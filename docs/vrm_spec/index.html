@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VRM仕様 &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>VRM仕様</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<hr />
+
+<p><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md">glTF-2.0</a>のバイナリ形式glbをベースにした、VR向けモデルフォーマットです。</p>
+
+<h1 id="更新履歴">更新履歴</h1>
+
+<ul>
+<li>20181109: JsonShcemaの<code>Vector3</code>のタイプが誤って <code>array</code> になっていた部分を修正</li>
+</ul>
+
+<pre><code class="language-js">{
+    &quot;x&quot;: {
+        &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;y&quot;: {
+        &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;z&quot;: {
+        &quot;type&quot;: &quot;number&quot;
+    }
+}
+</code></pre>
+
+<h1 id="拡張子">拡張子</h1>
+
+<p><code>.vrm</code>を使います。
+gltfのバイナリ形式<code>.glb</code>と互換性があるので、拡張子を<code>.glb</code>に変更するとGLTF対応のアプリケーションで読み込むことができます(VRM独自の追加情報は無くなります)。</p>
+
+<h1 id="json拡張">Json拡張</h1>
+
+<p>GLBのJSON部に<code>VRM Extension</code>として拡張しています。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+  <span style="color:#e6db74">&#34;extensionsUsed&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;VRM&#34;</span>
+  },
+  <span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;VRM&#34;</span><span style="color:#f92672">:</span> {
+      <span style="color:#75715e">// VRMの拡張情報
+</span><span style="color:#75715e"></span>    }
+  },
+  <span style="color:#75715e">// 通常のGLTF-2.0の情報
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+
+<p>仕様のJsonSchemaを作成しました</p>
+
+<ul>
+<li><a href="https://github.com/dwango/UniVRM/tree/master/specification/0.0/schema">https://github.com/dwango/UniVRM/tree/master/specification/0.0/schema</a></li>
+</ul>
+
+<p>GLTF-2.0のJsonSchema</p>
+
+<ul>
+<li><a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0/schema">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0/schema</a></li>
+</ul>
+
+<h1 id="vrm拡張-vrmバージョンなど">VRM拡張: VRMバージョンなど</h1>
+
+<ul>
+<li><code>/extensions/VRM/exporterVersion</code>はv0.36から</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm&#34;</span>,
+    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;VRM extension is for 3d humanoid avatars (and models) in VR applications.&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;exporterVersion&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Version of exporter that vrm created. UniVRM-0.42&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;meta&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.meta.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;humanoid&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.humanoid.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;firstPerson&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;blendShapeMaster&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;secondaryAnimation&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;materialProperties&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.material.schema.json&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<h1 id="保存できる要素">保存できる要素</h1>
+
+<p>人間型モデル一体分の情報を保存します。</p>
+
+<h2 id="gltf-2-0-texture">GLTF-2.0: Texture</h2>
+
+<ul>
+<li>GLTF-2.0の<code>/textures/</code></li>
+</ul>
+
+<p>VRM拡張はありません。</p>
+
+<h2 id="gltf-2-0-material-json-extensions-vrm-materialproperties">GLTF-2.0: Material(json.extensions.VRM.materialProperties)</h2>
+
+<ul>
+<li>GLTF-2.0の<code>/materials/</code></li>
+</ul>
+
+<p>GLTFのマテリアルにフォールバックした情報を保存しています(拡張子をGLBに変更した場合に使われる)。</p>
+
+<h2 id="vrm拡張-extensions-vrm-materialproperties">VRM拡張: <code>/extensions/VRM/materialProperties</code></h2>
+
+<p>VRM独自のマテリアル情報を保存しています。
+現状、Unityに必要な項目を保存しています。
+選択可能なShaderは、<a href="#vrmshader">VRMが提供するシェーダー</a>を参照してください。</p>
+
+<ul>
+<li><a href="https://github.com/dwango/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json">https://github.com/dwango/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json</a></li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.material&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;shader&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;renderQueue&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;floatProperties&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;vectorProperties&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;textureProperties&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;keywordMap&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;tagMap&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>
+        }
+    }
+}
+</code></pre></div>
+
+<h2 id="gltf-2-0-mesh">GLTF-2.0: Mesh</h2>
+
+<ul>
+<li>GLTF-2.0の<code>/meshes/</code></li>
+</ul>
+
+<p>VRM拡張はありません。</p>
+
+<h3 id="頂点属性">頂点属性</h3>
+
+<ul>
+<li><p>GLTF-2.0の<code>/meshes/*/primitives/*/attributes</code></p>
+
+<ul>
+<li>TANGENT (vec4) // v0.42から保存するのをやめて、import時にnormalとuvから計算するようにしています。</li>
+</ul></li>
+</ul>
+
+<h3 id="モーフターゲット情報">モーフターゲット情報</h3>
+
+<ul>
+<li><code>/meshes/*/primitives/*/extras/targetNames</code></li>
+</ul>
+
+<p>にMoprhTargetの名称を記録しています。</p>
+
+<h2 id="gltf-2-0-スキニング情報">GLTF-2.0: スキニング情報</h2>
+
+<ul>
+<li>GLTF-2.0の<code>/skins/</code></li>
+</ul>
+
+<p>VRM拡張はありません。</p>
+
+<h2 id="gltf-2-0-node">GLTF-2.0: Node</h2>
+
+<ul>
+<li>GLTF-2.0の<code>/nodes/</code></li>
+</ul>
+
+<p>VRM拡張はありません。</p>
+
+<ul>
+<li>node
+
+<ul>
+<li>name</li>
+<li>position(vec3)</li>
+<li>rotation(quaternion)</li>
+<li>scale(vec3)</li>
+</ul></li>
+</ul>
+
+<h1 id="保存する値に対する規約">保存する値に対する規約</h1>
+
+<h2 id="gltf2の規約">GLTF2の規約</h2>
+
+<p>GLTF2の規約に準拠します。
+特に重要な項目です。</p>
+
+<ul>
+<li>メートル単位</li>
+<li>右手Y-UP座標系<sup class="footnote-ref" id="fnref:OpenGLCoord"><a href="#fn:OpenGLCoord">1</a></sup></li>
+</ul>
+
+<h2 id="vrmの規約">VRMの規約</h2>
+
+<p>人間型モデルに特化して互換性を高めるために、以下の制約を課します。</p>
+
+<ul>
+<li>モデルは原点に位置する</li>
+<li>モデルは-Z向き<sup class="footnote-ref" id="fnref:OpenGLCoord"><a href="#fn:OpenGLCoord">1</a></sup></li>
+<li>モデルのヒエラルキーはY-UP<sup class="footnote-ref" id="fnref:ZUP"><a href="#fn:ZUP">2</a></sup></li>
+<li>モデルのメッシュはY-UP<sup class="footnote-ref" id="fnref:ZUP"><a href="#fn:ZUP">2</a></sup></li>
+<li>モデルのヒエラルキーはT-Pose</li>
+<li>モデルのメッシュはT-Pose</li>
+<li>ボーンに回転を入れない</li>
+<li>ボーンにスケールを入れない</li>
+<li>ヘッドボーンは真正面を向いている<sup class="footnote-ref" id="fnref:LookAt"><a href="#fn:LookAt">3</a></sup></li>
+</ul>
+
+<p><a name="vrmshader"></a></p>
+
+<h1 id="vrmが提供するシェーダー">VRMが提供するシェーダー</h1>
+
+<p>セル調のキャラクタモデルの運用を想定して以下のシェーダーを用意しています。</p>
+
+<h2 id="unlit系">Unlit系</h2>
+
+<p>ライティング・シェーディングせずにテクスチャ色をそのまま表示します。
+半透明の扱い別に４種類を用意しています。</p>
+
+<ul>
+<li>UnlitTexture(不透明)</li>
+<li>UnlitCutout(透明度が閾値以下の部分を透明とする)</li>
+<li>UnlitTransparent(アルファブレンド。ZWriteしない)<sup class="footnote-ref" id="fnref:Transparent"><a href="#fn:Transparent">4</a></sup></li>
+<li>UnlitTransparentZWrite(アルファブレンド。ZWriteする)<sup class="footnote-ref" id="fnref:TransparentZWrite"><a href="#fn:TransparentZWrite">5</a></sup></li>
+</ul>
+
+<h2 id="mtoon">MToon</h2>
+
+<p>セルシェーディング、輪郭線に対応したシェーダー。
+Unlitよりもきめ細かく設定できます。</p>
+
+<h1 id="vrm拡張-モデルのボーンマッピング-json-extensions-vrm-humanoid">VRM拡張: モデルのボーンマッピング(json.extensions.VRM.humanoid)</h1>
+
+<p>NodeとHumanoidで定義される標準ボーンの対応表です。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.humanoid.bone&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;bone&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Human bone name.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;hips&#34;</span>,<span style="color:#e6db74">&#34;leftUpperLeg&#34;</span>,<span style="color:#e6db74">&#34;rightUpperLeg&#34;</span>,<span style="color:#e6db74">&#34;leftLowerLeg&#34;</span>,<span style="color:#e6db74">&#34;rightLowerLeg&#34;</span>,<span style="color:#e6db74">&#34;leftFoot&#34;</span>,<span style="color:#e6db74">&#34;rightFoot&#34;</span>,<span style="color:#e6db74">&#34;spine&#34;</span>,<span style="color:#e6db74">&#34;chest&#34;</span>,<span style="color:#e6db74">&#34;neck&#34;</span>,<span style="color:#e6db74">&#34;head&#34;</span>,<span style="color:#e6db74">&#34;leftShoulder&#34;</span>,<span style="color:#e6db74">&#34;rightShoulder&#34;</span>,<span style="color:#e6db74">&#34;leftUpperArm&#34;</span>,<span style="color:#e6db74">&#34;rightUpperArm&#34;</span>,<span style="color:#e6db74">&#34;leftLowerArm&#34;</span>,<span style="color:#e6db74">&#34;rightLowerArm&#34;</span>,<span style="color:#e6db74">&#34;leftHand&#34;</span>,<span style="color:#e6db74">&#34;rightHand&#34;</span>,<span style="color:#e6db74">&#34;leftToes&#34;</span>,<span style="color:#e6db74">&#34;rightToes&#34;</span>,<span style="color:#e6db74">&#34;leftEye&#34;</span>,<span style="color:#e6db74">&#34;rightEye&#34;</span>,<span style="color:#e6db74">&#34;jaw&#34;</span>,<span style="color:#e6db74">&#34;leftThumbProximal&#34;</span>,<span style="color:#e6db74">&#34;leftThumbIntermediate&#34;</span>,<span style="color:#e6db74">&#34;leftThumbDistal&#34;</span>,<span style="color:#e6db74">&#34;leftIndexProximal&#34;</span>,<span style="color:#e6db74">&#34;leftIndexIntermediate&#34;</span>,<span style="color:#e6db74">&#34;leftIndexDistal&#34;</span>,<span style="color:#e6db74">&#34;leftMiddleProximal&#34;</span>,<span style="color:#e6db74">&#34;leftMiddleIntermediate&#34;</span>,<span style="color:#e6db74">&#34;leftMiddleDistal&#34;</span>,<span style="color:#e6db74">&#34;leftRingProximal&#34;</span>,<span style="color:#e6db74">&#34;leftRingIntermediate&#34;</span>,<span style="color:#e6db74">&#34;leftRingDistal&#34;</span>,<span style="color:#e6db74">&#34;leftLittleProximal&#34;</span>,<span style="color:#e6db74">&#34;leftLittleIntermediate&#34;</span>,<span style="color:#e6db74">&#34;leftLittleDistal&#34;</span>,<span style="color:#e6db74">&#34;rightThumbProximal&#34;</span>,<span style="color:#e6db74">&#34;rightThumbIntermediate&#34;</span>,<span style="color:#e6db74">&#34;rightThumbDistal&#34;</span>,<span style="color:#e6db74">&#34;rightIndexProximal&#34;</span>,<span style="color:#e6db74">&#34;rightIndexIntermediate&#34;</span>,<span style="color:#e6db74">&#34;rightIndexDistal&#34;</span>,<span style="color:#e6db74">&#34;rightMiddleProximal&#34;</span>,<span style="color:#e6db74">&#34;rightMiddleIntermediate&#34;</span>,<span style="color:#e6db74">&#34;rightMiddleDistal&#34;</span>,<span style="color:#e6db74">&#34;rightRingProximal&#34;</span>,<span style="color:#e6db74">&#34;rightRingIntermediate&#34;</span>,<span style="color:#e6db74">&#34;rightRingDistal&#34;</span>,<span style="color:#e6db74">&#34;rightLittleProximal&#34;</span>,<span style="color:#e6db74">&#34;rightLittleIntermediate&#34;</span>,<span style="color:#e6db74">&#34;rightLittleDistal&#34;</span>,<span style="color:#e6db74">&#34;upperChest&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;node&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Reference node index&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;useDefaultValues&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unity&#39;s HumanLimit.useDefaultValues&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;boolean&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;min&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unity&#39;s HumanLimit.min&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;max&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unity&#39;s HumanLimit.max&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;center&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unity&#39;s HumanLimit.center&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;axisLength&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unity&#39;s HumanLimit.axisLength&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        }
+    }
+}
+</code></pre></div>
+
+<h2 id="定義しているボーン">定義しているボーン</h2>
+
+<ul>
+<li>hips</li>
+<li>spine</li>
+<li>chest</li>
+<li>upperChest<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></li>
+<li>neck</li>
+<li>head</li>
+
+<li><p>Left/Right eye<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right upperArm</p></li>
+
+<li><p>Left/Right lowerArm</p></li>
+
+<li><p>Left/Right hand</p></li>
+
+<li><p>Left/Right upperLeg</p></li>
+
+<li><p>Left/Right lowerLeg</p></li>
+
+<li><p>Left/Right foot</p></li>
+
+<li><p>Left/Right toe<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right thumb proximal, intermediate, distal<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right index proximal, intermediate, distal<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right middle proximal, intermediate, distal<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right ring proximal, intermediate, distal<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+
+<li><p>Left/Right little proximal, intermediate, distal<sup class="footnote-ref" id="fnref:notrequired"><a href="#fn:notrequired">6</a></sup></p></li>
+</ul>
+
+<h1 id="vrm拡張-モデル情報-json-extensions-vrm-meta">VRM拡張: モデル情報(json.extensions.VRM.meta)</h1>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.meta&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Title of VRM model&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Version of VRM model&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Author of VRM model&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;contactInformation&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Contact Information of VRM model author&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;reference&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Reference of VRM model&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;texture&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Thumbnail of VRM model&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;allowedUserName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;A person who can perform with this avatar&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;OnlyAuthor&#34;</span>,<span style="color:#e6db74">&#34;ExplicitlyLicensedPerson&#34;</span>,<span style="color:#e6db74">&#34;Everyone&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;violentUssageName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Permission to perform violent acts with this avatar&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Disallow&#34;</span>,<span style="color:#e6db74">&#34;Allow&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;sexualUssageName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Permission to perform sexual acts with this avatar&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Disallow&#34;</span>,<span style="color:#e6db74">&#34;Allow&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;commercialUssageName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;For commercial use&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Disallow&#34;</span>,<span style="color:#e6db74">&#34;Allow&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;otherPermissionUrl&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If there are any conditions not mentioned above, put the URL link of the license document here.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;licenseName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;License type&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Redistribution_Prohibited&#34;</span>,<span style="color:#e6db74">&#34;CC0&#34;</span>,<span style="color:#e6db74">&#34;CC_BY&#34;</span>,<span style="color:#e6db74">&#34;CC_BY_NC&#34;</span>,<span style="color:#e6db74">&#34;CC_BY_SA&#34;</span>,<span style="color:#e6db74">&#34;CC_BY_NC_SA&#34;</span>,<span style="color:#e6db74">&#34;CC_BY_ND&#34;</span>,<span style="color:#e6db74">&#34;CC_BY_NC_ND&#34;</span>,<span style="color:#e6db74">&#34;Other&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;otherLicenseUrl&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If “Other” is selected, put the URL link of the license document here.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        }
+    }
+}
+</code></pre></div>
+
+<h2 id="情報">情報</h2>
+
+<h3 id="タイトル-title">タイトル(Title)</h3>
+
+<p>アバターモデルの名前を設定します</p>
+
+<h3 id="作者-author">作者(Author)</h3>
+
+<p>モデルの作者の名前を記述します</p>
+
+<h3 id="連絡先-contact-information">連絡先(Contact Information)</h3>
+
+<p>モデルの作者への連絡先を記述します</p>
+
+<h3 id="参照-reference">参照(Reference)</h3>
+
+<p>何か「親作品」に相当するものがある場合は参照URLなどを記述します</p>
+
+<h3 id="サムネイル-thumbnail">サムネイル(Thumbnail)</h3>
+
+<p>アバターモデルのサムネイルを登録します。2048x2048程度の解像度テクスチャを推奨します。meta情報内ではtexture番号を指定します。</p>
+
+<h3 id="バージョン">バージョン</h3>
+
+<p>モデルの作成バージョンです。</p>
+
+<h2 id="使用許諾-ライセンス情報">使用許諾・ライセンス情報</h2>
+
+<p>License</p>
+
+<h3 id="アバターの人格に関する許諾範囲">アバターの人格に関する許諾範囲</h3>
+
+<p>Personation / Charaterization Permission</p>
+
+<h4 id="アバターに人格を与えることの許諾範囲-json-extensions-vrm-meta-allowedusername">アバターに人格を与えることの許諾範囲(json.extensions.VRM.meta.allowedUserName)</h4>
+
+<p>A person who can perform with this avatar</p>
+
+<ul>
+<li>アバターを操作することはアバター作者にのみ許される(Only Author)</li>
+<li>明確に許可された人限定(Explictly Licensed Person)</li>
+<li>全員に許可(Everyone)</li>
+</ul>
+
+<h4 id="このアバターを用いて暴力表現を演じることの許可-json-extensions-vrm-meta-violentussagename">このアバターを用いて暴力表現を演じることの許可(json.extensions.VRM.meta.violentUssageName)</h4>
+
+<p>Violent acts using this avatar</p>
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul>
+
+<h4 id="このアバターを用いて性的表現を演じることの許可-json-extensions-vrm-meta-sexualussagename">このアバターを用いて性的表現を演じることの許可(json.extensions.VRM.meta.sexualUssageName)</h4>
+
+<p>Sexuality acts using this avatar</p>
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul>
+
+<h4 id="商用利用の許可-json-extensions-vrm-meta-commercialussagename">商用利用の許可(json.extensions.VRM.meta.commercialUssageName)</h4>
+
+<p>For commercial use</p>
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul>
+
+<h4 id="その他のライセンス条件-json-extensions-vrm-meta-otherpermissionurl">その他のライセンス条件(json.extensions.VRM.meta.otherPermissionUrl)</h4>
+
+<p>Other License Url</p>
+
+<p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述</p>
+
+<h3 id="再配布-改変に関する許諾範囲">再配布・改変に関する許諾範囲</h3>
+
+<p>Redistribution / Modifications License</p>
+
+<h4 id="ライセンスタイプ-json-extensions-vrm-meta-licensename">ライセンスタイプ(json.extensions.VRM.meta.licenseName)</h4>
+
+<p>License Type</p>
+
+<ul>
+<li>再配布禁止(Redistribution Prohibited)</li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)</a></li>
+<li>その他(Other)</li>
+</ul>
+
+<h4 id="その他ライセンス条件-json-extensions-vrm-meta-otherlicenseurl">その他ライセンス条件(json.extensions.VRM.meta.otherLicenseUrl)</h4>
+
+<p>Other License Url</p>
+
+<p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述</p>
+
+<h1 id="vrm拡張-モーフ設定-json-extensions-vrm-blendshapemaster">VRM拡張: モーフ設定(json.extensions.VRM.blendShapeMaster)</h1>
+
+<p>BlendShapeをグループ化するBlendShapeGroupの配列を設定します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;blendShapeGroups&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.group.schema.json&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<h2 id="ブレンドシェイプグループ-json-extensions-vrm-blendshapemaster-blendshapegroups">ブレンドシェイプグループ(json.extensions.VRM.blendShapeMaster.blendShapeGroups)</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.group&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Expression name&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;presetName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Predefined Expression name&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Neutral&#34;</span>,<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#e6db74">&#34;U&#34;</span>,<span style="color:#e6db74">&#34;E&#34;</span>,<span style="color:#e6db74">&#34;O&#34;</span>,<span style="color:#e6db74">&#34;Blink&#34;</span>,<span style="color:#e6db74">&#34;Joy&#34;</span>,<span style="color:#e6db74">&#34;Angry&#34;</span>,<span style="color:#e6db74">&#34;Sorrow&#34;</span>,<span style="color:#e6db74">&#34;Fun&#34;</span>,<span style="color:#e6db74">&#34;LookUp&#34;</span>,<span style="color:#e6db74">&#34;LookDown&#34;</span>,<span style="color:#e6db74">&#34;LookLeft&#34;</span>,<span style="color:#e6db74">&#34;LookRight&#34;</span>,<span style="color:#e6db74">&#34;Blink_L&#34;</span>,<span style="color:#e6db74">&#34;Blink_R&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;binds&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Low level blendshape references.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.bind.schema.json&#34;</span>
+            }
+        },
+        <span style="color:#e6db74">&#34;materialValues&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Material animation references.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.materialbind.schema.json&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.bind&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;mesh&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;weight&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        }
+    }
+}
+</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.blendshape.materialbind&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;materialName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;propertyName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;targetValue&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<h3 id="名前">名前</h3>
+
+<p>名前です。事前定義名と同じ(大文字)を推奨します</p>
+
+<h3 id="事前定義名">事前定義名</h3>
+
+<p>待機状態の表情</p>
+
+<ul>
+<li>Neutral</li>
+</ul>
+
+<p>リップシンク</p>
+
+<ul>
+<li>A</li>
+<li>I</li>
+<li>U</li>
+<li>E</li>
+<li>O</li>
+</ul>
+
+<p>瞬き</p>
+
+<ul>
+<li>Blink</li>
+<li>Blink_L</li>
+<li>Blink_R</li>
+</ul>
+
+<p>喜怒哀楽</p>
+
+<ul>
+<li>Fun</li>
+<li>Angry</li>
+<li>Sorrow</li>
+<li>Joy</li>
+</ul>
+
+<p>視線制御</p>
+
+<ul>
+<li>LookUp</li>
+<li>LookDown</li>
+<li>LookLeft</li>
+<li>LookRight</li>
+</ul>
+
+<p>その他</p>
+
+<ul>
+<li>Unknown</li>
+</ul>
+
+<h3 id="ブレンドシェイプの名前の識別名">ブレンドシェイプの名前の識別名</h3>
+
+<p>システムからブレンドシェイプを一意に認識する文字列IDを以下のロジックで決定します。</p>
+
+<pre><code>// 疑似コード
+function GetID(preset, name)
+{
+  if (Preset != BlendShapePreset.Unknown)
+  {
+      return preset.ToString().ToUpper();
+  }
+  else
+  {
+      return name.ToUpper();
+  }
+}
+</code></pre>
+
+<ul>
+<li>ブレンドシェイプIDがユニークになるようにPresetとNameを設定する</li>
+</ul>
+
+<h1 id="vrm拡張-一人称設定-json-extensions-vrm-firstperson">VRM拡張: 一人称設定(json.extensions.VRM.firstPerson)</h1>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;firstPersonBone&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The bone whose rendering should be turned off in first-person view. Usually Head is specified.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;firstPersonBoneOffset&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The target position of the VR headset in first-person view. It is assumed that an offset from the head bone to the VR headset is added.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+            <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                },
+                <span style="color:#e6db74">&#34;y&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                },
+                <span style="color:#e6db74">&#34;z&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                }
+            }
+        },
+        <span style="color:#e6db74">&#34;meshAnnotations&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Switch display \/ undisplay for each mesh in first-person view or the others.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.meshannotation.schema.json&#34;</span>
+            }
+        },
+        <span style="color:#e6db74">&#34;lookAtTypeName&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Eye controller mode.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#e6db74">&#34;enum&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Bone&#34;</span>,<span style="color:#e6db74">&#34;BlendShape&#34;</span>]
+        },
+        <span style="color:#e6db74">&#34;lookAtHorizontalInner&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.degreemap.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;lookAtHorizontalOuter&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.degreemap.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;lookAtVerticalDown&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.degreemap.schema.json&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;lookAtVerticalUp&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.firstperson.degreemap.schema.json&#34;</span>
+        }
+    }
+}
+</code></pre></div>
+
+<p>一人称視点のアバターを描画する場合、自モデルの頭部の中が見えてしまうという問題が生じます<sup class="footnote-ref" id="fnref:firstperson"><a href="#fn:firstperson">7</a></sup>。
+これに対応するために、一人称時の表示状態を指定できます。</p>
+
+<h2 id="firstpersonbone-json-extensions-vrm-firstperson-firstpersonbone">firstPersonBone(json.extensions.VRM.firstPerson.firstPersonBone)</h2>
+
+<p>一人称時に描画を切り替えるべきボーンを指定します。通常<code>Head</code>です。</p>
+
+<h2 id="firstpersonboneoffset-json-extensions-vrm-firstperson-firstpersonboneoffset">firstPersonBoneOffset(json.extensions.VRM.firstPerson.firstPersonBoneOffset)</h2>
+
+<p>一人時のヘッドセットの目標位置。
+頭ボーンからヘッドセットへのオフセットを加味することを想定している。</p>
+
+<h2 id="meshannotations-json-extensions-vrm-firstperson-meshannotations">meshAnnotations(json.extensions.VRM.firstPerson.meshAnnotations)</h2>
+
+<p>各メッシュに対して一人称時とそれ以外で表示・非表示を切り替えることができます。
+以下の設定があります。</p>
+
+<ul>
+<li>Auto: firstPersonBoneとその子孫に対するボーンWeightを持つポリゴンを自動で非表示にする<sup class="footnote-ref" id="fnref:firstPersonAuto"><a href="#fn:firstPersonAuto">8</a></sup></li>
+<li>FirstPersonOnly: 一人称のみ表示</li>
+<li>ThirdPersonOnly: 三人称のみ表示(頭など一人称時に非表示にするメッシュに指定する)</li>
+<li>Both: 特に表示切替をしない</li>
+</ul>
+
+<h2 id="視線設定">視線設定</h2>
+
+<p>ターゲットの方向を向くようにキャラクタの視線を制御します。</p>
+
+<h3 id="目線タイプ-json-extensions-vrm-firstperson-lookattypename">目線タイプ(json.extensions.VRM.firstPerson.lookAtTypeName)</h3>
+
+<ul>
+<li>Bone: ボーンにより目線を操作します。</li>
+<li>BlendShape: BlendShapeにより目線を操作します。BlendShapePreset.LookUp, LookDown, LookLeft, LookRightを使います。</li>
+</ul>
+
+<h3 id="角度調整">角度調整</h3>
+
+<p>頭と目標物の角度差を目ボーンに適用する場合の角度を調整します。</p>
+
+<h4 id="json-extensions-vrm-firstperson-lookathorizontalinner">json.extensions.VRM.firstPerson.lookAtHorizontalInner</h4>
+
+<h4 id="json-extensions-vrm-firstperson-lookathorizontalouter">json.extensions.VRM.firstPerson.lookAtHorizontalOuter</h4>
+
+<h4 id="json-extensions-vrm-firstperson-lookatverticaldown">json.extensions.VRM.firstPerson.lookAtVerticalDown</h4>
+
+<h4 id="json-extensions-vrm-firstperson-lookatverticalup">json.extensions.VRM.firstPerson.lookAtVerticalUp</h4>
+
+<h1 id="vrm拡張-揺れモノ設定-json-extensions-vrm-secondaryanimation">VRM拡張: 揺れモノ設定(json.extensions.VRM.secondaryAnimation)</h1>
+
+<p>尻尾や髪の毛などのひも状のオブジェクトの自動アニメーションの設定です。</p>
+
+<h2 id="揺れるボーン-secondaryanimation-bonegroups">揺れるボーン(secondaryAnimation.boneGroups)</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;boneGroups&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation.spring.schema.json&#34;</span>
+            }
+        },
+        <span style="color:#e6db74">&#34;colliderGroups&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;$ref&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation.collidergroup.schema.json&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation.spring&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;comment&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Annotation comment&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;stiffiness&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The resilience of the swaying object (the power of returning to the initial pose).&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;gravityPower&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The strength of gravity.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;gravityDir&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The direction of gravity. Set (0, -1, 0) for simulating the gravity. Set (1, 0, 0) for simulating the wind.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+            <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                },
+                <span style="color:#e6db74">&#34;y&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                },
+                <span style="color:#e6db74">&#34;z&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                }
+            }
+        },
+        <span style="color:#e6db74">&#34;dragForce&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The resistance (deceleration) of automatic animation.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;center&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The reference point of a swaying object can be set at any location except the origin. When implementing UI moving with warp, the parent node to move with warp can be specified if you don&#39;t want to make the object swaying with warp movement.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;hitRadius&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The radius of the sphere used for the collision detection with colliders.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;bones&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Specify the node index of the root bone of the swaying object.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+            }
+        },
+        <span style="color:#e6db74">&#34;colliderGroups&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Specify the index of the collider group for collisions with swaying objects.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<h3 id="揺れるボーンの根元のボーン-json-extensions-vrm-secondaryanimation-bonegroups-0-bones">揺れるボーンの根元のボーン(json.extensions.VRM.secondaryAnimation.boneGroups[0].bones)</h3>
+
+<p>揺れモノの根元のボーンのノードインデックスを指定します。</p>
+
+<h3 id="揺れるボーンと衝突する当たり判定-json-extensions-vrm-secondaryanimation-bonegroups-0-collidergroups">揺れるボーンと衝突する当たり判定(json.extensions.VRM.secondaryAnimation.boneGroups[0].colliderGroups)</h3>
+
+<p>揺れモノに対する衝突判定グループのインデックスを指定します。</p>
+
+<h3 id="パラメーター">パラメーター</h3>
+
+<h4 id="center-json-extensions-vrm-secondaryanimation-bonegroups-0-center">center(json.extensions.VRM.secondaryAnimation.boneGroups[0].center)</h4>
+
+<p>world原点以外の、揺れモノの基準点を設定できます。
+ワープで移動するUIを実装した場合に、ワープ移動で揺れモノを揺らしたくない場合にワープで移動する親ノードを指定できます。</p>
+
+<h4 id="dragforce-json-extensions-vrm-secondaryanimation-bonegroups-0-dragforce">dragForce(json.extensions.VRM.secondaryAnimation.boneGroups[0].dragForce)</h4>
+
+<p>自動アニメーションの抵抗(減速)です。</p>
+
+<h4 id="gravitydir-json-extensions-vrm-secondaryanimation-bonegroups-0-gravitydir">gravityDir(json.extensions.VRM.secondaryAnimation.boneGroups[0].gravityDir)</h4>
+
+<p>重力の方向です。(0, -1, 0)にすると重力に、(1, 0, 0)にすると風のように作用します。</p>
+
+<h4 id="gravitypower-json-extensions-vrm-secondaryanimation-bonegroups-0-gravitypower">gravityPower(json.extensions.VRM.secondaryAnimation.boneGroups[0].gravityPower)</h4>
+
+<p>重力の強さです。</p>
+
+<h4 id="hitradius-json-extensions-vrm-secondaryanimation-bonegroups-0-hitradius">hitRadius(json.extensions.VRM.secondaryAnimation.boneGroups[0].hitRadius)</h4>
+
+<p>Colliderとの当たり判定の半径です</p>
+
+<h4 id="stiffness-json-extensions-vrm-secondaryanimation-bonegroups-0-stiffiness">stiffness(json.extensions.VRM.secondaryAnimation.boneGroups[0].stiffiness)</h4>
+
+<p>揺れモノの復元力(初期姿勢に戻る力)です</p>
+
+<h2 id="揺れモノ当たり判定設定-json-extensions-vrm-secondaryanimation-collidergroups">揺れモノ当たり判定設定(json.extensions.VRM.secondaryAnimation.colliderGroups)</h2>
+
+<p>揺れモノと衝突する球を設定します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vrm.secondaryanimation.collidergroup&#34;</span>,
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;node&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The node of the collider group for setting up collision detections.&#34;</span>,
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>
+        },
+        <span style="color:#e6db74">&#34;colliders&#34;</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;array&#34;</span>,
+            <span style="color:#e6db74">&#34;items&#34;</span><span style="color:#f92672">:</span> {
+                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+                <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+                    <span style="color:#e6db74">&#34;offset&#34;</span><span style="color:#f92672">:</span> {
+                        <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The local coordinate from the node of the collider group.&#34;</span>,
+                        <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+                        <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+                            <span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">:</span> {
+                                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                            },
+                            <span style="color:#e6db74">&#34;y&#34;</span><span style="color:#f92672">:</span> {
+                                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                            },
+                            <span style="color:#e6db74">&#34;z&#34;</span><span style="color:#f92672">:</span> {
+                                <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                            }
+                        }
+                    },
+                    <span style="color:#e6db74">&#34;radius&#34;</span><span style="color:#f92672">:</span> {
+                        <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;The radius of the collider.&#34;</span>,
+                        <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre></div>
+
+<h3 id="ノード-json-extensions-vrm-secondaryanimation-collidergroups-0-node">ノード(json.extensions.VRM.secondaryAnimation.colliderGroups[0].node)</h3>
+
+<p>当たり判定を設置するノードです。</p>
+
+<h3 id="ローカル座標-json-extensions-vrm-secondaryanimation-collidergroups-0-colliders-1-offset">ローカル座標(json.extensions.VRM.secondaryAnimation.colliderGroups[0].colliders[1].offset)</h3>
+
+<p>当たり判定のノードからのローカル座標です。</p>
+
+<h3 id="半径-json-extensions-vrm-secondaryanimation-collidergroups-0-colliders-1-radius">半径(json.extensions.VRM.secondaryAnimation.colliderGroups[0].colliders[1].radius)</h3>
+
+<p>当たり判定の半径です。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:OpenGLCoord">OpenGL座標系。+Xが右、+Yが上、+Zが手前です。
+ <a class="footnote-return" href="#fnref:OpenGLCoord"><sup>[return]</sup></a></li>
+<li id="fn:ZUP">Blenderや3ds MaxなどのZ-UPのモデラーに由来するモデルでヒエラルキーの途中でx軸-90度の回転を入れてZ-UPが入れ子になっている場合があります。
+ <a class="footnote-return" href="#fnref:ZUP"><sup>[return]</sup></a></li>
+<li id="fn:LookAt">視線制御はT-Pose時のヘッドの向きを基準に目標物の方向を計算します。
+ <a class="footnote-return" href="#fnref:LookAt"><sup>[return]</sup></a></li>
+<li id="fn:Transparent">煙や頬の色など実体の無いオブジェクト向けです。
+ <a class="footnote-return" href="#fnref:Transparent"><sup>[return]</sup></a></li>
+<li id="fn:TransparentZWrite">半透明の衣装や、髪の先が半透明など実体のあるオブジェクト向けです。
+ <a class="footnote-return" href="#fnref:TransparentZWrite"><sup>[return]</sup></a></li>
+<li id="fn:notrequired">無くても問題ありません。
+ <a class="footnote-return" href="#fnref:notrequired"><sup>[return]</sup></a></li>
+<li id="fn:firstperson">バックフェースカリングや近平面である程度対処できますが、口の中が作りこんであるモデルの歯茎が意図せずに見えてしまうなど不十分な場合があります。
+ <a class="footnote-return" href="#fnref:firstperson"><sup>[return]</sup></a></li>
+<li id="fn:firstPersonAuto">実行時に自動で非表示部分を削除したモデルを生成します。
+ <a class="footnote-return" href="#fnref:firstPersonAuto"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

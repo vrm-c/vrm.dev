@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MToon &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>MToon</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<p><a href="../../univrm_install/#shader-preloading-setting">Shader preloading setting</a><br>
+<a href="https://niconare.nicovideo.jp/watch/kn3485">How to use MToon</a></p>
+
+<h1 id="about-mtoon">About MToon</h1>
+
+<p>MToon aims for making Japanese anime expressions. It is achieved by mixing <code>Lit Color</code> and <code>Shade Color</code> based on Lighting parameters and light source environment.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/mtoon_about.png" alt="alicia MToon"  />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Apply MToon to the 3D model<code>Alicia</code></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="for-users-who-want-to-have-a-quick-setup">For users who want to have a quick setup</h1>
+
+<h2 id="common-items">Common items</h2>
+
+<ul>
+<li>Select the target material and change the shader to <code>VRM/MToon</code></li>
+<li>Click the shader panel and set the same texture in <code>Color-&gt;Lit Color, Alpha</code> and <code>Color-&gt;Shade Color</code></li>
+<li>Set white color in <code>Color-&gt;Lit Color, Alpha</code> and set the preference shade color in <code>Color-&gt;Shade Color</code></li>
+<li>Set the preference value in <code>Shading-&gt;Toony</code>. Make the lit color and shade color sharp:<code>1</code></li>
+<li>Set the texture in <code>Rim-&gt;Additive</code> (equivalent to <code>sphere map</code> or <code>Matcap</code>)</li>
+<li>If outline is necessary, select <code>WorldCoordinates</code> in <code>Outline-&gt;Width-&gt;Mode</code>. Select <code>None</code> if outline is not needed</li>
+<li>Set the value with good appearance in <code>Outline-&gt;Width-&gt;Width</code></li>
+</ul>
+
+<h2 id="general-material">General material</h2>
+
+<ul>
+<li>Choose <code>Shading Shift</code> and set <code>0</code></li>
+<li>Choose <code>Shading Toony-&gt;Shadow Receive Multiplier</code> and set <code>1</code></li>
+</ul>
+
+<h2 id="set-materials-not-being-shadowed-too-much-such-as-the-character-s-face">Set materials not being shadowed too much such as the character&rsquo;s face</h2>
+
+<ul>
+<li>Choose <code>Shading Shift</code> and set a negative value</li>
+<li>Choose <code>Shading Toony-&gt;Shadow Receive Multiplier</code> and set <code>0</code></li>
+</ul>
+
+<h1 id="setting-items">Setting items</h1>
+
+<h2 id="preliminary">Preliminary</h2>
+
+<p>Select the target material and change the shader to VRM/MToon.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/set_mtoon.png" alt="select MToon"  />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Change the material shader to VRM/MToon</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="rendering">Rendering</h2>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/mtoon_inspector_rendering.png" alt="MToon Rendering"  />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>The items included in the Rendering Inspector</td>
+</tr>
+</tbody>
+</table>
+
+<p>Set the rendering type and cull mode in <code>Rendering</code>.</p>
+
+<h3 id="rendering-type">Rendering Type</h3>
+
+<p>Set whether the material is opaque or semi-transparent.</p>
+
+<ul>
+<li>Opaque
+
+<ul>
+<li>For rendering performance, it is recommended to set <code>Opaque</code>.</li>
+</ul></li>
+
+<li><p>Cutout</p>
+
+<ul>
+<li>Although it is opaque, it refers to the alpha value in <code>Color-&gt;Lit Color, Alpha</code>. Therefore, it skips rendering for places having smaller value than <code>Color-&gt;Alpha-&gt;Cutoff</code>.</li>
+</ul></li>
+
+<li><p>Transparent</p>
+
+<ul>
+<li>The opacity based on the alpha value in <code>Color-&gt;Lit Color, Alpha</code>.</li>
+<li>The downside is that outline rendering cannot be performed correctly.</li>
+</ul></li>
+</ul>
+
+<h3 id="cull-mode">Cull Mode</h3>
+
+<p>Set which side of the polygon to be rendered.</p>
+
+<ul>
+<li>Back
+
+<ul>
+<li>Render the front side. Generally selecting &ldquo;Back&rdquo; is recommended.</li>
+</ul></li>
+<li>Front
+
+<ul>
+<li>Render the back side.</li>
+</ul></li>
+<li>None
+
+<ul>
+<li>Render the both sides.</li>
+</ul></li>
+</ul>
+
+<h3 id="alpha">Alpha</h3>
+
+<p>Required if choosing <code>Rendering Type-&gt;Cutout</code>.</p>
+
+<ul>
+<li>Cutoff (<code>Color-&gt;Alpha</code>)
+
+<ul>
+<li>Set the threshold value for not rendering.</li>
+</ul></li>
+</ul>
+
+<h2 id="color">Color</h2>
+
+<p>Set the rendering color.
+The texture and color are multiplied.
+Set the color hit by the light ray in <code>Lit Color, Alpha</code> and set the color not hit by the light ray in <code>Shade Color</code>.<br />
+Also, set the the alpha value in <code>Lit Color, Alpha</code> for opacity information.</p>
+
+<h2 id="lighting">Lighting</h2>
+
+<h3 id="shading-shift">Shading Shift</h3>
+
+<p>Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
+When the value is <code>0</code>, it is the normal lighting.
+When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
+It is necessary to disable the self-shadow with setting the value to <code>0</code> in <code>Shadow Receive Multiplier</code> according to the displayed warning message.</p>
+
+<h3 id="shading-toony">Shading Toony</h3>
+
+<p>Set whether to smoothly change the lit color and shade color around the threshold value in <code>Shade Shift</code>.
+When the value is <code>0</code>, it becomes realistically smooth like a general Lambert model.
+When the value is <code>1</code>, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.</p>
+
+<h3 id="shadow-receive-multiplier">Shadow Receive Multiplier</h3>
+
+<p>Set the influence of the self-shadow and shadow.
+<code>0</code>: Not affected.
+<code>1</code>: Affected.</p>
+
+<h3 id="lightcolor-attenuation">LightColor Attenuation</h3>
+
+<p>Set the influence of the light source color.
+<code>0</code>: Affected by the light source color.
+<code>1</code>: Not affected by the light source color. It only reflects the luminance of the light source color.</p>
+
+<h3 id="rim-additive">Rim Additive</h3>
+
+<p>Display additional light sources based on the relationship between the camera and the normal.
+In general it is called sphere map or matcap.</p>
+
+<h3 id="emission">Emission</h3>
+
+<p>Set the constant color regardless of the light source environment.</p>
+
+<h3 id="normal-map">Normal Map</h3>
+
+<p>Set the normal map.
+Set the strength value in the box on the right.</p>
+
+<h2 id="outline">Outline</h2>
+
+<p>Set the outline.</p>
+
+<h3 id="width-mode">Width Mode</h3>
+
+<ul>
+<li>None
+
+<ul>
+<li>The outline is not rendered</li>
+</ul></li>
+<li>WorldCoordinates
+
+<ul>
+<li>Render the outline of the constant width for the world coordinate</li>
+</ul></li>
+<li>ScreenCoordinates
+
+<ul>
+<li>Render the outline of the constant width for the screen coordinate</li>
+</ul></li>
+</ul>
+
+<h3 id="width">Width</h3>
+
+<p>Set the width of the outline.
+The unit of distance is meter when <code>Width Mode-&gt;WorldCoordinates</code> is chosen.</p>
+
+<h3 id="color-mode">Color Mode</h3>
+
+<ul>
+<li>FixedColor
+
+<ul>
+<li>Render with the fixed color</li>
+</ul></li>
+<li>MixedLighting
+
+<ul>
+<li>Multiply the influence of Lighting</li>
+</ul></li>
+</ul>
+
+<h3 id="color-1">Color</h3>
+
+<p>Set the outline color.</p>
+
+<h3 id="color-lighting-mix">Color Lighting Mix</h3>
+
+<p>Set the multiplier coefficient when <code>Color Mode-&gt;MixedLighting</code> is chosen.</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

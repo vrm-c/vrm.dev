@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to view VRM file &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>How to view VRM file</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer</h2>
+
+<p>Download VRM Viewer from <a href="https://github.com/dwango/UniVRMTest/releases">UniVRMTest/releases</a>. Next, run the program and click<code>VRM Model</code>. Then, select a VRM model available on your computer. The VRM model can be shown in the scene.</p>
+
+<h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project</h2>
+
+<p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:</p>
+
+<h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity</h3>
+
+<img src="https://vrm.dev/images/vrm/unity_new_project.png"   />
+
+
+<p>Create a new project at the start page (<code>New -&gt; Create project</code>).</p>
+
+<h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project</h3>
+
+<img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
+
+
+<p>Download the latest unitypackage (UniVRM-0.XX) from <a href="https://github.com/dwango/UniVRM/releases">UniVRM/releases</a> and import it into the current project (<code>Assets -&gt; Import Package -&gt; Custom Package</code>). The path of imported files is<code>../Assets/VRM</code>. <strong>It is recommended to delete existing VRM folder included VRM in advance before package import</strong>.</p>
+
+<h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_prefab_en.png"   />
+
+
+<p><strong>Drag and drop VRM file (~.vrm) into Assets folder</strong>. The <strong>prefab</strong> file of the imported VRM model data can be automatically generated.</p>
+
+<img src="https://vrm.dev/images/vrm/alicia_scene2.png"   />
+
+
+<p><strong>Drag and drop the prefab file under the scene in the Hierarchy window</strong>. The model data can be visualized as shown in the following image:</p>
+
+<img src="https://vrm.dev/images/vrm/vrm_settings.png"   />
+
+
+<p><strong>The VRM model&rsquo;s information will be shown in the Inspector window</strong> once the GameObject of the model data in<code>Hierarchy</code>is selected.</p>
+
+<h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder</h2>
+
+<img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png"   />
+
+
+<p><strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder</strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.</p>
+
+<h2 id="upload-download-vrm-file">Upload / Download VRM file</h2>
+
+<p>Currently you can submit your VRM files to <a href="http://3d.nicovideo.jp/">Nikoni 3D</a> or <a href="https://hub.vroid.com/">VRoid Hub</a>. For Nikoni 3D, the submitted VRM file <a href="https://3d.nicovideo.jp/search?word_type=tag&amp;word=VRM">can be found here</a>. Please check license information and try out those VRM models.
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in <a href="https://virtualcast.jp/">Virtual Cast</a>.</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VRMファイルを作ってみたい &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>VRMファイルを作ってみたい</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h2 id="vrmファイルのつくりかた-既存3dモデルからのコンバート">VRMファイルのつくりかた（既存3Dモデルからのコンバート）</h2>
+
+<p><img src="https://vrm.dev/images/vrm/vrm_workflow.png" alt="vrm workflow"  />
+
+VRMファイルをつくるためには、<a href="https://unity3d.com/jp">Unity</a>と<a href="https://github.com/dwango/UniVRM">UniVRM</a>を使用します。
+おおまかな作業のながれは以下のようになります</p>
+
+<ol>
+<li>Unityで3Dモデルデータと<a href="https://github.com/dwango/UniVRM">UniVRM</a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する</li>
+<li>一度UnityからVRMファイルを出力する（※正規化と呼びます）</li>
+<li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
+
+<ul>
+<li>場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する</li>
+</ul></li>
+<li>設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。</li>
+</ol>
+
+<p>ポイントは、 <strong>すでに作られた3DモデルをUnity上で調整し、Unityから出力する</strong>ということと、<strong>一度VRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う</strong>ところとなります。</p>
+
+<hr />
+
+<h3 id="1-unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る</h3>
+
+<p><img src="https://vrm.dev/images/vrm/unity_new_project.png"   />
+
+Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。</p>
+
+<h3 id="2-unityにunivrmをインストール">2.UnityにUniVRMをインストール</h3>
+
+<p><img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
+
+<a href="https://github.com/dwango/UniVRM/releases">UniVRM/releases</a>から最新のunitypackageをダウンロードし、<code>Assets/VRM</code>にインストールします。
+<strong>既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨</strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。</p>
+
+<h3 id="3-unityでhumanoidとして扱えるモデルデータを用意します">3.UnityでHumanoidとして扱えるモデルデータを用意します</h3>
+
+<p><img src="https://vrm.dev/images/vrm/alicia_generic.png"   />
+
+FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、<strong>必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください</strong>。後述しますが、<strong>VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください</strong>。</p>
+
+<p>インポート後、FBXのImport SettingsのRigタブでAnimationTypeをHumanoidにしてください。</p>
+
+<p><img src="https://vrm.dev/images/vrm/fix_eye.png"   />
+
+FBXインポート時の自動認識が食い違うことがありますので、ボーンの設定が間違っていたら修正します</p>
+
+<p>例</p>
+
+<ul>
+<li>前髪に顎ボーンが割り当てられる</li>
+<li>目のハイライトに目ボーンが割り当てられる</li>
+</ul>
+
+<h3 id="4-モデルデータを調整し-メニューから一度vrmをエクスポートする-正規化">4.モデルデータを調整し、メニューから一度VRMをエクスポートする（※正規化）</h3>
+
+<p><img src="https://vrm.dev/images/vrm/alicia_scene.png"   />
+
+3.で用意したモデルデータを<strong>一度Unityのシーンに配置します</strong>。その上で、以下の項目を調整します。</p>
+
+<ul>
+<li>モデルの位置
+
+<ul>
+<li>モデルは原点に位置する</li>
+</ul></li>
+<li>モデルのスケール
+
+<ul>
+<li>1.0 = 1m</li>
+</ul></li>
+<li>モデルの向き
+
+<ul>
+<li>モデルは+Zの方向に向いている</li>
+</ul></li>
+<li>質感（マテリアル/シェーダ）
+
+<ul>
+<li>以下のシェーダの中から使用することを<strong>強く推奨</strong>します。
+
+<ul>
+<li>PBR
+
+<ul>
+<li>Standardシェーダー(Unity標準)</li>
+</ul></li>
+<li>Unlit系シェーダー
+
+<ul>
+<li>VRM/UnlitTexture (UnityのUnit/Textureと同じ)</li>
+<li>VRM/UnlitCutout (UnityのUnit/Cutoutと同じ)</li>
+<li>VRM/UnlitTransparent (UnityのUnit/Transparentと同じ)</li>
+<li>VRM/UnlitTransparentZWrite (アルファブレンディングかつZWriteありです。実体のある半透明物への適用を想定しています)</li>
+</ul></li>
+<li>Toonシェーダー
+
+<ul>
+<li>VRM/MToon (照明対応トゥーンシェーダ）</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+
+調整が終わったら、UnityのHierarchyでモデルデータを選択し、メニューからVRM→Export humanoidを実行します</p>
+
+<p><img src="https://vrm.dev/images/vrm/export_dialog.png"   />
+
+チェックボックスを設定してExportを押してください。</p>
+
+<ul>
+<li>Force T Pose
+
+<ul>
+<li>回転・スケールの除去前にモデルを強制的に<a href="../vrm_tpose/">T-Pose</a>にします。</li>
+</ul></li>
+<li>Pose Freeze
+
+<ul>
+<li>回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように<strong>モデルを正規化する処理</strong>です。<strong>初回は必ずチェックを入れてください</strong>。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。</li>
+</ul></li>
+</ul>
+
+<p>Exportを押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。T-Poseとモデルの正規化の詳細は<a href="https://github.com/dwango/UniVRM/wiki/T-Poseとモデルの正規化の詳細">こちら</a>。</p>
+
+<h3 id="5-先ほどエクスポートしたvrmを再度unity上に読み込む">5.先ほどエクスポートしたVRMを再度Unity上に読み込む</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_prefab.png"   />
+
+
+<p><strong>4.で出力したVRMファイルを、UnityのAssetsにドラッグ＆ドロップする</strong>だけで、VRMファイルがインポートされ<strong>モデルデータのPrefabが生成されます</strong>。</p>
+
+<img src="https://vrm.dev/images/vrm/alicia_scene2.png"   />
+
+
+<p>さきほど4.で配置したモデルデータをいったん消し、<strong>VRMから生成されたPrefabをあらためてシーンに配置します</strong>。
+すると、メッシュなどが正規化されたモデルデータが表示されます。</p>
+
+<h3 id="6-vrm独自の設定を行う">6.VRM独自の設定を行う</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_settings.png"   />
+
+
+<p>5.で読み込まれたモデルデータをHierarchyで選択すると、<strong>インスペクタにさまざまな設定項目</strong>があらわれます。また、<strong>secondaryには揺れ物の設定</strong>が入っています。これらを設定していきます。
+<strong>少なくとも、タイトル・作者・ライセンス情報</strong>は埋めるようにしてください。<strong>特にライセンス情報は重要です！</strong></p>
+
+<ul>
+<li><p>Information（一般情報）</p>
+
+<ul>
+<li>Title
+
+<ul>
+<li>アバターモデル名称。自由入力</li>
+</ul></li>
+<li>Version
+
+<ul>
+<li>アバターモデルのバージョン。自由入力</li>
+</ul></li>
+<li>Author
+
+<ul>
+<li>作者名</li>
+</ul></li>
+<li>Contact Information
+
+<ul>
+<li>作者への連絡先</li>
+</ul></li>
+<li>Reference
+
+<ul>
+<li>アバターの「親作品」となるようなものがあれば、その情報</li>
+</ul></li>
+</ul></li>
+
+<li><p>License（使用許諾・ライセンス情報）</p>
+
+<ul>
+<li><p>アバターの人格に関する許諾範囲 (Personation / Charaterization Permission)</p>
+
+<ul>
+<li>アバターに人格を与えることの許諾範囲 (A person who can perform with this avatar)
+
+<ul>
+<li>アバターを操作することはアバター作者にのみ許される(Only Author)</li>
+<li>明確に許可された人限定(Explictly Licensed Person)</li>
+<li>全員に許可(Everyone)</li>
+</ul></li>
+<li>このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul></li>
+<li>このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul></li>
+<li>商用利用の許可(For commercial use)
+
+<ul>
+<li>不許可(Disallow)</li>
+<li>許可(Allow)</li>
+</ul></li>
+<li>その他のライセンス条件(Other License Url)
+
+<ul>
+<li>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述</li>
+</ul></li>
+</ul></li>
+
+<li><p>再配布・改変に関する許諾範囲(Redistribution / Modifications License)</p>
+
+<ul>
+<li><p>ライセンスタイプ(License Type)</p>
+
+<ul>
+<li>再配布禁止(Redistribution Prohibited)</li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)</a></li>
+<li>その他(Other)</li>
+</ul></li>
+
+<li><p>その他ライセンス条件(Other License Url)</p>
+
+<ul>
+<li>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>ほかに、</p>
+
+<ul>
+<li><a href="../univrm/components/univrm_blendshape/">表情や口パクの設定（BlendShape）</a></li>
+<li><a href="../univrm/components/univrm_firstperson/">一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）</a></li>
+<li><a href="../univrm/components/univrm_lookat/">視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。</a></li>
+<li><a href="../univrm/components/univrm_secondary/">揺れ物（SpringBone/SpringBoneCollider）の設定</a></li>
+</ul>
+
+<p>がありますので必要に応じて設定していきます。</p>
+
+<h3 id="7-unity上で再生し挙動を確認する-必要であれば">7.Unity上で再生し挙動を確認する（※必要であれば）</h3>
+
+<img src="https://vrm.dev/images/vrm/aiueo.png"   />
+
+
+<p>AnimationClip/AnimationControllerをセットしたり、VRMLookAtHeadのTargetに<a href="../univrm/components/univrm_lookat/#target">GameObject</a>をセットしたり（視線がどこを向くかの設定）して、実際にUnity上で動作を確認します。
+また、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。Add Componentから「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。</p>
+
+<h3 id="8-vrmファイルを出力する">8.VRMファイルを出力する</h3>
+
+<p><img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+
+調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューからVRM→Export humanoidを実行します</p>
+
+<p>このとき、<strong>「Force T Pose」と「Pose Freeze」のチェックは外してください</strong>。このチェックは初回（正規化）のときのみ使用します。
+ファイル名を指定してVRMファイルを出力します</p>
+
+<h3 id="完成">完成！</h3>
+
+<p>これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

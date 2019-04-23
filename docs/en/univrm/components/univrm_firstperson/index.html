@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>First-Person View &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>First-Person View</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h1 id="vrmfirstperson">VRMFirstPerson</h1>
+
+<p>The setting related to first-person perspectives.</p>
+
+<h2 id="firstpersonbone">FirstPersonBone</h2>
+
+<p>FirstPersonBone keeps track of a VR headset in a first-person view.
+Normally the head bone is assigned as FirstPersonBone.</p>
+
+<h2 id="firstpersonoffset">FirstPersonOffset</h2>
+
+<p>The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.</p>
+
+<h2 id="renderers">Renderers</h2>
+
+<p>The settings for controlling mesh rendering on/off in a first-person view.</p>
+
+<p>When a VRM model is used in VR applications, the user may see the model&rsquo;s head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function <strong>VRMFirstPerson</strong> which can hide the model&rsquo;s head in the first-person view. To test out first-person mode in Unity project, set up <a href="../../api/univrm_use_firstperson/#specify-the-additional-render-layers-for-the-application">render layer</a> in the inspector window and call <a href="../../api/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera">first-person setup function</a>. Then, go to<code>camera-&gt;cull mask</code>and select<code>EVERYTHING</code>but<code>THIRDPERSON_ONLY_LAYER</code>.</p>
+
+<h3 id="the-case-for-the-head-being-separated">The case for the head being separated</h3>
+
+<p>Set <strong>ThirdPersonOnly</strong> on the head.
+Set <strong>Both</strong> on the rest parts.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/firstperson.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>For a VRM model (below), the head is set to <strong>ThirdPersonOnly</strong> and the rest parts of the body are set to <strong>Both</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/firstperson_runtime.png" alt="firstperson"  />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Example: The meshes set to <strong>ThirdPersonOnly</strong> are not displayed in the first-person view.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="the-case-for-the-head-not-being-separated">The case for the head not being separated</h3>
+
+<p>Please set <strong>Auto</strong>.
+Except the model&rsquo;s head, the other parts are copied and treated as <strong>FirstPersonOnly</strong>.
+The original model is treated as <strong>ThirdPersonOnly</strong>.
+The parts regarding the head bone and its descendants with weights will be eliminated.</p>
+
+<h3 id="the-case-for-no-particular-setting">The case for no particular setting</h3>
+
+<p>Please set <strong>Both</strong>.</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

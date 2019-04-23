@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Univrms on VRM</title>
+    <link>https://vrm.dev/en/univrm/</link>
+    <description>Recent content in Univrms on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 05 Oct 2018 16:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://vrm.dev/en/univrm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UniVRM-0.44 Material</title>
+      <link>https://vrm.dev/en/univrm/shaders/univrm_shaders_044/</link>
+      <pubDate>Fri, 05 Oct 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/shaders/univrm_shaders_044/</guid>
+      <description>Material-related fixes and additions in UniVRM-0.44.
+Introduction of UniGLTF / UniUnlit shader UniVRM-0.43 was capable of importing / exporting the following Unlit shaders:
+ Unlit/Color Unlit/Texture, VRM/UnlitTexture Unlit/Transparent, VRM/UnlitTransparent Unlit/Transparent Coutout, VRM/UnlitCutout VRM/UnlitTransparentZWrite(not compatible with GLTF)  The following materials that are set with GLTF were not functional:
+ doubleSided the multiplication of color and texture transparent with color vertex color  Hence, we introduced the GLTF-compatible Unlit shader UniGLTF / UnLit:</description>
+    </item>
+    
+    <item>
+      <title>How to Use VRMFirstPerson</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_use_firstperson/</link>
+      <pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_use_firstperson/</guid>
+      <description>VRMFirstPerson Settings VRMFirstPerson has the following settings for Renderer:
+   FirstPersonFlag Layer Note     Both default Specify parts that are not necessarily separated between first-person view and third-person view.   ThirdPersonOnly THIRDPERSON_ONLY_LAYER Specify parts that are not rendered in first-person view.   FirstPersonOnly FIRSTPERSON_ONLY_LAYER Specify parts that are not rendered in third-person view. The auto-created headless model is used.   Auto THIRDPERSON_ONLY_LAYER Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.</description>
+    </item>
+    
+    <item>
+      <title>API Change History</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_api_history/</link>
+      <pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_api_history/</guid>
+      <description> This section describes about changes affecting the program.
+Please go to UniVRM/Wiki to get the latest information of the API update.
+v0.36 Texture Name Save Locations Changed Conforming to the GLTF specification.
+json.images[i].extra.name  After the change
+json.images[i].name  BlendShape Name Save Locations Changed Conforming to the GLTF specification.
+ &amp;ldquo;extras&amp;rdquo; is not allowed in target https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356  json.meshes[i].primitives[j].targets[k].extra.name  After the change
+json.meshes[i].primitives[j].extras.targetNames[k]  </description>
+    </item>
+    
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://vrm.dev/en/univrm/univrm_faq/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_faq/</guid>
+      <description>Report errors Please check the contents in console (Window -&amp;gt; Console). If an error messages (red) is shown in console, there might be something wrong somewhere: Please report the errors you got in: https://github.com/dwango/UniVRM/issues More details provided in the report will be very helpful for us to look into your problem. For example: OS (Windows10 64bit, etc.) Unity version (Unity-5.6.3p1, etc.) UniVRM version (0.40, etc.) VRMSpringBone set before was gone</description>
+    </item>
+    
+    <item>
+      <title>Available shaders in UniVRM</title>
+      <link>https://vrm.dev/en/univrm/shaders/univrm_shaders/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/shaders/univrm_shaders/</guid>
+      <description>UniVRM-0.44 material
+PBR Standard shader Unity standard.
+Unlit type shader VRM/UnlitTexture Same as Unit/Texture.
+VRM/UnlitCutout Same as Unit/Coutout.
+VRM/UnlitTransparent Same as Unit/Transparent.
+It is assumed to be applied to particle things such as smokes, semi-transparent objects without substances (depth value) such as rosy cheeks.
+VRM/UnlitTransparentZWrite Alpha blending and ZWrite are available. It is assumed to be applied to semi-transparent objects with substances (depth value) such as semi-transparent clothes and hairs.</description>
+    </item>
+    
+    <item>
+      <title>BlendShape Setting</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_blendshape/</guid>
+      <description>New features introduced in UniVRM v0.45 can be found here VRMBlendShapeProxy The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode How to use: Set BlendShapeAvatar VRMBlendShapeProxy-&amp;gt;BlendShapeAvatar in the Inspector Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY) BlendShapeAvatar Expressions can be created in the Inspector. Double click theBlend Shape Avatarbox or Click</description>
+    </item>
+    
+    <item>
+      <title>Eye Control</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_lookat/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_lookat/</guid>
+      <description>VRMLookAtHead         VRMLookAtHead    This component calculates the direction from the model&amp;rsquo;s head to the target.
+Target The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.
+Eye control with bone: VRMLookAtBoneApplyer         VRMLookAtBoneApplyer    Apply the parameters of the calculated eye gaze direction of VRMLookAtHead to EyeBone.</description>
+    </item>
+    
+    <item>
+      <title>First-Person View</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_firstperson/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_firstperson/</guid>
+      <description>VRMFirstPerson The setting related to first-person perspectives.
+FirstPersonBone FirstPersonBone keeps track of a VR headset in a first-person view. Normally the head bone is assigned as FirstPersonBone.
+FirstPersonOffset The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.
+Renderers The settings for controlling mesh rendering on/off in a first-person view.</description>
+    </item>
+    
+    <item>
+      <title>Import VRM Model at Runtime</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_import_runtime/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_import_runtime/</guid>
+      <description>Examples of importing the VRM model with the latest version can be found here.
+The followings are the methods to import a VRM model at runtime in Unity:
+Open VRM from a file path var path=&amp;#34;sample.vrm&amp;#34;; var go=VRM.VRMImporter.LoadFromPath(path); Debug.LogFormat(&amp;#34;loaded {0}&amp;#34;, go.name);  Open VRM asynchronously from a file path var path=&amp;#34;sample.vrm&amp;#34;; VRMImporter.LoadVrmAsync(path, go =&amp;gt; { Debug.LogFormat(&amp;#34;loaded {0}&amp;#34;, go.name); });  Open VRM from a byte array var path=&amp;#34;sample.vrm&amp;#34;; var bytes = File.</description>
+    </item>
+    
+    <item>
+      <title>MToon</title>
+      <link>https://vrm.dev/en/univrm/shaders/mtoon/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/shaders/mtoon/</guid>
+      <description>Shader preloading setting
+How to use MToon
+About MToon MToon aims for making Japanese anime expressions. It is achieved by mixing Lit Color and Shade Color based on Lighting parameters and light source environment.
+        Apply MToon to the 3D modelAlicia    For users who want to have a quick setup Common items  Select the target material and change the shader to VRM/MToon Click the shader panel and set the same texture in Color-&amp;gt;Lit Color, Alpha and Color-&amp;gt;Shade Color Set white color in Color-&amp;gt;Lit Color, Alpha and set the preference shade color in Color-&amp;gt;Shade Color Set the preference value in Shading-&amp;gt;Toony.</description>
+    </item>
+    
+    <item>
+      <title>Model Information</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_meta/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_meta/</guid>
+      <description>VRMMeta         VRMMeta component    Information Title Set the name of the VRM model
+Author Enter the author name of the VRM model
+Contact Information Enter the contact information of the author
+Reference Original / Related works of this avatar (URL), if any
+Thumbnail Register the thumbnail of the VRM model. A texture resolution about 2048x2048 is recommended.
+Version Specify the model version with character string.</description>
+    </item>
+    
+    <item>
+      <title>UniVRM Coordinate Transformations</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_coordinate/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_coordinate/</guid>
+      <description>UniVRM automatically performs the coordinate transformation with GLTF during import / export.
+VRM coordinate system Since VRM is an extension of GLTF, it conforms to the coordinate system of GLTF. It is right-handed Y-UP (OpenGL standard) coordinate system.
+ Right: X+ Up: Y+ In front: Z-  Unity coordinate system Left-handed Y-UP coordinate system。
+ Right:X+ Up:Y+ In front:Z+ (+- is inverted)  Transformation matrix Z-axis is inverted.
+Vector3 (Position, Normal, etc.</description>
+    </item>
+    
+    <item>
+      <title>UniVRM installation</title>
+      <link>https://vrm.dev/en/univrm/univrm_install/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_install/</guid>
+      <description>Unity Version UniVRM supports Unity5.6 and later versions.
+Installation Download the latest unitypackage (UniVRM-0.XX) from UniVRM/releases and import it into the current project (Assets -&amp;gt; Import Package -&amp;gt; Custom Package). The imported files will be in the folderAssets/VRM. It is recommended to delete existing VRM folder included VRM in advance before package import. The sample for loading and viewing VRM file at runtime is also provided (download UniVRM-RuntimeLoaderSample-0.XX).
+        Import UniVRM package    Stop AssetPostProcessor The importer of UniVRM is implemented withAssetPostprocessor.</description>
+    </item>
+    
+    <item>
+      <title>UniVRM workflow</title>
+      <link>https://vrm.dev/en/univrm/univrm_workflow/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_workflow/</guid>
+      <description>Workflow Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity Prepare a humanoid model that can be imported into Unity such as FBX format. Go to the model&amp;rsquo;sImport Settings -&amp;gt; Rig -&amp;gt; Animation Typeand selectHumanoidafter the model is imported.
+        SelectHumanoid    Correct bone assignment with rig configuration When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):</description>
+    </item>
+    
+    <item>
+      <title>Use BlendShape</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_use_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_use_blendshape/</guid>
+      <description>Apply BlendShape from a script var proxy=GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;(); // Call enum proxy.SetValue(BlendShapePreset.A, 1.0f); // Assign a value between 0 and 1  // Call string proxy.SetValue(&amp;#34;A&amp;#34;, 1.0f);  Apply multiple BlendShapes at once For example,
+For Blink_L
+ MeshA eye_L=100 MeshA eye_R=1  For Blink_R
+ MeshA eye_L=1 MeshA eye_R=100  If both BlendShapes are defined and enabled as shown below, later only those items set before can be applied.</description>
+    </item>
+    
+    <item>
+      <title>VRMSpringBone</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_secondary/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_secondary/</guid>
+      <description>Spring bone setting.
+The node attached by spring bones When VRM is imported, components related to spring bones are attached as follows:
+ VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is restored to the node previously attached during the export.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on.</description>
+    </item>
+    
+  </channel>
+</rss>

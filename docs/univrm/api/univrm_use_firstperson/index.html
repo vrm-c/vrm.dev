@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VRMFirstPersonの使い方 &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>VRMFirstPersonの使い方</h1>
+  <time datetime=2018-05-29T10:00:00&#43;0900 class="post-date">Tue, May 29, 2018</time>
+  
+
+<h1 id="vrmfirstpersonの設定-univrm-firstperson"><a href="../univrm_firstperson/">VRMFirstPersonの設定</a></h1>
+
+<p>VRMFirstPersonではRendererに対して設定があります。</p>
+
+<table>
+<thead>
+<tr>
+<th>FirstPersonFlag</th>
+<th>レイヤー</th>
+<th>備考</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Both</td>
+<td>default</td>
+<td>一人称と三人称で分ける必要のない部分に指定します</td>
+</tr>
+
+<tr>
+<td>ThirdPersonOnly</td>
+<td>THIRDPERSON_ONLY_LAYER</td>
+<td>一人称時に描画したくない部分に指定します</td>
+</tr>
+
+<tr>
+<td>FirstPersonOnly</td>
+<td>FIRSTPERSON_ONLY_LAYER</td>
+<td>三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います</td>
+</tr>
+
+<tr>
+<td>Auto</td>
+<td>THIRDPERSON_ONLY_LAYER</td>
+<td>実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します</td>
+</tr>
+</tbody>
+</table>
+
+<p>実行時に<strong>VRMFirstPerson.Setup</strong>を呼び出すことで、上記のレイヤー設定を行うことができます。明示的に外部から呼び出してください。</p>
+
+<h1 id="アプリケーションに追加の描画レイヤーを指定する">アプリケーションに追加の描画レイヤーを指定する</h1>
+
+<p>定数で以下のレイヤーを定義しています。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VRMFirstPerson</span> : MonoBehaviour
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> FIRSTPERSON_ONLY_LAYER = <span style="color:#ae81ff">9</span>;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> THIRDPERSON_ONLY_LAYER = <span style="color:#ae81ff">10</span>;
+
+    <span style="color:#75715e">// 省略
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/layer_setting.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>9番と１０番にLayerを設定</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="実行時にsetupを呼び出して-カメラにlayermaskを設定する">実行時にSetupを呼び出して、カメラにLayerMaskを設定する</h1>
+
+<ul>
+<li>VRMFirstPerson.Setupの呼び出し</li>
+<li>一人称カメラとその他のカメラに対してLayerMask</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System.Collections;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> UnityEngine;
+<span style="color:#66d9ef">using</span> VRM;
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SetupExample</span> : MonoBehaviour
+{<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [SerializeField]</span>
+    Camera m_firstPersonCamera; <span style="color:#75715e">// HMDのカメラ
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [SerializeField]</span>
+    LayerMask m_firstPersonMask; <span style="color:#75715e">// HMDのカメラにセットするマスク default | FIRSTPERSON_ONLY_LAYER など
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [SerializeField]</span>
+    LayerMask m_otherMask; <span style="color:#75715e">// HMDのカメラにセットするマスク default | THIRDPERSON_ONLY_LAYER など
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [SerializeField]</span>
+    VRMFirstPerson m_firstPerson;
+
+    <span style="color:#66d9ef">void</span> Reset()
+    {
+        m_firstPerson = GameObject.FindObjectOfType&lt;VRMFirstPerson&gt;();
+    }
+
+    <span style="color:#66d9ef">void</span> Start()
+    {
+        <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> camera <span style="color:#66d9ef">in</span> GameObject.FindObjectsOfType&lt;Camera&gt;())
+        {
+            camera.cullingMask = (camera == m_firstPersonCamera)
+                ? m_firstPersonMask
+                : m_otherMask
+                ;
+        }
+
+        <span style="color:#75715e">// VRMFirstPersonの初期化
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (m_firstPerson != <span style="color:#66d9ef">null</span>)
+        {
+            m_firstPerson.Setup();
+        }
+    }
+}
+</code></pre></div>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

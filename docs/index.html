@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta name="description" content="VRM - 3D Humanoid Avatar format for VR">
+  <meta name="keywords" content="VRM VR AR Avatar アバター 3D format フォーマット UniVRM">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  <meta property="og:title" content="VRM">
+  <meta property="og:image" content="https://vrm.dev/images/logo.png">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>VRM</title>
+
+  
+  <link rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+  <link rel="stylesheet" href="https://vrm.dev/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="https://vrm.dev/index.xml" rel="alternate" type="application/rss+xml" title="VRM" />
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <div class="content container">
+
+        
+        
+        <li>
+          <a class="language" href="https://vrm.dev/en/"><i class="fa fa-globe">&nbsp;</i>VRM(en)</a>
+        </li>
+        
+        
+
+<div class="posts">
+
+    
+
+<img src="https://vrm.dev/images/vrm/vrm_topheader.png" alt="VRM - humanoid 3d avatar format for VR"  />
+
+
+<h1 id="vrm-vr向け3dアバターファイルフォーマット">VRM - VR向け3Dアバターファイルフォーマット -</h1>
+
+<p>「VRM」は<strong>VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット</strong>です。<a href="https://www.khronos.org/gltf/">glTF2.0</a>をベースとしており、誰でも自由に利用することができます。また、<a href="https://unity3d.com/jp">Unity</a>向けのVRMファイルの読み書きを行うC#による標準実装（<a href="https://github.com/dwango/UniVRM">UniVRM</a>）がオープンソースで提供されます。</p>
+
+<hr />
+
+<h2 id="vrmについて">VRMについて</h2>
+
+<ul>
+<li><p><a href="./vrm_about/">「VRM」って何？どんなことができる？</a></p>
+
+<ul>
+<li><a href="./vrm_about/#vrm-とは">VRMとは</a></li>
+<li><a href="./vrm_about/#vrmで何ができるの">VRMで何ができるの？</a></li>
+<li><a href="./vrm_about/#vrmの特徴">VRMの特徴</a></li>
+<li><a href="./vrm_about/#vrmファイルに設定できるライセンスデータ">VRMファイルに設定できるライセンスデータ</a></li>
+</ul></li>
+
+<li><p><a href="./how_to_make_vrm/">VRMファイルを作ってみたい</a></p>
+
+<ul>
+<li><a href="./how_to_make_vrm/#vrmファイルのつくりかた-既存3dモデルからのコンバート">VRMファイルのつくりかた（既存3Dモデルからのコンバート）</a></li>
+</ul></li>
+
+<li><p><a href="./how_to_view_vrm/">VRMファイルを眺めてみたい</a></p>
+
+<ul>
+<li><a href="./how_to_view_vrm/#vrmファイルの読み込みかた">VRMファイルの読み込みかた</a></li>
+<li><a href="./how_to_view_vrm/#vrmファイルの読み込みかた-簡易版">VRMファイルの読み込みかた（簡易版）</a></li>
+<li><a href="./how_to_view_vrm/#vrmファイルを投稿する-探す">VRMファイルを投稿する・探す</a></li>
+</ul></li>
+
+<li><p><a href="./vrm_applications/">VRMファイルが使えるアプリケーションは？</a></p>
+
+<ul>
+<li><a href="./vrm_applications/#3Dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム</a></li>
+<li><a href="./vrm_applications/#キャラメイクツール">キャラメイクツール</a></li>
+<li><a href="./vrm_applications/#配信ツール">配信ツール</a></li>
+<li><a href="./vrm_applications/#メタバース">メタバース</a></li>
+<li><a href="./vrm_applications/#ゲームなど">ゲームなど</a></li>
+<li><a href="./vrm_applications/#ビューア">ビューア</a></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2 id="vrmフォーマット技術仕様">VRMフォーマット技術仕様</h2>
+
+<ul>
+<li><a href="./gltf_about/">GLTFとは</a></li>
+<li><a href="./vrm_spec/">VRM仕様</a>
+
+<ul>
+<li><a href="./vrm_tpose/">Tポーズについて</a></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2 id="univrm-https-github-com-dwango-univrm-unity向けvrm標準実装-仕様"><a href="https://github.com/dwango/UniVRM">UniVRM</a>(Unity向けVRM標準実装)仕様</h2>
+
+<ul>
+<li><a href="https://github.com/dwango/UniVRM/releases">Download</a></li>
+<li><a href="./univrm/univrm_install/">UniVRMのインストール</a></li>
+
+<li><p><a href="./univrm/univrm_workflow/">UniVRMのワークフロー</a></p></li>
+
+<li><p>UniVRMのコンポーネント</p>
+
+<ul>
+<li><a href="./univrm/components/univrm_meta/">モデル情報</a></li>
+<li><a href="./univrm/components/univrm_blendshape/">BlendShape</a></li>
+<li><a href="./univrm/components/univrm_firstperson/">一人称視点</a></li>
+<li><a href="./univrm/components/univrm_lookat/">視線制御</a></li>
+<li><a href="./univrm/components/univrm_secondary/">揺れモノ</a></li>
+</ul></li>
+
+<li><p><a href="./univrm/shaders/univrm_shaders/">UniVRMで使えるシェーダー</a></p>
+
+<ul>
+<li><a href="./univrm/shaders/univrm_shaders_044/">UniVRM-0.44のマテリアル</a></li>
+<li><a href="./univrm/shaders/mtoon/">MToonの設定</a></li>
+</ul></li>
+
+<li><p>API</p>
+
+<ul>
+<li><a href="./univrm/api/univrm_api_history/">変更履歴</a></li>
+<li><a href="./univrm/api/univrm_import_runtime/">実行時にVRMモデルをインポートする</a></li>
+<li><a href="./univrm/api/univrm_use_blendshape/">実行時にBlendShapeを操作する</a></li>
+<li><a href="./univrm/api/univrm_coordinate/">座標系の変換について</a></li>
+<li><a href="./univrm/api/univrm_use_firstperson/">一人称モードの使い方</a></li>
+</ul></li>
+
+<li><p><a href="./univrm/univrm_faq/">FAQ</a></p></li>
+</ul>
+
+
+</div>
+
+    </div>
+
+    
+  </body>
+</html>

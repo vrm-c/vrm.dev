@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniVRM workflow &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>UniVRM workflow</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h2 id="workflow">Workflow</h2>
+
+<img src="https://vrm.dev/images/vrm/vrm_workflow_en.png" alt="vrm workflow"  />
+
+
+<h2 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity</h2>
+
+<p>Prepare a humanoid model that can be <a href="https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html">imported</a> into Unity such as FBX format.
+Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</code>and select<code>Humanoid</code>after the model is imported.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/alicia_generic.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Select<code>Humanoid</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="correct-bone-assignment-with-rig-configuration">Correct bone assignment with rig configuration</h3>
+
+<p>When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):</p>
+
+<ul>
+<li>Jaw is assigned to mouth</li>
+<li>Eye is assigned to eye highlight</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/fix_eye.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Since the eyebone (and jawbone) auto-recognition on &ldquo;3D chan&rdquo; is incorrect, we can fix it by assigning the right component manually.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="export-from-menu">Export from menu</h2>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/vrm_menu_disable.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in<code>VRM</code>will become available.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in<code>VRM</code>will become available.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/export_dialog.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Check the boxes and click<code>Export</code>button.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="force-t-pose">Force T Pose</h3>
+
+<p>Force the model pose to become <a href="../../vrm_tpose/">T-Pose</a> before removing rotation / scale.</p>
+
+<h4 id="change-to-t-pose-manually">Change to T Pose manually</h4>
+
+<p>You can manually change the model pose to<code>T Pose</code>instead of changing it automatically. Make the model <a href="../../vrm_tpose/">T-Pose</a> manually in advance, choose<code>menu -&gt; VRM -&gt; export humanoid</code>and uncheck<code>Force T Pose</code>.</p>
+
+<h3 id="pose-freeze">Pose Freeze</h3>
+
+<p>Whether the rotation / scale removal processing should be performed. It is <strong>the process of normalizing model</strong> for conforming to the VRM rules. Please make sure to check the boxes at the <strong>first time of use</strong>. After this process is done, all the components can work correctly.</p>
+
+<h4 id="hierarchy-normalization">Hierarchy normalization</h4>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/rot.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>The model that has the bone rotation.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/rot_scale.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>The model made by Z-UP coordinate system. The unit of distance is non-meter (Blender default).</td>
+</tr>
+</tbody>
+</table>
+
+<p>Remove rotation and scale</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/without_rot_scale.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Normalization completed.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="mesh-normalization">Mesh normalization</h4>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/zup_mesh.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>The mesh with non T-pose is stored in Z-UP coordinate system.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Use<code>SkinnedMeshRenderer.BakeMesh</code>to change the mesh to T-pose state and change the coordinate to Y-Up through the coordinate operation.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/yup_mesh.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>The mesh with T-pose is stored in Y-UP coordinate system.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="import">Import</h2>
+
+<p>Please import VRM file into Assets folder</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/alicia_imported.png"   />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Import the VRM model<code>Alicia</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Texture, Material and Prefab are automatically generated from VRM.</p>
+
+<ul>
+<li>If the VRM file is not shown in the project view, right click and select<code>refresh</code></li>
+<li>If the Prefab file cannot be generated, right click the VRM file and select<code>reimport</code></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

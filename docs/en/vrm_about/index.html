@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What is &#34;VRM&#34;? What can VRM do? &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>What is &#34;VRM&#34;? What can VRM do?</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h2 id="what-is-vrm">What is VRM?</h2>
+
+<p>In the past, when trying to handle the <strong>3D humanoid avatar (3D model)</strong> in Virtual Reality, Virtual YouTuber, etc., it was necessary to develop an unique system for applications and fine-tune the 3D model data due to&hellip;</p>
+
+<ul>
+<li><p>The output data is depend on how creators make the 3D model and what modeling tools are used</p>
+
+<ul>
+<li>The coordinate system is different. The scale is different. The initial pose is different. The expression is different&hellip;</li>
+<li>Needless to say, the way bones put into the 3D model is also different</li>
+</ul></li>
+
+<li><p>The format of handling the 3D model data is different. Each company has its own specifications, which are way more complex than necessary. Also, the necessary information about their file formats is not fully provided</p>
+
+<ul>
+<li>Whether the FBX file, which is compatible with various software, is viable for an application and which version of the application can process the FBX file are main issues concerned by most of the users.</li>
+</ul></li>
+
+<li><p>There is not enough necessary information available from the viewpoint of using the 3D model data as the Avatar</p>
+
+<ul>
+<li>For example, in the first-person view, how to obtain the right position, how to get rid of the head display, which part of the body should be excluded and so on</li>
+</ul></li>
+</ul>
+
+<p>With the use of avatar in VR applications grows up very fast, if the situations mentioned above remain unchanged, application developers and 3D model creators will have to spend double or triple effort. To improve the current situation, based on the humanoid character and avatar, the first step is to:</p>
+
+<ul>
+<li>Effectively absorb and unify the differences from the model data</li>
+<li>Make handling the 3D model easy on the application side</li>
+</ul>
+
+<p>Here we propose a <strong>platform-independent 3D avatar file format</strong> that possesses the above characteristics called <strong>VRM</strong>.</p>
+
+<hr />
+
+<h2 id="what-can-you-do-with-vrm">What can you do with VRM?</h2>
+
+<p><img src="https://vrm.dev/images/vrm/vrm_app_en.png" alt="VRM applications"  />
+
+<strong>The same avatar (VRM model) data can be used in any application that supports VRM</strong>. As long as various VR applications are ready, the future will look like the one described below for sure&hellip;</p>
+
+<ul>
+<li>Create your own avatar with character maker tools that support VRM</li>
+<li>Use your own avatar to host a live streaming event and show up on your friends&rsquo; live channels</li>
+<li>After the live streaming, start a VR game to explore the VR world with your own avatar</li>
+<li>Move to the chat room in the VR world after getting tired of the game. Use the same avatar character to hang out with friends</li>
+<li>Tomorrow join the VR study group in VR. Of course, the same avatar appearance</li>
+</ul>
+
+<p><strong>By using your own avatar (VRM 3D model), you can easily access to various VRM-compatible applications and games</strong>.</p>
+
+<p>Live streaming, video creation, games, chat&hellip;. Now the virtual worlds are separated. The first step to connect the separated virtual worlds is VRM.</p>
+
+<hr />
+
+<h2 id="vrm-features">VRM features</h2>
+
+<p>VRM can handle the humanoid character and avatar. <strong>Although the current provided software to import and export VRM is for Unity, VRM itself is platform-independent</strong>, which means VRM is also applicable to other engines and environments.</p>
+
+<ul>
+<li>Available to handle the humanoid character (3D model data) without limiting to a specific platform.</li>
+<li>VRM is based on the 3D standard format <strong>glTF2.0</strong>, which is the format added with constraints and extensions for handling the humanoid model. Ease of implementation as it is based on this standard format.</li>
+<li>All data including textures and materials is compacted as one file. To import a VRM model, only one single file needs to be handled.</li>
+<li>Based on the standard of the scale (1.00 = 1 m), the coordinate system (Y-up, -Z) and the bone structure (conforming to Unity Humanoid, T-Stance, no local rotation for each bone), a 3D model made by different modeling tools will not cause differences on the exported VRM model.</li>
+<li>Various techniques such as the BlendShape and the material transparency can be used to handle Avatar expressions. The difference in a technique can be absorbed and unified through API operation on the VRM side.</li>
+<li>For the use of avatar in VR, VRM supports <strong>first-person view</strong>.</li>
+<li>A standard implementation of the object swaying that does not rely on the physical engine is available for users to set up the character&rsquo;s hair, clothes and so on.</li>
+<li>A standard implementation of the PBR shader is provided. Beside the standard PBR, users can also choose the Toon shader or the Unlit shader.</li>
+<li>Not only the meta information such as the title and the author name, but also the thumbnail and the <strong>license information specialized for avatars in the VR era</strong> can be included in the VRM file.</li>
+</ul>
+
+<p>VRM is assumed to be a 3D avatar format in the VR era and to be used in multiple applications. For example, when it comes to &ldquo;VR communications with avatars online&rdquo;, it is possible to <strong>send your own avatar data to your partners as they can see your avatar appearance in a shared virtual space</strong>. However, there may be situations that cannot be handled by just redistribution rules based on conventional thinkings. Therefore, VRM has:</p>
+
+<ul>
+<li>Modification / Redistribution rules for the avatar（configurable from Creative Commons, etc.）</li>
+</ul>
+
+<p>in addition to</p>
+
+<ul>
+<li>Permission to use the avatar and perform various acts</li>
+</ul>
+
+<p>The new adding above is assumed to be the format in VR era.</p>
+
+<hr />
+
+<h2 id="license-data-settings-in-vrm-file">License data settings in VRM file</h2>
+
+<h3 id="personation-characterization-permission">Personation / Characterization Permission</h3>
+
+<h4 id="a-person-who-can-perform-with-this-avatar">A person who can perform with this avatar</h4>
+
+<ul>
+<li>Only Author</li>
+<li>Explicitly Licensed Person</li>
+<li>Everyone</li>
+</ul>
+
+<h4 id="permission-to-perform-violent-acts-with-this-avatar">Permission to perform violent acts with this avatar</h4>
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul>
+
+<h4 id="permission-to-perform-sexual-acts-with-this-avatar">Permission to perform sexual acts with this avatar</h4>
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul>
+
+<h4 id="for-commercial-use">For commercial use</h4>
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul>
+
+<h4 id="other-license-url">Other License Url</h4>
+
+<p>If there are any conditions not mentioned above, put the URL link of the license document here.</p>
+
+<h3 id="license-redistribution-modification">License redistribution / modification</h3>
+
+<h4 id="license-type">License Type</h4>
+
+<ul>
+<li>Redistribution Prohibited</li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Copyright wavier (CC0)</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons CC BY License(CC_BY)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons CC BY NC License(CC_BY_NC)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons CC BY SA License(CC_BY_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Creative Commons CC BY NC SA License(CC_BY_NC_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nd/4.0/deed.en">Creative Commons CC BY ND License(CC_BY_ND)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">Creative Commons CC BY NC ND License(CC_BY_NC_ND)</a></li>
+<li>Other</li>
+</ul>
+
+<h4 id="other-license-url-1">Other License Url</h4>
+
+<p>If “Other” is selected, put the URL link of the license document here.</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

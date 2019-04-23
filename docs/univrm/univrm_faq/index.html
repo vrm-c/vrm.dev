@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniVRMでよくある質問 &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>UniVRMでよくある質問</h1>
+  <time datetime=2018-05-09T00:00:00Z class="post-date">Wed, May 9, 2018</time>
+  
+
+<h1 id="エラーの報告">エラーの報告</h1>
+
+<p>コンソール画面の内容をご確認ください。
+コンソール画面はメニューから表示できます。</p>
+
+<img src="https://vrm.dev/images/vrm/window_console.png" alt="コンソール画面を表示するメニュー"  />
+
+
+<p>表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。</p>
+
+<img src="https://vrm.dev/images/vrm/error.png" alt="エラーの例"  />
+
+
+<p>エラー報告は、起こった現象に</p>
+
+<ul>
+<li>OS(Windows10 64bitなど)</li>
+<li>Unityのバージョン(Unity-5.6.3p1など)</li>
+<li>UniVRMのバージョン(0.40など)</li>
+</ul>
+
+<p>を添えて</p>
+
+<ul>
+<li><a href="https://github.com/dwango/UniVRM/issues">https://github.com/dwango/UniVRM/issues</a></li>
+</ul>
+
+<p>等にお知らせください。</p>
+
+<h1 id="設定したvrmspringboneが居なくなった">設定したVRMSpringBoneが居なくなった</h1>
+
+<p>VRMSpringBoneはインポート時に<code>secondary</code>ノードにアタッチされます。</p>
+
+<p><a href="../components/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone</a></p>
+
+<h1 id="プロジェクトをビルドするとローダーが動かなくなる">プロジェクトをビルドするとローダーが動かなくなる</h1>
+
+<p>UniVRMで使うシェーダーがビルド対象に含まれていない可能性があります。</p>
+
+<p><code>Edit - ProjectSettings - GraphicsSettings - ShaderPreloading</code></p>
+
+<p>をご確認ください。</p>
+
+<p><a href="../univrm_install/#shader-preloadingの設定">Shader Preloadingの設定手順</a></p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

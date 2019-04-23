@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniVRM-0.44 Material &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>UniVRM-0.44 Material</h1>
+  <time datetime=2018-10-05T16:30:00&#43;0900 class="post-date">Fri, Oct 5, 2018</time>
+  
+
+<p>Material-related fixes and additions in UniVRM-0.44.</p>
+
+<h2 id="introduction-of-unigltf-uniunlit-shader">Introduction of UniGLTF / UniUnlit shader</h2>
+
+<p>UniVRM-0.43 was capable of importing / exporting the following Unlit shaders:</p>
+
+<ul>
+<li>Unlit/Color</li>
+<li>Unlit/Texture, VRM/UnlitTexture</li>
+<li>Unlit/Transparent, VRM/UnlitTransparent</li>
+<li>Unlit/Transparent Coutout, VRM/UnlitCutout</li>
+<li>VRM/UnlitTransparentZWrite(not compatible with GLTF)</li>
+</ul>
+
+<p>The following materials that are set with GLTF were not functional:</p>
+
+<ul>
+<li>doubleSided</li>
+<li>the multiplication of color and texture</li>
+<li>transparent with color</li>
+<li>vertex color</li>
+</ul>
+
+<p>Hence, we introduced the GLTF-compatible Unlit shader <code>UniGLTF / UnLit</code>:</p>
+
+<ul>
+<li>RenderType: <code>Opaque</code>, <code>Cutout</code>, <code>Transparent</code>, <code>TransparentZWrite</code>(VRM extension)</li>
+<li>CullMode: <code>Off</code>(doubleSided=True), <code>Back</code>(doublueSided=False), <code>Front</code>(VRM extension)</li>
+<li>VertexColorBlend: <code>None</code>, <code>Multiply</code></li>
+</ul>
+
+<h2 id="improvement-of-texture-conversion-of-standard-shaders">Improvement of texture conversion of Standard shaders</h2>
+
+<p>The processing of textures other than Standard shader color has been improved.</p>
+
+<ul>
+<li>Normal map correction: Since it is also applied to MToon, we put the details in the next section</li>
+<li>Metallic, Roughnes, OcclusionMap conversion
+
+<ul>
+<li>RGBA channel recombination</li>
+<li>Inversion of Roughness and Smoothness values</li>
+<li>sRGB&rsquo;s and Linear&rsquo;s correspondence</li>
+<li>Conversion with Importer, reverse conversion with Exporter</li>
+</ul></li>
+</ul>
+
+<h2 id="correction-of-normal-map-import-export">Correction of normal map import / export</h2>
+
+<p>The texture of <code>Standard</code> and <code>MToon</code>.
+Parse material&rsquo;s property name according to <code>_BumpMap</code>.</p>
+
+<ul>
+<li>EditorImport: <code>TextureImporterType.NormalMap</code></li>
+<li>RuntimeImport: Normal texture&rsquo;s Pack</li>
+<li>Export: Normal texture&rsquo;s Unpack</li>
+<li>sRGB&rsquo;s and Linear&rsquo;s correspondence</li>
+<li>Tangent&rsquo;s correspondence</li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

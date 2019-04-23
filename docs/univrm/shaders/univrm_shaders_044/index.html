@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniVRM-0.44のマテリアル &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>UniVRM-0.44のマテリアル</h1>
+  <time datetime=2018-10-05T16:30:00&#43;0900 class="post-date">Fri, Oct 5, 2018</time>
+  
+
+<p>UniVRM-0.44でマテリアル関連の修正と追加があります。</p>
+
+<h2 id="unigltf-uniunlitシェーダーの導入">UniGLTF/UniUnlitシェーダーの導入</h2>
+
+<p>UniVRM-0.43は以下のUnlitシェーダーのインポート・エクスポートに対応していました。</p>
+
+<ul>
+<li>Unlit/Color</li>
+<li>Unlit/Texture, VRM/UnlitTexture</li>
+<li>Unlit/Transparent, VRM/UnlitTransparent</li>
+<li>Unlit/Transparent Coutout, VRM/UnlitCutout</li>
+<li>VRM/UnlitTransparentZWrite(GLTF非互換)</li>
+</ul>
+
+<p>GLTFで設定可能な次のようなマテリアルを表現することができませんでした。</p>
+
+<ul>
+<li>doubleSided</li>
+<li>colorとtextureの乗算</li>
+<li>colorでtransparent</li>
+<li>vertex color</li>
+</ul>
+
+<p>GLTF互換のUnlitシェーダー <code>UniGLTF/UnLit</code> を導入しました。</p>
+
+<ul>
+<li>RenderType: <code>Opaque</code>, <code>Cutout</code>, <code>Transparent</code>, <code>TransparentZWrite</code>(VRM拡張)</li>
+<li>CullMode: <code>Off</code>(doubleSided=True), <code>Back</code>(doublueSided=False), <code>Front</code>(VRM拡張)</li>
+<li>VertexColorBlend: <code>None</code>, <code>Multiply</code></li>
+</ul>
+
+<h2 id="standardシェーダーのテクスチャ変換の改善">Standardシェーダーのテクスチャ変換の改善</h2>
+
+<p>Standardシェーダーのカラー以外のテクスチャの処理を改善しました。</p>
+
+<ul>
+<li>ノーマルマップの修正。MToonと共通なので次項で説明します</li>
+<li>Metallic, Roughnes, OcclusionMapの変換
+
+<ul>
+<li>RGBAチャンネル組み換え</li>
+<li>Roughness値とSmoothness値の反転</li>
+<li>sRGBとLinearの対応</li>
+<li>Importerで変換、Exporterで逆変換</li>
+</ul></li>
+</ul>
+
+<h2 id="ノーマルマップのインポート-エクスポートの修正">ノーマルマップのインポート・エクスポートの修正</h2>
+
+<p><code>Standard</code> と <code>MToon</code> のテクスチャです。
+Materialのプロパティ名 <code>_BumpMap</code> で判定します。</p>
+
+<ul>
+<li>EditorImport: <code>TextureImporterType.NormalMap</code></li>
+<li>RuntimeImport: 法線テクスチャのPack</li>
+<li>Export: 法線テクスチャのUnpack</li>
+<li>sRGBとLinearの対応</li>
+<li>Tangentの対応</li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

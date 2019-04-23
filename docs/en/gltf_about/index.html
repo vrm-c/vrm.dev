@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About GLTF &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>About GLTF</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<p>glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.</p>
+
+<ul>
+<li><a href="https://github.com/KhronosGroup/glTF">https://github.com/KhronosGroup/glTF</a></li>
+</ul>
+
+<h1 id="what-kind-of-information-can-be-recorded-by-gltf">What kind of information can be recorded by glTF?</h1>
+
+<ul>
+<li>Mesh (Vertex array、index array)
+
+<ul>
+<li>Morph target</li>
+<li>Skinning (4weight)</li>
+</ul></li>
+<li>Texture</li>
+<li>Material (PBR)</li>
+<li>Scene</li>
+<li>Animation<sup class="footnote-ref" id="fnref:vrm-not-supported"><a href="#fn:vrm-not-supported">1</a></sup></li>
+<li>Camera<sup class="footnote-ref" id="fnref:vrm-not-supported"><a href="#fn:vrm-not-supported">1</a></sup></li>
+<li>Light source<sup class="footnote-ref" id="fnref:vrm-not-supported"><a href="#fn:vrm-not-supported">1</a></sup></li>
+</ul>
+
+<p>An entire 3D scene can be recorded.</p>
+
+<ul>
+<li>OpenGL right-handed, Y-UP coordinate system</li>
+<li>Meter (unit)</li>
+<li>Little endian</li>
+</ul>
+
+<h1 id="gltf-format-outline">glTF format outline</h1>
+
+<p>glTF format comprises two parts: a JSON scene description part and a binary part that records images and vertex arrays. External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files<sup class="footnote-ref" id="fnref:VRM-glb"><a href="#fn:VRM-glb">2</a></sup>.</p>
+
+<h1 id="glb-format">glb format</h1>
+
+<p>A structure that has<code>Header part + Chunk parts</code>.
+More specifically, it is<code>Header part + JSON CHUNk + BINARY CHUNK</code>.</p>
+
+<p>Header part</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Length</th>
+<th align="left">Content</th>
+<th align="left">Type</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">4</td>
+<td align="left"></td>
+<td align="left">ascii</td>
+<td align="left">&ldquo;glTF&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">glTF version</td>
+<td align="left">int32</td>
+<td align="left">2</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">file size</td>
+<td align="left">int32</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<p>Chunk part</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Length</th>
+<th align="left">Content</th>
+<th align="left">Type</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">4</td>
+<td align="left">chunk size</td>
+<td align="left">int32</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">chunk type</td>
+<td align="left">ascii</td>
+<td align="left">&ldquo;JSON&rdquo; or &ldquo;BIN\x00&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">chunk size</td>
+<td align="left">chunk body</td>
+<td align="left">byte array</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="example-of-parsing-with-python3">Example of parsing with python3</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> struct
+<span style="color:#f92672">import</span> json
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Reader</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, data: bytes)<span style="color:#f92672">-&gt;</span>None:
+        self<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> data
+        self<span style="color:#f92672">.</span>pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_str</span>(self, size):
+        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data[self<span style="color:#f92672">.</span>pos: self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+</span> size]
+        self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+=</span> size
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">.</span>strip()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read</span>(self, size):
+        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data[self<span style="color:#f92672">.</span>pos: self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+</span> size]
+        self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+=</span> size
+        <span style="color:#66d9ef">return</span> result
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_uint</span>(self):
+        result <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>unpack(<span style="color:#e6db74">&#39;I&#39;</span>, self<span style="color:#f92672">.</span>data[self<span style="color:#f92672">.</span>pos:self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>])[<span style="color:#ae81ff">0</span>]
+        self<span style="color:#f92672">.</span>pos <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4</span>
+        <span style="color:#66d9ef">return</span> result
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_glb</span>(data: bytes):
+    reader <span style="color:#f92672">=</span> Reader(data)
+    magic <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_str(<span style="color:#ae81ff">4</span>)
+    <span style="color:#66d9ef">if</span>  magic <span style="color:#f92672">!=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;glTF&#39;</span>:
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;magic not found: #{magic}&#39;</span>)
+
+    version <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_uint()
+    <span style="color:#66d9ef">if</span> version <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>:
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;version:#{version} is not 2&#39;</span>)
+
+    size <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_uint()
+    size <span style="color:#f92672">-=</span> <span style="color:#ae81ff">12</span>
+
+    json_str <span style="color:#f92672">=</span> None
+    body <span style="color:#f92672">=</span> None
+    <span style="color:#66d9ef">while</span> size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#75715e">#print(size)</span>
+
+        chunk_size <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_uint()
+        size <span style="color:#f92672">-=</span> <span style="color:#ae81ff">4</span>
+
+        chunk_type <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_str(<span style="color:#ae81ff">4</span>)
+        size <span style="color:#f92672">-=</span> <span style="color:#ae81ff">4</span>
+
+        chunk_data <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read(chunk_size)
+        size <span style="color:#f92672">-=</span> chunk_size
+
+        <span style="color:#66d9ef">if</span> chunk_type <span style="color:#f92672">==</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;BIN</span><span style="color:#ae81ff">\x00</span><span style="color:#e6db74">&#39;</span>:
+            body <span style="color:#f92672">=</span> chunk_data
+        <span style="color:#66d9ef">elif</span> chunk_type <span style="color:#f92672">==</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;JSON&#39;</span>:
+            json_str <span style="color:#f92672">=</span> chunk_data
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;unknown chunk_type: {chunk_type}&#39;</span>)
+
+    <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>loads(json_str), body
+
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;AliciaSolid.vrm&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    parsed, body <span style="color:#f92672">=</span> parse_glb(f<span style="color:#f92672">.</span>read())</code></pre></div>
+
+<h1 id="vrm-extension">VRM extension</h1>
+
+<p>Information of VRM extension is stored in<code>json['extensions']['VRM']</code>.</p>
+
+<ul>
+<li><a href="../vrm_spec/">VRM specifications</a></li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:vrm-not-supported">Not supported in VRM
+ <a class="footnote-return" href="#fnref:vrm-not-supported"><sup>[return]</sup></a></li>
+<li id="fn:VRM-glb">glb is adopted in VRM.
+ <a class="footnote-return" href="#fnref:VRM-glb"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

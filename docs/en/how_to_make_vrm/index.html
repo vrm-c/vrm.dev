@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.3" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to make VRM file &middot; VRM</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vrm.dev/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="VRM" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://vrm.dev/"><h1>VRM</h1></a>
+      <p class="lead">
+       3D Humanoid Avatar format for VR 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://vrm.dev/">Home</a> </li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+    </ul>
+
+    <p>
+      
+        <p style="position:absolute;bottom:0rem;display:inline-block;vertical-align:middle;">
+          Copyright &copy; VRM Consortium
+        </p>
+      
+    </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>How to make VRM file</h1>
+  <time datetime=2018-04-16T16:30:00&#43;0900 class="post-date">Mon, Apr 16, 2018</time>
+  
+
+<h2 id="conversion-from-existing-3d-model">Conversion from existing 3D model</h2>
+
+<p><img src="https://vrm.dev/images/vrm/vrm_workflow_en.png" alt="vrm workflow"  />
+
+To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="https://github.com/dwango/UniVRM">UniVRM</a>. The workflow is as follow:</p>
+
+<ol>
+<li>Import the 3D model data and <a href="https://github.com/dwango/UniVRM">UniVRM</a> into the current unity project. Adjust and set the size, material, etc.</li>
+<li>Export the 3D model data as VRM in Unity (normalization processing)</li>
+<li>Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)
+
+<ul>
+<li>In some cases, make sure the model is working (e.g. facial expression change) in play mode first</li>
+</ul></li>
+<li>Export the 3D model data after the adjustment is finished. The new settings now are saved in the updated VRM file.</li>
+</ol>
+
+<p>Briefly speaking, <strong>A 3D model can be adjusted and exported as VRM file in Unity. Once a VRM file is made, it can be imported again for model fine tuning</strong>.</p>
+
+<hr />
+
+<h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity</h3>
+
+<img src="https://vrm.dev/images/vrm/unity_new_project.png"   />
+
+
+<p>Create a new project at the start page (<code>New -&gt; Create project</code>).</p>
+
+<h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project</h3>
+
+<img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
+
+
+<p>Download the latest unitypackage (UniVRM-0.XX) from <a href="https://github.com/dwango/UniVRM/releases">UniVRM/releases</a> and import it into the current project (<code>Assets -&gt; Import Package -&gt; Custom Package</code>). The path of imported files is<code>../Assets/VRM</code>. <strong>It is recommended to delete existing VRM folder included VRM in advance before package import</strong>.</p>
+
+<h3 id="3-prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">3. Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity</h3>
+
+<img src="https://vrm.dev/images/vrm/alicia_generic.png"   />
+
+
+<p>Prepare a humanoid model that can be <a href="https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html">imported</a> into Unity such as FBX format. The bone setting is also required. Also, <strong>be sure to use your own model or the licensed model data that is processed and used as VR avatar</strong>. As we will describe later, <strong>there are items that describe license information in VRM file itself, authors need to set those items for their own VRM models</strong>.</p>
+
+<p>Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</code>and select<code>Humanoid</code>after the model is imported.</p>
+
+<img src="https://vrm.dev/images/vrm/fix_eye.png"   />
+
+
+<p>When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image above):</p>
+
+<ul>
+<li>Jaw is assigned to mouth</li>
+<li>Eye is assigned to eye highlight</li>
+</ul>
+
+<p>We can fix them by assigning the right corresponding parts manually.</p>
+
+<h3 id="4-adjust-the-model-data-and-export-it-as-vrm-from-menu-normalization-processing">4. Adjust the model data and export it as VRM from menu（normalization processing）</h3>
+
+<img src="https://vrm.dev/images/vrm/alicia_scene.png"   />
+
+
+<p><strong>Drag and drop the model data (made in step 3) under the scene in the Hierarchy window</strong> and adjust the following parameters:</p>
+
+<ul>
+<li>Model Position
+
+<ul>
+<li>The model should be placed at the origin</li>
+</ul></li>
+<li>Model Scale
+
+<ul>
+<li>1.0 = 1m</li>
+</ul></li>
+<li>Model Pose
+
+<ul>
+<li>The model should face towards +Z(axis) direction</li>
+</ul></li>
+<li>Texture（material / shader）
+
+<ul>
+<li>Go to<code>Import Settings -&gt; Materials -&gt; Location</code>and select<code>Use External Materials (Legacy)</code>to enable shader option. It is <strong>highly recommended</strong> to use the shaders listed below:
+
+<ul>
+<li>PBR
+
+<ul>
+<li>Standard shader (Unity standard)</li>
+</ul></li>
+<li>Unlit type shader
+
+<ul>
+<li>VRM/UnlitTexture (same as Unit/Texture)</li>
+<li>VRM/UnlitCutout (same as Unit/Coutout)</li>
+<li>VRM/UnlitTransparent (same as Unit/Transparent)</li>
+<li>VRM/UnlitTransparentZWrite (Alpha blending and ZWrite are available. It is assumed to be applied to semi-transparent objects)</li>
+</ul></li>
+<li>Toon shader
+
+<ul>
+<li>VRM/MToon (lighting supported toon shader）</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+
+
+<p>After the adjustment is finished, select the model data in<code>Hierarchy</code>and export the model from<code>menu -&gt; VRM -&gt; export humanoid</code>.</p>
+
+<img src="https://vrm.dev/images/vrm/export_dialog.png"   />
+
+
+<p>Check the boxes and click the<code>Export</code>button</p>
+
+<ul>
+<li>Force T Pose
+
+<ul>
+<li>Force the model pose to become <a href="../vrm_tpose/">T-Pose</a> before removing rotation / scale.</li>
+</ul></li>
+<li>Pose Freeze
+
+<ul>
+<li>Whether the rotation / scale removal processing should be performed. It is <strong>the process of normalizing model</strong> for conforming to the VRM rules. Please make sure to check the boxes at the <strong>first time of use</strong>. After this process is done, all the components can work correctly.</li>
+</ul></li>
+</ul>
+
+<p>By clicking the<code>Export</code>button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: &ldquo;Model_Name_Normalized.vrm&rdquo;. Details about model&rsquo;s T-Pose normalization <a href="https://github.com/dwango/UniVRM/wiki/T-Pose-Normalization-for-Model">can be found here</a>.</p>
+
+<h3 id="5-import-the-vrm-file">5. Import the VRM file</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_prefab_en.png"   />
+
+
+<p><strong>Drag and drop the VRM file (~.vrm) from step 4 into Assets folder</strong>. The <strong>prefab</strong> file of the imported VRM model data can be automatically generated.</p>
+
+<img src="https://vrm.dev/images/vrm/alicia_scene2.png"   />
+
+
+<p>Now remove the model data (step 4), and <strong>drag and drop the prefab file under the scene in the Hierarchy window</strong>. Normalized model data such as mesh, etc. can then be shown.</p>
+
+<h3 id="6-custom-setting-in-vrm">6. Custom setting in VRM</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_settings.png"   />
+
+
+<p>The VRM model&rsquo;s information will be shown in the Inspector window once the GameObject of the model data (step 5) in<code>Hierarchy</code>is selected. In addition, the setting about <strong>spring bone (object swaying) is available in &ldquo;secondary&rdquo;</strong>. Please at least fill in title, author, license information. <strong>Specially, license information is crucial!</strong></p>
+
+<ul>
+<li><p>Information</p>
+
+<ul>
+<li>Title
+
+<ul>
+<li>Avatar model name (any input)</li>
+</ul></li>
+<li>Version
+
+<ul>
+<li>Avatar model version (any input)</li>
+</ul></li>
+<li>Author
+
+<ul>
+<li>Author name</li>
+</ul></li>
+<li>Contact Information
+
+<ul>
+<li>Author contact information</li>
+</ul></li>
+<li>Reference
+
+<ul>
+<li>Original / Related works of this avatar, if any</li>
+</ul></li>
+</ul></li>
+
+<li><p>License</p>
+
+<ul>
+<li><p>Personation / Characterization Permission</p>
+
+<ul>
+<li>A person who can perform with this avatar
+
+<ul>
+<li>Only Author</li>
+<li>Explicitly Licensed Person</li>
+<li>Everyone</li>
+</ul></li>
+<li>Permission to perform violent acts with this avatar
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul></li>
+<li>Permission to perform sexual acts with this avatar
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul></li>
+<li>For commercial use
+
+<ul>
+<li>Disallow</li>
+<li>Allow</li>
+</ul></li>
+<li>Other License Url
+
+<ul>
+<li>If there are any conditions not mentioned above, put the URL link of the license document here</li>
+</ul></li>
+</ul></li>
+
+<li><p>License redistribution / modification</p>
+
+<ul>
+<li><p>License Type</p>
+
+<ul>
+<li>Redistribution Prohibited</li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Copyright wavier (CC0)</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons CC BY License(CC_BY)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons CC BY NC License(CC_BY_NC)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons CC BY SA License(CC_BY_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Creative Commons CC BY NC SA License(CC_BY_NC_SA)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nd/4.0/deed.en">Creative Commons CC BY ND License(CC_BY_ND)</a></li>
+<li><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">Creative Commons CC BY NC ND License(CC_BY_NC_ND)</a></li>
+<li>Other</li>
+</ul></li>
+
+<li><p>Other License Url</p>
+
+<ul>
+<li>If “Other” is selected, put the URL link of the license document here</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Besides, please set up necessary items listed below:</p>
+
+<ul>
+<li><a href="../univrm/components/univrm_blendshape/">Expression and lip-sync (BlendShape)</a></li>
+<li><a href="../univrm/components/univrm_firstperson/">First-person point of view (Get rid of model&rsquo;s head for VR applications)</a></li>
+<li><a href="../univrm/components/univrm_lookat/">Movable range for eye gaze/eyeball controlled by bone or BlendShape</a></li>
+<li><a href="../univrm/components/univrm_secondary/">Spring bone (SpringBone/SpringBoneCollider)</a></li>
+</ul>
+
+<h3 id="7-check-model-expressions-movements-in-play-mode-if-necessary">7. Check model expressions/movements in play mode（If necessary）</h3>
+
+<img src="https://vrm.dev/images/vrm/aiueo.png"   />
+
+
+<p>Set<code>AnimationClip/AnimationController</code>and set <a href="../univrm/components/univrm_lookat/#target">viewing target</a> in<code>VRMLookAtHead -&gt; Target</code>(the head orientation towards the target). Then, check model&rsquo;s movements and expressions. Also, fairly simple test scripts &ldquo;AIUEO&rdquo; and &ldquo;Blinker&rdquo; are provided. Click<code>Add Component</code>at the bottom of model&rsquo;s Inspector window to add “AIUEO” script or drag the script directly to Inspector. After &ldquo;AIUEO&rdquo; is set, lip synchronization animation that &ldquo;aa&rdquo;, &ldquo;ih&rdquo;, &ldquo;ou&rdquo;, &ldquo;E&rdquo;, &ldquo;oh&rdquo; switches in turn can be created. Similarly, if &ldquo;Blinker&rdquo; is set, eye blink animation that plays periodically can be created. See <a href="https://github.com/dwango/UniVRM/releases">runtime VRM loader sample</a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.</p>
+
+<h3 id="8-export-the-adjusted-vrm-model">8. Export the adjusted VRM model</h3>
+
+<img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+
+
+<p>After the adjustment is completed, select the model data in<code>Hierarchy</code>and again export the model from<code>menu -&gt; VRM -&gt; export humanoid</code>.</p>
+
+<p>This time <strong>please uncheck &ldquo;Force T Pose&rdquo; and &ldquo;Pose Freeze&rdquo;</strong>. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.</p>
+
+<h3 id="done">Done！</h3>
+
+<p>Your VRM file is good to go. Let’s try to import the VRM file into applications that support VRM!</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>
