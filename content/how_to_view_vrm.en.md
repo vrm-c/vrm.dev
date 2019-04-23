@@ -4,7 +4,7 @@ date: 2018-04-16T16:30:00+09:00
 ---
 
 ## Import VRM file into VRM Viewer
-Download VRM Viewer from [UniVRMTest/releases](https://github.com/dwango/UniVRMTest/releases). Next, run the program and click``VRM Model``. Then, select a VRM model available on your computer. The VRM model can be shown in the scene.
+Download VRM Viewer from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases). Next, run the program and click``VRM Model``. Then, select a VRM model available on your computer. The VRM model can be shown in the scene.
 
 ## Import VRM file into Unity Project
 Importing VRM file by this way is a little tedious but you can see the information of a VRM model:
@@ -17,7 +17,7 @@ Create a new project at the start page (``New -> Create project``).
 ### 2. Import UniVRM package into the created project
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/dwango/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The path of imported files is``../Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**.
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The path of imported files is``../Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**.
 
 ### 3. Import VRM file into Unity 
 {{< img src="images/vrm/vrm_prefab_en.png" >}}

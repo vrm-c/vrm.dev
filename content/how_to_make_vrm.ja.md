@@ -6,10 +6,10 @@ date: 2018-04-16T16:30:00+09:00
 ##  VRMファイルのつくりかた（既存3Dモデルからのコンバート）
 
 {{< img src="images/vrm/vrm_workflow.png" alt="vrm workflow" >}}
-VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[UniVRM](https://github.com/dwango/UniVRM)を使用します。
+VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[UniVRM](https://github.com/vrm-c/UniVRM)を使用します。
 おおまかな作業のながれは以下のようになります
 
-1. Unityで3Dモデルデータと[UniVRM](https://github.com/dwango/UniVRM)を読み込む。Unity上で大きさやマテリアルなどを調整・設定する
+1. Unityで3Dモデルデータと[UniVRM](https://github.com/vrm-c/UniVRM)を読み込む。Unity上で大きさやマテリアルなどを調整・設定する
 1. 一度UnityからVRMファイルを出力する（※正規化と呼びます）
 1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
 	* 場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する
@@ -24,7 +24,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 
 ### 2.UnityにUniVRMをインストール
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
-[UniVRM/releases](https://github.com/dwango/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
+[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
 **既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
 
@@ -76,7 +76,7 @@ FBXインポート時の自動認識が食い違うことがありますので�
 * Pose Freeze
 	* 回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように**モデルを正規化する処理**です。**初回は必ずチェックを入れてください**。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。
 
-Exportを押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。T-Poseとモデルの正規化の詳細は[こちら](https://github.com/dwango/UniVRM/wiki/T-Poseとモデルの正規化の詳細)。
+Exportを押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。T-Poseとモデルの正規化の詳細は[こちら](https://github.com/vrm-c/UniVRM/wiki/T-Poseとモデルの正規化の詳細)。
 
 ### 5.先ほどエクスポートしたVRMを再度Unity上に読み込む
 {{< img src="images/vrm/vrm_prefab.png" >}}

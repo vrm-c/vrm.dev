@@ -47,7 +47,7 @@ Extended as`VRM Extension`in the JSON part of GLB.
 
 VRM JsonSchema:
 
-* https://github.com/dwango/UniVRM/tree/master/specification/0.0/schema
+* https://github.com/vrm-c/UniVRM/tree/master/specification/0.0/schema
 
 GLTF-2.0 JsonSchema:
 
@@ -113,7 +113,7 @@ Saves information that can revert back to GLTF material (it is used when file ex
 Saves VRM unique material information and items necessary for Unity.
 Please refer to [Available shaders in VRM](#vrmshader).
 
-* https://github.com/dwango/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json
+* https://github.com/vrm-c/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json
 
 {{< highlight js >}}
 {

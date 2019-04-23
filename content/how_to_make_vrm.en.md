@@ -6,9 +6,9 @@ date: 2018-04-16T16:30:00+09:00
 ## Conversion from existing 3D model
 
 {{< img src="images/vrm/vrm_workflow_en.png" alt="vrm workflow" >}}
-To make VRM file, we use [Unity](https://unity3d.com/) and [UniVRM](https://github.com/dwango/UniVRM). The workflow is as follow:
+To make VRM file, we use [Unity](https://unity3d.com/) and [UniVRM](https://github.com/vrm-c/UniVRM). The workflow is as follow:
 
-1. Import the 3D model data and [UniVRM](https://github.com/dwango/UniVRM) into the current unity project. Adjust and set the size, material, etc. 
+1. Import the 3D model data and [UniVRM](https://github.com/vrm-c/UniVRM) into the current unity project. Adjust and set the size, material, etc. 
 1. Export the 3D model data as VRM in Unity (normalization processing)
 1. Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)
      * In some cases, make sure the model is working (e.g. facial expression change) in play mode first
@@ -25,7 +25,7 @@ Create a new project at the start page (``New -> Create project``).
 ### 2. Import UniVRM package into the created project
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/dwango/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The path of imported files is``../Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**.
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The path of imported files is``../Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**.
 
 ### 3. Prepare a 3D model that can be handled as "Humanoid" in Unity
 {{< img src="images/vrm/alicia_generic.png" >}}
@@ -79,7 +79,7 @@ Check the boxes and click the``Export``button
 * Pose Freeze
     * Whether the rotation / scale removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 
-By clicking the``Export``button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". Details about model's T-Pose normalization [can be found here](https://github.com/dwango/UniVRM/wiki/T-Pose-Normalization-for-Model).
+By clicking the``Export``button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". Details about model's T-Pose normalization [can be found here](https://github.com/vrm-c/UniVRM/wiki/T-Pose-Normalization-for-Model).
 
 ### 5. Import the VRM file
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
@@ -150,7 +150,7 @@ Besides, please set up necessary items listed below:
 ### 7. Check model expressions/movements in play mode（If necessary）
 {{< img src="images/vrm/aiueo.png" >}}
 
-Set``AnimationClip/AnimationController``and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). Then, check model's movements and expressions. Also, fairly simple test scripts "AIUEO" and "Blinker" are provided. Click``Add Component``at the bottom of model's Inspector window to add “AIUEO” script or drag the script directly to Inspector. After "AIUEO" is set, lip synchronization animation that "aa", "ih", "ou", "E", "oh" switches in turn can be created. Similarly, if "Blinker" is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/dwango/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
+Set``AnimationClip/AnimationController``and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). Then, check model's movements and expressions. Also, fairly simple test scripts "AIUEO" and "Blinker" are provided. Click``Add Component``at the bottom of model's Inspector window to add “AIUEO” script or drag the script directly to Inspector. After "AIUEO" is set, lip synchronization animation that "aa", "ih", "ou", "E", "oh" switches in turn can be created. Similarly, if "Blinker" is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/vrm-c/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
 
 ### 8. Export the adjusted VRM model
 {{< img src="images/vrm/vrm_menu_enable.png" >}}

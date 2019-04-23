@@ -46,7 +46,7 @@
 
     <ul class="sidebar-nav">
       <li><a href="https://vrm.dev/">Home</a> </li>
-      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-vrm-c-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/UniVRM"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
     </ul>
 
     <p>
@@ -88,10 +88,10 @@
 
 <p><img src="https://vrm.dev/images/vrm/vrm_workflow_en.png" alt="vrm workflow"  />
 
-To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="https://github.com/dwango/UniVRM">UniVRM</a>. The workflow is as follow:</p>
+To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="https://github.com/vrm-c/UniVRM">UniVRM</a>. The workflow is as follow:</p>
 
 <ol>
-<li>Import the 3D model data and <a href="https://github.com/dwango/UniVRM">UniVRM</a> into the current unity project. Adjust and set the size, material, etc.</li>
+<li>Import the 3D model data and <a href="https://github.com/vrm-c/UniVRM">UniVRM</a> into the current unity project. Adjust and set the size, material, etc.</li>
 <li>Export the 3D model data as VRM in Unity (normalization processing)</li>
 <li>Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)
 
@@ -117,7 +117,7 @@ To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="h
 <img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
 
 
-<p>Download the latest unitypackage (UniVRM-0.XX) from <a href="https://github.com/dwango/UniVRM/releases">UniVRM/releases</a> and import it into the current project (<code>Assets -&gt; Import Package -&gt; Custom Package</code>). The path of imported files is<code>../Assets/VRM</code>. <strong>It is recommended to delete existing VRM folder included VRM in advance before package import</strong>.</p>
+<p>Download the latest unitypackage (UniVRM-0.XX) from <a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases</a> and import it into the current project (<code>Assets -&gt; Import Package -&gt; Custom Package</code>). The path of imported files is<code>../Assets/VRM</code>. <strong>It is recommended to delete existing VRM folder included VRM in advance before package import</strong>.</p>
 
 <h3 id="3-prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">3. Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity</h3>
 
@@ -214,7 +214,7 @@ To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="h
 </ul></li>
 </ul>
 
-<p>By clicking the<code>Export</code>button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: &ldquo;Model_Name_Normalized.vrm&rdquo;. Details about model&rsquo;s T-Pose normalization <a href="https://github.com/dwango/UniVRM/wiki/T-Pose-Normalization-for-Model">can be found here</a>.</p>
+<p>By clicking the<code>Export</code>button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: &ldquo;Model_Name_Normalized.vrm&rdquo;. Details about model&rsquo;s T-Pose normalization <a href="https://github.com/vrm-c/UniVRM/wiki/T-Pose-Normalization-for-Model">can be found here</a>.</p>
 
 <h3 id="5-import-the-vrm-file">5. Import the VRM file</h3>
 
@@ -344,7 +344,7 @@ To make VRM file, we use <a href="https://unity3d.com/">Unity</a> and <a href="h
 <img src="https://vrm.dev/images/vrm/aiueo.png"   />
 
 
-<p>Set<code>AnimationClip/AnimationController</code>and set <a href="../univrm/components/univrm_lookat/#target">viewing target</a> in<code>VRMLookAtHead -&gt; Target</code>(the head orientation towards the target). Then, check model&rsquo;s movements and expressions. Also, fairly simple test scripts &ldquo;AIUEO&rdquo; and &ldquo;Blinker&rdquo; are provided. Click<code>Add Component</code>at the bottom of model&rsquo;s Inspector window to add “AIUEO” script or drag the script directly to Inspector. After &ldquo;AIUEO&rdquo; is set, lip synchronization animation that &ldquo;aa&rdquo;, &ldquo;ih&rdquo;, &ldquo;ou&rdquo;, &ldquo;E&rdquo;, &ldquo;oh&rdquo; switches in turn can be created. Similarly, if &ldquo;Blinker&rdquo; is set, eye blink animation that plays periodically can be created. See <a href="https://github.com/dwango/UniVRM/releases">runtime VRM loader sample</a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.</p>
+<p>Set<code>AnimationClip/AnimationController</code>and set <a href="../univrm/components/univrm_lookat/#target">viewing target</a> in<code>VRMLookAtHead -&gt; Target</code>(the head orientation towards the target). Then, check model&rsquo;s movements and expressions. Also, fairly simple test scripts &ldquo;AIUEO&rdquo; and &ldquo;Blinker&rdquo; are provided. Click<code>Add Component</code>at the bottom of model&rsquo;s Inspector window to add “AIUEO” script or drag the script directly to Inspector. After &ldquo;AIUEO&rdquo; is set, lip synchronization animation that &ldquo;aa&rdquo;, &ldquo;ih&rdquo;, &ldquo;ou&rdquo;, &ldquo;E&rdquo;, &ldquo;oh&rdquo; switches in turn can be created. Similarly, if &ldquo;Blinker&rdquo; is set, eye blink animation that plays periodically can be created. See <a href="https://github.com/vrm-c/UniVRM/releases">runtime VRM loader sample</a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.</p>
 
 <h3 id="8-export-the-adjusted-vrm-model">8. Export the adjusted VRM model</h3>
 

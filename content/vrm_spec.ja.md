@@ -50,7 +50,7 @@ GLBのJSON部に`VRM Extension`として拡張しています。
 
 仕様のJsonSchemaを作成しました
 
-* https://github.com/dwango/UniVRM/tree/master/specification/0.0/schema
+* https://github.com/vrm-c/UniVRM/tree/master/specification/0.0/schema
 
 GLTF-2.0のJsonSchema
 
@@ -117,7 +117,7 @@ VRM独自のマテリアル情報を保存しています。
 現状、Unityに必要な項目を保存しています。
 選択可能なShaderは、[VRMが提供するシェーダー](#vrmshader)を参照してください。
 
-* https://github.com/dwango/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json
+* https://github.com/vrm-c/UniVRM/blob/master/specification/0.0/schema/vrm.material.schema.json
 
 {{< highlight js >}}
 {

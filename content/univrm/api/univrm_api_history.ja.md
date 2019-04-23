@@ -5,7 +5,7 @@ date: 2018-05-21T10:00:00+09:00
 
 プログラムに影響のある変更についてです。
 
-最新バージョンは[UniVRM/Wiki](https://github.com/dwango/UniVRM/wiki)をご覧ください。
+最新バージョンは[UniVRM/Wiki](https://github.com/vrm-c/UniVRM/wiki)をご覧ください。
 
 # v0.36
 

@@ -7,7 +7,7 @@ layout: vrm_index
 
 # VRM - 3D Avatar File Format for VR -
 
-"VRM" is **a file format for handling 3D humanoid avatar (3D model) data for VR applications**. It is based on glTF 2.0. Anyone is free to use it. In addition, a standard implementation ([UniVRM](https://github.com/dwango/UniVRM)) in c# that can import and export VRM file in [Unity](https://unity3d.com) is released as open source.
+"VRM" is **a file format for handling 3D humanoid avatar (3D model) data for VR applications**. It is based on glTF 2.0. Anyone is free to use it. In addition, a standard implementation ([UniVRM](https://github.com/vrm-c/UniVRM)) in c# that can import and export VRM file in [Unity](https://unity3d.com) is released as open source.
 
 ---
 
@@ -45,8 +45,8 @@ layout: vrm_index
 
 ---
 
-## [UniVRM](https://github.com/dwango/UniVRM) (VRM standard implementation for Unity) Specifications
-* [Download](https://github.com/dwango/UniVRM/releases)
+## [UniVRM](https://github.com/vrm-c/UniVRM) (VRM standard implementation for Unity) Specifications
+* [Download](https://github.com/vrm-c/UniVRM/releases)
 * [Install UniVRM](./univrm/univrm_install/)
 * [UniVRM workflow](./univrm/univrm_workflow/)
 

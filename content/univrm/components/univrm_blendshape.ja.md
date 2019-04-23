@@ -3,7 +3,7 @@ title: "ブレンドシェイプの設定"
 date: 2018-04-16T16:30:00+09:00
 ---
 
-UniVRM v0.45で導入された新機能は[こちら](https://github.com/dwango/UniVRM/wiki/BlendShapeのセットアップ)をご覧ください。
+UniVRM v0.45で導入された新機能は[こちら](https://github.com/vrm-c/UniVRM/wiki/BlendShapeのセットアップ)をご覧ください。
 
 ## VRMBlendShapeProxy
 

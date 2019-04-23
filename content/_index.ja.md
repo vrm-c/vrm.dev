@@ -7,7 +7,7 @@ layout: vrm_index
 
 # VRM - VR向け3Dアバターファイルフォーマット -
 
-「VRM」は**VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット**です。[glTF2.0](https://www.khronos.org/gltf/)をベースとしており、誰でも自由に利用することができます。また、[Unity](https://unity3d.com/jp)向けのVRMファイルの読み書きを行うC#による標準実装（[UniVRM](https://github.com/dwango/UniVRM)）がオープンソースで提供されます。
+「VRM」は**VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット**です。[glTF2.0](https://www.khronos.org/gltf/)をベースとしており、誰でも自由に利用することができます。また、[Unity](https://unity3d.com/jp)向けのVRMファイルの読み書きを行うC#による標準実装（[UniVRM](https://github.com/vrm-c/UniVRM)）がオープンソースで提供されます。
 
 ---
 
@@ -44,8 +44,8 @@ layout: vrm_index
 
 ---
 
-## [UniVRM](https://github.com/dwango/UniVRM)(Unity向けVRM標準実装)仕様
-* [Download](https://github.com/dwango/UniVRM/releases)
+## [UniVRM](https://github.com/vrm-c/UniVRM)(Unity向けVRM標準実装)仕様
+* [Download](https://github.com/vrm-c/UniVRM/releases)
 * [UniVRMのインストール](./univrm/univrm_install/)
 * [UniVRMのワークフロー](./univrm/univrm_workflow/)
 

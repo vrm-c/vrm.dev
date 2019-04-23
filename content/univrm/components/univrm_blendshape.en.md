@@ -3,7 +3,7 @@ title: "BlendShape Setting"
 date: 2018-04-16T16:30:00+09:00
 ---
 
-New features introduced in UniVRM v0.45 [can be found here](https://github.com/dwango/UniVRM/wiki/BlendShape-Setup)
+New features introduced in UniVRM v0.45 [can be found here](https://github.com/vrm-c/UniVRM/wiki/BlendShape-Setup)
 
 ## VRMBlendShapeProxy
 

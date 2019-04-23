@@ -46,7 +46,7 @@
 
     <ul class="sidebar-nav">
       <li><a href="https://vrm.dev/">Home</a> </li>
-      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-dwango-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/univrm"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
+      <li><a href="/#vrm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"> └VRMについて </a></li><li><a href="/#vrm%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E4%BB%95%E6%A7%98"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-https-github-com-vrm-c-univrm-unity%E5%90%91%E3%81%91vrm%E6%A8%99%E6%BA%96%E5%AE%9F%E8%A3%85-%E4%BB%95%E6%A7%98"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/UniVRM"> ・UniVRM </a></li><li><a href="https://www.vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
     </ul>
 
     <p>
@@ -88,11 +88,11 @@
 
 <p><img src="https://vrm.dev/images/vrm/vrm_workflow.png" alt="vrm workflow"  />
 
-VRMファイルをつくるためには、<a href="https://unity3d.com/jp">Unity</a>と<a href="https://github.com/dwango/UniVRM">UniVRM</a>を使用します。
+VRMファイルをつくるためには、<a href="https://unity3d.com/jp">Unity</a>と<a href="https://github.com/vrm-c/UniVRM">UniVRM</a>を使用します。
 おおまかな作業のながれは以下のようになります</p>
 
 <ol>
-<li>Unityで3Dモデルデータと<a href="https://github.com/dwango/UniVRM">UniVRM</a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する</li>
+<li>Unityで3Dモデルデータと<a href="https://github.com/vrm-c/UniVRM">UniVRM</a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する</li>
 <li>一度UnityからVRMファイルを出力する（※正規化と呼びます）</li>
 <li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
 
@@ -116,7 +116,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 
 <p><img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
 
-<a href="https://github.com/dwango/UniVRM/releases">UniVRM/releases</a>から最新のunitypackageをダウンロードし、<code>Assets/VRM</code>にインストールします。
+<a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases</a>から最新のunitypackageをダウンロードし、<code>Assets/VRM</code>にインストールします。
 <strong>既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨</strong>しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。</p>
 
@@ -210,7 +210,7 @@ FBXインポート時の自動認識が食い違うことがありますので�
 </ul></li>
 </ul>
 
-<p>Exportを押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。T-Poseとモデルの正規化の詳細は<a href="https://github.com/dwango/UniVRM/wiki/T-Poseとモデルの正規化の詳細">こちら</a>。</p>
+<p>Exportを押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。T-Poseとモデルの正規化の詳細は<a href="https://github.com/vrm-c/UniVRM/wiki/T-Poseとモデルの正規化の詳細">こちら</a>。</p>
 
 <h3 id="5-先ほどエクスポートしたvrmを再度unity上に読み込む">5.先ほどエクスポートしたVRMを再度Unity上に読み込む</h3>
 

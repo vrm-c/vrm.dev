@@ -22,7 +22,7 @@ date: 2018-05-09
 
 を添えて
 
-* https://github.com/dwango/UniVRM/issues
+* https://github.com/vrm-c/UniVRM/issues
 
 等にお知らせください。
 

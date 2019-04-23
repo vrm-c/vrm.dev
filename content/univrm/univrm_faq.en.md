@@ -15,7 +15,7 @@ If an error messages (red) is shown in console, there might be something wrong s
 
 Please report the errors you got in:
 
-* https://github.com/dwango/UniVRM/issues
+* https://github.com/vrm-c/UniVRM/issues
 
 More details provided in the report will be very helpful for us to look into your problem. For example:
 

@@ -5,7 +5,7 @@ date: 2018-05-21T10:00:00+09:00
 
 This section describes about changes affecting the program.
 
-Please go to [UniVRM/Wiki](https://github.com/dwango/UniVRM/wiki) to get the latest information of the API update.
+Please go to [UniVRM/Wiki](https://github.com/vrm-c/UniVRM/wiki) to get the latest information of the API update.
 
 # v0.36
 

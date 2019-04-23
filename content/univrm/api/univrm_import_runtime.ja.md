@@ -3,7 +3,7 @@ title: "VRMモデルを実行時にインポートする"
 date: 2018-04-16T16:30:00+09:00
 ---
 
-最新バージョンは[こちら](https://github.com/dwango/UniVRM/wiki/Runtime-import)をご覧ください。
+最新バージョンは[こちら](https://github.com/vrm-c/UniVRM/wiki/Runtime-import)をご覧ください。
 
 Unityで実行時にモデルをインポートする方法です。
 

@@ -5,7 +5,7 @@ date: 2018-04-16T16:30:00+09:00
 
 ##  VRMファイルの読み込みかた
 
-[UniVRMTest/releases](https://github.com/dwango/UniVRMTest/releases)からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
+[UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases)からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
 また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。
 
 ### 1.Unityで空のプロジェクトを作る
@@ -14,7 +14,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 
 ### 2.UnityにUniVRMをインストール
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
-[UniVRM/releases](https://github.com/dwango/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
+[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
 **既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
 
