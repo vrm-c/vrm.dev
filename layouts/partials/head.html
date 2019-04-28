@@ -42,4 +42,10 @@
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
   {{ end -}}
+
+  {{ if .IsTranslated -}}
+    {{ range .Translations -}}
+      <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Title }}" />
+    {{- end }}
+  {{- end }}
 </head>
