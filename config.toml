@@ -1,5 +1,4 @@
 baseURL = "https://vrm.dev/"
-languageCode = "ja"
 DefaultContentLanguage = "ja"
 title = "VRM"
 theme = "hyde"
@@ -9,36 +8,66 @@ enableEmoji = true
 
 [params]
   description = "3D Humanoid Avatar format for VR"
-  keywords = "VRM VR AR Avatar アバター 3D format フォーマット UniVRM"
   copyright = "VRM Consortium"
   articlesOnTop = 3
   articlesOnList = 10
 
-[menu]
-  [[menu.main]]
+[languages.ja]
+  languageCode = "ja"
+
+  [languages.ja.params]
+    keywords = "VRM, VR, AR, Avatar, アバター, 3D, format, フォーマット, UniVRM"
+
+  [[languages.ja.menu.main]]
     name = "└VRMについて"
-    url = "/#vrmについて"
+    url = "/#about-vrm"
     weight = 1
-  [[menu.main]]
+  [[languages.ja.menu.main]]
     name = "└VRMフォーマット技術仕様"
-    url = "/#vrmフォーマット技術仕様"
+    url = "/#vrm-format-technical-specifications"
     weight = 2
-  [[menu.main]]
+  [[languages.ja.menu.main]]
     name = "└UniVRM仕様"
-    url = "/#univrm-https-github-com-vrm-c-univrm-unity向けvrm標準実装-仕様"
+    url = "/#univrm-specifications"
     weight = 3
-  [[menu.main]]
+  [[languages.ja.menu.main]]
     name = "----"
     weight = 4
-  [[menu.main]]
+  [[languages.ja.menu.main]]
     name = "・UniVRM"
     url = "https://github.com/vrm-c/UniVRM"
     weight = 5
-  [[menu.main]]
+  [[languages.ja.menu.main]]
     name = "・VRMコンソーシアム"
     url = "https://vrm-consortium.org/"
     weight = 6
-  
-[Languages]
-[Languages.ja]
-[Languages.en]
+
+[languages.en]
+  languageCode = "en"
+
+  [languages.en.params]
+    keywords = "VRM, VR, AR, Avatar, 3D, format, UniVRM"
+
+  [[languages.en.menu.main]]
+    name = "└About VRM"
+    url = "/en/#about-vrm"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "└VRM Format Technical Specifications"
+    url = "/en/#vrm-format-technical-specifications"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "└UniVRM Specifications"
+    url = "/en/#univrm-specifications"
+    weight = 3
+  [[languages.en.menu.main]]
+    name = "----"
+    weight = 4
+  [[languages.en.menu.main]]
+    name = "・UniVRM"
+    url = "https://github.com/vrm-c/UniVRM"
+    weight = 5
+  [[languages.en.menu.main]]
+    name = "・VRM Consortium"
+    url = "https://vrm-consortium.org/"
+    weight = 6
