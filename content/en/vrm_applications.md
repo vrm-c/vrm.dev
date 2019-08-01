@@ -7,7 +7,7 @@ date: 2018-04-16T16:30:00+09:00
 
 * [The Seed Online](https://seed.online/)
 
-* [Niconi 3D](http://3d.nicovideo.jp/)
+* [Niconi 3D](https://3d.nicovideo.jp/)
 
 * [VRoid Hub](https://hub.vroid.com/)
 	
@@ -25,13 +25,13 @@ date: 2018-04-16T16:30:00+09:00
 
     * A VR live communication application that allows users to communicate in a shared virtual space in real-time. VRM model is importable.
 
-* [Custom Cast](http://customcast.jp/)
+* [Custom Cast](https://customcast.jp/)
 
 * [VDRAW](https://sites.google.com/view/vdraw/)
 
 * [Hitogata](https://sites.google.com/site/vhitogata/)
 
-* [3tene](http://3tene.com/)
+* [3tene](https://3tene.com/)
 
 * [Puppemoji](https://www.puppemoji.com/)
 
@@ -49,7 +49,7 @@ date: 2018-04-16T16:30:00+09:00
 
 * [Clarie](https://biscrat.booth.pm/items/1193414)
 
-* [Luppet](https://luppet.netlify.com/)
+* [Luppet](https://luppet.appspot.com/)
 
 ##  Metaverse
 
