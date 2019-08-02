@@ -1,25 +1,19 @@
 {{ partial "head.html" . }}
   <body class="{{ .Site.Params.themeColor }} {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
   {{ partial "sidebar.html" . }}
-    <div class="content container">
-
-        <a href="{{ .Site.BaseURL }}">
-          <img src="{{ .Site.BaseURL }}images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
-        </a>
-
-        {{ range .Translations }}
-        <li>
-          <a class="language" href="{{ .Permalink }}"><i class="fa fa-globe">&nbsp;</i>{{ .Title }}({{ .Lang }})</a>
-        </li>
-        {{ end }}
+    <main class="content container">
+    {{ if .IsTranslated -}}
+      <ul class="languages">
+        {{ range .Translations -}}
+          <li>
+            <a href="{{ .Permalink }}"><i class="material-icons">language</i> {{ .Title }} ({{ .Lang }})</a>
+          </li>
+        {{- end }}
+      </ul>
+    {{- end }}
 
     {{ block "main" . -}}{{- end }}
-
-        <a href="{{ .Site.BaseURL }}">
-          <img src="{{ .Site.BaseURL }}images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
-        </a>
-
-    </div>
+    </main>
 
     {{ template "_internal/google_analytics_async.html" . }}
   </body>

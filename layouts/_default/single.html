@@ -1,4 +1,8 @@
 {{ define "main" }}
+<a href="{{ .Site.BaseURL }}">
+  <img src="{{ .Site.BaseURL }}images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
+</a>
+
 <div class="post">
   <h1>{{ .Title }}</h1>
   <span class="post-date"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
@@ -13,4 +17,8 @@
     </article>
   </div>
 </div>
+
+<a href="{{ .Site.BaseURL }}">
+  <img src="{{ .Site.BaseURL }}images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
+</a>
 {{ end }}

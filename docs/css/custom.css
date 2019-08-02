@@ -64,3 +64,37 @@ article#content {
   color: white;
   border-radius: 4px;
 }
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 0 0.5em;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48em) {
+  .languages {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.languages li {
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (min-width: 48em) {
+  .languages li + li {
+    margin-left: 0.5em;
+  }
+}
+
+.languages .material-icons {
+  vertical-align: middle;
+  font-size: 1.1em;
+}
