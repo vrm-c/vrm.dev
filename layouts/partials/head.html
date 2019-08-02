@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link href="//gmpg.org/xfn/11" rel="profile">
   <meta name="description" content="{{ .Site.Title }} - {{ .Site.Params.description }}">
   <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   {{ hugo.Generator }}
-
-  {{ if .IsHome -}}
-  <meta property="og:title" content="{{ .Site.Title }}">
-  {{- else -}}
-  <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-  {{- end }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}images/vrm/card.png">
 
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -27,12 +17,12 @@
   {{- end }}
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/poole.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/hyde.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/poole.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+  {{ partial "head_fonts.html" . }}
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
@@ -43,9 +33,5 @@
     {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
   {{ end -}}
 
-  {{ if .IsTranslated -}}
-    {{ range .Translations -}}
-      <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Title }}" />
-    {{- end }}
-  {{- end }}
+  {{ partial "hook_head_end.html" . }}
 </head>
