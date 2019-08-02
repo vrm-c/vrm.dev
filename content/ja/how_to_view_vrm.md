@@ -40,7 +40,7 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 ## VRMファイルを投稿する・探す
 
-現在、[ニコニ立体](http://3d.nicovideo.jp/)または[VRoid Hub](https://hub.vroid.com/)でVRMファイルの投稿ができます。
+現在、[ニコニ立体](https://3d.nicovideo.jp/)または[VRoid Hub](https://hub.vroid.com/)でVRMファイルの投稿ができます。
 ニコニ立体では[こちら](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。
 
 なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると[バーチャルキャスト](https://virtualcast.jp/)から利用できます。

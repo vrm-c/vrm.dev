@@ -7,7 +7,7 @@ date: 2018-04-16T16:30:00+09:00
 
 * [ザ・シードオンライン](https://seed.online/)
 
-* [ニコニ立体](http://3d.nicovideo.jp/)
+* [ニコニ立体](https://3d.nicovideo.jp/)
 
 * [VRoid Hub](https://hub.vroid.com/)
 
@@ -25,13 +25,13 @@ date: 2018-04-16T16:30:00+09:00
 
 	* VR空間のスタジオをリアルタイムでコミュニケーションできるVRライブ・コミュニケーションサービス。モデルデータとしてVRMを採用、読み込み可能。
 
-* [カスタムキャスト](http://customcast.jp/)
+* [カスタムキャスト](https://customcast.jp/)
 
 * [VDRAW](https://sites.google.com/view/vdraw/)
 
 * [Hitogata](https://sites.google.com/site/vhitogata/)
 
-* [3tene](http://3tene.com/)
+* [3tene](https://3tene.com/)
 
 * [パペ文字](https://www.puppemoji.com/)
 
@@ -49,7 +49,7 @@ date: 2018-04-16T16:30:00+09:00
 
 * [[VR撮影アプリ] Clarie](https://biscrat.booth.pm/items/1193414)
 
-* [Luppet](https://luppet.netlify.com/)
+* [Luppet](https://luppet.appspot.com/)
 
 ##  メタバース
 
