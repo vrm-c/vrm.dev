@@ -1,264 +1,703 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta name="description" content="VRM - 3D Humanoid Avatar format for VR">
-  <meta name="keywords" content="VRM, VR, AR, Avatar, 3D, format, UniVRM">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="generator" content="Hugo 0.55.3" />
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.56.3" />
 
-  <meta property="og:title" content="Univrms - VRM">
-  <meta property="og:image" content="https://vrm.dev/images/vrm/card.png">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
+<link rel="alternate" type="application/rss&#43;xml" href="https://vrm.dev/en/univrm/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x196.png" sizes="96x196">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png"sizes="192x192">
+
+<title>UniVRM (VRM standard implementation for Unity) Specifications | VRM</title><meta property="og:title" content="UniVRM (VRM standard implementation for Unity) Specifications" />
+<meta property="og:description" content="3D Humanoid Avatar format for VR" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vrm.dev/en/univrm/" />
+
+<meta property="og:image" content="https://vrm.dev/images/vrm/card.png" />
+
+<meta property="og:updated_time" content="2018-05-09T00:00:00+00:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="UniVRM (VRM standard implementation for Unity) Specifications">
+<meta itemprop="description" content="3D Humanoid Avatar format for VR">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
+
+<meta name="twitter:title" content="UniVRM (VRM standard implementation for Unity) Specifications"/>
+<meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
+
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.f809dd81c31369e745fc9960408ecf7e6c5ed33854d3a4201a6c039d56a4d89c.css" as="style">
+<link href="/scss/main.min.f809dd81c31369e745fc9960408ecf7e6c5ed33854d3a4201a6c039d56a4d89c.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>UniVRM (VRM standard implementation for Unity) Specifications | VRM</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">VRM</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/en/vrm/" ><span>About VRM</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/en/spec/" ><span>VRM Format Technical Specifications</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/en/univrm/" ><span class="active">UniVRM Specifications</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/vrm-c/UniVRM" target="_blank" ><span>UniVRM</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://vrm-consortium.org/" target="_blank" ><span>VRM Consortium</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/univrm/">日本語</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
 
-  <title>Univrms - VRM</title>
-
-  
-  <link rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
-  <link rel="stylesheet" href="https://vrm.dev/css/poole.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/syntax.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/hyde.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/custom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="https://vrm.dev/en/univrm/index.xml" rel="alternate" type="application/rss+xml" title="VRM" />
-  <link rel="alternate" href="https://vrm.dev/univrm/" hreflang="ja" title="Univrms" />
-</head>
-
-  <body class=" ">
-  <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="/en/"><h1>VRM</h1></a>
-      <p class="lead">
-       3D Humanoid Avatar format for VR 
-      </p>
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/univrm/">日本語</a>
+	
+</div>
     </div>
+    
+    
 
-    <ul class="sidebar-nav">
-      <li><a href="/en/">Home</a> </li>
-      <li><a href="/en/#about-vrm"> └About VRM </a></li><li><a href="/en/#vrm-format-technical-specifications"> └VRM Format Technical Specifications </a></li><li><a href="/en/#univrm-specifications"> └UniVRM Specifications </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/UniVRM"> ・UniVRM </a></li><li><a href="https://vrm-consortium.org/"> ・VRM Consortium </a></li>
-    </ul>
 
-    <p>
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="en-docs">
       
-        <p style="display:inline-block;vertical-align:middle;">
-          Copyright &copy; VRM Consortium
-        </p>
       
-    </p>
-  </div>
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/vrm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">About VRM</a>
+  </li>
+  <ul>
+    <li class="collapse " id="en-vrm">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-vrm-about" href="/en/vrm_about/">What is “VRM”? What can VRM do?</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-how-to-make-vrm" href="/en/how_to_make_vrm/">How to make VRM file</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-how-to-view-vrm" href="/en/how_to_view_vrm/">How to view VRM file</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-vrm-applications" href="/en/vrm_applications/">What applications that support VRM?</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/spec/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">VRM Format Technical Specifications</a>
+  </li>
+  <ul>
+    <li class="collapse " id="en-spec">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-gltf-about" href="/en/gltf_about/">What is GLTF?</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/vrm_spec/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">VRM specifications</a>
+  </li>
+  <ul>
+    <li class="collapse " id="en-vrm-spec">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-vrm-tpose" href="/en/vrm_tpose/">About T-pose</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/univrm/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">UniVRM Specifications</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="en-univrm">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-univrm-install" href="/en/univrm/univrm_install/">Install UniVRM</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-univrm-workflow" href="/en/univrm/univrm_workflow/">UniVRM workflow</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/univrm/components/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">UniVRM components</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="en-univrm-components">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-components-univrm-meta" href="/en/univrm/components/univrm_meta/">Model Information</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-components-univrm-blendshape" href="/en/univrm/components/univrm_blendshape/">BlendShape</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-components-univrm-firstperson" href="/en/univrm/components/univrm_firstperson/">First-Person View</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-components-univrm-lookat" href="/en/univrm/components/univrm_lookat/">Eye Control</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-components-univrm-secondary" href="/en/univrm/components/univrm_secondary/">Spring bone</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/univrm/univrm_shaders/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Available shaders in UniVRM</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="en-univrm-univrm-shaders">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-shaders-univrm-shaders-044" href="/en/univrm/shaders/univrm_shaders_044/">UniVRM-0.44 Material</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-shaders-mtoon" href="/en/univrm/shaders/mtoon/">MToon setting</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/univrm/api/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">API</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="en-univrm-api">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-api-univrm-api-history" href="/en/univrm/api/univrm_api_history/">API change history</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-api-univrm-import-runtime" href="/en/univrm/api/univrm_import_runtime/">Import VRM model at runtime</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-api-univrm-use-blendshape" href="/en/univrm/api/univrm_use_blendshape/">Use BlendShape at runtime</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-api-univrm-coordinate" href="/en/univrm/api/univrm_coordinate/">Coordinate transformations</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-api-univrm-use-firstperson" href="/en/univrm/api/univrm_use_firstperson/">How to use first-person mode </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-en-univrm-univrm-faq" href="/en/univrm/univrm_faq/">FAQ</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
 </div>
 
-    <div class="content container">
 
-        <a href="https://vrm.dev/">
-          <img src="https://vrm.dev/images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
-        </a>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/en/docs/univrm/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=UniVRM%20%28VRM%20standard%20implementation%20for%20Unity%29%20Specifications" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+</div>
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://vrm.dev/en/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://vrm.dev/en/univrm/">UniVRM Specifications</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>UniVRM (VRM standard implementation for Unity) Specifications</h1>
+	
+	<ul>
+<li><a href="https://github.com/vrm-c/UniVRM/releases" target="_blank">Download</a></li>
+</ul>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/univrm_install/">UniVRM installation</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/univrm_workflow/">UniVRM workflow</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/components/">UniVRM components</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/univrm_shaders/">Available shaders in UniVRM</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/api/">API</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/univrm/univrm_faq/">Frequently asked questions</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 9, 2018
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/vrm-c">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
 
         
-        <li>
-          <a class="language" href="https://vrm.dev/univrm/"><i class="fa fa-globe">&nbsp;</i>Univrms(ja)</a>
-        </li>
         
-
-    <h1>Articles</h1>
-
-
-<div class="posts">
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/shaders/univrm_shaders_044/">UniVRM-0.44 Material</a>
-  </h3>
-  <span class="post-date">Fri, Oct 5, 2018</span>
-  <p class="summary">
-    Material-related fixes and additions in UniVRM-0.44.
-Introduction of UniGLTF / UniUnlit shader UniVRM-0.43 was capable of importing / exporting the following Unlit shaders:
- Unlit/Color Unlit/Texture, VRM/UnlitTexture Unlit/Transparent, VRM/UnlitTransparent Unlit/Transparent Coutout, VRM/UnlitCutout VRM/UnlitTransparentZWrite(not compatible with GLTF)  The following materials that are set with GLTF were not functional:
- doubleSided the multiplication of color and texture transparent with color vertex color  Hence, we introduced the GLTF-compatible Unlit shader UniGLTF / UnLit:
-    
-    <a href="/en/univrm/shaders/univrm_shaders_044/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/api/univrm_use_firstperson/">How to Use VRMFirstPerson</a>
-  </h3>
-  <span class="post-date">Tue, May 29, 2018</span>
-  <p class="summary">
-    VRMFirstPerson Settings VRMFirstPerson has the following settings for Renderer:
-   FirstPersonFlag Layer Note     Both default Specify parts that are not necessarily separated between first-person view and third-person view.   ThirdPersonOnly THIRDPERSON_ONLY_LAYER Specify parts that are not rendered in first-person view.   FirstPersonOnly FIRSTPERSON_ONLY_LAYER Specify parts that are not rendered in third-person view. The auto-created headless model is used.   Auto THIRDPERSON_ONLY_LAYER Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.
-    
-    <a href="/en/univrm/api/univrm_use_firstperson/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/api/univrm_api_history/">API Change History</a>
-  </h3>
-  <span class="post-date">Mon, May 21, 2018</span>
-  <p class="summary">
-     This section describes about changes affecting the program.
-Please go to UniVRM/Wiki to get the latest information of the API update.
-v0.36 Texture Name Save Locations Changed Conforming to the GLTF specification.
-json.images[i].extra.name  After the change
-json.images[i].name  BlendShape Name Save Locations Changed Conforming to the GLTF specification.
- &ldquo;extras&rdquo; is not allowed in target https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356  json.meshes[i].primitives[j].targets[k].extra.name  After the change
-json.meshes[i].primitives[j].extras.targetNames[k]  
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/univrm_faq/">Frequently asked questions</a>
-  </h3>
-  <span class="post-date">Wed, May 9, 2018</span>
-  <p class="summary">
-    Report errors Please check the contents in console (Window -&gt; Console). If an error messages (red) is shown in console, there might be something wrong somewhere: Please report the errors you got in: https://github.com/vrm-c/UniVRM/issues More details provided in the report will be very helpful for us to look into your problem. For example: OS (Windows10 64bit, etc.) Unity version (Unity-5.6.3p1, etc.) UniVRM version (0.40, etc.) VRMSpringBone set before was gone
-    
-    <a href="/en/univrm/univrm_faq/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/shaders/univrm_shaders/">Available shaders in UniVRM</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    UniVRM-0.44 material
-PBR Standard shader Unity standard.
-Unlit type shader VRM/UnlitTexture Same as Unit/Texture.
-VRM/UnlitCutout Same as Unit/Coutout.
-VRM/UnlitTransparent Same as Unit/Transparent.
-It is assumed to be applied to particle things such as smokes, semi-transparent objects without substances (depth value) such as rosy cheeks.
-VRM/UnlitTransparentZWrite Alpha blending and ZWrite are available. It is assumed to be applied to semi-transparent objects with substances (depth value) such as semi-transparent clothes and hairs.
-    
-    <a href="/en/univrm/shaders/univrm_shaders/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/components/univrm_blendshape/">BlendShape Setting</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    New features introduced in UniVRM v0.45 can be found here VRMBlendShapeProxy The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode How to use: Set BlendShapeAvatar VRMBlendShapeProxy-&gt;BlendShapeAvatar in the Inspector Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY) BlendShapeAvatar Expressions can be created in the Inspector. Double click theBlend Shape Avatarbox or Click
-    
-    <a href="/en/univrm/components/univrm_blendshape/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/components/univrm_lookat/">Eye Control</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    VRMLookAtHead         VRMLookAtHead    This component calculates the direction from the model&rsquo;s head to the target.
-Target The target to be tracked by the model&rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.
-Eye control with bone: VRMLookAtBoneApplyer         VRMLookAtBoneApplyer    Apply the parameters of the calculated eye gaze direction of VRMLookAtHead to EyeBone.
-    
-    <a href="/en/univrm/components/univrm_lookat/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/components/univrm_firstperson/">First-Person View</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    VRMFirstPerson The setting related to first-person perspectives.
-FirstPersonBone FirstPersonBone keeps track of a VR headset in a first-person view. Normally the head bone is assigned as FirstPersonBone.
-FirstPersonOffset The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.
-Renderers The settings for controlling mesh rendering on/off in a first-person view.
-    
-    <a href="/en/univrm/components/univrm_firstperson/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/api/univrm_import_runtime/">Import VRM Model at Runtime</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    Examples of importing the VRM model with the latest version can be found here.
-The followings are the methods to import a VRM model at runtime in Unity:
-Open VRM from a file path var path=&#34;sample.vrm&#34;; var go=VRM.VRMImporter.LoadFromPath(path); Debug.LogFormat(&#34;loaded {0}&#34;, go.name);  Open VRM asynchronously from a file path var path=&#34;sample.vrm&#34;; VRMImporter.LoadVrmAsync(path, go =&gt; { Debug.LogFormat(&#34;loaded {0}&#34;, go.name); });  Open VRM from a byte array var path=&#34;sample.vrm&#34;; var bytes = File.
-    
-    <a href="/en/univrm/api/univrm_import_runtime/">...</a>
-    
-  </p>
-</div>
-<div class="post">
-  <h3 class="post-title">
-    ・<a href="https://vrm.dev/en/univrm/shaders/mtoon/">MToon</a>
-  </h3>
-  <span class="post-date">Mon, Apr 16, 2018</span>
-  <p class="summary">
-    Shader preloading setting
-How to use MToon
-About MToon MToon aims for making Japanese anime expressions. It is achieved by mixing Lit Color and Shade Color based on Lighting parameters and light source environment.
-        Apply MToon to the 3D modelAlicia    For users who want to have a quick setup Common items  Select the target material and change the shader to VRM/MToon Click the shader panel and set the same texture in Color-&gt;Lit Color, Alpha and Color-&gt;Shade Color Set white color in Color-&gt;Lit Color, Alpha and set the preference shade color in Color-&gt;Shade Color Set the preference value in Shading-&gt;Toony.
-    
-    <a href="/en/univrm/shaders/mtoon/">...</a>
-    
-  </p>
-</div>
-
-</div>
-
-
-
-<div class="pagination-container">
-  <div class="pagination">
-
-    
-    <span aria-hidden="true">&lt;&lt;</span>
-    <span aria-hidden="true">&lt;</span>
-    
-
-
-    
-      <a href="/en/univrm/" class="current">1</a>
-    
-      <a href="/en/univrm/page/2/">2</a>
-    
-
-
-    
-      <a href="/en/univrm/page/2/" aria-label="Next">&gt;</a>
-      
-      <a href="/en/univrm/page/2/" aria-label="Last">&gt;&gt;</a>
-      
-    
-
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2019 VRM Consortium All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
   </div>
-</div>
+</footer>
 
-
-
-        <a href="https://vrm.dev/">
-          <img src="https://vrm.dev/images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
-        </a>
 
     </div>
-
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="/js/main.min.7c5c1664a3b3974b0569326628b079e88df34214371e095f87ae7821a830d184.js" integrity="sha256-fFwWZKOzl0sFaTJmKLB56I3zQhQ3Hglfh654Iagw0YQ="></script>
+
+
+
   </body>
 </html>
