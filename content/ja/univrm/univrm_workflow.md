@@ -9,17 +9,29 @@ date: 2018-04-16T16:30:00+09:00
 
 ## humanoid avatarがセット済みの人間型モデルを用意します
 
-Fbx等のUnityのHumanoidモデルを用意してください。
+Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定もされている必要があります。
 
-FbxのImport SettingsのRigタブでAnimationTypeをHumanoidにしてください。
+{{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
+{{< img src="images/vrm/ModelConversionMenu.png" width="900" height="200" alt="ModelConversionMenu" >}}
 
-|{{< img src="images/vrm/alicia_generic.png" >}}|
+インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに`Select`をクリックして、`Rig`をクリックして`Animation Type`を`Humanoid`に設定し、`Configure`ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。`Save`をクリックして保存します。
+
+|{{< img src="images/vrm/SetModelAsHumanoid.png" width="900" height="200" alt="SetModelAsHumanoid" >}}|
 |-----|
-|humanoidに設定します|
+|`Humanoid`に設定して、`Configure`をクリックします|
+
+これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。
+
+{{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
 
 ### rigのconfigureでボーンの割り当てを修正
+ボーンマッピングエラーを修正するには、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある`Mapping`をクリックし、`clear`をクリックして`Automap`をクリックします。
 
-fbxインポート時の自動認識が食い違うことがあります。
+|{{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}|
+|-----|
+|適切なボーンコンポーネントを選択してください|
+
+ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します
 
 例
 
@@ -28,21 +40,16 @@ fbxインポート時の自動認識が食い違うことがあります。
 
 |{{< img src="images/vrm/fix_eye.png" >}}|
 |-----|
-|立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正しました|
+|立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正します|
 
 ## メニューからエクスポート
-
-|{{< img src="images/vrm/vrm_menu_disable.png" >}}|
-|-----|
-|ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります|
-
 |{{< img src="images/vrm/vrm_menu_enable.png" >}}|
 |-----|
-|ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります|
+|ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで`Assets`フォルダに保存されます|
 
-|{{< img src="images/vrm/export_dialog.png" >}}|
+|{{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}|
 |-----|
-|チェックボックスを設定してExportを押してください|
+|`Author`欄に名前を入力して`Export`を押してください|
 
 ### Force T Pose
 回転・スケールの除去前にモデルを強制的に[T-Pose](../../vrm_tpose/)にします。
@@ -94,6 +101,8 @@ vrmファイルをAssetsフォルダにインポートしてください。
 |立体ちゃんのVRMをインポート|
 
 Texture, Material, PrefabがVRMから自動生成されます。
+
+{{< img src="images/vrm/vrm_prefab.png" >}}
 
 * 対象のProjectビューにvrmが表示されない場合、右クリックから``refresh``してみてください
 * Prefabが生成されない場合、vrmファイルを右クリックして``reimport``してみてください

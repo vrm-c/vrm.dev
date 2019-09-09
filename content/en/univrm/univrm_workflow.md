@@ -9,43 +9,48 @@ date: 2018-04-16T16:30:00+09:00
 
 ## Prepare a 3D model that can be handled as "Humanoid" in Unity
 
-Prepare a humanoid model that can be [imported](https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX format.
-Go to the model's``Import Settings -> Rig -> Animation Type``and select``Humanoid``after the model is imported.
+Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX format. The model's bones must be set.
 
-|{{< img src="images/vrm/alicia_generic.png" >}}|
+{{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
+{{< img src="images/vrm/ModelConversionMenu.png" width="900" height="200" alt="ModelConversionMenu" >}}
+
+First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click `Select` and then click `Rig`. Set `Animation Type` as `Humanoid`, and then click `Configure` button. A message box will pop up asking whether you want to save the current scene. Click `Save` to save it.
+
+|{{< img src="images/vrm/SetModelAsHumanoid.png" width="900" height="200" alt="SetModelAsHumanoid" >}}|
 |-----|
-|Select``Humanoid``|
+|Select``Humanoid`` and click `Configure`|
 
-### Correct bone assignment with rig configuration
+Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model's Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red.
 
-When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):
+{{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
 
-* Jaw is assigned to mouth
-* Eye is assigned to eye highlight
+### Correct bone mapping with rig configuration
+To corrent bone mapping errors, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click `Mapping` in the lowerleft of the interface, click `clear` and then click `Automap`.
 
-|{{< img src="images/vrm/fix_eye.png" >}}|
+|{{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}|
 |-----|
-|Since the eyebone (and jawbone) auto-recognition on "3D chan" is incorrect, we can fix it by assigning the right component manually.|
+|Choose a right component to fit a bone|
+
+However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:
+
+{{< img src="images/vrm/fix_eye.png" >}}
+
+We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click `Done` button to proceed to the next step.
 
 ## Export from menu
-
-|{{< img src="images/vrm/vrm_menu_disable.png" >}}|
+|{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}|
 |-----|
-|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in``VRM``will become available.|
+|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.53.0 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
 
-|{{< img src="images/vrm/vrm_menu_enable.png" >}}|
+|{{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}|
 |-----|
-|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in``VRM``will become available.|
-
-|{{< img src="images/vrm/export_dialog.png" >}}|
-|-----|
-|Check the boxes and click``Export``button.|
+|Enter your name in the `Author` field and click the `Export` button.|
 
 ### Force T Pose
 Force the model pose to become [T-Pose](../../vrm_tpose/) before removing rotation / scale.
 
 #### Change to T Pose manually
-You can manually change the model pose to`T Pose`instead of changing it automatically. Make the model [T-Pose](../../vrm_tpose/) manually in advance, choose`menu -> VRM -> export humanoid`and uncheck``Force T Pose``.
+You can manually change the model pose to [T-Pose](../../vrm_tpose/) (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
 
 ### Pose Freeze
 Whether the rotation / scale removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
@@ -87,6 +92,8 @@ Please import VRM file into Assets folder
 |Import the VRM model``Alicia``|
 
 Texture, Material and Prefab are automatically generated from VRM.
+
+{{< img src="images/vrm/vrm_prefab_en.png" >}}
 
 * If the VRM file is not shown in the project view, right click and select``refresh``
 * If the Prefab file cannot be generated, right click the VRM file and select``reimport``
