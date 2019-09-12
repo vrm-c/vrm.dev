@@ -22,13 +22,13 @@ Expressions can be created in the Inspector.
 
 |{{< img src="images/vrm/VRMBlendShapeProxyEditor.png" >}}|
 |-----|
-|Double click the``Blend Shape Avatar``box|
+|Double click the``Blend Shape Avatar``field|
 
 or
 
 |{{< img src="images/vrm/BlendShapeAvatarAsset.png" >}}|
 |-----|
-|Click BlendShape directly here (the highlighted file)|
+|Click``BlendShape``directly in the Project view|
 
 |{{< img src="images/vrm/BlendShapeAvatarEditor.png" >}}|
 |-----|
@@ -86,7 +86,7 @@ You can operate expressions from the Inspector.
 
 |{{< img src="images/vrm/VRMBlendShapeProxyRuntime.png" >}}|
 |-----|
-|Double click the``Blend Shape Avatar``box and click``Add BlendShapeClip``|
+|Double click the``Blend Shape Avatar``field and click``Add BlendShapeClip``|
 
 Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.
 
@@ -107,4 +107,4 @@ After the setting is done, don't forget to export VRM file for being able to use
 
 |{{< img src="images/vrm/BlendShapeClipMaterial.png" >}}|
 |-----|
-|The setting of Material morph. Double click the``Current clip``box or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the project view|
+|The setting of Material morph. Double click the``Current clip``field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view|
