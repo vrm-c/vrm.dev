@@ -1,0 +1,2631 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – Documentation</title>
+    <link>https://vrm.dev/en/docs/</link>
+    <description>Recent content in Documentation on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: UniVRM-0.44 Material</title>
+      <link>https://vrm.dev/en/univrm/shaders/univrm_shaders_044/</link>
+      <pubDate>Fri, 05 Oct 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/shaders/univrm_shaders_044/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;Material-related fixes and additions in UniVRM-0.44.&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction-of-unigltf-uniunlit-shader&#34;&gt;Introduction of UniGLTF / UniUnlit shader&lt;/h2&gt;
+
+&lt;p&gt;UniVRM-0.43 was capable of importing / exporting the following Unlit shaders:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unlit/Color&lt;/li&gt;
+&lt;li&gt;Unlit/Texture, VRM/UnlitTexture&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent, VRM/UnlitTransparent&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent Coutout, VRM/UnlitCutout&lt;/li&gt;
+&lt;li&gt;VRM/UnlitTransparentZWrite(not compatible with GLTF)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following materials that are set with GLTF were not functional:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;doubleSided&lt;/li&gt;
+&lt;li&gt;the multiplication of color and texture&lt;/li&gt;
+&lt;li&gt;transparent with color&lt;/li&gt;
+&lt;li&gt;vertex color&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hence, we introduced the GLTF-compatible Unlit shader &lt;code&gt;UniGLTF / UnLit&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RenderType: &lt;code&gt;Opaque&lt;/code&gt;, &lt;code&gt;Cutout&lt;/code&gt;, &lt;code&gt;Transparent&lt;/code&gt;, &lt;code&gt;TransparentZWrite&lt;/code&gt;(VRM extension)&lt;/li&gt;
+&lt;li&gt;CullMode: &lt;code&gt;Off&lt;/code&gt;(doubleSided=True), &lt;code&gt;Back&lt;/code&gt;(doublueSided=False), &lt;code&gt;Front&lt;/code&gt;(VRM extension)&lt;/li&gt;
+&lt;li&gt;VertexColorBlend: &lt;code&gt;None&lt;/code&gt;, &lt;code&gt;Multiply&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;improvement-of-texture-conversion-of-standard-shaders&#34;&gt;Improvement of texture conversion of Standard shaders&lt;/h2&gt;
+
+&lt;p&gt;The processing of textures other than Standard shader color has been improved.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Normal map correction: Since it is also applied to MToon, we put the details in the next section&lt;/li&gt;
+&lt;li&gt;Metallic, Roughnes, OcclusionMap conversion
+
+&lt;ul&gt;
+&lt;li&gt;RGBA channel recombination&lt;/li&gt;
+&lt;li&gt;Inversion of Roughness and Smoothness values&lt;/li&gt;
+&lt;li&gt;sRGB&amp;rsquo;s and Linear&amp;rsquo;s correspondence&lt;/li&gt;
+&lt;li&gt;Conversion with Importer, reverse conversion with Exporter&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;correction-of-normal-map-import-export&#34;&gt;Correction of normal map import / export&lt;/h2&gt;
+
+&lt;p&gt;The texture of &lt;code&gt;Standard&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.
+Parse material&amp;rsquo;s property name according to &lt;code&gt;_BumpMap&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;RuntimeImport: Normal texture&amp;rsquo;s Pack&lt;/li&gt;
+&lt;li&gt;Export: Normal texture&amp;rsquo;s Unpack&lt;/li&gt;
+&lt;li&gt;sRGB&amp;rsquo;s and Linear&amp;rsquo;s correspondence&lt;/li&gt;
+&lt;li&gt;Tangent&amp;rsquo;s correspondence&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: API Change History</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_api_history/</link>
+      <pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_api_history/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;This section describes about changes affecting the program.&lt;/p&gt;
+
+&lt;p&gt;Please go to &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki&#34; target=&#34;_blank&#34;&gt;UniVRM/Wiki&lt;/a&gt; to get the latest information of the API update.&lt;/p&gt;
+
+&lt;h1 id=&#34;v0-36&#34;&gt;v0.36&lt;/h1&gt;
+
+&lt;h2 id=&#34;texture-name-save-locations-changed&#34;&gt;Texture Name Save Locations Changed&lt;/h2&gt;
+
+&lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.images&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.extra.name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After the change&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.images&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;blendshape-name-save-locations-changed&#34;&gt;BlendShape Name Save Locations Changed&lt;/h2&gt;
+
+&lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;extras&amp;rdquo; is not allowed in target&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&#34; target=&#34;_blank&#34;&gt;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.meshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.primitives&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.targets&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.extra.name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the change&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.meshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.primitives&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.extras.targetNames&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: About VRM T-Pose</title>
+      <link>https://vrm.dev/en/vrm_tpose/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/vrm_tpose/</guid>
+      <description>
+        
+        
+        &lt;p&gt;VRM T-Pose conforms to Humanoid of Unity of the first implementation of VRM.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/T_pose.png&#34; alt=&#34;T_pose&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;T-Pose example&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Besides apparent parts such as body and head / leg, there are also rules on arm and finger:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Palm faces downward&lt;/li&gt;
+&lt;li&gt;Thumb is horizontally spread 45 degrees (a view from the top) on XZ plane&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRM installation</title>
+      <link>https://vrm.dev/en/univrm/univrm_install/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_install/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;unity-version&#34;&gt;Unity Version&lt;/h2&gt;
+
+&lt;p&gt;UniVRM supports Unity5.6 and later versions.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Download the latest unitypackage (UniVRM-0.XX) from &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;UniVRM/releases&lt;/a&gt; and import it into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The imported files will be in the folder&lt;code&gt;Assets/VRM&lt;/code&gt;. &lt;strong&gt;It is recommended to delete existing VRM folder included VRM in advance before package import&lt;/strong&gt;. The sample for loading and viewing VRM file at runtime is also provided (download UniVRM-RuntimeLoaderSample-0.XX).&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Import UniVRM package&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;stop-assetpostprocessor&#34;&gt;Stop AssetPostProcessor&lt;/h2&gt;
+
+&lt;p&gt;The importer of UniVRM is implemented with&lt;code&gt;AssetPostprocessor&lt;/code&gt;.
+There may be cases where AssetPostProcessor is inconvenient when including UniVRM in Unity project. We have added a symbol to invalidate this (from v0.39).&lt;/p&gt;
+
+&lt;p&gt;Set&lt;code&gt;VRM_STOP_ASSETPOSTPROCESSOR&lt;/code&gt;in&lt;code&gt;Edit - ProjectSettings - Player&lt;/code&gt;&amp;mdash;&amp;gt;&lt;code&gt;Other Settings - Scripting Define Symbols&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/stop_assetpostprocessor.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stop AssetPostProcessor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;shader-option&#34;&gt;Shader option&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/shaders.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The shaders provided in UniVRM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;shader-preloading-setting&#34;&gt;Shader preloading setting&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;There is no need to move shader into Resources folder (VRM/Resources) since v0.36.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Please set up project as follows:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/graphics_setting.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Editor - Project Settings - Graphics - Shader preloading&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/shader_preloading.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Model Information</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_meta/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_meta/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;vrmmeta&#34;&gt;VRMMeta&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/meta.png&#34; alt=&#34;meta&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMMeta component&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;information&#34;&gt;Information&lt;/h3&gt;
+
+&lt;h4 id=&#34;title&#34;&gt;Title&lt;/h4&gt;
+
+&lt;p&gt;Set the name of the VRM model&lt;/p&gt;
+
+&lt;h4 id=&#34;author&#34;&gt;Author&lt;/h4&gt;
+
+&lt;p&gt;Enter the author name of the VRM model&lt;/p&gt;
+
+&lt;h4 id=&#34;contact-information&#34;&gt;Contact Information&lt;/h4&gt;
+
+&lt;p&gt;Enter the contact information of the author&lt;/p&gt;
+
+&lt;h4 id=&#34;reference&#34;&gt;Reference&lt;/h4&gt;
+
+&lt;p&gt;Original / Related works of this avatar (URL), if any&lt;/p&gt;
+
+&lt;h4 id=&#34;thumbnail&#34;&gt;Thumbnail&lt;/h4&gt;
+
+&lt;p&gt;Register the thumbnail of the VRM model. A texture resolution about 2048x2048 is recommended.&lt;/p&gt;
+
+&lt;h4 id=&#34;version&#34;&gt;Version&lt;/h4&gt;
+
+&lt;p&gt;Specify the model version with character string.
+Any description is OK.&lt;/p&gt;
+
+&lt;h3 id=&#34;license&#34;&gt;License&lt;/h3&gt;
+
+&lt;h4 id=&#34;personation-characterization-permission&#34;&gt;Personation / Characterization Permission&lt;/h4&gt;
+
+&lt;h5 id=&#34;a-person-who-can-perform-with-this-avatar&#34;&gt;A person who can perform with this avatar&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only Author&lt;/li&gt;
+&lt;li&gt;Explicitly Licensed Person&lt;/li&gt;
+&lt;li&gt;Everyone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;permission-to-perform-violent-acts-with-this-avatar&#34;&gt;Permission to perform violent acts with this avatar&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;permission-to-perform-sexual-acts-with-this-avatar&#34;&gt;Permission to perform sexual acts with this avatar&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;for-commercial-use&#34;&gt;For commercial use&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;other-license-url&#34;&gt;Other License Url&lt;/h5&gt;
+
+&lt;p&gt;If there are any conditions not mentioned above, put the URL link of the license document here.&lt;/p&gt;
+
+&lt;h4 id=&#34;redistribution-modifications-license&#34;&gt;Redistribution / Modifications License&lt;/h4&gt;
+
+&lt;h5 id=&#34;license-type&#34;&gt;License Type&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redistribution Prohibited&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/publicdomain/zero/1.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Copyright wavier(CC0)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY License(CC_BY)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC License(CC_BY_NC)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY SA License(CC_BY_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nd/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY ND License(CC_BY_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Other&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;other-license-url-1&#34;&gt;Other License Url&lt;/h5&gt;
+
+&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: About GLTF</title>
+      <link>https://vrm.dev/en/gltf_about/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/gltf_about/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF&#34; target=&#34;_blank&#34;&gt;https://github.com/KhronosGroup/glTF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;what-kind-of-information-can-be-recorded-by-gltf&#34;&gt;What kind of information can be recorded by glTF?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mesh (Vertex array、index array)
+
+&lt;ul&gt;
+&lt;li&gt;Morph target&lt;/li&gt;
+&lt;li&gt;Skinning (4weight)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Texture&lt;/li&gt;
+&lt;li&gt;Material (PBR)&lt;/li&gt;
+&lt;li&gt;Scene&lt;/li&gt;
+&lt;li&gt;Animation&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vrm-not-supported&#34;&gt;&lt;a href=&#34;#fn:vrm-not-supported&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Camera&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vrm-not-supported&#34;&gt;&lt;a href=&#34;#fn:vrm-not-supported&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Light source&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vrm-not-supported&#34;&gt;&lt;a href=&#34;#fn:vrm-not-supported&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An entire 3D scene can be recorded.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OpenGL right-handed, Y-UP coordinate system&lt;/li&gt;
+&lt;li&gt;Meter (unit)&lt;/li&gt;
+&lt;li&gt;Little endian&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;gltf-format-outline&#34;&gt;glTF format outline&lt;/h1&gt;
+
+&lt;p&gt;glTF format comprises two parts: a JSON scene description part and a binary part that records images and vertex arrays. External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:VRM-glb&#34;&gt;&lt;a href=&#34;#fn:VRM-glb&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;glb-format&#34;&gt;glb format&lt;/h1&gt;
+
+&lt;p&gt;A structure that has&lt;code&gt;Header part + Chunk parts&lt;/code&gt;.
+More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Header part&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;ldquo;glTF&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;glTF version&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;file size&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Chunk part&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;chunk type&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;ldquo;JSON&amp;rdquo; or &amp;ldquo;BIN\x00&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;chunk body&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;byte array&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;example-of-parsing-with-python3&#34;&gt;Example of parsing with python3&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;struct&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reader&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;__init__&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;
+        &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read_str&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+        &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;strip&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+        &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read_uint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;struct&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;unpack&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;I&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;])[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+        &lt;span style=&#34;color:#3465a4&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;parse_glb&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reader&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;magic&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_str&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;magic&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;glTF&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;magic not found: #{magic}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+    &lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_uint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;version:#{version} is not 2&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+    &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_uint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;12&lt;/span&gt;
+
+    &lt;span style=&#34;color:#000&#34;&gt;json_str&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;None&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;None&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#print(size)&lt;/span&gt;
+
+        &lt;span style=&#34;color:#000&#34;&gt;chunk_size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_uint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
+
+        &lt;span style=&#34;color:#000&#34;&gt;chunk_type&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_str&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
+
+        &lt;span style=&#34;color:#000&#34;&gt;chunk_data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;chunk_size&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chunk_size&lt;/span&gt;
+
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chunk_type&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;BIN&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;\x00&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chunk_data&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chunk_type&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;JSON&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;json_str&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chunk_data&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;unknown chunk_type: {chunk_type}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;loads&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json_str&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;body&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;AliciaSolid.vrm&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;parsed&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;parse_glb&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;vrm-extension&#34;&gt;VRM extension&lt;/h1&gt;
+
+&lt;p&gt;Information of VRM extension is stored in&lt;code&gt;json[&#39;extensions&#39;][&#39;VRM&#39;]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../vrm_spec/&#34;&gt;VRM specifications&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:vrm-not-supported&#34;&gt;Not supported in VRM
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vrm-not-supported&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:VRM-glb&#34;&gt;glb is adopted in VRM.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:VRM-glb&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: What is &#34;VRM&#34;? What can VRM do?</title>
+      <link>https://vrm.dev/en/vrm_about/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/vrm_about/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;what-is-vrm&#34;&gt;What is VRM?&lt;/h2&gt;
+
+&lt;p&gt;In the past, when trying to handle the &lt;strong&gt;3D humanoid avatar (3D model)&lt;/strong&gt; in Virtual Reality, Virtual YouTuber, etc., it was necessary to develop an unique system for applications and fine-tune the 3D model data due to&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The output data is depend on how creators make the 3D model and what modeling tools are used&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The coordinate system is different. The scale is different. The initial pose is different. The expression is different&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Needless to say, the way bones put into the 3D model is also different&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The format of handling the 3D model data is different. Each company has its own specifications, which are way more complex than necessary. Also, the necessary information about their file formats is not fully provided&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Whether the FBX file, which is compatible with various software, is viable for an application and which version of the application can process the FBX file are main issues concerned by most of the users.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There is not enough necessary information available from the viewpoint of using the 3D model data as the Avatar&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For example, in the first-person view, how to obtain the right position, how to get rid of the head display, which part of the body should be excluded and so on&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With the use of avatar in VR applications grows up very fast, if the situations mentioned above remain unchanged, application developers and 3D model creators will have to spend double or triple effort. To improve the current situation, based on the humanoid character and avatar, the first step is to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Effectively absorb and unify the differences from the model data&lt;/li&gt;
+&lt;li&gt;Make handling the 3D model easy on the application side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here we propose a &lt;strong&gt;platform-independent 3D avatar file format&lt;/strong&gt; that possesses the above characteristics called &lt;strong&gt;VRM&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-can-you-do-with-vrm&#34;&gt;What can you do with VRM?&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_app_en.png&#34; alt=&#34;VRM applications&#34;  /&gt;
+
+&lt;strong&gt;The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong&gt;. As long as various VR applications are ready, the future will look like the one described below for sure&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create your own avatar with character maker tools that support VRM&lt;/li&gt;
+&lt;li&gt;Use your own avatar to host a live streaming event and show up on your friends&amp;rsquo; live channels&lt;/li&gt;
+&lt;li&gt;After the live streaming, start a VR game to explore the VR world with your own avatar&lt;/li&gt;
+&lt;li&gt;Move to the chat room in the VR world after getting tired of the game. Use the same avatar character to hang out with friends&lt;/li&gt;
+&lt;li&gt;Tomorrow join the VR study group in VR. Of course, the same avatar appearance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;By using your own avatar (VRM 3D model), you can easily access to various VRM-compatible applications and games&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Live streaming, video creation, games, chat&amp;hellip;. Now the virtual worlds are separated. The first step to connect the separated virtual worlds is VRM.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;vrm-features&#34;&gt;VRM features&lt;/h2&gt;
+
+&lt;p&gt;VRM can handle the humanoid character and avatar. &lt;strong&gt;Although the current provided software to import and export VRM is for Unity, VRM itself is platform-independent&lt;/strong&gt;, which means VRM is also applicable to other engines and environments.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Available to handle the humanoid character (3D model data) without limiting to a specific platform.&lt;/li&gt;
+&lt;li&gt;VRM is based on the 3D standard format &lt;strong&gt;glTF2.0&lt;/strong&gt;, which is the format added with constraints and extensions for handling the humanoid model. Ease of implementation as it is based on this standard format.&lt;/li&gt;
+&lt;li&gt;All data including textures and materials is compacted as one file. To import a VRM model, only one single file needs to be handled.&lt;/li&gt;
+&lt;li&gt;Based on the standard of the scale (1.00 = 1 m), the coordinate system (Y-up, -Z) and the bone structure (conforming to Unity Humanoid, T-Stance, no local rotation for each bone), a 3D model made by different modeling tools will not cause differences on the exported VRM model.&lt;/li&gt;
+&lt;li&gt;Various techniques such as the BlendShape and the material transparency can be used to handle Avatar expressions. The difference in a technique can be absorbed and unified through API operation on the VRM side.&lt;/li&gt;
+&lt;li&gt;For the use of avatar in VR, VRM supports &lt;strong&gt;first-person view&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;A standard implementation of the object swaying that does not rely on the physical engine is available for users to set up the character&amp;rsquo;s hair, clothes and so on.&lt;/li&gt;
+&lt;li&gt;A standard implementation of the PBR shader is provided. Beside the standard PBR, users can also choose the Toon shader or the Unlit shader.&lt;/li&gt;
+&lt;li&gt;Not only the meta information such as the title and the author name, but also the thumbnail and the &lt;strong&gt;license information specialized for avatars in the VR era&lt;/strong&gt; can be included in the VRM file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;VRM is assumed to be a 3D avatar format in the VR era and to be used in multiple applications. For example, when it comes to &amp;ldquo;VR communications with avatars online&amp;rdquo;, it is possible to &lt;strong&gt;send your own avatar data to your partners as they can see your avatar appearance in a shared virtual space&lt;/strong&gt;. However, there may be situations that cannot be handled by just redistribution rules based on conventional thinkings. Therefore, VRM has:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Modification / Redistribution rules for the avatar（configurable from Creative Commons, etc.）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;in addition to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Permission to use the avatar and perform various acts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The new adding above is assumed to be the format in VR era.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;license-data-settings-in-vrm-file&#34;&gt;License data settings in VRM file&lt;/h2&gt;
+
+&lt;h3 id=&#34;personation-characterization-permission&#34;&gt;Personation / Characterization Permission&lt;/h3&gt;
+
+&lt;h4 id=&#34;a-person-who-can-perform-with-this-avatar&#34;&gt;A person who can perform with this avatar&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only Author&lt;/li&gt;
+&lt;li&gt;Explicitly Licensed Person&lt;/li&gt;
+&lt;li&gt;Everyone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;permission-to-perform-violent-acts-with-this-avatar&#34;&gt;Permission to perform violent acts with this avatar&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;permission-to-perform-sexual-acts-with-this-avatar&#34;&gt;Permission to perform sexual acts with this avatar&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;for-commercial-use&#34;&gt;For commercial use&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;other-license-url&#34;&gt;Other License Url&lt;/h4&gt;
+
+&lt;p&gt;If there are any conditions not mentioned above, put the URL link of the license document here.&lt;/p&gt;
+
+&lt;h3 id=&#34;license-redistribution-modification&#34;&gt;License redistribution / modification&lt;/h3&gt;
+
+&lt;h4 id=&#34;license-type&#34;&gt;License Type&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redistribution Prohibited&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/publicdomain/zero/1.0/deed.en&#34; target=&#34;_blank&#34;&gt;Copyright wavier (CC0)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY License(CC_BY)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC License(CC_BY_NC)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY SA License(CC_BY_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nd/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY ND License(CC_BY_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Other&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;other-license-url-1&#34;&gt;Other License Url&lt;/h4&gt;
+
+&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BlendShape Setting</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_blendshape/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;New features introduced in UniVRM v0.45 &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/BlendShape-Setup&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;vrmblendshapeproxy&#34;&gt;VRMBlendShapeProxy&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxy.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;How to use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set BlendShapeAvatar &lt;code&gt;VRMBlendShapeProxy-&amp;gt;BlendShapeAvatar&lt;/code&gt; in the Inspector&lt;/li&gt;
+&lt;li&gt;Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;blendshapeavatar&#34;&gt;BlendShapeAvatar&lt;/h2&gt;
+
+&lt;p&gt;Expressions can be created in the Inspector.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;box&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Click BlendShape directly here (the highlighted file)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The Inspector of BlendShape editor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Select expressions and customize the values.
+For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as shown in the following:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClip.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Example: Set&lt;code&gt;mouth_smile&lt;/code&gt;,&lt;code&gt;eye_smile&lt;/code&gt;and&lt;code&gt;eyeblow_smile&lt;/code&gt;to 100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified.&lt;/p&gt;
+
+&lt;p&gt;After changing slider value and creating BlendShape, click the Apply button for saving the current status.&lt;/p&gt;
+
+&lt;h2 id=&#34;blendshape-preset&#34;&gt;BlendShape preset&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShape_Preset.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Select&lt;code&gt;Preset&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The predefined names for the BlendShape clips. The following predefined expressions are available:&lt;/p&gt;
+
+&lt;h3 id=&#34;neutral&#34;&gt;NEUTRAL&lt;/h3&gt;
+
+&lt;p&gt;Specified as the standard facial expression and assumed to be used in standby state.&lt;/p&gt;
+
+&lt;h3 id=&#34;a-i-u-e-o&#34;&gt;A, I, U, E, O&lt;/h3&gt;
+
+&lt;p&gt;Corresponds to the sound of lip-sync&lt;code&gt;aa・ih・ou・E・oh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;blink&#34;&gt;Blink&lt;/h3&gt;
+
+&lt;p&gt;Eye blink.&lt;/p&gt;
+
+&lt;h3 id=&#34;blink-l-blink-r&#34;&gt;Blink_L, Blink_R&lt;/h3&gt;
+
+&lt;p&gt;Blinks with only one eye.&lt;/p&gt;
+
+&lt;h3 id=&#34;joy-angry-sorrow-fun&#34;&gt;Joy, Angry, Sorrow, Fun&lt;/h3&gt;
+
+&lt;p&gt;Emotion.&lt;/p&gt;
+
+&lt;h3 id=&#34;lookup-lookdown-lookleft-lookright&#34;&gt;LookUp, LookDown, LookLeft, LookRight&lt;/h3&gt;
+
+&lt;p&gt;Used when the model&amp;rsquo;s eyes are controlled by BlendShape.&lt;/p&gt;
+
+&lt;h3 id=&#34;unknown&#34;&gt;Unknown&lt;/h3&gt;
+
+&lt;p&gt;New created expressions are specified as &amp;ldquo;Unknown&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;change-the-value-of-blendshapeproxy-at-runtime&#34;&gt;Change the value of BlendShapeProxy (at runtime)&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Preset&lt;/code&gt;is used&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can operate expressions from the Inspector.&lt;/p&gt;
+
+&lt;h2 id=&#34;option-add-additional-facial-expressions&#34;&gt;[Option] Add additional facial expressions&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;box and click&lt;code&gt;Add BlendShapeClip&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipOption.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Click the new expression &amp;ldquo;びっくり&amp;rdquo; (surprised)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can call it from the codes shown as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Call this expression with string since it belongs to unknown category
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;びっくり&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Assign a value between the range 0~1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After the setting is done, don&amp;rsquo;t forget to export VRM file for being able to use the created expressions at runtime.&lt;/p&gt;
+
+&lt;h2 id=&#34;option-morph-material-color&#34;&gt;[Option] Morph material color&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipMaterial.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The setting of Material morph. Double click the&lt;code&gt;Current clip&lt;/code&gt;box or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the project view&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: How to make VRM file</title>
+      <link>https://vrm.dev/en/how_to_make_vrm/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/how_to_make_vrm/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;conversion-from-existing-3d-model&#34;&gt;Conversion from existing 3D model&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_workflow_en.png&#34; alt=&#34;vrm workflow&#34;  /&gt;
+
+To make VRM file, we use &lt;a href=&#34;https://unity3d.com/&#34; target=&#34;_blank&#34;&gt;Unity&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34; target=&#34;_blank&#34;&gt;UniVRM&lt;/a&gt;. The workflow is as follow:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Import the 3D model data and &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34; target=&#34;_blank&#34;&gt;UniVRM&lt;/a&gt; into the current unity project. Adjust and set the size, material, etc.&lt;/li&gt;
+&lt;li&gt;Export the 3D model data as VRM in Unity (normalization processing)&lt;/li&gt;
+&lt;li&gt;Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)
+
+&lt;ul&gt;
+&lt;li&gt;In some cases, make sure the model is working (e.g. facial expression change) in play mode first&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Export the 3D model data after the adjustment is finished. The new settings now are saved in the updated VRM file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Briefly speaking, &lt;strong&gt;A 3D model can be adjusted and exported as VRM file in Unity. Once a VRM file is made, it can be imported again for model fine tuning&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;1-create-an-empty-project-in-unity&#34;&gt;1. Create an empty project in Unity&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/unity_new_project.png&#34;   /&gt;
+
+
+&lt;p&gt;Create a new project at the start page (&lt;code&gt;New -&amp;gt; Create project&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;2-import-univrm-package-into-the-created-project&#34;&gt;2. Import UniVRM package into the created project&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34;  /&gt;
+
+
+&lt;p&gt;Download the latest unitypackage (UniVRM-0.XX) from &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;UniVRM/releases&lt;/a&gt; and import it into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The path of imported files is&lt;code&gt;../Assets/VRM&lt;/code&gt;. &lt;strong&gt;It is recommended to delete existing VRM folder included VRM in advance before package import&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity&#34;&gt;3. Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_generic.png&#34;   /&gt;
+
+
+&lt;p&gt;Prepare a humanoid model that can be &lt;a href=&#34;https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html&#34; target=&#34;_blank&#34;&gt;imported&lt;/a&gt; into Unity such as FBX format. The bone setting is also required. Also, &lt;strong&gt;be sure to use your own model or the licensed model data that is processed and used as VR avatar&lt;/strong&gt;. As we will describe later, &lt;strong&gt;there are items that describe license information in VRM file itself, authors need to set those items for their own VRM models&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code&gt;and select&lt;code&gt;Humanoid&lt;/code&gt;after the model is imported.&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34;   /&gt;
+
+
+&lt;p&gt;When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image above):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jaw is assigned to mouth&lt;/li&gt;
+&lt;li&gt;Eye is assigned to eye highlight&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can fix them by assigning the right corresponding parts manually.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-adjust-the-model-data-and-export-it-as-vrm-from-menu-normalization-processing&#34;&gt;4. Adjust the model data and export it as VRM from menu（normalization processing）&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Drag and drop the model data (made in step 3) under the scene in the Hierarchy window&lt;/strong&gt; and adjust the following parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Model Position
+
+&lt;ul&gt;
+&lt;li&gt;The model should be placed at the origin&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Model Scale
+
+&lt;ul&gt;
+&lt;li&gt;1.0 = 1m&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Model Pose
+
+&lt;ul&gt;
+&lt;li&gt;The model should face towards +Z(axis) direction&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Texture（material / shader）
+
+&lt;ul&gt;
+&lt;li&gt;Go to&lt;code&gt;Import Settings -&amp;gt; Materials -&amp;gt; Location&lt;/code&gt;and select&lt;code&gt;Use External Materials (Legacy)&lt;/code&gt;to enable shader option. It is &lt;strong&gt;highly recommended&lt;/strong&gt; to use the shaders listed below:
+
+&lt;ul&gt;
+&lt;li&gt;PBR
+
+&lt;ul&gt;
+&lt;li&gt;Standard shader (Unity standard)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Unlit type shader
+
+&lt;ul&gt;
+&lt;li&gt;VRM/UnlitTexture (same as Unit/Texture)&lt;/li&gt;
+&lt;li&gt;VRM/UnlitCutout (same as Unit/Coutout)&lt;/li&gt;
+&lt;li&gt;VRM/UnlitTransparent (same as Unit/Transparent)&lt;/li&gt;
+&lt;li&gt;VRM/UnlitTransparentZWrite (Alpha blending and ZWrite are available. It is assumed to be applied to semi-transparent objects)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Toon shader
+
+&lt;ul&gt;
+&lt;li&gt;VRM/MToon (lighting supported toon shader）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_enable.png&#34;   /&gt;
+
+
+&lt;p&gt;After the adjustment is finished, select the model data in&lt;code&gt;Hierarchy&lt;/code&gt;and export the model from&lt;code&gt;menu -&amp;gt; VRM -&amp;gt; export humanoid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog.png&#34;   /&gt;
+
+
+&lt;p&gt;Check the boxes and click the&lt;code&gt;Export&lt;/code&gt;button&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Force T Pose
+
+&lt;ul&gt;
+&lt;li&gt;Force the model pose to become &lt;a href=&#34;../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; before removing rotation / scale.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Pose Freeze
+
+&lt;ul&gt;
+&lt;li&gt;Whether the rotation / scale removal processing should be performed. It is &lt;strong&gt;the process of normalizing model&lt;/strong&gt; for conforming to the VRM rules. Please make sure to check the boxes at the &lt;strong&gt;first time of use&lt;/strong&gt;. After this process is done, all the components can work correctly.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By clicking the&lt;code&gt;Export&lt;/code&gt;button, the VRM file can be created. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. Details about model&amp;rsquo;s T-Pose normalization &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/T-Pose-Normalization-for-Model&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;5-import-the-vrm-file&#34;&gt;5. Import the VRM file&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab_en.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Drag and drop the VRM file (~.vrm) from step 4 into Assets folder&lt;/strong&gt;. The &lt;strong&gt;prefab&lt;/strong&gt; file of the imported VRM model data can be automatically generated.&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene2.png&#34;   /&gt;
+
+
+&lt;p&gt;Now remove the model data (step 4), and &lt;strong&gt;drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong&gt;. Normalized model data such as mesh, etc. can then be shown.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-custom-setting-in-vrm&#34;&gt;6. Custom setting in VRM&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+
+
+&lt;p&gt;The VRM model&amp;rsquo;s information will be shown in the Inspector window once the GameObject of the model data (step 5) in&lt;code&gt;Hierarchy&lt;/code&gt;is selected. In addition, the setting about &lt;strong&gt;spring bone (object swaying) is available in &amp;ldquo;secondary&amp;rdquo;&lt;/strong&gt;. Please at least fill in title, author, license information. &lt;strong&gt;Specially, license information is crucial!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Information&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Title
+
+&lt;ul&gt;
+&lt;li&gt;Avatar model name (any input)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Version
+
+&lt;ul&gt;
+&lt;li&gt;Avatar model version (any input)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Author
+
+&lt;ul&gt;
+&lt;li&gt;Author name&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Contact Information
+
+&lt;ul&gt;
+&lt;li&gt;Author contact information&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Reference
+
+&lt;ul&gt;
+&lt;li&gt;Original / Related works of this avatar, if any&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;License&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Personation / Characterization Permission&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A person who can perform with this avatar
+
+&lt;ul&gt;
+&lt;li&gt;Only Author&lt;/li&gt;
+&lt;li&gt;Explicitly Licensed Person&lt;/li&gt;
+&lt;li&gt;Everyone&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Permission to perform violent acts with this avatar
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Permission to perform sexual acts with this avatar
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;For commercial use
+
+&lt;ul&gt;
+&lt;li&gt;Disallow&lt;/li&gt;
+&lt;li&gt;Allow&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Other License Url
+
+&lt;ul&gt;
+&lt;li&gt;If there are any conditions not mentioned above, put the URL link of the license document here&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;License redistribution / modification&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;License Type&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redistribution Prohibited&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/publicdomain/zero/1.0/deed.en&#34; target=&#34;_blank&#34;&gt;Copyright wavier (CC0)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY License(CC_BY)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC License(CC_BY_NC)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY SA License(CC_BY_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nd/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY ND License(CC_BY_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en&#34; target=&#34;_blank&#34;&gt;Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Other&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Other License Url&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If “Other” is selected, put the URL link of the license document here&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Besides, please set up necessary items listed below:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_blendshape/&#34;&gt;Expression and lip-sync (BlendShape)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_firstperson/&#34;&gt;First-person point of view (Get rid of model&amp;rsquo;s head for VR applications)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_lookat/&#34;&gt;Movable range for eye gaze/eyeball controlled by bone or BlendShape&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_secondary/&#34;&gt;Spring bone (SpringBone/SpringBoneCollider)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;7-check-model-expressions-movements-in-play-mode-if-necessary&#34;&gt;7. Check model expressions/movements in play mode（If necessary）&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/aiueo.png&#34;   /&gt;
+
+
+&lt;p&gt;Set&lt;code&gt;AnimationClip/AnimationController&lt;/code&gt;and set &lt;a href=&#34;../univrm/components/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). Then, check model&amp;rsquo;s movements and expressions. Also, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. Click&lt;code&gt;Add Component&lt;/code&gt;at the bottom of model&amp;rsquo;s Inspector window to add “AIUEO” script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;runtime VRM loader sample&lt;/a&gt; (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p&gt;
+
+&lt;h3 id=&#34;8-export-the-adjusted-vrm-model&#34;&gt;8. Export the adjusted VRM model&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_enable.png&#34;   /&gt;
+
+
+&lt;p&gt;After the adjustment is completed, select the model data in&lt;code&gt;Hierarchy&lt;/code&gt;and again export the model from&lt;code&gt;menu -&amp;gt; VRM -&amp;gt; export humanoid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This time &lt;strong&gt;please uncheck &amp;ldquo;Force T Pose&amp;rdquo; and &amp;ldquo;Pose Freeze&amp;rdquo;&lt;/strong&gt;. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.&lt;/p&gt;
+
+&lt;h3 id=&#34;done&#34;&gt;Done！&lt;/h3&gt;
+
+&lt;p&gt;Your VRM file is good to go. Let’s try to import the VRM file into applications that support VRM!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Import VRM Model at Runtime</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_import_runtime/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_import_runtime/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;Examples of importing the VRM model with the latest version &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/Runtime-import%28en%29&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The followings are the methods to import a VRM model at runtime in Unity:&lt;/p&gt;
+
+&lt;h2 id=&#34;open-vrm-from-a-file-path&#34;&gt;Open VRM from a file path&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VRM&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadFromPath&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogFormat&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;open-vrm-asynchronously-from-a-file-path&#34;&gt;Open VRM asynchronously from a file path&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadVrmAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogFormat&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;open-vrm-from-a-byte-array&#34;&gt;Open VRM from a byte array&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadAllBytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadFromBytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;open-vrm-asynchronously-from-a-byte-array&#34;&gt;Open VRM asynchronously from a byte array&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadVrmAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogFormat&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;get-the-information-form-vrm&#34;&gt;Get the information form VRM&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#if UNITY_STANDALONE_WIN
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;FileDialogForWindows&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;FileDialog&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;open VRM&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Application&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dataPath&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/default.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#endif
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;IsNullOrEmpty&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Get a byte array
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadAllBytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VRMImporterContext&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Get JSON in GLB format and parse it
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ParseGlb&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Get the meta
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadMeta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogFormat&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;meta: title:{0}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Title&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// You can access the entire parsed GLTF here
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vrm&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GLTF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Convert the parsed JSON to the Scene Object
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m_loadAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Run asynchronously
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;now&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;time&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadVrmAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;delta&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;now&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+                    &lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogFormat&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;delta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+                    &lt;span style=&#34;color:#000&#34;&gt;OnLoaded&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;else&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Run synchronously
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#000&#34;&gt;VRMImporter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadFromBytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+                &lt;span style=&#34;color:#000&#34;&gt;OnLoaded&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;get-the-thumbnail-from-v0-37&#34;&gt;Get the thumbnail (From v0.37)&lt;/h2&gt;
+
+&lt;p&gt;A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadMeta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Make a thumbnail texture
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;Texture2D&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;thumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Thumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: MToon</title>
+      <link>https://vrm.dev/en/univrm/shaders/mtoon/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/shaders/mtoon/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;&lt;a href=&#34;../../univrm_install/#shader-preloading-setting&#34;&gt;Shader preloading setting&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://niconare.nicovideo.jp/watch/kn3485&#34; target=&#34;_blank&#34;&gt;How to use MToon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;about-mtoon&#34;&gt;About MToon&lt;/h1&gt;
+
+&lt;p&gt;MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code&gt;Lit Color&lt;/code&gt; and &lt;code&gt;Shade Color&lt;/code&gt; based on Lighting parameters and light source environment.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apply MToon to the 3D model&lt;code&gt;Alicia&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;for-users-who-want-to-have-a-quick-setup&#34;&gt;For users who want to have a quick setup&lt;/h1&gt;
+
+&lt;h2 id=&#34;common-items&#34;&gt;Common items&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select the target material and change the shader to &lt;code&gt;VRM/MToon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click the shader panel and set the same texture in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set white color in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and set the preference shade color in &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the preference value in &lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt;. Make the lit color and shade color sharp:&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the texture in &lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; (equivalent to &lt;code&gt;sphere map&lt;/code&gt; or &lt;code&gt;Matcap&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If outline is necessary, select &lt;code&gt;WorldCoordinates&lt;/code&gt; in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt;. Select &lt;code&gt;None&lt;/code&gt; if outline is not needed&lt;/li&gt;
+&lt;li&gt;Set the value with good appearance in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;general-material&#34;&gt;General material&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;set-materials-not-being-shadowed-too-much-such-as-the-character-s-face&#34;&gt;Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set a negative value&lt;/li&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;setting-items&#34;&gt;Setting items&lt;/h1&gt;
+
+&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
+
+&lt;p&gt;Select the target material and change the shader to VRM/MToon.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Change the material shader to VRM/MToon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The items included in the Rendering Inspector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Set the rendering type and cull mode in &lt;code&gt;Rendering&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
+
+&lt;p&gt;Set whether the material is opaque or semi-transparent.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Opaque
+
+&lt;ul&gt;
+&lt;li&gt;For rendering performance, it is recommended to set &lt;code&gt;Opaque&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Cutout&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Although it is opaque, it refers to the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;. Therefore, it skips rendering for places having smaller value than &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Transparent&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The opacity based on the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The downside is that outline rendering cannot be performed correctly.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
+
+&lt;p&gt;Set which side of the polygon to be rendered.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Back
+
+&lt;ul&gt;
+&lt;li&gt;Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Front
+
+&lt;ul&gt;
+&lt;li&gt;Render the back side.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;None
+
+&lt;ul&gt;
+&lt;li&gt;Render the both sides.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
+
+&lt;p&gt;Required if choosing &lt;code&gt;Rendering Type-&amp;gt;Cutout&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
+
+&lt;ul&gt;
+&lt;li&gt;Set the threshold value for not rendering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
+
+&lt;p&gt;Set the rendering color.
+The texture and color are multiplied.
+Set the color hit by the light ray in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; and set the color not hit by the light ray in &lt;code&gt;Shade Color&lt;/code&gt;.&lt;br /&gt;
+Also, set the the alpha value in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; for opacity information.&lt;/p&gt;
+
+&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
+
+&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
+
+&lt;p&gt;Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
+When the value is &lt;code&gt;0&lt;/code&gt;, it is the normal lighting.
+When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
+It is necessary to disable the self-shadow with setting the value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; according to the displayed warning message.&lt;/p&gt;
+
+&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
+
+&lt;p&gt;Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code&gt;Shade Shift&lt;/code&gt;.
+When the value is &lt;code&gt;0&lt;/code&gt;, it becomes realistically smooth like a general Lambert model.
+When the value is &lt;code&gt;1&lt;/code&gt;, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p&gt;
+
+&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
+
+&lt;p&gt;Set the influence of the self-shadow and shadow.
+&lt;code&gt;0&lt;/code&gt;: Not affected.
+&lt;code&gt;1&lt;/code&gt;: Affected.&lt;/p&gt;
+
+&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
+
+&lt;p&gt;Set the influence of the light source color.
+&lt;code&gt;0&lt;/code&gt;: Affected by the light source color.
+&lt;code&gt;1&lt;/code&gt;: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p&gt;
+
+&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
+
+&lt;p&gt;Display additional light sources based on the relationship between the camera and the normal.
+In general it is called sphere map or matcap.&lt;/p&gt;
+
+&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
+
+&lt;p&gt;Set the constant color regardless of the light source environment.&lt;/p&gt;
+
+&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
+
+&lt;p&gt;Set the normal map.
+Set the strength value in the box on the right.&lt;/p&gt;
+
+&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
+
+&lt;p&gt;Set the outline.&lt;/p&gt;
+
+&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;None
+
+&lt;ul&gt;
+&lt;li&gt;The outline is not rendered&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;WorldCoordinates
+
+&lt;ul&gt;
+&lt;li&gt;Render the outline of the constant width for the world coordinate&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ScreenCoordinates
+
+&lt;ul&gt;
+&lt;li&gt;Render the outline of the constant width for the screen coordinate&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
+
+&lt;p&gt;Set the width of the outline.
+The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinates&lt;/code&gt; is chosen.&lt;/p&gt;
+
+&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FixedColor
+
+&lt;ul&gt;
+&lt;li&gt;Render with the fixed color&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;MixedLighting
+
+&lt;ul&gt;
+&lt;li&gt;Multiply the influence of Lighting&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
+
+&lt;p&gt;Set the outline color.&lt;/p&gt;
+
+&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
+
+&lt;p&gt;Set the multiplier coefficient when &lt;code&gt;Color Mode-&amp;gt;MixedLighting&lt;/code&gt; is chosen.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRM workflow</title>
+      <link>https://vrm.dev/en/univrm/univrm_workflow/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_workflow/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_workflow_en.png&#34; alt=&#34;vrm workflow&#34;  /&gt;
+
+
+&lt;h2 id=&#34;prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity&#34;&gt;Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2&gt;
+
+&lt;p&gt;Prepare a humanoid model that can be &lt;a href=&#34;https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html&#34; target=&#34;_blank&#34;&gt;imported&lt;/a&gt; into Unity such as FBX format.
+Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code&gt;and select&lt;code&gt;Humanoid&lt;/code&gt;after the model is imported.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_generic.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Select&lt;code&gt;Humanoid&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;correct-bone-assignment-with-rig-configuration&#34;&gt;Correct bone assignment with rig configuration&lt;/h3&gt;
+
+&lt;p&gt;When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jaw is assigned to mouth&lt;/li&gt;
+&lt;li&gt;Eye is assigned to eye highlight&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Since the eyebone (and jawbone) auto-recognition on &amp;ldquo;3D chan&amp;rdquo; is incorrect, we can fix it by assigning the right component manually.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;export-from-menu&#34;&gt;Export from menu&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_disable.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in&lt;code&gt;VRM&lt;/code&gt;will become available.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_enable.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in&lt;code&gt;VRM&lt;/code&gt;will become available.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Check the boxes and click&lt;code&gt;Export&lt;/code&gt;button.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h3&gt;
+
+&lt;p&gt;Force the model pose to become &lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; before removing rotation / scale.&lt;/p&gt;
+
+&lt;h4 id=&#34;change-to-t-pose-manually&#34;&gt;Change to T Pose manually&lt;/h4&gt;
+
+&lt;p&gt;You can manually change the model pose to&lt;code&gt;T Pose&lt;/code&gt;instead of changing it automatically. Make the model &lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; manually in advance, choose&lt;code&gt;menu -&amp;gt; VRM -&amp;gt; export humanoid&lt;/code&gt;and uncheck&lt;code&gt;Force T Pose&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h3&gt;
+
+&lt;p&gt;Whether the rotation / scale removal processing should be performed. It is &lt;strong&gt;the process of normalizing model&lt;/strong&gt; for conforming to the VRM rules. Please make sure to check the boxes at the &lt;strong&gt;first time of use&lt;/strong&gt;. After this process is done, all the components can work correctly.&lt;/p&gt;
+
+&lt;h4 id=&#34;hierarchy-normalization&#34;&gt;Hierarchy normalization&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/rot.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The model that has the bone rotation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/rot_scale.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The model made by Z-UP coordinate system. The unit of distance is non-meter (Blender default).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Remove rotation and scale&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/without_rot_scale.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalization completed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;mesh-normalization&#34;&gt;Mesh normalization&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/zup_mesh.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The mesh with non T-pose is stored in Z-UP coordinate system.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Use&lt;code&gt;SkinnedMeshRenderer.BakeMesh&lt;/code&gt;to change the mesh to T-pose state and change the coordinate to Y-Up through the coordinate operation.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/yup_mesh.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The mesh with T-pose is stored in Y-UP coordinate system.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
+
+&lt;p&gt;Please import VRM file into Assets folder&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_imported.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Import the VRM model&lt;code&gt;Alicia&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Texture, Material and Prefab are automatically generated from VRM.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If the VRM file is not shown in the project view, right click and select&lt;code&gt;refresh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If the Prefab file cannot be generated, right click the VRM file and select&lt;code&gt;reimport&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: First-Person View</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_firstperson/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_firstperson/</guid>
+      <description>
+        
+        
+        
+
+&lt;h1 id=&#34;vrmfirstperson&#34;&gt;VRMFirstPerson&lt;/h1&gt;
+
+&lt;p&gt;The setting related to first-person perspectives.&lt;/p&gt;
+
+&lt;h2 id=&#34;firstpersonbone&#34;&gt;FirstPersonBone&lt;/h2&gt;
+
+&lt;p&gt;FirstPersonBone keeps track of a VR headset in a first-person view.
+Normally the head bone is assigned as FirstPersonBone.&lt;/p&gt;
+
+&lt;h2 id=&#34;firstpersonoffset&#34;&gt;FirstPersonOffset&lt;/h2&gt;
+
+&lt;p&gt;The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.&lt;/p&gt;
+
+&lt;h2 id=&#34;renderers&#34;&gt;Renderers&lt;/h2&gt;
+
+&lt;p&gt;The settings for controlling mesh rendering on/off in a first-person view.&lt;/p&gt;
+
+&lt;p&gt;When a VRM model is used in VR applications, the user may see the model&amp;rsquo;s head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function &lt;strong&gt;VRMFirstPerson&lt;/strong&gt; which can hide the model&amp;rsquo;s head in the first-person view. To test out first-person mode in Unity project, set up &lt;a href=&#34;../../api/univrm_use_firstperson/#specify-the-additional-render-layers-for-the-application&#34;&gt;render layer&lt;/a&gt; in the inspector window and call &lt;a href=&#34;../../api/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;first-person setup function&lt;/a&gt;. Then, go to&lt;code&gt;camera-&amp;gt;cull mask&lt;/code&gt;and select&lt;code&gt;EVERYTHING&lt;/code&gt;but&lt;code&gt;THIRDPERSON_ONLY_LAYER&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-case-for-the-head-being-separated&#34;&gt;The case for the head being separated&lt;/h3&gt;
+
+&lt;p&gt;Set &lt;strong&gt;ThirdPersonOnly&lt;/strong&gt; on the head.
+Set &lt;strong&gt;Both&lt;/strong&gt; on the rest parts.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/firstperson.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;For a VRM model (below), the head is set to &lt;strong&gt;ThirdPersonOnly&lt;/strong&gt; and the rest parts of the body are set to &lt;strong&gt;Both&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/firstperson_runtime.png&#34; alt=&#34;firstperson&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Example: The meshes set to &lt;strong&gt;ThirdPersonOnly&lt;/strong&gt; are not displayed in the first-person view.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;the-case-for-the-head-not-being-separated&#34;&gt;The case for the head not being separated&lt;/h3&gt;
+
+&lt;p&gt;Please set &lt;strong&gt;Auto&lt;/strong&gt;.
+Except the model&amp;rsquo;s head, the other parts are copied and treated as &lt;strong&gt;FirstPersonOnly&lt;/strong&gt;.
+The original model is treated as &lt;strong&gt;ThirdPersonOnly&lt;/strong&gt;.
+The parts regarding the head bone and its descendants with weights will be eliminated.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-case-for-no-particular-setting&#34;&gt;The case for no particular setting&lt;/h3&gt;
+
+&lt;p&gt;Please set &lt;strong&gt;Both&lt;/strong&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: How to view VRM file</title>
+      <link>https://vrm.dev/en/how_to_view_vrm/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/how_to_view_vrm/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;import-vrm-file-into-vrm-viewer&#34;&gt;Import VRM file into VRM Viewer&lt;/h2&gt;
+
+&lt;p&gt;Download VRM Viewer from &lt;a href=&#34;https://github.com/vrm-c/UniVRMTest/releases&#34; target=&#34;_blank&#34;&gt;UniVRMTest/releases&lt;/a&gt;. Next, run the program and click&lt;code&gt;VRM Model&lt;/code&gt;. Then, select a VRM model available on your computer. The VRM model can be shown in the scene.&lt;/p&gt;
+
+&lt;h2 id=&#34;import-vrm-file-into-unity-project&#34;&gt;Import VRM file into Unity Project&lt;/h2&gt;
+
+&lt;p&gt;Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p&gt;
+
+&lt;h3 id=&#34;1-create-an-empty-project-in-unity&#34;&gt;1. Create an empty project in Unity&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/unity_new_project.png&#34;   /&gt;
+
+
+&lt;p&gt;Create a new project at the start page (&lt;code&gt;New -&amp;gt; Create project&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;2-import-univrm-package-into-the-created-project&#34;&gt;2. Import UniVRM package into the created project&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34;  /&gt;
+
+
+&lt;p&gt;Download the latest unitypackage (UniVRM-0.XX) from &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;UniVRM/releases&lt;/a&gt; and import it into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The path of imported files is&lt;code&gt;../Assets/VRM&lt;/code&gt;. &lt;strong&gt;It is recommended to delete existing VRM folder included VRM in advance before package import&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-import-vrm-file-into-unity&#34;&gt;3. Import VRM file into Unity&lt;/h3&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab_en.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong&gt;. The &lt;strong&gt;prefab&lt;/strong&gt; file of the imported VRM model data can be automatically generated.&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene2.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong&gt;. The model data can be visualized as shown in the following image:&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong&gt; once the GameObject of the model data in&lt;code&gt;Hierarchy&lt;/code&gt;is selected.&lt;/p&gt;
+
+&lt;h2 id=&#34;import-vrm-file-into-3d-builder&#34;&gt;Import VRM file into 3D Builder&lt;/h2&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_3dbuilder.png&#34;   /&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong&gt;. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p&gt;
+
+&lt;h2 id=&#34;upload-download-vrm-file&#34;&gt;Upload / Download VRM file&lt;/h2&gt;
+
+&lt;p&gt;Currently you can submit your VRM files to &lt;a href=&#34;https://3d.nicovideo.jp/&#34; target=&#34;_blank&#34;&gt;Nikoni 3D&lt;/a&gt; or &lt;a href=&#34;https://hub.vroid.com/&#34; target=&#34;_blank&#34;&gt;VRoid Hub&lt;/a&gt;. For Nikoni 3D, the submitted VRM file &lt;a href=&#34;https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;. Please check license information and try out those VRM models.
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href=&#34;https://virtualcast.jp/&#34; target=&#34;_blank&#34;&gt;Virtual Cast&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Use BlendShape</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_use_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_use_blendshape/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;apply-blendshape-from-a-script&#34;&gt;Apply BlendShape from a script&lt;/h2&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GetComponent&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VRMBlendShapeProxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Call enum 
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;A&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Assign a value between 0 and 1
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Call string
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;A&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;apply-multiple-blendshapes-at-once&#34;&gt;Apply multiple BlendShapes at once&lt;/h2&gt;
+
+&lt;p&gt;For example,&lt;/p&gt;
+
+&lt;p&gt;For Blink_L&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MeshA eye_L=100&lt;/li&gt;
+&lt;li&gt;MeshA eye_R=1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For Blink_R&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MeshA eye_L=1&lt;/li&gt;
+&lt;li&gt;MeshA eye_R=100&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If both BlendShapes are defined and enabled as shown below, later only those items set before can be applied.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_L&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_R&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this case, the following codes are workable:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Keep the value and wait for Apply function
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_L&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_R&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Apply all the BlendShapes at once
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Apply&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRM Coordinate Transformations</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_coordinate/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_coordinate/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;UniVRM automatically performs the coordinate transformation with GLTF during import / export.&lt;/p&gt;
+
+&lt;h2 id=&#34;vrm-coordinate-system&#34;&gt;VRM coordinate system&lt;/h2&gt;
+
+&lt;p&gt;Since VRM is an extension of GLTF, it conforms to the coordinate system of GLTF.
+It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Right: X+&lt;/li&gt;
+&lt;li&gt;Up: Y+&lt;/li&gt;
+&lt;li&gt;In front: Z-&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;unity-coordinate-system&#34;&gt;Unity coordinate system&lt;/h2&gt;
+
+&lt;p&gt;Left-handed Y-UP coordinate system。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Right:X+&lt;/li&gt;
+&lt;li&gt;Up:Y+&lt;/li&gt;
+&lt;li&gt;In front:Z+ (+- is inverted)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;transformation-matrix&#34;&gt;Transformation matrix&lt;/h2&gt;
+
+&lt;p&gt;Z-axis is inverted.&lt;/p&gt;
+
+&lt;h3 id=&#34;vector3-position-normal-etc&#34;&gt;Vector3 (Position, Normal, etc.)&lt;/h3&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;x&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;y&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;z&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;quaternion-rotation&#34;&gt;Quaternion (Rotation)&lt;/h3&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Quaternion&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Quaternion&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;float&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;angle&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;axis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ToAngleAxis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;out&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;angle&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;out&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;axis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Quaternion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;AngleAxis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;angle&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;axis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;matrix-bindmatrices&#34;&gt;Matrix (BindMatrices)&lt;/h3&gt;
+
+&lt;p&gt;Not working well if a scale value is contained.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Matrix4x4&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Matrix4x4&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#if UNITY_2017_1_OR_NEWER
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetTRS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GetColumn&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rotation&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;one&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SetTRS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ExtractPosition&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ExtractRotation&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReverseZ&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Vector3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;one&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#endif
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Eye Control</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_lookat/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_lookat/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;vrmlookathead&#34;&gt;VRMLookAtHead&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMLookAtHead.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMLookAtHead&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This component calculates the direction from the model&amp;rsquo;s head to the target.&lt;/p&gt;
+
+&lt;h3 id=&#34;target&#34;&gt;Target&lt;/h3&gt;
+
+&lt;p&gt;The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.&lt;/p&gt;
+
+&lt;h2 id=&#34;eye-control-with-bone-vrmlookatboneapplyer&#34;&gt;Eye control with bone: VRMLookAtBoneApplyer&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMLookAtBoneApplyer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Apply the parameters of the calculated eye gaze direction of VRMLookAtHead to EyeBone.&lt;/p&gt;
+
+&lt;h3 id=&#34;degreemapping&#34;&gt;DegreeMapping&lt;/h3&gt;
+
+&lt;p&gt;Adjust angles when applying rotation to EyeBone.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HorizontalOuter: The angle limit of horizontally outward direction&lt;/li&gt;
+&lt;li&gt;HorizontalInner: The angle limit of horizontally inward direction&lt;/li&gt;
+&lt;li&gt;VerticalDown: The angle limit of vertically downward direction&lt;/li&gt;
+&lt;li&gt;VerticalUp: The angle limit of vertically upward direction&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;eye-control-with-blendshape-vrmlookatblendshapeapplyer&#34;&gt;Eye control with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2&gt;
+
+&lt;p&gt;The component for controlling the eyes with BlendShape.
+Please delete VRMLookAtBoneApplyer and attach VRMLookAtBlendShapeApplyer instead.
+Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/LookAt-Settings&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: What applications that support VRM?</title>
+      <link>https://vrm.dev/en/vrm_applications/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/vrm_applications/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;3d-model-submission-platform&#34;&gt;3D model submission platform&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://seed.online/&#34; target=&#34;_blank&#34;&gt;The Seed Online&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://3d.nicovideo.jp/&#34; target=&#34;_blank&#34;&gt;Niconi 3D&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.vroid.com/&#34; target=&#34;_blank&#34;&gt;VRoid Hub&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;character-maker&#34;&gt;Character maker&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://vkatsu.jp/&#34; target=&#34;_blank&#34;&gt;Vkatsu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vroid.pixiv.net/&#34; target=&#34;_blank&#34;&gt;VRoid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fantia.jp/fanclubs/10552&#34; target=&#34;_blank&#34;&gt;SeshiruHenshin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;live-streaming-tool&#34;&gt;Live streaming tool&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://virtualcast.jp/&#34; target=&#34;_blank&#34;&gt;Virtual Cast&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A VR live communication application that allows users to communicate in a shared virtual space in real-time. VRM model is importable.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://customcast.jp/&#34; target=&#34;_blank&#34;&gt;Custom Cast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/vdraw/&#34; target=&#34;_blank&#34;&gt;VDRAW&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/site/vhitogata/&#34; target=&#34;_blank&#34;&gt;Hitogata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://3tene.com/&#34; target=&#34;_blank&#34;&gt;3tene&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.puppemoji.com/&#34; target=&#34;_blank&#34;&gt;Puppemoji&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/870820/Wakaru_ver_beta/&#34; target=&#34;_blank&#34;&gt;Wakaru&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sh-akira/VirtualMotionCapture&#34; target=&#34;_blank&#34;&gt;VirtualMotionCapture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://facevtuber.com/&#34; target=&#34;_blank&#34;&gt;FaceVTuber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://materializer.co/lab/mayalive&#34; target=&#34;_blank&#34;&gt;Mayalive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wevtubers.appspot.com/&#34; target=&#34;_blank&#34;&gt;WeVTuber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/m2wasabi/LiveAvatar&#34; target=&#34;_blank&#34;&gt;LiveAvatar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://biscrat.booth.pm/items/1193414&#34; target=&#34;_blank&#34;&gt;Clarie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://luppet.appspot.com/&#34; target=&#34;_blank&#34;&gt;Luppet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;metaverse&#34;&gt;Metaverse&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cluster.mu/&#34; target=&#34;_blank&#34;&gt;cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://naby.booth.pm/items/990663&#34; target=&#34;_blank&#34;&gt;VWorld&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;game&#34;&gt;Game&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wandv.jp/seiya/&#34; target=&#34;_blank&#34;&gt;SEIYA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://orenodinner.booth.pm/items/952450&#34; target=&#34;_blank&#34;&gt;BONFIRE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/&#34; target=&#34;_blank&#34;&gt;TSUN-TSUN VR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mediaplex.co.jp/korokoro/&#34; target=&#34;_blank&#34;&gt;KOROKORO System&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;viewer&#34;&gt;Viewer&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.BooApps.VPocket&#34; target=&#34;_blank&#34;&gt;VPocket (Android / iOS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www43.atwiki.jp/beamman/&#34; target=&#34;_blank&#34;&gt;VRMViewer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm-viewer.yukimochi.io/&#34; target=&#34;_blank&#34;&gt;VRM Viewer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/magicien/VRMQuickLook&#34; target=&#34;_blank&#34;&gt;VRMQuickLook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fantom1x.blog130.fc2.com/blog-entry-309.html&#34; target=&#34;_blank&#34;&gt;VRM Live Viewer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kirurobo/UniWinApi&#34; target=&#34;_blank&#34;&gt;UniWinApi Example project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://120byte.booth.pm/items/1099618&#34; target=&#34;_blank&#34;&gt;VRM OningyoAsobi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/m2wasabi/KinectV2VRM&#34; target=&#34;_blank&#34;&gt;KinectV2VRM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.vrai.jp/vr_mocuvrm_en.html&#34; target=&#34;_blank&#34;&gt;MocuMocuVRM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;others&#34;&gt;Others&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://app.famitsu.com/gametitle/8356/&#34; target=&#34;_blank&#34;&gt;Vtabi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vismuth.net/&#34; target=&#34;_blank&#34;&gt;Vismuth&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit&#34; target=&#34;_blank&#34;&gt;AI4Animation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruyo/VRM4U&#34; target=&#34;_blank&#34;&gt;VRM4U&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yashinut.com/archives/vstamp_app.html&#34; target=&#34;_blank&#34;&gt;vstamp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/m2wasabi/VRMLoaderUI&#34; target=&#34;_blank&#34;&gt;VRMLoaderUI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: How to Use VRMFirstPerson</title>
+      <link>https://vrm.dev/en/univrm/api/univrm_use_firstperson/</link>
+      <pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/api/univrm_use_firstperson/</guid>
+      <description>
+        
+        
+        
+
+&lt;h1 id=&#34;vrmfirstperson-settings-univrm-firstperson&#34;&gt;&lt;a href=&#34;../univrm_firstperson/&#34;&gt;VRMFirstPerson Settings&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;VRMFirstPerson has the following settings for Renderer:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;FirstPersonFlag&lt;/th&gt;
+&lt;th&gt;Layer&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Both&lt;/td&gt;
+&lt;td&gt;default&lt;/td&gt;
+&lt;td&gt;Specify parts that are not necessarily separated between first-person view and third-person view.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ThirdPersonOnly&lt;/td&gt;
+&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;Specify parts that are not rendered in first-person view.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FirstPersonOnly&lt;/td&gt;
+&lt;td&gt;FIRSTPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;Specify parts that are not rendered in third-person view. The auto-created headless model is used.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Auto&lt;/td&gt;
+&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;By calling &lt;strong&gt;VRMFirstPerson.Setup&lt;/strong&gt; at runtime, the layer settings described above can be performed. Please call the function explicitly from outside.&lt;/p&gt;
+
+&lt;h1 id=&#34;specify-the-additional-render-layers-for-the-application&#34;&gt;Specify the additional render layers for the application&lt;/h1&gt;
+
+&lt;p&gt;The following layers are defined as constant:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VRMFirstPerson&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MonoBehaviour&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;FIRSTPERSON_ONLY_LAYER&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;THIRDPERSON_ONLY_LAYER&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// The following parts are omitted
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/layer_setting.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Layer in #9 and #10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;Call Setup function at runtime and set LayerMask in Camera&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call VRMFirstPerson.Setup&lt;/li&gt;
+&lt;li&gt;Set LayerMask for first-person camera view and other camera views&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;System.Collections&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;System.Collections.Generic&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;UnityEngine&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VRM&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SetupExample&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MonoBehaviour&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#c4a000&#34;&gt;    [SerializeField]&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;Camera&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonCamera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMD camera
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;    
+&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;    [SerializeField]&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set a first-person mask (default | FIRSTPERSON_ONLY_LAYER, etc.) in HMD camera
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;    [SerializeField]&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set other masks (default | THIRDPERSON_ONLY_LAYER, etc.) in HMD camera
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;    [SerializeField]&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;VRMFirstPerson&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GameObject&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;FindObjectOfType&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VRMFirstPerson&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;();&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Start&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;foreach&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;camera&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GameObject&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;FindObjectsOfType&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Camera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;())&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;camera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cullingMask&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;camera&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonCamera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// VRMFirstPerson initialization
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VRMSpringBone</title>
+      <link>https://vrm.dev/en/univrm/components/univrm_secondary/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/components/univrm_secondary/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;Spring bone setting.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-node-attached-by-spring-bones&#34;&gt;The node attached by spring bones&lt;/h1&gt;
+
+&lt;p&gt;When VRM is imported, components related to spring bones are attached as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VRMSpringBone is attached to the node&lt;code&gt;secondary&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;VRMSpringBoneColliderGroup is restored to the node previously attached during the export.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Please check&lt;code&gt;secondary&lt;/code&gt;in the Hierarchy window if you cannot find VRMSpringBone&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
+
+&lt;p&gt;The setting for making objects swaying such as tail, hair, clothes and so on. Please set the parent GameObject of an object in&lt;code&gt;Root Bones&lt;/code&gt;. Drag an object (e.g.&lt;code&gt;hair1_L&lt;/code&gt;) to the&lt;code&gt;Element X&lt;/code&gt;box (e.g.&lt;code&gt;Element 0&lt;/code&gt;). The number of elements can be changed in&lt;code&gt;Size&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMSpringBone.png&#34; alt=&#34;lookat&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Example: Set the hair and ribbon in&lt;code&gt;Root Bones&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;That&amp;rsquo;s it. The specified objects will perform swaying movements.&lt;/p&gt;
+
+&lt;h1 id=&#34;option-vrmspringbonecollidergroup-collision-detection&#34;&gt;[Option] VRMSpringBoneColliderGroup (Collision detection)&lt;/h1&gt;
+
+&lt;p&gt;The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/collider.png&#34; alt=&#34;collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For example, attach VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and drag&lt;code&gt;head&lt;/code&gt;to the&lt;code&gt;Element 0&lt;/code&gt;box in&lt;code&gt;Collider Groups&lt;/code&gt;. You can change its offset and radius value by double clicking the&lt;code&gt;Element&lt;/code&gt;box in&lt;code&gt;Collider Groups&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_collider.png&#34; alt=&#34;set_collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Attach and set&lt;code&gt;head&lt;/code&gt;in&lt;code&gt;Collider Groups&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/spring_gizmo.png&#34; alt=&#34;gizmo&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Gizmo at runtime (check&lt;code&gt;Draw Gizmo&lt;/code&gt;in the Inspector of VRMSpringBone)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;set-multiple-collision-detections-in-one-vrmspringbonecollidergroup&#34;&gt;Set multiple collision detections in one VRMSpringBoneColliderGroup&lt;/h2&gt;
+
+&lt;p&gt;Though the default is only set for one collision detection (the range of a sphere ball), users can change the setting to multiple detections (multiple balls) by changing the value of&lt;code&gt;Size&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Frequently asked questions</title>
+      <link>https://vrm.dev/en/univrm/univrm_faq/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrm.dev/en/univrm/univrm_faq/</guid>
+      <description>
+        
+        
+        
+
+&lt;h1 id=&#34;report-errors&#34;&gt;Report errors&lt;/h1&gt;
+
+&lt;p&gt;Please check the contents in console (&lt;code&gt;Window -&amp;gt; Console&lt;/code&gt;).&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/window_console.png&#34; alt=&#34;コンソール画面を表示するメニュー&#34;  /&gt;
+
+
+&lt;p&gt;If an error messages (red) is shown in console, there might be something wrong somewhere:&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/error.png&#34; alt=&#34;エラーの例&#34;  /&gt;
+
+
+&lt;p&gt;Please report the errors you got in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM/issues&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More details provided in the report will be very helpful for us to look into your problem. For example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OS (Windows10 64bit, etc.)&lt;/li&gt;
+&lt;li&gt;Unity version (Unity-5.6.3p1, etc.)&lt;/li&gt;
+&lt;li&gt;UniVRM version (0.40, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;vrmspringbone-set-before-was-gone&#34;&gt;VRMSpringBone set before was gone&lt;/h1&gt;
+
+&lt;p&gt;VRMSpringBone was attached to the node&lt;code&gt;secondary&lt;/code&gt;during import.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;../components/univrm_secondary/#the-node-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;i-got-errors-when-loading-the-built-application&#34;&gt;I got errors when loading the built application&lt;/h1&gt;
+
+&lt;p&gt;Shaders used by UniVRM may not be included in the application.&lt;/p&gt;
+
+&lt;p&gt;Please double check:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Edit - Project Settings - Graphics - Shader preloading&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;../univrm_install/#shader-preloading-setting&#34;&gt;The procedure for setting Shader preloading&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
