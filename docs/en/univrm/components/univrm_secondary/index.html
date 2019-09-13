@@ -21,9 +21,9 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png"sizes="192x192">
 
 <title>VRMSpringBone | VRM</title><meta property="og:title" content="VRMSpringBone" />
-<meta property="og:description" content="Spring bone setting.
-The node attached by spring bones When VRM is imported, components related to spring bones are attached as follows:
- VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is restored to the node previously attached during the export.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on." />
+<meta property="og:description" content="This section is about spring bone settings.
+Nodes attached by spring bones When VRM is imported, nodes attached by components related to spring bones can be found as described below:
+ VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is attached to nodes exported last time.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/en/univrm/components/univrm_secondary/" />
 
@@ -31,14 +31,14 @@ The node attached by spring bones When VRM is imported, components related to sp
 <meta property="article:published_time" content="2018-04-16T16:30:00+09:00" />
 <meta property="article:modified_time" content="2018-04-16T16:30:00+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="VRMSpringBone">
-<meta itemprop="description" content="Spring bone setting.
-The node attached by spring bones When VRM is imported, components related to spring bones are attached as follows:
- VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is restored to the node previously attached during the export.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on.">
+<meta itemprop="description" content="This section is about spring bone settings.
+Nodes attached by spring bones When VRM is imported, nodes attached by components related to spring bones can be found as described below:
+ VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is attached to nodes exported last time.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on.">
 
 
 <meta itemprop="datePublished" content="2018-04-16T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-16T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="212">
+<meta itemprop="wordCount" content="257">
 
 
 
@@ -47,9 +47,9 @@ The node attached by spring bones When VRM is imported, components related to sp
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="VRMSpringBone"/>
-<meta name="twitter:description" content="Spring bone setting.
-The node attached by spring bones When VRM is imported, components related to spring bones are attached as follows:
- VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is restored to the node previously attached during the export.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on."/>
+<meta name="twitter:description" content="This section is about spring bone settings.
+Nodes attached by spring bones When VRM is imported, nodes attached by components related to spring bones can be found as described below:
+ VRMSpringBone is attached to the nodesecondary. VRMSpringBoneColliderGroup is attached to nodes exported last time.          Please checksecondaryin the Hierarchy window if you cannot find VRMSpringBone    VRMSpringBone The setting for making objects swaying such as tail, hair, clothes and so on."/>
 
 
 
@@ -510,11 +510,11 @@ The node attached by spring bones When VRM is imported, components related to sp
 
 <nav id="TableOfContents">
 <ul>
-<li><a href="#the-node-attached-by-spring-bones">The node attached by spring bones</a></li>
+<li><a href="#nodes-attached-by-spring-bones">Nodes attached by spring bones</a></li>
 <li><a href="#vrmspringbone">VRMSpringBone</a></li>
 <li><a href="#option-vrmspringbonecollidergroup-collision-detection">[Option] VRMSpringBoneColliderGroup (Collision detection)</a>
 <ul>
-<li><a href="#set-multiple-collision-detections-in-one-vrmspringbonecollidergroup">Set multiple collision detections in one VRMSpringBoneColliderGroup</a></li>
+<li><a href="#set-multiple-collision-detections-in-vrmspringbonecollidergroup">Set multiple collision detections in VRMSpringBoneColliderGroup</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -578,15 +578,15 @@ The node attached by spring bones When VRM is imported, components related to sp
 	</div>
 	
 
-<p>Spring bone setting.</p>
+<p>This section is about spring bone settings.</p>
 
-<h1 id="the-node-attached-by-spring-bones">The node attached by spring bones</h1>
+<h1 id="nodes-attached-by-spring-bones">Nodes attached by spring bones</h1>
 
-<p>When VRM is imported, components related to spring bones are attached as follows:</p>
+<p>When VRM is imported, nodes attached by components related to spring bones can be found as described below:</p>
 
 <ul>
 <li>VRMSpringBone is attached to the node<code>secondary</code>.</li>
-<li>VRMSpringBoneColliderGroup is restored to the node previously attached during the export.</li>
+<li>VRMSpringBoneColliderGroup is attached to nodes exported last time.</li>
 </ul>
 
 <table>
@@ -606,7 +606,7 @@ The node attached by spring bones When VRM is imported, components related to sp
 
 <h1 id="vrmspringbone">VRMSpringBone</h1>
 
-<p>The setting for making objects swaying such as tail, hair, clothes and so on. Please set the parent GameObject of an object in<code>Root Bones</code>. Drag an object (e.g.<code>hair1_L</code>) to the<code>Element X</code>box (e.g.<code>Element 0</code>). The number of elements can be changed in<code>Size</code>.</p>
+<p>The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object&rsquo;s parent Gameobject in<code>Root Bones</code>. To do that, drag a target object (e.g.<code>hair1_L</code>) from<code>Hierarchy</code>to the<code>Element X</code>field (or click the rightmost icon of<code>Element X</code>then you can see a list of selectable components). Adjust<code>Size</code>to change the number of<code>Root Bones</code>you want to put in.</p>
 
 <table>
 <thead>
@@ -623,7 +623,7 @@ The node attached by spring bones When VRM is imported, components related to sp
 </tbody>
 </table>
 
-<p>That&rsquo;s it. The specified objects will perform swaying movements.</p>
+<p>That&rsquo;s it. Try to adjust<code>Stiffness Force</code>,<code>Gravity Power</code>, etc. The target objects will perform swaying movements.</p>
 
 <h1 id="option-vrmspringbonecollidergroup-collision-detection">[Option] VRMSpringBoneColliderGroup (Collision detection)</h1>
 
@@ -644,7 +644,7 @@ The node attached by spring bones When VRM is imported, components related to sp
 </tbody>
 </table>
 
-<p>For example, attach VRMSpringBoneColliderGroup script to<code>head</code>and drag<code>head</code>to the<code>Element 0</code>box in<code>Collider Groups</code>. You can change its offset and radius value by double clicking the<code>Element</code>box in<code>Collider Groups</code>.</p>
+<p>For example, hit<code>Add Component</code>to attach VRMSpringBoneColliderGroup script to<code>head</code>and drag<code>head</code>to the<code>Element 0</code>field in<code>Collider Groups</code>. You can change its offset and radius value by double clicking the<code>Element 0</code>field in<code>Collider Groups</code>.</p>
 
 <table>
 <thead>
@@ -656,7 +656,7 @@ The node attached by spring bones When VRM is imported, components related to sp
 
 <tbody>
 <tr>
-<td>Attach and set<code>head</code>in<code>Collider Groups</code></td>
+<td>Attach the VRMSpringBoneColliderGroup script to<code>head</code>and set<code>head</code>in<code>Collider Groups</code></td>
 </tr>
 </tbody>
 </table>
@@ -676,9 +676,9 @@ The node attached by spring bones When VRM is imported, components related to sp
 </tbody>
 </table>
 
-<h2 id="set-multiple-collision-detections-in-one-vrmspringbonecollidergroup">Set multiple collision detections in one VRMSpringBoneColliderGroup</h2>
+<h2 id="set-multiple-collision-detections-in-vrmspringbonecollidergroup">Set multiple collision detections in VRMSpringBoneColliderGroup</h2>
 
-<p>Though the default is only set for one collision detection (the range of a sphere ball), users can change the setting to multiple detections (multiple balls) by changing the value of<code>Size</code>.</p>
+<p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of<code>Size</code>and multiple targets can then be put into<code>Element</code>fields.</p>
 
 	
 	

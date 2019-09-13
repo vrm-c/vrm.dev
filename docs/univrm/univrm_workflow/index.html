@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png"sizes="192x192">
 
 <title>UniVRMモデルのワークフロー | VRM</title><meta property="og:title" content="UniVRMモデルのワークフロー" />
-<meta property="og:description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。 FbxのIm" />
+<meta property="og:description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/univrm/univrm_workflow/" />
 
@@ -29,12 +29,12 @@
 <meta property="article:published_time" content="2018-04-16T16:30:00+09:00" />
 <meta property="article:modified_time" content="2018-04-16T16:30:00+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="UniVRMモデルのワークフロー">
-<meta itemprop="description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。 FbxのIm">
+<meta itemprop="description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定">
 
 
 <meta itemprop="datePublished" content="2018-04-16T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-16T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="1038">
+<meta itemprop="wordCount" content="1597">
 
 
 
@@ -43,7 +43,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="UniVRMモデルのワークフロー"/>
-<meta name="twitter:description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。 FbxのIm"/>
+<meta name="twitter:description" content="ワークフロー humanoid avatarがセット済みの人間型モデルを用意します Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定"/>
 
 
 
@@ -584,28 +584,55 @@
 
 <h2 id="humanoid-avatarがセット済みの人間型モデルを用意します">humanoid avatarがセット済みの人間型モデルを用意します</h2>
 
-<p>Fbx等のUnityのHumanoidモデルを用意してください。</p>
+<p>Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定もされている必要があります。</p>
 
-<p>FbxのImport SettingsのRigタブでAnimationTypeをHumanoidにしてください。</p>
+<p><img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
+
+<img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
+</p>
+
+<p>インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに<code>Select</code>をクリックして、<code>Rig</code>をクリックして<code>Animation Type</code>を<code>Humanoid</code>に設定し、<code>Configure</code>ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。<code>Save</code>をクリックして保存します。</p>
 
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/alicia_generic.png"   />
+<th><img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>humanoidに設定します</td>
+<td><code>Humanoid</code>に設定して、<code>Configure</code>をクリックします</td>
 </tr>
 </tbody>
 </table>
 
+<p>これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。</p>
+
+<img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
+
+
 <h3 id="rigのconfigureでボーンの割り当てを修正">rigのconfigureでボーンの割り当てを修正</h3>
 
-<p>fbxインポート時の自動認識が食い違うことがあります。</p>
+<p>ボーンマッピングエラーを修正するには、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある<code>Mapping</code>をクリックし、<code>clear</code>をクリックして<code>Automap</code>をクリックします。</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
+</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>適切なボーンコンポーネントを選択してください</td>
+</tr>
+</tbody>
+</table>
+
+<p>ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します。</p>
 
 <p>例</p>
 
@@ -624,7 +651,7 @@
 
 <tbody>
 <tr>
-<td>立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正しました</td>
+<td>立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正します。たとえば、eye_light_Lはeye_Lに置き換えられます</td>
 </tr>
 </tbody>
 </table>
@@ -634,14 +661,14 @@
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/vrm_menu_disable.png"   />
+<th><img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります</td>
+<td>ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで<code>Assets</code>フォルダに保存されます</td>
 </tr>
 </tbody>
 </table>
@@ -649,29 +676,14 @@
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+<th><img src="https://vrm.dev/images/vrm/VRMExporter.png" alt="VRMExporter" width="250" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th><img src="https://vrm.dev/images/vrm/export_dialog.png"   />
-</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>チェックボックスを設定してExportを押してください</td>
+<td><code>Author</code>欄に名前を入力して<code>Export</code>を押してください</td>
 </tr>
 </tbody>
 </table>
@@ -796,6 +808,9 @@ VRMの規約に合致するようにモデルを正規化する処理です。
 </table>
 
 <p>Texture, Material, PrefabがVRMから自動生成されます。</p>
+
+<img src="https://vrm.dev/images/vrm/vrm_prefab.png"   />
+
 
 <ul>
 <li>対象のProjectビューにvrmが表示されない場合、右クリックから<code>refresh</code>してみてください</li>

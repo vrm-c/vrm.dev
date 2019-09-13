@@ -180,7 +180,7 @@ Any description is OK.&lt;/p&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;box&lt;/td&gt;
+&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;field&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -197,7 +197,7 @@ Any description is OK.&lt;/p&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Click BlendShape directly here (the highlighted file)&lt;/td&gt;
+&lt;td&gt;Click&lt;code&gt;BlendShape&lt;/code&gt;directly in the Project view&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -317,7 +317,7 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;box and click&lt;code&gt;Add BlendShapeClip&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;field and click&lt;code&gt;Add BlendShapeClip&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -357,7 +357,7 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;The setting of Material morph. Double click the&lt;code&gt;Current clip&lt;/code&gt;box or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the project view&lt;/td&gt;
+&lt;td&gt;The setting of Material morph. Double click the&lt;code&gt;Current clip&lt;/code&gt;field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -378,7 +378,7 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 
 &lt;h1 id=&#34;vrmfirstperson&#34;&gt;VRMFirstPerson&lt;/h1&gt;
 
-&lt;p&gt;The setting related to first-person perspectives.&lt;/p&gt;
+&lt;p&gt;Settings related to first-person perspectives.&lt;/p&gt;
 
 &lt;h2 id=&#34;firstpersonbone&#34;&gt;FirstPersonBone&lt;/h2&gt;
 
@@ -528,15 +528,15 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
         
         
 
-&lt;p&gt;Spring bone setting.&lt;/p&gt;
+&lt;p&gt;This section is about spring bone settings.&lt;/p&gt;
 
-&lt;h1 id=&#34;the-node-attached-by-spring-bones&#34;&gt;The node attached by spring bones&lt;/h1&gt;
+&lt;h1 id=&#34;nodes-attached-by-spring-bones&#34;&gt;Nodes attached by spring bones&lt;/h1&gt;
 
-&lt;p&gt;When VRM is imported, components related to spring bones are attached as follows:&lt;/p&gt;
+&lt;p&gt;When VRM is imported, nodes attached by components related to spring bones can be found as described below:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;VRMSpringBone is attached to the node&lt;code&gt;secondary&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;VRMSpringBoneColliderGroup is restored to the node previously attached during the export.&lt;/li&gt;
+&lt;li&gt;VRMSpringBoneColliderGroup is attached to nodes exported last time.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table&gt;
@@ -556,7 +556,7 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 
 &lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
 
-&lt;p&gt;The setting for making objects swaying such as tail, hair, clothes and so on. Please set the parent GameObject of an object in&lt;code&gt;Root Bones&lt;/code&gt;. Drag an object (e.g.&lt;code&gt;hair1_L&lt;/code&gt;) to the&lt;code&gt;Element X&lt;/code&gt;box (e.g.&lt;code&gt;Element 0&lt;/code&gt;). The number of elements can be changed in&lt;code&gt;Size&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object&amp;rsquo;s parent Gameobject in&lt;code&gt;Root Bones&lt;/code&gt;. To do that, drag a target object (e.g.&lt;code&gt;hair1_L&lt;/code&gt;) from&lt;code&gt;Hierarchy&lt;/code&gt;to the&lt;code&gt;Element X&lt;/code&gt;field (or click the rightmost icon of&lt;code&gt;Element X&lt;/code&gt;then you can see a list of selectable components). Adjust&lt;code&gt;Size&lt;/code&gt;to change the number of&lt;code&gt;Root Bones&lt;/code&gt;you want to put in.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -573,7 +573,7 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;That&amp;rsquo;s it. The specified objects will perform swaying movements.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it. Try to adjust&lt;code&gt;Stiffness Force&lt;/code&gt;,&lt;code&gt;Gravity Power&lt;/code&gt;, etc. The target objects will perform swaying movements.&lt;/p&gt;
 
 &lt;h1 id=&#34;option-vrmspringbonecollidergroup-collision-detection&#34;&gt;[Option] VRMSpringBoneColliderGroup (Collision detection)&lt;/h1&gt;
 
@@ -594,7 +594,7 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;For example, attach VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and drag&lt;code&gt;head&lt;/code&gt;to the&lt;code&gt;Element 0&lt;/code&gt;box in&lt;code&gt;Collider Groups&lt;/code&gt;. You can change its offset and radius value by double clicking the&lt;code&gt;Element&lt;/code&gt;box in&lt;code&gt;Collider Groups&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For example, hit&lt;code&gt;Add Component&lt;/code&gt;to attach VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and drag&lt;code&gt;head&lt;/code&gt;to the&lt;code&gt;Element 0&lt;/code&gt;field in&lt;code&gt;Collider Groups&lt;/code&gt;. You can change its offset and radius value by double clicking the&lt;code&gt;Element 0&lt;/code&gt;field in&lt;code&gt;Collider Groups&lt;/code&gt;.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -606,7 +606,7 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Attach and set&lt;code&gt;head&lt;/code&gt;in&lt;code&gt;Collider Groups&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Attach the VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and set&lt;code&gt;head&lt;/code&gt;in&lt;code&gt;Collider Groups&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -626,9 +626,9 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;set-multiple-collision-detections-in-one-vrmspringbonecollidergroup&#34;&gt;Set multiple collision detections in one VRMSpringBoneColliderGroup&lt;/h2&gt;
+&lt;h2 id=&#34;set-multiple-collision-detections-in-vrmspringbonecollidergroup&#34;&gt;Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2&gt;
 
-&lt;p&gt;Though the default is only set for one collision detection (the range of a sphere ball), users can change the setting to multiple detections (multiple balls) by changing the value of&lt;code&gt;Size&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code&gt;Size&lt;/code&gt;and multiple targets can then be put into&lt;code&gt;Element&lt;/code&gt;fields.&lt;/p&gt;
 
       </description>
     </item>

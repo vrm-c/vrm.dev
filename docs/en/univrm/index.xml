@@ -31,7 +31,7 @@
 
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
-&lt;p&gt;Download the latest unitypackage (UniVRM-0.XX) from &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;UniVRM/releases&lt;/a&gt; and import it into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The imported files will be in the folder&lt;code&gt;Assets/VRM&lt;/code&gt;. &lt;strong&gt;It is recommended to delete existing VRM folder included VRM in advance before package import&lt;/strong&gt;. The sample for loading and viewing VRM file at runtime is also provided (download UniVRM-RuntimeLoaderSample-0.XX).&lt;/p&gt;
+&lt;p&gt;Download the latest unitypackage (UniVRM-0.XX) from &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;UniVRM/releases&lt;/a&gt; and import it into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The imported files will be in &lt;code&gt;../Assets/VRM&lt;/code&gt;. &lt;strong&gt;To update UniVRM to a newer version, deleting the previously created VRM folder before package import is recommended&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -141,61 +141,74 @@ There may be cases where AssetPostProcessor is inconvenient when including UniVR
 
 &lt;h2 id=&#34;prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity&#34;&gt;Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2&gt;
 
-&lt;p&gt;Prepare a humanoid model that can be &lt;a href=&#34;https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html&#34; target=&#34;_blank&#34;&gt;imported&lt;/a&gt; into Unity such as FBX format.
-Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code&gt;and select&lt;code&gt;Humanoid&lt;/code&gt;after the model is imported.&lt;/p&gt;
+&lt;p&gt;Prepare a 3D model that can be &lt;a href=&#34;https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html&#34; target=&#34;_blank&#34;&gt;imported&lt;/a&gt; into Unity such as FBX format. The model&amp;rsquo;s bones must be set.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click &lt;code&gt;Select&lt;/code&gt; and then click &lt;code&gt;Rig&lt;/code&gt;. Set &lt;code&gt;Animation Type&lt;/code&gt; as &lt;code&gt;Humanoid&lt;/code&gt;, and then click &lt;code&gt;Configure&lt;/code&gt; button. A message box will pop up asking whether you want to save the current scene. Click &lt;code&gt;Save&lt;/code&gt; to save it.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_generic.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/SetModelAsHumanoid.png&#34; alt=&#34;SetModelAsHumanoid&#34; width=&#34;900&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Select&lt;code&gt;Humanoid&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select&lt;code&gt;Humanoid&lt;/code&gt; and click &lt;code&gt;Configure&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;correct-bone-assignment-with-rig-configuration&#34;&gt;Correct bone assignment with rig configuration&lt;/h3&gt;
+&lt;p&gt;Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&amp;rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red.&lt;/p&gt;
 
-&lt;p&gt;When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Jaw is assigned to mouth&lt;/li&gt;
-&lt;li&gt;Eye is assigned to eye highlight&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;h3 id=&#34;correct-bone-mapping-with-rig-configuration&#34;&gt;Correct bone mapping with rig configuration&lt;/h3&gt;
+
+&lt;p&gt;To corrent bone mapping errors, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click &lt;code&gt;Mapping&lt;/code&gt; in the lowerleft of the interface, click &lt;code&gt;clear&lt;/code&gt; and then click &lt;code&gt;Automap&lt;/code&gt;.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Since the eyebone (and jawbone) auto-recognition on &amp;ldquo;3D chan&amp;rdquo; is incorrect, we can fix it by assigning the right component manually.&lt;/td&gt;
+&lt;td&gt;Choose a right component to fit a bone&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34;   /&gt;
+
+
+&lt;p&gt;We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click &lt;code&gt;Done&lt;/code&gt; button to proceed to the next step.&lt;/p&gt;
 
 &lt;h2 id=&#34;export-from-menu&#34;&gt;Export from menu&lt;/h2&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_disable.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in&lt;code&gt;VRM&lt;/code&gt;will become available.&lt;/td&gt;
+&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code&gt;Export humanoid&lt;/code&gt; option will become available (&lt;code&gt;VRM -&amp;gt; UniVRM-0.53.0 -&amp;gt; Export humanoid&lt;/code&gt;). The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -203,29 +216,14 @@ Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; A
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_enable.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMExporter.png&#34; alt=&#34;VRMExporter&#34; width=&#34;250&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in&lt;code&gt;VRM&lt;/code&gt;will become available.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog.png&#34;   /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Check the boxes and click&lt;code&gt;Export&lt;/code&gt;button.&lt;/td&gt;
+&lt;td&gt;Enter your name in the &lt;code&gt;Author&lt;/code&gt; field and click the &lt;code&gt;Export&lt;/code&gt; button.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -236,7 +234,7 @@ Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; A
 
 &lt;h4 id=&#34;change-to-t-pose-manually&#34;&gt;Change to T Pose manually&lt;/h4&gt;
 
-&lt;p&gt;You can manually change the model pose to&lt;code&gt;T Pose&lt;/code&gt;instead of changing it automatically. Make the model &lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; manually in advance, choose&lt;code&gt;menu -&amp;gt; VRM -&amp;gt; export humanoid&lt;/code&gt;and uncheck&lt;code&gt;Force T Pose&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can manually change the model pose to &lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; (done automatically by default). Make sure to deselect the &lt;code&gt;Force T Pose&lt;/code&gt; checkbox.&lt;/p&gt;
 
 &lt;h3 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h3&gt;
 
@@ -346,6 +344,9 @@ Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; A
 
 &lt;p&gt;Texture, Material and Prefab are automatically generated from VRM.&lt;/p&gt;
 
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab_en.png&#34;   /&gt;
+
+
 &lt;ul&gt;
 &lt;li&gt;If the VRM file is not shown in the project view, right click and select&lt;code&gt;refresh&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;If the Prefab file cannot be generated, right click the VRM file and select&lt;code&gt;reimport&lt;/code&gt;&lt;/li&gt;
@@ -395,7 +396,7 @@ Go to the model&amp;rsquo;s&lt;code&gt;Import Settings -&amp;gt; Rig -&amp;gt; A
 
 &lt;p&gt;VRMSpringBone was attached to the node&lt;code&gt;secondary&lt;/code&gt;during import.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;../components/univrm_secondary/#the-node-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../components/univrm_secondary/#nodes-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;i-got-errors-when-loading-the-built-application&#34;&gt;I got errors when loading the built application&lt;/h1&gt;
 
