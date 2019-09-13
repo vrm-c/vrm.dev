@@ -1,184 +1,264 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta name="description" content="VRM - 3D Humanoid Avatar format for VR">
-  <meta name="keywords" content="VRM, VR, AR, Avatar, アバター, 3D, format, フォーマット, UniVRM">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="generator" content="Hugo 0.55.3" />
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.56.3" />
 
-  <meta property="og:title" content="VRM">
-  <meta property="og:image" content="https://vrm.dev/images/vrm/card.png">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="alternate" type="application/rss&#43;xml" href="https://vrm.dev/index.xml">
 
-  <title>VRM</title>
 
-  
-  <link rel="stylesheet" href="https://vrm.dev/css/print.css" media="print">
-  <link rel="stylesheet" href="https://vrm.dev/css/poole.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/syntax.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/hyde.css">
-  <link rel="stylesheet" href="https://vrm.dev/css/custom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x196.png" sizes="96x196">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png"sizes="192x192">
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
+<title>VRM</title><meta property="og:title" content="VRM" />
+<meta property="og:description" content="3D Humanoid Avatar format for VR" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vrm.dev/" />
 
-  
-  <link href="https://vrm.dev/index.xml" rel="alternate" type="application/rss+xml" title="VRM" />
-  <link rel="alternate" href="https://vrm.dev/en/" hreflang="en" title="VRM" />
-</head>
+<meta property="og:image" content="https://vrm.dev/images/vrm/card.png" />
 
-  <body class=" ">
-  <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="/"><h1>VRM</h1></a>
-      <p class="lead">
-       3D Humanoid Avatar format for VR 
-      </p>
-    </div>
+<meta property="og:updated_time" content="2018-04-16T16:30:00+09:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="VRM">
+<meta itemprop="description" content="3D Humanoid Avatar format for VR">
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      <li><a href="/#about-vrm"> └VRMについて </a></li><li><a href="/#vrm-format-technical-specifications"> └VRMフォーマット技術仕様 </a></li><li><a href="/#univrm-specifications"> └UniVRM仕様 </a></li><li><a href=""> ---- </a></li><li><a href="https://github.com/vrm-c/UniVRM"> ・UniVRM </a></li><li><a href="https://vrm-consortium.org/"> ・VRMコンソーシアム </a></li>
-    </ul>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
-    <p>
+<meta name="twitter:title" content="VRM"/>
+<meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
+
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.f809dd81c31369e745fc9960408ecf7e6c5ed33854d3a4201a6c039d56a4d89c.css" as="style">
+<link href="/scss/main.min.f809dd81c31369e745fc9960408ecf7e6c5ed33854d3a4201a6c039d56a4d89c.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-home">
+    <header>
       
-        <p style="display:inline-block;vertical-align:middle;">
-          Copyright &copy; VRM Consortium
-        </p>
-      
-    </p>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark  td-navbar-cover flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">VRM</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/vrm/" ><span>VRMについて</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/spec/" ><span>VRMフォーマット技術仕様</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/univrm/" ><span>UniVRM仕様</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/vrm-c/UniVRM" target="_blank" ><span>UniVRM</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://vrm-consortium.org/" target="_blank" ><span>VRMコンソーシアム</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	日本語
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+
+
+
+
+
+
+
+
+
+
+
+<section id="td-cover-block-0" class="row td-cover-block td-cover-block--height-min js-td-cover td-overlay td-overlay--dark -bg-primary">
+  <div class="container td-overlay__inner">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="display-1 mt-0 mt-md-5 pb-4">VRM - VR向け3Dアバターファイルフォーマット -</h1>
+          
+          <div class="pt-3 lead">
+            <div class="mx-auto">
+  <a class="btn btn-lg btn-primary mr-3 mb-4" href="/vrm_about/">
+    もっと詳しく <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+  </a>
+  <p class="lead mt-5">VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット</p>
+  <div class="mx-auto mt-5">
+    
+
+
+<a class="btn btn-link text-info" href="#td-block-1"><i class="fa fa-chevron-circle-down" style="font-size: 400%"></i></a>
+
   </div>
 </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="content container">
 
+
+
+
+
+<a id="td-block-1" class="td-offset-anchor"></a>
+<section class="row td-box td-box--primary position-relative td-box--gradient td-box--height-auto">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">
+			<p>「VRM」は<strong>VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット</strong>です。<a href="https://www.khronos.org/gltf/" target="_blank">glTF2.0</a>をベースとしており、誰でも自由に利用することができます。</p>
+
+<p>また、<a href="https://unity3d.com/jp" target="_blank">Unity</a>向けのVRMファイルの読み書きを行うC#による標準実装（<a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a>）がオープンソースで提供されます。</p>
+
+		</span>
+	</div>
+</section>
+
+
+
+
+
+ 
+<a id="td-block-2" class="td-offset-anchor"></a>
+<section class="row td-box td-box--white td-box--gradient td-box--height-auto">
+	<div class="col">
+		<div class="row section">
+			<img src="/images/vrm/vrm_topheader.png" alt="VRM - humanoid 3d avatar format for VR" style="height: auto; width: 100%">
+		</div>
+	</div>
+</section>
+
+
+
+
+      </main>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
         
         
-        <li>
-          <a class="language" href="https://vrm.dev/en/"><i class="fa fa-globe">&nbsp;</i>VRM(en)</a>
-        </li>
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
         
         
-
-<div class="posts">
-
-    
-
-<img src="https://vrm.dev/images/vrm/vrm_topheader.png" alt="VRM - humanoid 3d avatar format for VR"  />
-
-
-<h1 id="vrm-vr向け3dアバターファイルフォーマット">VRM - VR向け3Dアバターファイルフォーマット -</h1>
-
-<p>「VRM」は<strong>VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット</strong>です。<a href="https://www.khronos.org/gltf/">glTF2.0</a>をベースとしており、誰でも自由に利用することができます。また、<a href="https://unity3d.com/jp">Unity</a>向けのVRMファイルの読み書きを行うC#による標準実装（<a href="https://github.com/vrm-c/UniVRM">UniVRM</a>）がオープンソースで提供されます。</p>
-
-<hr />
-
-<h2 id="vrmについて-a-name-about-vrm-a">VRMについて <a name="about-vrm"></a></h2>
-
-<ul>
-<li><p><a href="./vrm_about/">「VRM」って何？どんなことができる？</a></p>
-
-<ul>
-<li><a href="./vrm_about/#vrm-とは">VRMとは</a></li>
-<li><a href="./vrm_about/#vrmで何ができるの">VRMで何ができるの？</a></li>
-<li><a href="./vrm_about/#vrmの特徴">VRMの特徴</a></li>
-<li><a href="./vrm_about/#vrmファイルに設定できるライセンスデータ">VRMファイルに設定できるライセンスデータ</a></li>
-</ul></li>
-
-<li><p><a href="./how_to_make_vrm/">VRMファイルを作ってみたい</a></p>
-
-<ul>
-<li><a href="./how_to_make_vrm/#vrmファイルのつくりかた-既存3dモデルからのコンバート">VRMファイルのつくりかた（既存3Dモデルからのコンバート）</a></li>
-</ul></li>
-
-<li><p><a href="./how_to_view_vrm/">VRMファイルを眺めてみたい</a></p>
-
-<ul>
-<li><a href="./how_to_view_vrm/#vrmファイルの読み込みかた">VRMファイルの読み込みかた</a></li>
-<li><a href="./how_to_view_vrm/#vrmファイルの読み込みかた-簡易版">VRMファイルの読み込みかた（簡易版）</a></li>
-<li><a href="./how_to_view_vrm/#vrmファイルを投稿する-探す">VRMファイルを投稿する・探す</a></li>
-</ul></li>
-
-<li><p><a href="./vrm_applications/">VRMファイルが使えるアプリケーションは？</a></p>
-
-<ul>
-<li><a href="./vrm_applications/#3Dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム</a></li>
-<li><a href="./vrm_applications/#キャラメイクツール">キャラメイクツール</a></li>
-<li><a href="./vrm_applications/#配信ツール">配信ツール</a></li>
-<li><a href="./vrm_applications/#メタバース">メタバース</a></li>
-<li><a href="./vrm_applications/#ゲームなど">ゲームなど</a></li>
-<li><a href="./vrm_applications/#ビューア">ビューア</a></li>
-</ul></li>
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/vrm-c">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
 </ul>
 
-<hr />
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2019 VRM Consortium All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
 
-<h2 id="vrmフォーマット技術仕様-a-name-vrm-format-technical-specifications-a">VRMフォーマット技術仕様 <a name="vrm-format-technical-specifications"></a></h2>
-
-<ul>
-<li><a href="./gltf_about/">GLTFとは</a></li>
-<li><a href="./vrm_spec/">VRM仕様</a>
-
-<ul>
-<li><a href="./vrm_tpose/">Tポーズについて</a></li>
-</ul></li>
-</ul>
-
-<hr />
-
-<h2 id="univrm-https-github-com-vrm-c-univrm-unity向けvrm標準実装-仕様-a-name-univrm-specifications-a"><a href="https://github.com/vrm-c/UniVRM">UniVRM</a>(Unity向けVRM標準実装)仕様 <a name="univrm-specifications"></a></h2>
-
-<ul>
-<li><a href="https://github.com/vrm-c/UniVRM/releases">Download</a></li>
-<li><a href="./univrm/univrm_install/">UniVRMのインストール</a></li>
-
-<li><p><a href="./univrm/univrm_workflow/">UniVRMのワークフロー</a></p></li>
-
-<li><p>UniVRMのコンポーネント</p>
-
-<ul>
-<li><a href="./univrm/components/univrm_meta/">モデル情報</a></li>
-<li><a href="./univrm/components/univrm_blendshape/">BlendShape</a></li>
-<li><a href="./univrm/components/univrm_firstperson/">一人称視点</a></li>
-<li><a href="./univrm/components/univrm_lookat/">視線制御</a></li>
-<li><a href="./univrm/components/univrm_secondary/">揺れモノ</a></li>
-</ul></li>
-
-<li><p><a href="./univrm/shaders/univrm_shaders/">UniVRMで使えるシェーダー</a></p>
-
-<ul>
-<li><a href="./univrm/shaders/univrm_shaders_044/">UniVRM-0.44のマテリアル</a></li>
-<li><a href="./univrm/shaders/mtoon/">MToonの設定</a></li>
-</ul></li>
-
-<li><p>API</p>
-
-<ul>
-<li><a href="./univrm/api/univrm_api_history/">変更履歴</a></li>
-<li><a href="./univrm/api/univrm_import_runtime/">実行時にVRMモデルをインポートする</a></li>
-<li><a href="./univrm/api/univrm_use_blendshape/">実行時にBlendShapeを操作する</a></li>
-<li><a href="./univrm/api/univrm_coordinate/">座標系の変換について</a></li>
-<li><a href="./univrm/api/univrm_use_firstperson/">一人称モードの使い方</a></li>
-</ul></li>
-
-<li><p><a href="./univrm/univrm_faq/">FAQ</a></p></li>
-</ul>
-
-
-</div>
 
     </div>
-
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="/js/main.min.7c5c1664a3b3974b0569326628b079e88df34214371e095f87ae7821a830d184.js" integrity="sha256-fFwWZKOzl0sFaTJmKLB56I3zQhQ3Hglfh654Iagw0YQ="></script>
+
+
+
   </body>
 </html>
