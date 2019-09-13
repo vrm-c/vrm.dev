@@ -6,7 +6,7 @@ weight: 3
 ---
 
 # VRMFirstPerson
-The setting related to first-person perspectives.
+Settings related to first-person perspectives.
 
 ## FirstPersonBone
 FirstPersonBone keeps track of a VR headset in a first-person view.

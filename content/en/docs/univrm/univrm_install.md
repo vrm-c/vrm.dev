@@ -12,7 +12,7 @@ UniVRM supports Unity5.6 and later versions.
 
 ## Installation
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folder``Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**. The sample for loading and viewing VRM file at runtime is also provided (download UniVRM-RuntimeLoaderSample-0.XX).
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``. **To update UniVRM to a newer version, deleting the previously created VRM folder before package import is recommended**.
 
 |{{< img src="images/vrm/package_import.png" alt="package_import" >}}|
 |-----|
