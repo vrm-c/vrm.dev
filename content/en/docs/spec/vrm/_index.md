@@ -6,7 +6,7 @@ weight: 2
 ---
 
 VRM is based on glb format, which is a binary form of [glTF 2.0](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md). It is a model format for VR.
-
+VRM specification repository is [VRM specification)](https://github.com/vrm-c/vrm-specification) .
 # Update history
 
 * 20181109: Corrected parts where JsonSchema's `Vector3` type is erroneously set to `array`

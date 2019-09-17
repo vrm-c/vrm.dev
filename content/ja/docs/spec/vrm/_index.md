@@ -8,6 +8,7 @@ weight: 2
 ----
 
 [glTF-2.0](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)のバイナリ形式glbをベースにした、VR向けモデルフォーマットです。
+VRM仕様のリポジトリはこちら。：[VRM specification)](https://github.com/vrm-c/vrm-specification) 
 
 # 更新履歴
 
