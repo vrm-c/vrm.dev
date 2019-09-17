@@ -148,28 +148,55 @@ UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合
 
 &lt;h2 id=&#34;humanoid-avatarがセット済みの人間型モデルを用意します&#34;&gt;humanoid avatarがセット済みの人間型モデルを用意します&lt;/h2&gt;
 
-&lt;p&gt;Fbx等のUnityのHumanoidモデルを用意してください。&lt;/p&gt;
+&lt;p&gt;Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定もされている必要があります。&lt;/p&gt;
 
-&lt;p&gt;FbxのImport SettingsのRigタブでAnimationTypeをHumanoidにしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code&gt;Select&lt;/code&gt;をクリックして、&lt;code&gt;Rig&lt;/code&gt;をクリックして&lt;code&gt;Animation Type&lt;/code&gt;を&lt;code&gt;Humanoid&lt;/code&gt;に設定し、&lt;code&gt;Configure&lt;/code&gt;ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code&gt;Save&lt;/code&gt;をクリックして保存します。&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_generic.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/SetModelAsHumanoid.png&#34; alt=&#34;SetModelAsHumanoid&#34; width=&#34;900&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;humanoidに設定します&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Humanoid&lt;/code&gt;に設定して、&lt;code&gt;Configure&lt;/code&gt;をクリックします&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p&gt;これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
+
+
 &lt;h3 id=&#34;rigのconfigureでボーンの割り当てを修正&#34;&gt;rigのconfigureでボーンの割り当てを修正&lt;/h3&gt;
 
-&lt;p&gt;fbxインポート時の自動認識が食い違うことがあります。&lt;/p&gt;
+&lt;p&gt;ボーンマッピングエラーを修正するには、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code&gt;Mapping&lt;/code&gt;をクリックし、&lt;code&gt;clear&lt;/code&gt;をクリックして&lt;code&gt;Automap&lt;/code&gt;をクリックします。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;適切なボーンコンポーネントを選択してください&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します。&lt;/p&gt;
 
 &lt;p&gt;例&lt;/p&gt;
 
@@ -188,7 +215,7 @@ UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正しました&lt;/td&gt;
+&lt;td&gt;立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正します。たとえば、eye_light_Lはeye_Lに置き換えられます&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -198,14 +225,14 @@ UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_disable.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります&lt;/td&gt;
+&lt;td&gt;ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで&lt;code&gt;Assets&lt;/code&gt;フォルダに保存されます&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -213,29 +240,14 @@ UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_enable.png&#34;   /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMExporter.png&#34; alt=&#34;VRMExporter&#34; width=&#34;250&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog.png&#34;   /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;チェックボックスを設定してExportを押してください&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Author&lt;/code&gt;欄に名前を入力して&lt;code&gt;Export&lt;/code&gt;を押してください&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -360,6 +372,9 @@ VRMの規約に合致するようにモデルを正規化する処理です。
 &lt;/table&gt;
 
 &lt;p&gt;Texture, Material, PrefabがVRMから自動生成されます。&lt;/p&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab.png&#34;   /&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;対象のProjectビューにvrmが表示されない場合、右クリックから&lt;code&gt;refresh&lt;/code&gt;してみてください&lt;/li&gt;

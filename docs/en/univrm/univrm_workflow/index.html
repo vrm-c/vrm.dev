@@ -21,8 +21,8 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png"sizes="192x192">
 
 <title>UniVRM workflow | VRM</title><meta property="og:title" content="UniVRM workflow" />
-<meta property="og:description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a humanoid model that can be imported into Unity such as FBX format. Go to the model&rsquo;sImport Settings -&gt; Rig -&gt; Animation Typeand selectHumanoidafter the model is imported.
-        SelectHumanoid    Correct bone assignment with rig configuration When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):" />
+<meta property="og:description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a 3D model that can be imported into Unity such as FBX format. The model&rsquo;s bones must be set.
+First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click Select and then click Rig." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/en/univrm/univrm_workflow/" />
 
@@ -30,13 +30,13 @@
 <meta property="article:published_time" content="2018-04-16T16:30:00+09:00" />
 <meta property="article:modified_time" content="2018-04-16T16:30:00+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="UniVRM workflow">
-<meta itemprop="description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a humanoid model that can be imported into Unity such as FBX format. Go to the model&rsquo;sImport Settings -&gt; Rig -&gt; Animation Typeand selectHumanoidafter the model is imported.
-        SelectHumanoid    Correct bone assignment with rig configuration When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):">
+<meta itemprop="description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a 3D model that can be imported into Unity such as FBX format. The model&rsquo;s bones must be set.
+First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click Select and then click Rig.">
 
 
 <meta itemprop="datePublished" content="2018-04-16T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-16T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="368">
+<meta itemprop="wordCount" content="552">
 
 
 
@@ -45,8 +45,8 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="UniVRM workflow"/>
-<meta name="twitter:description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a humanoid model that can be imported into Unity such as FBX format. Go to the model&rsquo;sImport Settings -&gt; Rig -&gt; Animation Typeand selectHumanoidafter the model is imported.
-        SelectHumanoid    Correct bone assignment with rig configuration When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):"/>
+<meta name="twitter:description" content="Workflow Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity Prepare a 3D model that can be imported into Unity such as FBX format. The model&rsquo;s bones must be set.
+First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click Select and then click Rig."/>
 
 
 
@@ -512,7 +512,7 @@
 <li><a href="#workflow">Workflow</a></li>
 <li><a href="#prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity</a>
 <ul>
-<li><a href="#correct-bone-assignment-with-rig-configuration">Correct bone assignment with rig configuration</a></li>
+<li><a href="#correct-bone-mapping-with-rig-configuration">Correct bone mapping with rig configuration</a></li>
 </ul></li>
 <li><a href="#export-from-menu">Export from menu</a>
 <ul>
@@ -587,61 +587,74 @@
 
 <h2 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &ldquo;Humanoid&rdquo; in Unity</h2>
 
-<p>Prepare a humanoid model that can be <a href="https://docs.unity3d.com/2018.3/Documentation/Manual/HOWTO-importObject.html" target="_blank">imported</a> into Unity such as FBX format.
-Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</code>and select<code>Humanoid</code>after the model is imported.</p>
+<p>Prepare a 3D model that can be <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html" target="_blank">imported</a> into Unity such as FBX format. The model&rsquo;s bones must be set.</p>
+
+<p><img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
+
+<img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
+</p>
+
+<p>First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click <code>Select</code> and then click <code>Rig</code>. Set <code>Animation Type</code> as <code>Humanoid</code>, and then click <code>Configure</code> button. A message box will pop up asking whether you want to save the current scene. Click <code>Save</code> to save it.</p>
 
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/alicia_generic.png"   />
+<th><img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Select<code>Humanoid</code></td>
+<td>Select<code>Humanoid</code> and click <code>Configure</code></td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="correct-bone-assignment-with-rig-configuration">Correct bone assignment with rig configuration</h3>
+<p>Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red.</p>
 
-<p>When the model file is imported, bone assignments done by auto-recognition may be different from expectations (see image below):</p>
+<img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
 
-<ul>
-<li>Jaw is assigned to mouth</li>
-<li>Eye is assigned to eye highlight</li>
-</ul>
+
+<h3 id="correct-bone-mapping-with-rig-configuration">Correct bone mapping with rig configuration</h3>
+
+<p>To corrent bone mapping errors, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click <code>Mapping</code> in the lowerleft of the interface, click <code>clear</code> and then click <code>Automap</code>.</p>
 
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/fix_eye.png"   />
+<th><img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Since the eyebone (and jawbone) auto-recognition on &ldquo;3D chan&rdquo; is incorrect, we can fix it by assigning the right component manually.</td>
+<td>Choose a right component to fit a bone</td>
 </tr>
 </tbody>
 </table>
+
+<p>However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:</p>
+
+<img src="https://vrm.dev/images/vrm/fix_eye.png"   />
+
+
+<p>We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click <code>Done</code> button to proceed to the next step.</p>
 
 <h2 id="export-from-menu">Export from menu</h2>
 
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/vrm_menu_disable.png"   />
+<th><img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in<code>VRM</code>will become available.</td>
+<td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the <code>Export humanoid</code> option will become available (<code>VRM -&gt; UniVRM-0.53.0 -&gt; Export humanoid</code>). The file will be saved in the <code>Assets</code> folder by default.</td>
 </tr>
 </tbody>
 </table>
@@ -649,29 +662,14 @@ Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</cod
 <table>
 <thead>
 <tr>
-<th><img src="https://vrm.dev/images/vrm/vrm_menu_enable.png"   />
+<th><img src="https://vrm.dev/images/vrm/VRMExporter.png" alt="VRMExporter" width="250" />
 </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the export humanoid option in<code>VRM</code>will become available.</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th><img src="https://vrm.dev/images/vrm/export_dialog.png"   />
-</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Check the boxes and click<code>Export</code>button.</td>
+<td>Enter your name in the <code>Author</code> field and click the <code>Export</code> button.</td>
 </tr>
 </tbody>
 </table>
@@ -682,7 +680,7 @@ Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</cod
 
 <h4 id="change-to-t-pose-manually">Change to T Pose manually</h4>
 
-<p>You can manually change the model pose to<code>T Pose</code>instead of changing it automatically. Make the model <a href="../../vrm_tpose/">T-Pose</a> manually in advance, choose<code>menu -&gt; VRM -&gt; export humanoid</code>and uncheck<code>Force T Pose</code>.</p>
+<p>You can manually change the model pose to <a href="../../vrm_tpose/">T-Pose</a> (done automatically by default). Make sure to deselect the <code>Force T Pose</code> checkbox.</p>
 
 <h3 id="pose-freeze">Pose Freeze</h3>
 
@@ -791,6 +789,9 @@ Go to the model&rsquo;s<code>Import Settings -&gt; Rig -&gt; Animation Type</cod
 </table>
 
 <p>Texture, Material and Prefab are automatically generated from VRM.</p>
+
+<img src="https://vrm.dev/images/vrm/vrm_prefab_en.png"   />
+
 
 <ul>
 <li>If the VRM file is not shown in the project view, right click and select<code>refresh</code></li>
