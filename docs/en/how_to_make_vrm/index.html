@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.56.3" />
 
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 
@@ -36,7 +36,7 @@
 
 <meta itemprop="datePublished" content="2018-04-16T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-16T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="1472">
+<meta itemprop="wordCount" content="1484">
 
 
 
@@ -47,8 +47,6 @@
 <meta name="twitter:title" content="How to make VRM file"/>
 <meta name="twitter:description" content="Conversion from existing 3D model The VRM file can be made by Unity and UniVRM. The workflow is as follow:
  Import the 3D model data and UniVRM into the current unity project. Adjust/set the model&rsquo;s size, material, etc. Export the 3D model data as VRM in Unity (normalization processing) Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)  In some cases, make sure the model is working (e."/>
-
-
 
 
 
@@ -495,7 +493,7 @@
 
 
 
-<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/en/docs/vrm/how_to_make_vrm.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/en/docs%5cvrm%5chow_to_make_vrm.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/vrm-c/vrm.dev/issues/new?title=How%20to%20make%20VRM%20file" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
@@ -576,9 +574,10 @@
 
 <h2 id="conversion-from-existing-3d-model">Conversion from existing 3D model</h2>
 
-<p><img src="https://vrm.dev/images/vrm/vrm_workflow_en.png" alt="vrm workflow"  />
+<img src="https://vrm.dev/images/vrm/vrm_workflow_en.png" alt="vrm workflow"  />
 
-The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity</a> and <a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a>. The workflow is as follow:</p>
+
+<p>The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity</a> and <a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a>. The workflow is as follow:</p>
 
 <ol>
 <li>Import the 3D model data and <a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a> into the current unity project. Adjust/set the model&rsquo;s size, material, etc.</li>
@@ -615,6 +614,8 @@ The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity
 
 <p><img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
 </p>
 
@@ -632,6 +633,8 @@ The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity
 
 <p><img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
 </p>
 
@@ -840,9 +843,10 @@ The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity
 </ul></li>
 </ul>
 
-<p>Note that starting from Unity version 2018.3, the interface has slightly changes:
+<p>Note that starting from Unity version 2018.3, the interface has slightly changes:</p>
+
 <img src="https://vrm.dev/images/vrm/NewInterfaceForPrefab.png" alt="NewInterfaceForPrefab" width="700" />
-</p>
+
 
 <p>Now the basic model conversion is finished. To complete the whole setup, please set up the items listed below:</p>
 
@@ -859,15 +863,32 @@ The VRM file can be made by <a href="https://unity3d.com/" target="_blank">Unity
 
 <p><img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
 </p>
 
 <p>To test the model&rsquo;s expressions, fairly simple test scripts &ldquo;AIUEO&rdquo; and &ldquo;Blinker&rdquo; are provided. After setting up <a href="../univrm/components/univrm_blendshape/#vrmblendshapeproxy">BlendShape</a>, click <code>Add Component</code> at the bottom of model&rsquo;s Inspector window to add &ldquo;AIUEO&rdquo; script or drag the script directly to Inspector. After &ldquo;AIUEO&rdquo; is set, lip synchronization animation that &ldquo;aa&rdquo;, &ldquo;ih&rdquo;, &ldquo;ou&rdquo;, &ldquo;E&rdquo;, &ldquo;oh&rdquo; switches in turn can be created in the scene. Similarly, if &ldquo;Blinker&rdquo; is set, eye blink animation that plays periodically can be created. See <a href="https://github.com/vrm-c/UniVRM/releases" target="_blank">runtime VRM loader sample</a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.</p>
 
-<p><img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+</th>
+</tr>
+</thead>
 
-<img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+<tbody>
+<tr>
+<td>Double click the<code>BlendShapeAvatar</code> field to set up expressions for the 3D model</td>
+</tr>
+</tbody>
+</table>
 
+<p><img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
 </p>
 
