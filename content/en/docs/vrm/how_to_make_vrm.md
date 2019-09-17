@@ -6,8 +6,8 @@ weight: 2
 ---
 
 ## Conversion from existing 3D model
-
 {{< img src="images/vrm/vrm_workflow_en.png" alt="vrm workflow" >}}
+
 The VRM file can be made by [Unity](https://unity3d.com/) and [UniVRM](https://github.com/vrm-c/UniVRM). The workflow is as follow:
 
 1. Import the 3D model data and [UniVRM](https://github.com/vrm-c/UniVRM) into the current unity project. Adjust/set the model's size, material, etc. 
@@ -33,6 +33,8 @@ Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://gi
 Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX format. The model's bones must be set. Also, **be sure to use your own model or the model data that is processed and licensed for use as a VR avatar.**. As we will describe later, **there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models**. 
 
 {{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
+<br>
+<br>
 {{< img src="images/vrm/ModelConversionMenu.png" width="900" height="200" alt="ModelConversionMenu" >}}
 
 First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click `Select` and then click `Materials`. Set `Location` as `Use External Materials (Legacy)`.
@@ -46,6 +48,8 @@ Next, click `Rig` and set `Animation Type` as `Humanoid`, and then click `Config
 Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model's Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red. In this situation, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click `Mapping` in the lowerleft of the interface, click `clear` and then click `Automap`.
 
 {{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
+<br>
+<br>
 {{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}
 
 However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:
@@ -158,6 +162,7 @@ The VRM model's information will be shown in the Inspector window once the root 
 			* If “Other” is selected, put the URL link of the license document here
 
 Note that starting from Unity version 2018.3, the interface has slightly changes:
+
 {{< img src="images/vrm/NewInterfaceForPrefab.png" width="700" height="200" alt="NewInterfaceForPrefab" >}}
 
 Now the basic model conversion is finished. To complete the whole setup, please set up the items listed below:
@@ -172,12 +177,19 @@ Now the basic model conversion is finished. To complete the whole setup, please 
 Set `AnimationClip/AnimationController` and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test wheather the model's eyes are tracking the object in (near) real-time. The model's close-up face can be viewed in Inspector window.
 
 {{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
+<br>
+<br>
 {{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
 
 To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker" are provided. After setting up [BlendShape](../univrm/components/univrm_blendshape/#vrmblendshapeproxy), click `Add Component` at the bottom of model's Inspector window to add "AIUEO" script or drag the script directly to Inspector. After "AIUEO" is set, lip synchronization animation that "aa", "ih", "ou", "E", "oh" switches in turn can be created in the scene. Similarly, if "Blinker" is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/vrm-c/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
 
-{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}
+|{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}|
+|-----|
+|Double click the``BlendShapeAvatar`` field to set up expressions for the 3D model|
+
 {{< img src="images/vrm/AddExpressionScripts.png" width="650" height="260" alt="AddExpressionScripts" >}}
+<br>
+<br>
 {{< img src="images/vrm/InspectorFaceView.png" width="400" height="280" alt="InspectorFaceView" >}}
 
 ### 8. Export the adjusted VRM model
