@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.56.3" />
 
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 
@@ -50,6 +50,8 @@
 <meta name="twitter:description" content="glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.
  https://github.com/KhronosGroup/glTF  What kind of information can be recorded by glTF?  Mesh (Vertex array、index array)  Morph target Skinning (4weight)  Texture Material (PBR) Scene Animation1 Camera1 Light source1  An entire 3D scene can be recorded.
  OpenGL right-handed, Y-UP coordinate system Meter (unit) Little endian  glTF format outline glTF format comprises two parts: a JSON scene description part and a binary part that records images and vertex arrays."/>
+
+
 
 
 
@@ -721,8 +723,7 @@ More specifically, it is<code>Header part + JSON CHUNk + BINARY CHUNK</code>.</p
     <span style="color:#000">json_str</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#3465a4">None</span>
     <span style="color:#000">body</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#3465a4">None</span>
     <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000">size</span> <span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">:</span>
-        <span style="color:#8f5902;font-style:italic">#print(size)
-</span>
+        <span style="color:#8f5902;font-style:italic">#print(size)</span>
 
         <span style="color:#000">chunk_size</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">reader</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">read_uint</span><span style="color:#000;font-weight:bold">()</span>
         <span style="color:#000">size</span> <span style="color:#ce5c00;font-weight:bold">-=</span> <span style="color:#0000cf;font-weight:bold">4</span>
