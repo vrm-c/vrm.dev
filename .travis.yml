@@ -7,6 +7,7 @@ install:
 script:
     - git submodule update --init --recursive
     - hugo
+    - touch docs/.nojekyll
 
 deploy:
   provider: pages
