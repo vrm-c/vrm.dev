@@ -1,6 +1,6 @@
 # vrm.dev
 
-This repository contains a source files for vrm.dev.
+This repository contains source files for vrm.dev.
 
 ## Contributing
 
