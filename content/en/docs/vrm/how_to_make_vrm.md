@@ -174,7 +174,7 @@ Now the basic model conversion is finished. To complete the whole setup, please 
 
 
 ### 7. Check model expressions/movements in play mode（If necessary）
-Set `AnimationClip/AnimationController` and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test wheather the model's eyes are tracking the object in (near) real-time. The model's close-up face can be viewed in Inspector window.
+Set `AnimationClip/AnimationController` and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model's eyes are tracking the object in (near) real-time. The model's close-up face can be viewed in Inspector window.
 
 {{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
 <br>
