@@ -1,16 +1,19 @@
 ---
-title: "VRMのT-Poseについて"
-linkTitle: "Tポーズについて"
-date: 2018-04-16T16:30:00+09:00
+title: VRMのTポーズについて
+linkTitle: Tポーズについて
+date: 2018-04-16T07:30:00Z
+lastmod: 2019-09-18T11:30:00Z
 url: /vrm_tpose/
 weight: 1
+resources:
+- src: "*.png"
 ---
 
 VRMの第１実装のUnityのHumanoidに準拠したT-Pose[^tpose]を採用しています。
 
-|{{< img src="images/vrm/T_pose.png" alt="T_pose" >}}|
-|-----|
-|T-Poseの例|
+{{< imgproc t_pose Fit "375x473" >}}
+T-Poseの例
+{{< /imgproc >}}
 
 胴体と頭・足については自明ですが、腕と手の指についても規約があります。
 
