@@ -6,8 +6,8 @@ weight: 2
 ---
 
 ##  VRMファイルのつくりかた（既存3Dモデルからのコンバート）
-
 {{< img src="images/vrm/vrm_workflow.png" alt="vrm workflow" >}}
+
 VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[UniVRM](https://github.com/vrm-c/UniVRM)を使用します。
 おおまかな作業のながれは以下のようになります
 
@@ -22,10 +22,12 @@ VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[Uni
 ---
 ### 1.Unityで空のプロジェクトを作る
 {{< img src="images/vrm/unity_new_project.png" >}}
+
 Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
 
 ### 2.UnityにUniVRMをインストール
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
+
 [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`にインストールします。
 **既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
@@ -34,6 +36,8 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、**必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください**。後述しますが、**VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください**。
 
 {{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
+<br>
+<br>
 {{< img src="images/vrm/ModelConversionMenu.png" width="900" height="200" alt="ModelConversionMenu" >}}
 
 インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに`Select`をクリックして、`Materials`をクリックします。`Location`を`Use External Materials（Legacy)`に設定します。
@@ -47,6 +51,8 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。この状況では、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある`Mapping`をクリックし、`clear`をクリックして`Automap`をクリックします。
 
 {{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
+<br>
+<br>
 {{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}
 
 ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します
@@ -166,6 +172,7 @@ T-Poseとモデルの正規化の詳細は[こちら](https://github.com/vrm-c/U
 			* 上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述
 
 Unityバージョン2018.3から、インポートセッティングのインターフェースは少し変わったのでご注意してください:
+
 {{< img src="images/vrm/NewInterfaceForPrefab.png" width="700" height="200" alt="NewInterfaceForPrefab" >}}
 
 ほかに、
@@ -181,16 +188,23 @@ Unityバージョン2018.3から、インポートセッティングのインタ
 `AnimationClip/AnimationController`をセットしたり、`VRMLookAtHead`の`Target`に[GameObject](../univrm/components/univrm_lookat/#target)をセットしたり（視線がどこを向くかの設定）、`Head`欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、``GameObject -> 3D Object -> Cube``からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。
 
 {{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
+<br>
+<br>
 {{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
 
 モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape](../univrm/components/univrm_blendshape/#vrmblendshapeproxy)をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
 
-{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}
+|{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}|
+|-----|
+|``BlendShapeAvatar``フィールドにダブルクリックして、3Dモデルの表情を設定します|
 {{< img src="images/vrm/AddExpressionScripts.png" width="650" height="260" alt="AddExpressionScripts" >}}
+<br>
+<br>
 {{< img src="images/vrm/InspectorFaceView.png" width="400" height="280" alt="InspectorFaceView" >}}
 
 ### 8.VRMファイルを出力する
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
+
 調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.53.0 -> Export humanoid``を実行します
 
 このとき、**「Force T Pose」と「Pose Freeze」のチェックは外してください**。このチェックは初回（正規化）のときのみ使用します。

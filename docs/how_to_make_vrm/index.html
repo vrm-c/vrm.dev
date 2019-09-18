@@ -34,7 +34,7 @@
 
 <meta itemprop="datePublished" content="2018-04-16T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-16T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="4669">
+<meta itemprop="wordCount" content="4715">
 
 
 
@@ -573,9 +573,10 @@
 
 <h2 id="vrmファイルのつくりかた-既存3dモデルからのコンバート">VRMファイルのつくりかた（既存3Dモデルからのコンバート）</h2>
 
-<p><img src="https://vrm.dev/images/vrm/vrm_workflow.png" alt="vrm workflow"  />
+<img src="https://vrm.dev/images/vrm/vrm_workflow.png" alt="vrm workflow"  />
 
-VRMファイルをつくるためには、<a href="https://unity3d.com/jp" target="_blank">Unity</a>と<a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a>を使用します。
+
+<p>VRMファイルをつくるためには、<a href="https://unity3d.com/jp" target="_blank">Unity</a>と<a href="https://github.com/vrm-c/UniVRM" target="_blank">UniVRM</a>を使用します。
 おおまかな作業のながれは以下のようになります</p>
 
 <ol>
@@ -595,15 +596,17 @@ VRMファイルをつくるためには、<a href="https://unity3d.com/jp" targe
 
 <h3 id="1-unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る</h3>
 
-<p><img src="https://vrm.dev/images/vrm/unity_new_project.png"   />
+<img src="https://vrm.dev/images/vrm/unity_new_project.png"   />
 
-Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。</p>
+
+<p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。</p>
 
 <h3 id="2-unityにunivrmをインストール">2.UnityにUniVRMをインストール</h3>
 
-<p><img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
+<img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import"  />
 
-<a href="https://github.com/vrm-c/UniVRM/releases" target="_blank">UniVRM/releases</a>から最新のunitypackageをダウンロードし、<code>Assets/VRM</code>にインストールします。
+
+<p><a href="https://github.com/vrm-c/UniVRM/releases" target="_blank">UniVRM/releases</a>から最新のunitypackageをダウンロードし、<code>Assets/VRM</code>にインストールします。
 <strong>既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨</strong>しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。</p>
 
@@ -613,6 +616,8 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 <p><img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
 </p>
 
@@ -630,6 +635,8 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 <p><img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
 </p>
 
@@ -847,9 +854,10 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 </ul></li>
 </ul>
 
-<p>Unityバージョン2018.3から、インポートセッティングのインターフェースは少し変わったのでご注意してください:
+<p>Unityバージョン2018.3から、インポートセッティングのインターフェースは少し変わったのでご注意してください:</p>
+
 <img src="https://vrm.dev/images/vrm/NewInterfaceForPrefab.png" alt="NewInterfaceForPrefab" width="700" />
-</p>
+
 
 <p>ほかに、</p>
 
@@ -868,23 +876,41 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 <p><img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
 
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
 </p>
 
 <p>モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。<a href="../univrm/components/univrm_blendshape/#vrmblendshapeproxy">BlendShape</a>をセットアップした後、<code>Add Component</code>から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。</p>
 
-<p><img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+<table>
+<thead>
+<tr>
+<th><img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+</th>
+</tr>
+</thead>
 
-<img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+<tbody>
+<tr>
+<td><code>BlendShapeAvatar</code>フィールドにダブルクリックして、3Dモデルの表情を設定します</td>
+</tr>
+</tbody>
+</table>
 
+<p><img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+
+<br>
+<br>
 <img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
 </p>
 
 <h3 id="8-vrmファイルを出力する">8.VRMファイルを出力する</h3>
 
-<p><img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+<img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
 
-調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから<code>VRM -&gt; UniVRM-0.53.0 -&gt; Export humanoid</code>を実行します</p>
+
+<p>調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから<code>VRM -&gt; UniVRM-0.53.0 -&gt; Export humanoid</code>を実行します</p>
 
 <p>このとき、<strong>「Force T Pose」と「Pose Freeze」のチェックは外してください</strong>。このチェックは初回（正規化）のときのみ使用します。
 ファイル名を指定してVRMファイルを出力します</p>

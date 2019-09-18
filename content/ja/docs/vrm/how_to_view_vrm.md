@@ -12,10 +12,12 @@ weight: 3
 
 ### 1.Unityで空のプロジェクトを作る
 {{< img src="images/vrm/unity_new_project.png" >}}
+
 Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
 
 ### 2.UnityにUniVRMをインストール
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
+
 [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
 **既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。

@@ -551,7 +551,7 @@ More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/
     &lt;span style=&#34;color:#000&#34;&gt;json_str&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;None&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#3465a4&#34;&gt;None&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;
-        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#print(size)&lt;/span&gt;
+        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#print(size)&lt;/span&gt;
 
         &lt;span style=&#34;color:#000&#34;&gt;chunk_size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reader&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read_uint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
         &lt;span style=&#34;color:#000&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
@@ -1005,9 +1005,10 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 
 &lt;h2 id=&#34;conversion-from-existing-3d-model&#34;&gt;Conversion from existing 3D model&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_workflow_en.png&#34; alt=&#34;vrm workflow&#34;  /&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_workflow_en.png&#34; alt=&#34;vrm workflow&#34;  /&gt;
 
-The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#34;_blank&#34;&gt;Unity&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34; target=&#34;_blank&#34;&gt;UniVRM&lt;/a&gt;. The workflow is as follow:&lt;/p&gt;
+
+&lt;p&gt;The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#34;_blank&#34;&gt;Unity&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34; target=&#34;_blank&#34;&gt;UniVRM&lt;/a&gt;. The workflow is as follow:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Import the 3D model data and &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34; target=&#34;_blank&#34;&gt;UniVRM&lt;/a&gt; into the current unity project. Adjust/set the model&amp;rsquo;s size, material, etc.&lt;/li&gt;
@@ -1044,6 +1045,8 @@ The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#3
 
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
 
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
 &lt;/p&gt;
 
@@ -1061,6 +1064,8 @@ The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#3
 
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
 
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
 &lt;/p&gt;
 
@@ -1269,9 +1274,10 @@ The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#3
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Note that starting from Unity version 2018.3, the interface has slightly changes:
+&lt;p&gt;Note that starting from Unity version 2018.3, the interface has slightly changes:&lt;/p&gt;
+
 &lt;img src=&#34;https://vrm.dev/images/vrm/NewInterfaceForPrefab.png&#34; alt=&#34;NewInterfaceForPrefab&#34; width=&#34;700&#34; /&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Now the basic model conversion is finished. To complete the whole setup, please set up the items listed below:&lt;/p&gt;
 
@@ -1284,19 +1290,36 @@ The VRM file can be made by &lt;a href=&#34;https://unity3d.com/&#34; target=&#3
 
 &lt;h3 id=&#34;7-check-model-expressions-movements-in-play-mode-if-necessary&#34;&gt;7. Check model expressions/movements in play mode（If necessary）&lt;/h3&gt;
 
-&lt;p&gt;Set &lt;code&gt;AnimationClip/AnimationController&lt;/code&gt; and set &lt;a href=&#34;../univrm/components/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). For example, you can create a cube as a target from &lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;. Next, serach head component in&lt;code&gt;VRMLookAtHead -&amp;gt; Head&lt;/code&gt;. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test wheather the model&amp;rsquo;s eyes are tracking the object in (near) real-time. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p&gt;
+&lt;p&gt;Set &lt;code&gt;AnimationClip/AnimationController&lt;/code&gt; and set &lt;a href=&#34;../univrm/components/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). For example, you can create a cube as a target from &lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;. Next, serach head component in&lt;code&gt;VRMLookAtHead -&amp;gt; Head&lt;/code&gt;. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are tracking the object in (near) real-time. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/LookAtTarget.png&#34; alt=&#34;LookAtTarget&#34; width=&#34;900&#34; /&gt;
 
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/TargetTracking.png&#34; alt=&#34;TargetTracking&#34; width=&#34;500&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href=&#34;../univrm/components/univrm_blendshape/#vrmblendshapeproxy&#34;&gt;BlendShape&lt;/a&gt;, click &lt;code&gt;Add Component&lt;/code&gt; at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;runtime VRM loader sample&lt;/a&gt; (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeProxy.png&#34; alt=&#34;BlendShapeProxy&#34; width=&#34;650&#34; /&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeProxy.png&#34; alt=&#34;BlendShapeProxy&#34; width=&#34;650&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
 
-&lt;img src=&#34;https://vrm.dev/images/vrm/AddExpressionScripts.png&#34; alt=&#34;AddExpressionScripts&#34; width=&#34;650&#34; /&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Double click the&lt;code&gt;BlendShapeAvatar&lt;/code&gt; field to set up expressions for the 3D model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/AddExpressionScripts.png&#34; alt=&#34;AddExpressionScripts&#34; width=&#34;650&#34; /&gt;
+
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/InspectorFaceView.png&#34; alt=&#34;InspectorFaceView&#34; width=&#34;400&#34; /&gt;
 &lt;/p&gt;
 
@@ -1702,6 +1725,8 @@ The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinat
 
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
 
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
 &lt;/p&gt;
 
