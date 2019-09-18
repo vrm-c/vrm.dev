@@ -8,7 +8,7 @@ weight: 2
 ----
 
 [glTF-2.0](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)のバイナリ形式glbをベースにした、VR向けモデルフォーマットです。
-VRM仕様のリポジトリはこちら。：[VRM specification)](https://github.com/vrm-c/vrm-specification) 
+VRM仕様のリポジトリはこちら：[VRM specification](https://github.com/vrm-c/vrm-specification)。 
 
 # 更新履歴
 
@@ -288,30 +288,28 @@ NodeとHumanoidで定義される標準ボーンの対応表です。
 
 ## 定義しているボーン
 
-* hips
-* spine
-* chest
-* upperChest[^notrequired]
-* neck
-* head
-* Left/Right eye[^notrequired]
-
-* Left/Right upperArm
-* Left/Right lowerArm
-* Left/Right hand
-
-* Left/Right upperLeg
-* Left/Right lowerLeg
-* Left/Right foot
-* Left/Right toe[^notrequired]
-
-* Left/Right thumb proximal, intermediate, distal[^notrequired]
-* Left/Right index proximal, intermediate, distal[^notrequired]
-* Left/Right middle proximal, intermediate, distal[^notrequired]
-* Left/Right ring proximal, intermediate, distal[^notrequired]
-* Left/Right little proximal, intermediate, distal[^notrequired]
-
-[^notrequired]: 無くても問題ありません。
+|ボーン名前             |必須・オプション|
+|:---------------------|:--------------|
+|neck                  |オプション      |
+|head                  |必須           |
+|left/right Eye        |オプション      |
+|hips                  |必須           |
+|spine                 |必須           |
+|chest                 |オプション      |
+|upperChest            |オプション      |
+|left/right Shoulder   |オプション      |
+|left/right UpperArm   |必須           |
+|left/right LowerArm   |必須           |
+|left/right Hand       |必須           |
+|left/right UpperLeg   |必須           |
+|left/right LowerLeg   |必須           |
+|left/right Foot       |必須           |
+|left/right Toe        |オプション      |  
+|left/right Thumb Proximal, Intermediate, Distal |オプション|
+|left/right Index Proximal, Intermediate, Distal |オプション|
+|left/right Middle Proximal, Intermediate, Distal|オプション|
+|left/right Ring Proximal, Intermediate, Distal  |オプション|
+|left/right Little Proximal, Intermediate, Distal|オプション|
 
 # VRM拡張: モデル情報(json.extensions.VRM.meta)
 

@@ -6,7 +6,7 @@ weight: 2
 ---
 
 VRM is based on glb format, which is a binary form of [glTF 2.0](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md). It is a model format for VR.
-VRM specification repository is [VRM specification)](https://github.com/vrm-c/vrm-specification) .
+VRM specification repository is [VRM specification](https://github.com/vrm-c/vrm-specification).
 # Update history
 
 * 20181109: Corrected parts where JsonSchema's `Vector3` type is erroneously set to `array`
@@ -280,30 +280,28 @@ The table of standard bones defined by Node and Humanoid.
 
 ## Defined bones
 
-* hips
-* spine
-* chest
-* upperChest[^notrequired]
-* neck
-* head
-* Left/Right eye[^notrequired]
-
-* Left/Right upperArm
-* Left/Right lowerArm
-* Left/Right hand
-
-* Left/Right upperLeg
-* Left/Right lowerLeg
-* Left/Right foot
-* Left/Right toe[^notrequired]
-
-* Left/Right thumb proximal, intermediate, distal[^notrequired]
-* Left/Right index proximal, intermediate, distal[^notrequired]
-* Left/Right middle proximal, intermediate, distal[^notrequired]
-* Left/Right ring proximal, intermediate, distal[^notrequired]
-* Left/Right little proximal, intermediate, distal[^notrequired]
-
-[^notrequired]: Optional.
+|Bone Name             |Required/Optional|
+|:---------------------|:----------------|
+|neck                  |Optional         |
+|head                  |Required         |
+|left/right Eye        |Optional         |
+|hips                  |Required         |
+|spine                 |Required         |
+|chest                 |Optional         |
+|upperChest            |Optional         |
+|left/right Shoulder   |Optional         |
+|left/right UpperArm   |Required         |
+|left/right LowerArm   |Required         |
+|left/right Hand       |Required         |
+|left/right UpperLeg   |Required         |
+|left/right LowerLeg   |Required         |
+|left/right Foot       |Required         |
+|left/right Toe        |Optional         |  
+|left/right Thumb Proximal, Intermediate, Distal |Optional|
+|left/right Index Proximal, Intermediate, Distal |Optional|
+|left/right Middle Proximal, Intermediate, Distal|Optional|
+|left/right Ring Proximal, Intermediate, Distal  |Optional|
+|left/right Little Proximal, Intermediate, Distal|Optional|
 
 # VRM extension: Model information (json.extensions.VRM.meta)
 
