@@ -1,13 +1,20 @@
----
+git:
+  submodule: true
+
+language: node_js
+node_js:
+- 10
+cache: npm
+
+before_install:
+- wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.56.3/hugo_extended_0.56.3_Linux-64bit.deb
+- sudo dpkg -i /tmp/hugo.deb
+
 install:
-    - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.56.3/hugo_extended_0.56.3_Linux-64bit.deb
-    - sudo dpkg -i /tmp/hugo.deb
-    - npm install
+- npm ci
 
 script:
-    - git submodule update --init --recursive
-    - hugo
-    - touch docs/.nojekyll
+- npm run build
 
 deploy:
   provider: pages

@@ -7,24 +7,16 @@ This repository contains a source files for vrm.dev.
 vrm.dev requires the installation of [Hugo (extended) v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3).
 
 ```console
-$ git clone https://github.com/vrm-c/vrm.dev.git
+$ git clone --recursive https://github.com/vrm-c/vrm.dev.git
 $ cd vrm.dev
-$ git submodule update --init --recursive
 $ npm i
 $ hugo server -D
 $ open http://localhost:1313/
 ```
 
-vrm.dev contains built HTML documents in the repository. Set environment variable `HUGO_ENV` as `production`. For example, in Windows:
+vrm.dev contains built HTML documents in the repository. Run `npm run build` command to generate HTML documents before sending Pull Request.
 
-```console
-$ cd vrm.dev
-$ set HUGO_ENV=production
-```
-
-Run `hugo` command to generate HTML documents before sending Pull Request.
-
-vrm.dev adopts Hugo theme [docsy](https://github.com/google/docsy). Put your proposed [layout change](https://zwbetz.com/override-a-hugo-theme/) files in `vrm.dev/layouts`, if any.
+vrm.dev adopts Hugo theme [Docsy](https://github.com/google/docsy). Refer to [the Docsy's documentation](https://www.docsy.dev/docs/adding-content/lookandfeel/) for extending the layout.
 
 <!--
 ## License
