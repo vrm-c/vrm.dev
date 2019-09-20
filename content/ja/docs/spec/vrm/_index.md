@@ -290,12 +290,12 @@ NodeとHumanoidで定義される標準ボーンの対応表です。
 
 |ボーン名前             |必須・オプション|
 |:---------------------|:--------------|
-|neck                  |オプション      |
+|neck                  |必須      |
 |head                  |必須           |
 |left/right Eye        |オプション      |
 |hips                  |必須           |
 |spine                 |必須           |
-|chest                 |オプション      |
+|chest                 |必須      |
 |upperChest            |オプション      |
 |left/right Shoulder   |オプション      |
 |left/right UpperArm   |必須           |
