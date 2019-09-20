@@ -2,7 +2,6 @@
 title: "UniVRMの座標系変換について"
 linkTitle: "座標系の変換について"
 date: 2018-04-16T16:30:00+09:00
-url: /univrm/api/univrm_coordinate/
 weight: 4
 ---
 

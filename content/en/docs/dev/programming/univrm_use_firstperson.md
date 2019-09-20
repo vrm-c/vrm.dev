@@ -2,7 +2,6 @@
 title: "How to Use VRMFirstPerson"
 linkTitle: "How to use first-person mode "
 date: 2018-05-29T10:00:00+09:00
-url: "/en/univrm/api/univrm_use_firstperson/"
 weight: 5
 ---
 

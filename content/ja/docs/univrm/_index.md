@@ -1,6 +1,5 @@
 ---
-title: "UniVRM(Unity向けVRM標準実装)仕様"
-linkTitle: "UniVRM仕様"
+title: "UniVRMマニュアル"
 url: "/univrm/"
 weight: 3
 menu:
