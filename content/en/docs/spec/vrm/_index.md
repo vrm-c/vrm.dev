@@ -282,12 +282,12 @@ The table of standard bones defined by Node and Humanoid.
 
 |Bone Name             |Required/Optional|
 |:---------------------|:----------------|
-|neck                  |Optional         |
+|neck                  |Required         |
 |head                  |Required         |
 |left/right Eye        |Optional         |
 |hips                  |Required         |
 |spine                 |Required         |
-|chest                 |Optional         |
+|chest                 |Required         |
 |upperChest            |Optional         |
 |left/right Shoulder   |Optional         |
 |left/right UpperArm   |Required         |
