@@ -2,7 +2,6 @@
 title: "APIの変更履歴"
 linkTitle: "変更履歴"
 date: 2018-05-21T10:00:00+09:00
-url: /univrm/api/univrm_api_history/
 weight: 1
 ---
 

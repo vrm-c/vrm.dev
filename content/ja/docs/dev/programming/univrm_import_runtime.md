@@ -1,16 +1,15 @@
 ---
-title: "Import VRM Model at Runtime"
-linkTitle: "Import VRM model at runtime"
+title: "VRMモデルを実行時にインポートする"
+linkTitle: "実行時にVRMモデルをインポートする"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/api/univrm_import_runtime/"
 weight: 2
 ---
 
-Examples of importing the VRM model with the latest version [can be found here](https://github.com/vrm-c/UniVRM/wiki/Runtime-import%28en%29).
+最新バージョンは[こちら](https://github.com/vrm-c/UniVRM/wiki/Runtime-import)をご覧ください。
 
-The followings are the methods to import a VRM model at runtime in Unity:
+Unityで実行時にモデルをインポートする方法です。
 
-## Open VRM from a file path
+## ファイルパスからVRMを開く
 
 {{< highlight cs >}}
 var path="sample.vrm";
@@ -18,7 +17,7 @@ var go=VRM.VRMImporter.LoadFromPath(path);
 Debug.LogFormat("loaded {0}", go.name);
 {{< / highlight >}}
 
-## Open VRM asynchronously from a file path
+## ファイルパスから非同期にVRMを開く
 
 {{< highlight cs >}}
 var path="sample.vrm";
@@ -27,7 +26,7 @@ VRMImporter.LoadVrmAsync(path, go => {
 });
 {{< / highlight >}}
 
-## Open VRM from a byte array 
+## バイト列からVRM開く
 
 {{< highlight cs >}}
 var path="sample.vrm";
@@ -35,7 +34,7 @@ var bytes = File.ReadAllBytes(path);
 var go=VRMImporter.LoadFromBytes(bytes);
 {{< / highlight >}}
 
-## Open VRM asynchronously from a byte array
+## バイト列から非同期にVRMを開く
 
 {{< highlight cs >}}
 VRMImporter.LoadVrmAsync(bytes, go => {
@@ -43,7 +42,7 @@ VRMImporter.LoadVrmAsync(bytes, go => {
 });
 {{< / highlight >}}
 
-## Get the information form VRM
+## VRMから情報を取り出す
 
 {{< highlight cs >}}
 #if UNITY_STANDALONE_WIN
@@ -56,25 +55,25 @@ VRMImporter.LoadVrmAsync(bytes, go => {
                 return;
             }
 
-            // Get a byte array
+            // Byte列を得る
             var bytes = File.ReadAllBytes(path);
 
             var context = new VRMImporterContext();
 
-            // Get JSON in GLB format and parse it
+            // GLB形式をParseしてチャンクからJSONを取得しParseします
             context.ParseGlb(bytes);
 
-            // Get the meta
+            // metaを取得
             var meta = context.ReadMeta();
             Debug.LogFormat("meta: title:{0}", meta.Title);
 
-            // You can access the entire parsed GLTF here
+            // もしくはこちらでパースされたGLTF全体にアクセスできます
             var vrm = context.GLTF;
 
-            // Convert the parsed JSON to the Scene Object
+            // ParseしたJSONをもとにシーンを構築します
             if (m_loadAsync)
             {
-                // Run asynchronously
+                // 非同期に実行する
                 var now = Time.time;
                 VRMImporter.LoadVrmAsync(context, go=> {
                     var delta = Time.time - now;
@@ -84,17 +83,17 @@ VRMImporter.LoadVrmAsync(bytes, go => {
             }
             else
             {
-                // Run synchronously
+                // 同期的に実行する
                 VRMImporter.LoadFromBytes(context);
                 OnLoaded(context.Root);
             }
 {{< / highlight >}}
 
-## Get the thumbnail (From v0.37)
+## Thumbnailを取得する(v0.37から)
 
-A thumbnail texture can be created by passing arguments to ReadMeta. 
+ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。
 
 {{< highlight cs >}}
-    var meta = context.ReadMeta(true); // Make a thumbnail texture
+    var meta = context.ReadMeta(true); // Thumbnailテクスチャを作成する
     Texture2D thumbnail=meta.Thumbnail;
 {{< / highlight >}}

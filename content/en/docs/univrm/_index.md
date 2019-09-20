@@ -1,7 +1,5 @@
 ---
-title: "UniVRM (VRM standard implementation for Unity) Specifications"
-linkTitle: "UniVRM Specifications"
-url: "/en/univrm/"
+title: "UniVRM Manual"
 weight: 3
 menu:
   main:

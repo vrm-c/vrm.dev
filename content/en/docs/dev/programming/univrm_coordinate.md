@@ -2,7 +2,6 @@
 title: "UniVRM Coordinate Transformations"
 linkTitle: "Coordinate transformations"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/api/univrm_coordinate/"
 weight: 4
 ---
 
