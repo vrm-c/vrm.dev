@@ -1,6 +1,7 @@
 ---
-title: "About VRM"
-url: "/en/vrm/"
+title: About VRM
+url: /en/vrm/
+date: 2019-08-05T05:48:30Z
 weight: 1
 menu:
   main:
