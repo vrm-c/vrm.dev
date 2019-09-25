@@ -1731,4 +1731,287 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;https://github.com/vrm-c
 &lt;p&gt;Shaders used by UniVRM may not be included in the application.&lt;/p&gt;
 &lt;p&gt;Please double check:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Edit - Project Settings - Graphics - Shader preloading&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../univrm_install/#shader-preloading-setting&#34;&gt;The procedure for setting Shader preloading&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;a href=&#34;../univrm_install/#shader-preloading-setting&#34;&gt;The procedure for setting Shader preloading&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/settings/blendshape_setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/blendshape_setup/</guid><description>
+&lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
+&lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=images/blendshapeclip_assets.png width=200&gt;&lt;/p&gt;
+&lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
+&lt;p&gt;&lt;img src=images/blendshapeavatar.png width=500&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
+&lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
+&lt;h4 id=&#34;editor-tab&#34;&gt;Editor tab&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip Selection / Creation&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;list-tab-starting-from-v0-45&#34;&gt;List tab (Starting from v0.45)&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip List&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeclip-asset&#34;&gt;The Inspector of BlendShapeClip Asset&lt;/h3&gt;
+&lt;h4 id=&#34;blendshape-tab&#34;&gt;BlendShape tab&lt;/h4&gt;
+&lt;p&gt;Create the BlendShape setting:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;blendshape-list-tab&#34;&gt;BlendShape List tab&lt;/h4&gt;
+&lt;p&gt;You can see the values created from the BlendShape tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
+&lt;p&gt;You can create a &lt;a href=&#34;https://github.com/dwango/UniVRM/wiki/LookAt-Settings&#34; target=&#34;_blank&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=images/material_color.png width=300&gt;&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
+&lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
+&lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
+&lt;p&gt;Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Or click a BlendShapeClip Asset directly in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-change-the-values-of-the-sliders-to-make-a-facial-expression&#34;&gt;2. Change the values of the sliders to make a facial expression&lt;/h3&gt;
+&lt;p&gt;The names of the existing &lt;code&gt;SkinnedMeshRenderers&lt;/code&gt; will list in the Inspector window once you click the BlendShape tab.
+Click any listed name and you can then adjust the BlendShape value.
+The change value is reflected immediately.
+The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&gt;
+&lt;h3 id=&#34;3-check-the-model-s-blendshape-in-preview&#34;&gt;3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3&gt;
+&lt;p&gt;You can test changes in BlendShape by sliding the value (&lt;code&gt;Preview Weight Slider&lt;/code&gt;) between 0 ~ 1&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;left / right&lt;/code&gt; mouse button to change the viewing perspective&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;middle&lt;/code&gt; mouse button to move horizontally / vertically&lt;/p&gt;
+&lt;h3 id=&#34;the-binary-value-setting-for-blendshape-v0-45&#34;&gt;The Binary value setting for BlendShape (v0.45)&lt;/h3&gt;
+&lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/dev/gltf/how_to_create_glb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/dev/gltf/how_to_create_glb/</guid><description>
+&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
+&lt;p&gt;The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create an empty scene.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create an empty GameObject (topmost parent). No translation, rotation and scaling.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Select an object you want to export and add it to the created parent GameObject.
+(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt;(&lt;code&gt;UniGLTF-1.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;notes-on-components-to-be-exported&#34;&gt;Notes on components to be exported&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Please attach them to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Please attach it to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: How to Use BlendShapeProxy</title><link>https://vrm.dev/en/docs/dev/programming/how_to_use_blendshapeproxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/dev/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;p&gt;Work In Progress&lt;/p&gt;
+&lt;h2 id=&#34;why-use-multiple-setters-at-the-same-time&#34;&gt;Why use multiple setters at the same time?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;LipSync&lt;/li&gt;
+&lt;li&gt;Eye Blink&lt;/li&gt;
+&lt;li&gt;Eye Gaze control (the case where the model&amp;rsquo;s eye gaze movements are controlled by BlendShape)&lt;/li&gt;
+&lt;li&gt;Emotions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We found that multiple BlendShapes competed with each other when the above expressions were set from different components.
+A BlendShape set before may be overwritten with followed BlendShapes so it turns out that the desired BlendShape is not actually shown.
+In order to solve this issue, it is necessary to centralize the management of the BlendShape control.&lt;/p&gt;
+&lt;p&gt;For &lt;code&gt;SetValues&lt;/code&gt;, it is assumed to have the ability of synthesizing and excluding BlendShapes so aggregated BlendShapeClips can then generate a proper output.&lt;/p&gt;
+&lt;h2 id=&#34;immediatelysetvalue&#34;&gt;ImmediatelySetValue&lt;/h2&gt;
+&lt;p&gt;Assumed to be used for a simple test program.&lt;/p&gt;
+&lt;h2 id=&#34;accumeratevalue-apply&#34;&gt;AccumerateValue + Apply&lt;/h2&gt;
+&lt;p&gt;We recommend &lt;code&gt;SetValues&lt;/code&gt; (below) to handle possible accumulated BlendShape values.&lt;/p&gt;
+&lt;h2 id=&#34;setvalues&#34;&gt;SetValues&lt;/h2&gt;
+&lt;p&gt;Call &lt;code&gt;SetValues&lt;/code&gt; to combine BlendShapes.&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/settings/lookat_settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/lookat_settings/</guid><description>
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-eye-bone&#34;&gt;Control the Eye Gaze with the Eye Bone&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://dwango.github.io/en/vrm/univrm/components/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;https://dwango.github.io/en/vrm/univrm/components/univrm_lookat/&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-blendshape&#34;&gt;Control the Eye Gaze with the BlendShape&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://dwango.github.io/en/vrm/univrm/components/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;https://dwango.github.io/en/vrm/univrm/components/univrm_lookat/&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-uv-texture&#34;&gt;Control the Eye Gaze with the UV Texture&lt;/h2&gt;
+&lt;p&gt;A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
+&lt;code&gt;Unity chan&lt;/code&gt; belongs to this type.&lt;/p&gt;
+&lt;h3 id=&#34;search-the-eye-material&#34;&gt;Search the eye material&lt;/h3&gt;
+&lt;p&gt;Please search the eye material in the Project window. The &lt;code&gt;Tiling Offset&lt;/code&gt; setting will be displayed in the Inspector window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The values should be &lt;code&gt;1, 1, 0, 0&lt;/code&gt; (if the values are different, the followings are for reference only).&lt;/p&gt;
+&lt;p&gt;Now you can try to change the values of &lt;code&gt;Offset&lt;/code&gt; X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
+Since we have found where the eye materials are, we set the X and Y values back to &lt;code&gt;0&lt;/code&gt; and proceed to the next step.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-lookup-lookdown-lookleft-and-lookright&#34;&gt;Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2&gt;
+&lt;p&gt;In the following example, we choose &lt;code&gt;unlit/transparent cutout&lt;/code&gt; for material&lt;/p&gt;
+&lt;h3 id=&#34;lookleft-example&#34;&gt;LookLeft example&lt;/h3&gt;
+&lt;p&gt;Please select the &lt;code&gt;LookLeft&lt;/code&gt; asset in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;code&gt;Material List&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust Offset value in the LookLeft setting&lt;/li&gt;
+&lt;li&gt;Repeat the same procedure for &lt;code&gt;eye_R1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Adjust &lt;code&gt;Offset&lt;/code&gt; X for Left and Right and &lt;code&gt;Offset&lt;/code&gt; Y for Up and Down. For example, &lt;code&gt;LookLeft Offset = -0.2, 0&lt;/code&gt;, &lt;code&gt;LookRight Offset = 0.2, 0&lt;/code&gt;, &lt;code&gt;LookUp Offset = 0, -0.2&lt;/code&gt;, &lt;code&gt;LookDown Offset = 0, 0.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34; target=&#34;_blank&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;add-vrmlookatblendshapeapplyer-in-the-vrm-model-s-inspector-window&#34;&gt;Add VRMLookAtBlendShapeApplyer in the VRM model&amp;rsquo;s Inspector window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove VRMLookAtBoneApplyer&lt;/li&gt;
+&lt;li&gt;Add VRMLookAtBlendShapeApplyer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/docs/univrm/settings/material_settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/material_settings/</guid><description>
+&lt;p&gt;About material settings:&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The issue of causing glossy reflections:
+&lt;ul&gt;
+&lt;li&gt;It occurs when the shader type is &lt;code&gt;Standard&lt;/code&gt; (Unity standard) and the values of &lt;code&gt;metallic&lt;/code&gt; and &lt;code&gt;smooth&lt;/code&gt; are high. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit / UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
+&lt;li&gt;When an unknown shader is selected (not supported by &lt;code&gt;VRM&lt;/code&gt;), the shader is defaulted to Standard shader and it may result in glossy reflections. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit / UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;standard-shader&#34;&gt;Standard Shader&lt;/h2&gt;
+&lt;p&gt;Unity&amp;rsquo;s standard shader is compatible with GLTF&amp;rsquo;s standard PBR shader.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unlit-type-shader&#34;&gt;Unlit Type Shader&lt;/h2&gt;
+&lt;p&gt;The unlit type shaders &lt;code&gt;Unlit / Color&lt;/code&gt;, &lt;code&gt;Unlit / Texture&lt;/code&gt;, &lt;code&gt;Unlit / Transparent&lt;/code&gt;, and &lt;code&gt;Unilt / Transparent Cutout&lt;/code&gt; are built-in shaders in Unity.
+In GLTF, they are supported by the &lt;code&gt;KHR_material_unlit&lt;/code&gt; extension.&lt;/p&gt;
+&lt;p&gt;In GLTF, you can utilize &lt;code&gt;doubleSided&lt;/code&gt;, the multiplication of &lt;code&gt;Texture&lt;/code&gt; and &lt;code&gt;Color&lt;/code&gt;, &lt;code&gt;VertexColor&lt;/code&gt; and the alpha mode of &lt;code&gt;color&lt;/code&gt;. However, there is no shader that can handle these features on Unity side.
+In order to bring in this features, we have added the shader &lt;code&gt;UniGLTF / Unlit&lt;/code&gt; in Unity (v0.44).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mtoon-shader&#34;&gt;MToon Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://niconare.nicovideo.jp/watch/kn3485&#34; target=&#34;_blank&#34;&gt;https://niconare.nicovideo.jp/watch/kn3485&lt;/a&gt; (written in Japanese)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dwango.github.io/en/vrm/univrm/shaders/mtoon/&#34; target=&#34;_blank&#34;&gt;https://dwango.github.io/en/vrm/univrm/shaders/mtoon/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/dev/programming/runtime_import/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/dev/programming/runtime_import/</guid><description>
+&lt;p&gt;The followings are examples of runtime VRM import in &lt;code&gt;v0.44 and later versions&lt;/code&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;loadasync-example&#34;&gt;LoadAsync Example&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadAllBytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Get a byte array
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VRMImporterContext&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ParseGlb&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// When meta is needed
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;createThumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadMeta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;createThumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;thumbnail&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Thumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Construct a model
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ShowMeshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Load completed
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogError&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;loadasynctask-example&#34;&gt;LoadAsyncTask Example&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Task&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GameObject&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LoadAsync&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Byte&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VRMImporterContext&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Get JSON in GLB format and parse it
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ParseGlb&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;try&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Convert the parsed JSON to the scene object
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoadAsyncTask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Prevent the model&amp;#39;s surface from being penetrated by
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// the positional relation between the bounding box and the camera
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// SkinnedMeshRenderer.updateWhenOffscreen = true
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;EnableUpdateWhenOffscreen&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// If you do not want the program display the model&amp;#39;s T-Pose,
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// prepare it before ShowMeshes
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Display the model when the loading is finished
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ShowMeshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;catch&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Exception&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LogError&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Destroy related resources
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Destroy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;throw&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;related-article&#34;&gt;Related-Article&lt;/h2&gt;
+&lt;p&gt;More details can be found in the link below (written in Japanese):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6&#34; target=&#34;_blank&#34;&gt;UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: Support-Status-for-Animation-Exporter</title><link>https://vrm.dev/en/docs/dev/gltf/animation_exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/dev/gltf/animation_exporter/</guid><description>
+&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v0.44&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;support-status&#34;&gt;Support Status&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;how-to-export-an-animator&#34;&gt;How to Export an Animator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animator component to a root GameObject&lt;/li&gt;
+&lt;li&gt;Create an AnimatorController and set it in the Controller box (&lt;code&gt;Animator&lt;/code&gt;-&amp;gt;&lt;code&gt;Controller&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-to-export-an-animation&#34;&gt;How to Export an Animation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animation component to a root GameObject&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code&gt;Legacy&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set the created AnimationClip in the Animation box (&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li&gt;
+&lt;li&gt;Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/settings/t_pose/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/t_pose/</guid><description>
+&lt;p&gt;Work In Progress&lt;/p&gt;
+&lt;h2 id=&#34;supplementary-information-about-t-pose&#34;&gt;Supplementary Information about T-Pose&lt;/h2&gt;
+&lt;p&gt;When normalizing a model, the system requires the model posing as T-Pose. Therefore, to make a model in a T-Pose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt; from the menu bar and check &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Another option is adjusting the rotation of the arm etc. manually to make a T-Pose (without checking the &lt;code&gt;force T-Pose&lt;/code&gt; box)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Either one described above is OK. If the result made by the first option (automatic T-Pose) is not looking well, you can try the second one, which is the method for making a T-Pose manually.&lt;/p&gt;
+&lt;p&gt;Also, please avoid repeatedly normalizing a model that was already normalized before as much as you can. Errors after T-Pose process might be accumulated if you do so.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; box becomes unchecked by default if the model&amp;rsquo;s normalization is already done before. That said, the system will detect whether the Meta component is attached to the model.&lt;/p&gt;
+&lt;h2 id=&#34;common-problems&#34;&gt;Common Problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The position of the jaw changes: There is a possibility that the position of the jaw changes during the T-Pose process. If this is the case, please unassign the &lt;code&gt;jaw&lt;/code&gt; (chin) bone from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. For VRM, there is no problem with the program when unassinging the jawbone that is not used by the model.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) move instead of jaw: Please check whether the bone (bangs, etc.) is misassigned to the &lt;code&gt;jaw&lt;/code&gt; (chin) in the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is a possibility that the position of the jaw changes during the T-Pose process. As a result, bangs, etc. move unexpectedly.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

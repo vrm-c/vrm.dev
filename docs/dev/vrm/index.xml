@@ -24,4 +24,61 @@
 &lt;li id=&#34;fn:tpose&#34;&gt;&lt;a href=&#34;https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/&#34; target=&#34;_blank&#34;&gt;Mecanim Humanoids&lt;/a&gt;
 &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:tpose&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item></channel></rss>
+&lt;/div&gt;</description></item><item><title>Docs: ヒューマノイド</title><link>https://vrm.dev/docs/dev/vrm/humanoid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/dev/vrm/humanoid/</guid><description>
+&lt;p&gt;WIP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主にモーションキャプチャーのFKのモーションを投入できることを基準に決めました&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;関連イシュー&#34;&gt;関連イシュー&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dwango/UniVRM/issues/90&#34; target=&#34;_blank&#34;&gt;https://github.com/dwango/UniVRM/issues/90&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用語&#34;&gt;用語&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ボーン: ヒューマノイドを構成するgltfノード&lt;/li&gt;
+&lt;li&gt;ボーン名
+&lt;ul&gt;
+&lt;li&gt;hips&lt;/li&gt;
+&lt;li&gt;spine&lt;/li&gt;
+&lt;li&gt;chest(UnityHumanoidでは option。VRMでは必須?)&lt;/li&gt;
+&lt;li&gt;upperChest(option)&lt;/li&gt;
+&lt;li&gt;neck(UnityHumanoidでは option。VRMでは必須?)&lt;/li&gt;
+&lt;li&gt;head&lt;/li&gt;
+&lt;li&gt;Left/Right eye(option)&lt;/li&gt;
+&lt;li&gt;left/Right shoulder(UnityHumanoidでは option。VRMでは必須?)&lt;/li&gt;
+&lt;li&gt;Left/Right upperArm&lt;/li&gt;
+&lt;li&gt;Left/Right lowerArm&lt;/li&gt;
+&lt;li&gt;Left/Right hand&lt;/li&gt;
+&lt;li&gt;Left/Right upperLeg&lt;/li&gt;
+&lt;li&gt;Left/Right lowerLeg&lt;/li&gt;
+&lt;li&gt;Left/Right foot&lt;/li&gt;
+&lt;li&gt;Left/Right toe(UnityHumanoidでは option。VRMでは必須?)&lt;/li&gt;
+&lt;li&gt;Left/Right thumb proximal, intermediate, distal(option)&lt;/li&gt;
+&lt;li&gt;Left/Right index proximal, intermediate, distal(option)&lt;/li&gt;
+&lt;li&gt;Left/Right middle proximal, intermediate, distal(option)&lt;/li&gt;
+&lt;li&gt;Left/Right ring proximal, intermediate, distal(option)&lt;/li&gt;
+&lt;li&gt;Left/Right little proximal, intermediate, distal(option)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ヒューマノイドの要件-仮&#34;&gt;ヒューマノイドの要件(仮)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる&lt;/li&gt;
+&lt;li&gt;必須のボーンがすべて含まれている&lt;/li&gt;
+&lt;li&gt;ボーンの親子関係がヒューマノイドの定義を守っている(LowerLegの最初に見つかる祖先ボーンがUpperLegであるなど)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hipsをrootに以下の親子関係。カッコは必須でないボーン&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;hips - spine - chest - (upper chest) - neck - head&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;headからleft - (eye)&lt;/li&gt;
+&lt;li&gt;headからright - (eye)&lt;/li&gt;
+&lt;li&gt;chestまたはupper chestからleft - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;chestまたはupper chestからright - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;hipsからleft - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;li&gt;hipsからright - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;間にヒューマノイドに関係ないノードが入ることは許す(LowerLegの親がemptyでその親がUpperLegであるなど)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;必須でないボーンは飛ばしてよい(UpperArmの親がshoulderじゃなくてchestなど)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;加えて
+* T-Poseになっていること
+* 各ノードの回転・拡大は無いこと&lt;/p&gt;
+&lt;p&gt;あたりになるかと思います。&lt;/p&gt;</description></item></channel></rss>
