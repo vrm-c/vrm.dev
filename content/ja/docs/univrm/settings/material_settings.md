@@ -24,4 +24,4 @@ GLTFでは、`doubleSided`、`Texture`と`Color`の乗算、`VertexColor`, `Colo
 
 ## MToon
 * https://niconare.nicovideo.jp/watch/kn3485
-* https://dwango.github.io/vrm/univrm/shaders/mtoon/
+* https://vrm.dev/univrm/shaders/mtoon/
