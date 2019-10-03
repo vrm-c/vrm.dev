@@ -49,6 +49,7 @@ weight: 4
 * [BONFIRE](https://orenodinner.booth.pm/items/952450)
 * [TSUN-TSUN VR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/)
 * [KOROKORO System](https://www.mediaplex.co.jp/korokoro/)
+* [PilotXross](https://n-mattun.booth.pm/)
 
 ##  Viewer
 
