@@ -49,6 +49,7 @@ weight: 4
 * [BONFIRE~焚き火~](https://orenodinner.booth.pm/items/952450)
 * [つんつんVR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/)
 * [コロコロシステム](https://www.mediaplex.co.jp/korokoro/)
+* [パイロットクロス](https://n-mattun.booth.pm/)
 
 ##  ビューア
 
