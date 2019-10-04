@@ -4,18 +4,17 @@ Title: PrefabがImportされるタイミングと上書きの注意
 
 ## 0.49
 
-Material, BlendShapeAvatarを上書きしなかったときに既存のアセット参照をセットするようにしました。
+UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
+その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。
 
 ## 0.46
 
-Material, BlendShapeAvatar, BlendShapeClip は既存のファイルがあったときに上書きしないようにしました。
+UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
+Mesh, Texture, Prefabは上書きします。
+
+Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
+上書きしたい場合はImport前に削除してください。
 
 ## 0.45以前
 
-Assets化のフォルダに対してVRMが
-
-* 新規に作成されたとき
-* ExporterでAssets下を指定したとき(能動的Importを呼び出しあり)
-* ProjectのLibraryに該当するファイルが無い時(git等でcloneしたとき)
-
-にImportされ付随するアセット(Mesh, Texture, Material, BlendShape, Prefabなど)が上書きされます。
+UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。

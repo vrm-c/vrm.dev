@@ -5,11 +5,11 @@ Title: BlendShapeのセットアップ(v0.45)
 ## BlendShape関連のアセット
 VRMをImportすると、`モデル名から拡張子を除いた名前 + BlendShapes` フォルダにPresetを表すBlendShapeClipが作成されます。
 
-<img src=images/blendshapeclip_assets.png width=200>
+![image](/images/wiki/blendshapeclip_assets.png)
 
 BlendShapeAvatarアセット。
 
-<img src=images/blendshapeavatar.png width=500>
+![image](/images/wiki/blendshapeavatar.png)
 
 
 ## 設定画面
@@ -48,7 +48,7 @@ BlendShapeタブで作成した値を見ることが出来ます。
 
 `BlendShapeによるLookAt`(後述)や、BlendShapeで色を変える設定を作成することができます。
 
-<img src=images/material_color.png width=300>
+![image](/images/wiki/material_color.png)
 
 ## 各BlendShapeClipの設定
 
@@ -81,10 +81,10 @@ BlendShapeAvatarのインスペクタから選択する
 
 ### 中間値を許可しない設定(v0.45)
 
-<img src=images/alicia_binary.png width=300> 
+![image](/images/wiki/alicia_binary.png)
 
 スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。
 
 ロードするアプリケーションがv0.45以降になっていると有効になります。
 
-<img src=images/binary.png width=200>
+![image](/images/wiki/binary.png)

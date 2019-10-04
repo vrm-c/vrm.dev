@@ -7,7 +7,7 @@ weight: 2
 
 ## Workflow
 
-{{< img src="images/vrm/vrm_workflow_en.png" alt="vrm workflow" >}}
+{{< img src="images/vrm/VRM_changeVRM_EN.png" alt="vrm workflow" >}}
 
 ## Prepare a 3D model that can be handled as "Humanoid" in Unity
 
