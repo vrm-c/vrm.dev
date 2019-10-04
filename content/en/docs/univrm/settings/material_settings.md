@@ -26,4 +26,4 @@ In order to bring in this features, we have added the shader `UniGLTF / Unlit` i
 
 ## MToon Shader
 * https://niconare.nicovideo.jp/watch/kn3485 (written in Japanese)
-* https://dwango.github.io/en/vrm/univrm/shaders/mtoon/
+* https://vrm.dev/en/univrm/shaders/mtoon/

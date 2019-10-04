@@ -6,7 +6,7 @@ weight: 2
 ---
 
 ##  VRMファイルのつくりかた（既存3Dモデルからのコンバート）
-{{< img src="images/vrm/vrm_workflow.png" alt="vrm workflow" >}}
+{{< img src="images/vrm/VRM_changeVRM_jp.png" alt="vrm workflow" >}}
 
 VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[UniVRM](https://github.com/vrm-c/UniVRM)を使用します。
 おおまかな作業のながれは以下のようになります

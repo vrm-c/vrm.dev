@@ -29,7 +29,8 @@ VRでのアバター表現が急速に盛り上がるなか、こういった状
 
 ---
 ## VRMで何ができるの？
-{{< img src="images/vrm/vrm_app.png" alt="VRM applications" >}}
+{{< img src="images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" >}}
+
 **VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。**
 対応アプリケーションが揃うと、こんな未来になるはず…
 

@@ -7,7 +7,7 @@ weight: 2
 
 ## ワークフロー
 
-{{< img src="images/vrm/vrm_workflow.png" alt="vrm workflow" >}}
+{{< img src="images/vrm/VRM_changeVRM_jp.png" alt="vrm workflow" >}}
 
 ## humanoid avatarがセット済みの人間型モデルを用意します
 

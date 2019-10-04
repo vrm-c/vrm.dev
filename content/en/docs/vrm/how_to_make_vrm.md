@@ -6,7 +6,7 @@ weight: 2
 ---
 
 ## Conversion from existing 3D model
-{{< img src="images/vrm/vrm_workflow_en.png" alt="vrm workflow" >}}
+{{< img src="images/vrm/VRM_changeVRM_EN.png" alt="vrm workflow" >}}
 
 The VRM file can be made by [Unity](https://unity3d.com/) and [UniVRM](https://github.com/vrm-c/UniVRM). The workflow is as follow:
 

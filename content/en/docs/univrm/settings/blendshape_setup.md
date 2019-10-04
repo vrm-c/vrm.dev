@@ -5,12 +5,11 @@ Title: BlendShape Setup (v0.45)
 ## Assets related to BlendShape
 Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: `ModelName.BlendShapes`
 
-<img src=images/blendshapeclip_assets.png width=200>
+![image](/images/wiki/blendshapeclip_assets.png)
 
 BlendShapeAvatar Asset
 
-<img src=images/blendshapeavatar.png width=500>
-
+![image](/images/wiki/blendshapeavatar.png)
 
 ## Setting screen
 The Asset has the following setting screens:
@@ -47,7 +46,7 @@ You can see the values created from the BlendShape tab.
 
 You can create a [BlendShape version of LookAt](https://github.com/dwango/UniVRM/wiki/LookAt-Settings), change the color with BlendShape, etc.
 
-<img src=images/material_color.png width=300>
+![image](/images/wiki/material_color.png)
 
 ## BlendShapeClip Settings
 

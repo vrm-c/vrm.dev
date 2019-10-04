@@ -28,7 +28,8 @@ Here we propose a **platform-independent 3D avatar file format** that possesses 
 
 ---
 ## What can you do with VRM?
-{{< img src="images/vrm/vrm_app_en.png" alt="VRM applications" >}}
+{{< img src="images/vrm/VRM_WorldConnect_EN.png" alt="VRM applications" >}}
+
 **The same avatar (VRM model) data can be used in any application that supports VRM**. As long as various VR applications are ready, the future will look like the one described below for sure...
 
 * Create your own avatar with character maker tools that support VRM
