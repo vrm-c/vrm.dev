@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Setting Guide</title><link>https://vrm.dev/en/docs/univrm/settings/</link><description>Recent content in Setting Guide on VRM</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vrm.dev/en/docs/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/settings/blendshape_setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/blendshape_setup/</guid><description>
 &lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
 &lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=images/blendshapeclip_assets.png width=200&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
-&lt;p&gt;&lt;img src=images/blendshapeavatar.png width=500&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
 &lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
 &lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
@@ -22,7 +22,7 @@
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
 &lt;p&gt;You can create a &lt;a href=&#34;https://github.com/dwango/UniVRM/wiki/LookAt-Settings&#34; target=&#34;_blank&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=images/material_color.png width=300&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
 &lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
 &lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
@@ -105,7 +105,17 @@ In order to bring in this features, we have added the shader &lt;code&gt;UniGLTF
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://niconare.nicovideo.jp/watch/kn3485&#34; target=&#34;_blank&#34;&gt;https://niconare.nicovideo.jp/watch/kn3485&lt;/a&gt; (written in Japanese)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/univrm/shaders/mtoon/&#34; target=&#34;_blank&#34;&gt;https://vrm.dev/en/univrm/shaders/mtoon/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/settings/t_pose/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/t_pose/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/settings/prefab_importer_behaviour/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/prefab_importer_behaviour/</guid><description>
+&lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
+In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
+&lt;h2 id=&#34;0-46&#34;&gt;0.46&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder.
+However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
+&lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
+If you want to overwrite, delete them before importing.&lt;/p&gt;
+&lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/settings/t_pose/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/settings/t_pose/</guid><description>
 &lt;p&gt;Work In Progress&lt;/p&gt;
 &lt;h2 id=&#34;supplementary-information-about-t-pose&#34;&gt;Supplementary Information about T-Pose&lt;/h2&gt;
 &lt;p&gt;When normalizing a model, the system requires the model posing as T-Pose. Therefore, to make a model in a T-Pose:&lt;/p&gt;
