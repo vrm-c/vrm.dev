@@ -1,5 +1,5 @@
 ---
-Title: Precautions on Prefab Import and Overwrite issue
+Title: Precautions on Prefab Import and Overwrite Issue
 ---
 
 ## 0.49
@@ -18,5 +18,3 @@ If you want to overwrite, delete them before importing.
 ## 0.45 and before
 
 When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.
-
-
