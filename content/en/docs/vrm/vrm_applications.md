@@ -53,6 +53,8 @@ weight: 4
 
 ##  Viewer
 
+* [Babylon VRM Viewer](https://virtual-cast.github.io/babylon-vrm-loader/)
+* [Three-VRM](https://github.com/pixiv/three-vrm/)
 * [VPocket (Android / iOS)](https://play.google.com/store/apps/details?id=com.BooApps.VPocket)
 * [VRMViewer](https://www43.atwiki.jp/beamman/)
 * [VRM Viewer](https://vrm-viewer.yukimochi.io/)
