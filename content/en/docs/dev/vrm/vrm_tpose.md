@@ -5,15 +5,15 @@ date: 2018-04-16T16:30:00+09:00
 weight: 1
 ---
 
-VRM T-Pose conforms to Humanoid of Unity of the first implementation of VRM.
+VRM T-Pose[^tpose] conforms to Unity's Humanoid of the first implementation of VRM.
 
 |{{< img src="images/vrm/T_pose.png" alt="T_pose" >}}|
 |-----|
 |T-Pose example|
 
-Besides apparent parts such as body and head / leg, there are also rules on arm and finger:
+Besides fundamental parts such as body, head, and leg, rules on arm and finger are also formulated:
 
-* Palm faces downward
-* Thumb is horizontally spread 45 degrees (a view from the top) on XZ plane
+* Palm faces downward, parallel to the ground along x axis
+* Thumbs are parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top) 
 
 [^tpose]: [Mecanim Humanoids](https://blogs.unity3d.com/2014/05/26/mecanim-humanoids/)
