@@ -755,10 +755,10 @@ UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h3&gt;
-&lt;p&gt;回転・スケールの除去前にモデルを強制的に&lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にします。&lt;/p&gt;
+&lt;p&gt;回転・スケールの除去前にモデルを強制的に&lt;a href=&#34;../../docs/dev/vrm/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にします。&lt;/p&gt;
 &lt;h4 id=&#34;手動でt-poseにすることができます&#34;&gt;手動でT Poseにすることができます&lt;/h4&gt;
 &lt;p&gt;自動で&lt;code&gt;T Pose&lt;/code&gt;にすると姿勢が変わってしまう場合などに、手動で&lt;code&gt;T Pose&lt;/code&gt;化することができます。
-あらかじめモデルを手動で&lt;a href=&#34;../../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にしてからエクスポートメニューを実行し、
+あらかじめモデルを手動で&lt;a href=&#34;../../docs/dev/vrm/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にしてからエクスポートメニューを実行し、
 上記の&lt;code&gt;Force T Pose&lt;/code&gt;チェックボックスをオフにしてください。&lt;/p&gt;
 &lt;h3 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h3&gt;
 &lt;p&gt;回転・スケールの除去処理を実行するか否か。
@@ -951,14 +951,14 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;ul&gt;
 &lt;li&gt;Force T Pose
 &lt;ul&gt;
-&lt;li&gt;回転・スケールの除去前にモデルを強制的に&lt;a href=&#34;../vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にします。&lt;/li&gt;
+&lt;li&gt;回転・スケールの除去前にモデルを強制的に&lt;a href=&#34;../docs/dev/vrm/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にします。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Pose Freeze
 &lt;ul&gt;
 &lt;li&gt;回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように&lt;strong&gt;モデルを正規化する処理&lt;/strong&gt;です。&lt;strong&gt;初回は必ずチェックを入れてください&lt;/strong&gt;。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;T-Poseとモデルの正規化の詳細は&lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/T-Poseとモデルの正規化の詳細&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;T-Poseとモデルの正規化の詳細は&lt;a href=&#34;../docs/univrm/settings/t_pose/&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;5-先ほどエクスポートしたvrmを再度unity上に読み込む&#34;&gt;5.先ほどエクスポートしたVRMを再度Unity上に読み込む&lt;/h3&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab.png&#34; /&gt;
 &lt;p&gt;&lt;strong&gt;4.で出力したVRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong&gt;だけで、VRMファイルがインポートされ&lt;strong&gt;モデルデータのPrefabが生成されます&lt;/strong&gt;。&lt;/p&gt;
@@ -1087,7 +1087,7 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 ファイル名を指定してVRMファイルを出力します&lt;/p&gt;
 &lt;h3 id=&#34;完成&#34;&gt;完成！&lt;/h3&gt;
 &lt;p&gt;これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！&lt;/p&gt;</description></item><item><title>Docs: VRMモデルを実行時にインポートする</title><link>https://vrm.dev/docs/dev/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/dev/programming/univrm_import_runtime/</guid><description>
-&lt;p&gt;最新バージョンは&lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/Runtime-import&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;をご覧ください。&lt;/p&gt;
+&lt;p&gt;最新バージョンは&lt;a href=&#34;../runtime_import/&#34;&gt;こちら&lt;/a&gt;をご覧ください。&lt;/p&gt;
 &lt;p&gt;Unityで実行時にモデルをインポートする方法です。&lt;/p&gt;
 &lt;h2 id=&#34;ファイルパスからvrmを開く&#34;&gt;ファイルパスからVRMを開く&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -1415,7 +1415,7 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
 &lt;h2 id=&#34;モーフ制御の視線-vrmlookatblendshapeapplyer&#34;&gt;モーフ制御の視線: VRMLookAtBlendShapeApplyer&lt;/h2&gt;
 &lt;p&gt;BlendShapeで視線制御するモデル用のコンポーネントです。
 VRMLookAtBoneApplyerを削除して、代わりにこれをアタッチしてください。
-VRMLookAtBlendShapeに関する設定方法は&lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/LookAtの設定&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;</description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/dev/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/dev/programming/univrm_use_firstperson/</guid><description>
+VRMLookAtBlendShapeに関する設定方法は&lt;a href=&#34;../../../docs/univrm/settings/lookat_settings&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;</description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/dev/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/dev/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id=&#34;vrmfirstpersonの設定-univrm-firstperson&#34;&gt;&lt;a href=&#34;../univrm_firstperson/&#34;&gt;VRMFirstPersonの設定&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;VRMFirstPersonではRendererに対して設定があります。&lt;/p&gt;
 &lt;table&gt;
@@ -1768,7 +1768,7 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 &lt;h1 id=&#34;vrmによる拡張情報&#34;&gt;VRMによる拡張情報&lt;/h1&gt;
 &lt;p&gt;JSONの&lt;code&gt;json[&#39;extensions&#39;][&#39;VRM&#39;]&lt;/code&gt;以下に格納されています。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../vrm_spec/&#34;&gt;VRM仕様&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md&#34; target=&#34;_blank&#34;&gt;VRM仕様&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
@@ -1847,7 +1847,7 @@ BlendShape同士が競合することがわかりました。
 あまり使わない。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;h4 id=&#34;material-listタブ&#34;&gt;Material Listタブ&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;BlendShapeによるLookAt&lt;/code&gt;(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BlendShapeによる&lt;/code&gt;&lt;a href=&#34;../lookat_settings&#34;&gt;LookAt&lt;/a&gt;(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;各blendshapeclipの設定&#34;&gt;各BlendShapeClipの設定&lt;/h2&gt;
 &lt;p&gt;各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p&gt;
