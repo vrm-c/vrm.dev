@@ -128,4 +128,4 @@ with open('AliciaSolid.vrm', 'rb') as f:
 # VRM extension
 Information of VRM extension is stored in``json['extensions']['VRM']``.
 
-* [VRM specifications](../vrm_spec/)
+* [VRM specifications](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md)

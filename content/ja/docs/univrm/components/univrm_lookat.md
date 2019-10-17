@@ -38,4 +38,4 @@ EyeBoneに回転を適用する際に角度を調節します。
 
 BlendShapeで視線制御するモデル用のコンポーネントです。
 VRMLookAtBoneApplyerを削除して、代わりにこれをアタッチしてください。
-VRMLookAtBlendShapeに関する設定方法は[こちら](https://github.com/vrm-c/UniVRM/wiki/LookAtの設定)を参照してください。
+VRMLookAtBlendShapeに関する設定方法は[こちら](../../../docs/univrm/settings/lookat_settings)を参照してください。

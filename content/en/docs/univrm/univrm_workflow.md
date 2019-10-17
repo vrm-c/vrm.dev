@@ -51,13 +51,13 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 |Enter your name in the `Author` field and click the `Export` button.|
 
 ### Force T Pose
-Force the model pose to become [T-Pose](../../vrm_tpose/) before removing rotation / scale.
+Force the model pose to become [T-Pose](../../docs/dev/vrm/vrm_tpose/) before removing rotation / scaling.
 
 #### Change to T Pose manually
-You can manually change the model pose to [T-Pose](../../vrm_tpose/) (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
+You can manually change the model pose to [T-Pose](../../docs/dev/vrm/vrm_tpose/) (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
 
 ### Pose Freeze
-Whether the rotation / scale removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
+Whether the rotation / scaling removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 
 #### Hierarchy normalization 
 
@@ -70,7 +70,7 @@ Whether the rotation / scale removal processing should be performed. It is **the
 |-----|
 |The model made by Z-UP coordinate system. The unit of distance is non-meter (Blender default).|
 
-Remove rotation and scale
+Remove rotation and scaling
 
 |{{< img src="images/vrm/without_rot_scale.png" >}}|
 |-----|

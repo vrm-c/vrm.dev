@@ -134,4 +134,4 @@ with open('AliciaSolid.vrm', 'rb') as f:
 
 JSONの``json['extensions']['VRM']``以下に格納されています。
 
-* [VRM仕様](../vrm_spec/)
+* [VRM仕様](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md)
