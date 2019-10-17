@@ -5,7 +5,7 @@ date: 2018-04-16T16:30:00+09:00
 weight: 2
 ---
 
-Examples of importing the VRM model with the latest version [can be found here](https://github.com/vrm-c/UniVRM/wiki/Runtime-import%28en%29).
+Examples of importing the VRM model with the latest version [can be found here](../runtime_import/).
 
 The followings are the methods to import a VRM model at runtime in Unity:
 

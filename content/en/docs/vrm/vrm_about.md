@@ -74,11 +74,11 @@ The new adding above is assumed to be the format in VR era.
 * Explicitly Licensed Person
 * Everyone
 
-#### Permission to perform violent acts with this avatar
+#### Violent acts using this avatar
 * Disallow
 * Allow
 
-#### Permission to perform sexual acts with this avatar
+#### Sexuality acts using this avatar
 * Disallow
 * Allow
 
@@ -89,7 +89,7 @@ The new adding above is assumed to be the format in VR era.
 #### Other License Url
 If there are any conditions not mentioned above, put the URL link of the license document here.
 
-### License redistribution / modification
+### Redistribution / Modifications License
 #### License Type
 * Redistribution Prohibited
 * [Copyright wavier (CC0)](https://creativecommons.org/publicdomain/zero/1.0/deed.en)

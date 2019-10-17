@@ -5,7 +5,7 @@ date: 2018-04-16T16:30:00+09:00
 weight: 2
 ---
 
-最新バージョンは[こちら](https://github.com/vrm-c/UniVRM/wiki/Runtime-import)をご覧ください。
+最新バージョンは[こちら](../runtime_import/)をご覧ください。
 
 Unityで実行時にモデルをインポートする方法です。
 

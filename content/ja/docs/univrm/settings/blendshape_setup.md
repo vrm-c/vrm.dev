@@ -46,7 +46,7 @@ BlendShapeタブで作成した値を見ることが出来ます。
 
 #### Material Listタブ
 
-`BlendShapeによるLookAt`(後述)や、BlendShapeで色を変える設定を作成することができます。
+`BlendShapeによる`[LookAt](../lookat_settings)(後述)や、BlendShapeで色を変える設定を作成することができます。
 
 ![image](/images/wiki/material_color.png)
 

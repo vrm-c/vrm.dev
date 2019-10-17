@@ -96,11 +96,11 @@ Enter your name in the `Author` field and click the `Export` button. The VRM fil
 {{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}
 
 * Force T Pose
-    * Force the model pose to become [T-Pose](../vrm_tpose/) before removing rotation / scale.
+    * Force the model pose to become [T-Pose](../docs/dev/vrm/vrm_tpose/) before removing rotation / scaling.
 * Pose Freeze
-    * Whether the rotation / scale removal processing should be performed. This is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
+    * Whether the rotation / scaling removal processing should be performed. This is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 
-Details about model's T-Pose normalization [can be found here](https://github.com/vrm-c/UniVRM/wiki/T-Pose-Normalization-for-Model).
+Details about model's T-Pose normalization [can be found here](../docs/univrm/settings/t_pose/).
 
 ### 5. Import the VRM file
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
@@ -134,10 +134,10 @@ The VRM model's information will be shown in the Inspector window once the root 
 			* Only Author
 			* Explicitly Licensed Person
 			* Everyone
-		* Permission to perform violent acts with this avatar
+		* Violent acts using this avatar
 			* Disallow
 			* Allow
-		* Permission to perform sexual acts with this avatar
+		* Sexuality acts using this avatar
 			* Disallow
 			* Allow
 		* For commercial use
@@ -146,7 +146,7 @@ The VRM model's information will be shown in the Inspector window once the root 
 		* Other License Url
 			* If there are any conditions not mentioned above, put the URL link of the license document here
 
-	* License redistribution / modification
+	* Redistribution / Modifications License
 		* License Type
 			* Redistribution Prohibited
 			* [Copyright wavier (CC0)](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
