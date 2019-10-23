@@ -64,6 +64,7 @@ weight: 4
 * [VRMお人形遊び](https://120byte.booth.pm/items/1099618)
 * [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM)
 * [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm.html)
+* [VRM Display](https://akarimichi.github.io/vrm-display-releases/)
 
 ##  その他のVRM対応アプリ
 
