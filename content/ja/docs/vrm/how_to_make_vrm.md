@@ -139,10 +139,10 @@ T-Poseとモデルの正規化の詳細は[こちら](../docs/univrm/settings/t_
 		* アバターの「親作品」となるようなものがあれば、その情報
 
 * License（使用許諾・ライセンス情報）
-	* アバターの人格に関する許諾範囲 (Personation / Charaterization Permission)
+	* アバターの人格に関する許諾範囲 (Personation / Characterization Permission)
 		* アバターに人格を与えることの許諾範囲 (A person who can perform with this avatar)
 			* アバターを操作することはアバター作者にのみ許される(Only Author)
-			* 明確に許可された人限定(Explictly Licensed Person)
+			* 明確に許可された人限定(Explicitly Licensed Person)
 			* 全員に許可(Everyone)
 		* このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
 			* 不許可(Disallow)
