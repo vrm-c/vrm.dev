@@ -64,6 +64,7 @@ weight: 4
 * [VRM OningyoAsobi](https://120byte.booth.pm/items/1099618)
 * [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM)
 * [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm_en.html)
+* [VRM Display](https://akarimichi.github.io/vrm-display-releases/)
 
 ##  Others
 
