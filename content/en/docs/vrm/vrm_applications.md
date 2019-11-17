@@ -15,7 +15,7 @@ weight: 4
 ##  Character maker
 
 * [Vkatsu](http://vkatsu.jp/)
-* [VRoid](https://vroid.pixiv.net/)
+* [VRoid](https://vroid.com/en)
 * [SeshiruHenshin](https://fantia.jp/fanclubs/10552)
 
 ##  Live streaming tool
