@@ -6,11 +6,17 @@ url: /vrm_applications/
 weight: 4
 ---
 
-## 3Dキャラクター投稿プラットフォーム
+##  3Dキャラクター投稿プラットフォーム
 
 * [ザ・シードオンライン](https://seed.online/)
 * [ニコニ立体](https://3d.nicovideo.jp/)
 * [VRoid Hub](https://hub.vroid.com/)
+
+##  プラグイン
+
+* [VRM_IMPORTER_for_Blender](https://github.com/iCyP/VRM_IMPORTER_for_Blender2_8)
+* [VRM4U](https://github.com/ruyo/VRM4U)
+* [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter)
 
 ##  キャラメイクツール
 
@@ -21,7 +27,6 @@ weight: 4
 ##  配信ツール
 
 * [バーチャルキャスト](https://virtualcast.jp/)
-	* VR空間のスタジオをリアルタイムでコミュニケーションできるVRライブ・コミュニケーションサービス。モデルデータとしてVRMを採用、読み込み可能。
 * [カスタムキャスト](https://customcast.jp/)
 * [VDRAW](https://sites.google.com/view/vdraw/)
 * [REALITY](https://le.wrightflyer.net/reality/)
@@ -53,7 +58,7 @@ weight: 4
 
 ##  ビューア
 
-* [Babylon VRM Viewer](https://virtual-cast.github.io/babylon-vrm-loader/)
+* [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/)
 * [Three-VRM](https://github.com/pixiv/three-vrm/)
 * [VPocket (Android / iOS)](https://play.google.com/store/apps/details?id=com.BooApps.VPocket)
 * [VRMビュアー](https://www43.atwiki.jp/beamman/)
@@ -71,6 +76,5 @@ weight: 4
 * [Vタビ](https://app.famitsu.com/gametitle/8356/)
 * [Vismuth](https://vismuth.net/)
 * [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit)
-* [VRM4U](https://github.com/ruyo/VRM4U)
 * [Vスタンプ](https://yashinut.com/archives/vstamp_app.html)
 * [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI)
