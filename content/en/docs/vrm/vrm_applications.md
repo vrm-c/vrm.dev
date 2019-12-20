@@ -11,6 +11,12 @@ weight: 4
 * [The Seed Online](https://seed.online/)
 * [Niconi 3D](https://3d.nicovideo.jp/)
 * [VRoid Hub](https://hub.vroid.com/)
+
+##  Plug-in
+
+* [VRM_IMPORTER_for_Blender](https://github.com/iCyP/VRM_IMPORTER_for_Blender2_8)
+* [VRM4U](https://github.com/ruyo/VRM4U)
+* [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter)
 	
 ##  Character maker
 
@@ -21,7 +27,6 @@ weight: 4
 ##  Live streaming tool
 
 * [Virtual Cast](https://virtualcast.jp/)
-    * A VR live communication application that allows users to communicate in a shared virtual space in real-time. VRM model is importable.
 * [Custom Cast](https://customcast.jp/)
 * [VDRAW](https://sites.google.com/view/vdraw/)
 * [REALITY](https://le.wrightflyer.net/reality/)
@@ -53,7 +58,7 @@ weight: 4
 
 ##  Viewer
 
-* [Babylon VRM Viewer](https://virtual-cast.github.io/babylon-vrm-loader/)
+* [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/)
 * [Three-VRM](https://github.com/pixiv/three-vrm/)
 * [VPocket (Android / iOS)](https://play.google.com/store/apps/details?id=com.BooApps.VPocket)
 * [VRMViewer](https://www43.atwiki.jp/beamman/)
@@ -71,6 +76,5 @@ weight: 4
 * [Vtabi](https://app.famitsu.com/gametitle/8356/)
 * [Vismuth](https://vismuth.net/)
 * [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit)
-* [VRM4U](https://github.com/ruyo/VRM4U)
 * [vstamp](https://yashinut.com/archives/vstamp_app.html)
 * [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI)
