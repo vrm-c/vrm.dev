@@ -11,9 +11,9 @@ VRMFirstPerson has the following settings for Renderer:
 |FirstPersonFlag               |Layer               |Note                                       |
 |------------------------------|----------------------|--------------------------------------------|
 |Both                          |default               |Specify parts that are not necessarily separated between first-person view and third-person view.|
-|ThirdPersonOnly               |THIRDPERSON_ONLY_LAYER|Specify parts that are not rendered in first-person view.|
-|FirstPersonOnly               |FIRSTPERSON_ONLY_LAYER|Specify parts that are not rendered in third-person view. The auto-created headless model is used.|
-|Auto                          |THIRDPERSON_ONLY_LAYER|Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.|
+|ThirdPersonOnly               |VRMThirdPersonOnly|Specify parts that are not rendered in first-person view.|
+|FirstPersonOnly               |VRMFirstPersonOnly|Specify parts that are not rendered in third-person view. The auto-created headless model is used.|
+|Auto                          |VRMThirdPersonOnly|Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.|
 
 By calling **VRMFirstPerson.Setup** at runtime, the layer settings described above can be performed. Please call the function explicitly from outside.
 
@@ -52,10 +52,10 @@ public class SetupExample : MonoBehaviour
     Camera m_firstPersonCamera; // HMD camera
     
     [SerializeField]
-    LayerMask m_firstPersonMask; // Set a first-person mask (default | FIRSTPERSON_ONLY_LAYER, etc.) in HMD camera
+    LayerMask m_firstPersonMask; // Set a first-person mask (default | VRMFirstPersonOnly, etc.) in HMD camera
 
     [SerializeField]
-    LayerMask m_otherMask; // Set other masks (default | THIRDPERSON_ONLY_LAYER, etc.) in HMD camera
+    LayerMask m_otherMask; // Set other masks (default | VRMThirdPersonOnly, etc.) in HMD camera
 
     [SerializeField]
     VRMFirstPerson m_firstPerson;
