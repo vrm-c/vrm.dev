@@ -11,10 +11,10 @@ weight: 3
 var proxy=GetComponent<VRMBlendShapeProxy>();
 
 // enumで呼び出し
-proxy.SetValue(BlendShapePreset.A, 1.0f); // 0から1で指定
+proxy.ImmediatelySetValue(BlendShapePreset.A, 1.0f); // 0から1で指定
 
 // stringで呼び出し
-proxy.SetValue("A", 1.0f);
+proxy.ImmediatelySetValue("A", 1.0f);
 {{< / highlight >}}
 
 ## 複数のBlendShapeをまとめて適用する
@@ -34,14 +34,24 @@ Blink_Rが
 で定義されている場合に両方を有効にする意図で下記のようにすると、後からセットしたものだけが適用されてしまいます。
 
 {{< highlight cs >}}
-proxy.SetValue(BlendShapePreset.Blink_L, 1.0f);
-proxy.SetValue(BlendShapePreset.Blink_R, 1.0f);
+proxy.ImmediatelySetValue(BlendShapePreset.Blink_L, 1.0f);
+proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
 {{< / highlight >}}
 
 この場合は、以下のようにできます。
 
 {{< highlight cs >}}
-proxy.SetValue(BlendShapePreset.Blink_L, 1.0f, false); // すぐに適用せずにたくわえる
-proxy.SetValue(BlendShapePreset.Blink_R, 1.0f, false);
+proxy.AccumerateValue(BlendShapePreset.Blink_L, 1.0f); // すぐに適用せずにたくわえる
+proxy.AccumerateValue(BlendShapePreset.Blink_R, 1.0f);
 proxy.Apply(); // 蓄積した値をまとめて適用する
+{{< / highlight >}}
+
+または
+
+{{< highlight cs >}}
+proxy.SetValues(new Dictionary<BlendShapeKey, float>
+{
+    {new BlendShapeKey(BlendShapePreset.Blink_L), 1.0f},
+    {new BlendShapeKey(BlendShapePreset.Blink_R), 1.0f},
+});
 {{< / highlight >}}
