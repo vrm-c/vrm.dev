@@ -101,7 +101,7 @@ You can call it from the codes shown as follows:
 
 ```cs
 // Call this expression with string since it belongs to unknown category
-proxy.SetValue("びっくり", 1.0f); // Assign a value between the range 0~1
+proxy.ImmediatelySetValue("びっくり", 1.0f); // Assign a value between the range 0~1
 ```
 
 After the setting is done, don't forget to export VRM file for being able to use the created expressions at runtime.  

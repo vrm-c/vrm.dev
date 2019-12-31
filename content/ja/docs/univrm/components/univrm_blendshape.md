@@ -107,7 +107,7 @@ BlendShapeClipに対して事前定義された名前です。
 
 ```cs
 // unknownなのでstringで呼び出し
-proxy.SetValue("びっくり", 1.0f); // 0から1で指定
+proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 ```
 
 ## [オプション]マテリアルの色をモーフする
