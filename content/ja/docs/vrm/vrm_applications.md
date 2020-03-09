@@ -42,6 +42,7 @@ weight: 4
 * [LiveAvatar](https://github.com/m2wasabi/LiveAvatar)
 * [[VR撮影アプリ] Clarie](https://biscrat.booth.pm/items/1193414)
 * [Luppet](https://luppet.appspot.com/)
+* [vear](https://apps.apple.com/jp/app/vear/id1490697369)
 
 ##  メタバース
 
