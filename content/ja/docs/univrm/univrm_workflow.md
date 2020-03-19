@@ -29,7 +29,7 @@ Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設�
 {{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
 
 ### rigのconfigureでボーンの割り当てを修正
-ボーンマッピングエラーを修正するには、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある`Mapping`をクリックし、`clear`をクリックして`Automap`をクリックします。
+ボーンマッピングエラーを修正するには、ボーンマッピングに失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある`Mapping`をクリックし、`clear`をクリックして`Automap`をクリックします。
 
 |{{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}|
 |-----|
