@@ -11,9 +11,9 @@ VRMFirstPersonではRendererに対して設定があります。
 |FirstPersonFlag               |レイヤー               |備考                                        |
 |------------------------------|----------------------|--------------------------------------------|
 |Both                          |default               |一人称と三人称で分ける必要のない部分に指定します|
-|ThirdPersonOnly               |THIRDPERSON_ONLY_LAYER|一人称時に描画したくない部分に指定します        |
-|FirstPersonOnly               |FIRSTPERSON_ONLY_LAYER|三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います|
-|Auto                          |THIRDPERSON_ONLY_LAYER|実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します|
+|ThirdPersonOnly               |VRMThirdPersonOnly|一人称時に描画したくない部分に指定します        |
+|FirstPersonOnly               |VRMFirstPersonOnly|三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います|
+|Auto                          |VRMThirdPersonOnly|実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します|
 
 実行時に**VRMFirstPerson.Setup**を呼び出すことで、上記のレイヤー設定を行うことができます。明示的に外部から呼び出してください。
 
@@ -52,10 +52,10 @@ public class SetupExample : MonoBehaviour
     Camera m_firstPersonCamera; // HMDのカメラ
 
     [SerializeField]
-    LayerMask m_firstPersonMask; // HMDのカメラにセットするマスク default | FIRSTPERSON_ONLY_LAYER など
+    LayerMask m_firstPersonMask; // HMDのカメラにセットするマスク default | VRMFirstPersonOnly など
 
     [SerializeField]
-    LayerMask m_otherMask; // HMDのカメラにセットするマスク default | THIRDPERSON_ONLY_LAYER など
+    LayerMask m_otherMask; // HMDのカメラにセットするマスク default | VRMThirdPersonOnly など
 
     [SerializeField]
     VRMFirstPerson m_firstPerson;
