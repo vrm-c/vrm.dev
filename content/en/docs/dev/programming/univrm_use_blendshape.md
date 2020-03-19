@@ -11,10 +11,10 @@ weight: 3
 var proxy=GetComponent<VRMBlendShapeProxy>();
 
 // Call enum 
-proxy.SetValue(BlendShapePreset.A, 1.0f); // Assign a value between 0 and 1
+proxy.ImmediatelySetValue(BlendShapePreset.A, 1.0f); // Assign a value between 0 and 1
 
 // Call string
-proxy.SetValue("A", 1.0f);
+proxy.ImmediatelySetValue("A", 1.0f);
 {{< / highlight >}}
 
 ## Apply multiple BlendShapes at once
@@ -34,16 +34,26 @@ For Blink_R
 If both BlendShapes are defined and enabled as shown below, later only those items set before can be applied.
 
 {{< highlight cs >}}
-proxy.SetValue(BlendShapePreset.Blink_L, 1.0f);
-proxy.SetValue(BlendShapePreset.Blink_R, 1.0f);
+proxy.ImmediatelySetValue(BlendShapePreset.Blink_L, 1.0f);
+proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
 {{< / highlight >}}
 
 In this case, the following codes are workable:
 
 {{< highlight cs >}}
 // Keep the value and wait for Apply function
-proxy.SetValue(BlendShapePreset.Blink_L, 1.0f, false);
-proxy.SetValue(BlendShapePreset.Blink_R, 1.0f, false);
+proxy.AccumerateValue(BlendShapePreset.Blink_L, 1.0f);
+proxy.AccumerateValue(BlendShapePreset.Blink_R, 1.0f);
 // Apply all the BlendShapes at once
 proxy.Apply();
+{{< / highlight >}}
+
+Or
+
+{{< highlight cs >}}
+proxy.SetValues(new Dictionary<BlendShapeKey, float>
+{
+    {new BlendShapeKey(BlendShapePreset.Blink_L), 1.0f},
+    {new BlendShapeKey(BlendShapePreset.Blink_R), 1.0f},
+});
 {{< / highlight >}}
