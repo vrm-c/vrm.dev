@@ -1569,17 +1569,17 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;../../../docs/univrm/set
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;ThirdPersonOnly&lt;/td&gt;
-&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
 &lt;td&gt;Specify parts that are not rendered in first-person view.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;FirstPersonOnly&lt;/td&gt;
-&lt;td&gt;FIRSTPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMFirstPersonOnly&lt;/td&gt;
 &lt;td&gt;Specify parts that are not rendered in third-person view. The auto-created headless model is used.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Auto&lt;/td&gt;
-&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
 &lt;td&gt;Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1622,10 +1622,10 @@ Settings related to VRMLookAtBlendShape &lt;a href=&#34;../../../docs/univrm/set
 &lt;span style=&#34;color:#000&#34;&gt;Camera&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonCamera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMD camera
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set a first-person mask (default | FIRSTPERSON_ONLY_LAYER, etc.) in HMD camera
+&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set a first-person mask (default | VRMFirstPersonOnly, etc.) in HMD camera
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set other masks (default | THIRDPERSON_ONLY_LAYER, etc.) in HMD camera
+&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Set other masks (default | VRMThirdPersonOnly, etc.) in HMD camera
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;VRMFirstPerson&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;

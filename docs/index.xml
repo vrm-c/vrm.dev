@@ -1445,17 +1445,17 @@ VRMLookAtBlendShapeに関する設定方法は&lt;a href=&#34;../../../docs/univ
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;ThirdPersonOnly&lt;/td&gt;
-&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
 &lt;td&gt;一人称時に描画したくない部分に指定します&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;FirstPersonOnly&lt;/td&gt;
-&lt;td&gt;FIRSTPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMFirstPersonOnly&lt;/td&gt;
 &lt;td&gt;三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Auto&lt;/td&gt;
-&lt;td&gt;THIRDPERSON_ONLY_LAYER&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
 &lt;td&gt;実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1498,10 +1498,10 @@ VRMLookAtBlendShapeに関する設定方法は&lt;a href=&#34;../../../docs/univ
 &lt;span style=&#34;color:#000&#34;&gt;Camera&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonCamera&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMDのカメラ
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | FIRSTPERSON_ONLY_LAYER など
+&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPersonMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | VRMFirstPersonOnly など
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | THIRDPERSON_ONLY_LAYER など
+&lt;span style=&#34;color:#000&#34;&gt;LayerMask&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_otherMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | VRMThirdPersonOnly など
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt; [SerializeField]&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;VRMFirstPerson&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;m_firstPerson&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
