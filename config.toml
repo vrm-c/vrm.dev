@@ -2,6 +2,7 @@ baseURL = "https://vrm.dev/"
 title = "VRM"
 publishDir = "docs"
 
+enableGitInfo = true
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
@@ -145,3 +146,9 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
   url = "https://github.com/vrm-c"
   icon = "fab fa-github"
   desc = "Development takes place here!"
+
+[frontmatter]
+date = ["date", "publishDate", ":git", "lastmod"]
+lastmod = [":git", "lastmod", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
