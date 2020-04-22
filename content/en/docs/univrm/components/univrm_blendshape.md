@@ -6,7 +6,8 @@ url: "/en/univrm/components/univrm_blendshape/"
 weight: 2
 ---
 
-New features introduced in UniVRM v0.45 [can be found here](https://github.com/vrm-c/UniVRM/wiki/BlendShape-Setup)
+New features introduced in UniVRM v0.45 
+[can be found here](../../../docs/univrm/settings/blendshape_setup/)
 
 ## VRMBlendShapeProxy
 

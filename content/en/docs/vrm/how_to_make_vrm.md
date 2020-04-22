@@ -96,7 +96,7 @@ Enter your name in the `Author` field and click the `Export` button. The VRM fil
 {{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}
 
 * Force T Pose
-    * Force the model pose to become [T-Pose](../docs/dev/vrm/vrm_tpose/) before removing rotation / scaling.
+    * Force the model pose to become [T-Pose](../docs/dev/univrm-0.xx/vrm/vrm_tpose/) before removing rotation / scaling.
 * Pose Freeze
     * Whether the rotation / scaling removal processing should be performed. This is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 

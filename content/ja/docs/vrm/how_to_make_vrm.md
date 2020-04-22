@@ -104,7 +104,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 {{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}
 
 * Force T Pose
-	* 回転・スケールの除去前にモデルを強制的に[T-Pose](../docs/dev/vrm/vrm_tpose/)にします。
+	* 回転・スケールの除去前にモデルを強制的に[T-Pose](../docs/dev/univrm-0.xx/vrm/vrm_tpose/)にします。
 * Pose Freeze
 	* 回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように**モデルを正規化する処理**です。**初回は必ずチェックを入れてください**。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。
 

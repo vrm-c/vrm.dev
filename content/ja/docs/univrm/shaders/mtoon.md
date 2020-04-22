@@ -7,7 +7,7 @@ weight: 2
 ---
 
 [Shader preloadingの設定](../../univrm_install/#shader-preloadingの設定)<br/>
-[MToonの使い方](https://niconare.nicovideo.jp/watch/kn3485)
+[MToonの使い方](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 
 # MToon について
 MToon は日本のアニメ的表現をすることを目標としています。
