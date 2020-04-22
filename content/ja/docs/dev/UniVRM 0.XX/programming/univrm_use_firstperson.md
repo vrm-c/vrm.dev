@@ -5,8 +5,8 @@ date: 2018-05-29T10:00:00+09:00
 weight: 5
 ---
 
-# [VRMFirstPersonの設定](../univrm_firstperson/)
-VRMFirstPersonではRendererに対して設定があります。
+# VRMFirstPersonの設定
+[VRMFirstPerson](/../../../univrm/components/univrm_firstperson/)ではRendererに対して設定があります。
 
 |FirstPersonFlag               |レイヤー               |備考                                        |
 |------------------------------|----------------------|--------------------------------------------|

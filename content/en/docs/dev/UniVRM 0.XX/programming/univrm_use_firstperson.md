@@ -5,8 +5,8 @@ date: 2018-05-29T10:00:00+09:00
 weight: 5
 ---
 
-# [VRMFirstPerson Settings](../univrm_firstperson/)
-VRMFirstPerson has the following settings for Renderer:
+# VRMFirstPerson Settings
+[VRMFirstPerson](/../../../en/univrm/components/univrm_firstperson/) has the following settings for Renderer:
 
 |FirstPersonFlag               |Layer               |Note                                       |
 |------------------------------|----------------------|--------------------------------------------|
