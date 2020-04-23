@@ -1,5 +1,6 @@
 ---
-Title: PrefabがImportされるタイミングと上書きの注意
+title: PrefabがImportされるタイミングと上書きの注意
+url: /univrm/settings/prefab_importer_behaviour/
 ---
 
 ## 0.49

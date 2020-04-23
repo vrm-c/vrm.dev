@@ -1,5 +1,6 @@
 ---
-Title: マテリアル設定
+title: マテリアル設定
+url: /univrm/settings/material_settings/
 ---
 
 ## トラブルシューティング
@@ -23,5 +24,5 @@ GLTFでは、`doubleSided`、`Texture`と`Color`の乗算、`VertexColor`, `Colo
 `WIP`
 
 ## MToon
-* https://niconare.nicovideo.jp/watch/kn3485
-* https://vrm.dev/univrm/shaders/mtoon/
+* https://www.slideshare.net/VirtualCast/vrm-mtoon
+* [MToon Shader](../../../../univrm/shaders/mtoon/)

@@ -1,5 +1,6 @@
 ---
-Title: T-Poseとモデルの正規化の詳細
+title: T-Poseとモデルの正規化の詳細
+url: /univrm/settings/t_pose/
 ---
 
 WIP

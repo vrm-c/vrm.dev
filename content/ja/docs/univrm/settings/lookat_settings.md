@@ -1,13 +1,15 @@
 ---
-Title: LookAtの設定
+title: LookAtの設定
+url: /univrm/settings/lookat_settings/
 ---
 
 ## 目ボーンによる視線制御
-https://vrm.dev/univrm/components/univrm_lookat/
+
+[視線制御](../../../../univrm/components/univrm_lookat)
 を参照してください。
 
 ## BlendShapeによる視線制御
-https://vrm.dev/univrm/components/univrm_lookat/
+[視線制御](../../../../univrm/components/univrm_lookat)
 を参照してください。
 
 ## TextureのUV操作による視線制御

@@ -51,10 +51,10 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 |Enter your name in the `Author` field and click the `Export` button.|
 
 ### Force T Pose
-Force the model pose to become [T-Pose](../../docs/dev/vrm/vrm_tpose/) before removing rotation / scaling.
+Force the model pose to become [T-Pose](../../dev/univrm-0.xx/vrm/vrm_tpose/) before removing rotation / scaling.
 
 #### Change to T Pose manually
-You can manually change the model pose to [T-Pose](../../docs/dev/vrm/vrm_tpose/) (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
+You can manually change the model pose to [T-Pose](../../dev/univrm-0.xx/vrm/vrm_tpose/) (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
 
 ### Pose Freeze
 Whether the rotation / scaling removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.

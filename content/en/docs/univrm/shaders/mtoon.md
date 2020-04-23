@@ -7,7 +7,7 @@ weight: 2
 ---
 
 [Shader preloading setting](../../univrm_install/#shader-preloading-setting)<br>
-[How to use MToon](https://niconare.nicovideo.jp/watch/kn3485)
+[How to use MToon](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 
 # About MToon
 MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit Color` and `Shade Color` based on Lighting parameters and light source environment. 

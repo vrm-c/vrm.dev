@@ -1,5 +1,6 @@
 ---
-Title: Material-Settings
+title: Material-Settings
+url: "/en/univrm/settings/material_settings/"
 ---
 
 About material settings:
@@ -25,5 +26,5 @@ In order to bring in this features, we have added the shader `UniGLTF / Unlit` i
 `WIP`
 
 ## MToon Shader
-* https://niconare.nicovideo.jp/watch/kn3485 (written in Japanese)
-* https://vrm.dev/en/univrm/shaders/mtoon/
+* https://www.slideshare.net/VirtualCast/vrm-mtoon (written in Japanese)
+* [MToon Shader](../../../../univrm/shaders/mtoon/)

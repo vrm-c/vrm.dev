@@ -1,3 +1,4 @@
 ---
-Title: セッティングガイド
+title: セッティングガイド
+url: /univrm/settings/
 ---

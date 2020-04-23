@@ -1,3 +1,4 @@
 ---
-Title: Setting Guide
+title: Setting Guide
+url: "/en/univrm/settings/"
 ---

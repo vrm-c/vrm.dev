@@ -1,12 +1,13 @@
 ---
-Title: LookAt-Settings
+title: LookAt-Settings
+url: "/en/univrm/settings/lookat_settings/"
 ---
 
 ## Control the Eye Gaze with the Eye Bone
-Please refer to https://vrm.dev/en/univrm/components/univrm_lookat/.
+Please refer to [Eye Control](../../../../univrm/components/univrm_lookat).
 
 ## Control the Eye Gaze with the BlendShape
-Please refer to https://vrm.dev/en/univrm/components/univrm_lookat/.
+Please refer to [Eye Control](../../../../univrm/components/univrm_lookat).
 
 ## Control the Eye Gaze with the UV Texture
 A method that can move the model's eyes by sliding Texture up, down, left, or right.

@@ -1,7 +1,7 @@
 ---
 title: "Available shaders in UniVRM"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/univrm_shaders/"
+url: "/en/univrm/shaders/univrm_shaders/"
 weight: 4
 ---
 
