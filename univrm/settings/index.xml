@@ -1,0 +1,137 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – セッティングガイド</title><link>https://vrm.dev/univrm/settings/</link><description>Recent content in セッティングガイド on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 23 Apr 2020 17:09:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/univrm/settings/blendshape_setup/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/blendshape_setup/</guid><description>
+&lt;h2 id=&#34;blendshape関連のアセット&#34;&gt;BlendShape関連のアセット&lt;/h2&gt;
+&lt;p&gt;VRMをImportすると、&lt;code&gt;モデル名から拡張子を除いた名前 + BlendShapes&lt;/code&gt; フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;BlendShapeAvatarアセット。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;設定画面&#34;&gt;設定画面&lt;/h2&gt;
+&lt;p&gt;アセットには以下の設定画面があります。&lt;/p&gt;
+&lt;h3 id=&#34;blendshapeavatarアセットのインスペクタ&#34;&gt;BlendShapeAvatarアセットのインスペクタ&lt;/h3&gt;
+&lt;h4 id=&#34;editorタブ&#34;&gt;Editorタブ&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip選択・設定作成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;listタブ-v0-45から&#34;&gt;Listタブ(v0.45から)&lt;/h4&gt;
+&lt;p&gt;BlendShapeClipのリスト&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;blendshapeclipアセットのインスペクタ&#34;&gt;BlendShapeClipアセットのインスペクタ。&lt;/h3&gt;
+&lt;h4 id=&#34;blendshapeタブ&#34;&gt;BlendShapeタブ&lt;/h4&gt;
+&lt;p&gt;設定作成します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;blendshape-listタブ&#34;&gt;BlendShape Listタブ&lt;/h4&gt;
+&lt;p&gt;BlendShapeタブで作成した値を見ることが出来ます。
+あまり使わない。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;material-listタブ&#34;&gt;Material Listタブ&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;BlendShapeによる&lt;/code&gt;&lt;a href=&#34;../lookat_settings&#34;&gt;LookAt&lt;/a&gt;(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;各blendshapeclipの設定&#34;&gt;各BlendShapeClipの設定&lt;/h2&gt;
+&lt;p&gt;各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p&gt;
+&lt;h3 id=&#34;1-対象のblendshapeclipを選ぶ&#34;&gt;1. 対象のBlendShapeClipを選ぶ&lt;/h3&gt;
+&lt;p&gt;BlendShapeAvatarのインスペクタから選択する&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;アセットのBlendShapeClipを直接選択する&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-スライダを操作して顔を作る&#34;&gt;2. スライダを操作して顔を作る&lt;/h3&gt;
+&lt;p&gt;モデルに存在するSKinnedMeshRendererの名前から、
+目的のBlendShapeのスライダーを探して値を設定します。
+変更値は即座に反映されます。
+&lt;code&gt;Apply&lt;/code&gt;ボタン不要になりました(v0.45)。&lt;/p&gt;
+&lt;h3 id=&#34;3-previewの操作&#34;&gt;3. Previewの操作&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Preview Weight Slider&lt;/code&gt; で0~1の効き具合をテストできます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;左ドラッグ・右ドラッグ&lt;/code&gt;向きを変えられます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;中ドラッグ&lt;/code&gt;移動できます。&lt;/p&gt;
+&lt;h3 id=&#34;中間値を許可しない設定-v0-45&#34;&gt;中間値を許可しない設定(v0.45)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p&gt;
+&lt;p&gt;ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: LookAtの設定</title><link>https://vrm.dev/univrm/settings/lookat_settings/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/lookat_settings/</guid><description>
+&lt;h2 id=&#34;目ボーンによる視線制御&#34;&gt;目ボーンによる視線制御&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;視線制御&lt;/a&gt;
+を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeによる視線制御&#34;&gt;BlendShapeによる視線制御&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;視線制御&lt;/a&gt;
+を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;textureのuv操作による視線制御&#34;&gt;TextureのUV操作による視線制御&lt;/h2&gt;
+&lt;p&gt;Textureを上下左右にスライドさせることで目線を移動させる方法です。
+&lt;code&gt;Unityちゃん&lt;/code&gt; がこのタイプです。&lt;/p&gt;
+&lt;h3 id=&#34;目のマテリアルを探す&#34;&gt;目のマテリアルを探す&lt;/h3&gt;
+&lt;p&gt;マテリアルのインスペクタの目のテクスチャの &lt;code&gt;Tiling Offset&lt;/code&gt; の設定に注目してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1, 1, 0, 0&lt;/code&gt; になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください・・・)。&lt;/p&gt;
+&lt;p&gt;試しに、&lt;code&gt;Offset&lt;/code&gt; Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
+目的の設定が見つかったので &lt;code&gt;0&lt;/code&gt; に戻して次に進みます。&lt;/p&gt;
+&lt;h3 id=&#34;lookup-lookdown-lookleft-lookrightを設定する&#34;&gt;LookUp, LookDown, LookLeft, LookRightを設定する&lt;/h3&gt;
+&lt;p&gt;例では、Materialに &lt;code&gt;unlit/transparent cutout&lt;/code&gt; を使用しています。&lt;/p&gt;
+&lt;h4 id=&#34;lookleftの例&#34;&gt;LookLeftの例&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;LookLeft&lt;/code&gt; アセットを選択してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Material List&lt;/code&gt; タブを選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt; を選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt; を選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt; に設定します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Offsetを調整してLookLeftを作ります&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eye_R1&lt;/code&gt; も同様に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34; target=&#34;_blank&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vrmlookatblendshapeapplyerをセットする&#34;&gt;VRMLookAtBlendShapeApplyerをセットする&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;VRMLookAtBoneApplyerを削除します&lt;/li&gt;
+&lt;li&gt;VRMLookAtBlendShapeApplyerを追加します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;初期設定では、目標物が頭部から見て90度の角度になったときにBlendShpaeを1.0にセットするという意味になります。90以上は1.0にクランプされます。
+90を減らすことでより少ない角度で大きく瞳を動かすことが出来ます。&lt;/p&gt;
+&lt;p&gt;以上で完了です。&lt;/p&gt;</description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/univrm/settings/prefab_importer_behaviour/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/prefab_importer_behaviour/</guid><description>
+&lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
+&lt;p&gt;UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
+その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p&gt;
+&lt;h2 id=&#34;0-46&#34;&gt;0.46&lt;/h2&gt;
+&lt;p&gt;UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
+Mesh, Texture, Prefabは上書きします。&lt;/p&gt;
+&lt;p&gt;Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
+上書きしたい場合はImport前に削除してください。&lt;/p&gt;
+&lt;h2 id=&#34;0-45以前&#34;&gt;0.45以前&lt;/h2&gt;
+&lt;p&gt;UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p&gt;</description></item><item><title>Docs: T-Poseとモデルの正規化の詳細</title><link>https://vrm.dev/univrm/settings/t_pose/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/t_pose/</guid><description>
+&lt;p&gt;WIP&lt;/p&gt;
+&lt;h2 id=&#34;t-pose化の補足&#34;&gt;T-Pose化の補足&lt;/h2&gt;
+&lt;p&gt;正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。&lt;/p&gt;
+&lt;p&gt;T-Pose化するには、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkする&lt;/li&gt;
+&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkせずに、手動で腕等の回転を調整してT-Poseにする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;のどちらでもOKです。自動T-Poseがいい感じにならない場合は手動をお試しください。
+また、&lt;code&gt;正規化済のモデル&lt;/code&gt; を繰り返し &lt;code&gt;正規化する&lt;/code&gt; ことをはできるだけ避けてください(ずれが蓄積する)。&lt;/p&gt;
+&lt;p&gt;システムが、正規化済みと判定したモデル(Metaコンポーネントがアタッチされているなど)では、 &lt;code&gt;force T-Pose&lt;/code&gt; がデフォルトでは外れるようになっています。&lt;/p&gt;
+&lt;h2 id=&#34;よくある不具合&#34;&gt;よくある不具合&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;顎の位置が変わってしまう。&lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt;　設定で &lt;code&gt;jaw&lt;/code&gt; (顎) ボーンの割り当てを解除してください。VRMはプログラム側で顎ボーンを使っていないの割り当てを解除しても問題ありません。T-Pose化するときに顎の位置が微妙に変わってしまう場合があります(T-Poseの顎になるため)。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;前髪等、顔のパーツが微妙に動く。 &lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt; 設定で前髪等の意図しないボーンが &lt;code&gt;jaw&lt;/code&gt; (顎) ボーン に割り当てされていないかご確認ください。T-Pose化するときに顎の位置が微妙に変わってしまい、結果として前髪等が動いてしまう場合があります。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: マテリアル設定</title><link>https://vrm.dev/univrm/settings/material_settings/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/material_settings/</guid><description>
+&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ピカピカに反射してしまう。
+&lt;ul&gt;
+&lt;li&gt;Shaderの種類が &lt;code&gt;Standard&lt;/code&gt; (Unityの標準) で &lt;code&gt;metallilc&lt;/code&gt; と &lt;code&gt;smooth&lt;/code&gt; 値が高い状態になっています。 マテリアルのシェーダーを &lt;code&gt;Unlit/UniUnlit&lt;/code&gt; にするとテクスチャがそのまま表示できます。&lt;/li&gt;
+&lt;li&gt;Shaderの種類が、&lt;code&gt;VRM&lt;/code&gt; のサポートしてないシェーダーになっています。サポート外シェーダーロード時は &lt;code&gt;Standard&lt;/code&gt; として処理する関係でピカピカに反射する場合があります。マテリアルのシェーダーを &lt;code&gt;Unlit/UniUnlit&lt;/code&gt; にするとテクスチャがそのまま表示できます。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;standard&#34;&gt;Standard&lt;/h2&gt;
+&lt;p&gt;UnityのデフォルトでGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unlit系&#34;&gt;Unlit系&lt;/h2&gt;
+&lt;p&gt;Unityでは、&lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unilt/Transparent Cutout&lt;/code&gt; があります。
+GLTFでは、 &lt;code&gt;KHR_material_unlit&lt;/code&gt; 拡張でサポートしています。&lt;/p&gt;
+&lt;p&gt;GLTFでは、&lt;code&gt;doubleSided&lt;/code&gt;、&lt;code&gt;Texture&lt;/code&gt;と&lt;code&gt;Color&lt;/code&gt;の乗算、&lt;code&gt;VertexColor&lt;/code&gt;, &lt;code&gt;Color&lt;/code&gt; のアルファモードが表現できますが Unityでは対応するシェーダーがありませんでした。
+まとめて対応するために &lt;code&gt;UniGLTF/Unlit&lt;/code&gt; シェーダーを追加しました(v0.44)。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mtoon&#34;&gt;MToon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../univrm/shaders/mtoon/&#34;&gt;MToon Shader&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

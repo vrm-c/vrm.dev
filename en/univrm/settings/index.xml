@@ -1,0 +1,133 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Setting Guide</title><link>https://vrm.dev/en/univrm/settings/</link><description>Recent content in Setting Guide on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 23 Apr 2020 17:09:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/univrm/settings/blendshape_setup/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/blendshape_setup/</guid><description>
+&lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
+&lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
+&lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
+&lt;h4 id=&#34;editor-tab&#34;&gt;Editor tab&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip Selection / Creation&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;list-tab-starting-from-v0-45&#34;&gt;List tab (Starting from v0.45)&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip List&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeclip-asset&#34;&gt;The Inspector of BlendShapeClip Asset&lt;/h3&gt;
+&lt;h4 id=&#34;blendshape-tab&#34;&gt;BlendShape tab&lt;/h4&gt;
+&lt;p&gt;Create the BlendShape setting:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;blendshape-list-tab&#34;&gt;BlendShape List tab&lt;/h4&gt;
+&lt;p&gt;You can see the values created from the BlendShape tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
+&lt;p&gt;You can create a &lt;a href=&#34;../lookat_settings&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
+&lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
+&lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
+&lt;p&gt;Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Or click a BlendShapeClip Asset directly in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-change-the-values-of-the-sliders-to-make-a-facial-expression&#34;&gt;2. Change the values of the sliders to make a facial expression&lt;/h3&gt;
+&lt;p&gt;The names of the existing &lt;code&gt;SkinnedMeshRenderers&lt;/code&gt; will list in the Inspector window once you click the BlendShape tab.
+Click any listed name and you can then adjust the BlendShape value.
+The change value is reflected immediately.
+The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&gt;
+&lt;h3 id=&#34;3-check-the-model-s-blendshape-in-preview&#34;&gt;3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3&gt;
+&lt;p&gt;You can test changes in BlendShape by sliding the value (&lt;code&gt;Preview Weight Slider&lt;/code&gt;) between 0 ~ 1&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;left / right&lt;/code&gt; mouse button to change the viewing perspective&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;middle&lt;/code&gt; mouse button to move horizontally / vertically&lt;/p&gt;
+&lt;h3 id=&#34;the-binary-value-setting-for-blendshape-v0-45&#34;&gt;The Binary value setting for BlendShape (v0.45)&lt;/h3&gt;
+&lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/univrm/settings/lookat_settings/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/lookat_settings/</guid><description>
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-eye-bone&#34;&gt;Control the Eye Gaze with the Eye Bone&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-blendshape&#34;&gt;Control the Eye Gaze with the BlendShape&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-uv-texture&#34;&gt;Control the Eye Gaze with the UV Texture&lt;/h2&gt;
+&lt;p&gt;A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
+&lt;code&gt;Unity chan&lt;/code&gt; belongs to this type.&lt;/p&gt;
+&lt;h3 id=&#34;search-the-eye-material&#34;&gt;Search the eye material&lt;/h3&gt;
+&lt;p&gt;Please search the eye material in the Project window. The &lt;code&gt;Tiling Offset&lt;/code&gt; setting will be displayed in the Inspector window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The values should be &lt;code&gt;1, 1, 0, 0&lt;/code&gt; (if the values are different, the followings are for reference only).&lt;/p&gt;
+&lt;p&gt;Now you can try to change the values of &lt;code&gt;Offset&lt;/code&gt; X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
+Since we have found where the eye materials are, we set the X and Y values back to &lt;code&gt;0&lt;/code&gt; and proceed to the next step.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-lookup-lookdown-lookleft-and-lookright&#34;&gt;Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2&gt;
+&lt;p&gt;In the following example, we choose &lt;code&gt;unlit/transparent cutout&lt;/code&gt; for material&lt;/p&gt;
+&lt;h3 id=&#34;lookleft-example&#34;&gt;LookLeft example&lt;/h3&gt;
+&lt;p&gt;Please select the &lt;code&gt;LookLeft&lt;/code&gt; asset in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;code&gt;Material List&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust Offset value in the LookLeft setting&lt;/li&gt;
+&lt;li&gt;Repeat the same procedure for &lt;code&gt;eye_R1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Adjust &lt;code&gt;Offset&lt;/code&gt; X for Left and Right and &lt;code&gt;Offset&lt;/code&gt; Y for Up and Down. For example, &lt;code&gt;LookLeft Offset = -0.2, 0&lt;/code&gt;, &lt;code&gt;LookRight Offset = 0.2, 0&lt;/code&gt;, &lt;code&gt;LookUp Offset = 0, -0.2&lt;/code&gt;, &lt;code&gt;LookDown Offset = 0, 0.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34; target=&#34;_blank&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;add-vrmlookatblendshapeapplyer-in-the-vrm-model-s-inspector-window&#34;&gt;Add VRMLookAtBlendShapeApplyer in the VRM model&amp;rsquo;s Inspector window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove VRMLookAtBoneApplyer&lt;/li&gt;
+&lt;li&gt;Add VRMLookAtBlendShapeApplyer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/univrm/settings/material_settings/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/material_settings/</guid><description>
+&lt;p&gt;About material settings:&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The issue of causing glossy reflections:
+&lt;ul&gt;
+&lt;li&gt;It occurs when the shader type is &lt;code&gt;Standard&lt;/code&gt; (Unity standard) and the values of &lt;code&gt;metallic&lt;/code&gt; and &lt;code&gt;smooth&lt;/code&gt; are high. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit / UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
+&lt;li&gt;When an unknown shader is selected (not supported by &lt;code&gt;VRM&lt;/code&gt;), the shader is defaulted to Standard shader and it may result in glossy reflections. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit / UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;standard-shader&#34;&gt;Standard Shader&lt;/h2&gt;
+&lt;p&gt;Unity&amp;rsquo;s standard shader is compatible with GLTF&amp;rsquo;s standard PBR shader.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unlit-type-shader&#34;&gt;Unlit Type Shader&lt;/h2&gt;
+&lt;p&gt;The unlit type shaders &lt;code&gt;Unlit / Color&lt;/code&gt;, &lt;code&gt;Unlit / Texture&lt;/code&gt;, &lt;code&gt;Unlit / Transparent&lt;/code&gt;, and &lt;code&gt;Unilt / Transparent Cutout&lt;/code&gt; are built-in shaders in Unity.
+In GLTF, they are supported by the &lt;code&gt;KHR_material_unlit&lt;/code&gt; extension.&lt;/p&gt;
+&lt;p&gt;In GLTF, you can utilize &lt;code&gt;doubleSided&lt;/code&gt;, the multiplication of &lt;code&gt;Texture&lt;/code&gt; and &lt;code&gt;Color&lt;/code&gt;, &lt;code&gt;VertexColor&lt;/code&gt; and the alpha mode of &lt;code&gt;color&lt;/code&gt;. However, there is no shader that can handle these features on Unity side.
+In order to bring in this features, we have added the shader &lt;code&gt;UniGLTF / Unlit&lt;/code&gt; in Unity (v0.44).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mtoon-shader&#34;&gt;MToon Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt; (written in Japanese)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../univrm/shaders/mtoon/&#34;&gt;MToon Shader&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/univrm/settings/prefab_importer_behaviour/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/prefab_importer_behaviour/</guid><description>
+&lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
+In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
+&lt;h2 id=&#34;0-46&#34;&gt;0.46&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder.
+However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
+&lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
+If you want to overwrite, delete them before importing.&lt;/p&gt;
+&lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/univrm/settings/t_pose/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/t_pose/</guid><description>
+&lt;p&gt;Work In Progress&lt;/p&gt;
+&lt;h2 id=&#34;supplementary-information-about-t-pose&#34;&gt;Supplementary Information about T-Pose&lt;/h2&gt;
+&lt;p&gt;When normalizing a model, the system requires the model posing as T-Pose. Therefore, to make a model in a T-Pose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt; from the menu bar and check &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Another option is adjusting the rotation of the arm etc. manually to make a T-Pose (without checking the &lt;code&gt;force T-Pose&lt;/code&gt; box)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Either one described above is OK. If the result made by the first option (automatic T-Pose) is not looking well, you can try the second one, which is the method for making a T-Pose manually.&lt;/p&gt;
+&lt;p&gt;Also, please avoid repeatedly normalizing a model that was already normalized before as much as you can. Errors after T-Pose process might be accumulated if you do so.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; box becomes unchecked by default if the model&amp;rsquo;s normalization is already done before. That said, the system will detect whether the Meta component is attached to the model.&lt;/p&gt;
+&lt;h2 id=&#34;common-problems&#34;&gt;Common Problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The position of the jaw changes: There is a possibility that the position of the jaw changes during the T-Pose process. If this is the case, please unassign the &lt;code&gt;jaw&lt;/code&gt; (chin) bone from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. For VRM, there is no problem with the program when unassinging the jawbone that is not used by the model.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) move instead of jaw: Please check whether the bone (bangs, etc.) is misassigned to the &lt;code&gt;jaw&lt;/code&gt; (chin) in the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is a possibility that the position of the jaw changes during the T-Pose process. As a result, bangs, etc. move unexpectedly.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
