@@ -2,11 +2,12 @@
 title: "How to Use VRMFirstPerson"
 linkTitle: "How to use first-person mode "
 date: 2018-05-29T10:00:00+09:00
+url: "/en/dev/univrm-0.xx/programming/univrm_use_firstperson/"
 weight: 5
 ---
 
 # VRMFirstPerson Settings
-[VRMFirstPerson](/../../../en/univrm/components/univrm_firstperson/) has the following settings for Renderer:
+[VRMFirstPerson](/../../../univrm/components/univrm_firstperson/) has the following settings for Renderer:
 
 |FirstPersonFlag               |Layer               |Note                                       |
 |------------------------------|----------------------|--------------------------------------------|

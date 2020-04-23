@@ -1,6 +1,7 @@
 ---
 title: UniVRM-1.XX
 date: 2020-04-21T17:12:49+09:00
+url: "/en/dev/univrm-1.xx/"
 ---
 
 * [UniVRM-1.0 draft](https://github.com/vrm-c/UniVRM_1_0) repository will serve as the core library for VRM1.0's Editor&Runtime. Other utilities such as UniHumanoid and VRMViewer will be managed in [UniVRMUtility](https://github.com/vrm-c/UniVRMUtility).

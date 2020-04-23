@@ -1,6 +1,7 @@
 ---
 title: Unity Assets
 date: 2020-04-21T17:12:49+09:00
+url: "/en/dev/univrm-1.xx/unity_assets/"
 ---
 
 Asset Handling Change

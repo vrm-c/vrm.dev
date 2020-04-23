@@ -1,6 +1,7 @@
 ---
 title: 過去バージョンのロードについて
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/load_vrm-0.x_model/"
 ---
 
 ## Metaの変換について

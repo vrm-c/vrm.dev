@@ -1,6 +1,7 @@
 ---
 title: 構成
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/structure/"
 weight: 1
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: エクスポート手順
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/how_to_export/"
 ---
 
 旧 UniVRM-0.XX から少しエクスポート手順が変わります。

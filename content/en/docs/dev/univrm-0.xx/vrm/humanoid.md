@@ -1,5 +1,6 @@
 ---
-Title: Humanoid
+title: Humanoid
+url: "/en/dev/univrm-0.xx/vrm/humanoid/"
 ---
 
 Work In progress
@@ -7,7 +8,7 @@ Work In progress
 * Mainly based on whether MotionCapture's FK (Forward Kinematics) can be used.
 
 ## Related Issues
-https://github.com/dwango/UniVRM/issues/90
+https://github.com/vrm-c/vrm-specification/issues/87
 
 ## Terminology
 

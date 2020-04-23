@@ -1,6 +1,7 @@
 ---
 title: API
 date: 2020-04-21T17:12:49+09:00
+url: "/en/dev/univrm-1.xx/api/"
 ---
 
 Available in https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs

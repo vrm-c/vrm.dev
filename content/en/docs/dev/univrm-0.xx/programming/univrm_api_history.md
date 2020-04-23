@@ -2,6 +2,7 @@
 title: "API Change History"
 linkTitle: "API change history"
 date: 2018-05-21T10:00:00+09:00
+url: "/en/dev/univrm-0.xx/programming/univrm_api_history/"
 weight: 1
 ---
 

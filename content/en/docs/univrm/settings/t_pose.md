@@ -1,5 +1,6 @@
 ---
-Title: T Pose Normalization for Model
+title: T Pose Normalization for Model
+url: "/en/univrm/settings/t_pose/"
 ---
 
 Work In Progress

@@ -1,6 +1,7 @@
 ---
 title: UniVRM-0.XX と共存する
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/use_with_univrm-0.xx/"
 ---
 
 UniVRM-1.0 と UniVRM-0.XX の両方のインポーターが動作します。

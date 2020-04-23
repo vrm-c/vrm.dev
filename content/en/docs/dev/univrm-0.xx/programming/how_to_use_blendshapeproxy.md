@@ -1,5 +1,6 @@
 ---
-Title: How to Use BlendShapeProxy
+title: How to Use BlendShapeProxy
+url: "/en/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/"
 ---
 
 Work In Progress

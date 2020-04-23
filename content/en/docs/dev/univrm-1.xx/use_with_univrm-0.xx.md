@@ -1,6 +1,7 @@
 ---
 title: UniVRM-1.XX and UniVRM-0.XX coexistence
 date: 2020-04-21T17:12:49+09:00
+url: "/en/dev/univrm-1.xx/use_with_univrm-0.xx/"
 ---
 
 Both UniVRM-1.XX and UniVRM-0.XX importers work.

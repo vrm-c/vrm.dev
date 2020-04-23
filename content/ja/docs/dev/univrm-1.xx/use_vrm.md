@@ -1,6 +1,7 @@
 ---
 title: UniVRM使用例
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/use_vrm/"
 ---
 
 ## EditorExport
@@ -16,7 +17,7 @@ date: 2020-04-21T17:12:49+09:00
 ## RunTimeImport
 
 * ランタイムにロードする
-* https://github.com/vrm-c/UniVRMUtility SimpleViewer
+* https://github.com/vrm-c/UniVRMUtility SimpleViewer, VRMViewer
 
 ## RuntimeExport
 

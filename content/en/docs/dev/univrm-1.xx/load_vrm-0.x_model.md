@@ -1,6 +1,7 @@
 ---
 title: Load VRM model made from VRM-0.X
 date: 2020-04-21T17:12:49+09:00
+url: "/en/dev/univrm-1.xx/load_vrm-0.x_model/"
 ---
 
 ## About Meta Conversion

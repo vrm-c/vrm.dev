@@ -7,7 +7,7 @@ weight: 2
 ---
 
 UniVRM v0.45で導入された新機能は
-[こちら](../../../docs/univrm/settings/blendshape_setup/)をご覧ください。
+[こちら](../../settings/blendshape_setup/)をご覧ください。
 
 ## VRMBlendShapeProxy
 

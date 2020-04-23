@@ -18,7 +18,7 @@ The offset from the tracking position to the FirstPersonBone position. We assume
 ## Renderers
 The settings for controlling mesh rendering on/off in a first-person view.
 
-When a VRM model is used in VR applications, the user may see the model's head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function **VRMFirstPerson** which can hide the model's head in the first-person view. To test out first-person mode in Unity project, set up [render layer](../../../docs/dev/univrm-0.xx/programming/univrm_use_firstperson/#specify-the-additional-render-layers-for-the-application) in the inspector window and call [first-person setup function](../../../docs/dev/univrm-0.xx/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera). Then, go to`camera->cull mask`and select`EVERYTHING`but`THIRDPERSON_ONLY_LAYER`.
+When a VRM model is used in VR applications, the user may see the model's head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function **VRMFirstPerson** which can hide the model's head in the first-person view. To test out first-person mode in Unity project, set up [render layer](../../../dev/univrm-0.xx/programming/univrm_use_firstperson/#specify-the-additional-render-layers-for-the-application) in the inspector window and call [first-person setup function](../../../dev/univrm-0.xx/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera). Then, go to`camera->cull mask`and select`EVERYTHING`but`THIRDPERSON_ONLY_LAYER`.
 
 ### The case for the head being separated
 

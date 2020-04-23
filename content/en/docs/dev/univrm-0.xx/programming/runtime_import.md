@@ -1,5 +1,6 @@
 ---
-Title: Runtime Importer
+title: Runtime Importer
+url: "/en/dev/univrm-0.xx/programming/runtime_import/"
 ---
 
 The followings are examples of runtime VRM import in `v0.44 and later versions`:

@@ -1,5 +1,6 @@
 ---
-Title: Support-Status-for-Animation-Exporter
+title: Support-Status-for-Animation-Exporter
+url: "/en/dev/univrm-0.xx/gltf/animation_exporter/"
 ---
 
 ### Version

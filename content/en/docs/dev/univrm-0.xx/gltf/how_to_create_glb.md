@@ -1,5 +1,6 @@
 ---
-Title: GLB Export
+title: GLB Export
+url: "/en/dev/univrm-0.xx/gltf/how_to_create_glb/"
 ---
 
 ## Procedure

@@ -1,6 +1,7 @@
 ---
 title: "Outline"
 date: 2020-04-21T19:56:48+09:00
+url: "/en/dev/univrm-1.xx/outline/"
 weight: 1
 ---
 

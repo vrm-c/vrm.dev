@@ -1,5 +1,6 @@
 ---
-Title: Material Import Export
+title: Material Import Export
+url: "/dev/univrm-0.xx/gltf/material_export_import/"
 ---
 
 |エクスポート     |VRM/GLTFファイルに記録される内容    |GLTFアプリの見え方 |VRMインポートなど|

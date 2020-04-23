@@ -1,5 +1,6 @@
 ---
-Title: Glbエクスポート
+title: Glbエクスポート
+url: "/dev/univrm-0.xx/gltf/how_to_create_glb/"
 ---
 
 ## 手順

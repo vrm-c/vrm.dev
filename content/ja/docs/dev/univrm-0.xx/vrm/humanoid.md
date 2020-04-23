@@ -1,5 +1,6 @@
 ---
-Title: ヒューマノイド
+title: ヒューマノイド
+url: "/dev/univrm-0.xx/vrm/humanoid/"
 ---
 
 WIP
@@ -7,7 +8,7 @@ WIP
 * 主にモーションキャプチャーのFKのモーションを投入できることを基準に決めました
 
 ## 関連イシュー
-https://github.com/dwango/UniVRM/issues/90
+https://github.com/vrm-c/vrm-specification/issues/87
 
 ## 用語
 

@@ -1,5 +1,6 @@
 ---
-Title: アニメーションのエクスポート対応状況
+title: アニメーションのエクスポート対応状況
+url: "/dev/univrm-0.xx/gltf/animation_exporter/"
 ---
 
 ### 対応バージョン

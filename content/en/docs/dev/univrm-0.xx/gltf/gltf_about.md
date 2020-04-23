@@ -2,6 +2,7 @@
 title: "About GLTF"
 linkTitle: "What is GLTF?"
 date: 2018-04-16T16:30:00+09:00
+url: "/en/dev/univrm-0.xx/gltf/gltf_about/"
 weight: 1
 ---
 

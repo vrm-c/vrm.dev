@@ -2,6 +2,7 @@
 title: "About VRM T-Pose"
 linkTitle: "About T-pose"
 date: 2018-04-16T16:30:00+09:00
+url: "/en/dev/univrm-0.xx/vrm/vrm_tpose/"
 weight: 1
 ---
 

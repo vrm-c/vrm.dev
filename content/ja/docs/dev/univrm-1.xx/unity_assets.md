@@ -1,6 +1,7 @@
 ---
 title: Assetの扱いを変更しました
 date: 2020-04-21T17:12:49+09:00
+url: "/dev/univrm-1.xx/unity_assets/"
 ---
 
 [ScriptedImporter](https://docs.unity3d.com/ScriptReference/Experimental.AssetImporters.ScriptedImporter.html) を使っていて、以前の[AssetPostprocessor](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html)と挙動が異なります。
