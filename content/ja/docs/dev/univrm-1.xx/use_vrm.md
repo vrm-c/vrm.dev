@@ -4,22 +4,14 @@ date: 2020-04-21T17:12:49+09:00
 url: "/dev/univrm-1.xx/use_vrm/"
 ---
 
-## EditorExport
-
-* VRMモデルのセットアップ
-
 ## EditorImport
+* 読み込んでprefabを生成する
 
-* セットアップ済みのVRMを読み込む
-* Sceneに入れてprefabとして使う
-* 修正して再エクスポートする
+## EditorExport
+* シーンをEditorで作り上げてからエクスポートする
 
 ## RunTimeImport
-
-* ランタイムにロードする
 * https://github.com/vrm-c/UniVRMUtility SimpleViewer, VRMViewer
 
 ## RuntimeExport
-
-* ランタイムにエクスポートする
-* キャラクタークリエーションツール
+* https://github.com/vrm-c/UniVRMUtility PrimMan。ランタイムに箱人間をプログラム的に生成してVRMとしてエクスポートする
