@@ -1,10 +1,8 @@
 ---
-title: Unity Assets
+title: Unity Assets Handling Changes
 date: 2020-04-21T17:12:49+09:00
 url: "/en/dev/univrm-1.xx/unity_assets/"
 ---
-
-Asset Handling Change
 
 In UniVRM1.XX, we adopt [ScriptedImporter](https://docs.unity3d.com/ScriptReference/Experimental.AssetImporters.ScriptedImporter.html), which has different asset handling behaviors compared with [AssetPostprocessor](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html).
 
@@ -19,7 +17,7 @@ Put `model.vrm` in the Assets folder => AssetPostprocessor is triggered for file
 * Extract BlendShape from vrm
 * Construct Prefab from the extracted assets
 
-Many assets are generated in the Assets folder.
+Many assets are generated in the Assets folder:
 
 * model.vrm
 * model.vrm.meta
@@ -41,12 +39,12 @@ Put `model.vrm` in the Assets folder => ScriptedImporter is triggered for files 
 * Extracted blendshapes from vrm will be a sub-asset of ScriptedImporter's asset(readonly)
 * Construct Prefab from extracted assets and make it as a sub-asset of ScriptedImporter's asset(readonly)
 
-Only one asset is generated in the Assets folder.
+Only one asset is generated in the Assets folder:
 
 * model.vrm
 * model.vrm.meta
 
 ## Extract
-`ScriptedImporter` asset cannot be modified with readonly state
+`ScriptedImporter` asset cannot be modified with readonly state. 
 To make it modifiable, select components you want to extract and click `Extract` button in the Prefab's inspector window (same as `Extract` in fbx importer) 
 `Extract` is not required if there is no intention to modify it.

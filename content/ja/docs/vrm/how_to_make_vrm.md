@@ -71,7 +71,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 
 ヒエラルキーウィンドウでモデルをクリックすると、このモデルにアタッチされたサブコンポーネントが表示されます。それらサブコンポーネントのいずれかをクリックしてください。以下の項目を確認して調整します：
 
-{{< img src="images/vrm/PositionShaderAdjustment.png" width="900" height="450" alt="PositionShaderAdjustment" >}}
+{{< img src="images/vrm/initial_position_rotation.jpg" width="800" height="450" alt="initial_position_rotation" >}}
 
 * モデルの位置
 	* モデルは原点に位置する
@@ -90,6 +90,8 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 			* VRM/UnlitTransparentZWrite (アルファブレンディングかつZWriteありです。実体のある半透明物への適用を想定しています)
 		* Toonシェーダー
 			* VRM/MToon (照明対応トゥーンシェーダ）
+
+{{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
 マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon](../univrm/shaders/mtoon/)を参照してください。
 
