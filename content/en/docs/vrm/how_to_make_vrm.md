@@ -63,7 +63,7 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 
 Now clcik the model in the Hierarchy window, you shall see sub-components attached to this model. Please click any of them. We are going to check and adjust the items listed below:
 
-{{< img src="images/vrm/PositionShaderAdjustment.png" width="900" height="450" alt="PositionShaderAdjustment" >}}
+{{< img src="images/vrm/initial_position_rotation.jpg" width="800" height="450" alt="initial_position_rotation" >}}
 
 * Model Position
 	* The model should be placed at the origin
@@ -82,6 +82,8 @@ Now clcik the model in the Hierarchy window, you shall see sub-components attach
 			* VRM/UnlitTransparentZWrite (Alpha blending and ZWrite are available. It is assumed to be applied to semi-transparent objects)
 		* Toon shader
 			* VRM/MToon (lighting supported toon shader）
+
+{{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
 Note that if the materials are not assigned or you want to change them, click the rightmost icon of `Element X` to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select `VRM/MToon` as an example as shown below. Please refer to [MToon](../univrm/shaders/mtoon/) for more information.
 
