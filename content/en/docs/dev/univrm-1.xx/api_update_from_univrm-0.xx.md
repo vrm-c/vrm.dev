@@ -76,14 +76,14 @@ url: "/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
         public void Export()
         {
             // file path
-            var path = "../YourModel.vrm";
-            var model = UniVRM10.VrmLoader.CreateVrmModel(path);
-            var assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(model, showMesh: true);
-            UniVRM10.ComponentBuilder.Build10(model, assets);　
+            var importPath = "../YourModel.vrm";
+            var importedModel = UniVRM10.VrmLoader.CreateVrmModel(importPath);
+            var assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(importedModel);
+            UniVRM10.ComponentBuilder.Build10(importedModel, assets);　
             
             // export with UniVRM1.0
             var exporter = new UniVRM10.RuntimeVrmConverter();
-            var model = exporter.ToModelFrom10(asset.Root);
+            var model = exporter.ToModelFrom10(assets.Root);
 
             // transform to right-handed coordinate system
             VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
