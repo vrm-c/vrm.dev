@@ -5,33 +5,36 @@ url: "/en/dev/univrm-1.xx/structure/"
 weight: 2
 ---
 
-### VrmLib(namespace VrmLib)
+## Assets/vrmlib
 
 `VrmLib.Model`: An intermediate container generated from the GLTF array buffer to make handling VRM model data easier. It can access the GLTF hierarchy in the VRM model without index referencing.
 
-### ProtobufSerializer
+## Assets/ProtobufSerializer
 
 VRM-1.0's reading/writing.
 Defined by ProtocolBuffer and generate a Json serializer.
 
-#### Google.Protobuf
+Transfer from VRM-1.0 to the intermediate format `VrmLib.Model`.
 
-Google.Protobuf
+* `VRM-1.0 <=> VrmLib.Model` 
 
-#### VrmProtobuf(namespace VrmProtobuf)
+## Assets/VRM
 
-C# container and JSON serializer exported from the GLTF's Protobuf definition.
-Implement `JSON(VRM-1.0) => C#(VrmProtobuf)` and `C#(VrmProtobuf) => JSON(VRM-1.0)`.
+Add `package.json` to reference the followings (UniVRM-0.55):
 
-#### ProtobufSerializer(namespace VrmProtobuf)
+* MToon shader
+* UniUnlit shader
+* VRM-0.X's serializer
 
-Transfer from C# serialized container to the intermediate format `VrmLib.Model`.
-Implement `VrmProtobuf => VrmLib.Model` and `VrmLib.Model => VrmProtobuf`.
+## Assets/UniVRM0XReader
 
-### Builder(namespace UniVRM10)
+Transfer from VRM-0.X to the intermediate format `VrmLib.Model`.
 
-Implement `VrmLib.Model => Unity`(UnityBuilder) and `Unity => VrmLib.Model`(VRMBuilder).
+* `VRM-0.x => VrmLib.Model` 
 
+## Assets/UniVRM-1.0
+
+* `VrmLib.Model <=> Unity`
 * Transformation between right-handed and left-handed coordinate system
 * Must be run in ScriptThread
 * GLTF-related (Mesh, Texture, Material, GameObject, SkinnedMeshRenderer, etc.)

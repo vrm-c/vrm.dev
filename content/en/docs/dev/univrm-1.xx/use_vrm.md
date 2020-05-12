@@ -4,22 +4,18 @@ date: 2020-04-21T17:12:49+09:00
 url: "/en/dev/univrm-1.xx/use_vrm/"
 ---
 
-## EditorExport
-
-* VRM model's setup
-
 ## EditorImport
 
-* Import a setup-finished VRM model
-* Put the imported VRM model in the Scene and use it as prefab
-* Customize the model's features/parameters and export as VRM file again
+* Import VRM and generate its prefab
+
+## EditorExport
+
+* Export VRM made from the scene in Editor mode
 
 ## RunTimeImport
 
-* Load a VRM model at runtime
 * https://github.com/vrm-c/UniVRMUtility SimpleViewer, VRMViewer
 
 ## RuntimeExport
 
-* Export a VRM model at runtime
-* Character creation tool
+* https://github.com/vrm-c/UniVRMUtility PrimMan. Export box man as VRM format through the program at runtime
