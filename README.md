@@ -6,21 +6,19 @@ This repository contains source files for vrm.dev.
 
 ## Contributing
 
-vrm.dev requires the installation of [Hugo (extended) v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3).
+vrm.dev requires [Hugo (extended) v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3).
+Make sure `hugo.exe` is put in the `/vrm.dev/` directory.
 
-vrm.devを起動するためには、[Hugo (extended) v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3)をインストールする必要があります。
+Start a local website server by running the following commands:
 
 ```console
 $ git clone --recursive https://github.com/vrm-c/vrm.dev.git
 $ cd vrm.dev
 $ npm i
 $ hugo server -D
-$ open http://localhost:1313/
 ```
 
-To make sure new contents are added, run localhost before sending Pull Request.
-
-追加したコンテンツを確認するため、プルリクエストを送る前にlocalhostを実行してください。
+Access your local version of vrm.dev at http://localhost:1313/. You can preview the updates in real-time.
 
 vrm.dev adopts Hugo theme [Docsy](https://github.com/google/docsy). Refer to [the Docsy's documentation](https://www.docsy.dev/docs/adding-content/lookandfeel/) for extending the layout.
 
