@@ -14,6 +14,7 @@ weight: 4
 
 ##  Plug-in
 
+* [VRM_IMPORTER](https://github.com/saturday06/VRM_IMPORTER_for_Blender2_8) (Blender Add-on)
 * [VRM4U](https://github.com/ruyo/VRM4U)
 * [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter)
 	
