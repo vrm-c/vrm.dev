@@ -19,7 +19,6 @@ weight: 4
 	
 ##  Character maker
 
-* [Vkatsu](http://vkatsu.jp/)
 * [VRoid](https://vroid.com/en)
 * [SeshiruHenshin](https://fantia.jp/fanclubs/10552)
 

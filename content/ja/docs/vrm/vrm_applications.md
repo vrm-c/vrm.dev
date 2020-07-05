@@ -20,7 +20,6 @@ weight: 4
 
 ##  キャラメイクツール
 
-* [Vカツ](http://vkatsu.jp/)
 * [VRoid](https://vroid.com/)
 * [セシル変身アプリ](https://fantia.jp/fanclubs/10552)
 
