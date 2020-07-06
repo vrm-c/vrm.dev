@@ -14,7 +14,7 @@ weight: 4
 
 ##  プラグイン
 
-* [VRM_IMPORTER_for_Blender](https://github.com/iCyP/VRM_IMPORTER_for_Blender2_8)
+* [VRM_IMPORTER](https://github.com/saturday06/VRM_IMPORTER_for_Blender2_8) (Blenderアドオン)
 * [VRM4U](https://github.com/ruyo/VRM4U)
 * [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter)
 
