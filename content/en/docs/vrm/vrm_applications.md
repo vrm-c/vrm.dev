@@ -42,6 +42,7 @@ weight: 4
 * [Clarie](https://biscrat.booth.pm/items/1193414)
 * [Luppet](https://luppet.appspot.com/)
 * [vear](https://apps.apple.com/jp/app/vear/id1490697369)
+* [CharWebCam](https://github.com/xelloss120/CharWebCam)
 
 ##  Metaverse
 
