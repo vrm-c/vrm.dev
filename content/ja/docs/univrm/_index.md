@@ -1,10 +1,10 @@
 ---
 title: "UniVRMマニュアル"
 url: "/univrm/"
-weight: 3
+weight: 11
 menu:
   main:
-    weight: 3
+    weight: 11
 ---
 
 - [Download](https://github.com/vrm-c/UniVRM/releases)
