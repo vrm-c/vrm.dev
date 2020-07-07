@@ -7,47 +7,54 @@ weight: 1
 
 ## Unity Version
 
-Unity5.6以降をサポートしています。
+`UniVRM-0.56` から
+Unity2018.4LTS以降 + `.Net4` 設定をサポートしています。
 
-## インストール
+## unitypackage の入手
 
-``Assets/VRM``にインストールします。
+https://github.com/vrm-c/UniVRM/releases
 
-既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨しています。
+`UniVRM-0.XX.X_XXXX.unitypackage`
 
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
+です。
+
+## インストール前の準備
+
+* Unity2018.4LTS以降で新規のプロジェクトを作成します
+* Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
+
+{{< img src="images/vrm/show_console.jpg" alt="show console" >}}
+
+{{< img src="images/vrm/clear_console.jpg" alt="clear console" >}}
+
+* `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
+
+{{< img src="images/vrm/linear_setting.jpg" alt="linear setting" >}}
+
+### 既存のプロジェクトで作業する場合
+
+* `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
+* 旧バージョンのVRMがインストールされている場合、`Assets/VRM` を削除してください
+
+## unitypackage の import
+
+`unitypackage` を Import します。
+
+`Assets` - `Import Package` - `Custom Package...` で `UniVRM-0.XX.X_XXXX.unitypackage` を選択します。
+
+`Assets/VRM` と `Assets/VRMShaders` の２つのフォルダに import されます。
 
 |{{< img src="images/vrm/package_import.png" alt="package_import" >}}|
 |-----|
 |UnityPackageをインポート|
 
-## AssetPostProcessorを止める
+## import が成功したか確認する方法
 
-UniVRMのインポーターは``AssetPostprocessor``で実装しています。
-UnityプロジェクトにUniVRMを含めるときにAssetPostProcessorが都合が悪い場合があり、これを無効にするシンボルを追加しました(v0.39から)。
+VRM menu が表示されていれば動作しています。
 
-``Editor - ProjectSettings - Player`` の ``Other Settings - Scripting Define Symbols``に``VRM_STOP_ASSETPOSTPROCESSOR``を設定します。
+{{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
 
-|{{< img src="images/vrm/stop_assetpostprocessor.png" >}}|
-|-----|
-|AssetPostProcessorを停止|
+menu が出てこない場合は、
 
-## シェーダーバリアント
-
-|{{< img src="images/vrm/shaders.png" >}}|
-|-----|
-|同梱されるシェーダー。|
-
-## Shader Preloadingの設定
-
-**v0.36からShaderがResourcesフォルダに移動して不要になりました**
-
-プロジェクトに以下のように設定してください。
-
-|{{< img src="images/vrm/graphics_setting.png" >}}|
-|-----|
-|Editor - Project Settings - Graphics|
-
-|{{< img src="images/vrm/shader_preloading.png" >}}|
-|-----|
-|shader preloadingの設定|
+* `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
+* Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
