@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – UniVRMマニュアル</title><link>https://vrm.dev/univrm/</link><description>Recent content in UniVRMマニュアル on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 07 Jul 2020 17:59:07 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRMのインストール</title><link>https://vrm.dev/univrm/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_install/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – UniVRMマニュアル</title><link>https://vrm.dev/univrm/</link><description>Recent content in UniVRMマニュアル on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 07 Jul 2020 17:59:07 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRMのインストール</title><link>https://vrm.dev/univrm/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/univrm/univrm_install/</guid><description>
 &lt;h2 id=&#34;unity-version&#34;&gt;Unity Version&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; から
 Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートしています。&lt;/p&gt;
@@ -46,7 +46,128 @@ Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートし�
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; になっていることを確認してください&lt;/li&gt;
 &lt;li&gt;Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: UniVRMモデルのワークフロー</title><link>https://vrm.dev/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_workflow/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Docs: UniVRMのエクスポート</title><link>https://vrm.dev/univrm/univrm_export/</link><pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/univrm/univrm_export/</guid><description>
+&lt;h2 id=&#34;エクスポートダイアログ&#34;&gt;エクスポートダイアログ&lt;/h2&gt;
+&lt;p&gt;v0.56&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+&lt;p&gt;Unityの簡易ダイアログ機能で画面を作成しています。
+v0.57 以降でダイアログを改善予定です。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;用語&lt;/th&gt;
+&lt;th&gt;意味&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Root&lt;/td&gt;
+&lt;td&gt;一番親のオブジェクト(ひとつだけ)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ヒエラルキー&lt;/td&gt;
+&lt;td&gt;Rootの子孫全部&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;警告メッセージ-オレンジの囲み&#34;&gt;警告メッセージ(オレンジの囲み)&lt;/h3&gt;
+&lt;p&gt;エクスポート可能だけど、問題があるかもしれない。&lt;/p&gt;
+&lt;h4 id=&#34;jaw-bone-is-included-it-may-not-be-what-you-intended-please-check-the-humanoid-avatar-setting-screen&#34;&gt;Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen&lt;/h4&gt;
+&lt;p&gt;humanoid設定に顎が含まれている。
+FBXインポート時に意図せずに自動で割り当てられる場合があります。
+間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
+FBX importer の rig 設定に戻って設定を解除することをおすすめします。&lt;/p&gt;
+&lt;h4 id=&#34;this-model-contains-vertex-color&#34;&gt;This model contains vertex color&lt;/h4&gt;
+&lt;p&gt;ヒエラルキーに含まれる mesh に頂点カラーが含まれている。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;頂点カラー&lt;/th&gt;
+&lt;th&gt;含まれている挙動&lt;/th&gt;
+&lt;th&gt;挙動&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;UniVRM-0.53以前&lt;/td&gt;
+&lt;td&gt;未対応&lt;/td&gt;
+&lt;td&gt;含まれているけど無視する挙動&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniVRM-0.54～&lt;/td&gt;
+&lt;td&gt;使う&lt;/td&gt;
+&lt;td&gt;含まれているものは使う挙動&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Unlitで頂点カラーが含まれているが使わないという設定がありせん。
+必要ない場合は、&lt;code&gt;Remove Vertex Color&lt;/code&gt; オプションで削除できます。&lt;/p&gt;
+&lt;h4 id=&#34;unknown-material-0-is-used-this-will-export-as-standard-fallback&#34;&gt;unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code&gt;Standard&lt;/code&gt; fallback&lt;/h4&gt;
+&lt;p&gt;standard, unlit, mtoon 以外のマテリアルは、standard になります。&lt;/p&gt;
+&lt;h3 id=&#34;エラーメッセージ-赤い囲み&#34;&gt;エラーメッセージ(赤い囲み)&lt;/h3&gt;
+&lt;p&gt;エクスポート不可能。問題を解決する必要があります。
+このメッセージが表示されているときは、&lt;code&gt;export&lt;/code&gt; ボタンが無効になります。&lt;/p&gt;
+&lt;h4 id=&#34;require-source&#34;&gt;Require source&lt;/h4&gt;
+&lt;p&gt;エクスポート可能なオブジェクトをシーンで選択してださい&lt;/p&gt;
+&lt;h4 id=&#34;the-root-transform-should-have-default-translation-rotation-and-scale&#34;&gt;The Root transform should have Default translation, rotation and scale.&lt;/h4&gt;
+&lt;p&gt;Rootに移動・回転・スケール値が設定されている 。
+0.56から禁止になりました。
+0.55以前はエクスポートできたが、後でエラー等のトラブルが発生していました。
+Rootの移動(0)・回転(0)・スケール(1)にしてください。
+必要な場合は、Root の下に階層で移動・回転・スケールしてください。&lt;/p&gt;
+&lt;h4 id=&#34;require-animator&#34;&gt;Require animator.&lt;/h4&gt;
+&lt;p&gt;RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)&lt;/p&gt;
+&lt;h4 id=&#34;require-animator-avatar&#34;&gt;Require animator.avatar&lt;/h4&gt;
+&lt;p&gt;RootのAnimatorにavatarがありません(ヒューマノイドでない)&lt;/p&gt;
+&lt;h4 id=&#34;animator-avatar-is-not-valid&#34;&gt;Animator.avatar is not valid.&lt;/h4&gt;
+&lt;p&gt;RootのAnimatorのavatarが正常でない(ヒューマノイドでない)&lt;/p&gt;
+&lt;h4 id=&#34;animator-avatar-is-not-humanoid-please-change-model-s-animationtype-to-humanoid&#34;&gt;Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid.&lt;/h4&gt;
+&lt;p&gt;RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください&lt;/p&gt;
+&lt;h4 id=&#34;find-duplicate-bone-names-please-check-model-s-bone-names&#34;&gt;Find duplicate Bone names. Please check model&amp;rsquo;s bone names.&lt;/h4&gt;
+&lt;p&gt;ヒエラルキーの中に同じ名前のGameObjectが含まれている。
+0.56で禁止になりました。
+0.55以前はエクスポートできたが、後でエラー等のトラブルが発生していました。
+リネームしてください。&lt;/p&gt;
+&lt;h4 id=&#34;require-title&#34;&gt;Require Title.&lt;/h4&gt;
+&lt;p&gt;ダイアログのタイトルを入力してください(必須項目)&lt;/p&gt;
+&lt;h4 id=&#34;require-version&#34;&gt;Require Version.&lt;/h4&gt;
+&lt;p&gt;ダイアログのバージョンを入力してください(必須項目)&lt;/p&gt;
+&lt;h4 id=&#34;require-author&#34;&gt;Require Author.&lt;/h4&gt;
+&lt;p&gt;ダイアログのAuthorを入力してください(必須項目)&lt;/p&gt;
+&lt;h4 id=&#34;no-active-mesh&#34;&gt;No active mesh&lt;/h4&gt;
+&lt;p&gt;ヒエラルキーに active なメッシュが含まれていない&lt;/p&gt;
+&lt;h4 id=&#34;filename-0-is-too-long&#34;&gt;FileName &amp;lsquo;{0}&amp;rsquo; is too long.&lt;/h4&gt;
+&lt;p&gt;material, texture, mesh の名前が長すぎる。
+リネームしてください&lt;/p&gt;
+&lt;h3 id=&#34;オプション-青い囲み&#34;&gt;オプション(青い囲み)&lt;/h3&gt;
+&lt;p&gt;エクスポートのオプションです。
+チェックするとエクスポート前に追加の処理を実行します。&lt;/p&gt;
+&lt;h4 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h4&gt;
+&lt;p&gt;エクスポート前に強制的にT-Poseにします。
+手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。&lt;/p&gt;
+&lt;h4 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h4&gt;
+&lt;p&gt;モデルを正規化します。
+正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。
+正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。&lt;/p&gt;
+&lt;h4 id=&#34;useexperimentalexporter&#34;&gt;UseExperimentalExporter&lt;/h4&gt;
+&lt;p&gt;シリアライザーのバージョン。
+どちらでも動作します。&lt;/p&gt;
+&lt;h4 id=&#34;usesparseaccessor&#34;&gt;UseSparseAccessor&lt;/h4&gt;
+&lt;p&gt;BlendShapeが多数ある場合にファイルサイズを削減できます。&lt;/p&gt;
+&lt;h4 id=&#34;onlyblendshapeposition&#34;&gt;OnlyBlendshapePosition&lt;/h4&gt;
+&lt;p&gt;BlendShapeのNormal, Tangent をエクスポートしない。
+ファイルサイズを削減できます。
+UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。&lt;/p&gt;
+&lt;h4 id=&#34;reduceblendshape&#34;&gt;ReduceBlendshape&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。&lt;/p&gt;
+&lt;h4 id=&#34;reduceblendshapeclip&#34;&gt;ReduceBlendshapeClip&lt;/h4&gt;
+&lt;p&gt;Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。&lt;/p&gt;
+&lt;h4 id=&#34;removevertexcolor&#34;&gt;RemoveVertexColor&lt;/h4&gt;
+&lt;p&gt;頂点カラーをエクスポートしない。
+GLTFには、頂点カラーを含むが使わないという設定がありません。
+UniVRMでは、 &lt;code&gt;unlit&lt;/code&gt; のみ頂点カラー対応です。&lt;/p&gt;</description></item><item><title>Docs: UniVRMモデルのワークフロー</title><link>https://vrm.dev/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_workflow/</guid><description>
 &lt;h2 id=&#34;ワークフロー&#34;&gt;ワークフロー&lt;/h2&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/VRM_changeVRM_jp.png&#34; alt=&#34;vrm workflow&#34; /&gt;
 &lt;h2 id=&#34;humanoid-avatarがセット済みの人間型モデルを用意します&#34;&gt;humanoid avatarがセット済みの人間型モデルを用意します&lt;/h2&gt;
