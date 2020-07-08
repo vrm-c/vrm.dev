@@ -44,6 +44,7 @@ weight: 4
 * [Luppet](https://luppet.appspot.com/)
 * [vear](https://apps.apple.com/jp/app/vear/id1490697369)
 * [CharWebCam](https://github.com/xelloss120/CharWebCam)
+* [VMagicMirror](https://malaybaku.github.io/VMagicMirror/)
 
 ##  メタバース
 
@@ -80,3 +81,4 @@ weight: 4
 * [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit)
 * [Vスタンプ](https://yashinut.com/archives/vstamp_app.html)
 * [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI)
+* [TRACKING WORLD](http://deatrathias.net/TW/)

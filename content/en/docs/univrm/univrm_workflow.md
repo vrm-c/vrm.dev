@@ -2,7 +2,7 @@
 title: "UniVRM workflow"
 date: 2018-04-16T16:30:00+09:00
 url: "/en/univrm/univrm_workflow/"
-weight: 2
+weight: 4
 ---
 
 ## Workflow
@@ -44,9 +44,9 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 ## Export from menu
 |{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}|
 |-----|
-|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.53.0 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
+|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.56.0 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
 
-|{{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}|
+|{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}|
 |-----|
 |Enter your name in the `Author` field and click the `Export` button.|
 
