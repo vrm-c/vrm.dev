@@ -2,6 +2,7 @@
 &lt;h2 id=&#34;unity-version&#34;&gt;Unity Version&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; から
 Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートしています。&lt;/p&gt;
+&lt;p&gt;UPMでUniVRMをインストールする場合は、&lt;a href=&#34;../univrm_upm&#34;&gt;UPMでUniVRMをインストールする&lt;/a&gt;ページをご覧ください。&lt;/p&gt;
 &lt;h2 id=&#34;unitypackage-の入手&#34;&gt;unitypackage の入手&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt;&lt;/p&gt;
@@ -11,12 +12,13 @@ Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートし�
 &lt;li&gt;Unity2018.4LTS以降で新規のプロジェクトを作成します&lt;/li&gt;
 &lt;li&gt;Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/show_console.jpg&#34; alt=&#34;show console&#34; /&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/clear_console.jpg&#34; alt=&#34;clear console&#34; /&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/show_console.jpg&#34; alt=&#34;show console&#34; width=&#34;500&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/clear_console.jpg&#34; alt=&#34;clear console&#34; width=&#34;500&#34; /&gt;
+&lt;hr&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Rendering&lt;/code&gt; - &lt;code&gt;ColorSpace&lt;/code&gt; を &lt;code&gt;Linear&lt;/code&gt; に設定します(推奨)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/linear_setting.jpg&#34; alt=&#34;linear setting&#34; /&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/linear_setting.jpg&#34; alt=&#34;linear setting&#34; width=&#34;600&#34; /&gt;
 &lt;h3 id=&#34;既存のプロジェクトで作業する場合&#34;&gt;既存のプロジェクトで作業する場合&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; にしてください&lt;/li&gt;
@@ -29,7 +31,7 @@ Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートし�
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34; /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34; width=&#34;350&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -41,7 +43,8 @@ Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートし�
 &lt;/table&gt;
 &lt;h2 id=&#34;import-が成功したか確認する方法&#34;&gt;import が成功したか確認する方法&lt;/h2&gt;
 &lt;p&gt;VRM menu が表示されていれば動作しています。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm menu&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm menu&#34; /&gt;
+&lt;hr&gt;&lt;/p&gt;
 &lt;p&gt;menu が出てこない場合は、&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; になっていることを確認してください&lt;/li&gt;
@@ -167,7 +170,56 @@ ReduceBlendshapeと組み合わせて使います。&lt;/p&gt;
 &lt;h4 id=&#34;removevertexcolor&#34;&gt;RemoveVertexColor&lt;/h4&gt;
 &lt;p&gt;頂点カラーをエクスポートしない。
 GLTFには、頂点カラーを含むが使わないという設定がありません。
-UniVRMでは、 &lt;code&gt;unlit&lt;/code&gt; のみ頂点カラー対応です。&lt;/p&gt;</description></item><item><title>Docs: UniVRMモデルのワークフロー</title><link>https://vrm.dev/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_workflow/</guid><description>
+UniVRMでは、 &lt;code&gt;unlit&lt;/code&gt; のみ頂点カラー対応です。&lt;/p&gt;</description></item><item><title>Docs: UPMでUniVRMをインストールする</title><link>https://vrm.dev/univrm/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_upm/</guid><description>
+&lt;h2 id=&#34;univrm-0-xx-の-unitypackage&#34;&gt;UniVRM-0.XX の UnityPackage&lt;/h2&gt;
+&lt;p&gt;UniVRM-0.56から、 UniVRMはUnityPackageManagerでインポートできるようになった。&lt;/p&gt;
+&lt;p&gt;github リポジトリのルート以外に &lt;code&gt;package.json&lt;/code&gt; を配置する機能を使っているので、
+&lt;code&gt;Unity 2019.3.4f1以降&lt;/code&gt; が必要です。&lt;/p&gt;
+&lt;h3 id=&#34;導入方法&#34;&gt;導入方法&lt;/h3&gt;
+&lt;p&gt;UnityPackageManagerのWindow&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/menu_packagemanager.jpg&#34; /&gt;
+&lt;hr&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;add package from git URL&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/from_git.jpg&#34; /&gt;
+&lt;hr&gt;&lt;/p&gt;
+&lt;p&gt;新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p&gt;
+&lt;p&gt;たとえば、&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34; target=&#34;_blank&#34;&gt;v0.56.3&lt;/a&gt; のgit urlは次のとおりです：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&lt;/code&gt; =&amp;gt; VRMShaders に依存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p&gt;
+&lt;p&gt;バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p&gt;
+&lt;h4 id=&#34;もしくは-packages-manifest-json-に直接コピーペーストする&#34;&gt;もしくは、 Packages/manifest.json に直接コピーペーストする。&lt;/h4&gt;
+&lt;p&gt;以下の内容を追記してください（&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34; target=&#34;_blank&#34;&gt;v0.56.3&lt;/a&gt;の例)。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;以下の &amp;ldquo;lock&amp;rdquo; はUnityが自動で更新するので、編集する必要はありません。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;lock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ただし、特定のコミットに切り替える場合は、ハッシュ値を手動で変更できます。&lt;/p&gt;
+&lt;p&gt;もしくは&lt;code&gt;dependencies&lt;/code&gt;に特定のコミットに付きます。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: UniVRMモデルのワークフロー</title><link>https://vrm.dev/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/univrm_workflow/</guid><description>
 &lt;h2 id=&#34;ワークフロー&#34;&gt;ワークフロー&lt;/h2&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/VRM_changeVRM_jp.png&#34; alt=&#34;vrm workflow&#34; /&gt;
 &lt;h2 id=&#34;humanoid-avatarがセット済みの人間型モデルを用意します&#34;&gt;humanoid avatarがセット済みの人間型モデルを用意します&lt;/h2&gt;
@@ -244,7 +296,7 @@ UniVRMでは、 &lt;code&gt;unlit&lt;/code&gt; のみ頂点カラー対応です
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMExporter.png&#34; alt=&#34;VRMExporter&#34; width=&#34;250&#34; /&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
