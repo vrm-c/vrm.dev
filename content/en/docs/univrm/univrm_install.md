@@ -8,42 +8,53 @@ weight: 1
 
 ## Unity Version
 
-UniVRM supports Unity5.6 and later versions.
+Starting from `UniVRM-0.56`, UniVRM supports `Unity-2018.4LTS+` `.Net4.x`.
 
-## Installation
+To install UniVRM with Unity Package Manager, please refer to [Install UniVRM with UPM](../univrm_upm)
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``. **To update UniVRM to a newer version, deleting the previously created VRM folder before package import is recommended**.
+## unitypackage
 
-|{{< img src="images/vrm/package_import.png" alt="package_import" >}}|
+Get unity package in https://github.com/vrm-c/UniVRM/releases.
+
+The package name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
+
+## Before Installation
+
+* Create a new Unity project (`Unity-2018.4LTS+`)
+* Show Console: click `clear` button on the upper-left of the window to see if any error message (in red) left before installation.
+
+{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
+
+{{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
+<hr>
+
+* Go to `Linear``ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` and set `ColorSpace` to `Linear` (recommended setting)
+
+{{< img src="images/vrm/linear_setting.jpg" width="600" alt="linear setting">}}
+
+### Install UniVRM in an Existing Project
+
+* Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent` (Unity 2018). 
+* If old UniVRM version exists, please delete `Assets/VRM` before installation
+
+## Import unitypackage
+
+Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
+
+The two folders: `Assets/VRM` and `Assets/VRMShaders` will be imported into the Unity project.
+
+|{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
-|Import UniVRM package|
+|Import Unity Package|
 
-## Stop AssetPostProcessor
+## Check if UniVRM has been imported successfully
 
-The importer of UniVRM is implemented with``AssetPostprocessor``.
-There may be cases where AssetPostProcessor is inconvenient when including UniVRM in Unity project. We have added a symbol to invalidate this (from v0.39).
+if UniVRM import successes, VRM menu will be displayed on the top:
 
-Set``VRM_STOP_ASSETPOSTPROCESSOR``in``Edit - ProjectSettings - Player``--->``Other Settings - Scripting Define Symbols``.
+{{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
 
-|{{< img src="images/vrm/stop_assetpostprocessor.png" >}}|
-|-----|
-|Stop AssetPostProcessor|
+If menu does not show up:
 
-## Shader option
-
-|{{< img src="images/vrm/shaders.png" >}}|
-|-----|
-|The shaders provided in UniVRM|
-
-## Shader preloading setting
-
-**There is no need to move shader into Resources folder (VRM/Resources) since v0.36.**
-
-Please set up project as follows:
-
-|{{< img src="images/vrm/graphics_setting.png" >}}|
-|-----|
-|Editor - Project Settings - Graphics - Shader preloading|
-
-|{{< img src="images/vrm/shader_preloading.png" >}}|
-|-----|
+* Check if `.Net4.X equivalent` has been selected (`ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version`)
+* Open Console and check if any error (message in red) occurs

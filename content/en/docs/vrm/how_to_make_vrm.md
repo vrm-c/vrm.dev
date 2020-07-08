@@ -61,7 +61,7 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 ### 4. Adjust the model data and export it as VRM from menu（normalization processing）
 {{< img src="images/vrm/alicia_scene.png" >}}
 
-Now clcik the model in the Hierarchy window, you shall see sub-components attached to this model. Please click any of them. We are going to check and adjust the items listed below:
+Now click the model in the Hierarchy window, you shall see sub-components attached to this model. Please click any of them. We are going to check and adjust the items listed below:
 
 {{< img src="images/vrm/initial_position_rotation.jpg" width="800" height="450" alt="initial_position_rotation" >}}
 
@@ -89,13 +89,13 @@ Note that if the materials are not assigned or you want to change them, click th
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
-After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.53.0 -> Export humanoid``.
+After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.56.0 -> Export humanoid``.
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default.
 
-{{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}
+{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 
 * Force T Pose
     * Force the model pose to become [T-Pose](../dev/univrm-0.xx/vrm/vrm_tpose/) before removing rotation / scaling.
@@ -197,7 +197,7 @@ To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker
 ### 8. Export the adjusted VRM model
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.53.0 -> Export humanoid``.
+After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.56.0 -> Export humanoid``.
 
 This time **please do not check "Force T Pose" and "Pose Freeze"**. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.
 

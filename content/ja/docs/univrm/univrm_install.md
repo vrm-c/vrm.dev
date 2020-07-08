@@ -10,6 +10,8 @@ weight: 1
 `UniVRM-0.56` から
 Unity2018.4LTS以降 + `.Net4` 設定をサポートしています。
 
+UPMでUniVRMをインストールする場合は、[UPMでUniVRMをインストールする](../univrm_upm)ページをご覧ください。
+
 ## unitypackage の入手
 
 https://github.com/vrm-c/UniVRM/releases
@@ -23,13 +25,14 @@ https://github.com/vrm-c/UniVRM/releases
 * Unity2018.4LTS以降で新規のプロジェクトを作成します
 * Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
 
-{{< img src="images/vrm/show_console.jpg" alt="show console" >}}
+{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
 
-{{< img src="images/vrm/clear_console.jpg" alt="clear console" >}}
+{{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
+<hr>
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
-{{< img src="images/vrm/linear_setting.jpg" alt="linear setting" >}}
+{{< img src="images/vrm/linear_setting.jpg" width="600" alt="linear setting">}}
 
 ### 既存のプロジェクトで作業する場合
 
@@ -44,7 +47,7 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets/VRM` と `Assets/VRMShaders` の２つのフォルダに import されます。
 
-|{{< img src="images/vrm/package_import.png" alt="package_import" >}}|
+|{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
 |UnityPackageをインポート|
 
@@ -53,6 +56,7 @@ https://github.com/vrm-c/UniVRM/releases
 VRM menu が表示されていれば動作しています。
 
 {{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
 
 menu が出てこない場合は、
 

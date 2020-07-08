@@ -2,7 +2,7 @@
 title: "UniVRMモデルのワークフロー"
 date: 2018-04-16T16:30:00+09:00
 url: /univrm/univrm_workflow/
-weight: 3
+weight: 4
 ---
 
 ## ワークフロー
@@ -51,7 +51,7 @@ Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設�
 |-----|
 |ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで`Assets`フォルダに保存されます|
 
-|{{< img src="images/vrm/VRMExporter.png" width="250" height="450" alt="VRMExporter">}}|
+|{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}|
 |-----|
 |`Author`欄に名前を入力して`Export`を押してください|
 

@@ -1,5 +1,5 @@
 ---
 title: UniVRMのコンポーネント
 url: /univrm/components/
-weight: 3
+weight: 5
 ---
