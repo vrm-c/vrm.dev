@@ -1,6 +1,6 @@
 ---
 title: "UniVRMのインストール"
-date: 2018-04-16T16:30:00+09:00
+date: 2020-07-07
 url: /univrm/univrm_install/
 weight: 1
 ---
