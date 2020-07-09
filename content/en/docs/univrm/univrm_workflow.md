@@ -44,7 +44,7 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 ## Export from menu
 |{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}|
 |-----|
-|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.56.0 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
+|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.56.3 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
 
 |{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}|
 |-----|

@@ -97,7 +97,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
-調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、``VRM -> UniVRM-0.56.0 -> Export humanoid``からエクスポートします。
+調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、``VRM -> UniVRM-0.56.3 -> Export humanoid``からエクスポートします。
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
@@ -207,7 +207,7 @@ Unityバージョン2018.3から、インポートセッティングのインタ
 ### 8.VRMファイルを出力する
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.56.0 -> Export humanoid``を実行します
+調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.56.3 -> Export humanoid``を実行します
 
 このとき、**「Force T Pose」と「Pose Freeze」のチェックは外してください**。このチェックは初回（正規化）のときのみ使用します。
 ファイル名を指定してVRMファイルを出力します
