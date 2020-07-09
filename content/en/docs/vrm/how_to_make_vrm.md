@@ -89,7 +89,7 @@ Note that if the materials are not assigned or you want to change them, click th
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
-After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.56.0 -> Export humanoid``.
+After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.56.3 -> Export humanoid``.
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
@@ -197,7 +197,7 @@ To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker
 ### 8. Export the adjusted VRM model
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.56.0 -> Export humanoid``.
+After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.56.3 -> Export humanoid``.
 
 This time **please do not check "Force T Pose" and "Pose Freeze"**. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.
 

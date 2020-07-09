@@ -32,11 +32,12 @@ For example, the git urls of [v0.56.3](https://github.com/vrm-c/UniVRM/releases/
 
 Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
-By changing the version number, You can switch to different version as you wish.
+By changing the version number, You can switch to different version based on your needs.
 
 #### Add dependencies in Packages/manifest.json
 
-An alternative way is to add necessary dependencies right in Packages/manifest.json. Please copy and paste the following contents (example of [v0.56.3](https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3)):
+An alternative way is to add necessary dependencies right in Packages/manifest.json. 
+Open manifest.json with text/code editor and paste the following contents (example of [v0.56.3](https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3)):
 
 ```json
 {
@@ -49,8 +50,6 @@ An alternative way is to add necessary dependencies right in Packages/manifest.j
 ```
 
 The hash values in `lock` can be updated automatically by Unity, there is no need to manually change them.
-
-However, if you want to switch to a specific commit, you can manually change the hash value.
 
 ```json
   "lock": {
