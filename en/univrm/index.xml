@@ -64,9 +64,10 @@
 &lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&lt;/code&gt; =&amp;gt; depends on VRMShaders&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p&gt;
-&lt;p&gt;By changing the version number, You can switch to different version as you wish.&lt;/p&gt;
+&lt;p&gt;By changing the version number, You can switch to different version based on your needs.&lt;/p&gt;
 &lt;h4 id=&#34;add-dependencies-in-packages-manifest-json&#34;&gt;Add dependencies in Packages/manifest.json&lt;/h4&gt;
-&lt;p&gt;An alternative way is to add necessary dependencies right in Packages/manifest.json. Please copy and paste the following contents (example of &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34; target=&#34;_blank&#34;&gt;v0.56.3&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;An alternative way is to add necessary dependencies right in Packages/manifest.json.
+Open manifest.json with text/code editor and paste the following contents (example of &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34; target=&#34;_blank&#34;&gt;v0.56.3&lt;/a&gt;):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
@@ -75,7 +76,6 @@
 &lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The hash values in &lt;code&gt;lock&lt;/code&gt; can be updated automatically by Unity, there is no need to manually change them.&lt;/p&gt;
-&lt;p&gt;However, if you want to switch to a specific commit, you can manually change the hash value.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;lock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -148,7 +148,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code&gt;Export humanoid&lt;/code&gt; option will become available (&lt;code&gt;VRM -&amp;gt; UniVRM-0.56.0 -&amp;gt; Export humanoid&lt;/code&gt;). The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default.&lt;/td&gt;
+&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code&gt;Export humanoid&lt;/code&gt; option will become available (&lt;code&gt;VRM -&amp;gt; UniVRM-0.56.3 -&amp;gt; Export humanoid&lt;/code&gt;). The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
