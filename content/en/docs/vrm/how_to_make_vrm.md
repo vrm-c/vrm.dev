@@ -93,7 +93,7 @@ After adjustments are completed, select the model in `Hierarchy` window and expo
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default.
+Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default. The details for export settings [can be found here](../univrm/univrm_export).
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 

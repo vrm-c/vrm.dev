@@ -102,6 +102,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 `Author`欄に名前を入力し、`Export`を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで`Assets`フォルダに保存されます。
+詳しくは[UniVRMのエクスポート](../univrm/univrm_export)をご覧ください。
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 
