@@ -1,4 +1,19 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Setting Guide</title><link>https://vrm.dev/en/univrm/settings/</link><description>Recent content in Setting Guide on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 18:39:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/univrm/settings/material_settings/</link><pubDate>Mon, 25 May 2020 13:04:37 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/material_settings/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Setting Guide</title><link>https://vrm.dev/en/univrm/settings/</link><description>Recent content in Setting Guide on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 18:39:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/univrm/settings/t_pose/</link><pubDate>Fri, 17 Jul 2020 19:13:08 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/t_pose/</guid><description>
+&lt;h2 id=&#34;supplementary-information-regarding-t-pose&#34;&gt;Supplementary Information regarding T-Pose&lt;/h2&gt;
+&lt;p&gt;To normalize a model, the model with T-Pose is required.&lt;/p&gt;
+&lt;p&gt;If the model doesn&amp;rsquo;t have T-Pose, you cna make a T-Pose by doing any of the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;code&gt;Menu&lt;/code&gt; on top and select &lt;code&gt;Export humanoid&lt;/code&gt; from &lt;code&gt;VRM&lt;/code&gt; -&amp;gt; &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt;. The export dialog will pop up. Enable &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p&gt;
+&lt;p&gt;Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p&gt;
+&lt;h2 id=&#34;common-issues&#34;&gt;Common Issues&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code&gt;jaw&lt;/code&gt; (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is no influence on model if jaw bone is not used&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code&gt;jaw&lt;/code&gt; bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/univrm/settings/material_settings/</link><pubDate>Mon, 25 May 2020 13:04:37 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/material_settings/</guid><description>
 &lt;p&gt;About material settings:&lt;/p&gt;
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 &lt;ul&gt;
@@ -209,19 +224,4 @@ However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
 &lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
 If you want to overwrite, delete them before importing.&lt;/p&gt;
 &lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/univrm/settings/t_pose/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/en/univrm/settings/t_pose/</guid><description>
-&lt;p&gt;Work In Progress&lt;/p&gt;
-&lt;h2 id=&#34;supplementary-information-about-t-pose&#34;&gt;Supplementary Information about T-Pose&lt;/h2&gt;
-&lt;p&gt;When normalizing a model, the system requires the model posing as T-Pose. Therefore, to make a model in a T-Pose:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Navigate to &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt; from the menu bar and check &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Another option is adjusting the rotation of the arm etc. manually to make a T-Pose (without checking the &lt;code&gt;force T-Pose&lt;/code&gt; box)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Either one described above is OK. If the result made by the first option (automatic T-Pose) is not looking well, you can try the second one, which is the method for making a T-Pose manually.&lt;/p&gt;
-&lt;p&gt;Also, please avoid repeatedly normalizing a model that was already normalized before as much as you can. Errors after T-Pose process might be accumulated if you do so.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; box becomes unchecked by default if the model&amp;rsquo;s normalization is already done before. That said, the system will detect whether the Meta component is attached to the model.&lt;/p&gt;
-&lt;h2 id=&#34;common-problems&#34;&gt;Common Problems&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The position of the jaw changes: There is a possibility that the position of the jaw changes during the T-Pose process. If this is the case, please unassign the &lt;code&gt;jaw&lt;/code&gt; (chin) bone from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. For VRM, there is no problem with the program when unassinging the jawbone that is not used by the model.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) move instead of jaw: Please check whether the bone (bangs, etc.) is misassigned to the &lt;code&gt;jaw&lt;/code&gt; (chin) in the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is a possibility that the position of the jaw changes during the T-Pose process. As a result, bangs, etc. move unexpectedly.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item></channel></rss>

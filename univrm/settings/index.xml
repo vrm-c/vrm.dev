@@ -1,4 +1,19 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – セッティングガイド</title><link>https://vrm.dev/univrm/settings/</link><description>Recent content in セッティングガイド on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 18:39:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: マテリアル設定</title><link>https://vrm.dev/univrm/settings/material_settings/</link><pubDate>Mon, 25 May 2020 13:04:37 +0900</pubDate><guid>https://vrm.dev/univrm/settings/material_settings/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – セッティングガイド</title><link>https://vrm.dev/univrm/settings/</link><description>Recent content in セッティングガイド on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 18:39:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: T-Poseとモデルの正規化の詳細</title><link>https://vrm.dev/univrm/settings/t_pose/</link><pubDate>Fri, 17 Jul 2020 19:13:08 +0900</pubDate><guid>https://vrm.dev/univrm/settings/t_pose/</guid><description>
+&lt;h2 id=&#34;t-pose化の補足&#34;&gt;T-Pose化の補足&lt;/h2&gt;
+&lt;p&gt;正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。&lt;/p&gt;
+&lt;p&gt;T-Pose化するには、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkする&lt;/li&gt;
+&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkせずに、手動で腕等の回転を調整してT-Poseにする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;のどちらでもOKです。自動T-Poseがいい感じにならない場合は手動をお試しください。
+また、&lt;code&gt;正規化済のモデル&lt;/code&gt; を繰り返し &lt;code&gt;正規化する&lt;/code&gt; ことをはできるだけ避けてください(ずれが蓄積する)。&lt;/p&gt;
+&lt;p&gt;システムが、正規化済みと判定したモデル(Metaコンポーネントがアタッチされているなど)では、 &lt;code&gt;force T-Pose&lt;/code&gt; がデフォルトでは外れるようになっています。&lt;/p&gt;
+&lt;h2 id=&#34;よくある不具合&#34;&gt;よくある不具合&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;顎の位置が変わってしまう。&lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt;　設定で &lt;code&gt;jaw&lt;/code&gt; (顎) ボーンの割り当てを解除してください。VRMはプログラム側で顎ボーンを使っていないの割り当てを解除しても問題ありません。T-Pose化するときに顎の位置が微妙に変わってしまう場合があります(T-Poseの顎になるため)。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;前髪等、顔のパーツが微妙に動く。 &lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt; 設定で前髪等の意図しないボーンが &lt;code&gt;jaw&lt;/code&gt; (顎) ボーン に割り当てされていないかご確認ください。T-Pose化するときに顎の位置が微妙に変わってしまい、結果として前髪等が動いてしまう場合があります。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: マテリアル設定</title><link>https://vrm.dev/univrm/settings/material_settings/</link><pubDate>Mon, 25 May 2020 13:04:37 +0900</pubDate><guid>https://vrm.dev/univrm/settings/material_settings/</guid><description>
 &lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ピカピカに反射してしまう。
@@ -214,20 +229,4 @@ Mesh, Texture, Prefabは上書きします。&lt;/p&gt;
 &lt;p&gt;Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
 上書きしたい場合はImport前に削除してください。&lt;/p&gt;
 &lt;h2 id=&#34;0-45以前&#34;&gt;0.45以前&lt;/h2&gt;
-&lt;p&gt;UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p&gt;</description></item><item><title>Docs: T-Poseとモデルの正規化の詳細</title><link>https://vrm.dev/univrm/settings/t_pose/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/univrm/settings/t_pose/</guid><description>
-&lt;p&gt;WIP&lt;/p&gt;
-&lt;h2 id=&#34;t-pose化の補足&#34;&gt;T-Pose化の補足&lt;/h2&gt;
-&lt;p&gt;正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。&lt;/p&gt;
-&lt;p&gt;T-Pose化するには、&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkする&lt;/li&gt;
-&lt;li&gt;エクスポートダイアログの &lt;code&gt;force T-Pose&lt;/code&gt; を checkせずに、手動で腕等の回転を調整してT-Poseにする&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;のどちらでもOKです。自動T-Poseがいい感じにならない場合は手動をお試しください。
-また、&lt;code&gt;正規化済のモデル&lt;/code&gt; を繰り返し &lt;code&gt;正規化する&lt;/code&gt; ことをはできるだけ避けてください(ずれが蓄積する)。&lt;/p&gt;
-&lt;p&gt;システムが、正規化済みと判定したモデル(Metaコンポーネントがアタッチされているなど)では、 &lt;code&gt;force T-Pose&lt;/code&gt; がデフォルトでは外れるようになっています。&lt;/p&gt;
-&lt;h2 id=&#34;よくある不具合&#34;&gt;よくある不具合&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;顎の位置が変わってしまう。&lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt;　設定で &lt;code&gt;jaw&lt;/code&gt; (顎) ボーンの割り当てを解除してください。VRMはプログラム側で顎ボーンを使っていないの割り当てを解除しても問題ありません。T-Pose化するときに顎の位置が微妙に変わってしまう場合があります(T-Poseの顎になるため)。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;前髪等、顔のパーツが微妙に動く。 &lt;code&gt;fbx&lt;/code&gt; の &lt;code&gt;Rig&lt;/code&gt; 設定で前髪等の意図しないボーンが &lt;code&gt;jaw&lt;/code&gt; (顎) ボーン に割り当てされていないかご確認ください。T-Pose化するときに顎の位置が微妙に変わってしまい、結果として前髪等が動いてしまう場合があります。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;p&gt;UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p&gt;</description></item></channel></rss>
