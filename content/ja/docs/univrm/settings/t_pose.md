@@ -3,8 +3,6 @@ title: T-Poseとモデルの正規化の詳細
 url: /univrm/settings/t_pose/
 ---
 
-WIP
-
 ## T-Pose化の補足
 正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。
 

@@ -31,7 +31,7 @@ Here is a list of warning messages:
 Jaw (chin) bone is included in humanoid setting.
 There is a possibility that the jaw bone is automatically assigned during FBX import. 
 As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
-Therefore, bangs movements will have weird movements due to this issue.
+Therefore, bangs will have weird movements due to this issue.
 Please remove this setting in Inspector `FBX Importer` -> `rig`
 
 #### This model contains vertex color
