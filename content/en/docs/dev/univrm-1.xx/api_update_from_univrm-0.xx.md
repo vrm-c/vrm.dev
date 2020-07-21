@@ -100,10 +100,10 @@ url: "/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
 
 ## LookAt
 
-* LookAt related classes `VRM.VRMLookAtBoneApplyer`, `VRM.VRMLookAtBlendShapeApplyer` and `VRM.VRMLookAtHead` has been integrated into `UniVRM10.VRMBlendShapeProxy`
-* `VRM.LookAtType` has been changed to `UniVRM10.VRMBlendShapeProxy.LookAtTypes`
-* `VRMLookAtHead.Target` has been replaced with `VRMBlendShapeProxy.Gaze`
-* Added `UniVRM10.VRMBlendShapeProxy.LookAtTargetTypes`. You can choose to get yaw/pitch angle relative to head automatically or specify yaw/pitch angle
+* LookAt related classes `VRM.VRMLookAtBoneApplyer`, `VRM.VRMLookAtBlendShapeApplyer` and `VRM.VRMLookAtHead` has been integrated into `UniVRM10.VRMController`
+* `VRM.LookAtType` has been changed to `UniVRM10.VRMController.LookAtTypes`
+* `VRMLookAtHead.Target` has been replaced with `VRMController.Gaze`
+* Added `UniVRM10.VRMController.LookAtTargetTypes`. You can choose to get yaw/pitch angle relative to head automatically or specify yaw/pitch angle
 
 ### Example
 ```cs
@@ -124,11 +124,11 @@ url: "/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
 
         public void SpecifyLookAtTarget()
         {
-            var proxy = _vrmModel.GetComponent<VRMBlendShapeProxy>();
-            proxy.LookAtTargetType = VRMBlendShapeProxy.LookAtTargetTypes.CalcYawPitchToGaze;
-			
+            var proxy = _vrmModel.GetComponent<VRMController>();
+            proxy.LookAtTargetType = VRMController.LookAtTargetTypes.CalcYawPitchToGaze;
+
             // specify LookAt target
-            _vrmModel.GetComponent<VRMBlendShapeProxy>().Gaze = _targetObject.transform;
+            _vrmModel.GetComponent<VRMController>().Gaze = _targetObject.transform;
 
             // get yaw/pitch angle relative to head
             var (yaw, pitch) = proxy.GetLookAtYawPitch();
@@ -136,9 +136,9 @@ url: "/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
 
         public void SpecifyYawPitchAngle()
         {
-            var proxy = _vrmModel.GetComponent<VRMBlendShapeProxy>();
-            proxy.LookAtTargetType = VRMBlendShapeProxy.LookAtTargetTypes.SetYawPitch;
-			
+            var proxy = _vrmModel.GetComponent<VRMController>();
+            proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
+
             // specify yaw/pitch angle
             proxy.SetLookAtYawPitch(0, 0);
         }

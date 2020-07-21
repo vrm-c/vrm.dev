@@ -6,7 +6,7 @@ url: "/en/univrm/settings/t_pose/"
 ## Supplementary Information regarding T-Pose
 To normalize a model, the model with T-Pose is required.
 
-If the model doesn't have T-Pose, you cna make a T-Pose by doing any of the followings:
+If the model doesn't have T-Pose, you can make a T-Pose by doing any of the followings:
 
 * Click `Menu` on top and select `Export humanoid` from `VRM` -> `UniVRM-0.XX` -> `Export humanoid`. The export dialog will pop up. Enable `force T-Pose` 
 * Make T-Pose for the model by manually adjusting the rotation of the arm etc.
