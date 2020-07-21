@@ -100,10 +100,10 @@ url: "/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
 
 ## LookAt
 
-* LookAt関連クラス`VRM.VRMLookAtBoneApplyer`、`VRM.VRMLookAtBlendShapeApplyer`、`VRM.VRMLookAtHead`が`UniVRM10.VRMBlendShapeProxy`に統合されました
-* `VRM.LookAtType`は`UniVRM10.VRMBlendShapeProxy.LookAtTypes`に変更されました
-* `VRMLookAtHead.Target`は`VRMBlendShapeProxy.Gaze`に置き換えられました
-* `UniVRM10.VRMBlendShapeProxy.LookAtTargetTypes`を追加しました。自動で頭に対するyaw・pitch角度を取得するか、yaw・pitch角度をセットするの選択肢があります
+* LookAt関連クラス`VRM.VRMLookAtBoneApplyer`、`VRM.VRMLookAtBlendShapeApplyer`、`VRM.VRMLookAtHead`が`UniVRM10.VRMController`に統合されました
+* `VRM.LookAtType`は`UniVRM10.VRMController.LookAtTypes`に変更されました
+* `VRMLookAtHead.Target`は`VRMController.Gaze`に置き換えられました
+* `UniVRM10.VRMController.LookAtTargetTypes`を追加しました。自動で頭に対するyaw・pitch角度を取得するか、yaw・pitch角度をセットするの選択肢があります
 
 ### Example
 ```cs
@@ -124,21 +124,21 @@ url: "/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
 
         public void SpecifyLookAtTarget()
         {
-            var proxy = _vrmModel.GetComponent<VRMBlendShapeProxy>();
-            proxy.LookAtTargetType = VRMBlendShapeProxy.LookAtTargetTypes.CalcYawPitchToGaze;
-			
+            var proxy = _vrmModel.GetComponent<VRMController>();
+            proxy.LookAtTargetType = VRMController.LookAtTargetTypes.CalcYawPitchToGaze;
+
             // LookAtターゲットを指定する
-            _vrmModel.GetComponent<VRMBlendShapeProxy>().Gaze = _targetObject.transform;
-            
+            _vrmModel.GetComponent<VRMController>().Gaze = _targetObject.transform;
+
             // 頭に対するyaw・pitch角度を取得する
             var (yaw, pitch) = proxy.GetLookAtYawPitch();
         }
 
         public void SpecifyYawPitchAngle()
         {
-            var proxy = _vrmModel.GetComponent<VRMBlendShapeProxy>();
-            proxy.LookAtTargetType = VRMBlendShapeProxy.LookAtTargetTypes.SetYawPitch;
-			
+            var proxy = _vrmModel.GetComponent<VRMController>();
+            proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
+
             // yaw・pitch角度をセットする
             proxy.SetLookAtYawPitch(0, 0);
         }
