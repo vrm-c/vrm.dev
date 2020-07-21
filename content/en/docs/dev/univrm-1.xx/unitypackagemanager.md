@@ -23,15 +23,8 @@ UnityPackageManager's Window
 
 Since there is no function that can automatically download the dependencies between packages, please add the following git urls in order:
 
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/dotnet.system.memory`
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/vrmlib` => Depends on system.memory
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/VRM` => UniVRM-0.XX's import/export, MToon
-
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/ProtobufSerializer` => Depends on vrmlib
-
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/UniVRM0XReader`=> Depends on vrmlib and VRM
-
-* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/UniVRM-1.0` => Depends on vrmlib, ProtobufSerializer, and UniVRM0XReader
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders`
+* `https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10` => Depends on VRMShaders
 
 
 #### Add dependencies in Packages/manifest.json
@@ -42,12 +35,8 @@ An alternative way is to add necessary dependencies right in Packages/manifest.j
 {
   "dependencies": {
     // ...
-    "com.vrmc.protobufserializer": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/ProtobufSerializer",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/UniVRM-1.0",
-    "com.vrmc.univrm0xreader": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/UniVRM0XReader",
-    "com.vrmc.vrmlib": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/vrmlib",
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/VRM",
-    "dotnet.system.memory": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/dotnet.system.memory",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders",
     // ...
 }
 ```
@@ -58,29 +47,13 @@ The hash values in `lock` can be updated automatically by Unity, there is no nee
 
 ```json
   "lock": {
-    "com.vrmc.protobufserializer": {
-      "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
-    },
     "com.vrmc.univrm": {
       "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
-    },
-    "com.vrmc.vrmlib": {
-      "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
+      "hash": "198c2c605ded711b21781421e71ba9bdbe0f8728"
     },
     "com.vrmc.vrmshaders": {
       "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
-    },
-    "dotnet.system.memory": {
-      "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
-    },
-    "com.vrmc.univrm0xreader": {
-      "revision": "HEAD",
-      "hash": "bf5f59be929f4e3ce2451062a5e39706b0bd8749"
+      "hash": "155acf354735288db0335878179f483901541851"
     }
   }
 ```
