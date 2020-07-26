@@ -51,6 +51,7 @@ weight: 4
 
 * [cluster](https://cluster.mu/)
 * [VWorld](https://naby.booth.pm/items/990663)
+* [Exokit](https://github.com/exokitxr/avatars)
 
 ##  Game
 
