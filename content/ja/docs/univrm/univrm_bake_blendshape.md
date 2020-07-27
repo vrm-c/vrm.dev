@@ -7,11 +7,11 @@ tags: ["blendshape"]
 
 UniVRM ではエクスポートするときに、 `SkinnedMeshRenderer` のスライダーを上げておくとその状態を基本状態にすることができます。
 
-{{<img width=400 src="images/vrm/blendshape_value.jpg" >}}
+{{<img width="400" src="images/vrm/blendshape_value.jpg" >}}
 
 `Pose Freeze` のチェックボックスを有効にする必要があります。
 
-{{<img width=400 src="images/vrm/check_freeze.jpg">}}
+{{<img width="400" src="images/vrm/check_freeze.jpg">}}
 
 エクスポートすると・・・
 
