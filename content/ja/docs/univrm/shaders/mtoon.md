@@ -3,7 +3,7 @@ title: "MToon"
 linkTitle: "MToonの設定"
 date: 2018-04-16T16:30:00+09:00
 url: /univrm/shaders/mtoon/
-weight: 2
+weight: 1
 ---
 
 [Shader preloadingの設定](../../univrm_install/#shader-preloadingの設定)<br/>

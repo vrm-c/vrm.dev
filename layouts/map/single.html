@@ -1,19 +1,28 @@
 {{- define "hierarchy" }}
   <ul>
+    {{- /* 通常の記事ページをループ処理 */}}
+    {{- range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
     {{- /* セクションページをループ処理 */}}
     {{- range .Sections }}
       <li><a href="{{ .RelPermalink }}">&#128193;{{ .Title }}</a>
       {{- template "hierarchy" . }}
     {{- end }}
-
-    {{- /* 通常の記事ページをループ処理 */}}
-    {{- range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{- end }}
   </ul>
 {{- end }} {{ define "main"}}
 <main id="main">
   <div>
+    <h2>最近更新された記事</h2>
+    <ul>
+      {{ range first 10 .Site.RegularPages.ByLastmod.Reverse }}
+        <li>
+          <b><a href="{{.RelPermalink}}">{{.Title}}</a></b>
+          <time>{{.Lastmod.Format "2006-01-02"}}</time>
+        </li>
+      {{ end }}
+    </ul>
+
     <h2>SiteMap</h2>
     {{ if eq .Site.Language.Lang "ja" }}
     {{ range .Site.Home.Sections }}
