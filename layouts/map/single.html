@@ -1,14 +1,13 @@
 {{- define "hierarchy" }}
   <ul>
+    {{- /* 通常の記事ページをループ処理 */}}
+    {{- range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
     {{- /* セクションページをループ処理 */}}
     {{- range .Sections }}
       <li><a href="{{ .RelPermalink }}">&#128193;{{ .Title }}</a>
       {{- template "hierarchy" . }}
-    {{- end }}
-
-    {{- /* 通常の記事ページをループ処理 */}}
-    {{- range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{- end }}
   </ul>
 {{- end }} {{ define "main"}}
