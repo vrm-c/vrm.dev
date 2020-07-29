@@ -1,49 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – UniVRMで使えるシェーダー</title><link>https://vrm.dev/univrm/shaders/univrm_shaders/</link><description>Recent content in UniVRMで使えるシェーダー on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/shaders/univrm_shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRM-0.44のマテリアル</title><link>https://vrm.dev/univrm/shaders/univrm_shaders_044/</link><pubDate>Fri, 05 Oct 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/univrm_shaders_044/</guid><description>
-&lt;p&gt;UniVRM-0.44でマテリアル関連の修正と追加があります。&lt;/p&gt;
-&lt;h2 id=&#34;unigltf-uniunlitシェーダーの導入&#34;&gt;UniGLTF/UniUnlitシェーダーの導入&lt;/h2&gt;
-&lt;p&gt;UniVRM-0.43は以下のUnlitシェーダーのインポート・エクスポートに対応していました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unlit/Color&lt;/li&gt;
-&lt;li&gt;Unlit/Texture, VRM/UnlitTexture&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent, VRM/UnlitTransparent&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent Coutout, VRM/UnlitCutout&lt;/li&gt;
-&lt;li&gt;VRM/UnlitTransparentZWrite(GLTF非互換)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GLTFで設定可能な次のようなマテリアルを表現することができませんでした。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;doubleSided&lt;/li&gt;
-&lt;li&gt;colorとtextureの乗算&lt;/li&gt;
-&lt;li&gt;colorでtransparent&lt;/li&gt;
-&lt;li&gt;vertex color&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GLTF互換のUnlitシェーダー &lt;code&gt;UniGLTF/UnLit&lt;/code&gt; を導入しました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;RenderType: &lt;code&gt;Opaque&lt;/code&gt;, &lt;code&gt;Cutout&lt;/code&gt;, &lt;code&gt;Transparent&lt;/code&gt;, &lt;code&gt;TransparentZWrite&lt;/code&gt;(VRM拡張)&lt;/li&gt;
-&lt;li&gt;CullMode: &lt;code&gt;Off&lt;/code&gt;(doubleSided=True), &lt;code&gt;Back&lt;/code&gt;(doublueSided=False), &lt;code&gt;Front&lt;/code&gt;(VRM拡張)&lt;/li&gt;
-&lt;li&gt;VertexColorBlend: &lt;code&gt;None&lt;/code&gt;, &lt;code&gt;Multiply&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;standardシェーダーのテクスチャ変換の改善&#34;&gt;Standardシェーダーのテクスチャ変換の改善&lt;/h2&gt;
-&lt;p&gt;Standardシェーダーのカラー以外のテクスチャの処理を改善しました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/li&gt;
-&lt;li&gt;Metallic, Roughnes, OcclusionMapの変換
-&lt;ul&gt;
-&lt;li&gt;RGBAチャンネル組み換え&lt;/li&gt;
-&lt;li&gt;Roughness値とSmoothness値の反転&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Importerで変換、Exporterで逆変換&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ノーマルマップのインポート-エクスポートの修正&#34;&gt;ノーマルマップのインポート・エクスポートの修正&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Standard&lt;/code&gt; と &lt;code&gt;MToon&lt;/code&gt; のテクスチャです。
-Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RuntimeImport: 法線テクスチャのPack&lt;/li&gt;
-&lt;li&gt;Export: 法線テクスチャのUnpack&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Tangentの対応&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: MToon</title><link>https://vrm.dev/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/mtoon/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – UniVRM Material詳細</title><link>https://vrm.dev/univrm/shaders/univrm_shaders/</link><description>Recent content in UniVRM Material詳細 on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/shaders/univrm_shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/mtoon/</guid><description>
 &lt;p&gt;&lt;a href=&#34;../../univrm_install/#shader-preloadingの設定&#34;&gt;Shader preloadingの設定&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;MToonの使い方&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;mtoon-について&#34;&gt;MToon について&lt;/h1&gt;
@@ -220,4 +175,196 @@ Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定しま�
 &lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
 &lt;p&gt;輪郭線の色を設定します。&lt;/p&gt;
 &lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Color Mode&lt;/code&gt; が &lt;code&gt;MixedLighting&lt;/code&gt; のとき、その乗算係数を設定します。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;code&gt;Color Mode&lt;/code&gt; が &lt;code&gt;MixedLighting&lt;/code&gt; のとき、その乗算係数を設定します。&lt;/p&gt;</description></item><item><title>Docs: 対応するシェーダー</title><link>https://vrm.dev/docs/univrm/shaders/univrm_material_shader/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_material_shader/</guid><description>
+&lt;h2 id=&#34;エクスポート&#34;&gt;エクスポート&lt;/h2&gt;
+&lt;h3 id=&#34;gltf-レイヤー&#34;&gt;GLTF レイヤー&lt;/h3&gt;
+&lt;p&gt;PBR と Unlit の２種類しかない。
+マテリアルが以下の何れかのシェーダーである場合に &lt;code&gt;unlit&lt;/code&gt; であると見做されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unlit/Color&lt;/li&gt;
+&lt;li&gt;Unlit/Texture&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent Cutout&lt;/li&gt;
+&lt;li&gt;UniGLTF/UniUnlit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;それ以外は、 &lt;code&gt;standard&lt;/code&gt; と見做して処理し、 gltf の &lt;code&gt;/materials[]&lt;/code&gt; に記録します。&lt;/p&gt;
+&lt;h3 id=&#34;vrm-レイヤー&#34;&gt;VRM レイヤー&lt;/h3&gt;
+&lt;p&gt;gltf の &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt; に記録します。
+shader名が、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VRM/UnlitTransparentZWrite&lt;/li&gt;
+&lt;li&gt;VRM/MToon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以外の時は、 &lt;code&gt;shaderName&lt;/code&gt; に &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; が記録されます。&lt;/p&gt;
+&lt;h2 id=&#34;インポート&#34;&gt;インポート&lt;/h2&gt;
+&lt;h3 id=&#34;gltf-レイヤー-1&#34;&gt;GLTF レイヤー&lt;/h3&gt;
+&lt;p&gt;GLTFの &lt;code&gt;/materials[]&lt;/code&gt; からUnityマテリアルを作成します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stanard&lt;/li&gt;
+&lt;li&gt;UniGLTF/UniUlit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の何れかを選択します。&lt;/p&gt;
+&lt;h3 id=&#34;vrm-レイヤー-1&#34;&gt;VRM レイヤー&lt;/h3&gt;
+&lt;p&gt;GLTFの &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt; からUnityマテリアルを作成します。
+&lt;code&gt;shaderName&lt;/code&gt; が &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; の場合は、 &lt;code&gt;/materials[]&lt;/code&gt; から GLTFのマテリアル生成ロジックに移譲します。&lt;/p&gt;
+&lt;h2 id=&#34;インポート-エクスポート&#34;&gt;インポート・エクスポート&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;export&lt;/th&gt;
+&lt;th&gt;gltf&lt;/th&gt;
+&lt;th&gt;import&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Color&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Texture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTexture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitCutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/MToon&lt;/td&gt;
+&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
+&lt;td&gt;VRM/MToon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;その他&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;という動きになります。&lt;/p&gt;</description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; からフォルダ構成を変更して、
+&lt;code&gt;UniVRM&lt;/code&gt; のマテリアル関連の機能は、 &lt;code&gt;Assets/VRMShaders&lt;/code&gt; に移動しました。&lt;/p&gt;
+&lt;h2 id=&#34;upm-パッケージ&#34;&gt;UPM パッケージ&lt;/h2&gt;
+&lt;p&gt;パッケージとして独立して、 &lt;code&gt;UniVRM&lt;/code&gt; とは関係なくマテリアル関連だけ単体で使うことできます。
+( &lt;code&gt;UniVRM&lt;/code&gt; が &lt;code&gt;VRMShaders&lt;/code&gt; を使う関係)。
+&lt;code&gt;UniUnlit&lt;/code&gt; と &lt;code&gt;MToon&lt;/code&gt; を内包しています。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;manifest.json&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;抜粋&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;#0.57.0&lt;/code&gt; 部分で UniVRM のリリース番号(github の tag)を指定します。
+&lt;code&gt;VRMShaders&lt;/code&gt; は &lt;code&gt;VRM&lt;/code&gt; と同じリリース番号を適用する運用をしています。&lt;/p&gt;
+&lt;h3 id=&#34;uniunlit&#34;&gt;UniUnlit&lt;/h3&gt;
+&lt;p&gt;GLTF の一部の機能が、Unity組み込みの &lt;code&gt;unlit&lt;/code&gt; 系シェーダーでは表現できないもの(頂点カラーなど)があるので用意しました。
+Unity組み込みの &lt;code&gt;unlit&lt;/code&gt; 系シェーダーと違い、これひとつですべての &lt;code&gt;unlit&lt;/code&gt; を表現できます。&lt;/p&gt;
+&lt;p&gt;unlit系シェーダーは、export して import すると &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; に変わります。
+UniVRMが &lt;code&gt;unlit&lt;/code&gt; 系でサポートするシェーダーは下記のとおりです。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;export&lt;/th&gt;
+&lt;th&gt;gltf&lt;/th&gt;
+&lt;th&gt;import&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Color&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Texture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34; target=&#34;_blank&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;で開発しています。
+git submodule で、VRMShaders 配下になるようにしています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: テクスチャー変換</title><link>https://vrm.dev/docs/univrm/shaders/univrm_texture_conversion/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_texture_conversion/</guid><description>
+&lt;p&gt;Unity と GLTF でテクスチャーの仕様に非互換があるので、 &lt;code&gt;export/import&lt;/code&gt; で変換しています。&lt;/p&gt;
+&lt;h2 id=&#34;standardシェーダーのテクスチャ変換の改善&#34;&gt;Standardシェーダーのテクスチャ変換の改善&lt;/h2&gt;
+&lt;p&gt;Standardシェーダーのカラー以外のテクスチャの処理を改善しました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/li&gt;
+&lt;li&gt;Metallic, Roughnes, OcclusionMapの変換
+&lt;ul&gt;
+&lt;li&gt;RGBAチャンネル組み換え&lt;/li&gt;
+&lt;li&gt;Roughness値とSmoothness値の反転&lt;/li&gt;
+&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
+&lt;li&gt;Importerで変換、Exporterで逆変換&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ノーマルマップのインポート-エクスポートの修正&#34;&gt;ノーマルマップのインポート・エクスポートの修正&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Standard&lt;/code&gt; と &lt;code&gt;MToon&lt;/code&gt; のテクスチャです。
+Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;RuntimeImport: 法線テクスチャのPack&lt;/li&gt;
+&lt;li&gt;Export: 法線テクスチャのUnpack&lt;/li&gt;
+&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
+&lt;li&gt;Tangentの対応&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
