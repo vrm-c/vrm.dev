@@ -13,6 +13,16 @@
 {{- end }} {{ define "main"}}
 <main id="main">
   <div>
+    <h2>最近更新された記事</h2>
+    <ul>
+      {{ range first 10 .Site.RegularPages.ByLastmod.Reverse }}
+        <li>
+          <b><a href="{{.RelPermalink}}">{{.Title}}</a></b>
+          <time>{{.Lastmod.Format "2006-01-02"}}</time>
+        </li>
+      {{ end }}
+    </ul>
+
     <h2>SiteMap</h2>
     {{ if eq .Site.Language.Lang "ja" }}
     {{ range .Site.Home.Sections }}
