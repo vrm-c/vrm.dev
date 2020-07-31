@@ -6,7 +6,7 @@
     {{- end }}
     {{- /* セクションページをループ処理 */}}
     {{- range .Sections }}
-      <li><a href="{{ .RelPermalink }}">&#128193;{{ .Title }}</a>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
       {{- template "hierarchy" . }}
     {{- end }}
   </ul>

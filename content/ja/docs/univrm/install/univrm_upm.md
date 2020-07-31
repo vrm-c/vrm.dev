@@ -1,8 +1,7 @@
 ---
-title: "UPMでUniVRMをインストールする"
+title: "install UPM"
 date: 2020-07-08T11:42:13+09:00
-url: "/univrm/univrm_upm/"
-weight: 3
+weight: 2
 ---
 
 ## UniVRM-0.XX の UnityPackage

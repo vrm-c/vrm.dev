@@ -1,7 +1,6 @@
 ---
-title: "UniVRMのインストール"
+title: "install unitypackage"
 date: 2020-07-07
-url: /univrm/univrm_install/
 weight: 1
 ---
 

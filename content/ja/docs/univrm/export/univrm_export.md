@@ -1,7 +1,6 @@
 ---
-title: "UniVRMのエクスポート"
+title: "エクスポートダイアログ"
 date: 2020-07-08
-url: /univrm/univrm_export/
 weight: 2
 ---
 
