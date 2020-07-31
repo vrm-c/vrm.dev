@@ -52,7 +52,7 @@ weight: 4
 | [Luppet](https://luppet.appspot.com/) | Windows + Leap Motion |
 | [vear](https://apps.apple.com/jp/app/vear/id1490697369) | iOS |
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
-| [VMagicMirror](https://malaybaku.github.io/VMagicMirror/en/) | Windows 
+| [VMagicMirror](https://malaybaku.github.io/VMagicMirror/en/) | Windows |
 
 ##  Metaverse
 
@@ -60,6 +60,7 @@ weight: 4
 |-------------|----------|
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [VWorld](https://naby.booth.pm/items/990663) | Windows |
+| [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 
 ##  Game
 
