@@ -20,6 +20,7 @@ weight: 4
 | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngine plug-in |
 | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Maya script |
 | [VRM Converter for VRChat](https://www.v-market.work/ec/items/122/detail/) | Unity editor extension |
+| [CopyVRMSettings.cs](https://pokemori.booth.pm/items/1788660) | Unity editor extension |
 
 ##  Character maker
 
