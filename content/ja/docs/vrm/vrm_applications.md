@@ -60,6 +60,7 @@ weight: 4
 |------------------|------------------|
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [Vワールド](https://naby.booth.pm/items/990663) | Windows |
+| [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 
 ##  ゲームなど
 
