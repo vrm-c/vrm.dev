@@ -9,7 +9,7 @@ weight: 4
 ##  3D model submission platform
 
 * [The Seed Online](https://seed.online/)
-* [Niconi 3D](https://3d.nicovideo.jp/)
+* [Niconi Solid](https://3d.nicovideo.jp/)
 * [VRoid Hub](https://hub.vroid.com/)
 
 ##  Plug-in
