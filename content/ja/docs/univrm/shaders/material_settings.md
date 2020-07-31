@@ -50,4 +50,4 @@ GLTFでは、`doubleSided`、`Texture`と`Color`の乗算、`VertexColor`, `Colo
 
 ## MToon
 * https://www.slideshare.net/VirtualCast/vrm-mtoon
-* [MToon Shader](../../../../univrm/shaders/mtoon/)
+*[MToon Shader]({{< relref "mtoon.md" >}})  
