@@ -2,7 +2,6 @@
 title: "UniVRM installation"
 linkTitle: "Install UniVRM"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/univrm_install/"
 weight: 1
 ---
 

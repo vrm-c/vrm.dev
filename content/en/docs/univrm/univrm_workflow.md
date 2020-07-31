@@ -2,7 +2,7 @@
 title: "UniVRM workflow"
 date: 2018-04-16T16:30:00+09:00
 url: "/en/univrm/univrm_workflow/"
-weight: 4
+weight: 2
 ---
 
 ## Workflow

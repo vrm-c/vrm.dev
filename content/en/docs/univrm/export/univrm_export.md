@@ -1,7 +1,6 @@
 ---
 title: "UniVRM Export"
 date: 2020-07-16T10:23:04+09:00
-url: /en/univrm/univrm_export/
 weight: 2
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Install UniVRM with UPM"
 date: 2020-07-07T18:33:59+09:00
-url: "/en/univrm/univrm_upm/"
 weight: 3
 ---
 
