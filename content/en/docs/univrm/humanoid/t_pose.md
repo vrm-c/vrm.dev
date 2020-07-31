@@ -1,6 +1,5 @@
 ---
 title: T Pose Normalization for Model
-url: "/en/univrm/settings/t_pose/"
 ---
 
 ## Supplementary Information regarding T-Pose

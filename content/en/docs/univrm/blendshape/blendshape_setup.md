@@ -1,6 +1,5 @@
 ---
 title: BlendShape Setup (v0.45)
-url: "/en/univrm/settings/blendshape_setup/"
 ---
 
 ## Assets related to BlendShape

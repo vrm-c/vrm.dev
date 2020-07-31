@@ -1,6 +1,5 @@
 ---
 title: マテリアル設定
-url: /univrm/settings/material_settings/
 ---
 
 ## トラブルシューティング

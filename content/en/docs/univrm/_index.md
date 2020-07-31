@@ -1,6 +1,5 @@
 ---
 title: "UniVRM Manual"
-url: "/en/univrm/"
 weight: 1
 menu:
   main:

@@ -2,7 +2,6 @@
 title: "MToon"
 linkTitle: "MToon setting"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/shaders/mtoon/"
 weight: 2
 ---
 

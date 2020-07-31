@@ -1,6 +1,5 @@
 ---
 title: Material-Settings
-url: "/en/univrm/settings/material_settings/"
 ---
 
 About material settings:

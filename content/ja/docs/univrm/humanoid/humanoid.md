@@ -1,6 +1,5 @@
 ---
 title: ヒューマノイド
-url: "/dev/univrm-0.xx/vrm/humanoid/"
 ---
 
 WIP

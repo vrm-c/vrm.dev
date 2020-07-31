@@ -1,6 +1,5 @@
 ---
 title: Humanoid
-url: "/en/dev/univrm-0.xx/vrm/humanoid/"
 ---
 
 Work In progress

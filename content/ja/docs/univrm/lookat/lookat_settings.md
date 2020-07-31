@@ -1,6 +1,5 @@
 ---
 title: LookAtの設定
-url: /univrm/settings/lookat_settings/
 ---
 
 ## 目ボーンによる視線制御

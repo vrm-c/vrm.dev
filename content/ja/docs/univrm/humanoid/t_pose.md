@@ -1,6 +1,5 @@
 ---
 title: T-Poseとモデルの正規化の詳細
-url: /univrm/settings/t_pose/
 ---
 
 ## T-Pose化の補足

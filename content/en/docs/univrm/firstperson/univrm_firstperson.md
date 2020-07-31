@@ -1,7 +1,6 @@
 ---
 title: "First-Person View"
 date: 2018-04-16T16:30:00+09:00
-url: "/en/univrm/components/univrm_firstperson/"
 weight: 3
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: LookAt-Settings
-url: "/en/univrm/settings/lookat_settings/"
 ---
 
 ## Control the Eye Gaze with the Eye Bone

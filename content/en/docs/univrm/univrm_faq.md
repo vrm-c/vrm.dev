@@ -2,7 +2,6 @@
 title: "Frequently asked questions"
 linkTitle: "FAQ"
 date: 2018-05-09
-url: "/en/univrm/univrm_faq/"
 weight: 3
 ---
 
