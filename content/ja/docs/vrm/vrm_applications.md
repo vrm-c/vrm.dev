@@ -37,7 +37,7 @@ weight: 4
 | [バーチャルキャスト](https://virtualcast.jp/) | Windows VR |
 | [カスタムキャスト](https://customcast.jp/) | iOS, Android |
 | [VDRAW](https://sites.google.com/view/vdraw/) | Windows |
-| [REALITY](https://le.wrightflyer.net/reality/) | iOS, Android |
+| [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
 | [SHOWROOM V](https://campaign.showroom-live.com/showroom-v/) | iOS |
 | [Hitogata](https://sites.google.com/site/vhitogata/) | Windows |
 | [3tene](https://3tene.com/) | Windows, macOS |
@@ -79,7 +79,7 @@ weight: 4
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js拡張 |
 | [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
 | [VPocket](https://play.google.com/store/apps/details?id=com.BooApps.VPocket) | Android, iOS |
-| [VRMビュアー](https://www43.atwiki.jp/beamman/) | Windows |
+| [VRMビュアー](https://w.atwiki.jp/beamman/) | Windows |
 | [VRM Viewer](https://vrm-viewer.yukimochi.io/) | Webブラウザ |
 | [VRMQuickLook](https://github.com/magicien/VRMQuickLook) | macOS |
 | [VRM Live Viewer](http://fantom1x.blog130.fc2.com/blog-entry-309.html) | Windows |
