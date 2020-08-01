@@ -16,6 +16,7 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
+| [UniVRM](https://vrm.dev/univrm/) | Unityエディタ拡張, Unityライブラリ |
 | [VRM_IMPORTER](https://github.com/saturday06/VRM_IMPORTER_for_Blender2_8) | Blenderアドオン |
 | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
 | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
