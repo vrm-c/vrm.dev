@@ -28,7 +28,7 @@ weight: 4
 |-------------|----------|
 | [Vkatsu](http://vkatsu.jp/) | Windows, iOS, Android |
 | [VRoid Studio](https://vroid.com/en/studio/) | Windows, macOS |
-| [SeshiruHenshin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
+| [CecilHenShin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 
 ##  Live streaming tool
 
