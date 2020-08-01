@@ -94,7 +94,7 @@ weight: 4
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
 | [Vタビ](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
-| [Vismuth](https://vismuth.net/) | Android, iOS |
+| [Vismuth](https://vismuth.com/) | Android, iOS |
 | [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit) | Unityライブラリ |
 | [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unityライブラリ |
