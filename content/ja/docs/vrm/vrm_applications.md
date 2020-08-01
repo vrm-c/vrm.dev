@@ -53,6 +53,7 @@ weight: 4
 | [vear](https://apps.apple.com/jp/app/vear/id1490697369) | iOS |
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
 | [VMagicMirror](https://malaybaku.github.io/VMagicMirror/) | Windows |
+| [2DR](https://2dr.info/) | iOS, Android |
 
 ##  メタバース
 
