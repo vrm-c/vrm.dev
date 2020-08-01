@@ -78,7 +78,7 @@ weight: 4
 |------------------|------------------|
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js拡張 |
 | [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
-| [VPocket](https://play.google.com/store/apps/details?id=com.BooApps.VPocket) | Android, iOS |
+| [VPocket](https://booooooh.booth.pm/items/1033823) | Android, iOS |
 | [VRMビュアー](https://w.atwiki.jp/beamman/) | Windows |
 | [VRM Viewer](https://vrm-viewer.yukimochi.io/) | Webブラウザ |
 | [VRMQuickLook](https://github.com/magicien/VRMQuickLook) | macOS |
