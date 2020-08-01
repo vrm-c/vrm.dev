@@ -27,7 +27,6 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
-| [Vカツ](http://vkatsu.jp/) | Windows, iOS, Android |
 | [VRoid Studio](https://vroid.com/studio/) | Windows, macOS |
 | [セシル変身アプリ](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 
@@ -35,17 +34,13 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
-| [カスタムキャスト](https://customcast.jp/) | iOS, Android |
 | [VDRAW](https://sites.google.com/view/vdraw/) | Windows |
-| [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
 | [SHOWROOM V](https://campaign.showroom-live.com/showroom-v/) | iOS |
 | [Hitogata](https://sites.google.com/site/vhitogata/) | Windows |
 | [3tene](https://3tene.com/) | Windows, macOS |
-| [パペ文字](https://www.puppemoji.com/) | iOS |
 | [Wakaru](https://store.steampowered.com/app/870820/Wakaru_ver_beta/) | Windows |
 | [バーチャルモーションキャプチャー](https://sh-akira.github.io/VirtualMotionCapture/) | Windows VR |
 | [FaceVTuber](https://facevtuber.com/) | Google Chrome |
-| [メイアライブ（オーダーメイド版）](https://materializer.co/lab/mayalive) | Windows, macOS |
 | [LiveAvatar](https://github.com/m2wasabi/LiveAvatar) | HTC VIVE |
 | [[VR撮影アプリ] Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Luppet](https://luppet.appspot.com/) | Windows + Leap Motion |
@@ -100,3 +95,13 @@ weight: 4
 | [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unityライブラリ |
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
+
+##  内部的にVRMを活用しているサービス
+
+| アプリケーション | プラットフォーム |
+|------------------|------------------|
+| [Vカツ](http://vkatsu.jp/) | Windows, iOS, Android |
+| [カスタムキャスト](https://customcast.jp/) | iOS, Android |
+| [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
+| [パペ文字](https://www.puppemoji.com/) | iOS |
+| [メイアライブオーダーメイド版](https://materializer.co/lab/mayalive) | Windows, macOS |
