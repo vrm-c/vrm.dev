@@ -43,7 +43,7 @@ weight: 4
 | [3tene](https://3tene.com/) | Windows, macOS |
 | [Puppemoji](https://www.puppemoji.com/) | iOS |
 | [Wakaru](https://store.steampowered.com/app/870820/Wakaru_ver_beta/) | Windows |
-| [VirtualMotionCapture](https://github.com/sh-akira/VirtualMotionCapture) | Windows VR |
+| [VirtualMotionCapture](https://sh-akira.github.io/VirtualMotionCapture/) | Windows VR |
 | [FaceVTuber](https://facevtuber.com/) | Google Chrome |
 | [Mayalive](https://materializer.co/lab/mayalive) | Windows, macOS |
 | [WeVTuber](https://wevtubers.appspot.com/) | Windows Google Chrome, Safari |
