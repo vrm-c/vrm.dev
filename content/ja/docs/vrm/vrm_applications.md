@@ -59,7 +59,6 @@ weight: 4
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
-| [Vワールド](https://naby.booth.pm/items/990663) | Windows |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 
 ##  ゲームなど
@@ -76,6 +75,7 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
+| [Vワールド](https://naby.booth.pm/items/990663) | Windows |
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js拡張 |
 | [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
 | [VPocket](https://play.google.com/store/apps/details?id=com.BooApps.VPocket) | Android, iOS |
