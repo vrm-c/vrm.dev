@@ -96,6 +96,6 @@ weight: 4
 | [Vtabi](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
 | [Vismuth](https://vismuth.net/) | Android, iOS |
 | [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit) | Unity library |
-| [vstamp](https://yashinut.com/archives/vstamp_app.html) | iOS, Android |
+| [vstamp](https://bnut.jp/vstamp) | iOS, Android |
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unity library |
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
