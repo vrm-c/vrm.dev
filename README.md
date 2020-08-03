@@ -25,5 +25,5 @@ vrm.dev adopts Hugo theme [Docsy](https://github.com/google/docsy). Refer to [th
 <!--
 ## License
 
-[UNKNOWN](LICENSE)
+[UNKNOWN]({{< relref "LICENSE.md" >}})
 -->

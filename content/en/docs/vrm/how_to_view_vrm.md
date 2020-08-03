@@ -6,7 +6,7 @@ weight: 3
 ---
 
 ## Import VRM file into VRM Viewer
-Download VRM Viewer from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases). Next, run the program and click``VRM Model``. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers [can be found here](../vrm_applications/#viewer).
+Download VRM Viewer from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases). Next, run the program and click``VRM Model``. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers [can be found here]({{< relref "vrm_applications.md#viewer" >}}).
 
 ## Import VRM file into Unity Project
 Importing VRM file by this way is a little tedious but you can see the information of a VRM model:

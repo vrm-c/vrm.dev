@@ -6,7 +6,7 @@ url: "/en/dev/univrm-0.xx/programming/univrm_import_runtime/"
 weight: 2
 ---
 
-Examples of importing the VRM model with the latest version [can be found here](../runtime_import/).
+Examples of importing the VRM model with the latest version [can be found here]({{< relref "runtime_import.md" >}}).
 
 The followings are the methods to import a VRM model at runtime in Unity:
 

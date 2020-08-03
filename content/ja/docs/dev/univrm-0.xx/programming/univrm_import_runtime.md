@@ -6,7 +6,7 @@ url: "/dev/univrm-0.xx/programming/univrm_import_runtime/"
 weight: 2
 ---
 
-最新バージョンは[こちら](../runtime_import/)をご覧ください。
+最新バージョンは[こちら]({{< relref "runtime_import.md" >}})をご覧ください。
 
 Unityで実行時にモデルをインポートする方法です。
 

@@ -8,7 +8,7 @@ weight: 3
 ##  VRMファイルの読み込みかた
 
 [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases)からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
-また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは[こちら](../vrm_applications/#ビューア)をご覧ください。
+また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは[こちら]({{< relref "vrm_applications.md#ビューア" >}})をご覧ください。
 
 ### 1.Unityで空のプロジェクトを作る
 {{< img src="images/vrm/unity_new_project.png" >}}

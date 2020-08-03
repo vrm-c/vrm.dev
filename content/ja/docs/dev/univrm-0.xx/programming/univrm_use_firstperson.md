@@ -7,7 +7,7 @@ weight: 5
 ---
 
 # VRMFirstPersonの設定
-[VRMFirstPerson](/../../../univrm/components/univrm_firstperson/)ではRendererに対して設定があります。
+[VRMFirstPerson]({{< relref "univrm_firstperson.md" >}})ではRendererに対して設定があります。
 
 |FirstPersonFlag               |レイヤー               |備考                                        |
 |------------------------------|----------------------|--------------------------------------------|

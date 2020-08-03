@@ -7,7 +7,7 @@ weight: 5
 ---
 
 # VRMFirstPerson Settings
-[VRMFirstPerson](/../../../univrm/components/univrm_firstperson/) has the following settings for Renderer:
+[VRMFirstPerson]({{< relref "univrm_firstperson.md" >}}) has the following settings for Renderer:
 
 |FirstPersonFlag               |Layer               |Note                                       |
 |------------------------------|----------------------|--------------------------------------------|
