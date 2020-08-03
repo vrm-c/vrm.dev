@@ -2,10 +2,9 @@
 title: "MToon"
 linkTitle: "MToon setting"
 date: 2018-04-16T16:30:00+09:00
-weight: 2
+weight: 1
 ---
 
-[Shader preloading setting](../../univrm_install/#shader-preloading-setting)<br>
 [How to use MToon](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 
 # About MToon
