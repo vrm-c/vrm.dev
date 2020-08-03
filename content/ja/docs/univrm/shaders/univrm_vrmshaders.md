@@ -1,7 +1,8 @@
 ---
-title: "VRMShaders"
+title: "VRMShaders UPMパッケージ"
 date: 2020-07-29
-weight: 3
+weight: 8
+tags: ["material", "upm"]
 url: "univrm/shaders/univrm_vrmshaders/"
 ---
 
@@ -28,19 +29,7 @@ url: "univrm/shaders/univrm_vrmshaders/"
 
 ### UniUnlit
 
-GLTF の一部の機能が、Unity組み込みの `unlit` 系シェーダーでは表現できないもの(頂点カラーなど)があるので用意しました。
-Unity組み込みの `unlit` 系シェーダーと違い、これひとつですべての `unlit` を表現できます。
-
-unlit系シェーダーは、export して import すると `UniGLTF/UniUnlit` に変わります。
-UniVRMが `unlit` 系でサポートするシェーダーは下記のとおりです。
-
-| export                   | gltf                | import           |
-|--------------------------|---------------------|------------------|
-| Unlit/Color              | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Texture            | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Transparent        | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Transparent Cutout | KHR_materials_unlit | UniGLTF/UniUnlit |
-| UniGLTF/UniUnlit         | KHR_materials_unlit | UniGLTF/UniUnlit |
+[unilt]({{< relref "univrm_unlit.md" >}})
 
 ### MToon
 
@@ -50,3 +39,5 @@ https://github.com/Santarh/MToon
 git submodule で、VRMShaders 配下になるようにしています。
 
 https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders
+
+[mtoon]({{< relref "mtoon.md" >}})
