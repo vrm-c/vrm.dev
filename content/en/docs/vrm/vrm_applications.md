@@ -27,7 +27,7 @@ weight: 4
 | Application | Platform |
 |-------------|----------|
 | [Vkatsu](http://vkatsu.jp/) | Windows, iOS, Android |
-| [VRoid](https://vroid.com/en) | Windows, macOS |
+| [VRoid Studio](https://vroid.com/en/studio/) | Windows, macOS |
 | [SeshiruHenshin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 
 ##  Live streaming tool

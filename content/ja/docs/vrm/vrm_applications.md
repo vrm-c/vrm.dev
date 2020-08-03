@@ -27,7 +27,7 @@ weight: 4
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
 | [Vカツ](http://vkatsu.jp/) | Windows, iOS, Android |
-| [VRoid](https://vroid.com/) | Windows, macOS |
+| [VRoid Studio](https://vroid.com/studio/) | Windows, macOS |
 | [セシル変身アプリ](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 
 ##  配信ツール
