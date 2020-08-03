@@ -1,17 +1,23 @@
 ---
-title: Support-Status-for-Animation-Exporter
+title: Animation
+date: 2020-08-03T16:07:54+09:00
+weight: 4
 ---
+
+The definition for Animation is available in GLTF.
+
+> VRM specification does not include the Animation.
 
 ### Version
 * v0.44
 
 ### Support Status
-| KeyName |  |
-|:-----------|:------------:|
+| KeyName        |   |
+|:---------------|:-:|
 | TranslationKey | ○ |
-| RotationKey | ○ |
-| ScaleKey | ○ |
-| BlendShapeKey | × |
+| RotationKey    | ○ |
+| ScaleKey       | ○ |
+| BlendShapeKey  | × |
 
 ***
 

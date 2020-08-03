@@ -85,24 +85,24 @@ Now click the model in the Hierarchy window, you shall see sub-components attach
 
 {{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
-Note that if the materials are not assigned or you want to change them, click the rightmost icon of `Element X` to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select `VRM/MToon` as an example as shown below. Please refer to [MToon](../univrm/shaders/mtoon/) for more information.
+Note that if the materials are not assigned or you want to change them, click the rightmost icon of `Element X` to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select `VRM/MToon` as an example as shown below. Please refer to [MToon](../docs/univrm/shaders/mtoon/) for more information.
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
-After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.56.3 -> Export humanoid``.
+After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.XX -> Export humanoid``.
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default. The details for export settings [can be found here](../univrm/univrm_export).
+Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default. The details for export settings [can be found here](../docs/univrm/export/univrm_export/).
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 
 * Force T Pose
-    * Force the model pose to become [T-Pose](../dev/univrm-0.xx/vrm/vrm_tpose/) before removing rotation / scaling.
+    * Force the model pose to become [T-Pose](../docs/univrm/humanoid/vrm_tpose/) before removing rotation / scaling.
 * Pose Freeze
     * Whether the rotation / scaling removal processing should be performed. This is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 
-Details about model's T-Pose normalization [can be found here](../univrm/settings/t_pose/).
+Details about model's T-Pose normalization [can be found here](../docs/univrm/humanoid/t_pose/).
 
 ### 5. Import the VRM file
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
@@ -169,21 +169,21 @@ Note that starting from Unity version 2018.3, the interface has slightly changes
 
 Now the basic model conversion is finished. To complete the whole setup, please set up the items listed below:
 
-* [Expression and lip-sync (BlendShape)](../univrm/components/univrm_blendshape/)
-* [First-person point of view (Get rid of model's head for VR applications)](../univrm/components/univrm_firstperson/)
-* [Movable range for eye gaze/eyeball controlled by bone or BlendShape](../univrm/components/univrm_lookat/)
-* [Spring bone (SpringBone/SpringBoneCollider)](../univrm/components/univrm_secondary/)
+* [Expression and lip-sync (BlendShape)](../docs/univrm/blendshape/univrm_blendshape/)
+* [First-person point of view (Get rid of model's head for VR applications)](../docs/univrm/firstperson/univrm_firstperson/)
+* [Movable range for eye gaze/eyeball controlled by bone or BlendShape](../docs/univrm/lookat/univrm_lookat/)
+* [Spring bone (SpringBone/SpringBoneCollider)](../docs/univrm/springbone/univrm_secondary/)
 
 
 ### 7. Check model expressions/movements in play mode（If necessary）
-Set `AnimationClip/AnimationController` and set [viewing target](../univrm/components/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model's eyes are tracking the object in (near) real-time. The model's close-up face can be viewed in Inspector window.
+Set `AnimationClip/AnimationController` and set [viewing target](../docs/univrm/lookat/univrm_lookat/#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model's eyes are tracking the object in (near) real-time. The model's close-up face can be viewed in Inspector window.
 
 {{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
 <br>
 <br>
 {{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
 
-To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker" are provided. After setting up [BlendShape](../univrm/components/univrm_blendshape/#vrmblendshapeproxy), click `Add Component` at the bottom of model's Inspector window to add "AIUEO" script or drag the script directly to Inspector. After "AIUEO" is set, lip synchronization animation that "aa", "ih", "ou", "E", "oh" switches in turn can be created in the scene. Similarly, if "Blinker" is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/vrm-c/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
+To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker" are provided. After setting up [BlendShape](../docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy), click `Add Component` at the bottom of model's Inspector window to add "AIUEO" script or drag the script directly to Inspector. After "AIUEO" is set, lip synchronization animation that "aa", "ih", "ou", "E", "oh" switches in turn can be created in the scene. Similarly, if "Blinker" is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/vrm-c/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
 
 |{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}|
 |-----|
@@ -197,7 +197,7 @@ To test the model's expressions, fairly simple test scripts "AIUEO" and "Blinker
 ### 8. Export the adjusted VRM model
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.56.3 -> Export humanoid``.
+After the adjustment is completed, select the model data in `Hierarchy` and again export the model from``VRM -> UniVRM-0.XX -> Export humanoid``.
 
 This time **please do not check "Force T Pose" and "Pose Freeze"**. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.
 

@@ -43,17 +43,17 @@ We can see the Jaw and Eyes are assigned by the wrong components. As mentioned a
 ## Export from menu
 |{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}|
 |-----|
-|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.56.3 -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
+|In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the `Export humanoid` option will become available (`VRM -> UniVRM-0.XX -> Export humanoid`). The file will be saved in the `Assets` folder by default.|
 
 |{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}|
 |-----|
 |Enter your name in the `Author` field and click the `Export` button.|
 
 ### Force T Pose
-Force the model pose to become[T-Pose]({{< relref "vrm_tpose.md" >}})   before removing rotation / scaling.
+Force the model pose to become[T-Pose]({{< relref "/docs/univrm/humanoid/vrm_tpose" >}})   before removing rotation / scaling.
 
 #### Change to T Pose manually
-You can manually change the model pose to[T-Pose]({{< relref "vrm_tpose.md" >}})   (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
+You can manually change the model pose to[T-Pose]({{< relref "/docs/univrm/humanoid/vrm_tpose" >}})   (done automatically by default). Make sure to deselect the `Force T Pose` checkbox.
 
 ### Pose Freeze
 Whether the rotation / scaling removal processing should be performed. It is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.

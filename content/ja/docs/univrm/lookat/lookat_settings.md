@@ -4,11 +4,11 @@ title: LookAtの設定
 
 ## 目ボーンによる視線制御
 
-[視線制御](../../../../univrm/components/univrm_lookat)
+[視線制御]({{< relref "univrm_lookat.md" >}})
 を参照してください。
 
 ## BlendShapeによる視線制御
-[視線制御](../../../../univrm/components/univrm_lookat)
+[視線制御]({{< relref "univrm_lookat.md" >}})
 を参照してください。
 
 ## TextureのUV操作による視線制御

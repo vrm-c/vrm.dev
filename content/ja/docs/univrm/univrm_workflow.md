@@ -55,7 +55,7 @@ Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設�
 |`Author`欄に名前を入力して`Export`を押してください|
 
 ### Force T Pose
-回転・スケールの除去前にモデルを強制的[T-Pose]({{< relref "vrm_tpose.md" >}})  にします。
+回転・スケールの除去前にモデルを強制的[T-Pose]({{< relref "/docs/univrm/humanoid/vrm_tpose" >}})  にします。
 
 #### 手動でT Poseにすることができます
 自動で`T Pose`にすると姿勢が変わってしまう場合などに、手動で`T Pose`化することができます。

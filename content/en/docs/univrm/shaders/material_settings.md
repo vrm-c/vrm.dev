@@ -50,4 +50,4 @@ Note that when `KHR_materials_unlit` is declared, core PBR properties are ignore
 
 ## MToon
 * https://www.slideshare.net/VirtualCast/vrm-mtoon (written in Japanese)
-*[MToon Shader]({{< relref "mtoon.md" >}})  
+* [MToon Shader]({{< relref "mtoon.md" >}})  

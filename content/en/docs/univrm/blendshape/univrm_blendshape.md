@@ -6,7 +6,7 @@ weight: 2
 ---
 
 New features introduced in UniVRM v0.45 
-[can be found here](../../settings/blendshape_setup/)
+[can be found here]({{< relref "univrm_bake_blendshape.md" >}})
 
 ## VRMBlendShapeProxy
 

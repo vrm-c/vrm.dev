@@ -5,7 +5,6 @@ date: 2018-04-16T16:30:00+09:00
 weight: 1
 ---
 
-[Shader preloadingの設定](../../univrm_install/#shader-preloadingの設定)<br/>
 [MToonの使い方](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 
 # MToon について
