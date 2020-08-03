@@ -7,7 +7,41 @@ def update_url(root: pathlib.Path, path: pathlib.Path):
         url = f'{path.parent.relative_to(root)}/'
     else:
         url = f'{path.parent.relative_to(root)}/{path.stem}/'
-    print(root, url)
+
+    frontmatter = []
+    lines = []
+    delemeter = 0
+    old_url = None
+    for l in path.read_text().split('\n'):
+        if l.startswith('---'):
+            delemeter += 1
+        else:
+            if delemeter == 0:
+                raise Exception('no frontmatter')
+            elif delemeter == 1:
+                if l.startswith('url:'):
+                    if old_url:
+                        raise Exception("multi url ?")
+                    old_url = l
+                else:
+                    frontmatter.append(l)
+            elif delemeter == 2:
+                lines.append(l)
+            else:
+                raise Exception('too many ---')
+    if lines and lines[-1] == '':
+        lines.pop()
+
+    with path.open('w') as f:
+        f.write('---\n')
+        for l in frontmatter:
+            f.write(l + '\n')
+        f.write(f'url: "{url}"\n')
+        f.write('---\n')
+        for l in lines:
+            f.write(l + '\n')
+
+    print(f'{old_url} => {url}')
 
 
 def traverse(root: pathlib.Path, path: pathlib.Path):
