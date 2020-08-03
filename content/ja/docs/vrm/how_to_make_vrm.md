@@ -93,25 +93,25 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 
 {{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
-マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon](../univrm/shaders/mtoon/)を参照してください。
+マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon](../docs/univrm/shaders/mtoon/)を参照してください。
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
-調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、``VRM -> UniVRM-0.56.3 -> Export humanoid``からエクスポートします。
+調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、``VRM -> UniVRM-0.XX -> Export humanoid``からエクスポートします。
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 `Author`欄に名前を入力し、`Export`を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで`Assets`フォルダに保存されます。
-詳しくは[UniVRMのエクスポート](../univrm/univrm_export)をご覧ください。
+詳しくは[UniVRMのエクスポート](../docs/univrm/export/univrm_export/)をご覧ください。
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 
 * Force T Pose
-	* 回転・スケールの除去前にモデルを強制的に[T-Pose](../dev/univrm-0.xx/vrm/vrm_tpose/)にします。
+	* 回転・スケールの除去前にモデルを強制的に[T-Pose](../docs/univrm/humanoid/vrm_tpose/)にします。
 * Pose Freeze
 	* 回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように**モデルを正規化する処理**です。**初回は必ずチェックを入れてください**。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。
 
-T-Poseとモデルの正規化の詳細は[こちら](../univrm/settings/t_pose/)。
+T-Poseとモデルの正規化の詳細は[こちら](../docs/univrm/humanoid/t_pose/)。
 
 ### 5.先ほどエクスポートしたVRMを再度Unity上に読み込む
 {{< img src="images/vrm/vrm_prefab.png" >}}
@@ -180,22 +180,22 @@ Unityバージョン2018.3から、インポートセッティングのインタ
 
 ほかに、
 
-* [表情や口パクの設定（BlendShape）](../univrm/components/univrm_blendshape/)
-* [一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）](../univrm/components/univrm_firstperson/)
-* [視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。](../univrm/components/univrm_lookat/)
-* [揺れ物（SpringBone/SpringBoneCollider）の設定](../univrm/components/univrm_secondary/)
+* [表情や口パクの設定（BlendShape）](../docs/univrm/blendshape/univrm_blendshape/)
+* [一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）](../docs/univrm/firstperson/univrm_firstperson/)
+* [視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。](../docs/univrm/lookat/univrm_lookat/)
+* [揺れ物（SpringBone/SpringBoneCollider）の設定](../docs/univrm/springbone/univrm_secondary/)
 
 がありますので必要に応じて設定していきます。
 
 ### 7.Unity上で再生し挙動を確認する（※必要であれば）
-`AnimationClip/AnimationController`をセットしたり、`VRMLookAtHead`の`Target`に[GameObject](../univrm/components/univrm_lookat/#target)をセットしたり（視線がどこを向くかの設定）、`Head`欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、``GameObject -> 3D Object -> Cube``からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。
+`AnimationClip/AnimationController`をセットしたり、`VRMLookAtHead`の`Target`に[GameObject](../docs/univrm/lookat/univrm_lookat/#target)をセットしたり（視線がどこを向くかの設定）、`Head`欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、``GameObject -> 3D Object -> Cube``からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。
 
 {{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
 <br>
 <br>
 {{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
 
-モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape](../univrm/components/univrm_blendshape/#vrmblendshapeproxy)をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
+モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape](../docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy)をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
 
 |{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}|
 |-----|
@@ -208,7 +208,7 @@ Unityバージョン2018.3から、インポートセッティングのインタ
 ### 8.VRMファイルを出力する
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.56.3 -> Export humanoid``を実行します
+調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.XX -> Export humanoid``を実行します
 
 このとき、**「Force T Pose」と「Pose Freeze」のチェックは外してください**。このチェックは初回（正規化）のときのみ使用します。
 ファイル名を指定してVRMファイルを出力します

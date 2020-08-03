@@ -31,7 +31,7 @@ weight: 2
 # 設定したVRMSpringBoneが居なくなった
 VRMSpringBoneはインポート時に```secondary```ノードにアタッチされます。
 
-[VRMSpringBone](../components/univrm_secondary/#コンポーネントのアタッチされるノード)
+[VRMSpringBone](../springbone/univrm_secondary/#コンポーネントのアタッチされるノード)
 
 # プロジェクトをビルドするとローダーが動かなくなる
 
@@ -41,5 +41,4 @@ UniVRMで使うシェーダーがビルド対象に含まれていない可能�
 
 をご確認ください。
 
-[Shader Preloadingの設定手順](../univrm_install/#shader-preloadingの設定)
 

@@ -35,4 +35,4 @@ Adjust angles when applying rotation to EyeBone.
 ## Eye control with BlendShape: VRMLookAtBlendShapeApplyer
 The component for controlling the eyes with BlendShape.
 Please delete VRMLookAtBoneApplyer and attach VRMLookAtBlendShapeApplyer instead.
-Settings related to VRMLookAtBlendShape[can be found here]({{< relref "lookat_settings.md" >}})  .
+Settings related to VRMLookAtBlendShape[can be found here]({{< relref "lookat_settings.md" >}}).

@@ -28,7 +28,7 @@ More details provided in the report will be very helpful for us to look into you
 # VRMSpringBone set before was gone
 VRMSpringBone was attached to the node```secondary```during import.
 
-[VRMSpringBone](../components/univrm_secondary/#nodes-attached-by-spring-bones)
+[VRMSpringBone](../springbone/univrm_secondary/#nodes-attached-by-spring-bones)
 
 # I got errors when loading the built application 
 Shaders used by UniVRM may not be included in the application.
@@ -36,5 +36,3 @@ Shaders used by UniVRM may not be included in the application.
 Please double check:
 
 ```Edit - Project Settings - Graphics - Shader preloading```
-
-[The procedure for setting Shader preloading](../univrm_install/#shader-preloading-setting)
