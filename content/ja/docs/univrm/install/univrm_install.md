@@ -10,7 +10,7 @@ url: "univrm/install/univrm_install/"
 `UniVRM-0.56` から
 Unity2018.4LTS以降 + `.Net4` 設定をサポートしています。
 
-UPMでUniVRMをインストールする場合は、[UPMでUniVRMをインストールする](../univrm_upm)ページをご覧ください。
+UPMでUniVRMをインストールする場合は、[UPMでUniVRMをインストールする]({{< relref "univrm_upm.md" >}})ページをご覧ください。
 
 ## unitypackage の入手
 

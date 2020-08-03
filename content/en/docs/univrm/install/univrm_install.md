@@ -10,7 +10,7 @@ url: "univrm/install/univrm_install/"
 
 Starting from `UniVRM-0.56`, UniVRM supports `Unity-2018.4LTS+` `.Net4.x`.
 
-To install UniVRM with Unity Package Manager, please refer to [Install UniVRM with UPM](../univrm_upm)
+To install UniVRM with Unity Package Manager, please refer to [Install UniVRM with UPM]({{< relref "univrm_upm.md" >}})
 
 ## unitypackage
 
