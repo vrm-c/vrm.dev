@@ -11,7 +11,6 @@ def update_url(root: pathlib.Path, path: pathlib.Path):
     frontmatter = []
     lines = []
     delemeter = 0
-    old_url = None
     for l in path.read_text().split('\n'):
         if l.startswith('---'):
             delemeter += 1
@@ -19,12 +18,7 @@ def update_url(root: pathlib.Path, path: pathlib.Path):
             if delemeter == 0:
                 raise Exception('no frontmatter')
             elif delemeter == 1:
-                if l.startswith('url:'):
-                    if old_url:
-                        raise Exception("multi url ?")
-                    old_url = l
-                else:
-                    frontmatter.append(l)
+                frontmatter.append(l)
             elif delemeter == 2:
                 lines.append(l)
             else:
@@ -34,14 +28,19 @@ def update_url(root: pathlib.Path, path: pathlib.Path):
 
     with path.open('w') as f:
         f.write('---\n')
+        url_found = False
         for l in frontmatter:
-            f.write(l + '\n')
-        f.write(f'url: "{url}"\n')
+            if l.startswith('url:'):
+                f.write(f'url: "{url}"\n')
+                url_found = True
+            else:
+                f.write(l + '\n')
+        if not url_found:
+            f.write(f'url: "{url}"\n')
         f.write('---\n')
         for l in lines:
             f.write(l + '\n')
-
-    print(f'{old_url} => {url}')
+    print(f'{url}')
 
 
 def traverse(root: pathlib.Path, path: pathlib.Path):
