@@ -46,7 +46,6 @@ weight: 4
 | [VirtualMotionCapture](https://sh-akira.github.io/VirtualMotionCapture/) | Windows VR |
 | [FaceVTuber](https://facevtuber.com/) | Google Chrome |
 | [Mayalive](https://materializer.co/lab/mayalive) | Windows, macOS |
-| [WeVTuber](https://wevtubers.appspot.com/) | Windows Google Chrome, Safari |
 | [LiveAvatar](https://github.com/m2wasabi/LiveAvatar) | HTC VIVE |
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Luppet](https://luppet.appspot.com/) | Windows + Leap Motion |
