@@ -1,6 +1,7 @@
 ---
 title: Glbエクスポート
 weight: 2
+url: "univrm/gltf/how_to_create_glb/"
 ---
 
 ## 手順

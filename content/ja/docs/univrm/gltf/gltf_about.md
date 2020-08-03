@@ -3,6 +3,7 @@ title: "GLTFについて"
 linkTitle: "GLTFとは"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
+url: "univrm/gltf/gltf_about/"
 ---
 
 glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。

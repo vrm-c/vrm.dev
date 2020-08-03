@@ -2,6 +2,7 @@
 title: "エクスポートダイアログ"
 date: 2020-07-08
 weight: 2
+url: "univrm/export/univrm_export/"
 ---
 
 ## エクスポートダイアログ

@@ -2,6 +2,7 @@
 title: Animation
 date: 2020-08-03T16:07:54+09:00
 weight: 4
+url: "univrm/gltf/animation_exporter/"
 ---
 
 The definition for Animation is available in GLTF.

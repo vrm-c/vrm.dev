@@ -2,6 +2,7 @@
 title: "テクスチャー変換"
 date: 2020-07-29
 weight: 5
+url: "univrm/shaders/univrm_texture_conversion/"
 ---
 
 Unity と GLTF でテクスチャーの仕様に非互換があるので、 `export/import` で変換しています。

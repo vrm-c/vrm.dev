@@ -2,6 +2,7 @@
 title: "Eye Control"
 date: 2018-04-16T16:30:00+09:00
 weight: 4
+url: "univrm/lookat/univrm_lookat/"
 ---
 
 ## VRMLookAtHead
