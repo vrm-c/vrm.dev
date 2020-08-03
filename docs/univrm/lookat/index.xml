@@ -1,0 +1,88 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁LookAt</title><link>https://vrm.dev/docs/univrm/lookat/</link><description>Recent content in 📁LookAt on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 31 Jul 2020 18:33:55 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/lookat/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 視線制御</title><link>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</guid><description>
+&lt;h2 id=&#34;vrmlookathead&#34;&gt;VRMLookAtHead&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMLookAtHead.png&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMLookAtHead&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;このコンポーネントは頭から見たTargetの方向を計算します。&lt;/p&gt;
+&lt;h3 id=&#34;target&#34;&gt;Target&lt;/h3&gt;
+&lt;p&gt;注視する対象物です。目を向けたい場所にあるオブジェクトをセットしてください。
+カメラをセットすればカメラ目線になります。&lt;/p&gt;
+&lt;h2 id=&#34;ボーン制御の視線-vrmlookatboneapplyer&#34;&gt;ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMLookAtBoneApplyer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;VRMLookAtHeadの計算した視線方向のパラメーターをEyeBoneに適用します。&lt;/p&gt;
+&lt;h3 id=&#34;degreemapping&#34;&gt;DegreeMapping&lt;/h3&gt;
+&lt;p&gt;EyeBoneに回転を適用する際に角度を調節します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HorizontalOuter: 横方向外向きの角度制限です&lt;/li&gt;
+&lt;li&gt;HorizontalInner: 横方向内向きの角度制限です&lt;/li&gt;
+&lt;li&gt;VerticalDown: 縦方向下向きの角度制限です&lt;/li&gt;
+&lt;li&gt;VerticalUp: 縦方向上向きの角度制限です&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;モーフ制御の視線-vrmlookatblendshapeapplyer&#34;&gt;モーフ制御の視線: VRMLookAtBlendShapeApplyer&lt;/h2&gt;
+&lt;p&gt;BlendShapeで視線制御するモデル用のコンポーネントです。
+VRMLookAtBoneApplyerを削除して、代わりにこれをアタッチしてください。
+VRMLookAtBlendShapeに関する設定方法&lt;a href=&#34;https://vrm.dev/docs/univrm/lookat/lookat_settings/&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt; を参照してください。&lt;/p&gt;</description></item><item><title>Docs: LookAtの設定</title><link>https://vrm.dev/docs/univrm/lookat/lookat_settings/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_settings/</guid><description>
+&lt;h2 id=&#34;目ボーンによる視線制御&#34;&gt;目ボーンによる視線制御&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;視線制御&lt;/a&gt;
+を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeによる視線制御&#34;&gt;BlendShapeによる視線制御&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../univrm/components/univrm_lookat&#34;&gt;視線制御&lt;/a&gt;
+を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;textureのuv操作による視線制御&#34;&gt;TextureのUV操作による視線制御&lt;/h2&gt;
+&lt;p&gt;Textureを上下左右にスライドさせることで目線を移動させる方法です。
+&lt;code&gt;Unityちゃん&lt;/code&gt; がこのタイプです。&lt;/p&gt;
+&lt;h3 id=&#34;目のマテリアルを探す&#34;&gt;目のマテリアルを探す&lt;/h3&gt;
+&lt;p&gt;マテリアルのインスペクタの目のテクスチャの &lt;code&gt;Tiling Offset&lt;/code&gt; の設定に注目してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1, 1, 0, 0&lt;/code&gt; になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください・・・)。&lt;/p&gt;
+&lt;p&gt;試しに、&lt;code&gt;Offset&lt;/code&gt; Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
+目的の設定が見つかったので &lt;code&gt;0&lt;/code&gt; に戻して次に進みます。&lt;/p&gt;
+&lt;h3 id=&#34;lookup-lookdown-lookleft-lookrightを設定する&#34;&gt;LookUp, LookDown, LookLeft, LookRightを設定する&lt;/h3&gt;
+&lt;p&gt;例では、Materialに &lt;code&gt;unlit/transparent cutout&lt;/code&gt; を使用しています。&lt;/p&gt;
+&lt;h4 id=&#34;lookleftの例&#34;&gt;LookLeftの例&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;LookLeft&lt;/code&gt; アセットを選択してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Material List&lt;/code&gt; タブを選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt; を選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt; を選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt; に設定します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Offsetを調整してLookLeftを作ります&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eye_R1&lt;/code&gt; も同様に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34; target=&#34;_blank&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vrmlookatblendshapeapplyerをセットする&#34;&gt;VRMLookAtBlendShapeApplyerをセットする&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;VRMLookAtBoneApplyerを削除します&lt;/li&gt;
+&lt;li&gt;VRMLookAtBlendShapeApplyerを追加します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;初期設定では、目標物が頭部から見て90度の角度になったときにBlendShpaeを1.0にセットするという意味になります。90以上は1.0にクランプされます。
+90を減らすことでより少ない角度で大きく瞳を動かすことが出来ます。&lt;/p&gt;
+&lt;p&gt;以上で完了です。&lt;/p&gt;</description></item></channel></rss>

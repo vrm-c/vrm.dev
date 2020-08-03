@@ -1,0 +1,123 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁Export</title><link>https://vrm.dev/en/docs/univrm/export/</link><description>Recent content in 📁Export on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 31 Jul 2020 18:56:26 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/export/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
+&lt;h2 id=&#34;export-dialog&#34;&gt;Export Dialog&lt;/h2&gt;
+&lt;p&gt;v0.56&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+&lt;hr&gt;&lt;/p&gt;
+&lt;p&gt;Below is the export dialog in v0.56.
+We will improve it in the later version.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Terminology&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Root&lt;/td&gt;
+&lt;td&gt;Topmost parent of an object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hierarchy&lt;/td&gt;
+&lt;td&gt;Root&amp;rsquo;s children&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;warning-message-marked-with-orange-frame&#34;&gt;Warning Message (marked with orange frame)&lt;/h3&gt;
+&lt;p&gt;The model can be exported, but there is no guarantee that this exported model&amp;rsquo;s behaviors/looking are what you expect.&lt;/p&gt;
+&lt;p&gt;Here is a list of warning messages:&lt;/p&gt;
+&lt;h4 id=&#34;jaw-bone-is-included-it-may-not-be-what-you-intended-please-check-the-humanoid-avatar-setting-screen&#34;&gt;Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen&lt;/h4&gt;
+&lt;p&gt;Jaw (chin) bone is included in humanoid setting.
+There is a possibility that the jaw bone is automatically assigned during FBX import.
+As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
+Therefore, bangs will have weird movements due to this issue.
+Please remove this setting in Inspector &lt;code&gt;FBX Importer&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;this-model-contains-vertex-color&#34;&gt;This model contains vertex color&lt;/h4&gt;
+&lt;p&gt;If you see this message, there are meshes that contain vertex color in Hierarchy.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Vertex Color&lt;/th&gt;
+&lt;th&gt;If contained&lt;/th&gt;
+&lt;th&gt;Behavior&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Before UniVRM-0.53&lt;/td&gt;
+&lt;td&gt;not applied&lt;/td&gt;
+&lt;td&gt;ignore vertex color effect&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;From UniVRM-0.54&lt;/td&gt;
+&lt;td&gt;applied&lt;/td&gt;
+&lt;td&gt;show vertex color effect&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If &lt;code&gt;Unlit&lt;/code&gt; is used, there is no setting that can disable vertex color usage.
+If necessary, please choose &lt;code&gt;Remove Vertex Color&lt;/code&gt; option to direct remove vertex color data from the model.&lt;/p&gt;
+&lt;h4 id=&#34;unknown-material-0-is-used-this-will-export-as-standard-fallback&#34;&gt;unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code&gt;Standard&lt;/code&gt; fallback&lt;/h4&gt;
+&lt;p&gt;Materials other than Standard, Unlit, MToon will be defaulted to Standard.&lt;/p&gt;
+&lt;h3 id=&#34;error-message-marked-with-red-frame&#34;&gt;Error Message (marked with red frame)&lt;/h3&gt;
+&lt;p&gt;Export is not allowed. Problems shown in the red frame need to be resolved.
+If Error Message is shown in the dialog, &lt;code&gt;export&lt;/code&gt; button is disabled.&lt;/p&gt;
+&lt;p&gt;Here is a list of error messages:&lt;/p&gt;
+&lt;h4 id=&#34;require-source&#34;&gt;Require source&lt;/h4&gt;
+&lt;p&gt;Please select a valid object that can be exported as VRM file in the scene.&lt;/p&gt;
+&lt;h4 id=&#34;the-root-transform-should-have-default-translation-rotation-and-scale&#34;&gt;The Root transform should have Default translation, rotation and scale&lt;/h4&gt;
+&lt;p&gt;Starting from v0.56, Root (topmost parent) object with non-default values for translation, rotation, and scale is not allowed to export.
+In previous versions we found it would cause errors sometimes if Root&amp;rsquo;s transform is not Default.
+Instead, we recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p&gt;
+&lt;h4 id=&#34;require-animator&#34;&gt;Require animator&lt;/h4&gt;
+&lt;p&gt;Animator component cannot be found in Root (non-humanoid).&lt;/p&gt;
+&lt;h4 id=&#34;require-animator-avatar&#34;&gt;Require animator.avatar&lt;/h4&gt;
+&lt;p&gt;avatar cannot be found in Root&amp;rsquo;s Animator (non-humanoid).&lt;/p&gt;
+&lt;h4 id=&#34;animator-avatar-is-not-valid&#34;&gt;Animator.avatar is not valid&lt;/h4&gt;
+&lt;p&gt;Animator.avatar is not humanoid.&lt;/p&gt;
+&lt;h4 id=&#34;animator-avatar-is-not-humanoid-please-change-model-s-animationtype-to-humanoid&#34;&gt;Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid&lt;/h4&gt;
+&lt;p&gt;Please change the setting to &lt;code&gt;humanoid&lt;/code&gt; (from Inspector: &lt;code&gt;FBX Import&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt; -&amp;gt; &lt;code&gt;AnimationType&lt;/code&gt;).&lt;/p&gt;
+&lt;h4 id=&#34;find-duplicate-bone-names-please-check-model-s-bone-names&#34;&gt;Find duplicate Bone names. Please check model&amp;rsquo;s bone names&lt;/h4&gt;
+&lt;p&gt;Export is not allowed in v0.56 if there are GameObjects with the same name in Hierarchy.
+In previous versions we found it would cause errors sometimes if bones with the same name are used.
+Please rename them.&lt;/p&gt;
+&lt;h4 id=&#34;require-title&#34;&gt;Require Title&lt;/h4&gt;
+&lt;p&gt;Please enter the title of this model in the dialog.&lt;/p&gt;
+&lt;h4 id=&#34;require-version&#34;&gt;Require Version&lt;/h4&gt;
+&lt;p&gt;Please enter the version of this model in the dialog.&lt;/p&gt;
+&lt;h4 id=&#34;require-author&#34;&gt;Require Author&lt;/h4&gt;
+&lt;p&gt;Please enter the author of this model in the dialog.&lt;/p&gt;
+&lt;h4 id=&#34;no-active-mesh&#34;&gt;No active mesh&lt;/h4&gt;
+&lt;p&gt;Export target doesn&amp;rsquo;t have &lt;code&gt;active&lt;/code&gt; mesh.&lt;/p&gt;
+&lt;h4 id=&#34;filename-0-is-too-long&#34;&gt;FileName &amp;lsquo;{0}&amp;rsquo; is too long&lt;/h4&gt;
+&lt;p&gt;Material, Texture and Mesh names are too long.
+Please rename them.&lt;/p&gt;
+&lt;h3 id=&#34;export-option-marked-with-blue-frame&#34;&gt;Export Option (marked with blue frame)&lt;/h3&gt;
+&lt;p&gt;Additional processing during export can be chosen here.&lt;/p&gt;
+&lt;h4 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h4&gt;
+&lt;p&gt;Force T-Pose before export.
+If you can manually make T-Pose for model, it&amp;rsquo;s ok without selecting this option.&lt;/p&gt;
+&lt;h4 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h4&gt;
+&lt;p&gt;Model&amp;rsquo;s normalization.
+If Model&amp;rsquo;s normalization is already done, there is no need to perform model normalization again.
+However, if additional parts are added into the model (not normalized yet), model normalization is required.
+In Hierarchy, all GameObjects&amp;rsquo; rotation should be 0, and their scale should be 1 if a model has been normalized.&lt;/p&gt;
+&lt;h4 id=&#34;useexperimentalexporter&#34;&gt;UseExperimentalExporter&lt;/h4&gt;
+&lt;p&gt;Exporter&amp;rsquo;s Serializer version.
+It will not affect the output whether this option is selected or not.&lt;/p&gt;
+&lt;h4 id=&#34;usesparseaccessor&#34;&gt;UseSparseAccessor&lt;/h4&gt;
+&lt;p&gt;If the model contains multiple BlendShapes, selecting this option can help reduce the file&amp;rsquo;s size.&lt;/p&gt;
+&lt;h4 id=&#34;onlyblendshapeposition&#34;&gt;OnlyBlendshapePosition&lt;/h4&gt;
+&lt;p&gt;BlendShape&amp;rsquo;s Normal and Tangent will not be exported if this option is selected.
+The file size can be reduced.
+Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
+&lt;h4 id=&#34;reduceblendshape&#34;&gt;ReduceBlendshape&lt;/h4&gt;
+&lt;p&gt;BlendShapes that are not referenced by BlendShapeClips will not be exported.
+The file size can be reduced.&lt;/p&gt;
+&lt;h4 id=&#34;reduceblendshapeclip&#34;&gt;ReduceBlendshapeClip&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip belongs to Preset.Unknown will not be exported.
+Used in combination with ReduceBlendshape.&lt;/p&gt;
+&lt;h4 id=&#34;removevertexcolor&#34;&gt;RemoveVertexColor&lt;/h4&gt;
+&lt;p&gt;Vertex color will not be exported.
+In GLTF, there is no setting that can disable the color vertex usage.
+UniVRM supports vertex color for &lt;code&gt;unlit&lt;/code&gt; shader.&lt;/p&gt;</description></item></channel></rss>

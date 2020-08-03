@@ -1,0 +1,49 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁FirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/</link><description>Recent content in 📁FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 31 Jul 2020 18:33:55 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 一人称表示</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;h1 id=&#34;vrmfirstperson&#34;&gt;VRMFirstPerson&lt;/h1&gt;
+&lt;p&gt;一人称表示に関連する設定です。&lt;/p&gt;
+&lt;h2 id=&#34;firstpersonbone&#34;&gt;FirstPersonBone&lt;/h2&gt;
+&lt;p&gt;通常頭ボーンを指定します。
+一人称時にヘッドセットに追随させるボーンです。&lt;/p&gt;
+&lt;h2 id=&#34;firstpersonoffset&#34;&gt;FirstPersonOffset&lt;/h2&gt;
+&lt;p&gt;追随する位置をFirstPersonBoneの位置からオフセットします。
+デフォルト値[0, 0.06, 0]は、Headから両目の間へのオフセットを想定しています。&lt;/p&gt;
+&lt;h2 id=&#34;renderers&#34;&gt;Renderers&lt;/h2&gt;
+&lt;p&gt;一人称描画時のメッシュのOn/Offをコントロールする設定です。&lt;/p&gt;
+&lt;p&gt;VRアプリでは、自分モデルの頭部の見えなくていい部分が見えてしまう問題があります。
+VRMFirstPersonでは一人称時に頭を描画しないようにすることを支援する機能を用意しています。&lt;/p&gt;
+&lt;h3 id=&#34;頭が分かれている場合&#34;&gt;頭が分かれている場合&lt;/h3&gt;
+&lt;p&gt;頭に&lt;strong&gt;ThirdPersonOnly&lt;/strong&gt;を指定します。
+その他の部分に&lt;strong&gt;Both&lt;/strong&gt;を指定します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/firstperson.png&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/firstperson_runtime.png&#34; alt=&#34;firstperson&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;頭が分かれていない場合&#34;&gt;頭が分かれていない場合&lt;/h3&gt;
+&lt;p&gt;Autoを指定します。
+実行時に頭以外をコピーしたモデルを複製して、これを&lt;strong&gt;FirstPersonOnly&lt;/strong&gt;として扱います。
+元のモデルは&lt;strong&gt;ThirdPersonOnly&lt;/strong&gt;として扱います。
+頭ボーンのとその子孫のウェイトを持っている部分が削除対象になります。&lt;/p&gt;
+&lt;h3 id=&#34;特に設定しない場合&#34;&gt;特に設定しない場合&lt;/h3&gt;
+&lt;p&gt;Bothを設定してください。&lt;/p&gt;</description></item></channel></rss>
