@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁BlendShape</title><link>https://vrm.dev/en/docs/univrm/blendshape/</link><description>Recent content in 📁BlendShape on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 31 Jul 2020 18:56:26 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/blendshape/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
 &lt;p&gt;New features introduced in UniVRM v0.45
-&lt;a href=&#34;../../settings/blendshape_setup/&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;vrmblendshapeproxy&#34;&gt;VRMBlendShapeProxy&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -214,4 +214,12 @@ The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&
 &lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: Bake BlendShape State When Exporting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
+&lt;p&gt;When exporting the VRM model, current BlendShape value can be set to the basic state.
+For example, in &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt;, click on &lt;code&gt;BlendShapes&lt;/code&gt; and adjust &lt;code&gt;bs_face.eye_blink&lt;/code&gt; slider to change the value from 0 to 57.8.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/blendshape_value.jpg&#34; width=&#34;400&#34; /&gt;
+&lt;p&gt;In export dialog, enabling &lt;code&gt;Pose Freeze&lt;/code&gt; is required.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/check_freeze.jpg&#34; width=&#34;400&#34; /&gt;
+&lt;p&gt;After VRM export:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/bake_blink.gif&#34; /&gt;
+&lt;p&gt;Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p&gt;</description></item></channel></rss>

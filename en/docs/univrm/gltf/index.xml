@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/</link><description>Recent content in 📁GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 31 Jul 2020 18:56:26 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/</link><description>Recent content in 📁GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 16:07:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p&gt;glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF&#34; target=&#34;_blank&#34;&gt;https://github.com/KhronosGroup/glTF&lt;/a&gt;&lt;/li&gt;
@@ -151,23 +151,19 @@ More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/
 &lt;li id=&#34;fn:VRM-glb&#34;&gt;glb is adopted in VRM.
 &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:VRM-glb&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;/div&gt;</description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
 &lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
 &lt;p&gt;The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Create an empty scene.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create an empty GameObject (topmost parent). No translation, rotation and scaling.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Select an object you want to export and add it to the created parent GameObject.
-(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&#34;1-create-an-empty-scene&#34;&gt;1. Create an empty scene.&lt;/h3&gt;
+&lt;h3 id=&#34;2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale&#34;&gt;2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3&gt;
+&lt;p&gt;The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
+Its translation, rotation and scale should be default values.&lt;/p&gt;
+&lt;h3 id=&#34;3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject&#34;&gt;3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3&gt;
+&lt;p&gt;(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt;(&lt;code&gt;UniGLTF-1.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&#34;4-select-the-topmost-parent-gameobject-and-click-export-unigltf-1-xx-export&#34;&gt;4. Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt;(&lt;code&gt;UniGLTF-1.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&#34;5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file&#34;&gt;5. Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/h3&gt;
 &lt;h2 id=&#34;notes-on-components-to-be-exported&#34;&gt;Notes on components to be exported&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Please attach them to the child other than the topmost parent)&lt;/li&gt;
@@ -177,7 +173,11 @@ More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/
 &lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Support-Status-for-Animation-Exporter</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p&gt;The definition for Animation is available in GLTF.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VRM specification does not include the Animation.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;v0.44&lt;/li&gt;

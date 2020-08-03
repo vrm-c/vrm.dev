@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 04 Aug 2019 17:59:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 17 Sep 2019 16:28:23 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
 &lt;h1 id=&#34;univrm-1-0-draft&#34;&gt;UniVRM-1.0 draft&lt;/h1&gt;
 &lt;p&gt;Unity implementation of VRM-1.0 draft.&lt;/p&gt;
 &lt;ul&gt;
@@ -52,52 +52,7 @@ Unity-2019.3 |
 +-------------------+
 |GLB(GLTF+BIN) |VRM-1.0
 +-------------------+
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Docs: UniVRM-0.44 Material</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_shaders_044/</link><pubDate>Fri, 05 Oct 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_shaders_044/</guid><description>
-&lt;p&gt;Material-related fixes and additions in UniVRM-0.44.&lt;/p&gt;
-&lt;h2 id=&#34;introduction-of-unigltf-uniunlit-shader&#34;&gt;Introduction of UniGLTF / UniUnlit shader&lt;/h2&gt;
-&lt;p&gt;UniVRM-0.43 was capable of importing / exporting the following Unlit shaders:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unlit/Color&lt;/li&gt;
-&lt;li&gt;Unlit/Texture, VRM/UnlitTexture&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent, VRM/UnlitTransparent&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent Coutout, VRM/UnlitCutout&lt;/li&gt;
-&lt;li&gt;VRM/UnlitTransparentZWrite(not compatible with GLTF)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following materials that are set with GLTF were not functional:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;doubleSided&lt;/li&gt;
-&lt;li&gt;the multiplication of color and texture&lt;/li&gt;
-&lt;li&gt;transparent with color&lt;/li&gt;
-&lt;li&gt;vertex color&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hence, we introduced the GLTF-compatible Unlit shader &lt;code&gt;UniGLTF / UnLit&lt;/code&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;RenderType: &lt;code&gt;Opaque&lt;/code&gt;, &lt;code&gt;Cutout&lt;/code&gt;, &lt;code&gt;Transparent&lt;/code&gt;, &lt;code&gt;TransparentZWrite&lt;/code&gt;(VRM extension)&lt;/li&gt;
-&lt;li&gt;CullMode: &lt;code&gt;Off&lt;/code&gt;(doubleSided=True), &lt;code&gt;Back&lt;/code&gt;(doublueSided=False), &lt;code&gt;Front&lt;/code&gt;(VRM extension)&lt;/li&gt;
-&lt;li&gt;VertexColorBlend: &lt;code&gt;None&lt;/code&gt;, &lt;code&gt;Multiply&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;improvement-of-texture-conversion-of-standard-shaders&#34;&gt;Improvement of texture conversion of Standard shaders&lt;/h2&gt;
-&lt;p&gt;The processing of textures other than Standard shader color has been improved.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Normal map correction: Since it is also applied to MToon, we put the details in the next section&lt;/li&gt;
-&lt;li&gt;Metallic, Roughnes, OcclusionMap conversion
-&lt;ul&gt;
-&lt;li&gt;RGBA channel recombination&lt;/li&gt;
-&lt;li&gt;Inversion of Roughness and Smoothness values&lt;/li&gt;
-&lt;li&gt;sRGB&amp;rsquo;s and Linear&amp;rsquo;s correspondence&lt;/li&gt;
-&lt;li&gt;Conversion with Importer, reverse conversion with Exporter&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;correction-of-normal-map-import-export&#34;&gt;Correction of normal map import / export&lt;/h2&gt;
-&lt;p&gt;The texture of &lt;code&gt;Standard&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.
-Parse material&amp;rsquo;s property name according to &lt;code&gt;_BumpMap&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RuntimeImport: Normal texture&amp;rsquo;s Pack&lt;/li&gt;
-&lt;li&gt;Export: Normal texture&amp;rsquo;s Unpack&lt;/li&gt;
-&lt;li&gt;sRGB&amp;rsquo;s and Linear&amp;rsquo;s correspondence&lt;/li&gt;
-&lt;li&gt;Tangent&amp;rsquo;s correspondence&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: API Change History</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</guid><description>
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Docs: API Change History</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</guid><description>
 &lt;p&gt;This section describes about changes affecting the program.&lt;/p&gt;
 &lt;p&gt;Please go to &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki&#34; target=&#34;_blank&#34;&gt;UniVRM/Wiki&lt;/a&gt; to get the latest information of the API update.&lt;/p&gt;
 &lt;h1 id=&#34;v0-36&#34;&gt;v0.36&lt;/h1&gt;
@@ -188,7 +143,182 @@ Parse material&amp;rsquo;s property name according to &lt;code&gt;_BumpMap&lt;/c
 &lt;ul&gt;
 &lt;li&gt;Check if &lt;code&gt;.Net4.X equivalent&lt;/code&gt; has been selected (&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Open Console and check if any error (message in red) occurs&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Model Information</title><link>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/mtoon/</guid><description>
+&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;How to use MToon&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;about-mtoon&#34;&gt;About MToon&lt;/h1&gt;
+&lt;p&gt;MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code&gt;Lit Color&lt;/code&gt; and &lt;code&gt;Shade Color&lt;/code&gt; based on Lighting parameters and light source environment.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apply MToon to the 3D model&lt;code&gt;Alicia&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;for-users-who-want-to-have-a-quick-setup&#34;&gt;For users who want to have a quick setup&lt;/h1&gt;
+&lt;h2 id=&#34;common-items&#34;&gt;Common items&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the target material and change the shader to &lt;code&gt;VRM/MToon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click the shader panel and set the same texture in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set white color in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and set the preference shade color in &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the preference value in &lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt;. Make the lit color and shade color sharp:&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the texture in &lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; (equivalent to &lt;code&gt;sphere map&lt;/code&gt; or &lt;code&gt;Matcap&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If outline is necessary, select &lt;code&gt;WorldCoordinates&lt;/code&gt; in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt;. Select &lt;code&gt;None&lt;/code&gt; if outline is not needed&lt;/li&gt;
+&lt;li&gt;Set the value with good appearance in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;general-material&#34;&gt;General material&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;set-materials-not-being-shadowed-too-much-such-as-the-character-s-face&#34;&gt;Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set a negative value&lt;/li&gt;
+&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;setting-items&#34;&gt;Setting items&lt;/h1&gt;
+&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
+&lt;p&gt;Select the target material and change the shader to VRM/MToon.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Change the material shader to VRM/MToon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The items included in the Rendering Inspector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Set the rendering type and cull mode in &lt;code&gt;Rendering&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
+&lt;p&gt;Set whether the material is opaque or semi-transparent.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Opaque
+&lt;ul&gt;
+&lt;li&gt;For rendering performance, it is recommended to set &lt;code&gt;Opaque&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cutout&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Although it is opaque, it refers to the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;. Therefore, it skips rendering for places having smaller value than &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Transparent&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The opacity based on the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The downside is that outline rendering cannot be performed correctly.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
+&lt;p&gt;Set which side of the polygon to be rendered.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Back
+&lt;ul&gt;
+&lt;li&gt;Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Front
+&lt;ul&gt;
+&lt;li&gt;Render the back side.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;None
+&lt;ul&gt;
+&lt;li&gt;Render the both sides.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
+&lt;p&gt;Required if choosing &lt;code&gt;Rendering Type-&amp;gt;Cutout&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
+&lt;ul&gt;
+&lt;li&gt;Set the threshold value for not rendering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
+&lt;p&gt;Set the rendering color.
+The texture and color are multiplied.
+Set the color hit by the light ray in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; and set the color not hit by the light ray in &lt;code&gt;Shade Color&lt;/code&gt;.&lt;br /&gt;
+Also, set the the alpha value in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; for opacity information.&lt;/p&gt;
+&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
+&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
+&lt;p&gt;Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
+When the value is &lt;code&gt;0&lt;/code&gt;, it is the normal lighting.
+When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
+It is necessary to disable the self-shadow with setting the value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; according to the displayed warning message.&lt;/p&gt;
+&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
+&lt;p&gt;Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code&gt;Shade Shift&lt;/code&gt;.
+When the value is &lt;code&gt;0&lt;/code&gt;, it becomes realistically smooth like a general Lambert model.
+When the value is &lt;code&gt;1&lt;/code&gt;, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p&gt;
+&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
+&lt;p&gt;Set the influence of the self-shadow and shadow.
+&lt;code&gt;0&lt;/code&gt;: Not affected.
+&lt;code&gt;1&lt;/code&gt;: Affected.&lt;/p&gt;
+&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
+&lt;p&gt;Set the influence of the light source color.
+&lt;code&gt;0&lt;/code&gt;: Affected by the light source color.
+&lt;code&gt;1&lt;/code&gt;: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p&gt;
+&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
+&lt;p&gt;Display additional light sources based on the relationship between the camera and the normal.
+In general it is called sphere map or matcap.&lt;/p&gt;
+&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
+&lt;p&gt;Set the constant color regardless of the light source environment.&lt;/p&gt;
+&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
+&lt;p&gt;Set the normal map.
+Set the strength value in the box on the right.&lt;/p&gt;
+&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;Set the outline.&lt;/p&gt;
+&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;None
+&lt;ul&gt;
+&lt;li&gt;The outline is not rendered&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;WorldCoordinates
+&lt;ul&gt;
+&lt;li&gt;Render the outline of the constant width for the world coordinate&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ScreenCoordinates
+&lt;ul&gt;
+&lt;li&gt;Render the outline of the constant width for the screen coordinate&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
+&lt;p&gt;Set the width of the outline.
+The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinates&lt;/code&gt; is chosen.&lt;/p&gt;
+&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;FixedColor
+&lt;ul&gt;
+&lt;li&gt;Render with the fixed color&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;MixedLighting
+&lt;ul&gt;
+&lt;li&gt;Multiply the influence of Lighting&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
+&lt;p&gt;Set the outline color.&lt;/p&gt;
+&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
+&lt;p&gt;Set the multiplier coefficient when &lt;code&gt;Color Mode-&amp;gt;MixedLighting&lt;/code&gt; is chosen.&lt;/p&gt;</description></item><item><title>Docs: Model Information</title><link>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</guid><description>
 &lt;h2 id=&#34;vrmmeta&#34;&gt;VRMMeta&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -509,7 +639,136 @@ More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/
 &lt;li&gt;Other&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;other-license-url-1&#34;&gt;Other License Url&lt;/h4&gt;
-&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;</description></item><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
+&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;</description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
+&lt;p&gt;The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p&gt;
+&lt;h3 id=&#34;1-create-an-empty-scene&#34;&gt;1. Create an empty scene.&lt;/h3&gt;
+&lt;h3 id=&#34;2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale&#34;&gt;2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3&gt;
+&lt;p&gt;The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
+Its translation, rotation and scale should be default values.&lt;/p&gt;
+&lt;h3 id=&#34;3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject&#34;&gt;3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3&gt;
+&lt;p&gt;(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-select-the-topmost-parent-gameobject-and-click-export-unigltf-1-xx-export&#34;&gt;4. Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt;(&lt;code&gt;UniGLTF-1.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file&#34;&gt;5. Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/h3&gt;
+&lt;h2 id=&#34;notes-on-components-to-be-exported&#34;&gt;Notes on components to be exported&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Please attach them to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Please attach it to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: UniVRM Shaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_material_shader/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_material_shader/</guid><description>
+&lt;h2 id=&#34;export&#34;&gt;Export&lt;/h2&gt;
+&lt;h3 id=&#34;gltf-layer&#34;&gt;GLTF Layer&lt;/h3&gt;
+&lt;p&gt;There are only two types: PBR (Physically based rendering) and Unlit.
+A material will be &lt;code&gt;unlit&lt;/code&gt; if it is one of the shaders in the following list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unlit/Color&lt;/li&gt;
+&lt;li&gt;Unlit/Texture&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent&lt;/li&gt;
+&lt;li&gt;Unlit/Transparent Cutout&lt;/li&gt;
+&lt;li&gt;UniGLTF/UniUnlit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other shaders will be set as &lt;code&gt;standard&lt;/code&gt; and recorded in gltf&amp;rsquo;s &lt;code&gt;/materials[]&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;vrm-layer&#34;&gt;VRM Layer&lt;/h3&gt;
+&lt;p&gt;Shaders are recorded in gltf&amp;rsquo;s &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Available shaders in VRM Layer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VRM/UnlitTransparentZWrite&lt;/li&gt;
+&lt;li&gt;VRM/MToon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other shaders will be set as &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; in &lt;code&gt;shaderName&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
+&lt;h3 id=&#34;gltf-layer-1&#34;&gt;GLTF Layer&lt;/h3&gt;
+&lt;p&gt;Create Unity material from GLTF&amp;rsquo;s &lt;code&gt;/materials[]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Select either one in the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Standard&lt;/li&gt;
+&lt;li&gt;UniGLTF/UniUnlit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vrm-layer-1&#34;&gt;VRM Layer&lt;/h3&gt;
+&lt;p&gt;Create Unity material from GLTF&amp;rsquo;s &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;import-export&#34;&gt;Import/Export&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;export&lt;/th&gt;
+&lt;th&gt;gltf&lt;/th&gt;
+&lt;th&gt;import&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Color&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Texture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTexture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitCutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/MToon&lt;/td&gt;
+&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
+&lt;td&gt;VRM/MToon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
+&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Others&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
 &lt;h2 id=&#34;export-dialog&#34;&gt;Export Dialog&lt;/h2&gt;
 &lt;p&gt;v0.56&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
@@ -662,7 +921,7 @@ Defined by ProtocolBuffer and generate a Json serializer.&lt;/p&gt;
 &lt;li&gt;VRM-related (HumanoidAvatar, BlendShapeProxy, LookAt, FirstPerson, etc.)&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
 &lt;p&gt;New features introduced in UniVRM v0.45
-&lt;a href=&#34;../../settings/blendshape_setup/&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;vrmblendshapeproxy&#34;&gt;VRMBlendShapeProxy&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -912,23 +1171,23 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/shader_option.jpg&#34; alt=&#34;shader_option&#34; width=&#34;800&#34; /&gt;
-&lt;p&gt;Note that if the materials are not assigned or you want to change them, click the rightmost icon of &lt;code&gt;Element X&lt;/code&gt; to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select &lt;code&gt;VRM/MToon&lt;/code&gt; as an example as shown below. Please refer to &lt;a href=&#34;../univrm/shaders/mtoon/&#34;&gt;MToon&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;Note that if the materials are not assigned or you want to change them, click the rightmost icon of &lt;code&gt;Element X&lt;/code&gt; to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select &lt;code&gt;VRM/MToon&lt;/code&gt; as an example as shown below. Please refer to &lt;a href=&#34;../docs/univrm/shaders/mtoon/&#34;&gt;MToon&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/MToonMaterialSetting.png&#34; alt=&#34;MToonMaterialSetting&#34; width=&#34;700&#34; /&gt;
-&lt;p&gt;After adjustments are completed, select the model in &lt;code&gt;Hierarchy&lt;/code&gt; window and export it from&lt;code&gt;VRM -&amp;gt; UniVRM-0.56.3 -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After adjustments are completed, select the model in &lt;code&gt;Hierarchy&lt;/code&gt; window and export it from&lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;Enter your name in the &lt;code&gt;Author&lt;/code&gt; field and click the &lt;code&gt;Export&lt;/code&gt; button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default. The details for export settings &lt;a href=&#34;../univrm/univrm_export&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Enter your name in the &lt;code&gt;Author&lt;/code&gt; field and click the &lt;code&gt;Export&lt;/code&gt; button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default. The details for export settings &lt;a href=&#34;../docs/univrm/export/univrm_export/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
 &lt;ul&gt;
 &lt;li&gt;Force T Pose
 &lt;ul&gt;
-&lt;li&gt;Force the model pose to become &lt;a href=&#34;../dev/univrm-0.xx/vrm/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; before removing rotation / scaling.&lt;/li&gt;
+&lt;li&gt;Force the model pose to become &lt;a href=&#34;../docs/univrm/humanoid/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; before removing rotation / scaling.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Pose Freeze
 &lt;ul&gt;
 &lt;li&gt;Whether the rotation / scaling removal processing should be performed. This is &lt;strong&gt;the process of normalizing model&lt;/strong&gt; for conforming to the VRM rules. Please make sure to check the boxes at the &lt;strong&gt;first time of use&lt;/strong&gt;. After this process is done, all the components can work correctly.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Details about model&amp;rsquo;s T-Pose normalization &lt;a href=&#34;../univrm/settings/t_pose/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Details about model&amp;rsquo;s T-Pose normalization &lt;a href=&#34;../docs/univrm/humanoid/t_pose/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;5-import-the-vrm-file&#34;&gt;5. Import the VRM file&lt;/h3&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab_en.png&#34; /&gt;
 &lt;p&gt;&lt;strong&gt;Drag and drop the VRM file (~.vrm) from step 4 into Assets folder&lt;/strong&gt;. The &lt;strong&gt;prefab&lt;/strong&gt; file of the imported VRM model data can be automatically generated.&lt;/p&gt;
@@ -1016,19 +1275,19 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 &lt;img src=&#34;https://vrm.dev/images/vrm/NewInterfaceForPrefab.png&#34; alt=&#34;NewInterfaceForPrefab&#34; width=&#34;700&#34; /&gt;
 &lt;p&gt;Now the basic model conversion is finished. To complete the whole setup, please set up the items listed below:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_blendshape/&#34;&gt;Expression and lip-sync (BlendShape)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_firstperson/&#34;&gt;First-person point of view (Get rid of model&amp;rsquo;s head for VR applications)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_lookat/&#34;&gt;Movable range for eye gaze/eyeball controlled by bone or BlendShape&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../univrm/components/univrm_secondary/&#34;&gt;Spring bone (SpringBone/SpringBoneCollider)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/univrm/blendshape/univrm_blendshape/&#34;&gt;Expression and lip-sync (BlendShape)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/univrm/firstperson/univrm_firstperson/&#34;&gt;First-person point of view (Get rid of model&amp;rsquo;s head for VR applications)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/univrm/lookat/univrm_lookat/&#34;&gt;Movable range for eye gaze/eyeball controlled by bone or BlendShape&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/univrm/springbone/univrm_secondary/&#34;&gt;Spring bone (SpringBone/SpringBoneCollider)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;7-check-model-expressions-movements-in-play-mode-if-necessary&#34;&gt;7. Check model expressions/movements in play mode（If necessary）&lt;/h3&gt;
-&lt;p&gt;Set &lt;code&gt;AnimationClip/AnimationController&lt;/code&gt; and set &lt;a href=&#34;../univrm/components/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). For example, you can create a cube as a target from &lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;. Next, serach head component in&lt;code&gt;VRMLookAtHead -&amp;gt; Head&lt;/code&gt;. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are tracking the object in (near) real-time. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p&gt;
+&lt;p&gt;Set &lt;code&gt;AnimationClip/AnimationController&lt;/code&gt; and set &lt;a href=&#34;../docs/univrm/lookat/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). For example, you can create a cube as a target from &lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;. Next, serach head component in&lt;code&gt;VRMLookAtHead -&amp;gt; Head&lt;/code&gt;. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are tracking the object in (near) real-time. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/LookAtTarget.png&#34; alt=&#34;LookAtTarget&#34; width=&#34;900&#34; /&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/TargetTracking.png&#34; alt=&#34;TargetTracking&#34; width=&#34;500&#34; /&gt;
 &lt;/p&gt;
-&lt;p&gt;To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href=&#34;../univrm/components/univrm_blendshape/#vrmblendshapeproxy&#34;&gt;BlendShape&lt;/a&gt;, click &lt;code&gt;Add Component&lt;/code&gt; at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;runtime VRM loader sample&lt;/a&gt; (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p&gt;
+&lt;p&gt;To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href=&#34;../docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy&#34;&gt;BlendShape&lt;/a&gt;, click &lt;code&gt;Add Component&lt;/code&gt; at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34; target=&#34;_blank&#34;&gt;runtime VRM loader sample&lt;/a&gt; (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1049,7 +1308,7 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 &lt;/p&gt;
 &lt;h3 id=&#34;8-export-the-adjusted-vrm-model&#34;&gt;8. Export the adjusted VRM model&lt;/h3&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;After the adjustment is completed, select the model data in &lt;code&gt;Hierarchy&lt;/code&gt; and again export the model from&lt;code&gt;VRM -&amp;gt; UniVRM-0.56.3 -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After the adjustment is completed, select the model data in &lt;code&gt;Hierarchy&lt;/code&gt; and again export the model from&lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This time &lt;strong&gt;please do not check &amp;ldquo;Force T Pose&amp;rdquo; and &amp;ldquo;Pose Freeze&amp;rdquo;&lt;/strong&gt;. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.&lt;/p&gt;
 &lt;h3 id=&#34;done&#34;&gt;Done！&lt;/h3&gt;
 &lt;p&gt;Your VRM file is good to go. Let’s try to import the VRM file into applications that support VRM!&lt;/p&gt;</description></item><item><title>Docs: Import VRM Model at Runtime</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_import_runtime/</guid><description>
@@ -1118,183 +1377,7 @@ For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as sh
 &lt;p&gt;A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ReadMeta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Make a thumbnail texture
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Texture2D&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;thumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;meta&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Thumbnail&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/mtoon/</guid><description>
-&lt;p&gt;&lt;a href=&#34;../../univrm_install/#shader-preloading-setting&#34;&gt;Shader preloading setting&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;How to use MToon&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;about-mtoon&#34;&gt;About MToon&lt;/h1&gt;
-&lt;p&gt;MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code&gt;Lit Color&lt;/code&gt; and &lt;code&gt;Shade Color&lt;/code&gt; based on Lighting parameters and light source environment.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Apply MToon to the 3D model&lt;code&gt;Alicia&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;for-users-who-want-to-have-a-quick-setup&#34;&gt;For users who want to have a quick setup&lt;/h1&gt;
-&lt;h2 id=&#34;common-items&#34;&gt;Common items&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Select the target material and change the shader to &lt;code&gt;VRM/MToon&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Click the shader panel and set the same texture in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set white color in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and set the preference shade color in &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set the preference value in &lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt;. Make the lit color and shade color sharp:&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set the texture in &lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; (equivalent to &lt;code&gt;sphere map&lt;/code&gt; or &lt;code&gt;Matcap&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;If outline is necessary, select &lt;code&gt;WorldCoordinates&lt;/code&gt; in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt;. Select &lt;code&gt;None&lt;/code&gt; if outline is not needed&lt;/li&gt;
-&lt;li&gt;Set the value with good appearance in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;general-material&#34;&gt;General material&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;set-materials-not-being-shadowed-too-much-such-as-the-character-s-face&#34;&gt;Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set a negative value&lt;/li&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;setting-items&#34;&gt;Setting items&lt;/h1&gt;
-&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
-&lt;p&gt;Select the target material and change the shader to VRM/MToon.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Change the material shader to VRM/MToon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;The items included in the Rendering Inspector&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Set the rendering type and cull mode in &lt;code&gt;Rendering&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
-&lt;p&gt;Set whether the material is opaque or semi-transparent.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Opaque
-&lt;ul&gt;
-&lt;li&gt;For rendering performance, it is recommended to set &lt;code&gt;Opaque&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cutout&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Although it is opaque, it refers to the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;. Therefore, it skips rendering for places having smaller value than &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Transparent&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The opacity based on the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;The downside is that outline rendering cannot be performed correctly.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
-&lt;p&gt;Set which side of the polygon to be rendered.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Back
-&lt;ul&gt;
-&lt;li&gt;Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Front
-&lt;ul&gt;
-&lt;li&gt;Render the back side.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;Render the both sides.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
-&lt;p&gt;Required if choosing &lt;code&gt;Rendering Type-&amp;gt;Cutout&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
-&lt;ul&gt;
-&lt;li&gt;Set the threshold value for not rendering.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
-&lt;p&gt;Set the rendering color.
-The texture and color are multiplied.
-Set the color hit by the light ray in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; and set the color not hit by the light ray in &lt;code&gt;Shade Color&lt;/code&gt;.&lt;br /&gt;
-Also, set the the alpha value in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; for opacity information.&lt;/p&gt;
-&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
-&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
-&lt;p&gt;Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
-When the value is &lt;code&gt;0&lt;/code&gt;, it is the normal lighting.
-When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
-It is necessary to disable the self-shadow with setting the value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; according to the displayed warning message.&lt;/p&gt;
-&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
-&lt;p&gt;Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code&gt;Shade Shift&lt;/code&gt;.
-When the value is &lt;code&gt;0&lt;/code&gt;, it becomes realistically smooth like a general Lambert model.
-When the value is &lt;code&gt;1&lt;/code&gt;, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p&gt;
-&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
-&lt;p&gt;Set the influence of the self-shadow and shadow.
-&lt;code&gt;0&lt;/code&gt;: Not affected.
-&lt;code&gt;1&lt;/code&gt;: Affected.&lt;/p&gt;
-&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
-&lt;p&gt;Set the influence of the light source color.
-&lt;code&gt;0&lt;/code&gt;: Affected by the light source color.
-&lt;code&gt;1&lt;/code&gt;: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p&gt;
-&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
-&lt;p&gt;Display additional light sources based on the relationship between the camera and the normal.
-In general it is called sphere map or matcap.&lt;/p&gt;
-&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
-&lt;p&gt;Set the constant color regardless of the light source environment.&lt;/p&gt;
-&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
-&lt;p&gt;Set the normal map.
-Set the strength value in the box on the right.&lt;/p&gt;
-&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;Set the outline.&lt;/p&gt;
-&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;The outline is not rendered&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;WorldCoordinates
-&lt;ul&gt;
-&lt;li&gt;Render the outline of the constant width for the world coordinate&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ScreenCoordinates
-&lt;ul&gt;
-&lt;li&gt;Render the outline of the constant width for the screen coordinate&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
-&lt;p&gt;Set the width of the outline.
-The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinates&lt;/code&gt; is chosen.&lt;/p&gt;
-&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;FixedColor
-&lt;ul&gt;
-&lt;li&gt;Render with the fixed color&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;MixedLighting
-&lt;ul&gt;
-&lt;li&gt;Multiply the influence of Lighting&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
-&lt;p&gt;Set the outline color.&lt;/p&gt;
-&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
-&lt;p&gt;Set the multiplier coefficient when &lt;code&gt;Color Mode-&amp;gt;MixedLighting&lt;/code&gt; is chosen.&lt;/p&gt;</description></item><item><title>Docs: UniVRM workflow</title><link>https://vrm.dev/en/docs/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/univrm_workflow/</guid><description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: UniVRM workflow</title><link>https://vrm.dev/en/docs/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/univrm_workflow/</guid><description>
 &lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/VRM_changeVRM_EN.png&#34; alt=&#34;vrm workflow&#34; /&gt;
 &lt;h2 id=&#34;prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity&#34;&gt;Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2&gt;
@@ -1348,7 +1431,7 @@ The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinat
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code&gt;Export humanoid&lt;/code&gt; option will become available (&lt;code&gt;VRM -&amp;gt; UniVRM-0.56.3 -&amp;gt; Export humanoid&lt;/code&gt;). The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default.&lt;/td&gt;
+&lt;td&gt;In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code&gt;Export humanoid&lt;/code&gt; option will become available (&lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;). The file will be saved in the &lt;code&gt;Assets&lt;/code&gt; folder by default.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1526,12 +1609,11 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;/ul&gt;
 &lt;h1 id=&#34;vrmspringbone-set-before-was-gone&#34;&gt;VRMSpringBone set before was gone&lt;/h1&gt;
 &lt;p&gt;VRMSpringBone was attached to the node&lt;code&gt;secondary&lt;/code&gt;during import.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../components/univrm_secondary/#nodes-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../springbone/univrm_secondary/#nodes-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;i-got-errors-when-loading-the-built-application&#34;&gt;I got errors when loading the built application&lt;/h1&gt;
 &lt;p&gt;Shaders used by UniVRM may not be included in the application.&lt;/p&gt;
 &lt;p&gt;Please double check:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Edit - Project Settings - Graphics - Shader preloading&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../univrm_install/#shader-preloading-setting&#34;&gt;The procedure for setting Shader preloading&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: First-Person View</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p&gt;&lt;code&gt;Edit - Project Settings - Graphics - Shader preloading&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Docs: First-Person View</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;h1 id=&#34;vrmfirstperson&#34;&gt;VRMFirstPerson&lt;/h1&gt;
 &lt;p&gt;Settings related to first-person perspectives.&lt;/p&gt;
 &lt;h2 id=&#34;firstpersonbone&#34;&gt;FirstPersonBone&lt;/h2&gt;
@@ -1541,7 +1623,7 @@ Normally the head bone is assigned as FirstPersonBone.&lt;/p&gt;
 &lt;p&gt;The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.&lt;/p&gt;
 &lt;h2 id=&#34;renderers&#34;&gt;Renderers&lt;/h2&gt;
 &lt;p&gt;The settings for controlling mesh rendering on/off in a first-person view.&lt;/p&gt;
-&lt;p&gt;When a VRM model is used in VR applications, the user may see the model&amp;rsquo;s head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function &lt;strong&gt;VRMFirstPerson&lt;/strong&gt; which can hide the model&amp;rsquo;s head in the first-person view. To test out first-person mode in Unity project, set up&lt;a href=&#34;#specify-the-additional-render-layers-for-the-application) in the inspector window and call [first-person setup function](...md&#34; target=&#34;_blank&#34;&gt;render layer&lt;/a&gt; . Then, go to&lt;code&gt;camera-&amp;gt;cull mask&lt;/code&gt;and select&lt;code&gt;EVERYTHING&lt;/code&gt;but&lt;code&gt;THIRDPERSON_ONLY_LAYER&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When a VRM model is used in VR applications, the user may see the model&amp;rsquo;s head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function &lt;strong&gt;VRMFirstPerson&lt;/strong&gt; which can hide the model&amp;rsquo;s head in the first-person view. To test out first-person mode in Unity project, set up &lt;a href=&#34;#specify-the-additional-render-layers-for-the-application) in the inspector window and call [first-person setup function](...md&#34; target=&#34;_blank&#34;&gt;render layer&lt;/a&gt; . Then, go to&lt;code&gt;camera-&amp;gt;cull mask&lt;/code&gt;and select&lt;code&gt;EVERYTHING&lt;/code&gt;but&lt;code&gt;THIRDPERSON_ONLY_LAYER&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;the-case-for-the-head-being-separated&#34;&gt;The case for the head being separated&lt;/h3&gt;
 &lt;p&gt;Set &lt;strong&gt;ThirdPersonOnly&lt;/strong&gt; on the head.
 Set &lt;strong&gt;Both&lt;/strong&gt; on the rest parts.&lt;/p&gt;
@@ -1638,7 +1720,131 @@ Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャ�
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BlendShapeKey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_L&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BlendShapeKey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BlendShapePreset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Blink_R&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: UniVRM Coordinate Transformations</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_coordinate/</guid><description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p&gt;The definition for Animation is available in GLTF.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VRM specification does not include the Animation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v0.44&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;support-status&#34;&gt;Support Status&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;how-to-export-an-animator&#34;&gt;How to Export an Animator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animator component to a root GameObject&lt;/li&gt;
+&lt;li&gt;Create an AnimatorController and set it in the Controller box (&lt;code&gt;Animator&lt;/code&gt;-&amp;gt;&lt;code&gt;Controller&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-to-export-an-animation&#34;&gt;How to Export an Animation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animation component to a root GameObject&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code&gt;Legacy&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set the created AnimationClip in the Animation box (&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li&gt;
+&lt;li&gt;Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p&gt;Starting from &lt;code&gt;UniVRM-0.56&lt;/code&gt;, the folder structure in UniVRM has been changed.
+Material-related parts in &lt;code&gt;UniVRM&lt;/code&gt; has been moved to &lt;code&gt;Assets/VRMShaders&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;upm-package&#34;&gt;UPM Package&lt;/h2&gt;
+&lt;p&gt;VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
+Besides that, VRMShaders can be used independently without &lt;code&gt;UniVRM&lt;/code&gt; (&lt;code&gt;UniVRM&lt;/code&gt; uses &lt;code&gt;VRMShaders&lt;/code&gt;).
+VRMShaders includes &lt;code&gt;UniUnlit&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;manifest.json&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this example, the version of UniVRM being imported is v0.57.0.
+The imported version can be changed to different version (e.g. v0.56.0).
+&lt;code&gt;VRMShaders&lt;/code&gt; version number is the same as UniVRM.&lt;/p&gt;
+&lt;h3 id=&#34;uniunlit&#34;&gt;UniUnlit&lt;/h3&gt;
+&lt;p&gt;Since part of GLTF properties are not available in Unity&amp;rsquo;s &lt;code&gt;unlit&lt;/code&gt; shaders (e.g. vertex color), we introduced &lt;code&gt;UniUnlit&lt;/code&gt; to solve this issue. In addition, &lt;code&gt;UniUnlit&lt;/code&gt; is fully compatible with all &lt;code&gt;unlit&lt;/code&gt; shaders in Unity.&lt;/p&gt;
+&lt;p&gt;Unity&amp;rsquo;s &lt;code&gt;unlit&lt;/code&gt; shaders will become &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; if they are exported, and then imported again.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;export&lt;/th&gt;
+&lt;th&gt;gltf&lt;/th&gt;
+&lt;th&gt;import&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Color&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Texture&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
+&lt;p&gt;In VRMShaders, MToon shader is managed by &lt;code&gt;git submodule&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the latest update about MToon, please refer to:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34; target=&#34;_blank&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: UniVRM Coordinate Transformations</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_coordinate/</guid><description>
 &lt;p&gt;UniVRM automatically performs the coordinate transformation with GLTF during import / export.&lt;/p&gt;
 &lt;h2 id=&#34;vrm-coordinate-system&#34;&gt;VRM coordinate system&lt;/h2&gt;
 &lt;p&gt;Since VRM is an extension of GLTF, it conforms to the coordinate system of GLTF.
@@ -1727,7 +1933,7 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
 &lt;h2 id=&#34;eye-control-with-blendshape-vrmlookatblendshapeapplyer&#34;&gt;Eye control with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2&gt;
 &lt;p&gt;The component for controlling the eyes with BlendShape.
 Please delete VRMLookAtBoneApplyer and attach VRMLookAtBlendShapeApplyer instead.
-Settings related to VRMLookAtBlendShape&lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/lookat_settings/&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt; .&lt;/p&gt;</description></item><item><title>Docs: What applications that support VRM?</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
+Settings related to VRMLookAtBlendShape&lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/lookat_settings/&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Docs: What applications that support VRM?</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
 &lt;h2 id=&#34;3d-model-submission-platform&#34;&gt;3D model submission platform&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://seed.online/&#34; target=&#34;_blank&#34;&gt;The Seed Online&lt;/a&gt;&lt;/li&gt;
@@ -2026,7 +2232,30 @@ Settings related to VRMLookAtBlendShape&lt;a href=&#34;https://vrm.dev/en/docs/u
 &lt;td&gt;Windows VR&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Docs: How to Use VRMFirstPerson</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</guid><description>
+&lt;/table&gt;</description></item><item><title>Docs: Texture Conversion</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_texture_conversion/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_texture_conversion/</guid><description>
+&lt;p&gt;Since the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM&amp;rsquo;s &lt;code&gt;export/import&lt;/code&gt; to convert textures between Unity and GLTF.&lt;/p&gt;
+&lt;h2 id=&#34;improvement-standardshader-s-texture-conversion&#34;&gt;Improvement: StandardShader&amp;rsquo;s Texture Conversion&lt;/h2&gt;
+&lt;p&gt;The processing of textures other than color texture type has been improved.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NormalMap&amp;rsquo;s import/export correction: since this fix is also applied to MToon shader, we put the details in the next section&lt;/li&gt;
+&lt;li&gt;Metallic, Roughness, OcclusionMap conversion:
+&lt;ul&gt;
+&lt;li&gt;RGBA channel recombination&lt;/li&gt;
+&lt;li&gt;The relative relation between Roughness value and Smoothness value&lt;/li&gt;
+&lt;li&gt;Support sRGB and Linear&lt;/li&gt;
+&lt;li&gt;Convert Texture by Importer, reverse conversion on Texture by Exporter&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;correction-normalmap-s-import-export&#34;&gt;Correction: NormalMap&amp;rsquo;s Import/Export&lt;/h2&gt;
+&lt;p&gt;Target for the textures of &lt;code&gt;Standard&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.
+Normal map can be identified by the keyword &lt;code&gt;_BumpMap&lt;/code&gt; in the material property.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;RuntimeImport: pack normal texture&lt;/li&gt;
+&lt;li&gt;Export: unpack normal texture&lt;/li&gt;
+&lt;li&gt;Support sRGB and Linear&lt;/li&gt;
+&lt;li&gt;Support Tangent&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: How to Use VRMFirstPerson</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id=&#34;vrmfirstperson-settings&#34;&gt;VRMFirstPerson Settings&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/../../../univrm/components/univrm_firstperson/&#34;&gt;VRMFirstPerson&lt;/a&gt; has the following settings for Renderer:&lt;/p&gt;
 &lt;table&gt;
@@ -2205,141 +2434,11 @@ Settings related to VRMLookAtBlendShape&lt;a href=&#34;https://vrm.dev/en/docs/u
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;set-multiple-collision-detections-in-vrmspringbonecollidergroup&#34;&gt;Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2&gt;
-&lt;p&gt;Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code&gt;Size&lt;/code&gt;and multiple targets can then be put into&lt;code&gt;Element&lt;/code&gt;fields.&lt;/p&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
-&lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
-&lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
-&lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
-&lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
-&lt;h4 id=&#34;editor-tab&#34;&gt;Editor tab&lt;/h4&gt;
-&lt;p&gt;BlendShapeClip Selection / Creation&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;list-tab-starting-from-v0-45&#34;&gt;List tab (Starting from v0.45)&lt;/h4&gt;
-&lt;p&gt;BlendShapeClip List&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;the-inspector-of-blendshapeclip-asset&#34;&gt;The Inspector of BlendShapeClip Asset&lt;/h3&gt;
-&lt;h4 id=&#34;blendshape-tab&#34;&gt;BlendShape tab&lt;/h4&gt;
-&lt;p&gt;Create the BlendShape setting:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;blendshape-list-tab&#34;&gt;BlendShape List tab&lt;/h4&gt;
-&lt;p&gt;You can see the values created from the BlendShape tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
-&lt;p&gt;You can create a &lt;a href=&#34;../lookat_settings&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
-&lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
-&lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
-&lt;p&gt;Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Or click a BlendShapeClip Asset directly in the Project window&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-change-the-values-of-the-sliders-to-make-a-facial-expression&#34;&gt;2. Change the values of the sliders to make a facial expression&lt;/h3&gt;
-&lt;p&gt;The names of the existing &lt;code&gt;SkinnedMeshRenderers&lt;/code&gt; will list in the Inspector window once you click the BlendShape tab.
-Click any listed name and you can then adjust the BlendShape value.
-The change value is reflected immediately.
-The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&gt;
-&lt;h3 id=&#34;3-check-the-model-s-blendshape-in-preview&#34;&gt;3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3&gt;
-&lt;p&gt;You can test changes in BlendShape by sliding the value (&lt;code&gt;Preview Weight Slider&lt;/code&gt;) between 0 ~ 1&lt;/p&gt;
-&lt;p&gt;Click and drag the &lt;code&gt;left / right&lt;/code&gt; mouse button to change the viewing perspective&lt;/p&gt;
-&lt;p&gt;Click and drag the &lt;code&gt;middle&lt;/code&gt; mouse button to move horizontally / vertically&lt;/p&gt;
-&lt;h3 id=&#34;the-binary-value-setting-for-blendshape-v0-45&#34;&gt;The Binary value setting for BlendShape (v0.45)&lt;/h3&gt;
-&lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
-&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
-&lt;p&gt;The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Create an empty scene.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create an empty GameObject (topmost parent). No translation, rotation and scaling.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Select an object you want to export and add it to the created parent GameObject.
-(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt;(&lt;code&gt;UniGLTF-1.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;notes-on-components-to-be-exported&#34;&gt;Notes on components to be exported&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Please attach them to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Please attach it to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
-&lt;p&gt;Work In progress&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;related-issues&#34;&gt;Related Issues&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/87&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/vrm-specification/issues/87&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;terminology&#34;&gt;Terminology&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Bone: Gltf node that contains &lt;code&gt;Humanoid&lt;/code&gt; -&amp;gt; &lt;code&gt;HumanBones&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Bone Name
-&lt;ul&gt;
-&lt;li&gt;hips&lt;/li&gt;
-&lt;li&gt;spine&lt;/li&gt;
-&lt;li&gt;chest (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
-&lt;li&gt;upperChest(option)&lt;/li&gt;
-&lt;li&gt;neck (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
-&lt;li&gt;head&lt;/li&gt;
-&lt;li&gt;Left/Right eye (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;left/Right shoulder (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
-&lt;li&gt;Left/Right upperArm&lt;/li&gt;
-&lt;li&gt;Left/Right lowerArm&lt;/li&gt;
-&lt;li&gt;Left/Right hand&lt;/li&gt;
-&lt;li&gt;Left/Right upperLeg&lt;/li&gt;
-&lt;li&gt;Left/Right lowerLeg&lt;/li&gt;
-&lt;li&gt;Left/Right foot&lt;/li&gt;
-&lt;li&gt;Left/Right toe (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
-&lt;li&gt;Left/Right thumb proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Left/Right index proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Left/Right middle proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Left/Right ring proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Left/Right little proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;humanoid-requirements-tentative&#34;&gt;Humanoid Requirements (Tentative)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Target nodes can be selected regardless of skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.)&lt;/li&gt;
-&lt;li&gt;All required bones are contained&lt;/li&gt;
-&lt;li&gt;The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;hips - spine - chest - (upper chest) - neck - head&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[Branch] from head - left - (eye)&lt;/li&gt;
-&lt;li&gt;[Branch] from head - right - (eye)&lt;/li&gt;
-&lt;li&gt;[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
-&lt;li&gt;[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
-&lt;li&gt;[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li&gt;
-&lt;li&gt;[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Inserting a node that is not related to humanoid is allowable as long as it follows an order above (e.g. LowerLeg&amp;rsquo;s parent is object cube and this cube&amp;rsquo;s parent is UpperLeg, etc.)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Non-required bones can be skipped (UpperArm&amp;rsquo;s parent is not shoulder, but chest)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In addition&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Be the T-pose&lt;/li&gt;
-&lt;li&gt;No rotation/scaling for each node&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;That&amp;rsquo;s pretty much it.&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</guid><description>
+&lt;p&gt;Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code&gt;Size&lt;/code&gt;and multiple targets can then be put into&lt;code&gt;Element&lt;/code&gt;fields.&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</link><pubDate>Mon, 03 Aug 2020 18:54:32 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</guid><description>
 &lt;h2 id=&#34;control-the-eye-gaze-with-the-eye-bone&#34;&gt;Control the Eye Gaze with the Eye Bone&lt;/h2&gt;
-&lt;p&gt;Please refer to&lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;Eye Control&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;control-the-eye-gaze-with-the-blendshape&#34;&gt;Control the Eye Gaze with the BlendShape&lt;/h2&gt;
-&lt;p&gt;Please refer to&lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;Eye Control&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34; target=&#34;_blank&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;control-the-eye-gaze-with-the-uv-texture&#34;&gt;Control the Eye Gaze with the UV Texture&lt;/h2&gt;
 &lt;p&gt;A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
 &lt;code&gt;Unity chan&lt;/code&gt; belongs to this type.&lt;/p&gt;
@@ -2374,62 +2473,7 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;li&gt;Add VRMLookAtBlendShapeApplyer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Material Import Export</title><link>https://vrm.dev/en/docs/univrm/shaders/material_export_import/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/material_export_import/</guid><description>
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Export&lt;/th&gt;
-&lt;th&gt;Contents recorded in VRM / GLTF file&lt;/th&gt;
-&lt;th&gt;Rendering in GLTF application&lt;/th&gt;
-&lt;th&gt;VRM import, etc.&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Stanard&lt;/td&gt;
-&lt;td&gt;GLTF Material&lt;/td&gt;
-&lt;td&gt;pbr&lt;/td&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color&lt;/td&gt;
-&lt;td&gt;GLTF Material + unlit extension&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported)&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture&lt;/td&gt;
-&lt;td&gt;GLTF Material + unlit extension&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported)&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent&lt;/td&gt;
-&lt;td&gt;GLTF Material + unlit extension&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported)&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/TransparentCutout&lt;/td&gt;
-&lt;td&gt;GLTF Material + unlit extension&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported)&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
-&lt;td&gt;VRM Material + GLTF Material&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported. It is processed as normal Transparent)&lt;/td&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;VRM Material + GLTF Material&lt;/td&gt;
-&lt;td&gt;unlit extension (shown as Standard if unlit extension is not supported)&lt;/td&gt;
-&lt;td&gt;VRM Material + GLTF Material&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The GLTF unlit extension is KHR_material_unlit.&lt;/p&gt;</description></item><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/docs/univrm/shaders/material_settings/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/material_settings/</guid><description>
+&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Material-Settings</title><link>https://vrm.dev/en/docs/univrm/shaders/material_settings/</link><pubDate>Mon, 03 Aug 2020 18:53:26 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/material_settings/</guid><description>
 &lt;p&gt;About material settings:&lt;/p&gt;
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 &lt;ul&gt;
@@ -2544,9 +2588,113 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;p&gt;Note that when &lt;code&gt;KHR_materials_unlit&lt;/code&gt; is declared, core PBR properties are ignored except baseColor. Color values, alpha coverage and double sided will still apply to unlit materials.&lt;/p&gt;
 &lt;h2 id=&#34;mtoon&#34;&gt;MToon&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt; (written in Japanese)
-*&lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/mtoon/&#34; target=&#34;_blank&#34;&gt;MToon Shader&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt; (written in Japanese)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/mtoon/&#34; target=&#34;_blank&#34;&gt;MToon Shader&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
+&lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
+&lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
+&lt;h4 id=&#34;editor-tab&#34;&gt;Editor tab&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip Selection / Creation&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;list-tab-starting-from-v0-45&#34;&gt;List tab (Starting from v0.45)&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip List&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-inspector-of-blendshapeclip-asset&#34;&gt;The Inspector of BlendShapeClip Asset&lt;/h3&gt;
+&lt;h4 id=&#34;blendshape-tab&#34;&gt;BlendShape tab&lt;/h4&gt;
+&lt;p&gt;Create the BlendShape setting:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;blendshape-list-tab&#34;&gt;BlendShape List tab&lt;/h4&gt;
+&lt;p&gt;You can see the values created from the BlendShape tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
+&lt;p&gt;You can create a &lt;a href=&#34;../lookat_settings&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
+&lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
+&lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
+&lt;p&gt;Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Or click a BlendShapeClip Asset directly in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-change-the-values-of-the-sliders-to-make-a-facial-expression&#34;&gt;2. Change the values of the sliders to make a facial expression&lt;/h3&gt;
+&lt;p&gt;The names of the existing &lt;code&gt;SkinnedMeshRenderers&lt;/code&gt; will list in the Inspector window once you click the BlendShape tab.
+Click any listed name and you can then adjust the BlendShape value.
+The change value is reflected immediately.
+The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&gt;
+&lt;h3 id=&#34;3-check-the-model-s-blendshape-in-preview&#34;&gt;3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3&gt;
+&lt;p&gt;You can test changes in BlendShape by sliding the value (&lt;code&gt;Preview Weight Slider&lt;/code&gt;) between 0 ~ 1&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;left / right&lt;/code&gt; mouse button to change the viewing perspective&lt;/p&gt;
+&lt;p&gt;Click and drag the &lt;code&gt;middle&lt;/code&gt; mouse button to move horizontally / vertically&lt;/p&gt;
+&lt;h3 id=&#34;the-binary-value-setting-for-blendshape-v0-45&#34;&gt;The Binary value setting for BlendShape (v0.45)&lt;/h3&gt;
+&lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
+&lt;p&gt;Work In progress&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;related-issues&#34;&gt;Related Issues&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/87&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/vrm-specification/issues/87&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;terminology&#34;&gt;Terminology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bone: Gltf node that contains &lt;code&gt;Humanoid&lt;/code&gt; -&amp;gt; &lt;code&gt;HumanBones&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Bone Name
+&lt;ul&gt;
+&lt;li&gt;hips&lt;/li&gt;
+&lt;li&gt;spine&lt;/li&gt;
+&lt;li&gt;chest (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
+&lt;li&gt;upperChest(option)&lt;/li&gt;
+&lt;li&gt;neck (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
+&lt;li&gt;head&lt;/li&gt;
+&lt;li&gt;Left/Right eye (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;left/Right shoulder (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
+&lt;li&gt;Left/Right upperArm&lt;/li&gt;
+&lt;li&gt;Left/Right lowerArm&lt;/li&gt;
+&lt;li&gt;Left/Right hand&lt;/li&gt;
+&lt;li&gt;Left/Right upperLeg&lt;/li&gt;
+&lt;li&gt;Left/Right lowerLeg&lt;/li&gt;
+&lt;li&gt;Left/Right foot&lt;/li&gt;
+&lt;li&gt;Left/Right toe (&lt;code&gt;optional&lt;/code&gt; for Unity&amp;rsquo;s Humanoid, &lt;code&gt;required&lt;/code&gt; for VRM?)&lt;/li&gt;
+&lt;li&gt;Left/Right thumb proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Left/Right index proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Left/Right middle proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Left/Right ring proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Left/Right little proximal, intermediate, distal (&lt;code&gt;optional&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;humanoid-requirements-tentative&#34;&gt;Humanoid Requirements (Tentative)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Target nodes can be selected regardless of skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.)&lt;/li&gt;
+&lt;li&gt;All required bones are contained&lt;/li&gt;
+&lt;li&gt;The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;hips - spine - chest - (upper chest) - neck - head&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Branch] from head - left - (eye)&lt;/li&gt;
+&lt;li&gt;[Branch] from head - right - (eye)&lt;/li&gt;
+&lt;li&gt;[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;li&gt;[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Inserting a node that is not related to humanoid is allowable as long as it follows an order above (e.g. LowerLeg&amp;rsquo;s parent is object cube and this cube&amp;rsquo;s parent is UpperLeg, etc.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Non-required bones can be skipped (UpperArm&amp;rsquo;s parent is not shoulder, but chest)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Be the T-pose&lt;/li&gt;
+&lt;li&gt;No rotation/scaling for each node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&amp;rsquo;s pretty much it.&lt;/p&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
 &lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
 In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
@@ -2556,68 +2704,7 @@ However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
 &lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
 If you want to overwrite, delete them before importing.&lt;/p&gt;
 &lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: Support-Status-for-Animation-Exporter</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
-&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;v0.44&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;support-status&#34;&gt;Support Status&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;how-to-export-an-animator&#34;&gt;How to Export an Animator&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Add an Animator component to a root GameObject&lt;/li&gt;
-&lt;li&gt;Create an AnimatorController and set it in the Controller box (&lt;code&gt;Animator&lt;/code&gt;-&amp;gt;&lt;code&gt;Controller&lt;/code&gt;) in the Inspector window&lt;/li&gt;
-&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
-&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
-&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
-&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;how-to-export-an-animation&#34;&gt;How to Export an Animation&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Add an Animation component to a root GameObject&lt;/li&gt;
-&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
-&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
-&lt;li&gt;Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code&gt;Legacy&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Set the created AnimationClip in the Animation box (&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;) in the Inspector window&lt;/li&gt;
-&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
-&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
-&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li&gt;
-&lt;li&gt;Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
+&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Fri, 31 Jul 2020 19:32:03 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
 &lt;h2 id=&#34;supplementary-information-regarding-t-pose&#34;&gt;Supplementary Information regarding T-Pose&lt;/h2&gt;
 &lt;p&gt;To normalize a model, the model with T-Pose is required.&lt;/p&gt;
 &lt;p&gt;If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p&gt;
@@ -2632,7 +2719,15 @@ If you want to overwrite, delete them before importing.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code&gt;jaw&lt;/code&gt; (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is no influence on model if jaw bone is not used&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code&gt;jaw&lt;/code&gt; bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Employ Unity Package Manager</title><link>https://vrm.dev/en/en/dev/univrm-1.xx/package/</link><pubDate>Mon, 11 May 2020 17:06:05 +0900</pubDate><guid>https://vrm.dev/en/en/dev/univrm-1.xx/package/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Docs: Bake BlendShape State When Exporting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
+&lt;p&gt;When exporting the VRM model, current BlendShape value can be set to the basic state.
+For example, in &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt;, click on &lt;code&gt;BlendShapes&lt;/code&gt; and adjust &lt;code&gt;bs_face.eye_blink&lt;/code&gt; slider to change the value from 0 to 57.8.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/blendshape_value.jpg&#34; width=&#34;400&#34; /&gt;
+&lt;p&gt;In export dialog, enabling &lt;code&gt;Pose Freeze&lt;/code&gt; is required.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/check_freeze.jpg&#34; width=&#34;400&#34; /&gt;
+&lt;p&gt;After VRM export:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/bake_blink.gif&#34; /&gt;
+&lt;p&gt;Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p&gt;</description></item><item><title>Docs: Employ Unity Package Manager</title><link>https://vrm.dev/en/en/dev/univrm-1.xx/package/</link><pubDate>Mon, 11 May 2020 17:06:05 +0900</pubDate><guid>https://vrm.dev/en/en/dev/univrm-1.xx/package/</guid><description>
 &lt;h2 id=&#34;univrm-1-0-s-unitypackage&#34;&gt;UniVRM-1.0&amp;rsquo;s UnityPackage&lt;/h2&gt;
 &lt;p&gt;UnityPackage is adopted experimentally in UniVRM-1.0.&lt;/p&gt;
 &lt;p&gt;As &lt;code&gt;package.json&lt;/code&gt; is placed in each module in github repository&amp;rsquo;s &lt;code&gt;Assets&lt;/code&gt; folder,
