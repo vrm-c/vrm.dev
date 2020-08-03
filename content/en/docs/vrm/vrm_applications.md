@@ -34,7 +34,6 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
-| [Virtual Cast](https://virtualcast.jp/) | Windows VR |
 | [Custom Cast](https://customcast.jp/) | iOS, Android |
 | [VDRAW](https://sites.google.com/view/vdraw/) | Windows |
 | [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
@@ -58,6 +57,7 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
+| [Virtual Cast](https://virtualcast.jp/) | Windows VR |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [VWorld](https://naby.booth.pm/items/990663) | Windows |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
