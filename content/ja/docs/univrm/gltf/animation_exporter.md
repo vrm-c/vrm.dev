@@ -1,6 +1,5 @@
 ---
 title: アニメーション
-url: "/dev/univrm-0.xx/gltf/animation_exporter/"
 tags: ["unvrm", "gltf", "animation"]
 weight: 4
 ---

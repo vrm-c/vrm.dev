@@ -1,7 +1,6 @@
 ---
 title: "UniVRM-0.44 Material"
 date: 2018-10-05T16:30:00+09:00
-url: "/en/univrm/shaders/univrm_shaders_044/"
 weight: 1
 ---
 

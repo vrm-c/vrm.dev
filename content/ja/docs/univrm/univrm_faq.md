@@ -2,8 +2,7 @@
 title: "UniVRMでよくある質問"
 linkTitle: "FAQ"
 date: 2018-05-09
-url: /univrm/univrm_faq/
-weight: 8
+weight: 2
 ---
 
 # エラーの報告
