@@ -59,3 +59,4 @@ def process(root: pathlib.Path, child: str):
 
 if __name__ == '__main__':
     process(HERE.parent / 'content/ja/docs', 'univrm')
+    process(HERE.parent / 'content/en/docs', 'univrm')
