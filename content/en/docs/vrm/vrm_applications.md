@@ -59,7 +59,6 @@ weight: 4
 |-------------|----------|
 | [Virtual Cast](https://virtualcast.jp/) | Windows VR |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
-| [VWorld](https://naby.booth.pm/items/990663) | Windows |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 
 ##  Game
@@ -76,6 +75,7 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
+| [VWorld](https://naby.booth.pm/items/990663) | Windows |
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js extension |
 | [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js extension |
 | [VPocket](https://booooooh.booth.pm/items/1033823) | Android, iOS |
