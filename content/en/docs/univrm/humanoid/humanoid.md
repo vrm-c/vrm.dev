@@ -1,5 +1,6 @@
 ---
 title: Humanoid
+url: "univrm/humanoid/humanoid/"
 ---
 
 Work In progress

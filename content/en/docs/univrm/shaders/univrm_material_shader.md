@@ -2,6 +2,7 @@
 title: "UniVRM Shaders"
 date: 2020-08-03T10:39:04+09:00
 weight: 2
+url: "univrm/shaders/univrm_material_shader/"
 ---
 
 ## Export

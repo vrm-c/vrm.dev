@@ -2,6 +2,7 @@
 title: "Texture Conversion"
 date: 2020-08-03T10:39:04+09:00
 weight: 5
+url: "univrm/shaders/univrm_texture_conversion/"
 ---
 
 Since the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM's `export/import` to convert textures between Unity and GLTF. 

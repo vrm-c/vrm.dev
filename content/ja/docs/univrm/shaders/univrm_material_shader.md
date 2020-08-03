@@ -2,6 +2,7 @@
 title: "対応するシェーダー"
 date: 2020-07-29
 weight: 2
+url: "univrm/shaders/univrm_material_shader/"
 ---
 
 ## エクスポート

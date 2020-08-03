@@ -2,6 +2,7 @@
 title: "VRMShaders"
 date: 2020-07-29
 weight: 4
+url: "univrm/shaders/univrm_vrmshaders/"
 ---
 
 `UniVRM-0.56` からフォルダ構成を変更して、

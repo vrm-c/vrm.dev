@@ -1,5 +1,6 @@
 ---
 title: ヒューマノイド
+url: "univrm/humanoid/humanoid/"
 ---
 
 WIP

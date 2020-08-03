@@ -1,5 +1,6 @@
 ---
 title: BlendShapeのセットアップ(v0.45)
+url: "univrm/blendshape/blendshape_setup/"
 ---
 
 ## BlendShape関連のアセット

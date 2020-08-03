@@ -2,6 +2,7 @@
 title: "install unitypackage"
 date: 2020-07-07
 weight: 1
+url: "univrm/install/univrm_install/"
 ---
 
 ## Unity Version
