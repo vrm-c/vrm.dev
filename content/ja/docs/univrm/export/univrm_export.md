@@ -7,12 +7,12 @@ url: "univrm/export/univrm_export/"
 
 ## エクスポートダイアログ
 
-v0.56
+v0.57
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 
 Unityの簡易ダイアログ機能で画面を作成しています。
-v0.57 以降でダイアログを改善予定です。
+v0.58 以降でダイアログを改善予定です。
 
 | 用語         | 意味                             |
 |--------------|----------------------------------|
@@ -23,6 +23,11 @@ v0.57 以降でダイアログを改善予定です。
 
 エクスポート可能だけど、問題があるかもしれない。
 
+#### The Root translation, rotation and scale will be dropped
+Rootに移動・回転・スケール値が設定されている。
+そのままエクスポートした場合、ルートの TRS は無くなります。
+移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。
+
 #### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
 
 humanoid設定に顎が含まれている。 
@@ -30,6 +35,9 @@ FBXインポート時に意図せずに自動で割り当てられる場合が�
 間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
 FBX importer の rig 設定に戻って設定を解除することをおすすめします。
 
+#### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
+ヒエラルキーの中に同じ名前のGameObjectが含まれている。
+エクスポートした場合に自動でリネームする。
 
 #### This model contains vertex color
 
@@ -55,13 +63,6 @@ standard, unlit, mtoon 以外のマテリアルは、standard になります。
 #### Require source
 エクスポート可能なオブジェクトをシーンで選択してださい
 
-#### The Root transform should have Default translation, rotation and scale.
-Rootに移動・回転・スケール値が設定されている 。
-0.56から禁止になりました。
-0.55以前はエクスポートできたが、後でエラー等のトラブルが発生していました。
-Rootの移動(0)・回転(0)・スケール(1)にしてください。
-必要な場合は、Root の下に階層で移動・回転・スケールしてください。
-
 #### Require animator.
 RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)
 
@@ -73,12 +74,6 @@ RootのAnimatorのavatarが正常でない(ヒューマノイドでない)
 
 #### Animator.avatar is not humanoid. Please change model's AnimationType to humanoid.
 RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください
-
-#### Find duplicate Bone names. Please check model's bone names.
-ヒエラルキーの中に同じ名前のGameObjectが含まれている。
-0.56で禁止になりました。
-0.55以前はエクスポートできたが、後でエラー等のトラブルが発生していました。
-リネームしてください。
 
 #### Require Title.
 ダイアログのタイトルを入力してください(必須項目)

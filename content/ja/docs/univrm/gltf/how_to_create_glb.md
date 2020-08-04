@@ -35,4 +35,4 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 
 ## 対応しているShader
 
-* `Standard` もしくは `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Coutout`, `UniGLTF/UniUnlit`
+* `Standard` もしくは `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`

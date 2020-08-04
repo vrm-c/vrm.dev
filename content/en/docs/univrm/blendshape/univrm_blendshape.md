@@ -2,12 +2,14 @@
 title: "BlendShape Setting"
 linkTitle: "BlendShape"
 date: 2018-04-16T16:30:00+09:00
-weight: 2
+weight: 1
 url: "univrm/blendshape/univrm_blendshape/"
 ---
 
-New features introduced in UniVRM v0.45 
-[can be found here]({{< relref "univrm_bake_blendshape.md" >}})
+New features introduced in UniVRM v0.45:
+
+* [BlendShape setting in Inspector]({{< relref "blendshape_setup.md" >}})
+* [Bake BlendShape state]({{< relref "univrm_bake_blendshape.md" >}})
 
 ## VRMBlendShapeProxy
 

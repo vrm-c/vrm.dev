@@ -1,7 +1,7 @@
 ---
 title: "VRMShaders"
 date: 2020-08-03T10:39:04+09:00
-weight: 4
+weight: 3
 url: "univrm/shaders/univrm_vrmshaders/"
 ---
 

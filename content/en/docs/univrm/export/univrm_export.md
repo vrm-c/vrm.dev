@@ -7,12 +7,12 @@ url: "univrm/export/univrm_export/"
 
 ## Export Dialog
 
-v0.56
+v0.57
 
 {{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
 <hr>
 
-Below is the export dialog in v0.56.
+Below is the export dialog in v0.57.
 We will improve it in the later version.
 
 | Terminology  | Meaning                       |
@@ -26,6 +26,12 @@ The model can be exported, but there is no guarantee that this exported model's 
 
 Here is a list of warning messages:
 
+#### The Root translation, rotation and scale will be dropped
+
+A model is allowed to export if Root's translation, rotation and scale are not Default values. 
+However, those values will be lost.
+We recommend moving this object in the Hierarchy to be Root's child.
+
 #### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
 
 Jaw (chin) bone is included in humanoid setting.
@@ -33,6 +39,12 @@ There is a possibility that the jaw bone is automatically assigned during FBX im
 As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
 Therefore, bangs will have weird movements due to this issue.
 Please remove this setting in Inspector `FBX Importer` -> `rig`
+
+#### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
+
+A model is allowed to export if there are bones with the same name in this model. 
+Only the warning message will be given in Export dialog. 
+Those bones will be renamed automatically.
 
 #### This model contains vertex color
 
@@ -61,12 +73,6 @@ Here is a list of error messages:
 
 Please select a valid object that can be exported as VRM file in the scene.
 
-#### The Root transform should have Default translation, rotation and scale
-
-Starting from v0.56, Root (topmost parent) object with non-default values for translation, rotation, and scale is not allowed to export.
-In previous versions we found it would cause errors sometimes if Root's transform is not Default.
-Instead, we recommend moving this object in the Hierarchy to be Root's child.
-
 #### Require animator
 
 Animator component cannot be found in Root (non-humanoid).
@@ -82,12 +88,6 @@ Animator.avatar is not humanoid.
 #### Animator.avatar is not humanoid. Please change model's AnimationType to humanoid
 
 Please change the setting to `humanoid` (from Inspector: `FBX Import` -> `rig` -> `AnimationType`).
-
-#### Find duplicate Bone names. Please check model's bone names
-
-Export is not allowed in v0.56 if there are GameObjects with the same name in Hierarchy.
-In previous versions we found it would cause errors sometimes if bones with the same name are used.
-Please rename them.
 
 #### Require Title
 
