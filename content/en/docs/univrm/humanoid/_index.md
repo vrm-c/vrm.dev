@@ -1,5 +1,7 @@
 ---
 title: 📁Humanoid
 weight: 19
-aliases: ["/univrm/humanoid/"]
+aliases: ["/en/univrm/"]
 ---
+
+

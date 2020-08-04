@@ -3,7 +3,7 @@ title: "Frequently asked questions"
 linkTitle: "FAQ"
 date: 2018-05-09
 weight: 3
-aliases: ["/univrm/univrm_faq/"]
+aliases: ["/en/univrm/univrm_faq/"]
 ---
 
 # Report errors
@@ -37,3 +37,7 @@ Shaders used by UniVRM may not be included in the application.
 Please double check:
 
 ```Edit - Project Settings - Graphics - Shader preloading```
+
+
+
+

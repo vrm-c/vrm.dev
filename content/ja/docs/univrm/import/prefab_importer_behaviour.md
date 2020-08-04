@@ -1,6 +1,6 @@
 ---
 title: PrefabがImportされるタイミングと上書きの注意
-aliases: ["/univrm/import/prefab_importer_behaviour/"]
+aliases: ["/univrm/settings/prefab_importer_behaviour/"]
 ---
 
 ## 0.49
@@ -19,3 +19,6 @@ Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更している�
 ## 0.45以前
 
 UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。
+
+
+

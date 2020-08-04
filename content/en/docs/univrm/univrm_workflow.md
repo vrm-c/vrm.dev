@@ -2,7 +2,7 @@
 title: "UniVRM workflow"
 date: 2018-04-16T16:30:00+09:00
 weight: 2
-aliases: ["/univrm/univrm_workflow/"]
+aliases: ["/en/univrm/univrm_workflow/"]
 ---
 
 ## Workflow
@@ -101,3 +101,7 @@ Texture, Material and Prefab are automatically generated from VRM.
 
 * If the VRM file is not shown in the project view, right click and select``refresh``
 * If the Prefab file cannot be generated, right click the VRM file and select``reimport``
+
+
+
+

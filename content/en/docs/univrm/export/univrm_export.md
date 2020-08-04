@@ -2,7 +2,7 @@
 title: "UniVRM Export"
 date: 2020-07-16T10:23:04+09:00
 weight: 2
-aliases: ["/univrm/export/univrm_export/"]
+aliases: ["/en/univrm/univrm_export/"]
 ---
 
 ## Export Dialog
@@ -156,3 +156,6 @@ Used in combination with ReduceBlendshape.
 Vertex color will not be exported.
 In GLTF, there is no setting that can disable the color vertex usage.
 UniVRM supports vertex color for `unlit` shader.
+
+
+

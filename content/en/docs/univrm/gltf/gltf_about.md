@@ -3,7 +3,7 @@ title: "About GLTF"
 linkTitle: "What is GLTF?"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/gltf/gltf_about/"]
+aliases: ["/en/dev/univrm-0.xx/gltf/gltf_about/"]
 ---
 
 glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.
@@ -130,3 +130,7 @@ with open('AliciaSolid.vrm', 'rb') as f:
 Information of VRM extension is stored in``json['extensions']['VRM']``.
 
 * [VRM specifications](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md)
+
+
+
+

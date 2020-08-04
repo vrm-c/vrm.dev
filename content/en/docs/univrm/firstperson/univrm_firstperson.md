@@ -2,7 +2,7 @@
 title: "First-Person View"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
-aliases: ["/univrm/firstperson/univrm_firstperson/"]
+aliases: ["/en/univrm/components/univrm_firstperson/"]
 ---
 
 # VRMFirstPerson
@@ -41,3 +41,6 @@ The parts regarding the head bone and its descendants with weights will be elimi
 
 ### The case for no particular setting
 Please set **Both**.
+
+
+

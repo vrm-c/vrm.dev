@@ -2,7 +2,7 @@
 title: アニメーション
 tags: ["unvrm", "gltf", "animation"]
 weight: 4
-aliases: ["/univrm/gltf/animation_exporter/"]
+aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 ---
 
 GLTF は、Animation の定義があります。
@@ -45,3 +45,7 @@ GLTF は、Animation の定義があります。
 ![Interpolation](/images/wiki/Interpolation.png)
 2. Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない
 3. Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）
+
+
+
+

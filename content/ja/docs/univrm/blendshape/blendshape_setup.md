@@ -1,7 +1,7 @@
 ---
 title: BlendShapeのセットアップ(v0.45)
 weight: 2
-aliases: ["/univrm/blendshape/blendshape_setup/"]
+aliases: ["/univrm/settings/blendshape_setup/"]
 ---
 
 ## BlendShape関連のアセット
@@ -90,3 +90,6 @@ BlendShapeAvatarのインスペクタから選択する
 ロードするアプリケーションがv0.45以降になっていると有効になります。
 
 ![image](/images/wiki/binary.png)
+
+
+

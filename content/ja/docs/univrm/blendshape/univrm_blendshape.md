@@ -3,7 +3,7 @@ title: "ブレンドシェイプの設定"
 linkTitle: "BlendShape"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/blendshape/univrm_blendshape/"]
+aliases: ["/univrm/components/univrm_blendshape/"]
 ---
 
 UniVRM v0.45で導入された新機能は
@@ -120,3 +120,6 @@ proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 |{{< img src="images/vrm/BlendShapeClipMaterial.png" >}}|
 |-----|
 |Materialモーフの設定|
+
+
+

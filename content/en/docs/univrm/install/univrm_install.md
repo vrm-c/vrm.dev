@@ -3,7 +3,7 @@ title: "UniVRM installation"
 linkTitle: "Install UniVRM"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/install/univrm_install/"]
+aliases: ["/en/univrm/univrm_install/"]
 ---
 
 ## Unity Version
@@ -58,3 +58,6 @@ If menu does not show up:
 
 * Check if `.Net4.X equivalent` has been selected (`ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version`)
 * Open Console and check if any error (message in red) occurs
+
+
+

@@ -2,7 +2,7 @@
 title: "install unitypackage"
 date: 2020-07-07
 weight: 1
-aliases: ["/univrm/install/univrm_install/"]
+aliases: ["/univrm/univrm_install/"]
 ---
 
 ## Unity Version
@@ -62,3 +62,6 @@ menu が出てこない場合は、
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
 * Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
+
+
+

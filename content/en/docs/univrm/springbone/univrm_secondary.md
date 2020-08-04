@@ -3,7 +3,7 @@ title: "VRMSpringBone"
 linkTitle: "Spring bone"
 date: 2018-04-16T16:30:00+09:00
 weight: 5
-aliases: ["/univrm/springbone/univrm_secondary/"]
+aliases: ["/en/univrm/components/univrm_secondary/"]
 ---
 
 This section is about spring bone settings.
@@ -46,3 +46,6 @@ For example, hit``Add Component``to attach VRMSpringBoneColliderGroup script to`
 
 ## Set multiple collision detections in VRMSpringBoneColliderGroup
 Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of``Size``and multiple targets can then be put into``Element``fields.
+
+
+

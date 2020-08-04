@@ -97,20 +97,26 @@ def get_lang(path: pathlib.Path) -> str:
 
 def get_entry(lang: str, path: pathlib.Path):
     lang = f'/{lang}/'
-    for k, v in DATA.items():
-        if k.startswith(lang) and k.endswith(path.name):
-            return v
+    if path.name.endswith('_index.md'):
+        end = path.parent.name + '/' + path.name
+        for k, v in DATA.items():
+            if k.startswith(lang) and k.endswith(end):
+                return v
+    else:
+        for k, v in DATA.items():
+            if k.startswith(lang) and k.endswith(path.name):
+                return v
 
 
 def update_aliases(path: pathlib.Path, url: str):
-    # print(f'{path} => {url}')
-    buffer = io.StringIO()
+    print(f'{path} => {url}')
+    lines = []
     for l in path.read_text().split('\n'):
         if l.startswith('aliases:'):
-            buffer.write(f'aliases: ["{url}"]\n')
+            lines.append(f'aliases: ["{url}"]\n')
         else:
-            buffer.write(l + '\n')
-    path.write_text(buffer.getvalue())
+            lines.append(l + '\n')
+    path.write_text(''.join(lines))
 
 
 def process(path: pathlib.Path):

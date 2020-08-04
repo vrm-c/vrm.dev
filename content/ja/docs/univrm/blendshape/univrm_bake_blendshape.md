@@ -2,7 +2,7 @@
 title: "エクスポート時にBlendShapeの状態をベイクする"
 date: 2020-07-27T19:28:41+09:00
 tags: ["blendshape"]
-aliases: ["/univrm/blendshape/univrm_bake_blendshape/"]
+aliases: ["/univrm/univrm_bake_blendshape/"]
 weight: 3
 ---
 
@@ -19,3 +19,6 @@ UniVRM ではエクスポートするときに、 `SkinnedMeshRenderer` のス�
 {{<img src="images/vrm/bake_blink.gif">}}
 
 基本状態(blendShape が 0 の状態)が変更されます。
+
+
+
