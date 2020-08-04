@@ -29,7 +29,7 @@ ProtocolBufferで定義して、Jsonのシリアライザを生成したもの�
 &lt;li&gt;VRM部分(HumanoidAvatar, BlendShapeProxy, LookAt, FirstPersonなど)&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Docs: BlendShapeProxyの更新</title><link>https://vrm.dev/dev/univrm-1.xx/blendshapeproxy/</link><pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/blendshapeproxy/</guid><description>
 &lt;h2 id=&#34;推奨される-blendshape-周りの更新順番&#34;&gt;推奨される BlendShape 周りの更新順番&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;のように&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Humanoid&lt;/li&gt;
@@ -42,7 +42,7 @@ ProtocolBufferで定義して、Jsonのシリアライザを生成したもの�
 &lt;h2 id=&#34;blendshapeclip-の排他機能&#34;&gt;BlendShapeClip の排他機能&lt;/h2&gt;
 &lt;p&gt;例えば &lt;code&gt;fan&lt;/code&gt; と &lt;code&gt;blink&lt;/code&gt; が同時に適用されたときに、目がおかしくなるモデルがあります。
 このとき、 &lt;code&gt;fan&lt;/code&gt; に対して &lt;code&gt;blink&lt;/code&gt; を無視するフラグを付けられるようにしました。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ignoreBlink&lt;/li&gt;
 &lt;li&gt;ignoreLookAt&lt;/li&gt;
@@ -84,7 +84,7 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;省略&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&lt;/a&gt; は、 &lt;code&gt;UniVRM-1.0&lt;/code&gt; の &lt;code&gt;UnityPackage&lt;/code&gt; を使う例です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&#34;&gt;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&lt;/a&gt; は、 &lt;code&gt;UniVRM-1.0&lt;/code&gt; の &lt;code&gt;UnityPackage&lt;/code&gt; を使う例です。&lt;/p&gt;
 &lt;p&gt;以下の &amp;ldquo;lock&amp;rdquo; はUnityが自動で更新するので、編集する必要はありません。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;lock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -96,7 +96,7 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: API</title><link>https://vrm.dev/dev/univrm-1.xx/api/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api/</guid><description>
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&#34;&gt;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;にあります。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;System.IO&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -284,7 +284,7 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ...
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: Assetの扱いを変更しました</title><link>https://vrm.dev/dev/univrm-1.xx/unity_assets/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/unity_assets/</guid><description>
-&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ScriptReference/Experimental.AssetImporters.ScriptedImporter.html&#34; target=&#34;_blank&#34;&gt;ScriptedImporter&lt;/a&gt; を使っていて、以前の&lt;a href=&#34;https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html&#34; target=&#34;_blank&#34;&gt;AssetPostprocessor&lt;/a&gt;と挙動が異なります。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ScriptReference/Experimental.AssetImporters.ScriptedImporter.html&#34;&gt;ScriptedImporter&lt;/a&gt; を使っていて、以前の&lt;a href=&#34;https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html&#34;&gt;AssetPostprocessor&lt;/a&gt;と挙動が異なります。&lt;/p&gt;
 &lt;h2 id=&#34;0-xx&#34;&gt;0.xx&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;model.vrm&lt;/code&gt; を Assets フォルダに投入 =&amp;gt; AssetPostprocessor が拡張子 &lt;code&gt;.vrm&lt;/code&gt; のファイルに対して発動&lt;/p&gt;
 &lt;ul&gt;
@@ -347,11 +347,11 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;/ul&gt;
 &lt;h2 id=&#34;runtimeimport&#34;&gt;RunTimeImport&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRMUtility&lt;/a&gt; SimpleViewer, VRMViewer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility&#34;&gt;https://github.com/vrm-c/UniVRMUtility&lt;/a&gt; SimpleViewer, VRMViewer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;runtimeexport&#34;&gt;RuntimeExport&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRMUtility&lt;/a&gt; PrimMan。ランタイムに箱人間をプログラム的に生成してVRMとしてエクスポートする&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility&#34;&gt;https://github.com/vrm-c/UniVRMUtility&lt;/a&gt; PrimMan。ランタイムに箱人間をプログラム的に生成してVRMとしてエクスポートする&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Docs: エクスポート手順</title><link>https://vrm.dev/dev/univrm-1.xx/how_to_export/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/how_to_export/</guid><description>
 &lt;p&gt;旧 UniVRM-0.XX から少しエクスポート手順が変わります。&lt;/p&gt;
 &lt;ol&gt;

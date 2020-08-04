@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁Material</title><link>https://vrm.dev/univrm/shaders/</link><description>Recent content in 📁Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/mtoon/</guid><description>
-&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;MToonの使い方&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;MToonの使い方&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;mtoon-について&#34;&gt;MToon について&lt;/h1&gt;
 &lt;p&gt;MToon は日本のアニメ的表現をすることを目標としています。
 主色 (Lit Color) と陰色 (Shade Color) の 2 色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。&lt;/p&gt;
@@ -340,33 +340,10 @@ UniVRMが &lt;code&gt;unlit&lt;/code&gt; 系でサポートするシェーダー
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34; target=&#34;_blank&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34; target=&#34;_blank&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: テクスチャー変換</title><link>https://vrm.dev/univrm/shaders/univrm_texture_conversion/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/univrm/shaders/univrm_texture_conversion/</guid><description>
-&lt;p&gt;Unity と GLTF でテクスチャーの仕様に非互換があるので、 &lt;code&gt;export/import&lt;/code&gt; で変換しています。&lt;/p&gt;
-&lt;h2 id=&#34;standardシェーダーのテクスチャ変換の改善&#34;&gt;Standardシェーダーのテクスチャ変換の改善&lt;/h2&gt;
-&lt;p&gt;Standardシェーダーのカラー以外のテクスチャの処理を改善しました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/li&gt;
-&lt;li&gt;Metallic, Roughnes, OcclusionMapの変換
-&lt;ul&gt;
-&lt;li&gt;RGBAチャンネル組み換え&lt;/li&gt;
-&lt;li&gt;Roughness値とSmoothness値の反転&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Importerで変換、Exporterで逆変換&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ノーマルマップのインポート-エクスポートの修正&#34;&gt;ノーマルマップのインポート・エクスポートの修正&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Standard&lt;/code&gt; と &lt;code&gt;MToon&lt;/code&gt; のテクスチャです。
-Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RuntimeImport: 法線テクスチャのPack&lt;/li&gt;
-&lt;li&gt;Export: 法線テクスチャのUnpack&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Tangentの対応&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: マテリアル設定</title><link>https://vrm.dev/univrm/shaders/material_settings/</link><pubDate>Mon, 03 Aug 2020 19:26:01 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/material_settings/</guid><description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: マテリアル設定</title><link>https://vrm.dev/univrm/shaders/material_settings/</link><pubDate>Tue, 04 Aug 2020 12:07:14 +0900</pubDate><guid>https://vrm.dev/univrm/shaders/material_settings/</guid><description>
 &lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ピカピカに反射してしまう。
@@ -376,7 +353,7 @@ Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定しま�
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;standard&#34;&gt;Standard&lt;/h2&gt;
-&lt;p&gt;Unityの&lt;a href=&#34;https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html&#34; target=&#34;_blank&#34;&gt;デフォルト&lt;/a&gt;でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p&gt;
+&lt;p&gt;Unityの&lt;a href=&#34;https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html&#34;&gt;デフォルト&lt;/a&gt;でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -447,7 +424,7 @@ Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定しま�
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/222&#34; target=&#34;_blank&#34;&gt;[参照]&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/222&#34;&gt;[参照]&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;unlit系&#34;&gt;Unlit系&lt;/h2&gt;
 &lt;p&gt;Unityでは、&lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; があります。
 GLTFでは、 &lt;code&gt;KHR_materials_unlit&lt;/code&gt; 拡張でサポートしています。&lt;/p&gt;
@@ -482,6 +459,29 @@ GLTFでは、 &lt;code&gt;KHR_materials_unlit&lt;/code&gt; 拡張でサポート
 &lt;p&gt;&lt;code&gt;KHR_materials_unlit&lt;/code&gt;を宣言されているの場合は、コアPBRプロパティは無視されます（baseColorを除く）。色の値、アルファと両面プロパティはまだUnlitマテリアルに適用されます。&lt;/p&gt;
 &lt;h2 id=&#34;mtoon&#34;&gt;MToon&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34; target=&#34;_blank&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/univrm/shaders/mtoon/&#34; target=&#34;_blank&#34;&gt;MToon Shader&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/univrm/shaders/mtoon/&#34;&gt;MToon Shader&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: テクスチャー変換</title><link>https://vrm.dev/univrm/shaders/univrm_texture_conversion/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/univrm/shaders/univrm_texture_conversion/</guid><description>
+&lt;p&gt;Unity と GLTF でテクスチャーの仕様に非互換があるので、 &lt;code&gt;export/import&lt;/code&gt; で変換しています。&lt;/p&gt;
+&lt;h2 id=&#34;standardシェーダーのテクスチャ変換の改善&#34;&gt;Standardシェーダーのテクスチャ変換の改善&lt;/h2&gt;
+&lt;p&gt;Standardシェーダーのカラー以外のテクスチャの処理を改善しました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/li&gt;
+&lt;li&gt;Metallic, Roughnes, OcclusionMapの変換
+&lt;ul&gt;
+&lt;li&gt;RGBAチャンネル組み換え&lt;/li&gt;
+&lt;li&gt;Roughness値とSmoothness値の反転&lt;/li&gt;
+&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
+&lt;li&gt;Importerで変換、Exporterで逆変換&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ノーマルマップのインポート-エクスポートの修正&#34;&gt;ノーマルマップのインポート・エクスポートの修正&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Standard&lt;/code&gt; と &lt;code&gt;MToon&lt;/code&gt; のテクスチャです。
+Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;RuntimeImport: 法線テクスチャのPack&lt;/li&gt;
+&lt;li&gt;Export: 法線テクスチャのUnpack&lt;/li&gt;
+&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
+&lt;li&gt;Tangentの対応&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>

@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁Export</title><link>https://vrm.dev/en/univrm/export/</link><description>Recent content in 📁Export on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 19:26:01 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/univrm/export/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/univrm/export/univrm_export/</guid><description>
 &lt;h2 id=&#34;export-dialog&#34;&gt;Export Dialog&lt;/h2&gt;
-&lt;p&gt;v0.56&lt;/p&gt;
+&lt;p&gt;v0.57&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
 &lt;hr&gt;&lt;/p&gt;
-&lt;p&gt;Below is the export dialog in v0.56.
+&lt;p&gt;Below is the export dialog in v0.57.
 We will improve it in the later version.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -26,12 +26,20 @@ We will improve it in the later version.&lt;/p&gt;
 &lt;h3 id=&#34;warning-message-marked-with-orange-frame&#34;&gt;Warning Message (marked with orange frame)&lt;/h3&gt;
 &lt;p&gt;The model can be exported, but there is no guarantee that this exported model&amp;rsquo;s behaviors/looking are what you expect.&lt;/p&gt;
 &lt;p&gt;Here is a list of warning messages:&lt;/p&gt;
+&lt;h4 id=&#34;the-root-translation-rotation-and-scale-will-be-dropped&#34;&gt;The Root translation, rotation and scale will be dropped&lt;/h4&gt;
+&lt;p&gt;A model is allowed to export if Root&amp;rsquo;s translation, rotation and scale are not Default values.
+However, those values will be lost.
+We recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p&gt;
 &lt;h4 id=&#34;jaw-bone-is-included-it-may-not-be-what-you-intended-please-check-the-humanoid-avatar-setting-screen&#34;&gt;Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen&lt;/h4&gt;
 &lt;p&gt;Jaw (chin) bone is included in humanoid setting.
 There is a possibility that the jaw bone is automatically assigned during FBX import.
 As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
 Therefore, bangs will have weird movements due to this issue.
 Please remove this setting in Inspector &lt;code&gt;FBX Importer&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;there-is-a-bone-with-the-same-name-in-the-hierarchy-if-exported-these-bones-will-be-automatically-renamed&#34;&gt;There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed&lt;/h4&gt;
+&lt;p&gt;A model is allowed to export if there are bones with the same name in this model.
+Only the warning message will be given in Export dialog.
+Those bones will be renamed automatically.&lt;/p&gt;
 &lt;h4 id=&#34;this-model-contains-vertex-color&#34;&gt;This model contains vertex color&lt;/h4&gt;
 &lt;p&gt;If you see this message, there are meshes that contain vertex color in Hierarchy.&lt;/p&gt;
 &lt;table&gt;
@@ -65,10 +73,6 @@ If Error Message is shown in the dialog, &lt;code&gt;export&lt;/code&gt; button 
 &lt;p&gt;Here is a list of error messages:&lt;/p&gt;
 &lt;h4 id=&#34;require-source&#34;&gt;Require source&lt;/h4&gt;
 &lt;p&gt;Please select a valid object that can be exported as VRM file in the scene.&lt;/p&gt;
-&lt;h4 id=&#34;the-root-transform-should-have-default-translation-rotation-and-scale&#34;&gt;The Root transform should have Default translation, rotation and scale&lt;/h4&gt;
-&lt;p&gt;Starting from v0.56, Root (topmost parent) object with non-default values for translation, rotation, and scale is not allowed to export.
-In previous versions we found it would cause errors sometimes if Root&amp;rsquo;s transform is not Default.
-Instead, we recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p&gt;
 &lt;h4 id=&#34;require-animator&#34;&gt;Require animator&lt;/h4&gt;
 &lt;p&gt;Animator component cannot be found in Root (non-humanoid).&lt;/p&gt;
 &lt;h4 id=&#34;require-animator-avatar&#34;&gt;Require animator.avatar&lt;/h4&gt;
@@ -77,10 +81,6 @@ Instead, we recommend moving this object in the Hierarchy to be Root&amp;rsquo;s
 &lt;p&gt;Animator.avatar is not humanoid.&lt;/p&gt;
 &lt;h4 id=&#34;animator-avatar-is-not-humanoid-please-change-model-s-animationtype-to-humanoid&#34;&gt;Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid&lt;/h4&gt;
 &lt;p&gt;Please change the setting to &lt;code&gt;humanoid&lt;/code&gt; (from Inspector: &lt;code&gt;FBX Import&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt; -&amp;gt; &lt;code&gt;AnimationType&lt;/code&gt;).&lt;/p&gt;
-&lt;h4 id=&#34;find-duplicate-bone-names-please-check-model-s-bone-names&#34;&gt;Find duplicate Bone names. Please check model&amp;rsquo;s bone names&lt;/h4&gt;
-&lt;p&gt;Export is not allowed in v0.56 if there are GameObjects with the same name in Hierarchy.
-In previous versions we found it would cause errors sometimes if bones with the same name are used.
-Please rename them.&lt;/p&gt;
 &lt;h4 id=&#34;require-title&#34;&gt;Require Title&lt;/h4&gt;
 &lt;p&gt;Please enter the title of this model in the dialog.&lt;/p&gt;
 &lt;h4 id=&#34;require-version&#34;&gt;Require Version&lt;/h4&gt;

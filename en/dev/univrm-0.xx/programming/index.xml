@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 23 Apr 2020 17:09:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/dev/univrm-0.xx/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_api_history/</guid><description>
 &lt;p&gt;This section describes about changes affecting the program.&lt;/p&gt;
-&lt;p&gt;Please go to &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki&#34; target=&#34;_blank&#34;&gt;UniVRM/Wiki&lt;/a&gt; to get the latest information of the API update.&lt;/p&gt;
+&lt;p&gt;Please go to &lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki&#34;&gt;UniVRM/Wiki&lt;/a&gt; to get the latest information of the API update.&lt;/p&gt;
 &lt;h1 id=&#34;v0-36&#34;&gt;v0.36&lt;/h1&gt;
 &lt;h2 id=&#34;texture-name-save-locations-changed&#34;&gt;Texture Name Save Locations Changed&lt;/h2&gt;
 &lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
@@ -11,12 +11,12 @@
 &lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&amp;ldquo;extras&amp;rdquo; is not allowed in target&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&#34; target=&#34;_blank&#34;&gt;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&#34;&gt;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.meshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.primitives&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.targets&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.extra.name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;After the change&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;json.meshes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.primitives&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;.extras.targetNames&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: Import VRM Model at Runtime</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_import_runtime/</guid><description>
-&lt;p&gt;Examples of importing the VRM model with the latest version &lt;a href=&#34;https://vrm.dev/en/dev/univrm-0.xx/programming/runtime_import/&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Examples of importing the VRM model with the latest version &lt;a href=&#34;https://vrm.dev/en/dev/univrm-0.xx/programming/runtime_import/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The followings are the methods to import a VRM model at runtime in Unity:&lt;/p&gt;
 &lt;h2 id=&#34;open-vrm-from-a-file-path&#34;&gt;Open VRM from a file path&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -166,7 +166,7 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docs: How to Use VRMFirstPerson</title><link>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-0.xx/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id=&#34;vrmfirstperson-settings&#34;&gt;VRMFirstPerson Settings&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/univrm/firstperson/univrm_firstperson/&#34; target=&#34;_blank&#34;&gt;VRMFirstPerson&lt;/a&gt; has the following settings for Renderer:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/univrm/firstperson/univrm_firstperson/&#34;&gt;VRMFirstPerson&lt;/a&gt; has the following settings for Renderer:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -336,5 +336,5 @@ In order to solve this issue, it is necessary to centralize the management of th
 &lt;h2 id=&#34;related-article&#34;&gt;Related-Article&lt;/h2&gt;
 &lt;p&gt;More details can be found in the link below (written in Japanese):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6&#34; target=&#34;_blank&#34;&gt;UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6&#34;&gt;UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>
