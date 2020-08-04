@@ -6,7 +6,7 @@ This repository contains source files for vrm.dev.
 
 ## Contributing
 
-vrm.dev requires [Hugo (extended) v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3).
+vrm.dev requires [Hugo (extended) v0.74.3](https://github.com/gohugoio/hugo/releases/tag/v0.74.3).
 Make sure `hugo.exe` is put in the `/vrm.dev/` directory.
 
 Start a local website server by running the following commands:
