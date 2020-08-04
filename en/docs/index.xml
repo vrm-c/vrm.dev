@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 17 Sep 2019 16:28:23 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 17 Sep 2019 16:32:50 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
 &lt;h1 id=&#34;univrm-1-0-draft&#34;&gt;UniVRM-1.0 draft&lt;/h1&gt;
 &lt;p&gt;Unity implementation of VRM-1.0 draft.&lt;/p&gt;
 &lt;ul&gt;
@@ -813,7 +813,7 @@ More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/
 &lt;li&gt;Other&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;other-license-url-1&#34;&gt;Other License Url&lt;/h4&gt;
-&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p&gt;If “Other” is selected, put the URL link of the license document here.&lt;/p&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
 &lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
@@ -2619,7 +2619,71 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p&gt;In VRMShaders, MToon shader is managed by &lt;code&gt;git submodule&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;For the latest update about MToon, please refer to:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</guid><description>
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-eye-bone&#34;&gt;Control the Eye Gaze with the Eye Bone&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-blendshape&#34;&gt;Control the Eye Gaze with the BlendShape&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;control-the-eye-gaze-with-the-uv-texture&#34;&gt;Control the Eye Gaze with the UV Texture&lt;/h2&gt;
+&lt;p&gt;A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
+&lt;code&gt;Unity chan&lt;/code&gt; belongs to this type.&lt;/p&gt;
+&lt;h3 id=&#34;search-the-eye-material&#34;&gt;Search the eye material&lt;/h3&gt;
+&lt;p&gt;Please search the eye material in the Project window. The &lt;code&gt;Tiling Offset&lt;/code&gt; setting will be displayed in the Inspector window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The values should be &lt;code&gt;1, 1, 0, 0&lt;/code&gt; (if the values are different, the followings are for reference only).&lt;/p&gt;
+&lt;p&gt;Now you can try to change the values of &lt;code&gt;Offset&lt;/code&gt; X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
+Since we have found where the eye materials are, we set the X and Y values back to &lt;code&gt;0&lt;/code&gt; and proceed to the next step.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-lookup-lookdown-lookleft-and-lookright&#34;&gt;Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2&gt;
+&lt;p&gt;In the following example, we choose &lt;code&gt;unlit/transparent cutout&lt;/code&gt; for material&lt;/p&gt;
+&lt;h3 id=&#34;lookleft-example&#34;&gt;LookLeft example&lt;/h3&gt;
+&lt;p&gt;Please select the &lt;code&gt;LookLeft&lt;/code&gt; asset in the Project window&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;code&gt;Material List&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust Offset value in the LookLeft setting&lt;/li&gt;
+&lt;li&gt;Repeat the same procedure for &lt;code&gt;eye_R1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Adjust &lt;code&gt;Offset&lt;/code&gt; X for Left and Right and &lt;code&gt;Offset&lt;/code&gt; Y for Up and Down. For example, &lt;code&gt;LookLeft Offset = -0.2, 0&lt;/code&gt;, &lt;code&gt;LookRight Offset = 0.2, 0&lt;/code&gt;, &lt;code&gt;LookUp Offset = 0, -0.2&lt;/code&gt;, &lt;code&gt;LookDown Offset = 0, 0.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;add-vrmlookatblendshapeapplyer-in-the-vrm-model-s-inspector-window&#34;&gt;Add VRMLookAtBlendShapeApplyer in the VRM model&amp;rsquo;s Inspector window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove VRMLookAtBoneApplyer&lt;/li&gt;
+&lt;li&gt;Add VRMLookAtBlendShapeApplyer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
+In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
+&lt;h2 id=&#34;0-46&#34;&gt;0.46&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder.
+However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
+&lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
+If you want to overwrite, delete them before importing.&lt;/p&gt;
+&lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
+&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
+&lt;h2 id=&#34;supplementary-information-regarding-t-pose&#34;&gt;Supplementary Information regarding T-Pose&lt;/h2&gt;
+&lt;p&gt;To normalize a model, the model with T-Pose is required.&lt;/p&gt;
+&lt;p&gt;If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;code&gt;Menu&lt;/code&gt; on top and select &lt;code&gt;Export humanoid&lt;/code&gt; from &lt;code&gt;VRM&lt;/code&gt; -&amp;gt; &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt;. The export dialog will pop up. Enable &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p&gt;
+&lt;p&gt;Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p&gt;
+&lt;h2 id=&#34;common-issues&#34;&gt;Common Issues&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code&gt;jaw&lt;/code&gt; (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is no influence on model if jaw bone is not used&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code&gt;jaw&lt;/code&gt; bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
 &lt;p&gt;Work In progress&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li&gt;
@@ -2678,71 +2742,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;li&gt;Be the T-pose&lt;/li&gt;
 &lt;li&gt;No rotation/scaling for each node&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;That&amp;rsquo;s pretty much it.&lt;/p&gt;</description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</guid><description>
-&lt;h2 id=&#34;control-the-eye-gaze-with-the-eye-bone&#34;&gt;Control the Eye Gaze with the Eye Bone&lt;/h2&gt;
-&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;control-the-eye-gaze-with-the-blendshape&#34;&gt;Control the Eye Gaze with the BlendShape&lt;/h2&gt;
-&lt;p&gt;Please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34;&gt;Eye Control&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;control-the-eye-gaze-with-the-uv-texture&#34;&gt;Control the Eye Gaze with the UV Texture&lt;/h2&gt;
-&lt;p&gt;A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
-&lt;code&gt;Unity chan&lt;/code&gt; belongs to this type.&lt;/p&gt;
-&lt;h3 id=&#34;search-the-eye-material&#34;&gt;Search the eye material&lt;/h3&gt;
-&lt;p&gt;Please search the eye material in the Project window. The &lt;code&gt;Tiling Offset&lt;/code&gt; setting will be displayed in the Inspector window.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_tiling_offset.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The values should be &lt;code&gt;1, 1, 0, 0&lt;/code&gt; (if the values are different, the followings are for reference only).&lt;/p&gt;
-&lt;p&gt;Now you can try to change the values of &lt;code&gt;Offset&lt;/code&gt; X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
-Since we have found where the eye materials are, we set the X and Y values back to &lt;code&gt;0&lt;/code&gt; and proceed to the next step.&lt;/p&gt;
-&lt;h2 id=&#34;set-up-lookup-lookdown-lookleft-and-lookright&#34;&gt;Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2&gt;
-&lt;p&gt;In the following example, we choose &lt;code&gt;unlit/transparent cutout&lt;/code&gt; for material&lt;/p&gt;
-&lt;h3 id=&#34;lookleft-example&#34;&gt;LookLeft example&lt;/h3&gt;
-&lt;p&gt;Please select the &lt;code&gt;LookLeft&lt;/code&gt; asset in the Project window&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/lookleft.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Click &lt;code&gt;Material List&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;code&gt;+&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Select &lt;code&gt;eye_L1&lt;/code&gt; - &lt;code&gt;_MainTex_ST&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set &lt;code&gt;Tliling = 1, 1&lt;/code&gt;, &lt;code&gt;Offset = 0, 0&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/tiling_offset_1100.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Adjust Offset value in the LookLeft setting&lt;/li&gt;
-&lt;li&gt;Repeat the same procedure for &lt;code&gt;eye_R1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Adjust &lt;code&gt;Offset&lt;/code&gt; X for Left and Right and &lt;code&gt;Offset&lt;/code&gt; Y for Up and Down. For example, &lt;code&gt;LookLeft Offset = -0.2, 0&lt;/code&gt;, &lt;code&gt;LookRight Offset = 0.2, 0&lt;/code&gt;, &lt;code&gt;LookUp Offset = 0, -0.2&lt;/code&gt;, &lt;code&gt;LookDown Offset = 0, 0.2&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/look_left.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://unity-chan.com/&#34;&gt;© UTJ/UCL&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;add-vrmlookatblendshapeapplyer-in-the-vrm-model-s-inspector-window&#34;&gt;Add VRMLookAtBlendShapeApplyer in the VRM model&amp;rsquo;s Inspector window&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Remove VRMLookAtBoneApplyer&lt;/li&gt;
-&lt;li&gt;Add VRMLookAtBlendShapeApplyer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_applyer.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p&gt;</description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
-&lt;h2 id=&#34;0-49&#34;&gt;0.49&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
-In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
-&lt;h2 id=&#34;0-46&#34;&gt;0.46&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder.
-However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
-&lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
-If you want to overwrite, delete them before importing.&lt;/p&gt;
-&lt;h2 id=&#34;0-45-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;</description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
-&lt;h2 id=&#34;supplementary-information-regarding-t-pose&#34;&gt;Supplementary Information regarding T-Pose&lt;/h2&gt;
-&lt;p&gt;To normalize a model, the model with T-Pose is required.&lt;/p&gt;
-&lt;p&gt;If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Click &lt;code&gt;Menu&lt;/code&gt; on top and select &lt;code&gt;Export humanoid&lt;/code&gt; from &lt;code&gt;VRM&lt;/code&gt; -&amp;gt; &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt;. The export dialog will pop up. Enable &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p&gt;
-&lt;p&gt;Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p&gt;
-&lt;h2 id=&#34;common-issues&#34;&gt;Common Issues&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code&gt;jaw&lt;/code&gt; (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is no influence on model if jaw bone is not used&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code&gt;jaw&lt;/code&gt; bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Employ Unity Package Manager</title><link>https://vrm.dev/en/en/dev/univrm-1.xx/package/</link><pubDate>Mon, 11 May 2020 17:06:05 +0900</pubDate><guid>https://vrm.dev/en/en/dev/univrm-1.xx/package/</guid><description>
+&lt;p&gt;That&amp;rsquo;s pretty much it.&lt;/p&gt;</description></item><item><title>Docs: Employ Unity Package Manager</title><link>https://vrm.dev/en/en/dev/univrm-1.xx/package/</link><pubDate>Mon, 11 May 2020 17:06:05 +0900</pubDate><guid>https://vrm.dev/en/en/dev/univrm-1.xx/package/</guid><description>
 &lt;h2 id=&#34;univrm-1-0-s-unitypackage&#34;&gt;UniVRM-1.0&amp;rsquo;s UnityPackage&lt;/h2&gt;
 &lt;p&gt;UnityPackage is adopted experimentally in UniVRM-1.0.&lt;/p&gt;
 &lt;p&gt;As &lt;code&gt;package.json&lt;/code&gt; is placed in each module in github repository&amp;rsquo;s &lt;code&gt;Assets&lt;/code&gt; folder,
