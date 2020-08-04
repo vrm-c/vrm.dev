@@ -1,676 +1,721 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 17 Sep 2019 16:32:50 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
-&lt;h2 id=&#34;vrm-とは&#34;&gt;「VRM」とは&lt;/h2&gt;
-&lt;p&gt;VR(Virtual Reality)やVTuberなどにおいて&lt;strong&gt;「キャラクターや人型のアバター（の3Dモデル）」&lt;/strong&gt;を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p&gt;
-&lt;p&gt;というのも…&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;3Dモデルを作成したクリエイターや使用したモデリングツールによって「作法」が違いデータの状況がひとつひとつ異なっている
-&lt;ul&gt;
-&lt;li&gt;座標系が異なっていたり、スケールが異なっていたり、初期姿勢が異なっていたり、表情の表現方法が異なっていたり…&lt;/li&gt;
-&lt;li&gt;もちろん、骨（ボーン）の入れ方も状況によって異なっていたり&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;3Dモデルデータを取り扱うフォーマットは、各社各様で仕様が必要以上に複雑であったり、必要な情報が足りなかったりしている
-&lt;ul&gt;
-&lt;li&gt;対応ソフトが多い「FBXファイル」はアプリケーションごとに読めたり読めなかったり。どのアプリケーションのどのバージョンで出力したFBXなのか…というのを気にしたかたも多いと思います&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;3Dモデルデータを「アバターとして使用する」という観点で見ると、必要な情報が整備されていない
-&lt;ul&gt;
-&lt;li&gt;たとえば一人称視点を実現するための視点の位置はどこか、一人称視点から表示するためには頭部の表示を消さなければならないが、具体的にはどこを消すのか、など&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;VRでのアバター表現が急速に盛り上がるなか、こういった状況が続くとアプリケーション開発者にとっても、3Dモデルクリエイターにとっても二度手間三度手間になってしまいます。
-この状況を改善するために&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;「人型のキャラクターやアバター」において&lt;/li&gt;
-&lt;li&gt;細かいモデルデータの差違を吸収・統一し&lt;/li&gt;
-&lt;li&gt;アプリケーション側の取り扱いを簡単にする&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong&gt;ものです。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2 id=&#34;vrmで何ができるの&#34;&gt;VRMで何ができるの？&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png&#34; alt=&#34;VRM applications&#34; /&gt;
-&lt;p&gt;&lt;strong&gt;VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong&gt;
-対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VRM対応のキャラクタ製作ツールで自分のアバターをつくる&lt;/li&gt;
-&lt;li&gt;自分のアバターで生放送をしていたら、友達も生放送をはじめたので友達の放送に凸しに行った&lt;/li&gt;
-&lt;li&gt;放送後そのままVRゲームを起動、自分のアバターでVR世界を探索&lt;/li&gt;
-&lt;li&gt;ゲームに飽きたのでVR世界のチャットへ移動。同じアバターで友達と遊ぶ&lt;/li&gt;
-&lt;li&gt;翌日はVR勉強会にVR参加。もちろんアバターはいつもの姿で&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2 id=&#34;vrmの特徴&#34;&gt;VRMの特徴&lt;/h2&gt;
-&lt;p&gt;VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong&gt;UnityでVRMファイルを読み書きする標準実装が提供されます&lt;/strong&gt;が、&lt;strong&gt;フォーマット自体はプラットフォーム非依存&lt;/strong&gt;であり他エンジンや環境でも取り扱うことが可能です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;プラットフォーム非依存で人型のキャラクター3Dモデルデータを取り扱うことが可能&lt;/li&gt;
-&lt;li&gt;3D標準フォーマット glTF2.0をベースとして、人型モデルを取り扱うための制約と拡張を加えたフォーマット。標準フォーマットをベースとしているため実装も容易&lt;/li&gt;
-&lt;li&gt;テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能&lt;/li&gt;
-&lt;li&gt;スケール（1.00 = 1m）・座標系と向き（Y-up, -Z方向向き）・骨の構造（Unity Humanoid準拠構成, Tスタンス, 各骨にローカルの回転などを入れない）などについて標準の構成が決められておりモデリングツールによる差違の影響を受けない&lt;/li&gt;
-&lt;li&gt;Blend Shapeやマテリアルの透明度など「キャラクターの表情」を取り扱うためにはさまざまな技法が使われるが、その技法の差違をVRM側で吸収し統一したAPIで操作できる&lt;/li&gt;
-&lt;li&gt;VRでのアバター利用のための、&lt;strong&gt;「一人称視点再現のための情報」&lt;/strong&gt;に対応。&lt;/li&gt;
-&lt;li&gt;キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能に&lt;/li&gt;
-&lt;li&gt;標準実装としてのマテリアル（シェーダ）を用意。標準的なPBRだけでなくトゥーンシェーディングやUnlitレンダリングを設定可能&lt;/li&gt;
-&lt;li&gt;タイトル・作者名などのメタ情報だけでなく、サムネイルや&lt;strong&gt;VR時代に即した、アバターに特化したライセンス情報&lt;/strong&gt;も内包可能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、&lt;strong&gt;自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong&gt;、ということも行われることになります。
-この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;のほかに&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;を&lt;strong&gt;ファイルに設定できる&lt;/strong&gt;など、VR時代を想定したフォーマットとなっています。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2 id=&#34;vrmファイルに設定できるライセンスデータ&#34;&gt;VRMファイルに設定できるライセンスデータ&lt;/h2&gt;
-&lt;h3 id=&#34;アバターの人格に関する許諾範囲-personation-characterization-permission&#34;&gt;アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3&gt;
-&lt;h4 id=&#34;アバターに人格を与えることの許諾範囲-a-person-who-can-perform-with-this-avatar&#34;&gt;アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;アバターを操作することはアバター作者にのみ許される(Only Author)&lt;/li&gt;
-&lt;li&gt;明確に許可された人限定(Explicitly Licensed Person)&lt;/li&gt;
-&lt;li&gt;全員に許可(Everyone)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;このアバターを用いて暴力表現を演じることの許可-violent-acts-using-this-avatar&#34;&gt;このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;このアバターを用いて性的表現を演じることの許可-sexuality-acts-using-this-avatar&#34;&gt;このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;商用利用の許可-for-commercial-use&#34;&gt;商用利用の許可(For commercial use)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;その他のライセンス条件-other-license-url&#34;&gt;その他のライセンス条件(Other License Url)&lt;/h4&gt;
-&lt;p&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p&gt;
-&lt;h3 id=&#34;再配布-改変に関する許諾範囲-redistribution-modifications-license&#34;&gt;再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3&gt;
-&lt;h4 id=&#34;ライセンスタイプ-license-type&#34;&gt;ライセンスタイプ(License Type)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;再配布禁止(Redistribution Prohibited)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/publicdomain/zero/1.0/deed.ja&#34;&gt;著作権放棄(CC0)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/deed.ja&#34;&gt;Creative Commons CC BYライセンス(CC_BY)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/deed.ja&#34;&gt;Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/deed.ja&#34;&gt;Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja&#34;&gt;Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nd/4.0/deed.ja&#34;&gt;Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja&#34;&gt;Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;その他(Other)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;その他ライセンス条件-other-license-url&#34;&gt;その他ライセンス条件(Other License Url)&lt;/h4&gt;
-&lt;p&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p&gt;</description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
-&lt;h2 id=&#34;vrmファイルのつくりかた-既存3dモデルからのコンバート&#34;&gt;VRMファイルのつくりかた（既存3Dモデルからのコンバート）&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/VRM_changeVRM_jp.png&#34; alt=&#34;vrm workflow&#34; /&gt;
-&lt;p&gt;VRMファイルをつくるためには、&lt;a href=&#34;https://unity3d.com/jp&#34;&gt;Unity&lt;/a&gt;と&lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34;&gt;UniVRM&lt;/a&gt;を使用します。
-おおまかな作業のながれは以下のようになります&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Unityで3Dモデルデータと&lt;a href=&#34;https://github.com/vrm-c/UniVRM&#34;&gt;UniVRM&lt;/a&gt;を読み込む。Unity上で大きさやマテリアルなどを調整・設定する&lt;/li&gt;
-&lt;li&gt;一度UnityからVRMファイルを出力する（※正規化と呼びます）&lt;/li&gt;
-&lt;li&gt;上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
-&lt;ul&gt;
-&lt;li&gt;場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;ポイントは、 &lt;strong&gt;すでに作られた3DモデルをUnity上で調整し、Unityから出力する&lt;/strong&gt;ということと、&lt;strong&gt;一度VRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う&lt;/strong&gt;ところとなります。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;1-unityで空のプロジェクトを作る&#34;&gt;1.Unityで空のプロジェクトを作る&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/unity_new_project.png&#34; /&gt;
-&lt;p&gt;Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p&gt;
-&lt;h3 id=&#34;2-unityにunivrmをインストール&#34;&gt;2.UnityにUniVRMをインストール&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34; /&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;UniVRM/releases&lt;/a&gt;から最新のunitypackageをダウンロードし、&lt;code&gt;Assets/VRM&lt;/code&gt;にインストールします。
-&lt;strong&gt;既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨&lt;/strong&gt;しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p&gt;
-&lt;h3 id=&#34;3-unityでhumanoidとして扱えるモデルデータを用意します&#34;&gt;3.UnityでHumanoidとして扱えるモデルデータを用意します&lt;/h3&gt;
-&lt;p&gt;FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、&lt;strong&gt;必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください&lt;/strong&gt;。後述しますが、&lt;strong&gt;VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code&gt;Select&lt;/code&gt;をクリックして、&lt;code&gt;Materials&lt;/code&gt;をクリックします。&lt;code&gt;Location&lt;/code&gt;を&lt;code&gt;Use External Materials（Legacy)&lt;/code&gt;に設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/SetAsExternalMaterialsLegacy.png&#34; alt=&#34;SetAsExternalMaterialsLegacy&#34; width=&#34;900&#34; /&gt;
-&lt;p&gt;次に、&lt;code&gt;Rig&lt;/code&gt;をクリックして&lt;code&gt;Animation Type&lt;/code&gt;を&lt;code&gt;Humanoid&lt;/code&gt;に設定し、&lt;code&gt;Configure&lt;/code&gt;ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code&gt;Save&lt;/code&gt;をクリックして保存します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/SetModelAsHumanoid.png&#34; alt=&#34;SetModelAsHumanoid&#34; width=&#34;900&#34; /&gt;
-&lt;p&gt;これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。この状況では、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code&gt;Mapping&lt;/code&gt;をクリックし、&lt;code&gt;clear&lt;/code&gt;をクリックして&lt;code&gt;Automap&lt;/code&gt;をクリックします。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34; /&gt;
-&lt;p&gt;例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;前髪に顎ボーンが割り当てられる&lt;/li&gt;
-&lt;li&gt;目のハイライトに目ボーンが割り当てられる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;上記のように、適切な対応するコンポーネントを手動で割り当てることで修正できます（たとえば、eye_light_Lはeye_Lに置き換えられます）。ボーンマッピングに問題がない場合は、&lt;code&gt;Done&lt;/code&gt;ボタンをクリックして次の手順に進みます。&lt;/p&gt;
-&lt;h3 id=&#34;4-モデルデータを調整し-メニューから一度vrmをエクスポートする-正規化&#34;&gt;4.モデルデータを調整し、メニューから一度VRMをエクスポートする（※正規化）&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene.png&#34; /&gt;
-&lt;p&gt;ヒエラルキーウィンドウでモデルをクリックすると、このモデルにアタッチされたサブコンポーネントが表示されます。それらサブコンポーネントのいずれかをクリックしてください。以下の項目を確認して調整します：&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/initial_position_rotation.jpg&#34; alt=&#34;initial_position_rotation&#34; width=&#34;800&#34; /&gt;
-&lt;ul&gt;
-&lt;li&gt;モデルの位置
-&lt;ul&gt;
-&lt;li&gt;モデルは原点に位置する&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;モデルのスケール
-&lt;ul&gt;
-&lt;li&gt;1.0 = 1m&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;モデルの向き
-&lt;ul&gt;
-&lt;li&gt;モデルは+Zの方向に向いている&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;質感（マテリアル/シェーダ）
-&lt;ul&gt;
-&lt;li&gt;以下のシェーダの中から使用することを&lt;strong&gt;強く推奨&lt;/strong&gt;します。
-&lt;ul&gt;
-&lt;li&gt;PBR
-&lt;ul&gt;
-&lt;li&gt;Standardシェーダー(Unity標準)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Unlit系シェーダー
-&lt;ul&gt;
-&lt;li&gt;VRM/UnlitTexture (UnityのUnit/Textureと同じ)&lt;/li&gt;
-&lt;li&gt;VRM/UnlitCutout (UnityのUnit/Cutoutと同じ)&lt;/li&gt;
-&lt;li&gt;VRM/UnlitTransparent (UnityのUnit/Transparentと同じ)&lt;/li&gt;
-&lt;li&gt;VRM/UnlitTransparentZWrite (アルファブレンディングかつZWriteありです。実体のある半透明物への適用を想定しています)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Toonシェーダー
-&lt;ul&gt;
-&lt;li&gt;VRM/MToon (照明対応トゥーンシェーダ）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/shader_option.jpg&#34; alt=&#34;shader_option&#34; width=&#34;800&#34; /&gt;
-&lt;p&gt;マテリアルが割り当てられていない場合、または変更する場合は、&lt;code&gt;Element X&lt;/code&gt;の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として&lt;code&gt;VRM/MToon&lt;/code&gt;を選択します。詳細については、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/mtoon/&#34;&gt;MToon&lt;/a&gt;を参照してください。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/MToonMaterialSetting.png&#34; alt=&#34;MToonMaterialSetting&#34; width=&#34;700&#34; /&gt;
-&lt;p&gt;調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、&lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;からエクスポートします。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;&lt;code&gt;Author&lt;/code&gt;欄に名前を入力し、&lt;code&gt;Export&lt;/code&gt;を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで&lt;code&gt;Assets&lt;/code&gt;フォルダに保存されます。
-詳しくは&lt;a href=&#34;https://vrm.dev/docs/univrm/export/univrm_export/&#34;&gt;UniVRMのエクスポート&lt;/a&gt;をご覧ください。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
-&lt;ul&gt;
-&lt;li&gt;Force T Pose
-&lt;ul&gt;
-&lt;li&gt;回転・スケールの除去前にモデルを強制的に&lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt;にします。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Pose Freeze
-&lt;ul&gt;
-&lt;li&gt;回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように&lt;strong&gt;モデルを正規化する処理&lt;/strong&gt;です。&lt;strong&gt;初回は必ずチェックを入れてください&lt;/strong&gt;。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;T-Poseとモデルの正規化の詳細は&lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/t_pose/&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;5-先ほどエクスポートしたvrmを再度unity上に読み込む&#34;&gt;5.先ほどエクスポートしたVRMを再度Unity上に読み込む&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab.png&#34; /&gt;
-&lt;p&gt;&lt;strong&gt;4.で出力したVRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong&gt;だけで、VRMファイルがインポートされ&lt;strong&gt;モデルデータのPrefabが生成されます&lt;/strong&gt;。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene2.png&#34; /&gt;
-&lt;p&gt;さきほど4.で配置したモデルデータをいったん消し、&lt;strong&gt;VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong&gt;。
-すると、メッシュなどが正規化されたモデルデータが表示されます。&lt;/p&gt;
-&lt;h3 id=&#34;6-vrm独自の設定を行う&#34;&gt;6.VRM独自の設定を行う&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34; /&gt;
-&lt;p&gt;5.で読み込まれたモデルデータをHierarchyで選択すると、&lt;strong&gt;インスペクタにさまざまな設定項目&lt;/strong&gt;があらわれます。また、&lt;strong&gt;secondaryには揺れ物の設定&lt;/strong&gt;が入っています。これらを設定していきます。
-&lt;strong&gt;少なくとも、タイトル・作者・ライセンス情報&lt;/strong&gt;は埋めるようにしてください。&lt;strong&gt;特にライセンス情報は重要です！&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Information（一般情報）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Title
-&lt;ul&gt;
-&lt;li&gt;アバターモデル名称。自由入力&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Version
-&lt;ul&gt;
-&lt;li&gt;アバターモデルのバージョン。自由入力&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Author
-&lt;ul&gt;
-&lt;li&gt;作者名&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Contact Information
-&lt;ul&gt;
-&lt;li&gt;作者への連絡先&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Reference
-&lt;ul&gt;
-&lt;li&gt;アバターの「親作品」となるようなものがあれば、その情報&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;License（使用許諾・ライセンス情報）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;アバターの人格に関する許諾範囲 (Personation / Characterization Permission)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;アバターに人格を与えることの許諾範囲 (A person who can perform with this avatar)
-&lt;ul&gt;
-&lt;li&gt;アバターを操作することはアバター作者にのみ許される(Only Author)&lt;/li&gt;
-&lt;li&gt;明確に許可された人限定(Explicitly Licensed Person)&lt;/li&gt;
-&lt;li&gt;全員に許可(Everyone)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;商用利用の許可(For commercial use)
-&lt;ul&gt;
-&lt;li&gt;不許可(Disallow)&lt;/li&gt;
-&lt;li&gt;許可(Allow)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;その他のライセンス条件(Other License Url)
-&lt;ul&gt;
-&lt;li&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ライセンスタイプ(License Type)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;再配布禁止(Redistribution Prohibited)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/publicdomain/zero/1.0/deed.ja&#34;&gt;著作権放棄(CC0)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/deed.ja&#34;&gt;Creative Commons CC BYライセンス(CC_BY)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/deed.ja&#34;&gt;Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/deed.ja&#34;&gt;Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja&#34;&gt;Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nd/4.0/deed.ja&#34;&gt;Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja&#34;&gt;Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;その他(Other)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;その他ライセンス条件(Other License Url)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Unityバージョン2018.3から、インポートセッティングのインターフェースは少し変わったのでご注意してください:&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/NewInterfaceForPrefab.png&#34; alt=&#34;NewInterfaceForPrefab&#34; width=&#34;700&#34; /&gt;
-&lt;p&gt;ほかに、&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/&#34;&gt;表情や口パクの設定（BlendShape）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/&#34;&gt;一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/lookat/univrm_lookat/&#34;&gt;視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/&#34;&gt;揺れ物（SpringBone/SpringBoneCollider）の設定&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;がありますので必要に応じて設定していきます。&lt;/p&gt;
-&lt;h3 id=&#34;7-unity上で再生し挙動を確認する-必要であれば&#34;&gt;7.Unity上で再生し挙動を確認する（※必要であれば）&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;AnimationClip/AnimationController&lt;/code&gt;をセットしたり、&lt;code&gt;VRMLookAtHead&lt;/code&gt;の&lt;code&gt;Target&lt;/code&gt;に&lt;a href=&#34;https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target&#34;&gt;GameObject&lt;/a&gt;をセットしたり（視線がどこを向くかの設定）、&lt;code&gt;Head&lt;/code&gt;欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/LookAtTarget.png&#34; alt=&#34;LookAtTarget&#34; width=&#34;900&#34; /&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/TargetTracking.png&#34; alt=&#34;TargetTracking&#34; width=&#34;500&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。&lt;a href=&#34;https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy&#34;&gt;BlendShape&lt;/a&gt;をセットアップした後、&lt;code&gt;Add Component&lt;/code&gt;から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeProxy.png&#34; alt=&#34;BlendShapeProxy&#34; width=&#34;650&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;BlendShapeAvatar&lt;/code&gt;フィールドにダブルクリックして、3Dモデルの表情を設定します&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/AddExpressionScripts.png&#34; alt=&#34;AddExpressionScripts&#34; width=&#34;650&#34; /&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/InspectorFaceView.png&#34; alt=&#34;InspectorFaceView&#34; width=&#34;400&#34; /&gt;
-&lt;/p&gt;
-&lt;h3 id=&#34;8-vrmファイルを出力する&#34;&gt;8.VRMファイルを出力する&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから&lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;を実行します&lt;/p&gt;
-&lt;p&gt;このとき、&lt;strong&gt;「Force T Pose」と「Pose Freeze」のチェックは外してください&lt;/strong&gt;。このチェックは初回（正規化）のときのみ使用します。
-ファイル名を指定してVRMファイルを出力します&lt;/p&gt;
-&lt;h3 id=&#34;完成&#34;&gt;完成！&lt;/h3&gt;
-&lt;p&gt;これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！&lt;/p&gt;</description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
-&lt;h2 id=&#34;vrmファイルの読み込みかた&#34;&gt;VRMファイルの読み込みかた&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMTest/releases&#34;&gt;UniVRMTest/releases&lt;/a&gt;からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
-また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href=&#34;https://vrm.dev/vrm_applications/#ビューア&#34;&gt;こちら&lt;/a&gt;をご覧ください。&lt;/p&gt;
-&lt;h3 id=&#34;1-unityで空のプロジェクトを作る&#34;&gt;1.Unityで空のプロジェクトを作る&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/unity_new_project.png&#34; /&gt;
-&lt;p&gt;Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p&gt;
-&lt;h3 id=&#34;2-unityにunivrmをインストール&#34;&gt;2.UnityにUniVRMをインストール&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34; /&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;UniVRM/releases&lt;/a&gt;から最新のunitypackageをダウンロードし、&lt;code&gt;Assets/VRM&lt;/code&gt;にインストールします。
-&lt;strong&gt;既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨&lt;/strong&gt;しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p&gt;
-&lt;h3 id=&#34;3-vrmファイルをunity上に読み込む&#34;&gt;3.VRMファイルをUnity上に読み込む&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab.png&#34; /&gt;
-&lt;p&gt;&lt;strong&gt;VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong&gt;だけで、VRMファイルがインポートされ&lt;strong&gt;モデルデータのPrefabが生成されます&lt;/strong&gt;。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene2.png&#34; /&gt;
-&lt;p&gt;&lt;strong&gt;VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong&gt;。
-すると、モデルデータが表示されます。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34; /&gt;
-&lt;p&gt;読み込まれたモデルデータをHierarchyで選択すると、&lt;strong&gt;インスペクタに各種情報が表示されます&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;vrmファイルの読み込みかた-簡易版&#34;&gt;VRMファイルの読み込みかた（簡易版）&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_3dbuilder.png&#34; /&gt;
-&lt;p&gt;～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong&gt;Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong&gt;。（ただしVRM独自の設定は反映されません）&lt;/p&gt;
-&lt;h2 id=&#34;vrmファイルを投稿する-探す&#34;&gt;VRMファイルを投稿する・探す&lt;/h2&gt;
-&lt;p&gt;現在、&lt;a href=&#34;https://seed.online/&#34;&gt;The Seed Online&lt;/a&gt;、&lt;a href=&#34;https://hub.vroid.com/&#34;&gt;VRoid Hub&lt;/a&gt;及び&lt;a href=&#34;https://3d.nicovideo.jp/&#34;&gt;ニコニ立体&lt;/a&gt;でVRMファイルの投稿ができます。
-ニコニ立体では&lt;a href=&#34;https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM&#34;&gt;こちら&lt;/a&gt;から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p&gt;
-&lt;p&gt;なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href=&#34;https://virtualcast.jp/&#34;&gt;バーチャルキャスト&lt;/a&gt;から利用できます。&lt;/p&gt;</description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
-&lt;h2 id=&#34;3dキャラクター投稿プラットフォーム&#34;&gt;3Dキャラクター投稿プラットフォーム&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://seed.online/&#34;&gt;ザ・シードオンライン&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://3d.nicovideo.jp/&#34;&gt;ニコニ立体&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hub.vroid.com/&#34;&gt;VRoid Hub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;プラグイン&#34;&gt;プラグイン&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://vrm.dev/univrm/&#34;&gt;UniVRM&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityエディタ拡張, Unityライブラリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/saturday06/VRM_IMPORTER_for_Blender2_8&#34;&gt;VRM_IMPORTER&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Blenderアドオン&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/ruyo/VRM4U&#34;&gt;VRM4U&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;UnrealEngineプラグイン&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/kashikacojp/glTF-Maya-Exporter&#34;&gt;glTF-Maya-Exporter&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Mayaスクリプト&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://pokemori.booth.pm/items/1025226&#34;&gt;VRM Converter for VRChat&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityエディタ拡張&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://pokemori.booth.pm/items/1788660&#34;&gt;CopyVRMSettings.cs&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityエディタ拡張&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;キャラメイクツール&#34;&gt;キャラメイクツール&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://vroid.com/studio/&#34;&gt;VRoid Studio&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, macOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://fantia.jp/fanclubs/10552&#34;&gt;セシル変身アプリ&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, macOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;配信ツール&#34;&gt;配信ツール&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://sites.google.com/view/vdraw/&#34;&gt;VDRAW&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://campaign.showroom-live.com/showroom-v/&#34;&gt;SHOWROOM V&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://sites.google.com/site/vhitogata/&#34;&gt;Hitogata&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://3tene.com/&#34;&gt;3tene&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, macOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://store.steampowered.com/app/870820/Wakaru_ver_beta/&#34;&gt;Wakaru&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://sh-akira.github.io/VirtualMotionCapture/&#34;&gt;バーチャルモーションキャプチャー&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://facevtuber.com/&#34;&gt;FaceVTuber&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Google Chrome&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/m2wasabi/LiveAvatar&#34;&gt;LiveAvatar&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;HTC VIVE&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://luppet.appspot.com/&#34;&gt;Luppet&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows + Leap Motion&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://apps.apple.com/jp/app/vear/id1490697369&#34;&gt;vear&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/xelloss120/CharWebCam&#34;&gt;CharWebCam&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://malaybaku.github.io/VMagicMirror/&#34;&gt;VMagicMirror&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://2dr.info/&#34;&gt;2DR&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;メタバース&#34;&gt;メタバース&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://virtualcast.jp/&#34;&gt;バーチャルキャスト&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://cluster.mu/&#34;&gt;cluster&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;PCVR, Windows, macOS, iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://biscrat.booth.pm/items/1193414&#34;&gt;Clarie&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/exokitxr/avatars&#34;&gt;Exokit&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, macOS, Linux, VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;ゲームなど&#34;&gt;ゲームなど&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://wandv.jp/seiya/&#34;&gt;SEIYA&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://orenodinner.booth.pm/items/952450&#34;&gt;BONFIRE~焚き火~&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Oculus Go&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/&#34;&gt;つんつんVR&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.mediaplex.co.jp/korokoro/&#34;&gt;コロコロシステム&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Oculus Rift&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://n-mattun.booth.pm/&#34;&gt;パイロットクロス&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;ビューア&#34;&gt;ビューア&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://naby.booth.pm/items/990663&#34;&gt;Vワールド&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/virtual-cast/babylon-vrm-loader/&#34;&gt;Babylon VRM Viewer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Babylon.js拡張&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/pixiv/three-vrm/&#34;&gt;Three-VRM&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;three.js拡張&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://booooooh.booth.pm/items/1033823&#34;&gt;VPocket&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Android, iOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://w.atwiki.jp/beamman/&#34;&gt;VRMビュアー&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://vrm-viewer.yukimochi.io/&#34;&gt;VRM Viewer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Webブラウザ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/magicien/VRMQuickLook&#34;&gt;VRMQuickLook&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;macOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://fantom1x.blog130.fc2.com/blog-entry-309.html&#34;&gt;VRM Live Viewer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/kirurobo/UniWinApi&#34;&gt;UniWinApi Example project&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityライブラリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://120byte.booth.pm/items/1099618&#34;&gt;VRMお人形遊び&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/m2wasabi/KinectV2VRM&#34;&gt;KinectV2VRM&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityライブラリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://www.vrai.jp/vr_mocuvrm.html&#34;&gt;MocuMocuVRM&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR, Looking Glass&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://akarimichi.github.io/vrm-display-releases/&#34;&gt;VRM Display&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;その他のvrm対応アプリ&#34;&gt;その他のVRM対応アプリ&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://app.famitsu.com/gametitle/8356/&#34;&gt;Vタビ&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://vismuth.com/&#34;&gt;Vismuth&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Android, iOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit&#34;&gt;AI4Animation&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityライブラリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://bnut.jp/vstamp&#34;&gt;Vスタンプ&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/m2wasabi/VRMLoaderUI&#34;&gt;VRMLoaderUI&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Unityライブラリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://deatrathias.net/TW/&#34;&gt;TRACKING WORLD&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;内部的にvrmを活用しているサービス&#34;&gt;内部的にVRMを活用しているサービス&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;アプリケーション&lt;/th&gt;
-&lt;th&gt;プラットフォーム&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://vkatsu.jp/&#34;&gt;Vカツ&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://customcast.jp/&#34;&gt;カスタムキャスト&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://reality.wrightflyer.net/&#34;&gt;REALITY&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS, Android&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.puppemoji.com/&#34;&gt;パペ文字&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;iOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://materializer.co/lab/mayalive&#34;&gt;メイアライブオーダーメイド版&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows, macOS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 17 Sep 2019 17:26:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+&lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
+&lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
+&lt;p>というのも…&lt;/p>
+&lt;ul>
+&lt;li>3Dモデルを作成したクリエイターや使用したモデリングツールによって「作法」が違いデータの状況がひとつひとつ異なっている
+&lt;ul>
+&lt;li>座標系が異なっていたり、スケールが異なっていたり、初期姿勢が異なっていたり、表情の表現方法が異なっていたり…&lt;/li>
+&lt;li>もちろん、骨（ボーン）の入れ方も状況によって異なっていたり&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>3Dモデルデータを取り扱うフォーマットは、各社各様で仕様が必要以上に複雑であったり、必要な情報が足りなかったりしている
+&lt;ul>
+&lt;li>対応ソフトが多い「FBXファイル」はアプリケーションごとに読めたり読めなかったり。どのアプリケーションのどのバージョンで出力したFBXなのか…というのを気にしたかたも多いと思います&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>3Dモデルデータを「アバターとして使用する」という観点で見ると、必要な情報が整備されていない
+&lt;ul>
+&lt;li>たとえば一人称視点を実現するための視点の位置はどこか、一人称視点から表示するためには頭部の表示を消さなければならないが、具体的にはどこを消すのか、など&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>VRでのアバター表現が急速に盛り上がるなか、こういった状況が続くとアプリケーション開発者にとっても、3Dモデルクリエイターにとっても二度手間三度手間になってしまいます。
+この状況を改善するために&lt;/p>
+&lt;ul>
+&lt;li>「人型のキャラクターやアバター」において&lt;/li>
+&lt;li>細かいモデルデータの差違を吸収・統一し&lt;/li>
+&lt;li>アプリケーション側の取り扱いを簡単にする&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong>ものです。&lt;/p>
+&lt;hr>
+&lt;h2 id="vrmで何ができるの">VRMで何ができるの？&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
+&lt;p>&lt;strong>VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong>
+対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p>
+&lt;ul>
+&lt;li>VRM対応のキャラクタ製作ツールで自分のアバターをつくる&lt;/li>
+&lt;li>自分のアバターで生放送をしていたら、友達も生放送をはじめたので友達の放送に凸しに行った&lt;/li>
+&lt;li>放送後そのままVRゲームを起動、自分のアバターでVR世界を探索&lt;/li>
+&lt;li>ゲームに飽きたのでVR世界のチャットへ移動。同じアバターで友達と遊ぶ&lt;/li>
+&lt;li>翌日はVR勉強会にVR参加。もちろんアバターはいつもの姿で&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong>&lt;/p>
+&lt;p>生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p>
+&lt;hr>
+&lt;h2 id="vrmの特徴">VRMの特徴&lt;/h2>
+&lt;p>VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong>UnityでVRMファイルを読み書きする標準実装が提供されます&lt;/strong>が、&lt;strong>フォーマット自体はプラットフォーム非依存&lt;/strong>であり他エンジンや環境でも取り扱うことが可能です。&lt;/p>
+&lt;ul>
+&lt;li>プラットフォーム非依存で人型のキャラクター3Dモデルデータを取り扱うことが可能&lt;/li>
+&lt;li>3D標準フォーマット glTF2.0をベースとして、人型モデルを取り扱うための制約と拡張を加えたフォーマット。標準フォーマットをベースとしているため実装も容易&lt;/li>
+&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能&lt;/li>
+&lt;li>スケール（1.00 = 1m）・座標系と向き（Y-up, -Z方向向き）・骨の構造（Unity Humanoid準拠構成, Tスタンス, 各骨にローカルの回転などを入れない）などについて標準の構成が決められておりモデリングツールによる差違の影響を受けない&lt;/li>
+&lt;li>Blend Shapeやマテリアルの透明度など「キャラクターの表情」を取り扱うためにはさまざまな技法が使われるが、その技法の差違をVRM側で吸収し統一したAPIで操作できる&lt;/li>
+&lt;li>VRでのアバター利用のための、**「一人称視点再現のための情報」**に対応。&lt;/li>
+&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能に&lt;/li>
+&lt;li>標準実装としてのマテリアル（シェーダ）を用意。標準的なPBRだけでなくトゥーンシェーディングやUnlitレンダリングを設定可能&lt;/li>
+&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや&lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong>も内包可能&lt;/li>
+&lt;/ul>
+&lt;p>VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、&lt;strong>自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong>、ということも行われることになります。
+この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p>
+&lt;ul>
+&lt;li>モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li>
+&lt;/ul>
+&lt;p>のほかに&lt;/p>
+&lt;ul>
+&lt;li>モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li>
+&lt;/ul>
+&lt;p>を&lt;strong>ファイルに設定できる&lt;/strong>など、VR時代を想定したフォーマットとなっています。&lt;/p>
+&lt;hr>
+&lt;h2 id="vrmファイルに設定できるライセンスデータ">VRMファイルに設定できるライセンスデータ&lt;/h2>
+&lt;h3 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3>
+&lt;h4 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(Only Author)&lt;/li>
+&lt;li>明確に許可された人限定(Explicitly Licensed Person)&lt;/li>
+&lt;li>全員に許可(Everyone)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて暴力表現を演じることの許可violent-acts-using-this-avatar">このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて性的表現を演じることの許可sexuality-acts-using-this-avatar">このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
+&lt;h3 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3>
+&lt;h4 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h4>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
+&lt;h2 id="vrmファイルのつくりかた既存3dモデルからのコンバート">VRMファイルのつくりかた（既存3Dモデルからのコンバート）&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/VRM_changeVRM_jp.png" alt="vrm workflow" />
+&lt;p>VRMファイルをつくるためには、&lt;a href="https://unity3d.com/jp">Unity&lt;/a>と&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を使用します。
+おおまかな作業のながれは以下のようになります&lt;/p>
+&lt;ol>
+&lt;li>Unityで3Dモデルデータと&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する&lt;/li>
+&lt;li>一度UnityからVRMファイルを出力する（※正規化と呼びます）&lt;/li>
+&lt;li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
+&lt;ul>
+&lt;li>場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。&lt;/li>
+&lt;/ol>
+&lt;p>ポイントは、 &lt;strong>すでに作られた3DモデルをUnity上で調整し、Unityから出力する&lt;/strong>ということと、&lt;strong>一度VRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う&lt;/strong>ところとなります。&lt;/p>
+&lt;hr>
+&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
+&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" />
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>にインストールします。
+&lt;strong>既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨&lt;/strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
+&lt;h3 id="3unityでhumanoidとして扱えるモデルデータを用意します">3.UnityでHumanoidとして扱えるモデルデータを用意します&lt;/h3>
+&lt;p>FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、&lt;strong>必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください&lt;/strong>。後述しますが、&lt;strong>VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください&lt;/strong>。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
+&lt;/p>
+&lt;p>インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code>Select&lt;/code>をクリックして、&lt;code>Materials&lt;/code>をクリックします。&lt;code>Location&lt;/code>を&lt;code>Use External Materials（Legacy)&lt;/code>に設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/SetAsExternalMaterialsLegacy.png" alt="SetAsExternalMaterialsLegacy" width="900" />
+&lt;p>次に、&lt;code>Rig&lt;/code>をクリックして&lt;code>Animation Type&lt;/code>を&lt;code>Humanoid&lt;/code>に設定し、&lt;code>Configure&lt;/code>ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code>Save&lt;/code>をクリックして保存します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
+&lt;p>これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。この状況では、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code>Mapping&lt;/code>をクリックし、&lt;code>clear&lt;/code>をクリックして&lt;code>Automap&lt;/code>をクリックします。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
+&lt;/p>
+&lt;p>ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/fix_eye.png" />
+&lt;p>例&lt;/p>
+&lt;ul>
+&lt;li>前髪に顎ボーンが割り当てられる&lt;/li>
+&lt;li>目のハイライトに目ボーンが割り当てられる&lt;/li>
+&lt;/ul>
+&lt;p>上記のように、適切な対応するコンポーネントを手動で割り当てることで修正できます（たとえば、eye_light_Lはeye_Lに置き換えられます）。ボーンマッピングに問題がない場合は、&lt;code>Done&lt;/code>ボタンをクリックして次の手順に進みます。&lt;/p>
+&lt;h3 id="4モデルデータを調整しメニューから一度vrmをエクスポートする正規化">4.モデルデータを調整し、メニューから一度VRMをエクスポートする（※正規化）&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene.png" />
+&lt;p>ヒエラルキーウィンドウでモデルをクリックすると、このモデルにアタッチされたサブコンポーネントが表示されます。それらサブコンポーネントのいずれかをクリックしてください。以下の項目を確認して調整します：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/initial_position_rotation.jpg" alt="initial_position_rotation" width="800" />
+&lt;ul>
+&lt;li>モデルの位置
+&lt;ul>
+&lt;li>モデルは原点に位置する&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>モデルのスケール
+&lt;ul>
+&lt;li>1.0 = 1m&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>モデルの向き
+&lt;ul>
+&lt;li>モデルは+Zの方向に向いている&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>質感（マテリアル/シェーダ）
+&lt;ul>
+&lt;li>以下のシェーダの中から使用することを&lt;strong>強く推奨&lt;/strong>します。
+&lt;ul>
+&lt;li>PBR
+&lt;ul>
+&lt;li>Standardシェーダー(Unity標準)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Unlit系シェーダー
+&lt;ul>
+&lt;li>VRM/UnlitTexture (UnityのUnit/Textureと同じ)&lt;/li>
+&lt;li>VRM/UnlitCutout (UnityのUnit/Cutoutと同じ)&lt;/li>
+&lt;li>VRM/UnlitTransparent (UnityのUnit/Transparentと同じ)&lt;/li>
+&lt;li>VRM/UnlitTransparentZWrite (アルファブレンディングかつZWriteありです。実体のある半透明物への適用を想定しています)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Toonシェーダー
+&lt;ul>
+&lt;li>VRM/MToon (照明対応トゥーンシェーダ）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/shader_option.jpg" alt="shader_option" width="800" />
+&lt;p>マテリアルが割り当てられていない場合、または変更する場合は、&lt;code>Element X&lt;/code>の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として&lt;code>VRM/MToon&lt;/code>を選択します。詳細については、&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">MToon&lt;/a>を参照してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/MToonMaterialSetting.png" alt="MToonMaterialSetting" width="700" />
+&lt;p>調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>からエクスポートします。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;p>&lt;code>Author&lt;/code>欄に名前を入力し、&lt;code>Export&lt;/code>を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで&lt;code>Assets&lt;/code>フォルダに保存されます。
+詳しくは&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">UniVRMのエクスポート&lt;/a>をご覧ください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>Force T Pose
+&lt;ul>
+&lt;li>回転・スケールの除去前にモデルを強制的に&lt;a href="https://vrm.dev/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a>にします。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Pose Freeze
+&lt;ul>
+&lt;li>回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように&lt;strong>モデルを正規化する処理&lt;/strong>です。&lt;strong>初回は必ずチェックを入れてください&lt;/strong>。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>T-Poseとモデルの正規化の詳細は&lt;a href="https://vrm.dev/docs/univrm/humanoid/t_pose/">こちら&lt;/a>。&lt;/p>
+&lt;h3 id="5先ほどエクスポートしたvrmを再度unity上に読み込む">5.先ほどエクスポートしたVRMを再度Unity上に読み込む&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;p>&lt;strong>4.で出力したVRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>さきほど4.で配置したモデルデータをいったん消し、&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
+すると、メッシュなどが正規化されたモデルデータが表示されます。&lt;/p>
+&lt;h3 id="6vrm独自の設定を行う">6.VRM独自の設定を行う&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>5.で読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタにさまざまな設定項目&lt;/strong>があらわれます。また、&lt;strong>secondaryには揺れ物の設定&lt;/strong>が入っています。これらを設定していきます。
+&lt;strong>少なくとも、タイトル・作者・ライセンス情報&lt;/strong>は埋めるようにしてください。&lt;strong>特にライセンス情報は重要です！&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Information（一般情報）&lt;/p>
+&lt;ul>
+&lt;li>Title
+&lt;ul>
+&lt;li>アバターモデル名称。自由入力&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Version
+&lt;ul>
+&lt;li>アバターモデルのバージョン。自由入力&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Author
+&lt;ul>
+&lt;li>作者名&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Contact Information
+&lt;ul>
+&lt;li>作者への連絡先&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Reference
+&lt;ul>
+&lt;li>アバターの「親作品」となるようなものがあれば、その情報&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>License（使用許諾・ライセンス情報）&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>アバターの人格に関する許諾範囲 (Personation / Characterization Permission)&lt;/p>
+&lt;ul>
+&lt;li>アバターに人格を与えることの許諾範囲 (A person who can perform with this avatar)
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(Only Author)&lt;/li>
+&lt;li>明確に許可された人限定(Explicitly Licensed Person)&lt;/li>
+&lt;li>全員に許可(Everyone)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>商用利用の許可(For commercial use)
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>その他のライセンス条件(Other License Url)
+&lt;ul>
+&lt;li>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ライセンスタイプ(License Type)&lt;/p>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>その他ライセンス条件(Other License Url)&lt;/p>
+&lt;ul>
+&lt;li>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Unityバージョン2018.3から、インポートセッティングのインターフェースは少し変わったのでご注意してください:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/NewInterfaceForPrefab.png" alt="NewInterfaceForPrefab" width="700" />
+&lt;p>ほかに、&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">表情や口パクの設定（BlendShape）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">揺れ物（SpringBone/SpringBoneCollider）の設定&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>がありますので必要に応じて設定していきます。&lt;/p>
+&lt;h3 id="7unity上で再生し挙動を確認する必要であれば">7.Unity上で再生し挙動を確認する（※必要であれば）&lt;/h3>
+&lt;p>&lt;code>AnimationClip/AnimationController&lt;/code>をセットしたり、&lt;code>VRMLookAtHead&lt;/code>の&lt;code>Target&lt;/code>に&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target">GameObject&lt;/a>をセットしたり（視線がどこを向くかの設定）、&lt;code>Head&lt;/code>欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
+&lt;/p>
+&lt;p>モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>をセットアップした後、&lt;code>Add Component&lt;/code>から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>BlendShapeAvatar&lt;/code>フィールドにダブルクリックして、3Dモデルの表情を設定します&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;br>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;br>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="8vrmファイルを出力する">8.VRMファイルを出力する&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;p>調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>を実行します&lt;/p>
+&lt;p>このとき、&lt;strong>「Force T Pose」と「Pose Freeze」のチェックは外してください&lt;/strong>。このチェックは初回（正規化）のときのみ使用します。
+ファイル名を指定してVRMファイルを出力します&lt;/p>
+&lt;h3 id="完成">完成！&lt;/h3>
+&lt;p>これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！&lt;/p></description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
+&lt;h2 id="vrmファイルの読み込みかた">VRMファイルの読み込みかた&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
+また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>をご覧ください。&lt;/p>
+&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
+&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" />
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>にインストールします。
+&lt;strong>既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨&lt;/strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
+&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
+すると、モデルデータが表示されます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタに各種情報が表示されます&lt;/strong>。&lt;/p>
+&lt;h2 id="vrmファイルの読み込みかた簡易版">VRMファイルの読み込みかた（簡易版）&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>。（ただしVRM独自の設定は反映されません）&lt;/p>
+&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
+&lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
+ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
+&lt;h2 id="3dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://seed.online/">ザ・シードオンライン&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="プラグイン">プラグイン&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://vrm.dev/univrm/">UniVRM&lt;/a>&lt;/td>
+&lt;td>Unityエディタ拡張, Unityライブラリ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/saturday06/VRM_IMPORTER_for_Blender2_8">VRM_IMPORTER&lt;/a>&lt;/td>
+&lt;td>Blenderアドオン&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/ruyo/VRM4U">VRM4U&lt;/a>&lt;/td>
+&lt;td>UnrealEngineプラグイン&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/kashikacojp/glTF-Maya-Exporter">glTF-Maya-Exporter&lt;/a>&lt;/td>
+&lt;td>Mayaスクリプト&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://pokemori.booth.pm/items/1025226">VRM Converter for VRChat&lt;/a>&lt;/td>
+&lt;td>Unityエディタ拡張&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://pokemori.booth.pm/items/1788660">CopyVRMSettings.cs&lt;/a>&lt;/td>
+&lt;td>Unityエディタ拡張&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="キャラメイクツール">キャラメイクツール&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://vroid.com/studio/">VRoid Studio&lt;/a>&lt;/td>
+&lt;td>Windows, macOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://fantia.jp/fanclubs/10552">セシル変身アプリ&lt;/a>&lt;/td>
+&lt;td>Windows, macOS&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="配信ツール">配信ツール&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://sites.google.com/view/vdraw/">VDRAW&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://campaign.showroom-live.com/showroom-v/">SHOWROOM V&lt;/a>&lt;/td>
+&lt;td>iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://sites.google.com/site/vhitogata/">Hitogata&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://3tene.com/">3tene&lt;/a>&lt;/td>
+&lt;td>Windows, macOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/870820/Wakaru_ver_beta/">Wakaru&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://sh-akira.github.io/VirtualMotionCapture/">バーチャルモーションキャプチャー&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://facevtuber.com/">FaceVTuber&lt;/a>&lt;/td>
+&lt;td>Google Chrome&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/m2wasabi/LiveAvatar">LiveAvatar&lt;/a>&lt;/td>
+&lt;td>HTC VIVE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://luppet.appspot.com/">Luppet&lt;/a>&lt;/td>
+&lt;td>Windows + Leap Motion&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://apps.apple.com/jp/app/vear/id1490697369">vear&lt;/a>&lt;/td>
+&lt;td>iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/xelloss120/CharWebCam">CharWebCam&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://malaybaku.github.io/VMagicMirror/">VMagicMirror&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://2dr.info/">2DR&lt;/a>&lt;/td>
+&lt;td>iOS, Android&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="メタバース">メタバース&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://cluster.mu/">cluster&lt;/a>&lt;/td>
+&lt;td>PCVR, Windows, macOS, iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://biscrat.booth.pm/items/1193414">Clarie&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/exokitxr/avatars">Exokit&lt;/a>&lt;/td>
+&lt;td>Windows, macOS, Linux, VR&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="ゲームなど">ゲームなど&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://wandv.jp/seiya/">SEIYA&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://orenodinner.booth.pm/items/952450">BONFIRE~焚き火~&lt;/a>&lt;/td>
+&lt;td>Oculus Go&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/">つんつんVR&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.mediaplex.co.jp/korokoro/">コロコロシステム&lt;/a>&lt;/td>
+&lt;td>Oculus Rift&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://n-mattun.booth.pm/">パイロットクロス&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="ビューア">ビューア&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://naby.booth.pm/items/990663">Vワールド&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/virtual-cast/babylon-vrm-loader/">Babylon VRM Viewer&lt;/a>&lt;/td>
+&lt;td>Babylon.js拡張&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/pixiv/three-vrm/">Three-VRM&lt;/a>&lt;/td>
+&lt;td>three.js拡張&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://booooooh.booth.pm/items/1033823">VPocket&lt;/a>&lt;/td>
+&lt;td>Android, iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://w.atwiki.jp/beamman/">VRMビュアー&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://vrm-viewer.yukimochi.io/">VRM Viewer&lt;/a>&lt;/td>
+&lt;td>Webブラウザ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/magicien/VRMQuickLook">VRMQuickLook&lt;/a>&lt;/td>
+&lt;td>macOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="http://fantom1x.blog130.fc2.com/blog-entry-309.html">VRM Live Viewer&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/kirurobo/UniWinApi">UniWinApi Example project&lt;/a>&lt;/td>
+&lt;td>Unityライブラリ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://120byte.booth.pm/items/1099618">VRMお人形遊び&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/m2wasabi/KinectV2VRM">KinectV2VRM&lt;/a>&lt;/td>
+&lt;td>Unityライブラリ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="http://www.vrai.jp/vr_mocuvrm.html">MocuMocuVRM&lt;/a>&lt;/td>
+&lt;td>Windows VR, Looking Glass&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://akarimichi.github.io/vrm-display-releases/">VRM Display&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="その他のvrm対応アプリ">その他のVRM対応アプリ&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://app.famitsu.com/gametitle/8356/">Vタビ&lt;/a>&lt;/td>
+&lt;td>iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://vismuth.com/">Vismuth&lt;/a>&lt;/td>
+&lt;td>Android, iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit">AI4Animation&lt;/a>&lt;/td>
+&lt;td>Unityライブラリ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://bnut.jp/vstamp">Vスタンプ&lt;/a>&lt;/td>
+&lt;td>iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/m2wasabi/VRMLoaderUI">VRMLoaderUI&lt;/a>&lt;/td>
+&lt;td>Unityライブラリ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="http://deatrathias.net/TW/">TRACKING WORLD&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="内部的にvrmを活用しているサービス">内部的にVRMを活用しているサービス&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>アプリケーション&lt;/th>
+&lt;th>プラットフォーム&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="http://vkatsu.jp/">Vカツ&lt;/a>&lt;/td>
+&lt;td>Windows, iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://customcast.jp/">カスタムキャスト&lt;/a>&lt;/td>
+&lt;td>iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://reality.wrightflyer.net/">REALITY&lt;/a>&lt;/td>
+&lt;td>iOS, Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.puppemoji.com/">パペ文字&lt;/a>&lt;/td>
+&lt;td>iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://materializer.co/lab/mayalive">メイアライブオーダーメイド版&lt;/a>&lt;/td>
+&lt;td>Windows, macOS&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>

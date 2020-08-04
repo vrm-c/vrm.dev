@@ -1,228 +1,227 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁BlendShape</title><link>https://vrm.dev/en/docs/univrm/blendshape/</link><description>Recent content in 📁BlendShape on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 14:54:52 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/blendshape/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
-&lt;p&gt;New features introduced in UniVRM v0.45:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/&#34;&gt;BlendShape setting in Inspector&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/&#34;&gt;Bake BlendShape state&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmblendshapeproxy&#34;&gt;VRMBlendShapeProxy&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxy.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;How to use:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Set BlendShapeAvatar &lt;code&gt;VRMBlendShapeProxy-&amp;gt;BlendShapeAvatar&lt;/code&gt; in the Inspector&lt;/li&gt;
-&lt;li&gt;Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;blendshapeavatar&#34;&gt;BlendShapeAvatar&lt;/h2&gt;
-&lt;p&gt;Expressions can be created in the Inspector.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;field&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;or&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Click&lt;code&gt;BlendShape&lt;/code&gt;directly in the Project view&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;The Inspector of BlendShape editor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Select expressions and customize the values.
-For example, we select&lt;code&gt;Fun&lt;/code&gt;and edit its expressions as shown in the following:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClip.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Example: Set&lt;code&gt;mouth_smile&lt;/code&gt;,&lt;code&gt;eye_smile&lt;/code&gt;and&lt;code&gt;eyeblow_smile&lt;/code&gt;to 100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified.&lt;/p&gt;
-&lt;p&gt;After changing slider value and creating BlendShape, click the Apply button for saving the current status.&lt;/p&gt;
-&lt;h2 id=&#34;blendshape-preset&#34;&gt;BlendShape preset&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShape_Preset.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Select&lt;code&gt;Preset&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The predefined names for the BlendShape clips. The following predefined expressions are available:&lt;/p&gt;
-&lt;h3 id=&#34;neutral&#34;&gt;NEUTRAL&lt;/h3&gt;
-&lt;p&gt;Specified as the standard facial expression and assumed to be used in standby state.&lt;/p&gt;
-&lt;h3 id=&#34;a-i-u-e-o&#34;&gt;A, I, U, E, O&lt;/h3&gt;
-&lt;p&gt;Corresponds to the sound of lip-sync&lt;code&gt;aa・ih・ou・E・oh&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;blink&#34;&gt;Blink&lt;/h3&gt;
-&lt;p&gt;Eye blink.&lt;/p&gt;
-&lt;h3 id=&#34;blink-l-blink-r&#34;&gt;Blink_L, Blink_R&lt;/h3&gt;
-&lt;p&gt;Blinks with only one eye.&lt;/p&gt;
-&lt;h3 id=&#34;joy-angry-sorrow-fun&#34;&gt;Joy, Angry, Sorrow, Fun&lt;/h3&gt;
-&lt;p&gt;Emotion.&lt;/p&gt;
-&lt;h3 id=&#34;lookup-lookdown-lookleft-lookright&#34;&gt;LookUp, LookDown, LookLeft, LookRight&lt;/h3&gt;
-&lt;p&gt;Used when the model&amp;rsquo;s eyes are controlled by BlendShape.&lt;/p&gt;
-&lt;h3 id=&#34;unknown&#34;&gt;Unknown&lt;/h3&gt;
-&lt;p&gt;New created expressions are specified as &amp;ldquo;Unknown&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;change-the-value-of-blendshapeproxy-at-runtime&#34;&gt;Change the value of BlendShapeProxy (at runtime)&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Preset&lt;/code&gt;is used&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;You can operate expressions from the Inspector.&lt;/p&gt;
-&lt;h2 id=&#34;option-add-additional-facial-expressions&#34;&gt;[Option] Add additional facial expressions&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Double click the&lt;code&gt;Blend Shape Avatar&lt;/code&gt;field and click&lt;code&gt;Add BlendShapeClip&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipOption.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Click the new expression &amp;ldquo;びっくり&amp;rdquo; (surprised)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;You can call it from the codes shown as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Call this expression with string since it belongs to unknown category
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;proxy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ImmediatelySetValue&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;びっくり&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0f&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Assign a value between the range 0~1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After the setting is done, don&amp;rsquo;t forget to export VRM file for being able to use the created expressions at runtime.&lt;/p&gt;
-&lt;h2 id=&#34;option-morph-material-color&#34;&gt;[Option] Morph material color&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipMaterial.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;The setting of Material morph. Double click the&lt;code&gt;Current clip&lt;/code&gt;field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
-&lt;h2 id=&#34;assets-related-to-blendshape&#34;&gt;Assets related to BlendShape&lt;/h2&gt;
-&lt;p&gt;Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code&gt;ModelName.BlendShapes&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;BlendShapeAvatar Asset&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;setting-screen&#34;&gt;Setting screen&lt;/h2&gt;
-&lt;p&gt;The Asset has the following setting screens:&lt;/p&gt;
-&lt;h3 id=&#34;the-inspector-of-blendshapeavatar-asset&#34;&gt;The Inspector of BlendShapeAvatar Asset&lt;/h3&gt;
-&lt;h4 id=&#34;editor-tab&#34;&gt;Editor tab&lt;/h4&gt;
-&lt;p&gt;BlendShapeClip Selection / Creation&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;list-tab-starting-from-v0-45&#34;&gt;List tab (Starting from v0.45)&lt;/h4&gt;
-&lt;p&gt;BlendShapeClip List&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;the-inspector-of-blendshapeclip-asset&#34;&gt;The Inspector of BlendShapeClip Asset&lt;/h3&gt;
-&lt;h4 id=&#34;blendshape-tab&#34;&gt;BlendShape tab&lt;/h4&gt;
-&lt;p&gt;Create the BlendShape setting:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;blendshape-list-tab&#34;&gt;BlendShape List tab&lt;/h4&gt;
-&lt;p&gt;You can see the values created from the BlendShape tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;material-list-tab&#34;&gt;Material List tab&lt;/h4&gt;
-&lt;p&gt;You can create a &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/lookat_settings/&#34;&gt;BlendShape version of LookAt&lt;/a&gt;, change the color with BlendShape, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;blendshapeclip-settings&#34;&gt;BlendShapeClip Settings&lt;/h2&gt;
-&lt;p&gt;Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p&gt;
-&lt;h3 id=&#34;1-select-a-blendshapeclip&#34;&gt;1. Select a BlendShapeClip&lt;/h3&gt;
-&lt;p&gt;Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Or click a BlendShapeClip Asset directly in the Project window&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-change-the-values-of-the-sliders-to-make-a-facial-expression&#34;&gt;2. Change the values of the sliders to make a facial expression&lt;/h3&gt;
-&lt;p&gt;The names of the existing &lt;code&gt;SkinnedMeshRenderers&lt;/code&gt; will list in the Inspector window once you click the BlendShape tab.
+&lt;p>New features introduced in UniVRM v0.45:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/">BlendShape setting in Inspector&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/">Bake BlendShape state&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrmblendshapeproxy">VRMBlendShapeProxy&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxy.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>How to use:&lt;/p>
+&lt;ul>
+&lt;li>Set BlendShapeAvatar &lt;code>VRMBlendShapeProxy-&amp;gt;BlendShapeAvatar&lt;/code> in the Inspector&lt;/li>
+&lt;li>Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY)&lt;/li>
+&lt;/ul>
+&lt;h2 id="blendshapeavatar">BlendShapeAvatar&lt;/h2>
+&lt;p>Expressions can be created in the Inspector.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Double click the&lt;code>Blend Shape Avatar&lt;/code>field&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>or&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Click&lt;code>BlendShape&lt;/code>directly in the Project view&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The Inspector of BlendShape editor&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Select expressions and customize the values.
+For example, we select&lt;code>Fun&lt;/code>and edit its expressions as shown in the following:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClip.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Example: Set&lt;code>mouth_smile&lt;/code>,&lt;code>eye_smile&lt;/code>and&lt;code>eyeblow_smile&lt;/code>to 100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified.&lt;/p>
+&lt;p>After changing slider value and creating BlendShape, click the Apply button for saving the current status.&lt;/p>
+&lt;h2 id="blendshape-preset">BlendShape preset&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShape_Preset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Select&lt;code>Preset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The predefined names for the BlendShape clips. The following predefined expressions are available:&lt;/p>
+&lt;h3 id="neutral">NEUTRAL&lt;/h3>
+&lt;p>Specified as the standard facial expression and assumed to be used in standby state.&lt;/p>
+&lt;h3 id="a-i-u-e-o">A, I, U, E, O&lt;/h3>
+&lt;p>Corresponds to the sound of lip-sync&lt;code>aa・ih・ou・E・oh&lt;/code>.&lt;/p>
+&lt;h3 id="blink">Blink&lt;/h3>
+&lt;p>Eye blink.&lt;/p>
+&lt;h3 id="blink_l-blink_r">Blink_L, Blink_R&lt;/h3>
+&lt;p>Blinks with only one eye.&lt;/p>
+&lt;h3 id="joy-angry-sorrow-fun">Joy, Angry, Sorrow, Fun&lt;/h3>
+&lt;p>Emotion.&lt;/p>
+&lt;h3 id="lookup-lookdown-lookleft-lookright">LookUp, LookDown, LookLeft, LookRight&lt;/h3>
+&lt;p>Used when the model&amp;rsquo;s eyes are controlled by BlendShape.&lt;/p>
+&lt;h3 id="unknown">Unknown&lt;/h3>
+&lt;p>New created expressions are specified as &amp;ldquo;Unknown&amp;rdquo;.&lt;/p>
+&lt;h2 id="change-the-value-of-blendshapeproxy-at-runtime">Change the value of BlendShapeProxy (at runtime)&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Preset&lt;/code>is used&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can operate expressions from the Inspector.&lt;/p>
+&lt;h2 id="option-add-additional-facial-expressions">[Option] Add additional facial expressions&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Double click the&lt;code>Blend Shape Avatar&lt;/code>field and click&lt;code>Add BlendShapeClip&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipOption.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Click the new expression &amp;ldquo;びっくり&amp;rdquo; (surprised)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can call it from the codes shown as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#8f5902;font-style:italic">// Call this expression with string since it belongs to unknown category
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ImmediatelySetValue&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;びっくり&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Assign a value between the range 0~1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After the setting is done, don&amp;rsquo;t forget to export VRM file for being able to use the created expressions at runtime.&lt;/p>
+&lt;h2 id="option-morph-material-color">[Option] Morph material color&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipMaterial.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The setting of Material morph. Double click the&lt;code>Current clip&lt;/code>field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
+&lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
+&lt;p>BlendShapeAvatar Asset&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h2 id="setting-screen">Setting screen&lt;/h2>
+&lt;p>The Asset has the following setting screens:&lt;/p>
+&lt;h3 id="the-inspector-of-blendshapeavatar-asset">The Inspector of BlendShapeAvatar Asset&lt;/h3>
+&lt;h4 id="editor-tab">Editor tab&lt;/h4>
+&lt;p>BlendShapeClip Selection / Creation&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h4 id="list-tab-starting-from-v045">List tab (Starting from v0.45)&lt;/h4>
+&lt;p>BlendShapeClip List&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/list.png" alt="image">&lt;/p>
+&lt;h3 id="the-inspector-of-blendshapeclip-asset">The Inspector of BlendShapeClip Asset&lt;/h3>
+&lt;h4 id="blendshape-tab">BlendShape tab&lt;/h4>
+&lt;p>Create the BlendShape setting:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;h4 id="blendshape-list-tab">BlendShape List tab&lt;/h4>
+&lt;p>You can see the values created from the BlendShape tab.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_angry.png" alt="image">&lt;/p>
+&lt;h4 id="material-list-tab">Material List tab&lt;/h4>
+&lt;p>You can create a &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_settings/">BlendShape version of LookAt&lt;/a>, change the color with BlendShape, etc.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_color.png" alt="image">&lt;/p>
+&lt;h2 id="blendshapeclip-settings">BlendShapeClip Settings&lt;/h2>
+&lt;p>Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p>
+&lt;h3 id="1-select-a-blendshapeclip">1. Select a BlendShapeClip&lt;/h3>
+&lt;p>Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;p>Or click a BlendShapeClip Asset directly in the Project window&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeclip.png" alt="image">&lt;/p>
+&lt;h3 id="2-change-the-values-of-the-sliders-to-make-a-facial-expression">2. Change the values of the sliders to make a facial expression&lt;/h3>
+&lt;p>The names of the existing &lt;code>SkinnedMeshRenderers&lt;/code> will list in the Inspector window once you click the BlendShape tab.
 Click any listed name and you can then adjust the BlendShape value.
 The change value is reflected immediately.
-The &lt;code&gt;Apply&lt;/code&gt; button is removed starting from v0.45.&lt;/p&gt;
-&lt;h3 id=&#34;3-check-the-model-s-blendshape-in-preview&#34;&gt;3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3&gt;
-&lt;p&gt;You can test changes in BlendShape by sliding the value (&lt;code&gt;Preview Weight Slider&lt;/code&gt;) between 0 ~ 1&lt;/p&gt;
-&lt;p&gt;Click and drag the &lt;code&gt;left / right&lt;/code&gt; mouse button to change the viewing perspective&lt;/p&gt;
-&lt;p&gt;Click and drag the &lt;code&gt;middle&lt;/code&gt; mouse button to move horizontally / vertically&lt;/p&gt;
-&lt;h3 id=&#34;the-binary-value-setting-for-blendshape-v0-45&#34;&gt;The Binary value setting for BlendShape (v0.45)&lt;/h3&gt;
-&lt;p&gt;The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This feature will become effective when a v0.45-installed application is loaded&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description></item><item><title>Docs: Bake BlendShape State When Exporting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
-&lt;p&gt;When exporting the VRM model, current BlendShape value can be set to the basic state.
-For example, in &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt;, click on &lt;code&gt;BlendShapes&lt;/code&gt; and adjust &lt;code&gt;bs_face.eye_blink&lt;/code&gt; slider to change the value from 0 to 57.8.&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/blendshape_value.jpg&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;In export dialog, enabling &lt;code&gt;Pose Freeze&lt;/code&gt; is required.&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/check_freeze.jpg&#34; width=&#34;400&#34; /&gt;
-&lt;p&gt;After VRM export:&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/bake_blink.gif&#34; /&gt;
-&lt;p&gt;Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p&gt;</description></item></channel></rss>
+The &lt;code>Apply&lt;/code> button is removed starting from v0.45.&lt;/p>
+&lt;h3 id="3-check-the-models-blendshape-in-preview">3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3>
+&lt;p>You can test changes in BlendShape by sliding the value (&lt;code>Preview Weight Slider&lt;/code>) between 0 ~ 1&lt;/p>
+&lt;p>Click and drag the &lt;code>left / right&lt;/code> mouse button to change the viewing perspective&lt;/p>
+&lt;p>Click and drag the &lt;code>middle&lt;/code> mouse button to move horizontally / vertically&lt;/p>
+&lt;h3 id="the-binary-value-setting-for-blendshape-v045">The Binary value setting for BlendShape (v0.45)&lt;/h3>
+&lt;p>The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;p>This feature will become effective when a v0.45-installed application is loaded&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: Bake BlendShape State When Exporting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
+&lt;p>When exporting the VRM model, current BlendShape value can be set to the basic state.
+For example, in &lt;code>SkinnedMeshRenderer&lt;/code>, click on &lt;code>BlendShapes&lt;/code> and adjust &lt;code>bs_face.eye_blink&lt;/code> slider to change the value from 0 to 57.8.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/blendshape_value.jpg" width="400" />
+&lt;p>In export dialog, enabling &lt;code>Pose Freeze&lt;/code> is required.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
+&lt;p>After VRM export:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
+&lt;p>Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p></description></item></channel></rss>

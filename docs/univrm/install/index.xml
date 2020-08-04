@@ -1,101 +1,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁Install</title><link>https://vrm.dev/docs/univrm/install/</link><description>Recent content in 📁Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 14:54:52 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: install unitypackage</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
-&lt;h2 id=&#34;unity-version&#34;&gt;Unity Version&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; から
-Unity2018.4LTS以降 + &lt;code&gt;.Net4&lt;/code&gt; 設定をサポートしています。&lt;/p&gt;
-&lt;p&gt;UPMでUniVRMをインストールする場合は、&lt;a href=&#34;https://vrm.dev/docs/univrm/install/univrm_upm/&#34;&gt;UPMでUniVRMをインストールする&lt;/a&gt;ページをご覧ください。&lt;/p&gt;
-&lt;h2 id=&#34;unitypackage-の入手&#34;&gt;unitypackage の入手&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;です。&lt;/p&gt;
-&lt;h2 id=&#34;インストール前の準備&#34;&gt;インストール前の準備&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity2018.4LTS以降で新規のプロジェクトを作成します&lt;/li&gt;
-&lt;li&gt;Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/show_console.jpg&#34; alt=&#34;show console&#34; width=&#34;500&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/clear_console.jpg&#34; alt=&#34;clear console&#34; width=&#34;500&#34; /&gt;
-&lt;hr&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Rendering&lt;/code&gt; - &lt;code&gt;ColorSpace&lt;/code&gt; を &lt;code&gt;Linear&lt;/code&gt; に設定します(推奨)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/linear_setting.jpg&#34; alt=&#34;linear setting&#34; width=&#34;600&#34; /&gt;
-&lt;h3 id=&#34;既存のプロジェクトで作業する場合&#34;&gt;既存のプロジェクトで作業する場合&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; にしてください&lt;/li&gt;
-&lt;li&gt;旧バージョンのVRMがインストールされている場合、&lt;code&gt;Assets/VRM&lt;/code&gt; を削除してください&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unitypackage-の-import&#34;&gt;unitypackage の import&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;unitypackage&lt;/code&gt; を Import します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Assets&lt;/code&gt; - &lt;code&gt;Import Package&lt;/code&gt; - &lt;code&gt;Custom Package...&lt;/code&gt; で &lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt; を選択します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Assets/VRM&lt;/code&gt; と &lt;code&gt;Assets/VRMShaders&lt;/code&gt; の２つのフォルダに import されます。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.png&#34; alt=&#34;package_import&#34; width=&#34;350&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;UnityPackageをインポート&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;import-が成功したか確認する方法&#34;&gt;import が成功したか確認する方法&lt;/h2&gt;
-&lt;p&gt;VRM menu が表示されていれば動作しています。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm menu&#34; /&gt;
-&lt;hr&gt;&lt;/p&gt;
-&lt;p&gt;menu が出てこない場合は、&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; になっていることを確認してください&lt;/li&gt;
-&lt;li&gt;Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: install UPM</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
-&lt;h2 id=&#34;univrm-0-xx-の-unitypackage&#34;&gt;UniVRM-0.XX の UnityPackage&lt;/h2&gt;
-&lt;p&gt;UniVRM-0.56から、 UniVRMはUnityPackageManagerでインポートできるようになった。&lt;/p&gt;
-&lt;p&gt;github リポジトリのルート以外に &lt;code&gt;package.json&lt;/code&gt; を配置する機能を使っているので、
-&lt;code&gt;Unity 2019.3.4f1以降&lt;/code&gt; が必要です。&lt;/p&gt;
-&lt;h3 id=&#34;導入方法&#34;&gt;導入方法&lt;/h3&gt;
-&lt;p&gt;UnityPackageManagerのWindow&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/menu_packagemanager.jpg&#34; /&gt;
-&lt;hr&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;add package from git URL&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/from_git.jpg&#34; /&gt;
-&lt;hr&gt;&lt;/p&gt;
-&lt;p&gt;新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p&gt;
-&lt;p&gt;たとえば、&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34;&gt;v0.56.3&lt;/a&gt; のgit urlは次のとおりです：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&lt;/code&gt; =&amp;gt; VRMShaders に依存&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p&gt;
-&lt;p&gt;バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p&gt;
-&lt;h4 id=&#34;もしくは-packages-manifest-json-に直接コピーペーストする&#34;&gt;もしくは、 Packages/manifest.json に直接コピーペーストする。&lt;/h4&gt;
-&lt;p&gt;以下の内容を追記してください（&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34;&gt;v0.56.3&lt;/a&gt;の例)。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以下の &amp;ldquo;lock&amp;rdquo; はUnityが自動で更新するので、編集する必要はありません。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;lock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v0.56.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ただし、特定のコミットに切り替える場合は、ハッシュ値を手動で変更できます。&lt;/p&gt;
-&lt;p&gt;もしくは&lt;code&gt;dependencies&lt;/code&gt;に特定のコミットに付きます。&lt;/p&gt;
-&lt;p&gt;例：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
+&lt;h2 id="unity-version">Unity Version&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.56&lt;/code> から
+Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしています。&lt;/p>
+&lt;p>UPMでUniVRMをインストールする場合は、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_upm/">UPMでUniVRMをインストールする&lt;/a>ページをご覧ください。&lt;/p>
+&lt;h2 id="unitypackage-の入手">unitypackage の入手&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
+&lt;p>&lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;h2 id="インストール前の準備">インストール前の準備&lt;/h2>
+&lt;ul>
+&lt;li>Unity2018.4LTS以降で新規のプロジェクトを作成します&lt;/li>
+&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
+&lt;hr>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> を &lt;code>Linear&lt;/code> に設定します(推奨)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
+&lt;h3 id="既存のプロジェクトで作業する場合">既存のプロジェクトで作業する場合&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> にしてください&lt;/li>
+&lt;li>旧バージョンのVRMがインストールされている場合、&lt;code>Assets/VRM&lt;/code> を削除してください&lt;/li>
+&lt;/ul>
+&lt;h2 id="unitypackage-の-import">unitypackage の import&lt;/h2>
+&lt;p>&lt;code>unitypackage&lt;/code> を Import します。&lt;/p>
+&lt;p>&lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package...&lt;/code> で &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
+&lt;p>&lt;code>Assets/VRM&lt;/code> と &lt;code>Assets/VRMShaders&lt;/code> の２つのフォルダに import されます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="350" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>UnityPackageをインポート&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="import-が成功したか確認する方法">import が成功したか確認する方法&lt;/h2>
+&lt;p>VRM menu が表示されていれば動作しています。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
+&lt;hr>
+&lt;p>menu が出てこない場合は、&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> になっていることを確認してください&lt;/li>
+&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
+&lt;/ul></description></item><item><title>Docs: install UPM</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
+&lt;h2 id="univrm-0xx-の-unitypackage">UniVRM-0.XX の UnityPackage&lt;/h2>
+&lt;p>UniVRM-0.56から、 UniVRMはUnityPackageManagerでインポートできるようになった。&lt;/p>
+&lt;p>github リポジトリのルート以外に &lt;code>package.json&lt;/code> を配置する機能を使っているので、
+&lt;code>Unity 2019.3.4f1以降&lt;/code> が必要です。&lt;/p>
+&lt;h3 id="導入方法">導入方法&lt;/h3>
+&lt;p>UnityPackageManagerのWindow&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
+&lt;hr>
+&lt;p>&lt;code>add package from git URL&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
+&lt;hr>
+&lt;p>新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p>
+&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3">v0.56.3&lt;/a> のgit urlは次のとおりです：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&lt;/code> =&amp;gt; VRMShaders に依存&lt;/li>
+&lt;/ul>
+&lt;p>パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p>
+&lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
+&lt;h4 id="もしくは-packagesmanifestjson-に直接コピーペーストする">もしくは、 Packages/manifest.json に直接コピーペーストする。&lt;/h4>
+&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3">v0.56.3&lt;/a>の例)。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>以下の &amp;ldquo;lock&amp;rdquo; はUnityが自動で更新するので、編集する必要はありません。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json"> &lt;span style="color:#4e9a06">&amp;#34;lock&amp;#34;&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;v0.56.3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;v0.56.3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;3b68eb7f99bfe78ea9c83ea75511282ef1782f1a&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>ただし、特定のコミットに切り替える場合は、ハッシュ値を手動で変更できます。&lt;/p>
+&lt;p>もしくは&lt;code>dependencies&lt;/code>に特定のコミットに付きます。&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

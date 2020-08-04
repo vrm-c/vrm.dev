@@ -1,483 +1,500 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁Material</title><link>https://vrm.dev/en/docs/univrm/shaders/</link><description>Recent content in 📁Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/mtoon/</guid><description>
-&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;How to use MToon&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;about-mtoon&#34;&gt;About MToon&lt;/h1&gt;
-&lt;p&gt;MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code&gt;Lit Color&lt;/code&gt; and &lt;code&gt;Shade Color&lt;/code&gt; based on Lighting parameters and light source environment.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Apply MToon to the 3D model&lt;code&gt;Alicia&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;for-users-who-want-to-have-a-quick-setup&#34;&gt;For users who want to have a quick setup&lt;/h1&gt;
-&lt;h2 id=&#34;common-items&#34;&gt;Common items&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Select the target material and change the shader to &lt;code&gt;VRM/MToon&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Click the shader panel and set the same texture in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set white color in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; and set the preference shade color in &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set the preference value in &lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt;. Make the lit color and shade color sharp:&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Set the texture in &lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; (equivalent to &lt;code&gt;sphere map&lt;/code&gt; or &lt;code&gt;Matcap&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;If outline is necessary, select &lt;code&gt;WorldCoordinates&lt;/code&gt; in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt;. Select &lt;code&gt;None&lt;/code&gt; if outline is not needed&lt;/li&gt;
-&lt;li&gt;Set the value with good appearance in &lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;general-material&#34;&gt;General material&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;set-materials-not-being-shadowed-too-much-such-as-the-character-s-face&#34;&gt;Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Shift&lt;/code&gt; and set a negative value&lt;/li&gt;
-&lt;li&gt;Choose &lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; and set &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;setting-items&#34;&gt;Setting items&lt;/h1&gt;
-&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
-&lt;p&gt;Select the target material and change the shader to VRM/MToon.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Change the material shader to VRM/MToon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;The items included in the Rendering Inspector&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Set the rendering type and cull mode in &lt;code&gt;Rendering&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
-&lt;p&gt;Set whether the material is opaque or semi-transparent.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Opaque
-&lt;ul&gt;
-&lt;li&gt;For rendering performance, it is recommended to set &lt;code&gt;Opaque&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cutout&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Although it is opaque, it refers to the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;. Therefore, it skips rendering for places having smaller value than &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Transparent&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The opacity based on the alpha value in &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;The downside is that outline rendering cannot be performed correctly.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
-&lt;p&gt;Set which side of the polygon to be rendered.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Back
-&lt;ul&gt;
-&lt;li&gt;Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Front
-&lt;ul&gt;
-&lt;li&gt;Render the back side.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;Render the both sides.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
-&lt;p&gt;Required if choosing &lt;code&gt;Rendering Type-&amp;gt;Cutout&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
-&lt;ul&gt;
-&lt;li&gt;Set the threshold value for not rendering.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
-&lt;p&gt;Set the rendering color.
+&lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">How to use MToon&lt;/a>&lt;/p>
+&lt;h1 id="about-mtoon">About MToon&lt;/h1>
+&lt;p>MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code>Lit Color&lt;/code> and &lt;code>Shade Color&lt;/code> based on Lighting parameters and light source environment.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_about.png" alt="alicia MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Apply MToon to the 3D model&lt;code>Alicia&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="for-users-who-want-to-have-a-quick-setup">For users who want to have a quick setup&lt;/h1>
+&lt;h2 id="common-items">Common items&lt;/h2>
+&lt;ul>
+&lt;li>Select the target material and change the shader to &lt;code>VRM/MToon&lt;/code>&lt;/li>
+&lt;li>Click the shader panel and set the same texture in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> and &lt;code>Color-&amp;gt;Shade Color&lt;/code>&lt;/li>
+&lt;li>Set white color in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> and set the preference shade color in &lt;code>Color-&amp;gt;Shade Color&lt;/code>&lt;/li>
+&lt;li>Set the preference value in &lt;code>Shading-&amp;gt;Toony&lt;/code>. Make the lit color and shade color sharp:&lt;code>1&lt;/code>&lt;/li>
+&lt;li>Set the texture in &lt;code>Rim-&amp;gt;Additive&lt;/code> (equivalent to &lt;code>sphere map&lt;/code> or &lt;code>Matcap&lt;/code>)&lt;/li>
+&lt;li>If outline is necessary, select &lt;code>WorldCoordinates&lt;/code> in &lt;code>Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code>. Select &lt;code>None&lt;/code> if outline is not needed&lt;/li>
+&lt;li>Set the value with good appearance in &lt;code>Outline-&amp;gt;Width-&amp;gt;Width&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="general-material">General material&lt;/h2>
+&lt;ul>
+&lt;li>Choose &lt;code>Shading Shift&lt;/code> and set &lt;code>0&lt;/code>&lt;/li>
+&lt;li>Choose &lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> and set &lt;code>1&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="set-materials-not-being-shadowed-too-much-such-as-the-characters-face">Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2>
+&lt;ul>
+&lt;li>Choose &lt;code>Shading Shift&lt;/code> and set a negative value&lt;/li>
+&lt;li>Choose &lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> and set &lt;code>0&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h1 id="setting-items">Setting items&lt;/h1>
+&lt;h2 id="preliminary">Preliminary&lt;/h2>
+&lt;p>Select the target material and change the shader to VRM/MToon.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_mtoon.png" alt="select MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Change the material shader to VRM/MToon&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="rendering">Rendering&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_inspector_rendering.png" alt="MToon Rendering" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The items included in the Rendering Inspector&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Set the rendering type and cull mode in &lt;code>Rendering&lt;/code>.&lt;/p>
+&lt;h3 id="rendering-type">Rendering Type&lt;/h3>
+&lt;p>Set whether the material is opaque or semi-transparent.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Opaque&lt;/p>
+&lt;ul>
+&lt;li>For rendering performance, it is recommended to set &lt;code>Opaque&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Cutout&lt;/p>
+&lt;ul>
+&lt;li>Although it is opaque, it refers to the alpha value in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code>. Therefore, it skips rendering for places having smaller value than &lt;code>Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Transparent&lt;/p>
+&lt;ul>
+&lt;li>The opacity based on the alpha value in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code>.&lt;/li>
+&lt;li>The downside is that outline rendering cannot be performed correctly.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cull-mode">Cull Mode&lt;/h3>
+&lt;p>Set which side of the polygon to be rendered.&lt;/p>
+&lt;ul>
+&lt;li>Back
+&lt;ul>
+&lt;li>Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Front
+&lt;ul>
+&lt;li>Render the back side.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>None
+&lt;ul>
+&lt;li>Render the both sides.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="alpha">Alpha&lt;/h3>
+&lt;p>Required if choosing &lt;code>Rendering Type-&amp;gt;Cutout&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Cutoff (&lt;code>Color-&amp;gt;Alpha&lt;/code>)
+&lt;ul>
+&lt;li>Set the threshold value for not rendering.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="color">Color&lt;/h2>
+&lt;p>Set the rendering color.
 The texture and color are multiplied.
-Set the color hit by the light ray in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; and set the color not hit by the light ray in &lt;code&gt;Shade Color&lt;/code&gt;.&lt;br /&gt;
-Also, set the the alpha value in &lt;code&gt;Lit Color, Alpha&lt;/code&gt; for opacity information.&lt;/p&gt;
-&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
-&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
-&lt;p&gt;Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
-When the value is &lt;code&gt;0&lt;/code&gt;, it is the normal lighting.
+Set the color hit by the light ray in &lt;code>Lit Color, Alpha&lt;/code> and set the color not hit by the light ray in &lt;code>Shade Color&lt;/code>.&lt;br>
+Also, set the the alpha value in &lt;code>Lit Color, Alpha&lt;/code> for opacity information.&lt;/p>
+&lt;h2 id="lighting">Lighting&lt;/h2>
+&lt;h3 id="shading-shift">Shading Shift&lt;/h3>
+&lt;p>Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
+When the value is &lt;code>0&lt;/code>, it is the normal lighting.
 When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
-It is necessary to disable the self-shadow with setting the value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; according to the displayed warning message.&lt;/p&gt;
-&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
-&lt;p&gt;Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code&gt;Shade Shift&lt;/code&gt;.
-When the value is &lt;code&gt;0&lt;/code&gt;, it becomes realistically smooth like a general Lambert model.
-When the value is &lt;code&gt;1&lt;/code&gt;, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p&gt;
-&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
-&lt;p&gt;Set the influence of the self-shadow and shadow.
-&lt;code&gt;0&lt;/code&gt;: Not affected.
-&lt;code&gt;1&lt;/code&gt;: Affected.&lt;/p&gt;
-&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
-&lt;p&gt;Set the influence of the light source color.
-&lt;code&gt;0&lt;/code&gt;: Affected by the light source color.
-&lt;code&gt;1&lt;/code&gt;: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p&gt;
-&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
-&lt;p&gt;Display additional light sources based on the relationship between the camera and the normal.
-In general it is called sphere map or matcap.&lt;/p&gt;
-&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
-&lt;p&gt;Set the constant color regardless of the light source environment.&lt;/p&gt;
-&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
-&lt;p&gt;Set the normal map.
-Set the strength value in the box on the right.&lt;/p&gt;
-&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;Set the outline.&lt;/p&gt;
-&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;The outline is not rendered&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;WorldCoordinates
-&lt;ul&gt;
-&lt;li&gt;Render the outline of the constant width for the world coordinate&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ScreenCoordinates
-&lt;ul&gt;
-&lt;li&gt;Render the outline of the constant width for the screen coordinate&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
-&lt;p&gt;Set the width of the outline.
-The unit of distance is meter when &lt;code&gt;Width Mode-&amp;gt;WorldCoordinates&lt;/code&gt; is chosen.&lt;/p&gt;
-&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;FixedColor
-&lt;ul&gt;
-&lt;li&gt;Render with the fixed color&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;MixedLighting
-&lt;ul&gt;
-&lt;li&gt;Multiply the influence of Lighting&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
-&lt;p&gt;Set the outline color.&lt;/p&gt;
-&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
-&lt;p&gt;Set the multiplier coefficient when &lt;code&gt;Color Mode-&amp;gt;MixedLighting&lt;/code&gt; is chosen.&lt;/p&gt;</description></item><item><title>Docs: UniUnlit</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</link><pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</guid><description>
-&lt;h2 id=&#34;unigltf-uniunlit-shader&#34;&gt;&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; shader&lt;/h2&gt;
-&lt;p&gt;Since part of GLTF properties are not available in Unity&amp;rsquo;s &lt;code&gt;unlit&lt;/code&gt; shaders (e.g. vertex color), we introduced &lt;code&gt;UniUnlit&lt;/code&gt; to solve this issue. In addition, &lt;code&gt;UniUnlit&lt;/code&gt; is fully compatible with all &lt;code&gt;unlit&lt;/code&gt; shaders in Unity.&lt;/p&gt;
-&lt;p&gt;Unity&amp;rsquo;s &lt;code&gt;unlit&lt;/code&gt; shaders will become &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; if they are exported, and then imported again.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;export&lt;/th&gt;
-&lt;th&gt;gltf&lt;/th&gt;
-&lt;th&gt;import&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
-&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;The issue of causing glossy reflections:
-&lt;ul&gt;
-&lt;li&gt;It occurs when the shader type is &lt;code&gt;Standard&lt;/code&gt; (Unity standard) and the values of &lt;code&gt;metallic&lt;/code&gt; and &lt;code&gt;smooth&lt;/code&gt; are high. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit/UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
-&lt;li&gt;When an unknown shader is selected (not supported by &lt;code&gt;VRM&lt;/code&gt;), the shader is defaulted to Standard shader and it may result in glossy reflections. If you set the material&amp;rsquo;s shader to &lt;code&gt;Unlit/UniUnlit&lt;/code&gt;, the texture can be displayed as it supposes to be.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;standard&#34;&gt;Standard&lt;/h2&gt;
-&lt;p&gt;The majority of &lt;a href=&#34;https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html&#34;&gt;material parameters&lt;/a&gt; in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Unity Standard&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;GLTF PBR&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Albedo Color&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Albedo Texture&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Metallic Level&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/metallicFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Smoothness Level&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1.0f - (/materials/pbrMetallicRoughness/roughnessFactor)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Metallic Texture&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/metallicRoughnessTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Normal Map&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/normalTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Bump scale&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/normalTexture/scale&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Height Map&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Occlusion Texture&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/occlusionTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Occlusion Strength&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/occlusionTexture/strength&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Emission Color&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/emissiveFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Emission Texture&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/emissiveTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Detail Mask&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Secondary Maps&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Rendering Mode&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/alphaMode&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;For UniVRM&amp;rsquo;s material import, the roughnessFactor value is baked into the Metallic Texture. For material export, the smoothness value is baked into the Metallic Texture (&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/222&#34;&gt;discussion&lt;/a&gt;).&lt;/p&gt;
-&lt;h2 id=&#34;unlit&#34;&gt;Unlit&lt;/h2&gt;
-&lt;p&gt;Unity has Unlit type shader such as &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, and &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt;. For GLTF, unlit is supported by &lt;code&gt;KHR_materials_unlit&lt;/code&gt; extension.&lt;/p&gt;
-&lt;p&gt;In GLTF, you can utilize &lt;code&gt;doubleSided&lt;/code&gt;, the product of &lt;code&gt;Texture&lt;/code&gt;, &lt;code&gt;Color&lt;/code&gt; and &lt;code&gt;VertexColor&lt;/code&gt; (if any), and &lt;code&gt;color&lt;/code&gt;&amp;rsquo;s alpha mode. Given that there is no shader that can handle these features on Unity side, we introduce &lt;code&gt;UniGLTF/Unlit&lt;/code&gt; in Unity (v0.44).&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;UniUnlit&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;GLTF Unlit&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Color Factor&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Color Texture&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Rendering Mode&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/alphaMode&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Cull Mode&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/doubleSided&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Note that when &lt;code&gt;KHR_materials_unlit&lt;/code&gt; is declared, core PBR properties are ignored except baseColor. Color values, alpha coverage and double sided will still apply to unlit materials.&lt;/p&gt;
-&lt;h2 id=&#34;mtoon&#34;&gt;MToon&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a&gt; (written in Japanese)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/mtoon/&#34;&gt;MToon Shader&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Since the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM&amp;rsquo;s &lt;code&gt;export/import&lt;/code&gt; to convert textures between Unity and GLTF.&lt;/p&gt;
-&lt;h2 id=&#34;improvement-standardshader-s-texture-conversion&#34;&gt;Improvement: StandardShader&amp;rsquo;s Texture Conversion&lt;/h2&gt;
-&lt;p&gt;The processing of textures other than color texture type has been improved.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;NormalMap&amp;rsquo;s import/export correction: since this fix is also applied to MToon shader, we put the details in the next section&lt;/li&gt;
-&lt;li&gt;Metallic, Roughness, OcclusionMap conversion:
-&lt;ul&gt;
-&lt;li&gt;RGBA channel recombination&lt;/li&gt;
-&lt;li&gt;The relative relation between Roughness value and Smoothness value&lt;/li&gt;
-&lt;li&gt;Support sRGB and Linear&lt;/li&gt;
-&lt;li&gt;Convert Texture by Importer, reverse conversion on Texture by Exporter&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;correction-normalmap-s-import-export&#34;&gt;Correction: NormalMap&amp;rsquo;s Import/Export&lt;/h2&gt;
-&lt;p&gt;Target for the textures of &lt;code&gt;Standard&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.
-Normal map can be identified by the keyword &lt;code&gt;_BumpMap&lt;/code&gt; in the material property.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RuntimeImport: pack normal texture&lt;/li&gt;
-&lt;li&gt;Export: unpack normal texture&lt;/li&gt;
-&lt;li&gt;Support sRGB and Linear&lt;/li&gt;
-&lt;li&gt;Support Tangent&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</guid><description>
-&lt;h2 id=&#34;export&#34;&gt;Export&lt;/h2&gt;
-&lt;h3 id=&#34;gltf-layer&#34;&gt;GLTF Layer&lt;/h3&gt;
-&lt;p&gt;There are only two types: PBR (Physically based rendering) and Unlit.
-A material will be &lt;code&gt;unlit&lt;/code&gt; if it is one of the shaders in the following list:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unlit/Color&lt;/li&gt;
-&lt;li&gt;Unlit/Texture&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent Cutout&lt;/li&gt;
-&lt;li&gt;UniGLTF/UniUnlit&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Other shaders will be set as &lt;code&gt;standard&lt;/code&gt; and recorded in gltf&amp;rsquo;s &lt;code&gt;/materials[]&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;vrm-layer&#34;&gt;VRM Layer&lt;/h3&gt;
-&lt;p&gt;Shaders are recorded in gltf&amp;rsquo;s &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Available shaders in VRM Layer:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VRM/UnlitTransparentZWrite&lt;/li&gt;
-&lt;li&gt;VRM/MToon&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Other shaders will be set as &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; in &lt;code&gt;shaderName&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
-&lt;h3 id=&#34;gltf-layer-1&#34;&gt;GLTF Layer&lt;/h3&gt;
-&lt;p&gt;Create Unity material from GLTF&amp;rsquo;s &lt;code&gt;/materials[]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Select either one in the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Standard&lt;/li&gt;
-&lt;li&gt;UniGLTF/UniUnlit&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;vrm-layer-1&#34;&gt;VRM Layer&lt;/h3&gt;
-&lt;p&gt;Create Unity material from GLTF&amp;rsquo;s &lt;code&gt;/extensions/VRM/materialProperties[]&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;import-export&#34;&gt;Import/Export&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;export&lt;/th&gt;
-&lt;th&gt;gltf&lt;/th&gt;
-&lt;th&gt;import&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTexture&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparent&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitCutout&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
-&lt;td&gt;extensions.VRM.materialsProperties[]&lt;/td&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Others&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
-&lt;p&gt;Starting from &lt;code&gt;UniVRM-0.56&lt;/code&gt;, the folder structure in UniVRM has been changed.
-Material-related parts in &lt;code&gt;UniVRM&lt;/code&gt; has been moved to &lt;code&gt;Assets/VRMShaders&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;upm-package&#34;&gt;UPM Package&lt;/h2&gt;
-&lt;p&gt;VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
-Besides that, VRMShaders can be used independently without &lt;code&gt;UniVRM&lt;/code&gt; (&lt;code&gt;UniVRM&lt;/code&gt; uses &lt;code&gt;VRMShaders&lt;/code&gt;).
-VRMShaders includes &lt;code&gt;UniUnlit&lt;/code&gt; and &lt;code&gt;MToon&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;manifest.json&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In this example, the version of UniVRM being imported is v0.57.0.
+It is necessary to disable the self-shadow with setting the value to &lt;code>0&lt;/code> in &lt;code>Shadow Receive Multiplier&lt;/code> according to the displayed warning message.&lt;/p>
+&lt;h3 id="shading-toony">Shading Toony&lt;/h3>
+&lt;p>Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code>Shade Shift&lt;/code>.
+When the value is &lt;code>0&lt;/code>, it becomes realistically smooth like a general Lambert model.
+When the value is &lt;code>1&lt;/code>, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p>
+&lt;h3 id="shadow-receive-multiplier">Shadow Receive Multiplier&lt;/h3>
+&lt;p>Set the influence of the self-shadow and shadow.
+&lt;code>0&lt;/code>: Not affected.
+&lt;code>1&lt;/code>: Affected.&lt;/p>
+&lt;h3 id="lightcolor-attenuation">LightColor Attenuation&lt;/h3>
+&lt;p>Set the influence of the light source color.
+&lt;code>0&lt;/code>: Affected by the light source color.
+&lt;code>1&lt;/code>: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p>
+&lt;h3 id="rim-additive">Rim Additive&lt;/h3>
+&lt;p>Display additional light sources based on the relationship between the camera and the normal.
+In general it is called sphere map or matcap.&lt;/p>
+&lt;h3 id="emission">Emission&lt;/h3>
+&lt;p>Set the constant color regardless of the light source environment.&lt;/p>
+&lt;h3 id="normal-map">Normal Map&lt;/h3>
+&lt;p>Set the normal map.
+Set the strength value in the box on the right.&lt;/p>
+&lt;h2 id="outline">Outline&lt;/h2>
+&lt;p>Set the outline.&lt;/p>
+&lt;h3 id="width-mode">Width Mode&lt;/h3>
+&lt;ul>
+&lt;li>None
+&lt;ul>
+&lt;li>The outline is not rendered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>WorldCoordinates
+&lt;ul>
+&lt;li>Render the outline of the constant width for the world coordinate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ScreenCoordinates
+&lt;ul>
+&lt;li>Render the outline of the constant width for the screen coordinate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="width">Width&lt;/h3>
+&lt;p>Set the width of the outline.
+The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&lt;/code> is chosen.&lt;/p>
+&lt;h3 id="color-mode">Color Mode&lt;/h3>
+&lt;ul>
+&lt;li>FixedColor
+&lt;ul>
+&lt;li>Render with the fixed color&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>MixedLighting
+&lt;ul>
+&lt;li>Multiply the influence of Lighting&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="color-1">Color&lt;/h3>
+&lt;p>Set the outline color.&lt;/p>
+&lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
+&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: UniUnlit</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</link><pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</guid><description>
+&lt;h2 id="unigltfuniunlit-shader">&lt;code>UniGLTF/UniUnlit&lt;/code> shader&lt;/h2>
+&lt;p>Since part of GLTF properties are not available in Unity&amp;rsquo;s &lt;code>unlit&lt;/code> shaders (e.g. vertex color), we introduced &lt;code>UniUnlit&lt;/code> to solve this issue. In addition, &lt;code>UniUnlit&lt;/code> is fully compatible with all &lt;code>unlit&lt;/code> shaders in Unity.&lt;/p>
+&lt;p>Unity&amp;rsquo;s &lt;code>unlit&lt;/code> shaders will become &lt;code>UniGLTF/UniUnlit&lt;/code> if they are exported, and then imported again.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>export&lt;/th>
+&lt;th>gltf&lt;/th>
+&lt;th>import&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Unlit/Color&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Texture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent Cutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;ul>
+&lt;li>The issue of causing glossy reflections:
+&lt;ul>
+&lt;li>It occurs when the shader type is &lt;code>Standard&lt;/code> (Unity standard) and the values of &lt;code>metallic&lt;/code> and &lt;code>smooth&lt;/code> are high. If you set the material&amp;rsquo;s shader to &lt;code>Unlit/UniUnlit&lt;/code>, the texture can be displayed as it supposes to be.&lt;/li>
+&lt;li>When an unknown shader is selected (not supported by &lt;code>VRM&lt;/code>), the shader is defaulted to Standard shader and it may result in glossy reflections. If you set the material&amp;rsquo;s shader to &lt;code>Unlit/UniUnlit&lt;/code>, the texture can be displayed as it supposes to be.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="standard">Standard&lt;/h2>
+&lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Unity Standard&lt;/th>
+&lt;th align="left">GLTF PBR&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Albedo Color&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Albedo Texture&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic Level&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/metallicFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Smoothness Level&lt;/td>
+&lt;td align="left">1.0f - (/materials/pbrMetallicRoughness/roughnessFactor)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic Texture&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/metallicRoughnessTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Normal Map&lt;/td>
+&lt;td align="left">/materials/normalTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Bump scale&lt;/td>
+&lt;td align="left">/materials/normalTexture/scale&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Height Map&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Occlusion Texture&lt;/td>
+&lt;td align="left">/materials/occlusionTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Occlusion Strength&lt;/td>
+&lt;td align="left">/materials/occlusionTexture/strength&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Emission Color&lt;/td>
+&lt;td align="left">/materials/emissiveFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Emission Texture&lt;/td>
+&lt;td align="left">/materials/emissiveTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Detail Mask&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Secondary Maps&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Rendering Mode&lt;/td>
+&lt;td align="left">/materials/alphaMode&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For UniVRM&amp;rsquo;s material import, the roughnessFactor value is baked into the Metallic Texture. For material export, the smoothness value is baked into the Metallic Texture (&lt;a href="https://github.com/vrm-c/UniVRM/pull/222">discussion&lt;/a>).&lt;/p>
+&lt;h2 id="unlit">Unlit&lt;/h2>
+&lt;p>Unity has Unlit type shader such as &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, and &lt;code>Unlit/Transparent Cutout&lt;/code>. For GLTF, unlit is supported by &lt;code>KHR_materials_unlit&lt;/code> extension.&lt;/p>
+&lt;p>In GLTF, you can utilize &lt;code>doubleSided&lt;/code>, the product of &lt;code>Texture&lt;/code>, &lt;code>Color&lt;/code> and &lt;code>VertexColor&lt;/code> (if any), and &lt;code>color&lt;/code>'s alpha mode. Given that there is no shader that can handle these features on Unity side, we introduce &lt;code>UniGLTF/Unlit&lt;/code> in Unity (v0.44).&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">UniUnlit&lt;/th>
+&lt;th align="left">GLTF Unlit&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Color Factor&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Color Texture&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Rendering Mode&lt;/td>
+&lt;td align="left">/materials/alphaMode&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Cull Mode&lt;/td>
+&lt;td align="left">/materials/doubleSided&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Note that when &lt;code>KHR_materials_unlit&lt;/code> is declared, core PBR properties are ignored except baseColor. Color values, alpha coverage and double sided will still apply to unlit materials.&lt;/p>
+&lt;h2 id="mtoon">MToon&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">https://www.slideshare.net/VirtualCast/vrm-mtoon&lt;/a> (written in Japanese)&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/mtoon/">MToon Shader&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Since the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM&amp;rsquo;s &lt;code>export/import&lt;/code> to convert textures between Unity and GLTF.&lt;/p>
+&lt;h2 id="improvement-standardshaders-texture-conversion">Improvement: StandardShader&amp;rsquo;s Texture Conversion&lt;/h2>
+&lt;p>The processing of textures other than color texture type has been improved.&lt;/p>
+&lt;ul>
+&lt;li>NormalMap&amp;rsquo;s import/export correction: since this fix is also applied to MToon shader, we put the details in the next section&lt;/li>
+&lt;li>Metallic, Roughness, OcclusionMap conversion:
+&lt;ul>
+&lt;li>RGBA channel recombination&lt;/li>
+&lt;li>The relative relation between Roughness value and Smoothness value&lt;/li>
+&lt;li>Support sRGB and Linear&lt;/li>
+&lt;li>Convert Texture by Importer, reverse conversion on Texture by Exporter&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="correction-normalmaps-importexport">Correction: NormalMap&amp;rsquo;s Import/Export&lt;/h2>
+&lt;p>Target for the textures of &lt;code>Standard&lt;/code> and &lt;code>MToon&lt;/code>.
+Normal map can be identified by the keyword &lt;code>_BumpMap&lt;/code> in the material property.&lt;/p>
+&lt;ul>
+&lt;li>EditorImport: &lt;code>TextureImporterType.NormalMap&lt;/code>&lt;/li>
+&lt;li>RuntimeImport: pack normal texture&lt;/li>
+&lt;li>Export: unpack normal texture&lt;/li>
+&lt;li>Support sRGB and Linear&lt;/li>
+&lt;li>Support Tangent&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</guid><description>
+&lt;h2 id="export">Export&lt;/h2>
+&lt;h3 id="gltf-layer">GLTF Layer&lt;/h3>
+&lt;p>There are only two types: PBR (Physically based rendering) and Unlit.
+A material will be &lt;code>unlit&lt;/code> if it is one of the shaders in the following list:&lt;/p>
+&lt;ul>
+&lt;li>Unlit/Color&lt;/li>
+&lt;li>Unlit/Texture&lt;/li>
+&lt;li>Unlit/Transparent&lt;/li>
+&lt;li>Unlit/Transparent Cutout&lt;/li>
+&lt;li>UniGLTF/UniUnlit&lt;/li>
+&lt;/ul>
+&lt;p>Other shaders will be set as &lt;code>standard&lt;/code> and recorded in gltf&amp;rsquo;s &lt;code>/materials[]&lt;/code>.&lt;/p>
+&lt;h3 id="vrm-layer">VRM Layer&lt;/h3>
+&lt;p>Shaders are recorded in gltf&amp;rsquo;s &lt;code>/extensions/VRM/materialProperties[]&lt;/code>.&lt;/p>
+&lt;p>Available shaders in VRM Layer:&lt;/p>
+&lt;ul>
+&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
+&lt;li>VRM/MToon&lt;/li>
+&lt;/ul>
+&lt;p>Other shaders will be set as &lt;code>VRM_USE_GLTFSHADER&lt;/code> in &lt;code>shaderName&lt;/code>.&lt;/p>
+&lt;h2 id="import">Import&lt;/h2>
+&lt;h3 id="gltf-layer-1">GLTF Layer&lt;/h3>
+&lt;p>Create Unity material from GLTF&amp;rsquo;s &lt;code>/materials[]&lt;/code>.&lt;/p>
+&lt;p>Select either one in the followings:&lt;/p>
+&lt;ul>
+&lt;li>Standard&lt;/li>
+&lt;li>UniGLTF/UniUnlit&lt;/li>
+&lt;/ul>
+&lt;h3 id="vrm-layer-1">VRM Layer&lt;/h3>
+&lt;p>Create Unity material from GLTF&amp;rsquo;s &lt;code>/extensions/VRM/materialProperties[]&lt;/code>.&lt;/p>
+&lt;h2 id="importexport">Import/Export&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>export&lt;/th>
+&lt;th>gltf&lt;/th>
+&lt;th>import&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Unlit/Color&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Texture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent Cutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTexture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitCutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparentZWrite&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Standard&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Standard&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/MToon&lt;/td>
+&lt;td>extensions.VRM.materialsProperties[]&lt;/td>
+&lt;td>VRM/MToon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparentZWrite&lt;/td>
+&lt;td>extensions.VRM.materialsProperties[]&lt;/td>
+&lt;td>VRM/UnlitTransparentZWrite&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Others&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Standard&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
+Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
+&lt;h2 id="upm-package">UPM Package&lt;/h2>
+&lt;p>VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
+Besides that, VRMShaders can be used independently without &lt;code>UniVRM&lt;/code> (&lt;code>UniVRM&lt;/code> uses &lt;code>VRMShaders&lt;/code>).
+VRMShaders includes &lt;code>UniUnlit&lt;/code> and &lt;code>MToon&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">manifest.json&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, the version of UniVRM being imported is v0.57.0.
 The imported version can be changed to different version (e.g. v0.56.0).
-&lt;code&gt;VRMShaders&lt;/code&gt; version number is the same as UniVRM.&lt;/p&gt;
-&lt;h3 id=&#34;uniunlit&#34;&gt;UniUnlit&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;unlit&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
-&lt;p&gt;In VRMShaders, MToon shader is managed by &lt;code&gt;git submodule&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&#34;&gt;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For the latest update about MToon, please refer to:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Santarh/MToon&#34;&gt;https://github.com/Santarh/MToon&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;code>VRMShaders&lt;/code> version number is the same as UniVRM.&lt;/p>
+&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
+&lt;h3 id="mtoon">MToon&lt;/h3>
+&lt;p>In VRMShaders, MToon shader is managed by &lt;code>git submodule&lt;/code>:&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
+&lt;p>For the latest update about MToon, please refer to:&lt;/p>
+&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p></description></item></channel></rss>

@@ -1,212 +1,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – UniVRMマニュアル</title><link>https://vrm.dev/docs/univrm/</link><description>Recent content in UniVRMマニュアル on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 14:54:52 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ワークフロー</title><link>https://vrm.dev/docs/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/univrm_workflow/</guid><description>
-&lt;h2 id=&#34;ワークフロー&#34;&gt;ワークフロー&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/VRM_changeVRM_jp.png&#34; alt=&#34;vrm workflow&#34; /&gt;
-&lt;h2 id=&#34;humanoid-avatarがセット済みの人間型モデルを用意します&#34;&gt;humanoid avatarがセット済みの人間型モデルを用意します&lt;/h2&gt;
-&lt;p&gt;Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定もされている必要があります。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/ModelConversionMenu.png&#34; alt=&#34;ModelConversionMenu&#34; width=&#34;900&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code&gt;Select&lt;/code&gt;をクリックして、&lt;code&gt;Rig&lt;/code&gt;をクリックして&lt;code&gt;Animation Type&lt;/code&gt;を&lt;code&gt;Humanoid&lt;/code&gt;に設定し、&lt;code&gt;Configure&lt;/code&gt;ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code&gt;Save&lt;/code&gt;をクリックして保存します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/SetModelAsHumanoid.png&#34; alt=&#34;SetModelAsHumanoid&#34; width=&#34;900&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Humanoid&lt;/code&gt;に設定して、&lt;code&gt;Configure&lt;/code&gt;をクリックします&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
-&lt;h3 id=&#34;rigのconfigureでボーンの割り当てを修正&#34;&gt;rigのconfigureでボーンの割り当てを修正&lt;/h3&gt;
-&lt;p&gt;ボーンマッピングエラーを修正するには、ボーンマッピングに失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code&gt;Mapping&lt;/code&gt;をクリックし、&lt;code&gt;clear&lt;/code&gt;をクリックして&lt;code&gt;Automap&lt;/code&gt;をクリックします。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;適切なボーンコンポーネントを選択してください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します。&lt;/p&gt;
-&lt;p&gt;例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;前髪に顎ボーンが割り当てられる&lt;/li&gt;
-&lt;li&gt;目のハイライトに目ボーンが割り当てられる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正します。たとえば、eye_light_Lはeye_Lに置き換えられます&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;メニューからエクスポート&#34;&gt;メニューからエクスポート&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.png&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで&lt;code&gt;Assets&lt;/code&gt;フォルダに保存されます&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Author&lt;/code&gt;欄に名前を入力して&lt;code&gt;Export&lt;/code&gt;を押してください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h3&gt;
-&lt;p&gt;回転・スケールの除去前にモデルを強制的&lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; にします。&lt;/p&gt;
-&lt;h4 id=&#34;手動でt-poseにすることができます&#34;&gt;手動でT Poseにすることができます&lt;/h4&gt;
-&lt;p&gt;自動で&lt;code&gt;T Pose&lt;/code&gt;にすると姿勢が変わってしまう場合などに、手動で&lt;code&gt;T Pose&lt;/code&gt;化することができます。
-あらかじめモデルを手動&lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/vrm_tpose/&#34;&gt;T-Pose&lt;/a&gt; にしてからエクスポートメニューを実行し、
-上記の&lt;code&gt;Force T Pose&lt;/code&gt;チェックボックスをオフにしてください。&lt;/p&gt;
-&lt;h3 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h3&gt;
-&lt;p&gt;回転・スケールの除去処理を実行するか否か。
+&lt;h2 id="ワークフロー">ワークフロー&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/VRM_changeVRM_jp.png" alt="vrm workflow" />
+&lt;h2 id="humanoid-avatarがセット済みの人間型モデルを用意します">humanoid avatarがセット済みの人間型モデルを用意します&lt;/h2>
+&lt;p>Fbx等のUnityのHumanoidモデルを用意してください。ボーンの設定もされている必要があります。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
+&lt;/p>
+&lt;p>インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code>Select&lt;/code>をクリックして、&lt;code>Rig&lt;/code>をクリックして&lt;code>Animation Type&lt;/code>を&lt;code>Humanoid&lt;/code>に設定し、&lt;code>Configure&lt;/code>ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code>Save&lt;/code>をクリックして保存します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Humanoid&lt;/code>に設定して、&lt;code>Configure&lt;/code>をクリックします&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
+&lt;h3 id="rigのconfigureでボーンの割り当てを修正">rigのconfigureでボーンの割り当てを修正&lt;/h3>
+&lt;p>ボーンマッピングエラーを修正するには、ボーンマッピングに失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code>Mapping&lt;/code>をクリックし、&lt;code>clear&lt;/code>をクリックして&lt;code>Automap&lt;/code>をクリックします。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>適切なボーンコンポーネントを選択してください&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します。&lt;/p>
+&lt;p>例&lt;/p>
+&lt;ul>
+&lt;li>前髪に顎ボーンが割り当てられる&lt;/li>
+&lt;li>目のハイライトに目ボーンが割り当てられる&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/fix_eye.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>立体ちゃんでは目のボーンの自動認識がうまくいっていなかったので手動で修正します。たとえば、eye_light_Lはeye_Lに置き換えられます&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="メニューからエクスポート">メニューからエクスポート&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ヒエラルキーでhumanoid avatarをセットしたanimatorを選択すると有効になります。ファイルはデフォルトで&lt;code>Assets&lt;/code>フォルダに保存されます&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Author&lt;/code>欄に名前を入力して&lt;code>Export&lt;/code>を押してください&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="force-t-pose">Force T Pose&lt;/h3>
+&lt;p>回転・スケールの除去前にモデルを強制的&lt;a href="https://vrm.dev/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a> にします。&lt;/p>
+&lt;h4 id="手動でt-poseにすることができます">手動でT Poseにすることができます&lt;/h4>
+&lt;p>自動で&lt;code>T Pose&lt;/code>にすると姿勢が変わってしまう場合などに、手動で&lt;code>T Pose&lt;/code>化することができます。
+あらかじめモデルを手動&lt;a href="https://vrm.dev/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a> にしてからエクスポートメニューを実行し、
+上記の&lt;code>Force T Pose&lt;/code>チェックボックスをオフにしてください。&lt;/p>
+&lt;h3 id="pose-freeze">Pose Freeze&lt;/h3>
+&lt;p>回転・スケールの除去処理を実行するか否か。
 VRMの規約に合致するようにモデルを正規化する処理です。
 初回のみ必要です。
-事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/p&gt;
-&lt;h4 id=&#34;ヒエラルキーの正規化&#34;&gt;ヒエラルキーの正規化&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/rot.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ボーンの向きに意味を持たせてあるタイプのモデル&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/rot_scale.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Z-UPかつ非メートル単位のモデル(Blenderのデフォルト)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;回転とスケールを除去します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/without_rot_scale.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;正規化済み&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;メッシュの正規化&#34;&gt;メッシュの正規化&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/zup_mesh.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;非T-PoseかつZ-UPで格納されているメッシュ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;SkinnedMeshRenderer.BakeMeshを使ってT-Pose状態のメッシュを作り、座標操作でY-UP化します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/yup_mesh.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;T-PoseかつY-UPで格納されているメッシュ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
-&lt;p&gt;vrmファイルをAssetsフォルダにインポートしてください。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_imported.png&#34; /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;立体ちゃんのVRMをインポート&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Texture, Material, PrefabがVRMから自動生成されます。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab.png&#34; /&gt;
-&lt;ul&gt;
-&lt;li&gt;対象のProjectビューにvrmが表示されない場合、右クリックから&lt;code&gt;refresh&lt;/code&gt;してみてください&lt;/li&gt;
-&lt;li&gt;Prefabが生成されない場合、vrmファイルを右クリックして&lt;code&gt;reimport&lt;/code&gt;してみてください&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Docs: UniVRMでよくある質問</title><link>https://vrm.dev/docs/univrm/univrm_faq/</link><pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/univrm_faq/</guid><description>
-&lt;h1 id=&#34;エラーの報告&#34;&gt;エラーの報告&lt;/h1&gt;
-&lt;p&gt;コンソール画面の内容をご確認ください。
-コンソール画面はメニューから表示できます。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/window_console.png&#34; alt=&#34;コンソール画面を表示するメニュー&#34; /&gt;
-&lt;p&gt;表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/error.png&#34; alt=&#34;エラーの例&#34; /&gt;
-&lt;p&gt;エラー報告は、起こった現象に&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;OS(Windows10 64bitなど)&lt;/li&gt;
-&lt;li&gt;Unityのバージョン(Unity-5.6.3p1など)&lt;/li&gt;
-&lt;li&gt;UniVRMのバージョン(0.40など)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;を添えて&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues&#34;&gt;https://github.com/vrm-c/UniVRM/issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;等にお知らせください。&lt;/p&gt;
-&lt;h1 id=&#34;設定したvrmspringboneが居なくなった&#34;&gt;設定したVRMSpringBoneが居なくなった&lt;/h1&gt;
-&lt;p&gt;VRMSpringBoneはインポート時に&lt;code&gt;secondary&lt;/code&gt;ノードにアタッチされます。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;プロジェクトをビルドするとローダーが動かなくなる&#34;&gt;プロジェクトをビルドするとローダーが動かなくなる&lt;/h1&gt;
-&lt;p&gt;UniVRMで使うシェーダーがビルド対象に含まれていない可能性があります。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Edit - ProjectSettings - GraphicsSettings - ShaderPreloading&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;をご確認ください。&lt;/p&gt;</description></item></channel></rss>
+事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/p>
+&lt;h4 id="ヒエラルキーの正規化">ヒエラルキーの正規化&lt;/h4>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/rot.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ボーンの向きに意味を持たせてあるタイプのモデル&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/rot_scale.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Z-UPかつ非メートル単位のモデル(Blenderのデフォルト)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>回転とスケールを除去します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/without_rot_scale.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>正規化済み&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="メッシュの正規化">メッシュの正規化&lt;/h4>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/zup_mesh.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>非T-PoseかつZ-UPで格納されているメッシュ&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>SkinnedMeshRenderer.BakeMeshを使ってT-Pose状態のメッシュを作り、座標操作でY-UP化します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/yup_mesh.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-PoseかつY-UPで格納されているメッシュ&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="import">Import&lt;/h2>
+&lt;p>vrmファイルをAssetsフォルダにインポートしてください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/alicia_imported.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>立体ちゃんのVRMをインポート&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Texture, Material, PrefabがVRMから自動生成されます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;ul>
+&lt;li>対象のProjectビューにvrmが表示されない場合、右クリックから&lt;code>refresh&lt;/code>してみてください&lt;/li>
+&lt;li>Prefabが生成されない場合、vrmファイルを右クリックして&lt;code>reimport&lt;/code>してみてください&lt;/li>
+&lt;/ul></description></item><item><title>Docs: UniVRMでよくある質問</title><link>https://vrm.dev/docs/univrm/univrm_faq/</link><pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/univrm_faq/</guid><description>
+&lt;h1 id="エラーの報告">エラーの報告&lt;/h1>
+&lt;p>コンソール画面の内容をご確認ください。
+コンソール画面はメニューから表示できます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/window_console.png" alt="コンソール画面を表示するメニュー" />
+&lt;p>表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/error.png" alt="エラーの例" />
+&lt;p>エラー報告は、起こった現象に&lt;/p>
+&lt;ul>
+&lt;li>OS(Windows10 64bitなど)&lt;/li>
+&lt;li>Unityのバージョン(Unity-5.6.3p1など)&lt;/li>
+&lt;li>UniVRMのバージョン(0.40など)&lt;/li>
+&lt;/ul>
+&lt;p>を添えて&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/issues">https://github.com/vrm-c/UniVRM/issues&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>等にお知らせください。&lt;/p>
+&lt;h1 id="設定したvrmspringboneが居なくなった">設定したVRMSpringBoneが居なくなった&lt;/h1>
+&lt;p>VRMSpringBoneはインポート時に&lt;code>secondary&lt;/code>ノードにアタッチされます。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone&lt;/a>&lt;/p>
+&lt;h1 id="プロジェクトをビルドするとローダーが動かなくなる">プロジェクトをビルドするとローダーが動かなくなる&lt;/h1>
+&lt;p>UniVRMで使うシェーダーがビルド対象に含まれていない可能性があります。&lt;/p>
+&lt;p>&lt;code>Edit - ProjectSettings - GraphicsSettings - ShaderPreloading&lt;/code>&lt;/p>
+&lt;p>をご確認ください。&lt;/p></description></item><item><title>Docs: 📁Install</title><link>https://vrm.dev/docs/univrm/install/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/</guid><description/></item><item><title>Docs: 📁Export</title><link>https://vrm.dev/docs/univrm/export/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/export/</guid><description/></item><item><title>Docs: 📁Import</title><link>https://vrm.dev/docs/univrm/import/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/</guid><description/></item><item><title>Docs: 📁LookAt</title><link>https://vrm.dev/docs/univrm/lookat/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/</guid><description/></item><item><title>Docs: 📁BlendShape</title><link>https://vrm.dev/docs/univrm/blendshape/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/</guid><description/></item><item><title>Docs: 📁FirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/</guid><description/></item><item><title>Docs: 📁SpringBone</title><link>https://vrm.dev/docs/univrm/springbone/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/springbone/</guid><description/></item><item><title>Docs: 📁Material</title><link>https://vrm.dev/docs/univrm/shaders/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/</guid><description/></item><item><title>Docs: 📁Meta</title><link>https://vrm.dev/docs/univrm/meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/</guid><description/></item><item><title>Docs: 📁Humanoid</title><link>https://vrm.dev/docs/univrm/humanoid/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/</guid><description/></item><item><title>Docs: 📁GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/</guid><description>
+&lt;p>UniVRM には UniGLTF の最新版が含まれています。&lt;/p></description></item></channel></rss>
