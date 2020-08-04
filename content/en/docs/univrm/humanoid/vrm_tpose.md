@@ -3,7 +3,7 @@ title: "About VRM T-Pose"
 linkTitle: "About T-pose"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-url: "univrm/humanoid/vrm_tpose/"
+aliases: ["/univrm/humanoid/vrm_tpose/"]
 ---
 
 VRM T-Pose[^tpose] conforms to Unity's Humanoid of the first implementation of VRM.

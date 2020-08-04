@@ -2,7 +2,7 @@
 title: GLB Export
 date: 2020-08-03T16:07:54+09:00
 weight: 2
-url: "univrm/gltf/how_to_create_glb/"
+aliases: ["/univrm/gltf/how_to_create_glb/"]
 ---
 
 ## Procedure

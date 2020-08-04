@@ -2,7 +2,7 @@
 title: "UniVRM workflow"
 date: 2018-04-16T16:30:00+09:00
 weight: 2
-url: "univrm/univrm_workflow/"
+aliases: ["/univrm/univrm_workflow/"]
 ---
 
 ## Workflow

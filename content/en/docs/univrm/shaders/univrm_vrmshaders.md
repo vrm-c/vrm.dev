@@ -1,8 +1,9 @@
 ---
 title: "VRMShaders"
 date: 2020-08-03T10:39:04+09:00
-weight: 3
-url: "univrm/shaders/univrm_vrmshaders/"
+weight: 8
+tags: ["material", "upm"]
+aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 
 Starting from `UniVRM-0.56`, the folder structure in UniVRM has been changed.
@@ -29,17 +30,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 
 ### UniUnlit
 
-Since part of GLTF properties are not available in Unity's `unlit` shaders (e.g. vertex color), we introduced `UniUnlit` to solve this issue. In addition, `UniUnlit` is fully compatible with all `unlit` shaders in Unity.
-
-Unity's `unlit` shaders will become `UniGLTF/UniUnlit` if they are exported, and then imported again. 
-
-| export                   | gltf                | import           |
-|--------------------------|---------------------|------------------|
-| Unlit/Color              | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Texture            | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Transparent        | KHR_materials_unlit | UniGLTF/UniUnlit |
-| Unlit/Transparent Cutout | KHR_materials_unlit | UniGLTF/UniUnlit |
-| UniGLTF/UniUnlit         | KHR_materials_unlit | UniGLTF/UniUnlit |
+[unlit]({{< relref "univrm_unlit.md" >}})
 
 ### MToon
 

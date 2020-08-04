@@ -1,8 +1,9 @@
 ---
-title: "UniVRM Shaders"
+title: "Export Import"
 date: 2020-08-03T10:39:04+09:00
-weight: 2
-url: "univrm/shaders/univrm_material_shader/"
+weight: 4
+tags: ["material"]
+aliases: ["/univrm/shaders/univrm_material_shader/"]
 ---
 
 ## Export

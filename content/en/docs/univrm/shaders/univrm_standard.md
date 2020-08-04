@@ -1,7 +1,9 @@
 ---
-title: Material-Settings
-url: "univrm/shaders/material_settings/"
+title: "Standard"
+weight: 3
+tags: ["material"]
 weight: 4
+aliases: ["/univrm/shaders/material_settings/"]
 ---
 
 ## Troubleshooting
@@ -51,3 +53,27 @@ Note that when `KHR_materials_unlit` is declared, core PBR properties are ignore
 ## MToon
 * https://www.slideshare.net/VirtualCast/vrm-mtoon (written in Japanese)
 * [MToon Shader]({{< relref "mtoon.md" >}})  
+
+Since the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM's `export/import` to convert textures between Unity and GLTF. 
+
+## Improvement: StandardShader's Texture Conversion
+
+The processing of textures other than color texture type has been improved.
+
+* NormalMap's import/export correction: since this fix is also applied to MToon shader, we put the details in the next section
+* Metallic, Roughness, OcclusionMap conversion:
+    * RGBA channel recombination
+    * The relative relation between Roughness value and Smoothness value
+    * Support sRGB and Linear
+    * Convert Texture by Importer, reverse conversion on Texture by Exporter
+
+## Correction: NormalMap's Import/Export
+
+Target for the textures of `Standard` and `MToon`.
+Normal map can be identified by the keyword `_BumpMap` in the material property.
+
+* EditorImport: `TextureImporterType.NormalMap`
+* RuntimeImport: pack normal texture
+* Export: unpack normal texture
+* Support sRGB and Linear 
+* Support Tangent
