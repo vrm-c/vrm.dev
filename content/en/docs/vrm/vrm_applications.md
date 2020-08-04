@@ -42,7 +42,6 @@ weight: 4
 | [VirtualMotionCapture](https://sh-akira.github.io/VirtualMotionCapture/) | Windows VR |
 | [FaceVTuber](https://facevtuber.com/) | Google Chrome |
 | [LiveAvatar](https://github.com/m2wasabi/LiveAvatar) | HTC VIVE |
-| [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Luppet](https://luppet.appspot.com/) | Windows + Leap Motion |
 | [vear](https://apps.apple.com/jp/app/vear/id1490697369) | iOS |
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
@@ -55,6 +54,7 @@ weight: 4
 |-------------|----------|
 | [Virtual Cast](https://virtualcast.jp/) | Windows VR |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
+| [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 
 ##  Game
