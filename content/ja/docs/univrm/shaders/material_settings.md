@@ -1,6 +1,7 @@
 ---
 title: マテリアル設定
 url: "univrm/shaders/material_settings/"
+weight: 4
 ---
 
 ## トラブルシューティング
