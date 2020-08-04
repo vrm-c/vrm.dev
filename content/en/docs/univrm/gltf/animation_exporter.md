@@ -2,7 +2,7 @@
 title: Animation
 date: 2020-08-03T16:07:54+09:00
 weight: 4
-aliases: ["/univrm/gltf/animation_exporter/"]
+aliases: ["/en/dev/univrm-0.xx/gltf/animation_exporter/"]
 ---
 
 The definition for Animation is available in GLTF.
@@ -47,3 +47,7 @@ The definition for Animation is available in GLTF.
 ![Interpolation](/images/wiki/Interpolation.png)
 2. For the Animator, all edited clips can be exported. However, the Animator states are not saved
 3. Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one
+
+
+
+

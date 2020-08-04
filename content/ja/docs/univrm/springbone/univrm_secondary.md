@@ -3,7 +3,7 @@ title: "VRMSpringBone"
 linkTitle: "揺れモノ"
 date: 2018-04-16T16:30:00+09:00
 weight: 5
-aliases: ["/univrm/springbone/univrm_secondary/"]
+aliases: ["/univrm/components/univrm_secondary/"]
 ---
 
 揺れモノ設定。
@@ -47,3 +47,6 @@ VRMをインポートしたとき、揺れモノ関連のコンポーネント�
 
 ## ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます
 VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。
+
+
+

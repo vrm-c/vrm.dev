@@ -1,5 +1,8 @@
 ---
 title: 📁BlendShape
 weight: 15
-aliases: ["/univrm/blendshape/"]
+aliases: ["/univrm/"]
 ---
+
+
+

@@ -1,6 +1,6 @@
 ---
 title: LookAt-Settings
-aliases: ["/univrm/lookat/lookat_settings/"]
+aliases: ["/en/univrm/settings/lookat_settings/"]
 ---
 
 ## Control the Eye Gaze with the Eye Bone
@@ -55,3 +55,6 @@ Please select the `LookLeft` asset in the Project window
 ![image](/images/wiki/blendshape_applyer.png)
 
 In the default setting, when the look angle between the target and the model's head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.
+
+
+

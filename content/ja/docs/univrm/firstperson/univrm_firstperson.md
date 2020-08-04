@@ -2,7 +2,7 @@
 title: "一人称表示"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
-aliases: ["/univrm/firstperson/univrm_firstperson/"]
+aliases: ["/univrm/components/univrm_firstperson/"]
 ---
 
 # VRMFirstPerson
@@ -47,3 +47,6 @@ Autoを指定します。
 ### 特に設定しない場合
 
 Bothを設定してください。
+
+
+

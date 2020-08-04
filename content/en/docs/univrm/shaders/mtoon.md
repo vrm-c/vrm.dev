@@ -3,7 +3,7 @@ title: "MToon"
 linkTitle: "MToon setting"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/shaders/mtoon/"]
+aliases: ["/en/univrm/shaders/mtoon/"]
 ---
 
 [How to use MToon](https://www.slideshare.net/VirtualCast/vrm-mtoon)
@@ -141,3 +141,7 @@ Set the outline color.
 
 ### Color Lighting Mix
 Set the multiplier coefficient when `Color Mode->MixedLighting` is chosen.
+
+
+
+

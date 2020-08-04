@@ -3,7 +3,7 @@ title: "GLTFについて"
 linkTitle: "GLTFとは"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/gltf/gltf_about/"]
+aliases: ["/dev/univrm-0.xx/gltf/gltf_about/"]
 ---
 
 glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。
@@ -137,3 +137,7 @@ with open('AliciaSolid.vrm', 'rb') as f:
 JSONの``json['extensions']['VRM']``以下に格納されています。
 
 * [VRM仕様](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md)
+
+
+
+

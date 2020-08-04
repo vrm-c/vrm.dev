@@ -5,7 +5,11 @@ no_list: true
 menu:
   main:
     weight: 11
-aliases: ["/univrm/"]
+aliases: ["/en/univrm/"]
 ---
 
 - [Download](https://github.com/vrm-c/UniVRM/releases)
+
+
+
+

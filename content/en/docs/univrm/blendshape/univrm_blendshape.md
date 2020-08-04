@@ -3,7 +3,7 @@ title: "BlendShape Setting"
 linkTitle: "BlendShape"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/blendshape/univrm_blendshape/"]
+aliases: ["/en/univrm/components/univrm_blendshape/"]
 ---
 
 New features introduced in UniVRM v0.45:
@@ -114,3 +114,6 @@ After the setting is done, don't forget to export VRM file for being able to use
 |{{< img src="images/vrm/BlendShapeClipMaterial.png" >}}|
 |-----|
 |The setting of Material morph. Double click the``Current clip``field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view|
+
+
+

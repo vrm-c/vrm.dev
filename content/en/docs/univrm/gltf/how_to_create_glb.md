@@ -2,7 +2,7 @@
 title: GLB Export
 date: 2020-08-03T16:07:54+09:00
 weight: 2
-aliases: ["/univrm/gltf/how_to_create_glb/"]
+aliases: ["/en/dev/univrm-0.xx/gltf/how_to_create_glb/"]
 ---
 
 ## Procedure
@@ -37,3 +37,7 @@ Its translation, rotation and scale should be default values.
 ## Available Shader
 
 * `Standard`, `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout` and `UniGLTF/UniUnlit`
+
+
+
+

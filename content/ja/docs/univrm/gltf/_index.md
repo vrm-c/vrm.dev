@@ -1,7 +1,11 @@
 ---
 title: 📁GLTF
 weight: 20
-aliases: ["/univrm/gltf/"]
+aliases: ["/dev/univrm-0.xx/gltf/"]
 ---
 
 UniVRM には UniGLTF の最新版が含まれています。
+
+
+
+

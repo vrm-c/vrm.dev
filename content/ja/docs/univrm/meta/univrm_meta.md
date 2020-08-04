@@ -2,7 +2,7 @@
 title: "モデル情報"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/meta/univrm_meta/"]
+aliases: ["/univrm/components/univrm_meta/"]
 ---
 
 ## VRMMeta
@@ -67,3 +67,6 @@ aliases: ["/univrm/meta/univrm_meta/"]
 
 ##### その他ライセンス条件(Other License Url)
 上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述
+
+
+

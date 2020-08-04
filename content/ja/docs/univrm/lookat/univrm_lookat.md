@@ -2,7 +2,7 @@
 title: "視線制御"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/univrm/lookat/univrm_lookat/"]
+aliases: ["/univrm/components/univrm_lookat/"]
 ---
 
 ## VRMLookAtHead
@@ -39,3 +39,6 @@ EyeBoneに回転を適用する際に角度を調節します。
 BlendShapeで視線制御するモデル用のコンポーネントです。
 VRMLookAtBoneApplyerを削除して、代わりにこれをアタッチしてください。
 VRMLookAtBlendShapeに関する設定方法[こちら]({{< relref "lookat_settings.md" >}})  を参照してください。
+
+
+

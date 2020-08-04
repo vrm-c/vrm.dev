@@ -1,6 +1,6 @@
 ---
 title: LookAtの設定
-aliases: ["/univrm/lookat/lookat_settings/"]
+aliases: ["/univrm/settings/lookat_settings/"]
 ---
 
 ## 目ボーンによる視線制御
@@ -60,3 +60,6 @@ Textureを上下左右にスライドさせることで目線を移動させる�
 90を減らすことでより少ない角度で大きく瞳を動かすことが出来ます。
 
 以上で完了です。
+
+
+

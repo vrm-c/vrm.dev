@@ -1,7 +1,7 @@
 ---
 title: BlendShape Setup (v0.45)
 weight: 2
-aliases: ["/univrm/blendshape/blendshape_setup/"]
+aliases: ["/en/univrm/settings/blendshape_setup/"]
 ---
 
 ## Assets related to BlendShape
@@ -88,3 +88,6 @@ The Binary option is added into the BlendShape setting in v0.45. It is for users
 This feature will become effective when a v0.45-installed application is loaded
 
 ![image](/images/wiki/binary.png)
+
+
+

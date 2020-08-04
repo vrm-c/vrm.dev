@@ -1,7 +1,7 @@
 ---
 title: Glbエクスポート
 weight: 2
-aliases: ["/univrm/gltf/how_to_create_glb/"]
+aliases: ["/dev/univrm-0.xx/gltf/how_to_create_glb/"]
 ---
 
 ## 手順
@@ -36,3 +36,7 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 ## 対応しているShader
 
 * `Standard` もしくは `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
+
+
+
+

@@ -142,3 +142,7 @@ Rendering 項目では主色と影色、および描画方法を設定します�
 
 ### Color Lighting Mix
 `Color Mode` が `MixedLighting` のとき、その乗算係数を設定します。
+
+
+
+
