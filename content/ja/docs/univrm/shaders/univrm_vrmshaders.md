@@ -29,7 +29,7 @@ url: "univrm/shaders/univrm_vrmshaders/"
 
 ### UniUnlit
 
-[unilt]({{< relref "univrm_unlit.md" >}})
+[unlit]({{< relref "univrm_unlit.md" >}})
 
 ### MToon
 

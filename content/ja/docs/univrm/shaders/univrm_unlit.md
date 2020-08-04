@@ -5,7 +5,7 @@ weight: 2
 tags: ["material"]
 ---
 
-## `UniGLTF/UniUnilt` シェーダー
+## `UniGLTF/UniUnlit` シェーダー
 
 Unity の `Unlit` 系シェーダーは、機能ごとに
 
