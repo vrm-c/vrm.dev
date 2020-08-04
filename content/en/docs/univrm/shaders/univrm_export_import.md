@@ -10,20 +10,29 @@ aliases: ["/univrm/shaders/univrm_material_shader/"]
 
 ### GLTF Layer
 
-There are only two types: PBR (Physically based rendering) and Unlit.
-A material will be `unlit` if it is one of the shaders in the following list:
+The information is recorded in gltf's `/materials[]`.
 
-* Unlit/Color
-* Unlit/Texture
-* Unlit/Transparent
-* Unlit/Transparent Cutout
-* UniGLTF/UniUnlit
+Only support the following two types:
 
-Other shaders will be set as `standard` and recorded in gltf's `/materials[]`.
+* PBR (default) 
+* Unlit (KHR_materials_unlit extension) 
+
+#### Details
+
+If the material is one of the shaders in the following list, add `KHR_materials_unlit` extension.
+
+* Unlit/Color (Unity default)
+* Unlit/Texture (Unity default)
+* Unlit/Transparent (Unity default)
+* Unlit/Transparent Cutout (Unity default)
+* UniGLTF/UniUnlit (UniVRM)
+* VRM/UnlitTexture (UniVRM)
+* VRM/UnlitTransparent (UniVRM)
+* VRM/UnlitCutout (UniVRM)
 
 ### VRM Layer
 
-Shaders are recorded in gltf's `/extensions/VRM/materialProperties[]`.
+The information is recorded in gltf's `/extensions/VRM/materialProperties[]`.
 
 Available shaders in VRM Layer:
 
@@ -37,30 +46,30 @@ Other shaders will be set as `VRM_USE_GLTFSHADER` in `shaderName`.
 ### GLTF Layer
 
 Create Unity material from GLTF's `/materials[]`.
+If `KHR_materials_unlit` extension is found, the material `UniGLTF/UniUnlit` is created.
 
-Select either one in the followings:
-
-* Standard
-* UniGLTF/UniUnlit
+[UniUnlit]({{< relref "univrm_vrmshaders.md" >}}#uniunlit)
 
 ### VRM Layer
 
 Create Unity material from GLTF's `/extensions/VRM/materialProperties[]`.
+If `shaderName` is `VRM_USE_GLTFSHADER`, use the information recorded in `/materials[]` and process as `GLTF`'s `PBR` or `Unlit`.
 
-## Import/Export
+## Shader Change
 
-| export                     | gltf                                 | import                     |
-|----------------------------|--------------------------------------|----------------------------|
-| Unlit/Color                | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Texture              | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent          | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent Cutout   | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTexture           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTransparent       | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitCutout            | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTransparentZWrite | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| UniGLTF/UniUnlit           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Standard                   |                                      | Standard                   |
-| VRM/MToon                  | extensions.VRM.materialsProperties[] | VRM/MToon                  |
-| VRM/UnlitTransparentZWrite | extensions.VRM.materialsProperties[] | VRM/UnlitTransparentZWrite |
-| Others                     |                                      | Standard                   |
+The shader may be changed after export/import:
+
+* if unsupported shaders are imported, they will be changed to `Standard`. GLTF's `PBR` will be set to `Standard` due to the majority of the properties are compatible
+* if shaders are unlit type, they will be [UniGLTF/UniUnlit]({{< relref "univrm_unlit.md" >}}) (this is the normal conversion).
+
+## VRM_USE_GLTFSHADER
+
+The information is recorded in:
+
+`/extensions/VRM/materialProperties[]`
+
+Supported Shaders:
+
+* VRM/MToon
+
+Currently VRM supported shaders are  `PBR(Standard)`, `Unlit`, `MToon`.
