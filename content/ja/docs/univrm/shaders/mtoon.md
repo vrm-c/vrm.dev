@@ -3,7 +3,7 @@ title: "MToon"
 linkTitle: "MToonの設定"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-url: "univrm/shaders/mtoon/"
+aliases: ["/univrm/shaders/mtoon/"]
 tags: ["material", "mtoon"]
 ---
 

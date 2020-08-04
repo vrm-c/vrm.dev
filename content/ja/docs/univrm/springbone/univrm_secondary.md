@@ -3,7 +3,7 @@ title: "VRMSpringBone"
 linkTitle: "揺れモノ"
 date: 2018-04-16T16:30:00+09:00
 weight: 5
-url: "univrm/springbone/univrm_secondary/"
+aliases: ["/univrm/springbone/univrm_secondary/"]
 ---
 
 揺れモノ設定。

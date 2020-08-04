@@ -2,7 +2,7 @@
 title: "install UPM"
 date: 2020-07-08T11:42:13+09:00
 weight: 2
-url: "univrm/install/univrm_upm/"
+aliases: ["/univrm/install/univrm_upm/"]
 ---
 
 ## UniVRM-0.XX の UnityPackage

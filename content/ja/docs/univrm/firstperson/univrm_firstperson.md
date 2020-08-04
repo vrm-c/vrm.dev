@@ -2,7 +2,7 @@
 title: "一人称表示"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
-url: "univrm/firstperson/univrm_firstperson/"
+aliases: ["/univrm/firstperson/univrm_firstperson/"]
 ---
 
 # VRMFirstPerson

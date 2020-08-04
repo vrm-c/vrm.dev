@@ -2,7 +2,7 @@
 title: アニメーション
 tags: ["unvrm", "gltf", "animation"]
 weight: 4
-url: "univrm/gltf/animation_exporter/"
+aliases: ["/univrm/gltf/animation_exporter/"]
 ---
 
 GLTF は、Animation の定義があります。

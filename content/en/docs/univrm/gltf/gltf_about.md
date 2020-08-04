@@ -3,7 +3,7 @@ title: "About GLTF"
 linkTitle: "What is GLTF?"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-url: "univrm/gltf/gltf_about/"
+aliases: ["/univrm/gltf/gltf_about/"]
 ---
 
 glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.

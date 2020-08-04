@@ -3,7 +3,7 @@ title: "BlendShape Setting"
 linkTitle: "BlendShape"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-url: "univrm/blendshape/univrm_blendshape/"
+aliases: ["/univrm/blendshape/univrm_blendshape/"]
 ---
 
 New features introduced in UniVRM v0.45:

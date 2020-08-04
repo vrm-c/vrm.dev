@@ -2,8 +2,8 @@
 title: "Standard"
 weight: 3
 tags: ["material"]
-url: "univrm/shaders/material_settings/"
 weight: 4
+aliases: ["/univrm/shaders/material_settings/"]
 ---
 
 ## Troubleshooting

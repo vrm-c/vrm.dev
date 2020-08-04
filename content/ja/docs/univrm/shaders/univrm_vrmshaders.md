@@ -3,7 +3,7 @@ title: "VRMShaders UPMパッケージ"
 date: 2020-07-29
 weight: 8
 tags: ["material", "upm"]
-url: "univrm/shaders/univrm_vrmshaders/"
+aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 
 `UniVRM-0.56` からフォルダ構成を変更して、

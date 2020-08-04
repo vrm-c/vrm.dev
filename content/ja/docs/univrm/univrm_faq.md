@@ -3,7 +3,7 @@ title: "UniVRMでよくある質問"
 linkTitle: "FAQ"
 date: 2018-05-09
 weight: 2
-url: "univrm/univrm_faq/"
+aliases: ["/univrm/univrm_faq/"]
 ---
 
 # エラーの報告

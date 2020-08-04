@@ -2,7 +2,7 @@
 title: "Standard"
 weight: 3
 tags: ["material"]
-url: "univrm/shaders/standard/"
+aliases: ["/univrm/shaders/standard/"]
 ---
 
 ## Standard

@@ -2,7 +2,7 @@
 title: "モデル情報"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-url: "univrm/meta/univrm_meta/"
+aliases: ["/univrm/meta/univrm_meta/"]
 ---
 
 ## VRMMeta

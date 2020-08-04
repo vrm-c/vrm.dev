@@ -1,6 +1,6 @@
 ---
 title: T Pose Normalization for Model
-url: "univrm/humanoid/t_pose/"
+aliases: ["/univrm/humanoid/t_pose/"]
 ---
 
 ## Supplementary Information regarding T-Pose

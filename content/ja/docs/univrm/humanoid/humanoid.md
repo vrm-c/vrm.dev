@@ -1,6 +1,6 @@
 ---
 title: ヒューマノイド
-url: "univrm/humanoid/humanoid/"
+aliases: ["/univrm/humanoid/humanoid/"]
 ---
 
 WIP

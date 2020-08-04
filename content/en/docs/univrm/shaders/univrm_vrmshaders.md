@@ -3,7 +3,7 @@ title: "VRMShaders"
 date: 2020-08-03T10:39:04+09:00
 weight: 8
 tags: ["material", "upm"]
-url: "univrm/shaders/univrm_vrmshaders/"
+aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 
 Starting from `UniVRM-0.56`, the folder structure in UniVRM has been changed.

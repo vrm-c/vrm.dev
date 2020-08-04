@@ -1,5 +1,5 @@
 ---
 title: "📁LookAt"
 weight: 14
-url: "univrm/lookat/"
+aliases: ["/univrm/lookat/"]
 ---

@@ -2,7 +2,7 @@
 title: "UniVRM Export"
 date: 2020-07-16T10:23:04+09:00
 weight: 2
-url: "univrm/export/univrm_export/"
+aliases: ["/univrm/export/univrm_export/"]
 ---
 
 ## Export Dialog
