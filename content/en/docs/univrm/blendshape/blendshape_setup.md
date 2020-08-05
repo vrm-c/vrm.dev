@@ -46,7 +46,7 @@ You can see the values created from the BlendShape tab.
 
 #### Material List tab
 
-You can create a [BlendShape version of LookAt]({{< relref "lookat_settings.md" >}}), change the color with BlendShape, etc.
+You can create a [BlendShape version of LookAt]({{< relref "lookat_blendshape.md" >}}), change the color with BlendShape, etc.
 
 ![image](/images/wiki/material_color.png)
 
