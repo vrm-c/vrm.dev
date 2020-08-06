@@ -1,4 +1,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 📁LookAt</title><link>https://vrm.dev/en/docs/univrm/lookat/</link><description>Recent content in 📁LookAt on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 14:54:52 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/lookat/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Eye Control</title><link>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</guid><description>
+&lt;p>VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
+目に適用できます。&lt;/p>
+&lt;ul>
+&lt;li>VRMLookAtHead + VRMLookAtBoneApplyer または VRMLookAtBlendShapeApplyer の２つのコンポーネントで設定します。&lt;/li>
+&lt;/ul>
+&lt;h2 id="lookatの種類">LookAtの種類&lt;/h2>
+&lt;p>注視点への Yaw, Pitch 角を適用する方法が以下の３種類あります。
+モデルに応じて選択してください。&lt;/p>
+&lt;h3 id="bone">Bone&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye ボーンが回転するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="blendshape">BlendShape&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">BlendShapeの頂点移動で制御するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="textureuv">TextureUV&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">目のテクスチャの &lt;code>UV Offset&lt;/code> で制御するタイプ&lt;/a>&lt;/p>
 &lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -16,6 +30,12 @@
 &lt;p>This component calculates the direction from the model&amp;rsquo;s head to the target.&lt;/p>
 &lt;h3 id="target">Target&lt;/h3>
 &lt;p>The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.&lt;/p>
+&lt;h2 id="視線計算の基準位置">視線計算の基準位置&lt;/h2>
+&lt;p>VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p>
+&lt;blockquote>
+&lt;p>eye bone を使う場合は目の間が推定できるのですがblendShape を使う場合には位置がわからないので、明示的に設定するようになっています。&lt;/p>
+&lt;/blockquote></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
 &lt;h2 id="eye-control-with-bone-vrmlookatboneapplyer">Eye control with bone: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -38,15 +58,15 @@
 &lt;li>HorizontalInner: The angle limit of horizontally inward direction&lt;/li>
 &lt;li>VerticalDown: The angle limit of vertically downward direction&lt;/li>
 &lt;li>VerticalUp: The angle limit of vertically upward direction&lt;/li>
-&lt;/ul>
+&lt;/ul></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;h2 id="eye-control-with-blendshape-vrmlookatblendshapeapplyer">Eye control with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2>
 &lt;p>The component for controlling the eyes with BlendShape.
 Please delete VRMLookAtBoneApplyer and attach VRMLookAtBlendShapeApplyer instead.
-Settings related to VRMLookAtBlendShape&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_settings/">can be found here&lt;/a>.&lt;/p></description></item><item><title>Docs: LookAt-Settings</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_settings/</guid><description>
+Settings related to VRMLookAtBlendShape&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">can be found here&lt;/a>.&lt;/p>
 &lt;h2 id="control-the-eye-gaze-with-the-eye-bone">Control the Eye Gaze with the Eye Bone&lt;/h2>
 &lt;p>Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye Control&lt;/a>.&lt;/p>
 &lt;h2 id="control-the-eye-gaze-with-the-blendshape">Control the Eye Gaze with the BlendShape&lt;/h2>
-&lt;p>Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye Control&lt;/a>.&lt;/p>
+&lt;p>Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye Control&lt;/a>.&lt;/p></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</guid><description>
 &lt;h2 id="control-the-eye-gaze-with-the-uv-texture">Control the Eye Gaze with the UV Texture&lt;/h2>
 &lt;p>A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
 &lt;code>Unity chan&lt;/code> belongs to this type.&lt;/p>

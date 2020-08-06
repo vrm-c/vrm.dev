@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 18 Sep 2019 11:20:35 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: install unitypackage</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 18 Sep 2019 14:21:47 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: install unitypackage</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;p>&lt;code>UniVRM-0.56&lt;/code> から
 Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしています。&lt;/p>
@@ -439,7 +439,47 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 &lt;p>VRMではglbを採用しています。 &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Docs: MToon</title><link>https://vrm.dev/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/mtoon/</guid><description>
+&lt;/section></description></item><item><title>Docs: LookAt</title><link>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</guid><description>
+&lt;p>VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
+目に適用できます。&lt;/p>
+&lt;ul>
+&lt;li>VRMLookAtHead + VRMLookAtBoneApplyer または VRMLookAtBlendShapeApplyer の２つのコンポーネントで設定します。&lt;/li>
+&lt;/ul>
+&lt;h2 id="lookatの種類">LookAtの種類&lt;/h2>
+&lt;p>注視点への Yaw, Pitch 角を適用する方法が以下の３種類あります。
+モデルに応じて選択してください。&lt;/p>
+&lt;h3 id="bone">Bone&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">eye ボーンが回転するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="blendshape">BlendShape&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeの頂点移動で制御するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="textureuv">TextureUV&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">目のテクスチャの &lt;code>UV Offset&lt;/code> で制御するタイプ&lt;/a>&lt;/p>
+&lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtHead.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtHead&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>このコンポーネントは頭から見たTargetの方向を計算します。&lt;/p>
+&lt;h3 id="target">Target&lt;/h3>
+&lt;blockquote>
+&lt;p>Application設定 です。モデルのセットアップには使いません&lt;/p>
+&lt;/blockquote>
+&lt;p>注視する対象物です。目を向けたい場所にあるオブジェクトをセットしてください。
+カメラをセットすればカメラ目線になります。&lt;/p>
+&lt;h2 id="視線計算の基準位置">視線計算の基準位置&lt;/h2>
+&lt;p>VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p>
+&lt;blockquote>
+&lt;p>eye bone を使う場合は目の間が推定できるのですがblendShape を使う場合には位置がわからないので、明示的に設定するようになっています。&lt;/p>
+&lt;/blockquote></description></item><item><title>Docs: MToon</title><link>https://vrm.dev/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/mtoon/</guid><description>
 &lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">MToonの使い方&lt;/a>&lt;/p>
 &lt;h1 id="mtoon-について">MToon について&lt;/h1>
 &lt;p>MToon は日本のアニメ的表現をすることを目標としています。
@@ -990,52 +1030,7 @@ VRMの規約に合致するようにモデルを正規化する処理です。
 &lt;ul>
 &lt;li>対象のProjectビューにvrmが表示されない場合、右クリックから&lt;code>refresh&lt;/code>してみてください&lt;/li>
 &lt;li>Prefabが生成されない場合、vrmファイルを右クリックして&lt;code>reimport&lt;/code>してみてください&lt;/li>
-&lt;/ul></description></item><item><title>Docs: 視線制御</title><link>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</guid><description>
-&lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtHead.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>VRMLookAtHead&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>このコンポーネントは頭から見たTargetの方向を計算します。&lt;/p>
-&lt;h3 id="target">Target&lt;/h3>
-&lt;p>注視する対象物です。目を向けたい場所にあるオブジェクトをセットしてください。
-カメラをセットすればカメラ目線になります。&lt;/p>
-&lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>VRMLookAtBoneApplyer&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>VRMLookAtHeadの計算した視線方向のパラメーターをEyeBoneに適用します。&lt;/p>
-&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
-&lt;p>EyeBoneに回転を適用する際に角度を調節します。&lt;/p>
-&lt;ul>
-&lt;li>HorizontalOuter: 横方向外向きの角度制限です&lt;/li>
-&lt;li>HorizontalInner: 横方向内向きの角度制限です&lt;/li>
-&lt;li>VerticalDown: 縦方向下向きの角度制限です&lt;/li>
-&lt;li>VerticalUp: 縦方向上向きの角度制限です&lt;/li>
-&lt;/ul>
-&lt;h2 id="モーフ制御の視線-vrmlookatblendshapeapplyer">モーフ制御の視線: VRMLookAtBlendShapeApplyer&lt;/h2>
-&lt;p>BlendShapeで視線制御するモデル用のコンポーネントです。
-VRMLookAtBoneApplyerを削除して、代わりにこれをアタッチしてください。
-VRMLookAtBlendShapeに関する設定方法&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_settings/">こちら&lt;/a> を参照してください。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;/ul></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1059,7 +1054,7 @@ VRMLookAtBlendShapeに関する設定方法&lt;a href="https://vrm.dev/docs/univ
 あまり使わない。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_angry.png" alt="image">&lt;/p>
 &lt;h4 id="material-listタブ">Material Listタブ&lt;/h4>
-&lt;p>&lt;code>BlendShapeによる&lt;/code>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_settings/">LookAt&lt;/a>(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p>
+&lt;p>&lt;code>BlendShapeによる&lt;/code>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">LookAt&lt;/a>(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/material_color.png" alt="image">&lt;/p>
 &lt;h2 id="各blendshapeclipの設定">各BlendShapeClipの設定&lt;/h2>
 &lt;p>各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p>
@@ -1081,7 +1076,38 @@ VRMLookAtBlendShapeに関する設定方法&lt;a href="https://vrm.dev/docs/univ
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
 &lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
+&lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtBoneApplyer&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>VRMLookAtHeadの計算した視線方向のパラメーターをEyeBoneに適用します。&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>目標物への相対角度 yaw, pitch を、eye bone のローテンションにそのまま代入すると目が動きすぎてしまいます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の eye bone の回転角度 =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>で設定できます。
+次の４方向を設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>HorizontalOuter&lt;/li>
+&lt;li>HorizontalInner&lt;/li>
+&lt;/ul>
+&lt;p>横方向は左右ではなく、内外になります。&lt;/p></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
 &lt;h2 id="手順">手順&lt;/h2>
 &lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
 以下、手順を説明します。&lt;/p>
@@ -1741,7 +1767,26 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;p>ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">meta&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadMeta&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Thumbnailテクスチャを作成する
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">Texture2D&lt;/span> &lt;span style="color:#000">thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">meta&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
+&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
+&lt;h2 id="モーフ制御の視線-vrmlookatblendshapeapplyer">モーフ制御の視線: VRMLookAtBlendShapeApplyer&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>BlendShapeで視線制御するモデル用のコンポーネントです。
+事前に、 &lt;code>LookUp&lt;/code>, &lt;code>LookDown&lt;/code>, &lt;code>LookLeft&lt;/code>, &lt;code>LookRight&lt;/code> の４つの BlendShape を設定してください。&lt;/p>
+&lt;p>VRMLookAtBlendShapeに関する設定方法&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">こちら&lt;/a> を参照してください。&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>次の３つを設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>Horizontal&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
 &lt;table>
@@ -1964,7 +2009,50 @@ VRMFirstPersonでは一人称時に頭を描画しないようにすることを
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_L&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_R&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">});&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
+&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
+&lt;h2 id="textureのuv操作による視線制御">TextureのUV操作による視線制御&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>Textureを上下左右にスライドさせることで目線を移動させる方法です。
+&lt;code>Unityちゃん&lt;/code> はこのタイプです。&lt;/p>
+&lt;h2 id="目のマテリアルを探す">目のマテリアルを探す&lt;/h2>
+&lt;p>マテリアルのインスペクタの目のテクスチャの &lt;code>Tiling Offset&lt;/code> の設定に注目してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
+&lt;p>&lt;code>1, 1, 0, 0&lt;/code> になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。&lt;/p>
+&lt;p>試しに、&lt;code>Offset&lt;/code> Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
+目的の設定が見つかったので元に戻して次に進みます。&lt;/p>
+&lt;h2 id="blendshapeの準備">BlendShapeの準備&lt;/h2>
+&lt;p>LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラーマテリアルの UV を操作するようにします。
+例では、Materialに &lt;code>unlit/transparent cutout&lt;/code> を使用しています。&lt;/p>
+&lt;h3 id="lookleftの例">LookLeftの例&lt;/h3>
+&lt;p>&lt;code>LookLeft&lt;/code> 選択してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Material List&lt;/code> タブを選択&lt;/li>
+&lt;li>&lt;code>+&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code> に設定します&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Offsetを調整してLookLeftを作ります&lt;/li>
+&lt;li>&lt;code>eye_R1&lt;/code> も同様に&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
+&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>次の３つを設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>Horizontal&lt;/li>
+&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>GLTF は、Animation の定義があります。&lt;/p>
 &lt;blockquote>
 &lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
@@ -2650,49 +2738,7 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p>
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: LookAtの設定</title><link>https://vrm.dev/docs/univrm/lookat/lookat_settings/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_settings/</guid><description>
-&lt;h2 id="目ボーンによる視線制御">目ボーンによる視線制御&lt;/h2>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">視線制御&lt;/a>
-を参照してください。&lt;/p>
-&lt;h2 id="blendshapeによる視線制御">BlendShapeによる視線制御&lt;/h2>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">視線制御&lt;/a>
-を参照してください。&lt;/p>
-&lt;h2 id="textureのuv操作による視線制御">TextureのUV操作による視線制御&lt;/h2>
-&lt;p>Textureを上下左右にスライドさせることで目線を移動させる方法です。
-&lt;code>Unityちゃん&lt;/code> がこのタイプです。&lt;/p>
-&lt;h3 id="目のマテリアルを探す">目のマテリアルを探す&lt;/h3>
-&lt;p>マテリアルのインスペクタの目のテクスチャの &lt;code>Tiling Offset&lt;/code> の設定に注目してください。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
-&lt;p>&lt;code>1, 1, 0, 0&lt;/code> になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください・・・)。&lt;/p>
-&lt;p>試しに、&lt;code>Offset&lt;/code> Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
-目的の設定が見つかったので &lt;code>0&lt;/code> に戻して次に進みます。&lt;/p>
-&lt;h3 id="lookup-lookdown-lookleft-lookrightを設定する">LookUp, LookDown, LookLeft, LookRightを設定する&lt;/h3>
-&lt;p>例では、Materialに &lt;code>unlit/transparent cutout&lt;/code> を使用しています。&lt;/p>
-&lt;h4 id="lookleftの例">LookLeftの例&lt;/h4>
-&lt;p>&lt;code>LookLeft&lt;/code> アセットを選択してください。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>Material List&lt;/code> タブを選択&lt;/li>
-&lt;li>&lt;code>+&lt;/code> を選択&lt;/li>
-&lt;li>&lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code> を選択&lt;/li>
-&lt;li>&lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code> に設定します&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Offsetを調整してLookLeftを作ります&lt;/li>
-&lt;li>&lt;code>eye_R1&lt;/code> も同様に&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
-&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
-&lt;h3 id="vrmlookatblendshapeapplyerをセットする">VRMLookAtBlendShapeApplyerをセットする&lt;/h3>
-&lt;ul>
-&lt;li>VRMLookAtBoneApplyerを削除します&lt;/li>
-&lt;li>VRMLookAtBlendShapeApplyerを追加します&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
-&lt;p>初期設定では、目標物が頭部から見て90度の角度になったときにBlendShpaeを1.0にセットするという意味になります。90以上は1.0にクランプされます。
-90を減らすことでより少ない角度で大きく瞳を動かすことが出来ます。&lt;/p>
-&lt;p>以上で完了です。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id="049">0.49&lt;/h2>
 &lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
 その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
