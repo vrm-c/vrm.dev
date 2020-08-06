@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 18 Sep 2019 14:38:58 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 18 Sep 2019 14:43:53 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Outline</title><link>https://vrm.dev/en/dev/univrm-1.xx/outline/</link><pubDate>Tue, 21 Apr 2020 19:56:48 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/outline/</guid><description>
 &lt;h1 id="univrm-10-draft">UniVRM-1.0 draft&lt;/h1>
 &lt;p>Unity implementation of VRM-1.0 draft.&lt;/p>
 &lt;ul>
@@ -278,20 +278,21 @@ For example, we select&lt;code>Fun&lt;/code>and edit its expressions as shown in
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: Eye Control</title><link>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</guid><description>
-&lt;p>VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
-目に適用できます。&lt;/p>
+&lt;p>To control the eye, the relative rotation (Yaw, Pitch) between the VRM model&amp;rsquo;s head and the LookAt target is calculated and then applied to the eye.&lt;/p>
+&lt;p>There are two types of eye control settings:&lt;/p>
 &lt;ul>
-&lt;li>VRMLookAtHead + VRMLookAtBoneApplyer または VRMLookAtBlendShapeApplyer の２つのコンポーネントで設定します。&lt;/li>
+&lt;li>&lt;code>VRMLookAtHead&lt;/code> + &lt;code>VRMLookAtBoneApplyer&lt;/code> components&lt;/li>
+&lt;li>&lt;code>VRMLookAtHead&lt;/code> + &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components&lt;/li>
 &lt;/ul>
-&lt;h2 id="lookatの種類">LookAtの種類&lt;/h2>
-&lt;p>注視点への Yaw, Pitch 角を適用する方法が以下の３種類あります。
-モデルに応じて選択してください。&lt;/p>
+&lt;h2 id="lookat-type">LookAt Type&lt;/h2>
+&lt;p>There are three ways to apply Yaw and Pitch angles relative to LookAt target.
+Please set up one of them listed in the followings based on the format of your model:&lt;/p>
 &lt;h3 id="bone">Bone&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye ボーンが回転するタイプ&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye movement controlled by Eye Bone&lt;/a>&lt;/p>
 &lt;h3 id="blendshape">BlendShape&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">BlendShapeの頂点移動で制御するタイプ&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye movement controlled by BlendShape vertices&lt;/a>&lt;/p>
 &lt;h3 id="textureuv">TextureUV&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">目のテクスチャの &lt;code>UV Offset&lt;/code> で制御するタイプ&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye movement controlled by &lt;code>UV Offset&lt;/code> of the eye&amp;rsquo;s texture&lt;/a>&lt;/p>
 &lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -308,12 +309,13 @@ For example, we select&lt;code>Fun&lt;/code>and edit its expressions as shown in
 &lt;/table>
 &lt;p>This component calculates the direction from the model&amp;rsquo;s head to the target.&lt;/p>
 &lt;h3 id="target">Target&lt;/h3>
-&lt;p>The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.&lt;/p>
-&lt;h2 id="視線計算の基準位置">視線計算の基準位置&lt;/h2>
-&lt;p>VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p>
 &lt;blockquote>
-&lt;p>eye bone を使う場合は目の間が推定できるのですがblendShape を使う場合には位置がわからないので、明示的に設定するようになっています。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: UniVRM installation</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
+&lt;p>This is the setting for Application, not for VRM model setup&lt;/p>
+&lt;/blockquote>
+&lt;p>The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.&lt;/p>
+&lt;h2 id="viewpoint-position">Viewpoint Position&lt;/h2>
+&lt;p>The viewpoint position is obtained by &lt;code>HeadBonePosition&lt;/code> + &lt;code>FirstPersonOffset&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson.png" /></description></item><item><title>Docs: UniVRM installation</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, UniVRM supports &lt;code>Unity-2018.4LTS+&lt;/code> &lt;code>.Net4.x&lt;/code>.&lt;/p>
 &lt;p>To install UniVRM with Unity Package Manager, please refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_upm/">Install UniVRM with UPM&lt;/a>&lt;/p>
@@ -881,7 +883,35 @@ More specifically, it is&lt;code>Header part + JSON CHUNk + BINARY CHUNK&lt;/cod
 &lt;li>Other&lt;/li>
 &lt;/ul>
 &lt;h4 id="other-license-url-1">Other License Url&lt;/h4>
-&lt;p>If “Other” is selected, put the URL link of the license document here.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>If “Other” is selected, put the URL link of the license document here.&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Thu, 06 Aug 2020 11:25:13 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;code>LookAt Bone&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBoneApplyer&lt;/code> components.&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-bone-vrmlookatboneapplyer">Control the Eye Gaze with bone: VRMLookAtBoneApplyer&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtBoneApplyer&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Apply the parameters of the calculated eye gaze direction of &lt;code>VRMLookAtHead&lt;/code> to EyeBone.&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;ul>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>eye bone&amp;rsquo;s rotation angle when yaw, pitch angle is at maximum =&amp;gt; &lt;code>Curve Y Range Degree&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code>, &lt;code>HorizontalOuter&lt;/code>, &lt;code>HorizontalInner&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>HorizontalOuter: The movable range of horizontal outward direction&lt;/li>
+&lt;li>HorizontalInner: The movable range of horizontal inward direction&lt;/li>
+&lt;li>VerticalDown: The movable range of vertical downward direction&lt;/li>
+&lt;li>VerticalUp: The movable range of vertical upward direction&lt;/li>
+&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -926,31 +956,7 @@ The &lt;code>Apply&lt;/code> button is removed starting from v0.45.&lt;/p>
 &lt;p>The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>This feature will become effective when a v0.45-installed application is loaded&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
-&lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
-&lt;h2 id="eye-control-with-bone-vrmlookatboneapplyer">Eye control with bone: VRMLookAtBoneApplyer&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>VRMLookAtBoneApplyer&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Apply the parameters of the calculated eye gaze direction of VRMLookAtHead to EyeBone.&lt;/p>
-&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
-&lt;p>Adjust angles when applying rotation to EyeBone.&lt;/p>
-&lt;ul>
-&lt;li>HorizontalOuter: The angle limit of horizontally outward direction&lt;/li>
-&lt;li>HorizontalInner: The angle limit of horizontally inward direction&lt;/li>
-&lt;li>VerticalDown: The angle limit of vertically downward direction&lt;/li>
-&lt;li>VerticalUp: The angle limit of vertically upward direction&lt;/li>
-&lt;/ul></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
 &lt;h2 id="procedure">Procedure&lt;/h2>
 &lt;p>The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p>
 &lt;h3 id="1-create-an-empty-scene">1. Create an empty scene.&lt;/h3>
@@ -1708,15 +1714,26 @@ Defined by ProtocolBuffer and generate a Json serializer.&lt;/p>
 &lt;ul>
 &lt;li>If the VRM file is not shown in the project view, right click and select&lt;code>refresh&lt;/code>&lt;/li>
 &lt;li>If the Prefab file cannot be generated, right click the VRM file and select&lt;code>reimport&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
-&lt;h2 id="eye-control-with-blendshape-vrmlookatblendshapeapplyer">Eye control with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2>
-&lt;p>The component for controlling the eyes with BlendShape.
-Please delete VRMLookAtBoneApplyer and attach VRMLookAtBlendShapeApplyer instead.
-Settings related to VRMLookAtBlendShape&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="control-the-eye-gaze-with-the-eye-bone">Control the Eye Gaze with the Eye Bone&lt;/h2>
-&lt;p>Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye Control&lt;/a>.&lt;/p>
-&lt;h2 id="control-the-eye-gaze-with-the-blendshape">Control the Eye Gaze with the BlendShape&lt;/h2>
-&lt;p>Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye Control&lt;/a>.&lt;/p></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 17:50:38 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/ul></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Thu, 06 Aug 2020 11:21:06 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>&lt;code>LookAt Blendshape&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components.
+In the default setting, please remove &lt;code>VRMLookAtBoneApplyer&lt;/code> and add &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> in the VRM model’s Inspector window.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-blendshape-vrmlookatblendshapeapplyer">Control the Eye Gaze with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>Please set up the following blendshapes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>LookUp&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookDown&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookLeft&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookRight&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. If &lt;code>Curve X Range Degree&lt;/code> is set to a lower degree, the pupil will move widely even at a small angle change.&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code>Curve Y Range Degree&lt;/code> to 1&lt;/li>
+&lt;/ul>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 17:50:38 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -2008,20 +2025,24 @@ Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャ�
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_L&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_R&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">});&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</link><pubDate>Wed, 05 Aug 2020 20:01:17 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</guid><description>
-&lt;h2 id="control-the-eye-gaze-with-the-uv-texture">Control the Eye Gaze with the UV Texture&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</link><pubDate>Thu, 06 Aug 2020 11:25:27 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;p>&lt;code>LookAt UV&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components.
+In the default setting, please remove &lt;code>VRMLookAtBoneApplyer&lt;/code> and add &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> in the VRM model’s Inspector window.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-the-textures-uv">Control the Eye Gaze with the Texture&amp;rsquo;s UV&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
 &lt;p>A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
-&lt;code>Unity chan&lt;/code> belongs to this type.&lt;/p>
+&lt;code>Unity Chan&lt;/code> belongs to this type.&lt;/p>
 &lt;h3 id="search-the-eye-material">Search the eye material&lt;/h3>
-&lt;p>Please search the eye material in the Project window. The &lt;code>Tiling Offset&lt;/code> setting will be displayed in the Inspector window.&lt;/p>
+&lt;p>Please search the eye material in the Project window. The &lt;code>Tiling Offset&lt;/code> setting will be displayed in the Inspector window:&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
 &lt;p>The values should be &lt;code>1, 1, 0, 0&lt;/code> (if the values are different, the followings are for reference only).&lt;/p>
 &lt;p>Now you can try to change the values of &lt;code>Offset&lt;/code> X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
 Since we have found where the eye materials are, we set the X and Y values back to &lt;code>0&lt;/code> and proceed to the next step.&lt;/p>
 &lt;h2 id="set-up-lookup-lookdown-lookleft-and-lookright">Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2>
-&lt;p>In the following example, we choose &lt;code>unlit/transparent cutout&lt;/code> for material&lt;/p>
+&lt;p>In the following example, we will set up the eye movement based on UV value for the material &lt;code>eye_L1&lt;/code> (see the above image). &lt;code>unlit/transparent cutout&lt;/code> is applied in the material.&lt;/p>
 &lt;h3 id="lookleft-example">LookLeft example&lt;/h3>
-&lt;p>Please select the &lt;code>LookLeft&lt;/code> asset in the Project window&lt;/p>
+&lt;p>Please select the &lt;code>LookLeft&lt;/code> asset in the Project window:&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
 &lt;ul>
 &lt;li>Click &lt;code>Material List&lt;/code>&lt;/li>
@@ -2037,13 +2058,13 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;/ul>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
 &lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
-&lt;h3 id="add-vrmlookatblendshapeapplyer-in-the-vrm-models-inspector-window">Add VRMLookAtBlendShapeApplyer in the VRM model&amp;rsquo;s Inspector window&lt;/h3>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. If &lt;code>Curve X Range Degree&lt;/code> is set to a lower degree, the pupil will move widely even at a small angle change.&lt;/p>
 &lt;ul>
-&lt;li>Remove VRMLookAtBoneApplyer&lt;/li>
-&lt;li>Add VRMLookAtBlendShapeApplyer&lt;/li>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code>Curve Y Range Degree&lt;/code> to 1&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
-&lt;p>In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>The definition for Animation is available in GLTF.&lt;/p>
 &lt;blockquote>
 &lt;p>VRM specification does not include the Animation.&lt;/p>
