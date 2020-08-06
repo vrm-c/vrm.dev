@@ -5,27 +5,29 @@ weight: 1
 aliases: ["/en/univrm/components/univrm_lookat/"]
 ---
 
-VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
-目に適用できます。
+To control the eye, the relative rotation (Yaw, Pitch) between the VRM model's head and the LookAt target is calculated and then applied to the eye.
 
-* VRMLookAtHead + VRMLookAtBoneApplyer または VRMLookAtBlendShapeApplyer の２つのコンポーネントで設定します。
+There are two types of eye control settings:
 
-## LookAtの種類
+* `VRMLookAtHead` + `VRMLookAtBoneApplyer` components
+* `VRMLookAtHead` + `VRMLookAtBlendShapeApplyer` components
 
-注視点への Yaw, Pitch 角を適用する方法が以下の３種類あります。
-モデルに応じて選択してください。
+## LookAt Type
+
+There are three ways to apply Yaw and Pitch angles relative to LookAt target.
+Please set up one of them listed in the followings based on the format of your model:
 
 ### Bone
 
-[eye ボーンが回転するタイプ]({{< relref "lookat_bone.md" >}})
+[eye movement controlled by Eye Bone]({{< relref "lookat_bone.md" >}})
 
 ### BlendShape
 
-[BlendShapeの頂点移動で制御するタイプ]({{< relref "lookat_blendshape.md" >}})
+[eye movement controlled by BlendShape vertices]({{< relref "lookat_blendshape.md" >}})
 
 ### TextureUV
 
-[目のテクスチャの `UV Offset` で制御するタイプ]({{< relref "lookat_uv.md" >}})
+[eye movement controlled by `UV Offset` of the eye's texture]({{< relref "lookat_uv.md" >}})
 
 ## VRMLookAtHead
 
@@ -36,10 +38,13 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 This component calculates the direction from the model's head to the target.
 
 ### Target
+
+> This is the setting for Application, not for VRM model setup
+
 The target to be tracked by the model's eyes. If a camera is set as Target, the model will always look at the camera.
 
-## 視線計算の基準位置
+## Viewpoint Position
 
-VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。
+The viewpoint position is obtained by `HeadBonePosition` + `FirstPersonOffset`
 
-> eye bone を使う場合は目の間が推定できるのですがblendShape を使う場合には位置がわからないので、明示的に設定するようになっています。
+{{< img src="images/vrm/firstperson.png" >}}

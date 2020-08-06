@@ -1,6 +1,6 @@
 ---
 title: GLTF
-weight: 20
+weight: 21
 aliases: ["/dev/univrm-0.xx/gltf/"]
 ---
 

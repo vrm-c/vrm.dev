@@ -1,6 +1,6 @@
 ---
 title: Humanoid
-weight: 19
+weight: 18
 aliases: ["/univrm/"]
 ---
 

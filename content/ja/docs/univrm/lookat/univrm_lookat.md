@@ -46,4 +46,4 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 
 VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。
 
-> eye bone を使う場合は目の間が推定できるのですがblendShape を使う場合には位置がわからないので、明示的に設定するようになっています。
+{{< img src="images/vrm/firstperson.png" >}}

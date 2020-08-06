@@ -1,7 +1,7 @@
 ---
 title: "Material"
 date: 2018-04-16T16:30:00+09:00
-weight: 17
+weight: 15
 aliases: ["/en/univrm/shaders/univrm_shaders/"]
 ---
 
