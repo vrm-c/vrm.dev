@@ -52,7 +52,10 @@
       {{ if .IsPage }}
       {{ $mid := printf "m-%s" (.RelPermalink | anchorize) }}
       {{ $active := eq . $p }}
-      <a class="td-sidebar-link td-sidebar-link__page {{ if and (not $shouldDelayActive) $active }} active{{ end }}" id="{{ $mid }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      <a class="td-sidebar-link td-sidebar-link__page {{ if and (not $shouldDelayActive) $active }} active{{ end }}" id="{{ $mid }}" href="{{ .RelPermalink }}">
+          <i class="fas fa-file"></i>
+          {{ .LinkTitle }}
+      </a>
       {{ else }}
       {{ template "section-tree-nav-section" (dict "page" $p "section" .) }}
       {{ end }}
