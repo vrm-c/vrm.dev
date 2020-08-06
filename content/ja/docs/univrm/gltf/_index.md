@@ -1,5 +1,5 @@
 ---
-title: 📁GLTF
+title: GLTF
 weight: 20
 aliases: ["/dev/univrm-0.xx/gltf/"]
 ---

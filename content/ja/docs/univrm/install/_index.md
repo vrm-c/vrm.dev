@@ -1,5 +1,5 @@
 ---
-title: "📁Install"
+title: "Install"
 weight: 11
 aliases: ["/univrm/"]
 ---
