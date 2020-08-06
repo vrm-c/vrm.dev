@@ -1,5 +1,5 @@
 ---
-title: "📁LookAt"
+title: "LookAt"
 weight: 14
 aliases: ["/univrm/"]
 ---
