@@ -1,5 +1,6 @@
 ---
 title: LookAt(UV)
+date: 2020-08-06T11:25:27+09:00
 weight: 4
 aliases: [
     "/en/univrm/settings/lookat_settings/",
@@ -7,13 +8,21 @@ aliases: [
     ]
 ---
 
-## Control the Eye Gaze with the UV Texture
+`LookAt UV` requires `VRMLookAtHead` and `VRMLookAtBlendShapeApplyer` components. 
+In the default setting, please remove `VRMLookAtBoneApplyer` and add `VRMLookAtBlendShapeApplyer` in the VRM model’s Inspector window.
+
+![image](/images/vrm/add_vrm_lookat_blendshape.jpg)
+
+## Control the Eye Gaze with the Texture's UV
+
+![image](/images/wiki/blendshape_applyer.png)
+
 A method that can move the model's eyes by sliding Texture up, down, left, or right.
-`Unity chan` belongs to this type.
+`Unity Chan` belongs to this type.
 
 ### Search the eye material
 
-Please search the eye material in the Project window. The `Tiling Offset` setting will be displayed in the Inspector window.
+Please search the eye material in the Project window. The `Tiling Offset` setting will be displayed in the Inspector window:
 
 ![image](/images/wiki/material_tiling_offset.png)
 
@@ -23,10 +32,10 @@ Now you can try to change the values of `Offset` X and Y. X value is left or rig
 Since we have found where the eye materials are, we set the X and Y values back to `0` and proceed to the next step.
 
 ## Set up LookUp, LookDown, LookLeft and LookRight
-In the following example, we choose `unlit/transparent cutout` for material
+In the following example, we will set up the eye movement based on UV value for the material `eye_L1` (see the above image). `unlit/transparent cutout` is applied in the material.
 
 ### LookLeft example
-Please select the `LookLeft` asset in the Project window
+Please select the `LookLeft` asset in the Project window:
 
 ![image](/images/wiki/lookleft.png)
 
@@ -45,14 +54,11 @@ Please select the `LookLeft` asset in the Project window
 
 [© UTJ/UCL](http://unity-chan.com/)
 
-### Add VRMLookAtBlendShapeApplyer in the VRM model's Inspector window
+### DegreeMapping
 
-* Remove VRMLookAtBoneApplyer
-* Add VRMLookAtBlendShapeApplyer
+In the default setting, when the look angle between the target and the model's head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. If `Curve X Range Degree` is set to a lower degree, the pupil will move widely even at a small angle change.
 
-![image](/images/wiki/blendshape_applyer.png)
+* yaw, pitch maximum angle  => `Curve X Range Degree`
+* yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set `Curve Y Range Degree` to 1
 
-In the default setting, when the look angle between the target and the model's head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. By setting Curve X Range Degree to a lower degree, the pupil will move widely even at a small angle change.
-
-
-
+Please set up `VerticalDown`, `VerticalUp` and `Horizontal`.
