@@ -1,6 +1,6 @@
 ---
 title: BlendShape
-weight: 15
+weight: 14
 aliases: ["/en/univrm/"]
 ---
 
