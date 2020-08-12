@@ -2,7 +2,7 @@
 title: "Install UniVRM with UPM"
 date: 2020-07-07T18:33:59+09:00
 weight: 3
-aliases: ["/en/univrm/univrm_upm/"]
+aliases: ["/en/univrm/univrm_upm/", "/en/univrm/install/univrm_upm/"]
 ---
 
 ## UniVRM-0.XX's UnityPackage

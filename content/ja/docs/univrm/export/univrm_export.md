@@ -2,7 +2,7 @@
 title: "エクスポートダイアログ"
 date: 2020-07-08
 weight: 2
-aliases: ["/univrm/univrm_export/"]
+aliases: ["/univrm/univrm_export/", "/univrm/export/univrm_export/"]
 ---
 
 ## エクスポートダイアログ
