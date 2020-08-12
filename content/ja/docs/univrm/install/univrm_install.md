@@ -2,7 +2,7 @@
 title: "install unitypackage"
 date: 2020-07-07
 weight: 1
-aliases: ["/univrm/univrm_install/"]
+aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
 ---
 
 ## Unity Version

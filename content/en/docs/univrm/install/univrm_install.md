@@ -3,7 +3,7 @@ title: "UniVRM installation"
 linkTitle: "Install UniVRM"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
-aliases: ["/en/univrm/univrm_install/"]
+aliases: ["/en/univrm/univrm_install/", "/en/univrm/install/univrm_install/"]
 ---
 
 ## Unity Version
