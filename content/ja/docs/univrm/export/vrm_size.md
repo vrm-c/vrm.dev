@@ -107,6 +107,17 @@ Indexバッファは、Intの配列を使っています。
 の以下のオプションがブレンドシェイプの容量に関連します。
 
 #### エクスポートオプション
+
+最初の２つは安全にです。３つめは修正中。4つめは、UniVRM-0.53(含む)以前でロードエラーになるバージョン問題があります。
+
+##### ReduceBlendshape
+BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。
+
+##### ReduceBlendshapeClip
+Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。
+
 ##### UseSparseAccessor
 BlendShapeが多数ある場合にファイルサイズを削減できます。
 
@@ -133,18 +144,6 @@ BlendShapeのNormal, Tangent をエクスポートしない。
 
 > UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。
 
-##### ReduceBlendshape
-BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
-ファイルサイズを削減できます。
-
-##### ReduceBlendshapeClip
-Presetが Unknown であるBlendShapeClipをエクスポートしない。
-ReduceBlendshapeと組み合わせて使います。
-
-##### 不要な BlendShape を削減する
-
-エクスポートするときに特定の条件で `BlendShape` の出力を除外します。
-
 #### MeshUtility で BlendShape の あるMesh と ないMesh に分割する
 
 例えば、顔(BlendShapeあり)が 10000 頂点、体(BlendShapeなし)が 40000 頂点に分割されていると、
@@ -165,4 +164,4 @@ https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility
 
 ## まとめ
 
-ブレンドシェイプ、次に画像に注意してください。
+予想より大容量になってしまうときはブレンドシェイプ、次に画像に注意してください。
