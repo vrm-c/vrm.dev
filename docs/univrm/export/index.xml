@@ -115,4 +115,117 @@ ReduceBlendshapeと組み合わせて使います。&lt;/p>
 &lt;h4 id="removevertexcolor">RemoveVertexColor&lt;/h4>
 &lt;p>頂点カラーをエクスポートしない。
 GLTFには、頂点カラーを含むが使わないという設定がありません。
-UniVRMでは、 &lt;code>unlit&lt;/code> のみ頂点カラー対応です。&lt;/p></description></item></channel></rss>
+UniVRMでは、 &lt;code>unlit&lt;/code> のみ頂点カラー対応です。&lt;/p></description></item><item><title>Docs: VRMモデルのファイルサイズ</title><link>https://vrm.dev/docs/univrm/export/vrm_size/</link><pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/export/vrm_size/</guid><description>
+&lt;p>VRMは、GLB形式なので、&lt;/p>
+&lt;p>&lt;code>VRMエクスポートしたファイルのサイズ =&amp;gt; glb のサイズ&lt;/code>&lt;/p>
+&lt;p>&lt;code>glb =&amp;gt; json + binary&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;p>json はテキストなので通常は 1MB にもなりません。&lt;/p>
+&lt;p>binary で主なものは、&lt;/p>
+&lt;p>&lt;code>image&lt;/code> と &lt;code>mesh&lt;/code> です。&lt;/p>
+&lt;p>5万頂点、5万三角形のモデルを例としてどれくらいの容量になるかを計算する目安を説明します。&lt;/p>
+&lt;h2 id="image">Image&lt;/h2>
+&lt;p>Material が参照する Texture の PNG(JPG) のバイト列がそのまま入っています。
+Meta の Thumbnail も対象になります。&lt;/p>
+&lt;blockquote>
+&lt;p>v0.56 でローカルの元ファイルをそのまま使うようにした結果、
+元ファイルが巨大であった場合に、以前に比べて大きくなる問題が発生しています。4000x4000のような大きなファイルはPNG(JPG)を縮小してください。v0.58 修正予定。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/502">https://github.com/vrm-c/UniVRM/issues/502&lt;/a>&lt;/p>
+&lt;h2 id="mesh">Mesh&lt;/h2>
+&lt;p>Index バッファ と 頂点バッファです。&lt;/p>
+&lt;h3 id="indexバッファ">Indexバッファ&lt;/h3>
+&lt;p>Indexバッファは、Intの配列を使っています。&lt;/p>
+&lt;p>5万三角形のモデルの場合、&lt;/p>
+&lt;p>&lt;code>50000 x 4(Int=4byte) x 3(三角形の3頂点) =&amp;gt; 0.6MB&lt;/code> の容量を使います。&lt;/p>
+&lt;blockquote>
+&lt;p>GLTFの仕様的には unsigned short も可能ですが、UniVRM のエクスポーターは未対応。65536 頂点までなので 50000 三角形は格納できません。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="頂点バッファ">頂点バッファ&lt;/h3>
+&lt;p>一頂点は、&lt;/p>
+&lt;pre>&lt;code>{
+float3 Position; // 頂点位置 4(floatサイズ) x 3(xyz) =&amp;gt; 12byte
+float3 Normal; // 頂点法線 4(floatサイズ) x 3(xyz) =&amp;gt; 12byte
+float2 TEXCOORD_0; // 頂点UV 4(floatサイズ) x 2(xy) =&amp;gt; 8byte
+short4 JOINTS_0; // 頂点BoneIndex 2(shortサイズ) x 4(4boneまで) =&amp;gt; 8byte
+float4 WEIGHTS_0; // 頂点Weight 4(floatサイズ) x 4(4boneまで) =&amp;gt; 16byte
+}
+&lt;/code>&lt;/pre>&lt;p>となっています。&lt;/p>
+&lt;blockquote>
+&lt;p>頂点カラー、2つめのUV(未対応)などバリエーションがありうる。&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>GLTFにはTangent(float4)も保存できますが、UniVRMでは保存せずUnityに計算させています。法線とUVから &lt;code>MIKK T Space&lt;/code> アルゴリズムで計算したものを使う仕様です。&lt;/p>
+&lt;/blockquote>
+&lt;p>５万頂点のモデルの場合、&lt;/p>
+&lt;p>&lt;code>50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code> の容量を使います。&lt;/p>
+&lt;h2 id="基本容量">基本容量&lt;/h2>
+&lt;p>以上、 &lt;code>画像サイズ合計 + インデックスバッファ + 頂点バッファ&lt;/code> の合計がモデルの基本容量になります。
+5万頂点、5万三角形のモデルの場合、 &lt;code>3.4MB + 画像サイズ合計&lt;/code> が基本容量になります。
+基本容量は計算通りの値になります。
+以降、時として容量爆発の原因となるブレンドシェイプの容量についてです。&lt;/p>
+&lt;h2 id="ブレンドシェイプmorphtargetの容量">ブレンドシェイプ(MorphTarget)の容量&lt;/h2>
+&lt;pre>&lt;code class="language-ブレンドシェイプ頂点" data-lang="ブレンドシェイプ頂点">{
+float3 Position; // 頂点位置 4 x 3 =&amp;gt; 12byte. 必須
+float3 Normal; // 頂点法線 4 x 3 =&amp;gt; 12byte. オプション
+float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
+}
+&lt;/code>&lt;/pre>&lt;p>ひとつのブレンドシェイプで &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>20のブレンドシェイプがあったとすると,
+&lt;code>50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>60のブレンドシェイプがあると、
+&lt;code>50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code> の容量を使います。&lt;/p>
+&lt;ul>
+&lt;li>大量のBlendShapeがある&lt;/li>
+&lt;li>BlendShapeのある場所と無い場所が分割されていない&lt;/li>
+&lt;/ul>
+&lt;p>の条件が揃うと大容量になることに注意してください。
+以降、ブレンドシェイプ容量の削減方法についてです。&lt;/p>
+&lt;h3 id="ブレンドシェイプの容量対策">ブレンドシェイプの容量対策&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">エクスポートダイアログ&lt;/a>
+の以下のオプションがブレンドシェイプの容量に関連します。&lt;/p>
+&lt;h4 id="エクスポートオプション">エクスポートオプション&lt;/h4>
+&lt;p>最初の２つは安全にです。３つめは修正中。4つめは、UniVRM-0.53(含む)以前でロードエラーになるバージョン問題があります。&lt;/p>
+&lt;h5 id="reduceblendshape">ReduceBlendshape&lt;/h5>
+&lt;p>BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。&lt;/p>
+&lt;h5 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h5>
+&lt;p>Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。&lt;/p>
+&lt;h5 id="usesparseaccessor">UseSparseAccessor&lt;/h5>
+&lt;p>BlendShapeが多数ある場合にファイルサイズを削減できます。&lt;/p>
+&lt;p>ブレンドシェイプの値が、 &lt;code>0&lt;/code> でない頂点のみを飛び飛びに記録することで容量を削減する GLTF の仕様です。&lt;/p>
+&lt;blockquote>
+&lt;p>修正中: GLTFの互換性の問題があって、UniVRM以外のローダーでエラーになる&lt;/p>
+&lt;/blockquote>
+&lt;pre>&lt;code class="language-ブレンドシェイプ頂点" data-lang="ブレンドシェイプ頂点">{
+int Index; // 有効なブレンドシェイプの index =&amp;gt; 4
+float3 Position; // 頂点位置 4 x 3 =&amp;gt; 12byte. 必須
+float3 Normal; // 頂点法線 4 x 3 =&amp;gt; 12byte. オプション
+float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
+}
+&lt;/code>&lt;/pre>&lt;p>&lt;code>BlendShapeの有効な頂点数 x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>保存方法だけ変わる&lt;/li>
+&lt;/ul>
+&lt;h5 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h5>
+&lt;p>BlendShapeのNormal, Tangent をエクスポートしない。
+ファイルサイズを削減できます。&lt;/p>
+&lt;blockquote>
+&lt;p>UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="meshutility-で-blendshape-の-あるmesh-と-ないmesh-に分割する">MeshUtility で BlendShape の あるMesh と ないMesh に分割する&lt;/h4>
+&lt;p>例えば、顔(BlendShapeあり)が 10000 頂点、体(BlendShapeなし)が 40000 頂点に分割されていると、&lt;/p>
+&lt;p>ひとつのブレンドシェイプで &lt;code>10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>分割前の一体型のモデル&lt;/p>
+&lt;p>&lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
+&lt;p>に比べて容量を節約できます。&lt;/p>
+&lt;blockquote>
+&lt;p>ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility">https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>TODO: 導入方法の説明&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="まとめ">まとめ&lt;/h2>
+&lt;p>予想より大容量になってしまうときはブレンドシェイプ、次に画像に注意してください。&lt;/p></description></item></channel></rss>
