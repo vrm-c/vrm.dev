@@ -37,9 +37,9 @@
   <li class="td-sidebar-nav__section-title">
     <a  href="{{ $s.RelPermalink }}" class="align-left pl-0 pr-2{{ if not $show }} collapsed{{ end }}{{ if $active}} active{{ end }} td-sidebar-link td-sidebar-link__section">
         {{ if $show }}
-        <i class="fas fa-folder-open"></i>
+        <i class="fas fa-folder-open fa-fw"></i>
         {{ else }}
-        <i class="fas fa-folder"></i>
+        <i class="fas fa-folder fa-fw"></i>
         {{ end }}
         {{ $s.LinkTitle }}
     </a>
@@ -53,7 +53,7 @@
       {{ $mid := printf "m-%s" (.RelPermalink | anchorize) }}
       {{ $active := eq . $p }}
       <a class="td-sidebar-link td-sidebar-link__page {{ if and (not $shouldDelayActive) $active }} active{{ end }}" id="{{ $mid }}" href="{{ .RelPermalink }}">
-          <i class="fas fa-file"></i>
+          <i class="fas fa-file fa-fw"></i>
           {{ .LinkTitle }}
       </a>
       {{ else }}
