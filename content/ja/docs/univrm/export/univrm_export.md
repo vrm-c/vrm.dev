@@ -5,41 +5,166 @@ weight: 2
 aliases: ["/univrm/univrm_export/", "/univrm/export/univrm_export/"]
 ---
 
-## エクスポートダイアログ
+| 用語         | 意味                                                   |
+|--------------|--------------------------------------------------------|
+| Root         | エクスポート対象となる一番親のオブジェクト(ひとつだけ) |
+| ヒエラルキー | Root自身と子孫全部                                     |
 
-v0.57
+## v0.58
 
-{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
+{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 
-Unityの簡易ダイアログ機能で画面を作成しています。
-v0.58 以降でダイアログを改善予定です。
+Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html) で画面を作成しています。
 
-| 用語         | 意味                             |
-|--------------|----------------------------------|
-| Root         | 一番親のオブジェクト(ひとつだけ) |
-| ヒエラルキー | Rootの子孫全部                   |
+### 使い方
 
-### 警告メッセージ(オレンジの囲み)
+#### Window を表示する
 
-エクスポート可能だけど、問題があるかもしれない。
+以前と同じメニューから表示できます。
 
-#### The Root translation, rotation and scale will be dropped
+{{< img src="images/vrm/export058_menu.jpg" width="600" alt="vrm export" >}}
+
+* シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました
+
+#### 対象のオブジェクトをセットする
+
+* Drag
+
+{{< img src="images/vrm/export058_drag.gif" width="600" alt="vrm export" >}}
+
+* Selector
+
+{{< img src="images/vrm/export058_select.gif" width="600" alt="vrm export" >}}
+
+#### ExportRootの条件
+
+{{< img src="images/vrm/export058_empty.jpg" width="600" alt="vrm export" >}}
+
+ExportRoot が以下の条件を満たすと設定画面が表示されます。
+
+* Root である(親が無い)
+* Root に回転・スケールが無い(移動は可能)
+* ヒューマノイドである(Animatorコンポーネントがアタッチしてあり、Humanoid.Avatarがセットしてある)
+* Z+向きである(左足と右足のボーン位置から判定)
+* ヒエラルキーの中に enable な mesh を含む
+
+#### エクスポート設定画面
+
+Metaやエクスポートオプションを設定してください。
+警告は修正するかしないかを判断して、問題無ければ無視してください。
+選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の `export` ボタンを押すことができるようになります。
+
+
+## オプション
+
+エクスポートのオプションです。
+チェックするとエクスポート前に追加の処理を実行します。
+
+### Force T Pose
+エクスポート前に強制的にT-Poseにします。
+手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。
+
+### Pose Freeze
+モデルを正規化します。
+正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。
+正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。
+
+> 0.58 では自動でチェックボックスが On/Off されます
+
+### UseExperimentalExporter
+シリアライザーのバージョン。
+どちらでも動作します。
+
+### UseSparseAccessor
+BlendShapeが多数ある場合にファイルサイズを削減できます。
+
+### OnlyBlendshapePosition
+BlendShapeのNormal, Tangent をエクスポートしない。
+ファイルサイズを削減できます。
+UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。
+
+### ReduceBlendshape
+BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。
+
+### ReduceBlendshapeClip
+Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。
+
+### RemoveVertexColor
+頂点カラーをエクスポートしない。
+GLTFには、頂点カラーを含むが使わないという設定がありません。
+UniVRMでは、 `unlit` のみ頂点カラー対応です。
+
+## エラー項目
+
+バージョン毎の判定。
+
+| message                                                  | 0.56  | 0.57               | 0.58                     |
+|----------------------------------------------------------|-------|--------------------|--------------------------|
+| The Root translation, rotation and scale will be dropped | error | warn               | error(移動は可)          |
+| Jaw bone                                                 | warn  | warn               | warn                     |
+| Same name bone                                           | error | warn(自動リネーム) | warn                     |
+| Vertex color                                             | warn  | warn               | warn                     |
+| Unknown shader                                           | warn  | warn               | warn                     |
+| Require source                                           | error | error              | error                    |
+| Require no parent                                        | ok    | ok                 | error(新規)              |
+| Require Z+ forward                                       | ok    | ok                 | error(新規)              |
+| Require animator                                         | error | error              | error                    |
+| Require humanoid avatar                                  | error | error              | error                    |
+| Require Title/Version/Author                             | error | error              | error                    |
+| No active mesh                                           | error | error              | error                    |
+| Prefab export                                            | error | error              | ok(NO_ACTIVE_MESHだった) |
+| Springbone validation                                    | ok    | ok                 | warn                     |
+
+### Require source
+エクスポート可能なオブジェクトをシーンで選択してださい
+
+### Require animator.
+RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)
+
+### Require animator.avatar
+RootのAnimatorにavatarがありません(ヒューマノイドでない)
+
+### Animator.avatar is not valid.
+RootのAnimatorのavatarが正常でない(ヒューマノイドでない)
+
+### Animator.avatar is not humanoid. Please change model's AnimationType to humanoid.
+RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください
+
+### Require Title.
+ダイアログのタイトルを入力してください(必須項目)
+
+### Require Version.
+ダイアログのバージョンを入力してください(必須項目)
+
+### Require Author.
+ダイアログのAuthorを入力してください(必須項目)
+
+### No active mesh
+ヒエラルキーに active なメッシュが含まれていない
+
+### FileName '{0}' is too long.
+material, texture, mesh の名前が長すぎる。
+リネームしてください
+
+### The Root translation, rotation and scale will be dropped
 Rootに移動・回転・スケール値が設定されている。
 そのままエクスポートした場合、ルートの TRS は無くなります。
 移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。
 
-#### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
+### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
 
 humanoid設定に顎が含まれている。 
 FBXインポート時に意図せずに自動で割り当てられる場合があります。
 間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
 FBX importer の rig 設定に戻って設定を解除することをおすすめします。
 
-#### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
+### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
 ヒエラルキーの中に同じ名前のGameObjectが含まれている。
 エクスポートした場合に自動でリネームする。
 
-#### This model contains vertex color
+### This model contains vertex color
 
 ヒエラルキーに含まれる mesh に頂点カラーが含まれている。
 
@@ -51,85 +176,13 @@ FBX importer の rig 設定に戻って設定を解除することをおすす�
 Unlitで頂点カラーが含まれているが使わないという設定がありせん。
 必要ない場合は、`Remove Vertex Color` オプションで削除できます。
 
-#### unknown material '{0}' is used. this will export as `Standard` fallback 
+### unknown material '{0}' is used. this will export as `Standard` fallback 
 
 standard, unlit, mtoon 以外のマテリアルは、standard になります。
 
-### エラーメッセージ(赤い囲み)
+## v0.57
 
-エクスポート不可能。問題を解決する必要があります。
-このメッセージが表示されているときは、`export` ボタンが無効になります。
+{{< img src="images/vrm/export_dialog_56.jpg" width="600" alt="vrm export" >}}
 
-#### Require source
-エクスポート可能なオブジェクトをシーンで選択してださい
-
-#### Require animator.
-RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)
-
-#### Require animator.avatar
-RootのAnimatorにavatarがありません(ヒューマノイドでない)
-
-#### Animator.avatar is not valid.
-RootのAnimatorのavatarが正常でない(ヒューマノイドでない)
-
-#### Animator.avatar is not humanoid. Please change model's AnimationType to humanoid.
-RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください
-
-#### Require Title.
-ダイアログのタイトルを入力してください(必須項目)
-
-#### Require Version.
-ダイアログのバージョンを入力してください(必須項目)
-
-#### Require Author.
-ダイアログのAuthorを入力してください(必須項目)
-
-#### No active mesh
-ヒエラルキーに active なメッシュが含まれていない
-
-#### FileName '{0}' is too long.
-material, texture, mesh の名前が長すぎる。
-リネームしてください
-
-### オプション(青い囲み)
-
-エクスポートのオプションです。
-チェックするとエクスポート前に追加の処理を実行します。
-
-
-#### Force T Pose
-エクスポート前に強制的にT-Poseにします。
-手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。
-
-#### Pose Freeze
-モデルを正規化します。
-正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。
-正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。
-
-#### UseExperimentalExporter
-シリアライザーのバージョン。
-どちらでも動作します。
-
-#### UseSparseAccessor
-BlendShapeが多数ある場合にファイルサイズを削減できます。
-
-#### OnlyBlendshapePosition
-BlendShapeのNormal, Tangent をエクスポートしない。
-ファイルサイズを削減できます。
-UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。
-
-#### ReduceBlendshape
-BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
-ファイルサイズを削減できます。
-
-#### ReduceBlendshapeClip
-Presetが Unknown であるBlendShapeClipをエクスポートしない。
-ReduceBlendshapeと組み合わせて使います。
-
-#### RemoveVertexColor
-頂点カラーをエクスポートしない。
-GLTFには、頂点カラーを含むが使わないという設定がありません。
-UniVRMでは、 `unlit` のみ頂点カラー対応です。
-
-
-
+Unityの [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html) で画面を作成しています。
+v0.58 以降でダイアログを改善予定です。
