@@ -49,8 +49,8 @@ VRMBlendShape `Blink_R`
 このとき両目を閉じたいモチベーションから、両方を有効にする意図で下記のように実行します。
 
 {{< highlight cs >}}
-proxy.ImmediatelySetValue(BlendShapePreset.Blink_L, 1.0f);
-proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f);
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
 {{< / highlight >}}
 
 すると、左目だけが開いてしまいます。
@@ -61,15 +61,15 @@ proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
 {{< highlight cs >}}
 proxy.SetValues(new Dictionary<BlendShapeKey, float>
 {
-    {new BlendShapeKey(BlendShapePreset.Blink_L), 1.0f},
-    {new BlendShapeKey(BlendShapePreset.Blink_R), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f},
 });
 {{< / highlight >}}
 
 または
 
 {{< highlight cs >}}
-proxy.AccumerateValue(BlendShapePreset.Blink_L, 1.0f); // すぐに適用せずにたくわえる
-proxy.AccumerateValue(BlendShapePreset.Blink_R, 1.0f);
+proxy.AccumerateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f); // すぐに適用せずにたくわえる
+proxy.AccumerateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
 proxy.Apply(); // 蓄積した値をまとめて適用する
 {{< / highlight >}}
