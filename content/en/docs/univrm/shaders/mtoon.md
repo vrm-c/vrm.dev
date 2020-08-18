@@ -15,8 +15,8 @@ MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit 
 |-----|
 |Apply MToon to the 3D model``Alicia``|
 
-# For users who want to have a quick setup
-## Common items
+# Quick Setup
+## Basic Walk Through
 - Select the target material and change the shader to `VRM/MToon`
 - Click the shader panel and set the same texture in `Color->Lit Color, Alpha` and `Color->Shade Color`
 - Set white color in `Color->Lit Color, Alpha` and set the preference shade color in `Color->Shade Color`
@@ -25,7 +25,7 @@ MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit 
 - If outline is necessary, select `WorldCoordinates` in `Outline->Width->Mode`. Select `None` if outline is not needed
 - Set the value with good appearance in `Outline->Width->Width`
 
-## General material
+## General Material
 - Choose `Shading Shift` and set `0`
 - Choose `Shading Toony->Shadow Receive Multiplier` and set `1`
 
@@ -33,7 +33,7 @@ MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit 
 - Choose `Shading Shift` and set a negative value
 - Choose `Shading Toony->Shadow Receive Multiplier` and set `0`
 
-# Setting items
+# Items Setup
 ## Preliminary
 Select the target material and change the shader to VRM/MToon.
 
