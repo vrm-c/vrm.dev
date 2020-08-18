@@ -17,6 +17,9 @@ UniVRM v0.58.0
 
 ## スクリプトから BlendShape weight を適用する
 
+`SetValues` 関数のみを使用します。
+そのフレームで必要な表情の weight 値をすべて集めてから `SetValues` を 1 回だけ呼んで設定します。
+
 {{< highlight cs >}}
 var proxy = GetComponent<VRMBlendShapeProxy>();
 
@@ -29,6 +32,8 @@ proxy.SetValues(new Dictionary<BlendShapeKey, float>
 {{< / highlight >}}
 
 ## 複数の BlendShape weight を適用する際の競合の問題について
+
+この節では、なぜ `SetValues` を使わなければならないのかという疑問に回答します。
 
 たとえば 2 つの VRMBlendShape `Blink_L` と `Blink_R` が
 
@@ -48,8 +53,10 @@ proxy.ImmediatelySetValue(BlendShapePreset.Blink_L, 1.0f);
 proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
 {{< / highlight >}}
 
-すると後から `ImmediateSetValue` した `Blink_R` が weight を上書きしてしまい、左目が開いてしまいます。
-したがって VRM の表情制御においては下記の 2 通りのどちらかで書くことが求められます。
+すると、左目だけが開いてしまいます。
+これは後から `ImmediateSetValue` した `Blink_R` が `Blink_L` と競合して weight を上書きしてしまうからです。
+したがって VRM の表情制御においては下記の 2 通りのどちらかの方法で書くことが求められます。
+これらの方法はこの競合の問題を解決して表情を設定することができます。
 
 {{< highlight cs >}}
 proxy.SetValues(new Dictionary<BlendShapeKey, float>
