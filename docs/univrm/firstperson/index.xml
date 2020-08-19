@@ -1,19 +1,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – FirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/</link><description>Recent content in FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 一人称表示</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
-&lt;h1 id="vrmfirstperson">VRMFirstPerson&lt;/h1>
-&lt;p>一人称表示に関連する設定です。&lt;/p>
-&lt;h2 id="firstpersonbone">FirstPersonBone&lt;/h2>
+&lt;p>２系統の設定があります。&lt;/p>
+&lt;ul>
+&lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
+&lt;li>VRで、メッシュごとにカメラの可視設定を分ける&lt;/li>
+&lt;/ul>
+&lt;p>※ アプリケーション側でこれらのパラメーターを使っている場合のみ有効です&lt;/p>
+&lt;h2 id="ヘッドセットの位置指定">ヘッドセットの位置指定&lt;/h2>
+&lt;p>ヘッドの動きの頭部への反映を微調整できます。&lt;/p>
+&lt;h3 id="firstpersonbone">FirstPersonBone&lt;/h3>
 &lt;p>通常頭ボーンを指定します。
 一人称時にヘッドセットに追随させるボーンです。&lt;/p>
-&lt;h2 id="firstpersonoffset">FirstPersonOffset&lt;/h2>
+&lt;h3 id="firstpersonoffset">FirstPersonOffset&lt;/h3>
 &lt;p>追随する位置をFirstPersonBoneの位置からオフセットします。
 デフォルト値[0, 0.06, 0]は、Headから両目の間へのオフセットを想定しています。&lt;/p>
-&lt;h2 id="renderers">Renderers&lt;/h2>
-&lt;p>一人称描画時のメッシュのOn/Offをコントロールする設定です。&lt;/p>
-&lt;p>VRアプリでは、自分モデルの頭部の見えなくていい部分が見えてしまう問題があります。
-VRMFirstPersonでは一人称時に頭を描画しないようにすることを支援する機能を用意しています。&lt;/p>
-&lt;h3 id="頭が分かれている場合">頭が分かれている場合&lt;/h3>
-&lt;p>頭に&lt;strong>ThirdPersonOnly&lt;/strong>を指定します。
-その他の部分に&lt;strong>Both&lt;/strong>を指定します。&lt;/p>
+&lt;h2 id="vrの可視設定">VRの可視設定&lt;/h2>
+&lt;p>VRアプリでの可視設定です。
+VRアプリでは２種類のカメラが想定されます。&lt;/p>
+&lt;ul>
+&lt;li>一人称(HMDにレンダリングされる)&lt;/li>
+&lt;li>三人称(HMD以外。配信用、鏡、マルチユーザーの他のユーザーのHMD)&lt;/li>
+&lt;/ul>
+&lt;p>です。
+このとき、一人称で普通に自身のモデルがすべて見えると不都合があります。&lt;/p>
+&lt;ul>
+&lt;li>近平面で自分の輪切りが見える&lt;/li>
+&lt;li>髪が邪魔で何も見えない&lt;/li>
+&lt;li>自分モデルの頭部の中身が見えてしまう(歯とか)&lt;/li>
+&lt;/ul>
+&lt;p>など。
+これらの自体に対処するために、メッシュ毎に２種類のカメラに対する可視性を設定できます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>設定&lt;/th>
+&lt;th>一人称カメラ&lt;/th>
+&lt;th>三人称カメラ&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Both&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>体、手、足など頭部から遠い部位を指する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FirstPersonOnly&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>使わない？&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ThirdPersonOnly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>外部カメラしか見えない。頭部、髪、帽子などを指定する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auto&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>デフォルト&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="auto-による-both-と-thirdpersononly-への自動分割">Auto による Both と ThirdPersonOnly への自動分割&lt;/h3>
+&lt;p>設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code>Both&lt;/code> と &lt;code>ThirdPersonOnly&lt;/code> に分離することを指示できます。
+UniVRMでは &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/">VRMFirstPerson.Setup()&lt;/a> を呼び出します。
+Autoによる自動分割は、重めの処理になります。&lt;/p>
+&lt;p>分割基準は、&lt;/p>
+&lt;ul>
+&lt;li>含まれる頂点が &lt;code>head&lt;/code> か &lt;code>head&lt;/code> の子孫の weight を持っているか否か&lt;/li>
+&lt;/ul>
+&lt;p>です。
+すべて同じ側の場合は分割せずに、&lt;code>Both&lt;/code> か &lt;code>ThirdPersonOnly&lt;/code> として扱います。&lt;/p>
+&lt;h3 id="推奨される構成">推奨される構成&lt;/h3>
+&lt;p>あらかじめ、頭と体にモデルを分割しておき&lt;/p>
+&lt;ul>
+&lt;li>頭に &lt;code>ThirdPersonOnly&lt;/code> を指定&lt;/li>
+&lt;li>体に &lt;code>Both&lt;/code> を指定&lt;/li>
+&lt;/ul>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -39,11 +106,4 @@ VRMFirstPersonでは一人称時に頭を描画しないようにすることを
 &lt;td>動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table>
-&lt;h3 id="頭が分かれていない場合">頭が分かれていない場合&lt;/h3>
-&lt;p>Autoを指定します。
-実行時に頭以外をコピーしたモデルを複製して、これを&lt;strong>FirstPersonOnly&lt;/strong>として扱います。
-元のモデルは&lt;strong>ThirdPersonOnly&lt;/strong>として扱います。
-頭ボーンのとその子孫のウェイトを持っている部分が削除対象になります。&lt;/p>
-&lt;h3 id="特に設定しない場合">特に設定しない場合&lt;/h3>
-&lt;p>Bothを設定してください。&lt;/p></description></item></channel></rss>
+&lt;/table></description></item></channel></rss>

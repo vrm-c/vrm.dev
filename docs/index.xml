@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 21 Apr 2020 18:27:06 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: install unitypackage</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 21 Apr 2020 18:29:59 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: install unitypackage</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;p>&lt;code>UniVRM-0.56&lt;/code> から
 Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしています。&lt;/p>
@@ -78,7 +78,7 @@ ProtocolBufferで定義して、Jsonのシリアライザを生成したもの�
 &lt;li>スクリプトスレッドで実行する必要あり&lt;/li>
 &lt;li>GLTF部分(Mesh, Texture, Material, GameObject, SkinnedMeshRendererなど)&lt;/li>
 &lt;li>VRM部分(HumanoidAvatar, BlendShapeProxy, LookAt, FirstPersonなど)&lt;/li>
-&lt;/ul></description></item><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/dev/univrm-0.xx/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/univrm_api_history/</guid><description>
+&lt;/ul></description></item><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;p>プログラムに影響のある変更についてです。&lt;/p>
 &lt;p>最新バージョンは&lt;a href="https://github.com/vrm-c/UniVRM/wiki">UniVRM/Wiki&lt;/a>をご覧ください。&lt;/p>
 &lt;h1 id="v036">v0.36&lt;/h1>
@@ -1832,8 +1832,8 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;p>このとき、&lt;strong>「Force T Pose」と「Pose Freeze」のチェックは外してください&lt;/strong>。このチェックは初回（正規化）のときのみ使用します。
 ファイル名を指定してVRMファイルを出力します&lt;/p>
 &lt;h3 id="完成">完成！&lt;/h3>
-&lt;p>これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！&lt;/p></description></item><item><title>Docs: VRMモデルを実行時にインポートする</title><link>https://vrm.dev/dev/univrm-0.xx/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/univrm_import_runtime/</guid><description>
-&lt;p>最新バージョンは&lt;a href="https://vrm.dev/dev/univrm-0.xx/programming/runtime_import/">こちら&lt;/a>をご覧ください。&lt;/p>
+&lt;p>これでセットアップ済のVRMファイルが出来ました。対応アプリケーションに読み込ませてみましょう！&lt;/p></description></item><item><title>Docs: VRMモデルを実行時にインポートする</title><link>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</guid><description>
+&lt;p>最新バージョンは&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">こちら&lt;/a>をご覧ください。&lt;/p>
 &lt;p>Unityで実行時にモデルをインポートする方法です。&lt;/p>
 &lt;h2 id="ファイルパスからvrmを開く">ファイルパスからVRMを開く&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;sample.vrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
@@ -2171,21 +2171,88 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
 ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
 &lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: 一人称表示</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
-&lt;h1 id="vrmfirstperson">VRMFirstPerson&lt;/h1>
-&lt;p>一人称表示に関連する設定です。&lt;/p>
-&lt;h2 id="firstpersonbone">FirstPersonBone&lt;/h2>
+&lt;p>２系統の設定があります。&lt;/p>
+&lt;ul>
+&lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
+&lt;li>VRで、メッシュごとにカメラの可視設定を分ける&lt;/li>
+&lt;/ul>
+&lt;p>※ アプリケーション側でこれらのパラメーターを使っている場合のみ有効です&lt;/p>
+&lt;h2 id="ヘッドセットの位置指定">ヘッドセットの位置指定&lt;/h2>
+&lt;p>ヘッドの動きの頭部への反映を微調整できます。&lt;/p>
+&lt;h3 id="firstpersonbone">FirstPersonBone&lt;/h3>
 &lt;p>通常頭ボーンを指定します。
 一人称時にヘッドセットに追随させるボーンです。&lt;/p>
-&lt;h2 id="firstpersonoffset">FirstPersonOffset&lt;/h2>
+&lt;h3 id="firstpersonoffset">FirstPersonOffset&lt;/h3>
 &lt;p>追随する位置をFirstPersonBoneの位置からオフセットします。
 デフォルト値[0, 0.06, 0]は、Headから両目の間へのオフセットを想定しています。&lt;/p>
-&lt;h2 id="renderers">Renderers&lt;/h2>
-&lt;p>一人称描画時のメッシュのOn/Offをコントロールする設定です。&lt;/p>
-&lt;p>VRアプリでは、自分モデルの頭部の見えなくていい部分が見えてしまう問題があります。
-VRMFirstPersonでは一人称時に頭を描画しないようにすることを支援する機能を用意しています。&lt;/p>
-&lt;h3 id="頭が分かれている場合">頭が分かれている場合&lt;/h3>
-&lt;p>頭に&lt;strong>ThirdPersonOnly&lt;/strong>を指定します。
-その他の部分に&lt;strong>Both&lt;/strong>を指定します。&lt;/p>
+&lt;h2 id="vrの可視設定">VRの可視設定&lt;/h2>
+&lt;p>VRアプリでの可視設定です。
+VRアプリでは２種類のカメラが想定されます。&lt;/p>
+&lt;ul>
+&lt;li>一人称(HMDにレンダリングされる)&lt;/li>
+&lt;li>三人称(HMD以外。配信用、鏡、マルチユーザーの他のユーザーのHMD)&lt;/li>
+&lt;/ul>
+&lt;p>です。
+このとき、一人称で普通に自身のモデルがすべて見えると不都合があります。&lt;/p>
+&lt;ul>
+&lt;li>近平面で自分の輪切りが見える&lt;/li>
+&lt;li>髪が邪魔で何も見えない&lt;/li>
+&lt;li>自分モデルの頭部の中身が見えてしまう(歯とか)&lt;/li>
+&lt;/ul>
+&lt;p>など。
+これらの自体に対処するために、メッシュ毎に２種類のカメラに対する可視性を設定できます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>設定&lt;/th>
+&lt;th>一人称カメラ&lt;/th>
+&lt;th>三人称カメラ&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Both&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>体、手、足など頭部から遠い部位を指する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FirstPersonOnly&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>使わない？&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ThirdPersonOnly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>外部カメラしか見えない。頭部、髪、帽子などを指定する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auto&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>デフォルト&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="auto-による-both-と-thirdpersononly-への自動分割">Auto による Both と ThirdPersonOnly への自動分割&lt;/h3>
+&lt;p>設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code>Both&lt;/code> と &lt;code>ThirdPersonOnly&lt;/code> に分離することを指示できます。
+UniVRMでは &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/">VRMFirstPerson.Setup()&lt;/a> を呼び出します。
+Autoによる自動分割は、重めの処理になります。&lt;/p>
+&lt;p>分割基準は、&lt;/p>
+&lt;ul>
+&lt;li>含まれる頂点が &lt;code>head&lt;/code> か &lt;code>head&lt;/code> の子孫の weight を持っているか否か&lt;/li>
+&lt;/ul>
+&lt;p>です。
+すべて同じ側の場合は分割せずに、&lt;code>Both&lt;/code> か &lt;code>ThirdPersonOnly&lt;/code> として扱います。&lt;/p>
+&lt;h3 id="推奨される構成">推奨される構成&lt;/h3>
+&lt;p>あらかじめ、頭と体にモデルを分割しておき&lt;/p>
+&lt;ul>
+&lt;li>頭に &lt;code>ThirdPersonOnly&lt;/code> を指定&lt;/li>
+&lt;li>体に &lt;code>Both&lt;/code> を指定&lt;/li>
+&lt;/ul>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2211,14 +2278,7 @@ VRMFirstPersonでは一人称時に頭を描画しないようにすることを
 &lt;td>動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table>
-&lt;h3 id="頭が分かれていない場合">頭が分かれていない場合&lt;/h3>
-&lt;p>Autoを指定します。
-実行時に頭以外をコピーしたモデルを複製して、これを&lt;strong>FirstPersonOnly&lt;/strong>として扱います。
-元のモデルは&lt;strong>ThirdPersonOnly&lt;/strong>として扱います。
-頭ボーンのとその子孫のウェイトを持っている部分が削除対象になります。&lt;/p>
-&lt;h3 id="特に設定しない場合">特に設定しない場合&lt;/h3>
-&lt;p>Bothを設定してください。&lt;/p></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/dev/univrm-0.xx/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/univrm_use_blendshape/</guid><description>
+&lt;/table></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
 &lt;h2 id="環境">環境&lt;/h2>
 &lt;p>UniVRM v0.58.0&lt;/p>
 &lt;h2 id="使用するメソッド">使用するメソッド&lt;/h2>
@@ -2759,7 +2819,7 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;td>Windows, macOS&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/dev/univrm-0.xx/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/univrm_coordinate/</guid><description>
+&lt;/table></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid><description>
 &lt;p>UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p>
 &lt;h2 id="vrmの座標系">VRMの座標系&lt;/h2>
 &lt;p>VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
@@ -2804,7 +2864,7 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p>
 &lt;span style="color:#8f5902;font-style:italic">#endif
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">m&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/dev/univrm-0.xx/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/univrm_use_firstperson/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id="vrmfirstpersonの設定">VRMFirstPersonの設定&lt;/h1>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">VRMFirstPerson&lt;/a>ではRendererに対して設定があります。&lt;/p>
 &lt;table>
@@ -3006,7 +3066,78 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p>
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Wed, 19 Aug 2020 18:27:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;p>WIP&lt;/p>
+&lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
+&lt;ul>
+&lt;li>LipSync&lt;/li>
+&lt;li>瞬き&lt;/li>
+&lt;li>視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li>
+&lt;li>プログラムによる喜怒哀楽&lt;/li>
+&lt;/ul>
+&lt;p>上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
+BlendShape同士が競合することがわかりました。
+後で設定した値で上書きされて希望のBlendShapeが適用されないという状態になります。
+これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p>
+&lt;p>合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code>SetValues&lt;/code>&lt;/p>
+&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
+&lt;p>簡単なテストプログラムでの利用を想定しています。&lt;/p>
+&lt;h2 id="accumeratevalue--apply">AccumerateValue + Apply&lt;/h2>
+&lt;p>下記のSetValuesを推奨しています。&lt;/p>
+&lt;h2 id="setvalues">SetValues&lt;/h2>
+&lt;p>BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Wed, 19 Aug 2020 18:27:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;p>この記事は &lt;code>Version 0.44以降&lt;/code> のAPIについてです。&lt;/p>
+&lt;h2 id="loadasyncの例">LoadAsyncの例&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">bytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">File&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadAllBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// なんらかの方法でByte列を得る
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">context&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">VRMImporterContext&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ParseGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// metaが必要な場合
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">createThumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">meta&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadMeta&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">createThumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">thumbnail&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">meta&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// modelを構築
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LoadAsync&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">_&lt;/span> &lt;span style="color:#000;font-weight:bold">=&amp;gt;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ShowMeshes&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">go&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// load完了
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000">Debug&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LogError&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctaskを使う例">LoadAsyncTaskを使う例&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#8f5902;font-style:italic">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#000">Task&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">GameObject&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">LoadAsync&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Byte&lt;/span>&lt;span style="color:#000;font-weight:bold">[]&lt;/span> &lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">context&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">VRMImporterContext&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// GLB形式でJSONを取得しParseします
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ParseGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">try&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// ParseしたJSONをシーンオブジェクトに変換していく
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LoadAsyncTask&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// バウンディングボックスとカメラの位置関係で見切れるのを防止する
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">EnableUpdateWhenOffscreen&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// ロード後に表示する
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ShowMeshes&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">catch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Exception&lt;/span> &lt;span style="color:#000">ex&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">Debug&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LogError&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">ex&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// 関連するリソースを破棄する
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Destroy&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">throw&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#endif
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="関連する記事など">関連する記事など&lt;/h2>
+&lt;p>こちらの記事がわかりやすいです。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 04 Aug 2020 14:54:52 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id="049">0.49&lt;/h2>
 &lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
 その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
@@ -3171,78 +3302,7 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/</guid><description>
-&lt;p>WIP&lt;/p>
-&lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
-&lt;ul>
-&lt;li>LipSync&lt;/li>
-&lt;li>瞬き&lt;/li>
-&lt;li>視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li>
-&lt;li>プログラムによる喜怒哀楽&lt;/li>
-&lt;/ul>
-&lt;p>上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
-BlendShape同士が競合することがわかりました。
-後で設定した値で上書きされて希望のBlendShapeが適用されないという状態になります。
-これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p>
-&lt;p>合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code>SetValues&lt;/code>&lt;/p>
-&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
-&lt;p>簡単なテストプログラムでの利用を想定しています。&lt;/p>
-&lt;h2 id="accumeratevalue--apply">AccumerateValue + Apply&lt;/h2>
-&lt;p>下記のSetValuesを推奨しています。&lt;/p>
-&lt;h2 id="setvalues">SetValues&lt;/h2>
-&lt;p>BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/dev/univrm-0.xx/programming/runtime_import/</link><pubDate>Thu, 23 Apr 2020 17:09:54 +0900</pubDate><guid>https://vrm.dev/dev/univrm-0.xx/programming/runtime_import/</guid><description>
-&lt;p>この記事は &lt;code>Version 0.44以降&lt;/code> のAPIについてです。&lt;/p>
-&lt;h2 id="loadasyncの例">LoadAsyncの例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">bytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">File&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadAllBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// なんらかの方法でByte列を得る
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">context&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">VRMImporterContext&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ParseGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// metaが必要な場合
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">createThumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">meta&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadMeta&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">createThumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">thumbnail&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">meta&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// modelを構築
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LoadAsync&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">_&lt;/span> &lt;span style="color:#000;font-weight:bold">=&amp;gt;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ShowMeshes&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">go&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// load完了
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;span style="color:#000">Debug&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LogError&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctaskを使う例">LoadAsyncTaskを使う例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#8f5902;font-style:italic">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#000">Task&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">GameObject&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">LoadAsync&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Byte&lt;/span>&lt;span style="color:#000;font-weight:bold">[]&lt;/span> &lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">context&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">VRMImporterContext&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// GLB形式でJSONを取得しParseします
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ParseGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">try&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ParseしたJSONをシーンオブジェクトに変換していく
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LoadAsyncTask&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// バウンディングボックスとカメラの位置関係で見切れるのを防止する
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">EnableUpdateWhenOffscreen&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// ロード後に表示する
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ShowMeshes&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">catch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Exception&lt;/span> &lt;span style="color:#000">ex&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">Debug&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LogError&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">ex&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// 関連するリソースを破棄する
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Destroy&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">throw&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">#endif
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="関連する記事など">関連する記事など&lt;/h2>
-&lt;p>こちらの記事がわかりやすいです。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: API</title><link>https://vrm.dev/dev/univrm-1.xx/api/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API</title><link>https://vrm.dev/dev/univrm-1.xx/api/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api/</guid><description>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs">https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a>&lt;/p>
 &lt;p>にあります。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
