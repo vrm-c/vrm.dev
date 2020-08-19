@@ -12,7 +12,7 @@ The VRM file can be made by [Unity](https://unity3d.com/) and [UniVRM](https://g
 
 1. Import the 3D model data and [UniVRM](https://github.com/vrm-c/UniVRM) into the current unity project. Adjust/set the model's size, material, etc. 
 1. Export the 3D model data as VRM in Unity (normalization processing)
-1. Import the VRM file into the current unity project and customize the settings (license, spring bone, expression, eyelook, etc.)
+1. Import the VRM file into the current unity project and customize the settings (license, [spring bone]({{< relref "univrm_secondary.md" >}}), [expression]({{< relref "univrm_blendshape.md" >}}), [eyelook]({{< relref "univrm_lookat.md" >}}), etc.)
      * In some cases, make sure the model is working (e.g. facial expression change) in play mode first
 1. Export the 3D model data as VRM again after the adjustment is finished. The new customized settings are now saved in the VRM file.
 
@@ -93,9 +93,13 @@ After adjustments are completed, select the model in `Hierarchy` window and expo
 
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default. The details for export settings [can be found here]({{< relref "univrm_export.md" >}}).
+Enter your name in the `Author` field and click the `Export` button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: "Model_Name_Normalized.vrm". The file will be saved in the `Assets` folder by default.
 
-{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
+Related Pages about UniVRM export:
+  * [UniVRM Export]({{< relref "univrm_export.md" >}})
+  * [VRM Size]({{< relref "vrm_size.md" >}})
+
+{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 
 * Force T Pose
     * Force the model pose to become [T-Pose]({{< relref "vrm_tpose.md" >}}) before removing rotation / scaling.

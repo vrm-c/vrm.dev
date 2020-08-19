@@ -13,7 +13,7 @@ VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[Uni
 
 1. Unityで3Dモデルデータと[UniVRM](https://github.com/vrm-c/UniVRM)を読み込む。Unity上で大きさやマテリアルなどを調整・設定する
 1. 一度UnityからVRMファイルを出力する（※正規化と呼びます）
-1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
+1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・[揺れ物]({{< relref "univrm_secondary.md" >}})・[表情]({{< relref "univrm_blendshape.md" >}})・[目線]({{< relref "univrm_lookat.md" >}})など）を行う
 	* 場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する
 1. 設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。
 
@@ -102,9 +102,12 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 `Author`欄に名前を入力し、`Export`を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで`Assets`フォルダに保存されます。
-詳しくは[UniVRMのエクスポート]({{< relref "univrm_export.md" >}})をご覧ください。
 
-{{< img src="images/vrm/export_dialog_56.jpg" width="600"alt="vrm export" >}}
+UniVRMエクスポートに関するページ：
+  * [エクスポートダイアログ]({{< relref "univrm_export.md" >}})
+  * [VRMモデルのファイルサイズ]({{< relref "vrm_size.md" >}})
+
+{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 
 * Force T Pose
 	* 回転・スケールの除去前にモデルを強制的に[T-Pose]({{< relref "vrm_tpose.md" >}})にします。
