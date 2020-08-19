@@ -53,7 +53,7 @@ ExportRoot が以下の条件を満たすと設定画面が表示されます。
 Metaやエクスポートオプションを設定してください。
 警告は修正するかしないかを判断して、問題無ければ無視してください。
 選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の `export` ボタンを押すことができるようになります。
-
+VRMモデルのファイルサイズの詳しい内容は[こちら]({{< relref "vrm_size.md" >}})を参考してください。
 
 ## オプション
 
@@ -153,14 +153,14 @@ Rootに移動・回転・スケール値が設定されている。
 そのままエクスポートした場合、ルートの TRS は無くなります。
 移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。
 
-### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
+### Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen 
 
 humanoid設定に顎が含まれている。 
 FBXインポート時に意図せずに自動で割り当てられる場合があります。
 間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
 FBX importer の rig 設定に戻って設定を解除することをおすすめします。
 
-### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
+### There are bones with the same name in the hierarchy. They will be automatically renamed after export
 ヒエラルキーの中に同じ名前のGameObjectが含まれている。
 エクスポートした場合に自動でリネームする。
 

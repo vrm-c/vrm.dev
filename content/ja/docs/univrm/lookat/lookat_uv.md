@@ -10,6 +10,8 @@ aliases: [
 VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 `VRMLookAtBoneApplyer` を削除して、代わりに `VRMLookAtBlendShapeApplyer` をアタッチしてください。
 
+`Inspector -> Add Component -> VRMLookAtBlendShapeApplyer`.
+
 ![image](/images/vrm/add_vrm_lookat_blendshape.jpg)
 
 ## TextureのUV操作による視線制御

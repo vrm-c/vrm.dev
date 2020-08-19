@@ -53,6 +53,7 @@ The setting screen for ExportRoot will show up if the following conditions are s
 Please set up `Meta` and `ExportSettings`.
 If you get warning messages, it is optional for you to correct those warnings or not.
 If there is no error messages shown, you can go ahead and press `export` button at the lower right of the dialog.
+Details about VRM size calculation [can be found here]({{< relref "vrm_size.md" >}}).
 
 ## Export Option
 
@@ -79,7 +80,9 @@ It will not affect the output whether this option is selected or not.
 
 ### UseSparseAccessor
 
-If the model contains multiple BlendShapes, selecting this option can help reduce the file's size.
+Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.
+
+If the model contains multiple BlendShapes, enabling this can help reduce the file size.
 
 ### OnlyBlendshapePosition
 
@@ -94,7 +97,7 @@ The file size can be reduced.
 
 ### ReduceBlendshapeClip
 
-BlendShapeClip belongs to Preset.Unknown will not be exported.
+BlendShapeClip belonging to Preset.Unknown will not be exported.
 Used in combination with ReduceBlendshape.
 
 ### RemoveVertexColor
@@ -121,7 +124,7 @@ Table for Error Messages in v0.56, v0.57 and v0.58
 | Require humanoid avatar                                  | error | error              | error                              |
 | Require Title/Version/Author                             | error | error              | error                              |
 | No active mesh                                           | error | error              | error                              |
-| Prefab export                                            | error | error              | ok (result in NO_ACTIVE_MESH)      |
+| Prefab export                                            | error | error              | ok                                 |
 | Springbone validation                                    | ok    | ok                 | warn                               |
 
 ### Require source
@@ -171,7 +174,7 @@ A model is allowed to export if Root's translation, rotation and scale are not D
 However, those values will be lost.
 We recommend moving this object in the Hierarchy to be Root's child.
 
-### Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen 
+### Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen
 
 Jaw (chin) bone is included in humanoid setting.
 There is a possibility that the jaw bone is automatically assigned during FBX import. 
@@ -179,7 +182,7 @@ As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assig
 Therefore, bangs will have weird movements due to this issue.
 Please remove this setting in Inspector `FBX Importer` -> `rig`
 
-### There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed
+### There are bones with the same name in the hierarchy. They will be automatically renamed after export
 
 A model is allowed to export if there are bones with the same name in this model. 
 Only the warning message will be given in Export dialog. 
