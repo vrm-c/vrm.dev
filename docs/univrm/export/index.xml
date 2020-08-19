@@ -49,7 +49,8 @@
 &lt;h4 id="エクスポート設定画面">エクスポート設定画面&lt;/h4>
 &lt;p>Metaやエクスポートオプションを設定してください。
 警告は修正するかしないかを判断して、問題無ければ無視してください。
-選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の &lt;code>export&lt;/code> ボタンを押すことができるようになります。&lt;/p>
+選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の &lt;code>export&lt;/code> ボタンを押すことができるようになります。
+VRMモデルのファイルサイズの詳しい内容は&lt;a href="https://vrm.dev/docs/univrm/export/vrm_size/">こちら&lt;/a>を参考してください。&lt;/p>
 &lt;h2 id="オプション">オプション&lt;/h2>
 &lt;p>エクスポートのオプションです。
 チェックするとエクスポート前に追加の処理を実行します。&lt;/p>
@@ -205,12 +206,12 @@ UniVRMでは、 &lt;code>unlit&lt;/code> のみ頂点カラー対応です。&lt
 &lt;p>Rootに移動・回転・スケール値が設定されている。
 そのままエクスポートした場合、ルートの TRS は無くなります。
 移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。&lt;/p>
-&lt;h3 id="jaw-bone-is-included-it-may-not-be-what-you-intended-please-check-the-humanoid-avatar-setting-screen">Jaw bone is included. It may not be what you intended. Please check the humanoid avatar setting screen&lt;/h3>
+&lt;h3 id="jaw-bone-is-included-it-may-not-what-you-intended-please-check-the-humanoid-avatar-setting-screen">Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen&lt;/h3>
 &lt;p>humanoid設定に顎が含まれている。
 FBXインポート時に意図せずに自動で割り当てられる場合があります。
 間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
 FBX importer の rig 設定に戻って設定を解除することをおすすめします。&lt;/p>
-&lt;h3 id="there-is-a-bone-with-the-same-name-in-the-hierarchy-if-exported-these-bones-will-be-automatically-renamed">There is a bone with the same name in the hierarchy. If exported, these bones will be automatically renamed&lt;/h3>
+&lt;h3 id="there-are-bones-with-the-same-name-in-the-hierarchy-they-will-be-automatically-renamed-after-export">There are bones with the same name in the hierarchy. They will be automatically renamed after export&lt;/h3>
 &lt;p>ヒエラルキーの中に同じ名前のGameObjectが含まれている。
 エクスポートした場合に自動でリネームする。&lt;/p>
 &lt;h3 id="this-model-contains-vertex-color">This model contains vertex color&lt;/h3>

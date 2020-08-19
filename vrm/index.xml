@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 21 Apr 2020 18:22:22 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 21 Apr 2020 18:27:06 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
 &lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
 &lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
 &lt;p>というのも…&lt;/p>
@@ -114,7 +114,7 @@
 &lt;ol>
 &lt;li>Unityで3Dモデルデータと&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する&lt;/li>
 &lt;li>一度UnityからVRMファイルを出力する（※正規化と呼びます）&lt;/li>
-&lt;li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・揺れ物・表情・目線など）を行う
+&lt;li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">揺れ物&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">表情&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">目線&lt;/a>など）を行う
 &lt;ul>
 &lt;li>場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する&lt;/li>
 &lt;/ul>
@@ -208,9 +208,13 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;img src="https://vrm.dev/images/vrm/MToonMaterialSetting.png" alt="MToonMaterialSetting" width="700" />
 &lt;p>調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>からエクスポートします。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
-&lt;p>&lt;code>Author&lt;/code>欄に名前を入力し、&lt;code>Export&lt;/code>を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで&lt;code>Assets&lt;/code>フォルダに保存されます。
-詳しくは&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">UniVRMのエクスポート&lt;/a>をご覧ください。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
+&lt;p>&lt;code>Author&lt;/code>欄に名前を入力し、&lt;code>Export&lt;/code>を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで&lt;code>Assets&lt;/code>フォルダに保存されます。&lt;/p>
+&lt;p>UniVRMエクスポートに関するページ：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">エクスポートダイアログ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/export/vrm_size/">VRMモデルのファイルサイズ&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
 &lt;ul>
 &lt;li>Force T Pose
 &lt;ul>
@@ -685,6 +689,10 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;tr>
 &lt;td>&lt;a href="http://deatrathias.net/TW/">TRACKING WORLD&lt;/a>&lt;/td>
 &lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://matsuvr.booth.pm/items/2223918">VRM Automatic Photographing&lt;/a>&lt;/td>
+&lt;td>Windows 10&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
