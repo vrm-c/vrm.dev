@@ -2,7 +2,7 @@
 title: "VRMモデルを実行時にインポートする"
 linkTitle: "実行時にVRMモデルをインポートする"
 date: 2018-04-16T16:30:00+09:00
-url: "/dev/univrm-0.xx/programming/univrm_import_runtime/"
+aliases: ["/dev/univrm-0.xx/programming/univrm_import_runtime/"]
 weight: 2
 ---
 
