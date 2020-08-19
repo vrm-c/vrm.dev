@@ -1,36 +1,36 @@
 ---
-title: ランタイムインポーター
-url: "/dev/univrm-0.xx/programming/runtime_import/"
+title: Runtime Importer
+aliases: ["/en/dev/univrm-0.xx/programming/runtime_import/"]
 ---
 
-この記事は `Version 0.44以降` のAPIについてです。
+The followings are examples of runtime VRM import in `v0.44 and later versions`:
 
-## LoadAsyncの例 
+## LoadAsync Example 
 
 ```csharp
 var bytes = File.ReadAllBytes(path);
-// なんらかの方法でByte列を得る
+// Get a byte array
 
 var context = new VRMImporterContext();
 
 context.ParseGlb(bytes);
 
-// metaが必要な場合
+// When meta is needed
 bool createThumbnail=true;
 var meta = context.ReadMeta(createThumbnail);
 var thumbnail = meta.Thumbnail;
 
-// modelを構築
+// Construct a model
 context.LoadAsync(_ =>
 {
     context.ShowMeshes();
     var go = context.Root;
-    // load完了
+    // Load completed
 },
 Debug.LogError);
 ```
 
-## LoadAsyncTaskを使う例
+## LoadAsyncTask Example
 
 ```csharp
 #if (NET_4_6 && UNITY_2017_1_OR_NEWER)
@@ -38,20 +38,22 @@ async static Task<GameObject> LoadAsync(Byte[] bytes)
 {
     var context = new VRMImporterContext();
 
-    // GLB形式でJSONを取得しParseします
+    // Get JSON in GLB format and parse it
     context.ParseGlb(bytes);
 
     try
     {
-        // ParseしたJSONをシーンオブジェクトに変換していく
+        // Convert the parsed JSON to the scene object
         await context.LoadAsyncTask();
 
-        // バウンディングボックスとカメラの位置関係で見切れるのを防止する
+        // Prevent the model's surface from being penetrated by
+        // the positional relation between the bounding box and the camera
         // SkinnedMeshRenderer.updateWhenOffscreen = true
         context.EnableUpdateWhenOffscreen();
 
-        // T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
-        // ロード後に表示する
+        // If you do not want the program display the model's T-Pose,
+        // prepare it before ShowMeshes
+        // Display the model when the loading is finished
         context.ShowMeshes();
 
         return context.Root;
@@ -59,7 +61,7 @@ async static Task<GameObject> LoadAsync(Byte[] bytes)
     catch(Exception ex)
     {
         Debug.LogError(ex);
-        // 関連するリソースを破棄する
+        // Destroy related resources
         context.Destroy(true);
         throw;
     }
@@ -67,8 +69,8 @@ async static Task<GameObject> LoadAsync(Byte[] bytes)
 #endif
 ```
 
-## 関連する記事など
+## Related-Article
 
-こちらの記事がわかりやすいです。
+More details can be found in the link below (written in Japanese):
 
 * [UniVRMを使ってVRMモデルをランタイムロードする方法](https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6)

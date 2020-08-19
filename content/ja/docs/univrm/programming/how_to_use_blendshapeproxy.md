@@ -1,6 +1,6 @@
 ---
 title: BlendShapeProxyの使い方
-url: "/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/"
+aliases: ["/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/"]
 ---
 
 WIP
