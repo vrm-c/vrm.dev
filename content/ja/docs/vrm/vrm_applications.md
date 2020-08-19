@@ -95,6 +95,7 @@ weight: 4
 | [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unityライブラリ |
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
+| [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 
 ##  内部的にVRMを活用しているサービス
 
