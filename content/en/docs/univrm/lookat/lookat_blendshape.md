@@ -11,6 +11,8 @@ aliases: [
 `LookAt Blendshape` requires `VRMLookAtHead` and `VRMLookAtBlendShapeApplyer` components. 
 In the default setting, please remove `VRMLookAtBoneApplyer` and add `VRMLookAtBlendShapeApplyer` in the VRM model’s Inspector window.
 
+`Inspector -> Add Component -> VRMLookAtBlendShapeApplyer`.
+
 ![image](/images/vrm/add_vrm_lookat_blendshape.jpg)
 
 ## Control the Eye Gaze with BlendShape: VRMLookAtBlendShapeApplyer
