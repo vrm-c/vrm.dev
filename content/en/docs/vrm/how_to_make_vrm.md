@@ -12,7 +12,7 @@ The VRM file can be made by [Unity](https://unity3d.com/) and [UniVRM](https://g
 
 1. Import the 3D model data and [UniVRM](https://github.com/vrm-c/UniVRM) into the current unity project. Adjust/set the model's size, material, etc. 
 1. Export the 3D model data as VRM in Unity (normalization processing)
-1. Import the VRM file into the current unity project and customize the settings (license, [spring bone]({{< relref "univrm_secondary.md" >}}), [expression]({{< relref "univrm_blendshape.md" >}}), [eyelook]({{< relref "univrm_lookat.md" >}}), etc.)
+1. Import the VRM file into the current unity project and customize the settings ([license]({{< relref "univrm_meta.md" >}}), [spring bone]({{< relref "univrm_secondary.md" >}}), [expression]({{< relref "univrm_blendshape.md" >}}), [eyelook]({{< relref "univrm_lookat.md" >}}), etc.)
      * In some cases, make sure the model is working (e.g. facial expression change) in play mode first
 1. Export the 3D model data as VRM again after the adjustment is finished. The new customized settings are now saved in the VRM file.
 
@@ -124,33 +124,33 @@ The VRM model's information will be shown in the Inspector window once the root 
 
 * Information
 	* Title
-		* Avatar model name (any input)
+		* The name of the avatar model
 	* Version
-		* Avatar model version (any input)
+		* The version that creates the model
 	* Author
-		* Author name
+		* The author name (not limited to one). Putting avatar creator/first author name at the beginning is recommended.
 	* Contact Information
-		* Author contact information
+		* The contact information of the first author
 	* Reference
-		* Original / Related works of this avatar, if any
+		* The original/related work(s) of the avatar (URL), if any
 
 * License
 	* Personation / Characterization Permission
 		* A person who can perform with this avatar
-			* Only Author
-			* Explicitly Licensed Person
-			* Everyone
-		* Violent acts using this avatar
+			* The avatar may only be manipulated by its creator
+			* Authorized only to explicitly specified person
+			* Authorized to anyone
+		* Permission to perform violent acts with this avatar
 			* Disallow
 			* Allow
-		* Sexuality acts using this avatar
+		* Permission to perform sexual acts with this avatar
 			* Disallow
 			* Allow
 		* For commercial use
 			* Disallow
 			* Allow
 		* Other License Url
-			* If there are any conditions not mentioned above, put the URL link of the license document here
+			* The URL links of license with regard to other permissions
 
 	* Redistribution / Modifications License
 		* License Type
@@ -165,7 +165,7 @@ The VRM model's information will be shown in the Inspector window once the root 
 			* Other
 
 		* Other License Url
-			* If “Other” is selected, put the URL link of the license document here
+			* The URL links of license with regard to other permissions
 
 Note that starting from Unity version 2018.3, the interface has slightly changes:
 

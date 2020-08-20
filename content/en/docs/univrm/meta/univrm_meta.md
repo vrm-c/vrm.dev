@@ -7,36 +7,35 @@ aliases: ["/en/univrm/components/univrm_meta/"]
 
 ## VRMMeta
 
-|{{< img src="images/vrm/meta.png" alt="meta" >}}|
+|{{< img src="images/vrm/meta_new.jpg" width="800" alt="meta" >}}|
 |-----|
 |VRMMeta component|
 
 ### Information
 #### Title
-Set the name of the VRM model
+The name of the avatar model.
 
 #### Author
-Enter the author name of the VRM model
+The author name (not limited to one). Putting avatar creator/first author name at the beginning is recommended.
 
 #### Contact Information
-Enter the contact information of the author
+The contact information of the first author.
 
 #### Reference
-Original / Related works of this avatar (URL), if any
+The original/related work(s) of the avatar (URL), if any.
 
 #### Thumbnail
-Register the thumbnail of the VRM model. A texture resolution about 2048x2048 is recommended.
+The index to access the thumbnail image of the avatar model in gltf.images. The texture resolution of 2048x2048 is recommended. This is for the application to use as an icon.
 
 #### Version
-Specify the model version with character string.
-Any description is OK.
+The version that creates the model.
 
 ### License
 #### Personation / Characterization Permission
 ##### A person who can perform with this avatar
-* Only Author
-* Explicitly Licensed Person
-* Everyone
+* The avatar may only be manipulated by its creator
+* Authorized only to explicitly specified person
+* Authorized to anyone
 
 ##### Permission to perform violent acts with this avatar
 * Disallow
@@ -51,7 +50,7 @@ Any description is OK.
 * Allow
 
 ##### Other License Url
-If there are any conditions not mentioned above, put the URL link of the license document here.
+The URL links of license with regard to other permissions.
 
 #### Redistribution / Modifications License
 ##### License Type
@@ -66,7 +65,4 @@ If there are any conditions not mentioned above, put the URL link of the license
 * Other
 
 ##### Other License Url
-If “Other” is selected, put the URL link of the license document here.
-
-
-
+The URL links of license with regard to other permissions.

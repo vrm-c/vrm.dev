@@ -74,15 +74,15 @@ VRMは複数アプリケーション間で相互利用されることが想定�
 ## VRMファイルに設定できるライセンスデータ
 ### アバターの人格に関する許諾範囲(Personation / Characterization Permission)
 #### アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)
-* アバターを操作することはアバター作者にのみ許される(Only Author)
-* 明確に許可された人限定(Explicitly Licensed Person)
-* 全員に許可(Everyone)
+* アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)
+* 明確に許可された人限定(Authorized only to explicitly specified person)
+* 全員に許可(Authorized to anyone)
 
-#### このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
+#### このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)
 * 不許可(Disallow)
 * 許可(Allow)
 
-#### このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)
+#### このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)
 * 不許可(Disallow)
 * 許可(Allow)
 
