@@ -70,15 +70,15 @@ The new adding above is assumed to be the format in VR era.
 ## License data settings in VRM file
 ### Personation / Characterization Permission
 #### A person who can perform with this avatar
-* Only Author
-* Explicitly Licensed Person
-* Everyone
+* The avatar may only be manipulated by its creator
+* Authorized only to explicitly specified person
+* Authorized to anyone
 
-#### Violent acts using this avatar
+#### Permission to perform violent acts with this avatar
 * Disallow
 * Allow
 
-#### Sexuality acts using this avatar
+#### Permission to perform sexual acts with this avatar
 * Disallow
 * Allow
 
@@ -87,7 +87,7 @@ The new adding above is assumed to be the format in VR era.
 * Allow
 
 #### Other License Url
-If there are any conditions not mentioned above, put the URL link of the license document here.
+The URL links of license with regard to other permissions.
 
 ### Redistribution / Modifications License
 #### License Type
@@ -102,4 +102,4 @@ If there are any conditions not mentioned above, put the URL link of the license
 * Other
 
 #### Other License Url
-If “Other” is selected, put the URL link of the license document here.
+The URL links of license with regard to other permissions.

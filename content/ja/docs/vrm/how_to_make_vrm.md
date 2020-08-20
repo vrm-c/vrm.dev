@@ -13,7 +13,7 @@ VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[Uni
 
 1. Unityで3Dモデルデータと[UniVRM](https://github.com/vrm-c/UniVRM)を読み込む。Unity上で大きさやマテリアルなどを調整・設定する
 1. 一度UnityからVRMファイルを出力する（※正規化と呼びます）
-1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（ライセンス・[揺れ物]({{< relref "univrm_secondary.md" >}})・[表情]({{< relref "univrm_blendshape.md" >}})・[目線]({{< relref "univrm_lookat.md" >}})など）を行う
+1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（[ライセンス]({{< relref "univrm_meta.md" >}})・[揺れ物]({{< relref "univrm_secondary.md" >}})・[表情]({{< relref "univrm_blendshape.md" >}})・[目線]({{< relref "univrm_lookat.md" >}})など）を行う
 	* 場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する
 1. 設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。
 
@@ -147,13 +147,13 @@ T-Poseとモデルの正規化の詳細は[こちら]({{< relref "t_pose.md" >}}
 * License（使用許諾・ライセンス情報）
 	* アバターの人格に関する許諾範囲 (Personation / Characterization Permission)
 		* アバターに人格を与えることの許諾範囲 (A person who can perform with this avatar)
-			* アバターを操作することはアバター作者にのみ許される(Only Author)
-			* 明確に許可された人限定(Explicitly Licensed Person)
-			* 全員に許可(Everyone)
-		* このアバターを用いて暴力表現を演じることの許可(Violent acts using this avatar)
+			* アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)
+			* 明確に許可された人限定(Authorized only to explicitly specified person)
+			* 全員に許可(Authorized to anyone)
+		* このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)
 			* 不許可(Disallow)
 			* 許可(Allow)
-		* このアバターを用いて性的表現を演じることの許可(Sexuality acts using this avatar)
+		* このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)
 			* 不許可(Disallow)
 			* 許可(Allow)
 		* 商用利用の許可(For commercial use)
