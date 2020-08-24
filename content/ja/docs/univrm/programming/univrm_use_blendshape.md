@@ -38,10 +38,12 @@ proxy.SetValues(new Dictionary<BlendShapeKey, float>
 たとえば 2 つの VRMBlendShape `Blink_L` と `Blink_R` が
 
 VRMBlendShape `Blink_L`
+
 * Mesh `A` の Blendshape `eye_close_L` の weight 値 `100`
 * Mesh `A` の Blendshape `eye_close_R` の weight 値 `1`
 
 VRMBlendShape `Blink_R`
+
 * Mesh `A` の Blendshape `eye_close_L` の weight 値 `1`
 * Mesh `A` の Blendshape `eye_close_R` の weight 値 `100`
 
@@ -69,7 +71,7 @@ proxy.SetValues(new Dictionary<BlendShapeKey, float>
 または
 
 {{< highlight cs >}}
-proxy.AccumerateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f); // すぐに適用せずにたくわえる
-proxy.AccumerateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f); // すぐに適用せずにたくわえる
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
 proxy.Apply(); // 蓄積した値をまとめて適用する
 {{< / highlight >}}
