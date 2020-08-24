@@ -1,60 +1,80 @@
 ---
-title: "Use BlendShape"
-linkTitle: "Use BlendShape at runtime"
+title: "BlendShape Manipulations"
+linkTitle: "BlendShape manipulations at runtime"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_use_blendshape/"]
 weight: 3
 ---
 
-## Apply BlendShape from a script
+## Environment
+UniVRM v0.58.0
+
+## Methods
+
+* [Recommended] `SetValues`
+* [Not Recommended] `ImmediatelySetValue`
+* [For Advanced Users] `AccumulateValue`, `Apply`
+
+## Apply BlendShape weight from Script
+
+Call `SetValues` function once to create the specific expression (merged by multiple BlendShapes) in a frame:
 
 {{< highlight cs >}}
-var proxy=GetComponent<VRMBlendShapeProxy>();
+var proxy = GetComponent<VRMBlendShapeProxy>();
 
-// Call enum 
-proxy.ImmediatelySetValue(BlendShapePreset.A, 1.0f); // Assign a value between 0 and 1
-
-// Call string
-proxy.ImmediatelySetValue("A", 1.0f);
+proxy.SetValues(new Dictionary<BlendShapeKey, float>
+{
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.A), 1f}, // Assign the Weight of a BlendShape clip between 0 and 1
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), 1f}, // Specify a system-defined BlendShape clip by enum
+    {BlendShapeKey.CreateUnknown("USER_DEFINED_FACIAL"), 1f}, // Specify a user-defined BlendShape clip by string
+});
 {{< / highlight >}}
 
-## Apply multiple BlendShapes at once
+## Why use SetValues when applying multiple BlendShape at once?
 
-For example,
+We found that multiple BlendShapes compete with each other when the following expressions are specified:
+
+* LipSync
+* Eye Blink
+* Eye Gaze control (if eye gaze movements are controlled by BlendShape)
+* Emotions
+
+A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. In order to solve this issue, it is necessary to centralize the management of the BlendShape control.
+
+For `SetValues`, it can merge multiple BlendShapes without concerning overwritten issues so the specified expression can then be generated correctly.
+
+Blink example:
 
 For Blink_L
 
-* MeshA eye_L=100
-* MeshA eye_R=1
+  * The weight value for BlendShape `eye_L` of `Mesh_A` is 100
+  * The weight value for BlendShape `eye_R` of `Mesh_A` is 1
 
 For Blink_R
 
-* MeshA eye_L=1
-* MeshA eye_R=100
+  * The weight value for BlendShape `eye_L` of `Mesh_A` is 1
+  * The weight value for BlendShape `eye_R` of `Mesh_A` is 100
 
-If both BlendShapes are defined and enabled as shown below, later only those items set before can be applied.
-
-{{< highlight cs >}}
-proxy.ImmediatelySetValue(BlendShapePreset.Blink_L, 1.0f);
-proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
-{{< / highlight >}}
-
-In this case, the following codes are workable:
+If we use `ImmediatelySetValue` function for eye blinking,
 
 {{< highlight cs >}}
-// Keep the value and wait for Apply function
-proxy.AccumerateValue(BlendShapePreset.Blink_L, 1.0f);
-proxy.AccumerateValue(BlendShapePreset.Blink_R, 1.0f);
-// Apply all the BlendShapes at once
-proxy.Apply();
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f);
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
 {{< / highlight >}}
 
-Or
+The weight values set for Blink_L will be overwritten by Blink_R. To resolve this issue, we use `SetValues` or `AccumulateValue` to correctly manipulate specified BlendShapes:
 
 {{< highlight cs >}}
 proxy.SetValues(new Dictionary<BlendShapeKey, float>
 {
-    {new BlendShapeKey(BlendShapePreset.Blink_L), 1.0f},
-    {new BlendShapeKey(BlendShapePreset.Blink_R), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f},
 });
+{{< / highlight >}}
+
+{{< highlight cs >}}
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f);
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
+// Apply all the specified BlendShapes at once
+proxy.Apply();
 {{< / highlight >}}
