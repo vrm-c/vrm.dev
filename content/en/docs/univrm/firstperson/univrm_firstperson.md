@@ -1,46 +1,77 @@
 ---
-title: "First-Person View"
+title: "First-Person"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
 aliases: ["/en/univrm/components/univrm_firstperson/"]
 ---
 
-# VRMFirstPerson
-Settings related to first-person perspectives.
+VRM FirstPerson has two types of setting:
 
-## FirstPersonBone
-FirstPersonBone keeps track of a VR headset in a first-person view.
-Normally the head bone is assigned as FirstPersonBone.
+* VR headset position
+* The visibility setting of a mesh from a camera in VR
 
-## FirstPersonOffset
-The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.
+※ These settings only work on VRM application side
 
-## Renderers
-The settings for controlling mesh rendering on/off in a first-person view.
+## Headset Position
 
-When a VRM model is used in VR applications, the user may see the model's head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function **VRMFirstPerson** which can hide the model's head in the first-person view. To test out first-person mode in Unity project, set up [render layer]({{< relref "#specify-the-additional-render-layers-for-the-application" >}}) in the inspector window and call [first-person setup function]({{< relref "" >}})  . Then, go to`camera->cull mask`and select`EVERYTHING`but`THIRDPERSON_ONLY_LAYER`.
+You can adjust how the movement of the headset is reflected on the model's head by the followings:
 
-### The case for the head being separated
+### FirstPersonBone
 
-Set **ThirdPersonOnly** on the head.
-Set **Both** on the rest parts.
+FirstPersonBone keeps track of a VR headset in the first-person view.
+Normally the Head bone is assigned as FirstPersonBone.
 
-|{{< img src="images/vrm/firstperson.png" >}}|
-|-----|
-|For a VRM model (below), the head is set to **ThirdPersonOnly** and the rest parts of the body are set to **Both**.| 
+### FirstPersonOffset
 
-|{{< img src="images/vrm/firstperson_runtime.png" alt="firstperson" >}}|
-|-----|
-|Example: The meshes set to **ThirdPersonOnly** are not displayed in the first-person view.|
+The offset from the FirstPersonBone position to the tracking position. [0, 0.06, 0] is the default offset from the head to the middle of the eyes.
 
-### The case for the head not being separated
-Please set **Auto**.
-Except the model's head, the other parts are copied and treated as **FirstPersonOnly**. 
-The original model is treated as **ThirdPersonOnly**.
-The parts regarding the head bone and its descendants with weights will be eliminated. 
+## VR Visibility Setting
 
-### The case for no particular setting
-Please set **Both**.
+The visibility setting is for VR applications.
+For a VR application, two types of camera, First-person camera and Third-person camera, are expected to be used.
 
+* First-person camera (Head-mounted display)
+* Third-person camera (other users' HMD, mirror, etc.)
 
+However, for first-person camera, the user may encounter the following situations:
 
+* Model's head gets cut by the near plane
+* The view is blocked by the Model's hair
+* The inside of the model's head can be seen such as teeth
+
+To address the above issues, you can set up the visibility of each mesh for First-person camera and Third-person camera:
+
+| Setting         | First-Person Camera | Third-Person Camera | Note                                                                       |
+|-----------------|---------------------|---------------------|----------------------------------------------------------------------------|
+| Both            | 〇                  | 〇                  | The part with a certain distance from the head (e.g. body, hands and feet) |
+| FirstPersonOnly | 〇                  |                     |                                                                            |
+| ThirdPersonOnly |                     | 〇                  | Only visible from the external camera (e.g. head, hair, hat)               |
+| Auto            | Described below     | Described below     | Default                                                                    |
+
+### Use Auto to split Mesh into Both and ThirdPersonOnly
+
+If `Auto` is specified, the mesh will be split into two parts (`Both` and `ThirdPersonOnly`) automatically during import.
+In UniVRM, call [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md#call-setup-function-at-runtime-and-set-layermask-in-camera" >}}) for auto splitting.
+
+#### MeshAnnotation.Auto Algorithm
+
+* Gather all the vertices of the Mesh specified as `Auto`. For each vertex, check whether it contains the weight of Head bone (or the child of the Head bone)
+* Binarize Mesh: the first one containing triangles with HeadBone-related vertices and the second one containing triangles with the rest of the vertices
+* Set the mesh containing the HeadBone-related vertices as `ThirdPersonOnly`, and another mesh is set as `Both`
+
+Note that auto splitting is a heavy processing.
+
+### Recommended Structure
+
+Split the model into `Head` and `Body`.
+
+* Specify `ThirdPersonOnly` for `Head`
+* Specify `Both` for `Body` 
+
+| {{< img src="images/vrm/firstperson.png" >}}                                                      |
+|---------------------------------------------------------------------------------------------------|
+| Alicia's `Body` is set as `Both`, while the parts related to `Head` are set as `ThirdPersonOnly`. |
+
+| {{< img src="images/vrm/firstperson_runtime.png" alt="firstperson" >}}     |
+|----------------------------------------------------------------------------|
+| The meshes with `ThirdPersonOnly` setting are not rendered in FirstPerson. |
