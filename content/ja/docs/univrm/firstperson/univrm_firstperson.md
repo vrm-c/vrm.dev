@@ -54,7 +54,7 @@ VRアプリでは２種類のカメラが想定されます。
 ### Auto による Both と ThirdPersonOnly への自動分割
 
 設定をAutoにしておくと、ロード時にメッシュを自動で `Both` と `ThirdPersonOnly` に分離することを指示できます。
-UniVRMでは [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md" >}}) を呼び出します。
+UniVRMでは [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md#実行時にsetupを呼び出してカメラにlayermaskを設定する" >}}) を呼び出します。
 Autoによる自動分割は、重めの処理になります。
 
 分割基準は、
