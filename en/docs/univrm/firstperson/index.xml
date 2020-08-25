@@ -1,17 +1,83 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – FirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/</link><description>Recent content in FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: First-Person View</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
-&lt;h1 id="vrmfirstperson">VRMFirstPerson&lt;/h1>
-&lt;p>Settings related to first-person perspectives.&lt;/p>
-&lt;h2 id="firstpersonbone">FirstPersonBone&lt;/h2>
-&lt;p>FirstPersonBone keeps track of a VR headset in a first-person view.
-Normally the head bone is assigned as FirstPersonBone.&lt;/p>
-&lt;h2 id="firstpersonoffset">FirstPersonOffset&lt;/h2>
-&lt;p>The offset from the tracking position to the FirstPersonBone position. We assume the default value [0, 0.06, 0] is the offset between the head and the middle of the eyes.&lt;/p>
-&lt;h2 id="renderers">Renderers&lt;/h2>
-&lt;p>The settings for controlling mesh rendering on/off in a first-person view.&lt;/p>
-&lt;p>When a VRM model is used in VR applications, the user may see the model&amp;rsquo;s head inside inadvertently, which is not a good experience of being immersed in VR worlds. To address this problem, we provide the function &lt;strong>VRMFirstPerson&lt;/strong> which can hide the model&amp;rsquo;s head in the first-person view. To test out first-person mode in Unity project, set up &lt;a href="#specify-the-additional-render-layers-for-the-application">render layer&lt;/a> in the inspector window and call &lt;a href="">first-person setup function&lt;/a> . Then, go to&lt;code>camera-&amp;gt;cull mask&lt;/code>and select&lt;code>EVERYTHING&lt;/code>but&lt;code>THIRDPERSON_ONLY_LAYER&lt;/code>.&lt;/p>
-&lt;h3 id="the-case-for-the-head-being-separated">The case for the head being separated&lt;/h3>
-&lt;p>Set &lt;strong>ThirdPersonOnly&lt;/strong> on the head.
-Set &lt;strong>Both&lt;/strong> on the rest parts.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – FirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/</link><description>Recent content in FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: First-Person</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p>VRM FirstPerson has two types of setting:&lt;/p>
+&lt;ul>
+&lt;li>VR headset position&lt;/li>
+&lt;li>The visibility setting of a mesh from a camera in VR&lt;/li>
+&lt;/ul>
+&lt;p>※ These settings only work on VRM application side&lt;/p>
+&lt;h2 id="headset-position">Headset Position&lt;/h2>
+&lt;p>You can adjust how the movement of the headset is reflected on the model&amp;rsquo;s head by the followings:&lt;/p>
+&lt;h3 id="firstpersonbone">FirstPersonBone&lt;/h3>
+&lt;p>FirstPersonBone keeps track of a VR headset in the first-person view.
+Normally the Head bone is assigned as FirstPersonBone.&lt;/p>
+&lt;h3 id="firstpersonoffset">FirstPersonOffset&lt;/h3>
+&lt;p>The offset from the FirstPersonBone position to the tracking position. [0, 0.06, 0] is the default offset from the head to the middle of the eyes.&lt;/p>
+&lt;h2 id="vr-visibility-setting">VR Visibility Setting&lt;/h2>
+&lt;p>The visibility setting is for VR applications.
+For a VR application, two types of camera, First-person camera and Third-person camera, are expected to be used.&lt;/p>
+&lt;ul>
+&lt;li>First-person camera (Head-mounted display)&lt;/li>
+&lt;li>Third-person camera (other users&amp;rsquo; HMD, mirror, etc.)&lt;/li>
+&lt;/ul>
+&lt;p>However, for first-person camera, the user may encounter the following situations:&lt;/p>
+&lt;ul>
+&lt;li>Model&amp;rsquo;s head gets cut by the near plane&lt;/li>
+&lt;li>The view is blocked by the Model&amp;rsquo;s hair&lt;/li>
+&lt;li>The inside of the model&amp;rsquo;s head can be seen such as teeth&lt;/li>
+&lt;/ul>
+&lt;p>To address the above issues, you can set up the visibility of each mesh for First-person camera and Third-person camera:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>First-Person Camera&lt;/th>
+&lt;th>Third-Person Camera&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Both&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>The part with a certain distance from the head (e.g. body, hands and feet)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FirstPersonOnly&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ThirdPersonOnly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>Only visible from the external camera (e.g. head, hair, hat)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auto&lt;/td>
+&lt;td>Described below&lt;/td>
+&lt;td>Described below&lt;/td>
+&lt;td>Default&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="use-auto-to-split-mesh-into-both-and-thirdpersononly">Use Auto to split Mesh into Both and ThirdPersonOnly&lt;/h3>
+&lt;p>If &lt;code>Auto&lt;/code> is specified, the mesh will be split into two parts (&lt;code>Both&lt;/code> and &lt;code>ThirdPersonOnly&lt;/code>) automatically during import.
+In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera">VRMFirstPerson.Setup()&lt;/a> for auto splitting.&lt;/p>
+&lt;h4 id="meshannotationauto-algorithm">MeshAnnotation.Auto Algorithm&lt;/h4>
+&lt;ul>
+&lt;li>Gather all the vertices of the Mesh specified as &lt;code>Auto&lt;/code>. For each vertex, check whether it contains the weight of Head bone (or the child of the Head bone)&lt;/li>
+&lt;li>Binarize Mesh: the first one containing triangles with HeadBone-related vertices and the second one containing triangles with the rest of the vertices&lt;/li>
+&lt;li>Set the mesh containing the HeadBone-related vertices as &lt;code>ThirdPersonOnly&lt;/code>, and another mesh is set as &lt;code>Both&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Note that auto splitting is a heavy processing.&lt;/p>
+&lt;h3 id="recommended-structure">Recommended Structure&lt;/h3>
+&lt;p>Split the model into &lt;code>Head&lt;/code> and &lt;code>Body&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Specify &lt;code>ThirdPersonOnly&lt;/code> for &lt;code>Head&lt;/code>&lt;/li>
+&lt;li>Specify &lt;code>Both&lt;/code> for &lt;code>Body&lt;/code>&lt;/li>
+&lt;/ul>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -21,7 +87,7 @@ Set &lt;strong>Both&lt;/strong> on the rest parts.&lt;/p>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>For a VRM model (below), the head is set to &lt;strong>ThirdPersonOnly&lt;/strong> and the rest parts of the body are set to &lt;strong>Both&lt;/strong>.&lt;/td>
+&lt;td>Alicia&amp;rsquo;s &lt;code>Body&lt;/code> is set as &lt;code>Both&lt;/code>, while the parts related to &lt;code>Head&lt;/code> are set as &lt;code>ThirdPersonOnly&lt;/code>.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -34,14 +100,7 @@ Set &lt;strong>Both&lt;/strong> on the rest parts.&lt;/p>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Example: The meshes set to &lt;strong>ThirdPersonOnly&lt;/strong> are not displayed in the first-person view.&lt;/td>
+&lt;td>The meshes with &lt;code>ThirdPersonOnly&lt;/code> setting are not rendered in FirstPerson.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table>
-&lt;h3 id="the-case-for-the-head-not-being-separated">The case for the head not being separated&lt;/h3>
-&lt;p>Please set &lt;strong>Auto&lt;/strong>.
-Except the model&amp;rsquo;s head, the other parts are copied and treated as &lt;strong>FirstPersonOnly&lt;/strong>.
-The original model is treated as &lt;strong>ThirdPersonOnly&lt;/strong>.
-The parts regarding the head bone and its descendants with weights will be eliminated.&lt;/p>
-&lt;h3 id="the-case-for-no-particular-setting">The case for no particular setting&lt;/h3>
-&lt;p>Please set &lt;strong>Both&lt;/strong>.&lt;/p></description></item></channel></rss>
+&lt;/table></description></item></channel></rss>
