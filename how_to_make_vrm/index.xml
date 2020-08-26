@@ -1,0 +1,173 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><description>Recent content in VRMファイルを作ってみたい on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 18:57:23 +0900</lastBuildDate><atom:link href="https://vrm.dev/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. VRMファイルを作成する</title><link>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Wed, 26 Aug 2020 15:52:06 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+&lt;p>VRMファイルをつくるためには、&lt;a href="https://unity3d.com/jp">Unity&lt;/a>と&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を使用します。
+おおまかな作業のながれは以下のようになります：&lt;/p>
+&lt;ol>
+&lt;li>Unityで3Dモデルデータと&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を読み込む。Unity上で大きさやマテリアルなどを調整・設定する&lt;/li>
+&lt;li>一度UnityからVRMファイルを出力する（※正規化と呼びます）&lt;/li>
+&lt;li>上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（&lt;a href="https://vrm.dev/docs/univrm/meta/univrm_meta/">ライセンス&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">揺れ物&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">表情&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">目線&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">一人称表示&lt;/a>など）を行う
+&lt;ul>
+&lt;li>場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。&lt;/li>
+&lt;/ol>
+&lt;p>ポイントは、 &lt;strong>すでに作られた3DモデルをUnity上で調整し、Unityから出力する&lt;/strong>ということと、&lt;strong>一度VRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う&lt;/strong>ところとなります。&lt;/p>
+&lt;hr>
+&lt;h3 id="unityで空のプロジェクトを作る">Unityで空のプロジェクトを作る&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
+&lt;h3 id="unityにunivrmをインストール">UnityにUniVRMをインストール&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" />
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>と&lt;code>Assets/VRMShaders&lt;/code>にインストールします。
+&lt;strong>既存のVRMが存在している場合、あらかじめVRMとVRMShadersフォルダを削除することを推奨&lt;/strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
+&lt;h3 id="unityでhumanoidとして扱えるモデルデータを用意します">UnityでHumanoidとして扱えるモデルデータを用意します&lt;/h3>
+&lt;p>FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、&lt;strong>必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください&lt;/strong>。後述しますが、&lt;strong>VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください&lt;/strong>。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
+&lt;/p>
+&lt;p>インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに&lt;code>Select&lt;/code>をクリックして、&lt;code>Materials&lt;/code>をクリックします。&lt;code>Location&lt;/code>を&lt;code>Use External Materials（Legacy)&lt;/code>に設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/SetAsExternalMaterialsLegacy.png" alt="SetAsExternalMaterialsLegacy" width="900" />
+&lt;p>次に、&lt;code>Rig&lt;/code>をクリックして&lt;code>Animation Type&lt;/code>を&lt;code>Humanoid&lt;/code>に設定し、&lt;code>Configure&lt;/code>ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。&lt;code>Save&lt;/code>をクリックして保存します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
+&lt;p>これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。この状況では、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある&lt;code>Mapping&lt;/code>をクリックし、&lt;code>clear&lt;/code>をクリックして&lt;code>Automap&lt;/code>をクリックします。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
+&lt;/p>
+&lt;p>ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/fix_eye.png" />
+&lt;p>例&lt;/p>
+&lt;ul>
+&lt;li>前髪に顎ボーンが割り当てられる&lt;/li>
+&lt;li>目のハイライトに目ボーンが割り当てられる&lt;/li>
+&lt;/ul>
+&lt;p>上記のように、適切な対応するコンポーネントを手動で割り当てることで修正できます（たとえば、eye_light_Lはeye_Lに置き換えられます）。ボーンマッピングに問題がない場合は、&lt;code>Done&lt;/code>ボタンをクリックして次の手順に進みます。&lt;/p>
+&lt;h3 id="モデルデータを調整する">モデルデータを調整する&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene.png" />
+&lt;p>ヒエラルキーウィンドウでモデルをクリックすると、このモデルにアタッチされたサブコンポーネントが表示されます。それらサブコンポーネントのいずれかをクリックしてください。以下の項目を確認して調整します：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/initial_position_rotation.jpg" alt="initial_position_rotation" width="800" />
+&lt;ul>
+&lt;li>モデルの位置
+&lt;ul>
+&lt;li>モデルは原点に位置する&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>モデルのスケール
+&lt;ul>
+&lt;li>1.0 = 1m&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>モデルの向き
+&lt;ul>
+&lt;li>モデルは+Zの方向に向いている&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>質感（マテリアル/シェーダ）
+&lt;ul>
+&lt;li>以下のシェーダの中から使用することを&lt;strong>強く推奨&lt;/strong>します。
+&lt;ul>
+&lt;li>Toonシェーダー
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">VRM/MToon&lt;/a> (照明対応トゥーンシェーダ）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Unlit系シェーダー
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniGLTF/UniUnlit&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PBR
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_standard/">Standard&lt;/a> (Unity標準)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/shader_option.jpg" alt="shader_option" width="800" />
+&lt;p>マテリアルが割り当てられていない場合、または変更する場合は、&lt;code>Element X&lt;/code>の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として&lt;code>VRM/MToon&lt;/code>を選択します。詳細については、&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">MToon&lt;/a>を参照してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/MToonMaterialSetting.png" alt="MToonMaterialSetting" width="700" />
+&lt;h3 id="メニューから一度vrmをエクスポートする正規化">メニューから一度VRMをエクスポートする（※正規化）&lt;/h3>
+&lt;p>調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>からエクスポートします。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;p>&lt;code>Author&lt;/code>欄に名前を入力し、&lt;code>Export&lt;/code>を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで&lt;code>Assets&lt;/code>フォルダに保存されます。&lt;/p>
+&lt;p>UniVRMエクスポートに関するページ：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">エクスポートダイアログ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/export/vrm_size/">VRMモデルのファイルサイズ&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>Force T Pose
+&lt;ul>
+&lt;li>回転・スケールの除去前にモデルを強制的に&lt;a href="https://vrm.dev/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a>にします。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Pose Freeze
+&lt;ul>
+&lt;li>回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように&lt;strong>モデルを正規化する処理&lt;/strong>です。&lt;strong>初回は必ずチェックを入れてください&lt;/strong>。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>T-Poseとモデルの正規化の詳細は&lt;a href="https://vrm.dev/docs/univrm/humanoid/t_pose/">こちら&lt;/a>。&lt;/p>
+&lt;p>次のセクションでは、&lt;a href="https://vrm.dev/how_to_make_vrm/setup_vrm/">VRMファイルをインポートしセットアップする方法&lt;/a>を紹介します。&lt;/p></description></item><item><title>Docs: 2. VRMをセットアップする</title><link>https://vrm.dev/how_to_make_vrm/setup_vrm/</link><pubDate>Wed, 26 Aug 2020 15:52:30 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/setup_vrm/</guid><description>
+&lt;p>前のセクションでは、 ヒューマノイド3DモデルをVRMに変換する方法を紹介しました。次に、VRMファイルを設定していきます。&lt;/p>
+&lt;h3 id="vrmをunity上に読み込む">VRMをUnity上に読み込む&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;a href="https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/#モデルデータを調整する">配置したモデルデータ&lt;/a>をいったん消し、&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
+すると、メッシュなどが正規化されたモデルデータが表示されます。&lt;/p>
+&lt;h3 id="6vrm独自の設定を行う">6.VRM独自の設定を行う&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>5.で読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタにさまざまな設定項目&lt;/strong>があらわれます。また、&lt;strong>secondaryには揺れ物の設定&lt;/strong>が入っています。これらを設定していきます。
+**少なくとも、&lt;a href="https://vrm.dev/docs/univrm/meta/univrm_meta/">タイトル・作者・ライセンス情報&lt;/a>**は埋めるようにしてください。&lt;strong>特にライセンス情報は重要です！&lt;/strong>&lt;/p>
+&lt;p>ほかに、&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">表情や口パクの設定（BlendShape）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">揺れ物（SpringBone/SpringBoneCollider）の設定&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>がありますので必要に応じて設定していきます。&lt;/p>
+&lt;h3 id="vrmファイルを出力する">VRMファイルを出力する&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;p>調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>を実行します&lt;/p>
+&lt;p>このとき、&lt;strong>「Force T Pose」と「Pose Freeze」のチェックは外してください&lt;/strong>。このチェックは初回（正規化）のときのみ使用します。
+ファイル名を指定してVRMファイルを出力します&lt;/p>
+&lt;h3 id="完成">完成！&lt;/h3>
+&lt;p>これでセットアップ済のVRMファイルが出来ました。&lt;a href="https://vrm.dev/vrm_applications/">対応アプリケーション&lt;/a>に読み込ませてみましょう！&lt;/p></description></item><item><title>Docs: VRMの動作を確認する</title><link>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Wed, 26 Aug 2020 15:52:48 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
+&lt;p>このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。&lt;/p>
+&lt;h3 id="目の動きを確認する">目の動きを確認する&lt;/h3>
+&lt;p>&lt;code>AnimationClip/AnimationController&lt;/code>をセットしたり、&lt;code>VRMLookAtHead&lt;/code>の&lt;code>Target&lt;/code>に&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target">GameObject&lt;/a>をセットしたり（視線がどこを向くかの設定）、&lt;code>Head&lt;/code>欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
+&lt;/p>
+&lt;h3 id="ブレンドシェイプを確認する">ブレンドシェイプを確認する&lt;/h3>
+&lt;p>モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>をセットアップした後、&lt;code>Add Component&lt;/code>から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>BlendShapeAvatar&lt;/code>フィールドにダブルクリックして、3Dモデルの表情を設定します&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
+&lt;/p></description></item></channel></rss>
