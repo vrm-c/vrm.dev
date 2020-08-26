@@ -48,5 +48,8 @@ VRMをインポートしたとき、揺れモノ関連のコンポーネント�
 ## ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます
 VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。
 
+# 設定したVRMSpringBoneが居なくなった
+VRMSpringBoneはインポート時に```secondary```ノードにアタッチされます。
+エクスポート時と違う場所に現れるのでご注意ください。
 
-
+[VRMSpringBone]({{< relref "univrm_secondary.md#コンポーネントのアタッチされるノード" >}})
