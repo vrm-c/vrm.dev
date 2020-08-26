@@ -2,6 +2,7 @@
 title: "How to make VRM file"
 url: "/en/how_to_make_vrm/"
 weight: 2
+aliases: ["/en/docs/univrm/univrm_workflow/"]
 ---
 
 | {{< img src="images/vrm/VRM_changeVRM_EN.png" alt="vrm workflow" >}}  |
