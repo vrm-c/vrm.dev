@@ -18,8 +18,8 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 ### 2.UnityにUniVRMをインストール
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
 
-[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、``Assets/VRM``にインストールします。
-**既存のVRMが存在している場合、あらかじめVRMフォルダを削除することを推奨**しています。
+[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`と`Assets/VRMShaders`にインストールします。
+**既存のVRMが存在している場合、あらかじめVRMとVRMShadersフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
 
 ### 3.VRMファイルをUnity上に読み込む

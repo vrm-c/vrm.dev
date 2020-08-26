@@ -19,7 +19,7 @@ Create a new project at the start page (``New -> Create project``).
 ### 2. Import UniVRM package into the created project
 {{< img src="images/vrm/package_import.png" alt="package_import" >}}
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The path of imported files is``../Assets/VRM``. **It is recommended to delete existing VRM folder included VRM in advance before package import**.
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM`` and ``../Assets/VRMShaders``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM and VRMShaders folders (if any) before package import**.
 
 ### 3. Import VRM file into Unity 
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
