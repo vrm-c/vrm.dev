@@ -14,7 +14,7 @@ aliases: ["/en/univrm/"]
 
 Please check the contents in console (``Window -> Console``).
 
-{{< img src="images/vrm/window_console.png" alt="menu >}}
+{{< img src="images/vrm/window_console.png" alt="menu" >}}
 
 If an error messages (red) is shown in console, there might be something wrong somewhere:
 
