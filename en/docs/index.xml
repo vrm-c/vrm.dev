@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 22 Apr 2020 17:21:58 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 12 May 2020 16:00:12 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;p>A VRM file can be made by &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, which is a standard implementation of VRM in &lt;a href="https://unity3d.com/">Unity&lt;/a>.
 Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for making a VRM file:&lt;/p>
 &lt;ol>
@@ -1557,173 +1557,7 @@ Defined by ProtocolBuffer and generate a Json serializer.&lt;/p>
 &lt;p>A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">meta&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadMeta&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Make a thumbnail texture
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">Texture2D&lt;/span> &lt;span style="color:#000">thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">meta&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Thumbnail&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRM workflow</title><link>https://vrm.dev/en/docs/univrm/univrm_workflow/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/univrm_workflow/</guid><description>
-&lt;h2 id="workflow">Workflow&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/VRM_changeVRM_EN.png" alt="vrm workflow" />
-&lt;h2 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2>
-&lt;p>Prepare a 3D model that can be &lt;a href="https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html">imported&lt;/a> into Unity such as FBX format. The model&amp;rsquo;s bones must be set.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/ModelConversionMenu.png" alt="ModelConversionMenu" width="900" />
-&lt;/p>
-&lt;p>First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click &lt;code>Select&lt;/code> and then click &lt;code>Rig&lt;/code>. Set &lt;code>Animation Type&lt;/code> as &lt;code>Humanoid&lt;/code>, and then click &lt;code>Configure&lt;/code> button. A message box will pop up asking whether you want to save the current scene. Click &lt;code>Save&lt;/code> to save it.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Select&lt;code>Humanoid&lt;/code> and click &lt;code>Configure&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&amp;rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
-&lt;h3 id="correct-bone-mapping-with-rig-configuration">Correct bone mapping with rig configuration&lt;/h3>
-&lt;p>To corrent bone mapping errors, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click &lt;code>Mapping&lt;/code> in the lowerleft of the interface, click &lt;code>clear&lt;/code> and then click &lt;code>Automap&lt;/code>.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Choose a right component to fit a bone&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/fix_eye.png" />
-&lt;p>We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click &lt;code>Done&lt;/code> button to proceed to the next step.&lt;/p>
-&lt;h2 id="export-from-menu">Export from menu&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>In the Hierarchy window, if 3D model data with a setup-completed humanoid is selected, the &lt;code>Export humanoid&lt;/code> option will become available (&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>). The file will be saved in the &lt;code>Assets&lt;/code> folder by default.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Enter your name in the &lt;code>Author&lt;/code> field and click the &lt;code>Export&lt;/code> button.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="force-t-pose">Force T Pose&lt;/h3>
-&lt;p>Force the model pose to become &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a> before removing rotation / scaling.&lt;/p>
-&lt;h4 id="change-to-t-pose-manually">Change to T Pose manually&lt;/h4>
-&lt;p>You can manually change the model pose to &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/">T-Pose&lt;/a> (done automatically by default). Make sure to deselect the &lt;code>Force T Pose&lt;/code> checkbox.&lt;/p>
-&lt;h3 id="pose-freeze">Pose Freeze&lt;/h3>
-&lt;p>Whether the rotation / scaling removal processing should be performed. It is &lt;strong>the process of normalizing model&lt;/strong> for conforming to the VRM rules. Please make sure to check the boxes at the &lt;strong>first time of use&lt;/strong>. After this process is done, all the components can work correctly.&lt;/p>
-&lt;h4 id="hierarchy-normalization">Hierarchy normalization&lt;/h4>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/rot.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>The model that has the bone rotation.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/rot_scale.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>The model made by Z-UP coordinate system. The unit of distance is non-meter (Blender default).&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Remove rotation and scaling&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/without_rot_scale.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Normalization completed.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h4 id="mesh-normalization">Mesh normalization&lt;/h4>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/zup_mesh.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>The mesh with non T-pose is stored in Z-UP coordinate system.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Use&lt;code>SkinnedMeshRenderer.BakeMesh&lt;/code>to change the mesh to T-pose state and change the coordinate to Y-Up through the coordinate operation.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/yup_mesh.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>The mesh with T-pose is stored in Y-UP coordinate system.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="import">Import&lt;/h2>
-&lt;p>Please import VRM file into Assets folder&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/alicia_imported.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Import the VRM model&lt;code>Alicia&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Texture, Material and Prefab are automatically generated from VRM.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;ul>
-&lt;li>If the VRM file is not shown in the project view, right click and select&lt;code>refresh&lt;/code>&lt;/li>
-&lt;li>If the Prefab file cannot be generated, right click the VRM file and select&lt;code>reimport&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
 &lt;p>In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p>
 &lt;h3 id="check-models-eye-movements">Check Model&amp;rsquo;s Eye Movements&lt;/h3>
 &lt;p>Set &lt;code>AnimationClip/AnimationController&lt;/code> and set &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/#target">viewing target&lt;/a> in&lt;code>VRMLookAtHead -&amp;gt; Target&lt;/code>(the head orientation towards the target). For example, you can create a cube as a target from &lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>. Next, serach head component in&lt;code>VRMLookAtHead -&amp;gt; Head&lt;/code>. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are constantly tracking the object. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p>
@@ -2022,29 +1856,7 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Frequently asked questions</title><link>https://vrm.dev/en/docs/univrm/univrm_faq/</link><pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/univrm_faq/</guid><description>
-&lt;h1 id="report-errors">Report errors&lt;/h1>
-&lt;p>Please check the contents in console (&lt;code>Window -&amp;gt; Console&lt;/code>).&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/window_console.png" alt="コンソール画面を表示するメニュー" />
-&lt;p>If an error messages (red) is shown in console, there might be something wrong somewhere:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/error.png" alt="エラーの例" />
-&lt;p>Please report the errors you got in:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/issues">https://github.com/vrm-c/UniVRM/issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>More details provided in the report will be very helpful for us to look into your problem. For example:&lt;/p>
-&lt;ul>
-&lt;li>OS (Windows10 64bit, etc.)&lt;/li>
-&lt;li>Unity version (Unity-5.6.3p1, etc.)&lt;/li>
-&lt;li>UniVRM version (0.40, etc.)&lt;/li>
-&lt;/ul>
-&lt;h1 id="vrmspringbone-set-before-was-gone">VRMSpringBone set before was gone&lt;/h1>
-&lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p>
-&lt;h1 id="i-got-errors-when-loading-the-built-application">I got errors when loading the built application&lt;/h1>
-&lt;p>Shaders used by UniVRM may not be included in the application.&lt;/p>
-&lt;p>Please double check:&lt;/p>
-&lt;p>&lt;code>Edit - Project Settings - Graphics - Shader preloading&lt;/code>&lt;/p></description></item><item><title>Docs: BlendShape Manipulations</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShape Manipulations</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</guid><description>
 &lt;h2 id="environment">Environment&lt;/h2>
 &lt;p>UniVRM v0.58.0&lt;/p>
 &lt;h2 id="methods">Methods&lt;/h2>
@@ -2920,7 +2732,10 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="set-multiple-collision-detections-in-vrmspringbonecollidergroup">Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2>
-&lt;p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code>Size&lt;/code>and multiple targets can then be put into&lt;code>Element&lt;/code>fields.&lt;/p></description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code>Size&lt;/code>and multiple targets can then be put into&lt;code>Element&lt;/code>fields.&lt;/p>
+&lt;h1 id="vrmspringbone-set-before-was-gone">VRMSpringBone set before was gone&lt;/h1>
+&lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
 &lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
 Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
 &lt;h2 id="upm-package">UPM Package&lt;/h2>
@@ -3423,4 +3238,29 @@ To address this issue, a function that can disable &lt;code>blink&lt;/code> when
 &lt;h2 id="extract">Extract&lt;/h2>
 &lt;p>&lt;code>ScriptedImporter&lt;/code> asset cannot be modified with readonly state.
 To make it modifiable, select components you want to extract and click &lt;code>Extract&lt;/code> button in the Prefab&amp;rsquo;s inspector window (same as &lt;code>Extract&lt;/code> in fbx importer)
-&lt;code>Extract&lt;/code> is not required if there is no intention to modify it.&lt;/p></description></item></channel></rss>
+&lt;code>Extract&lt;/code> is not required if there is no intention to modify it.&lt;/p></description></item><item><title>Docs: UniVRM Import/Export Examples</title><link>https://vrm.dev/en/dev/univrm-1.xx/use_vrm/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/use_vrm/</guid><description>
+&lt;h2 id="editorimport">EditorImport&lt;/h2>
+&lt;ul>
+&lt;li>Import VRM and generate its prefab&lt;/li>
+&lt;/ul>
+&lt;h2 id="editorexport">EditorExport&lt;/h2>
+&lt;ul>
+&lt;li>Export VRM made from the scene in Editor mode&lt;/li>
+&lt;/ul>
+&lt;h2 id="runtimeimport">RunTimeImport&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRMUtility">https://github.com/vrm-c/UniVRMUtility&lt;/a> SimpleViewer, VRMViewer&lt;/li>
+&lt;/ul>
+&lt;h2 id="runtimeexport">RuntimeExport&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRMUtility">https://github.com/vrm-c/UniVRMUtility&lt;/a> PrimMan. Export box man as VRM format through the program at runtime&lt;/li>
+&lt;/ul></description></item><item><title>Docs: UniVRM-1.XX and UniVRM-0.XX coexistence</title><link>https://vrm.dev/en/dev/univrm-1.xx/use_with_univrm-0.xx/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/use_with_univrm-0.xx/</guid><description>
+&lt;p>Both UniVRM-1.XX and UniVRM-0.XX importers work.&lt;/p>
+&lt;p>The uniVRM-0.XX importer can be stopped by defining the c# symbol &lt;code>VRM_STOP_ASSETPOSTPROCESSOR&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;code>Edit&lt;/code> -&amp;gt; &lt;code>preference&lt;/code> -&amp;gt; &lt;code>UniVRM&lt;/code> and check &lt;code>StopVrmAssetPostProcessor&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>or&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;code>Edit&lt;/code> -&amp;gt; &lt;code>project settings&lt;/code> -&amp;gt; &lt;code>other settings&lt;/code> -&amp;gt; &lt;code>Scripting Define Symbols&lt;/code> and add &lt;code>VRM_STOP_ASSETPOSTPROCESSOR&lt;/code>&lt;/li>
+&lt;/ul></description></item></channel></rss>
