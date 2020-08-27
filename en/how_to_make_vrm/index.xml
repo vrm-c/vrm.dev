@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><description>Recent content in How to make VRM file on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 18:57:23 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><description>Recent content in How to make VRM file on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 27 Aug 2020 11:57:58 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;p>A VRM file can be made by &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, which is a standard implementation of VRM in &lt;a href="https://unity3d.com/">Unity&lt;/a>.
 Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for making a VRM file:&lt;/p>
 &lt;ol>
@@ -121,7 +121,7 @@ Now we are going to show how to import and set up a VRM file.&lt;/p>
 Normalized model data such as mesh (i.e. rotation is Unity default) can then be shown.&lt;/p>
 &lt;h3 id="custom-settings-in-vrm">Custom settings in VRM&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>The VRM model&amp;rsquo;s information will be shown in the Inspector window once the root of the model (step 5) in &lt;code>Hierarchy&lt;/code> is selected. Note that &lt;strong>spring bone settings are available in &amp;ldquo;secondary&amp;rdquo;&lt;/strong>. Please at least fill in &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">title, author, license information&lt;/a>. &lt;strong>Specially, license information is crucial!&lt;/strong>&lt;/p>
+&lt;p>The VRM model&amp;rsquo;s information will be shown in the Inspector window once the root GameObject of the model in &lt;code>Hierarchy&lt;/code> is selected. Note that &lt;strong>spring bone settings are available in &amp;ldquo;secondary&amp;rdquo;&lt;/strong>. Please at least fill in &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">title, author, license information&lt;/a>. &lt;strong>Specially, license information is crucial!&lt;/strong>&lt;/p>
 &lt;p>To make a VRM model fully functional, please set up the following components:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">Expression and lip-sync (BlendShape)&lt;/a>&lt;/li>
@@ -136,14 +136,14 @@ Normalized model data such as mesh (i.e. rotation is Unity default) can then be 
 &lt;h3 id="done">Done！&lt;/h3>
 &lt;p>Your VRM file is good to go. Try to import the VRM file into &lt;a href="https://vrm.dev/en/vrm_applications/">applications&lt;/a> that support VRM!&lt;/p></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
 &lt;p>In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p>
-&lt;h3 id="check-models-lookat">Check model&amp;rsquo;s LookAt&lt;/h3>
+&lt;h3 id="check-models-eye-movements">Check Model&amp;rsquo;s Eye Movements&lt;/h3>
 &lt;p>Set &lt;code>AnimationClip/AnimationController&lt;/code> and set &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/#target">viewing target&lt;/a> in&lt;code>VRMLookAtHead -&amp;gt; Target&lt;/code>(the head orientation towards the target). For example, you can create a cube as a target from &lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>. Next, serach head component in&lt;code>VRMLookAtHead -&amp;gt; Head&lt;/code>. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are constantly tracking the object. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
 &lt;br>
 &lt;br>
 &lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
 &lt;/p>
-&lt;h3 id="check-models-blendshape">Check model&amp;rsquo;s BlendShape&lt;/h3>
+&lt;h3 id="check-models-expressions">Check Model&amp;rsquo;s Expressions&lt;/h3>
 &lt;p>To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>, click &lt;code>Add Component&lt;/code> at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href="https://github.com/vrm-c/UniVRM/releases">runtime VRM loader sample&lt;/a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p>
 &lt;table>
 &lt;thead>
