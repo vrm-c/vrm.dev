@@ -7,7 +7,7 @@ menu:
 aliases: ["/en/univrm/"]
 ---
 
-- VRMファイルを作ってみたい]({{< relref "how_to_make_vrm" >}})
+- [VRMファイルを作ってみたい]({{< relref "how_to_make_vrm" >}})
 - [Download](https://github.com/vrm-c/UniVRM/releases)
 
 # Report errors
