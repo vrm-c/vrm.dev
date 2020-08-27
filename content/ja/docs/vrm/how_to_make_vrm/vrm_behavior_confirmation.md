@@ -16,7 +16,7 @@ weight: 3
 <br>
 {{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
 
-### ブレンドシェイプを確認する
+### 表情を確認する
 
 モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape]({{< relref "univrm_blendshape.md#vrmblendshapeproxy" >}})をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
 

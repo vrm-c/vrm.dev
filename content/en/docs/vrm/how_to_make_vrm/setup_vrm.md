@@ -22,7 +22,7 @@ Normalized model data such as mesh (i.e. rotation is Unity default) can then be 
 ### Custom settings in VRM
 {{< img src="images/vrm/vrm_settings.png" >}}
 
-The VRM model's information will be shown in the Inspector window once the root of the model (step 5) in `Hierarchy` is selected. Note that **spring bone settings are available in "secondary"**. Please at least fill in [title, author, license information]({{< relref "univrm_meta.md" >}}). **Specially, license information is crucial!**
+The VRM model's information will be shown in the Inspector window once the root GameObject of the model in `Hierarchy` is selected. Note that **spring bone settings are available in "secondary"**. Please at least fill in [title, author, license information]({{< relref "univrm_meta.md" >}}). **Specially, license information is crucial!**
 
 To make a VRM model fully functional, please set up the following components:
 
