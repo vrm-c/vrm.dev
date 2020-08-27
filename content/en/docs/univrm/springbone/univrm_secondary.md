@@ -47,5 +47,7 @@ For example, hit``Add Component``to attach VRMSpringBoneColliderGroup script to`
 ## Set multiple collision detections in VRMSpringBoneColliderGroup
 Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of``Size``and multiple targets can then be put into``Element``fields.
 
+# VRMSpringBone set before was gone
+VRMSpringBone was attached to the node```secondary```during import.
 
-
+[VRMSpringBone]({{< relref "univrm_secondary.md#nodes-attached-by-spring-bones" >}})
