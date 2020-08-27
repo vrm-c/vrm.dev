@@ -10,17 +10,17 @@ aliases: ["/en/univrm/"]
 - [How to make VRM file]({{< relref "how_to_make_vrm" >}})
 - [Download](https://github.com/vrm-c/UniVRM/releases)
 
-# Report errors
+# Bug Report
 
-Please check the contents in console (``Window -> Console``).
+Please check messages in Console (``Window -> Console``).
 
 {{< img src="images/vrm/window_console.png" alt="menu" >}}
 
-If an error messages (red) is shown in console, there might be something wrong somewhere:
+If messages like the following are shown in the Console window, there may be errors somewhere in the program. 
 
 {{< img src="images/vrm/error.png" alt="エラーの例" >}}
 
-Please report the errors you got in:
+Please report bugs you got via:
 
 * https://github.com/vrm-c/UniVRM/issues/new/choose
 
