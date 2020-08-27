@@ -11,4 +11,4 @@ weight: 2
 The figure above provides an overview of converting humanoid 3D models to VRM.
 
 The detailed walkthrough is presented in the first two sections below. 
-The last section is about VRM model testings such as LookAt, BlendShape.
+The last section is about VRM model testings such as eye movement and expression.
