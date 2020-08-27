@@ -7,14 +7,14 @@ menu:
 aliases: ["/en/univrm/"]
 ---
 
-- [VRMファイルを作ってみたい]({{< relref "how_to_make_vrm" >}})
+- [How to make VRM file]({{< relref "how_to_make_vrm" >}})
 - [Download](https://github.com/vrm-c/UniVRM/releases)
 
 # Report errors
 
 Please check the contents in console (``Window -> Console``).
 
-{{< img src="images/vrm/window_console.png" alt="コンソール画面を表示するメニュー" >}}
+{{< img src="images/vrm/window_console.png" alt="menu >}}
 
 If an error messages (red) is shown in console, there might be something wrong somewhere:
 
