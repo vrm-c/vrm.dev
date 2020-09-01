@@ -11,7 +11,7 @@ Starting from UniVRM-0.56, UniVRM can be imported with Unity Package Manager.
 
 Requirement: `Unity 2019.3.4f1 or later version`.
 
-### How to use
+### Install using UnityPackageManager window
 
 To open UPM, go to `Windows` -> `Package Manager`:
 
@@ -25,10 +25,11 @@ Select `add package from git URL` to import the target package specified by its 
 
 Whenever a new UniVRM version comes out, we will post git urls associated with this release. 
 
-For example, the git urls of [v0.56.3](https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3) are:
+For example, the git urls of [v0.59.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0) are:
 
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3` => depends on VRMShaders
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0`
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0`
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0` => depends on VRMShaders and MeshUtility
 
 Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
@@ -37,32 +38,20 @@ By changing the version number, You can switch to different version based on you
 #### Add dependencies in Packages/manifest.json
 
 An alternative way is to add necessary dependencies right in Packages/manifest.json. 
-Open manifest.json with text/code editor and paste the following contents (example of [v0.56.3](https://github.com/vrm-c/UniVRM/releases/tag/v0.56.3)):
+Open manifest.json with text/code editor and paste the following contents (example of [v0.59.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0)):
 
 ```json
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.56.3",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.56.3",
+    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0",
     // ...
 }
 ```
 
-The hash values in `lock` can be updated automatically by Unity, there is no need to manually change them.
-
-```json
-  "lock": {
-    "com.vrmc.vrmshaders": {
-      "revision": "v0.56.3",
-      "hash": "3b68eb7f99bfe78ea9c83ea75511282ef1782f1a"
-    },
-    "com.vrmc.univrm": {
-      "revision": "v0.56.3",
-      "hash": "3b68eb7f99bfe78ea9c83ea75511282ef1782f1a"
-    }
-  }
-```
+## Specify git commit
 
 However, if you want to switch to the specific commit, you can manually change the hash value or append the specific commit in `dependencies`.
 
@@ -77,6 +66,3 @@ Example:
     // ...
 }
 ```
-
-
-
