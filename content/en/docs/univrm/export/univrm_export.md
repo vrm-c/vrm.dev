@@ -10,7 +10,7 @@ aliases: ["/en/univrm/univrm_export/", "/en/univrm/export/univrm_export/"]
 | Root         | Topmost parent of an object |
 | Hierarchy    | Root and its children       |
 
-## v0.58
+## v0.58~
 
 {{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 

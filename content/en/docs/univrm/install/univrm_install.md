@@ -1,5 +1,5 @@
 ---
-title: "UniVRM installation"
+title: "Install UniVRM"
 linkTitle: "Install UniVRM"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
@@ -16,7 +16,7 @@ To install UniVRM with Unity Package Manager, please refer to [Install UniVRM wi
 
 Get unity package in https://github.com/vrm-c/UniVRM/releases.
 
-The package name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
+The package's name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
 
 ## Before Installation
 
@@ -35,13 +35,13 @@ The package name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
 ### Install UniVRM in an Existing Project
 
 * Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent` (Unity 2018)
-* If old UniVRM version exists, please delete `Assets/VRM` before installation
+* If old UniVRM version exists, please delete `Assets/VRM`, `Assets/VRMShaders`(if exists) and `Assets/MeshUtility`(if exists) before installation. 
 
 ## Import unitypackage
 
 Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
 
-The two folders: `Assets/VRM` and `Assets/VRMShaders` will be imported into the Unity project.
+The two folders: `Assets/VRM`, `Assets/VRMShaders` and `Assets/MeshUtility` will be imported into the Unity project.
 
 |{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
