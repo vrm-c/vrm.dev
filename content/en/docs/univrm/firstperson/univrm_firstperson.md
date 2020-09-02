@@ -31,7 +31,7 @@ The visibility setting is for VR applications.
 For a VR application, two types of camera, First-person camera and Third-person camera, are expected to be used.
 
 * First-person camera (Head-mounted display)
-* Third-person camera (other users' HMD, mirror, etc.)
+* Third-person camera (Other users' HMD, mirror, etc. For streaming)
 
 However, for first-person camera, the user may encounter the following situations:
 
@@ -55,9 +55,9 @@ In UniVRM, call [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md#c
 
 #### MeshAnnotation.Auto Algorithm
 
-* Gather all the vertices of the Mesh specified as `Auto`. For each vertex, check whether it contains the weight of Head bone (or the child of the Head bone)
-* Binarize Mesh: the first one containing triangles with HeadBone-related vertices and the second one containing triangles with the rest of the vertices
-* Set the mesh containing the HeadBone-related vertices as `ThirdPersonOnly`, and another mesh is set as `Both`
+* For a mesh specified as `Auto`, each vertex will be checked whether it contains the weight of Head bone (or the child of the Head bone)
+* Split the mesh into two groups: the first group contains triangles with HeadBone-related vertices while the second group contains triangles with the rest of the vertices
+* Set the mesh containing the HeadBone-related vertices as `ThirdPersonOnly`. And another mesh is set as `Both`
 
 Note that auto splitting is a heavy processing.
 
