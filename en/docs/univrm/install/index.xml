@@ -1,10 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRM installation</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, UniVRM supports &lt;code>Unity-2018.4LTS+&lt;/code> &lt;code>.Net4.x&lt;/code>.&lt;/p>
 &lt;p>To install UniVRM with Unity Package Manager, please refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_upm/">Install UniVRM with UPM&lt;/a>.&lt;/p>
 &lt;h2 id="unitypackage">unitypackage&lt;/h2>
 &lt;p>Get unity package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
-&lt;p>The package name will look like this: &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
 &lt;h2 id="before-installation">Before Installation&lt;/h2>
 &lt;ul>
 &lt;li>Create a new Unity project (&lt;code>Unity-2018.4LTS+&lt;/code>)&lt;/li>
@@ -20,11 +20,11 @@
 &lt;h3 id="install-univrm-in-an-existing-project">Install UniVRM in an Existing Project&lt;/h3>
 &lt;ul>
 &lt;li>Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> and set &lt;code>Scripting Runtime Version&lt;/code> to &lt;code>.Net4.X equivalent&lt;/code> (Unity 2018)&lt;/li>
-&lt;li>If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code> before installation&lt;/li>
+&lt;li>If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code>(if exists) and &lt;code>Assets/MeshUtility&lt;/code>(if exists) before installation.&lt;/li>
 &lt;/ul>
 &lt;h2 id="import-unitypackage">Import unitypackage&lt;/h2>
 &lt;p>Go to &lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package&lt;/code> and select &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>The two folders: &lt;code>Assets/VRM&lt;/code> and &lt;code>Assets/VRMShaders&lt;/code> will be imported into the Unity project.&lt;/p>
+&lt;p>The two folders: &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code> and &lt;code>Assets/MeshUtility&lt;/code> will be imported into the Unity project.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -83,18 +83,40 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRM uninstall</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
-&lt;p>Remove below folders&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install UniVRM Samples</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:28:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</guid><description>
+&lt;p>In this section, we assume you have &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_install/">installed UniVRM package&lt;/a>.&lt;/p>
+&lt;h2 id="univrm-samples-package">UniVRM Samples Package&lt;/h2>
+&lt;p>Get UniVRM Samples package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
+&lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
+&lt;p>Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.59).&lt;/p>
+&lt;h2 id="import">Import&lt;/h2>
+&lt;p>From the menu, go to &lt;code>Assets -&amp;gt; Import Package&lt;/code> and then click &lt;code>Custom Package&lt;/code> to import the package &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
+&lt;p>After you see the file information in the package as shown below, click &lt;code>Import&lt;/code> button:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_package_import.jpg" alt="sample_package_import" width="300" />
+&lt;h2 id="run-univrm-samples">Run UniVRM Samples&lt;/h2>
+&lt;p>Now the folder &lt;code>VRM.Samples&lt;/code> should be in &lt;code>Assets&lt;/code>. In Project window, please select &lt;code>SampleViewer&lt;/code>:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_scene.jpg" alt="sample_scene" width="300" />
+&lt;p>Next, select &lt;code>Game&lt;/code> view. You will see the &lt;code>SampleViewer&lt;/code> interface:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_viewer.jpg" alt="sample_viewer" width="500" />
+&lt;p>Click &lt;code>Play&lt;/code> button to enable &lt;code>SampleViewer&lt;/code>, and then click &lt;code>Open&lt;/code> button to import a VRM model into the scene at runtime:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/play_mode.jpg" alt="play_mode" width="150" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/sample_viewer_activate.jpg" alt="sample_viewer_activate" width="600" />
+&lt;/p>
+&lt;p>Other samples such as VRM export and FirstPerson rendering are available in &lt;code>VRM.Samples&lt;/code>.&lt;/p></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;p>Please delete the folders below:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>folder&lt;/th>
 &lt;th>Version&lt;/th>
-&lt;th>備考&lt;/th>
+&lt;th>Note&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -124,4 +146,6 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table>
+&lt;p>If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.&lt;/p>
+&lt;p>To remove packages installed by Unity Package Window, please click &lt;code>Remove&lt;/code> button at the lower right of the package interface in UPM window.&lt;/p></description></item></channel></rss>

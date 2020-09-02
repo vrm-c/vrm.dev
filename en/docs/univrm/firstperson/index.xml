@@ -17,7 +17,7 @@ Normally the Head bone is assigned as FirstPersonBone.&lt;/p>
 For a VR application, two types of camera, First-person camera and Third-person camera, are expected to be used.&lt;/p>
 &lt;ul>
 &lt;li>First-person camera (Head-mounted display)&lt;/li>
-&lt;li>Third-person camera (other users&amp;rsquo; HMD, mirror, etc.)&lt;/li>
+&lt;li>Third-person camera (Other users&amp;rsquo; HMD, mirror, etc. For streaming)&lt;/li>
 &lt;/ul>
 &lt;p>However, for first-person camera, the user may encounter the following situations:&lt;/p>
 &lt;ul>
@@ -67,9 +67,9 @@ For a VR application, two types of camera, First-person camera and Third-person 
 In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera">VRMFirstPerson.Setup()&lt;/a> for auto splitting.&lt;/p>
 &lt;h4 id="meshannotationauto-algorithm">MeshAnnotation.Auto Algorithm&lt;/h4>
 &lt;ul>
-&lt;li>Gather all the vertices of the Mesh specified as &lt;code>Auto&lt;/code>. For each vertex, check whether it contains the weight of Head bone (or the child of the Head bone)&lt;/li>
-&lt;li>Binarize Mesh: the first one containing triangles with HeadBone-related vertices and the second one containing triangles with the rest of the vertices&lt;/li>
-&lt;li>Set the mesh containing the HeadBone-related vertices as &lt;code>ThirdPersonOnly&lt;/code>, and another mesh is set as &lt;code>Both&lt;/code>&lt;/li>
+&lt;li>For a mesh specified as &lt;code>Auto&lt;/code>, each vertex will be checked whether it contains the weight of Head bone (or the child of the Head bone)&lt;/li>
+&lt;li>Split the mesh into two groups: the first group contains triangles with HeadBone-related vertices while the second group contains triangles with the rest of the vertices&lt;/li>
+&lt;li>Set the mesh containing the HeadBone-related vertices as &lt;code>ThirdPersonOnly&lt;/code>. And another mesh is set as &lt;code>Both&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Note that auto splitting is a heavy processing.&lt;/p>
 &lt;h3 id="recommended-structure">Recommended Structure&lt;/h3>
