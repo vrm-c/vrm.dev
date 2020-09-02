@@ -1,5 +1,5 @@
 ---
-title: "install unitypackage"
+title: "UniVRMをインストールする"
 date: 2020-07-07
 weight: 1
 aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
@@ -37,7 +37,7 @@ https://github.com/vrm-c/UniVRM/releases
 ### 既存のプロジェクトで作業する場合
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
-* 旧バージョンのVRMがインストールされている場合、`Assets/VRM` を削除してください
+* 旧バージョンのVRMがインストールされている場合、`Assets/VRM`、`Assets/VRMShaders`（存在する場合）、そして`Assets/MeshUtility`（存在する場合） を削除してください
 
 ## unitypackage の import
 
@@ -45,7 +45,7 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets` - `Import Package` - `Custom Package...` で `UniVRM-0.XX.X_XXXX.unitypackage` を選択します。
 
-`Assets/VRM` と `Assets/VRMShaders` の２つのフォルダに import されます。
+`Assets/VRM`、`Assets/VRMShaders`お及び`Assets/MeshUtility` の３つのフォルダに import されます。
 
 |{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|

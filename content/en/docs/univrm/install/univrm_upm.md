@@ -1,7 +1,7 @@
 ---
 title: "Install UniVRM with UPM"
 date: 2020-07-07T18:33:59+09:00
-weight: 3
+weight: 2
 aliases: ["/en/univrm/univrm_upm/", "/en/univrm/install/univrm_upm/"]
 ---
 
@@ -61,8 +61,9 @@ Example:
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#155acf354735288db0335878179f483901541851",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#155acf354735288db0335878179f483901541851",
+    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca",
     // ...
 }
 ```

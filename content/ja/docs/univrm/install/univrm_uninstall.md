@@ -1,6 +1,6 @@
 ---
-title: "UniVRM uninstall"
-linkTitle: "Uninstall UniVRM"
+title: "UniVRMをアンインストールする"
+linkTitle: "UniVRMをアンインストールする"
 date: 2020-08-31
 weight: 4
 aliases: []
@@ -19,3 +19,5 @@ aliases: []
 UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。
 
 * バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。
+
+UPMでパッケージをインストールするの場合は、UPMウィンドウのパッケージインタフェースの右下にある`Remove`ボタンをクリックしてください。
