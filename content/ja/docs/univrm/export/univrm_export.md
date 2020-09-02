@@ -10,7 +10,7 @@ aliases: ["/univrm/univrm_export/", "/univrm/export/univrm_export/"]
 | Root         | エクスポート対象となる一番親のオブジェクト(ひとつだけ) |
 | ヒエラルキー | Root自身と子孫全部                                     |
 
-## v0.58
+## v0.58~
 
 {{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 
