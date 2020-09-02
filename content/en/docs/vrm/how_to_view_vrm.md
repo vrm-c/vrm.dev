@@ -17,9 +17,9 @@ Importing VRM file by this way is a little tedious but you can see the informati
 Create a new project at the start page (``New -> Create project``).
 
 ### 2. Import UniVRM package into the created project
-{{< img src="images/vrm/package_import.png" alt="package_import" >}}
+{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM`` and ``../Assets/VRMShaders``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM and VRMShaders folders (if any) before package import**.
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``, ``../Assets/VRMShaders`` and ``../Assets/MeshUtility``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import**.
 
 ### 3. Import VRM file into Unity 
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
@@ -41,5 +41,5 @@ Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://gi
 **Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder**. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.
 
 ## Upload / Download VRM file
-Currently you can submit your VRM files to [THE SEED ONLINE](https://seed.online/), [VRoid Hub](https://hub.vroid.com/) or [Nikoni 3D](https://3d.nicovideo.jp/). For Nikoni 3D, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM). Please check license information and try out those VRM models.
+Currently you can submit your VRM files to [THE SEED ONLINE](https://seed.online/en/), [VRoid Hub](https://hub.vroid.com/en/) or [Nikoni 3D](https://3d.nicovideo.jp/). For Nikoni 3D, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM). Please check license information and try out those VRM models.
 Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in [Virtual Cast](https://virtualcast.jp/).

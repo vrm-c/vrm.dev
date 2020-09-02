@@ -16,10 +16,10 @@ weight: 3
 Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
 
 ### 2.UnityにUniVRMをインストール
-{{< img src="images/vrm/package_import.png" alt="package_import" >}}
+{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
 
-[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`と`Assets/VRMShaders`にインストールします。
-**既存のVRMが存在している場合、あらかじめVRMとVRMShadersフォルダを削除することを推奨**しています。
+[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`、`Assets/VRMShaders`及び`Assets/MeshUtility`にインストールします。
+**既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
 
 ### 3.VRMファイルをUnity上に読み込む
