@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 25 May 2020 13:00:41 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 25 May 2020 13:04:37 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;p>A VRM file can be made by &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, which is a standard implementation of VRM in &lt;a href="https://unity3d.com/">Unity&lt;/a>.
 Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for making a VRM file:&lt;/p>
 &lt;ol>
@@ -1926,7 +1926,30 @@ For example, in &lt;code>SkinnedMeshRenderer&lt;/code>, click on &lt;code>BlendS
 &lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">AccumulateValue&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_R&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">// Apply all the specified BlendShapes at once
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Apply&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: First-Person</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to view VRM file</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
+&lt;h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer&lt;/h2>
+&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
+&lt;h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project&lt;/h2>
+&lt;p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p>
+&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
+&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
+&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
+&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p>
+&lt;h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p>
+&lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
+&lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;p>VRM FirstPerson has two types of setting:&lt;/p>
 &lt;ul>
 &lt;li>VR headset position&lt;/li>
@@ -1990,6 +2013,13 @@ For a VR application, two types of camera, First-person camera and Third-person 
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;h3 id="reset-settings">Reset settings&lt;/h3>
+&lt;p>FirstPerson is automatically setuped when first export.
+But, setting is broken if mesh is modified.
+VRMFirstPerson reset is fix settings.
+VRMFirstPerson reset is&lt;/p>
+&lt;p>Click &lt;code>VRM First Person(Script)&lt;/code> meshinspector top-right &lt;code>cogwheel ⚙&lt;/code> button, and select &lt;code>Reset&lt;/code>.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
 &lt;h3 id="use-auto-to-split-mesh-into-both-and-thirdpersononly">Use Auto to split Mesh into Both and ThirdPersonOnly&lt;/h3>
 &lt;p>If &lt;code>Auto&lt;/code> is specified, the mesh will be split into two parts (&lt;code>Both&lt;/code> and &lt;code>ThirdPersonOnly&lt;/code>) automatically during import.
 In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera">VRMFirstPerson.Setup()&lt;/a> for auto splitting.&lt;/p>
@@ -2031,30 +2061,7 @@ In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_us
 &lt;td>The meshes with &lt;code>ThirdPersonOnly&lt;/code> setting are not rendered in FirstPerson.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: How to view VRM file</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
-&lt;h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer&lt;/h2>
-&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project&lt;/h2>
-&lt;p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p>
-&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
-&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
-&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p>
-&lt;h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p>
-&lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
-&lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
-Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;/table></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
 &lt;p>Please delete the folders below:&lt;/p>
 &lt;table>
 &lt;thead>

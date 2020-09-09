@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – FirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/</link><description>Recent content in FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 一人称表示</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – FirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/</link><description>Recent content in FirstPerson on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/firstperson/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;p>２系統の設定があります。&lt;/p>
 &lt;ul>
 &lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
@@ -65,6 +65,13 @@ VRアプリでは２種類のカメラが想定されます。&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;h3 id="設定のリセット">設定のリセット&lt;/h3>
+&lt;p>FirstPerson は、最初に自動で Auto の設定になるようになっています。
+Mesh が増減するなどでモデルの構成が変わった場合に、参照が &lt;code>Missing&lt;/code> になるなどエクスポートできない状態になる場合があります。
+VRMFirstPerson をリセットすることで再設定することができます。
+リセットする方法は、&lt;/p>
+&lt;p>&lt;code>VRM First Person(Script)&lt;/code> インスペクタの右上角の &lt;code>歯車アイコン ⚙&lt;/code> で表示されるメニューから &lt;code>Reset&lt;/code> を選択してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
 &lt;h3 id="auto-による-both-と-thirdpersononly-への自動分割">Auto による Both と ThirdPersonOnly への自動分割&lt;/h3>
 &lt;p>設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code>Both&lt;/code> と &lt;code>ThirdPersonOnly&lt;/code> に分離することを指示できます。
 UniVRMでは &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/#実行時にsetupを呼び出してカメラにlayermaskを設定する">VRMFirstPerson.Setup()&lt;/a> を呼び出します。

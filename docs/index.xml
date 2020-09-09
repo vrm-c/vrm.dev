@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 25 May 2020 13:00:41 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. VRMファイルを作成する</title><link>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Wed, 26 Aug 2020 15:52:06 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 25 May 2020 13:04:37 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. VRMファイルを作成する</title><link>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Wed, 26 Aug 2020 15:52:06 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;p>VRMファイルをつくるためには、&lt;a href="https://unity3d.com/jp">Unity&lt;/a>と&lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>を使用します。
 おおまかな作業のながれは以下のようになります：&lt;/p>
 &lt;ol>
@@ -1840,33 +1840,7 @@ float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
 &lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
 &lt;p>エクスポートすると・・・&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
-&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
-&lt;h2 id="vrmファイルの読み込みかた">VRMファイルの読み込みかた&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
-また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>をご覧ください。&lt;/p>
-&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
-&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>及び&lt;code>Assets/MeshUtility&lt;/code>にインストールします。
-&lt;strong>既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨&lt;/strong>しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
-&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
-&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
-すると、モデルデータが表示されます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタに各種情報が表示されます&lt;/strong>。&lt;/p>
-&lt;h2 id="vrmファイルの読み込みかた簡易版">VRMファイルの読み込みかた（簡易版）&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>。（ただしVRM独自の設定は反映されません）&lt;/p>
-&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
-&lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
-ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: 一人称表示</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;p>２系統の設定があります。&lt;/p>
 &lt;ul>
 &lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
@@ -1933,6 +1907,13 @@ VRアプリでは２種類のカメラが想定されます。&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;h3 id="設定のリセット">設定のリセット&lt;/h3>
+&lt;p>FirstPerson は、最初に自動で Auto の設定になるようになっています。
+Mesh が増減するなどでモデルの構成が変わった場合に、参照が &lt;code>Missing&lt;/code> になるなどエクスポートできない状態になる場合があります。
+VRMFirstPerson をリセットすることで再設定することができます。
+リセットする方法は、&lt;/p>
+&lt;p>&lt;code>VRM First Person(Script)&lt;/code> インスペクタの右上角の &lt;code>歯車アイコン ⚙&lt;/code> で表示されるメニューから &lt;code>Reset&lt;/code> を選択してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
 &lt;h3 id="auto-による-both-と-thirdpersononly-への自動分割">Auto による Both と ThirdPersonOnly への自動分割&lt;/h3>
 &lt;p>設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code>Both&lt;/code> と &lt;code>ThirdPersonOnly&lt;/code> に分離することを指示できます。
 UniVRMでは &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/#実行時にsetupを呼び出してカメラにlayermaskを設定する">VRMFirstPerson.Setup()&lt;/a> を呼び出します。
@@ -1974,7 +1955,33 @@ Autoによる自動分割は、重めの処理になります。&lt;/p>
 &lt;td>動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
+&lt;/table></description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
+&lt;h2 id="vrmファイルの読み込みかた">VRMファイルの読み込みかた&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
+また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>をご覧ください。&lt;/p>
+&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
+&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>及び&lt;code>Assets/MeshUtility&lt;/code>にインストールします。
+&lt;strong>既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨&lt;/strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
+&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
+すると、モデルデータが表示されます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタに各種情報が表示されます&lt;/strong>。&lt;/p>
+&lt;h2 id="vrmファイルの読み込みかた簡易版">VRMファイルの読み込みかた（簡易版）&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>。（ただしVRM独自の設定は反映されません）&lt;/p>
+&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
+&lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
+ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
 &lt;h2 id="環境">環境&lt;/h2>
 &lt;p>UniVRM v0.58.0&lt;/p>
 &lt;h2 id="使用するメソッド">使用するメソッド&lt;/h2>
