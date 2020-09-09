@@ -91,7 +91,7 @@
 &lt;li>[Not Recommended] &lt;code>ImmediatelySetValue&lt;/code>&lt;/li>
 &lt;li>[For Advanced Users] &lt;code>AccumulateValue&lt;/code>, &lt;code>Apply&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="apply-blendshape-weight-from-script">Apply BlendShape weight from Script&lt;/h2>
+&lt;h2 id="apply-blendshape-weight-from-script">Apply BlendShape weight from script&lt;/h2>
 &lt;p>Call &lt;code>SetValues&lt;/code> function once to create the specific expression (merged by multiple BlendShapes) in a frame:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMBlendShapeProxy&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
 &lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SetValues&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">Dictionary&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">float&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
@@ -101,7 +101,7 @@
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateUnknown&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Specify a user-defined BlendShape clip by string
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">});&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="why-use-setvalues-when-applying-multiple-blendshape-at-once">Why use SetValues when applying multiple BlendShape at once?&lt;/h2>
+&lt;h2 id="why-use-setvalues-for-synthesizing-multiple-blendshapes">Why use &lt;code>SetValues&lt;/code> for synthesizing multiple BlendShapes?&lt;/h2>
 &lt;p>We found that multiple BlendShapes compete with each other when the following expressions are specified:&lt;/p>
 &lt;ul>
 &lt;li>LipSync&lt;/li>
@@ -109,8 +109,8 @@
 &lt;li>Eye Gaze control (if eye gaze movements are controlled by BlendShape)&lt;/li>
 &lt;li>Emotions&lt;/li>
 &lt;/ul>
-&lt;p>A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. In order to solve this issue, it is necessary to centralize the management of the BlendShape control.&lt;/p>
-&lt;p>For &lt;code>SetValues&lt;/code>, it can merge multiple BlendShapes without concerning overwritten issues so the specified expression can then be generated correctly.&lt;/p>
+&lt;p>A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown.&lt;/p>
+&lt;p>In order to address this issue, we can use &lt;code>SetValues&lt;/code> function to merge multiple BlendShapes into a specified expression while the BlendShape overwriting can be avoided.&lt;/p>
 &lt;p>Blink example:&lt;/p>
 &lt;p>For Blink_L&lt;/p>
 &lt;ul>
@@ -281,25 +281,41 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to Use BlendShapeProxy</title><link>https://vrm.dev/en/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Wed, 19 Aug 2020 18:27:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to Use BlendShapeProxy</title><link>https://vrm.dev/en/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Wed, 09 Sep 2020 14:57:57 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
 &lt;p>Work In Progress&lt;/p>
-&lt;h2 id="why-use-multiple-setters-at-the-same-time">Why use multiple setters at the same time?&lt;/h2>
+&lt;h2 id="the-issue-of-applying-multiple-blendshapes-at-once">The issue of applying multiple BlendShapes at once&lt;/h2>
+&lt;p>We found that multiple BlendShapes compete with each other when the following expressions are specified:&lt;/p>
 &lt;ul>
 &lt;li>LipSync&lt;/li>
 &lt;li>Eye Blink&lt;/li>
-&lt;li>Eye Gaze control (the case where the model&amp;rsquo;s eye gaze movements are controlled by BlendShape)&lt;/li>
+&lt;li>Eye Gaze control (if eye gaze movements are controlled by BlendShape)&lt;/li>
 &lt;li>Emotions&lt;/li>
 &lt;/ul>
-&lt;p>We found that multiple BlendShapes competed with each other when the above expressions were set from different components.
-A BlendShape set before may be overwritten with followed BlendShapes so it turns out that the desired BlendShape is not actually shown.
-In order to solve this issue, it is necessary to centralize the management of the BlendShape control.&lt;/p>
-&lt;p>For &lt;code>SetValues&lt;/code>, it is assumed to have the ability of synthesizing and excluding BlendShapes so aggregated BlendShapeClips can then generate a proper output.&lt;/p>
+&lt;p>A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. In order to address this issue, it is necessary to centralize the management of the BlendShape control.&lt;/p>
+&lt;p>For &lt;code>SetValues&lt;/code>, it can merge multiple BlendShapes while avoiding overwriting problems. As such, the specified expression can then be generated correctly.&lt;/p>
 &lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
 &lt;p>Assumed to be used for a simple test program.&lt;/p>
-&lt;h2 id="accumeratevalue--apply">AccumerateValue + Apply&lt;/h2>
-&lt;p>We recommend &lt;code>SetValues&lt;/code> (below) to handle possible accumulated BlendShape values.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMBlendShapeProxy&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
+&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ImmediatelySetValue&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">A&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accumulatevalue--apply">AccumulateValue + Apply&lt;/h2>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMBlendShapeProxy&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
+&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">AccumulateValue&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_L&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">AccumulateValue&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_R&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Apply all the specified BlendShapes at once
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Apply&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We recommend &lt;code>SetValues&lt;/code> (below) to handle the case of applying multiple BlendShapes.&lt;/p>
 &lt;h2 id="setvalues">SetValues&lt;/h2>
-&lt;p>Call &lt;code>SetValues&lt;/code> to combine BlendShapes.&lt;/p></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Wed, 19 Aug 2020 18:27:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;p>Call &lt;code>SetValues&lt;/code> to combine multiple BlendShapes.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMBlendShapeProxy&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
+&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SetValues&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">Dictionary&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">float&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_L&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#000">BlendShapeKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateFromPreset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BlendShapePreset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blink_R&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Wed, 19 Aug 2020 18:27:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
 &lt;p>The followings are examples of runtime VRM import in &lt;code>v0.44 and later versions&lt;/code>:&lt;/p>
 &lt;h2 id="loadasync-example">LoadAsync Example&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">bytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">File&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadAllBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
