@@ -15,7 +15,7 @@ UniVRM v0.58.0
 * [Not Recommended] `ImmediatelySetValue`
 * [For Advanced Users] `AccumulateValue`, `Apply`
 
-## Apply BlendShape weight from Script
+## Apply BlendShape weight from script
 
 Call `SetValues` function once to create the specific expression (merged by multiple BlendShapes) in a frame:
 
@@ -30,7 +30,7 @@ proxy.SetValues(new Dictionary<BlendShapeKey, float>
 });
 {{< / highlight >}}
 
-## Why use SetValues when applying multiple BlendShape at once?
+## Why use `SetValues` for synthesizing multiple BlendShapes?
 
 We found that multiple BlendShapes compete with each other when the following expressions are specified:
 
@@ -39,9 +39,9 @@ We found that multiple BlendShapes compete with each other when the following ex
 * Eye Gaze control (if eye gaze movements are controlled by BlendShape)
 * Emotions
 
-A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. In order to solve this issue, it is necessary to centralize the management of the BlendShape control.
+A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. 
 
-For `SetValues`, it can merge multiple BlendShapes without concerning overwritten issues so the specified expression can then be generated correctly.
+In order to address this issue, we can use `SetValues` function to merge multiple BlendShapes into a specified expression while the BlendShape overwriting can be avoided.
 
 Blink example:
 
