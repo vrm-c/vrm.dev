@@ -1,5 +1,5 @@
 ---
-title: "一人称表示"
+title: "VRMFirstPerson"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
 aliases: ["/univrm/components/univrm_firstperson/"]
@@ -50,6 +50,17 @@ VRアプリでは２種類のカメラが想定されます。
 | FirstPersonOnly | 〇           |              | 使わない？                                           |
 | ThirdPersonOnly |              | 〇           | 外部カメラしか見えない。頭部、髪、帽子などを指定する |
 | Auto            | 後述         | 後述         | デフォルト                                           |
+
+### 設定のリセット
+
+FirstPerson は、最初に自動で Auto の設定になるようになっています。
+Mesh が増減するなどでモデルの構成が変わった場合に、参照が `Missing` になるなどエクスポートできない状態になる場合があります。
+VRMFirstPerson をリセットすることで再設定することができます。
+リセットする方法は、
+
+`VRM First Person(Script)` インスペクタの右上角の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
+
+{{< img src="images/vrm/firstperson_reset.gif" width="600" alt="firstperson reset" >}}
 
 ### Auto による Both と ThirdPersonOnly への自動分割
 
