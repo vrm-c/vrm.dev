@@ -1,5 +1,5 @@
 ---
-title: "First-Person"
+title: "VRMFirstPerson"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
 aliases: ["/en/univrm/components/univrm_firstperson/"]
@@ -47,6 +47,17 @@ To address the above issues, you can set up the visibility of each mesh for Firs
 | FirstPersonOnly | 〇                  |                     |                                                                            |
 | ThirdPersonOnly |                     | 〇                  | Only visible from the external camera (e.g. head, hair, hat)               |
 | Auto            | Described below     | Described below     | Default                                                                    |
+
+### Reset settings
+
+FirstPerson is automatically setuped when first export.
+But, setting is broken if mesh is modified.
+VRMFirstPerson reset is fix settings.
+VRMFirstPerson reset is
+
+Click `VRM First Person(Script)` meshinspector top-right `cogwheel ⚙` button, and select `Reset`.
+
+{{< img src="images/vrm/firstperson_reset.gif" width="600" alt="firstperson reset" >}}
 
 ### Use Auto to split Mesh into Both and ThirdPersonOnly
 
