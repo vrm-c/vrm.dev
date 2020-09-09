@@ -42,3 +42,5 @@ Unityプロジェクトにインストールされている`UniVRM`のバージ�
 {{< img src="images/vrm/sample_viewer_activate.jpg" width="600" alt="sample_viewer_activate" >}}
 
 `VRM.Samples`にVRMエクスポートと一人称レンダリングのサンプルがあります。
+
+Aliciaモデルは[こちら](https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm)。

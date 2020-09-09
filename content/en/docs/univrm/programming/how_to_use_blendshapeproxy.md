@@ -5,24 +5,58 @@ aliases: ["/en/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/"]
 
 Work In Progress
 
-## Why use multiple setters at the same time?
+## The issue of applying multiple BlendShapes at once
+
+We found that multiple BlendShapes compete with each other when the following expressions are specified:
 
 * LipSync
 * Eye Blink
-* Eye Gaze control (the case where the model's eye gaze movements are controlled by BlendShape)
+* Eye Gaze control (if eye gaze movements are controlled by BlendShape)
 * Emotions
 
-We found that multiple BlendShapes competed with each other when the above expressions were set from different components.
-A BlendShape set before may be overwritten with followed BlendShapes so it turns out that the desired BlendShape is not actually shown.
-In order to solve this issue, it is necessary to centralize the management of the BlendShape control.
+A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown. In order to address this issue, it is necessary to centralize the management of the BlendShape control.
 
-For `SetValues`, it is assumed to have the ability of synthesizing and excluding BlendShapes so aggregated BlendShapeClips can then generate a proper output.
+For `SetValues`, it can merge multiple BlendShapes while avoiding overwriting problems. As such, the specified expression can then be generated correctly.
 
 ## ImmediatelySetValue
+
 Assumed to be used for a simple test program.
 
-## AccumerateValue + Apply
-We recommend `SetValues` (below) to handle possible accumulated BlendShape values.
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), 1.0f);
+```
+
+## AccumulateValue + Apply
+
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f);
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
+// Apply all the specified BlendShapes at once
+proxy.Apply();
+```
+
+We recommend `SetValues` (below) to handle the case of applying multiple BlendShapes.
 
 ## SetValues
-Call `SetValues` to combine BlendShapes.
+
+Call `SetValues` to combine multiple BlendShapes.
+
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.SetValues(new Dictionary<BlendShapeKey, float>
+{
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f},
+});
+```
