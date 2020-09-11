@@ -62,12 +62,11 @@ For a VR application, two types of camera, First-person camera and Third-person 
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="reset-settings">Reset settings&lt;/h3>
-&lt;p>FirstPerson is automatically setuped when first export.
-But, setting is broken if mesh is modified.
-VRMFirstPerson reset is fix settings.
-VRMFirstPerson reset is&lt;/p>
-&lt;p>Click &lt;code>VRM First Person(Script)&lt;/code> meshinspector top-right &lt;code>cogwheel ⚙&lt;/code> button, and select &lt;code>Reset&lt;/code>.&lt;/p>
+&lt;h3 id="reset-visibility-setting">Reset Visibility Setting&lt;/h3>
+&lt;p>The default setting for Mesh Renderer in VRMFirstPerson is &lt;code>Auto&lt;/code>.
+If you increase/decrease the number of meshes (i.e. change the model&amp;rsquo;s structure), the reference to the original mesh may become &lt;code>Missing&lt;/code>, resulting in VRM Export failure.
+We can fix the missing problem by resetting VRMFirstPerson.
+Click the &lt;code>gear icon ⚙&lt;/code> on the upper right corner of &lt;code>VRM First Person(Script)&lt;/code> inspector and select &lt;code>Reset&lt;/code> shown as follow:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
 &lt;h3 id="use-auto-to-split-mesh-into-both-and-thirdpersononly">Use Auto to split Mesh into Both and ThirdPersonOnly&lt;/h3>
 &lt;p>If &lt;code>Auto&lt;/code> is specified, the mesh will be split into two parts (&lt;code>Both&lt;/code> and &lt;code>ThirdPersonOnly&lt;/code>) automatically during import.
