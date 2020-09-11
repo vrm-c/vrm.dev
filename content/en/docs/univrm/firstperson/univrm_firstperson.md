@@ -48,14 +48,12 @@ To address the above issues, you can set up the visibility of each mesh for Firs
 | ThirdPersonOnly |                     | 〇                  | Only visible from the external camera (e.g. head, hair, hat)               |
 | Auto            | Described below     | Described below     | Default                                                                    |
 
-### Reset settings
+### Reset Visibility Setting
 
-FirstPerson is automatically setuped when first export.
-But, setting is broken if mesh is modified.
-VRMFirstPerson reset is fix settings.
-VRMFirstPerson reset is
-
-Click `VRM First Person(Script)` meshinspector top-right `cogwheel ⚙` button, and select `Reset`.
+The default setting for Mesh Renderer in VRMFirstPerson is `Auto`.
+If you increase/decrease the number of meshes (i.e. change the model's structure), the reference to the original mesh may become `Missing`, resulting in VRM Export failure.
+We can fix the missing problem by resetting VRMFirstPerson.
+Click the `gear icon ⚙` on the upper right corner of `VRM First Person(Script)` inspector and select `Reset` shown as follow:
 
 {{< img src="images/vrm/firstperson_reset.gif" width="600" alt="firstperson reset" >}}
 
