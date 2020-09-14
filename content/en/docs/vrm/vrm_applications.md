@@ -1,5 +1,5 @@
 ---
-title: "What applications that support VRM?"
+title: "VRM applications"
 date: 2018-04-16T16:30:00+09:00
 lastmod: 2019-09-09T09:47:19Z
 url: "/en/vrm_applications/"
@@ -29,6 +29,7 @@ weight: 4
 |-------------|----------|
 | [VRoid Studio](https://vroid.com/en/studio/) | Windows, macOS |
 | [CecilHenShin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
+| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
 ##  Live streaming tool
 
@@ -47,6 +48,9 @@ weight: 4
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
 | [VMagicMirror](https://malaybaku.github.io/VMagicMirror/en/) | Windows |
 | [2DR](https://2dr.info/) | iOS, Android |
+| [VUP-VTuber](https://store.steampowered.com/app/1207050/VUPVTuber_Maker_Animation_MMDLive2D__facial_capture/) | Windows 10 |
+| [Michicon Plus](https://www.next-system.com/michicon) | iOS |
+| [VOVOLA](https://vovola.wixsite.com/website) | Windows 10 |
 
 ##  Metaverse
 
