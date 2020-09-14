@@ -29,6 +29,7 @@ weight: 4
 |------------------|------------------|
 | [VRoid Studio](https://vroid.com/studio/) | Windows, macOS |
 | [セシル変身アプリ](https://fantia.jp/fanclubs/10552) | Windows, macOS |
+| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
 ##  配信ツール
 
@@ -47,6 +48,9 @@ weight: 4
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
 | [VMagicMirror](https://malaybaku.github.io/VMagicMirror/) | Windows |
 | [2DR](https://2dr.info/) | iOS, Android |
+| [VUP-VTuber](https://store.steampowered.com/app/1207050/VUPVTuber_Maker_Animation_MMDLive2D__facial_capture/) | Windows 10 |
+| [ミチコンPlus](https://www.next-system.com/michicon) | iOS |
+| [VOVOLA](https://vovola.wixsite.com/website) | Windows 10 |
 
 ##  メタバース
 

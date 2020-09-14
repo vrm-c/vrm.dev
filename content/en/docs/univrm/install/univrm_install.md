@@ -21,7 +21,7 @@ The package's name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
 ## Before Installation
 
 * Create a new Unity project (`Unity-2018.4LTS+`)
-* Show Console: click `clear` button on the upper-left of the Console window to see if any error message (in red) left before installation
+* Show Console: click `clear` button on the upper-left corner of the Console window to see if any error message (in red) left before installation
 
 {{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
 
