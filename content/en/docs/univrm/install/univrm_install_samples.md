@@ -2,6 +2,7 @@
 title: "Install UniVRM Samples"
 date: 2020-09-02T12:28:08+09:00
 weight: 3
+tags: ["api"]
 ---
 
 In this section, we assume you have [installed UniVRM package]({{< relref "univrm_install.md" >}}).

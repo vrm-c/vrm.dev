@@ -1,6 +1,7 @@
 ---
 title: T Pose Normalization for Model
 aliases: ["/en/univrm/settings/t_pose/"]
+tags: ["detail"]
 ---
 
 ## Supplementary Information regarding T-Pose

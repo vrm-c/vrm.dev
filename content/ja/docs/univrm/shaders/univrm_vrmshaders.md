@@ -2,7 +2,7 @@
 title: "VRMShaders UPMパッケージ"
 date: 2020-07-29
 weight: 8
-tags: ["material", "upm"]
+tags: ["unity"]
 aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 

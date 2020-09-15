@@ -3,6 +3,7 @@ title: "VRMのT-Poseについて"
 linkTitle: "Tポーズについて"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/univrm/humanoid/vrm_tpose/"]
+tags: ["detail"]
 ---
 
 VRMの第１実装のUnityのHumanoidに準拠したT-Pose[^tpose]を採用しています。

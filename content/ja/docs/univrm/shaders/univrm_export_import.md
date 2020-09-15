@@ -2,7 +2,7 @@
 title: "Export Import"
 date: 2020-07-29
 weight: 4
-tags: ["material"]
+tags: ["detail"]
 ---
 
 ## エクスポート

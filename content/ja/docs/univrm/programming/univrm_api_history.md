@@ -4,6 +4,7 @@ linkTitle: "変更履歴"
 date: 2018-05-21T10:00:00+09:00
 aliases: ["/dev/univrm-0.xx/programming/univrm_api_history/"]
 weight: 1
+tags: ["api"]
 ---
 
 プログラムに影響のある変更についてです。

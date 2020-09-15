@@ -2,6 +2,7 @@
 title: BlendShapeのセットアップ(v0.45)
 weight: 2
 aliases: ["/univrm/settings/blendshape_setup/"]
+tags: ["unity"]
 ---
 
 ## BlendShape関連のアセット

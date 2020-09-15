@@ -6,6 +6,7 @@ aliases: [
     "/en/univrm/settings/lookat_settings/",
     "/en/docs/univrm/settings/lookat_settings/",
     ]
+tags: ["unity"]
 ---
 
 `LookAt Blendshape` requires `VRMLookAtHead` and `VRMLookAtBlendShapeApplyer` components. 

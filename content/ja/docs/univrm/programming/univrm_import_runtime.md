@@ -4,6 +4,7 @@ linkTitle: "実行時にVRMモデルをインポートする"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/dev/univrm-0.xx/programming/univrm_import_runtime/"]
 weight: 2
+tags: ["api"]
 ---
 
 最新バージョンは[こちら]({{< relref "runtime_import.md" >}})をご覧ください。

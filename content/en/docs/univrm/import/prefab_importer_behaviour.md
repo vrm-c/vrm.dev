@@ -1,6 +1,7 @@
 ---
 title: Precautions on Prefab Import and Overwrite Issue
 aliases: ["/en/univrm/settings/prefab_importer_behaviour/"]
+tags: ["detail"]
 ---
 
 ## 0.49

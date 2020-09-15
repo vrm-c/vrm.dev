@@ -2,6 +2,7 @@
 title: "UniVRMサンプルをインストールする"
 date: 2020-09-02T12:29:28+09:00
 weight: 3
+tags: ["api"]
 ---
 
 このセクションでは、[UniVRMパッケージをインストール]({{< relref "univrm_install.md" >}})したことを想定しています。
