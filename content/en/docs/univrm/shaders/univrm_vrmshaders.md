@@ -42,4 +42,4 @@ For the latest update about MToon, please refer to:
 
 https://github.com/Santarh/MToon
 
-[Introduction to MToon]({{< relref "mtoon.md" >}})
+[Introduction to MToon]({{< relref "shader_mtoon.md" >}})

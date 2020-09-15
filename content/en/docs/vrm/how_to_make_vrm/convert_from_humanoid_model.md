@@ -73,7 +73,7 @@ Now click the model in the Hierarchy window, you shall see sub-components attach
 * Texture（material / shader）
     * The shaders listed below are **highly recommended**:
 		* Toon shader
-			* [VRM/MToon]({{< relref "mtoon.md" >}}) (lighting supported toon shader）
+			* [VRM/MToon]({{< relref "shader_mtoon.md" >}}) (lighting supported toon shader）
 		* Unlit type shader
 			* [UniGLTF/UniUnlit]({{< relref "univrm_unlit.md" >}})
 		* PBR
@@ -81,7 +81,7 @@ Now click the model in the Hierarchy window, you shall see sub-components attach
 
 {{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
-Note that if the materials are not assigned or you want to change them, click the rightmost icon of `Element X` to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select `VRM/MToon` as an example as shown below. Please refer to [MToon]({{< relref "mtoon.md" >}}) for more information.
+Note that if the materials are not assigned or you want to change them, click the rightmost icon of `Element X` to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select `VRM/MToon` as an example as shown below. Please refer to [MToon]({{< relref "shader_mtoon.md" >}}) for more information.
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 

@@ -40,4 +40,4 @@ git submodule で、VRMShaders 配下になるようにしています。
 
 https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders
 
-[mtoon]({{< relref "mtoon.md" >}})
+[mtoon]({{< relref "shader_mtoon.md" >}})

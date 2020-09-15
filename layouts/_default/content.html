@@ -1,5 +1,6 @@
 <div class="td-content">
     <h1>{{ .Title }}</h1>
+    {{ partial "page-tags.html" . }}
     {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
     <div class="share">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
