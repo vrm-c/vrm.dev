@@ -1,6 +1,7 @@
 ---
 title: BlendShapeProxyの使い方
 aliases: ["/dev/univrm-0.xx/programming/how_to_use_blendshapeproxy/"]
+tags: ["api"]
 ---
 
 WIP

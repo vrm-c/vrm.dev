@@ -2,7 +2,7 @@
 title: "VRMShaders UPMパッケージ"
 date: 2020-07-29
 weight: 8
-tags: ["material", "upm"]
+tags: ["unity"]
 aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 
@@ -40,4 +40,4 @@ git submodule で、VRMShaders 配下になるようにしています。
 
 https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders
 
-[mtoon]({{< relref "mtoon.md" >}})
+[mtoon]({{< relref "shader_mtoon.md" >}})

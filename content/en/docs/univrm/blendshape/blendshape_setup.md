@@ -2,6 +2,7 @@
 title: BlendShape Setup (v0.45)
 weight: 2
 aliases: ["/en/univrm/settings/blendshape_setup/"]
+tags: ["unity"]
 ---
 
 ## Assets related to BlendShape

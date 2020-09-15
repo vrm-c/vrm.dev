@@ -1,7 +1,7 @@
 ---
 title: "Bake BlendShape State When Exporting"
 date: 2020-07-27T19:28:41+09:00
-tags: ["blendshape"]
+tags: ["unity"]
 weight: 3
 aliases: ["/univrm/blendshape/univrm_bake_blendshape/"]
 ---

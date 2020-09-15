@@ -1,6 +1,7 @@
 ---
 title: ランタイムインポーター
 aliases: ["/dev/univrm-0.xx/programming/runtime_import/"]
+tags: ["api"]
 ---
 
 この記事は `Version 0.44以降` のAPIについてです。

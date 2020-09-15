@@ -3,6 +3,7 @@ title: "UniVRM Export"
 date: 2020-07-16T10:23:04+09:00
 weight: 2
 aliases: ["/en/univrm/univrm_export/", "/en/univrm/export/univrm_export/"]
+tags: ["unity"]
 ---
 
 | Terminology  | Meaning                     |

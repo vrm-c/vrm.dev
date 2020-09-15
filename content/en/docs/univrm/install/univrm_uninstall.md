@@ -4,6 +4,7 @@ linkTitle: "Uninstall UniVRM"
 date: 2020-08-31
 weight: 4
 aliases: []
+tags: ["unity"]
 ---
 
 Please delete the folders below:

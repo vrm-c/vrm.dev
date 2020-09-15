@@ -4,6 +4,7 @@ linkTitle: "実行時にBlendShapeを操作する"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/dev/univrm-0.xx/programming/univrm_use_blendshape/"]
 weight: 3
+tags: ["api"]
 ---
 ## 環境
 UniVRM v0.58.0

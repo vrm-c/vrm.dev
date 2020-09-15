@@ -2,7 +2,7 @@
 title: "VRM Size"
 date: 2020-08-17T16:12:54+09:00
 weight: 3
-tags: []
+tags: ["detail"]
 aliases: []
 ---
 
