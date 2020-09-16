@@ -100,10 +100,10 @@ Related Pages about UniVRM export:
 {{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
 
 * Force T Pose
-    * Force the model pose to become [T-Pose]({{< relref "vrm_tpose.md" >}}) before removing rotation / scaling.
+    * Force the model pose to become [T-Pose]({{< relref "humanoid_overview.md" >}}) before removing rotation / scaling.
 * Pose Freeze
     * Whether the rotation / scaling removal processing should be performed. This is **the process of normalizing model** for conforming to the VRM rules. Please make sure to check the boxes at the **first time of use**. After this process is done, all the components can work correctly.
 
-Details about model's T-Pose normalization [can be found here]({{< relref "t_pose.md" >}}).
+Details about model's T-Pose normalization [can be found here]({{< relref "humanoid_overview.md" >}}).
 
 In the next section, we will introduce how to [import and set up VRM file first time]({{< relref "setup_vrm.md" >}}).
