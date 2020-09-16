@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Material</title><link>https://vrm.dev/docs/univrm/shaders/</link><description>Recent content in Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/mtoon/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Material</title><link>https://vrm.dev/docs/univrm/shaders/</link><description>Recent content in Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</guid><description>
 &lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">MToonの使い方&lt;/a>&lt;/p>
 &lt;h1 id="mtoon-について">MToon について&lt;/h1>
 &lt;p>MToon は日本のアニメ的表現をすることを目標としています。
@@ -291,7 +291,7 @@
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 12:24:49 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
 &lt;table>
@@ -470,12 +470,12 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;p>パッケージとして独立して、 &lt;code>UniVRM&lt;/code> とは関係なくマテリアル関連だけ単体で使うことできます。
 ( &lt;code>UniVRM&lt;/code> が &lt;code>VRMShaders&lt;/code> を使う関係)。
 &lt;code>UniUnlit&lt;/code> と &lt;code>MToon&lt;/code> を内包しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">manifest.json&lt;/span> &lt;span style="color:#a40000">抜粋&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span> &lt;span style="color:#a00;background-color:#faa">抜粋&lt;/span>
+{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
+}
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>#0.57.0&lt;/code> 部分で UniVRM のリリース番号(github の tag)を指定します。
 &lt;code>VRMShaders&lt;/code> は &lt;code>VRM&lt;/code> と同じリリース番号を適用する運用をしています。&lt;/p>
 &lt;h3 id="uniunlit">UniUnlit&lt;/h3>
@@ -485,4 +485,4 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/mtoon/">mtoon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item></channel></rss>

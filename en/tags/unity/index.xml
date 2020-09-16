@@ -1,0 +1,1370 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 15 Sep 2020 20:06:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
+&lt;p>New features introduced in UniVRM v0.45:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/">BlendShape setting in Inspector&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/">Bake BlendShape state&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrmblendshapeproxy">VRMBlendShapeProxy&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxy.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>How to use:&lt;/p>
+&lt;ul>
+&lt;li>Set BlendShapeAvatar &lt;code>VRMBlendShapeProxy-&amp;gt;BlendShapeAvatar&lt;/code> in the Inspector&lt;/li>
+&lt;li>Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY)&lt;/li>
+&lt;/ul>
+&lt;h2 id="blendshapeavatar">BlendShapeAvatar&lt;/h2>
+&lt;p>Expressions can be created in the Inspector.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Double click the&lt;code>Blend Shape Avatar&lt;/code>field&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>or&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Click&lt;code>BlendShape&lt;/code>directly in the Project view&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The Inspector of BlendShape editor&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Select expressions and customize the values.
+For example, we select&lt;code>Fun&lt;/code>and edit its expressions as shown in the following:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClip.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Example: Set&lt;code>mouth_smile&lt;/code>,&lt;code>eye_smile&lt;/code>and&lt;code>eyeblow_smile&lt;/code>to 100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified.&lt;/p>
+&lt;p>After changing slider value and creating BlendShape, click the Apply button for saving the current status.&lt;/p>
+&lt;h2 id="blendshape-preset">BlendShape preset&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShape_Preset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Select&lt;code>Preset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The predefined names for the BlendShape clips. The following predefined expressions are available:&lt;/p>
+&lt;h3 id="neutral">NEUTRAL&lt;/h3>
+&lt;p>Specified as the standard facial expression and assumed to be used in standby state.&lt;/p>
+&lt;h3 id="a-i-u-e-o">A, I, U, E, O&lt;/h3>
+&lt;p>Corresponds to the sound of lip-sync&lt;code>aa・ih・ou・E・oh&lt;/code>.&lt;/p>
+&lt;h3 id="blink">Blink&lt;/h3>
+&lt;p>Eye blink.&lt;/p>
+&lt;h3 id="blink_l-blink_r">Blink_L, Blink_R&lt;/h3>
+&lt;p>Blinks with only one eye.&lt;/p>
+&lt;h3 id="joy-angry-sorrow-fun">Joy, Angry, Sorrow, Fun&lt;/h3>
+&lt;p>Emotion.&lt;/p>
+&lt;h3 id="lookup-lookdown-lookleft-lookright">LookUp, LookDown, LookLeft, LookRight&lt;/h3>
+&lt;p>Used when the model&amp;rsquo;s eyes are controlled by BlendShape.&lt;/p>
+&lt;h3 id="unknown">Unknown&lt;/h3>
+&lt;p>New created expressions are specified as &amp;ldquo;Unknown&amp;rdquo;.&lt;/p>
+&lt;h2 id="change-the-value-of-blendshapeproxy-at-runtime">Change the value of BlendShapeProxy (at runtime)&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Preset&lt;/code>is used&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can operate expressions from the Inspector.&lt;/p>
+&lt;h2 id="option-add-additional-facial-expressions">[Option] Add additional facial expressions&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Double click the&lt;code>Blend Shape Avatar&lt;/code>field and click&lt;code>Add BlendShapeClip&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipOption.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Click the new expression &amp;ldquo;びっくり&amp;rdquo; (surprised)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can call it from the codes shown as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// Call this expression with string since it belongs to unknown category
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.ImmediatelySetValue(&lt;span style="color:#c30">&amp;#34;びっくり&amp;#34;&lt;/span>, &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Assign a value between the range 0~1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After the setting is done, don&amp;rsquo;t forget to export VRM file for being able to use the created expressions at runtime.&lt;/p>
+&lt;h2 id="option-morph-material-color">[Option] Morph material color&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipMaterial.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The setting of Material morph. Double click the&lt;code>Current clip&lt;/code>field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Eye Control</title><link>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/</guid><description>
+&lt;p>To control the eye, the relative rotation (Yaw, Pitch) between the VRM model&amp;rsquo;s head and the LookAt target is calculated and then applied to the eye.&lt;/p>
+&lt;p>There are two types of eye control settings:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>VRMLookAtHead&lt;/code> + &lt;code>VRMLookAtBoneApplyer&lt;/code> components&lt;/li>
+&lt;li>&lt;code>VRMLookAtHead&lt;/code> + &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components&lt;/li>
+&lt;/ul>
+&lt;h2 id="lookat-type">LookAt Type&lt;/h2>
+&lt;p>There are three ways to apply Yaw and Pitch angles relative to LookAt target.
+Please set up one of them listed in the followings based on the format of your model:&lt;/p>
+&lt;h3 id="bone">Bone&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye movement controlled by Eye Bone&lt;/a>&lt;/p>
+&lt;h3 id="blendshape">BlendShape&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye movement controlled by BlendShape vertices&lt;/a>&lt;/p>
+&lt;h3 id="textureuv">TextureUV&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye movement controlled by &lt;code>UV Offset&lt;/code> of the eye&amp;rsquo;s texture&lt;/a>&lt;/p>
+&lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtHead.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtHead&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>This component calculates the direction from the model&amp;rsquo;s head to the target.&lt;/p>
+&lt;h3 id="target">Target&lt;/h3>
+&lt;blockquote>
+&lt;p>This is the setting for Application, not for VRM model setup&lt;/p>
+&lt;/blockquote>
+&lt;p>The target to be tracked by the model&amp;rsquo;s eyes. If a camera is set as Target, the model will always look at the camera.&lt;/p>
+&lt;h2 id="viewpoint-position">Viewpoint Position&lt;/h2>
+&lt;p>The viewpoint position is obtained by &lt;code>HeadBonePosition&lt;/code> + &lt;code>FirstPersonOffset&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson.png" /></description></item><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
+&lt;h2 id="unity-version">Unity Version&lt;/h2>
+&lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, UniVRM supports &lt;code>Unity-2018.4LTS+&lt;/code> &lt;code>.Net4.x&lt;/code>.&lt;/p>
+&lt;p>To install UniVRM with Unity Package Manager, please refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_upm/">Install UniVRM with UPM&lt;/a>.&lt;/p>
+&lt;h2 id="unitypackage">unitypackage&lt;/h2>
+&lt;p>Get unity package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
+&lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;h2 id="before-installation">Before Installation&lt;/h2>
+&lt;ul>
+&lt;li>Create a new Unity project (&lt;code>Unity-2018.4LTS+&lt;/code>)&lt;/li>
+&lt;li>Show Console: click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window to see if any error message (in red) left before installation&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
+&lt;hr>
+&lt;ul>
+&lt;li>Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> and set &lt;code>ColorSpace&lt;/code> to &lt;code>Linear&lt;/code> (recommended setting)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
+&lt;h3 id="install-univrm-in-an-existing-project">Install UniVRM in an Existing Project&lt;/h3>
+&lt;ul>
+&lt;li>Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> and set &lt;code>Scripting Runtime Version&lt;/code> to &lt;code>.Net4.X equivalent&lt;/code> (Unity 2018)&lt;/li>
+&lt;li>If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code>(if exists) and &lt;code>Assets/MeshUtility&lt;/code>(if exists) before installation.&lt;/li>
+&lt;/ul>
+&lt;h2 id="import-unitypackage">Import unitypackage&lt;/h2>
+&lt;p>Go to &lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package&lt;/code> and select &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
+&lt;p>The two folders: &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code> and &lt;code>Assets/MeshUtility&lt;/code> will be imported into the Unity project.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="350" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Import Unity Package&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
+&lt;p>If UniVRM import successes, VRM menu will be displayed on the top:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
+&lt;hr>
+&lt;p>If menu does not show up:&lt;/p>
+&lt;ul>
+&lt;li>Check if &lt;code>.Net4.X equivalent&lt;/code> has been selected (&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code>)&lt;/li>
+&lt;li>Open Console and check if any error (message in red) occurs&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Model Information</title><link>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/meta/univrm_meta/</guid><description>
+&lt;h2 id="vrmmeta">VRMMeta&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/meta_new.jpg" alt="meta" width="800" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMMeta component&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="information">Information&lt;/h3>
+&lt;h4 id="title">Title&lt;/h4>
+&lt;p>The name of the avatar model.&lt;/p>
+&lt;h4 id="author">Author&lt;/h4>
+&lt;p>The author name (not limited to one). Putting avatar creator/first author name at the beginning is recommended.&lt;/p>
+&lt;h4 id="contact-information">Contact Information&lt;/h4>
+&lt;p>The contact information of the first author.&lt;/p>
+&lt;h4 id="reference">Reference&lt;/h4>
+&lt;p>The original/related work(s) of the avatar (URL), if any.&lt;/p>
+&lt;h4 id="thumbnail">Thumbnail&lt;/h4>
+&lt;p>The index to access the thumbnail image of the avatar model in gltf.images. The texture resolution of 2048x2048 is recommended. This is for the application to use as an icon.&lt;/p>
+&lt;h4 id="version">Version&lt;/h4>
+&lt;p>The version that creates the model.&lt;/p>
+&lt;h3 id="license">License&lt;/h3>
+&lt;h4 id="personation--characterization-permission">Personation / Characterization Permission&lt;/h4>
+&lt;h5 id="a-person-who-can-perform-with-this-avatar">A person who can perform with this avatar&lt;/h5>
+&lt;ul>
+&lt;li>The avatar may only be manipulated by its creator&lt;/li>
+&lt;li>Authorized only to explicitly specified person&lt;/li>
+&lt;li>Authorized to anyone&lt;/li>
+&lt;/ul>
+&lt;h5 id="permission-to-perform-violent-acts-with-this-avatar">Permission to perform violent acts with this avatar&lt;/h5>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h5 id="permission-to-perform-sexual-acts-with-this-avatar">Permission to perform sexual acts with this avatar&lt;/h5>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h5 id="for-commercial-use">For commercial use&lt;/h5>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h5 id="other-license-url">Other License Url&lt;/h5>
+&lt;p>The URL links of license with regard to other permissions.&lt;/p>
+&lt;h4 id="redistribution--modifications-license">Redistribution / Modifications License&lt;/h4>
+&lt;h5 id="license-type">License Type&lt;/h5>
+&lt;ul>
+&lt;li>Redistribution Prohibited&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">Copyright wavier(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BY License(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NC License(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SA License(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY ND License(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>Other&lt;/li>
+&lt;/ul>
+&lt;h5 id="other-license-url-1">Other License Url&lt;/h5>
+&lt;p>The URL links of license with regard to other permissions.&lt;/p></description></item><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/</guid><description>
+&lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">How to use MToon&lt;/a>&lt;/p>
+&lt;h1 id="about-mtoon">About MToon&lt;/h1>
+&lt;p>MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code>Lit Color&lt;/code> and &lt;code>Shade Color&lt;/code> based on Lighting parameters and light source environment.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_about.png" alt="alicia MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Apply MToon to the 3D model&lt;code>Alicia&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="quick-setup">Quick Setup&lt;/h1>
+&lt;h2 id="basic-walk-through">Basic Walk Through&lt;/h2>
+&lt;ul>
+&lt;li>Select the target material and change the shader to &lt;code>VRM/MToon&lt;/code>&lt;/li>
+&lt;li>Click the shader panel and set the same texture in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> and &lt;code>Color-&amp;gt;Shade Color&lt;/code>&lt;/li>
+&lt;li>Set white color in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> and set the preference shade color in &lt;code>Color-&amp;gt;Shade Color&lt;/code>&lt;/li>
+&lt;li>Set the preference value in &lt;code>Shading-&amp;gt;Toony&lt;/code>. Make the lit color and shade color sharp:&lt;code>1&lt;/code>&lt;/li>
+&lt;li>Set the texture in &lt;code>Rim-&amp;gt;Additive&lt;/code> (equivalent to &lt;code>sphere map&lt;/code> or &lt;code>Matcap&lt;/code>)&lt;/li>
+&lt;li>If outline is necessary, select &lt;code>WorldCoordinates&lt;/code> in &lt;code>Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code>. Select &lt;code>None&lt;/code> if outline is not needed&lt;/li>
+&lt;li>Set the value with good appearance in &lt;code>Outline-&amp;gt;Width-&amp;gt;Width&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="general-material">General Material&lt;/h2>
+&lt;ul>
+&lt;li>Choose &lt;code>Shading Shift&lt;/code> and set &lt;code>0&lt;/code>&lt;/li>
+&lt;li>Choose &lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> and set &lt;code>1&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="set-materials-not-being-shadowed-too-much-such-as-the-characters-face">Set materials not being shadowed too much such as the character&amp;rsquo;s face&lt;/h2>
+&lt;ul>
+&lt;li>Choose &lt;code>Shading Shift&lt;/code> and set a negative value&lt;/li>
+&lt;li>Choose &lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> and set &lt;code>0&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h1 id="items-setup">Items Setup&lt;/h1>
+&lt;h2 id="preliminary">Preliminary&lt;/h2>
+&lt;p>Select the target material and change the shader to VRM/MToon.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_mtoon.png" alt="select MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Change the material shader to VRM/MToon&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="rendering">Rendering&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_inspector_rendering.png" alt="MToon Rendering" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The items included in the Rendering Inspector&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Set the rendering type and cull mode in &lt;code>Rendering&lt;/code>.&lt;/p>
+&lt;h3 id="rendering-type">Rendering Type&lt;/h3>
+&lt;p>Set whether the material is opaque or semi-transparent.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Opaque&lt;/p>
+&lt;ul>
+&lt;li>For rendering performance, it is recommended to set &lt;code>Opaque&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Cutout&lt;/p>
+&lt;ul>
+&lt;li>Although it is opaque, it refers to the alpha value in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code>. Therefore, it skips rendering for places having smaller value than &lt;code>Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Transparent&lt;/p>
+&lt;ul>
+&lt;li>The opacity based on the alpha value in &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code>.&lt;/li>
+&lt;li>The downside is that outline rendering cannot be performed correctly.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cull-mode">Cull Mode&lt;/h3>
+&lt;p>Set which side of the polygon to be rendered.&lt;/p>
+&lt;ul>
+&lt;li>Back
+&lt;ul>
+&lt;li>Render the front side. Generally selecting &amp;ldquo;Back&amp;rdquo; is recommended.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Front
+&lt;ul>
+&lt;li>Render the back side.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>None
+&lt;ul>
+&lt;li>Render the both sides.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="alpha">Alpha&lt;/h3>
+&lt;p>Required if choosing &lt;code>Rendering Type-&amp;gt;Cutout&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Cutoff (&lt;code>Color-&amp;gt;Alpha&lt;/code>)
+&lt;ul>
+&lt;li>Set the threshold value for not rendering.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="color">Color&lt;/h2>
+&lt;p>Set the rendering color.
+The texture and color are multiplied.
+Set the color hit by the light ray in &lt;code>Lit Color, Alpha&lt;/code> and set the color not hit by the light ray in &lt;code>Shade Color&lt;/code>.&lt;br>
+Also, set the the alpha value in &lt;code>Lit Color, Alpha&lt;/code> for opacity information.&lt;/p>
+&lt;h2 id="lighting">Lighting&lt;/h2>
+&lt;h3 id="shading-shift">Shading Shift&lt;/h3>
+&lt;p>Adjust the threshold value of the lit color and shade color for how the light ray hits the object.
+When the value is &lt;code>0&lt;/code>, it is the normal lighting.
+When the value is negative, it becomes the lighting with anime-like, wide range of lit color.
+It is necessary to disable the self-shadow with setting the value to &lt;code>0&lt;/code> in &lt;code>Shadow Receive Multiplier&lt;/code> according to the displayed warning message.&lt;/p>
+&lt;h3 id="shading-toony">Shading Toony&lt;/h3>
+&lt;p>Set whether to smoothly change the lit color and shade color around the threshold value in &lt;code>Shade Shift&lt;/code>.
+When the value is &lt;code>0&lt;/code>, it becomes realistically smooth like a general Lambert model.
+When the value is &lt;code>1&lt;/code>, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value.&lt;/p>
+&lt;h3 id="shadow-receive-multiplier">Shadow Receive Multiplier&lt;/h3>
+&lt;p>Set the influence of the self-shadow and shadow.
+&lt;code>0&lt;/code>: Not affected.
+&lt;code>1&lt;/code>: Affected.&lt;/p>
+&lt;h3 id="lightcolor-attenuation">LightColor Attenuation&lt;/h3>
+&lt;p>Set the influence of the light source color.
+&lt;code>0&lt;/code>: Affected by the light source color.
+&lt;code>1&lt;/code>: Not affected by the light source color. It only reflects the luminance of the light source color.&lt;/p>
+&lt;h3 id="rim-additive">Rim Additive&lt;/h3>
+&lt;p>Display additional light sources based on the relationship between the camera and the normal.
+In general it is called sphere map or matcap.&lt;/p>
+&lt;h3 id="emission">Emission&lt;/h3>
+&lt;p>Set the constant color regardless of the light source environment.&lt;/p>
+&lt;h3 id="normal-map">Normal Map&lt;/h3>
+&lt;p>Set the normal map.
+Set the strength value in the box on the right.&lt;/p>
+&lt;h2 id="outline">Outline&lt;/h2>
+&lt;p>Set the outline.&lt;/p>
+&lt;h3 id="width-mode">Width Mode&lt;/h3>
+&lt;ul>
+&lt;li>None
+&lt;ul>
+&lt;li>The outline is not rendered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>WorldCoordinates
+&lt;ul>
+&lt;li>Render the outline of the constant width for the world coordinate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ScreenCoordinates
+&lt;ul>
+&lt;li>Render the outline of the constant width for the screen coordinate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="width">Width&lt;/h3>
+&lt;p>Set the width of the outline.
+The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&lt;/code> is chosen.&lt;/p>
+&lt;h3 id="color-mode">Color Mode&lt;/h3>
+&lt;ul>
+&lt;li>FixedColor
+&lt;ul>
+&lt;li>Render with the fixed color&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>MixedLighting
+&lt;ul>
+&lt;li>Multiply the influence of Lighting&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="color-1">Color&lt;/h3>
+&lt;p>Set the outline color.&lt;/p>
+&lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
+&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
+&lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
+&lt;p>BlendShapeAvatar Asset&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h2 id="setting-screen">Setting screen&lt;/h2>
+&lt;p>The Asset has the following setting screens:&lt;/p>
+&lt;h3 id="the-inspector-of-blendshapeavatar-asset">The Inspector of BlendShapeAvatar Asset&lt;/h3>
+&lt;h4 id="editor-tab">Editor tab&lt;/h4>
+&lt;p>BlendShapeClip Selection / Creation&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h4 id="list-tab-starting-from-v045">List tab (Starting from v0.45)&lt;/h4>
+&lt;p>BlendShapeClip List&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/list.png" alt="image">&lt;/p>
+&lt;h3 id="the-inspector-of-blendshapeclip-asset">The Inspector of BlendShapeClip Asset&lt;/h3>
+&lt;h4 id="blendshape-tab">BlendShape tab&lt;/h4>
+&lt;p>Create the BlendShape setting:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;h4 id="blendshape-list-tab">BlendShape List tab&lt;/h4>
+&lt;p>You can see the values created from the BlendShape tab.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_angry.png" alt="image">&lt;/p>
+&lt;h4 id="material-list-tab">Material List tab&lt;/h4>
+&lt;p>You can create a &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">BlendShape version of LookAt&lt;/a>, change the color with BlendShape, etc.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_color.png" alt="image">&lt;/p>
+&lt;h2 id="blendshapeclip-settings">BlendShapeClip Settings&lt;/h2>
+&lt;p>Create a facial expression for a BlendShapeClip (not limited to the face).&lt;/p>
+&lt;h3 id="1-select-a-blendshapeclip">1. Select a BlendShapeClip&lt;/h3>
+&lt;p>Select a BlendShapeClip from the Inspector of BlendShapeAvatar&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;p>Or click a BlendShapeClip Asset directly in the Project window&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeclip.png" alt="image">&lt;/p>
+&lt;h3 id="2-change-the-values-of-the-sliders-to-make-a-facial-expression">2. Change the values of the sliders to make a facial expression&lt;/h3>
+&lt;p>The names of the existing &lt;code>SkinnedMeshRenderers&lt;/code> will list in the Inspector window once you click the BlendShape tab.
+Click any listed name and you can then adjust the BlendShape value.
+The change value is reflected immediately.
+The &lt;code>Apply&lt;/code> button is removed starting from v0.45.&lt;/p>
+&lt;h3 id="3-check-the-models-blendshape-in-preview">3. Check the model&amp;rsquo;s BlendShape in Preview&lt;/h3>
+&lt;p>You can test changes in BlendShape by sliding the value (&lt;code>Preview Weight Slider&lt;/code>) between 0 ~ 1&lt;/p>
+&lt;p>Click and drag the &lt;code>left / right&lt;/code> mouse button to change the viewing perspective&lt;/p>
+&lt;p>Click and drag the &lt;code>middle&lt;/code> mouse button to move horizontally / vertically&lt;/p>
+&lt;h3 id="the-binary-value-setting-for-blendshape-v045">The Binary value setting for BlendShape (v0.45)&lt;/h3>
+&lt;p>The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;p>This feature will become effective when a v0.45-installed application is loaded&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Thu, 06 Aug 2020 11:25:13 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;code>LookAt Bone&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBoneApplyer&lt;/code> components.&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-bone-vrmlookatboneapplyer">Control the Eye Gaze with bone: VRMLookAtBoneApplyer&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtBoneApplyer&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Apply the parameters of the calculated eye gaze direction of &lt;code>VRMLookAtHead&lt;/code> to EyeBone.&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;ul>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>eye bone&amp;rsquo;s rotation angle when yaw, pitch angle is at maximum =&amp;gt; &lt;code>Curve Y Range Degree&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code>, &lt;code>HorizontalOuter&lt;/code>, &lt;code>HorizontalInner&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>HorizontalOuter: The movable range of horizontal outward direction&lt;/li>
+&lt;li>HorizontalInner: The movable range of horizontal inward direction&lt;/li>
+&lt;li>VerticalDown: The movable range of vertical downward direction&lt;/li>
+&lt;li>VerticalUp: The movable range of vertical upward direction&lt;/li>
+&lt;/ul></description></item><item><title>Docs: UniUnlit</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</link><pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</guid><description>
+&lt;h2 id="unigltfuniunlit-shader">&lt;code>UniGLTF/UniUnlit&lt;/code> shader&lt;/h2>
+&lt;p>Unity has Unlit-type shaders:&lt;/p>
+&lt;ul>
+&lt;li>Unlit/Color&lt;/li>
+&lt;li>Unlit/Texture&lt;/li>
+&lt;li>Unlit/Transparent&lt;/li>
+&lt;li>Unlit/Transparent Cutout&lt;/li>
+&lt;/ul>
+&lt;p>In GLTF, unlit is supported by &lt;code>KHR_materials_unlit&lt;/code> extension.
+You can utilize &lt;code>doubleSided&lt;/code>, the product of &lt;code>Texture&lt;/code>, &lt;code>Color&lt;/code> and &lt;code>VertexColor&lt;/code> (if any), and &lt;code>color&lt;/code>'s alpha mode.
+Given that there is no shader that can handle these features on Unity side, we introduce &lt;code>UniGLTF/UniUnlit&lt;/code>, which is fully compatible with all &lt;code>unlit&lt;/code> shaders in Unity.&lt;/p>
+&lt;p>If Unlit-type shaders are re-imported after exporting, the shader will become &lt;code>UniGLTF/UniUnlit&lt;/code>.&lt;/p>
+&lt;p>Below is the summary for Unlit-type shaders&amp;rsquo; export/import:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>export&lt;/th>
+&lt;th>gltf&lt;/th>
+&lt;th>import&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Unlit/Color&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Texture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent Cutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTexture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitCutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Note that Only &lt;code>UniGLTF/UniUnlit&lt;/code> supports &lt;code>VertexColor&lt;/code>.
+More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the following two requirements are fulfilled:&lt;/p>
+&lt;ul>
+&lt;li>Mesh contains &lt;code>VertexColor&lt;/code> data&lt;/li>
+&lt;li>Material is identified as &lt;code>Unlit&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>To disable &lt;code>VertexColor&lt;/code>, enabling &lt;code>RemoveVertexColor&lt;/code> in export dialog before exporting the VRM model. Otherwise, &lt;code>VertexColor&lt;/code> will be applied automatically to the mesh that has &lt;code>Unlit&lt;/code> material after importing.&lt;/p>
+&lt;p>If &lt;code>KHR_materials_unlit&lt;/code> is declared, core PBR properties are ignored except baseColor. Color values, alpha coverage and double sided will still apply to unlit materials.&lt;/p>
+&lt;h2 id="gltf">GLTF&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">UniUnlit&lt;/th>
+&lt;th align="left">GLTF Unlit&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Color Factor&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Color Texture&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Rendering Mode&lt;/td>
+&lt;td align="left">/materials/alphaMode&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Cull Mode&lt;/td>
+&lt;td align="left">/materials/doubleSided&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Terminology&lt;/th>
+&lt;th>Meaning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Root&lt;/td>
+&lt;td>Topmost parent of an object&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy&lt;/td>
+&lt;td>Root and its children&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="v058">v0.58~&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
+&lt;p>The export dialog is based on Unity&amp;rsquo;s &lt;a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html">EditorWindow&lt;/a>&lt;/p>
+&lt;h3 id="how-to-use">How to use&lt;/h3>
+&lt;h4 id="vrm-exporter-window">VRM Exporter Window&lt;/h4>
+&lt;p>Open VRM Exporter Window by &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/export058_menu.jpg" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>You can directly pick up exportable target in the Project Window now. There is no need to put the Prefab in the scene first.&lt;/li>
+&lt;/ul>
+&lt;h4 id="export-target-setup">Export Target Setup&lt;/h4>
+&lt;ul>
+&lt;li>Drag the export target&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_drag.gif" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>Select the export target in the list&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_select.gif" alt="vrm export" width="600" />
+&lt;h4 id="conditions-for-valid-exportroot">Conditions for Valid ExportRoot&lt;/h4>
+&lt;img src="https://vrm.dev/images/vrm/export058_empty.jpg" alt="vrm export" width="600" />
+&lt;p>The setting screen for ExportRoot will show up if the following conditions are satisfied:&lt;/p>
+&lt;ul>
+&lt;li>Must be topmost parent&lt;/li>
+&lt;li>Root&amp;rsquo;s Rotation and Scaling are Default (changing Translation is allowable)&lt;/li>
+&lt;li>Has Animator component attached and Animator.avatar is humanoid&lt;/li>
+&lt;li>Faces the positive Z-axis (identified by the bone positions of left and right feet)&lt;/li>
+&lt;li>Contains active mesh in the Hierarchy&lt;/li>
+&lt;/ul>
+&lt;h4 id="exporter-interface">Exporter Interface&lt;/h4>
+&lt;p>Please set up &lt;code>Meta&lt;/code> and &lt;code>ExportSettings&lt;/code>.
+If you get warning messages, it is optional for you to correct those warnings or not.
+If there is no error messages shown, you can go ahead and press &lt;code>export&lt;/code> button at the lower right of the dialog.
+Details about VRM size calculation &lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">can be found here&lt;/a>.&lt;/p>
+&lt;h2 id="export-option">Export Option&lt;/h2>
+&lt;p>Here is a list of additional processing during export:&lt;/p>
+&lt;h3 id="force-t-pose">Force T Pose&lt;/h3>
+&lt;p>Force T-Pose before export.
+If you can manually make T-Pose for model, it&amp;rsquo;s ok without selecting this option.&lt;/p>
+&lt;h3 id="pose-freeze">Pose Freeze&lt;/h3>
+&lt;p>Model&amp;rsquo;s normalization.
+If Model&amp;rsquo;s normalization is already done, there is no need to perform model normalization again.
+However, if additional parts are added into the model (not normalized yet), model normalization is required.
+In Hierarchy, all GameObjects&amp;rsquo; rotation should be 0, and their scale should be 1 if a model has been normalized.&lt;/p>
+&lt;blockquote>
+&lt;p>In v0.58, the system can automatically identify whether the export target needs PoseFreeze&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="useexperimentalexporter">UseExperimentalExporter&lt;/h3>
+&lt;p>Exporter&amp;rsquo;s Serializer version.
+It will not affect the output whether this option is selected or not.&lt;/p>
+&lt;h3 id="usesparseaccessor">UseSparseAccessor&lt;/h3>
+&lt;p>Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p>
+&lt;p>If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p>
+&lt;h3 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h3>
+&lt;p>BlendShape&amp;rsquo;s Normal and Tangent will not be exported if this option is selected.
+The file size can be reduced.
+Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p>
+&lt;h3 id="reduceblendshape">ReduceBlendshape&lt;/h3>
+&lt;p>BlendShapes that are not referenced by BlendShapeClips will not be exported.
+The file size can be reduced.&lt;/p>
+&lt;h3 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h3>
+&lt;p>BlendShapeClip belonging to Preset.Unknown will not be exported.
+Used in combination with ReduceBlendshape.&lt;/p>
+&lt;h3 id="removevertexcolor">RemoveVertexColor&lt;/h3>
+&lt;p>Vertex color will not be exported.
+In GLTF, there is no setting that can disable the color vertex usage.
+UniVRM supports vertex color for &lt;code>unlit&lt;/code> shader.&lt;/p>
+&lt;h2 id="list-of-error-messages">List of Error Messages&lt;/h2>
+&lt;p>Table for Error Messages in v0.56, v0.57 and v0.58&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>message&lt;/th>
+&lt;th>0.56&lt;/th>
+&lt;th>0.57&lt;/th>
+&lt;th>0.58&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The Root translation, rotation and scale will be dropped&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>error (changing translation is OK)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Jaw bone&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Same name bone&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>warn (auto-rename)&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vertex color&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unknown shader&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require source&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require no parent&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>error (new)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require Z+ forward&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>error (new)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require animator&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require humanoid avatar&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require Title/Version/Author&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>No active mesh&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prefab export&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Springbone validation&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="require-source">Require source&lt;/h3>
+&lt;p>Please select a valid object that can be exported as VRM file in the scene.&lt;/p>
+&lt;h3 id="require-animator">Require animator&lt;/h3>
+&lt;p>Animator component cannot be found in Root (non-humanoid).&lt;/p>
+&lt;h3 id="require-animatoravatar">Require animator.avatar&lt;/h3>
+&lt;p>avatar cannot be found in Root&amp;rsquo;s Animator (non-humanoid).&lt;/p>
+&lt;h3 id="animatoravatar-is-not-valid">Animator.avatar is not valid&lt;/h3>
+&lt;p>Animator.avatar is not humanoid.&lt;/p>
+&lt;h3 id="animatoravatar-is-not-humanoid-please-change-models-animationtype-to-humanoid">Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid&lt;/h3>
+&lt;p>Please change the setting to &lt;code>humanoid&lt;/code> (from Inspector: &lt;code>FBX Import&lt;/code> -&amp;gt; &lt;code>rig&lt;/code> -&amp;gt; &lt;code>AnimationType&lt;/code>).&lt;/p>
+&lt;h3 id="require-title">Require Title&lt;/h3>
+&lt;p>Please enter the title of this model in the dialog.&lt;/p>
+&lt;h3 id="require-version">Require Version&lt;/h3>
+&lt;p>Please enter the version of this model in the dialog.&lt;/p>
+&lt;h3 id="require-author">Require Author&lt;/h3>
+&lt;p>Please enter the author of this model in the dialog.&lt;/p>
+&lt;h3 id="no-active-mesh">No active mesh&lt;/h3>
+&lt;p>Export target doesn&amp;rsquo;t have &lt;code>active&lt;/code> mesh.&lt;/p>
+&lt;h3 id="filename-0-is-too-long">FileName &amp;lsquo;{0}&amp;rsquo; is too long&lt;/h3>
+&lt;p>Material, Texture and Mesh names are too long.
+Please rename them.&lt;/p>
+&lt;h3 id="the-root-translation-rotation-and-scale-will-be-dropped">The Root translation, rotation and scale will be dropped&lt;/h3>
+&lt;p>A model is allowed to export if Root&amp;rsquo;s translation, rotation and scale are not Default values.
+However, those values will be lost.
+We recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p>
+&lt;h3 id="jaw-bone-is-included-it-may-not-what-you-intended-please-check-the-humanoid-avatar-setting-screen">Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen&lt;/h3>
+&lt;p>Jaw (chin) bone is included in humanoid setting.
+There is a possibility that the jaw bone is automatically assigned during FBX import.
+As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
+Therefore, bangs will have weird movements due to this issue.
+Please remove this setting in Inspector &lt;code>FBX Importer&lt;/code> -&amp;gt; &lt;code>rig&lt;/code>&lt;/p>
+&lt;h3 id="there-are-bones-with-the-same-name-in-the-hierarchy-they-will-be-automatically-renamed-after-export">There are bones with the same name in the hierarchy. They will be automatically renamed after export&lt;/h3>
+&lt;p>A model is allowed to export if there are bones with the same name in this model.
+Only the warning message will be given in Export dialog.
+Those bones will be renamed automatically.&lt;/p>
+&lt;h3 id="this-model-contains-vertex-color">This model contains vertex color&lt;/h3>
+&lt;p>If you see this message, there are meshes that contain vertex color in the Hierarchy.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Vertex Color&lt;/th>
+&lt;th>If contained&lt;/th>
+&lt;th>Behavior&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Before UniVRM-0.53&lt;/td>
+&lt;td>not applied&lt;/td>
+&lt;td>ignore vertex color effect&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>From UniVRM-0.54&lt;/td>
+&lt;td>applied&lt;/td>
+&lt;td>show vertex color effect&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>If &lt;code>Unlit&lt;/code> is used, there is no setting that can disable vertex color usage.
+If necessary, please choose &lt;code>Remove Vertex Color&lt;/code> option to direct remove vertex color data from the model.&lt;/p>
+&lt;h3 id="unknown-material-0-is-used-this-will-export-as-standard-fallback">unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code>Standard&lt;/code> fallback&lt;/h3>
+&lt;p>Materials other than Standard, Unlit, MToon will be defaulted to Standard.&lt;/p>
+&lt;h2 id="v057">v0.57&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
+&lt;hr>
+&lt;p>The export dialog is based on Unity&amp;rsquo;s &lt;a href="https://docs.unity3d.com/ScriptReference/ScriptableWizard.html">ScriptableWizard&lt;/a>.
+We will improve it in the later version.&lt;/p></description></item><item><title>Docs: Install UniVRM with UPM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_upm/</link><pubDate>Tue, 07 Jul 2020 18:33:59 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_upm/</guid><description>
+&lt;h2 id="univrm-0xxs-unitypackage">UniVRM-0.XX&amp;rsquo;s UnityPackage&lt;/h2>
+&lt;p>Starting from UniVRM-0.56, UniVRM can be imported with Unity Package Manager.&lt;/p>
+&lt;p>Requirement: &lt;code>Unity 2019.3.4f1 or later version&lt;/code>.&lt;/p>
+&lt;h3 id="install-using-unitypackagemanager-window">Install using UnityPackageManager window&lt;/h3>
+&lt;p>To open UPM, go to &lt;code>Windows&lt;/code> -&amp;gt; &lt;code>Package Manager&lt;/code>:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
+&lt;hr>
+&lt;p>Select &lt;code>add package from git URL&lt;/code> to import the target package specified by its git url.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
+&lt;hr>
+&lt;p>Whenever a new UniVRM version comes out, we will post git urls associated with this release.&lt;/p>
+&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a> are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; depends on VRMShaders and MeshUtility&lt;/li>
+&lt;/ul>
+&lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
+&lt;p>By changing the version number, You can switch to different version based on your needs.&lt;/p>
+&lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
+&lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
+Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="specify-git-commit">Specify git commit&lt;/h2>
+&lt;p>However, if you want to switch to the specific commit, you can manually change the hash value or append the specific commit in &lt;code>dependencies&lt;/code>.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Thu, 06 Aug 2020 11:21:06 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>&lt;code>LookAt Blendshape&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components.
+In the default setting, please remove &lt;code>VRMLookAtBoneApplyer&lt;/code> and add &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> in the VRM model’s Inspector window.&lt;/p>
+&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-blendshape-vrmlookatblendshapeapplyer">Control the Eye Gaze with BlendShape: VRMLookAtBlendShapeApplyer&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>Please set up the following blendshapes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>LookUp&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookDown&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookLeft&lt;/code>&lt;/li>
+&lt;li>&lt;code>LookRight&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. If &lt;code>Curve X Range Degree&lt;/code> is set to a lower degree, the pupil will move widely even at a small angle change.&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code>Curve Y Range Degree&lt;/code> to 1&lt;/li>
+&lt;/ul>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: Bake BlendShape State When Exporting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
+&lt;p>When exporting the VRM model, current BlendShape value can be set to the basic state.
+For example, in &lt;code>SkinnedMeshRenderer&lt;/code>, click on &lt;code>BlendShapes&lt;/code> and adjust &lt;code>bs_face.eye_blink&lt;/code> slider to change the value from 0 to 57.8.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/blendshape_value.jpg" width="400" />
+&lt;p>In export dialog, enabling &lt;code>Pose Freeze&lt;/code> is required.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
+&lt;p>After VRM export:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
+&lt;p>Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p>VRM FirstPerson has two types of setting:&lt;/p>
+&lt;ul>
+&lt;li>VR headset position&lt;/li>
+&lt;li>The visibility setting of a mesh from a camera in VR&lt;/li>
+&lt;/ul>
+&lt;p>※ These settings only work on VRM application side&lt;/p>
+&lt;h2 id="headset-position">Headset Position&lt;/h2>
+&lt;p>You can adjust how the movement of the headset is reflected on the model&amp;rsquo;s head by the followings:&lt;/p>
+&lt;h3 id="firstpersonbone">FirstPersonBone&lt;/h3>
+&lt;p>FirstPersonBone keeps track of a VR headset in the first-person view.
+Normally the Head bone is assigned as FirstPersonBone.&lt;/p>
+&lt;h3 id="firstpersonoffset">FirstPersonOffset&lt;/h3>
+&lt;p>The offset from the FirstPersonBone position to the tracking position. [0, 0.06, 0] is the default offset from the head to the middle of the eyes.&lt;/p>
+&lt;h2 id="vr-visibility-setting">VR Visibility Setting&lt;/h2>
+&lt;p>The visibility setting is for VR applications.
+For a VR application, two types of camera, First-person camera and Third-person camera, are expected to be used.&lt;/p>
+&lt;ul>
+&lt;li>First-person camera (Head-mounted display)&lt;/li>
+&lt;li>Third-person camera (Other users&amp;rsquo; HMD, mirror, etc. For streaming)&lt;/li>
+&lt;/ul>
+&lt;p>However, for first-person camera, the user may encounter the following situations:&lt;/p>
+&lt;ul>
+&lt;li>Model&amp;rsquo;s head gets cut by the near plane&lt;/li>
+&lt;li>The view is blocked by the Model&amp;rsquo;s hair&lt;/li>
+&lt;li>The inside of the model&amp;rsquo;s head can be seen such as teeth&lt;/li>
+&lt;/ul>
+&lt;p>To address the above issues, you can set up the visibility of each mesh for First-person camera and Third-person camera:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>First-Person Camera&lt;/th>
+&lt;th>Third-Person Camera&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Both&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>The part with a certain distance from the head (e.g. body, hands and feet)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FirstPersonOnly&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ThirdPersonOnly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>Only visible from the external camera (e.g. head, hair, hat)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auto&lt;/td>
+&lt;td>Described below&lt;/td>
+&lt;td>Described below&lt;/td>
+&lt;td>Default&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="reset-visibility-setting">Reset Visibility Setting&lt;/h3>
+&lt;p>The default setting for Mesh Renderer in VRMFirstPerson is &lt;code>Auto&lt;/code>.
+If you increase/decrease the number of meshes (i.e. change the model&amp;rsquo;s structure), the reference to the original mesh may become &lt;code>Missing&lt;/code>, resulting in VRM Export failure.
+We can fix the missing problem by resetting VRMFirstPerson.
+Click the &lt;code>gear icon ⚙&lt;/code> on the upper right corner of &lt;code>VRM First Person(Script)&lt;/code> inspector and select &lt;code>Reset&lt;/code> shown as follow:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
+&lt;h3 id="use-auto-to-split-mesh-into-both-and-thirdpersononly">Use Auto to split Mesh into Both and ThirdPersonOnly&lt;/h3>
+&lt;p>If &lt;code>Auto&lt;/code> is specified, the mesh will be split into two parts (&lt;code>Both&lt;/code> and &lt;code>ThirdPersonOnly&lt;/code>) automatically during import.
+In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera">VRMFirstPerson.Setup()&lt;/a> for auto splitting.&lt;/p>
+&lt;h4 id="meshannotationauto-algorithm">MeshAnnotation.Auto Algorithm&lt;/h4>
+&lt;ul>
+&lt;li>For a mesh specified as &lt;code>Auto&lt;/code>, each vertex will be checked whether it contains the weight of Head bone (or the child of the Head bone)&lt;/li>
+&lt;li>Split the mesh into two groups: the first group contains triangles with HeadBone-related vertices while the second group contains triangles with the rest of the vertices&lt;/li>
+&lt;li>Set the mesh containing the HeadBone-related vertices as &lt;code>ThirdPersonOnly&lt;/code>. And another mesh is set as &lt;code>Both&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Note that auto splitting is a heavy processing.&lt;/p>
+&lt;h3 id="recommended-structure">Recommended Structure&lt;/h3>
+&lt;p>Split the model into &lt;code>Head&lt;/code> and &lt;code>Body&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Specify &lt;code>ThirdPersonOnly&lt;/code> for &lt;code>Head&lt;/code>&lt;/li>
+&lt;li>Specify &lt;code>Both&lt;/code> for &lt;code>Body&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/firstperson.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Alicia&amp;rsquo;s &lt;code>Body&lt;/code> is set as &lt;code>Both&lt;/code>, while the parts related to &lt;code>Head&lt;/code> are set as &lt;code>ThirdPersonOnly&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/firstperson_runtime.png" alt="firstperson" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The meshes with &lt;code>ThirdPersonOnly&lt;/code> setting are not rendered in FirstPerson.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;p>Please delete the folders below:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>folder&lt;/th>
+&lt;th>Version&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Assets/VRM&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRMShaders&lt;/td>
+&lt;td>v0.56.0 or later&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/MeshUtility&lt;/td>
+&lt;td>v0.59.0 or later&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.&lt;/p>
+&lt;p>To remove packages installed by Unity Package Window, please click &lt;code>Remove&lt;/code> button at the lower right of the package interface in UPM window.&lt;/p></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</link><pubDate>Thu, 06 Aug 2020 11:25:27 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;p>&lt;code>LookAt UV&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components.
+In the default setting, please remove &lt;code>VRMLookAtBoneApplyer&lt;/code> and add &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> in the VRM model’s Inspector window.&lt;/p>
+&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="control-the-eye-gaze-with-the-textures-uv">Control the Eye Gaze with the Texture&amp;rsquo;s UV&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>A method that can move the model&amp;rsquo;s eyes by sliding Texture up, down, left, or right.
+&lt;code>Unity Chan&lt;/code> belongs to this type.&lt;/p>
+&lt;h3 id="search-the-eye-material">Search the eye material&lt;/h3>
+&lt;p>Please search the eye material in the Project window. The &lt;code>Tiling Offset&lt;/code> setting will be displayed in the Inspector window:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
+&lt;p>The values should be &lt;code>1, 1, 0, 0&lt;/code> (if the values are different, the followings are for reference only).&lt;/p>
+&lt;p>Now you can try to change the values of &lt;code>Offset&lt;/code> X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down.
+Since we have found where the eye materials are, we set the X and Y values back to &lt;code>0&lt;/code> and proceed to the next step.&lt;/p>
+&lt;h2 id="set-up-lookup-lookdown-lookleft-and-lookright">Set up LookUp, LookDown, LookLeft and LookRight&lt;/h2>
+&lt;p>In the following example, we will set up the eye movement based on UV value for the material &lt;code>eye_L1&lt;/code> (see the above image). &lt;code>unlit/transparent cutout&lt;/code> is applied in the material.&lt;/p>
+&lt;h3 id="lookleft-example">LookLeft example&lt;/h3>
+&lt;p>Please select the &lt;code>LookLeft&lt;/code> asset in the Project window:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Click &lt;code>Material List&lt;/code>&lt;/li>
+&lt;li>Click &lt;code>+&lt;/code>&lt;/li>
+&lt;li>Select &lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code>&lt;/li>
+&lt;li>Set &lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Adjust Offset value in the LookLeft setting&lt;/li>
+&lt;li>Repeat the same procedure for &lt;code>eye_R1&lt;/code>&lt;/li>
+&lt;li>Adjust &lt;code>Offset&lt;/code> X for Left and Right and &lt;code>Offset&lt;/code> Y for Up and Down. For example, &lt;code>LookLeft Offset = -0.2, 0&lt;/code>, &lt;code>LookRight Offset = 0.2, 0&lt;/code>, &lt;code>LookUp Offset = 0, -0.2&lt;/code>, &lt;code>LookDown Offset = 0, 0.2&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
+&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>In the default setting, when the look angle between the target and the model&amp;rsquo;s head reaches 90 degrees, the BlendShape value is set to 1. Any angle greater than 90 degrees will clamp the BlendShape value to 1. If &lt;code>Curve X Range Degree&lt;/code> is set to a lower degree, the pupil will move widely even at a small angle change.&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
+&lt;li>yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code>Curve Y Range Degree&lt;/code> to 1&lt;/li>
+&lt;/ul>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>The definition for Animation is available in GLTF.&lt;/p>
+&lt;blockquote>
+&lt;p>VRM specification does not include the Animation.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="version">Version&lt;/h3>
+&lt;ul>
+&lt;li>v0.44&lt;/li>
+&lt;/ul>
+&lt;h3 id="support-status">Support Status&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">KeyName&lt;/th>
+&lt;th align="center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">TranslationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">RotationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ScaleKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">BlendShapeKey&lt;/td>
+&lt;td align="center">×&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="how-to-export-an-animator">How to Export an Animator&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animator component to a root GameObject&lt;/li>
+&lt;li>Create an AnimatorController and set it in the Controller box (&lt;code>Animator&lt;/code>-&amp;gt;&lt;code>Controller&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="how-to-export-an-animation">How to Export an Animation&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animation component to a root GameObject&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code>Legacy&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/p>
+&lt;ol start="5">
+&lt;li>Set the created AnimationClip in the Animation box (&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="notes">Notes&lt;/h3>
+&lt;ol>
+&lt;li>Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
+&lt;li>For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li>
+&lt;li>Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li>
+&lt;/ol></description></item><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</guid><description>
+&lt;p>This section is about spring bone settings.&lt;/p>
+&lt;h1 id="nodes-attached-by-spring-bones">Nodes attached by spring bones&lt;/h1>
+&lt;p>When VRM is imported, nodes attached by components related to spring bones can be found as described below:&lt;/p>
+&lt;ul>
+&lt;li>VRMSpringBone is attached to the node&lt;code>secondary&lt;/code>.&lt;/li>
+&lt;li>VRMSpringBoneColliderGroup is attached to nodes exported last time.&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Please check&lt;code>secondary&lt;/code>in the Hierarchy window if you cannot find VRMSpringBone&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="vrmspringbone">VRMSpringBone&lt;/h1>
+&lt;p>The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object&amp;rsquo;s parent Gameobject in&lt;code>Root Bones&lt;/code>. To do that, drag a target object (e.g.&lt;code>hair1_L&lt;/code>) from&lt;code>Hierarchy&lt;/code>to the&lt;code>Element X&lt;/code>field (or click the rightmost icon of&lt;code>Element X&lt;/code>then you can see a list of selectable components). Adjust&lt;code>Size&lt;/code>to change the number of&lt;code>Root Bones&lt;/code>you want to put in.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMSpringBone.png" alt="lookat" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Example: Set the hair and ribbon in&lt;code>Root Bones&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>That&amp;rsquo;s it. Try to adjust&lt;code>Stiffness Force&lt;/code>,&lt;code>Gravity Power&lt;/code>, etc. The target objects will perform swaying movements.&lt;/p>
+&lt;h1 id="option-vrmspringbonecollidergroup-collision-detection">[Option] VRMSpringBoneColliderGroup (Collision detection)&lt;/h1>
+&lt;p>The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/collider.png" alt="collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For example, hit&lt;code>Add Component&lt;/code>to attach VRMSpringBoneColliderGroup script to&lt;code>head&lt;/code>and drag&lt;code>head&lt;/code>to the&lt;code>Element 0&lt;/code>field in&lt;code>Collider Groups&lt;/code>. You can change its offset and radius value by double clicking the&lt;code>Element 0&lt;/code>field in&lt;code>Collider Groups&lt;/code>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_collider.png" alt="set_collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Attach the VRMSpringBoneColliderGroup script to&lt;code>head&lt;/code>and set&lt;code>head&lt;/code>in&lt;code>Collider Groups&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/spring_gizmo.png" alt="gizmo" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Gizmo at runtime (check&lt;code>Draw Gizmo&lt;/code>in the Inspector of VRMSpringBone)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="set-multiple-collision-detections-in-vrmspringbonecollidergroup">Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2>
+&lt;p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code>Size&lt;/code>and multiple targets can then be put into&lt;code>Element&lt;/code>fields.&lt;/p>
+&lt;h1 id="vrmspringbone-set-before-was-gone">VRMSpringBone set before was gone&lt;/h1>
+&lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
+Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
+&lt;h2 id="upm-package">UPM Package&lt;/h2>
+&lt;p>VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
+Besides that, VRMShaders can be used independently without &lt;code>UniVRM&lt;/code> (&lt;code>UniVRM&lt;/code> uses &lt;code>VRMShaders&lt;/code>).
+VRMShaders includes &lt;code>UniUnlit&lt;/code> and &lt;code>MToon&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span>
+{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, the version of UniVRM being imported is v0.57.0.
+The imported version can be changed to different version (e.g. v0.56.0).
+&lt;code>VRMShaders&lt;/code> version number is the same as UniVRM.&lt;/p>
+&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
+&lt;h3 id="mtoon">MToon&lt;/h3>
+&lt;p>In VRMShaders, MToon shader is managed by &lt;code>git submodule&lt;/code>:&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
+&lt;p>For the latest update about MToon, please refer to:&lt;/p>
+&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>

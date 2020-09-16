@@ -1,0 +1,399 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 15 Sep 2020 20:06:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;h2 id="standard">Standard&lt;/h2>
+&lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Unityのデフォルト&lt;/th>
+&lt;th align="left">GLTFのPBRマテリアル&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Albedo カラー&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Albedo テクスチャ&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic レベル&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/metallicFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Smoothness レベル&lt;/td>
+&lt;td align="left">1.0f - (/materials/pbrMetallicRoughness/roughnessFactor)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic テクスチャ&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/metallicRoughnessTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">法線マップ&lt;/td>
+&lt;td align="left">/materials/normalTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">バンプスケール&lt;/td>
+&lt;td align="left">/materials/normalTexture/scale&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ハイトマップ&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">オクルージョンテクスチャ&lt;/td>
+&lt;td align="left">/materials/occlusionTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">オクルージョン強度&lt;/td>
+&lt;td align="left">/materials/occlusionTexture/strength&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Emission カラー&lt;/td>
+&lt;td align="left">/materials/emissiveFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Emission テクスチャ&lt;/td>
+&lt;td align="left">/materials/emissiveTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">詳細マスク&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">セカンダリマップ&lt;/td>
+&lt;td align="left">N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">レンダリングモード&lt;/td>
+&lt;td align="left">/materials/alphaMode&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる&lt;a href="https://github.com/vrm-c/UniVRM/pull/222">[参照]&lt;/a>。&lt;/p>
+&lt;p>Unity と GLTF でテクスチャーの仕様に非互換があるので、 &lt;code>export/import&lt;/code> で変換しています。&lt;/p>
+&lt;h2 id="テクスチャ変換">テクスチャ変換&lt;/h2>
+&lt;p>Standardシェーダーのカラー以外のテクスチャ(Linear)の処理について。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/p>
+&lt;ul>
+&lt;li>Materialのプロパティ名 &lt;code>_BumpMap&lt;/code> で判定します。&lt;/li>
+&lt;li>EditorImport: &lt;code>TextureImporterType.NormalMap&lt;/code>&lt;/li>
+&lt;li>RuntimeImport: 法線テクスチャのPack&lt;/li>
+&lt;li>Export: 法線テクスチャのUnpack&lt;/li>
+&lt;li>sRGBとLinearの対応&lt;/li>
+&lt;li>Tangentの対応&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Metallic, Roughnes, OcclusionMapの変換&lt;/p>
+&lt;ul>
+&lt;li>RGBAチャンネル組み換え&lt;/li>
+&lt;li>Roughness値とSmoothness値の反転&lt;/li>
+&lt;li>sRGBとLinearの対応&lt;/li>
+&lt;li>Importerで変換、Exporterで逆変換&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="トラブルシューティング">トラブルシューティング&lt;/h2>
+&lt;ul>
+&lt;li>ピカピカに反射してしまう。
+&lt;ul>
+&lt;li>Shaderの種類が &lt;code>Standard&lt;/code> (Unityの標準) で &lt;code>metallic&lt;/code> と &lt;code>smooth&lt;/code> 値が高い状態になっています。 マテリアルのシェーダーを &lt;code>Unlit/UniUnlit&lt;/code> にするとテクスチャがそのまま表示できます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: VRMモデルのファイルサイズ</title><link>https://vrm.dev/docs/univrm/export/vrm_size/</link><pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/export/vrm_size/</guid><description>
+&lt;p>VRMは、GLB形式なので、&lt;/p>
+&lt;p>&lt;code>VRMエクスポートしたファイルのサイズ =&amp;gt; glb のサイズ&lt;/code>&lt;/p>
+&lt;p>&lt;code>glb =&amp;gt; json + binary&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;p>json はテキストなので通常は 1MB にもなりません。&lt;/p>
+&lt;p>binary で主なものは、&lt;/p>
+&lt;p>&lt;code>image&lt;/code> と &lt;code>mesh&lt;/code> です。&lt;/p>
+&lt;p>5万頂点、5万三角形のモデルを例としてどれくらいの容量になるかを計算する目安を説明します。&lt;/p>
+&lt;h2 id="image">Image&lt;/h2>
+&lt;p>Material が参照する Texture の PNG(JPG) のバイト列がそのまま入っています。
+Meta の Thumbnail も対象になります。&lt;/p>
+&lt;blockquote>
+&lt;p>v0.56 でローカルの元ファイルをそのまま使うようにした結果、
+元ファイルが巨大であった場合に、以前に比べて大きくなる問題が発生しています。4000x4000のような大きなファイルはPNG(JPG)を縮小してください。v0.58 修正予定。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/502">https://github.com/vrm-c/UniVRM/issues/502&lt;/a>&lt;/p>
+&lt;h2 id="mesh">Mesh&lt;/h2>
+&lt;p>Index バッファ と 頂点バッファです。&lt;/p>
+&lt;h3 id="indexバッファ">Indexバッファ&lt;/h3>
+&lt;p>Indexバッファは、Intの配列を使っています。&lt;/p>
+&lt;p>5万三角形のモデルの場合、&lt;/p>
+&lt;p>&lt;code>50000 x 4(Int=4byte) x 3(三角形の3頂点) =&amp;gt; 0.6MB&lt;/code> の容量を使います。&lt;/p>
+&lt;blockquote>
+&lt;p>GLTFの仕様的には unsigned short も可能ですが、UniVRM のエクスポーターは未対応。65536 頂点までなので 50000 三角形は格納できません。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="頂点バッファ">頂点バッファ&lt;/h3>
+&lt;p>一頂点は、&lt;/p>
+&lt;pre>&lt;code>{
+float3 Position; // 頂点位置 4(floatサイズ) x 3(xyz) =&amp;gt; 12byte
+float3 Normal; // 頂点法線 4(floatサイズ) x 3(xyz) =&amp;gt; 12byte
+float2 TEXCOORD_0; // 頂点UV 4(floatサイズ) x 2(xy) =&amp;gt; 8byte
+short4 JOINTS_0; // 頂点BoneIndex 2(shortサイズ) x 4(4boneまで) =&amp;gt; 8byte
+float4 WEIGHTS_0; // 頂点Weight 4(floatサイズ) x 4(4boneまで) =&amp;gt; 16byte
+}
+&lt;/code>&lt;/pre>&lt;p>となっています。&lt;/p>
+&lt;blockquote>
+&lt;p>頂点カラー、2つめのUV(未対応)などバリエーションがありうる。&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>GLTFにはTangent(float4)も保存できますが、UniVRMでは保存せずUnityに計算させています。法線とUVから &lt;code>MIKK T Space&lt;/code> アルゴリズムで計算したものを使う仕様です。&lt;/p>
+&lt;/blockquote>
+&lt;p>５万頂点のモデルの場合、&lt;/p>
+&lt;p>&lt;code>50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code> の容量を使います。&lt;/p>
+&lt;h2 id="基本容量">基本容量&lt;/h2>
+&lt;p>以上、 &lt;code>画像サイズ合計 + インデックスバッファ + 頂点バッファ&lt;/code> の合計がモデルの基本容量になります。
+5万頂点、5万三角形のモデルの場合、 &lt;code>3.4MB + 画像サイズ合計&lt;/code> が基本容量になります。
+基本容量は計算通りの値になります。
+以降、時として容量爆発の原因となるブレンドシェイプの容量についてです。&lt;/p>
+&lt;h2 id="ブレンドシェイプmorphtargetの容量">ブレンドシェイプ(MorphTarget)の容量&lt;/h2>
+&lt;pre>&lt;code class="language-ブレンドシェイプ頂点" data-lang="ブレンドシェイプ頂点">{
+float3 Position; // 頂点位置 4 x 3 =&amp;gt; 12byte. 必須
+float3 Normal; // 頂点法線 4 x 3 =&amp;gt; 12byte. オプション
+float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
+}
+&lt;/code>&lt;/pre>&lt;p>ひとつのブレンドシェイプで &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>20のブレンドシェイプがあったとすると,
+&lt;code>50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>60のブレンドシェイプがあると、
+&lt;code>50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code> の容量を使います。&lt;/p>
+&lt;ul>
+&lt;li>大量のBlendShapeがある&lt;/li>
+&lt;li>BlendShapeのある場所と無い場所が分割されていない&lt;/li>
+&lt;/ul>
+&lt;p>の条件が揃うと大容量になることに注意してください。
+以降、ブレンドシェイプ容量の削減方法についてです。&lt;/p>
+&lt;h3 id="ブレンドシェイプの容量対策">ブレンドシェイプの容量対策&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">エクスポートダイアログ&lt;/a>
+の以下のオプションがブレンドシェイプの容量に関連します。&lt;/p>
+&lt;h4 id="エクスポートオプション">エクスポートオプション&lt;/h4>
+&lt;p>最初の２つは安全にです。３つめは修正中。4つめは、UniVRM-0.53(含む)以前でロードエラーになるバージョン問題があります。&lt;/p>
+&lt;h5 id="reduceblendshape">ReduceBlendshape&lt;/h5>
+&lt;p>BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。&lt;/p>
+&lt;h5 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h5>
+&lt;p>Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。&lt;/p>
+&lt;h5 id="usesparseaccessor">UseSparseAccessor&lt;/h5>
+&lt;p>BlendShapeが多数ある場合にファイルサイズを削減できます。&lt;/p>
+&lt;p>ブレンドシェイプの値が、 &lt;code>0&lt;/code> でない頂点のみを飛び飛びに記録することで容量を削減する GLTF の仕様です。&lt;/p>
+&lt;blockquote>
+&lt;p>修正中: GLTFの互換性の問題があって、UniVRM以外のローダーでエラーになる&lt;/p>
+&lt;/blockquote>
+&lt;pre>&lt;code class="language-ブレンドシェイプ頂点" data-lang="ブレンドシェイプ頂点">{
+int Index; // 有効なブレンドシェイプの index =&amp;gt; 4
+float3 Position; // 頂点位置 4 x 3 =&amp;gt; 12byte. 必須
+float3 Normal; // 頂点法線 4 x 3 =&amp;gt; 12byte. オプション
+float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
+}
+&lt;/code>&lt;/pre>&lt;p>&lt;code>BlendShapeの有効な頂点数 x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>保存方法だけ変わる&lt;/li>
+&lt;/ul>
+&lt;h5 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h5>
+&lt;p>BlendShapeのNormal, Tangent をエクスポートしない。
+ファイルサイズを削減できます。&lt;/p>
+&lt;blockquote>
+&lt;p>UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="meshutility-で-blendshape-の-あるmesh-と-ないmesh-に分割する">MeshUtility で BlendShape の あるMesh と ないMesh に分割する&lt;/h4>
+&lt;p>例えば、顔(BlendShapeあり)が 10000 頂点、体(BlendShapeなし)が 40000 頂点に分割されていると、&lt;/p>
+&lt;p>ひとつのブレンドシェイプで &lt;code>10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code> の容量を使います。&lt;/p>
+&lt;p>分割前の一体型のモデル&lt;/p>
+&lt;p>&lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
+&lt;p>に比べて容量を節約できます。&lt;/p>
+&lt;blockquote>
+&lt;p>ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility">https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>TODO: 導入方法の説明&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="まとめ">まとめ&lt;/h2>
+&lt;p>予想より大容量になってしまうときはブレンドシェイプ、次に画像に注意してください。&lt;/p></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</guid><description>
+&lt;h2 id="エクスポート">エクスポート&lt;/h2>
+&lt;h3 id="gltf-レイヤー">GLTF レイヤー&lt;/h3>
+&lt;p>gltf の &lt;code>/materials[]&lt;/code> に記録します。&lt;/p>
+&lt;ul>
+&lt;li>PBR(default)&lt;/li>
+&lt;li>Unlit(KHR_materials_unlit extension)&lt;/li>
+&lt;/ul>
+&lt;p>の２種類のみをサポートしています。&lt;/p>
+&lt;h4 id="詳細">詳細&lt;/h4>
+&lt;p>&lt;code>standard&lt;/code> と見做して処理します。&lt;/p>
+&lt;p>Unityマテリアルが以下の何れかのシェーダーである場合に、
+&lt;code>KHR_materials_unlit&lt;/code> extension を追加します。&lt;/p>
+&lt;ul>
+&lt;li>Unlit/Color(Unity標準)&lt;/li>
+&lt;li>Unlit/Texture(Unity標準)&lt;/li>
+&lt;li>Unlit/Transparent(Unity標準)&lt;/li>
+&lt;li>Unlit/Transparent Cutout(Unity標準)&lt;/li>
+&lt;li>UniGLTF/UniUnlit(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitTexture(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitTransparent(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitCutout(UniVRM)&lt;/li>
+&lt;/ul>
+&lt;h3 id="vrm-レイヤー">VRM レイヤー&lt;/h3>
+&lt;p>gltf の &lt;code>/extensions/VRM/materialProperties[]&lt;/code> に記録します。&lt;/p>
+&lt;ul>
+&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
+&lt;li>VRM/MToon&lt;/li>
+&lt;/ul>
+&lt;p>以外の時は、 &lt;code>shaderName&lt;/code> に &lt;code>VRM_USE_GLTFSHADER&lt;/code> が記録されて、 &lt;code>unknown shader&lt;/code> として GLTF 処理されます。&lt;/p>
+&lt;h2 id="インポート">インポート&lt;/h2>
+&lt;h3 id="gltf-レイヤー-1">GLTF レイヤー&lt;/h3>
+&lt;p>GLTFの &lt;code>/materials[]&lt;/code> からUnityマテリアルを作成します。
+&lt;code>KHR_materials_unlit&lt;/code> extension を発見した場合に、&lt;/p>
+&lt;ul>
+&lt;li>UniGLTF/UniUnlit&lt;/li>
+&lt;/ul>
+&lt;p>でマテリアルを作成します。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/#uniunlit">UniUnlit&lt;/a>&lt;/p>
+&lt;h3 id="vrm-レイヤー-1">VRM レイヤー&lt;/h3>
+&lt;p>GLTFの &lt;code>/extensions/VRM/materialProperties[]&lt;/code> からUnityマテリアルを作成します。
+&lt;code>shaderName&lt;/code> が &lt;code>VRM_USE_GLTFSHADER&lt;/code> の場合は、 &lt;code>/materials[]&lt;/code> に記録されている情報を使って &lt;code>GLTF&lt;/code> の &lt;code>PBR&lt;/code> か &lt;code>Unlit&lt;/code> として処理します。&lt;/p>
+&lt;h2 id="エクスポートしてインポートしたときのシェーダーの変化">エクスポートしてインポートしたときのシェーダーの変化&lt;/h2>
+&lt;p>エクスポートしてからインポートすると元と違うシェーダーになる場合があります。&lt;/p>
+&lt;ul>
+&lt;li>サポート外のシェーダーの場合。 &lt;code>Standard&lt;/code> になります。GLTF のデフォルトが &lt;code>PBR&lt;/code> で、それに対応するのが &lt;code>Standard&lt;/code> です。&lt;/li>
+&lt;li>unlit 系の場合。 &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniGLTF/UniUnlit&lt;/a> になります。正常な動作です。&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrm_use_gltfshader">VRM_USE_GLTFSHADER&lt;/h2>
+&lt;p>&lt;code>/extensions/VRM/materialProperties[]&lt;/code>&lt;/p>
+&lt;p>に記録した情報を使ってすべてのシェーダーを読みこめます。&lt;/p>
+&lt;ul>
+&lt;li>Runtimeは問題ない&lt;/li>
+&lt;li>EditorはインスペクターをアクティブにしたタイミングでGUIに値が変更されたりして個別の対応が必要な場合があり完全ではない&lt;/li>
+&lt;/ul>
+&lt;p>ただし、この機能は&lt;/p>
+&lt;ul>
+&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
+&lt;li>VRM/MToon&lt;/li>
+&lt;/ul>
+&lt;p>以外では &lt;code>VRM_USE_GLTFSHADER&lt;/code> で無効になるように封じています(v0.44くらい)。実質 MToon 専用です。
+VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, &lt;code>Unlit&lt;/code>, &lt;code>MToon&lt;/code> の３種類です。&lt;/p>
+&lt;blockquote>
+&lt;p>歴史的経緯で &lt;code>UnlitTransparentZWrite&lt;/code> が存在していますが、整理予定です。 &lt;code>MToon&lt;/code> の &lt;code>ZWrite&lt;/code> 機能を使ってください&lt;/p>
+&lt;/blockquote>
+&lt;p>以前にエクスポートするなどして &lt;code>VRM_USE_GLTFSHADER&lt;/code> を回避していればロード出来る場合があります。
+最初は、&lt;code>VRM&lt;/code> と無関係に Unity のマテリアルを読み書きする機能だった名残です。&lt;/p></description></item><item><title>Docs: T-Poseとモデルの正規化の詳細</title><link>https://vrm.dev/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/t_pose/</guid><description>
+&lt;h2 id="t-pose化の補足">T-Pose化の補足&lt;/h2>
+&lt;p>正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。&lt;/p>
+&lt;p>T-Pose化するには、&lt;/p>
+&lt;ul>
+&lt;li>エクスポートダイアログの &lt;code>force T-Pose&lt;/code> を checkする&lt;/li>
+&lt;li>エクスポートダイアログの &lt;code>force T-Pose&lt;/code> を checkせずに、手動で腕等の回転を調整してT-Poseにする&lt;/li>
+&lt;/ul>
+&lt;p>のどちらでもOKです。自動T-Poseがいい感じにならない場合は手動をお試しください。
+また、&lt;code>正規化済のモデル&lt;/code> を繰り返し &lt;code>正規化する&lt;/code> ことをはできるだけ避けてください(ずれが蓄積する)。&lt;/p>
+&lt;p>システムが、正規化済みと判定したモデル(Metaコンポーネントがアタッチされているなど)では、 &lt;code>force T-Pose&lt;/code> がデフォルトでは外れるようになっています。&lt;/p>
+&lt;h2 id="よくある不具合">よくある不具合&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>顎の位置が変わってしまう。&lt;code>fbx&lt;/code> の &lt;code>Rig&lt;/code>　設定で &lt;code>jaw&lt;/code> (顎) ボーンの割り当てを解除してください。VRMはプログラム側で顎ボーンを使っていないの割り当てを解除しても問題ありません。T-Pose化するときに顎の位置が微妙に変わってしまう場合があります(T-Poseの顎になるため)。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>前髪等、顔のパーツが微妙に動く。 &lt;code>fbx&lt;/code> の &lt;code>Rig&lt;/code> 設定で前髪等の意図しないボーンが &lt;code>jaw&lt;/code> (顎) ボーン に割り当てされていないかご確認ください。T-Pose化するときに顎の位置が微妙に変わってしまい、結果として前髪等が動いてしまう場合があります。&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: ヒューマノイド</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid/</guid><description>
+&lt;p>WIP&lt;/p>
+&lt;ul>
+&lt;li>主にモーションキャプチャーのFKのモーションを投入できることを基準に決めました&lt;/li>
+&lt;/ul>
+&lt;h2 id="関連イシュー">関連イシュー&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/p>
+&lt;h2 id="用語">用語&lt;/h2>
+&lt;ul>
+&lt;li>ボーン: ヒューマノイドを構成するgltfノード&lt;/li>
+&lt;li>ボーン名
+&lt;ul>
+&lt;li>hips&lt;/li>
+&lt;li>spine&lt;/li>
+&lt;li>chest(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
+&lt;li>upperChest(option)&lt;/li>
+&lt;li>neck(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
+&lt;li>head&lt;/li>
+&lt;li>Left/Right eye(option)&lt;/li>
+&lt;li>left/Right shoulder(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
+&lt;li>Left/Right upperArm&lt;/li>
+&lt;li>Left/Right lowerArm&lt;/li>
+&lt;li>Left/Right hand&lt;/li>
+&lt;li>Left/Right upperLeg&lt;/li>
+&lt;li>Left/Right lowerLeg&lt;/li>
+&lt;li>Left/Right foot&lt;/li>
+&lt;li>Left/Right toe(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
+&lt;li>Left/Right thumb proximal, intermediate, distal(option)&lt;/li>
+&lt;li>Left/Right index proximal, intermediate, distal(option)&lt;/li>
+&lt;li>Left/Right middle proximal, intermediate, distal(option)&lt;/li>
+&lt;li>Left/Right ring proximal, intermediate, distal(option)&lt;/li>
+&lt;li>Left/Right little proximal, intermediate, distal(option)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ヒューマノイドの要件仮">ヒューマノイドの要件(仮)&lt;/h2>
+&lt;ul>
+&lt;li>対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる&lt;/li>
+&lt;li>必須のボーンがすべて含まれている&lt;/li>
+&lt;li>ボーンの親子関係がヒューマノイドの定義を守っている(LowerLegの最初に見つかる祖先ボーンがUpperLegであるなど)&lt;/li>
+&lt;li>hipsをrootに以下の親子関係。カッコは必須でないボーン
+&lt;ul>
+&lt;li>
+&lt;p>hips - spine - chest - (upper chest) - neck - head&lt;/p>
+&lt;ul>
+&lt;li>headからleft - (eye)&lt;/li>
+&lt;li>headからright - (eye)&lt;/li>
+&lt;li>chestまたはupper chestからleft - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>chestまたはupper chestからright - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>hipsからleft - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;li>hipsからright - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>間にヒューマノイドに関係ないノードが入ることは許す(LowerLegの親がemptyでその親がUpperLegであるなど)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>必須でないボーンは飛ばしてよい(UpperArmの親がshoulderじゃなくてchestなど)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>加えて&lt;/p>
+&lt;ul>
+&lt;li>T-Poseになっていること&lt;/li>
+&lt;li>各ノードの回転・拡大は無いこと&lt;/li>
+&lt;/ul>
+&lt;p>あたりになるかと思います。&lt;/p></description></item><item><title>Docs: VRMのT-Poseについて</title><link>https://vrm.dev/docs/univrm/humanoid/vrm_tpose/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/vrm_tpose/</guid><description>
+&lt;p>VRMの第１実装のUnityのHumanoidに準拠したT-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>を採用しています。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-Poseの例&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>胴体と頭・足については自明ですが、腕と手の指についても規約があります。&lt;/p>
+&lt;ul>
+&lt;li>手の平は下向き&lt;/li>
+&lt;li>親指は水平でXZ平面(上から見て)45度&lt;/li>
+&lt;/ul>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>

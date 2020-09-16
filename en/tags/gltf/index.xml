@@ -1,0 +1,244 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – gltf</title><link>https://vrm.dev/en/tags/gltf/</link><description>Recent content in gltf on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 16:07:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid><description>
+&lt;p>glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF">https://github.com/KhronosGroup/glTF&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="what-kind-of-information-can-be-recorded-by-gltf">What kind of information can be recorded by glTF?&lt;/h1>
+&lt;ul>
+&lt;li>Mesh (Vertex array、index array)
+&lt;ul>
+&lt;li>Morph target&lt;/li>
+&lt;li>Skinning (4weight)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Texture&lt;/li>
+&lt;li>Material (PBR)&lt;/li>
+&lt;li>Scene&lt;/li>
+&lt;li>Animation&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>Camera&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>Light source&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;p>An entire 3D scene can be recorded.&lt;/p>
+&lt;ul>
+&lt;li>OpenGL right-handed, Y-UP coordinate system&lt;/li>
+&lt;li>Meter (unit)&lt;/li>
+&lt;li>Little endian&lt;/li>
+&lt;/ul>
+&lt;h1 id="gltf-format-outline">glTF format outline&lt;/h1>
+&lt;p>glTF format comprises two parts: a JSON scene description part and a binary part that records images and vertex arrays. External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>.&lt;/p>
+&lt;h1 id="glb-format">glb format&lt;/h1>
+&lt;p>A structure that has&lt;code>Header part + Chunk parts&lt;/code>.
+More specifically, it is&lt;code>Header part + JSON CHUNk + BINARY CHUNK&lt;/code>.&lt;/p>
+&lt;p>Header part&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Length&lt;/th>
+&lt;th align="left">Content&lt;/th>
+&lt;th align="left">Type&lt;/th>
+&lt;th align="left">Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">4&lt;/td>
+&lt;td align="left">&lt;/td>
+&lt;td align="left">ascii&lt;/td>
+&lt;td align="left">&amp;ldquo;glTF&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">4&lt;/td>
+&lt;td align="left">glTF version&lt;/td>
+&lt;td align="left">int32&lt;/td>
+&lt;td align="left">2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">4&lt;/td>
+&lt;td align="left">file size&lt;/td>
+&lt;td align="left">int32&lt;/td>
+&lt;td align="left">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Chunk part&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Length&lt;/th>
+&lt;th align="left">Content&lt;/th>
+&lt;th align="left">Type&lt;/th>
+&lt;th align="left">Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">4&lt;/td>
+&lt;td align="left">chunk size&lt;/td>
+&lt;td align="left">int32&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">4&lt;/td>
+&lt;td align="left">chunk type&lt;/td>
+&lt;td align="left">ascii&lt;/td>
+&lt;td align="left">&amp;ldquo;JSON&amp;rdquo; or &amp;ldquo;BIN\x00&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">chunk size&lt;/td>
+&lt;td align="left">chunk body&lt;/td>
+&lt;td align="left">byte array&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="example-of-parsing-with-python3">Example of parsing with python3&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#069;font-weight:bold">import&lt;/span> &lt;span style="color:#0cf;font-weight:bold">struct&lt;/span>
+&lt;span style="color:#069;font-weight:bold">import&lt;/span> &lt;span style="color:#0cf;font-weight:bold">json&lt;/span>
+&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">Reader&lt;/span>:
+&lt;span style="color:#069;font-weight:bold">def&lt;/span> __init__(self, data: &lt;span style="color:#366">bytes&lt;/span>)&lt;span style="color:#555">-&amp;gt;&lt;/span>None:
+self&lt;span style="color:#555">.&lt;/span>data &lt;span style="color:#555">=&lt;/span> data
+self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">=&lt;/span> &lt;span style="color:#f60">0&lt;/span>
+&lt;span style="color:#069;font-weight:bold">def&lt;/span> &lt;span style="color:#c0f">read_str&lt;/span>(self, size):
+result &lt;span style="color:#555">=&lt;/span> self&lt;span style="color:#555">.&lt;/span>data[self&lt;span style="color:#555">.&lt;/span>pos: self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+&lt;/span> size]
+self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+=&lt;/span> size
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> result&lt;span style="color:#555">.&lt;/span>strip()
+&lt;span style="color:#069;font-weight:bold">def&lt;/span> &lt;span style="color:#c0f">read&lt;/span>(self, size):
+result &lt;span style="color:#555">=&lt;/span> self&lt;span style="color:#555">.&lt;/span>data[self&lt;span style="color:#555">.&lt;/span>pos: self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+&lt;/span> size]
+self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+=&lt;/span> size
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> result
+&lt;span style="color:#069;font-weight:bold">def&lt;/span> &lt;span style="color:#c0f">read_uint&lt;/span>(self):
+result &lt;span style="color:#555">=&lt;/span> struct&lt;span style="color:#555">.&lt;/span>unpack(&lt;span style="color:#c30">&amp;#39;I&amp;#39;&lt;/span>, self&lt;span style="color:#555">.&lt;/span>data[self&lt;span style="color:#555">.&lt;/span>pos:self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+&lt;/span> &lt;span style="color:#f60">4&lt;/span>])[&lt;span style="color:#f60">0&lt;/span>]
+self&lt;span style="color:#555">.&lt;/span>pos &lt;span style="color:#555">+=&lt;/span> &lt;span style="color:#f60">4&lt;/span>
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> result
+&lt;span style="color:#069;font-weight:bold">def&lt;/span> &lt;span style="color:#c0f">parse_glb&lt;/span>(data: &lt;span style="color:#366">bytes&lt;/span>):
+reader &lt;span style="color:#555">=&lt;/span> Reader(data)
+magic &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read_str(&lt;span style="color:#f60">4&lt;/span>)
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> magic &lt;span style="color:#555">!=&lt;/span> &lt;span style="color:#c30">b&lt;/span>&lt;span style="color:#c30">&amp;#39;glTF&amp;#39;&lt;/span>:
+&lt;span style="color:#069;font-weight:bold">raise&lt;/span> &lt;span style="color:#c00;font-weight:bold">Exception&lt;/span>(f&lt;span style="color:#c30">&amp;#39;magic not found: #{magic}&amp;#39;&lt;/span>)
+version &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read_uint()
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> version &lt;span style="color:#555">!=&lt;/span> &lt;span style="color:#f60">2&lt;/span>:
+&lt;span style="color:#069;font-weight:bold">raise&lt;/span> &lt;span style="color:#c00;font-weight:bold">Exception&lt;/span>(f&lt;span style="color:#c30">&amp;#39;version:#{version} is not 2&amp;#39;&lt;/span>)
+size &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read_uint()
+size &lt;span style="color:#555">-=&lt;/span> &lt;span style="color:#f60">12&lt;/span>
+json_str &lt;span style="color:#555">=&lt;/span> None
+body &lt;span style="color:#555">=&lt;/span> None
+&lt;span style="color:#069;font-weight:bold">while&lt;/span> size &lt;span style="color:#555">&amp;gt;&lt;/span> &lt;span style="color:#f60">0&lt;/span>:
+&lt;span style="color:#09f;font-style:italic">#print(size)&lt;/span>
+chunk_size &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read_uint()
+size &lt;span style="color:#555">-=&lt;/span> &lt;span style="color:#f60">4&lt;/span>
+chunk_type &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read_str(&lt;span style="color:#f60">4&lt;/span>)
+size &lt;span style="color:#555">-=&lt;/span> &lt;span style="color:#f60">4&lt;/span>
+chunk_data &lt;span style="color:#555">=&lt;/span> reader&lt;span style="color:#555">.&lt;/span>read(chunk_size)
+size &lt;span style="color:#555">-=&lt;/span> chunk_size
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> chunk_type &lt;span style="color:#555">==&lt;/span> &lt;span style="color:#c30">b&lt;/span>&lt;span style="color:#c30">&amp;#39;BIN&lt;/span>&lt;span style="color:#c30;font-weight:bold">\x00&lt;/span>&lt;span style="color:#c30">&amp;#39;&lt;/span>:
+body &lt;span style="color:#555">=&lt;/span> chunk_data
+&lt;span style="color:#069;font-weight:bold">elif&lt;/span> chunk_type &lt;span style="color:#555">==&lt;/span> &lt;span style="color:#c30">b&lt;/span>&lt;span style="color:#c30">&amp;#39;JSON&amp;#39;&lt;/span>:
+json_str &lt;span style="color:#555">=&lt;/span> chunk_data
+&lt;span style="color:#069;font-weight:bold">else&lt;/span>:
+&lt;span style="color:#069;font-weight:bold">raise&lt;/span> &lt;span style="color:#c00;font-weight:bold">Exception&lt;/span>(f&lt;span style="color:#c30">&amp;#39;unknown chunk_type: {chunk_type}&amp;#39;&lt;/span>)
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> json&lt;span style="color:#555">.&lt;/span>loads(json_str), body
+&lt;span style="color:#069;font-weight:bold">with&lt;/span> &lt;span style="color:#366">open&lt;/span>(&lt;span style="color:#c30">&amp;#39;AliciaSolid.vrm&amp;#39;&lt;/span>, &lt;span style="color:#c30">&amp;#39;rb&amp;#39;&lt;/span>) &lt;span style="color:#069;font-weight:bold">as&lt;/span> f:
+parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="color:#555">.&lt;/span>read())&lt;/code>&lt;/pre>&lt;/div>
+&lt;h1 id="vrm-extension">VRM extension&lt;/h1>
+&lt;p>Information of VRM extension is stored in&lt;code>json['extensions']['VRM']&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md">VRM specifications&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Not supported in VRM &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>glb is adopted in VRM. &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;h2 id="procedure">Procedure&lt;/h2>
+&lt;p>The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p>
+&lt;h3 id="1-create-an-empty-scene">1. Create an empty scene.&lt;/h3>
+&lt;h3 id="2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale">2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3>
+&lt;p>The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
+Its translation, rotation and scale should be default values.&lt;/p>
+&lt;h3 id="3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject">3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3>
+&lt;p>(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
+&lt;h3 id="4-select-the-topmost-parent-gameobject-and-click-exportunigltf-1xx-export">4. Select the topmost parent GameObject and click &lt;code>Export&lt;/code>(&lt;code>UniGLTF-1.xx&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>).&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
+&lt;h3 id="5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file">5. Enter the file name and the selected GameObject can be exported as the &lt;code>glb&lt;/code> file.&lt;/h3>
+&lt;h2 id="notes-on-components-to-be-exported">Notes on components to be exported&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Please attach them to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Please attach it to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
+&lt;/ul>
+&lt;h2 id="available-shader">Available Shader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>, &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code> and &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>The definition for Animation is available in GLTF.&lt;/p>
+&lt;blockquote>
+&lt;p>VRM specification does not include the Animation.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="version">Version&lt;/h3>
+&lt;ul>
+&lt;li>v0.44&lt;/li>
+&lt;/ul>
+&lt;h3 id="support-status">Support Status&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">KeyName&lt;/th>
+&lt;th align="center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">TranslationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">RotationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ScaleKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">BlendShapeKey&lt;/td>
+&lt;td align="center">×&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="how-to-export-an-animator">How to Export an Animator&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animator component to a root GameObject&lt;/li>
+&lt;li>Create an AnimatorController and set it in the Controller box (&lt;code>Animator&lt;/code>-&amp;gt;&lt;code>Controller&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="how-to-export-an-animation">How to Export an Animation&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animation component to a root GameObject&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code>Legacy&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/p>
+&lt;ol start="5">
+&lt;li>Set the created AnimationClip in the Animation box (&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="notes">Notes&lt;/h3>
+&lt;ol>
+&lt;li>Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
+&lt;li>For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li>
+&lt;li>Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li>
+&lt;/ol></description></item></channel></rss>

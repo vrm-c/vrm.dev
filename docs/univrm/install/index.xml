@@ -72,25 +72,25 @@ Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしてい�
 &lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
 &lt;h3 id="packagesmanifestjson-直接編集によるインストール">packages/manifest.json 直接編集によるインストール&lt;/h3>
 &lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>の例)。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitの特定コミットを指定する場合">gitの特定コミットを指定する場合&lt;/h2>
 &lt;p>&lt;code>dependencies&lt;/code> に特定のコミットを指定します。&lt;/p>
 &lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRMサンプルをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:29:28 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install_samples/</guid><description>
 &lt;p>このセクションでは、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install/">UniVRMパッケージをインストール&lt;/a>したことを想定しています。&lt;/p>
 &lt;h2 id="univrmサンプルのパッケージ">UniVRMサンプルのパッケージ&lt;/h2>

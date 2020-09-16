@@ -1,0 +1,1402 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 15 Sep 2020 20:06:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: UniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
+&lt;h2 id="unity-version">Unity Version&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.56&lt;/code> から
+Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしています。&lt;/p>
+&lt;p>UPMでUniVRMをインストールする場合は、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_upm/">UPMでUniVRMをインストールする&lt;/a>ページをご覧ください。&lt;/p>
+&lt;h2 id="unitypackage-の入手">unitypackage の入手&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
+&lt;p>&lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;h2 id="インストール前の準備">インストール前の準備&lt;/h2>
+&lt;ul>
+&lt;li>Unity2018.4LTS以降で新規のプロジェクトを作成します&lt;/li>
+&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
+&lt;hr>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> を &lt;code>Linear&lt;/code> に設定します(推奨)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
+&lt;h3 id="既存のプロジェクトで作業する場合">既存のプロジェクトで作業する場合&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> にしてください&lt;/li>
+&lt;li>旧バージョンのVRMがインストールされている場合、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>（存在する場合）、そして&lt;code>Assets/MeshUtility&lt;/code>（存在する場合） を削除してください&lt;/li>
+&lt;/ul>
+&lt;h2 id="unitypackage-の-import">unitypackage の import&lt;/h2>
+&lt;p>&lt;code>unitypackage&lt;/code> を Import します。&lt;/p>
+&lt;p>&lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package...&lt;/code> で &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
+&lt;p>&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>お及び&lt;code>Assets/MeshUtility&lt;/code> の３つのフォルダに import されます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="350" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>UnityPackageをインポート&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="import-が成功したか確認する方法">import が成功したか確認する方法&lt;/h2>
+&lt;p>VRM menu が表示されていれば動作しています。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
+&lt;hr>
+&lt;p>menu が出てこない場合は、&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> になっていることを確認してください&lt;/li>
+&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
+&lt;/ul></description></item><item><title>Docs: ブレンドシェイプの設定</title><link>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</guid><description>
+&lt;p>UniVRM v0.45で導入された新機能は&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/blendshape_setup/">設定画面&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/">BlendShapeの状態をベイクする&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>をご覧ください。&lt;/p>
+&lt;h2 id="vrmblendshapeproxy">VRMBlendShapeProxy&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxy.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>使い方は、&lt;/p>
+&lt;ul>
+&lt;li>BlendShapeAvatarのインスペクタで設定する(Editor)&lt;/li>
+&lt;li>BlendShapeClipの値を０~１に変更する(実行時)&lt;/li>
+&lt;/ul>
+&lt;p>となっています。&lt;/p>
+&lt;h2 id="blendshapeavatar">BlendShapeAvatar&lt;/h2>
+&lt;p>このアセットのインスペクタで表情設定を作成します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>これをダブルクリックする&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>か&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>これを選択状態にする&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>BlendShapeEditorのインスペクタ&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>作りたい表情の名前を選択して表示を切り替えます。
+以下、Funを選択した例です。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClip.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>mouth_smileとeye_smileとeyeblow_smileを100にする&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。&lt;/p>
+&lt;p>Sliderを変更してBlendShapeを作った後はApplyを押して値を記録してください。&lt;/p>
+&lt;h2 id="blendshapeのプリセット">BlendShapeのプリセット&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShape_Preset.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Presetを選択する&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>BlendShapeClipに対して事前定義された名前です。
+以下のものがあります。&lt;/p>
+&lt;h3 id="neutral">NEUTRAL&lt;/h3>
+&lt;p>標準の表情を指定します。
+待機状態で使うことを想定しています。&lt;/p>
+&lt;h3 id="a-i-u-e-o">A, I, U, E, O&lt;/h3>
+&lt;p>リップシンクの&lt;code>あ・い・う・え・お&lt;/code>の音声に対応します。&lt;/p>
+&lt;h3 id="blink">Blink&lt;/h3>
+&lt;p>まばたきです。&lt;/p>
+&lt;h3 id="blink_l-blink_r">Blink_L, Blink_R&lt;/h3>
+&lt;p>片目だけつぶる動作です。&lt;/p>
+&lt;h3 id="joy-angry-sorrow-fun">Joy, Angry, Sorrow, Fun&lt;/h3>
+&lt;p>喜怒哀楽です。&lt;/p>
+&lt;h3 id="lookup-lookdown-lookleft-lookright">LookUp, LookDown, LookLeft, LookRight&lt;/h3>
+&lt;p>目線がモーフで制御されているタイプのモデルで使います。&lt;/p>
+&lt;h3 id="unknown">Unknown&lt;/h3>
+&lt;p>事前定義に無い表情などを作るときに指定します。&lt;/p>
+&lt;h2 id="blendshapeproxyの値を変更する実行時">BlendShapeProxyの値を変更する(実行時)&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Presetを使う&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>インスペクタから操作できます。&lt;/p>
+&lt;h2 id="オプション表情を追加する">[オプション]表情を追加する&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ボタンを押します&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>保存ファイルを決めます。
+一番後ろのボタンを選択して名前を入力して設定を作成してください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipOption.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ボタンを押します&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>コードからは以下のように呼び出せます。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// unknownなのでstringで呼び出し
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.ImmediatelySetValue(&lt;span style="color:#c30">&amp;#34;びっくり&amp;#34;&lt;/span>, &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// 0から1で指定
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="オプションマテリアルの色をモーフする">[オプション]マテリアルの色をモーフする&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipMaterial.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Materialモーフの設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: LookAt</title><link>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/univrm_lookat/</guid><description>
+&lt;p>VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
+目に適用できます。&lt;/p>
+&lt;ul>
+&lt;li>VRMLookAtHead + VRMLookAtBoneApplyer または VRMLookAtBlendShapeApplyer の２つのコンポーネントで設定します。&lt;/li>
+&lt;/ul>
+&lt;h2 id="lookatの種類">LookAtの種類&lt;/h2>
+&lt;p>注視点への Yaw, Pitch 角を適用する方法が以下の３種類あります。
+モデルに応じて選択してください。&lt;/p>
+&lt;h3 id="bone">Bone&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">eye ボーンが回転するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="blendshape">BlendShape&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeの頂点移動で制御するタイプ&lt;/a>&lt;/p>
+&lt;h3 id="textureuv">TextureUV&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">目のテクスチャの &lt;code>UV Offset&lt;/code> で制御するタイプ&lt;/a>&lt;/p>
+&lt;h2 id="vrmlookathead">VRMLookAtHead&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtHead.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtHead&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>このコンポーネントは頭から見たTargetの方向を計算します。&lt;/p>
+&lt;h3 id="target">Target&lt;/h3>
+&lt;blockquote>
+&lt;p>Application設定 です。モデルのセットアップには使いません&lt;/p>
+&lt;/blockquote>
+&lt;p>注視する対象物です。目を向けたい場所にあるオブジェクトをセットしてください。
+カメラをセットすればカメラ目線になります。&lt;/p>
+&lt;h2 id="視線計算の基準位置">視線計算の基準位置&lt;/h2>
+&lt;p>VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson.png" /></description></item><item><title>Docs: MToon</title><link>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</guid><description>
+&lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">MToonの使い方&lt;/a>&lt;/p>
+&lt;h1 id="mtoon-について">MToon について&lt;/h1>
+&lt;p>MToon は日本のアニメ的表現をすることを目標としています。
+主色 (Lit Color) と陰色 (Shade Color) の 2 色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_about.png" alt="alicia MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MToon を適用したニコニ立体ちゃん&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="手早く設定したい人向け">手早く設定したい人向け&lt;/h1>
+&lt;h2 id="共通項目">共通項目&lt;/h2>
+&lt;ul>
+&lt;li>目的のマテリアルを選択し、シェーダを &lt;code>VRM/MToon&lt;/code> に変更&lt;/li>
+&lt;li>&lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> と &lt;code>Color-&amp;gt;Shade Color&lt;/code> に同じテクスチャを設定&lt;/li>
+&lt;li>&lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> は白色 &lt;code>Color-&amp;gt;Shade Color&lt;/code> は好きな陰色を設定&lt;/li>
+&lt;li>&lt;code>Shading-&amp;gt;Toony&lt;/code> は好きな値。主色と影色をパキッとさせたいときは &lt;code>1&lt;/code>&lt;/li>
+&lt;li>&lt;code>Rim-&amp;gt;Additive&lt;/code> は &lt;code>Spheremap&lt;/code> や &lt;code>MatCap&lt;/code> と同等のテクスチャを設定&lt;/li>
+&lt;li>&lt;code>Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code> は輪郭線を必要とするなら &lt;code>WorldCoordinates&lt;/code> で、しないなら &lt;code>None&lt;/code>&lt;/li>
+&lt;li>&lt;code>Outline-&amp;gt;Width-&amp;gt;Width&lt;/code> は 見た目上好きな値&lt;/li>
+&lt;/ul>
+&lt;h2 id="普通のマテリアル">普通のマテリアル&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Shading Shift&lt;/code> は &lt;code>0&lt;/code>&lt;/li>
+&lt;li>&lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> は &lt;code>1&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="キャラクタの顔など影があまりついてほしくないマテリアル">キャラクタの顔など、影があまりついてほしくないマテリアル&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Shading Shift&lt;/code> はマイナスの値&lt;/li>
+&lt;li>&lt;code>Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code> は &lt;code>0&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h1 id="設定項目">設定項目&lt;/h1>
+&lt;h2 id="準備">準備&lt;/h2>
+&lt;p>目的のマテリアルを選択し、シェーダを &lt;code>VRM/MToon&lt;/code> に変更します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_mtoon.png" alt="select MToon" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Material の Shader を VRM/MToon に変更.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="rendering">Rendering&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/mtoon_inspector_rendering.png" alt="MToon Rendering" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Rendering Inspector に含まれる項目.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Rendering 項目では主色と影色、および描画方法を設定します。&lt;/p>
+&lt;h3 id="rendering-type">Rendering Type&lt;/h3>
+&lt;p>マテリアルが不透明か半透明かどうかを設定します。&lt;/p>
+&lt;ul>
+&lt;li>Opaque
+&lt;ul>
+&lt;li>不透明です。基本的には Opaque を設定することを推奨します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Cutout
+&lt;ul>
+&lt;li>不透明ですが &lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> のアルファ値情報を参照して &lt;code>Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code> の値より小さな箇所の描画をスキップします。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Transparent
+&lt;ul>
+&lt;li>半透明です。&lt;code>Color-&amp;gt;Lit Color, Alpha&lt;/code> のアルファ値どおりの不透明度になります。&lt;/li>
+&lt;li>デメリットとして輪郭線描画は正しく行われません。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cull-mode">Cull Mode&lt;/h3>
+&lt;p>ポリゴンのどちら側の面を描画するかを設定します。&lt;/p>
+&lt;ul>
+&lt;li>Back
+&lt;ul>
+&lt;li>表側を描画します。基本的にはこの Back を選択します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Front
+&lt;ul>
+&lt;li>裏側を描画します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>None
+&lt;ul>
+&lt;li>両面を描画します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="alpha">Alpha&lt;/h3>
+&lt;p>&lt;code>Rendering Type&lt;/code> が &lt;code>Cutout&lt;/code> であるときだけ設定する必要があります。&lt;/p>
+&lt;ul>
+&lt;li>Cutoff (&lt;code>Color-&amp;gt;Alpha&lt;/code>)
+&lt;ul>
+&lt;li>描画するしないのしきい値を設定します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="color">Color&lt;/h2>
+&lt;p>描画色を設定します。
+テクスチャと色は乗算されます。
+光が当たる主色は &lt;code>Lit Color, Alpha&lt;/code> に、光が当たらない陰色は &lt;code>Shade Color&lt;/code> に設定します。
+また &lt;code>Lit Color, Alpha&lt;/code> のアルファ値には不透明度情報を設定します。&lt;/p>
+&lt;h2 id="lighting">Lighting&lt;/h2>
+&lt;h3 id="shading-shift">Shading Shift&lt;/h3>
+&lt;p>光の当たり方に対して、主色と陰色のしきい値を調整します。
+&lt;code>0&lt;/code> のとき普通のライティングになります。
+マイナス値にするとアニメ的な、主色の範囲が広いライティングになります。
+マイナス値のときはセルフシャドウを無効化する必要があるため、表示された警告に従い &lt;code>Shadow Receive Multiplier&lt;/code> を &lt;code>0&lt;/code> に設定する必要があります。&lt;/p>
+&lt;h3 id="shading-toony">Shading Toony&lt;/h3>
+&lt;p>&lt;code>Shading Shift&lt;/code> の項目における主色と陰色のしきい値付近を滑らかに変化させるか否かを設定します。
+&lt;code>0&lt;/code> のときは通常の Lambert モデルのような写実寄りの滑らかさになります。
+&lt;code>1&lt;/code> のときはしきい値ではっきり主色と陰色が変化するアニメ調のライティングになります。&lt;/p>
+&lt;h3 id="shadow-receive-multiplier">Shadow Receive Multiplier&lt;/h3>
+&lt;p>セルフシャドウや落影の影響度を設定します。
+&lt;code>0&lt;/code> のときは影響を受けません。
+&lt;code>1&lt;/code> のときは影響を受けます。&lt;/p>
+&lt;h3 id="lightcolor-attenuation">LightColor Attenuation&lt;/h3>
+&lt;p>光源の色の影響度を設定します。
+&lt;code>0&lt;/code> のときは光源の色の影響を受けます。
+&lt;code>1&lt;/code> のときは光源の色の影響を無効化し、光源の色の輝度だけを反映します。&lt;/p>
+&lt;h3 id="rim-additive">Rim Additive&lt;/h3>
+&lt;p>カメラと法線の関係による追加光源を表現します。
+一般にはスフィアマップや MatCap と呼ばれます。&lt;/p>
+&lt;h3 id="emission">Emission&lt;/h3>
+&lt;p>光源環境によらず一定な色を設定します。&lt;/p>
+&lt;h3 id="normal-map">Normal Map&lt;/h3>
+&lt;p>法線マップを設定します。
+右側の値は法線マップの強さを設定します。&lt;/p>
+&lt;h2 id="outline">Outline&lt;/h2>
+&lt;p>輪郭線を設定します。&lt;/p>
+&lt;h3 id="width-mode">Width Mode&lt;/h3>
+&lt;ul>
+&lt;li>None
+&lt;ul>
+&lt;li>輪郭線を描画しません&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>WorldCoordinates
+&lt;ul>
+&lt;li>世界に対して一定の幅の輪郭線を描画します&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ScreenCoordinates
+&lt;ul>
+&lt;li>スクリーンに対して一定の幅の輪郭線を描画します&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="width">Width&lt;/h3>
+&lt;p>輪郭線の幅を設定します。
+&lt;code>Width Mode&lt;/code> が &lt;code>WorldCoordinates&lt;/code> のとき単位はメートルです。&lt;/p>
+&lt;h3 id="color-mode">Color Mode&lt;/h3>
+&lt;ul>
+&lt;li>FixedColor
+&lt;ul>
+&lt;li>固定色で描画します&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>MixedLighting
+&lt;ul>
+&lt;li>ライティングの影響を乗算します&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="color-1">Color&lt;/h3>
+&lt;p>輪郭線の色を設定します。&lt;/p>
+&lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
+&lt;p>&lt;code>Color Mode&lt;/code> が &lt;code>MixedLighting&lt;/code> のとき、その乗算係数を設定します。&lt;/p></description></item><item><title>Docs: モデル情報</title><link>https://vrm.dev/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/univrm_meta/</guid><description>
+&lt;h2 id="vrmmeta">VRMMeta&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/meta_new.jpg" alt="meta" width="800" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMMetaコンポーネント&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="情報information">情報(Information)&lt;/h3>
+&lt;h4 id="タイトルtitle">タイトル(Title)&lt;/h4>
+&lt;p>アバターモデルの名前を設定します&lt;/p>
+&lt;h4 id="作者author">作者(Author)&lt;/h4>
+&lt;p>モデルの作者の名前を記述します&lt;/p>
+&lt;h4 id="連絡先contact-information">連絡先(Contact Information)&lt;/h4>
+&lt;p>モデルの作者への連絡先を記述します&lt;/p>
+&lt;h4 id="参照reference">参照(Reference)&lt;/h4>
+&lt;p>何か「親作品」に相当するものがある場合は参照URLなどを記述します&lt;/p>
+&lt;h4 id="サムネイルthumbnail">サムネイル(Thumbnail)&lt;/h4>
+&lt;p>アバターモデルのサムネイルを登録します。2048x2048程度の解像度を推奨します。&lt;/p>
+&lt;h4 id="バージョン">バージョン&lt;/h4>
+&lt;p>モデルのバージョンを文字列で指定します。
+自由に記述できます。&lt;/p>
+&lt;h3 id="使用許諾ライセンス情報license">使用許諾・ライセンス情報(License)&lt;/h3>
+&lt;h4 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h4>
+&lt;h5 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
+&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
+&lt;li>全員に許可(Authorized to anyone)&lt;/li>
+&lt;/ul>
+&lt;h5 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h5>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
+&lt;h4 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h4>
+&lt;h5 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h5>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;h5 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h5>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
+&lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
+&lt;p>BlendShapeAvatarアセット。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h2 id="設定画面">設定画面&lt;/h2>
+&lt;p>アセットには以下の設定画面があります。&lt;/p>
+&lt;h3 id="blendshapeavatarアセットのインスペクタ">BlendShapeAvatarアセットのインスペクタ&lt;/h3>
+&lt;h4 id="editorタブ">Editorタブ&lt;/h4>
+&lt;p>BlendShapeClip選択・設定作成&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;h4 id="listタブv045から">Listタブ(v0.45から)&lt;/h4>
+&lt;p>BlendShapeClipのリスト&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/list.png" alt="image">&lt;/p>
+&lt;h3 id="blendshapeclipアセットのインスペクタ">BlendShapeClipアセットのインスペクタ。&lt;/h3>
+&lt;h4 id="blendshapeタブ">BlendShapeタブ&lt;/h4>
+&lt;p>設定作成します。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;h4 id="blendshape-listタブ">BlendShape Listタブ&lt;/h4>
+&lt;p>BlendShapeタブで作成した値を見ることが出来ます。
+あまり使わない。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_angry.png" alt="image">&lt;/p>
+&lt;h4 id="material-listタブ">Material Listタブ&lt;/h4>
+&lt;p>&lt;code>BlendShapeによる&lt;/code>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">LookAt&lt;/a>(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_color.png" alt="image">&lt;/p>
+&lt;h2 id="各blendshapeclipの設定">各BlendShapeClipの設定&lt;/h2>
+&lt;p>各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p>
+&lt;h3 id="1-対象のblendshapeclipを選ぶ">1. 対象のBlendShapeClipを選ぶ&lt;/h3>
+&lt;p>BlendShapeAvatarのインスペクタから選択する&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
+&lt;p>アセットのBlendShapeClipを直接選択する&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeclip.png" alt="image">&lt;/p>
+&lt;h3 id="2-スライダを操作して顔を作る">2. スライダを操作して顔を作る&lt;/h3>
+&lt;p>モデルに存在するSKinnedMeshRendererの名前から、
+目的のBlendShapeのスライダーを探して値を設定します。
+変更値は即座に反映されます。
+&lt;code>Apply&lt;/code>ボタン不要になりました(v0.45)。&lt;/p>
+&lt;h3 id="3-previewの操作">3. Previewの操作&lt;/h3>
+&lt;p>&lt;code>Preview Weight Slider&lt;/code> で0~1の効き具合をテストできます。&lt;/p>
+&lt;p>&lt;code>左ドラッグ・右ドラッグ&lt;/code>向きを変えられます。&lt;/p>
+&lt;p>&lt;code>中ドラッグ&lt;/code>移動できます。&lt;/p>
+&lt;h3 id="中間値を許可しない設定v045">中間値を許可しない設定(v0.45)&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
+&lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
+&lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
+&lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMLookAtBoneApplyer.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMLookAtBoneApplyer&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>VRMLookAtHeadの計算した視線方向のパラメーターをEyeBoneに適用します。&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>目標物への相対角度 yaw, pitch を、eye bone のローテンションにそのまま代入すると目が動きすぎてしまいます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の eye bone の回転角度 =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>で設定できます。
+次の４方向を設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>HorizontalOuter&lt;/li>
+&lt;li>HorizontalInner&lt;/li>
+&lt;/ul>
+&lt;p>横方向は左右ではなく、内外になります。&lt;/p></description></item><item><title>Docs: UniUnlit</title><link>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</link><pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</guid><description>
+&lt;h2 id="unigltfuniunlit-シェーダー">&lt;code>UniGLTF/UniUnlit&lt;/code> シェーダー&lt;/h2>
+&lt;p>Unity の &lt;code>Unlit&lt;/code> 系シェーダーは、機能ごとに&lt;/p>
+&lt;ul>
+&lt;li>Unlit/Color&lt;/li>
+&lt;li>Unlit/Texture&lt;/li>
+&lt;li>Unlit/Transparent&lt;/li>
+&lt;li>Unlit/Transparent Cutout&lt;/li>
+&lt;/ul>
+&lt;p>のように分かれています。&lt;/p>
+&lt;p>また、&lt;code>GLTF&lt;/code> では設定可能なのだけど、標準の &lt;code>Unlit&lt;/code> 系シェーダーでは再現できない組み合わせがあります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Texture&lt;/code> かつ &lt;code>Color&lt;/code> の乗算&lt;/li>
+&lt;li>頂点カラー&lt;/li>
+&lt;/ul>
+&lt;p>これらを解決する、統一 &lt;code>unlit&lt;/code> シェーダーとして &lt;code>UniGLTF/UniUnlit&lt;/code> があります。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> で、&lt;code>GLTF&lt;/code> で &lt;code>Unlit&lt;/code> 設定のマテリアルをインポートすると、
+すべて &lt;code>UniGLTF/UniUnlit&lt;/code> 使うようになります。&lt;/p>
+&lt;p>エクスポートしてからインポートする場合の対応表。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>export&lt;/th>
+&lt;th>gltf&lt;/th>
+&lt;th>import&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Unlit/Color&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Texture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent Cutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTexture&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparent&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitCutout&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>なお、UniVRM がサポートするシェーダーの中で、&lt;code>UniGLTF/UniUnlit&lt;/code> だけが頂点カラーをサポートしています。&lt;/p>
+&lt;ul>
+&lt;li>Meshに頂点カラーが含まれている&lt;/li>
+&lt;li>Materialが &lt;code>Unlit&lt;/code> 判定である&lt;/li>
+&lt;/ul>
+&lt;p>場合に、import すると頂点カラーが適用されます。
+頂点カラーが不要であるモデルに、Unity の &lt;code>unlit&lt;/code> 系マテリアルを適用してエクスポートすると、
+次にインポートするときに意図せずに色が変わる場合があります。
+この場合、エクスポート時に &lt;code>RemoveVertexColor&lt;/code> を有効にすることで、頂点カラーを含まない &lt;code>Mesh&lt;/code> をエクスポートすることができます。&lt;/p>
+&lt;h2 id="gltf">GLTF&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">UniUnlit&lt;/th>
+&lt;th align="left">GLTF Unlit&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">カラーファクター&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorFactor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">カラーテクスチャ&lt;/td>
+&lt;td align="left">/materials/pbrMetallicRoughness/baseColorTexture&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">レンダリングモード&lt;/td>
+&lt;td align="left">/materials/alphaMode&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">カリングモード&lt;/td>
+&lt;td align="left">/materials/doubleSided&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: UPMでUniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
+&lt;h2 id="univrm-0xx-の-unitypackage">UniVRM-0.XX の UnityPackage&lt;/h2>
+&lt;p>UniVRM-0.56から、UniVRMはUnityPackageManagerでインポートできるようになりました。&lt;/p>
+&lt;p>github リポジトリのルート以外に &lt;code>package.json&lt;/code> を配置する機能を使っているので、
+&lt;code>Unity 2019.3.4f1以降&lt;/code> が必要です。&lt;/p>
+&lt;h3 id="unitypackagemanager-ウインドウによるインストール">UnityPackageManager ウインドウによるインストール&lt;/h3>
+&lt;p>UnityPackageManagerのWindow&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
+&lt;hr>
+&lt;p>&lt;code>add package from git URL&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
+&lt;hr>
+&lt;p>新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p>
+&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a> のgit urlは次のとおりです：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; VRMShadersとMeshUtility に依存&lt;/li>
+&lt;/ul>
+&lt;p>パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p>
+&lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
+&lt;h3 id="packagesmanifestjson-直接編集によるインストール">packages/manifest.json 直接編集によるインストール&lt;/h3>
+&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>の例)。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitの特定コミットを指定する場合">gitの特定コミットを指定する場合&lt;/h2>
+&lt;p>&lt;code>dependencies&lt;/code> に特定のコミットを指定します。&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: エクスポートダイアログ</title><link>https://vrm.dev/docs/univrm/export/univrm_export/</link><pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/export/univrm_export/</guid><description>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>用語&lt;/th>
+&lt;th>意味&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Root&lt;/td>
+&lt;td>エクスポート対象となる一番親のオブジェクト(ひとつだけ)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ヒエラルキー&lt;/td>
+&lt;td>Root自身と子孫全部&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="v058">v0.58~&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
+&lt;p>Unityの &lt;a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html">EditorWindow&lt;/a> で画面を作成しています。&lt;/p>
+&lt;h3 id="使い方">使い方&lt;/h3>
+&lt;h4 id="window-を表示する">Window を表示する&lt;/h4>
+&lt;p>以前と同じメニューから表示できます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/export058_menu.jpg" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました&lt;/li>
+&lt;/ul>
+&lt;h4 id="対象のオブジェクトをセットする">対象のオブジェクトをセットする&lt;/h4>
+&lt;ul>
+&lt;li>Drag&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_drag.gif" alt="vrm export" width="600" />
+&lt;ul>
+&lt;li>Selector&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/export058_select.gif" alt="vrm export" width="600" />
+&lt;h4 id="exportrootの条件">ExportRootの条件&lt;/h4>
+&lt;img src="https://vrm.dev/images/vrm/export058_empty.jpg" alt="vrm export" width="600" />
+&lt;p>ExportRoot が以下の条件を満たすと設定画面が表示されます。&lt;/p>
+&lt;ul>
+&lt;li>Root である(親が無い)&lt;/li>
+&lt;li>Root に回転・スケールが無い(移動は可能)&lt;/li>
+&lt;li>ヒューマノイドである(Animatorコンポーネントがアタッチしてあり、Humanoid.Avatarがセットしてある)&lt;/li>
+&lt;li>Z+向きである(左足と右足のボーン位置から判定)&lt;/li>
+&lt;li>ヒエラルキーの中に enable な mesh を含む&lt;/li>
+&lt;/ul>
+&lt;h4 id="エクスポート設定画面">エクスポート設定画面&lt;/h4>
+&lt;p>Metaやエクスポートオプションを設定してください。
+警告は修正するかしないかを判断して、問題無ければ無視してください。
+選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の &lt;code>export&lt;/code> ボタンを押すことができるようになります。
+VRMモデルのファイルサイズの詳しい内容は&lt;a href="https://vrm.dev/docs/univrm/export/vrm_size/">こちら&lt;/a>を参考してください。&lt;/p>
+&lt;h2 id="オプション">オプション&lt;/h2>
+&lt;p>エクスポートのオプションです。
+チェックするとエクスポート前に追加の処理を実行します。&lt;/p>
+&lt;h3 id="force-t-pose">Force T Pose&lt;/h3>
+&lt;p>エクスポート前に強制的にT-Poseにします。
+手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。&lt;/p>
+&lt;h3 id="pose-freeze">Pose Freeze&lt;/h3>
+&lt;p>モデルを正規化します。
+正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。
+正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。&lt;/p>
+&lt;blockquote>
+&lt;p>0.58 では自動でチェックボックスが On/Off されます&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="useexperimentalexporter">UseExperimentalExporter&lt;/h3>
+&lt;p>シリアライザーのバージョン。
+どちらでも動作します。&lt;/p>
+&lt;h3 id="usesparseaccessor">UseSparseAccessor&lt;/h3>
+&lt;p>BlendShapeが多数ある場合にファイルサイズを削減できます。&lt;/p>
+&lt;h3 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h3>
+&lt;p>BlendShapeのNormal, Tangent をエクスポートしない。
+ファイルサイズを削減できます。
+UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。&lt;/p>
+&lt;h3 id="reduceblendshape">ReduceBlendshape&lt;/h3>
+&lt;p>BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
+ファイルサイズを削減できます。&lt;/p>
+&lt;h3 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h3>
+&lt;p>Presetが Unknown であるBlendShapeClipをエクスポートしない。
+ReduceBlendshapeと組み合わせて使います。&lt;/p>
+&lt;h3 id="removevertexcolor">RemoveVertexColor&lt;/h3>
+&lt;p>頂点カラーをエクスポートしない。
+GLTFには、頂点カラーを含むが使わないという設定がありません。
+UniVRMでは、 &lt;code>unlit&lt;/code> のみ頂点カラー対応です。&lt;/p>
+&lt;h2 id="エラー項目">エラー項目&lt;/h2>
+&lt;p>バージョン毎の判定。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>message&lt;/th>
+&lt;th>0.56&lt;/th>
+&lt;th>0.57&lt;/th>
+&lt;th>0.58&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>The Root translation, rotation and scale will be dropped&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>error(移動は可)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Jaw bone&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Same name bone&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>warn(自動リネーム)&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vertex color&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unknown shader&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require source&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require no parent&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>error(新規)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require Z+ forward&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>error(新規)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require animator&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require humanoid avatar&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Require Title/Version/Author&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>No active mesh&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prefab export&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>error&lt;/td>
+&lt;td>ok(NO_ACTIVE_MESHだった)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Springbone validation&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>ok&lt;/td>
+&lt;td>warn&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="require-source">Require source&lt;/h3>
+&lt;p>エクスポート可能なオブジェクトをシーンで選択してださい&lt;/p>
+&lt;h3 id="require-animator">Require animator.&lt;/h3>
+&lt;p>RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)&lt;/p>
+&lt;h3 id="require-animatoravatar">Require animator.avatar&lt;/h3>
+&lt;p>RootのAnimatorにavatarがありません(ヒューマノイドでない)&lt;/p>
+&lt;h3 id="animatoravatar-is-not-valid">Animator.avatar is not valid.&lt;/h3>
+&lt;p>RootのAnimatorのavatarが正常でない(ヒューマノイドでない)&lt;/p>
+&lt;h3 id="animatoravatar-is-not-humanoid-please-change-models-animationtype-to-humanoid">Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid.&lt;/h3>
+&lt;p>RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください&lt;/p>
+&lt;h3 id="require-title">Require Title.&lt;/h3>
+&lt;p>ダイアログのタイトルを入力してください(必須項目)&lt;/p>
+&lt;h3 id="require-version">Require Version.&lt;/h3>
+&lt;p>ダイアログのバージョンを入力してください(必須項目)&lt;/p>
+&lt;h3 id="require-author">Require Author.&lt;/h3>
+&lt;p>ダイアログのAuthorを入力してください(必須項目)&lt;/p>
+&lt;h3 id="no-active-mesh">No active mesh&lt;/h3>
+&lt;p>ヒエラルキーに active なメッシュが含まれていない&lt;/p>
+&lt;h3 id="filename-0-is-too-long">FileName &amp;lsquo;{0}&amp;rsquo; is too long.&lt;/h3>
+&lt;p>material, texture, mesh の名前が長すぎる。
+リネームしてください&lt;/p>
+&lt;h3 id="the-root-translation-rotation-and-scale-will-be-dropped">The Root translation, rotation and scale will be dropped&lt;/h3>
+&lt;p>Rootに移動・回転・スケール値が設定されている。
+そのままエクスポートした場合、ルートの TRS は無くなります。
+移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。&lt;/p>
+&lt;h3 id="jaw-bone-is-included-it-may-not-what-you-intended-please-check-the-humanoid-avatar-setting-screen">Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen&lt;/h3>
+&lt;p>humanoid設定に顎が含まれている。
+FBXインポート時に意図せずに自動で割り当てられる場合があります。
+間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
+FBX importer の rig 設定に戻って設定を解除することをおすすめします。&lt;/p>
+&lt;h3 id="there-are-bones-with-the-same-name-in-the-hierarchy-they-will-be-automatically-renamed-after-export">There are bones with the same name in the hierarchy. They will be automatically renamed after export&lt;/h3>
+&lt;p>ヒエラルキーの中に同じ名前のGameObjectが含まれている。
+エクスポートした場合に自動でリネームする。&lt;/p>
+&lt;h3 id="this-model-contains-vertex-color">This model contains vertex color&lt;/h3>
+&lt;p>ヒエラルキーに含まれる mesh に頂点カラーが含まれている。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>頂点カラー&lt;/th>
+&lt;th>含まれている挙動&lt;/th>
+&lt;th>挙動&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>UniVRM-0.53以前&lt;/td>
+&lt;td>未対応&lt;/td>
+&lt;td>含まれているけど無視する挙動&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniVRM-0.54～&lt;/td>
+&lt;td>使う&lt;/td>
+&lt;td>含まれているものは使う挙動&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Unlitで頂点カラーが含まれているが使わないという設定がありせん。
+必要ない場合は、&lt;code>Remove Vertex Color&lt;/code> オプションで削除できます。&lt;/p>
+&lt;h3 id="unknown-material-0-is-used-this-will-export-as-standard-fallback">unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code>Standard&lt;/code> fallback&lt;/h3>
+&lt;p>standard, unlit, mtoon 以外のマテリアルは、standard になります。&lt;/p>
+&lt;h2 id="v057">v0.57&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
+&lt;p>Unityの &lt;a href="https://docs.unity3d.com/ScriptReference/ScriptableWizard.html">ScriptableWizard&lt;/a> で画面を作成しています。
+v0.58 以降でダイアログを改善予定です。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
+&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
+&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="モーフ制御の視線-vrmlookatblendshapeapplyer">モーフ制御の視線: VRMLookAtBlendShapeApplyer&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>BlendShapeで視線制御するモデル用のコンポーネントです。
+事前に、 &lt;code>LookUp&lt;/code>, &lt;code>LookDown&lt;/code>, &lt;code>LookLeft&lt;/code>, &lt;code>LookRight&lt;/code> の４つの BlendShape を設定してください。&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>次の３つを設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>Horizontal&lt;/li>
+&lt;/ul></description></item><item><title>Docs: エクスポート時にBlendShapeの状態をベイクする</title><link>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
+&lt;p>UniVRM ではエクスポートするときに、 &lt;code>SkinnedMeshRenderer&lt;/code> のスライダーを上げておくとその状態を基本状態にすることができます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/blendshape_value.jpg" width="400" />
+&lt;p>&lt;code>Pose Freeze&lt;/code> のチェックボックスを有効にする必要があります。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
+&lt;p>エクスポートすると・・・&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
+&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p>２系統の設定があります。&lt;/p>
+&lt;ul>
+&lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
+&lt;li>VRで、メッシュごとにカメラの可視設定を分ける&lt;/li>
+&lt;/ul>
+&lt;p>※ アプリケーション側でこれらのパラメーターを使っている場合のみ有効です&lt;/p>
+&lt;h2 id="ヘッドセットの位置指定">ヘッドセットの位置指定&lt;/h2>
+&lt;p>ヘッドの動きの頭部への反映を微調整できます。&lt;/p>
+&lt;h3 id="firstpersonbone">FirstPersonBone&lt;/h3>
+&lt;p>通常頭ボーンを指定します。
+一人称時にヘッドセットに追随させるボーンです。&lt;/p>
+&lt;h3 id="firstpersonoffset">FirstPersonOffset&lt;/h3>
+&lt;p>追随する位置をFirstPersonBoneの位置からオフセットします。
+デフォルト値[0, 0.06, 0]は、Headから両目の間へのオフセットを想定しています。&lt;/p>
+&lt;h2 id="vrの可視設定">VRの可視設定&lt;/h2>
+&lt;p>VRアプリでの可視設定です。
+VRアプリでは２種類のカメラが想定されます。&lt;/p>
+&lt;ul>
+&lt;li>一人称(HMDにレンダリングされる)&lt;/li>
+&lt;li>三人称(HMD以外。配信用、鏡、マルチユーザーの他のユーザーのHMD)&lt;/li>
+&lt;/ul>
+&lt;p>です。
+このとき、一人称で普通に自身のモデルがすべて見えると不都合があります。&lt;/p>
+&lt;ul>
+&lt;li>近平面で自分の輪切りが見える&lt;/li>
+&lt;li>髪が邪魔で何も見えない&lt;/li>
+&lt;li>自分モデルの頭部の中身が見えてしまう(歯とか)&lt;/li>
+&lt;/ul>
+&lt;p>など。
+これらの自体に対処するために、メッシュ毎に２種類のカメラに対する可視性を設定できます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>設定&lt;/th>
+&lt;th>一人称カメラ&lt;/th>
+&lt;th>三人称カメラ&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Both&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>体、手、足など頭部から遠い部位を指する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FirstPersonOnly&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>使わない？&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ThirdPersonOnly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>〇&lt;/td>
+&lt;td>外部カメラしか見えない。頭部、髪、帽子などを指定する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auto&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>後述&lt;/td>
+&lt;td>デフォルト&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="設定のリセット">設定のリセット&lt;/h3>
+&lt;p>FirstPerson は、最初に自動で Auto の設定になるようになっています。
+Mesh が増減するなどでモデルの構成が変わった場合に、参照が &lt;code>Missing&lt;/code> になるなどエクスポートできない状態になる場合があります。
+VRMFirstPerson をリセットすることで再設定することができます。
+リセットする方法は、&lt;/p>
+&lt;p>&lt;code>VRM First Person(Script)&lt;/code> インスペクタの右上角の &lt;code>歯車アイコン ⚙&lt;/code> で表示されるメニューから &lt;code>Reset&lt;/code> を選択してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/firstperson_reset.gif" alt="firstperson reset" width="600" />
+&lt;h3 id="auto-による-both-と-thirdpersononly-への自動分割">Auto による Both と ThirdPersonOnly への自動分割&lt;/h3>
+&lt;p>設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code>Both&lt;/code> と &lt;code>ThirdPersonOnly&lt;/code> に分離することを指示できます。
+UniVRMでは &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/#実行時にsetupを呼び出してカメラにlayermaskを設定する">VRMFirstPerson.Setup()&lt;/a> を呼び出します。
+Autoによる自動分割は、重めの処理になります。&lt;/p>
+&lt;p>分割基準は、&lt;/p>
+&lt;ul>
+&lt;li>含まれる頂点が &lt;code>head&lt;/code> か &lt;code>head&lt;/code> の子孫の weight を持っているか否か&lt;/li>
+&lt;/ul>
+&lt;p>です。
+すべて同じ側の場合は分割せずに、&lt;code>Both&lt;/code> か &lt;code>ThirdPersonOnly&lt;/code> として扱います。&lt;/p>
+&lt;h3 id="推奨される構成">推奨される構成&lt;/h3>
+&lt;p>あらかじめ、頭と体にモデルを分割しておき&lt;/p>
+&lt;ul>
+&lt;li>頭に &lt;code>ThirdPersonOnly&lt;/code> を指定&lt;/li>
+&lt;li>体に &lt;code>Both&lt;/code> を指定&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/firstperson.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/firstperson_runtime.png" alt="firstperson" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
+&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
+&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="textureのuv操作による視線制御">TextureのUV操作による視線制御&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>Textureを上下左右にスライドさせることで目線を移動させる方法です。
+&lt;code>Unityちゃん&lt;/code> はこのタイプです。&lt;/p>
+&lt;h2 id="目のマテリアルを探す">目のマテリアルを探す&lt;/h2>
+&lt;p>マテリアルのインスペクタの目のテクスチャの &lt;code>Tiling Offset&lt;/code> の設定に注目してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
+&lt;p>&lt;code>1, 1, 0, 0&lt;/code> になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。&lt;/p>
+&lt;p>試しに、&lt;code>Offset&lt;/code> Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
+目的の設定が見つかったので元に戻して次に進みます。&lt;/p>
+&lt;h2 id="blendshapeの準備">BlendShapeの準備&lt;/h2>
+&lt;p>LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラーマテリアルの UV を操作するようにします。
+例では、Materialに &lt;code>unlit/transparent cutout&lt;/code> を使用しています。&lt;/p>
+&lt;h3 id="lookleftの例">LookLeftの例&lt;/h3>
+&lt;p>&lt;code>LookLeft&lt;/code> 選択してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Material List&lt;/code> タブを選択&lt;/li>
+&lt;li>&lt;code>+&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code> に設定します&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Offsetを調整してLookLeftを作ります&lt;/li>
+&lt;li>&lt;code>eye_R1&lt;/code> も同様に&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
+&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>次の３つを設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>Horizontal&lt;/li>
+&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>GLTF は、Animation の定義があります。&lt;/p>
+&lt;blockquote>
+&lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="対応バージョン">対応バージョン&lt;/h3>
+&lt;ul>
+&lt;li>v0.44&lt;/li>
+&lt;/ul>
+&lt;h3 id="対応状況">対応状況&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">KeyName&lt;/th>
+&lt;th align="center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">TranslationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">RotationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ScaleKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">BlendShapeKey&lt;/td>
+&lt;td align="center">×&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="animatorをエクスポートする場合">Animatorをエクスポートする場合&lt;/h3>
+&lt;ol>
+&lt;li>ルートGameObjectにAnimatorコンポーネントを追加&lt;/li>
+&lt;li>AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li>
+&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
+&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
+&lt;li>このクリップに対してアニメーションキーを追加&lt;/li>
+&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
+&lt;/ol>
+&lt;h3 id="animationをエクスポートする場合">Animationをエクスポートする場合&lt;/h3>
+&lt;ol>
+&lt;li>ルートGameObjectにAnimationコンポーネントを追加&lt;/li>
+&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
+&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
+&lt;li>Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br>
+&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/li>
+&lt;li>AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li>
+&lt;li>クリップに対してアニメーションキーを追加&lt;/li>
+&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
+&lt;/ol>
+&lt;h3 id="注意事項">注意事項&lt;/h3>
+&lt;ol>
+&lt;li>RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br>
+&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
+&lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
+&lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
+&lt;/ol></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;p>以下のフォルダを削除してください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>folder&lt;/th>
+&lt;th>Version&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Assets/VRM&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRMShaders&lt;/td>
+&lt;td>v0.56.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/MeshUtility&lt;/td>
+&lt;td>v0.59.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。&lt;/p>
+&lt;ul>
+&lt;li>バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。&lt;/li>
+&lt;/ul>
+&lt;p>UPMでパッケージをインストールするの場合は、UPMウィンドウのパッケージインタフェースの右下にある&lt;code>Remove&lt;/code>ボタンをクリックしてください。&lt;/p></description></item><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid><description>
+&lt;p>揺れモノ設定。&lt;/p>
+&lt;h1 id="コンポーネントのアタッチされるノード">コンポーネントのアタッチされるノード&lt;/h1>
+&lt;p>VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p>
+&lt;ul>
+&lt;li>VRMSpringBoneは、名前が&lt;code>secondary&lt;/code>のノードが自動的に作成されてそこにアタッチされます。&lt;/li>
+&lt;li>VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMSpringBoneが見つからない場合には&lt;code>secondary&lt;/code>ノードをご確認ください。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="vrmspringbone">VRMSpringBone&lt;/h1>
+&lt;p>尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
+揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMSpringBone.png" alt="lookat" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>RootBonesに髪の毛とリボンを設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>これだけで、指定したボーンが動きに合わせて揺れます。&lt;/p>
+&lt;h1 id="オプションvrmspringbonecollidergroup当たり判定">[オプション]VRMSpringBoneColliderGroup(当たり判定)&lt;/h1>
+&lt;p>揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/collider.png" alt="collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_collider.png" alt="set_collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/spring_gizmo.png" alt="gizmo" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>動作時のGizmo。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="ひとつのvrmspringbonecollidergroupに複数の当たり判定を設定できます">ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます&lt;/h2>
+&lt;p>VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。&lt;/p>
+&lt;h1 id="設定したvrmspringboneが居なくなった">設定したVRMSpringBoneが居なくなった&lt;/h1>
+&lt;p>VRMSpringBoneはインポート時に&lt;code>secondary&lt;/code>ノードにアタッチされます。
+エクスポート時と違う場所に現れるのでご注意ください。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders UPMパッケージ</title><link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>&lt;code>UniVRM-0.56&lt;/code> からフォルダ構成を変更して、
+&lt;code>UniVRM&lt;/code> のマテリアル関連の機能は、 &lt;code>Assets/VRMShaders&lt;/code> に移動しました。&lt;/p>
+&lt;h2 id="upm-パッケージ">UPM パッケージ&lt;/h2>
+&lt;p>パッケージとして独立して、 &lt;code>UniVRM&lt;/code> とは関係なくマテリアル関連だけ単体で使うことできます。
+( &lt;code>UniVRM&lt;/code> が &lt;code>VRMShaders&lt;/code> を使う関係)。
+&lt;code>UniUnlit&lt;/code> と &lt;code>MToon&lt;/code> を内包しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span> &lt;span style="color:#a00;background-color:#faa">抜粋&lt;/span>
+{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>#0.57.0&lt;/code> 部分で UniVRM のリリース番号(github の tag)を指定します。
+&lt;code>VRMShaders&lt;/code> は &lt;code>VRM&lt;/code> と同じリリース番号を適用する運用をしています。&lt;/p>
+&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
+&lt;h3 id="mtoon">MToon&lt;/h3>
+&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
+&lt;p>で開発しています。
+git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id="049">0.49&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
+その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
+&lt;h2 id="046">0.46&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
+Mesh, Texture, Prefabは上書きします。&lt;/p>
+&lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
+上書きしたい場合はImport前に削除してください。&lt;/p>
+&lt;h2 id="045以前">0.45以前&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item></channel></rss>

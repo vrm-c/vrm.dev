@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Material</title><link>https://vrm.dev/en/docs/univrm/shaders/</link><description>Recent content in Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/mtoon/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Material</title><link>https://vrm.dev/en/docs/univrm/shaders/</link><description>Recent content in Material on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/shaders/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MToon</title><link>https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/</guid><description>
 &lt;p>&lt;a href="https://www.slideshare.net/VirtualCast/vrm-mtoon">How to use MToon&lt;/a>&lt;/p>
 &lt;h1 id="about-mtoon">About MToon&lt;/h1>
 &lt;p>MToon aims for making Japanese anime expressions. It is achieved by mixing &lt;code>Lit Color&lt;/code> and &lt;code>Shade Color&lt;/code> based on Lighting parameters and light source environment.&lt;/p>
@@ -287,7 +287,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 04 Aug 2020 17:50:38 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -450,12 +450,12 @@ Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>A
 &lt;p>VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
 Besides that, VRMShaders can be used independently without &lt;code>UniVRM&lt;/code> (&lt;code>UniVRM&lt;/code> uses &lt;code>VRMShaders&lt;/code>).
 VRMShaders includes &lt;code>UniUnlit&lt;/code> and &lt;code>MToon&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">manifest.json&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span>
+{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
+}
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, the version of UniVRM being imported is v0.57.0.
 The imported version can be changed to different version (e.g. v0.56.0).
 &lt;code>VRMShaders&lt;/code> version number is the same as UniVRM.&lt;/p>
@@ -466,4 +466,4 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>

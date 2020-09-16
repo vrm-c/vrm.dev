@@ -105,25 +105,25 @@ Defined by ProtocolBuffer and generate a Json serializer.&lt;/p>
 &lt;/ul>
 &lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
 &lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json. Please copy and paste the following contents:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#a40000">//&lt;/span> &lt;span style="color:#a40000">...&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json">https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&lt;/a> is an example of using &lt;code>UniVRM-1.0&lt;/code>'s &lt;code>UnityPackage&lt;/code>.&lt;/p>
 &lt;p>The hash values in &lt;code>lock&lt;/code> can be updated automatically by Unity, there is no need to manually change them.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json"> &lt;span style="color:#4e9a06">&amp;#34;lock&amp;#34;&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HEAD&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;198c2c605ded711b21781421e71ba9bdbe0f8728&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HEAD&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json"> &lt;span style="color:#c30">&amp;#34;lock&amp;#34;&lt;/span>&lt;span style="color:#a00;background-color:#faa">:&lt;/span> {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;HEAD&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;198c2c605ded711b21781421e71ba9bdbe0f8728&amp;#34;&lt;/span>
+},
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;HEAD&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>
+}
+}
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShapeProxy Updates</title><link>https://vrm.dev/en/en/dev/univrm-1.xx/blendshapeproxy/</link><pubDate>Mon, 11 May 2020 17:05:49 +0900</pubDate><guid>https://vrm.dev/en/en/dev/univrm-1.xx/blendshapeproxy/</guid><description>
 &lt;h2 id="update-order-for-blendshape-related-components">Update order for BlendShape-related components&lt;/h2>
 &lt;p>As described in &lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order,">https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order,&lt;/a> it is recommended to update as the following order:&lt;/p>
@@ -156,66 +156,66 @@ To address this issue, a function that can disable &lt;code>blink&lt;/code> when
 &lt;p>&lt;code>Apply&lt;/code> is called in VRMBlendShapeProxy.LateUpdate.&lt;/p>
 &lt;p>When fine controlling is not required.&lt;/p></description></item><item><title>Docs: API</title><link>https://vrm.dev/en/dev/univrm-1.xx/api/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/api/</guid><description>
 &lt;p>Available in &lt;a href="https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs">https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System.IO&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">UnityEngine&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vrm-to-model">VRM to Model&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Model&lt;/span> &lt;span style="color:#000">ReadModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">string&lt;/span> &lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">bytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">File&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ReadAllBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000;font-weight:bold">(!&lt;/span>&lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Glb&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">TryParse&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">out&lt;/span> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Glb&lt;/span> &lt;span style="color:#000">glb&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">out&lt;/span> &lt;span style="color:#000">Exception&lt;/span> &lt;span style="color:#000">ex&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">Debug&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LogError&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">$&amp;#34;fail to Glb.TryParse: {path} =&amp;gt; {ex}&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#204a87;font-weight:bold">null&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// both VRM-0.X and VRM-1.0
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">model&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">VrmLoader&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateVrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> VrmLib.Model ReadModel(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> (!VrmLib.Glb.TryParse(bytes, &lt;span style="color:#069;font-weight:bold">out&lt;/span> VrmLib.Glb glb, &lt;span style="color:#069;font-weight:bold">out&lt;/span> Exception ex))
+{
+Debug.LogError(&lt;span style="color:#c30">$&amp;#34;fail to Glb.TryParse: {path} =&amp;gt; {ex}&amp;#34;&lt;/span>);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">null&lt;/span>;
+}
+&lt;span style="color:#09f;font-style:italic">// both VRM-0.X and VRM-1.0
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> model;
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="this-is-possible-on-a-thread">This is possible on a thread&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">Task&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Run&lt;/span>&lt;span style="color:#000;font-weight:bold">(()=&amp;gt;{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">ReadModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">return&lt;/span> Task.Run(()=&amp;gt;{
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> ReadModel(path);
+});
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="model-to-gameobject">Model to GameObject&lt;/h2>
 &lt;p>This requires a ScriptThread.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#000">ModelAsset&lt;/span> &lt;span style="color:#000">BuildGameObject&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Model&lt;/span> &lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">showMesh&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">importer&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">RuntimeUnityBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">assets&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">importer&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToUnityAsset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">showMesh&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ComponentBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Build10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">importer&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> ModelAsset BuildGameObject(VrmLib.Model model, &lt;span style="color:#078;font-weight:bold">bool&lt;/span> showMesh)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> importer = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeUnityBuilder();
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = importer.ToUnityAsset(model, showMesh);
+UniVRM10.ComponentBuilder.Build10(model, importer, assets);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> assets;
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="set-renderer-after-importing-the-model">Set renderer after importing the model&lt;/h3>
 &lt;p>Various assets now are stored in ModelAsset.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">asset&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">BuildGameObject&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">srcModel&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// renderer setting
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">foreach&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">render&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">asset&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Renderers&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// show when RuntimeUnityBuilder.ToUnity(showMesh = false)
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">render&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">enabled&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// avoid culling
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">render&lt;/span> &lt;span style="color:#204a87;font-weight:bold">is&lt;/span> &lt;span style="color:#000">SkinnedMeshRenderer&lt;/span> &lt;span style="color:#000">skinned&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">skinned&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">updateWhenOffscreen&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> asset = BuildGameObject(srcModel, &lt;span style="color:#069;font-weight:bold">false&lt;/span>);
+&lt;span style="color:#09f;font-style:italic">// renderer setting
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> render &lt;span style="color:#069;font-weight:bold">in&lt;/span> asset.Renderers)
+{
+&lt;span style="color:#09f;font-style:italic">// show when RuntimeUnityBuilder.ToUnity(showMesh = false)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> render.enabled = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+&lt;span style="color:#09f;font-style:italic">// avoid culling
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (render &lt;span style="color:#069;font-weight:bold">is&lt;/span> SkinnedMeshRenderer skinned)
+{
+skinned.updateWhenOffscreen = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+}
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="tackle-on-frame-rate-dropping-todo">Tackle on frame rate dropping (TODO)&lt;/h3>
 &lt;p>Optimize the processing of each frame to reduce spikes.&lt;/p>
 &lt;h2 id="gameobject-to-model">GameObject to Model&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Model&lt;/span> &lt;span style="color:#000">ToModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">UnityEngine&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">GameObject&lt;/span> &lt;span style="color:#000">target&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">exporter&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">RuntimeVrmConverter&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">model&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">exporter&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToModelFrom10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">target&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> VrmLib.Model ToModel(UnityEngine.GameObject target)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> exporter = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeVrmConverter();
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = exporter.ToModelFrom10(target);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> model;
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="model-to-vrm">Model to VRM&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">byte&lt;/span>&lt;span style="color:#000;font-weight:bold">[]&lt;/span> &lt;span style="color:#000">ToVrm10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Model&lt;/span> &lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// transform to right-handed coordinate system
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ModelExtensionsForCoordinates&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ConvertCoordinate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Coordinates&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Gltf&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">bytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Vrm10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ModelExtensions&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">byte&lt;/span>[] ToVrm10(VrmLib.Model model)
+{
+&lt;span style="color:#09f;font-style:italic">// transform to right-handed coordinate system
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = Vrm10.ModelExtensions.ToGlb(model);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> bytes;
+}
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API Changes</title><link>https://vrm.dev/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/</guid><description>
 &lt;h2 id="import">Import&lt;/h2>
 &lt;ul>
@@ -224,76 +224,76 @@ To address this issue, a function that can disable &lt;code>blink&lt;/code> when
 &lt;li>&lt;code>UniVRM10.ComponentBuilder.Build10&lt;/code> will set up components (Meta, BlendShape, LookAt, etc.) for the VRM GameObject&lt;/li>
 &lt;/ul>
 &lt;h3 id="example">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System.IO&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">UnityEngine&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">MyClass&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">MonoBehaviour&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">/**
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> * VRM import
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> *
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> * @return vrm object
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> */&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#000">GameObject&lt;/span> &lt;span style="color:#000">Import&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// file path
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">path&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">model&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">VrmLoader&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateVrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// build UniVRM-0.XX model&amp;#39;s components
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">assets&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">RuntimeUnityBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToUnityAsset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">showMesh&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// enable renderer when RuntimeUnityBuilder.ToUnity(showMesh = false)
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">foreach&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">renderer&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Renderers&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">renderer&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">enabled&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// avoid culling
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">renderer&lt;/span> &lt;span style="color:#204a87;font-weight:bold">is&lt;/span> &lt;span style="color:#000">SkinnedMeshRenderer&lt;/span> &lt;span style="color:#000">skinned&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">skinned&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">updateWhenOffscreen&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ComponentBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Build10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">vrmObject&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> 　　　　　　
-&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">vrmObject&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
+{
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">/**
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> * VRM import
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> *
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> * @return vrm object
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> */&lt;/span>
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> GameObject Import()
+{
+&lt;span style="color:#09f;font-style:italic">// file path
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = &lt;span style="color:#c30">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
+&lt;span style="color:#09f;font-style:italic">// build UniVRM-0.XX model&amp;#39;s components
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(model, showMesh: &lt;span style="color:#069;font-weight:bold">false&lt;/span>);
+&lt;span style="color:#09f;font-style:italic">// enable renderer when RuntimeUnityBuilder.ToUnity(showMesh = false)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> renderer &lt;span style="color:#069;font-weight:bold">in&lt;/span> assets.Renderers)
+{
+renderer.enabled = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+&lt;span style="color:#09f;font-style:italic">// avoid culling
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (renderer &lt;span style="color:#069;font-weight:bold">is&lt;/span> SkinnedMeshRenderer skinned)
+{
+skinned.updateWhenOffscreen = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+}
+}
+UniVRM10.ComponentBuilder.Build10(model, assets);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> vrmObject = assets.Root; 　　　　　　
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> vrmObject;
+}
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="export">Export&lt;/h2>
 &lt;ul>
 &lt;li>The class &lt;code>VRM.VRMExporter&lt;/code>, which is used to export VRM data (&lt;code>UniGLTF.gltfExporter.Export&lt;/code>), has been removed. In UniVRM-1.XX the UniVRM exporter will first transfer the VRM data (&lt;code>RuntimeVrmConverter.ToModelFrom10&lt;/code>) from the VRM GameObject to &lt;code>VrmLib.Model&lt;/code> then save to VRM file&lt;/li>
 &lt;li>&lt;code>Vrm10.ModelExtensions.ToGlb&lt;/code> will transfer the data from &lt;code>VrmLib.Model&lt;/code> to glb. Note that glb format is exchangeable with VRM. The coordinate transformation between Unity and GLTF is &lt;code>VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="example-1">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System.IO&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">UnityEngine&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">MyClass&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">MonoBehaviour&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">/**
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> * VRM export
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"> */&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">Export&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// file path
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">importPath&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">importedModel&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">VrmLoader&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CreateVrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">importPath&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">assets&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">RuntimeUnityBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToUnityAsset&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">importedModel&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ComponentBuilder&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Build10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">importedModel&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>　
-&lt;span style="color:#8f5902;font-style:italic">// export with UniVRM1.0
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">exporter&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">new&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">RuntimeVrmConverter&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">model&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">exporter&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToModelFrom10&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">assets&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Root&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// transform to right-handed coordinate system
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ModelExtensionsForCoordinates&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ConvertCoordinate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">VrmLib&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Coordinates&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Gltf&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">exportedBytes&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Vrm10&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ModelExtensions&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ToGlb&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">model&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// write out VRM1.0 file
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">path&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;vrm10.vrm&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">File&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">WriteAllBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">exportedBytes&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
+{
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">/**
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> * VRM export
+&lt;/span>&lt;span style="color:#09f;font-style:italic"> */&lt;/span>
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Export()
+{
+&lt;span style="color:#09f;font-style:italic">// file path
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> importPath = &lt;span style="color:#c30">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> importedModel = UniVRM10.VrmLoader.CreateVrmModel(importPath);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(importedModel);
+UniVRM10.ComponentBuilder.Build10(importedModel, assets);　
+&lt;span style="color:#09f;font-style:italic">// export with UniVRM1.0
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> exporter = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeVrmConverter();
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = exporter.ToModelFrom10(assets.Root);
+&lt;span style="color:#09f;font-style:italic">// transform to right-handed coordinate system
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> exportedBytes = Vrm10.ModelExtensions.ToGlb(model);
+&lt;span style="color:#09f;font-style:italic">// write out VRM1.0 file
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = &lt;span style="color:#c30">&amp;#34;vrm10.vrm&amp;#34;&lt;/span>;
+File.WriteAllBytes(path, exportedBytes);
+}
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="lookat">LookAt&lt;/h2>
 &lt;ul>
 &lt;li>LookAt related classes &lt;code>VRM.VRMLookAtBoneApplyer&lt;/code>, &lt;code>VRM.VRMLookAtBlendShapeApplyer&lt;/code> and &lt;code>VRM.VRMLookAtHead&lt;/code> has been integrated into &lt;code>UniVRM10.VRMController&lt;/code>&lt;/li>
@@ -302,37 +302,37 @@ To address this issue, a function that can disable &lt;code>blink&lt;/code> when
 &lt;li>Added &lt;code>UniVRM10.VRMController.LookAtTargetTypes&lt;/code>. You can choose to get yaw/pitch angle relative to head automatically or specify yaw/pitch angle&lt;/li>
 &lt;/ul>
 &lt;h3 id="example-2">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">System.IO&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">UnityEngine&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">using&lt;/span> &lt;span style="color:#000">UniVRM10&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">MyClass&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">MonoBehaviour&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000"> [SerializeField]&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">private&lt;/span> &lt;span style="color:#000">GameObject&lt;/span> &lt;span style="color:#000">_vrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#c4a000">
-&lt;/span>&lt;span style="color:#c4a000"> [SerializeField]&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">private&lt;/span> &lt;span style="color:#000">GameObject&lt;/span> &lt;span style="color:#000">_targetObject&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">SpecifyLookAtTarget&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">_vrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMController&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
-&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LookAtTargetType&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">VRMController&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LookAtTargetTypes&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">CalcYawPitchToGaze&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// specify LookAt target
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">_vrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMController&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;().&lt;/span>&lt;span style="color:#000">Gaze&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">_targetObject&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">transform&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// get yaw/pitch angle relative to head
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">yaw&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">pitch&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">GetLookAtYawPitch&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">SpecifyYawPitchAngle&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">_vrmModel&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">GetComponent&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">VRMController&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;();&lt;/span>
-&lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LookAtTargetType&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">VRMController&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">LookAtTargetTypes&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SetYawPitch&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// specify yaw/pitch angle
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SetLookAtYawPitch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniVRM10&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
+{
+&lt;span style="color:#309"> [SerializeField]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmModel;
+&lt;span style="color:#309">
+&lt;/span>&lt;span style="color:#309"> [SerializeField]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _targetObject;
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> SpecifyLookAtTarget()
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;();
+proxy.LookAtTargetType = VRMController.LookAtTargetTypes.CalcYawPitchToGaze;
+&lt;span style="color:#09f;font-style:italic">// specify LookAt target
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;().Gaze = _targetObject.transform;
+&lt;span style="color:#09f;font-style:italic">// get yaw/pitch angle relative to head
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> (yaw, pitch) = proxy.GetLookAtYawPitch();
+}
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> SpecifyYawPitchAngle()
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;();
+proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
+&lt;span style="color:#09f;font-style:italic">// specify yaw/pitch angle
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> proxy.SetLookAtYawPitch(&lt;span style="color:#f60">0&lt;/span>, &lt;span style="color:#f60">0&lt;/span>);
+}
+&lt;span style="color:#09f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to export</title><link>https://vrm.dev/en/dev/univrm-1.xx/how_to_export/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/how_to_export/</guid><description>
 &lt;p>The export procedure has a slight change from the UniVRM-0.XX:&lt;/p>
 &lt;ol>
