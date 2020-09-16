@@ -1,4 +1,71 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/en/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 15 Sep 2020 20:06:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About VRM T-Pose</title><link>https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/en/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 16 Sep 2020 15:43:09 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
+&lt;p>Work In progress&lt;/p>
+&lt;ul>
+&lt;li>Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li>
+&lt;/ul>
+&lt;h2 id="related-issues">Related Issues&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/p>
+&lt;h2 id="terminology">Terminology&lt;/h2>
+&lt;ul>
+&lt;li>Bone: Gltf node that contains &lt;code>Humanoid&lt;/code> -&amp;gt; &lt;code>HumanBones&lt;/code>&lt;/li>
+&lt;li>Bone Name
+&lt;ul>
+&lt;li>hips&lt;/li>
+&lt;li>spine&lt;/li>
+&lt;li>chest (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
+&lt;li>upperChest(option)&lt;/li>
+&lt;li>neck (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
+&lt;li>head&lt;/li>
+&lt;li>Left/Right eye (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>left/Right shoulder (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
+&lt;li>Left/Right upperArm&lt;/li>
+&lt;li>Left/Right lowerArm&lt;/li>
+&lt;li>Left/Right hand&lt;/li>
+&lt;li>Left/Right upperLeg&lt;/li>
+&lt;li>Left/Right lowerLeg&lt;/li>
+&lt;li>Left/Right foot&lt;/li>
+&lt;li>Left/Right toe (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
+&lt;li>Left/Right thumb proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>Left/Right index proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>Left/Right middle proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>Left/Right ring proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>Left/Right little proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="humanoid-requirements-tentative">Humanoid Requirements (Tentative)&lt;/h2>
+&lt;ul>
+&lt;li>Target nodes can be selected regardless of skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.)&lt;/li>
+&lt;li>All required bones are contained&lt;/li>
+&lt;li>The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li>
+&lt;li>The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):
+&lt;ul>
+&lt;li>
+&lt;p>hips - spine - chest - (upper chest) - neck - head&lt;/p>
+&lt;ul>
+&lt;li>[Branch] from head - left - (eye)&lt;/li>
+&lt;li>[Branch] from head - right - (eye)&lt;/li>
+&lt;li>[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;li>[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Inserting a node that is not related to humanoid is allowable as long as it follows an order above (e.g. LowerLeg&amp;rsquo;s parent is object cube and this cube&amp;rsquo;s parent is UpperLeg, etc.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Non-required bones can be skipped (UpperArm&amp;rsquo;s parent is not shoulder, but chest)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>In addition&lt;/p>
+&lt;ul>
+&lt;li>Be the T-pose&lt;/li>
+&lt;li>No rotation/scaling for each node&lt;/li>
+&lt;/ul>
+&lt;p>That&amp;rsquo;s pretty much it.&lt;/p>
 &lt;p>VRM T-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> conforms to Unity&amp;rsquo;s Humanoid of the first implementation of VRM.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -17,6 +84,25 @@
 &lt;ul>
 &lt;li>Palm faces downward, parallel to the ground along x axis&lt;/li>
 &lt;li>Thumbs are parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
+&lt;/ul>
+&lt;h2 id="supplementary-information-regarding-t-pose">Supplementary Information regarding T-Pose&lt;/h2>
+&lt;p>To normalize a model, the model with T-Pose is required.&lt;/p>
+&lt;p>If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p>
+&lt;ul>
+&lt;li>Click &lt;code>Menu&lt;/code> on top and select &lt;code>Export humanoid&lt;/code> from &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>. The export dialog will pop up. Enable &lt;code>force T-Pose&lt;/code>&lt;/li>
+&lt;li>Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li>
+&lt;/ul>
+&lt;p>If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p>
+&lt;p>Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p>
+&lt;p>The &lt;code>Force T-Pose&lt;/code> option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p>
+&lt;h2 id="common-issues">Common Issues&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code>jaw&lt;/code> (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>. There is no influence on model if jaw bone is not used&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code>jaw&lt;/code> bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>.&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
@@ -314,74 +400,7 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;span style="color:#099">#endif
 &lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> m;
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
-&lt;p>Work In progress&lt;/p>
-&lt;ul>
-&lt;li>Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li>
-&lt;/ul>
-&lt;h2 id="related-issues">Related Issues&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/p>
-&lt;h2 id="terminology">Terminology&lt;/h2>
-&lt;ul>
-&lt;li>Bone: Gltf node that contains &lt;code>Humanoid&lt;/code> -&amp;gt; &lt;code>HumanBones&lt;/code>&lt;/li>
-&lt;li>Bone Name
-&lt;ul>
-&lt;li>hips&lt;/li>
-&lt;li>spine&lt;/li>
-&lt;li>chest (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>upperChest(option)&lt;/li>
-&lt;li>neck (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>head&lt;/li>
-&lt;li>Left/Right eye (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>left/Right shoulder (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>Left/Right upperArm&lt;/li>
-&lt;li>Left/Right lowerArm&lt;/li>
-&lt;li>Left/Right hand&lt;/li>
-&lt;li>Left/Right upperLeg&lt;/li>
-&lt;li>Left/Right lowerLeg&lt;/li>
-&lt;li>Left/Right foot&lt;/li>
-&lt;li>Left/Right toe (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>Left/Right thumb proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right index proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right middle proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right ring proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right little proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="humanoid-requirements-tentative">Humanoid Requirements (Tentative)&lt;/h2>
-&lt;ul>
-&lt;li>Target nodes can be selected regardless of skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.)&lt;/li>
-&lt;li>All required bones are contained&lt;/li>
-&lt;li>The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li>
-&lt;li>The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):
-&lt;ul>
-&lt;li>
-&lt;p>hips - spine - chest - (upper chest) - neck - head&lt;/p>
-&lt;ul>
-&lt;li>[Branch] from head - left - (eye)&lt;/li>
-&lt;li>[Branch] from head - right - (eye)&lt;/li>
-&lt;li>[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
-&lt;li>[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
-&lt;li>[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li>
-&lt;li>[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Inserting a node that is not related to humanoid is allowable as long as it follows an order above (e.g. LowerLeg&amp;rsquo;s parent is object cube and this cube&amp;rsquo;s parent is UpperLeg, etc.)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Non-required bones can be skipped (UpperArm&amp;rsquo;s parent is not shoulder, but chest)&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>In addition&lt;/p>
-&lt;ul>
-&lt;li>Be the T-pose&lt;/li>
-&lt;li>No rotation/scaling for each node&lt;/li>
-&lt;/ul>
-&lt;p>That&amp;rsquo;s pretty much it.&lt;/p></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id="049">0.49&lt;/h2>
 &lt;p>When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder .
 In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p>
@@ -391,23 +410,4 @@ However, Mesh, Texture and Prefab will be overwritten.&lt;/p>
 &lt;p>Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
 If you want to overwrite, delete them before importing.&lt;/p>
 &lt;h2 id="045-and-before">0.45 and before&lt;/h2>
-&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
-&lt;h2 id="supplementary-information-regarding-t-pose">Supplementary Information regarding T-Pose&lt;/h2>
-&lt;p>To normalize a model, the model with T-Pose is required.&lt;/p>
-&lt;p>If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p>
-&lt;ul>
-&lt;li>Click &lt;code>Menu&lt;/code> on top and select &lt;code>Export humanoid&lt;/code> from &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>. The export dialog will pop up. Enable &lt;code>force T-Pose&lt;/code>&lt;/li>
-&lt;li>Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li>
-&lt;/ul>
-&lt;p>If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p>
-&lt;p>Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p>
-&lt;p>The &lt;code>Force T-Pose&lt;/code> option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p>
-&lt;h2 id="common-issues">Common Issues&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code>jaw&lt;/code> (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>. There is no influence on model if jaw bone is not used&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code>jaw&lt;/code> bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item></channel></rss>

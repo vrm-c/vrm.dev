@@ -1,31 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/</link><description>Recent content in Humanoid on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About VRM T-Pose</title><link>https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/vrm_tpose/</guid><description>
-&lt;p>VRM T-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> conforms to Unity&amp;rsquo;s Humanoid of the first implementation of VRM.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>T-Pose example&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Besides fundamental parts such as body, head, and leg, rules on arm and finger are also formulated:&lt;/p>
-&lt;ul>
-&lt;li>Palm faces downward, parallel to the ground along x axis&lt;/li>
-&lt;li>Thumbs are parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
-&lt;/ul>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>&lt;a href="https://blogs.unity3d.com/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/</link><description>Recent content in Humanoid on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;p>Work In progress&lt;/p>
 &lt;ul>
 &lt;li>Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li>
@@ -92,7 +65,26 @@
 &lt;li>Be the T-pose&lt;/li>
 &lt;li>No rotation/scaling for each node&lt;/li>
 &lt;/ul>
-&lt;p>That&amp;rsquo;s pretty much it.&lt;/p></description></item><item><title>Docs: T Pose Normalization for Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/t_pose/</guid><description>
+&lt;p>That&amp;rsquo;s pretty much it.&lt;/p>
+&lt;p>VRM T-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> conforms to Unity&amp;rsquo;s Humanoid of the first implementation of VRM.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-Pose example&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides fundamental parts such as body, head, and leg, rules on arm and finger are also formulated:&lt;/p>
+&lt;ul>
+&lt;li>Palm faces downward, parallel to the ground along x axis&lt;/li>
+&lt;li>Thumbs are parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
+&lt;/ul>
 &lt;h2 id="supplementary-information-regarding-t-pose">Supplementary Information regarding T-Pose&lt;/h2>
 &lt;p>To normalize a model, the model with T-Pose is required.&lt;/p>
 &lt;p>If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p>
@@ -111,4 +103,12 @@
 &lt;li>
 &lt;p>Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code>jaw&lt;/code> bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a href="https://blogs.unity3d.com/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>

@@ -1,58 +1,71 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Humanoid</title><link>https://vrm.dev/docs/univrm/humanoid/</link><description>Recent content in Humanoid on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: T-Poseとモデルの正規化の詳細</title><link>https://vrm.dev/docs/univrm/humanoid/t_pose/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/t_pose/</guid><description>
-&lt;h2 id="t-pose化の補足">T-Pose化の補足&lt;/h2>
-&lt;p>正規化する時に、元のモデルがT-PoseでないときT-Pose化する必要があります。&lt;/p>
-&lt;p>T-Pose化するには、&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Humanoid</title><link>https://vrm.dev/docs/univrm/humanoid/</link><description>Recent content in Humanoid on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
+&lt;h2 id="概要">概要&lt;/h2>
+&lt;p>VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p>
+&lt;p>１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p>
 &lt;ul>
-&lt;li>エクスポートダイアログの &lt;code>force T-Pose&lt;/code> を checkする&lt;/li>
-&lt;li>エクスポートダイアログの &lt;code>force T-Pose&lt;/code> を checkせずに、手動で腕等の回転を調整してT-Poseにする&lt;/li>
+&lt;li>hipsボーンの移動値&lt;/li>
+&lt;li>各ボーンの回転値&lt;/li>
 &lt;/ul>
-&lt;p>のどちらでもOKです。自動T-Poseがいい感じにならない場合は手動をお試しください。
-また、&lt;code>正規化済のモデル&lt;/code> を繰り返し &lt;code>正規化する&lt;/code> ことをはできるだけ避けてください(ずれが蓄積する)。&lt;/p>
-&lt;p>システムが、正規化済みと判定したモデル(Metaコンポーネントがアタッチされているなど)では、 &lt;code>force T-Pose&lt;/code> がデフォルトでは外れるようになっています。&lt;/p>
-&lt;h2 id="よくある不具合">よくある不具合&lt;/h2>
+&lt;p>ある Gltf Scene (Unity Hierarhcy) がこのデータを受けて同じポーズを再現するには以下の条件必要です。&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>顎の位置が変わってしまう。&lt;code>fbx&lt;/code> の &lt;code>Rig&lt;/code>　設定で &lt;code>jaw&lt;/code> (顎) ボーンの割り当てを解除してください。VRMはプログラム側で顎ボーンを使っていないの割り当てを解除しても問題ありません。T-Pose化するときに顎の位置が微妙に変わってしまう場合があります(T-Poseの顎になるため)。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>前髪等、顔のパーツが微妙に動く。 &lt;code>fbx&lt;/code> の &lt;code>Rig&lt;/code> 設定で前髪等の意図しないボーンが &lt;code>jaw&lt;/code> (顎) ボーン に割り当てされていないかご確認ください。T-Pose化するときに顎の位置が微妙に変わってしまい、結果として前髪等が動いてしまう場合があります。&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>Docs: ヒューマノイド</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid/</guid><description>
-&lt;p>WIP&lt;/p>
-&lt;ul>
-&lt;li>主にモーションキャプチャーのFKのモーションを投入できることを基準に決めました&lt;/li>
+&lt;li>Gltf Node (Unity GameObject) とボーン(hips, spine, chest&amp;hellip;)の対応が分かっている&lt;/li>
+&lt;li>ボーンの親子関係が決まっている&lt;/li>
+&lt;li>ポーズを受ける前の姿勢が決まっている =&amp;gt; T-Pose&lt;/li>
 &lt;/ul>
-&lt;h2 id="関連イシュー">関連イシュー&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/p>
-&lt;h2 id="用語">用語&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">備考&lt;/h4>
+細かく言えば、ボーンの長さが違うと同じポーズになりません。
+これを解決する技術を、リターゲットと言いますが VRM では特に指定していません。
+例えば、股-膝-足首-踵 の比率が違うと地面に対してすべります。
+&lt;/div>
+&lt;p>Unity の HumanoidAvatar を元に決めたのでだいたい同じです。&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a>&lt;/p>
+&lt;p>さらに、プログラムでの扱いを簡単にするために&lt;/p>
 &lt;ul>
-&lt;li>ボーン: ヒューマノイドを構成するgltfノード&lt;/li>
-&lt;li>ボーン名
+&lt;li>すべての Gltf Node (Unity GameObject) の回転を0にしたときに初期ポーズになる&lt;/li>
+&lt;li>スケールは変化しない&lt;/li>
+&lt;/ul>
+&lt;p>を追加したものが VRM のヒューマノイドです。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">備考&lt;/h4>
+特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。
+&lt;/div>
+&lt;h2 id="t-pose">T-Pose&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-Poseの例&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>腕と手の指についても規約があります。&lt;/p>
 &lt;ul>
-&lt;li>hips&lt;/li>
-&lt;li>spine&lt;/li>
-&lt;li>chest(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
-&lt;li>upperChest(option)&lt;/li>
-&lt;li>neck(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
-&lt;li>head&lt;/li>
-&lt;li>Left/Right eye(option)&lt;/li>
-&lt;li>left/Right shoulder(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
-&lt;li>Left/Right upperArm&lt;/li>
-&lt;li>Left/Right lowerArm&lt;/li>
-&lt;li>Left/Right hand&lt;/li>
-&lt;li>Left/Right upperLeg&lt;/li>
-&lt;li>Left/Right lowerLeg&lt;/li>
-&lt;li>Left/Right foot&lt;/li>
-&lt;li>Left/Right toe(UnityHumanoidでは option。VRMでは必須?)&lt;/li>
-&lt;li>Left/Right thumb proximal, intermediate, distal(option)&lt;/li>
-&lt;li>Left/Right index proximal, intermediate, distal(option)&lt;/li>
-&lt;li>Left/Right middle proximal, intermediate, distal(option)&lt;/li>
-&lt;li>Left/Right ring proximal, intermediate, distal(option)&lt;/li>
-&lt;li>Left/Right little proximal, intermediate, distal(option)&lt;/li>
+&lt;li>手の平は下向き&lt;/li>
+&lt;li>親指は水平でXZ平面(上から見て)45度&lt;/li>
 &lt;/ul>
-&lt;/li>
+&lt;h2 id="unityのヒューマノイド">Unityのヒューマノイド&lt;/h2>
+&lt;p>Unity では、 Avatar というオブジェクトがあります。
+これを、 Humanoid モードに設定できます。
+Avatar は Unity の オブジェクトですが、Humanoid Avatar の設定画面は &lt;code>fbx importer&lt;/code> の一部です。
+このため、 fbx 以外のデータから Humanoid Avatar のあるモデルを作れません。
+ただし、Program から Humanoid Avatar を作成する関数はあるので、
+UniVRMは Humanoid Avatar を作成できます。 &lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">humanoid component&lt;/a>&lt;/p>
+&lt;h2 id="互換性のあるbvh">互換性のあるBVH&lt;/h2>
+&lt;p>初期姿勢が、 &lt;code>T-Pose&lt;/code> であるBVHと互換性があります。&lt;/p>
+&lt;ul>
+&lt;li>hips に移動値を代入して&lt;/li>
+&lt;li>hips から子に向かって ローカル回転を代入します&lt;/li>
 &lt;/ul>
-&lt;h2 id="ヒューマノイドの要件仮">ヒューマノイドの要件(仮)&lt;/h2>
+&lt;h2 id="詳細">詳細&lt;/h2>
+&lt;p>ボーンの一覧は、&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html">https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html&lt;/a>&lt;/p>
+&lt;p>と同じです。&lt;/p>
 &lt;ul>
 &lt;li>対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる&lt;/li>
 &lt;li>必須のボーンがすべて含まれている&lt;/li>
@@ -79,36 +92,30 @@
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>加えて&lt;/p>
+&lt;h2 id="関連イシュー">関連イシュー&lt;/h2>
 &lt;ul>
-&lt;li>T-Poseになっていること&lt;/li>
-&lt;li>各ノードの回転・拡大は無いこと&lt;/li>
+&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>あたりになるかと思います。&lt;/p></description></item><item><title>Docs: VRMのT-Poseについて</title><link>https://vrm.dev/docs/univrm/humanoid/vrm_tpose/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/vrm_tpose/</guid><description>
-&lt;p>VRMの第１実装のUnityのHumanoidに準拠したT-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>を採用しています。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>T-Poseの例&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>胴体と頭・足については自明ですが、腕と手の指についても規約があります。&lt;/p>
+&lt;h2 id="参考">参考&lt;/h2>
 &lt;ul>
-&lt;li>手の平は下向き&lt;/li>
-&lt;li>親指は水平でXZ平面(上から見て)45度&lt;/li>
-&lt;/ul>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item></channel></rss>
+&lt;li>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;code>UniVRM-0.60.0&lt;/code>&lt;/p>
+&lt;p>fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p>
+&lt;h1 id="使い方">使い方&lt;/h1>
+&lt;p>ヒューマノイドボーンがあるシーンを用意します。&lt;/p>
+&lt;p>例として&lt;/p>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
+&lt;p>で説明します。&lt;/p>
+&lt;p>まず、 &lt;code>RiggedFigure.glb&lt;/code> を Asset フォルダに import してください。
+UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;/p>
+&lt;p>新規のシーンに &lt;code>RiggedFigure&lt;/code> prefab をインスタンス化します。&lt;/p>
+&lt;p>AddComponent で &lt;code>Humanoid&lt;/code> を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
+&lt;p>適当に Bone を当てはめます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
+&lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
+&lt;p>humanoid avatar が新規に作成されます。&lt;/p>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item></channel></rss>
