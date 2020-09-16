@@ -79,7 +79,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 * 質感（マテリアル/シェーダ）
 	* 以下のシェーダの中から使用することを**強く推奨**します。
     	* Toonシェーダー
-			* [VRM/MToon]({{< relref "mtoon.md" >}}) (照明対応トゥーンシェーダ）
+			* [VRM/MToon]({{< relref "shader_mtoon.md" >}}) (照明対応トゥーンシェーダ）
 		* Unlit系シェーダー
 			* [UniGLTF/UniUnlit]({{< relref "univrm_unlit.md" >}})
         * PBR
@@ -87,7 +87,7 @@ FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポ�
 
 {{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
 
-マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon]({{< relref "mtoon.md" >}})を参照してください。
+マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon]({{< relref "shader_mtoon.md" >}})を参照してください。
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 

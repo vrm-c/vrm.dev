@@ -1,6 +1,7 @@
 ---
 title: Runtime Importer
 aliases: ["/en/dev/univrm-0.xx/programming/runtime_import/"]
+tags: ["api"]
 ---
 
 The followings are examples of runtime VRM import in `v0.44 and later versions`:

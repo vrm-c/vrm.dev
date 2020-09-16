@@ -1,6 +1,7 @@
 ---
 title: T-Poseとモデルの正規化の詳細
 aliases: ["/univrm/settings/t_pose/"]
+tags: ["detail"]
 ---
 
 ## T-Pose化の補足

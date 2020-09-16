@@ -4,6 +4,7 @@ linkTitle: "API change history"
 date: 2018-05-21T10:00:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_api_history/"]
 weight: 1
+tags: ["api"]
 ---
 
 This section describes about changes affecting the program.

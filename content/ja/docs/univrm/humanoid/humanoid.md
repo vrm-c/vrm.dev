@@ -1,6 +1,7 @@
 ---
 title: ヒューマノイド
 aliases: ["/univrm/humanoid/humanoid/"]
+tags: ["detail"]
 ---
 
 WIP

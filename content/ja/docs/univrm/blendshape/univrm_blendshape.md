@@ -4,6 +4,7 @@ linkTitle: "BlendShape"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
 aliases: ["/univrm/components/univrm_blendshape/"]
+tags: ["unity"]
 ---
 
 UniVRM v0.45で導入された新機能は

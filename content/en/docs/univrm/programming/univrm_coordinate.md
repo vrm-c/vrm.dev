@@ -4,6 +4,7 @@ linkTitle: "Coordinate transformations"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_coordinate/"]
 weight: 4
+tags: ["detail"]
 ---
 
 UniVRM automatically performs the coordinate transformation with GLTF during import / export.

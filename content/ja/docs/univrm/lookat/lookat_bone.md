@@ -5,6 +5,7 @@ aliases: [
     "/univrm/settings/lookat_settings/",
     "/docs/univrm/settings/lookat_settings/",
     ]
+tags: ["unity"]
 ---
 
 VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。

@@ -2,7 +2,7 @@
 title: "VRMShaders"
 date: 2020-08-03T10:39:04+09:00
 weight: 8
-tags: ["material", "upm"]
+tags: ["unity"]
 aliases: ["/univrm/shaders/univrm_vrmshaders/"]
 ---
 
@@ -42,4 +42,4 @@ For the latest update about MToon, please refer to:
 
 https://github.com/Santarh/MToon
 
-[Introduction to MToon]({{< relref "mtoon.md" >}})
+[Introduction to MToon]({{< relref "shader_mtoon.md" >}})

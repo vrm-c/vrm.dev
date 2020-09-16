@@ -2,6 +2,7 @@
 title: Glbエクスポート
 weight: 2
 aliases: ["/dev/univrm-0.xx/gltf/how_to_create_glb/"]
+tags: ["gltf"]
 ---
 
 ## 手順

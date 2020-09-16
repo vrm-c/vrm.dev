@@ -2,7 +2,7 @@
 title: "UniUnlit"
 date: 2020-08-03
 weight: 2
-tags: ["material"]
+tags: ["unity"]
 ---
 
 ## `UniGLTF/UniUnlit` shader

@@ -4,6 +4,7 @@ linkTitle: "How to use first-person mode "
 date: 2018-05-29T10:00:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_use_firstperson/"]
 weight: 5
+tags: ["api"]
 ---
 
 # VRMFirstPerson Settings

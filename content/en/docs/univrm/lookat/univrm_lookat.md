@@ -3,6 +3,7 @@ title: "Eye Control"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
 aliases: ["/en/univrm/components/univrm_lookat/"]
+tags: ["unity"]
 ---
 
 To control the eye, the relative rotation (Yaw, Pitch) between the VRM model's head and the LookAt target is calculated and then applied to the eye.

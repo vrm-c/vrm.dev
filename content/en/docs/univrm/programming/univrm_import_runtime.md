@@ -4,6 +4,7 @@ linkTitle: "Import VRM model at runtime"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_import_runtime/"]
 weight: 2
+tags: ["api"]
 ---
 
 Examples of importing the VRM model with the latest version [can be found here]({{< relref "runtime_import.md" >}}).

@@ -4,6 +4,7 @@ linkTitle: "一人称モードの使い方"
 date: 2018-05-29T10:00:00+09:00
 aliases: ["/dev/univrm-0.xx/programming/univrm_use_firstperson/"]
 weight: 5
+tags: ["api"]
 ---
 
 # VRMFirstPersonの設定

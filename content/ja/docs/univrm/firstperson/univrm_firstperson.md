@@ -3,6 +3,7 @@ title: "VRMFirstPerson"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
 aliases: ["/univrm/components/univrm_firstperson/"]
+tags: ["unity"]
 ---
 
 ２系統の設定があります。

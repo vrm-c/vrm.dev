@@ -4,6 +4,7 @@ linkTitle: "BlendShape manipulations at runtime"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/en/dev/univrm-0.xx/programming/univrm_use_blendshape/"]
 weight: 3
+tags: ["api"]
 ---
 
 ## Environment
