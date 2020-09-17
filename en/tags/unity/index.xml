@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 15 Sep 2020 20:06:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 17 Sep 2020 19:27:28 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape Setting</title><link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</guid><description>
 &lt;p>New features introduced in UniVRM v0.45:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/">BlendShape setting in Inspector&lt;/a>&lt;/li>
@@ -1344,7 +1344,7 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code>Size&lt;/code>and multiple targets can then be put into&lt;code>Element&lt;/code>fields.&lt;/p>
 &lt;h1 id="vrmspringbone-set-before-was-gone">VRMSpringBone set before was gone&lt;/h1>
 &lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders UPM Package</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
 &lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
 Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
 &lt;h2 id="upm-package">UPM Package&lt;/h2>
@@ -1367,4 +1367,20 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 17 Sep 2020 19:27:28 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
+&lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
+&lt;h1 id="how-to-use">How to use&lt;/h1>
+&lt;p>Prepare a rigged model in the scene.&lt;/p>
+&lt;p>We will take the model in the following link as an example:&lt;/p>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
+&lt;p>First, import &lt;code>RiggedFigure.glb&lt;/code> into the &lt;code>Assets&lt;/code> folder.
+If UniVRM package is installed, the &lt;code>Prefab&lt;/code> file can be automatically generated from the imported &lt;code>glb&lt;/code>.&lt;/p>
+&lt;p>Drag the &lt;code>Prefab&lt;/code> file into the Scene. A GameObject associated with this &lt;code>Prefab&lt;/code> is instantiated.&lt;/p>
+&lt;p>Click on the GameObject in the &lt;code>Hierarchy&lt;/code> window, then add a humanoid component (&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; Humanoid&lt;/code>).&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
+&lt;p>Assign required bones as shown from messages:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
+&lt;p>Press &lt;code>Create UnityEngine.Avatar&lt;/code> button.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
+&lt;p>Now a humanoid avatar is created. You can make a T-pose for the model and convert it to VRM.&lt;/p></description></item></channel></rss>

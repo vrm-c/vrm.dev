@@ -1,42 +1,63 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/en/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 16 Sep 2020 15:43:09 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
-&lt;p>Work In progress&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/en/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 17 Sep 2020 19:27:28 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid Overview</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Thu, 17 Sep 2020 19:27:28 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>VRM humanoid is compatible with the motion of MotionCapture&amp;rsquo;s FK (Forward Kinematics).&lt;/p>
+&lt;p>The motion for one frame has the following information:&lt;/p>
 &lt;ul>
-&lt;li>Mainly based on whether MotionCapture&amp;rsquo;s FK (Forward Kinematics) can be used.&lt;/li>
+&lt;li>The Translation for Hips bone&lt;/li>
+&lt;li>The Rotation for each bone&lt;/li>
 &lt;/ul>
-&lt;h2 id="related-issues">Related Issues&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/p>
-&lt;h2 id="terminology">Terminology&lt;/h2>
+&lt;p>To reproduce the same pose in the Unity Scene (transferring data to a GameObject containing humanoid structure), the following conditions need to be satisfied:&lt;/p>
 &lt;ul>
-&lt;li>Bone: Gltf node that contains &lt;code>Humanoid&lt;/code> -&amp;gt; &lt;code>HumanBones&lt;/code>&lt;/li>
-&lt;li>Bone Name
-&lt;ul>
-&lt;li>hips&lt;/li>
-&lt;li>spine&lt;/li>
-&lt;li>chest (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>upperChest(option)&lt;/li>
-&lt;li>neck (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>head&lt;/li>
-&lt;li>Left/Right eye (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>left/Right shoulder (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>Left/Right upperArm&lt;/li>
-&lt;li>Left/Right lowerArm&lt;/li>
-&lt;li>Left/Right hand&lt;/li>
-&lt;li>Left/Right upperLeg&lt;/li>
-&lt;li>Left/Right lowerLeg&lt;/li>
-&lt;li>Left/Right foot&lt;/li>
-&lt;li>Left/Right toe (&lt;code>optional&lt;/code> for Unity&amp;rsquo;s Humanoid, &lt;code>required&lt;/code> for VRM?)&lt;/li>
-&lt;li>Left/Right thumb proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right index proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right middle proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right ring proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
-&lt;li>Left/Right little proximal, intermediate, distal (&lt;code>optional&lt;/code>)&lt;/li>
+&lt;li>Each bone (hips, spine, chest&amp;hellip;) corresponds to its humanoid skeleton in GLTF Node (Unity GameObject)&lt;/li>
+&lt;li>The Bones&amp;rsquo; parent-child relationships are known.&lt;/li>
+&lt;li>T-Pose must be the initial pose&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="humanoid-requirements-tentative">Humanoid Requirements (Tentative)&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+If the ratio (e.g. crotch - knee - foot) is uncommon, the same pose cannot be reproduced.
+&lt;/div>
+&lt;p>The creation of humanoid avatar is pretty much the same as the original:&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a>&lt;/p>
+&lt;p>In addition, to make it easier to handle in the program, VRM Humanoid has the following features:&lt;/p>
 &lt;ul>
-&lt;li>Target nodes can be selected regardless of skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.)&lt;/li>
-&lt;li>All required bones are contained&lt;/li>
+&lt;li>For the initial pose, all the Gltf Nodes (Unity GameObject) have no rotation&lt;/li>
+&lt;li>No scaling changes&lt;/li>
+&lt;/ul>
+&lt;h2 id="t-pose">T-Pose&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-Pose example&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>Palm faces downward, and it is parallel to the ground along x axis&lt;/li>
+&lt;li>Thumb is parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
+&lt;/ul>
+&lt;h2 id="unity-humanoid">Unity Humanoid&lt;/h2>
+&lt;p>In Unity, there is an object called &lt;code>Avatar&lt;/code>.
+This &lt;code>Avatar&lt;/code> object can set up the model in humanoid mode.
+Since the Humanoid Avatar settings are part of &lt;code>fbx importer&lt;/code>, the model with Humanoid Avatar from data other than fbx cannot be created.
+However, we can still create the Humanoid Avatar via program. See &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">humanoid component&lt;/a>.&lt;/p>
+&lt;h2 id="compatible-with-bvh">Compatible with BVH&lt;/h2>
+&lt;p>Compatible with BVH that has the initial pose as &lt;code>T-Pose&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Substitute the translation value into hips&lt;/li>
+&lt;li>Substitute the relative rotation value into its child&lt;/li>
+&lt;/ul>
+&lt;h2 id="details">Details&lt;/h2>
+&lt;p>For the list of human bones, please refer to:&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html">https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Target nodes not containing skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.) can be selected&lt;/li>
+&lt;li>All required bones must be included&lt;/li>
 &lt;li>The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li>
 &lt;li>The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):
 &lt;ul>
@@ -52,38 +73,22 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>Inserting a node that is not related to humanoid is allowable as long as it follows an order above (e.g. LowerLeg&amp;rsquo;s parent is object cube and this cube&amp;rsquo;s parent is UpperLeg, etc.)&lt;/p>
+&lt;p>Inserting non-bone objects between humanoid bones is allowable (e.g., LowerLeg’s parent is a Cube GameObject and this Cube’s parent is UpperLeg, etc.)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Non-required bones can be skipped (UpperArm&amp;rsquo;s parent is not shoulder, but chest)&lt;/p>
+&lt;p>Non-required bones can be skipped (UpperArm&amp;rsquo;s parent can be chest instead of shoulder)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>In addition&lt;/p>
+&lt;h2 id="related-issues">Related Issues&lt;/h2>
 &lt;ul>
-&lt;li>Be the T-pose&lt;/li>
-&lt;li>No rotation/scaling for each node&lt;/li>
+&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>That&amp;rsquo;s pretty much it.&lt;/p>
-&lt;p>VRM T-Pose&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> conforms to Unity&amp;rsquo;s Humanoid of the first implementation of VRM.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>T-Pose example&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Besides fundamental parts such as body, head, and leg, rules on arm and finger are also formulated:&lt;/p>
+&lt;h2 id="references">References&lt;/h2>
 &lt;ul>
-&lt;li>Palm faces downward, parallel to the ground along x axis&lt;/li>
-&lt;li>Thumbs are parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
+&lt;li>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="supplementary-information-regarding-t-pose">Supplementary Information regarding T-Pose&lt;/h2>
 &lt;p>To normalize a model, the model with T-Pose is required.&lt;/p>
@@ -103,15 +108,7 @@
 &lt;li>
 &lt;p>Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code>jaw&lt;/code> bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>.&lt;/p>
 &lt;/li>
-&lt;/ul>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>&lt;a href="https://blogs.unity3d.com/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
