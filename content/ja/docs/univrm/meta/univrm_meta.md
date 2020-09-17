@@ -1,7 +1,7 @@
 ---
 title: "モデル情報"
 date: 2018-04-16T16:30:00+09:00
-weight: 1
+weight: 2
 aliases: ["/univrm/components/univrm_meta/"]
 tags: ["unity"]
 ---
