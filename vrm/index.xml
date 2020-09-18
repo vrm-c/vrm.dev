@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 01 Aug 2020 11:22:34 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 01 Aug 2020 11:26:19 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
 &lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
 &lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
 &lt;p>というのも…&lt;/p>
@@ -65,7 +65,17 @@
 &lt;/ul>
 &lt;p>でVRMファイルの投稿ができます。
 ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Fri, 18 Sep 2020 15:27:25 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
+&lt;p>UniVRMを使うVRM化作業のながれは以下のようになります：&lt;/p>
+&lt;ol>
+&lt;li>元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する&lt;/li>
+&lt;li>上記出力した VRMファイルを読み込み、Unity上でVRM独自の設定（&lt;a href="https://vrm.dev/docs/univrm/meta/univrm_meta/">ライセンス&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">揺れ物&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">表情&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/">目線&lt;/a>・&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">一人称表示&lt;/a>など）を行い、正規化せずにVRMファイルを出力する&lt;/li>
+&lt;/ol>
+&lt;p>ポイントは、&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>一度仮のVRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>ところとなります。&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -79,9 +89,7 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>上の図はヒューマノイド3DモデルからVRMへの変換方法を示しています。&lt;/p>
-&lt;p>VRMファイルの作る方は以下のセクション１と２で紹介します。
-最後のセクションは、目の動きや表情などのVRMモデルの動作確認についてです。&lt;/p></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
+&lt;hr></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
 &lt;h2 id="3dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/">ザ・シードオンライン&lt;/a>&lt;/li>
