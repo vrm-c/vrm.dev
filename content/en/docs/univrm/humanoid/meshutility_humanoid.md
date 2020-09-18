@@ -18,13 +18,13 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/
 First, import `RiggedFigure.glb` into the `Assets` folder.
 If UniVRM package is installed, the `Prefab` file can be automatically generated from the imported `glb`.
 
-Drag the `Prefab` file into the Scene. A GameObject associated with this `Prefab` is instantiated.
+Drag the `Prefab` file to the `Hierarchy` window. A GameObject associated with this `Prefab` is instantiated.
 
 Click on the GameObject in the `Hierarchy` window, then add a humanoid component (`Inspector -> Add Component -> Humanoid`).
 
 {{< img src="images/vrm/bone_required.jpg" >}}
 
-Assign required bones as shown from messages:
+As shown in the image above, assign required bones.
 
 {{< img src="images/vrm/create_avatar.jpg" >}}
 
