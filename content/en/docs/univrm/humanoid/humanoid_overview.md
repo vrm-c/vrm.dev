@@ -15,7 +15,7 @@ weight: 1
 
 VRM humanoid is compatible with the motion of MotionCapture's FK (Forward Kinematics).
 
-The motion for one frame has the following information: 
+The motion for one frame has the information described below: 
 
 * The Translation for Hips bone
 * The Rotation for each bone
@@ -27,7 +27,7 @@ To reproduce the same pose in the Unity Scene (transferring data to a GameObject
 * T-Pose must be the initial pose
 
 {{% alert title="Note" color="info" %}}
-If the ratio (e.g. crotch - knee - foot) is uncommon, the same pose cannot be reproduced. 
+If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose cannot be reproduced. 
 {{% /alert %}}
 
 The creation of humanoid avatar is pretty much the same as the original: 
@@ -50,9 +50,8 @@ In addition, to make it easier to handle in the program, VRM Humanoid has the fo
 
 ## Unity Humanoid
 
-In Unity, there is an object called `Avatar`.
-This `Avatar` object can set up the model in humanoid mode.
-Since the Humanoid Avatar settings are part of `fbx importer`, the model with Humanoid Avatar from data other than fbx cannot be created.
+In Unity, there is an object called `Avatar`, which can be used to set up the model in humanoid mode.
+Since the Humanoid Avatar settings are part of `fbx importer`, basically the model with Humanoid Avatar from data other than fbx cannot be created.
 However, we can still create the Humanoid Avatar via program. See [humanoid component]({{< relref "meshutility_humanoid.md" >}}).
 
 ## Compatible with BVH
