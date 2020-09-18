@@ -2,114 +2,139 @@
 title: "1. VRMファイルを作成する"
 date: 2020-08-26T15:52:06+09:00
 url: "/how_to_make_vrm/convert_from_humanoid_model/"
-weight: 1
+description: "ベースモデル(fbx)を Unity にインポートして、Bone割り当てを確認、T-Pose にする、ライセンスを記述して出力(正規化)する"
+tags: ["unity"]
+weight: 2
 ---
 
-VRMファイルをつくるためには、[Unity](https://unity3d.com/jp)と[UniVRM](https://github.com/vrm-c/UniVRM)を使用します。
-おおまかな作業のながれは以下のようになります：
+## UnityでHumanoidとして扱えるモデルデータを用意します
 
-1. Unityで3Dモデルデータと[UniVRM](https://github.com/vrm-c/UniVRM)を読み込む。Unity上で大きさやマテリアルなどを調整・設定する
-1. 一度UnityからVRMファイルを出力する（※正規化と呼びます）
-1. 上記出力した VRMファイルをUnityで読み込み、Unity上でVRM独自の設定（[ライセンス]({{< relref "univrm_meta.md" >}})・[揺れ物]({{< relref "univrm_secondary.md" >}})・[表情]({{< relref "univrm_blendshape.md" >}})・[目線]({{< relref "univrm_lookat.md" >}})・[一人称表示]({{< relref "univrm_firstperson.md" >}})など）を行う
-	* 場合によってはここでUnity上でモデルを実際に動かして（再生して）挙動を確認する
-1. 設定が終わったら再度VRMファイルを出力する。すべての設定が埋め込まれたVRMファイルが出力されます。
+ヒューマノイドモデルは、
 
-ポイントは、 **すでに作られた3DモデルをUnity上で調整し、Unityから出力する**ということと、**一度VRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う**ところとなります。
+* **必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください**。
 
----
-### Unityで空のプロジェクトを作る
-{{< img src="images/vrm/unity_new_project.png" >}}
+後述しますが、
 
-Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
+* **VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定する** ようにしてください。
 
-### UnityにUniVRMをインストール
-{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
+また、Humanoid として認識させるために必須のボーンがすべて含まれている必要があります。
 
-[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`、`Assets/VRMShaders`及び`Assets/MeshUtility`にインストールします。
-**既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨**しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
+{{% alert title="ベースモデル" color="info" %}}
+この時点では必須ボーンが含まれている以外の条件は気にしなくてOKです。
+{{% /alert %}}
 
-### UnityでHumanoidとして扱えるモデルデータを用意します
-FBX等のUnityで読み込めるHumanoidモデルを用意しUnityにインポートします。ボーンの設定もされている必要があります。また、**必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください**。後述しますが、**VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定するようにしてください**。
+[必須ボーン](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3)
 
-{{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
-<br>
-<br>
-{{< img src="images/vrm/ModelConversionMenu.png" width="900" height="200" alt="ModelConversionMenu" >}}
+## unity に fbx を import する
 
-インポート後、Humanoidモデルをプロジェクトウィンドウからヒエラルキーウィンドウにドラッグし、ヒエラルキーウィンドウでモデルをクリックすると、上の図に示すようなメニューが表示されます。メニューに`Select`をクリックして、`Materials`をクリックします。`Location`を`Use External Materials（Legacy)`に設定します。
+fbx のフォルダを unityの Assets フォルダにドロップします。
 
-{{< img src="images/vrm/SetAsExternalMaterialsLegacy.png" width="900" height="200" alt="SetAsExternalMaterialsLegacy" >}}
+{{< img src="images/vrm/fbx_folder.jpg" >}}
 
-次に、`Rig`をクリックして`Animation Type`を`Humanoid`に設定し、`Configure`ボタンをクリックします。現在のシーンを保存するかどうかのメッセージボックスが表示されます。`Save`をクリックして保存します。
+unity
 
-{{< img src="images/vrm/SetModelAsHumanoid.png" width="900" height="200" alt="SetModelAsHumanoid" >}}
+{{< img src="images/vrm/assets_fbx.jpg" >}}
 
-これで、このモデルのボーンマッピングの詳細が表示されます。 Unityは最初に各ボーンの自動認識を実行します。モデルの体、頭などを確認できます。割り当てられたコンポーネントが適合する場合、左端のアイコンが緑色で表示されます。適合しない場合は赤色で表示されます。この状況では、ボーンマッピング失敗したボーンの右端のアイコンをクリックし、このボーンに適合するコンポーネントを選択します。ボーンを自動的に再割り当てるには、インターフェースの左下にある`Mapping`をクリックし、`clear`をクリックして`Automap`をクリックします。
+青いアイコンが fbx の asset(prefab) です。
+
+## fbx の material を設定する
+
+{{< img src="images/vrm/fbx_default.jpg" >}}
+
+この時点では fbx importer による初期状態になっており、マテリアルがデフォルト状態(StandardShaderでColor, ColorTexture割り当てのみ。半透明設定が無いなど)なので、マテリアルを最低限設定します。
+VRM 向けなので、この例では全部 `MToon` にします。
+
+{{% alert title="Shader" color="info" %}}
+VRMは、Standard, Unlit, MToon の３種類を記録できます。
+{{% /alert %}}
+
+* `Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。
+* Shader をすべて `VRM/Mtoon` に変更
+* MToon の `Shade Color` を白に変更
+
+{{< img src="images/vrm/alicia_preview.jpg" >}}
+
+ちゃんとした設定はこちら。[MToonの設定]({{< relref "shader_mtoon.md" >}})
+
+手順の説明なので先に進みます。
+
+## fbx を humanoid 設定にする
+
+fbx デフォルトは、generic 設定です。
+
+{{< img src="images/vrm/rig_generic.jpg" >}}
+
+humanoid に変更します。
+
+{{< img src="images/vrm/select_humanoid.jpg" >}}
+
+`apply` を押します。
+
+{{% alert title="humanoid" color="info" %}}
+このとき fbx importer がヒューマノイドボーンの割り当てを自動で推定します。
+失敗する時もあり、成功しても間違っている場合もあります。
+{{% /alert %}}
+
+humanoid のボーン割り当て画面に入ります。
+
+`configure` ボタンを押します。
 
 {{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
-<br>
-<br>
-{{< img src="images/vrm/BoneAssignment.png" width="900" height="650" alt="BoneAssignment" >}}
 
-ただし、場合によってはFBXインポート時の自動認識が食い違うことがありますので(緑色で表示されます)、ボーンの設定が間違っていたら修正します
+ボーンの割り当てを確認してください。
 
-{{< img src="images/vrm/fix_eye.png" >}}
-
-例
-
+{{% alert title="bone" color="info" %}}
 * 前髪に顎ボーンが割り当てられる
 * 目のハイライトに目ボーンが割り当てられる
 
-上記のように、適切な対応するコンポーネントを手動で割り当てることで修正できます（たとえば、eye_light_Lはeye_Lに置き換えられます）。ボーンマッピングに問題がない場合は、`Done`ボタンをクリックして次の手順に進みます。
+などにご注意ください。
+{{% /alert %}}
 
-### モデルデータを調整する
-{{< img src="images/vrm/alicia_scene.png" >}}
+## prefab をシーンに展開
 
-ヒエラルキーウィンドウでモデルをクリックすると、このモデルにアタッチされたサブコンポーネントが表示されます。それらサブコンポーネントのいずれかをクリックしてください。以下の項目を確認して調整します：
+`File` - `New Scene` として、
+fbx の prefab をシーンに展開します。
 
-{{< img src="images/vrm/initial_position_rotation.jpg" width="800" height="450" alt="initial_position_rotation" >}}
+{{< img src="images/vrm/DragImportedModel.png" width="600" height="700" >}}
 
-* モデルの位置
-	* モデルは原点に位置する
-* モデルのスケール
-	* 1.0 = 1m
-* モデルの向き
-	* モデルは+Zの方向に向いている
-* 質感（マテリアル/シェーダ）
-	* 以下のシェーダの中から使用することを**強く推奨**します。
-    	* Toonシェーダー
-			* [VRM/MToon]({{< relref "shader_mtoon.md" >}}) (照明対応トゥーンシェーダ）
-		* Unlit系シェーダー
-			* [UniGLTF/UniUnlit]({{< relref "univrm_unlit.md" >}})
-        * PBR
-			* [Standard]({{< relref "univrm_standard.md" >}}) (Unity標準)
+## エクスポート
 
-{{< img src="images/vrm/shader_option.jpg" width="800" height="450" alt="shader_option" >}}
+{{< img src="images/vrm/export058_menu.jpg" width="600" height="700" >}}
 
-マテリアルが割り当てられていない場合、または変更する場合は、`Element X`の右端のアイコンをクリックして、パソコンで使用可能なマテリアルを選択してください。選択したシェーダーに基づいてレンダリング効果を調整できるパラメーターがいくつかあります。ここでは、次の図に示すように例として`VRM/MToon`を選択します。詳細については、[MToon]({{< relref "shader_mtoon.md" >}})を参照してください。
+`VRM` - `UniVRM-0.XX.Y` - `Export Humanoid` を押してダイアログを表示します。
 
-{{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
+{{< img src="images/vrm/export058_empty.jpg" width="600" height="700" >}}
 
-### メニューから一度VRMをエクスポートする（※正規化）
+`Export Root` に prefab をシーンに展開した GameObject をドロップします。
 
-調整が完了したら、ヒエラルキーウィンドウでモデルを選択し、``VRM -> UniVRM-0.XX -> Export humanoid``からエクスポートします。
+{{% alert title="エラー" color="warning" %}}
+エクスポートダイアログで各種エラーチェックをしています。
+* 赤いメッセージは解決する必要があります。
+* 黄色いメッセージは無視してエクスポートできます。
 
-{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
+[エクスポートダイアログ]({{< relref "univrm_export.md" >}})
+{{% /alert %}}
 
-`Author`欄に名前を入力し、`Export`を押すと、VRMファイルが出力されます。ファイル名はわかりやすいように「(元のモデル名)_Normalized.vrm」などとしておくとよいでしょう。ファイルはデフォルトで`Assets`フォルダに保存されます。
+{{< img src="images/vrm/export_dialog_title_version_author.jpg" width="600" height="700" >}}
+<br>
+ライセンス情報を入力してください。赤いメッセージな無くなれば Export を押せます。
+次の作業のため、`Assets/models/vrm` フォルダを作成してそこにエクスポートしました。
 
-UniVRMエクスポートに関するページ：
-  * [エクスポートダイアログ]({{< relref "univrm_export.md" >}})
-  * [VRMモデルのファイルサイズ]({{< relref "vrm_size.md" >}})
+{{% alert title="エクスポート先" color="info" %}}
+エクスポート先には、Unity の Assets 内、外どちらでも選択できます。
+Assets 内を選択すると、Export 直後に Import が発動します(Importの方が重い)。
+Assets 内を選択する場合は、新規に専用のフォルダを作成すると分かりやすくなります。
+{{% /alert %}}
 
-{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
+## エクスポートオプション
 
-* Force T Pose
-	* 回転・スケールの除去前にモデルを強制的に[T-Pose]({{< relref "humanoid_overview.md" >}})にします。
-* Pose Freeze
-	* 回転・スケールの除去処理を実行するか否か。VRMの規約に合致するように**モデルを正規化する処理**です。**初回は必ずチェックを入れてください**。事前にこの処理を通過させることにより各種コンポーネントが正しく動作するようになります。
+{{< img src="images/vrm/export_options.jpg" width="600" height="700" >}}
 
-T-Poseとモデルの正規化の詳細は[こちら]({{< relref "humanoid_overview.md" >}})。
+{{% alert title="Force T-Pose" color="info" %}}
+エクスポートするときに自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
+{{% /alert %}}
 
-次のセクションでは、[VRMファイルをインポートしセットアップする方法]({{< relref "setup_vrm.md" >}})を紹介します。
+{{% alert title="Pose Freeze" color="info" %}}
+エクスポート時に正規化します。
+最新版は、 `ExportRoot` をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
+{{% /alert %}}
