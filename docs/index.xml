@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 07 Jul 2020 18:59:48 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 16:22:48 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;h2 id="概要">概要&lt;/h2>
 &lt;p>VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p>
 &lt;p>１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p>
@@ -914,10 +914,8 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;li>細かいモデルデータの差違を吸収・統一し&lt;/li>
 &lt;li>アプリケーション側の取り扱いを簡単にする&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong>ものです。&lt;/p>
-&lt;hr>
+&lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong> ものです。&lt;/p>
 &lt;h2 id="vrmで何ができるの">VRMで何ができるの？&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
 &lt;p>&lt;strong>VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong>
 対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p>
 &lt;ul>
@@ -929,139 +927,32 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;/ul>
 &lt;p>&lt;strong>「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong>&lt;/p>
 &lt;p>生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
 &lt;hr>
+&lt;p>➡️ &lt;a href="https://vrm.dev/vrm_applications/">&amp;ldquo;VRMファイルが使えるアプリケーション&lt;/a>&lt;/p>
 &lt;h2 id="vrmの特徴">VRMの特徴&lt;/h2>
 &lt;p>VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong>UnityでVRMファイルを読み書きする標準実装が提供されます&lt;/strong>が、&lt;strong>フォーマット自体はプラットフォーム非依存&lt;/strong>であり他エンジンや環境でも取り扱うことが可能です。&lt;/p>
 &lt;ul>
-&lt;li>プラットフォーム非依存で人型のキャラクター3Dモデルデータを取り扱うことが可能&lt;/li>
-&lt;li>3D標準フォーマット glTF2.0をベースとして、人型モデルを取り扱うための制約と拡張を加えたフォーマット。標準フォーマットをベースとしているため実装も容易&lt;/li>
-&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能&lt;/li>
-&lt;li>スケール（1.00 = 1m）・座標系と向き（Y-up, -Z方向向き）・骨の構造（Unity Humanoid準拠構成, Tスタンス, 各骨にローカルの回転などを入れない）などについて標準の構成が決められておりモデリングツールによる差違の影響を受けない&lt;/li>
-&lt;li>Blend Shapeやマテリアルの透明度など「キャラクターの表情」を取り扱うためにはさまざまな技法が使われるが、その技法の差違をVRM側で吸収し統一したAPIで操作できる&lt;/li>
-&lt;li>VRでのアバター利用のための、**「一人称視点再現のための情報」**に対応。&lt;/li>
-&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能に&lt;/li>
-&lt;li>標準実装としてのマテリアル（シェーダ）を用意。標準的なPBRだけでなくトゥーンシェーディングやUnlitレンダリングを設定可能&lt;/li>
-&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや&lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong>も内包可能&lt;/li>
+&lt;li>ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。&lt;/li>
+&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。&lt;/li>
+&lt;li>「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ &lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
+&lt;li>3種類のシェーダーに対応 ➡️ PBR, Unlit, &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>&lt;/li>
+&lt;li>視線制御を標準化して、モデルごとの違いを吸収 ➡️ &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">ボーンによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">TextureUVによる視線&lt;/a>&lt;/li>
+&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ &lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
+&lt;li>VRでのアバター利用のための、&lt;strong>「一人称視点再現のための情報」&lt;/strong> に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや &lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong> も内包可能 ➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、&lt;strong>自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong>、ということも行われることになります。
-この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p>
+&lt;p>というように単なるモデルデータに留まらず、アプリケーションでロードしてすぐに使えるようになっています。&lt;/p>
+&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
+&lt;p>現在、&lt;/p>
 &lt;ul>
-&lt;li>モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li>
+&lt;li>&lt;a href="https://seed.online/">The Seed Online&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>のほかに&lt;/p>
-&lt;ul>
-&lt;li>モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li>
-&lt;/ul>
-&lt;p>を&lt;strong>ファイルに設定できる&lt;/strong>など、VR時代を想定したフォーマットとなっています。&lt;/p>
-&lt;hr>
-&lt;h2 id="vrmファイルに設定できるライセンスデータ">VRMファイルに設定できるライセンスデータ&lt;/h2>
-&lt;h3 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3>
-&lt;h4 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
-&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
-&lt;li>全員に許可(Authorized to anyone)&lt;/li>
-&lt;/ul>
-&lt;h4 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h4>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
-&lt;h3 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3>
-&lt;h4 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h4>
-&lt;ul>
-&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
-&lt;li>その他(Other)&lt;/li>
-&lt;/ul>
-&lt;h4 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h4>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: モデル情報</title><link>https://vrm.dev/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/univrm_meta/</guid><description>
-&lt;h2 id="vrmmeta">VRMMeta&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/meta_new.jpg" alt="meta" width="800" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>VRMMetaコンポーネント&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="情報information">情報(Information)&lt;/h3>
-&lt;h4 id="タイトルtitle">タイトル(Title)&lt;/h4>
-&lt;p>アバターモデルの名前を設定します&lt;/p>
-&lt;h4 id="作者author">作者(Author)&lt;/h4>
-&lt;p>モデルの作者の名前を記述します&lt;/p>
-&lt;h4 id="連絡先contact-information">連絡先(Contact Information)&lt;/h4>
-&lt;p>モデルの作者への連絡先を記述します&lt;/p>
-&lt;h4 id="参照reference">参照(Reference)&lt;/h4>
-&lt;p>何か「親作品」に相当するものがある場合は参照URLなどを記述します&lt;/p>
-&lt;h4 id="サムネイルthumbnail">サムネイル(Thumbnail)&lt;/h4>
-&lt;p>アバターモデルのサムネイルを登録します。2048x2048程度の解像度を推奨します。&lt;/p>
-&lt;h4 id="バージョン">バージョン&lt;/h4>
-&lt;p>モデルのバージョンを文字列で指定します。
-自由に記述できます。&lt;/p>
-&lt;h3 id="使用許諾ライセンス情報license">使用許諾・ライセンス情報(License)&lt;/h3>
-&lt;h4 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h4>
-&lt;h5 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h5>
-&lt;ul>
-&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
-&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
-&lt;li>全員に許可(Authorized to anyone)&lt;/li>
-&lt;/ul>
-&lt;h5 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h5>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h5 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h5>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h5 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h5>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h5 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h5>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
-&lt;h4 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h4>
-&lt;h5 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h5>
-&lt;ul>
-&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
-&lt;li>その他(Other)&lt;/li>
-&lt;/ul>
-&lt;h5 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h5>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>でVRMファイルの投稿ができます。
+ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1579,7 +1470,75 @@ FBX importer の rig 設定に戻って設定を解除することをおすす�
 &lt;h2 id="v057">v0.57&lt;/h2>
 &lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
 &lt;p>Unityの &lt;a href="https://docs.unity3d.com/ScriptReference/ScriptableWizard.html">ScriptableWizard&lt;/a> で画面を作成しています。
-v0.58 以降でダイアログを改善予定です。&lt;/p></description></item><item><title>Docs: VRMモデルを実行時にインポートする</title><link>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</guid><description>
+v0.58 以降でダイアログを改善予定です。&lt;/p></description></item><item><title>Docs: モデル情報</title><link>https://vrm.dev/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/univrm_meta/</guid><description>
+&lt;h2 id="vrmmeta">VRMMeta&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/meta_new.jpg" alt="meta" width="800" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMMetaコンポーネント&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="情報information">情報(Information)&lt;/h3>
+&lt;h4 id="タイトルtitle">タイトル(Title)&lt;/h4>
+&lt;p>アバターモデルの名前を設定します&lt;/p>
+&lt;h4 id="作者author">作者(Author)&lt;/h4>
+&lt;p>モデルの作者の名前を記述します&lt;/p>
+&lt;h4 id="連絡先contact-information">連絡先(Contact Information)&lt;/h4>
+&lt;p>モデルの作者への連絡先を記述します&lt;/p>
+&lt;h4 id="参照reference">参照(Reference)&lt;/h4>
+&lt;p>何か「親作品」に相当するものがある場合は参照URLなどを記述します&lt;/p>
+&lt;h4 id="サムネイルthumbnail">サムネイル(Thumbnail)&lt;/h4>
+&lt;p>アバターモデルのサムネイルを登録します。2048x2048程度の解像度を推奨します。&lt;/p>
+&lt;h4 id="バージョン">バージョン&lt;/h4>
+&lt;p>モデルのバージョンを文字列で指定します。
+自由に記述できます。&lt;/p>
+&lt;h3 id="使用許諾ライセンス情報license">使用許諾・ライセンス情報(License)&lt;/h3>
+&lt;h4 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h4>
+&lt;h5 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
+&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
+&lt;li>全員に許可(Authorized to anyone)&lt;/li>
+&lt;/ul>
+&lt;h5 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h5>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h5 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h5>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
+&lt;h4 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h4>
+&lt;h5 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h5>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;h5 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h5>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: VRMモデルを実行時にインポートする</title><link>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_import_runtime/</guid><description>
 &lt;p>最新バージョンは&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">こちら&lt;/a>をご覧ください。&lt;/p>
 &lt;p>Unityで実行時にモデルをインポートする方法です。&lt;/p>
 &lt;h2 id="ファイルパスからvrmを開く">ファイルパスからVRMを開く&lt;/h2>
@@ -2057,302 +2016,7 @@ Autoによる自動分割は、重めの処理になります。&lt;/p>
 &lt;td>動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
-&lt;h2 id="vrmファイルの読み込みかた">VRMファイルの読み込みかた&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
-また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>をご覧ください。&lt;/p>
-&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
-&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>及び&lt;code>Assets/MeshUtility&lt;/code>にインストールします。
-&lt;strong>既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨&lt;/strong>しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
-&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
-&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
-すると、モデルデータが表示されます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタに各種情報が表示されます&lt;/strong>。&lt;/p>
-&lt;h2 id="vrmファイルの読み込みかた簡易版">VRMファイルの読み込みかた（簡易版）&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>。（ただしVRM独自の設定は反映されません）&lt;/p>
-&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
-&lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
-ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
-&lt;h2 id="環境">環境&lt;/h2>
-&lt;p>UniVRM v0.58.0&lt;/p>
-&lt;h2 id="使用するメソッド">使用するメソッド&lt;/h2>
-&lt;ul>
-&lt;li>[推奨] &lt;code>SetValues&lt;/code>&lt;/li>
-&lt;li>[非推奨] &lt;code>ImmediatelySetValue&lt;/code>&lt;/li>
-&lt;li>[上級者向け] &lt;code>AccumulateValue&lt;/code>&lt;/li>
-&lt;li>[上級者向け] &lt;code>Apply&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="スクリプトから-blendshape-weight-を適用する">スクリプトから BlendShape weight を適用する&lt;/h2>
-&lt;p>&lt;code>SetValues&lt;/code> 関数のみを使用します。
-そのフレームで必要な表情の weight 値をすべて集めてから &lt;code>SetValues&lt;/code> を 1 回だけ呼んで設定します。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
-{
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// [0, 1] の範囲で Weight を指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// システム定義の表情は enum で指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateUnknown(&lt;span style="color:#c30">&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span>), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// ユーザ定義の表情は string で指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>});
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="複数の-blendshape-weight-を適用する際の競合の問題について">複数の BlendShape weight を適用する際の競合の問題について&lt;/h2>
-&lt;p>この節では、なぜ &lt;code>SetValues&lt;/code> を使わなければならないのかという疑問に回答します。&lt;/p>
-&lt;p>たとえば 2 つの VRMBlendShape &lt;code>Blink_L&lt;/code> と &lt;code>Blink_R&lt;/code> が&lt;/p>
-&lt;p>VRMBlendShape &lt;code>Blink_L&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>VRMBlendShape &lt;code>Blink_R&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>で定義されているとします。
-このとき両目を閉じたいモチベーションから、両方を有効にする意図で下記のように実行します。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>すると、左目だけが開いてしまいます。
-これは後から &lt;code>ImmediateSetValue&lt;/code> した &lt;code>Blink_R&lt;/code> が &lt;code>Blink_L&lt;/code> と競合して weight を上書きしてしまうからです。
-したがって VRM の表情制御においては下記の 2 通りのどちらかの方法で書くことが求められます。
-これらの方法はこの競合の問題を解決して表情を設定することができます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
-{
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
-});
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>または&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
-&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
-&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
-&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
-&lt;h2 id="textureのuv操作による視線制御">TextureのUV操作による視線制御&lt;/h2>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
-&lt;p>Textureを上下左右にスライドさせることで目線を移動させる方法です。
-&lt;code>Unityちゃん&lt;/code> はこのタイプです。&lt;/p>
-&lt;h2 id="目のマテリアルを探す">目のマテリアルを探す&lt;/h2>
-&lt;p>マテリアルのインスペクタの目のテクスチャの &lt;code>Tiling Offset&lt;/code> の設定に注目してください。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
-&lt;p>&lt;code>1, 1, 0, 0&lt;/code> になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。&lt;/p>
-&lt;p>試しに、&lt;code>Offset&lt;/code> Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
-目的の設定が見つかったので元に戻して次に進みます。&lt;/p>
-&lt;h2 id="blendshapeの準備">BlendShapeの準備&lt;/h2>
-&lt;p>LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラーマテリアルの UV を操作するようにします。
-例では、Materialに &lt;code>unlit/transparent cutout&lt;/code> を使用しています。&lt;/p>
-&lt;h3 id="lookleftの例">LookLeftの例&lt;/h3>
-&lt;p>&lt;code>LookLeft&lt;/code> 選択してください。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>Material List&lt;/code> タブを選択&lt;/li>
-&lt;li>&lt;code>+&lt;/code> を選択&lt;/li>
-&lt;li>&lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code> を選択&lt;/li>
-&lt;li>&lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code> に設定します&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Offsetを調整してLookLeftを作ります&lt;/li>
-&lt;li>&lt;code>eye_R1&lt;/code> も同様に&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
-&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
-&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
-&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
-&lt;ul>
-&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
-&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
-&lt;/ul>
-&lt;p>次の３つを設定してください。&lt;/p>
-&lt;ul>
-&lt;li>VerticalDown&lt;/li>
-&lt;li>VerticalUp&lt;/li>
-&lt;li>Horizontal&lt;/li>
-&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
-&lt;p>GLTF は、Animation の定義があります。&lt;/p>
-&lt;blockquote>
-&lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="対応バージョン">対応バージョン&lt;/h3>
-&lt;ul>
-&lt;li>v0.44&lt;/li>
-&lt;/ul>
-&lt;h3 id="対応状況">対応状況&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th align="left">KeyName&lt;/th>
-&lt;th align="center">&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td align="left">TranslationKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">RotationKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">ScaleKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">BlendShapeKey&lt;/td>
-&lt;td align="center">×&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h3 id="animatorをエクスポートする場合">Animatorをエクスポートする場合&lt;/h3>
-&lt;ol>
-&lt;li>ルートGameObjectにAnimatorコンポーネントを追加&lt;/li>
-&lt;li>AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li>
-&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
-&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
-&lt;li>このクリップに対してアニメーションキーを追加&lt;/li>
-&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
-&lt;/ol>
-&lt;h3 id="animationをエクスポートする場合">Animationをエクスポートする場合&lt;/h3>
-&lt;ol>
-&lt;li>ルートGameObjectにAnimationコンポーネントを追加&lt;/li>
-&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
-&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
-&lt;li>Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br>
-&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/li>
-&lt;li>AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li>
-&lt;li>クリップに対してアニメーションキーを追加&lt;/li>
-&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
-&lt;/ol>
-&lt;h3 id="注意事項">注意事項&lt;/h3>
-&lt;ol>
-&lt;li>RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br>
-&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
-&lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
-&lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
-&lt;p>以下のフォルダを削除してください。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>folder&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>備考&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Assets/VRM&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/VRMShaders&lt;/td>
-&lt;td>v0.56.0以降&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/MeshUtility&lt;/td>
-&lt;td>v0.59.0以降&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。&lt;/p>
-&lt;ul>
-&lt;li>バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。&lt;/li>
-&lt;/ul>
-&lt;p>UPMでパッケージをインストールするの場合は、UPMウィンドウのパッケージインタフェースの右下にある&lt;code>Remove&lt;/code>ボタンをクリックしてください。&lt;/p></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</guid><description>
-&lt;h2 id="エクスポート">エクスポート&lt;/h2>
-&lt;h3 id="gltf-レイヤー">GLTF レイヤー&lt;/h3>
-&lt;p>gltf の &lt;code>/materials[]&lt;/code> に記録します。&lt;/p>
-&lt;ul>
-&lt;li>PBR(default)&lt;/li>
-&lt;li>Unlit(KHR_materials_unlit extension)&lt;/li>
-&lt;/ul>
-&lt;p>の２種類のみをサポートしています。&lt;/p>
-&lt;h4 id="詳細">詳細&lt;/h4>
-&lt;p>&lt;code>standard&lt;/code> と見做して処理します。&lt;/p>
-&lt;p>Unityマテリアルが以下の何れかのシェーダーである場合に、
-&lt;code>KHR_materials_unlit&lt;/code> extension を追加します。&lt;/p>
-&lt;ul>
-&lt;li>Unlit/Color(Unity標準)&lt;/li>
-&lt;li>Unlit/Texture(Unity標準)&lt;/li>
-&lt;li>Unlit/Transparent(Unity標準)&lt;/li>
-&lt;li>Unlit/Transparent Cutout(Unity標準)&lt;/li>
-&lt;li>UniGLTF/UniUnlit(UniVRM)&lt;/li>
-&lt;li>VRM/UnlitTexture(UniVRM)&lt;/li>
-&lt;li>VRM/UnlitTransparent(UniVRM)&lt;/li>
-&lt;li>VRM/UnlitCutout(UniVRM)&lt;/li>
-&lt;/ul>
-&lt;h3 id="vrm-レイヤー">VRM レイヤー&lt;/h3>
-&lt;p>gltf の &lt;code>/extensions/VRM/materialProperties[]&lt;/code> に記録します。&lt;/p>
-&lt;ul>
-&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
-&lt;li>VRM/MToon&lt;/li>
-&lt;/ul>
-&lt;p>以外の時は、 &lt;code>shaderName&lt;/code> に &lt;code>VRM_USE_GLTFSHADER&lt;/code> が記録されて、 &lt;code>unknown shader&lt;/code> として GLTF 処理されます。&lt;/p>
-&lt;h2 id="インポート">インポート&lt;/h2>
-&lt;h3 id="gltf-レイヤー-1">GLTF レイヤー&lt;/h3>
-&lt;p>GLTFの &lt;code>/materials[]&lt;/code> からUnityマテリアルを作成します。
-&lt;code>KHR_materials_unlit&lt;/code> extension を発見した場合に、&lt;/p>
-&lt;ul>
-&lt;li>UniGLTF/UniUnlit&lt;/li>
-&lt;/ul>
-&lt;p>でマテリアルを作成します。&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/#uniunlit">UniUnlit&lt;/a>&lt;/p>
-&lt;h3 id="vrm-レイヤー-1">VRM レイヤー&lt;/h3>
-&lt;p>GLTFの &lt;code>/extensions/VRM/materialProperties[]&lt;/code> からUnityマテリアルを作成します。
-&lt;code>shaderName&lt;/code> が &lt;code>VRM_USE_GLTFSHADER&lt;/code> の場合は、 &lt;code>/materials[]&lt;/code> に記録されている情報を使って &lt;code>GLTF&lt;/code> の &lt;code>PBR&lt;/code> か &lt;code>Unlit&lt;/code> として処理します。&lt;/p>
-&lt;h2 id="エクスポートしてインポートしたときのシェーダーの変化">エクスポートしてインポートしたときのシェーダーの変化&lt;/h2>
-&lt;p>エクスポートしてからインポートすると元と違うシェーダーになる場合があります。&lt;/p>
-&lt;ul>
-&lt;li>サポート外のシェーダーの場合。 &lt;code>Standard&lt;/code> になります。GLTF のデフォルトが &lt;code>PBR&lt;/code> で、それに対応するのが &lt;code>Standard&lt;/code> です。&lt;/li>
-&lt;li>unlit 系の場合。 &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniGLTF/UniUnlit&lt;/a> になります。正常な動作です。&lt;/li>
-&lt;/ul>
-&lt;h2 id="vrm_use_gltfshader">VRM_USE_GLTFSHADER&lt;/h2>
-&lt;p>&lt;code>/extensions/VRM/materialProperties[]&lt;/code>&lt;/p>
-&lt;p>に記録した情報を使ってすべてのシェーダーを読みこめます。&lt;/p>
-&lt;ul>
-&lt;li>Runtimeは問題ない&lt;/li>
-&lt;li>EditorはインスペクターをアクティブにしたタイミングでGUIに値が変更されたりして個別の対応が必要な場合があり完全ではない&lt;/li>
-&lt;/ul>
-&lt;p>ただし、この機能は&lt;/p>
-&lt;ul>
-&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
-&lt;li>VRM/MToon&lt;/li>
-&lt;/ul>
-&lt;p>以外では &lt;code>VRM_USE_GLTFSHADER&lt;/code> で無効になるように封じています(v0.44くらい)。実質 MToon 専用です。
-VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, &lt;code>Unlit&lt;/code>, &lt;code>MToon&lt;/code> の３種類です。&lt;/p>
-&lt;blockquote>
-&lt;p>歴史的経緯で &lt;code>UnlitTransparentZWrite&lt;/code> が存在していますが、整理予定です。 &lt;code>MToon&lt;/code> の &lt;code>ZWrite&lt;/code> 機能を使ってください&lt;/p>
-&lt;/blockquote>
-&lt;p>以前にエクスポートするなどして &lt;code>VRM_USE_GLTFSHADER&lt;/code> を回避していればロード出来る場合があります。
-最初は、&lt;code>VRM&lt;/code> と無関係に Unity のマテリアルを読み書きする機能だった名残です。&lt;/p></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
+&lt;/table></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
 &lt;h2 id="3dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/">ザ・シードオンライン&lt;/a>&lt;/li>
@@ -2682,7 +2346,325 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;td>Windows, macOS&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid><description>
+&lt;/table></description></item><item><title>Docs: BlendShapeを操作する</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
+&lt;h2 id="環境">環境&lt;/h2>
+&lt;p>UniVRM v0.58.0&lt;/p>
+&lt;h2 id="使用するメソッド">使用するメソッド&lt;/h2>
+&lt;ul>
+&lt;li>[推奨] &lt;code>SetValues&lt;/code>&lt;/li>
+&lt;li>[非推奨] &lt;code>ImmediatelySetValue&lt;/code>&lt;/li>
+&lt;li>[上級者向け] &lt;code>AccumulateValue&lt;/code>&lt;/li>
+&lt;li>[上級者向け] &lt;code>Apply&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="スクリプトから-blendshape-weight-を適用する">スクリプトから BlendShape weight を適用する&lt;/h2>
+&lt;p>&lt;code>SetValues&lt;/code> 関数のみを使用します。
+そのフレームで必要な表情の weight 値をすべて集めてから &lt;code>SetValues&lt;/code> を 1 回だけ呼んで設定します。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+{
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// [0, 1] の範囲で Weight を指定
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// システム定義の表情は enum で指定
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateUnknown(&lt;span style="color:#c30">&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span>), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// ユーザ定義の表情は string で指定
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>});
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="複数の-blendshape-weight-を適用する際の競合の問題について">複数の BlendShape weight を適用する際の競合の問題について&lt;/h2>
+&lt;p>この節では、なぜ &lt;code>SetValues&lt;/code> を使わなければならないのかという疑問に回答します。&lt;/p>
+&lt;p>たとえば 2 つの VRMBlendShape &lt;code>Blink_L&lt;/code> と &lt;code>Blink_R&lt;/code> が&lt;/p>
+&lt;p>VRMBlendShape &lt;code>Blink_L&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
+&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>VRMBlendShape &lt;code>Blink_R&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
+&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>で定義されているとします。
+このとき両目を閉じたいモチベーションから、両方を有効にする意図で下記のように実行します。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>);
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>すると、左目だけが開いてしまいます。
+これは後から &lt;code>ImmediateSetValue&lt;/code> した &lt;code>Blink_R&lt;/code> が &lt;code>Blink_L&lt;/code> と競合して weight を上書きしてしまうからです。
+したがって VRM の表情制御においては下記の 2 通りのどちらかの方法で書くことが求められます。
+これらの方法はこの競合の問題を解決して表情を設定することができます。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+{
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
+});
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>または&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
+proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
+&lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
+&lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/add_vrm_lookat_blendshape.jpg" alt="image">&lt;/p>
+&lt;h2 id="textureのuv操作による視線制御">TextureのUV操作による視線制御&lt;/h2>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_applyer.png" alt="image">&lt;/p>
+&lt;p>Textureを上下左右にスライドさせることで目線を移動させる方法です。
+&lt;code>Unityちゃん&lt;/code> はこのタイプです。&lt;/p>
+&lt;h2 id="目のマテリアルを探す">目のマテリアルを探す&lt;/h2>
+&lt;p>マテリアルのインスペクタの目のテクスチャの &lt;code>Tiling Offset&lt;/code> の設定に注目してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_tiling_offset.png" alt="image">&lt;/p>
+&lt;p>&lt;code>1, 1, 0, 0&lt;/code> になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。&lt;/p>
+&lt;p>試しに、&lt;code>Offset&lt;/code> Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。
+目的の設定が見つかったので元に戻して次に進みます。&lt;/p>
+&lt;h2 id="blendshapeの準備">BlendShapeの準備&lt;/h2>
+&lt;p>LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラーマテリアルの UV を操作するようにします。
+例では、Materialに &lt;code>unlit/transparent cutout&lt;/code> を使用しています。&lt;/p>
+&lt;h3 id="lookleftの例">LookLeftの例&lt;/h3>
+&lt;p>&lt;code>LookLeft&lt;/code> 選択してください。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/lookleft.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Material List&lt;/code> タブを選択&lt;/li>
+&lt;li>&lt;code>+&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>eye_L1&lt;/code> - &lt;code>_MainTex_ST&lt;/code> を選択&lt;/li>
+&lt;li>&lt;code>Tliling = 1, 1&lt;/code>, &lt;code>Offset = 0, 0&lt;/code> に設定します&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/tiling_offset_1100.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Offsetを調整してLookLeftを作ります&lt;/li>
+&lt;li>&lt;code>eye_R1&lt;/code> も同様に&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/look_left.png" alt="image">&lt;/p>
+&lt;p>&lt;a href="http://unity-chan.com/">© UTJ/UCL&lt;/a>&lt;/p>
+&lt;h3 id="degreemapping">DegreeMapping&lt;/h3>
+&lt;p>以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。&lt;/p>
+&lt;ul>
+&lt;li>yaw, pitch 角の上限値 =&amp;gt; Curve X Range Degree&lt;/li>
+&lt;li>yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください =&amp;gt; Curve Y Range Degree&lt;/li>
+&lt;/ul>
+&lt;p>次の３つを設定してください。&lt;/p>
+&lt;ul>
+&lt;li>VerticalDown&lt;/li>
+&lt;li>VerticalUp&lt;/li>
+&lt;li>Horizontal&lt;/li>
+&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>GLTF は、Animation の定義があります。&lt;/p>
+&lt;blockquote>
+&lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="対応バージョン">対応バージョン&lt;/h3>
+&lt;ul>
+&lt;li>v0.44&lt;/li>
+&lt;/ul>
+&lt;h3 id="対応状況">対応状況&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">KeyName&lt;/th>
+&lt;th align="center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">TranslationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">RotationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ScaleKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">BlendShapeKey&lt;/td>
+&lt;td align="center">×&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="animatorをエクスポートする場合">Animatorをエクスポートする場合&lt;/h3>
+&lt;ol>
+&lt;li>ルートGameObjectにAnimatorコンポーネントを追加&lt;/li>
+&lt;li>AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li>
+&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
+&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
+&lt;li>このクリップに対してアニメーションキーを追加&lt;/li>
+&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
+&lt;/ol>
+&lt;h3 id="animationをエクスポートする場合">Animationをエクスポートする場合&lt;/h3>
+&lt;ol>
+&lt;li>ルートGameObjectにAnimationコンポーネントを追加&lt;/li>
+&lt;li>UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li>
+&lt;li>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li>
+&lt;li>Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br>
+&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/li>
+&lt;li>AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li>
+&lt;li>クリップに対してアニメーションキーを追加&lt;/li>
+&lt;li>UniGLTF&amp;gt;Exportからglbを出力する&lt;/li>
+&lt;/ol>
+&lt;h3 id="注意事項">注意事項&lt;/h3>
+&lt;ol>
+&lt;li>RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br>
+&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
+&lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
+&lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
+&lt;/ol></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;p>以下のフォルダを削除してください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>folder&lt;/th>
+&lt;th>Version&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Assets/VRM&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRMShaders&lt;/td>
+&lt;td>v0.56.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/MeshUtility&lt;/td>
+&lt;td>v0.59.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。&lt;/p>
+&lt;ul>
+&lt;li>バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。&lt;/li>
+&lt;/ul>
+&lt;p>UPMでパッケージをインストールするの場合は、UPMウィンドウのパッケージインタフェースの右下にある&lt;code>Remove&lt;/code>ボタンをクリックしてください。&lt;/p></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_export_import/</guid><description>
+&lt;h2 id="エクスポート">エクスポート&lt;/h2>
+&lt;h3 id="gltf-レイヤー">GLTF レイヤー&lt;/h3>
+&lt;p>gltf の &lt;code>/materials[]&lt;/code> に記録します。&lt;/p>
+&lt;ul>
+&lt;li>PBR(default)&lt;/li>
+&lt;li>Unlit(KHR_materials_unlit extension)&lt;/li>
+&lt;/ul>
+&lt;p>の２種類のみをサポートしています。&lt;/p>
+&lt;h4 id="詳細">詳細&lt;/h4>
+&lt;p>&lt;code>standard&lt;/code> と見做して処理します。&lt;/p>
+&lt;p>Unityマテリアルが以下の何れかのシェーダーである場合に、
+&lt;code>KHR_materials_unlit&lt;/code> extension を追加します。&lt;/p>
+&lt;ul>
+&lt;li>Unlit/Color(Unity標準)&lt;/li>
+&lt;li>Unlit/Texture(Unity標準)&lt;/li>
+&lt;li>Unlit/Transparent(Unity標準)&lt;/li>
+&lt;li>Unlit/Transparent Cutout(Unity標準)&lt;/li>
+&lt;li>UniGLTF/UniUnlit(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitTexture(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitTransparent(UniVRM)&lt;/li>
+&lt;li>VRM/UnlitCutout(UniVRM)&lt;/li>
+&lt;/ul>
+&lt;h3 id="vrm-レイヤー">VRM レイヤー&lt;/h3>
+&lt;p>gltf の &lt;code>/extensions/VRM/materialProperties[]&lt;/code> に記録します。&lt;/p>
+&lt;ul>
+&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
+&lt;li>VRM/MToon&lt;/li>
+&lt;/ul>
+&lt;p>以外の時は、 &lt;code>shaderName&lt;/code> に &lt;code>VRM_USE_GLTFSHADER&lt;/code> が記録されて、 &lt;code>unknown shader&lt;/code> として GLTF 処理されます。&lt;/p>
+&lt;h2 id="インポート">インポート&lt;/h2>
+&lt;h3 id="gltf-レイヤー-1">GLTF レイヤー&lt;/h3>
+&lt;p>GLTFの &lt;code>/materials[]&lt;/code> からUnityマテリアルを作成します。
+&lt;code>KHR_materials_unlit&lt;/code> extension を発見した場合に、&lt;/p>
+&lt;ul>
+&lt;li>UniGLTF/UniUnlit&lt;/li>
+&lt;/ul>
+&lt;p>でマテリアルを作成します。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/#uniunlit">UniUnlit&lt;/a>&lt;/p>
+&lt;h3 id="vrm-レイヤー-1">VRM レイヤー&lt;/h3>
+&lt;p>GLTFの &lt;code>/extensions/VRM/materialProperties[]&lt;/code> からUnityマテリアルを作成します。
+&lt;code>shaderName&lt;/code> が &lt;code>VRM_USE_GLTFSHADER&lt;/code> の場合は、 &lt;code>/materials[]&lt;/code> に記録されている情報を使って &lt;code>GLTF&lt;/code> の &lt;code>PBR&lt;/code> か &lt;code>Unlit&lt;/code> として処理します。&lt;/p>
+&lt;h2 id="エクスポートしてインポートしたときのシェーダーの変化">エクスポートしてインポートしたときのシェーダーの変化&lt;/h2>
+&lt;p>エクスポートしてからインポートすると元と違うシェーダーになる場合があります。&lt;/p>
+&lt;ul>
+&lt;li>サポート外のシェーダーの場合。 &lt;code>Standard&lt;/code> になります。GLTF のデフォルトが &lt;code>PBR&lt;/code> で、それに対応するのが &lt;code>Standard&lt;/code> です。&lt;/li>
+&lt;li>unlit 系の場合。 &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniGLTF/UniUnlit&lt;/a> になります。正常な動作です。&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrm_use_gltfshader">VRM_USE_GLTFSHADER&lt;/h2>
+&lt;p>&lt;code>/extensions/VRM/materialProperties[]&lt;/code>&lt;/p>
+&lt;p>に記録した情報を使ってすべてのシェーダーを読みこめます。&lt;/p>
+&lt;ul>
+&lt;li>Runtimeは問題ない&lt;/li>
+&lt;li>EditorはインスペクターをアクティブにしたタイミングでGUIに値が変更されたりして個別の対応が必要な場合があり完全ではない&lt;/li>
+&lt;/ul>
+&lt;p>ただし、この機能は&lt;/p>
+&lt;ul>
+&lt;li>VRM/UnlitTransparentZWrite&lt;/li>
+&lt;li>VRM/MToon&lt;/li>
+&lt;/ul>
+&lt;p>以外では &lt;code>VRM_USE_GLTFSHADER&lt;/code> で無効になるように封じています(v0.44くらい)。実質 MToon 専用です。
+VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, &lt;code>Unlit&lt;/code>, &lt;code>MToon&lt;/code> の３種類です。&lt;/p>
+&lt;blockquote>
+&lt;p>歴史的経緯で &lt;code>UnlitTransparentZWrite&lt;/code> が存在していますが、整理予定です。 &lt;code>MToon&lt;/code> の &lt;code>ZWrite&lt;/code> 機能を使ってください&lt;/p>
+&lt;/blockquote>
+&lt;p>以前にエクスポートするなどして &lt;code>VRM_USE_GLTFSHADER&lt;/code> を回避していればロード出来る場合があります。
+最初は、&lt;code>VRM&lt;/code> と無関係に Unity のマテリアルを読み書きする機能だった名残です。&lt;/p></description></item><item><title>Docs: VRMファイルに設定できるライセンスデータ</title><link>https://vrm.dev/docs/vrm/vrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/vrm/vrm_meta/</guid><description>
+&lt;p>VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、 &lt;strong>自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong> 、ということも行われることになります。
+この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p>
+&lt;ul>
+&lt;li>モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li>
+&lt;/ul>
+&lt;p>のほかに&lt;/p>
+&lt;ul>
+&lt;li>モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li>
+&lt;/ul>
+&lt;p>を &lt;strong>ファイルに設定できる&lt;/strong> など、VR時代を想定したフォーマットとなっています。&lt;/p>
+&lt;h3 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3>
+&lt;h4 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
+&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
+&lt;li>全員に許可(Authorized to anyone)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
+&lt;h3 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3>
+&lt;h4 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h4>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid><description>
 &lt;p>UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p>
 &lt;h2 id="vrmの座標系">VRMの座標系&lt;/h2>
 &lt;p>VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
@@ -2826,7 +2808,47 @@ m_firstPerson.Setup();
 }
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMで開発する</title><link>https://vrm.dev/docs/vrm/vrm_development/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/vrm/vrm_development/</guid><description>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/programming/">programming&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrmの特徴開発者的な視点">VRMの特徴(開発者的な視点)&lt;/h2>
+&lt;ul>
+&lt;li>右手系Y-UPである ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_coordinate/">Coordinate&lt;/a>&lt;/li>
+&lt;li>メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません&lt;/li>
+&lt;li>人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい&lt;/li>
+&lt;li>初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます&lt;/li>
+&lt;li>初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます&lt;/li>
+&lt;li>初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます&lt;/li>
+&lt;li>表情・視線操作が統一されている ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/">BlendShapeProxy&lt;/a>&lt;/li>
+&lt;li>物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません&lt;/li>
+&lt;li>VRの設定が含まれている ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます&lt;/li>
+&lt;/ul>
+&lt;p>従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
+ランタイムにロードして動かす、という用途が想定されます。&lt;/p>
+&lt;h2 id="univrmで-ランタイムロードする">UniVRMで ランタイムロードする&lt;/h2>
+&lt;p>ランタイムで UniVRM の ロード機能を使うことができます。
+UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
+ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/programming/univrm_import_runtime/">runtime load&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="univrmで-ランタイムエクスポートする">UniVRMで ランタイムエクスポートする&lt;/h2>
+&lt;p>ランタイムで UniVRM の エクスポート機能 を使うことができます。
+この機能を使って、キャラクタークリエーションツール を実装することができます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code>&lt;/p>
+&lt;p>が例です。&lt;/p>
+&lt;h2 id="univrm以外の実装">UniVRM以外の実装&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ruyo/VRM4U">https://github.com/ruyo/VRM4U&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/virtual-cast/babylon-vrm-loader/">https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/pixiv/three-vrm/">https://github.com/pixiv/three-vrm/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid><description>
 &lt;p>揺れモノ設定。&lt;/p>
 &lt;h1 id="コンポーネントのアタッチされるノード">コンポーネントのアタッチされるノード&lt;/h1>
 &lt;p>VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p>
@@ -3385,13 +3407,4 @@ proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
 &lt;li>Authors&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: 過去バージョンのロードについて</title><link>https://vrm.dev/dev/univrm-1.xx/load_vrm-0.x_model/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/load_vrm-0.x_model/</guid><description>
-&lt;h2 id="metaの変換について">Metaの変換について&lt;/h2>
-&lt;p>VRM-0.Xのモデルは、ロード時に1.0に変換されます。&lt;/p>
-&lt;p>TODO:&lt;/p>
-&lt;ul>
-&lt;li>同じ項目はそのまま&lt;/li>
-&lt;li>新規項目は、不許可側に&lt;/li>
-&lt;li>内容の変わった項目は、不許可側に&lt;/li>
-&lt;li>再配布関連は、 &lt;code>OtherURL&lt;/code>&lt;/li>
 &lt;/ul></description></item></channel></rss>

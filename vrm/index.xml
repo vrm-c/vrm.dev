@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 07 Jul 2020 18:59:48 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 16:22:48 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
 &lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
 &lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
 &lt;p>というのも…&lt;/p>
@@ -27,10 +27,8 @@
 &lt;li>細かいモデルデータの差違を吸収・統一し&lt;/li>
 &lt;li>アプリケーション側の取り扱いを簡単にする&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong>ものです。&lt;/p>
-&lt;hr>
+&lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong> ものです。&lt;/p>
 &lt;h2 id="vrmで何ができるの">VRMで何ができるの？&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
 &lt;p>&lt;strong>VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong>
 対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p>
 &lt;ul>
@@ -42,71 +40,32 @@
 &lt;/ul>
 &lt;p>&lt;strong>「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong>&lt;/p>
 &lt;p>生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
 &lt;hr>
+&lt;p>➡️ &lt;a href="https://vrm.dev/vrm_applications/">&amp;ldquo;VRMファイルが使えるアプリケーション&lt;/a>&lt;/p>
 &lt;h2 id="vrmの特徴">VRMの特徴&lt;/h2>
 &lt;p>VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong>UnityでVRMファイルを読み書きする標準実装が提供されます&lt;/strong>が、&lt;strong>フォーマット自体はプラットフォーム非依存&lt;/strong>であり他エンジンや環境でも取り扱うことが可能です。&lt;/p>
 &lt;ul>
-&lt;li>プラットフォーム非依存で人型のキャラクター3Dモデルデータを取り扱うことが可能&lt;/li>
-&lt;li>3D標準フォーマット glTF2.0をベースとして、人型モデルを取り扱うための制約と拡張を加えたフォーマット。標準フォーマットをベースとしているため実装も容易&lt;/li>
-&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能&lt;/li>
-&lt;li>スケール（1.00 = 1m）・座標系と向き（Y-up, -Z方向向き）・骨の構造（Unity Humanoid準拠構成, Tスタンス, 各骨にローカルの回転などを入れない）などについて標準の構成が決められておりモデリングツールによる差違の影響を受けない&lt;/li>
-&lt;li>Blend Shapeやマテリアルの透明度など「キャラクターの表情」を取り扱うためにはさまざまな技法が使われるが、その技法の差違をVRM側で吸収し統一したAPIで操作できる&lt;/li>
-&lt;li>VRでのアバター利用のための、**「一人称視点再現のための情報」**に対応。&lt;/li>
-&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能に&lt;/li>
-&lt;li>標準実装としてのマテリアル（シェーダ）を用意。標準的なPBRだけでなくトゥーンシェーディングやUnlitレンダリングを設定可能&lt;/li>
-&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや&lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong>も内包可能&lt;/li>
+&lt;li>ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。&lt;/li>
+&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。&lt;/li>
+&lt;li>「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ &lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
+&lt;li>3種類のシェーダーに対応 ➡️ PBR, Unlit, &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>&lt;/li>
+&lt;li>視線制御を標準化して、モデルごとの違いを吸収 ➡️ &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">ボーンによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">TextureUVによる視線&lt;/a>&lt;/li>
+&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ &lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
+&lt;li>VRでのアバター利用のための、&lt;strong>「一人称視点再現のための情報」&lt;/strong> に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや &lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong> も内包可能 ➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、&lt;strong>自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong>、ということも行われることになります。
-この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p>
+&lt;p>というように単なるモデルデータに留まらず、アプリケーションでロードしてすぐに使えるようになっています。&lt;/p>
+&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
+&lt;p>現在、&lt;/p>
 &lt;ul>
-&lt;li>モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li>
+&lt;li>&lt;a href="https://seed.online/">The Seed Online&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>のほかに&lt;/p>
-&lt;ul>
-&lt;li>モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li>
-&lt;/ul>
-&lt;p>を&lt;strong>ファイルに設定できる&lt;/strong>など、VR時代を想定したフォーマットとなっています。&lt;/p>
-&lt;hr>
-&lt;h2 id="vrmファイルに設定できるライセンスデータ">VRMファイルに設定できるライセンスデータ&lt;/h2>
-&lt;h3 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3>
-&lt;h4 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
-&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
-&lt;li>全員に許可(Authorized to anyone)&lt;/li>
-&lt;/ul>
-&lt;h4 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h4>
-&lt;ul>
-&lt;li>不許可(Disallow)&lt;/li>
-&lt;li>許可(Allow)&lt;/li>
-&lt;/ul>
-&lt;h4 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h4>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
-&lt;h3 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3>
-&lt;h4 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h4>
-&lt;ul>
-&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
-&lt;li>その他(Other)&lt;/li>
-&lt;/ul>
-&lt;h4 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h4>
-&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
+&lt;p>でVRMファイルの投稿ができます。
+ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -122,33 +81,7 @@
 &lt;/table>
 &lt;p>上の図はヒューマノイド3DモデルからVRMへの変換方法を示しています。&lt;/p>
 &lt;p>VRMファイルの作る方は以下のセクション１と２で紹介します。
-最後のセクションは、目の動きや表情などのVRMモデルの動作確認についてです。&lt;/p></description></item><item><title>Docs: VRMファイルを眺めてみたい</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
-&lt;h2 id="vrmファイルの読み込みかた">VRMファイルの読み込みかた&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMファイルのビューアーアプリケーションをダウンロードしてください。プログラムを実行してVRMモデルを選んでモデルが表示されます。
-また、以下の方法は少し面倒ですが、UnityでVRMファイルを読み込むことで内容を確認することができます。他のVRMビューアは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>をご覧ください。&lt;/p>
-&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
-&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>及び&lt;code>Assets/MeshUtility&lt;/code>にインストールします。
-&lt;strong>既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨&lt;/strong>しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
-&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
-&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
-すると、モデルデータが表示されます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>読み込まれたモデルデータをHierarchyで選択すると、&lt;strong>インスペクタに各種情報が表示されます&lt;/strong>。&lt;/p>
-&lt;h2 id="vrmファイルの読み込みかた簡易版">VRMファイルの読み込みかた（簡易版）&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>。（ただしVRM独自の設定は反映されません）&lt;/p>
-&lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
-&lt;p>現在、&lt;a href="https://seed.online/">The Seed Online&lt;/a>、&lt;a href="https://hub.vroid.com/">VRoid Hub&lt;/a>及び&lt;a href="https://3d.nicovideo.jp/">ニコニ立体&lt;/a>でVRMファイルの投稿ができます。
-ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
+最後のセクションは、目の動きや表情などのVRMモデルの動作確認についてです。&lt;/p></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
 &lt;h2 id="3dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/">ザ・シードオンライン&lt;/a>&lt;/li>
@@ -478,4 +411,93 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;td>Windows, macOS&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table></description></item><item><title>Docs: VRMファイルに設定できるライセンスデータ</title><link>https://vrm.dev/docs/vrm/vrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/vrm/vrm_meta/</guid><description>
+&lt;p>VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、 &lt;strong>自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する&lt;/strong> 、ということも行われることになります。
+この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは&lt;/p>
+&lt;ul>
+&lt;li>モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）&lt;/li>
+&lt;/ul>
+&lt;p>のほかに&lt;/p>
+&lt;ul>
+&lt;li>モデルデータを使用して「人格を演じる」ことについての許諾規定&lt;/li>
+&lt;/ul>
+&lt;p>を &lt;strong>ファイルに設定できる&lt;/strong> など、VR時代を想定したフォーマットとなっています。&lt;/p>
+&lt;h3 id="アバターの人格に関する許諾範囲personation--characterization-permission">アバターの人格に関する許諾範囲(Personation / Characterization Permission)&lt;/h3>
+&lt;h4 id="アバターに人格を与えることの許諾範囲a-person-who-can-perform-with-this-avatar">アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)&lt;/li>
+&lt;li>明確に許可された人限定(Authorized only to explicitly specified person)&lt;/li>
+&lt;li>全員に許可(Authorized to anyone)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて暴力表現を演じることの許可permission-to-perform-violent-acts-with-this-avatar">このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="このアバターを用いて性的表現を演じることの許可permission-to-perform-sexual-acts-with-this-avatar">このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="商用利用の許可for-commercial-use">商用利用の許可(For commercial use)&lt;/h4>
+&lt;ul>
+&lt;li>不許可(Disallow)&lt;/li>
+&lt;li>許可(Allow)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他のライセンス条件other-license-url">その他のライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p>
+&lt;h3 id="再配布改変に関する許諾範囲redistribution--modifications-license">再配布・改変に関する許諾範囲(Redistribution / Modifications License)&lt;/h3>
+&lt;h4 id="ライセンスタイプlicense-type">ライセンスタイプ(License Type)&lt;/h4>
+&lt;ul>
+&lt;li>再配布禁止(Redistribution Prohibited)&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">著作権放棄(CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.ja">Creative Commons CC BYライセンス(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons CC BY NCライセンス(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">Creative Commons CC BY SAライセンス(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.ja">Creative Commons CC BY NDライセンス(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja">Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>その他(Other)&lt;/li>
+&lt;/ul>
+&lt;h4 id="その他ライセンス条件other-license-url">その他ライセンス条件(Other License Url)&lt;/h4>
+&lt;p>上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p></description></item><item><title>Docs: VRMで開発する</title><link>https://vrm.dev/docs/vrm/vrm_development/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/vrm/vrm_development/</guid><description>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/programming/">programming&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrmの特徴開発者的な視点">VRMの特徴(開発者的な視点)&lt;/h2>
+&lt;ul>
+&lt;li>右手系Y-UPである ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_coordinate/">Coordinate&lt;/a>&lt;/li>
+&lt;li>メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません&lt;/li>
+&lt;li>人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい&lt;/li>
+&lt;li>初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます&lt;/li>
+&lt;li>初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます&lt;/li>
+&lt;li>初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます&lt;/li>
+&lt;li>表情・視線操作が統一されている ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/">BlendShapeProxy&lt;/a>&lt;/li>
+&lt;li>物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません&lt;/li>
+&lt;li>VRの設定が含まれている ➡️ &lt;a href="https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます&lt;/li>
+&lt;/ul>
+&lt;p>従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
+ランタイムにロードして動かす、という用途が想定されます。&lt;/p>
+&lt;h2 id="univrmで-ランタイムロードする">UniVRMで ランタイムロードする&lt;/h2>
+&lt;p>ランタイムで UniVRM の ロード機能を使うことができます。
+UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
+ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/programming/univrm_import_runtime/">runtime load&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="univrmで-ランタイムエクスポートする">UniVRMで ランタイムエクスポートする&lt;/h2>
+&lt;p>ランタイムで UniVRM の エクスポート機能 を使うことができます。
+この機能を使って、キャラクタークリエーションツール を実装することができます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code>&lt;/p>
+&lt;p>が例です。&lt;/p>
+&lt;h2 id="univrm以外の実装">UniVRM以外の実装&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ruyo/VRM4U">https://github.com/ruyo/VRM4U&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/virtual-cast/babylon-vrm-loader/">https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/pixiv/three-vrm/">https://github.com/pixiv/three-vrm/&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
