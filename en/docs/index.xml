@@ -1,7 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Jul 2020 16:22:48 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid Overview</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Thu, 17 Sep 2020 19:27:28 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 01 Aug 2020 11:22:34 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid Overview</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>VRM humanoid is compatible with the motion of MotionCapture&amp;rsquo;s FK (Forward Kinematics).&lt;/p>
-&lt;p>The motion for one frame has the following information:&lt;/p>
+&lt;p>The motion for one frame has the information described below:&lt;/p>
 &lt;ul>
 &lt;li>The Translation for Hips bone&lt;/li>
 &lt;li>The Rotation for each bone&lt;/li>
@@ -14,7 +14,7 @@
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-If the ratio (e.g. crotch - knee - foot) is uncommon, the same pose cannot be reproduced.
+If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose cannot be reproduced.
 &lt;/div>
 &lt;p>The creation of humanoid avatar is pretty much the same as the original:&lt;/p>
 &lt;p>&lt;a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a>&lt;/p>
@@ -42,9 +42,8 @@ If the ratio (e.g. crotch - knee - foot) is uncommon, the same pose cannot be re
 &lt;li>Thumb is parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
 &lt;/ul>
 &lt;h2 id="unity-humanoid">Unity Humanoid&lt;/h2>
-&lt;p>In Unity, there is an object called &lt;code>Avatar&lt;/code>.
-This &lt;code>Avatar&lt;/code> object can set up the model in humanoid mode.
-Since the Humanoid Avatar settings are part of &lt;code>fbx importer&lt;/code>, the model with Humanoid Avatar from data other than fbx cannot be created.
+&lt;p>In Unity, there is an object called &lt;code>Avatar&lt;/code>, which can be used to set up the model in humanoid mode.
+Since the Humanoid Avatar settings are part of &lt;code>fbx importer&lt;/code>, basically the model with Humanoid Avatar from data other than fbx cannot be created.
 However, we can still create the Humanoid Avatar via program. See &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">humanoid component&lt;/a>.&lt;/p>
 &lt;h2 id="compatible-with-bvh">Compatible with BVH&lt;/h2>
 &lt;p>Compatible with BVH that has the initial pose as &lt;code>T-Pose&lt;/code>.&lt;/p>
@@ -2917,7 +2916,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 17 Sep 2020 19:27:28 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
 &lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
 &lt;h1 id="how-to-use">How to use&lt;/h1>
@@ -2926,10 +2925,10 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
 &lt;p>First, import &lt;code>RiggedFigure.glb&lt;/code> into the &lt;code>Assets&lt;/code> folder.
 If UniVRM package is installed, the &lt;code>Prefab&lt;/code> file can be automatically generated from the imported &lt;code>glb&lt;/code>.&lt;/p>
-&lt;p>Drag the &lt;code>Prefab&lt;/code> file into the Scene. A GameObject associated with this &lt;code>Prefab&lt;/code> is instantiated.&lt;/p>
+&lt;p>Drag the &lt;code>Prefab&lt;/code> file to the &lt;code>Hierarchy&lt;/code> window. A GameObject associated with this &lt;code>Prefab&lt;/code> is instantiated.&lt;/p>
 &lt;p>Click on the GameObject in the &lt;code>Hierarchy&lt;/code> window, then add a humanoid component (&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; Humanoid&lt;/code>).&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
-&lt;p>Assign required bones as shown from messages:&lt;/p>
+&lt;p>As shown in the image above, assign required bones.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
 &lt;p>Press &lt;code>Create UnityEngine.Avatar&lt;/code> button.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
