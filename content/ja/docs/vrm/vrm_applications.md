@@ -3,7 +3,7 @@ title: "VRMファイルが使えるアプリケーションは？"
 date: 2018-04-16T16:30:00+09:00
 lastmod: 2019-09-09T09:47:19Z	
 url: /vrm_applications/
-weight: 4
+weight: 3
 ---
 
 ##  3Dキャラクター投稿プラットフォーム

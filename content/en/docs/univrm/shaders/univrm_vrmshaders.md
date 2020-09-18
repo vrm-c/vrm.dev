@@ -1,5 +1,5 @@
 ---
-title: "VRMShaders"
+title: "VRMShaders UPM Package"
 date: 2020-08-03T10:39:04+09:00
 weight: 8
 tags: ["unity"]

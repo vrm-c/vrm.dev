@@ -25,11 +25,9 @@ VRでのアバター表現が急速に盛り上がるなか、こういった状
 * 細かいモデルデータの差違を吸収・統一し
 * アプリケーション側の取り扱いを簡単にする
 
-**「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する**ものです。
+**「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する** ものです。
 
----
 ## VRMで何ができるの？
-{{< img src="images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" >}}
 
 **VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。**
 対応アプリケーションが揃うと、こんな未来になるはず…
@@ -44,67 +42,35 @@ VRでのアバター表現が急速に盛り上がるなか、こういった状
 
 生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。
 
+{{< img src="images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" >}}
 
 ---
+
+ ➡️ ["VRMファイルが使えるアプリケーション]({{< relref "vrm_applications.md" >}})
+
 ## VRMの特徴
 VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。**UnityでVRMファイルを読み書きする標準実装が提供されます**が、**フォーマット自体はプラットフォーム非依存**であり他エンジンや環境でも取り扱うことが可能です。
 
-* プラットフォーム非依存で人型のキャラクター3Dモデルデータを取り扱うことが可能
-* 3D標準フォーマット glTF2.0をベースとして、人型モデルを取り扱うための制約と拡張を加えたフォーマット。標準フォーマットをベースとしているため実装も容易
-* テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能
-* スケール（1.00 = 1m）・座標系と向き（Y-up, -Z方向向き）・骨の構造（Unity Humanoid準拠構成, Tスタンス, 各骨にローカルの回転などを入れない）などについて標準の構成が決められておりモデリングツールによる差違の影響を受けない
-* Blend Shapeやマテリアルの透明度など「キャラクターの表情」を取り扱うためにはさまざまな技法が使われるが、その技法の差違をVRM側で吸収し統一したAPIで操作できる
-* VRでのアバター利用のための、**「一人称視点再現のための情報」**に対応。
-* キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能に
-* 標準実装としてのマテリアル（シェーダ）を用意。標準的なPBRだけでなくトゥーンシェーディングやUnlitレンダリングを設定可能
-* タイトル・作者名などのメタ情報だけでなく、サムネイルや**VR時代に即した、アバターに特化したライセンス情報**も内包可能
+* ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。
+* テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。
+* 「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
+* 3種類のシェーダーに対応 ➡️ PBR, Unlit, [MToon]({{< relref "shader_mtoon.md" >}})
+* 視線制御を標準化して、モデルごとの違いを吸収 ➡️ [ボーンによる視線]({{< relref "lookat_bone.md" >}})、 [BlendShapeによる視線]({{< relref "lookat_blendshape.md" >}})、 [TextureUVによる視線]({{< relref "lookat_uv.md" >}})
+* キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ [SpringBone]({{< relref "univrm_secondary.md" >}})
+* VRでのアバター利用のための、**「一人称視点再現のための情報」** に対応 ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})
+* タイトル・作者名などのメタ情報だけでなく、サムネイルや **VR時代に即した、アバターに特化したライセンス情報** も内包可能 ➡️ [Meta]({{< relref "vrm_meta.md" >}})
 
-VRMは複数アプリケーション間で相互利用されることが想定される、VR時代の3Dアバターフォーマットです。たとえば「ネットワークに相互接続されたアバターによるVRコミュニケーション」を考えた場合、**自分のアバターデータを「他の人から自分の姿が見えるように」他のユーザへ送信する**、ということも行われることになります。
-この場合、従来の考え方に基づく「再配布」規定だけでは対応できない場面が考えられます。そのため、VRMでは
+というように単なるモデルデータに留まらず、アプリケーションでロードしてすぐに使えるようになっています。
 
-* モデルデータ自体に対しての改変・再配布規定（Creative Commonsなどから設定可能）
+## VRMファイルを投稿する・探す
 
-のほかに
+現在、
 
-* モデルデータを使用して「人格を演じる」ことについての許諾規定
+* [The Seed Online](https://seed.online/)
+* [VRoid Hub](https://hub.vroid.com/)
+* [ニコニ立体](https://3d.nicovideo.jp/)
 
-を**ファイルに設定できる**など、VR時代を想定したフォーマットとなっています。
+でVRMファイルの投稿ができます。
+ニコニ立体では[こちら](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。
 
----
-## VRMファイルに設定できるライセンスデータ
-### アバターの人格に関する許諾範囲(Personation / Characterization Permission)
-#### アバターに人格を与えることの許諾範囲(A person who can perform with this avatar)
-* アバターを操作することはアバター作者にのみ許される(The avatar may only be manipulated by its creator)
-* 明確に許可された人限定(Authorized only to explicitly specified person)
-* 全員に許可(Authorized to anyone)
-
-#### このアバターを用いて暴力表現を演じることの許可(Permission to perform violent acts with this avatar)
-* 不許可(Disallow)
-* 許可(Allow)
-
-#### このアバターを用いて性的表現を演じることの許可(Permission to perform sexual acts with this avatar)
-* 不許可(Disallow)
-* 許可(Allow)
-
-#### 商用利用の許可(For commercial use)
-* 不許可(Disallow)
-* 許可(Allow)
-
-#### その他のライセンス条件(Other License Url)
-上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述
-
-### 再配布・改変に関する許諾範囲(Redistribution / Modifications License)
-#### ライセンスタイプ(License Type)
-* 再配布禁止(Redistribution Prohibited)
-* [著作権放棄(CC0)](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)
-* [Creative Commons CC BYライセンス(CC_BY)](https://creativecommons.org/licenses/by/4.0/deed.ja)
-* [Creative Commons CC BY NCライセンス(CC_BY_NC)](https://creativecommons.org/licenses/by-nc/4.0/deed.ja)
-* [Creative Commons CC BY SAライセンス(CC_BY_SA)](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)
-* [Creative Commons CC BY NC SAライセンス(CC_BY_NC_SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
-* [Creative Commons CC BY NDライセンス(CC_BY_ND)](https://creativecommons.org/licenses/by-nd/4.0/deed.ja)
-* [Creative Commons CC BY NC NDライセンス(CC_BY_NC_ND)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja)
-* その他(Other)
-
-#### その他ライセンス条件(Other License Url)
-上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述
-
+なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると[バーチャルキャスト](https://virtualcast.jp/)から利用できます。
