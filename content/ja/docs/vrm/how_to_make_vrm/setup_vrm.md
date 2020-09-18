@@ -2,26 +2,36 @@
 title: "2. VRMをセットアップする"
 date: 2020-08-26T15:52:30+09:00
 url: "/how_to_make_vrm/setup_vrm/"
-weight: 2
+description: "正規化済みのモデルに BlendShape、視線、SpringBone などをセットアップして正規化せずにを出力する"
+tags: ["unity"]
+weight: 3
 ---
 
-前のセクションでは、 ヒューマノイド3DモデルをVRMに変換する方法を紹介しました。次に、VRMファイルを設定していきます。
+## VRMモデル
 
-### VRMをUnity上に読み込む
+前節で VRM 出力したモデルの prefab。
+
+**VRMファイルを、UnityのAssetsにドラッグ＆ドロップする** だけで、VRMファイルがインポートされ **モデルデータのPrefabが生成されます** 。
+
 {{< img src="images/vrm/vrm_prefab.png" >}}
+{{< img src="images/vrm/vrm_components.jpg" >}}
 
-**VRMファイルを、UnityのAssetsにドラッグ＆ドロップする**だけで、VRMファイルがインポートされ**モデルデータのPrefabが生成されます**。
+* 正規化されている
+* VRMMeta, Animator, VRMBlendShapeProxy, VRMFirstPerson, VRMLookAtHead, VRMLookAtBoneApplyer 等がアタッチされている
+
+## VRM の Prefabをシーンに展開する
+
+`File` - `New Scene`
+
+prefab をシーンに展開します。
 
 {{< img src="images/vrm/alicia_scene2.png" >}}
 
-[配置したモデルデータ]({{< relref "convert_from_humanoid_model.md#モデルデータを調整する" >}})をいったん消し、**VRMから生成されたPrefabをあらためてシーンに配置します**。
-すると、メッシュなどが正規化されたモデルデータが表示されます。
-
-### VRM独自の設定を行う
+## VRM独自の設定を行う
 {{< img src="images/vrm/vrm_settings.png" >}}
 
-読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目**があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
-**少なくとも、[タイトル・作者・ライセンス情報]({{< relref "univrm_meta.md" >}})**は埋めるようにしてください。**特にライセンス情報は重要です！**
+読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目** があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
+**少なくとも、[タイトル・作者・ライセンス情報]({{< relref "univrm_meta.md" >}})** は埋めるようにしてください。 **特にライセンス情報は重要です！**
 
 ほかに、
 
@@ -33,12 +43,23 @@ weight: 2
 がありますので必要に応じて設定していきます。
 
 ### VRMファイルを出力する
+
 {{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.XX -> Export humanoid``を実行します
 
-このとき、**「Force T Pose」と「Pose Freeze」のチェックは外してください**。このチェックは初回（正規化）のときのみ使用します。
-ファイル名を指定してVRMファイルを出力します
+{{% alert title="Pose Freeze" color="info" %}}
+エクスポート時に正規化します。
+最新版は、 `ExportRoot` をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
+最初の正規化以降でも、
+
+* アクセサリを追加
+
+などの場合に必要です。 `ExportRoot` を再セットすれば自動判定します。
+
+* [BlendShape の Bake]({{< relref "univrm_bake_blendshape.md" >}}) もあります。
+
+{{% /alert %}}
 
 ### 完成！
 これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション]({{< relref "vrm_applications.md" >}})に読み込ませてみましょう！
