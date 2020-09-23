@@ -53,7 +53,7 @@ The setting screen for ExportRoot will show up if the following conditions are s
 
 Please set up `Meta` and `ExportSettings`.
 If you get warning messages, it is optional for you to correct those warnings or not.
-If there is no error messages shown, you can go ahead and press `export` button at the lower right of the dialog.
+If there is no error messages shown, you can go ahead and press `export` button at the lower right corner of the dialog.
 Details about VRM size calculation [can be found here]({{< relref "vrm_size.md" >}}).
 
 ## Export Option
