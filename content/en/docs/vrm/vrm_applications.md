@@ -51,6 +51,7 @@ weight: 4
 | [VUP-VTuber](https://store.steampowered.com/app/1207050/VUPVTuber_Maker_Animation_MMDLive2D__facial_capture/) | Windows 10 |
 | [Michicon Plus](https://www.next-system.com/michicon) | iOS |
 | [VOVOLA](https://vovola.wixsite.com/website) | Windows 10 |
+| [VSeeFace](https://www.vseeface.icu/) | Windows |
 
 ##  Metaverse
 
@@ -60,6 +61,7 @@ weight: 4
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
+| [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 
 ##  Game
 
