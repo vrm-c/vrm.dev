@@ -1,6 +1,6 @@
 ---
 title: "Unity のバージョン"
-weight: 2
+weight: 1
 tags: ["unity"]
 ---
 
@@ -19,6 +19,7 @@ Unity-2018.4 以降のバージョンで動作します。
 | Unity-2018.2     | ×    | -                         |                                                                      |
 | Unity-2018.3     | △    | .Net4.X equivalent        | C#7.3。動くかもしれないが未確認                                      |
 | Unity-2018.4 LTS | ◎    | .Net4.X equivalent        | UniVRMの開発に使っているバージョン                                   |
+| Unity-2019.1     | ○    | .Net4.X equivalent        |                                                                      |
 | Unity-2019.2     | ○    | -                         | .Net3.5が無くなったので Scripting Runtime Version 設定が不要になった |
 | Unity-2019.3     | ○    | -                         | 2019.3.4f1 から UPM(githubのサブフォルダ) が動作する                 |
 | Unity-2019.4 LTS | ◎    | -                         | リリース時にUPMの動作確認をしてるバージョン                          |

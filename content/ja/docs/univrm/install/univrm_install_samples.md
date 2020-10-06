@@ -15,8 +15,6 @@ https://github.com/vrm-c/UniVRM/releases
 
 です。
 
-Unityプロジェクトにインストールされている`UniVRM`のバージョンが`UniVRM-samples`のバージョンと一致していることを確認してください（例：`UniVRM`と`UniVRM-samples`はv0.59）。
-
 ## インポート
 
 メニューから `Assets -> Import Package -> Custom Package` で `UniVRM-samples-0.XX.X_XXXX.unitypackage` を選択します。
