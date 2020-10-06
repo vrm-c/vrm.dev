@@ -1,17 +1,14 @@
 ---
 title: "UniVRMをインストールする"
 date: 2020-07-07
-weight: 1
+weight: 2
 aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
 tags: ["unity"]
 ---
 
 ## Unity Version
 
-`UniVRM-0.56` から
-Unity2018.4LTS以降 + `.Net4` 設定をサポートしています。
-
-UPMでUniVRMをインストールする場合は、[UPMでUniVRMをインストールする]({{< relref "univrm_upm.md" >}})ページをご覧ください。
+* Unity-2019.4 が推奨バージョンです。その他のバージョンは、[Unityのバージョン]({{< relref "unity_version.md" >}}) を参照してください。
 
 ## unitypackage の入手
 
@@ -23,22 +20,22 @@ https://github.com/vrm-c/UniVRM/releases
 
 ## インストール前の準備
 
-* Unity2018.4LTS以降で新規のプロジェクトを作成します
-* Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
-
-{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
-
-{{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
-<hr>
+* Unityで新規のプロジェクトを作成します
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
 {{< img src="images/vrm/linear_setting.jpg" width="600" alt="linear setting">}}
 
-### 既存のプロジェクトで作業する場合
+{{% alert title="Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合" color="warning" %}}
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
-* 旧バージョンのVRMがインストールされている場合、`Assets/VRM`、`Assets/VRMShaders`（存在する場合）、そして`Assets/MeshUtility`（存在する場合） を削除してください
+{{% /alert %}}
+
+{{% alert title="既存のプロジェクト" color="warning" %}}
+事前に、古いバージョンの VRM を削除することを推奨しています。
+[UniVRMをアンインストール]({{< relref "univrm_uninstall.md" >}}) を参照してください。
+{{% /alert %}}
+
 
 ## unitypackage の import
 
@@ -61,8 +58,8 @@ VRM menu が表示されていれば動作しています。
 
 menu が出てこない場合は、
 
-* `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
-* Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください
+* Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
 
+{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
 
-
+{{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}

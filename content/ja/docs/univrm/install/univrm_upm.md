@@ -1,16 +1,11 @@
 ---
 title: "UPMでUniVRMをインストールする"
 date: 2020-07-08T11:42:13+09:00
-weight: 2
+weight: 3
 aliases: ["/univrm/univrm_upm/", "/univrm/install/univrm_upm/"]
 tags: ["unity"]
 ---
 
-## UniVRM-0.XX の UnityPackage
-
-UniVRM-0.56から、UniVRMはUnityPackageManagerでインポートできるようになりました。
-
-github リポジトリのルート以外に `package.json` を配置する機能を使っているので、
 `Unity 2019.3.4f1以降` が必要です。
 
 ### UnityPackageManager ウインドウによるインストール
