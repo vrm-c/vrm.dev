@@ -1,4 +1,86 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 01 Aug 2020 11:43:10 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 17:58:44 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Tue, 06 Oct 2020 18:31:16 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+&lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
+&lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
+&lt;ul>
+&lt;li>Unity-2019.4 LTS が推奨バージョンです&lt;/li>
+&lt;/ul>
+&lt;p>Unity-2018.4 以降のバージョンで動作します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Unity Version&lt;/th>
+&lt;th>動作&lt;/th>
+&lt;th>Scripting Runtime Version&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Unity-2017&lt;/td>
+&lt;td>×&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2018.1&lt;/td>
+&lt;td>×&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2018.2&lt;/td>
+&lt;td>×&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2018.3&lt;/td>
+&lt;td>△&lt;/td>
+&lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>C#7.3。動くかもしれないが未確認&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2018.4 LTS&lt;/td>
+&lt;td>◎&lt;/td>
+&lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>UniVRMの開発に使っているバージョン&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2019.1&lt;/td>
+&lt;td>○&lt;/td>
+&lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2019.2&lt;/td>
+&lt;td>○&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>.Net3.5が無くなったので Scripting Runtime Version 設定が不要になった&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2019.3&lt;/td>
+&lt;td>○&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>2019.3.4f1 から UPM(githubのサブフォルダ) が動作する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2019.4 LTS&lt;/td>
+&lt;td>◎&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>リリース時にUPMの動作確認をしてるバージョン&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unity-2020&lt;/td>
+&lt;td>○&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="-univrm-055">～ UniVRM-0.55&lt;/h2>
+&lt;ul>
+&lt;li>Unity-5.6 以降&lt;/li>
+&lt;/ul></description></item><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;h2 id="概要">概要&lt;/h2>
 &lt;p>VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p>
 &lt;p>１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p>
@@ -139,58 +221,7 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 &lt;p>Console左上の clear ボタンを押して赤いメッセージが消えない場合は unitypackage のインストールに失敗しているなど、unity project に異常があります。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/error_in_console.jpg" alt="clear console" width="500" />
 &lt;h2 id="manual">Manual&lt;/h2>
-&lt;p>➡ &lt;a href="https://vrm.dev/docs/univrm/install/">インストール&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
-&lt;h2 id="unity-version">Unity Version&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.56&lt;/code> から
-Unity2018.4LTS以降 + &lt;code>.Net4&lt;/code> 設定をサポートしています。&lt;/p>
-&lt;p>UPMでUniVRMをインストールする場合は、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_upm/">UPMでUniVRMをインストールする&lt;/a>ページをご覧ください。&lt;/p>
-&lt;h2 id="unitypackage-の入手">unitypackage の入手&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
-&lt;p>&lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
-&lt;p>です。&lt;/p>
-&lt;h2 id="インストール前の準備">インストール前の準備&lt;/h2>
-&lt;ul>
-&lt;li>Unity2018.4LTS以降で新規のプロジェクトを作成します&lt;/li>
-&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
-&lt;hr>
-&lt;ul>
-&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> を &lt;code>Linear&lt;/code> に設定します(推奨)&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
-&lt;h3 id="既存のプロジェクトで作業する場合">既存のプロジェクトで作業する場合&lt;/h3>
-&lt;ul>
-&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> にしてください&lt;/li>
-&lt;li>旧バージョンのVRMがインストールされている場合、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>（存在する場合）、そして&lt;code>Assets/MeshUtility&lt;/code>（存在する場合） を削除してください&lt;/li>
-&lt;/ul>
-&lt;h2 id="unitypackage-の-import">unitypackage の import&lt;/h2>
-&lt;p>&lt;code>unitypackage&lt;/code> を Import します。&lt;/p>
-&lt;p>&lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package...&lt;/code> で &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
-&lt;p>&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>お及び&lt;code>Assets/MeshUtility&lt;/code> の３つのフォルダに import されます。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="350" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>UnityPackageをインポート&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="import-が成功したか確認する方法">import が成功したか確認する方法&lt;/h2>
-&lt;p>VRM menu が表示されていれば動作しています。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
-&lt;hr>
-&lt;p>menu が出てこない場合は、&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> になっていることを確認してください&lt;/li>
-&lt;li>Console を表示させます。左上の clear ボタンを推して、UniVRMを導入する前にエラー(赤いメッセージ)が無いことを確認してください&lt;/li>
-&lt;/ul></description></item><item><title>Docs: 構成</title><link>https://vrm.dev/dev/univrm-1.xx/structure/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/structure/</guid><description>
+&lt;p>➡ &lt;a href="https://vrm.dev/docs/univrm/install/">インストール&lt;/a>&lt;/p></description></item><item><title>Docs: 構成</title><link>https://vrm.dev/dev/univrm-1.xx/structure/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/structure/</guid><description>
 &lt;h2 id="assetsvrmlib">Assets/vrmlib&lt;/h2>
 &lt;p>GLTFからバイト列を切り出して、index 参照を実体化して作業しやすくした中間の入れ物 &lt;code>VrmLib.Model&lt;/code>。&lt;/p>
 &lt;h2 id="assetsprotobufserializer">Assets/ProtobufSerializer&lt;/h2>
@@ -1176,49 +1207,7 @@ Assets 内を選択する場合は、新規に専用のフォルダを作成す�
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: UPMでUniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
-&lt;h2 id="univrm-0xx-の-unitypackage">UniVRM-0.XX の UnityPackage&lt;/h2>
-&lt;p>UniVRM-0.56から、UniVRMはUnityPackageManagerでインポートできるようになりました。&lt;/p>
-&lt;p>github リポジトリのルート以外に &lt;code>package.json&lt;/code> を配置する機能を使っているので、
-&lt;code>Unity 2019.3.4f1以降&lt;/code> が必要です。&lt;/p>
-&lt;h3 id="unitypackagemanager-ウインドウによるインストール">UnityPackageManager ウインドウによるインストール&lt;/h3>
-&lt;p>UnityPackageManagerのWindow&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
-&lt;hr>
-&lt;p>&lt;code>add package from git URL&lt;/code>&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
-&lt;hr>
-&lt;p>新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p>
-&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a> のgit urlは次のとおりです：&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; VRMShadersとMeshUtility に依存&lt;/li>
-&lt;/ul>
-&lt;p>パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p>
-&lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
-&lt;h3 id="packagesmanifestjson-直接編集によるインストール">packages/manifest.json 直接編集によるインストール&lt;/h3>
-&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>の例)。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitの特定コミットを指定する場合">gitの特定コミットを指定する場合&lt;/h2>
-&lt;p>&lt;code>dependencies&lt;/code> に特定のコミットを指定します。&lt;/p>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: エクスポートダイアログ</title><link>https://vrm.dev/docs/univrm/export/univrm_export/</link><pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/export/univrm_export/</guid><description>
+&lt;/table></description></item><item><title>Docs: エクスポートダイアログ</title><link>https://vrm.dev/docs/univrm/export/univrm_export/</link><pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/export/univrm_export/</guid><description>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1464,7 +1453,63 @@ FBX importer の rig 設定に戻って設定を解除することをおすす�
 &lt;h2 id="v057">v0.57&lt;/h2>
 &lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
 &lt;p>Unityの &lt;a href="https://docs.unity3d.com/ScriptReference/ScriptableWizard.html">ScriptableWizard&lt;/a> で画面を作成しています。
-v0.58 以降でダイアログを改善予定です。&lt;/p></description></item><item><title>Docs: モデル情報</title><link>https://vrm.dev/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/univrm_meta/</guid><description>
+v0.58 以降でダイアログを改善予定です。&lt;/p></description></item><item><title>Docs: UniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install/</guid><description>
+&lt;h2 id="unity-version">Unity Version&lt;/h2>
+&lt;ul>
+&lt;li>Unity-2019.4 が推奨バージョンです。その他のバージョンは、&lt;a href="https://vrm.dev/docs/univrm/install/unity_version/">Unityのバージョン&lt;/a> を参照してください。&lt;/li>
+&lt;/ul>
+&lt;h2 id="unitypackage-の入手">unitypackage の入手&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
+&lt;p>&lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;h2 id="インストール前の準備">インストール前の準備&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Unityで新規のプロジェクトを作成します&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> を &lt;code>Linear&lt;/code> に設定します(推奨)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> を &lt;code>.Net4.X equivalent&lt;/code> にしてください&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">既存のプロジェクト&lt;/h4>
+事前に、古いバージョンの VRM を削除することを推奨しています。
+&lt;a href="https://vrm.dev/docs/univrm/install/univrm_uninstall/">UniVRMをアンインストール&lt;/a> を参照してください。
+&lt;/div>
+&lt;h2 id="unitypackage-の-import">unitypackage の import&lt;/h2>
+&lt;p>&lt;code>unitypackage&lt;/code> を Import します。&lt;/p>
+&lt;p>&lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package...&lt;/code> で &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
+&lt;p>&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>お及び&lt;code>Assets/MeshUtility&lt;/code> の３つのフォルダに import されます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="350" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>UnityPackageをインポート&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="import-が成功したか確認する方法">import が成功したか確認する方法&lt;/h2>
+&lt;p>VRM menu が表示されていれば動作しています。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
+&lt;hr>
+&lt;p>menu が出てこない場合は、&lt;/p>
+&lt;ul>
+&lt;li>Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: モデル情報</title><link>https://vrm.dev/docs/univrm/meta/univrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/meta/univrm_meta/</guid><description>
 &lt;h2 id="vrmmeta">VRMMeta&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -1724,30 +1769,7 @@ OnLoaded(context.Root);
 &lt;li>Shaderの種類が &lt;code>Standard&lt;/code> (Unityの標準) で &lt;code>metallic&lt;/code> と &lt;code>smooth&lt;/code> 値が高い状態になっています。 マテリアルのシェーダーを &lt;code>Unlit/UniUnlit&lt;/code> にするとテクスチャがそのまま表示できます。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: UniVRMサンプルをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:29:28 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install_samples/</guid><description>
-&lt;p>このセクションでは、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install/">UniVRMパッケージをインストール&lt;/a>したことを想定しています。&lt;/p>
-&lt;h2 id="univrmサンプルのパッケージ">UniVRMサンプルのパッケージ&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
-&lt;p>&lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
-&lt;p>です。&lt;/p>
-&lt;p>Unityプロジェクトにインストールされている&lt;code>UniVRM&lt;/code>のバージョンが&lt;code>UniVRM-samples&lt;/code>のバージョンと一致していることを確認してください（例：&lt;code>UniVRM&lt;/code>と&lt;code>UniVRM-samples&lt;/code>はv0.59）。&lt;/p>
-&lt;h2 id="インポート">インポート&lt;/h2>
-&lt;p>メニューから &lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code> で &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
-&lt;p>以下の画像ようにインポートウィンドウを見たら、&lt;code>Import&lt;/code>ボタンをクリックしてください：&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_package_import.jpg" alt="sample_package_import" width="300" />
-&lt;h2 id="univrmサンプルのシーンを実行する">UniVRMサンプルのシーンを実行する&lt;/h2>
-&lt;p>&lt;code>VRM.Samples&lt;/code>フォルダは&lt;code>Assets&lt;/code>にあります。プロジェクトウィンドウに&lt;code>SampleViewer&lt;/code>を選択します：&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_scene.jpg" alt="sample_scene" width="300" />
-&lt;p>&lt;code>Game&lt;/code>タブをクリックして、&lt;code>SampleViewer&lt;/code>のインタフェースを表示させます：&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_viewer.jpg" alt="sample_viewer" width="500" />
-&lt;p>&lt;code>Play&lt;/code>ボタンをクリックして&lt;code>SampleViewer&lt;/code>を有効になります。実行時に&lt;code>Open&lt;/code>ボタンをクリックしてVRMモデルをシーンにインポートします：&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/play_mode.jpg" alt="play_mode" width="150" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/sample_viewer_activate.jpg" alt="sample_viewer_activate" width="600" />
-&lt;/p>
-&lt;p>&lt;code>VRM.Samples&lt;/code>にVRMエクスポートと一人称レンダリングのサンプルがあります。&lt;/p>
-&lt;p>Aliciaモデルは&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm">こちら&lt;/a>。&lt;/p></description></item><item><title>Docs: 2. VRMをセットアップする</title><link>https://vrm.dev/how_to_make_vrm/setup_vrm/</link><pubDate>Wed, 26 Aug 2020 15:52:30 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/setup_vrm/</guid><description>
+&lt;/ul></description></item><item><title>Docs: 2. VRMをセットアップする</title><link>https://vrm.dev/how_to_make_vrm/setup_vrm/</link><pubDate>Wed, 26 Aug 2020 15:52:30 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/setup_vrm/</guid><description>
 &lt;h2 id="vrmモデル">VRMモデル&lt;/h2>
 &lt;p>前節で VRM 出力したモデルの prefab。&lt;/p>
 &lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong> だけで、VRMファイルがインポートされ &lt;strong>モデルデータのPrefabが生成されます&lt;/strong> 。&lt;/p>
@@ -1911,7 +1933,46 @@ float3 Tangent; // 頂点Tangent 4 x 3 =&amp;gt; 12byte. 記録しない
 &lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
 &lt;p>エクスポートすると・・・&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
-&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: UPMでUniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
+&lt;p>&lt;code>Unity 2019.3.4f1以降&lt;/code> が必要です。&lt;/p>
+&lt;h3 id="unitypackagemanager-ウインドウによるインストール">UnityPackageManager ウインドウによるインストール&lt;/h3>
+&lt;p>UnityPackageManagerのWindow&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
+&lt;hr>
+&lt;p>&lt;code>add package from git URL&lt;/code>&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
+&lt;hr>
+&lt;p>新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p>
+&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a> のgit urlは次のとおりです：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; VRMShadersとMeshUtility に依存&lt;/li>
+&lt;/ul>
+&lt;p>パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p>
+&lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
+&lt;h3 id="packagesmanifestjson-直接編集によるインストール">packages/manifest.json 直接編集によるインストール&lt;/h3>
+&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>の例)。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitの特定コミットを指定する場合">gitの特定コミットを指定する場合&lt;/h2>
+&lt;p>&lt;code>dependencies&lt;/code> に特定のコミットを指定します。&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;p>２系統の設定があります。&lt;/p>
 &lt;ul>
 &lt;li>VRMモデル内で、VRヘッドセット位置を指定する&lt;/li>
@@ -2525,49 +2586,29 @@ proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値�
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
 &lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
-&lt;p>以下のフォルダを削除してください。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>folder&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>備考&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Assets/VRM&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/VRMShaders&lt;/td>
-&lt;td>v0.56.0以降&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/MeshUtility&lt;/td>
-&lt;td>v0.59.0以降&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。&lt;/p>
-&lt;ul>
-&lt;li>バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。&lt;/li>
-&lt;/ul>
-&lt;p>UPMでパッケージをインストールするの場合は、UPMウィンドウのパッケージインタフェースの右下にある&lt;code>Remove&lt;/code>ボタンをクリックしてください。&lt;/p></description></item><item><title>Docs: VRMの動作を確認する</title><link>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Wed, 26 Aug 2020 15:52:48 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
+&lt;/ol></description></item><item><title>Docs: UniVRMサンプルをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:29:28 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_install_samples/</guid><description>
+&lt;p>このセクションでは、&lt;a href="https://vrm.dev/docs/univrm/install/univrm_install/">UniVRMパッケージをインストール&lt;/a>したことを想定しています。&lt;/p>
+&lt;h2 id="univrmサンプルのパッケージ">UniVRMサンプルのパッケージ&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
+&lt;p>&lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
+&lt;p>です。&lt;/p>
+&lt;h2 id="インポート">インポート&lt;/h2>
+&lt;p>メニューから &lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code> で &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code> を選択します。&lt;/p>
+&lt;p>以下の画像ようにインポートウィンドウを見たら、&lt;code>Import&lt;/code>ボタンをクリックしてください：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_package_import.jpg" alt="sample_package_import" width="300" />
+&lt;h2 id="univrmサンプルのシーンを実行する">UniVRMサンプルのシーンを実行する&lt;/h2>
+&lt;p>&lt;code>VRM.Samples&lt;/code>フォルダは&lt;code>Assets&lt;/code>にあります。プロジェクトウィンドウに&lt;code>SampleViewer&lt;/code>を選択します：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_scene.jpg" alt="sample_scene" width="300" />
+&lt;p>&lt;code>Game&lt;/code>タブをクリックして、&lt;code>SampleViewer&lt;/code>のインタフェースを表示させます：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/sample_viewer.jpg" alt="sample_viewer" width="500" />
+&lt;p>&lt;code>Play&lt;/code>ボタンをクリックして&lt;code>SampleViewer&lt;/code>を有効になります。実行時に&lt;code>Open&lt;/code>ボタンをクリックしてVRMモデルをシーンにインポートします：&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/play_mode.jpg" alt="play_mode" width="150" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/sample_viewer_activate.jpg" alt="sample_viewer_activate" width="600" />
+&lt;/p>
+&lt;p>&lt;code>VRM.Samples&lt;/code>にVRMエクスポートと一人称レンダリングのサンプルがあります。&lt;/p>
+&lt;p>Aliciaモデルは&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm">こちら&lt;/a>。&lt;/p></description></item><item><title>Docs: VRMの動作を確認する</title><link>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Wed, 26 Aug 2020 15:52:48 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
 &lt;p>このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。&lt;/p>
 &lt;h3 id="目の動きを確認する">目の動きを確認する&lt;/h3>
 &lt;p>&lt;code>AnimationClip/AnimationController&lt;/code>をセットしたり、&lt;code>VRMLookAtHead&lt;/code>の&lt;code>Target&lt;/code>に&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target">GameObject&lt;/a>をセットしたり（視線がどこを向くかの設定）、&lt;code>Head&lt;/code>欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p>
@@ -2755,7 +2796,48 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;span style="color:#099">#endif
 &lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> m;
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;p>以下のフォルダを削除してください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>folder&lt;/th>
+&lt;th>Version&lt;/th>
+&lt;th>備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Assets/VRM&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRMShaders&lt;/td>
+&lt;td>v0.56.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/MeshUtility&lt;/td>
+&lt;td>v0.59.0以降&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。&lt;/p>
+&lt;ul>
+&lt;li>バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。&lt;/li>
+&lt;/ul></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id="vrmfirstpersonの設定">VRMFirstPersonの設定&lt;/h1>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">VRMFirstPerson&lt;/a>ではRendererに対して設定があります。&lt;/p>
 &lt;table>
@@ -3418,20 +3500,4 @@ proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
 &lt;ul>
 &lt;li>Eidt - project settings - other settings - Scripting Define Symbols&lt;/li>
 &lt;/ul>
-&lt;p>から設定できます。&lt;/p></description></item><item><title>Docs: UniVRM使用例</title><link>https://vrm.dev/dev/univrm-1.xx/use_vrm/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/use_vrm/</guid><description>
-&lt;h2 id="editorimport">EditorImport&lt;/h2>
-&lt;ul>
-&lt;li>読み込んでprefabを生成する&lt;/li>
-&lt;/ul>
-&lt;h2 id="editorexport">EditorExport&lt;/h2>
-&lt;ul>
-&lt;li>シーンをEditorで作り上げてからエクスポートする&lt;/li>
-&lt;/ul>
-&lt;h2 id="runtimeimport">RunTimeImport&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/vrm-c/UniVRMUtility">https://github.com/vrm-c/UniVRMUtility&lt;/a> SimpleViewer, VRMViewer&lt;/li>
-&lt;/ul>
-&lt;h2 id="runtimeexport">RuntimeExport&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/vrm-c/UniVRMUtility">https://github.com/vrm-c/UniVRMUtility&lt;/a> PrimMan。ランタイムに箱人間をプログラム的に生成してVRMとしてエクスポートする&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>から設定できます。&lt;/p></description></item></channel></rss>
