@@ -72,6 +72,7 @@ weight: 4
 | [TSUN-TSUN VR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/) | Windows VR |
 | [KOROKORO System](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [PilotXross](https://n-mattun.booth.pm/) | Windows VR |
+| [Primitier](https://ootamato.itch.io/primitier) | Windows VR |
 
 ##  Viewer
 
@@ -102,6 +103,7 @@ weight: 4
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unity library |
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
+| [TEATOR](https://teator.jp/) | Windows 10, macOS, iOS |
 
 ##  Services using VRM internally
 
