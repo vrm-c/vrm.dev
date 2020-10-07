@@ -2,7 +2,7 @@
 title: "Uninstall UniVRM"
 linkTitle: "Uninstall UniVRM"
 date: 2020-08-31
-weight: 4
+weight: 5
 aliases: []
 tags: ["unity"]
 ---
