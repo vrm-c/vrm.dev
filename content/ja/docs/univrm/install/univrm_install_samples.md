@@ -1,7 +1,7 @@
 ---
 title: "UniVRMサンプルをインストールする"
 date: 2020-09-02T12:29:28+09:00
-weight: 3
+weight: 4
 tags: ["api"]
 ---
 
@@ -14,8 +14,6 @@ https://github.com/vrm-c/UniVRM/releases
 `UniVRM-samples-0.XX.X_XXXX.unitypackage`
 
 です。
-
-Unityプロジェクトにインストールされている`UniVRM`のバージョンが`UniVRM-samples`のバージョンと一致していることを確認してください（例：`UniVRM`と`UniVRM-samples`はv0.59）。
 
 ## インポート
 
