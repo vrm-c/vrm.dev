@@ -72,6 +72,7 @@ weight: 3
 | [つんつんVR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/) | Windows VR |
 | [コロコロシステム](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [パイロットクロス](https://n-mattun.booth.pm/) | Windows VR |
+| [プリミティア](https://ootamato.itch.io/primitier) | Windows VR |
 
 ##  ビューア
 
@@ -102,6 +103,7 @@ weight: 3
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unityライブラリ |
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
+| [テアトル](https://teator.jp/) | Windows 10 |
 
 ##  内部的にVRMを活用しているサービス
 
