@@ -1,28 +1,28 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 18:36:11 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 18:44:01 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
 &lt;h2 id="what-is-vrm">What is VRM?&lt;/h2>
-&lt;p>In the past, when trying to handle the &lt;strong>3D humanoid avatar (3D model)&lt;/strong> in Virtual Reality, Virtual YouTuber, etc., it was necessary to develop an unique system for applications and fine-tune the 3D model data due to&amp;hellip;&lt;/p>
+&lt;p>In the past, handling &lt;strong>3D humanoid avatar (3D model)&lt;/strong> in Virtual Reality, Virtual YouTuber, etc. was not trivial as it was necessary to develop unique systems for applications and fine-tune the 3D model data due to&amp;hellip;&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>The output data is depend on how creators make the 3D model and what modeling tools are used&lt;/p>
 &lt;ul>
-&lt;li>The coordinate system is different. The scale is different. The initial pose is different. The expression is different&amp;hellip;&lt;/li>
+&lt;li>The coordinate system, scale, initial pose, and the way to express expressions are all different&amp;hellip;&lt;/li>
 &lt;li>Needless to say, the way bones put into the 3D model is also different&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>The format of handling the 3D model data is different. Each company has its own specifications, which are way more complex than necessary. Also, the necessary information about their file formats is not fully provided&lt;/p>
+&lt;p>Each company has its own specifications for handling the 3D model data, which are way more complex than usual. Also, the necessary information about their file formats is not fully provided&lt;/p>
 &lt;ul>
 &lt;li>Whether the FBX file, which is compatible with various software, is viable for an application and which version of the application can process the FBX file are main issues concerned by most of the users.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>There is not enough necessary information available from the viewpoint of using the 3D model data as the Avatar&lt;/p>
+&lt;p>There is not enough necessary information available from the viewpoint of using the 3D model data as Avatar&lt;/p>
 &lt;ul>
-&lt;li>For example, in the first-person view, how to obtain the right position, how to get rid of the head display, which part of the body should be excluded and so on&lt;/li>
+&lt;li>For example, in the first-person view, how to get the right viewpoint position, how to exclude head due to the view blocking issue and so on&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>With the use of avatar in VR applications grows up very fast, if the situations mentioned above remain unchanged, application developers and 3D model creators will have to spend double or triple effort. To improve the current situation, based on the humanoid character and avatar, the first step is to:&lt;/p>
+&lt;p>With the use of avatar in VR applications grows exponentially, if the situations mentioned above remain unchanged, application developers and 3D model creators will have to spend double or triple effort. To improve the current situation, based on the humanoid character and avatar, we can do the followings:&lt;/p>
 &lt;ul>
 &lt;li>Effectively absorb and unify the differences from the model data&lt;/li>
 &lt;li>Make handling the 3D model easy on the application side&lt;/li>
@@ -30,81 +30,36 @@
 &lt;p>Here we propose a &lt;strong>platform-independent 3D avatar file format&lt;/strong> that possesses the above characteristics called &lt;strong>VRM&lt;/strong>.&lt;/p>
 &lt;hr>
 &lt;h2 id="what-can-you-do-with-vrm">What can you do with VRM?&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_EN.png" alt="VRM applications" />
-&lt;p>&lt;strong>The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong>. As long as various VR applications are ready, the future will look like the one described below for sure&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong>. As long as various VRM applications are made, the future will look like the one described below for sure&amp;hellip;&lt;/p>
 &lt;ul>
-&lt;li>Create your own avatar with character maker tools that support VRM&lt;/li>
+&lt;li>Create your own avatar with the character maker in VRM format&lt;/li>
 &lt;li>Use your own avatar to host a live streaming event and show up on your friends&amp;rsquo; live channels&lt;/li>
 &lt;li>After the live streaming, start a VR game to explore the VR world with your own avatar&lt;/li>
-&lt;li>Move to the chat room in the VR world after getting tired of the game. Use the same avatar character to hang out with friends&lt;/li>
+&lt;li>After the game, move to the chat room in the VR world. Use the same avatar character to hang out with friends&lt;/li>
 &lt;li>Tomorrow join the VR study group in VR. Of course, the same avatar appearance&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>By using your own avatar (VRM 3D model), you can easily access to various VRM-compatible applications and games&lt;/strong>.&lt;/p>
-&lt;p>Live streaming, video creation, games, chat&amp;hellip;. Now the virtual worlds are separated. The first step to connect the separated virtual worlds is VRM.&lt;/p>
+&lt;p>&lt;strong>By using your own avatar (3D model data) in VRM format, you can access to various applications and games that support VRM&lt;/strong>.&lt;/p>
+&lt;p>Live streaming, video creation, games, chat&amp;hellip;. The virtual worlds are not connected with each other. Using VRM is the first step to bridge those virtual worlds.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_EN.png" alt="VRM applications" />
 &lt;hr>
+&lt;p>➡️ &lt;a href="https://vrm.dev/en/vrm_applications/">Applications that support VRM&lt;/a>&lt;/p>
 &lt;h2 id="vrm-features">VRM features&lt;/h2>
-&lt;p>VRM can handle the humanoid character and avatar. &lt;strong>Although the current provided software to import and export VRM is for Unity, VRM itself is platform-independent&lt;/strong>, which means VRM is also applicable to other engines and environments.&lt;/p>
+&lt;p>VRM can handle the humanoid character/avatar (3D model data). &lt;strong>Though the current provided software to import and export VRM is in Unity environment, VRM itself is platform-independent&lt;/strong>, which means import/export VRM file in other engines/environments is feasible.&lt;/p>
 &lt;ul>
-&lt;li>Available to handle the humanoid character (3D model data) without limiting to a specific platform.&lt;/li>
-&lt;li>VRM is based on the 3D standard format &lt;strong>glTF2.0&lt;/strong>, which is the format added with constraints and extensions for handling the humanoid model. Ease of implementation as it is based on this standard format.&lt;/li>
-&lt;li>All data including textures and materials is compacted as one file. To import a VRM model, only one single file needs to be handled.&lt;/li>
-&lt;li>Based on the standard of the scale (1.00 = 1 m), the coordinate system (Y-up, -Z) and the bone structure (conforming to Unity Humanoid, T-Stance, no local rotation for each bone), a 3D model made by different modeling tools will not cause differences on the exported VRM model.&lt;/li>
-&lt;li>Various techniques such as the BlendShape and the material transparency can be used to handle Avatar expressions. The difference in a technique can be absorbed and unified through API operation on the VRM side.&lt;/li>
-&lt;li>For the use of avatar in VR, VRM supports &lt;strong>first-person view&lt;/strong>.&lt;/li>
-&lt;li>A standard implementation of the object swaying that does not rely on the physical engine is available for users to set up the character&amp;rsquo;s hair, clothes and so on.&lt;/li>
-&lt;li>A standard implementation of the PBR shader is provided. Beside the standard PBR, users can also choose the Toon shader or the Unlit shader.&lt;/li>
-&lt;li>Not only the meta information such as the title and the author name, but also the thumbnail and the &lt;strong>license information specialized for avatars in the VR era&lt;/strong> can be included in the VRM file.&lt;/li>
+&lt;li>VRM is formulated on top of the 3D standard format &lt;strong>glTF2.0&lt;/strong> to handle the humanoid model&lt;/li>
+&lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
+&lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
+&lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
+&lt;li>Support three types of shaders ➡️ PBR, Unlit, [MToon](/en/docs/univrm/shaders/shader_mtoon/&lt;/li>
+&lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
+&lt;li>An implementation of spring physics that does not rely on the physical engine is provided for setting up the model&amp;rsquo;s hairs, clothes and so forth. ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
+&lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and &lt;strong>License Information&lt;/strong> are also included in the VRM file ➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>VRM is assumed to be a 3D avatar format in the VR era and to be used in multiple applications. For example, when it comes to &amp;ldquo;VR communications with avatars online&amp;rdquo;, it is possible to &lt;strong>send your own avatar data to your partners as they can see your avatar appearance in a shared virtual space&lt;/strong>. However, there may be situations that cannot be handled by just redistribution rules based on conventional thinkings. Therefore, VRM has:&lt;/p>
-&lt;ul>
-&lt;li>Modification / Redistribution rules for the avatar（configurable from Creative Commons, etc.）&lt;/li>
-&lt;/ul>
-&lt;p>in addition to&lt;/p>
-&lt;ul>
-&lt;li>Permission to use the avatar and perform various acts&lt;/li>
-&lt;/ul>
-&lt;p>The new adding above is assumed to be the format in VR era.&lt;/p>
-&lt;hr>
-&lt;h2 id="license-data-settings-in-vrm-file">License data settings in VRM file&lt;/h2>
-&lt;h3 id="personation--characterization-permission">Personation / Characterization Permission&lt;/h3>
-&lt;h4 id="a-person-who-can-perform-with-this-avatar">A person who can perform with this avatar&lt;/h4>
-&lt;ul>
-&lt;li>The avatar may only be manipulated by its creator&lt;/li>
-&lt;li>Authorized only to explicitly specified person&lt;/li>
-&lt;li>Authorized to anyone&lt;/li>
-&lt;/ul>
-&lt;h4 id="permission-to-perform-violent-acts-with-this-avatar">Permission to perform violent acts with this avatar&lt;/h4>
-&lt;ul>
-&lt;li>Disallow&lt;/li>
-&lt;li>Allow&lt;/li>
-&lt;/ul>
-&lt;h4 id="permission-to-perform-sexual-acts-with-this-avatar">Permission to perform sexual acts with this avatar&lt;/h4>
-&lt;ul>
-&lt;li>Disallow&lt;/li>
-&lt;li>Allow&lt;/li>
-&lt;/ul>
-&lt;h4 id="for-commercial-use">For commercial use&lt;/h4>
-&lt;ul>
-&lt;li>Disallow&lt;/li>
-&lt;li>Allow&lt;/li>
-&lt;/ul>
-&lt;h4 id="other-license-url">Other License Url&lt;/h4>
-&lt;p>The URL links of license with regard to other permissions.&lt;/p>
-&lt;h3 id="redistribution--modifications-license">Redistribution / Modifications License&lt;/h3>
-&lt;h4 id="license-type">License Type&lt;/h4>
-&lt;ul>
-&lt;li>Redistribution Prohibited&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Copyright wavier (CC0)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons CC BY License(CC_BY)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons CC BY NC License(CC_BY_NC)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons CC BY SA License(CC_BY_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.en">Creative Commons CC BY ND License(CC_BY_ND)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a>&lt;/li>
-&lt;li>Other&lt;/li>
-&lt;/ul>
-&lt;h4 id="other-license-url-1">Other License Url&lt;/h4>
-&lt;p>The URL links of license with regard to other permissions.&lt;/p></description></item><item><title>Docs: How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/</guid><description>
+&lt;p>As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.&lt;/p>
+&lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
+&lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/</guid><description>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -122,7 +77,7 @@
 &lt;p>The detailed walkthrough is presented in the first two sections below.
 The last section is about VRM model testings such as eye movement and expression.&lt;/p></description></item><item><title>Docs: How to view VRM file</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
 &lt;h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer&lt;/h2>
-&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
+&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
 &lt;h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project&lt;/h2>
 &lt;p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p>
 &lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
@@ -140,10 +95,7 @@ The last section is about VRM model testings such as eye movement and expression
 &lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p>
 &lt;h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder&lt;/h2>
 &lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p>
-&lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
-&lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
-Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: VRM applications</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
+&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: VRM applications</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
 &lt;h2 id="3d-model-submission-platform">3D model submission platform&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/en/">The Seed Online&lt;/a>&lt;/li>
@@ -489,4 +441,93 @@ Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャ�
 &lt;td>Windows, macOS&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table></description></item><item><title>Docs: License settings in VRM</title><link>https://vrm.dev/en/docs/vrm/vrm_meta/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/vrm_meta/</guid><description>
+&lt;p>VRM is assumed to be a 3D avatar format in the VR era and to be used in multiple applications. For example, when it comes to &amp;ldquo;VR communications with avatars online&amp;rdquo;, it is possible to &lt;strong>send your own avatar data to your partners as they can see your avatar appearance in a shared virtual space&lt;/strong>. However, there may be situations that cannot be handled by just redistribution rules based on conventional thinkings. Therefore, VRM has:&lt;/p>
+&lt;ul>
+&lt;li>Modification/Redistribution rules for the avatar（configurable from Creative Commons, etc.）&lt;/li>
+&lt;/ul>
+&lt;p>in addition to&lt;/p>
+&lt;ul>
+&lt;li>Permission to use the avatar and perform various activities&lt;/li>
+&lt;/ul>
+&lt;p>The new adding above is assumed to be the format in VR era.&lt;/p>
+&lt;hr>
+&lt;h3 id="personation--characterization-permission">Personation / Characterization Permission&lt;/h3>
+&lt;h4 id="a-person-who-can-perform-with-this-avatar">A person who can perform with this avatar&lt;/h4>
+&lt;ul>
+&lt;li>The avatar may only be manipulated by its creator&lt;/li>
+&lt;li>Authorized only to explicitly specified person&lt;/li>
+&lt;li>Authorized to anyone&lt;/li>
+&lt;/ul>
+&lt;h4 id="permission-to-perform-violent-acts-with-this-avatar">Permission to perform violent acts with this avatar&lt;/h4>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h4 id="permission-to-perform-sexual-acts-with-this-avatar">Permission to perform sexual acts with this avatar&lt;/h4>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h4 id="for-commercial-use">For commercial use&lt;/h4>
+&lt;ul>
+&lt;li>Disallow&lt;/li>
+&lt;li>Allow&lt;/li>
+&lt;/ul>
+&lt;h4 id="other-license-url">Other License Url&lt;/h4>
+&lt;p>The URL links of license with regard to other permissions.&lt;/p>
+&lt;h3 id="redistribution--modifications-license">Redistribution / Modifications License&lt;/h3>
+&lt;h4 id="license-type">License Type&lt;/h4>
+&lt;ul>
+&lt;li>Redistribution Prohibited&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Copyright wavier (CC0)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons CC BY License(CC_BY)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons CC BY NC License(CC_BY_NC)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons CC BY SA License(CC_BY_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Creative Commons CC BY NC SA License(CC_BY_NC_SA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nd/4.0/deed.en">Creative Commons CC BY ND License(CC_BY_ND)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">Creative Commons CC BY NC ND License(CC_BY_NC_ND)&lt;/a>&lt;/li>
+&lt;li>Other&lt;/li>
+&lt;/ul>
+&lt;h4 id="other-license-url-1">Other License Url&lt;/h4>
+&lt;p>The URL links of license with regard to other permissions.&lt;/p></description></item><item><title>Docs: VRM development</title><link>https://vrm.dev/en/docs/vrm/vrm_development/</link><pubDate>Thu, 08 Oct 2020 18:48:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/vrm_development/</guid><description>
+&lt;p>WIP&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../univrm/programming/">programming&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrm-features-for-developers">VRM Features (for Developers)&lt;/h2>
+&lt;ul>
+&lt;li>Right-handed Y-Up coordinate system ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_coordinate/">Coordinate&lt;/a>&lt;/li>
+&lt;li>Metric unit is meter&lt;/li>
+&lt;li>Humanoid bones ➡️ compatible with humanoid motion and motion capture&lt;/li>
+&lt;li>T-pose as the initial posture (towards +Z-axis)&lt;/li>
+&lt;li>The initial pose has no rotation and scale&lt;/li>
+&lt;li>The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin&amp;rsquo;s bind matrices are not included)&lt;/li>
+&lt;li>Expression/eye gaze manipulation are in BlendShapeProxy ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/programming/how_to_use_blendshapeproxy/">BlendShapeProxy&lt;/a>&lt;/li>
+&lt;li>Spring physics setup on clothes, hair and others&lt;/li>
+&lt;li>VR settings are available ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined&lt;/li>
+&lt;/ul>
+&lt;p>VRM is used for loading model into applications at runtime as opposed to the way that pre-makes models as asset for the use of the specific application.&lt;/p>
+&lt;h2 id="runtime-import-with-univrm">Runtime Import with UniVRM&lt;/h2>
+&lt;p>UniVRM can load VRM into Unity as a GameObject instead of a prefab.
+The imported GameObject is the same as the instantiated GameObject from Prefab&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_import_runtime/">runtime load&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="runtime-export-with-univrm">Runtime Export with UniVRM&lt;/h2>
+&lt;p>UniVRM can export the VRM model at runtime in Unity.
+The export function can be used for applications such as character maker tool.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_install_samples/">samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Exporter sample can be found in:&lt;/p>
+&lt;p>&lt;code>Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code>&lt;/p>
+&lt;h2 id="other-vrm-implementations">Other VRM Implementations&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ruyo/VRM4U">https://github.com/ruyo/VRM4U&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/saturday06/VRM_IMPORTER_for_Blender">https://github.com/saturday06/VRM_IMPORTER_for_Blender&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/virtual-cast/babylon-vrm-loader/">https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/pixiv/three-vrm/">https://github.com/pixiv/three-vrm/&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
