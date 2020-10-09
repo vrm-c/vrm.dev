@@ -50,13 +50,13 @@ Live streaming, video creation, games, chat.... The virtual worlds are not conne
 
 ## VRM features
 
-VRM can handle the humanoid character/avatar (3D model data). **Though the current provided software to import and export VRM is in Unity environment, VRM itself is platform-independent**, which means import/export VRM file in other engines/environments is feasible.
+VRM can handle the humanoid character/avatar (3D model data). **Though the current provided software to import and export VRM is in Unity, VRM itself is platform-independent**, which means import/export VRM file in other engines/environments is feasible.
 
 * VRM is formulated on top of the 3D standard format **glTF2.0** to handle the humanoid model 
 * The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM
 * All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed 
 * Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
-* Support three types of shaders ➡️ PBR, Unlit, [MToon]({{< relref "shader_mtoon.md" >}}
+* Support three types of shaders ➡️ PBR, Unlit, [MToon]({{< relref "shader_mtoon.md" >}})
 * Standardize eye gaze control to handle the different types of models ➡️ [eye gaze controlled by Bone]({{< relref "lookat_bone.md" >}}), [eye gaze controlled by BlendShape]({{< relref "lookat_blendshape.md" >}}), [eye gaze controlled by UV]({{< relref "lookat_uv.md" >}})
 * An implementation of spring physics that does not rely on the physical engine is provided for setting up the model's hairs, clothes and so forth. ➡️ [SpringBone]({{< relref "univrm_secondary.md" >}})
 * Avatar's **first-person view** is available in VR ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})
