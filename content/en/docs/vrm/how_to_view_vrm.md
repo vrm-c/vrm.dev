@@ -6,7 +6,7 @@ weight: 3
 ---
 
 ## Import VRM file into VRM Viewer
-Download VRM Viewer from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases). Next, run the program and click``VRM Model``. Then, select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers [can be found here]({{< relref "vrm_applications.md#viewer" >}}).
+Download VRM Viewer from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases). Next, run the program and click``VRM Model``. Select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers [can be found here]({{< relref "vrm_applications.md#viewer" >}}).
 
 ## Import VRM file into Unity Project
 Importing VRM file by this way is a little tedious but you can see the information of a VRM model:
@@ -39,7 +39,3 @@ Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://gi
 {{< img src="images/vrm/alicia_3dbuilder.png" >}}
 
 **Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder**. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.
-
-## Upload / Download VRM file
-Currently you can submit your VRM files to [THE SEED ONLINE](https://seed.online/en/), [VRoid Hub](https://hub.vroid.com/en/) or [Nikoni 3D](https://3d.nicovideo.jp/). For Nikoni 3D, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM). Please check license information and try out those VRM models.
-Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in [Virtual Cast](https://virtualcast.jp/).
