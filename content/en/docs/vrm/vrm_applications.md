@@ -62,6 +62,7 @@ weight: 4
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
+| [Collaboll](https://brother-pv.booth.pm/items/2016717) | Windows VR |
 
 ##  Game
 
@@ -104,6 +105,7 @@ weight: 4
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [TEATOR](https://teator.jp/) | Windows 10, macOS, iOS |
+| [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
 
 ##  Services using VRM internally
 
