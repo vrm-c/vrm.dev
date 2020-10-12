@@ -1,4 +1,18 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 18:55:49 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 19:23:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
+&lt;h2 id="import-vrm-file-in-editor-mode">Import VRM file in Editor Mode&lt;/h2>
+&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
+&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
+&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
+&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p></description></item><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Support from &lt;code>Unity-2018.4&lt;/code>. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
 &lt;table>
@@ -1051,7 +1065,7 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
 &lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
 &lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
-&lt;li>Support three types of shaders ➡️ PBR, Unlit, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>&lt;/li>
+&lt;li>Support three types of shaders ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
 &lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
 &lt;li>An implementation of spring physics that does not rely on the physical engine is provided for setting up the model&amp;rsquo;s hairs, clothes and so forth. ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
 &lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
@@ -1060,7 +1074,17 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;p>As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.&lt;/p>
 &lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
 &lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
-Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id="049">0.49&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder .
+In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p>
+&lt;h2 id="046">0.46&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder.
+However, Mesh, Texture and Prefab will be overwritten.&lt;/p>
+&lt;p>Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
+If you want to overwrite, delete them before importing.&lt;/p>
+&lt;h2 id="045-and-before">0.45 and before&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1279,7 +1303,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: UniVRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
+&lt;/table></description></item><item><title>Docs: VRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1678,7 +1702,12 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;li>Open Console: click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window to see if any error (message in red) occurs&lt;/li>
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: GLB Import</title><link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid><description>
+&lt;h2 id="import-glb-file-in-editor-mode">Import GLB file in Editor Mode&lt;/h2>
+&lt;p>The procedure is the same as &lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM import&lt;/a>. You just need to drag and drop the GLB file into &lt;strong>Assets folder&lt;/strong>.&lt;/p>
+&lt;h2 id="import-vrms-gltf-part-into-3d-builder">Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>To visualize a VRM model in &lt;strong>Windows 3D Builder&lt;/strong>, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -2025,27 +2054,14 @@ proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_
 proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
 &lt;span style="color:#09f;font-style:italic">// Apply all the specified BlendShapes at once
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.Apply();
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to view VRM file</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
-&lt;h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer&lt;/h2>
-&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project&lt;/h2>
-&lt;p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p>
-&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
-&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
-&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p>
-&lt;h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Import VRM into Viewer</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
+&lt;p>VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
+&lt;p>or you can use the viewer in &lt;a href="https://github.com/vrm-c/UniVRMTest/">UniVRMTest&lt;/a>:&lt;/p>
+&lt;ol>
+&lt;li>Download the VRM viewer (VRMViewer_v0.xx_Unity2019.xx.zip) from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>.&lt;/li>
+&lt;li>Run the program (VRM_Viewer_0.58.1.exe) and click&lt;code>VRM Model&lt;/code>&lt;/li>
+&lt;li>Select a VRM model available on your computer. The VRM model can be shown in the scene&lt;/li>
+&lt;/ol></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
 &lt;p>VRM FirstPerson has two types of setting:&lt;/p>
 &lt;ul>
 &lt;li>VR headset position&lt;/li>
@@ -2551,6 +2567,10 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;td>&lt;a href="https://teco-vr.com/">TECO&lt;/a>&lt;/td>
 &lt;td>Windows, macOS, Oculus&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://brother-pv.booth.pm/items/2016717">Collaboll&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="game">Game&lt;/h2>
@@ -2691,6 +2711,10 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;tr>
 &lt;td>&lt;a href="https://teator.jp/">TEATOR&lt;/a>&lt;/td>
 &lt;td>Windows 10, macOS, iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://novia.itch.io/dance-dance-maker">Dance Dance Maker!&lt;/a>&lt;/td>
+&lt;td>Oculus Quest&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3107,17 +3131,7 @@ proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dicti
 {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
 {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
 });
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
-&lt;h2 id="049">0.49&lt;/h2>
-&lt;p>When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder .
-In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p>
-&lt;h2 id="046">0.46&lt;/h2>
-&lt;p>When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder.
-However, Mesh, Texture and Prefab will be overwritten.&lt;/p>
-&lt;p>Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
-If you want to overwrite, delete them before importing.&lt;/p>
-&lt;h2 id="045-and-before">0.45 and before&lt;/h2>
-&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
 &lt;p>The followings are examples of runtime VRM import in &lt;code>v0.44 and later versions&lt;/code>:&lt;/p>
 &lt;h2 id="loadasync-example">LoadAsync Example&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
@@ -3299,139 +3313,4 @@ skinned.updateWhenOffscreen = &lt;span style="color:#069;font-weight:bold">true&
 &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = Vrm10.ModelExtensions.ToGlb(model);
 &lt;span style="color:#069;font-weight:bold">return&lt;/span> bytes;
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API Changes</title><link>https://vrm.dev/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/</guid><description>
-&lt;h2 id="import">Import&lt;/h2>
-&lt;ul>
-&lt;li>The class &lt;code>VRM.VRMImporterContext&lt;/code>, which is used to import VRM data (&lt;code>UniGLTF.ImporterContext.Load&lt;/code>), has been removed. In UniVRM-1.XX the UniVRM importer will first store the VRM data (&lt;code>UniVRM10.VrmLoader.CreateVrmModel&lt;/code>) in &lt;code>VrmLib.Model&lt;/code> then port to Unity&lt;/li>
-&lt;li>&lt;code>UniVRM10.UnityBuilder.ToUnityAsset&lt;/code> will transfer the data from &lt;code>VrmLib.Model&lt;/code> to Unity Asset. &lt;code>UniGLTF.ImporterContext.ShowMeshes&lt;/code> in 0.XX has been changed to a bool parameter of &lt;code>ToUnityAsset&lt;/code>&lt;/li>
-&lt;li>&lt;code>UniVRM10.ComponentBuilder.Build10&lt;/code> will set up components (Meta, BlendShape, LookAt, etc.) for the VRM GameObject&lt;/li>
-&lt;/ul>
-&lt;h3 id="example">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">/**
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> * VRM import
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> *
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> * @return vrm object
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> */&lt;/span>
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> GameObject Import()
-{
-&lt;span style="color:#09f;font-style:italic">// file path
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = &lt;span style="color:#c30">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
-&lt;span style="color:#09f;font-style:italic">// build UniVRM-0.XX model&amp;#39;s components
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(model, showMesh: &lt;span style="color:#069;font-weight:bold">false&lt;/span>);
-&lt;span style="color:#09f;font-style:italic">// enable renderer when RuntimeUnityBuilder.ToUnity(showMesh = false)
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> renderer &lt;span style="color:#069;font-weight:bold">in&lt;/span> assets.Renderers)
-{
-renderer.enabled = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-&lt;span style="color:#09f;font-style:italic">// avoid culling
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (renderer &lt;span style="color:#069;font-weight:bold">is&lt;/span> SkinnedMeshRenderer skinned)
-{
-skinned.updateWhenOffscreen = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-}
-}
-UniVRM10.ComponentBuilder.Build10(model, assets);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> vrmObject = assets.Root; 　　　　　　
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> vrmObject;
-}
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="export">Export&lt;/h2>
-&lt;ul>
-&lt;li>The class &lt;code>VRM.VRMExporter&lt;/code>, which is used to export VRM data (&lt;code>UniGLTF.gltfExporter.Export&lt;/code>), has been removed. In UniVRM-1.XX the UniVRM exporter will first transfer the VRM data (&lt;code>RuntimeVrmConverter.ToModelFrom10&lt;/code>) from the VRM GameObject to &lt;code>VrmLib.Model&lt;/code> then save to VRM file&lt;/li>
-&lt;li>&lt;code>Vrm10.ModelExtensions.ToGlb&lt;/code> will transfer the data from &lt;code>VrmLib.Model&lt;/code> to glb. Note that glb format is exchangeable with VRM. The coordinate transformation between Unity and GLTF is &lt;code>VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3 id="example-1">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">/**
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> * VRM export
-&lt;/span>&lt;span style="color:#09f;font-style:italic"> */&lt;/span>
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Export()
-{
-&lt;span style="color:#09f;font-style:italic">// file path
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> importPath = &lt;span style="color:#c30">&amp;#34;../YourModel.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> importedModel = UniVRM10.VrmLoader.CreateVrmModel(importPath);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(importedModel);
-UniVRM10.ComponentBuilder.Build10(importedModel, assets);　
-&lt;span style="color:#09f;font-style:italic">// export with UniVRM1.0
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> exporter = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeVrmConverter();
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = exporter.ToModelFrom10(assets.Root);
-&lt;span style="color:#09f;font-style:italic">// transform to right-handed coordinate system
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> exportedBytes = Vrm10.ModelExtensions.ToGlb(model);
-&lt;span style="color:#09f;font-style:italic">// write out VRM1.0 file
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = &lt;span style="color:#c30">&amp;#34;vrm10.vrm&amp;#34;&lt;/span>;
-File.WriteAllBytes(path, exportedBytes);
-}
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="lookat">LookAt&lt;/h2>
-&lt;ul>
-&lt;li>LookAt related classes &lt;code>VRM.VRMLookAtBoneApplyer&lt;/code>, &lt;code>VRM.VRMLookAtBlendShapeApplyer&lt;/code> and &lt;code>VRM.VRMLookAtHead&lt;/code> has been integrated into &lt;code>UniVRM10.VRMController&lt;/code>&lt;/li>
-&lt;li>&lt;code>VRM.LookAtType&lt;/code> has been changed to &lt;code>UniVRM10.VRMController.LookAtTypes&lt;/code>&lt;/li>
-&lt;li>&lt;code>VRMLookAtHead.Target&lt;/code> has been replaced with &lt;code>VRMController.Gaze&lt;/code>&lt;/li>
-&lt;li>Added &lt;code>UniVRM10.VRMController.LookAtTargetTypes&lt;/code>. You can choose to get yaw/pitch angle relative to head automatically or specify yaw/pitch angle&lt;/li>
-&lt;/ul>
-&lt;h3 id="example-2">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniVRM10&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">MyClass&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#309"> [SerializeField]&lt;/span>
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmModel;
-&lt;span style="color:#309">
-&lt;/span>&lt;span style="color:#309"> [SerializeField]&lt;/span>
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _targetObject;
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> SpecifyLookAtTarget()
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;();
-proxy.LookAtTargetType = VRMController.LookAtTargetTypes.CalcYawPitchToGaze;
-&lt;span style="color:#09f;font-style:italic">// specify LookAt target
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;().Gaze = _targetObject.transform;
-&lt;span style="color:#09f;font-style:italic">// get yaw/pitch angle relative to head
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> (yaw, pitch) = proxy.GetLookAtYawPitch();
-}
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> SpecifyYawPitchAngle()
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = _vrmModel.GetComponent&amp;lt;VRMController&amp;gt;();
-proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
-&lt;span style="color:#09f;font-style:italic">// specify yaw/pitch angle
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> proxy.SetLookAtYawPitch(&lt;span style="color:#f60">0&lt;/span>, &lt;span style="color:#f60">0&lt;/span>);
-}
-&lt;span style="color:#09f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to export</title><link>https://vrm.dev/en/dev/univrm-1.xx/how_to_export/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/en/dev/univrm-1.xx/how_to_export/</guid><description>
-&lt;p>The export procedure has a slight change from the UniVRM-0.XX:&lt;/p>
-&lt;ol>
-&lt;li>The model should be placed at the origin and face towards +Z(axis) direction. If necessary, please make the model as T-pose manually. Force &lt;code>T-Pose&lt;/code> feature has been removed in UniVRM-1.XX&lt;/li>
-&lt;li>Right click the selected model in Hierarchy window and select [UniVRM-1.0.0] - [Export VRM]. The export window will then prompt&lt;/li>
-&lt;li>In the export window, click &lt;code>Export&lt;/code> button&lt;/li>
-&lt;li>Select a file path you want to save your model in the dialog&lt;/li>
-&lt;/ol>
-&lt;p>The selected model can be judged whether it can be exported as VRM format in the export window. The exportable VRM model must fulfill requirements below:&lt;/p>
-&lt;ul>
-&lt;li>An Animator component has been added and a Humanoid avatar has been set to the root (a.k.a. topmost parent) of the VRM game object&lt;/li>
-&lt;li>Entered the information in the following three necessary items in Meta
-&lt;ul>
-&lt;li>Title&lt;/li>
-&lt;li>Version&lt;/li>
-&lt;li>Authors&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

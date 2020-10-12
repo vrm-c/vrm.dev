@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 18:55:49 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 19:23:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
 &lt;h2 id="what-is-vrm">What is VRM?&lt;/h2>
 &lt;p>In the past, handling &lt;strong>3D humanoid avatar (3D model)&lt;/strong> in Virtual Reality, Virtual YouTuber, etc. was not trivial as it was necessary to develop unique systems for applications and fine-tune the 3D model data due to&amp;hellip;&lt;/p>
 &lt;ul>
@@ -50,7 +50,7 @@
 &lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
 &lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
 &lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
-&lt;li>Support three types of shaders ➡️ PBR, Unlit, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>&lt;/li>
+&lt;li>Support three types of shaders ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
 &lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
 &lt;li>An implementation of spring physics that does not rely on the physical engine is provided for setting up the model&amp;rsquo;s hairs, clothes and so forth. ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
 &lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
@@ -75,27 +75,14 @@ Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャ�
 &lt;/table>
 &lt;p>The figure above provides an overview of converting humanoid 3D models to VRM.&lt;/p>
 &lt;p>The detailed walkthrough is presented in the first two sections below.
-The last section is about VRM model testings such as eye movement and expression.&lt;/p></description></item><item><title>Docs: How to view VRM file</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
-&lt;h2 id="import-vrm-file-into-vrm-viewer">Import VRM file into VRM Viewer&lt;/h2>
-&lt;p>Download VRM Viewer from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>. Next, run the program and click&lt;code>VRM Model&lt;/code>. Select a VRM model available on your computer. The VRM model can be shown in the scene. Other VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="import-vrm-file-into-unity-project">Import VRM file into Unity Project&lt;/h2>
-&lt;p>Importing VRM file by this way is a little tedious but you can see the information of a VRM model:&lt;/p>
-&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
-&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
-&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p>
-&lt;h2 id="import-vrm-file-into-3d-builder">Import VRM file into 3D Builder&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>&lt;strong>Another simple way to visualize a VRM model or check whether a VRM file is viable is using Windows 3D Builder&lt;/strong>. Please change file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: VRM applications</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
+The last section is about VRM model testings such as eye movement and expression.&lt;/p></description></item><item><title>Docs: Import VRM into Viewer</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
+&lt;p>VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
+&lt;p>or you can use the viewer in &lt;a href="https://github.com/vrm-c/UniVRMTest/">UniVRMTest&lt;/a>:&lt;/p>
+&lt;ol>
+&lt;li>Download the VRM viewer (VRMViewer_v0.xx_Unity2019.xx.zip) from &lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>.&lt;/li>
+&lt;li>Run the program (VRM_Viewer_0.58.1.exe) and click&lt;code>VRM Model&lt;/code>&lt;/li>
+&lt;li>Select a VRM model available on your computer. The VRM model can be shown in the scene&lt;/li>
+&lt;/ol></description></item><item><title>Docs: VRM applications</title><link>https://vrm.dev/en/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_applications/</guid><description>
 &lt;h2 id="3d-model-submission-platform">3D model submission platform&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/en/">The Seed Online&lt;/a>&lt;/li>
@@ -268,6 +255,10 @@ The last section is about VRM model testings such as eye movement and expression
 &lt;td>&lt;a href="https://teco-vr.com/">TECO&lt;/a>&lt;/td>
 &lt;td>Windows, macOS, Oculus&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://brother-pv.booth.pm/items/2016717">Collaboll&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="game">Game&lt;/h2>
@@ -408,6 +399,10 @@ The last section is about VRM model testings such as eye movement and expression
 &lt;tr>
 &lt;td>&lt;a href="https://teator.jp/">TEATOR&lt;/a>&lt;/td>
 &lt;td>Windows 10, macOS, iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://novia.itch.io/dance-dance-maker">Dance Dance Maker!&lt;/a>&lt;/td>
+&lt;td>Oculus Quest&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

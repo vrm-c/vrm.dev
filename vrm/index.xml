@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 18:55:49 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 19:23:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
 &lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
 &lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
 &lt;p>というのも…&lt;/p>
@@ -49,7 +49,7 @@
 &lt;li>ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。&lt;/li>
 &lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。&lt;/li>
 &lt;li>「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ &lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
-&lt;li>3種類のシェーダーに対応 ➡️ PBR, Unlit, &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>&lt;/li>
+&lt;li>3種類のシェーダーに対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
 &lt;li>視線制御を標準化して、モデルごとの違いを吸収 ➡️ &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">ボーンによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">TextureUVによる視線&lt;/a>&lt;/li>
 &lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ &lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
 &lt;li>VRでのアバター利用のための、&lt;strong>「一人称視点再現のための情報」&lt;/strong> に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
@@ -89,7 +89,14 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
+&lt;hr></description></item><item><title>Docs: ビューアでVRMをインポートする</title><link>https://vrm.dev/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/how_to_view_vrm/</guid><description>
+&lt;p>VRMビューアアプリは&lt;a href="https://vrm.dev/vrm_applications/#ビューア">こちら&lt;/a>。&lt;/p>
+&lt;p>または&lt;a href="https://github.com/vrm-c/UniVRMTest/">UniVRMTest&lt;/a>のビューアを使用できます：&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRMTest/releases">UniVRMTest/releases&lt;/a>からVRMビューア(VRMViewer_v0.xx_Unity2019.xx.zip)をダウンロードしてください&lt;/li>
+&lt;li>プログラム（VRM_Viewer_0.58.1.exe）を実行して&lt;code>VRMモデル&lt;/code>ボタンをクリックしてください&lt;/li>
+&lt;li>VRMモデルを選んでモデルがシーンに表示されます&lt;/li>
+&lt;/ol></description></item><item><title>Docs: VRMファイルが使えるアプリケーションは？</title><link>https://vrm.dev/vrm_applications/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_applications/</guid><description>
 &lt;h2 id="3dキャラクター投稿プラットフォーム">3Dキャラクター投稿プラットフォーム&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://seed.online/">ザ・シードオンライン&lt;/a>&lt;/li>
@@ -262,6 +269,10 @@
 &lt;td>&lt;a href="https://teco-vr.com/">TECO&lt;/a>&lt;/td>
 &lt;td>Windows, macOS, Oculus&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://brother-pv.booth.pm/items/2016717">コラボル&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="ゲームなど">ゲームなど&lt;/h2>
@@ -402,6 +413,10 @@
 &lt;tr>
 &lt;td>&lt;a href="https://teator.jp/">テアトル&lt;/a>&lt;/td>
 &lt;td>Windows 10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://novia.itch.io/dance-dance-maker">Dance Dance Maker!&lt;/a>&lt;/td>
+&lt;td>Oculus Quest&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

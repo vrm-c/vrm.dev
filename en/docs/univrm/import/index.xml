@@ -1,4 +1,18 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Import</title><link>https://vrm.dev/en/docs/univrm/import/</link><description>Recent content in Import on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/import/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Import</title><link>https://vrm.dev/en/docs/univrm/import/</link><description>Recent content in Import on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/import/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
+&lt;h2 id="import-vrm-file-in-editor-mode">Import VRM file in Editor Mode&lt;/h2>
+&lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
+&lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
+&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
+&lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>Drag and drop the prefab file under the scene in the Hierarchy window&lt;/strong>. The model data can be visualized as shown in the following image:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id="049">0.49&lt;/h2>
 &lt;p>When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder .
 In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p>

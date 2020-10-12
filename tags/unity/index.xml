@@ -1,4 +1,21 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 18:31:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Tue, 06 Oct 2020 18:31:16 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 12 Oct 2020 18:24:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
+&lt;h2 id="エディタモードでvrmファイルをインポートする">エディタモードでVRMファイルをインポートする&lt;/h2>
+&lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
+&lt;p>Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。&lt;/p>
+&lt;h3 id="2unityにunivrmをインストール">2.UnityにUniVRMをインストール&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a>から最新のunitypackageをダウンロードし、&lt;code>Assets/VRM&lt;/code>、&lt;code>Assets/VRMShaders&lt;/code>及び&lt;code>Assets/MeshUtility&lt;/code>にインストールします。
+&lt;strong>既存のUniVRMが存在している場合、あらかじめVRM、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨&lt;/strong>しています。
+UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。&lt;/p>
+&lt;h3 id="3vrmファイルをunity上に読み込む">3.VRMファイルをUnity上に読み込む&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm/vrm_prefab.png" />
+&lt;p>&lt;strong>VRMファイルを、UnityのAssetsにドラッグ＆ドロップする&lt;/strong>だけで、VRMファイルがインポートされ&lt;strong>モデルデータのPrefabが生成されます&lt;/strong>。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
+&lt;p>&lt;strong>VRMから生成されたPrefabをあらためてシーンに配置します&lt;/strong>。
+すると、モデルデータが表示されます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;p>読み込まれたモデルデータをHierarchyで選択すると、インスペクタに各種情報が表示されます。&lt;/p></description></item><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Tue, 06 Oct 2020 18:31:16 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;ul>
@@ -522,7 +539,17 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 &lt;h3 id="color-1">Color&lt;/h3>
 &lt;p>輪郭線の色を設定します。&lt;/p>
 &lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
-&lt;p>&lt;code>Color Mode&lt;/code> が &lt;code>MixedLighting&lt;/code> のとき、その乗算係数を設定します。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>&lt;code>Color Mode&lt;/code> が &lt;code>MixedLighting&lt;/code> のとき、その乗算係数を設定します。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id="049">0.49&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
+その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
+&lt;h2 id="046">0.46&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
+Mesh, Texture, Prefabは上書きします。&lt;/p>
+&lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
+上書きしたい場合はImport前に削除してください。&lt;/p>
+&lt;h2 id="045以前">0.45以前&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1700,14 +1727,4 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
 &lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
-&lt;h2 id="049">0.49&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
-その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
-&lt;h2 id="046">0.46&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
-Mesh, Texture, Prefabは上書きします。&lt;/p>
-&lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
-上書きしたい場合はImport前に削除してください。&lt;/p>
-&lt;h2 id="045以前">0.45以前&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item></channel></rss>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item></channel></rss>
