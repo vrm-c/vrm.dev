@@ -3,7 +3,7 @@ title: "VRMファイルが使えるアプリケーションは？"
 date: 2018-04-16T16:30:00+09:00
 lastmod: 2019-09-09T09:47:19Z	
 url: /vrm_applications/
-weight: 3
+weight: 4
 ---
 
 ##  3Dキャラクター投稿プラットフォーム
@@ -62,6 +62,7 @@ weight: 3
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
+| [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
 
 ##  ゲームなど
 
@@ -104,6 +105,7 @@ weight: 3
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [テアトル](https://teator.jp/) | Windows 10 |
+| [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
 
 ##  内部的にVRMを活用しているサービス
 

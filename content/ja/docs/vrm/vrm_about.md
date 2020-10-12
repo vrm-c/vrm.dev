@@ -54,7 +54,7 @@ VRMでは「人型」の「キャラクター・アバター」を取り扱う�
 * ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。
 * テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。
 * 「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
-* 3種類のシェーダーに対応 ➡️ PBR, Unlit, [MToon]({{< relref "shader_mtoon.md" >}})
+* 3種類のシェーダーに対応 ➡️ [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}), [PBR]({{< relref "univrm_standard.md" >}})
 * 視線制御を標準化して、モデルごとの違いを吸収 ➡️ [ボーンによる視線]({{< relref "lookat_bone.md" >}})、 [BlendShapeによる視線]({{< relref "lookat_blendshape.md" >}})、 [TextureUVによる視線]({{< relref "lookat_uv.md" >}})
 * キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ [SpringBone]({{< relref "univrm_secondary.md" >}})
 * VRでのアバター利用のための、**「一人称視点再現のための情報」** に対応 ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})

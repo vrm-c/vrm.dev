@@ -56,7 +56,7 @@ VRM can handle the humanoid character/avatar (3D model data). **Though the curre
 * The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM
 * All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed 
 * Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
-* Support three types of shaders ➡️ PBR, Unlit, [MToon]({{< relref "shader_mtoon.md" >}})
+* Support three types of shaders ➡️ [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}), [PBR]({{< relref "univrm_standard.md" >}})
 * Standardize eye gaze control to handle the different types of models ➡️ [eye gaze controlled by Bone]({{< relref "lookat_bone.md" >}}), [eye gaze controlled by BlendShape]({{< relref "lookat_blendshape.md" >}}), [eye gaze controlled by UV]({{< relref "lookat_uv.md" >}})
 * An implementation of spring physics that does not rely on the physical engine is provided for setting up the model's hairs, clothes and so forth. ➡️ [SpringBone]({{< relref "univrm_secondary.md" >}})
 * Avatar's **first-person view** is available in VR ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})
