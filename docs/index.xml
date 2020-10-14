@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 03 Aug 2020 19:23:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:05:39 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
 &lt;h2 id="エディタモードでvrmファイルをインポートする">エディタモードでVRMファイルをインポートする&lt;/h2>
 &lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
@@ -1043,7 +1043,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>また、Humanoid として認識させるために必須のボーンがすべて含まれている必要があります。&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">ベースモデル&lt;/h4>
-この時点では必須ボーンが含まれている以外の条件は気にしなくてOKです。
+使用可能なベースモデルの詳細は、 &lt;a href="https://vrm.dev/docs/univrm/humanoid/base_model/">BaseModel&lt;/a> を参照してください。
 &lt;/div>
 &lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3">必須ボーン&lt;/a>&lt;/p>
 &lt;h2 id="unity-に-fbx-を-import-する">unity に fbx を import する&lt;/h2>
@@ -3139,7 +3139,60 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 16:07:34 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
+&lt;ul>
+&lt;li>Animator がアタッチされている&lt;/li>
+&lt;li>Animator に HumanoidAvatar がセットされている&lt;/li>
+&lt;/ul>
+&lt;h2 id="fbx">FBX&lt;/h2>
+&lt;p>fbx で上記の条件を満たすには、 &lt;code>fbx importer&lt;/code> の &lt;code>rig&lt;/code> 設定で &lt;code>humanoid&lt;/code> 化してください。
+fbx の prefab は、 humanoid 化すると Animator がアタッチされて &lt;code>HumanoidAvatar&lt;/code> がセットされた状態になります。&lt;/p>
+&lt;p>fbx が humanoid 化できるには、&lt;/p>
+&lt;ul>
+&lt;li>必須のボーンがすべて含まれている&lt;/li>
+&lt;li>ボーンの親子関係が正しい&lt;/li>
+&lt;/ul>
+&lt;p>の２つの条件が必用です。&lt;/p>
+&lt;ul>
+&lt;li>ボーンの名前は自由です&lt;/li>
+&lt;/ul>
+&lt;p>参考&lt;/p>
+&lt;p>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/p>
+&lt;h2 id="fbx-をシーン上で加工する">FBX をシーン上で加工する&lt;/h2>
+&lt;p>問題ない&lt;/p>
+&lt;ul>
+&lt;li>fbx prefab 内の GameObject に子 GameObject を追加する&lt;/li>
+&lt;li>fbx prefab 内の GameObject を disable にする&lt;/li>
+&lt;/ul>
+&lt;p>うまくいかない場合あり&lt;/p>
+&lt;ul>
+&lt;li>fbx prefab 内の GameObject を削除する&lt;/li>
+&lt;li>fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)&lt;/li>
+&lt;/ul>
+&lt;p>何故問題があるかというと&lt;/p>
+&lt;ul>
+&lt;li>HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる&lt;/li>
+&lt;/ul>
+&lt;p>からです。
+HumanoidAvatar にはおそらく、&lt;/p>
+&lt;ul>
+&lt;li>元の姿勢&lt;/li>
+&lt;li>ヒューマンボーン(hipsなど)と GameObjectの対応関係&lt;/li>
+&lt;/ul>
+&lt;p>が記録されています。
+これに変更を加えた場合再作成する必用があります。
+下記の HumanoidComponent で作成できます。&lt;/p>
+&lt;h2 id="gameobject-から手動で-humanoidavatar-を作成する">GameObject から手動で HumanoidAvatar を作成する&lt;/h2>
+&lt;p>&lt;code>fbx importer&lt;/code> に頼らずに HumanoidAvatar を作成できます。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">HumanoidComponent&lt;/a>&lt;/p>
+&lt;p>これを使うと、&lt;/p>
+&lt;ul>
+&lt;li>人型の GLTF&lt;/li>
+&lt;li>シーン上でキューブを人型に積み上げる&lt;/li>
+&lt;/ul>
+&lt;p>などのヒエラルキーに対して、後付けで &lt;code>HumanoidAvatar&lt;/code> を作成することができます。
+HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0&lt;/code>&lt;/p>
 &lt;p>fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p>
 &lt;h1 id="使い方">使い方&lt;/h1>
@@ -3312,68 +3365,5 @@ VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必�
 &lt;span style="color:#309;font-weight:bold">&amp;#34;revision&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;HEAD&amp;#34;&lt;/span>,
 &lt;span style="color:#309;font-weight:bold">&amp;#34;hash&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span>
 }
-}
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API</title><link>https://vrm.dev/dev/univrm-1.xx/api/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api/</guid><description>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs">https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a>&lt;/p>
-&lt;p>にあります。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vrm-to-model">VRM to Model&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> VrmLib.Model ReadModel(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#069;font-weight:bold">if&lt;/span> (!VrmLib.Glb.TryParse(bytes, &lt;span style="color:#069;font-weight:bold">out&lt;/span> VrmLib.Glb glb, &lt;span style="color:#069;font-weight:bold">out&lt;/span> Exception ex))
-{
-Debug.LogError(&lt;span style="color:#c30">$&amp;#34;fail to Glb.TryParse: {path} =&amp;gt; {ex}&amp;#34;&lt;/span>);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">null&lt;/span>;
-}
-&lt;span style="color:#09f;font-style:italic">// both VRM-0.X and VRM-1.0
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> model;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="this-is-possible-on-a-thread">This is possible on a thread&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">return&lt;/span> Task.Run(()=&amp;gt;{
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> ReadModel(path);
-});
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="model-to-gameobject">Model to GameObject&lt;/h2>
-&lt;p>This requires a ScriptThread.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> ModelAsset BuildGameObject(VrmLib.Model model, &lt;span style="color:#078;font-weight:bold">bool&lt;/span> showMesh)
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> importer = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeUnityBuilder();
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> assets = importer.ToUnityAsset(model, showMesh);
-UniVRM10.ComponentBuilder.Build10(model, importer, assets);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> assets;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ロード後にレンダラーを設定する">ロード後にレンダラーを設定する&lt;/h3>
-&lt;p>ModelAsset に各種アセットが格納されています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> asset = BuildGameObject(srcModel, &lt;span style="color:#069;font-weight:bold">false&lt;/span>);
-&lt;span style="color:#09f;font-style:italic">// renderer setting
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> render &lt;span style="color:#069;font-weight:bold">in&lt;/span> asset.Renderers)
-{
-&lt;span style="color:#09f;font-style:italic">// show when RuntimeUnityBuilder.ToUnity(showMesh = false)
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> render.enabled = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-&lt;span style="color:#09f;font-style:italic">// avoid culling
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (render &lt;span style="color:#069;font-weight:bold">is&lt;/span> SkinnedMeshRenderer skinned)
-{
-skinned.updateWhenOffscreen = &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="フレームレートが落ちないようにするtodo">フレームレートが落ちないようにする(TODO)&lt;/h3>
-&lt;p>１フレームの処理を小さく小出しにして、スパイクを少なくする場合。&lt;/p>
-&lt;h2 id="gameobject-to-model">GameObject to Model&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> VrmLib.Model ToModel(UnityEngine.GameObject target)
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> exporter = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniVRM10.RuntimeVrmConverter();
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> model = exporter.ToModelFrom10(target);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> model;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="model-to-vrm">Model to VRM&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">byte&lt;/span>[] ToVrm10(VrmLib.Model model)
-{
-&lt;span style="color:#09f;font-style:italic">// 右手系に変換
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = Vrm10.ModelExtensions.ToGlb(model);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> bytes;
 }
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
