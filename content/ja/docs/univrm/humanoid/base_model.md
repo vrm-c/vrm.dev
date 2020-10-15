@@ -1,6 +1,7 @@
 ---
 title: BaseModel
 tags: ["unity"]
+weight: 2
 description: "VRMの元になる条件"
 ---
 

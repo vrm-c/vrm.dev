@@ -1,6 +1,7 @@
 ---
 title: HumanoidComponent
 tags: ["unity"]
+weight: 3
 ---
 
 `UniVRM-0.60.0`
