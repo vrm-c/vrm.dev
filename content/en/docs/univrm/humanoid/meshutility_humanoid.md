@@ -1,5 +1,6 @@
 ---
 title: Humanoid Component
+weight: 3
 tags: ["unity"]
 ---
 
