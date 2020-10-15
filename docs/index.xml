@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:05:39 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:06:18 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
 &lt;h2 id="エディタモードでvrmファイルをインポートする">エディタモードでVRMファイルをインポートする&lt;/h2>
 &lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
@@ -921,7 +921,60 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;/ul>
 &lt;p>でVRMファイルの投稿ができます。
 ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
+&lt;ul>
+&lt;li>Animator がアタッチされている&lt;/li>
+&lt;li>Animator に HumanoidAvatar がセットされている&lt;/li>
+&lt;/ul>
+&lt;h2 id="fbx">FBX&lt;/h2>
+&lt;p>fbx で上記の条件を満たすには、 &lt;code>fbx importer&lt;/code> の &lt;code>rig&lt;/code> 設定で &lt;code>humanoid&lt;/code> 化してください。
+fbx の prefab は、 humanoid 化すると Animator がアタッチされて &lt;code>HumanoidAvatar&lt;/code> がセットされた状態になります。&lt;/p>
+&lt;p>fbx が humanoid 化できるには、&lt;/p>
+&lt;ul>
+&lt;li>必須のボーンがすべて含まれている&lt;/li>
+&lt;li>ボーンの親子関係が正しい&lt;/li>
+&lt;/ul>
+&lt;p>の２つの条件が必用です。&lt;/p>
+&lt;ul>
+&lt;li>ボーンの名前は自由です&lt;/li>
+&lt;/ul>
+&lt;p>参考&lt;/p>
+&lt;p>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/p>
+&lt;h2 id="fbx-をシーン上で加工する">FBX をシーン上で加工する&lt;/h2>
+&lt;p>問題ない&lt;/p>
+&lt;ul>
+&lt;li>fbx prefab 内の GameObject に子 GameObject を追加する&lt;/li>
+&lt;li>fbx prefab 内の GameObject を disable にする&lt;/li>
+&lt;/ul>
+&lt;p>うまくいかない場合あり&lt;/p>
+&lt;ul>
+&lt;li>fbx prefab 内の GameObject を削除する&lt;/li>
+&lt;li>fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)&lt;/li>
+&lt;/ul>
+&lt;p>何故問題があるかというと&lt;/p>
+&lt;ul>
+&lt;li>HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる&lt;/li>
+&lt;/ul>
+&lt;p>からです。
+HumanoidAvatar にはおそらく、&lt;/p>
+&lt;ul>
+&lt;li>元の姿勢&lt;/li>
+&lt;li>ヒューマンボーン(hipsなど)と GameObjectの対応関係&lt;/li>
+&lt;/ul>
+&lt;p>が記録されています。
+これに変更を加えた場合再作成する必用があります。
+下記の HumanoidComponent で作成できます。&lt;/p>
+&lt;h2 id="gameobject-から手動で-humanoidavatar-を作成する">GameObject から手動で HumanoidAvatar を作成する&lt;/h2>
+&lt;p>&lt;code>fbx importer&lt;/code> に頼らずに HumanoidAvatar を作成できます。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">HumanoidComponent&lt;/a>&lt;/p>
+&lt;p>これを使うと、&lt;/p>
+&lt;ul>
+&lt;li>人型の GLTF&lt;/li>
+&lt;li>シーン上でキューブを人型に積み上げる&lt;/li>
+&lt;/ul>
+&lt;p>などのヒエラルキーに対して、後付けで &lt;code>HumanoidAvatar&lt;/code> を作成することができます。
+HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
 &lt;h2 id="049">0.49&lt;/h2>
 &lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
 その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
@@ -1670,7 +1723,25 @@ OnLoaded(context.Root);
 &lt;p>ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(&lt;span style="color:#069;font-weight:bold">true&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Thumbnailテクスチャを作成する
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> Texture2D thumbnail=meta.Thumbnail;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Glbインポート</title><link>https://vrm.dev/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 17:04:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/glb_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;code>UniVRM-0.60.0&lt;/code>&lt;/p>
+&lt;p>fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p>
+&lt;h1 id="使い方">使い方&lt;/h1>
+&lt;p>ヒューマノイドボーンがあるシーンを用意します。&lt;/p>
+&lt;p>例として&lt;/p>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
+&lt;p>で説明します。&lt;/p>
+&lt;p>まず、 &lt;code>RiggedFigure.glb&lt;/code> を Asset フォルダに import してください。
+UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;/p>
+&lt;p>新規のシーンに &lt;code>RiggedFigure&lt;/code> prefab をインスタンス化します。&lt;/p>
+&lt;p>AddComponent で &lt;code>Humanoid&lt;/code> を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
+&lt;p>適当に Bone を当てはめます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
+&lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
+&lt;p>humanoid avatar が新規に作成されます。&lt;/p>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: Glbインポート</title><link>https://vrm.dev/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 17:04:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/glb_import/</guid><description>
 &lt;h2 id="エディタモードでglbファイルをインポートする">エディタモードでGlbファイルをインポートする&lt;/h2>
 &lt;p>インポートする手順は&lt;a href="https://vrm.dev/docs/univrm/import/univrm_import/">VRM import&lt;/a>と同じです。UnityのAssetsにドラッグ＆ドロップするだけでGlbファイルをインポートできます。&lt;/p>
 &lt;h2 id="vrmのgltf部分を3d-builderでインポートする">VRMのglTF部分を3D Builderでインポートする&lt;/h2>
@@ -3139,78 +3210,7 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 16:07:34 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
-&lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
-&lt;ul>
-&lt;li>Animator がアタッチされている&lt;/li>
-&lt;li>Animator に HumanoidAvatar がセットされている&lt;/li>
-&lt;/ul>
-&lt;h2 id="fbx">FBX&lt;/h2>
-&lt;p>fbx で上記の条件を満たすには、 &lt;code>fbx importer&lt;/code> の &lt;code>rig&lt;/code> 設定で &lt;code>humanoid&lt;/code> 化してください。
-fbx の prefab は、 humanoid 化すると Animator がアタッチされて &lt;code>HumanoidAvatar&lt;/code> がセットされた状態になります。&lt;/p>
-&lt;p>fbx が humanoid 化できるには、&lt;/p>
-&lt;ul>
-&lt;li>必須のボーンがすべて含まれている&lt;/li>
-&lt;li>ボーンの親子関係が正しい&lt;/li>
-&lt;/ul>
-&lt;p>の２つの条件が必用です。&lt;/p>
-&lt;ul>
-&lt;li>ボーンの名前は自由です&lt;/li>
-&lt;/ul>
-&lt;p>参考&lt;/p>
-&lt;p>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/p>
-&lt;h2 id="fbx-をシーン上で加工する">FBX をシーン上で加工する&lt;/h2>
-&lt;p>問題ない&lt;/p>
-&lt;ul>
-&lt;li>fbx prefab 内の GameObject に子 GameObject を追加する&lt;/li>
-&lt;li>fbx prefab 内の GameObject を disable にする&lt;/li>
-&lt;/ul>
-&lt;p>うまくいかない場合あり&lt;/p>
-&lt;ul>
-&lt;li>fbx prefab 内の GameObject を削除する&lt;/li>
-&lt;li>fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)&lt;/li>
-&lt;/ul>
-&lt;p>何故問題があるかというと&lt;/p>
-&lt;ul>
-&lt;li>HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる&lt;/li>
-&lt;/ul>
-&lt;p>からです。
-HumanoidAvatar にはおそらく、&lt;/p>
-&lt;ul>
-&lt;li>元の姿勢&lt;/li>
-&lt;li>ヒューマンボーン(hipsなど)と GameObjectの対応関係&lt;/li>
-&lt;/ul>
-&lt;p>が記録されています。
-これに変更を加えた場合再作成する必用があります。
-下記の HumanoidComponent で作成できます。&lt;/p>
-&lt;h2 id="gameobject-から手動で-humanoidavatar-を作成する">GameObject から手動で HumanoidAvatar を作成する&lt;/h2>
-&lt;p>&lt;code>fbx importer&lt;/code> に頼らずに HumanoidAvatar を作成できます。&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">HumanoidComponent&lt;/a>&lt;/p>
-&lt;p>これを使うと、&lt;/p>
-&lt;ul>
-&lt;li>人型の GLTF&lt;/li>
-&lt;li>シーン上でキューブを人型に積み上げる&lt;/li>
-&lt;/ul>
-&lt;p>などのヒエラルキーに対して、後付けで &lt;code>HumanoidAvatar&lt;/code> を作成することができます。
-HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
-&lt;p>&lt;code>UniVRM-0.60.0&lt;/code>&lt;/p>
-&lt;p>fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p>
-&lt;h1 id="使い方">使い方&lt;/h1>
-&lt;p>ヒューマノイドボーンがあるシーンを用意します。&lt;/p>
-&lt;p>例として&lt;/p>
-&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
-&lt;p>で説明します。&lt;/p>
-&lt;p>まず、 &lt;code>RiggedFigure.glb&lt;/code> を Asset フォルダに import してください。
-UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;/p>
-&lt;p>新規のシーンに &lt;code>RiggedFigure&lt;/code> prefab をインスタンス化します。&lt;/p>
-&lt;p>AddComponent で &lt;code>Humanoid&lt;/code> を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
-&lt;p>適当に Bone を当てはめます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
-&lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
-&lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
 &lt;p>WIP&lt;/p>
 &lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
 &lt;ul>

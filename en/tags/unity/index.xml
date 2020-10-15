@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 12 Oct 2020 15:19:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 15 Oct 2020 18:23:26 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
 &lt;h2 id="import-vrm-file-in-editor-mode">Import VRM file in Editor Mode&lt;/h2>
 &lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
@@ -558,7 +558,38 @@ The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&
 &lt;h3 id="color-1">Color&lt;/h3>
 &lt;p>Set the outline color.&lt;/p>
 &lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
-&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: Create Initial VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
+&lt;li>&lt;code>Animator's HumanoidAvatar&lt;/code> is set up&lt;/li>
+&lt;/ul>
+&lt;h2 id="fbx">FBX&lt;/h2>
+&lt;p>To meet the conditions described above for an imported fbx, set the fbx model as &lt;code>humanoid&lt;/code> from &lt;code>Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code>.
+After &lt;code>humanoid&lt;/code> type is applied, &lt;code>Animator&lt;/code> component with &lt;code>HumanoidAvatar&lt;/code> will be attached to the fbx&amp;rsquo;s prefab.&lt;/p>
+&lt;p>To convert the fbx model to &lt;code>humanoid&lt;/code> type successfully:&lt;/p>
+&lt;ul>
+&lt;li>All required bones are included&lt;/li>
+&lt;li>Bones&amp;rsquo; parent-child relationships are correct (e.g. hips -&amp;gt; leg -&amp;gt; foot. not the other way around).&lt;/li>
+&lt;/ul>
+&lt;p>No restrictions on bone naming.&lt;/p>
+&lt;h2 id="modify-fbx-in-the-scene">Modify FBX in the scene&lt;/h2>
+&lt;p>You can modify fbx&amp;rsquo;s GameObject by&lt;/p>
+&lt;ul>
+&lt;li>adding children GameObjects to Parent GameObjects&lt;/li>
+&lt;li>disabling GameObjects&lt;/li>
+&lt;/ul>
+&lt;p>If you want to change the hierarchy structure, please refer to &lt;code>HumanoidComponent&lt;/code>, which is described in the next section.&lt;/p>
+&lt;h2 id="create-humanoidavatar-manually-from-gameobject">Create HumanoidAvatar manually from GameObject&lt;/h2>
+&lt;p>&lt;code>HumanoidAvatar&lt;/code> can be created without using &lt;code>fbx importer&lt;/code>.
+Check out &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">Humanoid Component&lt;/a> for more details.&lt;/p>
+&lt;p>If the following types of models are in the scene:&lt;/p>
+&lt;ul>
+&lt;li>Humanoid model in GLTF format&lt;/li>
+&lt;li>Humanoid-like model made by cubes and so on&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>HumanoidAvatar&lt;/code> can be created as long as each required bone is assigned accordingly based on the object in Hierarchy.
+Finally, to export the target &lt;code>GameObject&lt;/code> as VRM, attach &lt;code>Animator&lt;/code> component and assign the created &lt;code>HumanoidAvatar&lt;/code> to &lt;code>Avatar&lt;/code> field.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1034,7 +1065,23 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;li>Open Console: click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window to see if any error (message in red) occurs&lt;/li>
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Thu, 06 Aug 2020 11:21:06 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
+&lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
+&lt;h1 id="how-to-use">How to use&lt;/h1>
+&lt;p>Prepare a rigged model in the scene.&lt;/p>
+&lt;p>We will take the model in the following link as an example:&lt;/p>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
+&lt;p>First, import &lt;code>RiggedFigure.glb&lt;/code> into the &lt;code>Assets&lt;/code> folder.
+If UniVRM package is installed, the &lt;code>Prefab&lt;/code> file can be automatically generated from the imported &lt;code>glb&lt;/code>.&lt;/p>
+&lt;p>Drag the &lt;code>Prefab&lt;/code> file to the &lt;code>Hierarchy&lt;/code> window. A GameObject associated with this &lt;code>Prefab&lt;/code> is instantiated.&lt;/p>
+&lt;p>Click on the GameObject in the &lt;code>Hierarchy&lt;/code> window, then add a humanoid component (&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; Humanoid&lt;/code>).&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
+&lt;p>As shown in the image above, assign required bones.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
+&lt;p>Press &lt;code>Create UnityEngine.Avatar&lt;/code> button.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
+&lt;p>Now a humanoid avatar is created. You can make a T-pose for the model and convert it to VRM.&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Thu, 06 Aug 2020 11:21:06 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;p>&lt;code>LookAt Blendshape&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> components.
 In the default setting, please remove &lt;code>VRMLookAtBoneApplyer&lt;/code> and add &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> in the VRM model’s Inspector window.&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -1465,20 +1512,4 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
-&lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
-&lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
-&lt;h1 id="how-to-use">How to use&lt;/h1>
-&lt;p>Prepare a rigged model in the scene.&lt;/p>
-&lt;p>We will take the model in the following link as an example:&lt;/p>
-&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
-&lt;p>First, import &lt;code>RiggedFigure.glb&lt;/code> into the &lt;code>Assets&lt;/code> folder.
-If UniVRM package is installed, the &lt;code>Prefab&lt;/code> file can be automatically generated from the imported &lt;code>glb&lt;/code>.&lt;/p>
-&lt;p>Drag the &lt;code>Prefab&lt;/code> file to the &lt;code>Hierarchy&lt;/code> window. A GameObject associated with this &lt;code>Prefab&lt;/code> is instantiated.&lt;/p>
-&lt;p>Click on the GameObject in the &lt;code>Hierarchy&lt;/code> window, then add a humanoid component (&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; Humanoid&lt;/code>).&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
-&lt;p>As shown in the image above, assign required bones.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
-&lt;p>Press &lt;code>Create UnityEngine.Avatar&lt;/code> button.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
-&lt;p>Now a humanoid avatar is created. You can make a T-pose for the model and convert it to VRM.&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>
