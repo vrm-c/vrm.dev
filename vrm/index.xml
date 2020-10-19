@@ -1,17 +1,49 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:06:18 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – VRMについて</title><link>https://vrm.dev/vrm/</link><description>Recent content in VRMについて on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:07:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 「VRM」って何？どんなことができる？</title><link>https://vrm.dev/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/vrm_about/</guid><description>
 &lt;h2 id="vrmとは">「VRM」とは&lt;/h2>
-&lt;p>VR(Virtual Reality)やVTuberなどにおいて**「キャラクターや人型のアバター（の3Dモデル）」**を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
+&lt;p>VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong>UnityでVRMファイルを読み書きする標準実装(UniVRM)が提供されます&lt;/strong> が、 &lt;strong>フォーマットは &lt;a href="https://www.khronos.org/gltf/">GLTF&lt;/a> ベースでクロスプラットフォーム&lt;/strong> であり他のゲームエンジンやWebでも取り扱うことが可能です。&lt;/p>
+&lt;ul>
+&lt;li>ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。&lt;/li>
+&lt;li>テクスチャやマテリアルなどすべてのデータが１ファイルにまとまり、簡単に実行時にロードできる。&lt;/li>
+&lt;li>「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。ユーザー操作で表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ &lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
+&lt;li>3種類のマテリアル(シェーダー)に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
+&lt;li>3種類の視線制御に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">ボーンによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">TextureUVによる視線&lt;/a>&lt;/li>
+&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意 ➡️ &lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
+&lt;li>VRでのアバター利用のための、&lt;strong>「一人称視点再現のための情報」&lt;/strong> ➡️ &lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや &lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong> も内包可能 ➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>というように単なるモデルデータに留まらず、アプリケーションでロードしてすぐに使えるようになっています。&lt;/p>
+&lt;h2 id="vrmで何ができるの">VRMで何ができるの？&lt;/h2>
+&lt;p>&lt;strong>VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong>
+対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p>
+&lt;ul>
+&lt;li>VRM対応のキャラクタ製作ツールで自分のアバターをつくる&lt;/li>
+&lt;li>自分のアバターで生放送をしていたら、友達も生放送をはじめたので友達の放送に凸しに行った&lt;/li>
+&lt;li>放送後そのままVRゲームを起動、自分のアバターでVR世界を探索&lt;/li>
+&lt;li>ゲームに飽きたのでVR世界のチャットへ移動。同じアバターで友達と遊ぶ&lt;/li>
+&lt;li>翌日はVR勉強会にVR参加。もちろんアバターはいつもの姿で&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong>&lt;/p>
+&lt;p>生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
+&lt;hr>
+&lt;p>➡️ &lt;a href="https://vrm.dev/vrm_applications/">VRMファイルが使えるアプリケーション&lt;/a>&lt;/p>
+&lt;h2 id="vrmの特徴">VRMの特徴&lt;/h2>
+&lt;p>VR(Virtual Reality)やVTuberなどにおいて &lt;strong>「キャラクターや人型のアバター（の3Dモデル）」&lt;/strong> を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。&lt;/p>
 &lt;p>というのも…&lt;/p>
 &lt;ul>
 &lt;li>3Dモデルを作成したクリエイターや使用したモデリングツールによって「作法」が違いデータの状況がひとつひとつ異なっている
 &lt;ul>
-&lt;li>座標系が異なっていたり、スケールが異なっていたり、初期姿勢が異なっていたり、表情の表現方法が異なっていたり…&lt;/li>
-&lt;li>もちろん、骨（ボーン）の入れ方も状況によって異なっていたり&lt;/li>
+&lt;li>座標系が異なっていたり (Y-UP, Z-UP, 右手系、左手系)&lt;/li>
+&lt;li>スケールが異なっていたり(メートル単位、cm単位)&lt;/li>
+&lt;li>初期姿勢が異なっていたり(T-Pose, A-Pose, Z+向き、Z-向き)&lt;/li>
+&lt;li>表情の表現方法が異なっていたり(Morph, Bone, 識別方法)&lt;/li>
+&lt;li>骨（ボーン）の入れ方も状況によって異なっていたり(ボーンの識別方法、親子、リグ)&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>3Dモデルデータを取り扱うフォーマットは、各社各様で仕様が必要以上に複雑であったり、必要な情報が足りなかったりしている
 &lt;ul>
 &lt;li>対応ソフトが多い「FBXファイル」はアプリケーションごとに読めたり読めなかったり。どのアプリケーションのどのバージョンで出力したFBXなのか…というのを気にしたかたも多いと思います&lt;/li>
+&lt;li>また、ランタイムロードというよりは、アセットとして取り込む方向性です&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>3Dモデルデータを「アバターとして使用する」という観点で見ると、必要な情報が整備されていない
@@ -28,34 +60,6 @@
 &lt;li>アプリケーション側の取り扱いを簡単にする&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する&lt;/strong> ものです。&lt;/p>
-&lt;h2 id="vrmで何ができるの">VRMで何ができるの？&lt;/h2>
-&lt;p>&lt;strong>VRM対応アプリケーションで同じアバター（3Dモデル）データを使うことができます。&lt;/strong>
-対応アプリケーションが揃うと、こんな未来になるはず…&lt;/p>
-&lt;ul>
-&lt;li>VRM対応のキャラクタ製作ツールで自分のアバターをつくる&lt;/li>
-&lt;li>自分のアバターで生放送をしていたら、友達も生放送をはじめたので友達の放送に凸しに行った&lt;/li>
-&lt;li>放送後そのままVRゲームを起動、自分のアバターでVR世界を探索&lt;/li>
-&lt;li>ゲームに飽きたのでVR世界のチャットへ移動。同じアバターで友達と遊ぶ&lt;/li>
-&lt;li>翌日はVR勉強会にVR参加。もちろんアバターはいつもの姿で&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。&lt;/strong>&lt;/p>
-&lt;p>生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_jp.png" alt="VRM applications" />
-&lt;hr>
-&lt;p>➡️ &lt;a href="https://vrm.dev/vrm_applications/">&amp;ldquo;VRMファイルが使えるアプリケーション&lt;/a>&lt;/p>
-&lt;h2 id="vrmの特徴">VRMの特徴&lt;/h2>
-&lt;p>VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。&lt;strong>UnityでVRMファイルを読み書きする標準実装が提供されます&lt;/strong>が、&lt;strong>フォーマット自体はプラットフォーム非依存&lt;/strong>であり他エンジンや環境でも取り扱うことが可能です。&lt;/p>
-&lt;ul>
-&lt;li>ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。&lt;/li>
-&lt;li>テクスチャやマテリアルなどすべてのデータを含めて１ファイルにまとまる。ファイル一つで取り扱い可能。アプリケーションで簡単にロードできる。&lt;/li>
-&lt;li>「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。コントローラーで表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ &lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
-&lt;li>3種類のシェーダーに対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
-&lt;li>視線制御を標準化して、モデルごとの違いを吸収 ➡️ &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_bone/">ボーンによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">BlendShapeによる視線&lt;/a>、 &lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_uv/">TextureUVによる視線&lt;/a>&lt;/li>
-&lt;li>キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意、設定可能 ➡️ &lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
-&lt;li>VRでのアバター利用のための、&lt;strong>「一人称視点再現のための情報」&lt;/strong> に対応 ➡️ &lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
-&lt;li>タイトル・作者名などのメタ情報だけでなく、サムネイルや &lt;strong>VR時代に即した、アバターに特化したライセンス情報&lt;/strong> も内包可能 ➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>というように単なるモデルデータに留まらず、アプリケーションでロードしてすぐに使えるようになっています。&lt;/p>
 &lt;h2 id="vrmファイルを投稿する探す">VRMファイルを投稿する・探す&lt;/h2>
 &lt;p>現在、&lt;/p>
 &lt;ul>
@@ -65,7 +69,9 @@
 &lt;/ul>
 &lt;p>でVRMファイルの投稿ができます。
 ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
-&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Fri, 18 Sep 2020 15:27:25 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
+&lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p>
+&lt;h2 id="vrmを使うアプリケーションを開発する">VRMを使うアプリケーションを開発する&lt;/h2>
+&lt;p>➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_development/">VRMで開発する&lt;/a>&lt;/p></description></item><item><title>Docs: VRMファイルを作ってみたい</title><link>https://vrm.dev/how_to_make_vrm/</link><pubDate>Fri, 18 Sep 2020 15:27:25 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/</guid><description>
 &lt;p>UniVRMを使うVRM化作業のながれは以下のようになります：&lt;/p>
 &lt;ol>
 &lt;li>元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する&lt;/li>
