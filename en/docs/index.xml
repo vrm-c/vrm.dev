@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:07:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Aug 2020 12:10:46 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Import</title><link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/univrm_import/</guid><description>
 &lt;h2 id="import-vrm-file-in-editor-mode">Import VRM file in Editor Mode&lt;/h2>
 &lt;h3 id="1-create-an-empty-project-in-unity">1. Create an empty project in Unity&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
@@ -1015,6 +1015,36 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;/ol>
 &lt;/section></description></item><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
 &lt;h2 id="what-is-vrm">What is VRM?&lt;/h2>
+&lt;p>&lt;strong>VRM is a &lt;a href="https://www.khronos.org/gltf/">GLTF&lt;/a>-based, cross-platform file format that can handle the humanoid character/avatar (3D model data).&lt;/strong>
+The VRM file can be accessed in different environments such as game engines, Web, etc.
+The current provided software, &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, can import and export VRM in Unity.&lt;/p>
+&lt;ul>
+&lt;li>VRM is formulated on top of the 3D standard format &lt;strong>glTF2.0&lt;/strong> to handle the humanoid model&lt;/li>
+&lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
+&lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
+&lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
+&lt;li>Support three types of shaders ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
+&lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
+&lt;li>An implementation of spring physics that does not rely on the physical engine is provided for setting up the model&amp;rsquo;s hairs, clothes and so forth. ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
+&lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
+&lt;li>Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and &lt;strong>License Information&lt;/strong> are also included in the VRM file ➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.&lt;/p>
+&lt;h2 id="what-can-you-do-with-vrm">What can you do with VRM?&lt;/h2>
+&lt;p>&lt;strong>The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong>. As long as various VRM applications are made, the future will look like the one described below for sure&amp;hellip;&lt;/p>
+&lt;ul>
+&lt;li>Create your own avatar with the character maker in VRM format&lt;/li>
+&lt;li>Use your own avatar to host a live streaming event and show up on your friends&amp;rsquo; live channels&lt;/li>
+&lt;li>After the live streaming, start a VR game to explore the VR world with your own avatar&lt;/li>
+&lt;li>After the game, move to the chat room in the VR world. Use the same avatar character to hang out with friends&lt;/li>
+&lt;li>Tomorrow join the VR study group in VR. Of course, the same avatar appearance&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>By using your own avatar (3D model data) in VRM format, you can access various applications and games that support VRM&lt;/strong>.&lt;/p>
+&lt;p>Live streaming, video creation, games, chat&amp;hellip;. The virtual worlds are not connected with each other. Using VRM is the first step to bridge those virtual worlds.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_EN.png" alt="VRM applications" />
+&lt;hr>
+&lt;p>➡️ &lt;a href="https://vrm.dev/en/vrm_applications/">Applications that support VRM&lt;/a>&lt;/p>
+&lt;h2 id="vrm-features">VRM features&lt;/h2>
 &lt;p>In the past, handling &lt;strong>3D humanoid avatar (3D model)&lt;/strong> in Virtual Reality, Virtual YouTuber, etc. was not trivial as it was necessary to develop unique systems for applications and fine-tune the 3D model data due to&amp;hellip;&lt;/p>
 &lt;ul>
 &lt;li>
@@ -1042,39 +1072,12 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;li>Effectively absorb and unify the differences from the model data&lt;/li>
 &lt;li>Make handling the 3D model easy on the application side&lt;/li>
 &lt;/ul>
-&lt;p>Here we propose a &lt;strong>platform-independent 3D avatar file format&lt;/strong> that possesses the above characteristics called &lt;strong>VRM&lt;/strong>.&lt;/p>
-&lt;hr>
-&lt;h2 id="what-can-you-do-with-vrm">What can you do with VRM?&lt;/h2>
-&lt;p>&lt;strong>The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong>. As long as various VRM applications are made, the future will look like the one described below for sure&amp;hellip;&lt;/p>
-&lt;ul>
-&lt;li>Create your own avatar with the character maker in VRM format&lt;/li>
-&lt;li>Use your own avatar to host a live streaming event and show up on your friends&amp;rsquo; live channels&lt;/li>
-&lt;li>After the live streaming, start a VR game to explore the VR world with your own avatar&lt;/li>
-&lt;li>After the game, move to the chat room in the VR world. Use the same avatar character to hang out with friends&lt;/li>
-&lt;li>Tomorrow join the VR study group in VR. Of course, the same avatar appearance&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>By using your own avatar (3D model data) in VRM format, you can access to various applications and games that support VRM&lt;/strong>.&lt;/p>
-&lt;p>Live streaming, video creation, games, chat&amp;hellip;. The virtual worlds are not connected with each other. Using VRM is the first step to bridge those virtual worlds.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/VRM_WorldConnect_EN.png" alt="VRM applications" />
-&lt;hr>
-&lt;p>➡️ &lt;a href="https://vrm.dev/en/vrm_applications/">Applications that support VRM&lt;/a>&lt;/p>
-&lt;h2 id="vrm-features">VRM features&lt;/h2>
-&lt;p>VRM can handle the humanoid character/avatar (3D model data). &lt;strong>Though the current provided software to import and export VRM is in Unity, VRM itself is platform-independent&lt;/strong>, which means import/export VRM file in other engines/environments is feasible.&lt;/p>
-&lt;ul>
-&lt;li>VRM is formulated on top of the 3D standard format &lt;strong>glTF2.0&lt;/strong> to handle the humanoid model&lt;/li>
-&lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
-&lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
-&lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
-&lt;li>Support three types of shaders ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
-&lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
-&lt;li>An implementation of spring physics that does not rely on the physical engine is provided for setting up the model&amp;rsquo;s hairs, clothes and so forth. ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">SpringBone&lt;/a>&lt;/li>
-&lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
-&lt;li>Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and &lt;strong>License Information&lt;/strong> are also included in the VRM file ➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.&lt;/p>
+&lt;p>Here we propose a &lt;strong>platform-independent, 3D avatar file format&lt;/strong> called &lt;strong>VRM&lt;/strong> that has the above features.&lt;/p>
 &lt;h2 id="upload--download-vrm-file">Upload / Download VRM file&lt;/h2>
 &lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
-Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p></description></item><item><title>Docs: Create Initial VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p>
+&lt;h2 id="vrm-application-development">VRM application development&lt;/h2>
+&lt;p>➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_development/">VRM development&lt;/a>&lt;/p></description></item><item><title>Docs: Create Initial VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
 &lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
