@@ -70,6 +70,6 @@ Here we propose a **platform-independent, 3D avatar file format** called **VRM**
 Currently you can submit your VRM files to [THE SEED ONLINE](https://seed.online/en/), [VRoid Hub](https://hub.vroid.com/en/) or [Nikoni 3D](https://3d.nicovideo.jp/). For Nikoni 3D, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM). Please check license information and try out those VRM models.
 Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in [Virtual Cast](https://virtualcast.jp/).
 
-## VRM Application Development
+## VRM application development
 
  ➡️ [VRM development]({{< relref "vrm_development.md" >}})
