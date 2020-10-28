@@ -74,6 +74,8 @@ weight: 4
 | [KOROKORO System](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [PilotXross](https://n-mattun.booth.pm/) | Windows VR |
 | [Primitier](https://ootamato.itch.io/primitier) | Windows VR |
+| [Action Drill](https://lasmi.booth.pm/items/1615146) | Windows |
+| [Super Extreme VRM Soccer](https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer) | Windows |
 
 ##  Viewer
 

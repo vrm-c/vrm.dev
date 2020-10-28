@@ -14,11 +14,11 @@ WIP
 * Right-handed Y-Up coordinate system ➡️ [Coordinate]({{< relref "univrm_coordinate.md" >}})
 * Metric unit is meter
 * Humanoid bones ➡️ compatible with humanoid motion and motion capture
-* T-pose as the initial posture (towards +Z-axis)
+* T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode
 * The initial pose has no rotation and scale
 * The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin's bind matrices are not included)
 * Expression/eye gaze manipulation are in BlendShapeProxy ➡️ [BlendShapeProxy]({{< relref "how_to_use_blendshapeproxy.md" >}})
-* Spring physics setup on clothes, hair and others
+* Spring physics setup on clothes, hair and others ➡️ no interference with other physics
 * VR settings are available ➡️ [FirstPerson]({{< relref "univrm_use_firstperson.md" >}})
 * Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined
 
@@ -27,7 +27,7 @@ VRM is used for loading model into applications at runtime as opposed to the way
 ## Runtime Import with UniVRM
 
 UniVRM can load VRM into Unity as a GameObject instead of a prefab.
-The imported GameObject is the same as the instantiated GameObject from Prefab
+The imported GameObject is the same as the instantiated GameObject from Prefab.
 
 * [runtime load]({{< relref "univrm_import_runtime.md" >}})
 

@@ -74,6 +74,8 @@ weight: 4
 | [コロコロシステム](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [パイロットクロス](https://n-mattun.booth.pm/) | Windows VR |
 | [プリミティア](https://ootamato.itch.io/primitier) | Windows VR |
+| [Action Drill](https://lasmi.booth.pm/items/1615146) | Windows |
+| [スーパーエクストリームVRMサッカー](https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer) | Windows |
 
 ##  ビューア
 
