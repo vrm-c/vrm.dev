@@ -97,6 +97,12 @@ fbx の prefab をシーンに展開します。
 
 {{< img src="images/vrm/DragImportedModel.png" width="600" height="700" >}}
 
+## fbx の blendshpae の法線が乱れていないか確認する
+
+BlendShapeで変な影が出る場合の対策です。
+
+[BlendShape の法線を確認しよう]({{< relref "check_blendshape_normal.md" >}})
+
 ## エクスポート
 
 {{< img src="images/vrm/export058_menu.jpg" width="600" height="700" >}}

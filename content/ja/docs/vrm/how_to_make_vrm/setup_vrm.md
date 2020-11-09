@@ -2,7 +2,7 @@
 title: "2. VRMをセットアップする"
 date: 2020-08-26T15:52:30+09:00
 url: "/how_to_make_vrm/setup_vrm/"
-description: "正規化済みのモデルに BlendShape、視線、SpringBone などをセットアップして正規化せずにを出力する"
+description: "正規化済みのモデルに BlendShape、視線、SpringBone などをセットアップして再出力する"
 tags: ["unity"]
 weight: 3
 ---
