@@ -1,0 +1,46 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – fbx</title><link>https://vrm.dev/tags/fbx/</link><description>Recent content in fbx on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 09 Nov 2020 17:52:51 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/fbx/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: BlendShape の法線を確認しよう</title><link>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Mon, 09 Nov 2020 17:52:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
+&lt;p>最近のバージョンの Unity では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">詳細&lt;/h4>
+BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
+これに、計算された法線が設定されて意図しない変化をするようです。
+ベースになるメッシュの法線が加工されている場合、
+ミラーリングで左右が分かれている場合の境界などで顕著です。
+&lt;/div>
+&lt;h2 id="mtoonの法線デバッグ表示で法線を確認する">MToonの法線デバッグ表示で法線を確認する&lt;/h2>
+&lt;p>fbx の &lt;code>Materials&lt;/code> タブの &lt;code>Extract Materials...&lt;/code> を実行してマテリアルを取り出します。&lt;/p>
+&lt;p>すべてのマテリアルを選択します。&lt;/p>
+&lt;p>マテリアルの種類を &lt;code>VRM/MToon&lt;/code> に変更します。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">法線確認&lt;/h4>
+法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
+&lt;/div>
+&lt;p>MToon の &lt;code>Options - Debugging Options - Visualize&lt;/code> を &lt;code>Normal&lt;/code> に変更します。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/mtoon_normal.gif" alt="debug normal">&lt;/p>
+&lt;p>SkinedMeshRenderer を選択します。&lt;/p>
+&lt;p>BlendShape のスライダーを動かして法線を確認します。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/broken_normal.jpg" alt="debug normal">&lt;/p>
+&lt;ul>
+&lt;li>鼻先&lt;/li>
+&lt;li>下唇&lt;/li>
+&lt;/ul>
+&lt;p>の法線が顕著に乱れています。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">モデル情報&lt;/h4>
+&lt;ul>
+&lt;li>vroid さんの vrm を blender に import&lt;/li>
+&lt;li>blender から fbx export&lt;/li>
+&lt;li>unity に import&lt;/li>
+&lt;/ul>
+&lt;p>したものです。
+&lt;/div>
+&lt;h2 id="blendshape-の法線をなおす">BlendShape の法線をなおす&lt;/h2>
+&lt;p>上記の方法で BlendShape がおかしいことが分かった場合に修復する方法。&lt;/p>
+&lt;p>fbx の &lt;code>Model&lt;/code> タブを選択。&lt;/p>
+&lt;p>&lt;code>Legacy Blend Shape Normals&lt;/code> をチェックして Apply。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/legacy_normal_fixed.jpg" alt="fixed normal">&lt;/p>
+&lt;p>BlendShape がなおっていることを確認します。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">修正前との違い&lt;/h4>
+鼻先、下唇に加えて、舌が全然違う法線になってます。
+&lt;/div></description></item></channel></rss>
