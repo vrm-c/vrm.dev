@@ -108,6 +108,9 @@ weight: 4
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [TEATOR](https://teator.jp/) | Windows 10, macOS, iOS |
 | [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
+| [MocuMocuDance](http://www.vrai.jp/vr_mocu_en.html) | Oculus Rift, HTC Vive |
+| [LIV](https://liv.tv/) | Windows VR |
+| [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Oculus Rift, HTC Vive, Windows Mixed Reality |
 
 ##  Services using VRM internally
 

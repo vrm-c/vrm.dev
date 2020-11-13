@@ -40,6 +40,6 @@ Click `Play` button to enable `SampleViewer`, and then click `Open` button to im
 <br>
 {{< img src="images/vrm/sample_viewer_activate.jpg" width="600" alt="sample_viewer_activate" >}}
 
-Other samples such as VRM export and FirstPerson rendering are available in `VRM.Samples`.
+Other samples such as [Runtime VRM export](https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs) and [FirstPerson rendering](https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs) are available in `VRM.Samples`.
 
 Alicia model [can be found here](https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm).
