@@ -2,7 +2,8 @@
 title: "2. Set up VRM"
 date: 2020-08-25T17:26:05+09:00
 url: "/en/how_to_make_vrm/setup_vrm/"
-weight: 2
+tags: ["unity"]
+weight: 3
 ---
 
 In the previous section, we have introduced how to convert a Humanoid 3D model to VRM. 

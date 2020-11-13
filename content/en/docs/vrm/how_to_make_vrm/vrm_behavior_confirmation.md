@@ -2,7 +2,8 @@
 title: "Check Your VRM in Play Mode"
 date: 2020-08-25T17:26:54+09:00
 url: "/en/how_to_make_vrm/vrm_behavior_confirmation/"
-weight: 3
+tags: ["unity"]
+weight: 4
 ---
 
 In this section, we assume you have made a VRM model and want to test it in play mode.

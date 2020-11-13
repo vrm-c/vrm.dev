@@ -2,34 +2,16 @@
 title: "1. Create VRM from Humanoid 3D Models"
 date: 2020-08-25T17:10:30+09:00
 url: "/en/how_to_make_vrm/convert_from_humanoid_model/"
-weight: 1
+tags: ["unity"]
+weight: 2
 ---
 
-A VRM file can be made by [UniVRM](https://github.com/vrm-c/UniVRM), which is a standard implementation of VRM in [Unity](https://unity3d.com/). 
-Before we dive into the details, let's take a look at 4 core steps for making a VRM file:
-
-1. Import a 3D model and [UniVRM](https://github.com/vrm-c/UniVRM) into a Unity project. Set up/adjust the model's materials, etc. 
-1. Export the 3D model as VRM in Unity (Model Normalization)
-1. Import the VRM file into the Unity project and customize the settings such as [license]({{< relref "univrm_meta.md" >}}), [spring bone]({{< relref "univrm_secondary.md" >}}), [expression]({{< relref "univrm_blendshape.md" >}}), [eyelook]({{< relref "univrm_lookat.md" >}}), [first-person]({{< relref "univrm_firstperson.md" >}}).
-     * To make sure customized settings (e.g. facial expression) are working, check your model in play mode
-1. Export the 3D model as VRM again. Now your VRM model is all set.
-
-Briefly speaking, **a humanoid 3D model can be adjusted and exported as a VRM file in Unity. Once the VRM file is made, it can be imported again to adjust items such as VRM Meta, BlendShape, and others**.
-
----
-
-### Create an empty project in Unity
-{{< img src="images/vrm/unity_new_project.png" >}}
-
-Create a new project at the start page (``New -> Create project``).
-
-### Import UniVRM package into the created project
-{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
-
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``, ``../Assets/VRMShaders`` and ``../Assets/MeshUtility``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import**.
+After the UniVRM package is [installed]({{< relref "setup_unity.md" >}}) successfully, we can start converting the humanoid 3D model to VRM. 
 
 ### Prepare a 3D model that can be handled as "Humanoid" in Unity
-Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX 3D model. The model's bones must be set. Also, **be sure to use your own model or a model licensed for use as VR avatar**. As we will describe later, **there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models**. 
+Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.4/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX 3D model. The model's bones must be set. Also, **be sure to use your own model or a model licensed for use as VR avatar**. As we will describe later, **there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models**. 
+
+We use [Alicia Solid](https://3d.nicovideo.jp/works/td14712) as an example:
 
 {{< img src="images/vrm/DragImportedModel.png" width="300" height="300" alt="DragImported3DModel" >}}
 <br>
@@ -40,7 +22,11 @@ First, drag the imported humanoid 3D model from the Project window to the Hierar
 
 {{< img src="images/vrm/SetAsExternalMaterialsLegacy.png" width="900" height="200" alt="SetAsExternalMaterialsLegacy" >}}
 
-Next, click `Rig` and set `Animation Type` as `Humanoid`, and then click `Configure` button. A message box will pop up asking whether you want to save the current scene. Click `Save` to save it.
+Next, click `Rig` and set `Animation Type` as `Humanoid`, and then click `Apply` button:
+
+{{< img src="images/vrm/humanoid_apply.jpg" width="900" height="200" alt="humanoid_apply" >}}
+
+Next, click `Configure` button to configure your model. A message box will pop up asking whether you want to save the current scene. Click `Save` to save it.
 
 {{< img src="images/vrm/SetModelAsHumanoid.png" width="900" height="200" alt="SetModelAsHumanoid" >}}
 
