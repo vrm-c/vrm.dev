@@ -1,26 +1,48 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><description>Recent content in How to make VRM file on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 27 Aug 2020 11:57:58 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
-&lt;p>A VRM file can be made by &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, which is a standard implementation of VRM in &lt;a href="https://unity3d.com/">Unity&lt;/a>.
-Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for making a VRM file:&lt;/p>
-&lt;ol>
-&lt;li>Import a 3D model and &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a> into a Unity project. Set up/adjust the model&amp;rsquo;s materials, etc.&lt;/li>
-&lt;li>Export the 3D model as VRM in Unity (Model Normalization)&lt;/li>
-&lt;li>Import the VRM file into the Unity project and customize the settings such as &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">license&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">spring bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">expression&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">eyelook&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">first-person&lt;/a>.
-&lt;ul>
-&lt;li>To make sure customized settings (e.g. facial expression) are working, check your model in play mode&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Export the 3D model as VRM again. Now your VRM model is all set.&lt;/li>
-&lt;/ol>
-&lt;p>Briefly speaking, &lt;strong>a humanoid 3D model can be adjusted and exported as a VRM file in Unity. Once the VRM file is made, it can be imported again to adjust items such as VRM Meta, BlendShape, and others&lt;/strong>.&lt;/p>
-&lt;hr>
-&lt;h3 id="create-an-empty-project-in-unity">Create an empty project in Unity&lt;/h3>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><description>Recent content in How to make VRM file on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 13 Nov 2020 15:58:05 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
+&lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
+&lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/download_unitypackage.png" alt="download_unitypackage">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">XX YY&lt;/h4>
+XX is UniVRM version. YYYY is version ID
+&lt;/div>
+&lt;h2 id="install-unity">Install Unity&lt;/h2>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html">https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html&lt;/a>&lt;/p>
+&lt;p>Make sure the &lt;a href="https://vrm.dev/en/docs/univrm/install/unity_version/">Unity Version&lt;/a> you are going to download is compatible with UniVRM.&lt;/p>
+&lt;h2 id="create-an-empty-project-in-unity">Create an empty project in Unity&lt;/h2>
+&lt;p>Launch Unity and create a new project (&lt;code>New -&amp;gt; Create project&lt;/code>):&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
-&lt;h3 id="import-univrm-package-into-the-created-project">Import UniVRM package into the created project&lt;/h3>
+&lt;p>For Unity Hub, click &lt;code>Projects -&amp;gt; New -&amp;gt; 3D template -&amp;gt; CREATE&lt;/code>:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/new_project_en.jpg" />
+&lt;h2 id="import-univrm-package-into-the-created-project">Import UniVRM package into the created project&lt;/h2>
+&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
+&lt;p>If UniVRM import successes, &lt;code>VRM&lt;/code> will be displayed in the menu bar:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
+&lt;hr>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">If you are using Unity-2018 and the VRM menu does not show up:&lt;/h4>
+Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> and check whether &lt;code>Scripting Runtime Version&lt;/code> is set to &lt;code>.Net4.X equivalent&lt;/code>
+&lt;/div>
+&lt;h3 id="console">Console&lt;/h3>
+&lt;p>The errors occurred in a Unity project can be shown in the Console window:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
+&lt;p>Click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/error_in_console.jpg" alt="clear console" width="500" />
+&lt;h2 id="univrm-manual">UniVRM Manual&lt;/h2>
+&lt;p>➡ &lt;a href="https://vrm.dev/en/docs/univrm/install/">Install&lt;/a>&lt;/p></description></item><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+&lt;p>After the UniVRM package is &lt;a href="https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/">installed&lt;/a> successfully, we can start converting the humanoid 3D model to VRM.&lt;/p>
 &lt;h3 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h3>
-&lt;p>Prepare a 3D model that can be &lt;a href="https://docs.unity3d.com/2019.3/Documentation/Manual/HOWTO-importObject.html">imported&lt;/a> into Unity such as FBX 3D model. The model&amp;rsquo;s bones must be set. Also, &lt;strong>be sure to use your own model or a model licensed for use as VR avatar&lt;/strong>. As we will describe later, &lt;strong>there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models&lt;/strong>.&lt;/p>
+&lt;p>Prepare a 3D model that can be &lt;a href="https://docs.unity3d.com/2019.4/Documentation/Manual/HOWTO-importObject.html">imported&lt;/a> into Unity such as FBX 3D model. To be recognized as a humanoid model, the &lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones">required bones&lt;/a> must be set up.
+Also, &lt;strong>be sure to use your own model or a model licensed for use as VR avatar&lt;/strong>. As we will describe later, &lt;strong>there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models&lt;/strong>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Base VRM Model&lt;/h4>
+The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/base_model/">can be found here&lt;/a>
+&lt;/div>
+&lt;p>We use &lt;a href="https://3d.nicovideo.jp/works/td14712">Alicia Solid&lt;/a> as an example:&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
 &lt;br>
 &lt;br>
@@ -28,7 +50,9 @@ Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for
 &lt;/p>
 &lt;p>First, drag the imported humanoid 3D model from the Project window to the Hierarchy window. Click the 3D model in the Hierarchy window then you will see the menu as shown in the Figure above. Click &lt;code>Select&lt;/code> and then click &lt;code>Materials&lt;/code>. Set &lt;code>Location&lt;/code> as &lt;code>Use External Materials (Legacy)&lt;/code>.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/SetAsExternalMaterialsLegacy.png" alt="SetAsExternalMaterialsLegacy" width="900" />
-&lt;p>Next, click &lt;code>Rig&lt;/code> and set &lt;code>Animation Type&lt;/code> as &lt;code>Humanoid&lt;/code>, and then click &lt;code>Configure&lt;/code> button. A message box will pop up asking whether you want to save the current scene. Click &lt;code>Save&lt;/code> to save it.&lt;/p>
+&lt;p>Next, click &lt;code>Rig&lt;/code> and set &lt;code>Animation Type&lt;/code> as &lt;code>Humanoid&lt;/code>, and then click &lt;code>Apply&lt;/code> button:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/humanoid_apply.jpg" alt="humanoid_apply" width="900" />
+&lt;p>After &lt;code>Apply&lt;/code> button is clicked, click &lt;code>Configure&lt;/code> button to configure your model. A message box will pop up asking whether you want to save the current scene. Click &lt;code>Save&lt;/code> to save it.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
 &lt;p>Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&amp;rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red. In this situation, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click &lt;code>Mapping&lt;/code> in the lowerleft of the interface, click &lt;code>clear&lt;/code> and then click &lt;code>Automap&lt;/code>.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />

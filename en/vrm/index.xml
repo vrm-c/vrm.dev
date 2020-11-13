@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 11:42:49 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:02:40 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
 &lt;h2 id="what-is-vrm">What is VRM?&lt;/h2>
 &lt;p>&lt;strong>VRM is a &lt;a href="https://www.khronos.org/gltf/">GLTF&lt;/a>-based, cross-platform file format that can handle the humanoid character/avatar (3D model data).&lt;/strong>
 The VRM file can be accessed in different environments such as game engines, Web, etc.
@@ -62,7 +62,19 @@ The current provided software, &lt;a href="https://github.com/vrm-c/UniVRM">UniV
 &lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
 Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p>
 &lt;h2 id="vrm-application-development">VRM application development&lt;/h2>
-&lt;p>➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_development/">VRM development&lt;/a>&lt;/p></description></item><item><title>Docs: How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><pubDate>Thu, 27 Aug 2020 11:57:58 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/</guid><description>
+&lt;p>➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_development/">VRM development&lt;/a>&lt;/p></description></item><item><title>Docs: How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><pubDate>Fri, 13 Nov 2020 15:58:05 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/</guid><description>
+&lt;p>A VRM file can be made by &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a>, which is a standard implementation of VRM in &lt;a href="https://unity3d.com/">Unity&lt;/a>.
+Before we dive into the details, let&amp;rsquo;s take a look at 4 core steps for making a VRM file:&lt;/p>
+&lt;ol>
+&lt;li>Import a 3D model and &lt;a href="https://github.com/vrm-c/UniVRM">UniVRM&lt;/a> into a Unity project. Set up/adjust the model&amp;rsquo;s materials, etc.&lt;/li>
+&lt;li>Export the 3D model as VRM in Unity (Model Normalization)&lt;/li>
+&lt;li>Import the VRM file into the Unity project and customize the settings such as &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">license&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">spring bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">expression&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">eyelook&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">first-person&lt;/a>
+&lt;ul>
+&lt;li>To make sure customized settings (e.g. facial expression) are working, check your model in play mode&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Export the 3D model as VRM again. Setup completed.&lt;/li>
+&lt;/ol>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -77,8 +89,9 @@ Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャ�
 &lt;/tbody>
 &lt;/table>
 &lt;p>The figure above provides an overview of converting humanoid 3D models to VRM.&lt;/p>
-&lt;p>The detailed walkthrough is presented in the first two sections below.
-The last section is about VRM model testings such as eye movement and expression.&lt;/p></description></item><item><title>Docs: Import VRM into Viewer</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
+&lt;p>The environment Setup for UniVRM is in Section &lt;code>0&lt;/code>.
+The detailed walkthrough is presented in the Section &lt;code>1&lt;/code> and &lt;code>2&lt;/code>.
+The last Section is about VRM model testings such as eye movement and expression.&lt;/p></description></item><item><title>Docs: Import VRM into Viewer</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
 &lt;p>VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
 &lt;p>or you can use the viewer in &lt;a href="https://github.com/vrm-c/UniVRMTest/">UniVRMTest&lt;/a>:&lt;/p>
 &lt;ol>
@@ -414,6 +427,18 @@ The last section is about VRM model testings such as eye movement and expression
 &lt;tr>
 &lt;td>&lt;a href="https://novia.itch.io/dance-dance-maker">Dance Dance Maker!&lt;/a>&lt;/td>
 &lt;td>Oculus Quest&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="http://www.vrai.jp/vr_mocu_en.html">MocuMocuDance&lt;/a>&lt;/td>
+&lt;td>Oculus Rift, HTC Vive&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://liv.tv/">LIV&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/885000/Synth_Riders/">Synth Riders&lt;/a>&lt;/td>
+&lt;td>Oculus Rift, HTC Vive, Windows Mixed Reality&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
