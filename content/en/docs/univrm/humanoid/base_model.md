@@ -1,5 +1,5 @@
 ---
-title: "Create Initial VRM Model"
+title: "Create Base VRM Model"
 date: 2020-10-14T17:46:52+09:00
 weight: 2
 tags: ["unity"]

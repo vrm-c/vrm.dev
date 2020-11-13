@@ -9,7 +9,12 @@ weight: 2
 After the UniVRM package is [installed]({{< relref "setup_unity.md" >}}) successfully, we can start converting the humanoid 3D model to VRM. 
 
 ### Prepare a 3D model that can be handled as "Humanoid" in Unity
-Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.4/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX 3D model. The model's bones must be set. Also, **be sure to use your own model or a model licensed for use as VR avatar**. As we will describe later, **there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models**. 
+Prepare a 3D model that can be [imported](https://docs.unity3d.com/2019.4/Documentation/Manual/HOWTO-importObject.html) into Unity such as FBX 3D model. To be recognized as a humanoid model, the [required bones](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones) must be set up. 
+Also, **be sure to use your own model or a model licensed for use as VR avatar**. As we will describe later, **there are items that describe license information in the VRM file, authors need to fill up those information for their own VRM models**.
+
+{{% alert title="Base VRM Model" color="info" %}}
+The conditions for creating a VRM model [can be found here]({{< relref "base_model.md" >}})
+{{% /alert %}}
 
 We use [Alicia Solid](https://3d.nicovideo.jp/works/td14712) as an example:
 
@@ -26,7 +31,7 @@ Next, click `Rig` and set `Animation Type` as `Humanoid`, and then click `Apply`
 
 {{< img src="images/vrm/humanoid_apply.jpg" width="900" height="200" alt="humanoid_apply" >}}
 
-Next, click `Configure` button to configure your model. A message box will pop up asking whether you want to save the current scene. Click `Save` to save it.
+After `Apply` button is clicked, click `Configure` button to configure your model. A message box will pop up asking whether you want to save the current scene. Click `Save` to save it.
 
 {{< img src="images/vrm/SetModelAsHumanoid.png" width="900" height="200" alt="SetModelAsHumanoid" >}}
 
