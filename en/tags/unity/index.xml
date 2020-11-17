@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 12 Nov 2020 11:24:17 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/en/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Nov 2020 11:21:12 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
 &lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
 &lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
@@ -746,6 +746,8 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;img src="https://vrm.dev/images/vrm/shader_option.jpg" alt="shader_option" width="800" />
 &lt;p>Note that if the materials are not assigned or you want to change them, click the rightmost icon of &lt;code>Element X&lt;/code> to select available materials in your computer. There are several parameters that you can adjust rendering effects based on what shader you select. Here we select &lt;code>VRM/MToon&lt;/code> as an example as shown below. Please refer to &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a> for more information.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/MToonMaterialSetting.png" alt="MToonMaterialSetting" width="700" />
+&lt;h3 id="check-blendshape-normal">Check BlendShape Normal&lt;/h3>
+&lt;p>Check whether the imported fbx has the correct BlendShape normals. The details &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/">can be found here&lt;/a>.&lt;/p>
 &lt;h3 id="export-the-model-as-vrm-from-menu-model-normalization">Export the model as VRM from menu (model normalization)&lt;/h3>
 &lt;p>After adjustments are completed, select the model in &lt;code>Hierarchy&lt;/code> window and export it from&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
@@ -1422,7 +1424,40 @@ In UniVRM, call &lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_us
 &lt;td>The meshes with &lt;code>ThirdPersonOnly&lt;/code> setting are not rendered in FirstPerson.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
+&lt;/table></description></item><item><title>Docs: Check BlandShape Normal</title><link>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Mon, 16 Nov 2020 11:21:12 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
+&lt;p>Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model&amp;rsquo;s surface.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Details&lt;/h4>
+If the BlendShape normal is (0, 0, 0), the value of the surface normal should not be changed. It seems that the original BlendShape normal is replaced by the recalculated BlendShape normal, resulting in unexpected changes on the model&amp;rsquo;s surface
+&lt;/div>
+&lt;h2 id="validate-surface-normal-using-mtoons-debugging-options">Validate surface normal using MToon&amp;rsquo;s debugging options&lt;/h2>
+&lt;p>Drag fbx to the Hierarchy window and select it. In the Inspector, click &lt;code>Select -&amp;gt; Materials -&amp;gt; Extract Materials&lt;/code> and choose a folder to save these materials.
+Next, select all materials and change &lt;code>Shader&lt;/code> to &lt;code>VRM/MToon&lt;/code>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Surface normal validation&lt;/h4>
+At this point we set all the materials to MToon for surface normal validation only, so setting up textures&amp;rsquo; properties is not required.
+&lt;/div>
+&lt;p>To visualize the surface normal, go to &lt;code>Options - Debugging Options - Visualize&lt;/code> and select &lt;code>Normal&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/mtoon_normal.gif" alt="debug normal">&lt;/p>
+&lt;p>Select a GameObject containing &lt;code>SkinnedMeshRenderer&lt;/code> with BlendShape. Drag the slider while observing surface normals:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/broken_normal.jpg" alt="debug normal">&lt;/p>
+&lt;p>We can see surface normals around nose tip and mouth are not correct.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Steps to reproduce:&lt;/h4>
+&lt;ul>
+&lt;li>Import VRoid model into Blender&lt;/li>
+&lt;li>Export vrm as fbx&lt;/li>
+&lt;li>Import fbx into Unity&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2 id="fix-blendshape-normal">Fix BlendShape normal&lt;/h2>
+&lt;p>To fix BlendShape normal, in the fbx&amp;rsquo;s inspector, click &lt;code>Select -&amp;gt; Model -&amp;gt; Legacy Blend Shape Normals&lt;/code> and check the box.&lt;/p>
+&lt;p>Now confirm whether the BlendShape normal has been fixed:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/legacy_normal_fixed.jpg" alt="fixed normal">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Compare with the previous results&lt;/h4>
+Surface normals around the norse tip and mouth (e.g. tongue, lower lip) are totally different
+&lt;/div></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
 &lt;p>In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p>
 &lt;h3 id="check-models-eye-movements">Check Model&amp;rsquo;s Eye Movements&lt;/h3>
 &lt;p>Set &lt;code>AnimationClip/AnimationController&lt;/code> and set &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/#target">viewing target&lt;/a> in&lt;code>VRMLookAtHead -&amp;gt; Target&lt;/code>(the head orientation towards the target). For example, you can create a cube as a target from &lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>. Next, serach head component in&lt;code>VRMLookAtHead -&amp;gt; Head&lt;/code>. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are constantly tracking the object. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p>

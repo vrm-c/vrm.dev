@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:02:40 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:19:08 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMをインポートする</title><link>https://vrm.dev/docs/univrm/import/univrm_import/</link><pubDate>Mon, 12 Oct 2020 15:28:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/univrm_import/</guid><description>
 &lt;h2 id="エディタモードでvrmファイルをインポートする">エディタモードでVRMファイルをインポートする&lt;/h2>
 &lt;h3 id="1unityで空のプロジェクトを作る">1.Unityで空のプロジェクトを作る&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
@@ -2259,8 +2259,8 @@ proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
 proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShape の法線を確認しよう</title><link>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Mon, 09 Nov 2020 17:52:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
-&lt;p>最近のバージョンの Unity では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。&lt;/p>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShape の法線を確認しよう</title><link>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Tue, 17 Nov 2020 16:23:29 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
+&lt;p>最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">詳細&lt;/h4>
 BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
@@ -2278,7 +2278,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;/div>
 &lt;p>MToon の &lt;code>Options - Debugging Options - Visualize&lt;/code> を &lt;code>Normal&lt;/code> に変更します。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/mtoon_normal.gif" alt="debug normal">&lt;/p>
-&lt;p>SkinedMeshRenderer を選択します。&lt;/p>
+&lt;p>SkinnedMeshRenderer を選択します。&lt;/p>
 &lt;p>BlendShape のスライダーを動かして法線を確認します。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/broken_normal.jpg" alt="debug normal">&lt;/p>
 &lt;ul>
