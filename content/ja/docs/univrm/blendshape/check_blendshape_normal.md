@@ -4,7 +4,7 @@ weight: 4
 tags: ["unity", "fbx"]
 ---
 
-最近のバージョンの Unity では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。
+最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。
 
 {{% alert title="詳細" color="info" %}}
 
@@ -33,7 +33,7 @@ MToon の `Options - Debugging Options - Visualize` を `Normal` に変更しま
 
 ![debug normal](/images/vrm/mtoon_normal.gif)
 
-SkinedMeshRenderer を選択します。
+SkinnedMeshRenderer を選択します。
 
 BlendShape のスライダーを動かして法線を確認します。
 

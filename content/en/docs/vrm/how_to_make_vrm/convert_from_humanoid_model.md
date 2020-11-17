@@ -76,6 +76,10 @@ Note that if the materials are not assigned or you want to change them, click th
 
 {{< img src="images/vrm/MToonMaterialSetting.png" width="700" height="800" alt="MToonMaterialSetting" >}}
 
+### Check BlendShape Normal
+
+Check whether the imported fbx has the correct BlendShape normals. The details [can be found here]({{< relref "check_blendshape_normal.md" >}}).
+
 ### Export the model as VRM from menu (model normalization)
 
 After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.XX -> Export humanoid``.
