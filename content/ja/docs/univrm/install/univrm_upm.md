@@ -6,7 +6,7 @@ aliases: ["/univrm/univrm_upm/", "/univrm/install/univrm_upm/"]
 tags: ["unity"]
 ---
 
-* `Unity 2019.3.4f1以降` が必要です。
+* `Unity 2019.4以降` が必要です。
 * [Git client](https://git-scm.com/) のインストールが必要です。
 
 ### Unity 向けの git のインストール
