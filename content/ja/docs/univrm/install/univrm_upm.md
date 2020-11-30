@@ -6,7 +6,36 @@ aliases: ["/univrm/univrm_upm/", "/univrm/install/univrm_upm/"]
 tags: ["unity"]
 ---
 
-`Unity 2019.3.4f1以降` が必要です。
+* `Unity 2019.4以降` が必要です。
+* [Git client](https://git-scm.com/) のインストールが必要です。
+
+### Unity 向けの git のインストール
+
+Unity Manual [Requirements](https://docs.unity3d.com/Manual/upm-git.html#req) を参照してください。
+
+> To use Git dependencies in a project, make sure the [Git client](https://git-scm.com/) is installed on your machine and that you have added the Git executable path to the PATH system environment variable.
+
+未インストールだと
+
+> An error occurred while resolving packages:
+Project has invalid dependencies:
+com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your system then restart Unity and Unity Hub
+
+というようなエラーが出ます。
+
+
+{{% alert title="他のgit" color="warning" %}}
+https://git-scm.com/ からインストールした git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、Path の中で最初に見つかるように設定してください。
+
+* powershell からバージョンを確認した例 (20201130)
+```dos
+> git --version
+git version 2.29.2.windows.2
+```
+
+{{% /alert %}}
+
+
 
 ### UnityPackageManager ウインドウによるインストール
 
@@ -18,6 +47,7 @@ UnityPackageManagerのWindow
 `add package from git URL`
 
 {{< img src="images/vrm10/from_git.jpg" >}}
+
 <hr>
 
 新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。
