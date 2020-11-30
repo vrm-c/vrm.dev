@@ -1,16 +1,13 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Tue, 06 Oct 2020 18:31:16 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
-&lt;ul>
-&lt;li>Unity-2019.4 LTS が推奨バージョンです&lt;/li>
-&lt;/ul>
-&lt;p>Unity-2018.4 以降のバージョンで動作します。&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Unity Version&lt;/th>
 &lt;th>動作&lt;/th>
 &lt;th>Scripting Runtime Version&lt;/th>
+&lt;th>UPM&lt;/th>
 &lt;th>備考&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -20,11 +17,13 @@
 &lt;td>×&lt;/td>
 &lt;td>-&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.1&lt;/td>
 &lt;td>×&lt;/td>
 &lt;td>-&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -32,17 +31,20 @@
 &lt;td>×&lt;/td>
 &lt;td>-&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.3&lt;/td>
 &lt;td>△&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>C#7.3。動くかもしれないが未確認&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>UniVRMの開発に使っているバージョン&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -50,29 +52,34 @@
 &lt;td>○&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.2&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>-&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>.Net3.5が無くなったので Scripting Runtime Version 設定が不要になった&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.3&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>-&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>2019.3.4f1 から UPM(githubのサブフォルダ) が動作する&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>-&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>リリース時にUPMの動作確認をしてるバージョン&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2020&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>-&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -137,7 +144,32 @@
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
 &lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: UPMでUniVRMをインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_upm/</link><pubDate>Wed, 08 Jul 2020 11:42:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_upm/</guid><description>
-&lt;p>&lt;code>Unity 2019.3.4f1以降&lt;/code> が必要です。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Unity 2019.4以降&lt;/code> が必要です。&lt;/li>
+&lt;li>&lt;a href="https://git-scm.com/">Git client&lt;/a> のインストールが必要です。&lt;/li>
+&lt;/ul>
+&lt;h3 id="unity-向けの-git-のインストール">Unity 向けの git のインストール&lt;/h3>
+&lt;p>Unity Manual &lt;a href="https://docs.unity3d.com/Manual/upm-git.html#req">Requirements&lt;/a> を参照してください。&lt;/p>
+&lt;blockquote>
+&lt;p>To use Git dependencies in a project, make sure the &lt;a href="https://git-scm.com/">Git client&lt;/a> is installed on your machine and that you have added the Git executable path to the PATH system environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>未インストールだと&lt;/p>
+&lt;blockquote>
+&lt;p>An error occurred while resolving packages:
+Project has invalid dependencies:
+com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please install Git on your system then restart Unity and Unity Hub&lt;/p>
+&lt;/blockquote>
+&lt;p>というようなエラーが出ます。&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">他のgit&lt;/h4>
+&lt;p>&lt;a href="https://git-scm.com/">https://git-scm.com/&lt;/a> からインストールした git.exe (デフォルトは、 &lt;code>C:\Program Files\Git\cmd\git.exe&lt;/code>) が、Path の中で最初に見つかるように設定してください。&lt;/p>
+&lt;ul>
+&lt;li>powershell からバージョンを確認した例 (20201130)&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-dos" data-lang="dos">&amp;gt; git --version
+git version 2.29.2.windows.2
+&lt;/code>&lt;/pre>
+&lt;/div>
 &lt;h3 id="unitypackagemanager-ウインドウによるインストール">UnityPackageManager ウインドウによるインストール&lt;/h3>
 &lt;p>UnityPackageManagerのWindow&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
