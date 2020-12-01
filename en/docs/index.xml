@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:26:33 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
 &lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
 &lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
@@ -49,13 +49,14 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
 &lt;p>&lt;strong>The VRM model&amp;rsquo;s information will be shown in the Inspector window&lt;/strong> once the GameObject of the model data in&lt;code>Hierarchy&lt;/code>is selected.&lt;/p></description></item><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
-&lt;p>Support from &lt;code>Unity-2018.4&lt;/code>. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
+&lt;p>Support &lt;code>Unity-2018.4&lt;/code> and above. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Unity Version&lt;/th>
 &lt;th>Compatibility&lt;/th>
 &lt;th>Scripting Runtime Version&lt;/th>
+&lt;th>UPM&lt;/th>
 &lt;th>Note&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -65,10 +66,12 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;td>×&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.1&lt;/td>
 &lt;td>×&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
@@ -77,17 +80,20 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;td>×&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.3&lt;/td>
 &lt;td>△&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>C#7.3. Probably working. Not confirmed yet&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>Current UniVRM development version&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -95,10 +101,12 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;td>○&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.2&lt;/td>
 &lt;td>○&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>.Net3.5 is removed. There is no need to set &lt;code>Scripting Runtime Version&lt;/code> to .Net4.X equivalent&lt;/td>
 &lt;/tr>
@@ -106,25 +114,28 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;td>Unity-2019.3&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>Support UPM from 2019.3.4f1&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>Current version for UniVRM-0.XX UPM testing&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2020&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="-univrm-055">～ UniVRM-0.55&lt;/h2>
 &lt;ul>
-&lt;li>Support from &lt;code>Unity-5.6&lt;/code>&lt;/li>
+&lt;li>Support &lt;code>Unity-5.6&lt;/code> and above&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Humanoid Overview</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>VRM humanoid is compatible with the motion of MotionCapture&amp;rsquo;s FK (Forward Kinematics).&lt;/p>
@@ -1175,11 +1186,11 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/export/univrm_export/">UniVRM Export&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">VRM Size&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/export062_dialog_en.png" alt="vrm export" width="900" />
 &lt;ul>
 &lt;li>Force T Pose
 &lt;ul>
-&lt;li>Force the model pose to become &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/">T-Pose&lt;/a> before removing rotation / scaling.&lt;/li>
+&lt;li>Force the model pose to become &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/#t-pose">T-Pose&lt;/a> before removing rotation / scaling.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Pose Freeze
@@ -1188,7 +1199,6 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>Details about model&amp;rsquo;s T-Pose normalization &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/">can be found here&lt;/a>.&lt;/p>
 &lt;p>In the next section, we will introduce how to &lt;a href="https://vrm.dev/en/how_to_make_vrm/setup_vrm/">import and set up VRM file first time&lt;/a>.&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Thu, 06 Aug 2020 11:25:13 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>&lt;code>LookAt Bone&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBoneApplyer&lt;/code> components.&lt;/p>
 &lt;h2 id="control-the-eye-gaze-with-bone-vrmlookatboneapplyer">Control the Eye Gaze with bone: VRMLookAtBoneApplyer&lt;/h2>
@@ -1358,12 +1368,12 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="v058">v0.58~&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/export058_dialog.jpg" alt="vrm export" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/export062_dialog_en.png" alt="vrm export" width="900" />
 &lt;p>The export dialog is based on Unity&amp;rsquo;s &lt;a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html">EditorWindow&lt;/a>&lt;/p>
 &lt;h3 id="how-to-use">How to use&lt;/h3>
 &lt;h4 id="vrm-exporter-window">VRM Exporter Window&lt;/h4>
 &lt;p>Open VRM Exporter Window by &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/export058_menu.jpg" alt="vrm export" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="vrm export" width="600" />
 &lt;ul>
 &lt;li>You can directly pick up exportable target in the Project Window now. There is no need to put the Prefab in the scene first.&lt;/li>
 &lt;/ul>
@@ -1377,7 +1387,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/export058_select.gif" alt="vrm export" width="600" />
 &lt;h4 id="conditions-for-valid-exportroot">Conditions for Valid ExportRoot&lt;/h4>
-&lt;img src="https://vrm.dev/images/vrm/export058_empty.jpg" alt="vrm export" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/export062_empty_en.jpg" alt="vrm export" width="600" />
 &lt;p>The setting screen for ExportRoot will show up if the following conditions are satisfied:&lt;/p>
 &lt;ul>
 &lt;li>Must be topmost parent&lt;/li>
@@ -2006,9 +2016,31 @@ For example, in &lt;code>SkinnedMeshRenderer&lt;/code>, click on &lt;code>BlendS
 &lt;p>After VRM export:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
 &lt;p>Basic state (BlendShape value = 0) is changed (eyes are not open fully).&lt;/p></description></item><item><title>Docs: Install UniVRM with UPM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_upm/</link><pubDate>Tue, 07 Jul 2020 18:33:59 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_upm/</guid><description>
-&lt;h2 id="univrm-0xxs-unitypackage">UniVRM-0.XX&amp;rsquo;s UnityPackage&lt;/h2>
-&lt;p>Starting from UniVRM-0.56, UniVRM can be imported with Unity Package Manager.&lt;/p>
-&lt;p>Requirement: &lt;code>Unity 2019.3.4f1 or later version&lt;/code>.&lt;/p>
+&lt;p>Starting with UniVRM-0.56, UniVRM can be installed with Unity Package Manager.&lt;/p>
+&lt;p>Installation prerequisites:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Unity 2019.4 or later version&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://git-scm.com/">Git client&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="install-git-for-unity">Install git for Unity&lt;/h2>
+&lt;p>Please refer to &lt;a href="https://docs.unity3d.com/Manual/upm-git.html#req">&lt;code>Git dependencies -&amp;gt; Requirements&lt;/code>&lt;/a> for more information.&lt;/p>
+&lt;blockquote>
+&lt;p>To use Git dependencies in a project, make sure the &lt;a href="https://git-scm.com/">Git client&lt;/a> is installed on your machine and that you have added the Git executable path to the PATH system environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>If git is not installed, the error messages like below will be shown:&lt;/p>
+&lt;blockquote>
+&lt;p>An error occurred while resolving packages:
+Project has invalid dependencies:
+com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please install Git on your system then restart Unity and Unity Hub&lt;/p>
+&lt;/blockquote>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Check whether git.exe can be found on your machine&lt;/h4>
+&lt;p>As mentioned above, install &lt;a href="https://git-scm.com/">Git client&lt;/a> and get the directory of git.exe (by default, git.exe is in &lt;code>C:\Program Files\Git\cmd&lt;/code>). Then, add it to the PATH system environment variable.&lt;/p>
+&lt;p>To check the git version, for instance, open Windows PowerShell and type the command &lt;code>git --version&lt;/code>:&lt;/p>
+&lt;pre>&lt;code class="language-dos" data-lang="dos">&amp;gt; git --version
+git version 2.29.2.windows.2
+&lt;/code>&lt;/pre>
+&lt;/div>
 &lt;h3 id="install-using-unitypackagemanager-window">Install using UnityPackageManager window&lt;/h3>
 &lt;p>To open UPM, go to &lt;code>Windows&lt;/code> -&amp;gt; &lt;code>Package Manager&lt;/code>:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
@@ -2024,7 +2056,7 @@ For example, in &lt;code>SkinnedMeshRenderer&lt;/code>, click on &lt;code>BlendS
 &lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; depends on VRMShaders and MeshUtility&lt;/li>
 &lt;/ul>
 &lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
-&lt;p>By changing the version number, You can switch to different version based on your needs.&lt;/p>
+&lt;p>By changing the version number, you can switch to different version based on your needs.&lt;/p>
 &lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
 &lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
 Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>):&lt;/p>
@@ -2723,6 +2755,18 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;td>&lt;a href="https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer">Super Extreme VRM Soccer&lt;/a>&lt;/td>
 &lt;td>Windows&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/885000/Synth_Riders/">Synth Riders&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/1144460/SOUNDART/">SOUNDART&lt;/a>&lt;/td>
+&lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://rc-cobalt.booth.pm/items/1756359">VRAST!&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="viewer">Viewer&lt;/h2>
@@ -2840,10 +2884,6 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;tr>
 &lt;td>&lt;a href="https://liv.tv/">LIV&lt;/a>&lt;/td>
 &lt;td>Windows VR&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://store.steampowered.com/app/885000/Synth_Riders/">Synth Riders&lt;/a>&lt;/td>
-&lt;td>Oculus Rift, HTC Vive, Windows Mixed Reality&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

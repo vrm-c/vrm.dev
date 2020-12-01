@@ -1,12 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
-&lt;p>Support from &lt;code>Unity-2018.4&lt;/code>. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
+&lt;p>Support &lt;code>Unity-2018.4&lt;/code> and above. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Unity Version&lt;/th>
 &lt;th>Compatibility&lt;/th>
 &lt;th>Scripting Runtime Version&lt;/th>
+&lt;th>UPM&lt;/th>
 &lt;th>Note&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -16,10 +17,12 @@
 &lt;td>×&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.1&lt;/td>
 &lt;td>×&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
@@ -28,17 +31,20 @@
 &lt;td>×&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.3&lt;/td>
 &lt;td>△&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>C#7.3. Probably working. Not confirmed yet&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2018.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>Current UniVRM development version&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -46,10 +52,12 @@
 &lt;td>○&lt;/td>
 &lt;td>.Net4.X equivalent&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.2&lt;/td>
 &lt;td>○&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>.Net3.5 is removed. There is no need to set &lt;code>Scripting Runtime Version&lt;/code> to .Net4.X equivalent&lt;/td>
 &lt;/tr>
@@ -57,25 +65,28 @@
 &lt;td>Unity-2019.3&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>Support UPM from 2019.3.4f1&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2019.4 LTS&lt;/td>
 &lt;td>◎&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>Current version for UniVRM-0.XX UPM testing&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2020&lt;/td>
 &lt;td>○&lt;/td>
 &lt;td>&lt;/td>
+&lt;td>○&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="-univrm-055">～ UniVRM-0.55&lt;/h2>
 &lt;ul>
-&lt;li>Support from &lt;code>Unity-5.6&lt;/code>&lt;/li>
+&lt;li>Support &lt;code>Unity-5.6&lt;/code> and above&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;ul>
@@ -131,9 +142,31 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
 &lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: Install UniVRM with UPM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_upm/</link><pubDate>Tue, 07 Jul 2020 18:33:59 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_upm/</guid><description>
-&lt;h2 id="univrm-0xxs-unitypackage">UniVRM-0.XX&amp;rsquo;s UnityPackage&lt;/h2>
-&lt;p>Starting from UniVRM-0.56, UniVRM can be imported with Unity Package Manager.&lt;/p>
-&lt;p>Requirement: &lt;code>Unity 2019.3.4f1 or later version&lt;/code>.&lt;/p>
+&lt;p>Starting with UniVRM-0.56, UniVRM can be installed with Unity Package Manager.&lt;/p>
+&lt;p>Installation prerequisites:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Unity 2019.4 or later version&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://git-scm.com/">Git client&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="install-git-for-unity">Install git for Unity&lt;/h2>
+&lt;p>Please refer to &lt;a href="https://docs.unity3d.com/Manual/upm-git.html#req">&lt;code>Git dependencies -&amp;gt; Requirements&lt;/code>&lt;/a> for more information.&lt;/p>
+&lt;blockquote>
+&lt;p>To use Git dependencies in a project, make sure the &lt;a href="https://git-scm.com/">Git client&lt;/a> is installed on your machine and that you have added the Git executable path to the PATH system environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>If git is not installed, the error messages like below will be shown:&lt;/p>
+&lt;blockquote>
+&lt;p>An error occurred while resolving packages:
+Project has invalid dependencies:
+com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please install Git on your system then restart Unity and Unity Hub&lt;/p>
+&lt;/blockquote>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Check whether git.exe can be found on your machine&lt;/h4>
+&lt;p>As mentioned above, install &lt;a href="https://git-scm.com/">Git client&lt;/a> and get the directory of git.exe (by default, git.exe is in &lt;code>C:\Program Files\Git\cmd&lt;/code>). Then, add it to the PATH system environment variable.&lt;/p>
+&lt;p>To check the git version, for instance, open Windows PowerShell and type the command &lt;code>git --version&lt;/code>:&lt;/p>
+&lt;pre>&lt;code class="language-dos" data-lang="dos">&amp;gt; git --version
+git version 2.29.2.windows.2
+&lt;/code>&lt;/pre>
+&lt;/div>
 &lt;h3 id="install-using-unitypackagemanager-window">Install using UnityPackageManager window&lt;/h3>
 &lt;p>To open UPM, go to &lt;code>Windows&lt;/code> -&amp;gt; &lt;code>Package Manager&lt;/code>:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
@@ -149,7 +182,7 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; depends on VRMShaders and MeshUtility&lt;/li>
 &lt;/ul>
 &lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
-&lt;p>By changing the version number, You can switch to different version based on your needs.&lt;/p>
+&lt;p>By changing the version number, you can switch to different version based on your needs.&lt;/p>
 &lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
 &lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
 Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>):&lt;/p>
