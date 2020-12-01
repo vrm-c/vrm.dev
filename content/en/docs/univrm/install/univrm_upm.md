@@ -6,11 +6,37 @@ aliases: ["/en/univrm/univrm_upm/", "/en/univrm/install/univrm_upm/"]
 tags: ["unity"]
 ---
 
-## UniVRM-0.XX's UnityPackage
+Starting with UniVRM-0.56, UniVRM can be installed with Unity Package Manager.
 
-Starting from UniVRM-0.56, UniVRM can be imported with Unity Package Manager.
+Installation prerequisites:
 
-Requirement: `Unity 2019.3.4f1 or later version`.
+* `Unity 2019.4 or later version`
+* [Git client](https://git-scm.com/)
+
+## Install git for Unity
+
+Please refer to [`Git dependencies -> Requirements`](https://docs.unity3d.com/Manual/upm-git.html#req) for more information.
+
+> To use Git dependencies in a project, make sure the [Git client](https://git-scm.com/) is installed on your machine and that you have added the Git executable path to the PATH system environment variable.
+
+If git is not installed, the error messages like below will be shown: 
+
+> An error occurred while resolving packages:
+Project has invalid dependencies:
+com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your system then restart Unity and Unity Hub
+
+
+{{% alert title="Check whether git.exe can be found on your machine" color="warning" %}}
+As mentioned above, install [Git client](https://git-scm.com/) and get the directory of git.exe (by default, git.exe is in `C:\Program Files\Git\cmd`). Then, add it to the PATH system environment variable.
+
+To check the git version, for instance, open Windows PowerShell and type the command `git --version`:
+
+```dos
+> git --version
+git version 2.29.2.windows.2
+```
+
+{{% /alert %}}
 
 ### Install using UnityPackageManager window
 
@@ -34,7 +60,7 @@ For example, the git urls of [v0.59.0](https://github.com/vrm-c/UniVRM/releases/
 
 Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
-By changing the version number, You can switch to different version based on your needs.
+By changing the version number, you can switch to different version based on your needs.
 
 #### Add dependencies in Packages/manifest.json
 
