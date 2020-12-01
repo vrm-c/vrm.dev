@@ -105,7 +105,7 @@ BlendShapeで変な影が出る場合の対策です。
 
 ## エクスポート
 
-{{< img src="images/vrm/export058_menu.jpg" width="600" height="700" >}}
+{{< img src="images/vrm/UniVRMExportHumanoid.png" width="600" height="700" >}}
 
 `VRM` - `UniVRM-0.XX.Y` - `Export Humanoid` を押してダイアログを表示します。
 
