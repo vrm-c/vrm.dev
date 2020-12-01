@@ -76,6 +76,9 @@ weight: 4
 | [プリミティア](https://ootamato.itch.io/primitier) | Windows VR |
 | [Action Drill](https://lasmi.booth.pm/items/1615146) | Windows |
 | [スーパーエクストリームVRMサッカー](https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer) | Windows |
+| [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
+| [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
+| [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 
 ##  ビューア
 
@@ -110,7 +113,6 @@ weight: 4
 | [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
 | [MocuMocuDance](http://www.vrai.jp/vr_mocu.html) | Oculus Rift, HTC Vive |
 | [LIV](https://liv.tv/) | Windows VR |
-| [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Oculus Rift, HTC Vive, Windows Mixed Reality |
 
 ##  内部的にVRMを活用しているサービス
 

@@ -13,7 +13,7 @@ tags: ["unity"]
 
 ## v0.58~
 
-{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/export062_dialog.png" width="900" alt="vrm export" >}}
 
 Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html) で画面を作成しています。
 
@@ -23,7 +23,7 @@ Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.ht
 
 以前と同じメニューから表示できます。
 
-{{< img src="images/vrm/export058_menu.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/UniVRMExportHumanoid.png" width="600" alt="vrm export" >}}
 
 * シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました
 

@@ -13,7 +13,7 @@ tags: ["unity"]
 
 ## v0.58~
 
-{{< img src="images/vrm/export058_dialog.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/export062_dialog_en.png" width="900" alt="vrm export" >}}
 
 The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)
 
@@ -23,7 +23,7 @@ The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/Sc
 
 Open VRM Exporter Window by `VRM` -> `UniVRM-0.XX` -> `Export humanoid`
 
-{{< img src="images/vrm/export058_menu.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/UniVRMExportHumanoid.png" width="600" alt="vrm export" >}}
 
 * You can directly pick up exportable target in the Project Window now. There is no need to put the Prefab in the scene first. 
 
@@ -39,7 +39,7 @@ Open VRM Exporter Window by `VRM` -> `UniVRM-0.XX` -> `Export humanoid`
 
 #### Conditions for Valid ExportRoot
 
-{{< img src="images/vrm/export058_empty.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/export062_empty_en.jpg" width="600" alt="vrm export" >}}
 
 The setting screen for ExportRoot will show up if the following conditions are satisfied:
 
