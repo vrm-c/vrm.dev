@@ -79,6 +79,7 @@ weight: 4
 | [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
+| [BOW MAN](https://bowman.vrlab.dmm.com/ja/) | Windows VR |
 
 ##  ビューア
 
@@ -113,6 +114,10 @@ weight: 4
 | [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
 | [MocuMocuDance](http://www.vrai.jp/vr_mocu.html) | Oculus Rift, HTC Vive |
 | [LIV](https://liv.tv/) | Windows VR |
+| [VRMCardMaker](https://booth.pm/ja/items/1808860) | Windows |
+| [NeoRoidHub for Unity](https://neoseast-japan.booth.pm/items/2562276) | Unityエディタ拡張 |
+| [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
+| [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
 
 ##  内部的にVRMを活用しているサービス
 
