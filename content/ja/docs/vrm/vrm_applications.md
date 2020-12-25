@@ -29,7 +29,6 @@ weight: 4
 |------------------|------------------|
 | [VRoid Studio](https://vroid.com/studio/) | Windows, macOS |
 | [セシル変身アプリ](https://fantia.jp/fanclubs/10552) | Windows, macOS |
-| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
 ##  配信ツール
 
@@ -128,3 +127,4 @@ weight: 4
 | [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
 | [パペ文字](https://www.puppemoji.com/) | iOS |
 | [メイアライブオーダーメイド版](https://materializer.co/lab/mayalive) | Windows, macOS |
+| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |

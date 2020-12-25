@@ -29,7 +29,6 @@ weight: 4
 |-------------|----------|
 | [VRoid Studio](https://vroid.com/en/studio/) | Windows, macOS |
 | [CecilHenShin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
-| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
 ##  Live streaming tool
 
@@ -128,3 +127,4 @@ weight: 4
 | [REALITY](https://reality.wrightflyer.net/) | iOS, Android |
 | [Puppemoji](https://www.puppemoji.com/) | iOS |
 | [Mayalive Order Made Version](https://materializer.co/lab/mayalive) | Windows, macOS |
+| [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
