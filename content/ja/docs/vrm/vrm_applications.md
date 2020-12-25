@@ -28,6 +28,7 @@ weight: 4
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
 | [VRoid Studio](https://vroid.com/studio/) | Windows, macOS |
+| [VRoid Mobile](https://vroid.com/mobile/) | iOS, Android |
 | [セシル変身アプリ](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 | [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
