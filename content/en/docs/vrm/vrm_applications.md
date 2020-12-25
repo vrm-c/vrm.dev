@@ -28,6 +28,7 @@ weight: 4
 | Application | Platform |
 |-------------|----------|
 | [VRoid Studio](https://vroid.com/en/studio/) | Windows, macOS |
+| [VRoid Mobile](https://vroid.com/en/mobile/) | iOS, Android |
 | [CecilHenShin](https://fantia.jp/fanclubs/10552) | Windows, macOS |
 | [MakeAvatar](https://gugenka.jp/digital/make_avatar.php) | iOS, Android |
 
