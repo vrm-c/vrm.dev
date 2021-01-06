@@ -16,9 +16,9 @@ XX is UniVRM version. YYYY is version ID
 &lt;p>For Unity Hub, click &lt;code>Projects -&amp;gt; New -&amp;gt; 3D template -&amp;gt; CREATE&lt;/code>:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/new_project_en.jpg" />
 &lt;h2 id="import-univrm-package-into-the-created-project">Import UniVRM package into the created project&lt;/h2>
-&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>.&lt;/p>
+&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/UniGLTF&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
 &lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
 &lt;p>If UniVRM import successes, &lt;code>VRM&lt;/code> will be displayed in the menu bar:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
@@ -114,7 +114,7 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;p>Check whether the imported fbx has the correct BlendShape normals. The details &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/">can be found here&lt;/a>.&lt;/p>
 &lt;h3 id="export-the-model-as-vrm-from-menu-model-normalization">Export the model as VRM from menu (model normalization)&lt;/h3>
 &lt;p>After adjustments are completed, select the model in &lt;code>Hierarchy&lt;/code> window and export it from&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
 &lt;p>Enter your name in the &lt;code>Author&lt;/code> field and click the &lt;code>Export&lt;/code> button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file will be saved in the &lt;code>Assets&lt;/code> folder by default.&lt;/p>
 &lt;p>Related Pages about UniVRM export:&lt;/p>
 &lt;ul>
@@ -155,7 +155,7 @@ Normalized model data such as mesh (i.e. rotation is Unity default) can then be 
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">Spring bone (SpringBone/SpringBoneCollider)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="export-vrm-model-again">Export VRM model again&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
 &lt;p>After the all settings are completed, select the the model (topmost parent GameObject) in &lt;code>Hierarchy&lt;/code> and again export the model from&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
 &lt;p>This time &lt;strong>please do not check &amp;ldquo;Force T Pose&amp;rdquo; and &amp;ldquo;Pose Freeze&amp;rdquo;&lt;/strong>. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.&lt;/p>
 &lt;h3 id="done">Done！&lt;/h3>

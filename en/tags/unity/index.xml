@@ -16,9 +16,9 @@ XX is UniVRM version. YYYY is version ID
 &lt;p>For Unity Hub, click &lt;code>Projects -&amp;gt; New -&amp;gt; 3D template -&amp;gt; CREATE&lt;/code>:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/new_project_en.jpg" />
 &lt;h2 id="import-univrm-package-into-the-created-project">Import UniVRM package into the created project&lt;/h2>
-&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>.&lt;/p>
+&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/UniGLTF&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
 &lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
 &lt;p>If UniVRM import successes, &lt;code>VRM&lt;/code> will be displayed in the menu bar:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
@@ -40,7 +40,7 @@ Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>
 &lt;p>Create a new project at the start page (&lt;code>New -&amp;gt; Create project&lt;/code>).&lt;/p>
 &lt;h3 id="2-import-univrm-package-into-the-created-project">2. Import UniVRM package into the created project&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/package_import.png" alt="package_import" width="400" />
-&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
+&lt;p>Download the latest unitypackage (UniVRM-0.XX) from &lt;a href="https://github.com/vrm-c/UniVRM/releases">UniVRM/releases&lt;/a> and import it into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/UniGLTF&lt;/code>, &lt;code>../Assets/VRMShaders&lt;/code> and &lt;code>../Assets/MeshUtility&lt;/code>. &lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
 &lt;h3 id="3-import-vrm-file-into-unity">3. Import VRM file into Unity&lt;/h3>
 &lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
 &lt;p>&lt;strong>Drag and drop VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the imported VRM model data can be automatically generated.&lt;/p>
@@ -761,7 +761,7 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;p>Check whether the imported fbx has the correct BlendShape normals. The details &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/">can be found here&lt;/a>.&lt;/p>
 &lt;h3 id="export-the-model-as-vrm-from-menu-model-normalization">Export the model as VRM from menu (model normalization)&lt;/h3>
 &lt;p>After adjustments are completed, select the model in &lt;code>Hierarchy&lt;/code> window and export it from&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
 &lt;p>Enter your name in the &lt;code>Author&lt;/code> field and click the &lt;code>Export&lt;/code> button. The VRM file can then be created. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file will be saved in the &lt;code>Assets&lt;/code> folder by default.&lt;/p>
 &lt;p>Related Pages about UniVRM export:&lt;/p>
 &lt;ul>
@@ -933,7 +933,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;h3 id="how-to-use">How to use&lt;/h3>
 &lt;h4 id="vrm-exporter-window">VRM Exporter Window&lt;/h4>
 &lt;p>Open VRM Exporter Window by &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="vrm export" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="vrm export" width="600" />
 &lt;ul>
 &lt;li>You can directly pick up exportable target in the Project Window now. There is no need to put the Prefab in the scene first.&lt;/li>
 &lt;/ul>
@@ -1185,11 +1185,11 @@ We will improve it in the later version.&lt;/p></description></item><item><title
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Install UniVRM in an Existing Project: &lt;/h4>
-If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code>(if exists) and &lt;code>Assets/MeshUtility&lt;/code>(if exists) before installation. Refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_uninstall/">Uninstall UniVRM&lt;/a> for more information
+If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/UniGLTF&lt;/code> (if exists), &lt;code>Assets/VRMShaders&lt;/code> (if exists) and &lt;code>Assets/MeshUtility&lt;/code> (if exists) before installation. Refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_uninstall/">Uninstall UniVRM&lt;/a> for more information
 &lt;/div>
 &lt;h2 id="import-unitypackage">Import unitypackage&lt;/h2>
 &lt;p>Go to &lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package&lt;/code> and select &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>Three folders: &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/VRMShaders&lt;/code> and &lt;code>Assets/MeshUtility&lt;/code> will be imported into the Unity project.&lt;/p>
+&lt;p>Four folders: &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/UniGLTF&lt;/code>. &lt;code>Assets/VRMShaders&lt;/code> and &lt;code>Assets/MeshUtility&lt;/code> will be imported into the Unity project.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1212,7 +1212,12 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;li>Open Console: click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window to see if any error (message in red) occurs&lt;/li>
 &lt;/ul>
 &lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" /></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
+&lt;h2 id="related-sections">Related Sections&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://vrm.dev/en/how_to_make_vrm/">How to make VRM file&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM Import&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
 &lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
 &lt;h1 id="how-to-use">How to use&lt;/h1>
@@ -1249,7 +1254,7 @@ Normalized model data such as mesh (i.e. rotation is Unity default) can then be 
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">Spring bone (SpringBone/SpringBoneCollider)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="export-vrm-model-again">Export VRM model again&lt;/h3>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.png" alt="UniVRMExportHumanoid" width="400" />
+&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
 &lt;p>After the all settings are completed, select the the model (topmost parent GameObject) in &lt;code>Hierarchy&lt;/code> and again export the model from&lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
 &lt;p>This time &lt;strong>please do not check &amp;ldquo;Force T Pose&amp;rdquo; and &amp;ldquo;Pose Freeze&amp;rdquo;&lt;/strong>. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.&lt;/p>
 &lt;h3 id="done">Done！&lt;/h3>
@@ -1315,23 +1320,28 @@ git version 2.29.2.windows.2
 &lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
 &lt;hr>
 &lt;p>Whenever a new UniVRM version comes out, we will post git urls associated with this release.&lt;/p>
-&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a> are:&lt;/p>
+&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">v0.63.0&lt;/a> are:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&lt;/code> =&amp;gt; depends on VRMShaders and MeshUtility&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0&lt;/code> =&amp;gt; depends on VRMShaders&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0&lt;/code> =&amp;gt; depends on UniGLTF&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0&lt;/code> =&amp;gt; depends on UniGLTF, VRMShaders and MeshUtility&lt;/li>
 &lt;/ul>
 &lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
+&lt;p>Now check your project window. You shall see packages above in the Packages folder:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/upm_package.jpg" />
+&lt;hr>
 &lt;p>By changing the version number, you can switch to different version based on your needs.&lt;/p>
 &lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
 &lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
-Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">v0.59.0&lt;/a>):&lt;/p>
+Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">v0.63.0&lt;/a>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="specify-git-commit">Specify git commit&lt;/h2>
@@ -1340,9 +1350,10 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.meshutility&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/</guid><description>
@@ -1639,13 +1650,18 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>Assets/UniGLTF&lt;/td>
+&lt;td>v0.63.0 and above&lt;/td>
+&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td>Assets/VRMShaders&lt;/td>
-&lt;td>v0.56.0 or later&lt;/td>
+&lt;td>v0.56.0 and above&lt;/td>
 &lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Assets/MeshUtility&lt;/td>
-&lt;td>v0.59.0 or later&lt;/td>
+&lt;td>v0.59.0 and above&lt;/td>
 &lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
 &lt;/tr>
 &lt;tr>
