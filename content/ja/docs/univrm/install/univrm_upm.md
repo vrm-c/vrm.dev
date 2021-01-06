@@ -52,27 +52,34 @@ UnityPackageManagerのWindow
 
 新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。
 
-たとえば、[v0.59.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0) のgit urlは次のとおりです：
+たとえば、[v0.63.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0) のgit urlは次のとおりです：
 
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0` => VRMShadersとMeshUtility に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0`
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0` => VRMShaders に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0` => UniGLTF に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0` => UniGLTF、VRMShadersとMeshUtility に依存
 
 パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。
+
+ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する：
+
+{{< img src="images/vrm/upm_package.jpg" >}}
+<hr>
 
 バージョン番号を変更することで、お好きなバージョンに切り替えることができます。
 
 ### packages/manifest.json 直接編集によるインストール
 
-以下の内容を追記してください（[v0.59.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.59.0)の例)。
+以下の内容を追記してください（[v0.63.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0)の例)。
 
 ```json
 {
   "dependencies": {
     // ...
-    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.59.0",
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.59.0",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.59.0",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0",
+    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0",
     // ...
 }
 ```
@@ -87,9 +94,10 @@ UnityPackageManagerのWindow
 {
   "dependencies": {
     // ...
-    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#873aec208c663c10dd825e9b006fec6809cfe6ca",
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#873aec208c663c10dd825e9b006fec6809cfe6ca",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#873aec208c663c10dd825e9b006fec6809cfe6ca",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
+    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
     // ...
 }
 ```

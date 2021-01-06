@@ -43,7 +43,7 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets` - `Import Package` - `Custom Package...` で `UniVRM-0.XX.X_XXXX.unitypackage` を選択します。
 
-`Assets/VRM`、`Assets/VRMShaders`お及び`Assets/MeshUtility` の３つのフォルダに import されます。
+`Assets/VRM`、`Assets/UniGLTF`、`Assets/VRMShaders`お及び`Assets/MeshUtility` の４つのフォルダに import されます。
 
 |{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
@@ -63,3 +63,8 @@ menu が出てこない場合は、
 {{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
 
 {{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
+
+## 関連セクション
+
+- [VRMファイルを作ってみたい]({{< relref "how_to_make_vrm" >}})
+- [VRMをインポートする]({{< relref "univrm_import" >}})

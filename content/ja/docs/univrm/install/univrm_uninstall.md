@@ -12,6 +12,7 @@ tags: ["unity"]
 | folder                             | Version     | 備考                               |
 |------------------------------------|-------------|------------------------------------|
 | Assets/VRM                         |             | UniVRM-0.XX.0.unitypackage         |
+| Assets/UniGLTF                     | v0.63.0以降 | UniVRM-0.XX.0.unitypackage         |
 | Assets/VRMShaders                  | v0.56.0以降 | UniVRM-0.XX.0.unitypackage         |
 | Assets/MeshUtility                 | v0.59.0以降 | UniVRM-0.XX.0.unitypackage         |
 | Assets/VRM.Samples                 |             | UniVRM-samples-0.XX.0.unitypackage |

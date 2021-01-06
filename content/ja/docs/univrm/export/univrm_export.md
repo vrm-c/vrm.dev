@@ -23,7 +23,7 @@ Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.ht
 
 以前と同じメニューから表示できます。
 
-{{< img src="images/vrm/UniVRMExportHumanoid.png" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="600" alt="vrm export" >}}
 
 * シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました
 

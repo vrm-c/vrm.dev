@@ -33,14 +33,14 @@ The package's name will look like this: `UniVRM-0.XX.X_XXXX.unitypackage`
 {{% /alert %}}
 
 {{% alert title="Install UniVRM in an Existing Project: " color="warning" %}}
-If old UniVRM version exists, please delete `Assets/VRM`, `Assets/VRMShaders`(if exists) and `Assets/MeshUtility`(if exists) before installation. Refer to [Uninstall UniVRM]({{< relref "univrm_uninstall.md" >}}) for more information
+If old UniVRM version exists, please delete `Assets/VRM`, `Assets/UniGLTF` (if exists), `Assets/VRMShaders` (if exists) and `Assets/MeshUtility` (if exists) before installation. Refer to [Uninstall UniVRM]({{< relref "univrm_uninstall.md" >}}) for more information
 {{% /alert %}}
 
 ## Import unitypackage
 
 Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
 
-Three folders: `Assets/VRM`, `Assets/VRMShaders` and `Assets/MeshUtility` will be imported into the Unity project.
+Four folders: `Assets/VRM`, `Assets/UniGLTF`. `Assets/VRMShaders` and `Assets/MeshUtility` will be imported into the Unity project.
 
 |{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
@@ -60,3 +60,8 @@ If menu does not show up:
 {{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
 
 {{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
+
+## Related Sections
+
+- [How to make VRM file]({{< relref "how_to_make_vrm" >}})
+- [VRM Import]({{< relref "univrm_import" >}})
