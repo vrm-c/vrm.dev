@@ -63,6 +63,7 @@ weight: 4
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 | [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
+| [Webaverse](https://webaverse.com/) | Windows |
 
 ##  ゲームなど
 
@@ -80,6 +81,7 @@ weight: 4
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 | [BOW MAN](https://bowman.vrlab.dmm.com/ja/) | Windows VR |
+| [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
 
 ##  ビューア
 
