@@ -33,7 +33,7 @@ To make a VRM model fully functional, please set up the following components:
 * [Spring bone (SpringBone/SpringBoneCollider)]({{< relref "univrm_secondary.md" >}})
 
 ### Export VRM model again
-{{< img src="images/vrm/UniVRMExportHumanoid.png" width="400" height="225" alt="UniVRMExportHumanoid">}}
+{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
 After the all settings are completed, select the the model (topmost parent GameObject) in `Hierarchy` and again export the model from``VRM -> UniVRM-0.XX -> Export humanoid``.
 

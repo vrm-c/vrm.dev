@@ -15,7 +15,7 @@ Create a new project at the start page (``New -> Create project``).
 ### 2. Import UniVRM package into the created project
 {{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
 
-Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``, ``../Assets/VRMShaders`` and ``../Assets/MeshUtility``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, VRMShaders and MeshUtility folders (if any) before package import**.
+Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases) and import it into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in ``../Assets/VRM``, ``../Assets/UniGLTF``, ``../Assets/VRMShaders`` and ``../Assets/MeshUtility``. **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import**.
 
 ### 3. Import VRM file into Unity 
 {{< img src="images/vrm/vrm_prefab_en.png" >}}
