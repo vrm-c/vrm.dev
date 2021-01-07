@@ -52,12 +52,11 @@ Select `add package from git URL` to import the target package specified by its 
 
 Whenever a new UniVRM version comes out, we will post git urls associated with this release. 
 
-For example, the git urls of [v0.63.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0) are:
+For example, the git urls of [v0.63.1](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1) are:
 
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0` => depends on VRMShaders
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0` => depends on UniGLTF
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0` => depends on UniGLTF, VRMShaders and MeshUtility
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1`
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1` => depends on VRMShaders
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0` => depends on UniGLTF, VRMShaders
 
 Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
@@ -71,16 +70,15 @@ By changing the version number, you can switch to different version based on you
 #### Add dependencies in Packages/manifest.json
 
 An alternative way is to add necessary dependencies right in Packages/manifest.json. 
-Open manifest.json with text/code editor and paste the following contents (example of [v0.63.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.0)):
+Open manifest.json with text/code editor and paste the following contents (example of [v0.63.1](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1)):
 
 ```json
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.0",
-    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.0",
-    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#v0.63.0",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1",
     // ...
 }
 ```
@@ -95,10 +93,9 @@ Example:
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
-    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
-    "com.vrmc.meshutility": "https://github.com/vrm-c/UniVRM.git?path=/Assets/MeshUtility#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#54645cfc57f31e6a9b406b9fda2094e4b2a51a1f",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#d8d9ff481f426150273e123d152f12183756267f",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#d8d9ff481f426150273e123d152f12183756267f",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#d8d9ff481f426150273e123d152f12183756267f",
     // ...
 }
 ```

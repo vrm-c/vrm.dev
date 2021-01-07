@@ -158,7 +158,7 @@ BlendShapeのNormal, Tangent をエクスポートしない。
 
 > ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある
 
-https://github.com/vrm-c/UniVRM/tree/master/Assets/MeshUtility
+https://github.com/vrm-c/UniVRM/tree/master/Assets/UniGLTF/MeshUtility
 
 > TODO: 導入方法の説明
 

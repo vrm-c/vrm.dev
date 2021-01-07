@@ -35,7 +35,7 @@ For Unity Hub, click ``Projects -> New -> 3D template -> CREATE``:
 
 ## Import UniVRM package into the created project
 
-Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folders ``../Assets/VRM``, ``../Assets/UniGLTF``, ``../Assets/VRMShaders`` and ``../Assets/MeshUtility``.
+Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folders ``../Assets/VRM``, ``../Assets/UniGLTF`` and ``../Assets/VRMShaders``.
 
 {{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
 
