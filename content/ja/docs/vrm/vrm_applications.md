@@ -100,6 +100,7 @@ weight: 4
 | [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM) | Unityライブラリ |
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
+| [Desktop Magic Engine](https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/) | Windows |
 
 ##  その他のVRM対応アプリ
 
@@ -120,6 +121,7 @@ weight: 4
 | [NeoRoidHub for Unity](https://neoseast-japan.booth.pm/items/2562276) | Unityエディタ拡張 |
 | [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
 | [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
+| [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
 
 ##  内部的にVRMを活用しているサービス
 
