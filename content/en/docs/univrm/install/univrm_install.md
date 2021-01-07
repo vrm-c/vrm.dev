@@ -40,7 +40,7 @@ If old UniVRM version exists, please delete `Assets/VRM`, `Assets/UniGLTF` (if e
 
 Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
 
-Four folders: `Assets/VRM`, `Assets/UniGLTF`. `Assets/VRMShaders` and `Assets/MeshUtility` will be imported into the Unity project.
+Three folders: `Assets/VRM`, `Assets/UniGLTF` and `Assets/VRMShaders` will be imported into the Unity project.
 
 |{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
 |-----|
