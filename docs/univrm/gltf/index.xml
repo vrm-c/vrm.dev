@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:28:27 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:02 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p>glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。
 VRMはglTF2.0をベースとしたフォーマットとなっています。&lt;/p>
 &lt;ul>
@@ -249,4 +249,34 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
 &lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Thu, 07 Jan 2021 18:26:54 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.1&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
+&lt;/ul></description></item></channel></rss>

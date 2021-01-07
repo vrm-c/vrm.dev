@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:28:27 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:02 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -3388,7 +3388,37 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Thu, 07 Jan 2021 18:26:54 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.1&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
+&lt;/ul></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
 &lt;p>WIP&lt;/p>
 &lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
 &lt;ul>
@@ -3475,37 +3505,4 @@ Debug.LogError(ex);
 &lt;p>こちらの記事がわかりやすいです。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: BlendShapeProxyの更新</title><link>https://vrm.dev/dev/univrm-1.xx/blendshapeproxy/</link><pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/blendshapeproxy/</guid><description>
-&lt;h2 id="推奨される-blendshape-周りの更新順番">推奨される BlendShape 周りの更新順番&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order">https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order&lt;/a>&lt;/p>
-&lt;p>のように&lt;/p>
-&lt;ul>
-&lt;li>Humanoid&lt;/li>
-&lt;li>LookAt&lt;/li>
-&lt;li>BlendShape&lt;/li>
-&lt;/ul>
-&lt;p>の順が推奨となります。&lt;/p>
-&lt;h2 id="lookat-との統合">LookAt との統合&lt;/h2>
-&lt;p>LookAt と BlendShape の処理順の問題を軽減するため、 &lt;code>VRMLookAtHead&lt;/code>, &lt;code>VRMLookAtBoneApplyer&lt;/code>, &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> を &lt;code>VRMBlendShapeProxy&lt;/code> に統合しました。&lt;/p>
-&lt;h2 id="blendshapeclip-の排他機能">BlendShapeClip の排他機能&lt;/h2>
-&lt;p>例えば &lt;code>fan&lt;/code> と &lt;code>blink&lt;/code> が同時に適用されたときに、目がおかしくなるモデルがあります。
-このとき、 &lt;code>fan&lt;/code> に対して &lt;code>blink&lt;/code> を無視するフラグを付けられるようにしました。&lt;/p>
-&lt;p>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification">https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>ignoreBlink&lt;/li>
-&lt;li>ignoreLookAt&lt;/li>
-&lt;li>ignoreMouth&lt;/li>
-&lt;/ul>
-&lt;p>の３種類があります。&lt;/p>
-&lt;h2 id="setvalue-と-apply">SetValue と Apply&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.X&lt;/code> には &lt;code>BlendShapeProxyy.SetValueImmediate&lt;/code> と &lt;code>BlendSahpeProxy.SetValue + Apply&lt;/code> という２系統があったのですが、 &lt;code>BlendShapeProxyy.SetValueImmediate&lt;/code> は廃止になりました。&lt;/p>
-&lt;p>&lt;code>ignoreBlink&lt;/code> 等を動作させるにはすべての値を蓄積してからまとめて処理する必要があるためです。(最初は、外部にアプリケーション側が貯めて適用する設計だった)&lt;/p>
-&lt;h2 id="apply-の呼び出しタイミング">Apply の呼び出しタイミング&lt;/h2>
-&lt;h3 id="none">None&lt;/h3>
-&lt;p>ユーザーアプリケーション側で明示的に &lt;code>Apply&lt;/code> を呼び出してください。&lt;/p>
-&lt;h3 id="update">Update&lt;/h3>
-&lt;p>VRMBlendShapeProxy.Update で &lt;code>Apply&lt;/code> が呼ばれます。
-VRMBlendShapeProxy.Apply は、後ろの方で処理したいので注意が必要。&lt;/p>
-&lt;h3 id="lateupdate">LateUpdate&lt;/h3>
-&lt;p>VRMBlendShapeProxy.LateUpdate で &lt;code>Apply&lt;/code> が呼ばれます。
-細かい制御が必要ないときに。&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>
