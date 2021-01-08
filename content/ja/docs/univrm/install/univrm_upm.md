@@ -52,11 +52,11 @@ UnityPackageManagerのWindow
 
 新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。
 
-たとえば、[v0.63.1](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1) のgit urlは次のとおりです：
+たとえば、[v0.63.2](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2) のgit urlは次のとおりです：
 
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1` => VRMShaders に依存
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1` => UniGLTFとVRMShaders に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2`
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2` => VRMShaders に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2` => UniGLTFとVRMShaders に依存
 
 パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。
 
@@ -69,15 +69,15 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
 
 ### packages/manifest.json 直接編集によるインストール
 
-以下の内容を追記してください（[v0.63.1](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1)の例)。
+以下の内容を追記してください（[v0.63.2](https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2)の例)。
 
 ```json
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1",
-    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2",
     // ...
 }
 ```
@@ -92,9 +92,9 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#d8d9ff481f426150273e123d152f12183756267f",
-    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#d8d9ff481f426150273e123d152f12183756267f",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#d8d9ff481f426150273e123d152f12183756267f",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#2c190c39d9d50bdb4d40387690c47f1fb6184523",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#2c190c39d9d50bdb4d40387690c47f1fb6184523",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#2c190c39d9d50bdb4d40387690c47f1fb6184523",
     // ...
 }
 ```

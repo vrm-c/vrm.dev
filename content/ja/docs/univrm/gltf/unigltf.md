@@ -3,7 +3,7 @@ title: "UniGLTF"
 tags: ["unity", "gltf", "api"]
 ---
 
-この記事は、 `UniVRM-0.63.1` 以降を対象としています。
+この記事は、 `UniVRM-0.63.2` 以降を対象としています。
 
 `UniVRM` に内包されていた `UniGLTF` を単体で使えるように整理しました。
 `Assets/UniGLTF` フォルダに展開されます。
@@ -21,8 +21,8 @@ UniGLTF は　VRMShaders に依存しています。
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1",
-    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2",
+    "com.vrmc.unigltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2",
     // ...
 }
 ```
