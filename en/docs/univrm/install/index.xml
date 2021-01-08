@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:02 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Support &lt;code>Unity-2018.4&lt;/code> and above. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
 &lt;table>
@@ -180,26 +180,26 @@ git version 2.29.2.windows.2
 &lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
 &lt;hr>
 &lt;p>Whenever a new UniVRM version comes out, we will post git urls associated with this release.&lt;/p>
-&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">v0.63.1&lt;/a> are:&lt;/p>
+&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">v0.63.2&lt;/a> are:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&lt;/code> =&amp;gt; depends on VRMShaders&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.0&lt;/code> =&amp;gt; depends on UniGLTF, VRMShaders&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&lt;/code> =&amp;gt; depends on VRMShaders&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2&lt;/code> =&amp;gt; depends on UniGLTF, VRMShaders&lt;/li>
 &lt;/ul>
 &lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
-&lt;p>Now check your project window. You shall see packages above in the Packages folder:&lt;/p>
+&lt;p>Now check your project window. The packages above should be in the Packages folder:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/upm_package.jpg" />
 &lt;hr>
 &lt;p>By changing the version number, you can switch to different version based on your needs.&lt;/p>
 &lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
 &lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
-Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">v0.63.1&lt;/a>):&lt;/p>
+Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">v0.63.2&lt;/a>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="specify-git-commit">Specify git commit&lt;/h2>
@@ -208,9 +208,9 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install UniVRM Samples</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:28:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</guid><description>
@@ -218,7 +218,7 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;h2 id="univrm-samples-package">UniVRM Samples Package&lt;/h2>
 &lt;p>Get UniVRM Samples package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
 &lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.59).&lt;/p>
+&lt;p>Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.63.2).&lt;/p>
 &lt;h2 id="import">Import&lt;/h2>
 &lt;p>From the menu, go to &lt;code>Assets -&amp;gt; Import Package&lt;/code> and then click &lt;code>Custom Package&lt;/code> to import the package &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
 &lt;p>After you see the file information in the package as shown below, click &lt;code>Import&lt;/code> button:&lt;/p>

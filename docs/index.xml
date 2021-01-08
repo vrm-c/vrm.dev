@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:02 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -2092,11 +2092,11 @@ git version 2.29.2.windows.2
 &lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
 &lt;hr>
 &lt;p>新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。&lt;/p>
-&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">v0.63.1&lt;/a> のgit urlは次のとおりです：&lt;/p>
+&lt;p>たとえば、&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">v0.63.2&lt;/a> のgit urlは次のとおりです：&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&lt;/code> =&amp;gt; VRMShaders に依存&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1&lt;/code> =&amp;gt; UniGLTFとVRMShaders に依存&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&lt;/code> =&amp;gt; VRMShaders に依存&lt;/li>
+&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2&lt;/code> =&amp;gt; UniGLTFとVRMShaders に依存&lt;/li>
 &lt;/ul>
 &lt;p>パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。&lt;/p>
 &lt;p>ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する：&lt;/p>
@@ -2104,13 +2104,13 @@ git version 2.29.2.windows.2
 &lt;hr>
 &lt;p>バージョン番号を変更することで、お好きなバージョンに切り替えることができます。&lt;/p>
 &lt;h3 id="packagesmanifestjson-直接編集によるインストール">packages/manifest.json 直接編集によるインストール&lt;/h3>
-&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">v0.63.1&lt;/a>の例)。&lt;/p>
+&lt;p>以下の内容を追記してください（&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">v0.63.2&lt;/a>の例)。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.63.2&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitの特定コミットを指定する場合">gitの特定コミットを指定する場合&lt;/h2>
@@ -2119,9 +2119,9 @@ git version 2.29.2.windows.2
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#d8d9ff481f426150273e123d152f12183756267f&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#2c190c39d9d50bdb4d40387690c47f1fb6184523&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPerson</title><link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</guid><description>
@@ -3388,8 +3388,8 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Thu, 07 Jan 2021 18:26:54 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.1&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
 &lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
 &lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
 &lt;h2 id="unitypackage">UnityPackage&lt;/h2>
@@ -3400,8 +3400,8 @@ git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.1&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.1&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
