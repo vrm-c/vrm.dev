@@ -74,6 +74,14 @@ class GLTF
 }
 ```
 
+拡張は、以下の部品要素から作れます。
+
+* 拡張の型
+* JSON => 拡張の型(デシリアライズ)。コード生成可能
+* デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造。
+* 拡張の型 => JSON(シリアライズ)。コード生成可能
+* シリアライザの呼び出し。GLTF のどの extensions に拡張の値を出力するか記述する。exporter の改造。
+
 ### import の書き方
 
 `glTFExtension` を継承した `glTFExtensionImport` を使います。
