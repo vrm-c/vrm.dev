@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 14:29:54 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 19 Aug 2020 18:27:05 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -3388,7 +3388,326 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Sat, 16 Jan 2021 15:04:38 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
+&lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
+&lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;asset&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#f60">2.0&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;extras&amp;#34;&lt;/span>: {
+&lt;span style="color:#309;font-weight:bold">&amp;#34;guid&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;9abb92a3-39cf-4986-a758-c43d4bb4ab58&amp;#34;&lt;/span>,
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>名前が &lt;code>asset.extras.guid&lt;/code> で値が &lt;code>&amp;quot;9abb92a3-39cf-4986-a758-c43d4bb4ab58&amp;quot;&lt;/code> です。
+&lt;code>extensions&lt;/code> (&lt;code>extras&lt;/code>) がどんなプロパティを持つかの取り決めが、 GTTF 拡張です。
+複数形。&lt;/p>
+&lt;p>&lt;code>extensions&lt;/code> はオフィシャルに仕様を公開する、
+&lt;code>extras&lt;/code> はアプリケーション独自に手軽に追加という違いがあります。&lt;/p>
+&lt;blockquote>
+&lt;p>This enables glTF models to contain application-specific properties without creating a full glTF extension&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;code>extensions&lt;/code> は、&lt;code>{ベンダー名}_{拡張名}&lt;/code> という命名規則です。
+ベンダー名は、 &lt;a href="https://github.com/KhronosGroup/glTF">https://github.com/KhronosGroup/glTF&lt;/a> に申し込んで登録できます。&lt;/p>
+&lt;h2 id="unigltf-の-extensions">UniGLTF の extensions&lt;/h2>
+&lt;p>&lt;code>v0.63.0&lt;/code> 以前は、&lt;code>GLTF 型&lt;/code> の &lt;code>extensions&lt;/code> フィールドに、&lt;code>GLTFExtensions&lt;/code> 型を定義して、&lt;code>VRM&lt;/code> フィールドを定義するという方法をとっていました。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">VRM&lt;/span>
+{
+}
+&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">GLTFExtensions&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> VRM VRM;
+}
+&lt;span style="color:#09f;font-style:italic">// すべての拡張の型を事前に知っている必要があり、拡張を分離できない
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">GLTF&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> GLTFExtensions extensions;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>v0.63.1&lt;/code> から設計を変更して、すべての &lt;code>extensions/extras&lt;/code> に同じ型の入れ物を使うように変更しました。
+UniGLTF は &lt;code>import/export&lt;/code> の具体的な型を知りません。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>import&lt;/code> 時は、拡張が後で部分的にデシリアライズします。&lt;/li>
+&lt;li>&lt;code>export&lt;/code> 時は、拡張が先に部分的にシリアライズします。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// extensions / extras の入れ物として使う型
+&lt;/span>&lt;span style="color:#09f;font-style:italic">// Dictionary&amp;lt;string, Json&amp;gt; 的なもの。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">abstract&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">glTFExtension&lt;/span>
+{
+}
+&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">GLTF&lt;/span>
+{
+&lt;span style="color:#09f;font-style:italic">// UniGLTFは具体的な型を知らない。利用側が処理する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">public&lt;/span> glTFExtension extensions;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>拡張は、以下の部品要素から作れます。&lt;/p>
+&lt;ul>
+&lt;li>拡張の型&lt;/li>
+&lt;li>JSON =&amp;gt; 拡張の型(デシリアライズ)。コード生成可能&lt;/li>
+&lt;li>デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造。&lt;/li>
+&lt;li>拡張の型 =&amp;gt; JSON(シリアライズ)。コード生成可能&lt;/li>
+&lt;li>シリアライザの呼び出し。GLTF のどの extensions に拡張の値を出力するか記述する。exporter の改造。&lt;/li>
+&lt;/ul>
+&lt;h3 id="import-の書き方">import の書き方&lt;/h3>
+&lt;p>&lt;code>glTFExtension&lt;/code> を継承した &lt;code>glTFExtensionImport&lt;/code> を使います。
+UniGLTF で JSON をパースしたときに、&lt;code>extensions / extras&lt;/code> はすべて &lt;code>glTFExtensionImport&lt;/code> 型になります。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// 拡張をデシリアライズする関数。拡張が実装する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DeserializeExtension(UniGLTF.glTFExtension src)
+{
+&lt;span style="color:#069;font-weight:bold">if&lt;/span>(src &lt;span style="color:#069;font-weight:bold">is&lt;/span> UniGLTF.glTFExtensionImport extensions) &lt;span style="color:#09f;font-style:italic">// null check と　代入
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {
+&lt;span style="color:#069;font-weight:bold">foreach&lt;/span>(&lt;span style="color:#078;font-weight:bold">var&lt;/span> kv &lt;span style="color:#069;font-weight:bold">in&lt;/span> extensions.ObjectItems())
+{
+&lt;span style="color:#069;font-weight:bold">if&lt;/span>(kv.Key.GetString() == &lt;span style="color:#c30">&amp;#34;VRMC_vrm&amp;#34;&lt;/span>) &lt;span style="color:#09f;font-style:italic">// extension の名前をチェック
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {
+ListTreeNode&amp;lt;JsonValue&amp;gt; &lt;span style="color:#069;font-weight:bold">value&lt;/span> = kv.Value;
+&lt;span style="color:#09f;font-style:italic">// value に extension に対応する JSON の部分が入っている
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// どんな値が入っているかは Extension が知っている。ここでデシリアライズする。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// デシリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="export-の書き方">export の書き方&lt;/h3>
+&lt;p>&lt;code>glTFExtension&lt;/code> を継承した &lt;code>glTFExtensionExport&lt;/code> を使います。
+UniGLTF で Export するために &lt;code>UniGLTF.glTF&lt;/code> 型に値を詰め込むときに、先に部分的にシリアライズします。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// 拡張をシリアライズする関数。拡張が実装する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> SerializeTo(&lt;span style="color:#069;font-weight:bold">ref&lt;/span> UniGLTF.glTFExtension dst, VRMC_vrm extension)
+{
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> (dst &lt;span style="color:#069;font-weight:bold">is&lt;/span> glTFExtensionImport)
+{
+&lt;span style="color:#09f;font-style:italic">// unittest 等で 来るときがある
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">throw&lt;/span> &lt;span style="color:#069;font-weight:bold">new&lt;/span> NotImplementedException();
+}
+&lt;span style="color:#069;font-weight:bold">if&lt;/span> (!(dst &lt;span style="color:#069;font-weight:bold">is&lt;/span> glTFExtensionExport extensions))
+{
+&lt;span style="color:#09f;font-style:italic">// extensions に複数のエクステンションを差し込むことがありえる(ex. materialの unlit と mtoon など)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 無い時だけ新規に入れ物を作る。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> extensions = &lt;span style="color:#069;font-weight:bold">new&lt;/span> glTFExtensionExport();
+dst = extensions;
+}
+&lt;span style="color:#09f;font-style:italic">// extension を独自にシリアライズするコードここに書く
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// シリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = Serialize(extension);
+&lt;span style="color:#09f;font-style:italic">// シリアライズ済みのバイト列を差し込む
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> extensions.Add(VRMC_vrm.ExtensionName, bytes);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="実装例">実装例&lt;/h2>
+&lt;h3 id="gltf-gltf全体">GLTF: GLTF全体&lt;/h3>
+&lt;p>&lt;code>C#の型からコード生成&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Runtime\UniGLTF\Format\GltfSerializer.g.cs&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\UniGLTF\Runtime\UniGLTF\Format\GltfDeserializer.g.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>ジェネレーターの呼び出しコード&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Editor\UniGLTF\Serialization\SerializerGenerator.cs&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\UniGLTF\Editor\UniGLTF\Serialization\DeserializerGenerator.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;h3 id="gltf-meshesextrastargetnames">GLTF: &lt;code>meshes[*].extras.targetNames&lt;/code>&lt;/h3>
+&lt;p>&lt;code>コード生成せずに手書き&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\gltf_mesh_extras_targetNames.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;h3 id="gltf-materialsextensionskhr_materials_unlit">GLTF: &lt;code>materials[*].extensions.KHR_materials_unlit&lt;/code>&lt;/h3>
+&lt;p>&lt;code>コード生成せずに手書き&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\KHR_materials_unlit.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;h3 id="gltf-materialsextensionskhr_texture_transform">GLTF: &lt;code>materials[*].extensions.KHR_texture_transform&lt;/code>&lt;/h3>
+&lt;p>&lt;code>コード生成せずに手書き&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\KHR_texture_transform.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialImporter.cs#L296">https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialImporter.cs#L296&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialExporter.cs#L193">https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialExporter.cs#L193&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="vrm0-extensionsvrm">VRM0: &lt;code>extensions.VRM&lt;/code>&lt;/h3>
+&lt;p>&lt;code>C#の型からコード生成&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\VRM\Runtime\Format\VRMSerializer.g.cs&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM\Runtime\Format\VRMDeserializer.g.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>ジェネレーターの呼び出しコード&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\VRM\Editor\VRMSerializerGenerator.cs&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM\Editor\VRMDeserializerGenerator.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMImporterContext.cs#L41">https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMImporterContext.cs#L41&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMExporter.cs#L209">https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMExporter.cs#L209&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="vrm1-materialsextensionsvmrc_maetrials_mtoon">VRM1: &lt;code>materials[*].extensions.VMRC_maetrials_mtoon&lt;/code>&lt;/h3>
+&lt;p>&lt;code>JsonSchemaからコード生成&lt;/code>&lt;/p>
+&lt;p>5つの Extensions にわかれたので、個別に作成&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\VRM10\Runtime\Format\Constraints&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM10\Runtime\Format\MaterialsMToon&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM10\Runtime\Format\NodeCollider&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM10\Runtime\Format\SpringBone&lt;/code>&lt;/li>
+&lt;li>&lt;code>Assets\VRM10\Runtime\Format\VRM&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>ジェネレーターの呼び出しコード&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\VRM10\Editor\GeneratorMenu.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>生成コードの呼び出し&lt;/p>
+&lt;h2 id="コード生成">コード生成&lt;/h2>
+&lt;p>JSON と C# の型との シリアライズ/デシリアライズは定型コードになるので、ジェネレーターがあります。
+C# の型から生成するものと、JsonSchema から C# の型とともに生成するものがあります。&lt;/p>
+&lt;h3 id="c-の型から生成">C# の型から生成&lt;/h3>
+&lt;h4 id="シリアライザー">シリアライザー&lt;/h4>
+&lt;p>生成するコードを作成します。&lt;/p>
+&lt;ul>
+&lt;li>元になる型&lt;/li>
+&lt;li>出力先&lt;/li>
+&lt;/ul>
+&lt;p>の２つを決めます。static関数を生成するので、namespace と static class で囲ってあげます。&lt;/p>
+&lt;p>例&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Editor\UniGLTF\Serialization\SerializerGenerator.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Collections.Generic&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Reflection&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Text&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniJSON&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEditor&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">SerializerGenerator&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;using System;
+&lt;/span>&lt;span style="color:#c30">using System.Collections.Generic;
+&lt;/span>&lt;span style="color:#c30">using UniJSON;
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30">namespace UniGLTF {
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30"> static public class GltfSerializer
+&lt;/span>&lt;span style="color:#c30"> {
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30">&amp;#34;&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> End = &lt;span style="color:#c30">@&amp;#34;
+&lt;/span>&lt;span style="color:#c30"> } // class
+&lt;/span>&lt;span style="color:#c30">} // namespace
+&lt;/span>&lt;span style="color:#c30">&amp;#34;&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> OutPath
+{
+&lt;span style="color:#069;font-weight:bold">get&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> Path.Combine(UnityEngine.Application.dataPath,
+&lt;span style="color:#c30">&amp;#34;UniGLTF/UniGLTF/Scripts/IO/GltfSerializer.g.cs&amp;#34;&lt;/span>);
+}
+}
+&lt;span style="color:#309">
+&lt;/span>&lt;span style="color:#309"> [MenuItem(UniGLTFVersion.MENU + &amp;#34;/GLTF: Generate Serializer&amp;#34;)]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> GenerateSerializer()
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> info = &lt;span style="color:#069;font-weight:bold">new&lt;/span> ObjectSerialization(&lt;span style="color:#069;font-weight:bold">typeof&lt;/span>(glTF), &lt;span style="color:#c30">&amp;#34;gltf&amp;#34;&lt;/span>, &lt;span style="color:#c30">&amp;#34;Serialize_&amp;#34;&lt;/span>);
+Debug.Log(info);
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> s = File.Open(OutPath, FileMode.Create))
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> w = &lt;span style="color:#069;font-weight:bold">new&lt;/span> StreamWriter(s, &lt;span style="color:#069;font-weight:bold">new&lt;/span> UTF8Encoding(&lt;span style="color:#069;font-weight:bold">false&lt;/span>)))
+{
+w.Write(Begin);
+info.GenerateSerializer(w, &lt;span style="color:#c30">&amp;#34;Serialize&amp;#34;&lt;/span>);
+w.Write(End);
+}
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;write: {0}&amp;#34;&lt;/span>, OutPath);
+UnityPath.FromFullpath(OutPath).ImportAsset();
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="デシリアライザー">デシリアライザー&lt;/h4>
+&lt;p>生成するコードを作成します。&lt;/p>
+&lt;ul>
+&lt;li>元になる型&lt;/li>
+&lt;li>出力先&lt;/li>
+&lt;/ul>
+&lt;p>の２つを決めます。static関数を生成するので、namespace と static class で囲ってあげます。&lt;/p>
+&lt;p>例&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Assets\UniGLTF\Editor\UniGLTF\Serialization\DeserializerGenerator.cs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Reflection&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Text&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEditor&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>
+{
+&lt;span style="color:#09f;font-style:italic">/// &amp;lt;summary&amp;gt;
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">/// Generate deserializer from ListTreeNode&amp;lt;JsonValue&amp;gt; to glTF using type reflection
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">/// &amp;lt;/summary&amp;gt;
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">DeserializerGenerator&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">const&lt;/span> BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;using UniJSON;
+&lt;/span>&lt;span style="color:#c30">using System;
+&lt;/span>&lt;span style="color:#c30">using System.Collections.Generic;
+&lt;/span>&lt;span style="color:#c30">using UnityEngine;
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30">namespace UniGLTF {
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30">public static class GltfDeserializer
+&lt;/span>&lt;span style="color:#c30">{
+&lt;/span>&lt;span style="color:#c30">
+&lt;/span>&lt;span style="color:#c30">&amp;#34;&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> End = &lt;span style="color:#c30">@&amp;#34;
+&lt;/span>&lt;span style="color:#c30">} // GltfDeserializer
+&lt;/span>&lt;span style="color:#c30">} // UniGLTF
+&lt;/span>&lt;span style="color:#c30">&amp;#34;&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> OutPath
+{
+&lt;span style="color:#069;font-weight:bold">get&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> Path.Combine(UnityEngine.Application.dataPath,
+&lt;span style="color:#c30">&amp;#34;UniGLTF/UniGLTF/Scripts/IO/GltfDeserializer.g.cs&amp;#34;&lt;/span>);
+}
+}
+&lt;span style="color:#309">
+&lt;/span>&lt;span style="color:#309"> [MenuItem(UniGLTFVersion.MENU + &amp;#34;/GLTF: Generate Deserializer&amp;#34;)]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> GenerateSerializer()
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> info = &lt;span style="color:#069;font-weight:bold">new&lt;/span> ObjectSerialization(&lt;span style="color:#069;font-weight:bold">typeof&lt;/span>(glTF), &lt;span style="color:#c30">&amp;#34;gltf&amp;#34;&lt;/span>, &lt;span style="color:#c30">&amp;#34;Deserialize_&amp;#34;&lt;/span>);
+Debug.Log(info);
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> s = File.Open(OutPath, FileMode.Create))
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> w = &lt;span style="color:#069;font-weight:bold">new&lt;/span> StreamWriter(s, &lt;span style="color:#069;font-weight:bold">new&lt;/span> UTF8Encoding(&lt;span style="color:#069;font-weight:bold">false&lt;/span>)))
+{
+w.Write(Begin);
+info.GenerateDeserializer(w, &lt;span style="color:#c30">&amp;#34;Deserialize&amp;#34;&lt;/span>);
+w.Write(End);
+}
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;write: {0}&amp;#34;&lt;/span>, OutPath);
+UnityPath.FromFullpath(OutPath).ImportAsset();
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="キー出力の抑制">キー出力の抑制&lt;/h4>
+&lt;p>&lt;code>index&lt;/code> に無効な値として &lt;code>-1&lt;/code> を入れる場合に、JSONではキーを出力しないとしたいことがあります。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#309">[JsonSchema(Minimum = 0)]&lt;/span>
+&lt;span style="color:#078;font-weight:bold">int&lt;/span> index = -&lt;span style="color:#f60">1&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>のようにすることで、キーの出力を抑制できます。&lt;/p>
+&lt;p>TODO: &lt;code>int?&lt;/code> を使えるようにする。&lt;/p>
+&lt;h4 id="enum-のエンコーディング">enum のエンコーディング&lt;/h4>
+&lt;p>enumの値の名前を文字列で使う、enumの値の数値を使うの2種類がありえます。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#309">[JsonSchema(EnumSerializationType = EnumSerializationType.AsInt)]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> glBufferTarget target;
+&lt;span style="color:#309">
+&lt;/span>&lt;span style="color:#309">[JsonSchema(EnumSerializationType = EnumSerializationType.AsLowerString)]&lt;/span>
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> ProjectionType type;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jsonschemaから生成">JsonSchemaから生成&lt;/h3>
+&lt;p>VRM-1.0 の実装&lt;/p>
+&lt;p>TODO:&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
 &lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
 &lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
 &lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
@@ -3453,56 +3772,4 @@ proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dicti
 {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
 {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
 });
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
-&lt;p>この記事は &lt;code>Version 0.44以降&lt;/code> のAPIについてです。&lt;/p>
-&lt;h2 id="loadasyncの例">LoadAsyncの例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#09f;font-style:italic">// なんらかの方法でByte列を得る
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
-context.ParseGlb(bytes);
-&lt;span style="color:#09f;font-style:italic">// metaが必要な場合
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">bool&lt;/span> createThumbnail=&lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(createThumbnail);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> thumbnail = meta.Thumbnail;
-&lt;span style="color:#09f;font-style:italic">// modelを構築
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>context.LoadAsync(_ =&amp;gt;
-{
-context.ShowMeshes();
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go = context.Root;
-&lt;span style="color:#09f;font-style:italic">// load完了
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>},
-Debug.LogError);
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctaskを使う例">LoadAsyncTaskを使う例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#099">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
-&lt;/span>&lt;span style="color:#099">&lt;/span>&lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
-&lt;span style="color:#09f;font-style:italic">// GLB形式でJSONを取得しParseします
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
-&lt;span style="color:#069;font-weight:bold">try&lt;/span>
-{
-&lt;span style="color:#09f;font-style:italic">// ParseしたJSONをシーンオブジェクトに変換していく
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsyncTask();
-&lt;span style="color:#09f;font-style:italic">// バウンディングボックスとカメラの位置関係で見切れるのを防止する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// ロード後に表示する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
-}
-&lt;span style="color:#069;font-weight:bold">catch&lt;/span>(Exception ex)
-{
-Debug.LogError(ex);
-&lt;span style="color:#09f;font-style:italic">// 関連するリソースを破棄する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Destroy(&lt;span style="color:#069;font-weight:bold">true&lt;/span>);
-&lt;span style="color:#069;font-weight:bold">throw&lt;/span>;
-}
-}
-&lt;span style="color:#099">#endif
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="関連する記事など">関連する記事など&lt;/h2>
-&lt;p>こちらの記事がわかりやすいです。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
