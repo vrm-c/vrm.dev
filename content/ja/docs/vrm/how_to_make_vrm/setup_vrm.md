@@ -44,9 +44,15 @@ prefab をシーンに展開します。
 
 ### VRMファイルを出力する
 
-{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから`VRM0` - `Export UniVRM-0.XX`を実行します。
 
-調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから``VRM -> UniVRM-0.XX -> Export humanoid``を実行します
+{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+<br>
+
+前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。
+
+{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+<br>
 
 {{% alert title="Pose Freeze" color="info" %}}
 エクスポート時に正規化します。

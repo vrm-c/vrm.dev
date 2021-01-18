@@ -2,6 +2,7 @@
 title: "Check Your VRM in Play Mode"
 date: 2020-08-25T17:26:54+09:00
 url: "/en/how_to_make_vrm/vrm_behavior_confirmation/"
+description: "Unity play mode, runtime behaviors of BlendShape and SpringBone"
 tags: ["unity"]
 weight: 4
 ---

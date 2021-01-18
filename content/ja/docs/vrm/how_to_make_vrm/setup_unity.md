@@ -43,7 +43,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 メニューの `Assets` - `Import pacakge` - `Custom Package` を選択して、
 ダウンロードした `UniVRM-0.XX.0_YYYY.unitypackage` を選んでください。
 
-{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
+{{< img src="images/vrm/package_import.jpg" width="400" alt="package_import" >}}
 
 右下の `import` ボタンを押します。
 

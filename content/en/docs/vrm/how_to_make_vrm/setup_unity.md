@@ -1,6 +1,7 @@
 ---
 title: "0. Create a Unity project and install UniVRM"
 date: 2020-11-12T11:24:17+09:00
+description: "Unity download, Unity project creation, UniVRM package import"
 tags: ["unity"]
 weight: 1
 ---
@@ -37,7 +38,7 @@ For Unity Hub, click ``Projects -> New -> 3D template -> CREATE``:
 
 Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folders ``../Assets/VRM``, ``../Assets/UniGLTF`` and ``../Assets/VRMShaders``.
 
-{{< img src="images/vrm/package_import.png" width="400" alt="package_import" >}}
+{{< img src="images/vrm/package_import.jpg" width="400" alt="package_import" >}}
 
 **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import**.
 

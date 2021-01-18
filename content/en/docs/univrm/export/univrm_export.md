@@ -13,7 +13,7 @@ tags: ["unity"]
 
 ## v0.58~
 
-{{< img src="images/vrm/export062_dialog_en.png" width="900" alt="vrm export" >}}
+{{< img src="images/vrm/export_dialog.jpg" width="900" alt="vrm export" >}}
 
 The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)
 
@@ -21,11 +21,16 @@ The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/Sc
 
 #### VRM Exporter Window
 
-Open VRM Exporter Window by `VRM` -> `UniVRM-0.XX` -> `Export humanoid`
+Open VRM Exporter Window by `VRM0 -> Export UniVRM-0.XX`
 
-{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="600" alt="vrm export" >}}
+{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+<br>
 
-* You can directly pick up exportable target in the Project Window now. There is no need to put the Prefab in the scene first. 
+Previous versions: `VRM -> UniVRM-0.XX -> Export humanoid`.
+
+{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+
+* You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first. 
 
 #### Export Target Setup
 
