@@ -42,15 +42,20 @@ Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_X
 
 Three folders: `Assets/VRM`, `Assets/UniGLTF` and `Assets/VRMShaders` will be imported into the Unity project.
 
-|{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
+|{{< img src="images/vrm/package_import.jpg" width="350" alt="package_import" >}}|
 |-----|
 |Import Unity Package|
 
 ## Check if UniVRM has been imported successfully
 
-If UniVRM import successes, `VRM` will be displayed in the menu bar:
+If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
 {{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
+
+Previous versions:
+
+{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
 <hr>
 
 If menu does not show up:

@@ -2,6 +2,7 @@
 title: "1. Create VRM from Humanoid 3D Models"
 date: 2020-08-25T17:10:30+09:00
 url: "/en/how_to_make_vrm/convert_from_humanoid_model/"
+description: "Base model (fbx) import, bone mapping, T-Pose, license setup"
 tags: ["unity"]
 weight: 2
 ---
@@ -82,7 +83,12 @@ Check whether the imported fbx has the correct BlendShape normals. The details [
 
 ### Export the model as VRM from menu (model normalization)
 
-After adjustments are completed, select the model in `Hierarchy` window and export it from``VRM -> UniVRM-0.XX -> Export humanoid``.
+After adjustments are completed, select the model in `Hierarchy` window and export it from `VRM0 -> Export UniVRM-0.XX`.
+
+{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+<br>
+
+Previous versions: `VRM -> UniVRM-0.XX -> Export humanoid`.
 
 {{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
@@ -90,9 +96,9 @@ Enter your name in the `Author` field and click the `Export` button. The VRM fil
 
 Related Pages about UniVRM export:
   * [UniVRM Export]({{< relref "univrm_export.md" >}})
-  * [VRM Size]({{< relref "vrm_size.md" >}})
+  * [VRM Size (BlendShape size reduction)]({{< relref "vrm_size.md" >}})
 
-{{< img src="images/vrm/export062_dialog_en.png" width="900" alt="vrm export" >}}
+{{< img src="images/vrm/export_dialog.jpg" width="900" alt="vrm export" >}}
 
 * Force T Pose
     * Force the model pose to become [T-Pose]({{< relref "humanoid_overview.md#t-pose" >}}) before removing rotation / scaling.

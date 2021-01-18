@@ -45,15 +45,20 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets/VRM`、`Assets/UniGLTF`お及び`Assets/VRMShaders` の３つのフォルダに import されます。
 
-|{{< img src="images/vrm/package_import.png" width="350" alt="package_import" >}}|
+|{{< img src="images/vrm/package_import.jpg" width="350" alt="package_import" >}}|
 |-----|
 |UnityPackageをインポート|
 
 ## import が成功したか確認する方法
 
-VRM menu が表示されていれば動作しています。
+VRM menu が表示されていれば動作しています：
 
 {{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
+
+前のバージョン：
+
+{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
 <hr>
 
 menu が出てこない場合は、

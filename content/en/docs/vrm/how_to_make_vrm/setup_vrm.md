@@ -2,6 +2,7 @@
 title: "2. Set up VRM"
 date: 2020-08-25T17:26:05+09:00
 url: "/en/how_to_make_vrm/setup_vrm/"
+description: "Normalized vrm model, BlendShape, LookAt, SpringBone and FirstPerson configurations, model re-export"
 tags: ["unity"]
 weight: 3
 ---
@@ -33,9 +34,16 @@ To make a VRM model fully functional, please set up the following components:
 * [Spring bone (SpringBone/SpringBoneCollider)]({{< relref "univrm_secondary.md" >}})
 
 ### Export VRM model again
-{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
 
-After the all settings are completed, select the the model (topmost parent GameObject) in `Hierarchy` and again export the model from``VRM -> UniVRM-0.XX -> Export humanoid``.
+After the all settings are completed, select the the model (topmost parent GameObject) in `Hierarchy` and again export the model from `VRM0 -> Export UniVRM-0.XX`. 
+
+{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+<br>
+
+Previous versions: ``VRM -> UniVRM-0.XX -> Export humanoid``.
+
+{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+<br>
 
 This time **please do not check "Force T Pose" and "Pose Freeze"**. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.
 
