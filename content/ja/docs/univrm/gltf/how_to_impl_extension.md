@@ -19,12 +19,19 @@ tags: ["unity", "gltf", "api"]
 }
 ```
 
-名前が `asset.extras.guid` で値が `"9abb92a3-39cf-4986-a758-c43d4bb4ab58"` です。
-`extensions` (`extras`) がどんなプロパティを持つかの取り決めが、 GTTF 拡張です。
-複数形。
+名前(JsonPath)が `asset.extras.guid` で値が `"9abb92a3-39cf-4986-a758-c43d4bb4ab58"` です。
+`extensions` (`extras` 。複数形に注意) の
 
-`extensions` はオフィシャルに仕様を公開する、
-`extras` はアプリケーション独自に手軽に追加という違いがあります。
+* JsonPath。例 `extensions.VRM`, `asset.extras.guid`
+* 型、内容。例 object(VRMに関する諸々), string(guid文字列)
+
+の取り決めが `GTTF拡張` です。
+
+`extensions` はオフィシャルに仕様を策定して `JsonSchema` として公開する。
+
+* https://github.com/KhronosGroup/glTF/tree/master/extensions
+
+`extras` は `JsonSchema` を作るほどでもないちょっとした追加データを手軽に追加という気持ちの違いです。仕組みは同じです。
 
 > This enables glTF models to contain application-specific properties without creating a full glTF extension
 
@@ -53,15 +60,27 @@ class GLTF
 }
 ```
 
-`v0.63.1` から設計を変更して、すべての `extensions/extras` に同じ型の入れ物を使うように変更しました。
-UniGLTF は `import/export` の具体的な型を知りません。
+```cs
+// 個々の extensions に対して別個の型を定義する必要がある
+class GLTFMaterialExtensions
+{
+    public KHR_materials_unlit KHR_materials_unlit;
+}
 
-* `import` 時は、拡張が後で部分的にデシリアライズします。
-* `export` 時は、拡張が先に部分的にシリアライズします。
+class GLTFMaterial
+{
+    public GLTFMaterialExtensions extensions;
+}
+```
+
+この設計だと GLTF と拡張を別ライブラリとして分離することができませんでした。
+
+`v0.63.1` から設計を変更して、すべての `extensions/extras` に同じ型の入れ物を使うように変更しました。
+UniGLTF は `import/export` の具体的な内容を知らずに中間データの入れ物として扱います。
 
 ```cs
 // extensions / extras の入れ物として使う型
-// Dictionary<string, Json> 的なもの。
+// 実行時は、 glTFExtensionImport / glTFExtensionExport を使う
 public abstract class glTFExtension
 {
 
@@ -69,7 +88,7 @@ public abstract class glTFExtension
 
 class GLTF
 {
-    // UniGLTFは具体的な型を知らない。利用側が処理する
+    // UniGLTFは具体的な型を知らない。利用側が処理(serialize/deserialize)する
     public glTFExtension extensions;
 }
 ```
@@ -77,8 +96,10 @@ class GLTF
 拡張は、以下の部品要素から作れます。
 
 * 拡張の型
+
 * JSON => 拡張の型(デシリアライズ)。コード生成可能
-* デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造。
+* デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造
+
 * 拡張の型 => JSON(シリアライズ)。コード生成可能
 * シリアライザの呼び出し。GLTF のどの extensions に拡張の値を出力するか記述する。exporter の改造。
 
@@ -89,23 +110,21 @@ UniGLTF で JSON をパースしたときに、`extensions / extras` はすべ�
 
 ```cs
 // 拡張をデシリアライズする関数。拡張が実装する
-public void DeserializeExtension(UniGLTF.glTFExtension src)
+public T Deserialize<T>(UniGLTF.glTFExtension src, string key, Func<ListTreeNode<JsonValue>, T> deserialize)
 {
     if(src is UniGLTF.glTFExtensionImport extensions) // null check と　代入
     {
         foreach(var kv in extensions.ObjectItems())
         {
-            if(kv.Key.GetString() == "VRMC_vrm") // extension の名前をチェック
+            if(kv.Key.GetString() == key) // extension の名前をチェック
             {
-                ListTreeNode<JsonValue> value = kv.Value;
-
-                // value に extension に対応する JSON の部分が入っている
-                // どんな値が入っているかは Extension が知っている。ここでデシリアライズする。
-
                 // デシリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
+                return deserialize(kv.Value);
             }
         }
     }
+
+    return default;
 }
 ```
 
@@ -116,28 +135,28 @@ UniGLTF で Export するために `UniGLTF.glTF` 型に値を詰め込むとき
 
 ```cs
 // 拡張をシリアライズする関数。拡張が実装する
-public void SerializeTo(ref UniGLTF.glTFExtension dst, VRMC_vrm extension)
+public void Serialize<T>(ref UniGLTF.glTFExtension dst, string key, T value, Func<T, ArraySegment<byte>> serialize)
 {
     if (dst is glTFExtensionImport)
     {
-        // unittest 等で 来るときがある
+        // unittest 等でimportをexportに変換するのを忘れると来るときがある
         throw new NotImplementedException();
     }
 
     if (!(dst is glTFExtensionExport extensions))
     {
-        // extensions に複数のエクステンションを差し込むことがありえる(ex. materialの unlit と mtoon など)
+        // ひとつの extensions に複数のエクステンションを差し込むことがありえる(ex. material.extensions の KHR_materials_unlit と VRMC_materials_mtoon など)
         // 無い時だけ新規に入れ物を作る。
         extensions = new glTFExtensionExport();
+        // ref にしてあるのでメンバーを代入できる。
         dst = extensions;
     }
 
-    // extension を独自にシリアライズするコードここに書く
     // シリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
-    var bytes = Serialize(extension);
+    var bytes = serialize(value);
 
     // シリアライズ済みのバイト列を差し込む
-    extensions.Add(VRMC_vrm.ExtensionName, bytes);
+    extensions.Add(key, bytes);
 }
 ```
 
@@ -196,23 +215,31 @@ public void SerializeTo(ref UniGLTF.glTFExtension dst, VRMC_vrm extension)
 * https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMImporterContext.cs#L41
 * https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMExporter.cs#L209
 
-### VRM1: `materials[*].extensions.VMRC_maetrials_mtoon`
+### VRM1: `extensions.VRMC_vrm` など
 `JsonSchemaからコード生成`
 
-5つの Extensions にわかれたので、個別に作成
+5つの Extensions にわかれたので個別に作成。
+ささる場所(JsonPath)が違うのに注意。
 
-* `Assets\VRM10\Runtime\Format\Constraints`
-* `Assets\VRM10\Runtime\Format\MaterialsMToon`
-* `Assets\VRM10\Runtime\Format\NodeCollider`
-* `Assets\VRM10\Runtime\Format\SpringBone`
+#### `extensions.VRMC_vrm`
 * `Assets\VRM10\Runtime\Format\VRM`
 
-ジェネレーターの呼び出しコード
+#### `materials[*].extensions.VRMC_materials_mtoon`
+* `Assets\VRM10\Runtime\Format\MaterialsMToon`
 
+#### `nodes[*].extensions.VRMC_node_collider`
+* `Assets\VRM10\Runtime\Format\NodeCollider`
+
+#### `extensions.VRMC_springBone`
+* `Assets\VRM10\Runtime\Format\SpringBone`
+
+#### `extensions.VRMC_vrm_constraints`
+* `Assets\VRM10\Runtime\Format\Constraints`
+
+#### ジェネレーターの呼び出しコード
 * `Assets\VRM10\Editor\GeneratorMenu.cs`
 
-生成コードの呼び出し
-
+#### 生成コードの呼び出し
 
 ## コード生成
 JSON と C# の型との シリアライズ/デシリアライズは定型コードになるので、ジェネレーターがあります。
@@ -249,7 +276,8 @@ namespace UniGLTF
     {
         const BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
 
-        const string Begin = @"using System;
+        const string Begin = @"// Don't edit manually. This is generaged by generator. 
+using System;
 using System.Collections.Generic;
 using UniJSON;
 
@@ -324,7 +352,8 @@ namespace UniGLTF
     {
         public const BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
 
-        const string Begin = @"using UniJSON;
+        const string Begin = @"// Don't edit manually. This is generaged by generator. 
+using UniJSON;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -375,6 +404,8 @@ public static class GltfDeserializer
 
 `index` に無効な値として `-1` を入れる場合に、JSONではキーを出力しないとしたいことがあります。
 
+TODO: `int?` にするべきだった
+
 ```cs
 [JsonSchema(Minimum = 0)]
 int index = -1;
@@ -382,11 +413,22 @@ int index = -1;
 
 のようにすることで、キーの出力を抑制できます。
 
-TODO: `int?` を使えるようにする。
+```cs
+    // 生成コードのキー出力例
+    if(value.index>=0){
+```
+
+何も付けないと
+
+```cs
+    // 出力制御無し
+    if(true){
+```
 
 #### enum のエンコーディング
 
 enumの値の名前を文字列で使う、enumの値の数値を使うの2種類がありえます。
+enumの場合はデフォルト値が無いので必須です。
 
 ```cs
 [JsonSchema(EnumSerializationType = EnumSerializationType.AsInt)]
