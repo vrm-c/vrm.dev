@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 19:41:40 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 19:45:22 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -3402,7 +3402,7 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Wed, 20 Jan 2021 13:49:20 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Thu, 21 Jan 2021 17:55:58 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
 &lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
 &lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
@@ -3467,66 +3467,76 @@ UniGLTF は &lt;code>import/export&lt;/code> の具体的な内容を知らず�
 &lt;span style="color:#09f;font-style:italic">// UniGLTFは具体的な型を知らない。利用側が処理(serialize/deserialize)する
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">public&lt;/span> glTFExtension extensions;
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>拡張は、以下の部品要素から作れます。&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-の拡張の書き方">UniGLTF の拡張の書き方&lt;/h2>
+&lt;p>拡張は、以下の部品要素から作れます。&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>拡張の型&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>JSON =&amp;gt; 拡張の型(デシリアライズ)。コード生成可能&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>拡張の型 =&amp;gt; JSON(シリアライズ)。コード生成可能&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>シリアライザの呼び出し。GLTF のどの extensions に拡張の値を出力するか記述する。exporter の改造。&lt;/p>
-&lt;/li>
+&lt;li>名前(JsonPath)。例: &lt;code>extensions.VRM&lt;/code>, &lt;code>materials[*].extensions.KHR_materials_unlit&lt;/code>&lt;/li>
+&lt;li>拡張の型。&lt;code>T型&lt;/code>&lt;/li>
+&lt;li>デシリアライザー(import)。 &lt;code>jsonバイト列 =&amp;gt; T型&lt;/code>&lt;/li>
+&lt;li>シリアライザーexport)。&lt;code>T型 =&amp;gt; jsonバイト列&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="import-の書き方">import の書き方&lt;/h3>
-&lt;p>&lt;code>glTFExtension&lt;/code> を継承した &lt;code>glTFExtensionImport&lt;/code> を使います。
-UniGLTF で JSON をパースしたときに、&lt;code>extensions / extras&lt;/code> はすべて &lt;code>glTFExtensionImport&lt;/code> 型になります。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// 拡張をデシリアライズする関数。拡張が実装する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> T Deserialize&amp;lt;T&amp;gt;(UniGLTF.glTFExtension src, &lt;span style="color:#078;font-weight:bold">string&lt;/span> key, Func&amp;lt;ListTreeNode&amp;lt;JsonValue&amp;gt;, T&amp;gt; deserialize)
+&lt;h3 id="jsonpath-と-型を決める">JSONPATH と 型を決める&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C#" data-lang="C#">&lt;span style="color:#09f;font-style:italic">// 型
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">GoodMaterial&lt;/span>
 {
-&lt;span style="color:#069;font-weight:bold">if&lt;/span>(src &lt;span style="color:#069;font-weight:bold">is&lt;/span> UniGLTF.glTFExtensionImport extensions) &lt;span style="color:#09f;font-style:italic">// null check と　代入
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {
-&lt;span style="color:#069;font-weight:bold">foreach&lt;/span>(&lt;span style="color:#078;font-weight:bold">var&lt;/span> kv &lt;span style="color:#069;font-weight:bold">in&lt;/span> extensions.ObjectItems())
+&lt;span style="color:#09f;font-style:italic">// `materials[*].extensions.CUSTOM_materials_good`
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> EXTENSION_NAME = &lt;span style="color:#c30">&amp;#34;CUSTOM_materials_good&amp;#34;&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#078;font-weight:bold">int&lt;/span> GoodValue;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="import">import&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C#" data-lang="C#">GoodMaterial DeserializeGoodMaterial(ListTreeNode&amp;lt;JsonValue&amp;gt; json)
 {
-&lt;span style="color:#069;font-weight:bold">if&lt;/span>(kv.Key.GetString() == key) &lt;span style="color:#09f;font-style:italic">// extension の名前をチェック
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {
-&lt;span style="color:#09f;font-style:italic">// デシリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> deserialize(kv.Value);
-}
-}
-}
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">default&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="export-の書き方">export の書き方&lt;/h3>
-&lt;p>&lt;code>glTFExtension&lt;/code> を継承した &lt;code>glTFExtensionExport&lt;/code> を使います。
-UniGLTF で Export するために &lt;code>UniGLTF.glTF&lt;/code> 型に値を詰め込むときに、先に部分的にシリアライズします。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// 拡張をシリアライズする関数。拡張が実装する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Serialize&amp;lt;T&amp;gt;(&lt;span style="color:#069;font-weight:bold">ref&lt;/span> UniGLTF.glTFExtension dst, &lt;span style="color:#078;font-weight:bold">string&lt;/span> key, T &lt;span style="color:#069;font-weight:bold">value&lt;/span>, Func&amp;lt;T, ArraySegment&amp;lt;&lt;span style="color:#078;font-weight:bold">byte&lt;/span>&amp;gt;&amp;gt; serialize)
+&lt;span style="color:#09f;font-style:italic">// デシリアライズ。手で書くかコード生成する(後述)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;span style="color:#09f;font-style:italic">// ユーティリティ関数例
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">bool&lt;/span> TryGetExtension&amp;lt;T&amp;gt;(UniGLTF.glTFExtension extension, &lt;span style="color:#078;font-weight:bold">string&lt;/span> key, Func&amp;lt;ListTreeNode&amp;lt;JsonValue&amp;gt;, T&amp;gt; deserializer, &lt;span style="color:#069;font-weight:bold">out&lt;/span> T &lt;span style="color:#069;font-weight:bold">value&lt;/span>)
 {
-&lt;span style="color:#069;font-weight:bold">if&lt;/span> (dst &lt;span style="color:#069;font-weight:bold">is&lt;/span> glTFExtensionImport)
+&lt;span style="color:#069;font-weight:bold">if&lt;/span>(material.extensions &lt;span style="color:#069;font-weight:bold">is&lt;/span> UniGLTF.glTFExtensionsImport import)
 {
-&lt;span style="color:#09f;font-style:italic">// unittest 等でimportをexportに変換するのを忘れると来るときがある
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">throw&lt;/span> &lt;span style="color:#069;font-weight:bold">new&lt;/span> NotImplementedException();
-}
-&lt;span style="color:#069;font-weight:bold">if&lt;/span> (!(dst &lt;span style="color:#069;font-weight:bold">is&lt;/span> glTFExtensionExport extensions))
+&lt;span style="color:#09f;font-style:italic">// null check 完了
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">foreach&lt;/span>(&lt;span style="color:#078;font-weight:bold">var&lt;/span> kv &lt;span style="color:#069;font-weight:bold">in&lt;/span> import.ObjectItems())
 {
-&lt;span style="color:#09f;font-style:italic">// ひとつの extensions に複数のエクステンションを差し込むことがありえる(ex. material.extensions の KHR_materials_unlit と VRMC_materials_mtoon など)
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 無い時だけ新規に入れ物を作る。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> extensions = &lt;span style="color:#069;font-weight:bold">new&lt;/span> glTFExtensionExport();
-&lt;span style="color:#09f;font-style:italic">// ref にしてあるのでメンバーを代入できる。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> dst = extensions;
+&lt;span style="color:#069;font-weight:bold">if&lt;/span>(kv.key.GetString()==key)
+{
+&lt;span style="color:#069;font-weight:bold">value&lt;/span> = Deserialize(kv.Value);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">true&lt;/span>;
 }
-&lt;span style="color:#09f;font-style:italic">// シリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = serialize(&lt;span style="color:#069;font-weight:bold">value&lt;/span>);
-&lt;span style="color:#09f;font-style:italic">// シリアライズ済みのバイト列を差し込む
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> extensions.Add(key, bytes);
+}
+}
+&lt;span style="color:#069;font-weight:bold">value&lt;/span> = &lt;span style="color:#069;font-weight:bold">default&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">false&lt;/span>;
+}
+&lt;span style="color:#069;font-weight:bold">void&lt;/span> ImportMaterial(UniGLTF.glTFMaterial material)
+{
+&lt;span style="color:#09f;font-style:italic">// material の処理に割り込んで
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span>(TryGetExtension(material.extension, GoodMaterial.EXTENSION_NAME, DeserializeGoodMaterial, &lt;span style="color:#069;font-weight:bold">out&lt;/span> GoodMaterial good))
+{
+&lt;span style="color:#09f;font-style:italic">// good material 独自の処理
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="export">export&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">void&lt;/span> SerializeGoodMaterial(UniJSON.JsonFormatter f, GoodMaterial &lt;span style="color:#069;font-weight:bold">value&lt;/span>)
+{
+&lt;span style="color:#09f;font-style:italic">// シリアライズ。手で書くかコード生成する(後述)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;span style="color:#09f;font-style:italic">// ユーティリティ関数例
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#069;font-weight:bold">public&lt;/span> ArraySegment&amp;lt;&lt;span style="color:#078;font-weight:bold">byte&lt;/span>&amp;gt; SerializeExtension&amp;lt;T&amp;gt;(T &lt;span style="color:#069;font-weight:bold">value&lt;/span>, Func&amp;lt;T, ArraySegment&amp;lt;&lt;span style="color:#078;font-weight:bold">byte&lt;/span>&amp;gt;&amp;gt; serialize)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> f = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniJSON.JsonFormatter();
+serialize(f, &lt;span style="color:#069;font-weight:bold">value&lt;/span>);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> f.GetStoreBytes();
+}
+&lt;span style="color:#069;font-weight:bold">void&lt;/span> ExportGoodMaterial(UniGLTF.glTFMaterial material, GoodMaterial good)
+{
+&lt;span style="color:#09f;font-style:italic">// material の処理に割り込んで
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span>(!(material.extensions &lt;span style="color:#069;font-weight:bold">is&lt;/span> UniGLTF.glTFExtensionsExport export))
+{
+&lt;span style="color:#09f;font-style:italic">// 無かった。新規作成
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> export = &lt;span style="color:#069;font-weight:bold">new&lt;/span> UniGLTF.glTFExtensionsExport();
+material.extensions = export;
+}
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = SerializeExtension(good, SerializeGoodMaterial);
+export.Add(GoodMaterial.EXTENSION_NAME, bytes);
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="実装例">実装例&lt;/h2>
 &lt;h3 id="gltf-gltf全体">GLTF: GLTF全体&lt;/h3>
@@ -3581,7 +3591,7 @@ UniGLTF で Export するために &lt;code>UniGLTF.glTF&lt;/code> 型に値を�
 &lt;/ul>
 &lt;h3 id="vrm1-extensionsvrmc_vrm-など">VRM1: &lt;code>extensions.VRMC_vrm&lt;/code> など&lt;/h3>
 &lt;p>&lt;code>JsonSchemaからコード生成&lt;/code>&lt;/p>
-&lt;p>5つの Extensions にわかれたので個別に作成。
+&lt;p>5つの Extensions に分かれたので個別に作成。
 ささる場所(JsonPath)が違うのに注意。&lt;/p>
 &lt;h4 id="extensionsvrmc_vrm">&lt;code>extensions.VRMC_vrm&lt;/code>&lt;/h4>
 &lt;ul>
@@ -3613,7 +3623,7 @@ UniGLTF で Export するために &lt;code>UniGLTF.glTF&lt;/code> 型に値を�
 C# の型から生成するものと、JsonSchema から C# の型とともに生成するものがあります。&lt;/p>
 &lt;h3 id="c-の型から生成">C# の型から生成&lt;/h3>
 &lt;h4 id="シリアライザー">シリアライザー&lt;/h4>
-&lt;p>生成するコードを作成します。&lt;/p>
+&lt;p>ジェネレーターを呼び出すコードを作成します。&lt;/p>
 &lt;ul>
 &lt;li>元になる型&lt;/li>
 &lt;li>出力先&lt;/li>
@@ -3636,7 +3646,7 @@ C# の型から生成するものと、JsonSchema から C# の型とともに�
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">SerializerGenerator&lt;/span>
 {
 &lt;span style="color:#069;font-weight:bold">const&lt;/span> BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
-&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;// Don&amp;#39;t edit manually. This is generaged by generator.
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;// Don&amp;#39;t edit manually. This is generaged.
 &lt;/span>&lt;span style="color:#c30">using System;
 &lt;/span>&lt;span style="color:#c30">using System.Collections.Generic;
 &lt;/span>&lt;span style="color:#c30">using UniJSON;
@@ -3678,7 +3688,7 @@ UnityPath.FromFullpath(OutPath).ImportAsset();
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="デシリアライザー">デシリアライザー&lt;/h4>
-&lt;p>生成するコードを作成します。&lt;/p>
+&lt;p>ジェネレーターを呼び出すコードを作成します。&lt;/p>
 &lt;ul>
 &lt;li>元になる型&lt;/li>
 &lt;li>出力先&lt;/li>
@@ -3701,7 +3711,7 @@ UnityPath.FromFullpath(OutPath).ImportAsset();
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">DeserializerGenerator&lt;/span>
 {
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">const&lt;/span> BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
-&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;// Don&amp;#39;t edit manually. This is generaged by generator.
+&lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> Begin = &lt;span style="color:#c30">@&amp;#34;// Don&amp;#39;t edit manually. This is generaged.
 &lt;/span>&lt;span style="color:#c30">using UniJSON;
 &lt;/span>&lt;span style="color:#c30">using System;
 &lt;/span>&lt;span style="color:#c30">using System.Collections.Generic;
