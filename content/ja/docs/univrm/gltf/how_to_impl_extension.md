@@ -93,70 +93,94 @@ class GLTF
 }
 ```
 
+## UniGLTF の拡張の書き方
+
 拡張は、以下の部品要素から作れます。
 
-* 拡張の型
+* 名前(JsonPath)。例: `extensions.VRM`, `materials[*].extensions.KHR_materials_unlit`
+* 拡張の型。`T型`
+* デシリアライザー(import)。 `jsonバイト列 => T型`
+* シリアライザーexport)。`T型 => jsonバイト列`
 
-* JSON => 拡張の型(デシリアライズ)。コード生成可能
-* デシリアライザの呼び出し。GLTFの extensions に拡張の入っている場所を特定して、拡張の値を得る。importer の改造
+### JSONPATH と 型を決める
 
-* 拡張の型 => JSON(シリアライズ)。コード生成可能
-* シリアライザの呼び出し。GLTF のどの extensions に拡張の値を出力するか記述する。exporter の改造。
-
-### import の書き方
-
-`glTFExtension` を継承した `glTFExtensionImport` を使います。
-UniGLTF で JSON をパースしたときに、`extensions / extras` はすべて `glTFExtensionImport` 型になります。
-
-```cs
-// 拡張をデシリアライズする関数。拡張が実装する
-public T Deserialize<T>(UniGLTF.glTFExtension src, string key, Func<ListTreeNode<JsonValue>, T> deserialize)
+```C#
+// 型
+class GoodMaterial
 {
-    if(src is UniGLTF.glTFExtensionImport extensions) // null check と　代入
+    // `materials[*].extensions.CUSTOM_materials_good`
+    public const string EXTENSION_NAME = "CUSTOM_materials_good";
+
+    public int GoodValue;
+}
+```
+
+### import
+
+```C#
+GoodMaterial DeserializeGoodMaterial(ListTreeNode<JsonValue> json)
+{
+    // デシリアライズ。手で書くかコード生成する(後述)
+}
+
+// ユーティリティ関数例
+bool TryGetExtension<T>(UniGLTF.glTFExtension extension, string key, Func<ListTreeNode<JsonValue>, T> deserializer, out T value)
+{
+    if(material.extensions is UniGLTF.glTFExtensionsImport import)
     {
-        foreach(var kv in extensions.ObjectItems())
+        // null check 完了
+        foreach(var kv in import.ObjectItems())
         {
-            if(kv.Key.GetString() == key) // extension の名前をチェック
+            if(kv.key.GetString()==key)
             {
-                // デシリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
-                return deserialize(kv.Value);
+                value = Deserialize(kv.Value);
+                return true;
             }
         }
     }
 
-    return default;
+    value = default;
+    return false;
+}
+
+void ImportMaterial(UniGLTF.glTFMaterial material)
+{
+    // material の処理に割り込んで
+    if(TryGetExtension(material.extension, GoodMaterial.EXTENSION_NAME, DeserializeGoodMaterial, out GoodMaterial good))
+    {
+        // good material 独自の処理
+    }
 }
 ```
 
-### export の書き方
-
-`glTFExtension` を継承した `glTFExtensionExport` を使います。
-UniGLTF で Export するために `UniGLTF.glTF` 型に値を詰め込むときに、先に部分的にシリアライズします。
+### export
 
 ```cs
-// 拡張をシリアライズする関数。拡張が実装する
-public void Serialize<T>(ref UniGLTF.glTFExtension dst, string key, T value, Func<T, ArraySegment<byte>> serialize)
+void SerializeGoodMaterial(UniJSON.JsonFormatter f, GoodMaterial value)
 {
-    if (dst is glTFExtensionImport)
+    // シリアライズ。手で書くかコード生成する(後述)
+}
+
+// ユーティリティ関数例
+public ArraySegment<byte> SerializeExtension<T>(T value, Func<T, ArraySegment<byte>> serialize)
+{
+    var f = new UniJSON.JsonFormatter();
+    serialize(f, value);
+    return f.GetStoreBytes();
+}
+
+void ExportGoodMaterial(UniGLTF.glTFMaterial material, GoodMaterial good)
+{
+    // material の処理に割り込んで
+    if(!(material.extensions is UniGLTF.glTFExtensionsExport export))
     {
-        // unittest 等でimportをexportに変換するのを忘れると来るときがある
-        throw new NotImplementedException();
+        // 無かった。新規作成
+        export = new UniGLTF.glTFExtensionsExport();
+        material.extensions = export;
     }
 
-    if (!(dst is glTFExtensionExport extensions))
-    {
-        // ひとつの extensions に複数のエクステンションを差し込むことがありえる(ex. material.extensions の KHR_materials_unlit と VRMC_materials_mtoon など)
-        // 無い時だけ新規に入れ物を作る。
-        extensions = new glTFExtensionExport();
-        // ref にしてあるのでメンバーを代入できる。
-        dst = extensions;
-    }
-
-    // シリアライザーは手書きしてもよいし、コード生成を使うこともできる(後述)
-    var bytes = serialize(value);
-
-    // シリアライズ済みのバイト列を差し込む
-    extensions.Add(key, bytes);
+    var bytes = SerializeExtension(good, SerializeGoodMaterial);
+    export.Add(GoodMaterial.EXTENSION_NAME, bytes);
 }
 ```
 
@@ -218,7 +242,7 @@ public void Serialize<T>(ref UniGLTF.glTFExtension dst, string key, T value, Fun
 ### VRM1: `extensions.VRMC_vrm` など
 `JsonSchemaからコード生成`
 
-5つの Extensions にわかれたので個別に作成。
+5つの Extensions に分かれたので個別に作成。
 ささる場所(JsonPath)が違うのに注意。
 
 #### `extensions.VRMC_vrm`
@@ -249,7 +273,7 @@ C# の型から生成するものと、JsonSchema から C# の型とともに�
 
 #### シリアライザー
 
-生成するコードを作成します。
+ジェネレーターを呼び出すコードを作成します。
 
 * 元になる型
 * 出力先
@@ -276,7 +300,7 @@ namespace UniGLTF
     {
         const BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
 
-        const string Begin = @"// Don't edit manually. This is generaged by generator. 
+        const string Begin = @"// Don't edit manually. This is generaged. 
 using System;
 using System.Collections.Generic;
 using UniJSON;
@@ -325,7 +349,7 @@ namespace UniGLTF {
 
 #### デシリアライザー
 
-生成するコードを作成します。
+ジェネレーターを呼び出すコードを作成します。
 
 * 元になる型
 * 出力先
@@ -352,7 +376,7 @@ namespace UniGLTF
     {
         public const BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
 
-        const string Begin = @"// Don't edit manually. This is generaged by generator. 
+        const string Begin = @"// Don't edit manually. This is generaged. 
 using UniJSON;
 using System;
 using System.Collections.Generic;
