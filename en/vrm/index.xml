@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 19:52:12 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – About VRM</title><link>https://vrm.dev/en/vrm/</link><description>Recent content in About VRM on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 26 Aug 2020 19:58:42 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What is "VRM"? What can VRM do?</title><link>https://vrm.dev/en/vrm_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/vrm_about/</guid><description>
 &lt;h2 id="what-is-vrm">What is VRM?&lt;/h2>
 &lt;p>&lt;strong>VRM is a &lt;a href="https://www.khronos.org/gltf/">GLTF&lt;/a>-based, cross-platform file format that can handle the humanoid character/avatar (3D model data).&lt;/strong>
 The VRM file can be accessed in different environments such as game engines, Web, etc.
@@ -6,7 +6,7 @@ The current provided software, &lt;a href="https://github.com/vrm-c/UniVRM">UniV
 &lt;ul>
 &lt;li>VRM is formulated on top of the 3D standard format &lt;strong>glTF2.0&lt;/strong> to handle the humanoid model&lt;/li>
 &lt;li>The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM&lt;/li>
-&lt;li>All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
+&lt;li>&lt;strong>Runtime VRM Import&lt;/strong>: all data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed&lt;/li>
 &lt;li>Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">BlendShape&lt;/a>&lt;/li>
 &lt;li>Support three types of shaders ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>&lt;/li>
 &lt;li>Standardize eye gaze control to handle the different types of models ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_bone/">eye gaze controlled by Bone&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_blendshape/">eye gaze controlled by BlendShape&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/lookat/lookat_uv/">eye gaze controlled by UV&lt;/a>&lt;/li>
@@ -14,7 +14,7 @@ The current provided software, &lt;a href="https://github.com/vrm-c/UniVRM">UniV
 &lt;li>Avatar&amp;rsquo;s &lt;strong>first-person view&lt;/strong> is available in VR ➡️ &lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">FirstPerson&lt;/a>&lt;/li>
 &lt;li>Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and &lt;strong>License Information&lt;/strong> are also included in the VRM file ➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">Meta&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.&lt;/p>
+&lt;p>As described above, VRM is not just a 3D model data. &lt;strong>It is designed for being able to be used right away once being loaded into applications&lt;/strong>.&lt;/p>
 &lt;h2 id="what-can-you-do-with-vrm">What can you do with VRM?&lt;/h2>
 &lt;p>&lt;strong>The same avatar (VRM model) data can be used in any application that supports VRM&lt;/strong>. As long as various VRM applications are made, the future will look like the one described below for sure&amp;hellip;&lt;/p>
 &lt;ul>
@@ -342,6 +342,10 @@ The last Section is about VRM model testings such as eye movement and expression
 &lt;td>&lt;a href="https://store.steampowered.com/app/1307550/Craftopia/">Craftopia&lt;/a>&lt;/td>
 &lt;td>Windows&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://store.steampowered.com/app/1366570/RESONARK_X/">RESONARK X&lt;/a>&lt;/td>
+&lt;td>Oculus Rift, HTC Vive, Valve Index&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="viewer">Viewer&lt;/h2>
@@ -392,6 +396,10 @@ The last Section is about VRM model testings such as eye movement and expression
 &lt;tr>
 &lt;td>&lt;a href="https://120byte.booth.pm/items/1099618">VRM OningyoAsobi&lt;/a>&lt;/td>
 &lt;td>Windows VR&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://120byte.booth.pm/items/1654585">VRM OningyoAsobi (PC)&lt;/a>&lt;/td>
+&lt;td>Windows&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://github.com/m2wasabi/KinectV2VRM">KinectV2VRM&lt;/a>&lt;/td>
