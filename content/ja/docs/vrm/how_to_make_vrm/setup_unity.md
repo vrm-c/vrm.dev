@@ -49,9 +49,14 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 
 ## import が成功したか確認する方法
 
-VRM menu が表示されていれば動作しています。
+VRM menu が表示されていれば動作しています：
 
 {{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
+
+前のバージョン：
+
+{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
 <hr>
 
 {{% alert title="Unity-2018 で menu が出てこない場合" color="warning" %}}

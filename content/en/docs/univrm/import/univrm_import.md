@@ -29,3 +29,7 @@ Download the latest unitypackage (UniVRM-0.XX) from [UniVRM/releases](https://gi
 {{< img src="images/vrm/vrm_settings.png" >}}
 
 **The VRM model's information will be shown in the Inspector window** once the GameObject of the model data in``Hierarchy``is selected.
+
+## Related Sections
+
+- [VRM Export]({{< relref "univrm_export" >}})
