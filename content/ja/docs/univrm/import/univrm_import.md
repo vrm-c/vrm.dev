@@ -32,3 +32,7 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 {{< img src="images/vrm/vrm_settings.png" >}}
 
 読み込まれたモデルデータをHierarchyで選択すると、インスペクタに各種情報が表示されます。
+
+## 関連セクション
+
+- [VRMをエクスポートする]({{< relref "univrm_export" >}})

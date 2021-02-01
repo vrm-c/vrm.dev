@@ -44,9 +44,14 @@ Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project
 
 ## Check if UniVRM has been imported successfully
 
-If UniVRM import successes, `VRM` will be displayed in the menu bar:
+If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
 {{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+<hr>
+
+Previous versions:
+
+{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
 <hr>
 
 {{% alert title="If you are using Unity-2018 and the VRM menu does not show up:" color="warning" %}}

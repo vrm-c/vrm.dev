@@ -14,7 +14,7 @@ The current provided software, [UniVRM](https://github.com/vrm-c/UniVRM), can im
 
 * VRM is formulated on top of the 3D standard format **glTF2.0** to handle the humanoid model 
 * The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM
-* All data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed 
+* **Runtime VRM Import**: all data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed
 * Facial expressions such as joy, angry, sorrow, fun, eye blinking and Japanese あいうえお are defined. They can be manipulated via the controller, facial capture, lip-sync from the audio. The eye blinking can be reflected periodically ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
 * Support three types of shaders ➡️ [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}), [PBR]({{< relref "univrm_standard.md" >}})
 * Standardize eye gaze control to handle the different types of models ➡️ [eye gaze controlled by Bone]({{< relref "lookat_bone.md" >}}), [eye gaze controlled by BlendShape]({{< relref "lookat_blendshape.md" >}}), [eye gaze controlled by UV]({{< relref "lookat_uv.md" >}})
@@ -22,7 +22,7 @@ The current provided software, [UniVRM](https://github.com/vrm-c/UniVRM), can im
 * Avatar's **first-person view** is available in VR ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})
 * Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and **License Information** are also included in the VRM file ➡️ [Meta]({{< relref "vrm_meta.md" >}})
 
-As described above, VRM is not just a 3D model data. It is designed for being able to be used immediately after being loaded into applications.
+As described above, VRM is not just a 3D model data. **It is designed for being able to be used right away once being loaded into applications**.
 
 ## What can you do with VRM?
 
