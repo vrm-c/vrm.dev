@@ -82,6 +82,7 @@ weight: 4
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 | [BOW MAN](https://bowman.vrlab.dmm.com/) | Windows VR |
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
+| [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Oculus Rift, HTC Vive, Valve Index |
 
 ##  Viewer
 
@@ -97,6 +98,7 @@ weight: 4
 | [VRM Live Viewer](http://fantom1x.blog130.fc2.com/blog-entry-309.html) | Windows |
 | [UniWinApi Example project](https://github.com/kirurobo/UniWinApi) | Unity library |
 | [VRM OningyoAsobi](https://120byte.booth.pm/items/1099618) | Windows VR |
+| [VRM OningyoAsobi (PC)](https://120byte.booth.pm/items/1654585) | Windows |
 | [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM) | Unity library |
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm_en.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
