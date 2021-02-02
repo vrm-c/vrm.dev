@@ -82,7 +82,8 @@ weight: 4
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 | [BOW MAN](https://bowman.vrlab.dmm.com/ja/) | Windows VR |
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
-| [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Oculus Rift, HTC Vive, Valve Index |
+| [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR |
+| [ラクキン](https://rakugaki-kingdom.com/) | iOS, Android |
 
 ##  ビューア
 
@@ -124,6 +125,7 @@ weight: 4
 | [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
 | [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
 | [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
+| [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
 
 ##  内部的にVRMを活用しているサービス
 
