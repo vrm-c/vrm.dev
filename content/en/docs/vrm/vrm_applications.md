@@ -63,7 +63,7 @@ weight: 4
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 | [Collaboll](https://brother-pv.booth.pm/items/2016717) | Windows VR |
-| [Webaverse](https://webaverse.com/) | Windows |
+| [Webaverse](https://webaverse.com/) | Web browser |
 
 ##  Game
 
