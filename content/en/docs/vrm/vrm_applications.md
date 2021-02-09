@@ -98,8 +98,8 @@ weight: 4
 | [VRMQuickLook](https://github.com/magicien/VRMQuickLook) | macOS |
 | [VRM Live Viewer](http://fantom1x.blog130.fc2.com/blog-entry-309.html) | Windows |
 | [UniWinApi Example project](https://github.com/kirurobo/UniWinApi) | Unity library |
-| [VRM OningyoAsobi](https://120byte.booth.pm/items/1099618) | Windows VR |
-| [VRM OningyoAsobi (PC)](https://120byte.booth.pm/items/1654585) | Windows |
+| [VRM Doll Play](https://120byte.booth.pm/items/1099618) | Windows VR |
+| [VRM Doll Play (PC)](https://120byte.booth.pm/items/1654585) | Windows |
 | [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM) | Unity library |
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm_en.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
@@ -126,6 +126,7 @@ weight: 4
 | [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
 | [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
 | [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
+| [VTuber Editor](https://store.steampowered.com/app/1454500/VTuber_Editor/) | Windows |
 
 ##  Services using VRM internally
 
