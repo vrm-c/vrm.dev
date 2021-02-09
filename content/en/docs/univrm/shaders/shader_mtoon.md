@@ -9,6 +9,8 @@ tags: ["unity"]
 
 [How to use MToon](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 
+[Introduction video](https://www.youtube.com/watch?v=EpCv23bnkAk) of MToon and other VRMShaders.
+
 # About MToon
 MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit Color` and `Shade Color` based on Lighting parameters and light source environment. 
 

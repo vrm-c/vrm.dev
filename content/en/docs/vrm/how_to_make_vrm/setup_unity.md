@@ -67,6 +67,9 @@ The errors occurred in a Unity project can be shown in the Console window:
 Click `clear` button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.
 
 {{< img src="images/vrm/error_in_console.jpg" width="500" alt="clear console" >}}
+<hr>
+
+If no errors were found, we can proceed to the next step: [Create VRM from Humanoid 3D Model]({{< relref "convert_from_humanoid_model.md" >}})
 
 ## UniVRM Manual
 

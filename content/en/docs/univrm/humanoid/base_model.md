@@ -17,7 +17,7 @@ After `humanoid` type is applied, `Animator` component with `HumanoidAvatar` wil
 
 To convert the fbx model to `humanoid` type successfully:
 
-* All required bones are included
+* All [required bones](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones) are included
 * Bones' parent-child relationships are correct (e.g. hips -> leg -> foot. not the other way around).
 
 No restrictions on bone naming.

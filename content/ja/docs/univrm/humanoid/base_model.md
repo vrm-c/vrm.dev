@@ -17,7 +17,7 @@ fbx の prefab は、 humanoid 化すると Animator がアタッチされて `H
 
 fbx が humanoid 化できるには、
 
-* 必須のボーンがすべて含まれている
+* [必須のボーン](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3) がすべて含まれている
 * ボーンの親子関係が正しい
 
 の２つの条件が必用です。
