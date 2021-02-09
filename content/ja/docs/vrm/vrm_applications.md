@@ -60,10 +60,10 @@ weight: 4
 | [バーチャルキャスト](https://virtualcast.jp/) | Windows VR |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
-| [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
+| [Exokit](https://exokit.org/) | Windows, macOS, Linux, VR |
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 | [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
-| [Webaverse](https://webaverse.com/) | Windows |
+| [Webaverse](https://webaverse.com/) | Web browser |
 
 ##  ゲームなど
 
@@ -126,6 +126,7 @@ weight: 4
 | [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
 | [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
 | [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
+| [VTuber Editor](https://store.steampowered.com/app/1454500/VTuber_Editor/) | Windows |
 
 ##  内部的にVRMを活用しているサービス
 
