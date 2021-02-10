@@ -21,8 +21,8 @@ The conditions for creating a VRM model [can be found here]({{< relref "base_mod
 
 ## Import a FBX model into Unity
 
-Here we use [Alicia Solid](https://3d.nicovideo.jp/works/td14712) as an example. 
-First, Drag and drop the FBX folder (in some cases you can directly import unity package containing FBX model) into the `Assets` folder:
+Here we use [Alicia Solid](https://3d.nicovideo.jp/works/td14712) as an example.
+First, Drag and drop the FBX folder into the `Assets` folder:
 
 {{< img src="images/vrm/fbx_folder.jpg" >}}
 <hr>
@@ -36,13 +36,13 @@ In the Project window, click blue icon (Alicia_Solid_Unity), which is fbx's asse
 {{< img src="images/vrm/fbx_default.jpg" >}}
 <hr>
 
-As shown in the image above, by default FBX's materials are set as `Standard` shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material's shader parameter to `MToon` and reset the color parameter only.
+As shown in the image above, by default FBX's materials are set as `Standard` shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material's `Shader` to `MToon` and `Color` to white.
 
 {{% alert title="Shader" color="info" %}}
-VRM supports three types of shaders: [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}) and [PBR]({{< relref "univrm_standard.md" >}})
+VRM supports three types of shaders: [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}) and [Standard]({{< relref "univrm_standard.md" >}})
 {{% /alert %}}
 
-Create a folder (e.g. name the folder as `Materials`) in FBX folder (`/Assets/FBX/Materials`). In FBX's Inspector window, click `Materials` -> `Extract Materials` and save extracted materials into `Materials` folder. Another way to set up materials is by setting `Location` as `Use External Materials (Legacy)`. Here we only focus on the former one.
+Create a folder (e.g. name the folder as `Materials`) in FBX folder (`/Assets/FBX/Materials`). In FBX's Inspector window, click `Materials` -> `Extract Materials` and save extracted materials into `Materials` folder. If the reference for each material has been assigned in `On Demand Remap` section, skip this step. Another way to set up materials is by setting `Location` as `Use External Materials (Legacy)`. Here we only focus on the former one.
 
 {{< img src="images/vrm/extract_materials.jpg" width="900" height="200" alt="extract_materials" >}}
 <hr>

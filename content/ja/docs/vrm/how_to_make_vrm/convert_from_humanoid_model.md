@@ -45,12 +45,23 @@ unity
 VRM 向けなので、この例では全部 `MToon` にします。
 
 {{% alert title="Shader" color="info" %}}
-VRMは、Standard, Unlit, MToon の３種類を記録できます。
+VRMは、[MToon]({{< relref "shader_mtoon.md" >}})、[Unlit]({{< relref "univrm_unlit.md" >}}) と [Standard]({{< relref "univrm_standard.md" >}}) の３種類を記録できます。
 {{% /alert %}}
 
-* `Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。
-* Shader をすべて `VRM/Mtoon` に変更
-* MToon の `Shade Color` を白に変更
+`Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。
+
+{{< img src="images/vrm/extract_materials.jpg" width="900" height="200" alt="extract_materials" >}}
+<hr>
+
+Shader をすべて `VRM/Mtoon` に変更
+
+{{< img src="images/vrm/change_to_mtoon.jpg" alt="change_to_mtoon" >}}
+<hr>
+
+MToon の `Shade Color` を白に変更
+
+{{< img src="images/vrm/shade_color_to_white.jpg" alt="shade_color_to_white" >}}
+<hr>
 
 {{< img src="images/vrm/alicia_preview.jpg" >}}
 
@@ -127,7 +138,7 @@ BlendShapeで変な影が出る場合の対策です。
 [エクスポートダイアログ]({{< relref "univrm_export.md" >}})
 {{% /alert %}}
 
-{{< img src="images/vrm/export_dialog_title_version_author.jpg" width="600" height="700" >}}
+{{< img src="images/vrm/export_dialog_title_version_author.jpg" width="900" >}}
 <br>
 ライセンス情報を入力してください。赤いメッセージな無くなれば Export を押せます。
 次の作業のため、`Assets/models/vrm` フォルダを作成してそこにエクスポートしました。
@@ -140,10 +151,10 @@ Assets 内を選択する場合は、新規に専用のフォルダを作成す�
 
 ## エクスポートオプション
 
-{{< img src="images/vrm/export_options.jpg" width="600" height="700" >}}
+{{< img src="images/vrm/export_options.jpg" width="900" height="700" >}}
 
-{{% alert title="Force T-Pose" color="info" %}}
-エクスポートするときに自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
+{{% alert title="T-Poseにする" color="info" %}}
+自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
 {{% /alert %}}
 
 {{% alert title="Pose Freeze" color="info" %}}
