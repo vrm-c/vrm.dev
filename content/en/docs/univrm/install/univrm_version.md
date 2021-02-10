@@ -24,18 +24,19 @@ tags: ["unity"]
 |      | [0.61.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/20?closed=1) | [^springcollider]          | Made UniUnlit's vertex color working properly. Fixed AOT compilation issue   |
 |      | [0.61.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1)                                                                    |                            |                                                                              |
 |      | [0.62.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/21?closed=1) |                            | Fixed bugs when baking BlendShape                                            |
-| 2021 | [0.63.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/25?closed=1) | [^ss] [^keywordmap] [^upm] | Separated UniGLTF from UniVRM                                                |
-|      | [0.63.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1)                                                                    | [^ss] [^keywordmap]        |                                                                              |
+| 2021 | [0.63.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/25?closed=1) | [^jpg] [^keywordmap] [^upm]| JPG export bug. Separated UniGLTF from UniVRM                                |
+|      | [0.63.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1)                                                                    | [^jpg] [^keywordmap]       | JPG export bug                                                               |
 |      | [0.63.2](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2)                                                                    |                            |                                                                              |
-|      | [0.64.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0)                                                                    | [^asmdef]                  | Empty submesh will not be exported. vrm-1.0 Experiment kick-off              |
+|      | [0.64.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/23?closed=1) | [^asmdef]                  | Empty submesh will not be exported. vrm-1.0 Experiment kick-off              |
 |      | [0.65.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0)                                                                    | [^build]                   |                                                                              |
-|      | [0.65.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1)                                                                    | [^build]                   | Fixed export errors when Turkish locale is on [\#696](https://github.com/vrm-c/UniVRM/issues/696)|
+|      | [0.65.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1) [misestone](https://github.com/vrm-c/UniVRM/milestone/28?closed=1) | [^build]                   | Fixed export errors when Turkish locale is on [\#696](https://github.com/vrm-c/UniVRM/issues/696)|
 |      | [0.65.2](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2) [milestone](https://github.com/vrm-c/UniVRM/milestone/29?closed=1) |                            |                                                                              |
 |      | [0.65.3](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3)                                                                    |                            | Updated UniGLTF version number for UPM package. No unity package release     |
 |      | [0.66.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/26?closed=1) |                            | Added Warning messages when non-normalized Hierarchy contains spring bone colliders|
+|      | [0.67.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/27?closed=1) |                            | Maintenance release                                                          |
 
 [^springcollider]: Fixed bugs where SpringBone Collider transformation was done twice. [\#576](https://github.com/vrm-c/UniVRM/issues/576)
-[^ss]: Bugs occurred when creating a screenshot as .jpg format. [\#639](https://github.com/vrm-c/UniVRM/issues/639)
+[^jpg]: Bugs occurred when creating a screenshot as .jpg format. [\#639](https://github.com/vrm-c/UniVRM/issues/639)
 [^keywordmap]: Fixed serialization bugs when exporting VRM file. [\#654](https://github.com/vrm-c/UniVRM/issues/654)
 [^upm]: Fixed MeshUtility's reference issues.
 [^asmdef]: Fixed MeshUtility's assembly definitions. [\#687](https://github.com/vrm-c/UniVRM/pull/687)
