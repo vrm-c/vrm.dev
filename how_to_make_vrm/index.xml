@@ -68,13 +68,17 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 VRM 向けなので、この例では全部 &lt;code>MToon&lt;/code> にします。&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Shader&lt;/h4>
-VRMは、Standard, Unlit, MToon の３種類を記録できます。
+VRMは、&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>、&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a> と &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_standard/">Standard&lt;/a> の３種類を記録できます。
 &lt;/div>
-&lt;ul>
-&lt;li>&lt;code>Extract Materials&lt;/code> ボタンを押して fbx のフォルダに &lt;code>Materials&lt;/code> フォルダを作成してそこを選択。&lt;/li>
-&lt;li>Shader をすべて &lt;code>VRM/Mtoon&lt;/code> に変更&lt;/li>
-&lt;li>MToon の &lt;code>Shade Color&lt;/code> を白に変更&lt;/li>
-&lt;/ul>
+&lt;p>&lt;code>Extract Materials&lt;/code> ボタンを押して fbx のフォルダに &lt;code>Materials&lt;/code> フォルダを作成してそこを選択。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/extract_materials.jpg" alt="extract_materials" width="900" />
+&lt;hr>
+&lt;p>Shader をすべて &lt;code>VRM/Mtoon&lt;/code> に変更&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/change_to_mtoon.jpg" alt="change_to_mtoon" />
+&lt;hr>
+&lt;p>MToon の &lt;code>Shade Color&lt;/code> を白に変更&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/shade_color_to_white.jpg" alt="shade_color_to_white" />
+&lt;hr>
 &lt;img src="https://vrm.dev/images/vrm/alicia_preview.jpg" />
 &lt;p>ちゃんとした設定はこちら。&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">MToonの設定&lt;/a>&lt;/p>
 &lt;p>手順の説明なので先に進みます。&lt;/p>
@@ -126,7 +130,7 @@ fbx の prefab をシーンに展開します。&lt;/p>
 &lt;/ul>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">エクスポートダイアログ&lt;/a>&lt;/p>
 &lt;/div>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/export_dialog_title_version_author.jpg" width="600" />
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/export_dialog_title_version_author.jpg" width="900" />
 &lt;br>
 ライセンス情報を入力してください。赤いメッセージな無くなれば Export を押せます。
 次の作業のため、&lt;code>Assets/models/vrm&lt;/code> フォルダを作成してそこにエクスポートしました。&lt;/p>
@@ -137,10 +141,10 @@ Assets 内を選択すると、Export 直後に Import が発動します(Import
 Assets 内を選択する場合は、新規に専用のフォルダを作成すると分かりやすくなります。
 &lt;/div>
 &lt;h2 id="エクスポートオプション">エクスポートオプション&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/export_options.jpg" width="600" />
+&lt;img src="https://vrm.dev/images/vrm/export_options.jpg" width="900" />
 &lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Force T-Pose&lt;/h4>
-エクスポートするときに自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
+&lt;h4 class="alert-heading">T-Poseにする&lt;/h4>
+自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Pose Freeze&lt;/h4>

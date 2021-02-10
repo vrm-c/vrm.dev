@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 09 Sep 2020 14:56:50 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 09 Sep 2020 14:57:57 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
 &lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
 &lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
@@ -1119,7 +1119,7 @@ The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univ
 &lt;/div>
 &lt;h2 id="import-a-fbx-model-into-unity">Import a FBX model into Unity&lt;/h2>
 &lt;p>Here we use &lt;a href="https://3d.nicovideo.jp/works/td14712">Alicia Solid&lt;/a> as an example.
-First, Drag and drop the FBX folder (in some cases you can directly import unity package containing FBX model) into the &lt;code>Assets&lt;/code> folder:&lt;/p>
+First, Drag and drop the FBX folder into the &lt;code>Assets&lt;/code> folder:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/fbx_folder.jpg" />
 &lt;hr>
 &lt;p>In the Project window, click blue icon (Alicia_Solid_Unity), which is fbx&amp;rsquo;s asset (prefab):&lt;/p>
@@ -1127,12 +1127,12 @@ First, Drag and drop the FBX folder (in some cases you can directly import unity
 &lt;h2 id="fbxs-material-setup">FBX&amp;rsquo;s Material Setup&lt;/h2>
 &lt;img src="https://vrm.dev/images/vrm/fbx_default.jpg" />
 &lt;hr>
-&lt;p>As shown in the image above, by default FBX&amp;rsquo;s materials are set as &lt;code>Standard&lt;/code> shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material&amp;rsquo;s shader parameter to &lt;code>MToon&lt;/code> and reset the color parameter only.&lt;/p>
+&lt;p>As shown in the image above, by default FBX&amp;rsquo;s materials are set as &lt;code>Standard&lt;/code> shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material&amp;rsquo;s &lt;code>Shader&lt;/code> to &lt;code>MToon&lt;/code> and &lt;code>Color&lt;/code> to white.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Shader&lt;/h4>
-VRM supports three types of shaders: &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a> and &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">PBR&lt;/a>
+VRM supports three types of shaders: &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a> and &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">Standard&lt;/a>
 &lt;/div>
-&lt;p>Create a folder (e.g. name the folder as &lt;code>Materials&lt;/code>) in FBX folder (&lt;code>/Assets/FBX/Materials&lt;/code>). In FBX&amp;rsquo;s Inspector window, click &lt;code>Materials&lt;/code> -&amp;gt; &lt;code>Extract Materials&lt;/code> and save extracted materials into &lt;code>Materials&lt;/code> folder. Another way to set up materials is by setting &lt;code>Location&lt;/code> as &lt;code>Use External Materials (Legacy)&lt;/code>. Here we only focus on the former one.&lt;/p>
+&lt;p>Create a folder (e.g. name the folder as &lt;code>Materials&lt;/code>) in FBX folder (&lt;code>/Assets/FBX/Materials&lt;/code>). In FBX&amp;rsquo;s Inspector window, click &lt;code>Materials&lt;/code> -&amp;gt; &lt;code>Extract Materials&lt;/code> and save extracted materials into &lt;code>Materials&lt;/code> folder. If the reference for each material has been assigned in &lt;code>On Demand Remap&lt;/code> section, skip this step. Another way to set up materials is by setting &lt;code>Location&lt;/code> as &lt;code>Use External Materials (Legacy)&lt;/code>. Here we only focus on the former one.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/extract_materials.jpg" alt="extract_materials" width="900" />
 &lt;hr>
 &lt;p>The result should look like this:&lt;/p>
@@ -3471,13 +3471,13 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;td>2021&lt;/td>
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">0.63.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/25?closed=1">milestone&lt;/a>&lt;/td>
 &lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Separated UniGLTF from UniVRM&lt;/td>
+&lt;td>JPG export bug. Separated UniGLTF from UniVRM&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">0.63.1&lt;/a>&lt;/td>
 &lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>JPG export bug&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -3487,7 +3487,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0">0.64.0&lt;/a>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0">0.64.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/23?closed=1">milestone&lt;/a>&lt;/td>
 &lt;td>&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
 &lt;td>Empty submesh will not be exported. vrm-1.0 Experiment kick-off&lt;/td>
 &lt;/tr>
@@ -3499,7 +3499,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">misestone&lt;/a>&lt;/td>
 &lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
 &lt;td>Fixed export errors when Turkish locale is on &lt;a href="https://github.com/vrm-c/UniVRM/issues/696">#696&lt;/a>&lt;/td>
 &lt;/tr>
@@ -3520,6 +3520,12 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">0.66.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/26?closed=1">milestone&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Added Warning messages when non-normalized Hierarchy contains spring bone colliders&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0">0.67.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/27?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Maintenance release&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
