@@ -160,6 +160,13 @@ For example, if ExportRoot is not valid, the error messages will be displayed on
 
 If the model is not in [T-Pose]({{< relref "humanoid_overview.md#t-pose" >}}), click `Make T-Pose` to make one.
 
+{{% alert title="Pose Freeze" color="info" %}}
+
+`Pose Freeze` is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+For instance, in Hierarchy if a mesh's rotation or scale is not Default (first VRM export), the model normalization needs to be performed.
+
+{{% /alert %}}
+
 Related sections about UniVRM export:
   * [VRM Size (BlendShape size reduction)]({{< relref "vrm_size.md" >}})
 
