@@ -149,6 +149,11 @@ If all red messages are gone, click &lt;code>Export&lt;/code> button to export t
 &lt;img src="https://vrm.dev/images/vrm/export_options_en.jpg" width="900" />
 &lt;hr>
 &lt;p>If the model is not in &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/#t-pose">T-Pose&lt;/a>, click &lt;code>Make T-Pose&lt;/code> to make one.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Pose Freeze&lt;/h4>
+&lt;code>Pose Freeze&lt;/code> is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export), the model normalization needs to be performed.
+&lt;/div>
 &lt;p>Related sections about UniVRM export:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">VRM Size (BlendShape size reduction)&lt;/a>&lt;/li>
@@ -156,16 +161,21 @@ If all red messages are gone, click &lt;code>Export&lt;/code> button to export t
 &lt;p>In the next section, we will introduce how to &lt;a href="https://vrm.dev/en/how_to_make_vrm/setup_vrm/">import and set up VRM file first time&lt;/a>.&lt;/p></description></item><item><title>Docs: 2. Set up VRM</title><link>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</link><pubDate>Tue, 25 Aug 2020 17:26:05 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</guid><description>
 &lt;p>In the previous section, we have introduced how to convert a Humanoid 3D model to VRM.
 Now we are going to show how to import and set up a VRM file.&lt;/p>
-&lt;h3 id="import-the-vrm-file">Import the VRM file&lt;/h3>
+&lt;h2 id="import-the-vrm-file">Import the VRM file&lt;/h2>
+&lt;p>First &lt;strong>drag and drop a VRM file (~.vrm) into the Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file associated with the VRM file can be automatically generated.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;p>&lt;strong>Drag and drop the VRM file (~.vrm) into Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file of the VRM model data can be automatically generated.&lt;/p>
+&lt;hr>
+&lt;p>Click the prefab file (normalized model) and check the inspector window. As seen in the image below, components such as &lt;code>VRMMeta&lt;/code>, &lt;code>Animator&lt;/code>, &lt;code>VRMBlendShapeProxy&lt;/code>, &lt;code>VRMFirstPerson&lt;/code>, &lt;code>VRMLookAtHead&lt;/code>, &lt;code>VRMLookAtBoneApplyer&lt;/code> are attached to the model:&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/vrm_components.jpg" width="350" />
+&lt;hr>
+&lt;h2 id="open-vrm-prefab-in-the-scene">Open VRM prefab in the scene&lt;/h2>
+&lt;p>Create a new scene by &lt;code>File&lt;/code> - &lt;code>New Scene&lt;/code> or use an existing one, then drag the prefab file to the Hierarchy window:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;p>To avoid any confusion, remove the &lt;a href="https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/#adjust-the-model-data">GameObject of the original 3D model&lt;/a>.
-&lt;strong>Please drag the prefab file to the Hierarchy window&lt;/strong>.
-Normalized model data such as mesh (i.e. rotation is Unity default) can then be shown.&lt;/p>
+&lt;hr>
 &lt;h3 id="custom-settings-in-vrm">Custom settings in VRM&lt;/h3>
+&lt;p>By clicking the prefab&amp;rsquo;s GameObject in &lt;code>Hierarchy&lt;/code>, the VRM model&amp;rsquo;s information will be displayed in the Inspector window. Note that &lt;strong>spring bone settings can be found in the GameObject named &amp;ldquo;secondary&amp;rdquo;&lt;/strong>. Also, in &lt;code>VRM Meta&lt;/code>, make sure &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">title, author, license (the most important one)&lt;/a> are set.&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;p>The VRM model&amp;rsquo;s information will be shown in the Inspector window once the root GameObject of the model in &lt;code>Hierarchy&lt;/code> is selected. Note that &lt;strong>spring bone settings are available in &amp;ldquo;secondary&amp;rdquo;&lt;/strong>. Please at least fill in &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">title, author, license information&lt;/a>. &lt;strong>Specially, license information is crucial!&lt;/strong>&lt;/p>
+&lt;hr>
 &lt;p>To make a VRM model fully functional, please set up the following components:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">Expression and lip-sync (BlendShape)&lt;/a>&lt;/li>
@@ -180,7 +190,12 @@ Normalized model data such as mesh (i.e. rotation is Unity default) can then be 
 &lt;p>Previous versions: &lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
 &lt;br>&lt;/p>
-&lt;p>This time &lt;strong>please do not check &amp;ldquo;Force T Pose&amp;rdquo; and &amp;ldquo;Pose Freeze&amp;rdquo;&lt;/strong>. They are only used for the first time (normalization processing). Name the file and export the adjusted VRM model.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Pose Freeze&lt;/h4>
+&lt;code>Pose Freeze&lt;/code> is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export or adding accessories to the VRM model), the model normalization needs to be performed.
+&lt;/div>
+&lt;p>Other settings such as &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/">Bake BlendShape State&lt;/a> is also available.&lt;/p>
 &lt;h3 id="done">Done！&lt;/h3>
 &lt;p>Your VRM file is good to go. Try to import the VRM file into &lt;a href="https://vrm.dev/en/vrm_applications/">applications&lt;/a> that support VRM!&lt;/p></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
 &lt;p>In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p>
