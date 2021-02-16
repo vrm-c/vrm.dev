@@ -8,30 +8,42 @@ tags: ["unity"]
 ## エディタモードでVRMファイルをインポートする
 
 ### 1.Unityで空のプロジェクトを作る
-{{< img src="images/vrm/unity_new_project.png" >}}
 
-Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
+{{< img src="images/vrm/unity_new_project.png" >}}
+<hr>
+
+もしくは
+
+{{< img src="images/vrm/new_project.jpg" >}}
+<hr>
+
+Unityを起動し、プロジェクトを新規作成します。
 
 ### 2.UnityにUniVRMをインストール
-{{< img src="images/vrm/package_import.jpg" width="400" alt="package_import" >}}
 
 [UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`、`Assets/UniGLTF`及び`Assets/VRMShaders`にインストールします。
 **既存のUniVRMが存在している場合、あらかじめVRM、UniGLTF、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨**しています。
 UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
 
+{{< img src="images/vrm/package_import.jpg" width="400" alt="package_import" >}}
+<hr>
+
 ### 3.VRMファイルをUnity上に読み込む
-{{< img src="images/vrm/vrm_prefab.png" >}}
 
 **VRMファイルを、UnityのAssetsにドラッグ＆ドロップする**だけで、VRMファイルがインポートされ**モデルデータのPrefabが生成されます**。
 
+{{< img src="images/vrm/vrm_prefab.png" >}}
+<hr>
+
+**VRMから生成されたPrefabをシーンに配置します**。すると、モデルデータが表示されます。
+
 {{< img src="images/vrm/alicia_scene2.png" >}}
-
-**VRMから生成されたPrefabをあらためてシーンに配置します**。
-すると、モデルデータが表示されます。
-
-{{< img src="images/vrm/vrm_settings.png" >}}
+<hr>
 
 読み込まれたモデルデータをHierarchyで選択すると、インスペクタに各種情報が表示されます。
+
+{{< img src="images/vrm/vrm_settings.png" >}}
+<hr>
 
 ## 関連セクション
 
