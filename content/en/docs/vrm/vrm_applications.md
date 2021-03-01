@@ -57,7 +57,7 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
-| [Virtual Cast](https://virtualcast.jp/) | Windows VR |
+| [Virtual Cast](https://store.steampowered.com/app/947890/VirtualCast/) | Windows VR |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
@@ -84,6 +84,8 @@ weight: 4
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
 | [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR |
 | [Rakugaki Kingdom](https://rakugaki-kingdom.com/) | iOS, Android |
+| [FantasySeed](https://booth.pm/ja/items/1293100) | Windows |
+| [Cube Art World](https://simplestar-game.booth.pm/items/2622434) | Windows |
 
 ##  Viewer
 
@@ -127,6 +129,7 @@ weight: 4
 | [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
 | [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
 | [VTuber Editor](https://store.steampowered.com/app/1454500/VTuber_Editor/) | Windows |
+| [Ls ENGINE](https://lsengine.net/en/lsengine_en/) | Windows |
 
 ##  Services using VRM internally
 
