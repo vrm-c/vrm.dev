@@ -4,9 +4,51 @@ aliases: ["/dev/univrm-0.xx/programming/runtime_import/"]
 tags: ["api"]
 ---
 
-この記事は `Version 0.44以降` のAPIについてです。
+## `Version 0.68～`
 
-## LoadAsyncの例 
+ImporterContext を整理しました。使い方が下記のように変わります。
+以下の２種類の呼び出し方ができます。
+
+### 同期 sync
+
+```cs
+    // GltfParser が別れました。
+    var parser = new GltfParser();
+    parser.ParsePath(path);
+
+    // parser を引き数に ImporterContext を作成します
+    var context = new VRMImporterContext(parser);
+    context.Load();
+
+    // この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
+    context.DisposeOnGameObjectDestroyed();
+    // UpdateWhenOffscreen を有効にする
+    context.EnableUpdateWhenOffscreen();
+    // 表示
+    context.ShowMeshes();
+```
+
+### 非同期 async
+
+```cs
+async Task LoadVrmAsync(string path)
+{
+    // GltfParser が別れました。
+    var parser = new GltfParser();
+    await Task.Run(() => {
+        var file = File.ReadAllBytes(path);
+        // Unity の ScriptThread 以外でも実行できます
+        parser.ParseGlb(file);
+    }
+
+    // parser を引き数に ImporterContext を作成します
+    var context = new VRMImporterContext(parser);
+    await context.LoadAsync(); // 数フレームかかります
+}
+```
+
+
+## `Version 0.44～` LoadAsyncの例 
 
 ```csharp
 var bytes = File.ReadAllBytes(path);
