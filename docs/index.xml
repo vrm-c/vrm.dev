@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 14 Sep 2020 16:41:29 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 14 Sep 2020 16:41:47 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -3460,7 +3460,88 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Wed, 10 Feb 2021 15:16:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 02 Mar 2021 19:39:23 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
+&lt;p>ImporterContext を整理しました。使い方が下記のように変わります。
+以下の２種類の呼び出し方ができます。&lt;/p>
+&lt;h3 id="同期-sync">同期 sync&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+parser.ParsePath(path);
+&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser);
+context.Load();
+&lt;span style="color:#09f;font-style:italic">// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// UpdateWhenOffscreen を有効にする
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// 表示
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="非同期-async">非同期 async&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">async&lt;/span> Task LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+{
+&lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
+&lt;span style="color:#09f;font-style:italic">// Unity の ScriptThread 以外でも実行できます
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> parser.ParseGlb(file);
+}
+&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser);
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync(); &lt;span style="color:#09f;font-style:italic">// 数フレームかかります
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-044-loadasyncの例">&lt;code>Version 0.44～&lt;/code> LoadAsyncの例&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
+&lt;span style="color:#09f;font-style:italic">// なんらかの方法でByte列を得る
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+context.ParseGlb(bytes);
+&lt;span style="color:#09f;font-style:italic">// metaが必要な場合
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">bool&lt;/span> createThumbnail=&lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(createThumbnail);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> thumbnail = meta.Thumbnail;
+&lt;span style="color:#09f;font-style:italic">// modelを構築
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>context.LoadAsync(_ =&amp;gt;
+{
+context.ShowMeshes();
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> go = context.Root;
+&lt;span style="color:#09f;font-style:italic">// load完了
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>},
+Debug.LogError);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctaskを使う例">LoadAsyncTaskを使う例&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#099">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
+&lt;/span>&lt;span style="color:#099">&lt;/span>&lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+&lt;span style="color:#09f;font-style:italic">// GLB形式でJSONを取得しParseします
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
+&lt;span style="color:#069;font-weight:bold">try&lt;/span>
+{
+&lt;span style="color:#09f;font-style:italic">// ParseしたJSONをシーンオブジェクトに変換していく
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsyncTask();
+&lt;span style="color:#09f;font-style:italic">// バウンディングボックスとカメラの位置関係で見切れるのを防止する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// ロード後に表示する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
+}
+&lt;span style="color:#069;font-weight:bold">catch&lt;/span>(Exception ex)
+{
+Debug.LogError(ex);
+&lt;span style="color:#09f;font-style:italic">// 関連するリソースを破棄する
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Destroy(&lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;span style="color:#069;font-weight:bold">throw&lt;/span>;
+}
+}
+&lt;span style="color:#099">#endif
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="関連する記事など">関連する記事など&lt;/h2>
+&lt;p>こちらの記事がわかりやすいです。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Wed, 10 Feb 2021 15:16:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
 &lt;h1 id="version">Version&lt;/h1>
 &lt;ul>
 &lt;li>更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス&lt;/li>
@@ -4018,34 +4099,4 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p>
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> ProjectionType type;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jsonschemaから生成">JsonSchemaから生成&lt;/h3>
 &lt;p>VRM-1.0 の実装&lt;/p>
-&lt;p>TODO:&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
-&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
-&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
-&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb の読み書き&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit の読み書き
-&lt;ul>
-&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
-&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform の読み書き&lt;/li>
-&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>TODO:&lt;/p></description></item></channel></rss>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 14 Sep 2020 16:41:29 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 14 Sep 2020 16:41:47 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;p>プログラムに影響のある変更についてです。&lt;/p>
 &lt;p>最新バージョンは&lt;a href="https://github.com/vrm-c/UniVRM/wiki">UniVRM/Wiki&lt;/a>をご覧ください。&lt;/p>
 &lt;h1 id="v036">v0.36&lt;/h1>
@@ -284,44 +284,38 @@ m_firstPerson.Setup();
 }
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
-&lt;p>WIP&lt;/p>
-&lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
-&lt;ul>
-&lt;li>LipSync&lt;/li>
-&lt;li>瞬き&lt;/li>
-&lt;li>視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li>
-&lt;li>プログラムによる喜怒哀楽&lt;/li>
-&lt;/ul>
-&lt;p>上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
-BlendShape同士が競合することがわかりました。
-後で設定した値で上書きされて希望のBlendShapeが適用されないという状態になります。
-これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p>
-&lt;p>合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code>SetValues&lt;/code>&lt;/p>
-&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
-&lt;p>簡単なテストプログラムでの利用を想定しています。&lt;/p>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1.0f&lt;/span>);
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accumulatevalue--apply">AccumulateValue + Apply&lt;/h2>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下記のSetValuesを推奨しています。&lt;/p>
-&lt;h2 id="setvalues">SetValues&lt;/h2>
-&lt;p>BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 02 Mar 2021 19:39:23 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
+&lt;p>ImporterContext を整理しました。使い方が下記のように変わります。
+以下の２種類の呼び出し方ができます。&lt;/p>
+&lt;h3 id="同期-sync">同期 sync&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+parser.ParsePath(path);
+&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser);
+context.Load();
+&lt;span style="color:#09f;font-style:italic">// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// UpdateWhenOffscreen を有効にする
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// 表示
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="非同期-async">非同期 async&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">async&lt;/span> Task LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
 {
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
-});
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
-&lt;p>この記事は &lt;code>Version 0.44以降&lt;/code> のAPIについてです。&lt;/p>
-&lt;h2 id="loadasyncの例">LoadAsyncの例&lt;/h2>
+&lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
+&lt;span style="color:#09f;font-style:italic">// Unity の ScriptThread 以外でも実行できます
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> parser.ParseGlb(file);
+}
+&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser);
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync(); &lt;span style="color:#09f;font-style:italic">// 数フレームかかります
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-044-loadasyncの例">&lt;code>Version 0.44～&lt;/code> LoadAsyncの例&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
 &lt;span style="color:#09f;font-style:italic">// なんらかの方法でByte列を得る
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
@@ -371,4 +365,39 @@ Debug.LogError(ex);
 &lt;p>こちらの記事がわかりやすいです。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/how_to_use_blendshapeproxy/</guid><description>
+&lt;p>WIP&lt;/p>
+&lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
+&lt;ul>
+&lt;li>LipSync&lt;/li>
+&lt;li>瞬き&lt;/li>
+&lt;li>視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li>
+&lt;li>プログラムによる喜怒哀楽&lt;/li>
+&lt;/ul>
+&lt;p>上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
+BlendShape同士が競合することがわかりました。
+後で設定した値で上書きされて希望のBlendShapeが適用されないという状態になります。
+これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p>
+&lt;p>合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code>SetValues&lt;/code>&lt;/p>
+&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
+&lt;p>簡単なテストプログラムでの利用を想定しています。&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1.0f&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accumulatevalue--apply">AccumulateValue + Apply&lt;/h2>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
+proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下記のSetValuesを推奨しています。&lt;/p>
+&lt;h2 id="setvalues">SetValues&lt;/h2>
+&lt;p>BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+{
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
+});
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
