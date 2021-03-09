@@ -14,7 +14,9 @@ ImporterContext を整理しました。
 * リソースの Destroy をできるようになりました。
 * Parse と Load の２ステップに別れました。
 * ImporterContext.Dispose でリソース(Mesh, Material, Textureなど)を破棄してください。
-* DisposeOnGameObjectDestroyed で破棄の責務を GameObject に移譲できます。移譲した場合も ImporterContext.Dispose はしてください。
+* DisposeOnGameObjectDestroyed で破棄の責務を GameObject に移譲できます。
+    * 対象の GameObject の OnDestroy で関連リソースを Destory します。
+    * 移譲した場合も ImporterContext.Dispose はしてください。
 
 ### 同期 sync
 
