@@ -13,7 +13,9 @@ glTF の PBR material と Unity の Standard は、
 * glTF の Metallic => Blue
 * glTF の Roughness => Green
 
-https://docs.blender.org/manual/ja/dev/addons/import_export/scene_gltf2.html#metallic-and-roughness
+https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45
+
+> The metalness values are sampled from the B channel. The roughness values are sampled from the G channel.
 
 * Unity の Standard(Metallic Alpha) の Metallic => Alpha
 * Unity の Standard(Metallic Alpha) の Smooth => Red
