@@ -12,7 +12,7 @@ VRMはglTF2.0をベースとしたフォーマットとなっています。
 
 * https://github.com/KhronosGroup/glTF
 
-# glTFはどんな情報を記録できるのか
+## glTFはどんな情報を記録できるのか
 
 * メッシュ(頂点配列、インデックス配列)
     * モーフターゲット
@@ -32,7 +32,7 @@ VRMはglTF2.0をベースとしたフォーマットとなっています。
 
 [^vrm_not_supported]: VRMではサポートしていません
 
-# glTFフォーマット概説
+## glTFフォーマット概説
 
 JSON記述部と、画像や頂点配列を記録するバイナリ部の２つの部分からなります。
 
@@ -42,7 +42,7 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 
 [^VRM_glb]: VRMではglbを採用しています。
 
-# glb形式
+## glb形式
 
 ``ヘッダ部 + チャンク部繰り返し``という構造になっています。
 実質的には、
@@ -64,7 +64,7 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 |4         |chunk type|ascii|"JSON" or "BIN\x00"|
 |chunk size|chunk body|バイト列||
 
-## python3によるパース例
+### python3によるパース例
 
 {{< highlight python >}}
 import struct
@@ -133,12 +133,14 @@ with open('AliciaSolid.vrm', 'rb') as f:
 
 {{< / highlight >}}
 
-# VRMによる拡張情報
+## VRMによる拡張情報
 
 JSONの``json['extensions']['VRM']``以下に格納されています。
 
 * [VRM仕様](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md)
 
+## VRMのglTF部分を3D Builderで表示する
 
+{{< img src="images/vrm/alicia_3dbuilder.png" >}}
 
-
+～.vrmとなっているファイル拡張子を ～.glb に変更すると、**Windows 10標準搭載の3D Builderで読み込み確認することができます**（ただしVRM独自の設定は反映されません)。
