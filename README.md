@@ -15,7 +15,10 @@ Start a local website server by running the following commands:
 $ git clone --recursive https://github.com/vrm-c/vrm.dev.git
 $ cd vrm.dev
 $ npm i
-$ hugo server -D
+$ hugo server -w --disableFastRender -D -F
+# -w watch
+# -D include content marked as draft
+# -F include content with publishdate in the future
 ```
 
 Access your local version of vrm.dev at http://localhost:1313/ to preview update/changes made in scripts.
