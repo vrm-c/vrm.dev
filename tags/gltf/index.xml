@@ -1,10 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – gltf</title><link>https://vrm.dev/tags/gltf/</link><description>Recent content in gltf on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 21 Jan 2021 17:55:58 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – gltf</title><link>https://vrm.dev/tags/gltf/</link><description>Recent content in gltf on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 10 Mar 2021 14:41:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p>glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。
 VRMはglTF2.0をベースとしたフォーマットとなっています。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/KhronosGroup/glTF">https://github.com/KhronosGroup/glTF&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h1 id="gltfはどんな情報を記録できるのか">glTFはどんな情報を記録できるのか&lt;/h1>
+&lt;h2 id="gltfはどんな情報を記録できるのか">glTFはどんな情報を記録できるのか&lt;/h2>
 &lt;ul>
 &lt;li>メッシュ(頂点配列、インデックス配列)
 &lt;ul>
@@ -25,12 +25,12 @@ VRMはglTF2.0をベースとしたフォーマットとなっています。&lt;
 &lt;li>メートル単位&lt;/li>
 &lt;li>リトルエンディアン&lt;/li>
 &lt;/ul>
-&lt;h1 id="gltfフォーマット概説">glTFフォーマット概説&lt;/h1>
+&lt;h2 id="gltfフォーマット概説">glTFフォーマット概説&lt;/h2>
 &lt;p>JSON記述部と、画像や頂点配列を記録するバイナリ部の２つの部分からなります。&lt;/p>
 &lt;p>gltf形式では、URLやパスで参照する方法で外部のバイナリデータにアクセスします。
 glb形式ではJSON部とバイナリ部をひとつのファイルにまとめていて、バイト列のオフセットでバイナリデータにアクセスします。
 プログラムから扱うには外部ファイルへのアクセスが無いglb形式の方が簡単&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>です。&lt;/p>
-&lt;h1 id="glb形式">glb形式&lt;/h1>
+&lt;h2 id="glb形式">glb形式&lt;/h2>
 &lt;p>&lt;code>ヘッダ部 + チャンク部繰り返し&lt;/code>という構造になっています。
 実質的には、
 &lt;code>ヘッダ部 + JSON CHUNk + BINARY CHUNK&lt;/code>となります。&lt;/p>
@@ -96,7 +96,7 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="python3によるパース例">python3によるパース例&lt;/h2>
+&lt;h3 id="python3によるパース例">python3によるパース例&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#069;font-weight:bold">import&lt;/span> &lt;span style="color:#0cf;font-weight:bold">struct&lt;/span>
 &lt;span style="color:#069;font-weight:bold">import&lt;/span> &lt;span style="color:#0cf;font-weight:bold">json&lt;/span>
 &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">Reader&lt;/span>:
@@ -144,11 +144,14 @@ json_str &lt;span style="color:#555">=&lt;/span> chunk_data
 &lt;span style="color:#069;font-weight:bold">return&lt;/span> json&lt;span style="color:#555">.&lt;/span>loads(json_str), body
 &lt;span style="color:#069;font-weight:bold">with&lt;/span> &lt;span style="color:#366">open&lt;/span>(&lt;span style="color:#c30">&amp;#39;AliciaSolid.vrm&amp;#39;&lt;/span>, &lt;span style="color:#c30">&amp;#39;rb&amp;#39;&lt;/span>) &lt;span style="color:#069;font-weight:bold">as&lt;/span> f:
 parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="color:#555">.&lt;/span>read())&lt;/code>&lt;/pre>&lt;/div>
-&lt;h1 id="vrmによる拡張情報">VRMによる拡張情報&lt;/h1>
+&lt;h2 id="vrmによる拡張情報">VRMによる拡張情報&lt;/h2>
 &lt;p>JSONの&lt;code>json['extensions']['VRM']&lt;/code>以下に格納されています。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md">VRM仕様&lt;/a>&lt;/li>
 &lt;/ul>
+&lt;h2 id="vrmのgltf部分を3d-builderで表示する">VRMのglTF部分を3D Builderで表示する&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>（ただしVRM独自の設定は反映されません)。&lt;/p>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
@@ -159,7 +162,32 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;p>VRMではglbを採用しています。 &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;/section></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Wed, 10 Mar 2021 14:41:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>&lt;code>v0.68.0&lt;/code> 以降&lt;/p>
+&lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+以下、手順を説明します。&lt;/p>
+&lt;h3 id="1-unigltfexport-unigltf-2xy-メニューからダイアログを開きます">1. &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code> メニューからダイアログを開きます&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
+&lt;h3 id="2-exportroot-に対象の-gameiobject-をセットしてください">2. &lt;code>ExportRoot&lt;/code> に対象の GameIObject をセットしてください&lt;/h3>
+&lt;p>ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。&lt;/p>
+&lt;ul>
+&lt;li>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-export-を押す">3. &lt;code>Export&lt;/code> を押す&lt;/h3>
+&lt;p>ファイル保存ダイアログが表示されるので出力先を指定してください。&lt;/p>
+&lt;h2 id="glbのエクスポート対象になるコンポーネント">Glbのエクスポート対象になるコンポーネント&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
+&lt;/ul>
+&lt;h2 id="対応しているshader">対応しているShader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
+&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="v0680-より前">&lt;code>v0.68.0&lt;/code> より前&lt;/h1>
 &lt;h2 id="手順">手順&lt;/h2>
 &lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
 以下、手順を説明します。&lt;/p>
@@ -172,21 +200,71 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;h3 id="4-一番親のオブジェクトを選択してエクスポートメニューを起動します">4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。&lt;/h3>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
 &lt;h3 id="5-ファイル名を選択して-glb-ファイルを書き出せば完了です">5. ファイル名を選択して &lt;code>glb&lt;/code> ファイルを書き出せば完了です。&lt;/h3>
-&lt;h2 id="glbのエクスポート対象になるコンポーネント">Glbのエクスポート対象になるコンポーネント&lt;/h2>
+&lt;h2 id="glbのエクスポート対象になるコンポーネント-1">Glbのエクスポート対象になるコンポーネント&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
 &lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
 &lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
 &lt;/ul>
-&lt;h2 id="対応しているshader">対応しているShader&lt;/h2>
+&lt;h2 id="対応しているshader-1">対応しているShader&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>Standard&lt;/code> もしくは &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Glbインポート</title><link>https://vrm.dev/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 17:04:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/glb_import/</guid><description>
 &lt;h2 id="エディタモードでglbファイルをインポートする">エディタモードでGlbファイルをインポートする&lt;/h2>
 &lt;p>インポートする手順は&lt;a href="https://vrm.dev/docs/univrm/import/univrm_import/">VRM import&lt;/a>と同じです。UnityのAssetsにドラッグ＆ドロップするだけでGlbファイルをインポートできます。&lt;/p>
-&lt;h2 id="vrmのgltf部分を3d-builderでインポートする">VRMのglTF部分を3D Builderでインポートする&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>～.vrmとなっているファイル拡張子を ～.glb に変更すると、&lt;strong>Windows 10標準搭載の3D Builderで読み込み確認することができます&lt;/strong>（ただしVRM独自の設定は反映されません)。&lt;/p></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>&lt;code>v0.68.0&lt;/code> 以降。&lt;/p>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet&lt;/a>&lt;/p>
+&lt;p>をサンプルに使っています。&lt;/p>
+&lt;h3 id="reverseaxis-反転軸の設定">&lt;code>ReverseAxis&lt;/code> 反転軸の設定&lt;/h3>
+&lt;p>glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転する軸を選択できます。&lt;/p>
+&lt;ul>
+&lt;li>Z軸 (v0.68.0 より前と同じ)&lt;/li>
+&lt;li>X軸 (v0.68.0 から追加)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/unigltf/glb_axis.gif" width="400" />
+&lt;p>選択して &lt;code>Apply&lt;/code> を押すと反映されます。&lt;/p>
+&lt;h3 id="extract-materials-and-textures-">&lt;code>Extract Materials and Textures ...&lt;/code>&lt;/h3>
+&lt;p>fbx の import と同様に Material と Texture が glb の配下に import されます。
+この状態では、Material と Texture は Readonly で設定を変更できません。&lt;/p>
+&lt;p>&lt;code>Extract Materials and Textures ...&lt;/code> を押すことで Material と Texture を外部アセット(&lt;code>Material.asset&lt;/code>, &lt;code>Texture.png/jpg&lt;/code>) として展開します。
+通常の Material と同様に設定を変更できます。&lt;/p>
+&lt;p>&lt;code>Clear&lt;/code> で extract する前の状態に戻ります。&lt;/p>
+&lt;h3 id="glb-の-extract">glb の extract&lt;/h3>
+&lt;h4 id="clear">clear&lt;/h4>
+&lt;p>初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>texture_1.metallicRoughness&lt;/code> は、&lt;code>texture_1&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;a href="https://vrm.dev/docs/univrm/shaders/texture_import/">テクスチャーのインポート&lt;/a>&lt;/li>
+&lt;li>&lt;code>texture_3.occlusion&lt;/code> は、 &lt;code>textrue_3&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;a href="https://vrm.dev/docs/univrm/shaders/texture_import/">テクスチャーのインポート&lt;/a>&lt;/li>
+&lt;li>&lt;code>texture_4.normal&lt;/code> は、 &lt;code>textrue_4&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;a href="https://vrm.dev/docs/univrm/shaders/texture_import/">テクスチャーのインポート&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/unigltf/glb_clear.jpg" width="400" />
+&lt;h4 id="extract">extract&lt;/h4>
+&lt;p>&lt;code>Extract Materials and Textures ...&lt;/code> を押すと下記のように変化します。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Material_MR.mat&lt;/code> の生成&lt;/li>
+&lt;li>&lt;code>texture_0.jpg&lt;/code> の生成(color)&lt;/li>
+&lt;li>&lt;code>texture_1.metallicRoughness.png&lt;/code> の生成。&lt;code>texture_1&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
+&lt;li>&lt;code>texture_2.jpg&lt;/code> の生成(emission)&lt;/li>
+&lt;li>&lt;code>texture_3.occlusion.png&lt;/code> の生成。&lt;code>textrue_3&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
+&lt;li>&lt;code>texture_4.jpg&lt;/code> の生成(normalMap)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/unigltf/glb_extract.jpg" width="400" />
+&lt;h3 id="gltf-の-extract">gltf の extract&lt;/h3>
+&lt;h4 id="clear-1">clear&lt;/h4>
+&lt;p>初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Default_AO.occlusion&lt;/code> は、 &lt;code>Default_AO&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;a href="https://vrm.dev/docs/univrm/shaders/texture_import/">テクスチャーのインポート&lt;/a>&lt;/li>
+&lt;li>&lt;code>Defualt_metalRoughness.metallicRoughness&lt;/code> は、&lt;code>Defualt_metalRoughness&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;a href="https://vrm.dev/docs/univrm/shaders/texture_import/">テクスチャーのインポート&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/unigltf/gltf_clear.jpg" width="400" />
+&lt;h4 id="extract-1">extract&lt;/h4>
+&lt;p>&lt;code>Extract Materials and Textures ...&lt;/code> を押すと下記のように変化します。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Material_MR.mat&lt;/code> の生成&lt;/li>
+&lt;li>&lt;code>Default_AO.occlusion.png&lt;/code> の生成。&lt;code>Default_AO&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
+&lt;li>&lt;code>Default_metalRoughness.metallicRoughness.png&lt;/code> の生成。&lt;code>Default_metalRoughness&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>GLTF は、Animation の定義があります。&lt;/p>
 &lt;blockquote>
 &lt;p>VRM は、Animation を使わないという仕様です&lt;/p>

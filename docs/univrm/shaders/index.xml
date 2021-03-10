@@ -485,4 +485,61 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: テクスチャーのインポート</title><link>https://vrm.dev/docs/univrm/shaders/texture_import/</link><pubDate>Tue, 09 Mar 2021 21:03:31 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/texture_import/</guid><description>
+&lt;h2 id="テクスチャの変換">テクスチャの変換&lt;/h2>
+&lt;p>glTF の PBR material と Unity の Standard は、
+&lt;code>MetallicRoughness&lt;/code> テクスチャーと &lt;code>Occlusion&lt;/code> テクスチャーの RGB チャンネルの使い方が違います。
+&lt;code>UniGLTF&lt;/code> では、import 時に変換しています。&lt;/p>
+&lt;h3 id="metallicroughness-テクスチャー">&lt;code>MetallicRoughness&lt;/code> テクスチャー&lt;/h3>
+&lt;ul>
+&lt;li>glTF の Metallic =&amp;gt; Blue&lt;/li>
+&lt;li>glTF の Roughness =&amp;gt; Green&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>The metalness values are sampled from the B channel. The roughness values are sampled from the G channel.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Unity の Standard(Metallic Alpha) の Metallic =&amp;gt; Alpha&lt;/li>
+&lt;li>Unity の Standard(Metallic Alpha) の Smooth =&amp;gt; Red&lt;/li>
+&lt;/ul>
+&lt;p>となっており RGBA の割り当てと &lt;code>Roughness&lt;/code>, &lt;code>Smoothness&lt;/code> の持ち方が異なります。
+UniGLTF ではまず &lt;code>png/jpg&lt;/code> をロードして、それを元に変換テクスチャを作成します。&lt;/p>
+&lt;h3 id="occlusion-テクスチャー">&lt;code>Occlusion&lt;/code> テクスチャー&lt;/h3>
+&lt;h2 id="unity-の-linear-の-テクスチャーの挙動について">Unity の linear の テクスチャーの挙動について&lt;/h2>
+&lt;h3 id="runtime">Runtime&lt;/h3>
+&lt;p>new する場合は、&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture = &lt;span style="color:#069;font-weight:bold">new&lt;/span> Texture2D(width, height, format, mipChain, linear = &lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>とする。&lt;/p>
+&lt;h3 id="asset">Asset&lt;/h3>
+&lt;p>AssetFolder の png/jpg からloadする場合は、
+ロードする前に設定が必用。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style="color:#069;font-weight:bold">as&lt;/span> TextureImporter;
+textureImporter.sRGBTexture = &lt;span style="color:#069;font-weight:bold">false&lt;/span>; &lt;span style="color:#09f;font-style:italic">// Linear
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>textureImporter.SaveAndReimport();
+&lt;span style="color:#09f;font-style:italic">// linear でロードされます
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unity-の-normalmap-の挙動について">Unity の NormalMap の挙動について&lt;/h2>
+&lt;blockquote>
+&lt;p>MToon の NormalMap も同じです&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="runtime-1">Runtime&lt;/h3>
+&lt;p>new する場合は、&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture = &lt;span style="color:#069;font-weight:bold">new&lt;/span> Texture2D(width, height, format, mipChain, linear = &lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>とする。
+また、 &lt;code>DXT5nm&lt;/code> という仕様で格納する必要があるので変換します。
+y と w の２要素だけを使います。&lt;/p>
+&lt;pre>&lt;code class="language-hlsl" data-lang="hlsl">half4 normal;
+normal.x = 1.0;
+normal.y = col.y;
+normal.z = 1.0;
+normal.w = col.x;
+&lt;/code>&lt;/pre>&lt;h3 id="asset-1">Asset&lt;/h3>
+&lt;p>AssetFolder の png/jpg からloadする場合は、
+ロードする前に設定が必用。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style="color:#069;font-weight:bold">as&lt;/span> TextureImporter;
+textureImporter.textureType = TextureImporterType.NormalMap; &lt;span style="color:#09f;font-style:italic">// normalMap
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>textureImporter.SaveAndReimport();
+&lt;span style="color:#09f;font-style:italic">// DXT5nm でロードされます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
