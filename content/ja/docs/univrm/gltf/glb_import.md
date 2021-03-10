@@ -31,9 +31,14 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 fbx の import と同様に Material と Texture が glb の配下に import されます。
 この状態では、Material と Texture は Readonly で設定を変更できません。
 
+{{< img width=400 src="images/unigltf/glb_material_tab.jpg" >}}
+
 `Extract Materials and Textures ...` を押すことで Material と Texture を外部アセット(`Material.asset`, `Texture.png/jpg`) として展開します。
 通常の Material と同様に設定を変更できます。
 
+{{< img width=400 src="images/unigltf/glb_material_tab_extracted.jpg" >}}
+
+`Remaped Materials`と `Remaped Textures` に参照しているリソースが設定されます。
 `Clear` で extract する前の状態に戻ります。
 
 ### glb の extract
