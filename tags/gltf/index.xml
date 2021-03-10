@@ -226,9 +226,12 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;h3 id="extract-materials-and-textures-">&lt;code>Extract Materials and Textures ...&lt;/code>&lt;/h3>
 &lt;p>fbx の import と同様に Material と Texture が glb の配下に import されます。
 この状態では、Material と Texture は Readonly で設定を変更できません。&lt;/p>
+&lt;img src="https://vrm.dev/images/unigltf/glb_material_tab.jpg" width="400" />
 &lt;p>&lt;code>Extract Materials and Textures ...&lt;/code> を押すことで Material と Texture を外部アセット(&lt;code>Material.asset&lt;/code>, &lt;code>Texture.png/jpg&lt;/code>) として展開します。
 通常の Material と同様に設定を変更できます。&lt;/p>
-&lt;p>&lt;code>Clear&lt;/code> で extract する前の状態に戻ります。&lt;/p>
+&lt;img src="https://vrm.dev/images/unigltf/glb_material_tab_extracted.jpg" width="400" />
+&lt;p>&lt;code>Remaped Materials&lt;/code>と &lt;code>Remaped Textures&lt;/code> に参照しているリソースが設定されます。
+&lt;code>Clear&lt;/code> で extract する前の状態に戻ります。&lt;/p>
 &lt;h3 id="glb-の-extract">glb の extract&lt;/h3>
 &lt;h4 id="clear">clear&lt;/h4>
 &lt;p>初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。&lt;/p>
@@ -264,7 +267,7 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;li>&lt;code>Default_AO.occlusion.png&lt;/code> の生成。&lt;code>Default_AO&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;li>&lt;code>Default_metalRoughness.metallicRoughness.png&lt;/code> の生成。&lt;code>Default_metalRoughness&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;/ul>
-&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Wed, 16 Sep 2020 12:06:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>GLTF は、Animation の定義があります。&lt;/p>
 &lt;blockquote>
 &lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
