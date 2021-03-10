@@ -10,23 +10,19 @@ tags: ["gltf"]
 UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
 以下、手順を説明します。
 
-### 1. 空のシーンを用意します。
+### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
 
+![image](/images/unigltf/glb_export_dialog.jpg)
 
-### 2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。
+### 2. `ExportRoot` に対象の GameIObject をセットしてください
 
-一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。
+ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。
 
-### 3. エクスポートしたいオブジェクトをemptyの子にします。
-(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)
+* 一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。
 
-![image](/images/wiki/root_cube.png)
+### 3. `Export` を押す
 
-### 4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。
-
-![image](/images/wiki/menu_unigltf_export.png)
-
-### 5. ファイル名を選択して `glb` ファイルを書き出せば完了です。
+ファイル保存ダイアログが表示されるので出力先を指定してください。
 
 ## Glbのエクスポート対象になるコンポーネント
 
@@ -36,8 +32,5 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 
 ## 対応しているShader
 
-* `Standard` もしくは `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
-
-
-
-
+* `Standard`
+* `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
