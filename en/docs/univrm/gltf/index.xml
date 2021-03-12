@@ -155,8 +155,34 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>Starting with &lt;code>v0.68.0&lt;/code>, the &lt;code>glb&lt;/code> file can be create with &lt;code>UniGLTF&lt;/code> module.&lt;/p>
+&lt;p>The procedure for creating a glb file is described as follows:&lt;/p>
+&lt;h3 id="1-open-unigltfexport-unigltf-2xy">1. Open &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code>&lt;/h3>
+&lt;p>At the top of Unity Editor, click &lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>UniGLTF-2.X.Y&lt;/code> to open the dialog:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
+&lt;h3 id="2-assign-a-gameobject-to-exportroot">2. Assign a GameObject to &lt;code>ExportRoot&lt;/code>&lt;/h3>
+&lt;p>From the Hierarchy window, drag and drop a GameObject into the &lt;code>ExportRoot&lt;/code> field,
+or you can click ◎ button on the right of the &lt;code>ExportRoot&lt;/code> field and select a GameObject from the dropdown list.&lt;/p>
+&lt;ul>
+&lt;li>Note that the root (topmost parent) of a GameObject you select should not be a &lt;code>GLTF&lt;/code> node, but a node stored in the scene with default position, rotation and scale.&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-click-export-button">3. Click &lt;code>Export&lt;/code> button&lt;/h3>
+&lt;p>A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.&lt;/p>
+&lt;h2 id="exportable-components-for-glb">Exportable Components for GLB&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
+&lt;/ul>
+&lt;h2 id="available-shader">Available Shader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
+&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="before-v0680">Before &lt;code>v0.68.0&lt;/code>&lt;/h1>
 &lt;h2 id="procedure">Procedure&lt;/h2>
-&lt;p>The following is the procedure for creating the glb file with UniGLTF included in UniVRM:&lt;/p>
+&lt;p>The following is the procedure for creating the &lt;code>glb&lt;/code> file with UniGLTF module:&lt;/p>
 &lt;h3 id="1-create-an-empty-scene">1. Create an empty scene.&lt;/h3>
 &lt;h3 id="2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale">2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3>
 &lt;p>The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
@@ -164,16 +190,16 @@ Its translation, rotation and scale should be default values.&lt;/p>
 &lt;h3 id="3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject">3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3>
 &lt;p>(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
-&lt;h3 id="4-select-the-topmost-parent-gameobject-and-click-exportunigltf-1xx-export">4. Select the topmost parent GameObject and click &lt;code>Export&lt;/code>(&lt;code>UniGLTF-1.xx&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>).&lt;/h3>
+&lt;h3 id="4-select-the-topmost-parent-gameobject-and-click-export-unigltf-xxx-export">4. Select the topmost parent GameObject and click &lt;code>Export&lt;/code> (&lt;code>UniGLTF-x.xx&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>).&lt;/h3>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
 &lt;h3 id="5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file">5. Enter the file name and the selected GameObject can be exported as the &lt;code>glb&lt;/code> file.&lt;/h3>
-&lt;h2 id="notes-on-components-to-be-exported">Notes on components to be exported&lt;/h2>
+&lt;h2 id="exportable-components-for-glb-1">Exportable Components for GLB&lt;/h2>
 &lt;ul>
-&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Please attach them to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Please attach it to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>Animation&lt;/code> (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
 &lt;/ul>
-&lt;h2 id="available-shader">Available Shader&lt;/h2>
+&lt;h2 id="available-shader-1">Available Shader&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>Standard&lt;/code>, &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code> and &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: GLB Import</title><link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid><description>
