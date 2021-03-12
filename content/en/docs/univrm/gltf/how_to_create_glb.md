@@ -6,9 +6,45 @@ aliases: ["/en/dev/univrm-0.xx/gltf/how_to_create_glb/"]
 tags: ["gltf"]
 ---
 
+Starting with `v0.68.0`, the `glb` file can be create with `UniGLTF` module.
+
+The procedure for creating a glb file is described as follows:
+
+### 1. Open `UniGLTF/Export UniGLTF-2.X.Y`
+
+At the top of Unity Editor, click `UniGLTF` -> `UniGLTF-2.X.Y` to open the dialog:
+
+![image](/images/unigltf/glb_export_dialog.jpg)
+
+### 2. Assign a GameObject to `ExportRoot`
+
+From the Hierarchy window, drag and drop a GameObject into the `ExportRoot` field, 
+or you can click ◎ button on the right of the `ExportRoot` field and select a GameObject from the dropdown list.
+
+* Note that the root (topmost parent) of a GameObject you select should not be a `GLTF` node, but a node stored in the scene with default position, rotation and scale.
+
+### 3. Click `Export` button
+
+A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.
+
+## Exportable Components for GLB
+
+* `MeshRenderer + MeshFilter` (Attach them to the child other than the topmost parent)
+* `SkinnedMeshRenderer` (Attach it to the child other than the topmost parent)
+* `Animation` (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)
+
+## Available Shader
+
+* `Standard`
+* `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
+
+----
+
+# Before `v0.68.0`
+
 ## Procedure
 
-The following is the procedure for creating the glb file with UniGLTF included in UniVRM:
+The following is the procedure for creating the `glb` file with UniGLTF module:
 
 ### 1. Create an empty scene.
 
@@ -23,22 +59,18 @@ Its translation, rotation and scale should be default values.
 
 ![image](/images/wiki/root_cube.png)
 
-### 4. Select the topmost parent GameObject and click `Export`(`UniGLTF-1.xx`->`Export`).
+### 4. Select the topmost parent GameObject and click `Export` (`UniGLTF-x.xx`->`Export`).
 
 ![image](/images/wiki/menu_unigltf_export.png)
 
 ### 5. Enter the file name and the selected GameObject can be exported as the `glb` file. 
 
-## Notes on components to be exported 
+## Exportable Components for GLB
 
-* `MeshRenderer + MeshFilter` (Please attach them to the child other than the topmost parent)
-* `SkinnedMeshRenderer` (Please attach it to the child other than the topmost parent)
-* `Animation` (Please attach it to the topmost parent. For rotation, please input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)
+* `MeshRenderer + MeshFilter` (Attach them to the child other than the topmost parent)
+* `SkinnedMeshRenderer` (Attach it to the child other than the topmost parent)
+* `Animation` (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)
 
 ## Available Shader
 
 * `Standard`, `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout` and `UniGLTF/UniUnlit`
-
-
-
-

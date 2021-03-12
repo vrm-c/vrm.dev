@@ -65,6 +65,8 @@ weight: 4
 | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 | [Collaboll](https://brother-pv.booth.pm/items/2016717) | Windows VR |
 | [Webaverse](https://webaverse.com/) | Web browser |
+| [ambr](https://ambr.co.jp/) | Windows VR, macOS |
+| [Connect Chat](https://store.steampowered.com/app/1424930/Connect_Chat/) | Windows VR |
 
 ##  Game
 
