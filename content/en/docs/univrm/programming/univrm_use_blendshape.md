@@ -1,8 +1,8 @@
 ---
-title: "BlendShape Manipulations"
-linkTitle: "BlendShape manipulations at runtime"
+title: "How to Use BlendShapeProxy"
 date: 2018-04-16T16:30:00+09:00
-aliases: ["/en/dev/univrm-0.xx/programming/univrm_use_blendshape/"]
+aliases: ["/en/dev/univrm-0.xx/programming/univrm_use_blendshape/",
+          "/en/docs/univrm/programming/how_to_use_blendshapeproxy/"]
 weight: 3
 tags: ["api"]
 ---
@@ -79,3 +79,48 @@ proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 
 // Apply all the specified BlendShapes at once
 proxy.Apply();
 {{< / highlight >}}
+
+More details are described below:
+
+## ImmediatelySetValue
+
+Assumed to be used for a simple test program.
+
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), 1.0f);
+```
+
+## AccumulateValue + Apply
+
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f);
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f);
+// Apply all the specified BlendShapes at once
+proxy.Apply();
+```
+
+We recommend `SetValues` (below) to handle the case of applying multiple BlendShapes.
+
+## SetValues
+
+Call `SetValues` to combine multiple BlendShapes.
+
+Example:
+
+```cs
+var proxy = GetComponent<VRMBlendShapeProxy>();
+
+proxy.SetValues(new Dictionary<BlendShapeKey, float>
+{
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), 1.0f},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), 1.0f},
+});
+```

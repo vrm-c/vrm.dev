@@ -134,6 +134,9 @@ weight: 4
 | [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
 | [VTuber Editor](https://store.steampowered.com/app/1454500/VTuber_Editor/) | Windows |
 | [Ls ENGINE](https://lsengine.net/en/lsengine_en/) | Windows |
+| [ACUAH β](https://riemgoshawk.booth.pm/items/1990160) | Android |
+| [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
+| [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
 
 ##  Services using VRM internally
 

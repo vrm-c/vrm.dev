@@ -4,6 +4,7 @@ linkTitle: "座標系の変換について"
 date: 2018-04-16T16:30:00+09:00
 aliases: ["/dev/univrm-0.xx/programming/univrm_coordinate/"]
 weight: 4
+tags: ["api"]
 ---
 
 UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。

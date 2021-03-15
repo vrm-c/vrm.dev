@@ -7,13 +7,21 @@ weight: 1
 tags: ["api"]
 ---
 
-This section describes about changes affecting the program.
+## v0.68 Reworked ImporterContext
 
-Please go to [UniVRM/Wiki](https://github.com/vrm-c/UniVRM/wiki) to get the latest information of the API update.
+[Runtime Importer]({{< relref "runtime_import.md" >}})
 
-# v0.36
+## v0.63.2 Changed implementation method of gltf extension
 
-## Texture Name Save Locations Changed
+[Implement GLTF Extension]({{< relref "how_to_impl_extension.md" >}})
+
+## v0.56 Updated BlendShapeKey's Specifications
+
+[Rework BlendShapeKey's Interface](https://github.com/vrm-c/UniVRM/wiki/ReleaseNote-v0.56.0%28en%29#reworks-blendshapekeys-interface)
+
+## v0.36
+
+### Changed Storage Position of Texture Name
 
 Conforming to the GLTF specification.
 
@@ -27,7 +35,7 @@ After the change
 json.images[i].name
 ```
 
-## BlendShape Name Save Locations Changed
+### Changed Storage Position BlendShape Name
 
 Conforming to the GLTF specification.
 

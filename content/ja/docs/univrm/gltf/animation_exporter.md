@@ -1,7 +1,7 @@
 ---
 title: アニメーション
 tags: ["unity", "gltf"]
-weight: 4
+weight: 5
 aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 ---
 

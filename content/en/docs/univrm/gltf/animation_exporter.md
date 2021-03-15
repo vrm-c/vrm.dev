@@ -1,7 +1,7 @@
 ---
 title: Animation
 date: 2020-08-03T16:07:54+09:00
-weight: 4
+weight: 5
 aliases: ["/en/dev/univrm-0.xx/gltf/animation_exporter/"]
 tags: ["gltf", "unity"]
 ---
