@@ -12,9 +12,11 @@ weight: 2
 
 `ImporterContext` の仕様を変更しました。
 
-* ロード処理が Parse と Load の 2 ステップに別れました。
+* ロード処理が Parse と Load の 2 ステップに分かれました。
+    * Parse 処理をメインスレッド以外で処理することができます。
 * 非同期ロード関数 `ImporterContext.LoadAsync` の実装を `Task` に変更しました。
 * これまで明示的に破棄できなかった `UnityEngine.Object` リソースを破棄できるようになりました。
+    * リソースのリークを防ぐことができます。
 * `ImporterContext.Dispose` を呼び出すべきタイミングを「ロード処理終了時」に変更しました。
     * 呼び出して破棄する前に、後述の `ImporterContext.DisposeOnGameObjectDestroyed` を呼び出してください。
     * 以前の仕様は「生成したモデルの破棄時」に呼び出すべき関数でした。
