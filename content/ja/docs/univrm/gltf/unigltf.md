@@ -1,6 +1,7 @@
 ---
 title: "UniGLTF"
 tags: ["unity", "gltf", "api"]
+weight: 2
 ---
 
 この記事は、 `UniVRM-0.63.2` 以降を対象としています。
