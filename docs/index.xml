@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 18 Sep 2020 00:05:44 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – ドキュメント</title><link>https://vrm.dev/docs/</link><description>Recent content in ドキュメント on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 18 Sep 2020 23:07:13 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -115,7 +115,7 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;h2 id="関連セクション">関連セクション&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/docs/univrm/export/univrm_export/">VRMをエクスポートする&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
+&lt;/ul></description></item><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
 &lt;h2 id="概要">概要&lt;/h2>
 &lt;p>VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p>
 &lt;p>１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p>
@@ -955,113 +955,140 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 ニコニ立体では&lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">こちら&lt;/a>から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。&lt;/p>
 &lt;p>なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href="https://virtualcast.jp/">バーチャルキャスト&lt;/a>から利用できます。&lt;/p>
 &lt;h2 id="vrmを使うアプリケーションを開発する">VRMを使うアプリケーションを開発する&lt;/h2>
-&lt;p>➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_development/">VRMで開発する&lt;/a>&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
-&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
-&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
-&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb の読み書き&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit の読み書き
-&lt;ul>
-&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
-&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform の読み書き&lt;/li>
-&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
-&lt;/ul></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 09 Mar 2021 21:00:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;p>➡️ &lt;a href="https://vrm.dev/docs/vrm/vrm_development/">VRMで開発する&lt;/a>&lt;/p></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 15 Mar 2021 17:18:37 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
 &lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
-&lt;p>ImporterContext を整理しました。&lt;/p>
+&lt;h3 id="過去バージョンからの仕様変更">過去バージョンからの仕様変更&lt;/h3>
+&lt;p>&lt;code>ImporterContext&lt;/code> の仕様を変更しました。&lt;/p>
 &lt;ul>
-&lt;li>ImporterContext.LoadAsync の実装が Task になりました。&lt;/li>
-&lt;li>リソースの Destroy をできるようになりました。&lt;/li>
-&lt;li>Parse と Load の２ステップに別れました。&lt;/li>
-&lt;li>ImporterContext.Dispose でリソース(Mesh, Material, Textureなど)を破棄してください。&lt;/li>
-&lt;li>DisposeOnGameObjectDestroyed で破棄の責務を GameObject に移譲できます。
+&lt;li>ロード処理が Parse と Load の 2 ステップに分かれました。
 &lt;ul>
-&lt;li>対象の GameObject の OnDestroy で関連リソースを Destory します。&lt;/li>
-&lt;li>移譲した場合も ImporterContext.Dispose はしてください。&lt;/li>
+&lt;li>Parse 処理をメインスレッド以外で処理することができます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>非同期ロード関数 &lt;code>ImporterContext.LoadAsync&lt;/code> の実装を &lt;code>Task&lt;/code> に変更しました。&lt;/li>
+&lt;li>これまで明示的に破棄できなかった &lt;code>UnityEngine.Object&lt;/code> リソースを破棄できるようになりました。
+&lt;ul>
+&lt;li>リソースのリークを防ぐことができます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ImporterContext.Dispose&lt;/code> を呼び出すべきタイミングを「ロード処理終了時」に変更しました。
+&lt;ul>
+&lt;li>呼び出して破棄する前に、後述の &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> を呼び出してください。&lt;/li>
+&lt;li>以前の仕様は「生成したモデルの破棄時」に呼び出すべき関数でした。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> 関数を追加しました。
+&lt;ul>
+&lt;li>VRM モデルが必要とするリソース (Texture, Material, Mesh, etc) を破棄する責務を GameObject に移譲できます。&lt;/li>
+&lt;li>VRM の GameObject の破棄タイミングでリソース (Texture, Material, Mesh, etc) を破棄します。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="同期-sync">同期 sync&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">void&lt;/span> Load(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+&lt;h3 id="サンプルコード同期的ロード">サンプルコード（同期的ロード）&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
 {
-&lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
+{
+_vrmGameObject = LoadVrm(_vrmFilePath);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
+{
+DestroyVrm(_vrmGameObject);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject LoadVrm(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
+{
+&lt;span style="color:#09f;font-style:italic">// 1. GltfParser を呼び出します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-parser.ParsePath(path);
-&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+parser.ParsePath(vrmFilePath);
+&lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
-context.Load();
-} &lt;span style="color:#09f;font-style:italic">// context が保持する Unity リソースが Destroy されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>このままでロードしたヒエラルキーが即座に破棄されてしまいます。
-&lt;code>using&lt;/code> を越えるには &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> を使います。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">GameObject Load(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
-{
-&lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-parser.ParsePath(path);
-&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
-{
-context.Load();
-&lt;span style="color:#09f;font-style:italic">// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> destroyer = context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// UpdateWhenOffscreen を有効にする
+&lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Load();
+&lt;span style="color:#09f;font-style:italic">// 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 表示
+&lt;span style="color:#09f;font-style:italic">// 6. VRM モデルを表示します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> destroyer.gameObject;
-} &lt;span style="color:#09f;font-style:italic">// context が保持する Unity リソースが Destroy されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// DisposeOnGameObjectDestroyed により context が保持するリソースは、destroyerに移動済みです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>DisposeOnGameObjectDestroyed&lt;/code> を使用した場合、
-下記の様にすることで、 &lt;code>OnDestroy&lt;/code> 経由で関連する &lt;code>Mesh, Material, Texture&lt;/code> などまとめて Destroy されます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">UnityEngine.Object.Destroy(destroyer.gameObject);
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="非同期-async">非同期 async&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">async&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+&lt;span style="color:#09f;font-style:italic">// 7. Root の GameObject を return します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
+}
+&lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
 {
-&lt;span style="color:#09f;font-style:italic">// GltfParser が別れました。
+&lt;span style="color:#09f;font-style:italic">// 9. 生成された VRM の GameObject を破棄します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="サンプルコード非同期ロード">サンプルコード（非同期ロード）&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
+{
+&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
+{
+&lt;span style="color:#09f;font-style:italic">// 簡便のため、このサンプルではキャンセル処理などは考慮しません。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> _vrmGameObject = &lt;span style="color:#069;font-weight:bold">await&lt;/span> LoadVrmAsync(_vrmFilePath);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
+{
+DestroyVrm(_vrmGameObject);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
+{
+&lt;span style="color:#09f;font-style:italic">// 1. GltfParser を呼び出します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser は Unity のメインスレッド以外で実行できます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
 &lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
 &lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
-&lt;span style="color:#09f;font-style:italic">// Unity の ScriptThread 以外でも実行できます
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> parser.ParseGlb(file);
+parser.ParseGlb(file);
 }
-&lt;span style="color:#09f;font-style:italic">// parser を引き数に ImporterContext を作成します
+&lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
-&lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync(); &lt;span style="color:#09f;font-style:italic">// 数フレームかかります
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> destroyer = context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// UpdateWhenOffscreen を有効にする
+&lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Load 処理は数フレームの時間を要します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync();
+&lt;span style="color:#09f;font-style:italic">// 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 表示
+&lt;span style="color:#09f;font-style:italic">// 6. VRM モデルを表示します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> destroyer.gameObject;
-} &lt;span style="color:#09f;font-style:italic">// context が保持する Unity リソースが Destroy されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// DisposeOnGameObjectDestroyed により context が保持するリソースは、destroyerに移動済みです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-044-loadasyncの例">&lt;code>Version 0.44～&lt;/code> LoadAsyncの例&lt;/h2>
+&lt;span style="color:#09f;font-style:italic">// 7. Root の GameObject を return します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
+}
+&lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
+{
+&lt;span style="color:#09f;font-style:italic">// 9. 生成された VRM の GameObject を破棄します。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="過去バージョンの情報">過去バージョンの情報&lt;/h1>
+&lt;h2 id="version-044-loadasyncの例">&lt;code>Version 0.44～&lt;/code> LoadAsyncの例&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
 &lt;span style="color:#09f;font-style:italic">// なんらかの方法でByte列を得る
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
@@ -1177,7 +1204,37 @@ OnLoaded(context.Root);
 &lt;p>ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(&lt;span style="color:#069;font-weight:bold">true&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Thumbnailテクスチャを作成する
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> Texture2D thumbnail=meta.Thumbnail;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
+&lt;/ul></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
 &lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
 &lt;ul>
 &lt;li>Animator がアタッチされている&lt;/li>
@@ -1240,7 +1297,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
 上書きしたい場合はImport前に削除してください。&lt;/p>
 &lt;h2 id="045以前">0.45以前&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1286,7 +1343,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
 &lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
 &lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
@@ -1989,7 +2046,7 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;li>&lt;code>Default_AO.occlusion.png&lt;/code> の生成。&lt;code>Default_AO&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;li>&lt;code>Default_metalRoughness.metallicRoughness.png&lt;/code> の生成。&lt;code>Default_metalRoughness&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;/ul>
-&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -2009,7 +2066,7 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;li>VerticalDown&lt;/li>
 &lt;li>VerticalUp&lt;/li>
 &lt;li>Horizontal&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
 &lt;table>
@@ -2652,7 +2709,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">修正前との違い&lt;/h4>
 鼻先、下唇に加えて、舌が全然違う法線になってます。
-&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Fri, 18 Sep 2020 23:07:13 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>

@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.74.3"><meta name=ROBOTS content="INDEX, FOLLOW"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>ランタイムインポーター | VRM</title><meta property="og:title" content="ランタイムインポーター"><meta property="og:description" content="Version 0.68～ ImporterContext を整理しました。 ImporterContext.LoadAsync の実装が Task になりました。 リソースの Destroy をできるようになりました。 Parse と Load の２ステップに別れました。 ImporterContext.Dispose でリソース("><meta property="og:type" content="article"><meta property="og:url" content="https://vrm.dev/docs/univrm/programming/runtime_import/"><meta property="og:image" content="https://vrm.dev/images/vrm/card.png"><meta property="article:published_time" content="2021-03-09T21:00:14+09:00"><meta property="article:modified_time" content="2021-03-09T21:00:14+09:00"><meta property="og:site_name" content="VRM"><meta itemprop=name content="ランタイムインポーター"><meta itemprop=description content="Version 0.68～ ImporterContext を整理しました。 ImporterContext.LoadAsync の実装が Task になりました。 リソースの Destroy をできるようになりました。 Parse と Load の２ステップに別れました。 ImporterContext.Dispose でリソース("><meta itemprop=dateModified content="2021-03-09T21:00:14+09:00"><meta itemprop=wordCount content="1475"><meta itemprop=image content="https://vrm.dev/images/vrm/card.png"><meta itemprop=keywords content="api,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://vrm.dev/images/vrm/card.png"><meta name=twitter:title content="ランタイムインポーター"><meta name=twitter:description content="Version 0.68～ ImporterContext を整理しました。 ImporterContext.LoadAsync の実装が Task になりました。 リソースの Destroy をできるようになりました。 Parse と Load の２ステップに別れました。 ImporterContext.Dispose でリソース("><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-168395717-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preload href=/scss/main.min.430ceb4b58e09fd08899cc42621fc5d777620e57a38fe590c4adf9fecb258bdd.css as=style><link href=/scss/main.min.430ceb4b58e09fd08899cc42621fc5d777620e57a38fe590c4adf9fecb258bdd.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script></head><body class=td-page><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/><span class=navbar-logo></span><span class="text-uppercase font-weight-bold">VRM</span></a><div class="td-navbar-nav-scroll ml-md-auto flex-grow-1" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/vrm/><span>VRMについて</span></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://github.com/vrm-c/vrm-specification/tree/master/specification target=_blank><span>技術仕様</span>
+<!doctype html><html lang=ja class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.74.3"><meta name=ROBOTS content="INDEX, FOLLOW"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>ランタイムインポーター | VRM</title><meta property="og:title" content="ランタイムインポーター"><meta property="og:description" content="Version 0.68～ 過去バージョンからの仕様変更 ImporterContext の仕様を変更しました。 ロード処理が Parse と Load の 2 ステップに分かれました。 Parse 処理をメインスレッド以外で処"><meta property="og:type" content="article"><meta property="og:url" content="https://vrm.dev/docs/univrm/programming/runtime_import/"><meta property="og:image" content="https://vrm.dev/images/vrm/card.png"><meta property="article:published_time" content="2021-03-15T17:18:37+09:00"><meta property="article:modified_time" content="2021-03-15T17:18:37+09:00"><meta property="og:site_name" content="VRM"><meta itemprop=name content="ランタイムインポーター"><meta itemprop=description content="Version 0.68～ 過去バージョンからの仕様変更 ImporterContext の仕様を変更しました。 ロード処理が Parse と Load の 2 ステップに分かれました。 Parse 処理をメインスレッド以外で処"><meta itemprop=dateModified content="2021-03-15T17:18:37+09:00"><meta itemprop=wordCount content="2220"><meta itemprop=image content="https://vrm.dev/images/vrm/card.png"><meta itemprop=keywords content="api,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://vrm.dev/images/vrm/card.png"><meta name=twitter:title content="ランタイムインポーター"><meta name=twitter:description content="Version 0.68～ 過去バージョンからの仕様変更 ImporterContext の仕様を変更しました。 ロード処理が Parse と Load の 2 ステップに分かれました。 Parse 処理をメインスレッド以外で処"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-168395717-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preload href=/scss/main.min.430ceb4b58e09fd08899cc42621fc5d777620e57a38fe590c4adf9fecb258bdd.css as=style><link href=/scss/main.min.430ceb4b58e09fd08899cc42621fc5d777620e57a38fe590c4adf9fecb258bdd.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script></head><body class=td-page><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/><span class=navbar-logo></span><span class="text-uppercase font-weight-bold">VRM</span></a><div class="td-navbar-nav-scroll ml-md-auto flex-grow-1" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/vrm/><span>VRMについて</span></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://github.com/vrm-c/vrm-specification/tree/master/specification target=_blank><span>技術仕様</span>
 <i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://vrm-consortium.org/ target=_blank><span>VRMコンソーシアム</span>
 <i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://github.com/vrm-c/UniVRM/releases target=_blank><span>ダウンロード <i class="fab fa-github fa-lg fa-fw"></i></span><i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class="nav-link active" href=/docs/univrm/><span class=active>UniVRMマニュアル</span></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/map/><span>サイトマップ</span></a></li><li class="nav-item dropdown d-none d-lg-block"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Japanese</a><div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink><a class=dropdown-item href=/en/docs/univrm/programming/runtime_import/>English</a></div></li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label=サイトを検索... autocomplete=off></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><input type=search class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label=サイトを検索... autocomplete=off>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="collapse td-sidebar-nav" id=td-section-nav><div class="nav-item dropdown d-block d-lg-none"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Japanese</a><div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink><a class=dropdown-item href=/en/docs/univrm/programming/runtime_import/>English</a></div></div><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/ class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder-open fa-fw"></i>ドキュメント</a></li><ul><li class="collapse show" id=docs><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/vrm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>VRMについて</a></li><ul><li class=collapse id=vrm><a class="td-sidebar-link td-sidebar-link__page" id=m-vrm_about href=/vrm_about/><i class="fas fa-file fa-fw"></i>「VRM」って何？どんなことができる？</a><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/how_to_make_vrm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>VRMファイルを作ってみたい</a></li><ul><li class=collapse id=how_to_make_vrm><a class="td-sidebar-link td-sidebar-link__page" id=m-docsvrmhow_to_make_vrmsetup_unity href=/docs/vrm/how_to_make_vrm/setup_unity/><i class="fas fa-file fa-fw"></i>0. Unityを用意して、UniVRMをインストールする</a>
@@ -37,72 +37,127 @@
 <a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_use_blendshape href=/docs/univrm/programming/univrm_use_blendshape/><i class="fas fa-file fa-fw"></i>BlendShapeProxyの使い方</a>
 <a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_coordinate href=/docs/univrm/programming/univrm_coordinate/><i class="fas fa-file fa-fw"></i>座標系の変換について</a>
 <a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_use_firstperson href=/docs/univrm/programming/univrm_use_firstperson/><i class="fas fa-file fa-fw"></i>一人称モードの使い方</a></li></ul></ul></li></ul></ul></li></ul></ul></nav></div></div><div class="d-none d-xl-block col-xl-2 td-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"><a href=https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/univrm/programming/runtime_import.md target=_blank><i class="fa fa-edit fa-fw"></i>ページの編集</a>
-<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=%e3%83%a9%e3%83%b3%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%bc" target=_blank><i class="fab fa-github fa-fw"></i>ドキュメントのissueを作成</a></div><nav id=TableOfContents><ul><li><a href=#version-068><code>Version 0.68～</code></a><ul><li><a href=#同期-sync>同期 sync</a></li><li><a href=#非同期-async>非同期 async</a></li></ul></li><li><a href=#version-044-loadasyncの例><code>Version 0.44～</code> LoadAsyncの例</a></li><li><a href=#loadasynctaskを使う例>LoadAsyncTaskを使う例</a></li><li><a href=#関連する記事など>関連する記事など</a></li><li><a href=#ファイルパスからvrmを開く>ファイルパスからVRMを開く</a></li><li><a href=#ファイルパスから非同期にvrmを開く>ファイルパスから非同期にVRMを開く</a></li><li><a href=#バイト列からvrm開く>バイト列からVRM開く</a></li><li><a href=#バイト列から非同期にvrmを開く>バイト列から非同期にVRMを開く</a></li><li><a href=#vrmから情報を取り出す>VRMから情報を取り出す</a></li><li><a href=#thumbnailを取得するv037から>Thumbnailを取得する(v0.37から)</a></li></ul></nav></div><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main><nav aria-label=breadcrumb class="d-none d-md-block d-print-none"><ol class="breadcrumb spb-1"><li class=breadcrumb-item><a href=https://vrm.dev/docs/>ドキュメント</a></li><li class=breadcrumb-item><a href=https://vrm.dev/docs/univrm/>UniVRMマニュアル</a></li><li class=breadcrumb-item><a href=https://vrm.dev/docs/univrm/programming/>Programming</a></li><li class="breadcrumb-item active" aria-current=page><a href=https://vrm.dev/docs/univrm/programming/runtime_import/>ランタイムインポーター</a></li></ol></nav><div class=td-content><h1>ランタイムインポーター</h1><ul class=tags><li><a href=/tags/api>api</a></ul><div class=share><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-text="ランタイムインポーター - VRM" data-url=https://vrm.dev/docs/univrm/programming/runtime_import/ data-show-count=false>Tweet</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=%e3%83%a9%e3%83%b3%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%bc" target=_blank><i class="fab fa-github fa-fw"></i>ドキュメントのissueを作成</a></div><nav id=TableOfContents><ul><li><a href=#version-068><code>Version 0.68～</code></a><ul><li><a href=#過去バージョンからの仕様変更>過去バージョンからの仕様変更</a></li><li><a href=#サンプルコード同期的ロード>サンプルコード（同期的ロード）</a></li><li><a href=#サンプルコード非同期ロード>サンプルコード（非同期ロード）</a></li></ul></li></ul><ul><li><a href=#version-044-loadasyncの例><code>Version 0.44～</code> LoadAsyncの例</a></li><li><a href=#loadasynctaskを使う例>LoadAsyncTaskを使う例</a></li><li><a href=#関連する記事など>関連する記事など</a></li><li><a href=#ファイルパスからvrmを開く>ファイルパスからVRMを開く</a></li><li><a href=#ファイルパスから非同期にvrmを開く>ファイルパスから非同期にVRMを開く</a></li><li><a href=#バイト列からvrm開く>バイト列からVRM開く</a></li><li><a href=#バイト列から非同期にvrmを開く>バイト列から非同期にVRMを開く</a></li><li><a href=#vrmから情報を取り出す>VRMから情報を取り出す</a></li><li><a href=#thumbnailを取得するv037から>Thumbnailを取得する(v0.37から)</a></li></ul></nav></div><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main><nav aria-label=breadcrumb class="d-none d-md-block d-print-none"><ol class="breadcrumb spb-1"><li class=breadcrumb-item><a href=https://vrm.dev/docs/>ドキュメント</a></li><li class=breadcrumb-item><a href=https://vrm.dev/docs/univrm/>UniVRMマニュアル</a></li><li class=breadcrumb-item><a href=https://vrm.dev/docs/univrm/programming/>Programming</a></li><li class="breadcrumb-item active" aria-current=page><a href=https://vrm.dev/docs/univrm/programming/runtime_import/>ランタイムインポーター</a></li></ol></nav><div class=td-content><h1>ランタイムインポーター</h1><ul class=tags><li><a href=/tags/api>api</a></ul><div class=share><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-text="ランタイムインポーター - VRM" data-url=https://vrm.dev/docs/univrm/programming/runtime_import/ data-show-count=false>Tweet</a>
 <script async src=https://platform.twitter.com/widgets.js></script><a href=https://b.hatena.ne.jp/entry/https://vrm.dev/docs/univrm/programming/runtime_import/ class=hatena-bookmark-button data-hatena-bookmark-layout=basic-label-counter data-hatena-bookmark-lang=ja title=このエントリーをはてなブックマークに追加><img src=https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png alt=このエントリーをはてなブックマークに追加 width=20 height=20 style=border:none></a>
-<script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2funivrm%2fprogramming%2fruntime_import%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId" width=68 height=20 style=border:none;overflow:hidden scrolling=no frameborder=0 allowtransparency=true></iframe></div><div class="text-muted mb-2 pt-3">2021-03-09 21:00:14 +0900 +0900<br>最終更新 2021/03/09: <a href=https://github.com/vrm-c/vrm.dev/commit/7a27ff63011ec897693af7c09689f452617048c1>texture_import (7a27ff6)</a></div><h2 id=version-068><code>Version 0.68～</code></h2><p>ImporterContext を整理しました。</p><ul><li>ImporterContext.LoadAsync の実装が Task になりました。</li><li>リソースの Destroy をできるようになりました。</li><li>Parse と Load の２ステップに別れました。</li><li>ImporterContext.Dispose でリソース(Mesh, Material, Textureなど)を破棄してください。</li><li>DisposeOnGameObjectDestroyed で破棄の責務を GameObject に移譲できます。<ul><li>対象の GameObject の OnDestroy で関連リソースを Destory します。</li><li>移譲した場合も ImporterContext.Dispose はしてください。</li></ul></li></ul><h3 id=同期-sync>同期 sync</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=color:#069;font-weight:700>void</span> Load(<span style=color:#078;font-weight:700>string</span> path)
+<script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2funivrm%2fprogramming%2fruntime_import%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId" width=68 height=20 style=border:none;overflow:hidden scrolling=no frameborder=0 allowtransparency=true></iframe></div><div class="text-muted mb-2 pt-3">2021-03-15 17:18:37 +0900 +0900<br>最終更新 2021/03/15: <a href=https://github.com/vrm-c/vrm.dev/commit/55e6fe2c1d5d9ea321d70229fa85eb9e30b24d8f>過去バージョンからの仕様変更に追記 (55e6fe2)</a></div><h2 id=version-068><code>Version 0.68～</code></h2><h3 id=過去バージョンからの仕様変更>過去バージョンからの仕様変更</h3><p><code>ImporterContext</code> の仕様を変更しました。</p><ul><li>ロード処理が Parse と Load の 2 ステップに分かれました。<ul><li>Parse 処理をメインスレッド以外で処理することができます。</li></ul></li><li>非同期ロード関数 <code>ImporterContext.LoadAsync</code> の実装を <code>Task</code> に変更しました。</li><li>これまで明示的に破棄できなかった <code>UnityEngine.Object</code> リソースを破棄できるようになりました。<ul><li>リソースのリークを防ぐことができます。</li></ul></li><li><code>ImporterContext.Dispose</code> を呼び出すべきタイミングを「ロード処理終了時」に変更しました。<ul><li>呼び出して破棄する前に、後述の <code>ImporterContext.DisposeOnGameObjectDestroyed</code> を呼び出してください。</li><li>以前の仕様は「生成したモデルの破棄時」に呼び出すべき関数でした。</li></ul></li><li><code>ImporterContext.DisposeOnGameObjectDestroyed</code> 関数を追加しました。<ul><li>VRM モデルが必要とするリソース (Texture, Material, Mesh, etc) を破棄する責務を GameObject に移譲できます。</li><li>VRM の GameObject の破棄タイミングでリソース (Texture, Material, Mesh, etc) を破棄します。</li></ul></li></ul><h3 id=サンプルコード同期的ロード>サンプルコード（同期的ロード）</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>sealed</span> <span style=color:#069;font-weight:700>class</span> <span style=color:#0a8;font-weight:700>LoadVrmSample</span> : MonoBehaviour
 {
-    <span style=color:#09f;font-style:italic>// GltfParser が別れました。
-</span><span style=color:#09f;font-style:italic></span>    <span style=color:#078;font-weight:700>var</span> parser = <span style=color:#069;font-weight:700>new</span> GltfParser();
-    parser.ParsePath(path);
+<span style=color:#309>    [SerializeField]</span> <span style=color:#069;font-weight:700>private</span> <span style=color:#078;font-weight:700>string</span> _vrmFilePath;
+    <span style=color:#069;font-weight:700>private</span> GameObject _vrmGameObect;
 
-    <span style=color:#09f;font-style:italic>// parser を引き数に ImporterContext を作成します
-</span><span style=color:#09f;font-style:italic></span>    using(<span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext(parser))
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>void</span> Start()
     {
-        context.Load();
-    } <span style=color:#09f;font-style:italic>// context が保持する Unity リソースが Destroy されます。
-</span><span style=color:#09f;font-style:italic></span>}
-</code></pre></div><p>このままでロードしたヒエラルキーが即座に破棄されてしまいます。
-<code>using</code> を越えるには <code>ImporterContext.DisposeOnGameObjectDestroyed</code> を使います。</p><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs>GameObject Load(<span style=color:#078;font-weight:700>string</span> path)
-{
-    <span style=color:#09f;font-style:italic>// GltfParser が別れました。
-</span><span style=color:#09f;font-style:italic></span>    <span style=color:#078;font-weight:700>var</span> parser = <span style=color:#069;font-weight:700>new</span> GltfParser();
-    parser.ParsePath(path);
-
-    <span style=color:#09f;font-style:italic>// parser を引き数に ImporterContext を作成します
-</span><span style=color:#09f;font-style:italic></span>    using(<span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext(parser))
-    {
-        context.Load();
-
-        <span style=color:#09f;font-style:italic>// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
-</span><span style=color:#09f;font-style:italic></span>        <span style=color:#078;font-weight:700>var</span> destroyer = context.DisposeOnGameObjectDestroyed();
-        <span style=color:#09f;font-style:italic>// UpdateWhenOffscreen を有効にする
-</span><span style=color:#09f;font-style:italic></span>        context.EnableUpdateWhenOffscreen();
-        <span style=color:#09f;font-style:italic>// 表示
-</span><span style=color:#09f;font-style:italic></span>        context.ShowMeshes();
-
-        <span style=color:#069;font-weight:700>return</span> destroyer.gameObject;
-    } <span style=color:#09f;font-style:italic>// context が保持する Unity リソースが Destroy されます。
-</span><span style=color:#09f;font-style:italic></span>    <span style=color:#09f;font-style:italic>// DisposeOnGameObjectDestroyed により context が保持するリソースは、destroyerに移動済みです。
-</span><span style=color:#09f;font-style:italic></span>}
-</code></pre></div><p><code>DisposeOnGameObjectDestroyed</code> を使用した場合、
-下記の様にすることで、 <code>OnDestroy</code> 経由で関連する <code>Mesh, Material, Texture</code> などまとめて Destroy されます。</p><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs>UnityEngine.Object.Destroy(destroyer.gameObject);
-</code></pre></div><h3 id=非同期-async>非同期 async</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=color:#069;font-weight:700>async</span> Task&lt;GameObject&gt; LoadVrmAsync(<span style=color:#078;font-weight:700>string</span> path)
-{
-    <span style=color:#09f;font-style:italic>// GltfParser が別れました。
-</span><span style=color:#09f;font-style:italic></span>    <span style=color:#078;font-weight:700>var</span> parser = <span style=color:#069;font-weight:700>new</span> GltfParser();
-    <span style=color:#069;font-weight:700>await</span> Task.Run(() =&gt; {
-        <span style=color:#078;font-weight:700>var</span> file = File.ReadAllBytes(path);
-        <span style=color:#09f;font-style:italic>// Unity の ScriptThread 以外でも実行できます
-</span><span style=color:#09f;font-style:italic></span>        parser.ParseGlb(file);
+        _vrmGameObject = LoadVrm(_vrmFilePath);
     }
 
-    <span style=color:#09f;font-style:italic>// parser を引き数に ImporterContext を作成します
-</span><span style=color:#09f;font-style:italic></span>    using(<span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext(parser))
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>void</span> OnDestroy()
     {
-        <span style=color:#069;font-weight:700>await</span> context.LoadAsync(); <span style=color:#09f;font-style:italic>// 数フレームかかります
-</span><span style=color:#09f;font-style:italic></span>        
-        <span style=color:#09f;font-style:italic>// この関数を呼び出すと、Destroy(context.Root) することで関連する Texture, Material, Mesh などのリソースをまとめて破棄できます
-</span><span style=color:#09f;font-style:italic></span>        <span style=color:#078;font-weight:700>var</span> destroyer = context.DisposeOnGameObjectDestroyed();
-        <span style=color:#09f;font-style:italic>// UpdateWhenOffscreen を有効にする
-</span><span style=color:#09f;font-style:italic></span>        context.EnableUpdateWhenOffscreen();
-        <span style=color:#09f;font-style:italic>// 表示
-</span><span style=color:#09f;font-style:italic></span>        context.ShowMeshes();
+        DestroyVrm(_vrmGameObject);
+    }
 
-        <span style=color:#069;font-weight:700>return</span> destroyer.gameObject;
-    } <span style=color:#09f;font-style:italic>// context が保持する Unity リソースが Destroy されます。    
-</span><span style=color:#09f;font-style:italic></span>    <span style=color:#09f;font-style:italic>// DisposeOnGameObjectDestroyed により context が保持するリソースは、destroyerに移動済みです。
-</span><span style=color:#09f;font-style:italic></span>}
-</code></pre></div><h2 id=version-044-loadasyncの例><code>Version 0.44～</code> LoadAsyncの例</h2><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#078;font-weight:700>var</span> bytes = File.ReadAllBytes(path);
+    <span style=color:#069;font-weight:700>private</span> GameObject LoadVrm(<span style=color:#078;font-weight:700>string</span> vrmFilePath)
+    {
+        <span style=color:#09f;font-style:italic>// 1. GltfParser を呼び出します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#078;font-weight:700>var</span> parser = <span style=color:#069;font-weight:700>new</span> GltfParser();
+        parser.ParsePath(vrmFilePath);
+
+        <span style=color:#09f;font-style:italic>// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    VRMImporterContext は VRM のロードを実際に行うクラスです。
+</span><span style=color:#09f;font-style:italic></span>        using(<span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext(parser))
+        {
+            <span style=color:#09f;font-style:italic>// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+</span><span style=color:#09f;font-style:italic></span>            context.Load();
+
+            <span style=color:#09f;font-style:italic>// 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+</span><span style=color:#09f;font-style:italic></span>            context.DisposeOnGameObjectDestroyed();
+
+            <span style=color:#09f;font-style:italic>// 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+</span><span style=color:#09f;font-style:italic></span>            context.EnableUpdateWhenOffscreen();
+
+            <span style=color:#09f;font-style:italic>// 6. VRM モデルを表示します。
+</span><span style=color:#09f;font-style:italic></span>            context.ShowMeshes();
+
+            <span style=color:#09f;font-style:italic>// 7. Root の GameObject を return します。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#069;font-weight:700>return</span> context.Root;
+        }
+        <span style=color:#09f;font-style:italic>// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+</span><span style=color:#09f;font-style:italic></span>    }
+
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>void</span> DestroyVrm(GameObject vrmGameObject)
+    {
+        <span style=color:#09f;font-style:italic>// 9. 生成された VRM の GameObject を破棄します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+</span><span style=color:#09f;font-style:italic></span>        UnityEngine.Object.Destroy(vrmGameObject);
+    }
+}
+</code></pre></div><h3 id=サンプルコード非同期ロード>サンプルコード（非同期ロード）</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>sealed</span> <span style=color:#069;font-weight:700>class</span> <span style=color:#0a8;font-weight:700>LoadVrmAsyncSample</span> : MonoBehaviour
+{
+<span style=color:#309>    [SerializeField]</span> <span style=color:#069;font-weight:700>private</span> <span style=color:#078;font-weight:700>string</span> _vrmFilePath;
+    <span style=color:#069;font-weight:700>private</span> GameObject _vrmGameObect;
+
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>async</span> <span style=color:#069;font-weight:700>void</span> Start()
+    {
+        <span style=color:#09f;font-style:italic>// 簡便のため、このサンプルではキャンセル処理などは考慮しません。
+</span><span style=color:#09f;font-style:italic></span>        _vrmGameObject = <span style=color:#069;font-weight:700>await</span> LoadVrmAsync(_vrmFilePath);
+    }
+
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>void</span> OnDestroy()
+    {
+        DestroyVrm(_vrmGameObject);
+    }
+
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>async</span> Task&lt;GameObject&gt; LoadVrmAsync(<span style=color:#078;font-weight:700>string</span> vrmFilePath)
+    {
+        <span style=color:#09f;font-style:italic>// 1. GltfParser を呼び出します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    GltfParser は Unity のメインスレッド以外で実行できます。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#078;font-weight:700>var</span> parser = <span style=color:#069;font-weight:700>new</span> GltfParser();
+        <span style=color:#069;font-weight:700>await</span> Task.Run(() =&gt; {
+            <span style=color:#078;font-weight:700>var</span> file = File.ReadAllBytes(path);
+            parser.ParseGlb(file);
+        }
+
+        <span style=color:#09f;font-style:italic>// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    VRMImporterContext は VRM のロードを実際に行うクラスです。
+</span><span style=color:#09f;font-style:italic></span>        using(<span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext(parser))
+        {
+            <span style=color:#09f;font-style:italic>// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    Load 処理は数フレームの時間を要します。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#069;font-weight:700>await</span> context.LoadAsync();
+
+            <span style=color:#09f;font-style:italic>// 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+</span><span style=color:#09f;font-style:italic></span>            context.DisposeOnGameObjectDestroyed();
+
+            <span style=color:#09f;font-style:italic>// 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+</span><span style=color:#09f;font-style:italic></span>            context.EnableUpdateWhenOffscreen();
+
+            <span style=color:#09f;font-style:italic>// 6. VRM モデルを表示します。
+</span><span style=color:#09f;font-style:italic></span>            context.ShowMeshes();
+
+            <span style=color:#09f;font-style:italic>// 7. Root の GameObject を return します。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#09f;font-style:italic>//    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+</span><span style=color:#09f;font-style:italic></span>            <span style=color:#069;font-weight:700>return</span> context.Root;
+        }
+        <span style=color:#09f;font-style:italic>// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>//    手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+</span><span style=color:#09f;font-style:italic></span>    }
+
+    <span style=color:#069;font-weight:700>private</span> <span style=color:#069;font-weight:700>void</span> DestroyVrm(GameObject vrmGameObject)
+    {
+        <span style=color:#09f;font-style:italic>// 9. 生成された VRM の GameObject を破棄します。
+</span><span style=color:#09f;font-style:italic></span>        <span style=color:#09f;font-style:italic>// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+</span><span style=color:#09f;font-style:italic></span>        UnityEngine.Object.Destroy(vrmGameObject);
+    }
+}
+</code></pre></div><hr><h1 id=過去バージョンの情報>過去バージョンの情報</h1><h2 id=version-044-loadasyncの例><code>Version 0.44～</code> LoadAsyncの例</h2><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#078;font-weight:700>var</span> bytes = File.ReadAllBytes(path);
 <span style=color:#09f;font-style:italic>// なんらかの方法でByte列を得る
 </span><span style=color:#09f;font-style:italic></span>
 <span style=color:#078;font-weight:700>var</span> context = <span style=color:#069;font-weight:700>new</span> VRMImporterContext();
