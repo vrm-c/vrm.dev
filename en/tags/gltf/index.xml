@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – gltf</title><link>https://vrm.dev/en/tags/gltf/</link><description>Recent content in gltf on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 02 Mar 2021 12:22:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – gltf</title><link>https://vrm.dev/en/tags/gltf/</link><description>Recent content in gltf on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 15 Mar 2021 12:02:02 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About GLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p>glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/KhronosGroup/glTF">https://github.com/KhronosGroup/glTF&lt;/a>&lt;/li>
@@ -154,7 +154,40 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;p>glb is adopted in VRM. &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;/section></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
+&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb import/export&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit import/export
+&lt;ul>
+&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
+&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform import/export&lt;/li>
+&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: GLB Import</title><link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid><description>
+&lt;h2 id="import-glb-file-in-editor-mode">Import GLB file in Editor Mode&lt;/h2>
+&lt;p>The procedure is the same as &lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM import&lt;/a>. You just need to drag and drop the GLB file into &lt;strong>Assets folder&lt;/strong>.&lt;/p>
+&lt;h2 id="import-vrms-gltf-part-into-3d-builder">Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
+&lt;p>To visualize a VRM model in &lt;strong>Windows 3D Builder&lt;/strong>, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
 &lt;p>Starting with &lt;code>v0.68.0&lt;/code>, the &lt;code>glb&lt;/code> file can be create with &lt;code>UniGLTF&lt;/code> module.&lt;/p>
 &lt;p>The procedure for creating a glb file is described as follows:&lt;/p>
 &lt;h3 id="1-open-unigltfexport-unigltf-2xy">1. Open &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code>&lt;/h3>
@@ -202,12 +235,7 @@ Its translation, rotation and scale should be default values.&lt;/p>
 &lt;h2 id="available-shader-1">Available Shader&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>Standard&lt;/code>, &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code> and &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: GLB Import</title><link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid><description>
-&lt;h2 id="import-glb-file-in-editor-mode">Import GLB file in Editor Mode&lt;/h2>
-&lt;p>The procedure is the same as &lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM import&lt;/a>. You just need to drag and drop the GLB file into &lt;strong>Assets folder&lt;/strong>.&lt;/p>
-&lt;h2 id="import-vrms-gltf-part-into-3d-builder">Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>To visualize a VRM model in &lt;strong>Windows 3D Builder&lt;/strong>, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>The definition for Animation is available in GLTF.&lt;/p>
 &lt;blockquote>
 &lt;p>VRM specification does not include the Animation.&lt;/p>
@@ -272,35 +300,7 @@ Its translation, rotation and scale should be default values.&lt;/p>
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li>
 &lt;li>Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li>
-&lt;/ol></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
-&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb import/export&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit import/export
-&lt;ul>
-&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
-&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform import/export&lt;/li>
-&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Mesh Utility</title><link>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</link><pubDate>Tue, 02 Mar 2021 12:22:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</guid><description>
+&lt;/ol></description></item><item><title>Docs: Mesh Utility</title><link>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</link><pubDate>Tue, 02 Mar 2021 12:22:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</guid><description>
 &lt;h1 id="meshutility">MeshUtility&lt;/h1>
 &lt;p>Mesh processing tool in Unity platform.&lt;/p>
 &lt;p>Current available functions: &lt;code>MeshSeparator&lt;/code>, &lt;code>MeshIntegrator&lt;/code>, &lt;code>StaticMeshIntegrator&lt;/code> and &lt;code>BoneMeshEraser&lt;/code>.&lt;/p>
@@ -341,4 +341,5 @@ We first select a model GameObject (or drag and drop a GameObject to TargetObjec
 &lt;h3 id="staticmeshintegrator">StaticMeshIntegrator&lt;/h3>
 &lt;p>Integrate all the static meshes of a (prefab) GameObject (Root and its children).&lt;/p>
 &lt;h3 id="bonemesheraser">BoneMeshEraser&lt;/h3>
-&lt;p>Eliminate meshes associated with the bones in EraseRoot hierarchy. For instance, First-Person usage for VR applications.&lt;/p></description></item></channel></rss>
+&lt;p>Eliminate meshes associated with the bones in EraseRoot hierarchy. For instance, First-Person usage for VR applications.&lt;/p></description></item><item><title>Docs: Implement GLTF Extension</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>Work in progress&lt;/p></description></item></channel></rss>

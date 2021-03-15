@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 16 Sep 2020 15:43:09 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Documentation</title><link>https://vrm.dev/en/docs/</link><description>Recent content in Documentation on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 18 Sep 2020 00:05:44 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
 &lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
 &lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
@@ -324,15 +324,19 @@ Unity-2019.3 |
 |GLB(GLTF+BIN) |VRM-1.0
 +-------------------+
 &lt;/code>&lt;/pre></description></item><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
-&lt;p>This section describes about changes affecting the program.&lt;/p>
-&lt;p>Please go to &lt;a href="https://github.com/vrm-c/UniVRM/wiki">UniVRM/Wiki&lt;/a> to get the latest information of the API update.&lt;/p>
-&lt;h1 id="v036">v0.36&lt;/h1>
-&lt;h2 id="texture-name-save-locations-changed">Texture Name Save Locations Changed&lt;/h2>
+&lt;h2 id="v068-reworked-importercontext">v0.68 Reworked ImporterContext&lt;/h2>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">Runtime Importer&lt;/a>&lt;/p>
+&lt;h2 id="v0632-changed-implementation-method-of-gltf-extension">v0.63.2 Changed implementation method of gltf extension&lt;/h2>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/">Implement GLTF Extension&lt;/a>&lt;/p>
+&lt;h2 id="v056-updated-blendshapekeys-specifications">v0.56 Updated BlendShapeKey&amp;rsquo;s Specifications&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/wiki/ReleaseNote-v0.56.0%28en%29#reworks-blendshapekeys-interface">Rework BlendShapeKey&amp;rsquo;s Interface&lt;/a>&lt;/p>
+&lt;h2 id="v036">v0.36&lt;/h2>
+&lt;h3 id="changed-storage-position-of-texture-name">Changed Storage Position of Texture Name&lt;/h3>
 &lt;p>Conforming to the GLTF specification.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.images&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After the change&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.images&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.name&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="blendshape-name-save-locations-changed">BlendShape Name Save Locations Changed&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="changed-storage-position-blendshape-name">Changed Storage Position BlendShape Name&lt;/h3>
 &lt;p>Conforming to the GLTF specification.&lt;/p>
 &lt;ul>
 &lt;li>&amp;ldquo;extras&amp;rdquo; is not allowed in target&lt;/li>
@@ -1030,7 +1034,217 @@ The current provided software, &lt;a href="https://github.com/vrm-c/UniVRM">UniV
 &lt;p>Currently you can submit your VRM files to &lt;a href="https://seed.online/en/">THE SEED ONLINE&lt;/a>, &lt;a href="https://hub.vroid.com/en/">VRoid Hub&lt;/a> or &lt;a href="https://3d.nicovideo.jp/">Nikoni 3D&lt;/a>. For Nikoni 3D, the submitted VRM file &lt;a href="https://3d.nicovideo.jp/search?word_type=tag&amp;amp;word=VRM">can be found here&lt;/a>. Please check license information and try out those VRM models.
 Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href="https://virtualcast.jp/">Virtual Cast&lt;/a>.&lt;/p>
 &lt;h2 id="vrm-application-development">VRM application development&lt;/h2>
-&lt;p>➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_development/">VRM development&lt;/a>&lt;/p></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>➡️ &lt;a href="https://vrm.dev/en/docs/vrm/vrm_development/">VRM development&lt;/a>&lt;/p></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 15 Mar 2021 17:09:38 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;p>WIP&lt;/p>
+&lt;h2 id="version-068">&lt;code>Version 0.68~&lt;/code>&lt;/h2>
+&lt;p>ImporterContext has been reworked.&lt;/p>
+&lt;h3 id="sync">sync&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">void&lt;/span> Load(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+{
+&lt;span style="color:#09f;font-style:italic">// GltfParser has been separated from ImporterContext
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+parser.ParsePath(path);
+&lt;span style="color:#09f;font-style:italic">// Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+{
+context.Load();
+} &lt;span style="color:#09f;font-style:italic">// Unity resources held by context are destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>As shown above, once the gltf hierarchy is loaded, it will be destroyed immediately.
+To destroy resources such as textures, materials, meshes, etc., use &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> function.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">GameObject Load(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+{
+&lt;span style="color:#09f;font-style:italic">// GltfParser has been separated from ImporterContext
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+parser.ParsePath(path);
+&lt;span style="color:#09f;font-style:italic">// Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+{
+context.Load();
+&lt;span style="color:#09f;font-style:italic">// By calling this function, context.Root (all related resources such as Texture, Material, Mesh, etc.) can be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> destroyer = context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// Enable UpdateWhenOffscreen
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// Display the model
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> destroyer.gameObject;
+} &lt;span style="color:#09f;font-style:italic">// Unity resources held by context are destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Resources held by context by DisposeOnGameObjectDestroyed have been moved to destroyer
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When &lt;code>DisposeOnGameObjectDestroyed&lt;/code> is used, by calling the &lt;code>Object.Destroy&lt;/code> function,
+objects related to &lt;code>Mesh, Material, Texture...&lt;/code> will be destroyed via &lt;code>OnDestroy&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">UnityEngine.Object.Destroy(destroyer.gameObject);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="async">async&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">async&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> path)
+{
+&lt;span style="color:#09f;font-style:italic">// GltfParser has been separated from ImporterContext
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
+&lt;span style="color:#09f;font-style:italic">// Executable without Unity&amp;#39;s ScriptThread
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> parser.ParseGlb(file);
+}
+&lt;span style="color:#09f;font-style:italic">// Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+{
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync(); &lt;span style="color:#09f;font-style:italic">// take several frames per second
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// By calling this function, context.Root (all related resources such as Texture, Material, Mesh, etc.) can be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> destroyer = context.DisposeOnGameObjectDestroyed();
+&lt;span style="color:#09f;font-style:italic">// Enable UpdateWhenOffscreen
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// Display the model
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> destroyer.gameObject;
+} &lt;span style="color:#09f;font-style:italic">// Unity resources held by context are destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Resources held by context by DisposeOnGameObjectDestroyed have been moved to destroyer
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-044-loadasync-example">&lt;code>Version 0.44~&lt;/code> LoadAsync Example&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#09f;font-style:italic">// Get the byte array
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+context.ParseGlb(bytes);
+&lt;span style="color:#09f;font-style:italic">// When meta is needed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">bool&lt;/span> createThumbnail=&lt;span style="color:#069;font-weight:bold">true&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(createThumbnail);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> thumbnail = meta.Thumbnail;
+&lt;span style="color:#09f;font-style:italic">// Construct a model
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>context.LoadAsync(_ =&amp;gt;
+{
+context.ShowMeshes();
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> go = context.Root;
+&lt;span style="color:#09f;font-style:italic">// Load completed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>},
+Debug.LogError);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctask-example">LoadAsyncTask Example&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#099">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
+&lt;/span>&lt;span style="color:#099">&lt;/span>&lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+&lt;span style="color:#09f;font-style:italic">// Get JSON in GLB format and parse it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
+&lt;span style="color:#069;font-weight:bold">try&lt;/span>
+{
+&lt;span style="color:#09f;font-style:italic">// Convert the parsed JSON to the scene object
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsyncTask();
+&lt;span style="color:#09f;font-style:italic">// Prevent the model&amp;#39;s surface from being penetrated by
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// the positional relation between the bounding box and the camera
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
+&lt;span style="color:#09f;font-style:italic">// If you do not want the program displaying the model&amp;#39;s T-Pose,
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// prepare it before ShowMeshes
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Display the model when the loading is finished
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
+}
+&lt;span style="color:#069;font-weight:bold">catch&lt;/span>(Exception ex)
+{
+Debug.LogError(ex);
+&lt;span style="color:#09f;font-style:italic">// Destroy related resources
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Destroy(&lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;span style="color:#069;font-weight:bold">throw&lt;/span>;
+}
+}
+&lt;span style="color:#099">#endif
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="related-article">Related-Article&lt;/h2>
+&lt;p>More details can be found in the link below (written in Japanese):&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Examples of importing the VRM model with the latest version &lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">can be found here&lt;/a>.&lt;/p>
+&lt;p>The followings are the methods to import a VRM model at runtime in Unity:&lt;/p>
+&lt;h2 id="open-vrm-from-a-file-path">Open VRM from a file path&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRM.VRMImporter.LoadFromPath(path);
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="open-vrm-asynchronously-from-a-file-path">Open VRM asynchronously from a file path&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
+VRMImporter.LoadVrmAsync(path, go =&amp;gt; {
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
+});
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="open-vrm-from-a-byte-array">Open VRM from a byte array&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRMImporter.LoadFromBytes(bytes);
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="open-vrm-asynchronously-from-a-byte-array">Open VRM asynchronously from a byte array&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">VRMImporter.LoadVrmAsync(bytes, go =&amp;gt; {
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
+});
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="get-the-information-form-vrm">Get the information form VRM&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#099">#if UNITY_STANDALONE_WIN
+&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = FileDialogForWindows.FileDialog(&lt;span style="color:#c30">&amp;#34;open VRM&amp;#34;&lt;/span>, &lt;span style="color:#c30">&amp;#34;.vrm&amp;#34;&lt;/span>);
+&lt;span style="color:#099">#else
+&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = Application.dataPath + &lt;span style="color:#c30">&amp;#34;/default.vrm&amp;#34;&lt;/span>;
+&lt;span style="color:#099">#endif
+&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (&lt;span style="color:#078;font-weight:bold">string&lt;/span>.IsNullOrEmpty(path))
+{
+&lt;span style="color:#069;font-weight:bold">return&lt;/span>;
+}
+&lt;span style="color:#09f;font-style:italic">// Get the byte array
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+&lt;span style="color:#09f;font-style:italic">// Get JSON in GLB format and parse it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
+&lt;span style="color:#09f;font-style:italic">// Get the meta
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta();
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;meta: title:{0}&amp;#34;&lt;/span>, meta.Title);
+&lt;span style="color:#09f;font-style:italic">// You can access the entire parsed GLTF here
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> vrm = context.GLTF;
+&lt;span style="color:#09f;font-style:italic">// Convert the parsed JSON to the Scene Object
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (m_loadAsync)
+{
+&lt;span style="color:#09f;font-style:italic">// Run asynchronously
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> now = Time.time;
+VRMImporter.LoadVrmAsync(context, go=&amp;gt; {
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> delta = Time.time - now;
+Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span>, delta);
+OnLoaded(go);
+});
+}
+&lt;span style="color:#069;font-weight:bold">else&lt;/span>
+{
+&lt;span style="color:#09f;font-style:italic">// Run synchronously
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VRMImporter.LoadFromBytes(context);
+OnLoaded(context.Root);
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="get-the-thumbnail-from-v037">Get the thumbnail (From v0.37)&lt;/h2>
+&lt;p>A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(&lt;span style="color:#069;font-weight:bold">true&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Make a thumbnail texture
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> Texture2D thumbnail=meta.Thumbnail;
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
+&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb import/export&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit import/export
+&lt;ul>
+&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
+&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform import/export&lt;/li>
+&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
 &lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
@@ -1071,7 +1285,7 @@ However, Mesh, Texture and Prefab will be overwritten.&lt;/p>
 &lt;p>Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
 If you want to overwrite, delete them before importing.&lt;/p>
 &lt;h2 id="045-and-before">0.45 and before&lt;/h2>
-&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1264,54 +1478,6 @@ For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Defaul
 &lt;li>HorizontalInner: The movable range of horizontal inward direction&lt;/li>
 &lt;li>VerticalDown: The movable range of vertical downward direction&lt;/li>
 &lt;li>VerticalUp: The movable range of vertical upward direction&lt;/li>
-&lt;/ul></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
-&lt;p>Starting with &lt;code>v0.68.0&lt;/code>, the &lt;code>glb&lt;/code> file can be create with &lt;code>UniGLTF&lt;/code> module.&lt;/p>
-&lt;p>The procedure for creating a glb file is described as follows:&lt;/p>
-&lt;h3 id="1-open-unigltfexport-unigltf-2xy">1. Open &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code>&lt;/h3>
-&lt;p>At the top of Unity Editor, click &lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>UniGLTF-2.X.Y&lt;/code> to open the dialog:&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
-&lt;h3 id="2-assign-a-gameobject-to-exportroot">2. Assign a GameObject to &lt;code>ExportRoot&lt;/code>&lt;/h3>
-&lt;p>From the Hierarchy window, drag and drop a GameObject into the &lt;code>ExportRoot&lt;/code> field,
-or you can click ◎ button on the right of the &lt;code>ExportRoot&lt;/code> field and select a GameObject from the dropdown list.&lt;/p>
-&lt;ul>
-&lt;li>Note that the root (topmost parent) of a GameObject you select should not be a &lt;code>GLTF&lt;/code> node, but a node stored in the scene with default position, rotation and scale.&lt;/li>
-&lt;/ul>
-&lt;h3 id="3-click-export-button">3. Click &lt;code>Export&lt;/code> button&lt;/h3>
-&lt;p>A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.&lt;/p>
-&lt;h2 id="exportable-components-for-glb">Exportable Components for GLB&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
-&lt;/ul>
-&lt;h2 id="available-shader">Available Shader&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
-&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="before-v0680">Before &lt;code>v0.68.0&lt;/code>&lt;/h1>
-&lt;h2 id="procedure">Procedure&lt;/h2>
-&lt;p>The following is the procedure for creating the &lt;code>glb&lt;/code> file with UniGLTF module:&lt;/p>
-&lt;h3 id="1-create-an-empty-scene">1. Create an empty scene.&lt;/h3>
-&lt;h3 id="2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale">2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3>
-&lt;p>The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
-Its translation, rotation and scale should be default values.&lt;/p>
-&lt;h3 id="3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject">3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3>
-&lt;p>(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
-&lt;h3 id="4-select-the-topmost-parent-gameobject-and-click-export-unigltf-xxx-export">4. Select the topmost parent GameObject and click &lt;code>Export&lt;/code> (&lt;code>UniGLTF-x.xx&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>).&lt;/h3>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
-&lt;h3 id="5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file">5. Enter the file name and the selected GameObject can be exported as the &lt;code>glb&lt;/code> file.&lt;/h3>
-&lt;h2 id="exportable-components-for-glb-1">Exportable Components for GLB&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
-&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
-&lt;/ul>
-&lt;h2 id="available-shader-1">Available Shader&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>Standard&lt;/code>, &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code> and &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: UniUnlit</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</link><pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/</guid><description>
 &lt;h2 id="unigltfuniunlit-shader">&lt;code>UniGLTF/UniUnlit&lt;/code> shader&lt;/h2>
 &lt;p>Unity has Unlit-type shaders:&lt;/p>
@@ -1693,73 +1859,7 @@ Defined by ProtocolBuffer and generate a Json serializer.&lt;/p>
 &lt;li>Must be run in ScriptThread&lt;/li>
 &lt;li>GLTF-related (Mesh, Texture, Material, GameObject, SkinnedMeshRenderer, etc.)&lt;/li>
 &lt;li>VRM-related (HumanoidAvatar, BlendShapeProxy, LookAt, FirstPerson, etc.)&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Import VRM Model at Runtime</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_import_runtime/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_import_runtime/</guid><description>
-&lt;p>Examples of importing the VRM model with the latest version &lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">can be found here&lt;/a>.&lt;/p>
-&lt;p>The followings are the methods to import a VRM model at runtime in Unity:&lt;/p>
-&lt;h2 id="open-vrm-from-a-file-path">Open VRM from a file path&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRM.VRMImporter.LoadFromPath(path);
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="open-vrm-asynchronously-from-a-file-path">Open VRM asynchronously from a file path&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
-VRMImporter.LoadVrmAsync(path, go =&amp;gt; {
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
-});
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="open-vrm-from-a-byte-array">Open VRM from a byte array&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRMImporter.LoadFromBytes(bytes);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="open-vrm-asynchronously-from-a-byte-array">Open VRM asynchronously from a byte array&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">VRMImporter.LoadVrmAsync(bytes, go =&amp;gt; {
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
-});
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="get-the-information-form-vrm">Get the information form VRM&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#099">#if UNITY_STANDALONE_WIN
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = FileDialogForWindows.FileDialog(&lt;span style="color:#c30">&amp;#34;open VRM&amp;#34;&lt;/span>, &lt;span style="color:#c30">&amp;#34;.vrm&amp;#34;&lt;/span>);
-&lt;span style="color:#099">#else
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = Application.dataPath + &lt;span style="color:#c30">&amp;#34;/default.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#099">#endif
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (&lt;span style="color:#078;font-weight:bold">string&lt;/span>.IsNullOrEmpty(path))
-{
-&lt;span style="color:#069;font-weight:bold">return&lt;/span>;
-}
-&lt;span style="color:#09f;font-style:italic">// Get a byte array
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
-&lt;span style="color:#09f;font-style:italic">// Get JSON in GLB format and parse it
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
-&lt;span style="color:#09f;font-style:italic">// Get the meta
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta();
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;meta: title:{0}&amp;#34;&lt;/span>, meta.Title);
-&lt;span style="color:#09f;font-style:italic">// You can access the entire parsed GLTF here
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> vrm = context.GLTF;
-&lt;span style="color:#09f;font-style:italic">// Convert the parsed JSON to the Scene Object
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (m_loadAsync)
-{
-&lt;span style="color:#09f;font-style:italic">// Run asynchronously
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> now = Time.time;
-VRMImporter.LoadVrmAsync(context, go=&amp;gt; {
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> delta = Time.time - now;
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span>, delta);
-OnLoaded(go);
-});
-}
-&lt;span style="color:#069;font-weight:bold">else&lt;/span>
-{
-&lt;span style="color:#09f;font-style:italic">// Run synchronously
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VRMImporter.LoadFromBytes(context);
-OnLoaded(context.Root);
-}
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="get-the-thumbnail-from-v037">Get the thumbnail (From v0.37)&lt;/h2>
-&lt;p>A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(&lt;span style="color:#069;font-weight:bold">true&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Make a thumbnail texture
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> Texture2D thumbnail=meta.Thumbnail;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
 &lt;h2 id="unity-version">Unity Version&lt;/h2>
 &lt;ul>
 &lt;li>The recommended version is &lt;code>Unity-2019.4&lt;/code>. Other supported Unity versions &lt;a href="https://vrm.dev/en/docs/univrm/install/unity_version/">can be found here&lt;/a>.&lt;/li>
@@ -1842,7 +1942,7 @@ If UniVRM package is installed, the &lt;code>Prefab&lt;/code> file can be automa
 &lt;p>The procedure is the same as &lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM import&lt;/a>. You just need to drag and drop the GLB file into &lt;strong>Assets folder&lt;/strong>.&lt;/p>
 &lt;h2 id="import-vrms-gltf-part-into-3d-builder">Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2>
 &lt;img src="https://vrm.dev/images/vrm/alicia_3dbuilder.png" />
-&lt;p>To visualize a VRM model in &lt;strong>Windows 3D Builder&lt;/strong>, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;p>To visualize a VRM model in &lt;strong>Windows 3D Builder&lt;/strong>, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -2170,7 +2270,7 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#920c169d9a7fbb856d42e107ab2da01a15b45db1&amp;#34;&lt;/span>,
 &lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShape Manipulations</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: How to Use BlendShapeProxy</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</guid><description>
 &lt;h2 id="environment">Environment&lt;/h2>
 &lt;p>UniVRM v0.58.0&lt;/p>
 &lt;h2 id="methods">Methods&lt;/h2>
@@ -2225,6 +2325,30 @@ proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_
 proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
 &lt;span style="color:#09f;font-style:italic">// Apply all the specified BlendShapes at once
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.Apply();
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>More details are described below:&lt;/p>
+&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
+&lt;p>Assumed to be used for a simple test program.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1.0f&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accumulatevalue--apply">AccumulateValue + Apply&lt;/h2>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>);
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
+&lt;span style="color:#09f;font-style:italic">// Apply all the specified BlendShapes at once
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.Apply();
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We recommend &lt;code>SetValues&lt;/code> (below) to handle the case of applying multiple BlendShapes.&lt;/p>
+&lt;h2 id="setvalues">SetValues&lt;/h2>
+&lt;p>Call &lt;code>SetValues&lt;/code> to combine multiple BlendShapes.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+{
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
+{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
+});
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Import VRM into Viewer</title><link>https://vrm.dev/en/how_to_view_vrm/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/how_to_view_vrm/</guid><description>
 &lt;p>VRM viewers &lt;a href="https://vrm.dev/en/vrm_applications/#viewer">can be found here&lt;/a>.&lt;/p>
 &lt;p>or you can use the viewer in &lt;a href="https://github.com/vrm-c/UniVRMTest/">UniVRMTest&lt;/a>:&lt;/p>
@@ -2466,72 +2590,55 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;li>yaw, pitch maximum angle =&amp;gt; &lt;code>Curve X Range Degree&lt;/code>&lt;/li>
 &lt;li>yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code>Curve Y Range Degree&lt;/code> to 1&lt;/li>
 &lt;/ul>
-&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
-&lt;p>The definition for Animation is available in GLTF.&lt;/p>
-&lt;blockquote>
-&lt;p>VRM specification does not include the Animation.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="version">Version&lt;/h3>
+&lt;p>Please set up &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> and &lt;code>Horizontal&lt;/code>.&lt;/p></description></item><item><title>Docs: GLB Export</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>Starting with &lt;code>v0.68.0&lt;/code>, the &lt;code>glb&lt;/code> file can be create with &lt;code>UniGLTF&lt;/code> module.&lt;/p>
+&lt;p>The procedure for creating a glb file is described as follows:&lt;/p>
+&lt;h3 id="1-open-unigltfexport-unigltf-2xy">1. Open &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code>&lt;/h3>
+&lt;p>At the top of Unity Editor, click &lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>UniGLTF-2.X.Y&lt;/code> to open the dialog:&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
+&lt;h3 id="2-assign-a-gameobject-to-exportroot">2. Assign a GameObject to &lt;code>ExportRoot&lt;/code>&lt;/h3>
+&lt;p>From the Hierarchy window, drag and drop a GameObject into the &lt;code>ExportRoot&lt;/code> field,
+or you can click ◎ button on the right of the &lt;code>ExportRoot&lt;/code> field and select a GameObject from the dropdown list.&lt;/p>
 &lt;ul>
-&lt;li>v0.44&lt;/li>
+&lt;li>Note that the root (topmost parent) of a GameObject you select should not be a &lt;code>GLTF&lt;/code> node, but a node stored in the scene with default position, rotation and scale.&lt;/li>
 &lt;/ul>
-&lt;h3 id="support-status">Support Status&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th align="left">KeyName&lt;/th>
-&lt;th align="center">&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td align="left">TranslationKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">RotationKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">ScaleKey&lt;/td>
-&lt;td align="center">○&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td align="left">BlendShapeKey&lt;/td>
-&lt;td align="center">×&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
+&lt;h3 id="3-click-export-button">3. Click &lt;code>Export&lt;/code> button&lt;/h3>
+&lt;p>A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.&lt;/p>
+&lt;h2 id="exportable-components-for-glb">Exportable Components for GLB&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
+&lt;/ul>
+&lt;h2 id="available-shader">Available Shader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
+&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul>
 &lt;hr>
-&lt;h3 id="how-to-export-an-animator">How to Export an Animator&lt;/h3>
-&lt;ol>
-&lt;li>Add an Animator component to a root GameObject&lt;/li>
-&lt;li>Create an AnimatorController and set it in the Controller box (&lt;code>Animator&lt;/code>-&amp;gt;&lt;code>Controller&lt;/code>) in the Inspector window&lt;/li>
-&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
-&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
-&lt;li>Add animation keys to this clip&lt;/li>
-&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;h3 id="how-to-export-an-animation">How to Export an Animation&lt;/h3>
-&lt;ol>
-&lt;li>Add an Animation component to a root GameObject&lt;/li>
-&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
-&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
-&lt;li>Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code>Legacy&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/p>
-&lt;ol start="5">
-&lt;li>Set the created AnimationClip in the Animation box (&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>) in the Inspector window&lt;/li>
-&lt;li>Add animation keys to this clip&lt;/li>
-&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;h3 id="notes">Notes&lt;/h3>
-&lt;ol>
-&lt;li>Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
-&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
-&lt;li>For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li>
-&lt;li>Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li>
-&lt;/ol></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</guid><description>
+&lt;h1 id="before-v0680">Before &lt;code>v0.68.0&lt;/code>&lt;/h1>
+&lt;h2 id="procedure">Procedure&lt;/h2>
+&lt;p>The following is the procedure for creating the &lt;code>glb&lt;/code> file with UniGLTF module:&lt;/p>
+&lt;h3 id="1-create-an-empty-scene">1. Create an empty scene.&lt;/h3>
+&lt;h3 id="2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale">2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3>
+&lt;p>The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
+Its translation, rotation and scale should be default values.&lt;/p>
+&lt;h3 id="3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject">3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3>
+&lt;p>(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
+&lt;h3 id="4-select-the-topmost-parent-gameobject-and-click-export-unigltf-xxx-export">4. Select the topmost parent GameObject and click &lt;code>Export&lt;/code> (&lt;code>UniGLTF-x.xx&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>).&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
+&lt;h3 id="5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file">5. Enter the file name and the selected GameObject can be exported as the &lt;code>glb&lt;/code> file.&lt;/h3>
+&lt;h2 id="exportable-components-for-glb-1">Exportable Components for GLB&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (Attach them to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (Attach it to the child other than the topmost parent)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li>
+&lt;/ul>
+&lt;h2 id="available-shader-1">Available Shader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>, &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code> and &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Export Import</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_export_import/</guid><description>
 &lt;h2 id="export">Export&lt;/h2>
 &lt;h3 id="gltf-layer">GLTF Layer&lt;/h3>
 &lt;p>The information is recorded in gltf&amp;rsquo;s &lt;code>/materials[]&lt;/code>.&lt;/p>
@@ -3060,6 +3167,18 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;td>&lt;a href="https://lsengine.net/en/lsengine_en/">Ls ENGINE&lt;/a>&lt;/td>
 &lt;td>Windows&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://riemgoshawk.booth.pm/items/1990160">ACUAH β&lt;/a>&lt;/td>
+&lt;td>Android&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://apps.apple.com/jp/app/pose-arch/id1483326327">Pose Arc‪h&lt;/a>&lt;/td>
+&lt;td>iOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://cocop.site/cocopstudio/">COCOPStudio&lt;/a>&lt;/td>
+&lt;td>Android, iOS, Windows&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="services-using-vrm-internally">Services using VRM internally&lt;/h2>
@@ -3096,35 +3215,7 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;td>iOS, Android&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
-&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb import/export&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit import/export
-&lt;ul>
-&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
-&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform import/export&lt;/li>
-&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;/table></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
 &lt;p>Please delete the folders below:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -3179,7 +3270,72 @@ q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, 
 &lt;/tbody>
 &lt;/table>
 &lt;p>If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.&lt;/p>
-&lt;p>To remove packages installed by Unity Package Window, please click &lt;code>Remove&lt;/code> button at the lower right of the package interface in UPM window.&lt;/p></description></item><item><title>Docs: How to Use VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</guid><description>
+&lt;p>To remove packages installed by Unity Package Window, please click &lt;code>Remove&lt;/code> button at the lower right of the package interface in UPM window.&lt;/p></description></item><item><title>Docs: Animation</title><link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;p>The definition for Animation is available in GLTF.&lt;/p>
+&lt;blockquote>
+&lt;p>VRM specification does not include the Animation.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="version">Version&lt;/h3>
+&lt;ul>
+&lt;li>v0.44&lt;/li>
+&lt;/ul>
+&lt;h3 id="support-status">Support Status&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">KeyName&lt;/th>
+&lt;th align="center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">TranslationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">RotationKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">ScaleKey&lt;/td>
+&lt;td align="center">○&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">BlendShapeKey&lt;/td>
+&lt;td align="center">×&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="how-to-export-an-animator">How to Export an Animator&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animator component to a root GameObject&lt;/li>
+&lt;li>Create an AnimatorController and set it in the Controller box (&lt;code>Animator&lt;/code>-&amp;gt;&lt;code>Controller&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="how-to-export-an-animation">How to Export an Animation&lt;/h3>
+&lt;ol>
+&lt;li>Add an Animation component to a root GameObject&lt;/li>
+&lt;li>From the UnityEditor&amp;rsquo;s toolbar, select &lt;code>Windows&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code> to open the Animation window&lt;/li>
+&lt;li>Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li>
+&lt;li>Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code>Legacy&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/LegacyClip.png" alt="Interpolation">&lt;/p>
+&lt;ol start="5">
+&lt;li>Set the created AnimationClip in the Animation box (&lt;code>Animation&lt;/code>-&amp;gt;&lt;code>Animation&lt;/code>) in the Inspector window&lt;/li>
+&lt;li>Add animation keys to this clip&lt;/li>
+&lt;li>Export as the glb file from &lt;code>UniGLTF&lt;/code>-&amp;gt;&lt;code>Export&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="notes">Notes&lt;/h3>
+&lt;ol>
+&lt;li>Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
+&lt;li>For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li>
+&lt;li>Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li>
+&lt;/ol></description></item><item><title>Docs: How to Use VRMFirstPerson</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id="vrmfirstperson-settings">VRMFirstPerson Settings&lt;/h1>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">VRMFirstPerson&lt;/a> has the following settings for Renderer:&lt;/p>
 &lt;table>
@@ -3491,27 +3647,5 @@ The export function can be used for applications such as character maker tool.&l
 &lt;li>&lt;a href="https://github.com/saturday06/VRM_IMPORTER_for_Blender">https://github.com/saturday06/VRM_IMPORTER_for_Blender&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/virtual-cast/babylon-vrm-loader/">https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/pixiv/three-vrm/">https://github.com/pixiv/three-vrm/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: VRMShaders UPM Package</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
-&lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
-Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
-&lt;h2 id="upm-package">UPM Package&lt;/h2>
-&lt;p>VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
-Besides that, VRMShaders can be used independently without &lt;code>UniVRM&lt;/code> (&lt;code>UniVRM&lt;/code> uses &lt;code>VRMShaders&lt;/code>).
-VRMShaders includes &lt;code>UniUnlit&lt;/code> and &lt;code>MToon&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span>
-{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, the version of UniVRM being imported is v0.57.0.
-The imported version can be changed to different version (e.g. v0.56.0).
-&lt;code>VRMShaders&lt;/code> version number is the same as UniVRM.&lt;/p>
-&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
-&lt;h3 id="mtoon">MToon&lt;/h3>
-&lt;p>In VRMShaders, MToon shader is managed by &lt;code>git submodule&lt;/code>:&lt;/p>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>For the latest update about MToon, please refer to:&lt;/p>
-&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Docs: Implement GLTF Extension</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>Work in progress&lt;/p></description></item></channel></rss>

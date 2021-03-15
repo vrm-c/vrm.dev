@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 10 Feb 2021 15:16:50 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 15 Mar 2021 17:10:43 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 30 Nov 2020 16:19:11 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -560,7 +560,37 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 &lt;h3 id="color-1">Color&lt;/h3>
 &lt;p>輪郭線の色を設定します。&lt;/p>
 &lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
-&lt;p>&lt;code>Color Mode&lt;/code> が &lt;code>MixedLighting&lt;/code> のとき、その乗算係数を設定します。&lt;/p></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>&lt;code>Color Mode&lt;/code> が &lt;code>MixedLighting&lt;/code> のとき、その乗算係数を設定します。&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
+&lt;/ul></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
 &lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
 &lt;ul>
 &lt;li>Animator がアタッチされている&lt;/li>
@@ -623,7 +653,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
 上書きしたい場合はImport前に削除してください。&lt;/p>
 &lt;h2 id="045以前">0.45以前&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -669,7 +699,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
 &lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
 &lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
@@ -1314,7 +1344,7 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
 &lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -1616,7 +1646,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">修正前との違い&lt;/h4>
 鼻先、下唇に加えて、舌が全然違う法線になってます。
-&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Fri, 18 Sep 2020 00:05:44 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -1661,7 +1691,35 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;li>VerticalDown&lt;/li>
 &lt;li>VerticalUp&lt;/li>
 &lt;li>Horizontal&lt;/li>
-&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;/ul></description></item><item><title>Docs: VRMの動作を確認する</title><link>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Wed, 26 Aug 2020 15:52:48 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
+&lt;p>このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。&lt;/p>
+&lt;h3 id="目の動きを確認する">目の動きを確認する&lt;/h3>
+&lt;p>&lt;code>AnimationClip/AnimationController&lt;/code>をセットしたり、&lt;code>VRMLookAtHead&lt;/code>の&lt;code>Target&lt;/code>に&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target">GameObject&lt;/a>をセットしたり（視線がどこを向くかの設定）、&lt;code>Head&lt;/code>欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
+&lt;/p>
+&lt;h3 id="表情を確認する">表情を確認する&lt;/h3>
+&lt;p>モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>をセットアップした後、&lt;code>Add Component&lt;/code>から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>BlendShapeAvatar&lt;/code>フィールドにダブルクリックして、3Dモデルの表情を設定します&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
+&lt;br>
+&lt;br>
+&lt;img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
+&lt;/p></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>GLTF は、Animation の定義があります。&lt;/p>
 &lt;blockquote>
 &lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
@@ -1724,35 +1782,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
 &lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item><item><title>Docs: VRMの動作を確認する</title><link>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Wed, 26 Aug 2020 15:52:48 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
-&lt;p>このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。&lt;/p>
-&lt;h3 id="目の動きを確認する">目の動きを確認する&lt;/h3>
-&lt;p>&lt;code>AnimationClip/AnimationController&lt;/code>をセットしたり、&lt;code>VRMLookAtHead&lt;/code>の&lt;code>Target&lt;/code>に&lt;a href="https://vrm.dev/docs/univrm/lookat/univrm_lookat/#target">GameObject&lt;/a>をセットしたり（視線がどこを向くかの設定）、&lt;code>Head&lt;/code>欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、&lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
-&lt;/p>
-&lt;h3 id="表情を確認する">表情を確認する&lt;/h3>
-&lt;p>モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>をセットアップした後、&lt;code>Add Component&lt;/code>から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>BlendShapeAvatar&lt;/code>フィールドにダブルクリックして、3Dモデルの表情を設定します&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
-&lt;/p></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
+&lt;/ol></description></item><item><title>Docs: UniVRMをアンインストールする</title><link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_uninstall/</guid><description>
 &lt;p>以下のフォルダを削除してください。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1894,215 +1924,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;h1 id="設定したvrmspringboneが居なくなった">設定したVRMSpringBoneが居なくなった&lt;/h1>
 &lt;p>VRMSpringBoneはインポート時に&lt;code>secondary&lt;/code>ノードにアタッチされます。
 エクスポート時と違う場所に現れるのでご注意ください。&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: VRMShaders UPMパッケージ</title><link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
-&lt;p>&lt;code>UniVRM-0.56&lt;/code> からフォルダ構成を変更して、
-&lt;code>UniVRM&lt;/code> のマテリアル関連の機能は、 &lt;code>Assets/VRMShaders&lt;/code> に移動しました。&lt;/p>
-&lt;h2 id="upm-パッケージ">UPM パッケージ&lt;/h2>
-&lt;p>パッケージとして独立して、 &lt;code>UniVRM&lt;/code> とは関係なくマテリアル関連だけ単体で使うことできます。
-( &lt;code>UniVRM&lt;/code> が &lt;code>VRMShaders&lt;/code> を使う関係)。
-&lt;code>UniUnlit&lt;/code> と &lt;code>MToon&lt;/code> を内包しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span> &lt;span style="color:#a00;background-color:#faa">抜粋&lt;/span>
-{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>#0.57.0&lt;/code> 部分で UniVRM のリリース番号(github の tag)を指定します。
-&lt;code>VRMShaders&lt;/code> は &lt;code>VRM&lt;/code> と同じリリース番号を適用する運用をしています。&lt;/p>
-&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
-&lt;h3 id="mtoon">MToon&lt;/h3>
-&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>で開発しています。
-git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Wed, 10 Feb 2021 15:16:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
-&lt;h1 id="version">Version&lt;/h1>
-&lt;ul>
-&lt;li>更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス&lt;/li>
-&lt;/ul>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>date&lt;/th>
-&lt;th>version&lt;/th>
-&lt;th>更新で入った新しいバグ&lt;/th>
-&lt;th>更新内容・備考&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>2019&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0">0.55.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Unity-5.6 対応最終版&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2020&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0">0.56.0&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>Unity-2018.4 に変更&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1">0.56.1&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2">0.56.2&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3">0.56.3&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0">0.57.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>ボーン名重複時にに自動でリネームするようになりました&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1">0.57.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0">0.58.0&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>エクスポートダイアログの作り直し&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1">0.58.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">0.59.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>springBone の Missing を検知してメッセージ&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0">0.60.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>null check 的なものが増えて、モデル改変してもエラーが出にくくなりました&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0">0.61.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/20?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>UniUnlit の頂点カラー。AOT問題を修正&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1">0.61.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0">0.62.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/21?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>BlendShape bake の動作が正しくなった&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2021&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">0.63.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/25?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>jpg問題あり。UniGLTF分離&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">0.63.1&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>jpg問題あり&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">0.63.2&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0">0.64.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/23?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>メッシュの一部を削除したときのエクスポートエラーを回避。vrm-1.0 Experimental&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0">0.65.0&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">misestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>トルコ語のExportを修正&lt;a href="https://github.com/vrm-c/UniVRM/issues/696">#696&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2">0.65.2&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/29?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3">0.65.3&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniGLTFのバージョン。UPM専用。パッケージリリース無し&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">0.66.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/26?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>未正規化ヒエラルキーにスプリングボーンがあるときの警告メッセージ&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2/10予定&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0">0.67.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/27?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>メンテナンスリリース&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>VRMFirstPerson のエディターインポートのバグ &lt;a href="https://github.com/vrm-c/UniVRM/issues/515">/#515&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
-&lt;p>スプリングボーンのコライダーの座標変換バグ。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/576">#576&lt;/a> &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:3" role="doc-endnote">
-&lt;p>エクスポートダイアログのスクリーンショットボタンの jpg バグ。&lt;a href="https://github.com/vrm-c/UniVRM/issues/639">#639&lt;/a> &lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:4" role="doc-endnote">
-&lt;p>シリアライザのバグ。エクスポートしたファイルの互換性。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/654">#654&lt;/a> &lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:5" role="doc-endnote">
-&lt;p>MeshUtility フォルダの移動と参照の問題。 &lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:6" role="doc-endnote">
-&lt;p>他のパッケージと併用するときに install で問題が出る？ &lt;a href="https://github.com/vrm-c/UniVRM/pull/687">#687&lt;/a> &lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:7" role="doc-endnote">
-&lt;p>build すると Exception( &lt;code>#if UNITY_EDITOR&lt;/code> )。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/701">#701&lt;/a> &lt;a href="#fnref:7" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Thu, 21 Jan 2021 17:55:58 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
 &lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
 &lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
@@ -2474,34 +2296,212 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p>
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> ProjectionType type;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jsonschemaから生成">JsonSchemaから生成&lt;/h3>
 &lt;p>VRM-1.0 の実装&lt;/p>
-&lt;p>TODO:&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
-&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
-&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
-&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;p>TODO:&lt;/p></description></item><item><title>Docs: VRMShaders UPMパッケージ</title><link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
+&lt;p>&lt;code>UniVRM-0.56&lt;/code> からフォルダ構成を変更して、
+&lt;code>UniVRM&lt;/code> のマテリアル関連の機能は、 &lt;code>Assets/VRMShaders&lt;/code> に移動しました。&lt;/p>
+&lt;h2 id="upm-パッケージ">UPM パッケージ&lt;/h2>
+&lt;p>パッケージとして独立して、 &lt;code>UniVRM&lt;/code> とは関係なくマテリアル関連だけ単体で使うことできます。
+( &lt;code>UniVRM&lt;/code> が &lt;code>VRMShaders&lt;/code> を使う関係)。
+&lt;code>UniUnlit&lt;/code> と &lt;code>MToon&lt;/code> を内包しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span> &lt;span style="color:#a00;background-color:#faa">抜粋&lt;/span>
+{
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>#0.57.0&lt;/code> 部分で UniVRM のリリース番号(github の tag)を指定します。
+&lt;code>VRMShaders&lt;/code> は &lt;code>VRM&lt;/code> と同じリリース番号を適用する運用をしています。&lt;/p>
+&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
+&lt;h3 id="mtoon">MToon&lt;/h3>
+&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
+&lt;p>で開発しています。
+git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Wed, 10 Feb 2021 15:16:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
+&lt;h1 id="version">Version&lt;/h1>
 &lt;ul>
-&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;li>更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス&lt;/li>
 &lt;/ul>
-&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit の読み書き
-&lt;ul>
-&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
-&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
-&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>date&lt;/th>
+&lt;th>version&lt;/th>
+&lt;th>更新で入った新しいバグ&lt;/th>
+&lt;th>更新内容・備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>2019&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0">0.55.0&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Unity-5.6 対応最終版&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2020&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0">0.56.0&lt;/a>&lt;/td>
+&lt;td>x&lt;/td>
+&lt;td>Unity-2018.4 に変更&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1">0.56.1&lt;/a>&lt;/td>
+&lt;td>x&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2">0.56.2&lt;/a>&lt;/td>
+&lt;td>x&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3">0.56.3&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0">0.57.0&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>ボーン名重複時にに自動でリネームするようになりました&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1">0.57.1&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0">0.58.0&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>エクスポートダイアログの作り直し&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1">0.58.1&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">0.59.0&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>springBone の Missing を検知してメッセージ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0">0.60.0&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>null check 的なものが増えて、モデル改変してもエラーが出にくくなりました&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0">0.61.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/20?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>UniUnlit の頂点カラー。AOT問題を修正&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1">0.61.1&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0">0.62.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/21?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>BlendShape bake の動作が正しくなった&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2021&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">0.63.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/25?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>jpg問題あり。UniGLTF分離&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">0.63.1&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>jpg問題あり&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">0.63.2&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0">0.64.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/23?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>メッシュの一部を削除したときのエクスポートエラーを回避。vrm-1.0 Experimental&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0">0.65.0&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">misestone&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>トルコ語のExportを修正&lt;a href="https://github.com/vrm-c/UniVRM/issues/696">#696&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2">0.65.2&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/29?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3">0.65.3&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>UniGLTFのバージョン。UPM専用。パッケージリリース無し&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">0.66.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/26?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>未正規化ヒエラルキーにスプリングボーンがあるときの警告メッセージ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2/10予定&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0">0.67.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/27?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>メンテナンスリリース&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>VRMFirstPerson のエディターインポートのバグ &lt;a href="https://github.com/vrm-c/UniVRM/issues/515">/#515&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li>KHR_texture_transform の読み書き&lt;/li>
-&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>スプリングボーンのコライダーの座標変換バグ。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/576">#576&lt;/a> &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>エクスポートダイアログのスクリーンショットボタンの jpg バグ。&lt;a href="https://github.com/vrm-c/UniVRM/issues/639">#639&lt;/a> &lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4" role="doc-endnote">
+&lt;p>シリアライザのバグ。エクスポートしたファイルの互換性。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/654">#654&lt;/a> &lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:5" role="doc-endnote">
+&lt;p>MeshUtility フォルダの移動と参照の問題。 &lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:6" role="doc-endnote">
+&lt;p>他のパッケージと併用するときに install で問題が出る？ &lt;a href="https://github.com/vrm-c/UniVRM/pull/687">#687&lt;/a> &lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:7" role="doc-endnote">
+&lt;p>build すると Exception( &lt;code>#if UNITY_EDITOR&lt;/code> )。 &lt;a href="https://github.com/vrm-c/UniVRM/issues/701">#701&lt;/a> &lt;a href="#fnref:7" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>

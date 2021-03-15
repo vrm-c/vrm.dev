@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 16 Sep 2020 15:43:09 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 18 Sep 2020 00:05:44 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p>glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。
 VRMはglTF2.0をベースとしたフォーマットとなっています。&lt;/p>
 &lt;ul>
@@ -162,53 +162,36 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;p>VRMではglbを採用しています。 &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Wed, 10 Mar 2021 14:41:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
-&lt;p>&lt;code>v0.68.0&lt;/code> 以降&lt;/p>
-&lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
-以下、手順を説明します。&lt;/p>
-&lt;h3 id="1-unigltfexport-unigltf-2xy-メニューからダイアログを開きます">1. &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code> メニューからダイアログを開きます&lt;/h3>
-&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
-&lt;h3 id="2-exportroot-に対象の-gameiobject-をセットしてください">2. &lt;code>ExportRoot&lt;/code> に対象の GameIObject をセットしてください&lt;/h3>
-&lt;p>ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。&lt;/p>
+&lt;/section></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
 &lt;ul>
-&lt;li>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/li>
+&lt;li>glTF/glb の読み書き&lt;/li>
 &lt;/ul>
-&lt;h3 id="3-export-を押す">3. &lt;code>Export&lt;/code> を押す&lt;/h3>
-&lt;p>ファイル保存ダイアログが表示されるので出力先を指定してください。&lt;/p>
-&lt;h2 id="glbのエクスポート対象になるコンポーネント">Glbのエクスポート対象になるコンポーネント&lt;/h2>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
 &lt;ul>
-&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
-&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
-&lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
 &lt;/ul>
-&lt;h2 id="対応しているshader">対応しているShader&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
-&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="v0680-より前">&lt;code>v0.68.0&lt;/code> より前&lt;/h1>
-&lt;h2 id="手順">手順&lt;/h2>
-&lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
-以下、手順を説明します。&lt;/p>
-&lt;h3 id="1-空のシーンを用意します">1. 空のシーンを用意します。&lt;/h3>
-&lt;h3 id="2-一番親になるemptyを作成します移動回転拡縮は無し">2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。&lt;/h3>
-&lt;p>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/p>
-&lt;h3 id="3-エクスポートしたいオブジェクトをemptyの子にします">3. エクスポートしたいオブジェクトをemptyの子にします。&lt;/h3>
-&lt;p>(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
-&lt;h3 id="4-一番親のオブジェクトを選択してエクスポートメニューを起動します">4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。&lt;/h3>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
-&lt;h3 id="5-ファイル名を選択して-glb-ファイルを書き出せば完了です">5. ファイル名を選択して &lt;code>glb&lt;/code> ファイルを書き出せば完了です。&lt;/h3>
-&lt;h2 id="glbのエクスポート対象になるコンポーネント-1">Glbのエクスポート対象になるコンポーネント&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
-&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
-&lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
-&lt;/ul>
-&lt;h2 id="対応しているshader-1">対応しているShader&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>Standard&lt;/code> もしくは &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Glbインポート</title><link>https://vrm.dev/docs/univrm/gltf/glb_import/</link><pubDate>Mon, 12 Oct 2020 17:04:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/glb_import/</guid><description>
 &lt;h2 id="エディタモードでglbファイルをインポートする">エディタモードでGlbファイルをインポートする&lt;/h2>
 &lt;p>インポートする手順は&lt;a href="https://vrm.dev/docs/univrm/import/univrm_import/">VRM import&lt;/a>と同じです。UnityのAssetsにドラッグ＆ドロップするだけでGlbファイルをインポートできます。&lt;/p>
@@ -267,7 +250,54 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;li>&lt;code>Default_AO.occlusion.png&lt;/code> の生成。&lt;code>Default_AO&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;li>&lt;code>Default_metalRoughness.metallicRoughness.png&lt;/code> の生成。&lt;code>Default_metalRoughness&lt;/code> を元に Unity の Standard Shader 向けに変換したものです。&lt;/li>
 &lt;/ul>
-&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
+&lt;img src="https://vrm.dev/images/unigltf/gltf_extract.jpg" width="400" /></description></item><item><title>Docs: Glbエクスポート</title><link>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_create_glb/</guid><description>
+&lt;p>&lt;code>v0.68.0&lt;/code> 以降&lt;/p>
+&lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+以下、手順を説明します。&lt;/p>
+&lt;h3 id="1-unigltfexport-unigltf-2xy-メニューからダイアログを開きます">1. &lt;code>UniGLTF/Export UniGLTF-2.X.Y&lt;/code> メニューからダイアログを開きます&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/unigltf/glb_export_dialog.jpg" alt="image">&lt;/p>
+&lt;h3 id="2-exportroot-に対象の-gameiobject-をセットしてください">2. &lt;code>ExportRoot&lt;/code> に対象の GameIObject をセットしてください&lt;/h3>
+&lt;p>ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。&lt;/p>
+&lt;ul>
+&lt;li>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-export-を押す">3. &lt;code>Export&lt;/code> を押す&lt;/h3>
+&lt;p>ファイル保存ダイアログが表示されるので出力先を指定してください。&lt;/p>
+&lt;h2 id="glbのエクスポート対象になるコンポーネント">Glbのエクスポート対象になるコンポーネント&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
+&lt;/ul>
+&lt;h2 id="対応しているshader">対応しているShader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
+&lt;li>&lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="v0680-より前">&lt;code>v0.68.0&lt;/code> より前&lt;/h1>
+&lt;h2 id="手順">手順&lt;/h2>
+&lt;p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+以下、手順を説明します。&lt;/p>
+&lt;h3 id="1-空のシーンを用意します">1. 空のシーンを用意します。&lt;/h3>
+&lt;h3 id="2-一番親になるemptyを作成します移動回転拡縮は無し">2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。&lt;/h3>
+&lt;p>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/p>
+&lt;h3 id="3-エクスポートしたいオブジェクトをemptyの子にします">3. エクスポートしたいオブジェクトをemptyの子にします。&lt;/h3>
+&lt;p>(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/root_cube.png" alt="image">&lt;/p>
+&lt;h3 id="4-一番親のオブジェクトを選択してエクスポートメニューを起動します">4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。&lt;/h3>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/menu_unigltf_export.png" alt="image">&lt;/p>
+&lt;h3 id="5-ファイル名を選択して-glb-ファイルを書き出せば完了です">5. ファイル名を選択して &lt;code>glb&lt;/code> ファイルを書き出せば完了です。&lt;/h3>
+&lt;h2 id="glbのエクスポート対象になるコンポーネント-1">Glbのエクスポート対象になるコンポーネント&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>MeshRenderer + MeshFilter&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>SkinnedMeshRenderer&lt;/code> (一番親以外の子供につけてください)&lt;/li>
+&lt;li>&lt;code>Animation&lt;/code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li>
+&lt;/ul>
+&lt;h2 id="対応しているshader-1">対応しているShader&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code> もしくは &lt;code>Unlit/Color&lt;/code>, &lt;code>Unlit/Texture&lt;/code>, &lt;code>Unlit/Transparent&lt;/code>, &lt;code>Unlit/Transparent Cutout&lt;/code>, &lt;code>UniGLTF/UniUnlit&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: アニメーション</title><link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid><description>
 &lt;p>GLTF は、Animation の定義があります。&lt;/p>
 &lt;blockquote>
 &lt;p>VRM は、Animation を使わないという仕様です&lt;/p>
@@ -330,7 +360,7 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
 &lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Thu, 21 Jan 2021 17:55:58 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
 &lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
 &lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
@@ -702,34 +732,4 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p>
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> ProjectionType type;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jsonschemaから生成">JsonSchemaから生成&lt;/h3>
 &lt;p>VRM-1.0 の実装&lt;/p>
-&lt;p>TODO:&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
-&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
-&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
-&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb の読み書き&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit の読み書き
-&lt;ul>
-&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
-&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform の読み書き&lt;/li>
-&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>TODO:&lt;/p></description></item></channel></rss>

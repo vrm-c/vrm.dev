@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 09 Mar 2021 21:00:14 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 15 Mar 2021 17:10:43 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;h2 id="v068-importercontext-の整理">v0.68 ImporterContext の整理&lt;/h2>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">ランタイムインポーター&lt;/a>&lt;/p>
 &lt;h2 id="v0632-gltf-の-extension-の実装方法を変更">v0.63.2 gltf の extension の実装方法を変更&lt;/h2>
@@ -25,7 +25,37 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>変更後&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 09 Mar 2021 21:00:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
+&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
+&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
+&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb の読み書き&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit の読み書き
+&lt;ul>
+&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
+&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform の読み書き&lt;/li>
+&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
+&lt;/ul></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 09 Mar 2021 21:00:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
 &lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
 &lt;p>ImporterContext を整理しました。&lt;/p>
 &lt;ul>
@@ -327,7 +357,52 @@ proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dicti
 &lt;img src="https://vrm.dev/images/vrm/sample_viewer_activate.jpg" alt="sample_viewer_activate" width="600" />
 &lt;/p>
 &lt;p>&lt;code>VRM.Samples&lt;/code>に&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs">ランタイムVRMエクスポート&lt;/a>と&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs">一人称レンダリング&lt;/a>のサンプルがあります。&lt;/p>
-&lt;p>Aliciaモデルは&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm">こちら&lt;/a>。&lt;/p></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
+&lt;p>Aliciaモデルは&lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm">こちら&lt;/a>。&lt;/p></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid><description>
+&lt;p>UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p>
+&lt;h2 id="vrmの座標系">VRMの座標系&lt;/h2>
+&lt;p>VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
+OpenGL標準の右手系Y-UP座標系です。&lt;/p>
+&lt;ul>
+&lt;li>右:X+&lt;/li>
+&lt;li>上:Y+&lt;/li>
+&lt;li>前:Z-&lt;/li>
+&lt;/ul>
+&lt;h2 id="unityの座標系">Unityの座標系&lt;/h2>
+&lt;p>左手系Y-UP座標系です。&lt;/p>
+&lt;ul>
+&lt;li>右:X+&lt;/li>
+&lt;li>上:Y+&lt;/li>
+&lt;li>前:Z+(+-が反転)&lt;/li>
+&lt;/ul>
+&lt;h2 id="各値の変換">各値の変換&lt;/h2>
+&lt;p>Z軸を反転します。&lt;/p>
+&lt;h3 id="vector3position-normalなど">Vector3(Position, Normalなど)&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Vector3 ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Vector3 v)
+{
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">new&lt;/span> Vector3(v.x, v.y, -v.z);
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h3 id="quaternionrotation">Quaternion(Rotation)&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Quaternion ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Quaternion q)
+{
+&lt;span style="color:#078;font-weight:bold">float&lt;/span> angle;
+Vector3 axis;
+q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, &lt;span style="color:#069;font-weight:bold">out&lt;/span> axis);
+&lt;span style="color:#069;font-weight:bold">return&lt;/span> Quaternion.AngleAxis(-angle, ReverseZ(axis));
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;h3 id="matrixbindmatrices">Matrix(BindMatrices)&lt;/h3>
+&lt;p>スケール値が入っているとうまくいきません&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Matrix4x4 ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Matrix4x4 m)
+{
+&lt;span style="color:#099">#if UNITY_2017_1_OR_NEWER
+&lt;/span>&lt;span style="color:#099">&lt;/span> m.SetTRS(m.GetColumn(&lt;span style="color:#f60">3&lt;/span>).ReverseZ(), m.rotation.ReverseZ(), Vector3.one);
+&lt;span style="color:#099">#else
+&lt;/span>&lt;span style="color:#099">&lt;/span> m.SetTRS(m.ExtractPosition().ReverseZ(), m.ExtractRotation().ReverseZ(), Vector3.one);
+&lt;span style="color:#099">#endif
+&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> m;
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
 &lt;h1 id="vrmfirstpersonの設定">VRMFirstPersonの設定&lt;/h1>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">VRMFirstPerson&lt;/a>ではRendererに対して設定があります。&lt;/p>
 &lt;table>
@@ -426,7 +501,7 @@ m_firstPerson.Setup();
 }
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Thu, 21 Jan 2021 17:55:58 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
 &lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
 &lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
@@ -798,37 +873,7 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p>
 &lt;span style="color:#069;font-weight:bold">public&lt;/span> ProjectionType type;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jsonschemaから生成">JsonSchemaから生成&lt;/h3>
 &lt;p>VRM-1.0 の実装&lt;/p>
-&lt;p>TODO:&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>この記事は、 &lt;code>UniVRM-0.63.2&lt;/code> 以降を対象としています。&lt;/p>
-&lt;p>&lt;code>UniVRM&lt;/code> に内包されていた &lt;code>UniGLTF&lt;/code> を単体で使えるように整理しました。
-&lt;code>Assets/UniGLTF&lt;/code> フォルダに展開されます。&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>&lt;code>UniVRM-0.XX.unitypackage&lt;/code> でインストールできます。
-&lt;code>Assets/VRM&lt;/code> を削除すると &lt;code>glTF&lt;/code> 関連の機能だけを単体で利用できます。&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF は　VRMShaders に依存しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-に含まれる機能">UniGLTF に含まれる機能&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb の読み書き&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf拡張">glTF拡張&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit の読み書き
-&lt;ul>
-&lt;li>unityの unlit 系マテリアルのエクスポート&lt;/li>
-&lt;li>VRMShadersの &lt;a href="https://vrm.dev/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader としてのインポート&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform の読み書き&lt;/li>
-&lt;li>morphTarget(blendShape)の名前を &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code> に読み書きする&lt;/li>
-&lt;/ul></description></item><item><title>Docs: APIの変更点</title><link>https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/</guid><description>
+&lt;p>TODO:&lt;/p></description></item><item><title>Docs: APIの変更点</title><link>https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/</link><pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate><guid>https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/</guid><description>
 &lt;h2 id="import">Import&lt;/h2>
 &lt;ul>
 &lt;li>VRMをインポートするために（&lt;code>UniGLTF.ImporterContext.Load&lt;/code>）使用されるクラス&lt;code>VRM.VRMImporterContext&lt;/code>は削除されました。UniVRMインポーターはVRMデータ（&lt;code>UniVRM10.VrmLoader.CreateVrmModel&lt;/code>）を&lt;code>VrmLib.Model&lt;/code>に保存してからUnityに構築します&lt;/li>
