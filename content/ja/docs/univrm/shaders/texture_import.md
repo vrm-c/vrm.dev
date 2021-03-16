@@ -2,11 +2,39 @@
 title: "テクスチャーのインポート"
 ---
 
-## テクスチャの変換
+## Unity Standardシェーダー向け のテクスチャ変換
 
-glTF の PBR material と Unity の Standard は、 
+glTF の material(Physically Based Rendering) と Unity の Standard は、 
 `MetallicRoughness` テクスチャーと `Occlusion` テクスチャーの RGB チャンネルの使い方が違います。
+
+| 用途      | glTF                                                                    | Unity                                  |
+|:----------|:------------------------------------------------------------------------|:---------------------------------------|
+| Occlusion | materials[*].occlusionTexture の R channel                              | G channel                              |
+| Roughness | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の G channel | A channel (smoothness = 1 - roughness) |
+| Metallic  | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の B channel | R channel                              |
+
 `UniGLTF` では、import 時に変換しています。
+
+### glTF
+
+* https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture
+
+> The occlusion values are sampled from the R channel
+
+* https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture
+
+> The metalness values are sampled from the B channel. The roughness values are sampled from the G channel
+
+### Unity
+
+* https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html
+
+> the Metallic levels for the material are controlled by the values in the Red channel of the texture
+> the Smoothness levels for the material are controlled by the Alpha channel of the texture
+
+* https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html
+
+G channel を使うというドキュメントを探しています。
 
 ### `MetallicRoughness` テクスチャー
 
