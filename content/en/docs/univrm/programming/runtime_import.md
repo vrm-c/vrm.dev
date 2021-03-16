@@ -56,16 +56,16 @@ public sealed class LoadVrmSample : MonoBehaviour
             // 3. Call Load function to create a VRM GameObject
             context.Load();
 
-            // 4. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-            context.DisposeOnGameObjectDestroyed();
-
-            // 5. Enable UpdateWhenOffscreen
+            // 4. Enable UpdateWhenOffscreen
             //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
             context.EnableUpdateWhenOffscreen();
 
-            // 6. Display the model
+            // 5. Display the model
             context.ShowMeshes();
+
+            // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+            context.DisposeOnGameObjectDestroyed();
 
             // 7. Return Root GameObject (VRM model)
             //    Root GameObject is where VRMMeta component is attached
@@ -122,16 +122,16 @@ public sealed class LoadVrmAsyncSample : MonoBehaviour
             //    For loading process it will take several frames
             await context.LoadAsync();
 
-            // 4. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-            context.DisposeOnGameObjectDestroyed();
-
-            // 5. Enable UpdateWhenOffscreen
+            // 4. Enable UpdateWhenOffscreen
             //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
             context.EnableUpdateWhenOffscreen();
 
-            // 6. Display the model
+            // 5. Display the model
             context.ShowMeshes();
+
+            // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+            context.DisposeOnGameObjectDestroyed();
 
             // 7. Return Root GameObject (VRM model)
             //    Root GameObject is where VRMMeta component is attached
