@@ -57,16 +57,16 @@ public sealed class LoadVrmSample : MonoBehaviour
             // 3. Load 関数を呼び出し、VRM の GameObject を生成します。
             context.Load();
 
-            // 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-            context.DisposeOnGameObjectDestroyed();
-
-            // 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+            // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
             //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
             context.EnableUpdateWhenOffscreen();
 
-            // 6. VRM モデルを表示します。
+            // 5. VRM モデルを表示します。
             context.ShowMeshes();
+
+            // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+            context.DisposeOnGameObjectDestroyed();
 
             // 7. Root の GameObject を return します。
             //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
@@ -124,16 +124,16 @@ public sealed class LoadVrmAsyncSample : MonoBehaviour
             //    Load 処理は数フレームの時間を要します。
             await context.LoadAsync();
 
-            // 4. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-            context.DisposeOnGameObjectDestroyed();
-
-            // 5. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+            // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
             //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
             context.EnableUpdateWhenOffscreen();
 
-            // 6. VRM モデルを表示します。
+            // 5. VRM モデルを表示します。
             context.ShowMeshes();
+
+            // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+            context.DisposeOnGameObjectDestroyed();
 
             // 7. Root の GameObject を return します。
             //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
