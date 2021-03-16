@@ -291,7 +291,7 @@
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 29 Sep 2020 22:22:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Wed, 07 Oct 2020 17:14:30 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
 &lt;table>
@@ -485,11 +485,62 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: テクスチャーのインポート</title><link>https://vrm.dev/docs/univrm/shaders/texture_import/</link><pubDate>Tue, 09 Mar 2021 21:03:31 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/texture_import/</guid><description>
-&lt;h2 id="テクスチャの変換">テクスチャの変換&lt;/h2>
-&lt;p>glTF の PBR material と Unity の Standard は、
-&lt;code>MetallicRoughness&lt;/code> テクスチャーと &lt;code>Occlusion&lt;/code> テクスチャーの RGB チャンネルの使い方が違います。
-&lt;code>UniGLTF&lt;/code> では、import 時に変換しています。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: テクスチャーのインポート</title><link>https://vrm.dev/docs/univrm/shaders/texture_import/</link><pubDate>Tue, 16 Mar 2021 16:58:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/texture_import/</guid><description>
+&lt;h2 id="unity-standardシェーダー向け-のテクスチャ変換">Unity Standardシェーダー向け のテクスチャ変換&lt;/h2>
+&lt;p>glTF の material(Physically Based Rendering) と Unity の Standard は、
+&lt;code>MetallicRoughness&lt;/code> テクスチャーと &lt;code>Occlusion&lt;/code> テクスチャーの RGB チャンネルの使い方が違います。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">用途&lt;/th>
+&lt;th align="left">glTF&lt;/th>
+&lt;th align="left">Unity&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Occlusion&lt;/td>
+&lt;td align="left">materials[*].occlusionTexture の R channel&lt;/td>
+&lt;td align="left">G channel&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Roughness&lt;/td>
+&lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture の G channel&lt;/td>
+&lt;td align="left">A channel (smoothness = 1 - roughness)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic&lt;/td>
+&lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture の B channel&lt;/td>
+&lt;td align="left">R channel&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>UniGLTF&lt;/code> では、import 時に変換しています。&lt;/p>
+&lt;h3 id="gltf">glTF&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>The occlusion values are sampled from the R channel&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>The metalness values are sampled from the B channel. The roughness values are sampled from the G channel&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="unity">Unity&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html">https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>the Metallic levels for the material are controlled by the values in the Red channel of the texture
+the Smoothness levels for the material are controlled by the Alpha channel of the texture&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html">https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>G channel を使うというドキュメントを探しています。&lt;/p>
 &lt;h3 id="metallicroughness-テクスチャー">&lt;code>MetallicRoughness&lt;/code> テクスチャー&lt;/h3>
 &lt;ul>
 &lt;li>glTF の Metallic =&amp;gt; Blue&lt;/li>
