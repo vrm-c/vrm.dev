@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/en/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 16 Mar 2021 14:52:50 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/en/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 16 Mar 2021 16:53:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;h2 id="v068-reworked-importercontext">v0.68 Reworked ImporterContext&lt;/h2>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">Runtime Importer&lt;/a>&lt;/p>
 &lt;h2 id="v0632-changed-implementation-method-of-gltf-extension">v0.63.2 Changed implementation method of gltf extension&lt;/h2>
@@ -20,7 +20,7 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After the change&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 16 Mar 2021 14:52:50 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 16 Mar 2021 16:53:16 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
 &lt;h2 id="version-068">&lt;code>Version 0.68~&lt;/code>&lt;/h2>
 &lt;h3 id="api-changes">API Changes&lt;/h3>
 &lt;p>ImporterContext has been reworked.&lt;/p>
@@ -70,14 +70,14 @@ parser.ParsePath(vrmFilePath);
 {
 &lt;span style="color:#09f;font-style:italic">// 3. Call Load function to create a VRM GameObject
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Load();
-&lt;span style="color:#09f;font-style:italic">// 4. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// 5. Enable UpdateWhenOffscreen
+&lt;span style="color:#09f;font-style:italic">// 4. Enable UpdateWhenOffscreen
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 6. Display the model
+&lt;span style="color:#09f;font-style:italic">// 5. Display the model
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#09f;font-style:italic">// 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
 &lt;span style="color:#09f;font-style:italic">// 7. Return Root GameObject (VRM model)
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root GameObject is where VRMMeta component is attached
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
@@ -123,14 +123,14 @@ parser.ParseGlb(file);
 &lt;span style="color:#09f;font-style:italic">// 3. Call LoadAsync function to create a VRM GameObject
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// For loading process it will take several frames
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync();
-&lt;span style="color:#09f;font-style:italic">// 4. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// 5. Enable UpdateWhenOffscreen
+&lt;span style="color:#09f;font-style:italic">// 4. Enable UpdateWhenOffscreen
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 6. Display the model
+&lt;span style="color:#09f;font-style:italic">// 5. Display the model
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
+&lt;span style="color:#09f;font-style:italic">// 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
 &lt;span style="color:#09f;font-style:italic">// 7. Return Root GameObject (VRM model)
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root GameObject is where VRMMeta component is attached
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
