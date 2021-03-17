@@ -288,7 +288,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Wed, 07 Oct 2020 18:59:20 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -467,4 +467,71 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Texture Import</title><link>https://vrm.dev/en/docs/univrm/shaders/texture_import/</link><pubDate>Wed, 17 Mar 2021 11:10:12 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/texture_import/</guid><description>
+&lt;p>Work in progress&lt;/p>
+&lt;h2 id="texture-conversion-for-unitys-standard-shader">Texture Conversion for Unity&amp;rsquo;s Standard Shader&lt;/h2>
+&lt;p>RGB channel conversion between glTF&amp;rsquo;s material (PBR) and Unity Standard Shader:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Texture Type&lt;/th>
+&lt;th align="left">glTF&lt;/th>
+&lt;th align="left">Unity&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Occlusion&lt;/td>
+&lt;td align="left">materials[*].occlusionTexture&amp;rsquo;s R channel&lt;/td>
+&lt;td align="left">G channel&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Roughness&lt;/td>
+&lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s G channel&lt;/td>
+&lt;td align="left">A channel (smoothness = 1 - roughness)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic&lt;/td>
+&lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s B channel&lt;/td>
+&lt;td align="left">R channel&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The texture conversion described above can be done with &lt;code>UniGLTF&lt;/code> import.&lt;/p>
+&lt;h3 id="gltf">glTF&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>The occlusion values are sampled from the R channel&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>The metalness values are sampled from the B channel. The roughness values are sampled from the G channel&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="unity">Unity&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html">https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>the Metallic levels for the material are controlled by the values in the Red channel of the texture
+the Smoothness levels for the material are controlled by the Alpha channel of the texture&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html">https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="metallicroughness-texture">&lt;code>MetallicRoughness&lt;/code> Texture&lt;/h3>
+&lt;ul>
+&lt;li>glTF&amp;rsquo;s Metallic =&amp;gt; Blue&lt;/li>
+&lt;li>glTF&amp;rsquo;s Roughness =&amp;gt; Green&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>The metalness values are sampled from the B channel. The roughness values are sampled from the G channel.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Unity&amp;rsquo;s Standard(Metallic Alpha) Metallic =&amp;gt; Alpha&lt;/li>
+&lt;li>Unity&amp;rsquo;s Standard(Metallic Alpha) Smooth =&amp;gt; Red&lt;/li>
+&lt;/ul></description></item></channel></rss>
