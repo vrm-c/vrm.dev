@@ -20,7 +20,7 @@ Support `Unity-2018.4` and above. `Unity-2019.4 LTS` is recommended.
 | Unity-2019.2     | ○             |                           |     | .Net3.5 is removed. There is no need to set  `Scripting Runtime Version` to .Net4.X equivalent |
 | Unity-2019.3     | ○            |                            |     | Support UPM from 2019.3.4f1 |
 | Unity-2019.4 LTS | ◎            |                           | ○    | Current version for UniVRM-0.XX UPM testing |
-| Unity-2020       | ○            |                            | ○   |      |
+| Unity-2020       | ○            |                            | ○   | Fixed Prefab behaviors, etc. in `UniVRM-0.69.0` |
 
 ## ～ UniVRM-0.55
 
