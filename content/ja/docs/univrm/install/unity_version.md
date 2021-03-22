@@ -19,7 +19,7 @@ Unity サポート状況は以下のようになっています。
 | Unity-2019.2     | ○    | -                         |     | .Net3.5が無くなったので Scripting Runtime Version 設定が不要になった |
 | Unity-2019.3     | ○    | -                         |     | 2019.3.4f1 から UPM(githubのサブフォルダ) が動作する                 |
 | Unity-2019.4 LTS | ◎    | -                         | ○   | リリース時にUPMの動作確認をしてるバージョン                          |
-| Unity-2020       | △    | -                         | ○   | Prefab 周りの動作が変わっていてEditor機能が一部動作せず。            |
+| Unity-2020       | 〇   | -                         | ○   | Editor機能(Prefabなど)が一部動作せず。`UniVRM-0.69.0` で修正         |
 
 ## ～ UniVRM-0.55
 
