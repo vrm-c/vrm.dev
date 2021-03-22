@@ -7,13 +7,27 @@ title: "テクスチャーのインポート"
 glTF の material(Physically Based Rendering) と Unity の Standard は、 
 `MetallicRoughness` テクスチャーと `Occlusion` テクスチャーの RGB チャンネルの使い方が違います。
 
-| 用途      | glTF                                                                    | Unity                                  |
-|:----------|:------------------------------------------------------------------------|:---------------------------------------|
-| Occlusion | materials[*].occlusionTexture の R channel                              | G channel                              |
-| Roughness | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の G channel | A channel (smoothness = 1 - roughness) |
-| Metallic  | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の B channel | R channel                              |
+| 用途      | glTF                                                                    | Unity                                                                    |
+|:----------|:------------------------------------------------------------------------|:-------------------------------------------------------------------------|
+| Occlusion | materials[*].occlusionTexture の R channel                              | Standard._MetallicGlossMap.G channel                                     |
+| Roughness | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の G channel | Standard._MetallicGlossMap.A channel (smoothness = 1 - roughness) [^bug] |
+| Metallic  | materials[*].pbrMetallicRoughness.metallicRoughnessTexture の B channel | Standard._OcclusionMap.R channel                                         |
 
 `UniGLTF` では、import 時に変換しています。
+
+[^bug]: `v0.69.0` で修正されます。https://github.com/vrm-c/UniVRM/issues/388
+
+### MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0` 
+
+`v0.69.0` からテクスチャーを１枚にまとめる動作をします。
+
+* import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)
+* export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)
+
+`v0.68.0` 以前
+
+* import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import
+* export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export
 
 ### glTF
 
