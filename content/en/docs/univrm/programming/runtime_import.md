@@ -27,60 +27,67 @@ ImporterContext has been reworked.
 ### Sample Codes (Synchronous Loading)
 
 ```cs
-public sealed class LoadVrmSample : MonoBehaviour
+using UniGLTF;
+using UnityEngine;
+using VRM;
+
+namespace YourNameSpace
 {
-    [SerializeField] private string _vrmFilePath;
-    private GameObject _vrmGameObect;
-
-    private void Start()
+    public sealed class LoadVrmSample : MonoBehaviour
     {
-        _vrmGameObject = LoadVrm(_vrmFilePath);
-    }
+        [SerializeField] private string _vrmFilePath;
+        private GameObject _vrmGameObject;
 
-    private void OnDestroy()
-    {
-        DestroyVrm(_vrmGameObject);
-    }
-
-    private GameObject LoadVrm(string vrmFilePath)
-    {
-        // 1. Call GltfParser function (it has been separated from ImporterContext)
-        //    We use GltfParser to obtain JSON information and binary data from the VRM file
-        var parser = new GltfParser();
-        parser.ParsePath(vrmFilePath);
-
-        // 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
-        //    VRMImporterContext is the class for loading VRM
-        using(var context = new VRMImporterContext(parser))
+        private void Start()
         {
-            // 3. Call Load function to create a VRM GameObject
-            context.Load();
-
-            // 4. Enable UpdateWhenOffscreen
-            //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-            context.EnableUpdateWhenOffscreen();
-
-            // 5. Display the model
-            context.ShowMeshes();
-
-            // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-            context.DisposeOnGameObjectDestroyed();
-
-            // 7. Return Root GameObject (VRM model)
-            //    Root GameObject is where VRMMeta component is attached
-            return context.Root;
+            _vrmGameObject = LoadVrm(_vrmFilePath);
         }
-        // 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-        //    As mentioned in step 4, the resources associated with the VRM GameObject will not be destroyed
-        //    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
-    }
 
-    private void DestroyVrm(GameObject vrmGameObject)
-    {
-        // 9. Destroy the generated VRM GameObject
-        //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
-        UnityEngine.Object.Destroy(vrmGameObject);
+        private void OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        private GameObject LoadVrm(string vrmFilePath)
+        {
+            // 1. Call GltfParser function (it has been separated from ImporterContext)
+            //    We use GltfParser to obtain JSON information and binary data from the VRM file
+            var parser = new GltfParser();
+            parser.ParsePath(vrmFilePath);
+
+            // 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+            //    VRMImporterContext is the class for loading VRM
+            using (var context = new VRMImporterContext(parser))
+            {
+                // 3. Call Load function to create a VRM GameObject
+                context.Load();
+
+                // 4. Enable UpdateWhenOffscreen
+                //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+                context.EnableUpdateWhenOffscreen();
+
+                // 5. Display the model
+                context.ShowMeshes();
+
+                // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+                //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+                context.DisposeOnGameObjectDestroyed();
+
+                // 7. Return Root GameObject (VRM model)
+                //    Root GameObject is where VRMMeta component is attached
+                return context.Root;
+            }
+            // 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
+            //    As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
+            //    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
+        }
+
+        private void DestroyVrm(GameObject vrmGameObject)
+        {
+            // 9. Destroy the generated VRM GameObject
+            //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
+            UnityEngine.Object.Destroy(vrmGameObject);
+        }
     }
 }
 ```
@@ -88,65 +95,75 @@ public sealed class LoadVrmSample : MonoBehaviour
 ### Sample Codes (Asynchronous Loading)
 
 ```cs
-public sealed class LoadVrmAsyncSample : MonoBehaviour
+using System.IO;
+using System.Threading.Tasks;
+using UniGLTF;
+using UnityEngine;
+using VRM;
+
+namespace YourNameSpace
 {
-    [SerializeField] private string _vrmFilePath;
-    private GameObject _vrmGameObect;
-
-    private async void Start()
+    public sealed class LoadVrmAsyncSample : MonoBehaviour
     {
-        _vrmGameObject = await LoadVrmAsync(_vrmFilePath);
-    }
+        [SerializeField] private string _vrmFilePath;
+        private GameObject _vrmGameObject;
 
-    private void OnDestroy()
-    {
-        DestroyVrm(_vrmGameObject);
-    }
-
-    private async Task<GameObject> LoadVrmAsync(string vrmFilePath)
-    {
-        // 1. Call GltfParser function (it has been separated from ImporterContext)
-        //    We use GltfParser to obtain JSON information and binary data from the VRM file
-        //    GltfParser can be run by other than the Unity's main thread
-        var parser = new GltfParser();
-        await Task.Run(() => {
-            var file = File.ReadAllBytes(path);
-            parser.ParseGlb(file);
-        }
-
-        // 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
-        //    VRMImporterContext is the class for loading VRM
-        using(var context = new VRMImporterContext(parser))
+        private async void Start()
         {
-            // 3. Call LoadAsync function to create a VRM GameObject
-            //    For loading process it will take several frames
-            await context.LoadAsync();
-
-            // 4. Enable UpdateWhenOffscreen
-            //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-            context.EnableUpdateWhenOffscreen();
-
-            // 5. Display the model
-            context.ShowMeshes();
-
-            // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-            //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-            context.DisposeOnGameObjectDestroyed();
-
-            // 7. Return Root GameObject (VRM model)
-            //    Root GameObject is where VRMMeta component is attached
-            return context.Root;
+            _vrmGameObject = await LoadVrmAsync(_vrmFilePath);
         }
-        // 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-        //    As mentioned in step 4, the resources associated with the VRM GameObject will not be destroyed
-        //    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
-    }
 
-    private void DestroyVrm(GameObject vrmGameObject)
-    {
-        // 9. Destroy the generated VRM GameObject
-        //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
-        UnityEngine.Object.Destroy(vrmGameObject);
+        private void OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        private async Task<GameObject> LoadVrmAsync(string vrmFilePath)
+        {
+            // 1. Call GltfParser function (it has been separated from ImporterContext)
+            //    We use GltfParser to obtain JSON information and binary data from the VRM file
+            //    GltfParser can be run by other than the Unity's main thread
+            var parser = new GltfParser();
+            await Task.Run(() =>
+            {
+                var file = File.ReadAllBytes(vrmFilePath);
+                parser.ParseGlb(file);
+            });
+
+            // 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+            //    VRMImporterContext is the class for loading VRM
+            using (var context = new VRMImporterContext(parser))
+            {
+                // 3. Call LoadAsync function to create a VRM GameObject
+                //    For loading process it will take several frames
+                await context.LoadAsync();
+
+                // 4. Enable UpdateWhenOffscreen
+                //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+                context.EnableUpdateWhenOffscreen();
+
+                // 5. Display the model
+                context.ShowMeshes();
+
+                // 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
+                //    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
+                context.DisposeOnGameObjectDestroyed();
+
+                // 7. Return Root GameObject (VRM model)
+                //    Root GameObject is where VRMMeta component is attached
+                return context.Root;
+            }
+            // 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
+            //    As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
+            //    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
+        }
+
+        private void DestroyVrm(GameObject vrmGameObject)
+        {
+            // 9. Destroy the generated VRM GameObject
+            //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
+            UnityEngine.Object.Destroy(vrmGameObject);
+        }
     }
 }
 ```

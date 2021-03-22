@@ -28,60 +28,67 @@ weight: 2
 ### サンプルコード（同期的ロード）
 
 ```cs
-public sealed class LoadVrmSample : MonoBehaviour
+using UniGLTF;
+using UnityEngine;
+using VRM;
+
+namespace YourNameSpace
 {
-    [SerializeField] private string _vrmFilePath;
-    private GameObject _vrmGameObect;
-
-    private void Start()
+    public sealed class LoadVrmSample : MonoBehaviour
     {
-        _vrmGameObject = LoadVrm(_vrmFilePath);
-    }
+        [SerializeField] private string _vrmFilePath;
+        private GameObject _vrmGameObject;
 
-    private void OnDestroy()
-    {
-        DestroyVrm(_vrmGameObject);
-    }
-
-    private GameObject LoadVrm(string vrmFilePath)
-    {
-        // 1. GltfParser を呼び出します。
-        //    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
-        var parser = new GltfParser();
-        parser.ParsePath(vrmFilePath);
-
-        // 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
-        //    VRMImporterContext は VRM のロードを実際に行うクラスです。
-        using(var context = new VRMImporterContext(parser))
+        private void Start()
         {
-            // 3. Load 関数を呼び出し、VRM の GameObject を生成します。
-            context.Load();
-
-            // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
-            //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-            context.EnableUpdateWhenOffscreen();
-
-            // 5. VRM モデルを表示します。
-            context.ShowMeshes();
-
-            // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-            context.DisposeOnGameObjectDestroyed();
-
-            // 7. Root の GameObject を return します。
-            //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
-            return context.Root;
+            _vrmGameObject = LoadVrm(_vrmFilePath);
         }
-        // 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
-        //    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-        //    手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
-    }
 
-    private void DestroyVrm(GameObject vrmGameObject)
-    {
-        // 9. 生成された VRM の GameObject を破棄します。
-        //    GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
-        UnityEngine.Object.Destroy(vrmGameObject);
+        private void OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        private GameObject LoadVrm(string vrmFilePath)
+        {
+            // 1. GltfParser を呼び出します。
+            //    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+            var parser = new GltfParser();
+            parser.ParsePath(vrmFilePath);
+
+            // 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+            //    VRMImporterContext は VRM のロードを実際に行うクラスです。
+            using (var context = new VRMImporterContext(parser))
+            {
+                // 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+                context.Load();
+
+                // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+                //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+                context.EnableUpdateWhenOffscreen();
+
+                // 5. VRM モデルを表示します。
+                context.ShowMeshes();
+
+                // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+                //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+                context.DisposeOnGameObjectDestroyed();
+
+                // 7. Root の GameObject を return します。
+                //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+                return context.Root;
+            }
+            // 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+            //    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+            //    手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+        }
+
+        private void DestroyVrm(GameObject vrmGameObject)
+        {
+            // 9. 生成された VRM の GameObject を破棄します。
+            //    GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+            UnityEngine.Object.Destroy(vrmGameObject);
+        }
     }
 }
 ```
@@ -89,66 +96,76 @@ public sealed class LoadVrmSample : MonoBehaviour
 ### サンプルコード（非同期ロード）
 
 ```cs
-public sealed class LoadVrmAsyncSample : MonoBehaviour
+using System.IO;
+using System.Threading.Tasks;
+using UniGLTF;
+using UnityEngine;
+using VRM;
+
+namespace YourNameSpace
 {
-    [SerializeField] private string _vrmFilePath;
-    private GameObject _vrmGameObect;
-
-    private async void Start()
+    public sealed class LoadVrmAsyncSample : MonoBehaviour
     {
-        // 簡便のため、このサンプルではキャンセル処理などは考慮しません。
-        _vrmGameObject = await LoadVrmAsync(_vrmFilePath);
-    }
+        [SerializeField] private string _vrmFilePath;
+        private GameObject _vrmGameObject;
 
-    private void OnDestroy()
-    {
-        DestroyVrm(_vrmGameObject);
-    }
-
-    private async Task<GameObject> LoadVrmAsync(string vrmFilePath)
-    {
-        // 1. GltfParser を呼び出します。
-        //    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
-        //    GltfParser は Unity のメインスレッド以外で実行できます。
-        var parser = new GltfParser();
-        await Task.Run(() => {
-            var file = File.ReadAllBytes(path);
-            parser.ParseGlb(file);
-        }
-
-        // 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
-        //    VRMImporterContext は VRM のロードを実際に行うクラスです。
-        using(var context = new VRMImporterContext(parser))
+        private async void Start()
         {
-            // 3. Load 関数を呼び出し、VRM の GameObject を生成します。
-            //    Load 処理は数フレームの時間を要します。
-            await context.LoadAsync();
-
-            // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
-            //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-            context.EnableUpdateWhenOffscreen();
-
-            // 5. VRM モデルを表示します。
-            context.ShowMeshes();
-
-            // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-            //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-            context.DisposeOnGameObjectDestroyed();
-
-            // 7. Root の GameObject を return します。
-            //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
-            return context.Root;
+            // 簡便のため、このサンプルではキャンセル処理などは考慮しません。
+            _vrmGameObject = await LoadVrmAsync(_vrmFilePath);
         }
-        // 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
-        //    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-        //    手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
-    }
 
-    private void DestroyVrm(GameObject vrmGameObject)
-    {
-        // 9. 生成された VRM の GameObject を破棄します。
-        // GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
-        UnityEngine.Object.Destroy(vrmGameObject);
+        private void OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        private async Task<GameObject> LoadVrmAsync(string vrmFilePath)
+        {
+            // 1. GltfParser を呼び出します。
+            //    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+            //    GltfParser は Unity のメインスレッド以外で実行できます。
+            var parser = new GltfParser();
+            await Task.Run(() =>
+            {
+                var file = File.ReadAllBytes(vrmFilePath);
+                parser.ParseGlb(file);
+            });
+
+            // 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+            //    VRMImporterContext は VRM のロードを実際に行うクラスです。
+            using (var context = new VRMImporterContext(parser))
+            {
+                // 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+                //    Load 処理は数フレームの時間を要します。
+                await context.LoadAsync();
+
+                // 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+                //    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+                context.EnableUpdateWhenOffscreen();
+
+                // 5. VRM モデルを表示します。
+                context.ShowMeshes();
+
+                // 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+                //    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+                context.DisposeOnGameObjectDestroyed();
+
+                // 7. Root の GameObject を return します。
+                //    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+                return context.Root;
+            }
+            // 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+            //    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+            //    手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+        }
+
+        private void DestroyVrm(GameObject vrmGameObject)
+        {
+            // 9. 生成された VRM の GameObject を破棄します。
+            // GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+            UnityEngine.Object.Destroy(vrmGameObject);
+        }
     }
 }
 ```
