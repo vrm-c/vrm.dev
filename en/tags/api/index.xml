@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/en/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 16 Mar 2021 16:53:16 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – api</title><link>https://vrm.dev/en/tags/api/</link><description>Recent content in api on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 22 Mar 2021 18:15:57 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;h2 id="v068-reworked-importercontext">v0.68 Reworked ImporterContext&lt;/h2>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">Runtime Importer&lt;/a>&lt;/p>
 &lt;h2 id="v0632-changed-implementation-method-of-gltf-extension">v0.63.2 Changed implementation method of gltf extension&lt;/h2>
@@ -20,7 +20,7 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After the change&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 16 Mar 2021 16:53:16 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 22 Mar 2021 18:15:57 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
 &lt;h2 id="version-068">&lt;code>Version 0.68~&lt;/code>&lt;/h2>
 &lt;h3 id="api-changes">API Changes&lt;/h3>
 &lt;p>ImporterContext has been reworked.&lt;/p>
@@ -46,10 +46,15 @@
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="sample-codes-synchronous-loading">Sample Codes (Synchronous Loading)&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
 {
 &lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
 {
 _vrmGameObject = LoadVrm(_vrmFilePath);
@@ -66,7 +71,7 @@ DestroyVrm(_vrmGameObject);
 parser.ParsePath(vrmFilePath);
 &lt;span style="color:#09f;font-style:italic">// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext is the class for loading VRM
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
 &lt;span style="color:#09f;font-style:italic">// 3. Call Load function to create a VRM GameObject
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Load();
@@ -83,7 +88,7 @@ parser.ParsePath(vrmFilePath);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
 }
 &lt;span style="color:#09f;font-style:italic">// 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// As mentioned in step 4, the resources associated with the VRM GameObject will not be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
@@ -93,11 +98,19 @@ parser.ParsePath(vrmFilePath);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
 }
 }
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="sample-codes-asynchronous-loading">Sample Codes (Asynchronous Loading)&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Threading.Tasks&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
 {
 &lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
 {
 _vrmGameObject = &lt;span style="color:#069;font-weight:bold">await&lt;/span> LoadVrmAsync(_vrmFilePath);
@@ -112,13 +125,14 @@ DestroyVrm(_vrmGameObject);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// We use GltfParser to obtain JSON information and binary data from the VRM file
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser can be run by other than the Unity&amp;#39;s main thread
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt;
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(vrmFilePath);
 parser.ParseGlb(file);
-}
+});
 &lt;span style="color:#09f;font-style:italic">// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext is the class for loading VRM
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
 &lt;span style="color:#09f;font-style:italic">// 3. Call LoadAsync function to create a VRM GameObject
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// For loading process it will take several frames
@@ -136,7 +150,7 @@ parser.ParseGlb(file);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
 }
 &lt;span style="color:#09f;font-style:italic">// 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// As mentioned in step 4, the resources associated with the VRM GameObject will not be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
@@ -144,6 +158,7 @@ parser.ParseGlb(file);
 &lt;span style="color:#09f;font-style:italic">// 9. Destroy the generated VRM GameObject
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+}
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-044-loadasync-example">&lt;code>Version 0.44~&lt;/code> LoadAsync Example&lt;/h2>

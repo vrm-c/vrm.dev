@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 09 Oct 2020 18:01:04 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 12 Oct 2020 18:24:15 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
 &lt;h2 id="v068-importercontext-の整理">v0.68 ImporterContext の整理&lt;/h2>
 &lt;p>&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">ランタイムインポーター&lt;/a>&lt;/p>
 &lt;h2 id="v0632-gltf-の-extension-の実装方法を変更">v0.63.2 gltf の extension の実装方法を変更&lt;/h2>
@@ -25,7 +25,7 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>変更後&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Tue, 16 Mar 2021 16:53:16 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 22 Mar 2021 18:15:57 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
 &lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
 &lt;h3 id="過去バージョンからの仕様変更">過去バージョンからの仕様変更&lt;/h3>
 &lt;p>&lt;code>ImporterContext&lt;/code> の仕様を変更しました。&lt;/p>
@@ -55,10 +55,15 @@
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="サンプルコード同期的ロード">サンプルコード（同期的ロード）&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
 {
 &lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
 {
 _vrmGameObject = LoadVrm(_vrmFilePath);
@@ -75,7 +80,7 @@ DestroyVrm(_vrmGameObject);
 parser.ParsePath(vrmFilePath);
 &lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
 &lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Load();
@@ -93,7 +98,7 @@ parser.ParsePath(vrmFilePath);
 }
 &lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
 {
@@ -102,11 +107,19 @@ parser.ParsePath(vrmFilePath);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
 }
 }
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="サンプルコード非同期ロード">サンプルコード（非同期ロード）&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Threading.Tasks&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
 {
 &lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObect;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
 {
 &lt;span style="color:#09f;font-style:italic">// 簡便のため、このサンプルではキャンセル処理などは考慮しません。
@@ -122,13 +135,14 @@ DestroyVrm(_vrmGameObject);
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser は Unity のメインスレッド以外で実行できます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt; {
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(path);
+&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt;
+{
+&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(vrmFilePath);
 parser.ParseGlb(file);
-}
+});
 &lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> using(&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
 {
 &lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Load 処理は数フレームの時間を要します。
@@ -147,13 +161,14 @@ parser.ParseGlb(file);
 }
 &lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 4. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
 &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
 {
 &lt;span style="color:#09f;font-style:italic">// 9. 生成された VRM の GameObject を破棄します。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+}
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>

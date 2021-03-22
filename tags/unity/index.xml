@@ -643,17 +643,7 @@ HumanoidAvatar にはおそらく、&lt;/p>
 &lt;li>シーン上でキューブを人型に積み上げる&lt;/li>
 &lt;/ul>
 &lt;p>などのヒエラルキーに対して、後付けで &lt;code>HumanoidAvatar&lt;/code> を作成することができます。
-HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
-&lt;h2 id="049">0.49&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
-その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
-&lt;h2 id="046">0.46&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
-Mesh, Texture, Prefabは上書きします。&lt;/p>
-&lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
-上書きしたい場合はImport前に削除してください。&lt;/p>
-&lt;h2 id="045以前">0.45以前&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -699,7 +689,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
 &lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
 &lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
@@ -730,7 +720,17 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;li>HorizontalOuter&lt;/li>
 &lt;li>HorizontalInner&lt;/li>
 &lt;/ul>
-&lt;p>横方向は左右ではなく、内外になります。&lt;/p></description></item><item><title>Docs: 1. VRMファイルを作成する</title><link>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Wed, 26 Aug 2020 15:52:06 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+&lt;p>横方向は左右ではなく、内外になります。&lt;/p></description></item><item><title>Docs: PrefabがImportされるタイミングと上書きの注意</title><link>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id="049">0.49&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
+その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。&lt;/p>
+&lt;h2 id="046">0.46&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
+Mesh, Texture, Prefabは上書きします。&lt;/p>
+&lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
+上書きしたい場合はImport前に削除してください。&lt;/p>
+&lt;h2 id="045以前">0.45以前&lt;/h2>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: 1. VRMファイルを作成する</title><link>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Wed, 26 Aug 2020 15:52:06 +0900</pubDate><guid>https://vrm.dev/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;h2 id="unityでhumanoidとして扱えるモデルデータを用意します">UnityでHumanoidとして扱えるモデルデータを用意します&lt;/h2>
 &lt;p>ヒューマノイドモデルは、&lt;/p>
 &lt;ul>
@@ -1344,7 +1344,7 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
 &lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -1646,7 +1646,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">修正前との違い&lt;/h4>
 鼻先、下唇に加えて、舌が全然違う法線になってます。
-&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
