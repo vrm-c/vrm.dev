@@ -291,7 +291,7 @@
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>Unityの&lt;a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト&lt;/a>でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p>
 &lt;table>
@@ -485,7 +485,7 @@ VRMがサポートするシェーダーは、 &lt;code>PBR(Standard)&lt;/code>, 
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: テクスチャーのインポート</title><link>https://vrm.dev/docs/univrm/shaders/texture_import/</link><pubDate>Tue, 16 Mar 2021 16:58:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/texture_import/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: テクスチャーのインポート</title><link>https://vrm.dev/docs/univrm/shaders/texture_import/</link><pubDate>Mon, 22 Mar 2021 14:03:14 +0900</pubDate><guid>https://vrm.dev/docs/univrm/shaders/texture_import/</guid><description>
 &lt;h2 id="unity-standardシェーダー向け-のテクスチャ変換">Unity Standardシェーダー向け のテクスチャ変換&lt;/h2>
 &lt;p>glTF の material(Physically Based Rendering) と Unity の Standard は、
 &lt;code>MetallicRoughness&lt;/code> テクスチャーと &lt;code>Occlusion&lt;/code> テクスチャーの RGB チャンネルの使い方が違います。&lt;/p>
@@ -501,21 +501,32 @@ git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;tr>
 &lt;td align="left">Occlusion&lt;/td>
 &lt;td align="left">materials[*].occlusionTexture の R channel&lt;/td>
-&lt;td align="left">G channel&lt;/td>
+&lt;td align="left">Standard._MetallicGlossMap.G channel&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td align="left">Roughness&lt;/td>
 &lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture の G channel&lt;/td>
-&lt;td align="left">A channel (smoothness = 1 - roughness)&lt;/td>
+&lt;td align="left">Standard._MetallicGlossMap.A channel (smoothness = 1 - roughness) &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td align="left">Metallic&lt;/td>
 &lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture の B channel&lt;/td>
-&lt;td align="left">R channel&lt;/td>
+&lt;td align="left">Standard._OcclusionMap.R channel&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;p>&lt;code>UniGLTF&lt;/code> では、import 時に変換しています。&lt;/p>
+&lt;h3 id="metallicsmoothocclusionテクスチャを１枚にまとめる-v0690">MetallicSmoothOcclusionテクスチャを１枚にまとめる &lt;code>v0.69.0&lt;/code>&lt;/h3>
+&lt;p>&lt;code>v0.69.0&lt;/code> からテクスチャーを１枚にまとめる動作をします。&lt;/p>
+&lt;ul>
+&lt;li>import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)&lt;/li>
+&lt;li>export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>v0.68.0&lt;/code> 以前&lt;/p>
+&lt;ul>
+&lt;li>import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import&lt;/li>
+&lt;li>export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export&lt;/li>
+&lt;/ul>
 &lt;h3 id="gltf">glTF&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&lt;/a>&lt;/li>
@@ -593,4 +604,11 @@ textureImporter.textureType = TextureImporterType.NormalMap; &lt;span style="col
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>textureImporter.SaveAndReimport();
 &lt;span style="color:#09f;font-style:italic">// DXT5nm でロードされます。
 &lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;code>v0.69.0&lt;/code> で修正されます。https://github.com/vrm-c/UniVRM/issues/388 &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>

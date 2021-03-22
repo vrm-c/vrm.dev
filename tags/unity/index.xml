@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 16 Mar 2021 16:58:04 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Tue, 16 Mar 2021 16:58:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – unity</title><link>https://vrm.dev/tags/unity/</link><description>Recent content in unity on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 22 Mar 2021 14:13:01 +0900</lastBuildDate><atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity のバージョン</title><link>https://vrm.dev/docs/univrm/install/unity_version/</link><pubDate>Mon, 22 Mar 2021 14:13:01 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/unity_version/</guid><description>
 &lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
 &lt;p>Unity サポート状況は以下のようになっています。&lt;/p>
 &lt;table>
@@ -77,10 +77,10 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>Unity-2020&lt;/td>
-&lt;td>△&lt;/td>
+&lt;td>〇&lt;/td>
 &lt;td>-&lt;/td>
 &lt;td>○&lt;/td>
-&lt;td>Prefab 周りの動作が変わっていてEditor機能が一部動作せず。&lt;/td>
+&lt;td>Editor機能(Prefabなど)が一部動作せず。&lt;code>UniVRM-0.69.0&lt;/code> で修正&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -653,7 +653,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
 上書きしたい場合はImport前に削除してください。&lt;/p>
 &lt;h2 id="045以前">0.45以前&lt;/h2>
-&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。&lt;/p></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
 &lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -699,7 +699,7 @@ Mesh, Texture, Prefabは上書きします。&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
 &lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_bone/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。&lt;/p>
 &lt;h2 id="ボーン制御の視線-vrmlookatboneapplyer">ボーン制御の視線: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
@@ -1344,7 +1344,7 @@ UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;
 &lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
 &lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
+&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item><item><title>Docs: LookAt(Blendshape)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_blendshape/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -1646,7 +1646,7 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">修正前との違い&lt;/h4>
 鼻先、下唇に加えて、舌が全然違う法線になってます。
-&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Wed, 07 Oct 2020 19:00:21 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
+&lt;/div></description></item><item><title>Docs: LookAt(UV)</title><link>https://vrm.dev/docs/univrm/lookat/lookat_uv/</link><pubDate>Fri, 09 Oct 2020 18:01:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/lookat/lookat_uv/</guid><description>
 &lt;p>VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 &lt;code>VRMLookAtBoneApplyer&lt;/code> を削除して、代わりに &lt;code>VRMLookAtBlendShapeApplyer&lt;/code> をアタッチしてください。&lt;/p>
 &lt;p>&lt;code>Inspector -&amp;gt; Add Component -&amp;gt; VRMLookAtBlendShapeApplyer&lt;/code>.&lt;/p>
@@ -2318,7 +2318,7 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p>
 &lt;p>で開発しています。
 git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Tue, 16 Mar 2021 16:58:04 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/docs/univrm/install/univrm_version/</link><pubDate>Mon, 22 Mar 2021 13:53:48 +0900</pubDate><guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid><description>
 &lt;h1 id="version">Version&lt;/h1>
 &lt;ul>
 &lt;li>更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス&lt;/li>
@@ -2486,14 +2486,26 @@ git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;tr>
 &lt;td>&lt;/td>
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0">0.68.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/30?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>&lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> &lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
 &lt;td>glb/gltf 座標軸オプション。ImporterContext API&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>03/16&lt;/td>
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1">0.68.1&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>03/17&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2">0.68.2&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>03/22&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0">0.69.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/31?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>SmoothTexture 変換の修正&lt;a href="https://github.com/vrm-c/UniVRM/issues/388">#388&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2523,6 +2535,9 @@ git submodule で、VRMShaders 配下になるようにしています。&lt;/p>
 &lt;/li>
 &lt;li id="fn:8" role="doc-endnote">
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/786">#786&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/issues/788">#788&lt;/a> &lt;a href="#fnref:8" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:9" role="doc-endnote">
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/790">#790&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/issues/794">#794&lt;/a> &lt;a href="#fnref:9" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item></channel></rss>
