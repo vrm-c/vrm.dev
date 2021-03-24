@@ -288,7 +288,7 @@ More specifically, &lt;code>VertexColor&lt;/code> can be enabled if the followin
 &lt;td align="left">/materials/doubleSided&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;/table></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Mon, 12 Oct 2020 18:24:43 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
 &lt;h2 id="standard">Standard&lt;/h2>
 &lt;p>The majority of &lt;a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html">material parameters&lt;/a> in Unity&amp;rsquo;s standard shader are compatible with GLTF PBR materials:&lt;/p>
 &lt;table>
@@ -468,9 +468,8 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;p>For the latest update about MToon, please refer to:&lt;/p>
 &lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: Texture Import</title><link>https://vrm.dev/en/docs/univrm/shaders/texture_import/</link><pubDate>Wed, 17 Mar 2021 11:10:12 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/texture_import/</guid><description>
-&lt;p>Work in progress&lt;/p>
 &lt;h2 id="texture-conversion-for-unitys-standard-shader">Texture Conversion for Unity&amp;rsquo;s Standard Shader&lt;/h2>
-&lt;p>RGB channel conversion between glTF&amp;rsquo;s material (PBR) and Unity Standard Shader:&lt;/p>
+&lt;p>The table below is the RGB channel conversion between glTF&amp;rsquo;s material (PBR) and Unity Standard Shader:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -483,21 +482,32 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;tr>
 &lt;td align="left">Occlusion&lt;/td>
 &lt;td align="left">materials[*].occlusionTexture&amp;rsquo;s R channel&lt;/td>
-&lt;td align="left">G channel&lt;/td>
+&lt;td align="left">Standard._MetallicGlossMap.G channel&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td align="left">Roughness&lt;/td>
 &lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s G channel&lt;/td>
-&lt;td align="left">A channel (smoothness = 1 - roughness)&lt;/td>
+&lt;td align="left">Standard._MetallicGlossMap.A channel (smoothness = 1 - roughness) &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td align="left">Metallic&lt;/td>
 &lt;td align="left">materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s B channel&lt;/td>
-&lt;td align="left">R channel&lt;/td>
+&lt;td align="left">Standard._OcclusionMap.R channel&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>The texture conversion described above can be done with &lt;code>UniGLTF&lt;/code> import.&lt;/p>
+&lt;p>UniGLTF will perform the RGB channel conversion when textures are imported into Unity.&lt;/p>
+&lt;h3 id="texture-import-behaviors">Texture Import Behaviors&lt;/h3>
+&lt;p>Starting with &lt;code>v0.69.0&lt;/code>, Metallic, Smooth and Occlusion textures are integrated into one:&lt;/p>
+&lt;ul>
+&lt;li>import: glTF&amp;rsquo;s metallicRoughnessTexture and occlusionTexture are integrated into one (as seen in the table above)&lt;/li>
+&lt;li>export: Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap are integrated into one (as seen in the table above)&lt;/li>
+&lt;/ul>
+&lt;p>Before &lt;code>v0.69.0&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>import: convert and import textures to be used for _MetallicGlossMap and _OcclusionMap&lt;/li>
+&lt;li>export: convert and export Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap&lt;/li>
+&lt;/ul>
 &lt;h3 id="gltf">glTF&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&lt;/a>&lt;/li>
@@ -531,7 +541,49 @@ the Smoothness levels for the material are controlled by the Alpha channel of th
 &lt;blockquote>
 &lt;p>The metalness values are sampled from the B channel. The roughness values are sampled from the G channel.&lt;/p>
 &lt;/blockquote>
+&lt;p>In Unity,&lt;/p>
 &lt;ul>
 &lt;li>Unity&amp;rsquo;s Standard(Metallic Alpha) Metallic =&amp;gt; Alpha&lt;/li>
 &lt;li>Unity&amp;rsquo;s Standard(Metallic Alpha) Smooth =&amp;gt; Red&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;p>which are assigned to different channels as compared to gltf spec.
+For &lt;code>UniGLTF&lt;/code>, it will load &lt;code>png/jpg&lt;/code> images first, and then create converted textures to be used in Unity&amp;rsquo;s Standard Shader.&lt;/p>
+&lt;h2 id="unitys-linear-texture-behaviors">Unity&amp;rsquo;s Linear Texture Behaviors&lt;/h2>
+&lt;h3 id="runtime">Runtime&lt;/h3>
+&lt;p>Initialize a new texture as linear:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture = &lt;span style="color:#069;font-weight:bold">new&lt;/span> Texture2D(width, height, format, mipChain, linear = &lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="asset">Asset&lt;/h3>
+&lt;p>If textures are loaded from AssetFolder&amp;rsquo;s png/jpg:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style="color:#069;font-weight:bold">as&lt;/span> TextureImporter;
+textureImporter.sRGBTexture = &lt;span style="color:#069;font-weight:bold">false&lt;/span>; &lt;span style="color:#09f;font-style:italic">// Linear
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>textureImporter.SaveAndReimport();
+&lt;span style="color:#09f;font-style:italic">// loaded as linear texture
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unitys-normalmap-behaviors">Unity&amp;rsquo;s NormalMap Behaviors&lt;/h2>
+&lt;blockquote>
+&lt;p>Same as MToon&amp;rsquo;s NormalMap&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="runtime-1">Runtime&lt;/h3>
+&lt;p>Initialize a new texture for NormalMap:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture = &lt;span style="color:#069;font-weight:bold">new&lt;/span> Texture2D(width, height, format, mipChain, linear = &lt;span style="color:#069;font-weight:bold">true&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Since the normal texture needs to be converted to &lt;code>DXT5nm&lt;/code> format, we do the conversion described below:&lt;/p>
+&lt;pre>&lt;code class="language-hlsl" data-lang="hlsl">half4 normal;
+normal.x = 1.0;
+normal.y = col.y;
+normal.z = 1.0;
+normal.w = col.x;
+&lt;/code>&lt;/pre>&lt;h3 id="asset-1">Asset&lt;/h3>
+&lt;p>If textures are loaded from AssetFolder&amp;rsquo;s png/jpg:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style="color:#069;font-weight:bold">as&lt;/span> TextureImporter;
+textureImporter.textureType = TextureImporterType.NormalMap; &lt;span style="color:#09f;font-style:italic">// normalMap
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>textureImporter.SaveAndReimport();
+&lt;span style="color:#09f;font-style:italic">// loaded as DXT5nm format
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">var&lt;/span> texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code>&lt;/pre>&lt;/div>&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Fixed roughness conversion in &lt;code>v0.69.0&lt;/code> &lt;a href="https://github.com/vrm-c/UniVRM/issues/388">#388&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>
