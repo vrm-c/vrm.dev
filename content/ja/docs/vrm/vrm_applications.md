@@ -79,7 +79,6 @@ weight: 4
 | [パイロットクロス](https://n-mattun.booth.pm/) | Windows VR |
 | [プリミティア](https://ootamato.itch.io/primitier) | Windows VR |
 | [Action Drill](https://lasmi.booth.pm/items/1615146) | Windows |
-| [スーパーエクストリームVRMサッカー](https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer) | Windows |
 | [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
@@ -90,6 +89,16 @@ weight: 4
 | [FantasySeed](https://booth.pm/ja/items/1293100) | Windows |
 | [Roduet](https://fujisunflower.booth.pm/items/2510498) | Windows |
 | [Cube Art World](https://simplestar-game.booth.pm/items/2622434) | Windows |
+
+###  ブラウザゲーム
+
+| アプリケーション | プラットフォーム |
+|-----------------|-----------------|
+| [あけろ！爆裂駐車場！](https://unityroom.com/games/bakuretsu) | Web browser |
+| [スーパーエクストリームVRMサッカー](https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer) | Web browser |
+| [密ッションインポッシブル](https://unityroom.com/games/mitsussion) | Web browser |
+| [スーパーVRMブラザーズ3D](https://unityroom.com/games/aguroshoutest) | Web browser |
+| [ペースアップ！](https://unityroom.com/games/paseup) | Web browser |
 
 ##  ビューア
 
