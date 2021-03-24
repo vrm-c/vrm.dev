@@ -25,7 +25,7 @@ Select `Reverse Axis` X or Z and click `Apply` button. The result will be reflec
 
 ### `Extract Materials and Textures ...`
 
-Same as we did in [fbx import]({{< relref "convert_from_humanoid_model.md#fbxs-material-setup" >}}), initially material and textures would be imported into GLB.
+Same as we did in [fbx import]({{< relref "convert_from_humanoid_model.md#fbxs-material-setup" >}}), initially material and textures will be imported into GLB.
 In this state, the settings for materials/textures are unchangeable (`Readonly` mode).
 
 {{< img width=400 src="images/unigltf/glb_material_tab.jpg" >}}
