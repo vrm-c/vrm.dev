@@ -37,7 +37,9 @@ tags: ["unity"]
 |       | [0.68.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/30?closed=1) | [^material_import] [^import_bug] | glb/gltf 座標軸オプション。ImporterContext API                               |
 | 03/16 | [0.68.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1)                                                                    | [^import_bug]                    |                                                                              |
 | 03/17 | [0.68.2](http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2)                                                                    |                                  |                                                                              |
-| 03/22 | [0.69.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/31?closed=1) |                                  | SmoothTexture 変換の修正[\#388](https://github.com/vrm-c/UniVRM/issues/388)       |
+| 03/22 | [0.69.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/31?closed=1) | [^EncodeToPng][^NotUnique]       | SmoothTexture 変換の修正[\#388](https://github.com/vrm-c/UniVRM/issues/388)  |
+| 03/23 | [0.69.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1)                                                                    | [^EncodeToPng]                   |                                                                              |
+| 03/31 | [0.70.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/32?closed=1) |                                  | impl `WEIGHTS_0` not float4                                                  |
 
 [^springcollider]: スプリングボーンのコライダーの座標変換バグ。 [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: エクスポートダイアログのスクリーンショットボタンの jpg バグ。[\#639](https://github.com/vrm-c/UniVRM/issues/639)
@@ -48,3 +50,5 @@ tags: ["unity"]
 [^firstperson_import]: VRMFirstPerson のエディターインポートのバグ [/#515](https://github.com/vrm-c/UniVRM/issues/515)
 [^material_import]: [\#786](https://github.com/vrm-c/UniVRM/issues/786) [\#788](https://github.com/vrm-c/UniVRM/issues/788)
 [^import_bug]: [\#790](https://github.com/vrm-c/UniVRM/issues/790) [\#794](https://github.com/vrm-c/UniVRM/issues/794)
+[^NotUnique]: [\#812](https://github.com/vrm-c/UniVRM/pull/812)
+[^EncodeToPng]: [\#831](https://github.com/vrm-c/UniVRM/pull/831)
