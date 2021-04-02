@@ -171,3 +171,7 @@ Related sections about UniVRM export:
   * [VRM Size (BlendShape size reduction)]({{< relref "vrm_size.md" >}})
 
 In the next section, we will introduce how to [import and set up VRM file first time]({{< relref "setup_vrm.md" >}}).
+
+## Online Resources
+
+* [From Blender to VRM: Prepare your own Vtuber Model](https://www.youtube.com/watch?v=i2pOourRdFU)
