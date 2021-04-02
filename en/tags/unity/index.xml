@@ -650,38 +650,7 @@ The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&
 &lt;/li>
 &lt;li>KHR_texture_transform import/export&lt;/li>
 &lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
-&lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
-&lt;li>&lt;code>Animator's HumanoidAvatar&lt;/code> is set up&lt;/li>
-&lt;/ul>
-&lt;h2 id="fbx">FBX&lt;/h2>
-&lt;p>To meet the conditions described above for an imported fbx, set the fbx model as &lt;code>humanoid&lt;/code> from &lt;code>Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code>.
-After &lt;code>humanoid&lt;/code> type is applied, &lt;code>Animator&lt;/code> component with &lt;code>HumanoidAvatar&lt;/code> will be attached to the fbx&amp;rsquo;s prefab.&lt;/p>
-&lt;p>To convert the fbx model to &lt;code>humanoid&lt;/code> type successfully:&lt;/p>
-&lt;ul>
-&lt;li>All &lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones">required bones&lt;/a> are included&lt;/li>
-&lt;li>Bones&amp;rsquo; parent-child relationships are correct (e.g. hips -&amp;gt; leg -&amp;gt; foot. not the other way around).&lt;/li>
-&lt;/ul>
-&lt;p>No restrictions on bone naming.&lt;/p>
-&lt;h2 id="modify-fbx-in-the-scene">Modify FBX in the scene&lt;/h2>
-&lt;p>You can modify fbx&amp;rsquo;s GameObject by&lt;/p>
-&lt;ul>
-&lt;li>adding children GameObjects to Parent GameObjects&lt;/li>
-&lt;li>disabling GameObjects&lt;/li>
-&lt;/ul>
-&lt;p>If you want to change the hierarchy structure, please refer to &lt;code>HumanoidComponent&lt;/code>, which is described in the next section.&lt;/p>
-&lt;h2 id="create-humanoidavatar-manually-from-gameobject">Create HumanoidAvatar manually from GameObject&lt;/h2>
-&lt;p>&lt;code>HumanoidAvatar&lt;/code> can be created without using &lt;code>fbx importer&lt;/code>.
-Check out &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">Humanoid Component&lt;/a> for more details.&lt;/p>
-&lt;p>If the following types of models are in the scene:&lt;/p>
-&lt;ul>
-&lt;li>Humanoid model in GLTF format&lt;/li>
-&lt;li>Humanoid-like model made by cubes and so on&lt;/li>
-&lt;/ul>
-&lt;p>The &lt;code>HumanoidAvatar&lt;/code> can be created as long as each required bone is assigned accordingly based on the object in Hierarchy.
-Finally, to export the target &lt;code>GameObject&lt;/code> as VRM, attach &lt;code>Animator&lt;/code> component and assign the created &lt;code>HumanoidAvatar&lt;/code> to &lt;code>Avatar&lt;/code> field.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Mon, 12 Oct 2020 18:31:56 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -726,7 +695,38 @@ The &lt;code>Apply&lt;/code> button is removed starting from v0.45.&lt;/p>
 &lt;p>The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>This feature will become effective when a v0.45-installed application is loaded&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
+&lt;li>&lt;code>Animator's HumanoidAvatar&lt;/code> is set up&lt;/li>
+&lt;/ul>
+&lt;h2 id="fbx">FBX&lt;/h2>
+&lt;p>To meet the conditions described above for an imported fbx, set the fbx model as &lt;code>humanoid&lt;/code> from &lt;code>Import Settings -&amp;gt; Rig -&amp;gt; Animation Type&lt;/code>.
+After &lt;code>humanoid&lt;/code> type is applied, &lt;code>Animator&lt;/code> component with &lt;code>HumanoidAvatar&lt;/code> will be attached to the fbx&amp;rsquo;s prefab.&lt;/p>
+&lt;p>To convert the fbx model to &lt;code>humanoid&lt;/code> type successfully:&lt;/p>
+&lt;ul>
+&lt;li>All &lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones">required bones&lt;/a> are included&lt;/li>
+&lt;li>Bones&amp;rsquo; parent-child relationships are correct (e.g. hips -&amp;gt; leg -&amp;gt; foot. not the other way around).&lt;/li>
+&lt;/ul>
+&lt;p>No restrictions on bone naming.&lt;/p>
+&lt;h2 id="modify-fbx-in-the-scene">Modify FBX in the scene&lt;/h2>
+&lt;p>You can modify fbx&amp;rsquo;s GameObject by&lt;/p>
+&lt;ul>
+&lt;li>adding children GameObjects to Parent GameObjects&lt;/li>
+&lt;li>disabling GameObjects&lt;/li>
+&lt;/ul>
+&lt;p>If you want to change the hierarchy structure, please refer to &lt;code>HumanoidComponent&lt;/code>, which is described in the next section.&lt;/p>
+&lt;h2 id="create-humanoidavatar-manually-from-gameobject">Create HumanoidAvatar manually from GameObject&lt;/h2>
+&lt;p>&lt;code>HumanoidAvatar&lt;/code> can be created without using &lt;code>fbx importer&lt;/code>.
+Check out &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">Humanoid Component&lt;/a> for more details.&lt;/p>
+&lt;p>If the following types of models are in the scene:&lt;/p>
+&lt;ul>
+&lt;li>Humanoid model in GLTF format&lt;/li>
+&lt;li>Humanoid-like model made by cubes and so on&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>HumanoidAvatar&lt;/code> can be created as long as each required bone is assigned accordingly based on the object in Hierarchy.
+Finally, to export the target &lt;code>GameObject&lt;/code> as VRM, attach &lt;code>Animator&lt;/code> component and assign the created &lt;code>HumanoidAvatar&lt;/code> to &lt;code>Avatar&lt;/code> field.&lt;/p></description></item><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
 &lt;p>After the UniVRM package is &lt;a href="https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/">installed&lt;/a> successfully, we can start converting the humanoid 3D model to VRM.&lt;/p>
 &lt;h2 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2>
 &lt;p>First prepare &lt;strong>a 3D model made by your own or allowed to be modified for use as VR avatar. As there are &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">license settings&lt;/a> embedded in VRM file, users need to set them up according to Author&amp;rsquo;s (yourself or others) permission usage.&lt;/strong>&lt;/p>
@@ -846,7 +846,11 @@ For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Defaul
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">VRM Size (BlendShape size reduction)&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>In the next section, we will introduce how to &lt;a href="https://vrm.dev/en/how_to_make_vrm/setup_vrm/">import and set up VRM file first time&lt;/a>.&lt;/p></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Thu, 06 Aug 2020 11:25:13 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
+&lt;p>In the next section, we will introduce how to &lt;a href="https://vrm.dev/en/how_to_make_vrm/setup_vrm/">import and set up VRM file first time&lt;/a>.&lt;/p>
+&lt;h2 id="online-resources">Online Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=i2pOourRdFU">From Blender to VRM: Prepare your own Vtuber Model&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: LookAt(Bone)</title><link>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</link><pubDate>Thu, 06 Aug 2020 11:25:13 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/lookat/lookat_bone/</guid><description>
 &lt;p>&lt;code>LookAt Bone&lt;/code> requires &lt;code>VRMLookAtHead&lt;/code> and &lt;code>VRMLookAtBoneApplyer&lt;/code> components.&lt;/p>
 &lt;h2 id="control-the-eye-gaze-with-bone-vrmlookatboneapplyer">Control the Eye Gaze with bone: VRMLookAtBoneApplyer&lt;/h2>
 &lt;table>
@@ -2104,8 +2108,20 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;tr>
 &lt;td>03/22&lt;/td>
 &lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0">0.69.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/31?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup> &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>Fixed SmoothTexture conversion &lt;a href="https://github.com/vrm-c/UniVRM/issues/388">#388&lt;/a>, support Unity2020&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>03/23&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1">0.69.1&lt;/a>&lt;/td>
+&lt;td>&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>&lt;/td>
 &lt;td>&lt;/td>
-&lt;td>Fixed SmoothTexture conversion &lt;a href="https://github.com/vrm-c/UniVRM/issues/388">#388&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>03/31&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0">0.70.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/32?closed=1">milestone&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>impl &lt;code>WEIGHTS_0&lt;/code> not float4&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2138,6 +2154,12 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;/li>
 &lt;li id="fn:9" role="doc-endnote">
 &lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/790">#790&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/issues/794">#794&lt;/a> &lt;a href="#fnref:9" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:10" role="doc-endnote">
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/pull/831">#831&lt;/a> &lt;a href="#fnref:10" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:11" role="doc-endnote">
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/pull/812">#812&lt;/a> &lt;a href="#fnref:11" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item></channel></rss>
