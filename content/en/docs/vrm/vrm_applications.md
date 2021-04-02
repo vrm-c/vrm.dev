@@ -146,6 +146,9 @@ weight: 4
 | [ACUAH β](https://riemgoshawk.booth.pm/items/1990160) | Android |
 | [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
 | [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
+| [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
+| [TouroReminiscence](https://booth.pm/en/items/2349960) | Windows |
+| [Emmv Studio](https://booth.pm/en/items/2495794) | Windows |
 
 ##  Services using VRM internally
 
