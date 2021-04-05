@@ -45,4 +45,5 @@ By clicking the prefab's GameObject in `Hierarchy`, the VRM model's information 
 
 ## Related Sections
 
+- [Custom settings in VRM]({{< relref "setup_vrm#custom-settings-in-vrm" >}})
 - [VRM Export]({{< relref "univrm_export" >}})
