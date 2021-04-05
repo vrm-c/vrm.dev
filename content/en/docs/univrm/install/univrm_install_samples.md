@@ -13,7 +13,7 @@ Get UniVRM Samples package in https://github.com/vrm-c/UniVRM/releases.
 
 The package's name will look like this: `UniVRM-samples-0.XX.X_XXXX.unitypackage`.
 
-Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.64.0).
+Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.66.0).
 
 ## Import
 
