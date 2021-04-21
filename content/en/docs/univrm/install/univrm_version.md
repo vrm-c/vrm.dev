@@ -34,16 +34,16 @@ tags: ["unity"]
 |      | [0.63.2](http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2)                                                                    |                        |                                                                                                   |
 |      | [0.64.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/23?closed=1) | [^asmdef]              | Empty submesh will not be exported. vrm-1.0 Experiment kick-off                                   |
 |      | [0.65.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0)                                                                    | [^build]               |                                                                                                   |
-|      | [0.65.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1) [misestone](https://github.com/vrm-c/UniVRM/milestone/28?closed=1) | [^build]               | Fixed export errors when Turkish locale is on [\#696](https://github.com/vrm-c/UniVRM/issues/696) |
+|      | [0.65.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1) [milestone](https://github.com/vrm-c/UniVRM/milestone/28?closed=1) | [^build]               | Fixed export errors when Turkish locale is on [\#696](https://github.com/vrm-c/UniVRM/issues/696) |
 |      | [0.65.2](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2) [milestone](https://github.com/vrm-c/UniVRM/milestone/29?closed=1) |                        |                                                                                                   |
 |      | [0.65.3](http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3)                                                                    |                        | Updated UniGLTF version number for UPM package. No unity package release                          |
-|      | [0.66.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/26?closed=1) | ✅ Stable Version       | Added Warning messages when non-normalized Hierarchy contains spring bone colliders               |
+|      | [0.66.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/26?closed=1) | ✅ Stable Version      | Added Warning messages when non-normalized Hierarchy contains spring bone colliders               |
 |      | [0.67.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/27?closed=1) |                        | Maintenance release                                                                               |
 |      | [0.67.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1)                                                                    |                        | Only for UPM package. No unity package release                                                    |
 
 # v0.68.0 ~
 
-Working for VRM-1.0 
+Working on VRM-1.0...
 
 | Date  | Version                                                                                                                          | Bugs                                             | Notes                                                                                                 |
 |-------|----------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------------|
