@@ -651,7 +651,7 @@ The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&
 &lt;/li>
 &lt;li>KHR_texture_transform import/export&lt;/li>
 &lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 13 Nov 2020 15:56:44 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 13 Nov 2020 15:58:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1293,7 +1293,7 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/how_to_make_vrm/">How to make VRM file&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM Import&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Fri, 13 Nov 2020 15:56:44 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Fri, 13 Nov 2020 15:58:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
 &lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
 &lt;h1 id="how-to-use">How to use&lt;/h1>
@@ -1860,22 +1860,23 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item><item><title>Docs: Mesh Utility</title><link>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</link><pubDate>Tue, 02 Mar 2021 12:22:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</guid><description>
 &lt;h1 id="meshutility">MeshUtility&lt;/h1>
-&lt;p>Mesh processing tool in Unity platform.&lt;/p>
-&lt;p>Current available functions: &lt;code>MeshSeparator&lt;/code>, &lt;code>MeshIntegrator&lt;/code>, &lt;code>StaticMeshIntegrator&lt;/code> and &lt;code>BoneMeshEraser&lt;/code>.&lt;/p>
+&lt;p>Mesh processing tool in Unity platform.&lt;br>
+Current available functions: &lt;code>MeshSeparator&lt;/code>, &lt;code>MeshIntegrator&lt;/code>, &lt;code>StaticMeshIntegrator&lt;/code> and &lt;code>BoneMeshEraser&lt;/code>.&lt;/p>
 &lt;h2 id="example-of-usage">Example of Usage&lt;/h2>
-&lt;p>Here we show how to use &lt;code>MeshSeparator&lt;/code>. The usages for all the functions are roughly the same.&lt;/p>
-&lt;p>Suppose we want to split meshes contained BlendShape.
-We first select a model GameObject (or drag and drop a GameObject to TargetObject field shown below):&lt;/p>
+&lt;p>Here we show how to use &lt;code>MeshSeparator&lt;/code>. The usages for all the functions are roughly the same.&lt;br>
+Suppose we want to split meshes contained BlendShape.
+We first select the GameObject of a model:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/mesh_utility_exp1.jpg" width="200" />
 &lt;hr>
-&lt;p>At the top of Unity Editor, click &lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>MeshUtility&lt;/code> -&amp;gt; &lt;code>MeshProcessing Wizard&lt;/code> to display Mesh Processing Window:&lt;/p>
+&lt;p>Or directly drag and drop the GameObject to the &lt;code>TargetObject&lt;/code> field as shown below.&lt;br>
+At the top of Unity Editor, click &lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>MeshUtility&lt;/code> -&amp;gt; &lt;code>MeshProcessing Wizard&lt;/code> to display Mesh Processing Window:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/mesh_utility_en_exp2.jpg" width="800" />
 &lt;hr>
 &lt;p>Click &lt;code>Process&lt;/code> to generate the output (GameObject) and export it by &lt;code>VRM0&lt;/code> -&amp;gt; &lt;code>Export UniVRM-0.xx&lt;/code>:&lt;/p>
 &lt;img src="https://vrm.dev/images/vrm/mesh_utility_exp3.jpg" width="300" />
 &lt;hr>
-&lt;p>The split meshes are also saved in the &lt;code>Assets&lt;/code> folder.&lt;/p>
-&lt;p>In this example, the model&amp;rsquo;s mesh are split into two parts: face and body:&lt;/p>
+&lt;p>The split meshes are also saved in the &lt;code>Assets&lt;/code> folder.&lt;br>
+In this example, the model&amp;rsquo;s mesh are split into two parts: face and body:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1895,11 +1896,11 @@ We first select a model GameObject (or drag and drop a GameObject to TargetObjec
 &lt;h3 id="meshseparator">MeshSeparator&lt;/h3>
 &lt;p>Separate meshes contained BlendShape. The BlendShape size can be potentially reduced.&lt;/p>
 &lt;h3 id="meshintegrator">MeshIntegrator&lt;/h3>
-&lt;p>Integrate all the meshes of a (prefab) GameObject.&lt;/p>
+&lt;p>Integrate all the meshes of a (prefab) GameObject. Meshes w/ BlendShape will be grouped into another one.&lt;/p>
 &lt;h3 id="staticmeshintegrator">StaticMeshIntegrator&lt;/h3>
 &lt;p>Integrate all the static meshes of a (prefab) GameObject (Root and its children).&lt;/p>
 &lt;h3 id="bonemesheraser">BoneMeshEraser&lt;/h3>
-&lt;p>Eliminate meshes associated with the bones in EraseRoot hierarchy. For instance, First-Person usage for VR applications.&lt;/p></description></item><item><title>Docs: Implement GLTF Extension</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;p>Eliminate meshes associated with the bones in EraseRoot hierarchy.&lt;/p></description></item><item><title>Docs: Implement GLTF Extension</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>Work in progress&lt;/p></description></item><item><title>Docs: VRMShaders UPM Package</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
 &lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
 Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
@@ -2067,7 +2068,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">misestone&lt;/a>&lt;/td>
+&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">milestone&lt;/a>&lt;/td>
 &lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
 &lt;td>Fixed export errors when Turkish locale is on &lt;a href="https://github.com/vrm-c/UniVRM/issues/696">#696&lt;/a>&lt;/td>
 &lt;/tr>
@@ -2104,7 +2105,7 @@ The imported version can be changed to different version (e.g. v0.56.0).
 &lt;/tbody>
 &lt;/table>
 &lt;h1 id="v0680-">v0.68.0 ~&lt;/h1>
-&lt;p>Working for VRM-1.0&lt;/p>
+&lt;p>Working on VRM-1.0&amp;hellip;&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>

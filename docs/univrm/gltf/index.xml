@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 13 Nov 2020 15:56:44 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – GLTF</title><link>https://vrm.dev/docs/univrm/gltf/</link><description>Recent content in GLTF on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 13 Nov 2020 15:58:05 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/gltf/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GLTFについて</title><link>https://vrm.dev/docs/univrm/gltf/gltf_about/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/gltf_about/</guid><description>
 &lt;p>glTFはOpenGLの仕様策定をしているKHRONOSによる3Dフォーマットです。2017年にVersion2が策定されました。
 VRMはglTF2.0をベースとしたフォーマットとなっています。&lt;/p>
 &lt;ul>
@@ -360,7 +360,49 @@ parsed, body &lt;span style="color:#555">=&lt;/span> parse_glb(f&lt;span style="
 &lt;img src="https://vrm.dev/images/wiki/Interpolation.png" alt="Interpolation">&lt;/li>
 &lt;li>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li>
 &lt;li>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li>
-&lt;/ol></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
+&lt;/ol></description></item><item><title>Docs: Mesh Utility</title><link>https://vrm.dev/docs/univrm/gltf/mesh_utility/</link><pubDate>Wed, 21 Apr 2021 16:09:47 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/mesh_utility/</guid><description>
+&lt;h1 id="meshutility">MeshUtility&lt;/h1>
+&lt;p>&lt;code>MeshUtility&lt;/code>はメッシュ処理のツールです。&lt;br>
+現在利用可能な機能： &lt;code>MeshSeparator&lt;/code>、&lt;code>MeshIntegrator&lt;/code>、&lt;code>StaticMeshIntegrator&lt;/code>と&lt;code>BoneMeshEraser&lt;/code>。&lt;/p>
+&lt;h2 id="使用例">使用例&lt;/h2>
+&lt;p>ここでは、&lt;code>MeshSeparator&lt;/code>の使い方を紹介していきます。他の機能の使い方は大体同じです。&lt;br>
+&lt;code>MeshSeparator&lt;/code>が適用されると、BlendShapeを含むメッシュは分割されます。
+先ず、ヒエラルキーにモデルのGameObjectを選択します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/mesh_utility_exp1.jpg" width="200" />
+&lt;hr>
+&lt;p>または、GameObjectを&lt;code>TargetObject&lt;/code>フィールドにドラッグ＆ドロップします。&lt;br>
+メッシュ処理のウィンドウを表示するため、メニューから&lt;code>UniGLTF&lt;/code> -&amp;gt; &lt;code>MeshUtility&lt;/code> -&amp;gt; &lt;code>MeshProcessing Wizard&lt;/code>をクリックしてください：&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/mesh_utility_ja_exp2.jpg" width="800" />
+&lt;hr>
+&lt;p>&lt;code>Process&lt;/code>ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（&lt;code>VRM0&lt;/code> -&amp;gt; &lt;code>Export UniVRM-0.xx&lt;/code>）。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm/mesh_utility_exp3.jpg" width="300" />
+&lt;hr>
+&lt;p>分割されたメッシュも&lt;code>Assets&lt;/code>フォルダーに保存されます。&lt;br>
+この例では、モデルのメッシュは顔と体の2つの部分に分割された。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="center">顔: BlendShapeを含む 　&lt;/th>
+&lt;th align="center">体: BlendShapeを含まない&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="center">&lt;img src="https://vrm.dev/images/vrm/mesh_sep_result_1.jpg" width="200" />
+&lt;/td>
+&lt;td align="center">&lt;img src="https://vrm.dev/images/vrm/mesh_sep_result_2.jpg" width="200" />
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="meshseparator">MeshSeparator&lt;/h3>
+&lt;p>BlendShapeを含むメッシュは分割されます。BlendShapeのサイズを削減できます。&lt;/p>
+&lt;h3 id="meshintegrator">MeshIntegrator&lt;/h3>
+&lt;p>Prefab GameObjectのすべてのメッシュを統合します。BlendShapeを含むメッシュは独立して統合されます。&lt;/p>
+&lt;h3 id="staticmeshintegrator">StaticMeshIntegrator&lt;/h3>
+&lt;p>Prefab GameObjectのすべての静的メッシュを一つに統合します。&lt;/p>
+&lt;h3 id="bonemesheraser">BoneMeshEraser&lt;/h3>
+&lt;p>ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。&lt;/p></description></item><item><title>Docs: 拡張を実装する</title><link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>&lt;code>UniVRM-0.63.2&lt;/code> から &lt;a href="https://vrm.dev/docs/univrm/gltf/unigltf/">UniGLTF&lt;/a> の構成が変わって、 &lt;code>extensions&lt;/code> / &lt;code>extras&lt;/code> の実装方法が変わりました。&lt;/p>
 &lt;h2 id="gltf-拡張とは">GLTF 拡張とは&lt;/h2>
 &lt;p>例 &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras">https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a>&lt;/p>
