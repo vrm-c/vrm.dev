@@ -11,7 +11,7 @@ glTF is a 3D format created by Khronos Group, which is developing openGL specifi
 
 * https://github.com/KhronosGroup/glTF
 
-# What kind of information can be recorded by glTF?
+## What kind of information can be stored in glTF?
 
 * Mesh (Vertex array、index array)
     * Morph target
@@ -23,7 +23,7 @@ glTF is a 3D format created by Khronos Group, which is developing openGL specifi
 * Camera[^vrm_not_supported]
 * Light source[^vrm_not_supported]
 
-An entire 3D scene can be recorded.
+An entire 3D scene can be stored.
 
 * OpenGL right-handed, Y-UP coordinate system
 * Meter (unit)
@@ -31,15 +31,15 @@ An entire 3D scene can be recorded.
 
 [^vrm_not_supported]: Not supported in VRM
 
-# glTF format outline
+## glTF format outline
 
-glTF format comprises two parts: a JSON scene description part and a binary part that records images and vertex arrays. External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files[^VRM_glb].
+glTF format comprises two parts: the JSON scene description part and the binary part (where images and vertex array buffers are stored). External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files[^VRM_glb].
 
-[^VRM_glb]: glb is adopted in VRM.
+[^VRM_glb]: VRM adopts glb format
 
-# glb format
+## glb format
 
-A structure that has``Header part + Chunk parts``.
+A structure that consists of ``Header part + Chunk parts``.
 More specifically, it is``Header part + JSON CHUNk + BINARY CHUNK``.
 
 Header part
@@ -58,7 +58,7 @@ Chunk part
 |4         |chunk type|ascii|"JSON" or "BIN\x00"|
 |chunk size|chunk body|byte array||
 
-## Example of parsing with python3
+### Example of parsing glb with python3
 
 {{< highlight python >}}
 import struct
@@ -127,11 +127,16 @@ with open('AliciaSolid.vrm', 'rb') as f:
 
 {{< / highlight >}}
 
-# VRM extension
+## VRM extension
+
 Information of VRM extension is stored in``json['extensions']['VRM']``.
 
 * [VRM specifications](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md)
 
+## Import VRM's glTF part into 3D Builder
 
+{{< img src="images/vrm/alicia_3dbuilder.png" >}}
+
+To visualize a VRM model in **Windows 3D Builder**, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.
 
 
