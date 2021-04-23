@@ -42,6 +42,8 @@ Click `Clear` button to reset Material/Texture reference settings.
 
 ### glb extract
 
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
+
 #### clear
 
 In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:
@@ -67,9 +69,11 @@ By clicking `Extract Materials and Textures ...`, materials/textures listed belo
 
 ### gltf extract
 
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
+
 #### clear
 
-In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:
+In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:
 
 * `Default_AO.occlusion` is converted from `Default_AO` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
 * `Defualt_metalRoughness.metallicRoughness` is converted from `Defualt_metalRoughness` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})

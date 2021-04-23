@@ -43,6 +43,8 @@ fbx の import と同様に Material と Texture が glb の配下に import さ
 
 ### glb の extract
 
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
+
 #### clear
 
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。
@@ -67,6 +69,8 @@ fbx の import と同様に Material と Texture が glb の配下に import さ
 {{< img width=400 src="images/unigltf/glb_extract.jpg" >}}
 
 ### gltf の extract
+
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
 
 #### clear
 

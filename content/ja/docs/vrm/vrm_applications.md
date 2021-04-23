@@ -149,6 +149,7 @@ weight: 4
 | [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
 | [TouroReminiscence](https://booth.pm/ja/items/2349960) | Windows |
 | [Emmv Studio](https://booth.pm/ja/items/2495794) | Windows |
+| [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
 
 ##  内部的にVRMを活用しているサービス
 
