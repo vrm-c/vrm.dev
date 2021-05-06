@@ -53,6 +53,7 @@ weight: 4
 | [VOVOLA](https://vovola.wixsite.com/website) | Windows 10 |
 | [VSeeFace](https://www.vseeface.icu/) | Windows |
 | [ZZ3D](https://halmin.wixsite.com/zz3d) | iOS |
+| [LIV](https://liv.tv/) | Windows VR |
 
 ##  Metaverse
 
@@ -72,6 +73,7 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
+| [VWorld](https://naby.booth.pm/items/990663) | Windows |
 | [SEIYA](https://wandv.jp/seiya/) | Windows VR |
 | [BONFIRE](https://orenodinner.booth.pm/items/952450) | Oculus Go |
 | [TSUN-TSUN VR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/) | Windows VR |
@@ -89,6 +91,8 @@ weight: 4
 | [FantasySeed](https://booth.pm/ja/items/1293100) | Windows |
 | [Roduet](https://fujisunflower.booth.pm/items/2510498) | Windows |
 | [Cube Art World](https://simplestar-game.booth.pm/items/2622434) | Windows |
+| [TouroReminiscence](https://booth.pm/en/items/2349960) | Windows |
+| [VRM Cyber walk](https://ktamayan.booth.pm/items/2790105) | Windows |
 
 ###  Browser Game
 
@@ -99,12 +103,14 @@ weight: 4
 | [Mission Impossible](https://unityroom.com/games/mitsussion) | Web browser |
 | [Super VRM Brothers 3D](https://unityroom.com/games/aguroshoutest) | Web browser |
 | [Pace Up！](https://unityroom.com/games/paseup) | Web browser |
+| [VRM Bike](https://unityroom.com/games/vrm_bike) | Web browser |
+| [VRM Triple Jump](https://unityroom.com/games/vrmtriplejump) | Web browser |
+| [Step Panel Match](https://unityroom.com/games/step-panel-match) | Web browser |
 
 ##  Viewer
 
 | Application | Platform |
 |-------------|----------|
-| [VWorld](https://naby.booth.pm/items/990663) | Windows |
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js extension |
 | [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js extension |
 | [VPocket](https://booooooh.booth.pm/items/1033823) | Android, iOS |
@@ -132,9 +138,8 @@ weight: 4
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [TEATOR](https://teator.jp/) | Windows 10, macOS, iOS |
-| [Dance Dance Maker!](https://novia.itch.io/dance-dance-maker) | Oculus Quest |
+| [Dance Dance Maker!](https://booth.pm/en/items/2216222) | Oculus Quest |
 | [MocuMocuDance](http://www.vrai.jp/vr_mocu_en.html) | Oculus Rift, HTC Vive |
-| [LIV](https://liv.tv/) | Windows VR |
 | [VRMCardMaker](https://booth.pm/en/items/1808860) | Windows |
 | [NeoRoidHub for Unity](https://neoseast-japan.booth.pm/items/2562276) | Unity editor extension |
 | [waidayo](https://booth.pm/en/items/1779185) | PC, iOS |
@@ -147,9 +152,10 @@ weight: 4
 | [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
 | [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
 | [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
-| [TouroReminiscence](https://booth.pm/en/items/2349960) | Windows |
 | [Emmv Studio](https://booth.pm/en/items/2495794) | Windows |
 | [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
+| [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
+| [[HANA_Tool_v2] Control BlendShapes Tool](https://kuniyan.booth.pm/items/2604269) | Windows |
 
 ##  Services using VRM internally
 
