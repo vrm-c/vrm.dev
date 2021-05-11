@@ -6,11 +6,13 @@ url: /vrm_applications/
 weight: 4
 ---
 
-##  3Dキャラクター投稿プラットフォーム
+##  3Dキャラクターのプラットフォーム
 
 * [ザ・シードオンライン](https://seed.online/)
 * [ニコニ立体](https://3d.nicovideo.jp/)
 * [VRoid Hub](https://hub.vroid.com/)
+* [DMM VR CONNECT](https://connect.vrlab.dmm.com/)
+* [CryptoAvatars](https://cryptoavatars.io/home)
 
 ##  プラグイン
 
@@ -55,6 +57,39 @@ weight: 4
 | [ZZ3D](https://halmin.wixsite.com/zz3d) | iOS |
 | [LIV](https://liv.tv/) | Windows VR |
 
+##  モーションキャプチャ
+
+| Application | Platform |
+|-------------|----------|
+| [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
+| [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
+| [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
+| [TDPT](https://digital-standard.com/tdpt_lp/) | iOS |
+
+##  アニメーション
+
+| Application | Platform |
+|-------------|----------|
+| [Ls ENGINE](https://lsengine.net/) | Windows |
+| [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit) | Unityライブラリ |
+| [Dance Dance Maker!](https://booth.pm/ja/items/2216222) | Oculus Quest |
+
+##  撮影
+
+| Application | Platform |
+|-------------|----------|
+| [VRMお人形遊び](https://120byte.booth.pm/items/1099618) | Windows VR |
+| [VRMお人形遊びPC版](https://120byte.booth.pm/items/1654585) | Windows |
+| [Vタビ](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
+| [Vismuth](https://vismuth.com/) | Android, iOS |
+| [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
+| [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
+| [VRMCardMaker](https://booth.pm/ja/items/1808860) | Windows |
+| [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
+| [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
+| [Emmv Studio](https://booth.pm/ja/items/2495794) | Windows |
+| [PaSha!](https://ayato3d.booth.pm/items/2202577) | Windows 10 |
+
 ##  メタバース
 
 | アプリケーション | プラットフォーム |
@@ -68,6 +103,7 @@ weight: 4
 | [Webaverse](https://webaverse.com/) | Web browser |
 | [ambr](https://ambr.co.jp/) | Windows VR, macOS |
 | [Connect Chat](https://store.steampowered.com/app/1424930/Connect_Chat/) | Windows VR |
+| [VZero](https://facevtuber.com/vzero/) | Web browser |
 
 ##  ゲームなど
 
@@ -119,8 +155,6 @@ weight: 4
 | [VRMQuickLook](https://github.com/magicien/VRMQuickLook) | macOS |
 | [VRM Live Viewer](http://fantom1x.blog130.fc2.com/blog-entry-309.html) | Windows |
 | [UniWinApi Example project](https://github.com/kirurobo/UniWinApi) | Unityライブラリ |
-| [VRMお人形遊び](https://120byte.booth.pm/items/1099618) | Windows VR |
-| [VRMお人形遊びPC版](https://120byte.booth.pm/items/1654585) | Windows |
 | [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM) | Unityライブラリ |
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
@@ -130,30 +164,13 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
-| [Vタビ](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
-| [Vismuth](https://vismuth.com/) | Android, iOS |
-| [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit) | Unityライブラリ |
-| [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
 | [VRMLoaderUI](https://github.com/m2wasabi/VRMLoaderUI) | Unityライブラリ |
-| [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
-| [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [テアトル](https://teator.jp/) | Windows 10 |
-| [Dance Dance Maker!](https://booth.pm/ja/items/2216222) | Oculus Quest |
-| [MocuMocuDance](http://www.vrai.jp/vr_mocu.html) | Oculus Rift, HTC Vive |
-| [VRMCardMaker](https://booth.pm/ja/items/1808860) | Windows |
 | [NeoRoidHub for Unity](https://neoseast-japan.booth.pm/items/2562276) | Unityエディタ拡張 |
-| [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
-| [DMM VR CONNECT](https://connect.vrlab.dmm.com/) | Windows VR |
-| [CryptoAvatars](https://cryptoavatars.io/home) | Windows |
 | [Virtual Presentation Space](https://eyesout.itch.io/virtual-presentation-space) | Windows VR |
 | [VTuber Editor](https://store.steampowered.com/app/1454500/VTuber_Editor/) | Windows |
-| [Ls ENGINE](https://lsengine.net/) | Windows |
 | [ACUAH β](https://riemgoshawk.booth.pm/items/1990160) | Android |
-| [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
-| [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
 | [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
-| [Emmv Studio](https://booth.pm/ja/items/2495794) | Windows |
-| [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
 | [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
 | [[HANA] BlendShapeをコントロールするツール](https://kuniyan.booth.pm/items/2437978) | Windows |
 
