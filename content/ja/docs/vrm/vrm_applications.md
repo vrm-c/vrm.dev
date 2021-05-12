@@ -21,6 +21,7 @@ weight: 4
 | [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ |
 | [VRM Add-on for Blender](https://github.com/saturday06/VRM_Addon_for_Blender) | Blenderアドオン |
 | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
+| [godot-vrm](https://github.com/V-Sekai/godot-vrm) | Godotアドオン |
 | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
 | [VRM Converter for VRChat](https://pokemori.booth.pm/items/1025226) | Unityエディタ拡張 |
 | [UniVRMExtensions](https://pokemori.booth.pm/items/1788660) | Unityエディタ拡張 |
@@ -45,7 +46,7 @@ weight: 4
 | [バーチャルモーションキャプチャー](https://sh-akira.github.io/VirtualMotionCapture/) | Windows VR |
 | [FaceVTuber](https://facevtuber.com/) | Google Chrome |
 | [LiveAvatar](https://github.com/m2wasabi/LiveAvatar) | HTC VIVE |
-| [Luppet](https://luppet.appspot.com/) | Windows + Leap Motion |
+| [Luppet](https://luppet.appspot.com/) | Windows + optional hand tracking |
 | [vear](https://apps.apple.com/jp/app/vear/id1490697369) | iOS |
 | [CharWebCam](https://github.com/xelloss120/CharWebCam) | Windows |
 | [VMagicMirror](https://malaybaku.github.io/VMagicMirror/) | Windows |
@@ -53,7 +54,7 @@ weight: 4
 | [VUP-VTuber](https://store.steampowered.com/app/1207050/VUPVTuber_Maker_Animation_MMDLive2D__facial_capture/) | Windows 10 |
 | [ミチコンPlus](https://www.next-system.com/michicon) | iOS |
 | [VOVOLA](https://vovola.wixsite.com/website) | Windows 10 |
-| [VSeeFace](https://www.vseeface.icu/) | Windows |
+| [VSeeFace](https://www.vseeface.icu/) | Windows + optional hand tracking |
 | [ZZ3D](https://halmin.wixsite.com/zz3d) | iOS |
 | [LIV](https://liv.tv/) | Windows VR |
 
@@ -78,8 +79,8 @@ weight: 4
 
 | Application | Platform |
 |-------------|----------|
-| [VRMお人形遊び](https://120byte.booth.pm/items/1099618) | Windows VR |
 | [VRMお人形遊びPC版](https://120byte.booth.pm/items/1654585) | Windows |
+| [VRMお人形遊び](https://120byte.booth.pm/items/1099618) | Windows VR |
 | [Vタビ](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
 | [Vismuth](https://vismuth.com/) | Android, iOS |
 | [Vスタンプ](https://bnut.jp/vstamp) | iOS, Android |
@@ -94,7 +95,7 @@ weight: 4
 
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
-| [バーチャルキャスト](https://virtualcast.jp/) | Windows VR |
+| [バーチャルキャスト](https://virtualcast.jp/) | [Windows VR](https://store.steampowered.com/app/947890/VirtualCast/), [Oculus Quest](https://www.oculus.com/experiences/quest/4174249979259348/) |
 | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
 | [Exokit](https://exokit.org/) | Windows, macOS, Linux, VR |
@@ -122,13 +123,14 @@ weight: 4
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 | [BOW MAN](https://bowman.vrlab.dmm.com/ja/) | Windows VR |
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
-| [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR |
+| [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR, [Oculus Quest](https://www.oculus.com/experiences/quest/3405379359561787/) |
 | [ラクキン](https://rakugaki-kingdom.com/) | iOS, Android |
 | [FantasySeed](https://booth.pm/ja/items/1293100) | Windows |
 | [Roduet](https://fujisunflower.booth.pm/items/2510498) | Windows |
 | [Cube Art World](https://simplestar-game.booth.pm/items/2622434) | Windows |
 | [TouroReminiscence](https://booth.pm/ja/items/2349960) | Windows |
 | [VRM Cyber walk](https://ktamayan.booth.pm/items/2790105) | Windows |
+| [Virtual Home Run Derby](https://paldynojosh.booth.pm/items/1485218) | Windows |
 
 ###  ブラウザゲーム
 
