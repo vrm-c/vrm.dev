@@ -65,7 +65,7 @@ weight: 4
 | [TRACKING WORLD](http://deatrathias.net/TW/) | Windows VR |
 | [waidayo](https://booth.pm/en/items/1779185) | PC, iOS |
 | [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
-| [TDPT](https://apps.apple.com/us/app/tdpt/id1561086509) | iOS |
+| [TDPT](https://digital-standard.com/tdpt_lp/en/) | iOS |
 
 ##  Animation
 
@@ -175,6 +175,7 @@ weight: 4
 | [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
 | [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
 | [[HANA_Tool_v2] Control BlendShapes Tool](https://kuniyan.booth.pm/items/2604269) | Windows |
+| [Virtual Studio](https://natsunatsu.booth.pm/items/2956377) | Windows |
 
 ##  Services using VRM internally
 
