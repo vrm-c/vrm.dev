@@ -175,6 +175,7 @@ weight: 4
 | [TIFA](https://melonspeedruns.itch.io/tifa) | Windows |
 | [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
 | [[HANA] BlendShapeをコントロールするツール](https://kuniyan.booth.pm/items/2437978) | Windows |
+| [Virtual Studio](https://natsunatsu.booth.pm/items/2956377) | Windows |
 
 ##  内部的にVRMを活用しているサービス
 
