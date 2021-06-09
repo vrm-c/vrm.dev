@@ -141,8 +141,7 @@ Setting up one BlendShape only needs: `10000 x (12 + 12) => 0.24MB`
 
 > The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases
 
-https://github.com/vrm-c/UniVRM/tree/master/Assets/UniGLTF/MeshUtility
-
+[Mesh Utility]({{< relref "mesh_utility.md" >}})
 
 ## Summary
 

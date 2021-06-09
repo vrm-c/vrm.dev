@@ -48,3 +48,4 @@ Exporter sample can be found in:
 * https://github.com/saturday06/VRM_IMPORTER_for_Blender
 * https://github.com/virtual-cast/babylon-vrm-loader/
 * https://github.com/pixiv/three-vrm/
+* https://github.com/V-Sekai/godot-vrm
