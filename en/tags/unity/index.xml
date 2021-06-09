@@ -651,7 +651,7 @@ The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&
 &lt;/li>
 &lt;li>KHR_texture_transform import/export&lt;/li>
 &lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Thu, 07 Jan 2021 13:54:24 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -1293,7 +1293,7 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/how_to_make_vrm/">How to make VRM file&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM Import&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 07 Jan 2021 13:54:24 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 07 Jan 2021 14:04:51 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
 &lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
 &lt;h1 id="how-to-use">How to use&lt;/h1>
@@ -1902,29 +1902,131 @@ In this example, the model&amp;rsquo;s mesh are split into two parts: face and b
 &lt;h3 id="bonemesheraser">BoneMeshEraser&lt;/h3>
 &lt;p>Eliminate meshes associated with the bones in EraseRoot hierarchy.&lt;/p></description></item><item><title>Docs: Implement GLTF Extension</title><link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link><pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid><description>
 &lt;p>Work in progress&lt;/p></description></item><item><title>Docs: VRMShaders UPM Package</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</link><pubDate>Mon, 03 Aug 2020 10:39:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_vrmshaders/</guid><description>
-&lt;p>Starting from &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
+&lt;p>Starting with &lt;code>UniVRM-0.56&lt;/code>, the folder structure in UniVRM has been changed.
 Material-related parts in &lt;code>UniVRM&lt;/code> has been moved to &lt;code>Assets/VRMShaders&lt;/code>.&lt;/p>
+&lt;h2 id="supported-shaders-in-unity-and-the-interchangeability-with-gltf-materials">Supported Shaders in Unity and the interchangeability with GLTF materials&lt;/h2>
+&lt;p>VRM supports three types of materials:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>PBR (gltf default)&lt;/code>&lt;/li>
+&lt;li>&lt;code>unlit (KHR_materials_unlit extensions)&lt;/code> &lt;a href="https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit">https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit&lt;/a>&lt;/li>
+&lt;li>&lt;code>MToon&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Starting with &lt;code>v0.44&lt;/code>, the information regarding materials &lt;code>PBR&lt;/code>, &lt;code>unlit&lt;/code> can be recorded in glTF (symboled as &lt;code>VRM_USE_GLTFSHADER&lt;/code>).&lt;/p>
+&lt;p>If these three materials are imported into unity, they will be turned into:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Standard&lt;/code>&lt;/li>
+&lt;li>&lt;code>UniGLTF/UniUnlit&lt;/code> &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/li>
+&lt;li>&lt;code>VRM/MToon&lt;/code> &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">mtoon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>When exporting a VRM model, other &lt;code>unlit&lt;/code> type shaders are also supported.&lt;br>
+The following table summarizes all the &lt;code>shaders&lt;/code> used in the previous UniVRM versions:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Shader&lt;/th>
+&lt;th>glTF export&lt;/th>
+&lt;th>import&lt;/th>
+&lt;th>comment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Standard (Unity standard)&lt;/td>
+&lt;td>PBR&lt;/td>
+&lt;td>Standard&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/StandardVColor&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>was removed in v0.xx.0. Please use UniUnlit instead&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Color (Unity standard)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Texture (Unity standard)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent (Unity standard)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unlit/Transparent Cutout (Unity standard)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>UniGLTF/UniUnlit (VRMShaders)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTexture (UniVRM)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>was removed in v0.76.0. Please use UniUnlit instead&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparent (UniVRM)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>was removed in v0.76.0. Please use UniUnlit instead&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitCutout (UniVRM)&lt;/td>
+&lt;td>KHR_materials_unlit&lt;/td>
+&lt;td>UniGLTF/UniUnlit&lt;/td>
+&lt;td>was removed in v0.76.0. Please use UniUnlit instead&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/UnlitTransparentZWrite (UniVRM)&lt;/td>
+&lt;td>Not compatible with gltf&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>was removed in v0.76.0. Please use MToon instead.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VRM/MToon&lt;/td>
+&lt;td>extensions.VRM.materialProperties&lt;/td>
+&lt;td>VRM/MToon&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>VRMC_materials_mtoon&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>VRM 1.0&amp;rsquo;s MToon (in development)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="interchangeability-between-unity-and-gltf">Interchangeability between Unity and glTF&lt;/h2>
+&lt;h3 id="vertex-color">Vertex Color&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>Unity Standard&lt;/code> does not support vertex color. &lt;code>VRMShaders&lt;/code>'s UniUnlit supports vertex color.&lt;/li>
+&lt;/ul>
+&lt;h3 id="multi-uv">Multi-UV&lt;/h3>
+&lt;ul>
+&lt;li>glTF can use multiple uv for any type of texture while Standard, UniUnlit and MToon do not support this feature.&lt;/li>
+&lt;/ul>
 &lt;h2 id="upm-package">UPM Package&lt;/h2>
-&lt;p>VRMShaders can be used as a package to be imported into a Unity Project via Unity Package Manger.
-Besides that, VRMShaders can be used independently without &lt;code>UniVRM&lt;/code> (&lt;code>UniVRM&lt;/code> uses &lt;code>VRMShaders&lt;/code>).
-VRMShaders includes &lt;code>UniUnlit&lt;/code> and &lt;code>MToon&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">manifest.json&lt;/span>
 {
 &lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.57.0&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.76.0&amp;#34;&lt;/span>,
 }
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, the version of UniVRM being imported is v0.57.0.
-The imported version can be changed to different version (e.g. v0.56.0).
-&lt;code>VRMShaders&lt;/code> version number is the same as UniVRM.&lt;/p>
-&lt;h3 id="uniunlit">UniUnlit&lt;/h3>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">unlit&lt;/a>&lt;/p>
-&lt;h3 id="mtoon">MToon&lt;/h3>
-&lt;p>In VRMShaders, MToon shader is managed by &lt;code>git submodule&lt;/code>:&lt;/p>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders">https://github.com/vrm-c/UniVRM/tree/master/Assets/VRMShaders&lt;/a>&lt;/p>
-&lt;p>For the latest update about MToon, please refer to:&lt;/p>
-&lt;p>&lt;a href="https://github.com/Santarh/MToon">https://github.com/Santarh/MToon&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">Introduction to MToon&lt;/a>&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/en/docs/univrm/install/univrm_version/</link><pubDate>Mon, 01 Feb 2021 07:16:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_version/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/en/docs/univrm/install/univrm_version/</link><pubDate>Mon, 01 Feb 2021 07:16:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_version/</guid><description>
 &lt;h1 id="v0550">v0.55.0&lt;/h1>
 &lt;table>
 &lt;thead>
