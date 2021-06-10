@@ -1,9 +1,9 @@
 ---
-title: "VRMShaders UPM Package"
+title: "VRMShaders Package"
 date: 2020-08-03T10:39:04+09:00
 weight: 8
 tags: ["unity"]
-aliases: ["/univrm/shaders/univrm_vrmshaders/"]
+aliases: ["/en/univrm/shaders/univrm_vrmshaders/", "/en/docs/univrm/shaders/univrm_export_import/"]
 ---
 
 Starting with `UniVRM-0.56`, the folder structure in UniVRM has been changed.
@@ -40,7 +40,7 @@ The following table summarizes all the `shaders` used in the previous UniVRM ver
 | VRM/UnlitTexture (UniVRM)                 | KHR_materials_unlit               | UniGLTF/UniUnlit | was removed in v0.76.0. Please use UniUnlit instead                                                |
 | VRM/UnlitTransparent (UniVRM)             | KHR_materials_unlit               | UniGLTF/UniUnlit | was removed in v0.76.0. Please use UniUnlit instead                                                |
 | VRM/UnlitCutout (UniVRM)                  | KHR_materials_unlit               | UniGLTF/UniUnlit | was removed in v0.76.0. Please use UniUnlit instead                                                |
-| VRM/UnlitTransparentZWrite (UniVRM)       | Not compatible with gltf          |                  | was removed in v0.76.0. Please use MToon instead.                                                  |
+| VRM/UnlitTransparentZWrite (UniVRM)       | Not compatible with gltf          |                  | was removed in v0.76.0. Please use MToon instead                                                   |
 | VRM/MToon                                 | extensions.VRM.materialProperties | VRM/MToon        |                                                                                                    |
 |                                           | VRMC_materials_mtoon              |                  | VRM 1.0's MToon (in development)                                                                   |
 
