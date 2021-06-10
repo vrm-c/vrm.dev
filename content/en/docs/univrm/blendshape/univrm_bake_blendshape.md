@@ -3,7 +3,7 @@ title: "Bake BlendShape State When Exporting"
 date: 2020-07-27T19:28:41+09:00
 tags: ["unity"]
 weight: 3
-aliases: ["/univrm/blendshape/univrm_bake_blendshape/"]
+aliases: ["/en/univrm/blendshape/univrm_bake_blendshape/"]
 ---
 
 When exporting the VRM model, current BlendShape value can be set to the basic state.

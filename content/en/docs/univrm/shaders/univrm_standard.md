@@ -2,7 +2,7 @@
 title: "Standard"
 tags: ["detail"]
 weight: 3
-aliases: ["/univrm/shaders/material_settings/"]
+aliases: ["/en/univrm/shaders/material_settings/"]
 ---
 
 ## Standard
