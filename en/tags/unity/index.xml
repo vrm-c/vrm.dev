@@ -623,35 +623,7 @@ The unit of distance is meter when &lt;code>Width Mode-&amp;gt;WorldCoordinates&
 &lt;h3 id="color-1">Color&lt;/h3>
 &lt;p>Set the outline color.&lt;/p>
 &lt;h3 id="color-lighting-mix">Color Lighting Mix&lt;/h3>
-&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
-&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
-&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
-&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
-&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
-&lt;h2 id="upm">UPM&lt;/h2>
-&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
-&lt;ul>
-&lt;li>glTF/glb import/export&lt;/li>
-&lt;/ul>
-&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
-&lt;ul>
-&lt;li>KHR_materials_unlit import/export
-&lt;ul>
-&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
-&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>KHR_texture_transform import/export&lt;/li>
-&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Thu, 07 Jan 2021 14:08:48 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
+&lt;p>Set the multiplier coefficient when &lt;code>Color Mode-&amp;gt;MixedLighting&lt;/code> is chosen.&lt;/p></description></item><item><title>Docs: BlendShape Setup (v0.45)</title><link>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/blendshape_setup/</guid><description>
 &lt;h2 id="assets-related-to-blendshape">Assets related to BlendShape&lt;/h2>
 &lt;p>Once a VRM file is imported, BlendShapeClips (Preset) will be in a folder like this: &lt;code>ModelName.BlendShapes&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
@@ -696,7 +668,35 @@ The &lt;code>Apply&lt;/code> button is removed starting from v0.45.&lt;/p>
 &lt;p>The Binary option is added into the BlendShape setting in v0.45. It is for users who don&amp;rsquo;t want to display the middle state of the BlendShape. The target value will be automatically rounded off. A BlendShape with the binary setting being active will only have a representative expression like a screenshot.&lt;/p>
 &lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
 &lt;p>This feature will become effective when a v0.45-installed application is loaded&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
+&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: UniGLTF</title><link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link><pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid><description>
+&lt;p>Starting with &lt;code>UniVRM-0.63.2&lt;/code>, &lt;code>UniGLTF&lt;/code> is separated from &lt;code>UniVRM&lt;/code> and can be used as a UPM package.&lt;/p>
+&lt;p>The directory for &lt;code>UniGLTF&lt;/code> is &lt;code>Assets/UniGLTF&lt;/code>.&lt;/p>
+&lt;h2 id="unitypackage">UnityPackage&lt;/h2>
+&lt;p>UniGLTF can be installed by importing UniVRM unity package (&lt;code>UniVRM-0.XX.unitypackage&lt;/code>). gltf/glb import/export can still be used even the VRM folder (&lt;code>Assets/VRM&lt;/code>) is deleted.&lt;/p>
+&lt;h2 id="upm">UPM&lt;/h2>
+&lt;p>UniGLTF depends on VRMShaders.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span>,
+&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unigltf-features">UniGLTF Features&lt;/h2>
+&lt;ul>
+&lt;li>glTF/glb import/export&lt;/li>
+&lt;/ul>
+&lt;h3 id="gltf-extensions">glTF Extensions&lt;/h3>
+&lt;ul>
+&lt;li>KHR_materials_unlit import/export
+&lt;ul>
+&lt;li>export: unity&amp;rsquo;s unlit-type shaders&lt;/li>
+&lt;li>import: VRMShaders&amp;rsquo; &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">UniUnlit&lt;/a> shader&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>KHR_texture_transform import/export&lt;/li>
+&lt;li>The name of MorphTarget (BlendShape) is imported/exported to &lt;code>/meshes/*/primitives/*/extras/targetNames&lt;/code>, &lt;code>/meshes/*/extras/targetNames&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Create Base VRM Model</title><link>https://vrm.dev/en/docs/univrm/humanoid/base_model/</link><pubDate>Wed, 14 Oct 2020 17:46:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/base_model/</guid><description>
 &lt;p>The target &lt;code>GameObject&lt;/code> can be exported as VRM if the following two conditions are fulfilled:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>Animator&lt;/code> component is attached&lt;/li>
@@ -1293,7 +1293,7 @@ If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;c
 &lt;ul>
 &lt;li>&lt;a href="https://vrm.dev/en/how_to_make_vrm/">How to make VRM file&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM Import&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Thu, 07 Jan 2021 14:08:48 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Humanoid Component</title><link>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Fri, 08 Jan 2021 18:08:05 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
 &lt;p>&lt;code>UniVRM-0.60.0~&lt;/code>&lt;/p>
 &lt;p>A humanoid avatar can be created directly from the Scene without fbx.&lt;/p>
 &lt;h1 id="how-to-use">How to use&lt;/h1>
