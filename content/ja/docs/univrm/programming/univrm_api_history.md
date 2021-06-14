@@ -6,6 +6,10 @@ weight: 1
 tags: ["api"]
 ---
 
+## v0.77 ImporterContext の整理
+
+[ランタイムインポーター]({{< relref "runtime_import.md" >}})
+
 ## v0.68 ImporterContext の整理
 
 [ランタイムインポーター]({{< relref "runtime_import.md" >}})
