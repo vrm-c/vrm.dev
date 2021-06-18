@@ -122,6 +122,7 @@ weight: 4
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
 | [BOW MAN](https://bowman.vrlab.dmm.com/) | Windows VR |
+| [Legend of the Shieldbearers](https://www.spacepupstudio.com/lots) |Oculus Rift/Oculus Quest|
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
 | [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR, [Oculus Quest](https://www.oculus.com/experiences/quest/3405379359561787/) |
 | [Rakugaki Kingdom](https://rakugaki-kingdom.com/) | iOS, Android |
