@@ -66,6 +66,7 @@ weight: 4
 | [waidayo](https://booth.pm/ja/items/1779185) | PC, iOS |
 | [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
 | [TDPT](https://digital-standard.com/tdpt_lp/) | iOS |
+| [EasyVirtualMotionCaptureForUnity](https://booth.pm/ja/items/1801535) | Windows, Windows VR |
 
 ##  アニメーション
 
@@ -121,6 +122,7 @@ weight: 4
 | [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
+| [Legend of the Shieldbearers](https://www.spacepupstudio.com/lots) |Oculus Rift/Oculus Quest|
 | [BOW MAN](https://bowman.vrlab.dmm.com/ja/) | Windows VR |
 | [Craftopia](https://store.steampowered.com/app/1307550/Craftopia/) | Windows |
 | [RESONARK X](https://store.steampowered.com/app/1366570/RESONARK_X/) | Windows VR, [Oculus Quest](https://www.oculus.com/experiences/quest/3405379359561787/) |

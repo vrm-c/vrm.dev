@@ -66,6 +66,7 @@ weight: 4
 | [waidayo](https://booth.pm/en/items/1779185) | PC, iOS |
 | [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
 | [TDPT](https://digital-standard.com/tdpt_lp/en/) | iOS |
+| [EasyVirtualMotionCaptureForUnity](https://booth.pm/en/items/1801535) | Windows, Windows VR |
 
 ##  Animation
 
