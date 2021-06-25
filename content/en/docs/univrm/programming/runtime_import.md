@@ -81,7 +81,7 @@ namespace VRM.Samples
         private void DestroyVrm(GameObject vrmGameObject)
         {
             // 8. Destroy the generated VRM GameObject
-            //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
+            //    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will also be destroyed
             UnityEngine.Object.Destroy(vrmGameObject);
         }
     }
