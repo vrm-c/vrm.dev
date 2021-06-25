@@ -1,4 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/en/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 20 Jan 2021 13:49:20 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/en/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: API Change History</title><link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid><description>
+&lt;h2 id="v077-reworked-importercontext">v0.77 Reworked ImporterContext&lt;/h2>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">Runtime Importer&lt;/a>&lt;/p>
 &lt;h2 id="v068-reworked-importercontext">v0.68 Reworked ImporterContext&lt;/h2>
 &lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/programming/runtime_import/">Runtime Importer&lt;/a>&lt;/p>
 &lt;h2 id="v0632-changed-implementation-method-of-gltf-extension">v0.63.2 Changed implementation method of gltf extension&lt;/h2>
@@ -20,8 +22,76 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After the change&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 22 Mar 2021 18:15:57 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
-&lt;h2 id="version-068">&lt;code>Version 0.68~&lt;/code>&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Runtime Importer</title><link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link><pubDate>Fri, 25 Jun 2021 18:15:46 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid><description>
+&lt;h2 id="version-077">&lt;code>Version 0.77~&lt;/code>&lt;/h2>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/1018">DisposeOnGameObjectDestroyed&lt;/a>&lt;/p>
+&lt;p>&lt;code>ImporterContext&lt;/code> API has been modified.&lt;/p>
+&lt;p>The function &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> introduced in &lt;code>Version 0.68&lt;/code> has been discarded.&lt;br>
+Instead, &lt;code>ImporterContext.Load&lt;/code> and &lt;code>RuntimeGltfInstance&lt;/code> are used in &lt;code>v0.77&lt;/code>.&lt;/p>
+&lt;p>In addition, &lt;code>ImporterContext&lt;/code>'s members have been moved to &lt;code>RuntimeGltfInstance&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>Root&lt;/li>
+&lt;li>EnableUpdateWhenOffscreen()&lt;/li>
+&lt;li>ShowMeshes()&lt;/li>
+&lt;/ul>
+&lt;p>To destroy the Importer, use &lt;code>ImporterContext.Dispose&lt;/code> after &lt;code>Load&lt;/code> is called.&lt;br>
+By destroying RuntimeGltfInstance, the resources associated with the RuntimeGltfInstance (Texture, Material, Mesh, etc) will be destroyed.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
+&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM.Samples&lt;/span>
+{
+&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
+{
+&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
+{
+_vrmGameObject = LoadVrm(_vrmFilePath);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
+{
+DestroyVrm(_vrmGameObject);
+}
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject LoadVrm(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
+{
+&lt;span style="color:#09f;font-style:italic">// 1. Call GltfParser function (it has been separated from ImporterContext)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// We use GltfParser to obtain JSON information and binary data from the VRM file
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
+parser.ParsePath(vrmFilePath);
+&lt;span style="color:#09f;font-style:italic">// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// The class for loading VRM is VRMImporterContext
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
+{
+&lt;span style="color:#09f;font-style:italic">// 3. Call Load function to create a VRM GameObject
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> RuntimeGltfInstance instance = context.Load(); &lt;span style="color:#09f;font-style:italic">// &amp;lt;- `v0.77`
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// For asynchronous loading, use the following line instead:
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// RuntimeGltfInstance instance = await context.LoadAsync();
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// 4. Enable UpdateWhenOffscreen
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> instance.EnableUpdateWhenOffscreen(); &lt;span style="color:#09f;font-style:italic">// This function has been moved from ImporterContext to RuntimeGltfInstance in `v0.77`
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// 5. Display the model
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> instance.ShowMeshes(); &lt;span style="color:#09f;font-style:italic">// This function has been moved from ImporterContext to RuntimeGltfInstance `v0.77`
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
+&lt;span style="color:#09f;font-style:italic">// 6. Return Root GameObject (VRM model)
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root GameObject is where VRMMeta component is attached
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> instance.Root; &lt;span style="color:#09f;font-style:italic">// &amp;lt;- changed from ImporterContext to RuntimeGltfInstance in `v0.77`
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+&lt;span style="color:#09f;font-style:italic">// 7. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// In step 6, the resources associated with the VRM GameObject will not be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// The unused resources included in the glTF file (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
+&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
+{
+&lt;span style="color:#09f;font-style:italic">// 8. Destroy the generated VRM GameObject
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will also be destroyed
+&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-068">&lt;code>Version 0.68~&lt;/code>&lt;/h2>
 &lt;h3 id="api-changes">API Changes&lt;/h3>
 &lt;p>ImporterContext has been reworked.&lt;/p>
 &lt;ul>
