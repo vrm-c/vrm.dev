@@ -84,23 +84,30 @@ bufferView の primitive 間での共有をやめます。
 | 末端     | 7cm の遠さに 自動で追加 | 追加しない          |
 
 - 拡張を分離
-- Collider形状に Capsule を追加
+- Collider 形状に Capsule を追加
 
 ## VRMC_materials_hdr_emissiveMultiplier
 
+エミッションによる発光表現です。
+
 glTF では emissiveFactor(float3) の値域が [0.0, 1.0] です。
 これに係数を追加することで、1.0 を越える値を表せるようにします。
-gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。
 
-エミッションによる発光表現です。
+|                         | VRM0                                | VRM1                                                    |
+| ----------------------- | ----------------------------------- | ------------------------------------------------------- |
+| mtoon の emissiveFactor | 独自に格納していた(0, 1 制限が無い) | gltf material の emissiveFactor に格納(0, 1 制限がある) |
+
+gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。
 
 ## VRMC_materials_mtoon
 
-諸々
+- 拡張を分離
+
+`TODO` 諸々
 
 ## VRMC_node_constraint
 
-開発中
+`開発中`
 
 ### translation
 
