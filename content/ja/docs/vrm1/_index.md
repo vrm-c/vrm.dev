@@ -43,10 +43,23 @@ bufferView の primitive 間での共有をやめます。
 
 ## VRMC_vrm: meta
 
+`TODO`
+
 ## VRMC_vrm: humanoid
 
-`TODO` 内容に変更はない？
-`TODO` 必須ボーンについて確認せよ
+|                     | VRM0 | VRM1 |
+| ------------------- | ---- | ---- |
+| neck                | 必須 |      |
+| head                | 必須 | 必須 |
+| hips                | 必須 | 必須 |
+| spine               | 必須 | 必須 |
+| chest               | 必須 |      |
+| left/right UpperArm | 必須 | 必須 |
+| left/right LowerArm | 必須 | 必須 |
+| left/right Hand     | 必須 | 必須 |
+| left/right UpperLeg | 必須 | 必須 |
+| left/right LowerLeg | 必須 | 必須 |
+| left/right Foot     | 必須 | 必須 |
 
 ## VRMC_vrm: expression
 
@@ -69,11 +82,12 @@ bufferView の primitive 間での共有をやめます。
 
 ## VRMC_vrm: lookat
 
-`TODO` 特に変更無し
+* `degreemap.curve` が廃止になります
 
 ## VRMC_vrm: firstperson
 
-`TODO` 特に変更無し
+* `firstPersonBone` は廃止になり、`Head` 固定になります
+* `firstPersonBoneOffset` は、`lookAt.offsetFromHeadBone` になります
 
 ## VRMC_springBone
 
@@ -103,7 +117,7 @@ gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用しま�
 
 - 拡張を分離
 
-`TODO` 諸々
+`TODO`
 
 ## VRMC_node_constraint
 
