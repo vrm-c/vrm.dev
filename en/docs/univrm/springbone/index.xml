@@ -1,84 +1,114 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – SpringBone</title><link>https://vrm.dev/en/docs/univrm/springbone/</link><description>Recent content in SpringBone on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/springbone/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</guid><description>
-&lt;p>Instruction video on how to set up spring bones &lt;a href="https://www.youtube.com/watch?v=tpl_mqU8i7U">can be found here&lt;/a>.&lt;/p>
-&lt;h1 id="nodes-attached-by-spring-bones">Nodes attached by spring bones&lt;/h1>
-&lt;p>When VRM is imported, nodes attached by components related to spring bones can be found as described below:&lt;/p>
-&lt;ul>
-&lt;li>VRMSpringBone is attached to the node&lt;code>secondary&lt;/code>.&lt;/li>
-&lt;li>VRMSpringBoneColliderGroup is attached to nodes exported last time.&lt;/li>
-&lt;/ul>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Please check&lt;code>secondary&lt;/code>in the Hierarchy window if you cannot find VRMSpringBone&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h1 id="vrmspringbone">VRMSpringBone&lt;/h1>
-&lt;p>The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object&amp;rsquo;s parent Gameobject in&lt;code>Root Bones&lt;/code>. To do that, drag a target object (e.g.&lt;code>hair1_L&lt;/code>) from&lt;code>Hierarchy&lt;/code>to the&lt;code>Element X&lt;/code>field (or click the rightmost icon of&lt;code>Element X&lt;/code>then you can see a list of selectable components). Adjust&lt;code>Size&lt;/code>to change the number of&lt;code>Root Bones&lt;/code>you want to put in.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMSpringBone.png" alt="lookat" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Example: Set the hair and ribbon in&lt;code>Root Bones&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>That&amp;rsquo;s it. Try to adjust&lt;code>Stiffness Force&lt;/code>,&lt;code>Gravity Power&lt;/code>, etc. The target objects will perform swaying movements.&lt;/p>
-&lt;h1 id="option-vrmspringbonecollidergroup-collision-detection">[Option] VRMSpringBoneColliderGroup (Collision detection)&lt;/h1>
-&lt;p>The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/collider.png" alt="collider" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>For example, hit&lt;code>Add Component&lt;/code>to attach VRMSpringBoneColliderGroup script to&lt;code>head&lt;/code>and drag&lt;code>head&lt;/code>to the&lt;code>Element 0&lt;/code>field in&lt;code>Collider Groups&lt;/code>. You can change its offset and radius value by double clicking the&lt;code>Element 0&lt;/code>field in&lt;code>Collider Groups&lt;/code>.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_collider.png" alt="set_collider" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Attach the VRMSpringBoneColliderGroup script to&lt;code>head&lt;/code>and set&lt;code>head&lt;/code>in&lt;code>Collider Groups&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/spring_gizmo.png" alt="gizmo" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Gizmo at runtime (check&lt;code>Draw Gizmo&lt;/code>in the Inspector of VRMSpringBone)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="set-multiple-collision-detections-in-vrmspringbonecollidergroup">Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2>
-&lt;p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code>Size&lt;/code>and multiple targets can then be put into&lt;code>Element&lt;/code>fields.&lt;/p>
-&lt;h1 id="vrmspringbone-set-before-was-gone">VRMSpringBone set before was gone&lt;/h1>
-&lt;p>VRMSpringBone was attached to the node&lt;code>secondary&lt;/code>during import.&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones">VRMSpringBone&lt;/a>&lt;/p></description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – SpringBone</title>
+    <link>https://vrm.dev/en/docs/univrm/springbone/</link>
+    <description>Recent content in SpringBone on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/docs/univrm/springbone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: VRMSpringBone</title>
+      <link>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Instruction video on how to set up spring bones &lt;a href=&#34;https://www.youtube.com/watch?v=tpl_mqU8i7U&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;nodes-attached-by-spring-bones&#34;&gt;Nodes attached by spring bones&lt;/h1&gt;
+&lt;p&gt;When VRM is imported, nodes attached by components related to spring bones can be found as described below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VRMSpringBone is attached to the node&lt;code&gt;secondary&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;VRMSpringBoneColliderGroup is attached to nodes exported last time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Please check&lt;code&gt;secondary&lt;/code&gt;in the Hierarchy window if you cannot find VRMSpringBone&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
+&lt;p&gt;The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object&amp;rsquo;s parent Gameobject in&lt;code&gt;Root Bones&lt;/code&gt;. To do that, drag a target object (e.g.&lt;code&gt;hair1_L&lt;/code&gt;) from&lt;code&gt;Hierarchy&lt;/code&gt;to the&lt;code&gt;Element X&lt;/code&gt;field (or click the rightmost icon of&lt;code&gt;Element X&lt;/code&gt;then you can see a list of selectable components). Adjust&lt;code&gt;Size&lt;/code&gt;to change the number of&lt;code&gt;Root Bones&lt;/code&gt;you want to put in.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMSpringBone.png&#34; alt=&#34;lookat&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Example: Set the hair and ribbon in&lt;code&gt;Root Bones&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;That&amp;rsquo;s it. Try to adjust&lt;code&gt;Stiffness Force&lt;/code&gt;,&lt;code&gt;Gravity Power&lt;/code&gt;, etc. The target objects will perform swaying movements.&lt;/p&gt;
+&lt;h1 id=&#34;option-vrmspringbonecollidergroup-collision-detection&#34;&gt;[Option] VRMSpringBoneColliderGroup (Collision detection)&lt;/h1&gt;
+&lt;p&gt;The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/collider.png&#34; alt=&#34;collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For example, hit&lt;code&gt;Add Component&lt;/code&gt;to attach VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and drag&lt;code&gt;head&lt;/code&gt;to the&lt;code&gt;Element 0&lt;/code&gt;field in&lt;code&gt;Collider Groups&lt;/code&gt;. You can change its offset and radius value by double clicking the&lt;code&gt;Element 0&lt;/code&gt;field in&lt;code&gt;Collider Groups&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_collider.png&#34; alt=&#34;set_collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Attach the VRMSpringBoneColliderGroup script to&lt;code&gt;head&lt;/code&gt;and set&lt;code&gt;head&lt;/code&gt;in&lt;code&gt;Collider Groups&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/spring_gizmo.png&#34; alt=&#34;gizmo&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Gizmo at runtime (check&lt;code&gt;Draw Gizmo&lt;/code&gt;in the Inspector of VRMSpringBone)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;set-multiple-collision-detections-in-vrmspringbonecollidergroup&#34;&gt;Set multiple collision detections in VRMSpringBoneColliderGroup&lt;/h2&gt;
+&lt;p&gt;Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of&lt;code&gt;Size&lt;/code&gt;and multiple targets can then be put into&lt;code&gt;Element&lt;/code&gt;fields.&lt;/p&gt;
+&lt;h1 id=&#34;vrmspringbone-set-before-was-gone&#34;&gt;VRMSpringBone set before was gone&lt;/h1&gt;
+&lt;p&gt;VRMSpringBone was attached to the node&lt;code&gt;secondary&lt;/code&gt;during import.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/#nodes-attached-by-spring-bones&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

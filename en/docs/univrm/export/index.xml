@@ -1,342 +1,392 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Export</title><link>https://vrm.dev/en/docs/univrm/export/</link><description>Recent content in Export on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/export/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRM Export</title><link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link><pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid><description>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Terminology&lt;/th>
-&lt;th>Meaning&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Root&lt;/td>
-&lt;td>Topmost parent of an object&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Hierarchy&lt;/td>
-&lt;td>Root and its children&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="v058">v0.58~&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/export_dialog.jpg" alt="vrm export" width="900" />
-&lt;p>The export dialog is based on Unity&amp;rsquo;s &lt;a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html">EditorWindow&lt;/a>&lt;/p>
-&lt;h3 id="how-to-use">How to use&lt;/h3>
-&lt;h4 id="vrm-exporter-window">VRM Exporter Window&lt;/h4>
-&lt;p>Open VRM Exporter Window by &lt;code>VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code>&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm_menu" width="250" />
-&lt;br>&lt;/p>
-&lt;p>Previous versions: &lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
-&lt;ul>
-&lt;li>You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first.&lt;/li>
-&lt;/ul>
-&lt;h4 id="export-target-setup">Export Target Setup&lt;/h4>
-&lt;ul>
-&lt;li>Drag the export target&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/export058_drag.gif" alt="vrm export" width="600" />
-&lt;ul>
-&lt;li>Select the export target in the list&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/export058_select.gif" alt="vrm export" width="600" />
-&lt;h4 id="conditions-for-valid-exportroot">Conditions for Valid ExportRoot&lt;/h4>
-&lt;img src="https://vrm.dev/images/vrm/export062_empty_en.jpg" alt="vrm export" width="600" />
-&lt;p>The setting screen for ExportRoot will show up if the following conditions are satisfied:&lt;/p>
-&lt;ul>
-&lt;li>Must be topmost parent&lt;/li>
-&lt;li>Root&amp;rsquo;s Rotation and Scaling are Default (changing Translation is allowable)&lt;/li>
-&lt;li>Has Animator component attached and Animator.avatar is humanoid&lt;/li>
-&lt;li>Faces the positive Z-axis (identified by the bone positions of left and right feet)&lt;/li>
-&lt;li>Contains active mesh in the Hierarchy&lt;/li>
-&lt;/ul>
-&lt;h4 id="exporter-interface">Exporter Interface&lt;/h4>
-&lt;p>Please set up &lt;code>Meta&lt;/code> and &lt;code>ExportSettings&lt;/code>.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – Export</title>
+    <link>https://vrm.dev/en/docs/univrm/export/</link>
+    <description>Recent content in Export on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/docs/univrm/export/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: VRM Export</title>
+      <link>https://vrm.dev/en/docs/univrm/export/univrm_export/</link>
+      <pubDate>Thu, 16 Jul 2020 10:23:04 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/export/univrm_export/</guid>
+      <description>
+        
+        
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Terminology&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Root&lt;/td&gt;
+&lt;td&gt;Topmost parent of an object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hierarchy&lt;/td&gt;
+&lt;td&gt;Root and its children&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;v058&#34;&gt;v0.58~&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog.jpg&#34; alt=&#34;vrm export&#34; width=&#34;900&#34; /&gt;
+
+&lt;p&gt;The export dialog is based on Unity&amp;rsquo;s &lt;a href=&#34;https://docs.unity3d.com/ScriptReference/EditorWindow.html&#34;&gt;EditorWindow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-to-use&#34;&gt;How to use&lt;/h3&gt;
+&lt;h4 id=&#34;vrm-exporter-window&#34;&gt;VRM Exporter Window&lt;/h4&gt;
+&lt;p&gt;Open VRM Exporter Window by &lt;code&gt;VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm_menu&#34; width=&#34;250&#34; /&gt;
+
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Previous versions: &lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;export-target-setup&#34;&gt;Export Target Setup&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Drag the export target&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export058_drag.gif&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select the export target in the list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export058_select.gif&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+
+&lt;h4 id=&#34;conditions-for-valid-exportroot&#34;&gt;Conditions for Valid ExportRoot&lt;/h4&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export062_empty_en.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+
+&lt;p&gt;The setting screen for ExportRoot will show up if the following conditions are satisfied:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Must be topmost parent&lt;/li&gt;
+&lt;li&gt;Root&amp;rsquo;s Rotation and Scaling are Default (changing Translation is allowable)&lt;/li&gt;
+&lt;li&gt;Has Animator component attached and Animator.avatar is humanoid&lt;/li&gt;
+&lt;li&gt;Faces the positive Z-axis (identified by the bone positions of left and right feet)&lt;/li&gt;
+&lt;li&gt;Contains active mesh in the Hierarchy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exporter-interface&#34;&gt;Exporter Interface&lt;/h4&gt;
+&lt;p&gt;Please set up &lt;code&gt;Meta&lt;/code&gt; and &lt;code&gt;ExportSettings&lt;/code&gt;.
 If you get warning messages, it is optional for you to correct those warnings or not.
-If there is no error messages shown, you can go ahead and press &lt;code>export&lt;/code> button at the lower right corner of the dialog.
-Details about VRM size calculation &lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="export-option">Export Option&lt;/h2>
-&lt;p>Here is a list of additional processing during export:&lt;/p>
-&lt;h3 id="force-t-pose">Force T Pose&lt;/h3>
-&lt;p>Force T-Pose before export.
-If you can manually make T-Pose for model, it&amp;rsquo;s ok without selecting this option.&lt;/p>
-&lt;h3 id="pose-freeze">Pose Freeze&lt;/h3>
-&lt;p>Model&amp;rsquo;s normalization.
+If there is no error messages shown, you can go ahead and press &lt;code&gt;export&lt;/code&gt; button at the lower right corner of the dialog.
+Details about VRM size calculation &lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/vrm_size/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;export-option&#34;&gt;Export Option&lt;/h2&gt;
+&lt;p&gt;Here is a list of additional processing during export:&lt;/p&gt;
+&lt;h3 id=&#34;force-t-pose&#34;&gt;Force T Pose&lt;/h3&gt;
+&lt;p&gt;Force T-Pose before export.
+If you can manually make T-Pose for model, it&amp;rsquo;s ok without selecting this option.&lt;/p&gt;
+&lt;h3 id=&#34;pose-freeze&#34;&gt;Pose Freeze&lt;/h3&gt;
+&lt;p&gt;Model&amp;rsquo;s normalization.
 If Model&amp;rsquo;s normalization is already done, there is no need to perform model normalization again.
 However, if additional parts are added into the model (not normalized yet), model normalization is required.
-In Hierarchy, all GameObjects&amp;rsquo; rotation should be 0, and their scale should be 1 if a model has been normalized.&lt;/p>
-&lt;blockquote>
-&lt;p>In v0.58, the system can automatically identify whether the export target needs PoseFreeze&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="useexperimentalexporter">UseExperimentalExporter&lt;/h3>
-&lt;p>Exporter&amp;rsquo;s Serializer version.
-It will not affect the output whether this option is selected or not.&lt;/p>
-&lt;h3 id="usesparseaccessor">UseSparseAccessor&lt;/h3>
-&lt;p>Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p>
-&lt;p>If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p>
-&lt;h3 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h3>
-&lt;p>BlendShape&amp;rsquo;s Normal and Tangent will not be exported if this option is selected.
+In Hierarchy, all GameObjects&amp;rsquo; rotation should be 0, and their scale should be 1 if a model has been normalized.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In v0.58, the system can automatically identify whether the export target needs PoseFreeze&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;useexperimentalexporter&#34;&gt;UseExperimentalExporter&lt;/h3&gt;
+&lt;p&gt;Exporter&amp;rsquo;s Serializer version.
+It will not affect the output whether this option is selected or not.&lt;/p&gt;
+&lt;h3 id=&#34;usesparseaccessor&#34;&gt;UseSparseAccessor&lt;/h3&gt;
+&lt;p&gt;Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p&gt;
+&lt;p&gt;If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p&gt;
+&lt;h3 id=&#34;onlyblendshapeposition&#34;&gt;OnlyBlendshapePosition&lt;/h3&gt;
+&lt;p&gt;BlendShape&amp;rsquo;s Normal and Tangent will not be exported if this option is selected.
 The file size can be reduced.
-Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p>
-&lt;h3 id="reduceblendshape">ReduceBlendshape&lt;/h3>
-&lt;p>BlendShapes that are not referenced by BlendShapeClips will not be exported.
-The file size can be reduced.&lt;/p>
-&lt;h3 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h3>
-&lt;p>BlendShapeClip belonging to Preset.Unknown will not be exported.
-Used in combination with ReduceBlendshape.&lt;/p>
-&lt;h3 id="removevertexcolor">RemoveVertexColor&lt;/h3>
-&lt;p>Vertex color will not be exported.
+Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
+&lt;h3 id=&#34;reduceblendshape&#34;&gt;ReduceBlendshape&lt;/h3&gt;
+&lt;p&gt;BlendShapes that are not referenced by BlendShapeClips will not be exported.
+The file size can be reduced.&lt;/p&gt;
+&lt;h3 id=&#34;reduceblendshapeclip&#34;&gt;ReduceBlendshapeClip&lt;/h3&gt;
+&lt;p&gt;BlendShapeClip belonging to Preset.Unknown will not be exported.
+Used in combination with ReduceBlendshape.&lt;/p&gt;
+&lt;h3 id=&#34;removevertexcolor&#34;&gt;RemoveVertexColor&lt;/h3&gt;
+&lt;p&gt;Vertex color will not be exported.
 In GLTF, there is no setting that can disable the color vertex usage.
-UniVRM supports vertex color for &lt;code>unlit&lt;/code> shader.&lt;/p>
-&lt;h2 id="list-of-error-messages">List of Error Messages&lt;/h2>
-&lt;p>Table for Error Messages in v0.56, v0.57 and v0.58&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>message&lt;/th>
-&lt;th>0.56&lt;/th>
-&lt;th>0.57&lt;/th>
-&lt;th>0.58&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>The Root translation, rotation and scale will be dropped&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>error (changing translation is OK)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Jaw bone&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Same name bone&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>warn (auto-rename)&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Vertex color&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unknown shader&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require source&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require no parent&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>error (new)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require Z+ forward&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>error (new)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require animator&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require humanoid avatar&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Require Title/Version/Author&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>No active mesh&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Prefab export&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>error&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Springbone validation&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>ok&lt;/td>
-&lt;td>warn&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="require-source">Require source&lt;/h3>
-&lt;p>Please select a valid object that can be exported as VRM file in the scene.&lt;/p>
-&lt;h3 id="require-animator">Require animator&lt;/h3>
-&lt;p>Animator component cannot be found in Root (non-humanoid).&lt;/p>
-&lt;h3 id="require-animatoravatar">Require animator.avatar&lt;/h3>
-&lt;p>avatar cannot be found in Root&amp;rsquo;s Animator (non-humanoid).&lt;/p>
-&lt;h3 id="animatoravatar-is-not-valid">Animator.avatar is not valid&lt;/h3>
-&lt;p>Animator.avatar is not humanoid.&lt;/p>
-&lt;h3 id="animatoravatar-is-not-humanoid-please-change-models-animationtype-to-humanoid">Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid&lt;/h3>
-&lt;p>Please change the setting to &lt;code>humanoid&lt;/code> (from Inspector: &lt;code>FBX Import&lt;/code> -&amp;gt; &lt;code>rig&lt;/code> -&amp;gt; &lt;code>AnimationType&lt;/code>).&lt;/p>
-&lt;h3 id="require-title">Require Title&lt;/h3>
-&lt;p>Please enter the title of this model in the dialog.&lt;/p>
-&lt;h3 id="require-version">Require Version&lt;/h3>
-&lt;p>Please enter the version of this model in the dialog.&lt;/p>
-&lt;h3 id="require-author">Require Author&lt;/h3>
-&lt;p>Please enter the author of this model in the dialog.&lt;/p>
-&lt;h3 id="no-active-mesh">No active mesh&lt;/h3>
-&lt;p>Export target doesn&amp;rsquo;t have &lt;code>active&lt;/code> mesh.&lt;/p>
-&lt;h3 id="filename-0-is-too-long">FileName &amp;lsquo;{0}&amp;rsquo; is too long&lt;/h3>
-&lt;p>Material, Texture and Mesh names are too long.
-Please rename them.&lt;/p>
-&lt;h3 id="the-root-translation-rotation-and-scale-will-be-dropped">The Root translation, rotation and scale will be dropped&lt;/h3>
-&lt;p>A model is allowed to export if Root&amp;rsquo;s translation, rotation and scale are not Default values.
+UniVRM supports vertex color for &lt;code&gt;unlit&lt;/code&gt; shader.&lt;/p&gt;
+&lt;h2 id=&#34;list-of-error-messages&#34;&gt;List of Error Messages&lt;/h2&gt;
+&lt;p&gt;Table for Error Messages in v0.56, v0.57 and v0.58&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;message&lt;/th&gt;
+&lt;th&gt;0.56&lt;/th&gt;
+&lt;th&gt;0.57&lt;/th&gt;
+&lt;th&gt;0.58&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The Root translation, rotation and scale will be dropped&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;error (changing translation is OK)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jaw bone&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Same name bone&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;warn (auto-rename)&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vertex color&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unknown shader&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require source&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require no parent&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;error (new)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require Z+ forward&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;error (new)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require animator&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require humanoid avatar&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Require Title/Version/Author&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;No active mesh&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prefab export&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Springbone validation&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;ok&lt;/td&gt;
+&lt;td&gt;warn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;require-source&#34;&gt;Require source&lt;/h3&gt;
+&lt;p&gt;Please select a valid object that can be exported as VRM file in the scene.&lt;/p&gt;
+&lt;h3 id=&#34;require-animator&#34;&gt;Require animator&lt;/h3&gt;
+&lt;p&gt;Animator component cannot be found in Root (non-humanoid).&lt;/p&gt;
+&lt;h3 id=&#34;require-animatoravatar&#34;&gt;Require animator.avatar&lt;/h3&gt;
+&lt;p&gt;avatar cannot be found in Root&amp;rsquo;s Animator (non-humanoid).&lt;/p&gt;
+&lt;h3 id=&#34;animatoravatar-is-not-valid&#34;&gt;Animator.avatar is not valid&lt;/h3&gt;
+&lt;p&gt;Animator.avatar is not humanoid.&lt;/p&gt;
+&lt;h3 id=&#34;animatoravatar-is-not-humanoid-please-change-models-animationtype-to-humanoid&#34;&gt;Animator.avatar is not humanoid. Please change model&amp;rsquo;s AnimationType to humanoid&lt;/h3&gt;
+&lt;p&gt;Please change the setting to &lt;code&gt;humanoid&lt;/code&gt; (from Inspector: &lt;code&gt;FBX Import&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt; -&amp;gt; &lt;code&gt;AnimationType&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;require-title&#34;&gt;Require Title&lt;/h3&gt;
+&lt;p&gt;Please enter the title of this model in the dialog.&lt;/p&gt;
+&lt;h3 id=&#34;require-version&#34;&gt;Require Version&lt;/h3&gt;
+&lt;p&gt;Please enter the version of this model in the dialog.&lt;/p&gt;
+&lt;h3 id=&#34;require-author&#34;&gt;Require Author&lt;/h3&gt;
+&lt;p&gt;Please enter the author of this model in the dialog.&lt;/p&gt;
+&lt;h3 id=&#34;no-active-mesh&#34;&gt;No active mesh&lt;/h3&gt;
+&lt;p&gt;Export target doesn&amp;rsquo;t have &lt;code&gt;active&lt;/code&gt; mesh.&lt;/p&gt;
+&lt;h3 id=&#34;filename-0-is-too-long&#34;&gt;FileName &amp;lsquo;{0}&amp;rsquo; is too long&lt;/h3&gt;
+&lt;p&gt;Material, Texture and Mesh names are too long.
+Please rename them.&lt;/p&gt;
+&lt;h3 id=&#34;the-root-translation-rotation-and-scale-will-be-dropped&#34;&gt;The Root translation, rotation and scale will be dropped&lt;/h3&gt;
+&lt;p&gt;A model is allowed to export if Root&amp;rsquo;s translation, rotation and scale are not Default values.
 However, those values will be lost.
-We recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p>
-&lt;h3 id="jaw-bone-is-included-it-may-not-what-you-intended-please-check-the-humanoid-avatar-setting-screen">Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen&lt;/h3>
-&lt;p>Jaw (chin) bone is included in humanoid setting.
+We recommend moving this object in the Hierarchy to be Root&amp;rsquo;s child.&lt;/p&gt;
+&lt;h3 id=&#34;jaw-bone-is-included-it-may-not-what-you-intended-please-check-the-humanoid-avatar-setting-screen&#34;&gt;Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen&lt;/h3&gt;
+&lt;p&gt;Jaw (chin) bone is included in humanoid setting.
 There is a possibility that the jaw bone is automatically assigned during FBX import.
 As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone.
 Therefore, bangs will have weird movements due to this issue.
-Please remove this setting in Inspector &lt;code>FBX Importer&lt;/code> -&amp;gt; &lt;code>rig&lt;/code>&lt;/p>
-&lt;h3 id="there-are-bones-with-the-same-name-in-the-hierarchy-they-will-be-automatically-renamed-after-export">There are bones with the same name in the hierarchy. They will be automatically renamed after export&lt;/h3>
-&lt;p>A model is allowed to export if there are bones with the same name in this model.
+Please remove this setting in Inspector &lt;code&gt;FBX Importer&lt;/code&gt; -&amp;gt; &lt;code&gt;rig&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;there-are-bones-with-the-same-name-in-the-hierarchy-they-will-be-automatically-renamed-after-export&#34;&gt;There are bones with the same name in the hierarchy. They will be automatically renamed after export&lt;/h3&gt;
+&lt;p&gt;A model is allowed to export if there are bones with the same name in this model.
 Only the warning message will be given in Export dialog.
-Those bones will be renamed automatically.&lt;/p>
-&lt;h3 id="this-model-contains-vertex-color">This model contains vertex color&lt;/h3>
-&lt;p>If you see this message, there are meshes that contain vertex color in the Hierarchy.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Vertex Color&lt;/th>
-&lt;th>If contained&lt;/th>
-&lt;th>Behavior&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Before UniVRM-0.53&lt;/td>
-&lt;td>not applied&lt;/td>
-&lt;td>ignore vertex color effect&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>From UniVRM-0.54&lt;/td>
-&lt;td>applied&lt;/td>
-&lt;td>show vertex color effect&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>If &lt;code>Unlit&lt;/code> is used, there is no setting that can disable vertex color usage.
-If necessary, please choose &lt;code>Remove Vertex Color&lt;/code> option to direct remove vertex color data from the model.&lt;/p>
-&lt;h3 id="unknown-material-0-is-used-this-will-export-as-standard-fallback">unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code>Standard&lt;/code> fallback&lt;/h3>
-&lt;p>Materials other than Standard, Unlit, MToon will be defaulted to Standard.&lt;/p>
-&lt;h2 id="v057">v0.57&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/export_dialog_56.jpg" alt="vrm export" width="600" />
-&lt;hr>
-&lt;p>The export dialog is based on Unity&amp;rsquo;s &lt;a href="https://docs.unity3d.com/ScriptReference/ScriptableWizard.html">ScriptableWizard&lt;/a>.
-We will improve it in the later version.&lt;/p></description></item><item><title>Docs: VRM Size</title><link>https://vrm.dev/en/docs/univrm/export/vrm_size/</link><pubDate>Mon, 17 Aug 2020 16:12:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/vrm_size/</guid><description>
-&lt;p>Since VRM is a GLB-based format, we know that&lt;/p>
-&lt;p>&lt;code>exported VRM file size =&amp;gt; glb file size&lt;/code>&lt;/p>
-&lt;p>where&lt;/p>
-&lt;p>&lt;code>glb =&amp;gt; json + binary&lt;/code>&lt;/p>
-&lt;p>json is a text-based format. Generally it is less than 1MB.&lt;/p>
-&lt;p>&lt;code>Image&lt;/code> and &lt;code>Mesh&lt;/code> are two major parts in &lt;code>binary&lt;/code>.&lt;/p>
-&lt;p>Here we show an example of how to calculate the size for a model with 50k vertices and 50k triangles:&lt;/p>
-&lt;h2 id="image">Image&lt;/h2>
-&lt;p>&lt;code>Image&lt;/code> contains &lt;code>Texture&lt;/code> (referenced by Material) and &lt;code>Thumbnail&lt;/code> (in VRM Meta). Those images are stored as PNG(JPG) bytes.&lt;/p>
-&lt;blockquote>
-&lt;p>In v0.56, a large texture (e.g. 4096x4096) in the model fails to export as a smaller size texture (e.g. set to 1024x1024 by Texture Importer Settings -&amp;gt; MaxSize). We have fixed this issue in v0.58&lt;/p>
-&lt;/blockquote>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/502">https://github.com/vrm-c/UniVRM/issues/502&lt;/a>&lt;/p>
-&lt;h2 id="mesh">Mesh&lt;/h2>
-&lt;p>&lt;code>Mesh&lt;/code> contains index buffer and vertex buffer.&lt;/p>
-&lt;h3 id="index-buffer">Index Buffer&lt;/h3>
-&lt;p>Index buffer uses &lt;code>Int&lt;/code> array.&lt;/p>
-&lt;p>To calculate the required size for a model with 50k triangles:&lt;/p>
-&lt;p>&lt;code>50000 x 4(Int=4byte) x 3(three vertices in a triangle) =&amp;gt; 0.6MB&lt;/code>&lt;/p>
-&lt;blockquote>
-&lt;p>It is possible to store index using &lt;code>unsigned short&lt;/code> in GLTF. However, UniVRM does not support it due to the fact that the Max vertices number is 65536, which is unable to store 50k triangles or more in a model&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="vertex-buffer">Vertex Buffer&lt;/h3>
-&lt;p>The size for a vertex along with its attributes is:&lt;/p>
-&lt;pre>&lt;code>{
-float3 Position; // Vertex Position 4(float size) x 3(xyz) =&amp;gt; 12byte
-float3 Normal; // Vertex Normal 4(float size x 3(xyz) =&amp;gt; 12byte
-float2 TEXCOORD_0; // Vertex UV 4(float size) x 2(xy) =&amp;gt; 8byte
-short4 JOINTS_0; // Vertex BoneIndex 2(short size) x 4(up to 4 bones) =&amp;gt; 8byte
-float4 WEIGHTS_0; // Vertex Weight 4(float size) x 4(up to 4 bones) =&amp;gt; 16byte
+Those bones will be renamed automatically.&lt;/p&gt;
+&lt;h3 id=&#34;this-model-contains-vertex-color&#34;&gt;This model contains vertex color&lt;/h3&gt;
+&lt;p&gt;If you see this message, there are meshes that contain vertex color in the Hierarchy.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Vertex Color&lt;/th&gt;
+&lt;th&gt;If contained&lt;/th&gt;
+&lt;th&gt;Behavior&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Before UniVRM-0.53&lt;/td&gt;
+&lt;td&gt;not applied&lt;/td&gt;
+&lt;td&gt;ignore vertex color effect&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;From UniVRM-0.54&lt;/td&gt;
+&lt;td&gt;applied&lt;/td&gt;
+&lt;td&gt;show vertex color effect&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If &lt;code&gt;Unlit&lt;/code&gt; is used, there is no setting that can disable vertex color usage.
+If necessary, please choose &lt;code&gt;Remove Vertex Color&lt;/code&gt; option to direct remove vertex color data from the model.&lt;/p&gt;
+&lt;h3 id=&#34;unknown-material-0-is-used-this-will-export-as-standard-fallback&#34;&gt;unknown material &amp;lsquo;{0}&amp;rsquo; is used. this will export as &lt;code&gt;Standard&lt;/code&gt; fallback&lt;/h3&gt;
+&lt;p&gt;Materials other than Standard, Unlit, MToon will be defaulted to Standard.&lt;/p&gt;
+&lt;h2 id=&#34;v057&#34;&gt;v0.57&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_56.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;The export dialog is based on Unity&amp;rsquo;s &lt;a href=&#34;https://docs.unity3d.com/ScriptReference/ScriptableWizard.html&#34;&gt;ScriptableWizard&lt;/a&gt;.
+We will improve it in the later version.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VRM Size</title>
+      <link>https://vrm.dev/en/docs/univrm/export/vrm_size/</link>
+      <pubDate>Mon, 17 Aug 2020 16:12:54 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/export/vrm_size/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Since VRM is a GLB-based format, we know that&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;exported VRM file size =&amp;gt; glb file size&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;where&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;glb =&amp;gt; json + binary&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;json is a text-based format. Generally it is less than 1MB.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Image&lt;/code&gt; and &lt;code&gt;Mesh&lt;/code&gt; are two major parts in &lt;code&gt;binary&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here we show an example of how to calculate the size for a model with 50k vertices and 50k triangles:&lt;/p&gt;
+&lt;h2 id=&#34;image&#34;&gt;Image&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Image&lt;/code&gt; contains &lt;code&gt;Texture&lt;/code&gt; (referenced by Material) and &lt;code&gt;Thumbnail&lt;/code&gt; (in VRM Meta). Those images are stored as PNG(JPG) bytes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In v0.56, a large texture (e.g. 4096x4096) in the model fails to export as a smaller size texture (e.g. set to 1024x1024 by Texture Importer Settings -&amp;gt; MaxSize). We have fixed this issue in v0.58&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/502&#34;&gt;https://github.com/vrm-c/UniVRM/issues/502&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mesh&#34;&gt;Mesh&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Mesh&lt;/code&gt; contains index buffer and vertex buffer.&lt;/p&gt;
+&lt;h3 id=&#34;index-buffer&#34;&gt;Index Buffer&lt;/h3&gt;
+&lt;p&gt;Index buffer uses &lt;code&gt;Int&lt;/code&gt; array.&lt;/p&gt;
+&lt;p&gt;To calculate the required size for a model with 50k triangles:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;50000 x 4(Int=4byte) x 3(three vertices in a triangle) =&amp;gt; 0.6MB&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is possible to store index using &lt;code&gt;unsigned short&lt;/code&gt; in GLTF. However, UniVRM does not support it due to the fact that the Max vertices number is 65536, which is unable to store 50k triangles or more in a model&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;vertex-buffer&#34;&gt;Vertex Buffer&lt;/h3&gt;
+&lt;p&gt;The size for a vertex along with its attributes is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    float3 Position; // Vertex Position 4(float size) x 3(xyz) =&amp;gt; 12byte
+    float3 Normal; // Vertex Normal 4(float size x 3(xyz) =&amp;gt; 12byte
+    float2 TEXCOORD_0; // Vertex UV 4(float size) x 2(xy) =&amp;gt; 8byte
+    short4 JOINTS_0; // Vertex BoneIndex 2(short size) x 4(up to 4 bones) =&amp;gt; 8byte
+    float4 WEIGHTS_0; // Vertex Weight 4(float size) x 4(up to 4 bones) =&amp;gt; 16byte
 }
-&lt;/code>&lt;/pre>&lt;blockquote>
-&lt;p>Some models contain Vertex Color or Secondary UV (not supported), so the required size may vary&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;p>In UniVRM, Tangent(float4) can be calculated in Unity instead of being stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via &lt;code>MIKK T Space&lt;/code> algorithm&lt;/p>
-&lt;/blockquote>
-&lt;p>The case for a model containing 50k vertices:&lt;/p>
-&lt;p>&lt;code>50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code>&lt;/p>
-&lt;h2 id="basic-size">Basic Size&lt;/h2>
-&lt;p>As described above, the basic size for a model is &lt;code>Total Image Size + Index Buffer + Vertex Buffer&lt;/code>.
-The basic size for a model with 50k vertices and 50k triangles is &lt;code>3.4MB + Total Image Size&lt;/code>.
-Next, we will introduce size calculation for BlendShape, which may cause total size explosion in some circumstances.&lt;/p>
-&lt;h2 id="blendshape-morphtarget-size">BlendShape (MorphTarget) Size&lt;/h2>
-&lt;pre>&lt;code class="language-BlendShape" data-lang="BlendShape">{
-float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
-float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
-float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Some models contain Vertex Color or Secondary UV (not supported), so the required size may vary&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In UniVRM, Tangent(float4) can be calculated in Unity instead of being stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via &lt;code&gt;MIKK T Space&lt;/code&gt; algorithm&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The case for a model containing 50k vertices:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;basic-size&#34;&gt;Basic Size&lt;/h2&gt;
+&lt;p&gt;As described above, the basic size for a model is &lt;code&gt;Total Image Size + Index Buffer + Vertex Buffer&lt;/code&gt;.
+The basic size for a model with 50k vertices and 50k triangles is &lt;code&gt;3.4MB + Total Image Size&lt;/code&gt;.
+Next, we will introduce size calculation for BlendShape, which may cause total size explosion in some circumstances.&lt;/p&gt;
+&lt;h2 id=&#34;blendshape-morphtarget-size&#34;&gt;BlendShape (MorphTarget) Size&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-BlendShape&#34; data-lang=&#34;BlendShape&#34;&gt;{
+    float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
+    float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
+    float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
 }
-&lt;/code>&lt;/pre>&lt;p>If 1 BlendShape is added, the size will be: &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
-&lt;p>If 20 BlendShapes are added, the size will be: &lt;code>50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code>&lt;/p>
-&lt;p>If 60 BlendShapes are added, the size will be: &lt;code>50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code>&amp;hellip;&lt;/p>
-&lt;p>We can infer that if the number of BlendShapes are scaled to the hundreds, the size will become incredibly big. Moreover, most of the models do not actually use BlendShape on every single vertex. Reserving the space for BlendShape data for each vertex results in huge size.&lt;/p>
-&lt;p>To resolve this issue, below we provide several methods that may help shrink the total size.&lt;/p>
-&lt;h3 id="options-for-blendshape-size-reduction">Options for BlendShape Size Reduction&lt;/h3>
-&lt;p>In &lt;a href="https://vrm.dev/en/docs/univrm/export/univrm_export/">Export Dialog&lt;/a>, there are several options related to BlendShape size optimization.&lt;/p>
-&lt;h4 id="export-option">Export Option&lt;/h4>
-&lt;p>To reduce BlendShape size, the first two, &lt;code>ReduceBlendshape&lt;/code> and &lt;code>ReduceBlendshapeClip&lt;/code>, are the safest ways (no errors). We are working on &lt;code>UseSparseAccessor&lt;/code> to resolve the importing issue for some of the VRM loaders (UniVRM loader is fine). &lt;code>OnlyBlendshapePosition&lt;/code> has importing errors if the model is made by UniVRM-0.53 or earlier versions.&lt;/p>
-&lt;h5 id="reduceblendshape">ReduceBlendshape&lt;/h5>
-&lt;p>BlendShapes that are not referenced by BlendShapeClips will not be exported. The file size can be reduced.&lt;/p>
-&lt;h5 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h5>
-&lt;p>BlendShapeClip belonging to Preset.Unknown will not be exported. Used in combination with ReduceBlendshape.&lt;/p>
-&lt;h5 id="usesparseaccessor">UseSparseAccessor&lt;/h5>
-&lt;p>Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p>
-&lt;p>If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p>
-&lt;blockquote>
-&lt;p>WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM is fine)&lt;/p>
-&lt;/blockquote>
-&lt;pre>&lt;code class="language-BlendShape" data-lang="BlendShape">{
-int Index; // Valid BlendShape index (non-zero value) =&amp;gt; 4
-float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
-float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
-float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If 1 BlendShape is added, the size will be: &lt;code&gt;50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If 20 BlendShapes are added, the size will be: &lt;code&gt;50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If 60 BlendShapes are added, the size will be: &lt;code&gt;50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;We can infer that if the number of BlendShapes are scaled to the hundreds, the size will become incredibly big. Moreover, most of the models do not actually use BlendShape on every single vertex. Reserving the space for BlendShape data for each vertex results in huge size.&lt;/p&gt;
+&lt;p&gt;To resolve this issue, below we provide several methods that may help shrink the total size.&lt;/p&gt;
+&lt;h3 id=&#34;options-for-blendshape-size-reduction&#34;&gt;Options for BlendShape Size Reduction&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/univrm_export/&#34;&gt;Export Dialog&lt;/a&gt;, there are several options related to BlendShape size optimization.&lt;/p&gt;
+&lt;h4 id=&#34;export-option&#34;&gt;Export Option&lt;/h4&gt;
+&lt;p&gt;To reduce BlendShape size, the first two, &lt;code&gt;ReduceBlendshape&lt;/code&gt; and &lt;code&gt;ReduceBlendshapeClip&lt;/code&gt;, are the safest ways (no errors). We are working on &lt;code&gt;UseSparseAccessor&lt;/code&gt; to resolve the importing issue for some of the VRM loaders (UniVRM loader is fine). &lt;code&gt;OnlyBlendshapePosition&lt;/code&gt; has importing errors if the model is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
+&lt;h5 id=&#34;reduceblendshape&#34;&gt;ReduceBlendshape&lt;/h5&gt;
+&lt;p&gt;BlendShapes that are not referenced by BlendShapeClips will not be exported. The file size can be reduced.&lt;/p&gt;
+&lt;h5 id=&#34;reduceblendshapeclip&#34;&gt;ReduceBlendshapeClip&lt;/h5&gt;
+&lt;p&gt;BlendShapeClip belonging to Preset.Unknown will not be exported. Used in combination with ReduceBlendshape.&lt;/p&gt;
+&lt;h5 id=&#34;usesparseaccessor&#34;&gt;UseSparseAccessor&lt;/h5&gt;
+&lt;p&gt;Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p&gt;
+&lt;p&gt;If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM is fine)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-BlendShape&#34; data-lang=&#34;BlendShape&#34;&gt;{
+    int Index; // Valid BlendShape index (non-zero value) =&amp;gt; 4
+    float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
+    float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
+    float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
 }
-&lt;/code>&lt;/pre>&lt;p>&lt;code>The number of valid BlendShape vertices x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code>&lt;/p>
-&lt;h5 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h5>
-&lt;p>BlendShape’s Normal and Tangent will not be exported if this option is selected. The file size can be reduced. Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p>
-&lt;h4 id="meshutility-split-mesh-withwithout-blendshape">MeshUtility: Split Mesh with/without BlendShape&lt;/h4>
-&lt;p>For instance, a model&amp;rsquo;s mesh contains 50k vertices. It has 10k (with BlendShape) on face and 40k (without BlendShape) on body.&lt;/p>
-&lt;p>Setting up one BlendShape needs: &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
-&lt;p>If we split the mesh into two (face mesh and body mesh) based on BlendShape availability,&lt;/p>
-&lt;p>Setting up one BlendShape only needs: &lt;code>10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code>&lt;/p>
-&lt;blockquote>
-&lt;p>The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases&lt;/p>
-&lt;/blockquote>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/gltf/mesh_utility/">Mesh Utility&lt;/a>&lt;/p>
-&lt;h2 id="summary">Summary&lt;/h2>
-&lt;p>If you got a gigantic size of VRM model from export, check out the model&amp;rsquo;s BlendShape and texture images first.&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;The number of valid BlendShape vertices x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;onlyblendshapeposition&#34;&gt;OnlyBlendshapePosition&lt;/h5&gt;
+&lt;p&gt;BlendShape’s Normal and Tangent will not be exported if this option is selected. The file size can be reduced. Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
+&lt;h4 id=&#34;meshutility-split-mesh-withwithout-blendshape&#34;&gt;MeshUtility: Split Mesh with/without BlendShape&lt;/h4&gt;
+&lt;p&gt;For instance, a model&amp;rsquo;s mesh contains 50k vertices. It has 10k (with BlendShape) on face and 40k (without BlendShape) on body.&lt;/p&gt;
+&lt;p&gt;Setting up one BlendShape needs: &lt;code&gt;50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If we split the mesh into two (face mesh and body mesh) based on BlendShape availability,&lt;/p&gt;
+&lt;p&gt;Setting up one BlendShape only needs: &lt;code&gt;10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/gltf/mesh_utility/&#34;&gt;Mesh Utility&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;If you got a gigantic size of VRM model from export, check out the model&amp;rsquo;s BlendShape and texture images first.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

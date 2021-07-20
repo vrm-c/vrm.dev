@@ -1,276 +1,360 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – BlendShape</title><link>https://vrm.dev/docs/univrm/blendshape/</link><description>Recent content in BlendShape on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/blendshape/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ブレンドシェイプの設定</title><link>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</guid><description>
-&lt;p>UniVRM v0.45で導入された新機能は&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/blendshape_setup/">設定画面&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/">BlendShapeの状態をベイクする&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>をご覧ください。&lt;/p>
-&lt;h2 id="vrmblendshapeproxy">VRMBlendShapeProxy&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxy.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>使い方は、&lt;/p>
-&lt;ul>
-&lt;li>BlendShapeAvatarのインスペクタで設定する(Editor)&lt;/li>
-&lt;li>BlendShapeClipの値を０~１に変更する(実行時)&lt;/li>
-&lt;/ul>
-&lt;p>となっています。&lt;/p>
-&lt;h2 id="blendshapeavatar">BlendShapeAvatar&lt;/h2>
-&lt;p>このアセットのインスペクタで表情設定を作成します。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>これをダブルクリックする&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>か&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>これを選択状態にする&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>BlendShapeEditorのインスペクタ&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>作りたい表情の名前を選択して表示を切り替えます。
-以下、Funを選択した例です。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClip.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>mouth_smileとeye_smileとeyeblow_smileを100にする&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。&lt;/p>
-&lt;p>Sliderを変更してBlendShapeを作った後はApplyを押して値を記録してください。&lt;/p>
-&lt;h2 id="blendshapeのプリセット">BlendShapeのプリセット&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShape_Preset.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Presetを選択する&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>BlendShapeClipに対して事前定義された名前です。
-以下のものがあります。&lt;/p>
-&lt;h3 id="neutral">NEUTRAL&lt;/h3>
-&lt;p>標準の表情を指定します。
-待機状態で使うことを想定しています。&lt;/p>
-&lt;h3 id="a-i-u-e-o">A, I, U, E, O&lt;/h3>
-&lt;p>リップシンクの&lt;code>あ・い・う・え・お&lt;/code>の音声に対応します。&lt;/p>
-&lt;h3 id="blink">Blink&lt;/h3>
-&lt;p>まばたきです。&lt;/p>
-&lt;h3 id="blink_l-blink_r">Blink_L, Blink_R&lt;/h3>
-&lt;p>片目だけつぶる動作です。&lt;/p>
-&lt;h3 id="joy-angry-sorrow-fun">Joy, Angry, Sorrow, Fun&lt;/h3>
-&lt;p>喜怒哀楽です。&lt;/p>
-&lt;h3 id="lookup-lookdown-lookleft-lookright">LookUp, LookDown, LookLeft, LookRight&lt;/h3>
-&lt;p>目線がモーフで制御されているタイプのモデルで使います。&lt;/p>
-&lt;h3 id="unknown">Unknown&lt;/h3>
-&lt;p>事前定義に無い表情などを作るときに指定します。&lt;/p>
-&lt;h2 id="blendshapeproxyの値を変更する実行時">BlendShapeProxyの値を変更する(実行時)&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Presetを使う&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>インスペクタから操作できます。&lt;/p>
-&lt;h2 id="オプション表情を追加する">[オプション]表情を追加する&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>ボタンを押します&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>保存ファイルを決めます。
-一番後ろのボタンを選択して名前を入力して設定を作成してください。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipOption.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>ボタンを押します&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>コードからは以下のように呼び出せます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#09f;font-style:italic">// unknownなのでstringで呼び出し
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.ImmediatelySetValue(&lt;span style="color:#c30">&amp;#34;びっくり&amp;#34;&lt;/span>, &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// 0から1で指定
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="オプションマテリアルの色をモーフする">[オプション]マテリアルの色をモーフする&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeClipMaterial.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Materialモーフの設定&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Docs: BlendShapeのセットアップ(v0.45)</title><link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link><pubDate>Mon, 01 Feb 2021 09:10:25 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid><description>
-&lt;h2 id="blendshape関連のアセット">BlendShape関連のアセット&lt;/h2>
-&lt;p>VRMをImportすると、&lt;code>モデル名から拡張子を除いた名前 + BlendShapes&lt;/code> フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeclip_assets.png" alt="image">&lt;/p>
-&lt;p>BlendShapeAvatarアセット。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshapeavatar.png" alt="image">&lt;/p>
-&lt;h2 id="設定画面">設定画面&lt;/h2>
-&lt;p>アセットには以下の設定画面があります。&lt;/p>
-&lt;h3 id="blendshapeavatarアセットのインスペクタ">BlendShapeAvatarアセットのインスペクタ&lt;/h3>
-&lt;h4 id="editorタブ">Editorタブ&lt;/h4>
-&lt;p>BlendShapeClip選択・設定作成&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
-&lt;h4 id="listタブv045から">Listタブ(v0.45から)&lt;/h4>
-&lt;p>BlendShapeClipのリスト&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/list.png" alt="image">&lt;/p>
-&lt;h3 id="blendshapeclipアセットのインスペクタ">BlendShapeClipアセットのインスペクタ。&lt;/h3>
-&lt;h4 id="blendshapeタブ">BlendShapeタブ&lt;/h4>
-&lt;p>設定作成します。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
-&lt;h4 id="blendshape-listタブ">BlendShape Listタブ&lt;/h4>
-&lt;p>BlendShapeタブで作成した値を見ることが出来ます。
-あまり使わない。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/blendshape_angry.png" alt="image">&lt;/p>
-&lt;h4 id="material-listタブ">Material Listタブ&lt;/h4>
-&lt;p>&lt;code>BlendShapeによる&lt;/code>&lt;a href="https://vrm.dev/docs/univrm/lookat/lookat_blendshape/">LookAt&lt;/a>(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/material_color.png" alt="image">&lt;/p>
-&lt;h2 id="各blendshapeclipの設定">各BlendShapeClipの設定&lt;/h2>
-&lt;p>各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p>
-&lt;h3 id="1-対象のblendshapeclipを選ぶ">1. 対象のBlendShapeClipを選ぶ&lt;/h3>
-&lt;p>BlendShapeAvatarのインスペクタから選択する&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeavatar.png" alt="image">&lt;/p>
-&lt;p>アセットのBlendShapeClipを直接選択する&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/select_blendshapeclip.png" alt="image">&lt;/p>
-&lt;h3 id="2-スライダを操作して顔を作る">2. スライダを操作して顔を作る&lt;/h3>
-&lt;p>モデルに存在するSKinnedMeshRendererの名前から、
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – BlendShape</title>
+    <link>https://vrm.dev/docs/univrm/blendshape/</link>
+    <description>Recent content in BlendShape on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/docs/univrm/blendshape/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ブレンドシェイプの設定</title>
+      <link>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</guid>
+      <description>
+        
+        
+        &lt;p&gt;UniVRM v0.45で導入された新機能は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/blendshape/blendshape_setup/&#34;&gt;設定画面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/&#34;&gt;BlendShapeの状態をベイクする&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;をご覧ください。&lt;/p&gt;
+&lt;h2 id=&#34;vrmblendshapeproxy&#34;&gt;VRMBlendShapeProxy&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxy.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;使い方は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BlendShapeAvatarのインスペクタで設定する(Editor)&lt;/li&gt;
+&lt;li&gt;BlendShapeClipの値を０~１に変更する(実行時)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;となっています。&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeavatar&#34;&gt;BlendShapeAvatar&lt;/h2&gt;
+&lt;p&gt;このアセットのインスペクタで表情設定を作成します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyEditor.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;これをダブルクリックする&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;か&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarAsset.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;これを選択状態にする&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeAvatarEditor.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;BlendShapeEditorのインスペクタ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;作りたい表情の名前を選択して表示を切り替えます。
+以下、Funを選択した例です。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClip.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;mouth_smileとeye_smileとeyeblow_smileを100にする&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。&lt;/p&gt;
+&lt;p&gt;Sliderを変更してBlendShapeを作った後はApplyを押して値を記録してください。&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeのプリセット&#34;&gt;BlendShapeのプリセット&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShape_Preset.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Presetを選択する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;BlendShapeClipに対して事前定義された名前です。
+以下のものがあります。&lt;/p&gt;
+&lt;h3 id=&#34;neutral&#34;&gt;NEUTRAL&lt;/h3&gt;
+&lt;p&gt;標準の表情を指定します。
+待機状態で使うことを想定しています。&lt;/p&gt;
+&lt;h3 id=&#34;a-i-u-e-o&#34;&gt;A, I, U, E, O&lt;/h3&gt;
+&lt;p&gt;リップシンクの&lt;code&gt;あ・い・う・え・お&lt;/code&gt;の音声に対応します。&lt;/p&gt;
+&lt;h3 id=&#34;blink&#34;&gt;Blink&lt;/h3&gt;
+&lt;p&gt;まばたきです。&lt;/p&gt;
+&lt;h3 id=&#34;blink_l-blink_r&#34;&gt;Blink_L, Blink_R&lt;/h3&gt;
+&lt;p&gt;片目だけつぶる動作です。&lt;/p&gt;
+&lt;h3 id=&#34;joy-angry-sorrow-fun&#34;&gt;Joy, Angry, Sorrow, Fun&lt;/h3&gt;
+&lt;p&gt;喜怒哀楽です。&lt;/p&gt;
+&lt;h3 id=&#34;lookup-lookdown-lookleft-lookright&#34;&gt;LookUp, LookDown, LookLeft, LookRight&lt;/h3&gt;
+&lt;p&gt;目線がモーフで制御されているタイプのモデルで使います。&lt;/p&gt;
+&lt;h3 id=&#34;unknown&#34;&gt;Unknown&lt;/h3&gt;
+&lt;p&gt;事前定義に無い表情などを作るときに指定します。&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeproxyの値を変更する実行時&#34;&gt;BlendShapeProxyの値を変更する(実行時)&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Presetを使う&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;インスペクタから操作できます。&lt;/p&gt;
+&lt;h2 id=&#34;オプション表情を追加する&#34;&gt;[オプション]表情を追加する&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMBlendShapeProxyRuntime.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ボタンを押します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;保存ファイルを決めます。
+一番後ろのボタンを選択して名前を入力して設定を作成してください。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipOption.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ボタンを押します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;コードからは以下のように呼び出せます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// unknownなのでstringで呼び出し
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;proxy.ImmediatelySetValue(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;びっくり&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 0から1で指定
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;オプションマテリアルの色をモーフする&#34;&gt;[オプション]マテリアルの色をモーフする&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeClipMaterial.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Materialモーフの設定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BlendShapeのセットアップ(v0.45)</title>
+      <link>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</link>
+      <pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/blendshape/blendshape_setup/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;blendshape関連のアセット&#34;&gt;BlendShape関連のアセット&lt;/h2&gt;
+&lt;p&gt;VRMをImportすると、&lt;code&gt;モデル名から拡張子を除いた名前 + BlendShapes&lt;/code&gt; フォルダにPresetを表すBlendShapeClipが作成されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeclip_assets.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;BlendShapeAvatarアセット。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshapeavatar.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;設定画面&#34;&gt;設定画面&lt;/h2&gt;
+&lt;p&gt;アセットには以下の設定画面があります。&lt;/p&gt;
+&lt;h3 id=&#34;blendshapeavatarアセットのインスペクタ&#34;&gt;BlendShapeAvatarアセットのインスペクタ&lt;/h3&gt;
+&lt;h4 id=&#34;editorタブ&#34;&gt;Editorタブ&lt;/h4&gt;
+&lt;p&gt;BlendShapeClip選択・設定作成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;listタブv045から&#34;&gt;Listタブ(v0.45から)&lt;/h4&gt;
+&lt;p&gt;BlendShapeClipのリスト&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/list.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;blendshapeclipアセットのインスペクタ&#34;&gt;BlendShapeClipアセットのインスペクタ。&lt;/h3&gt;
+&lt;h4 id=&#34;blendshapeタブ&#34;&gt;BlendShapeタブ&lt;/h4&gt;
+&lt;p&gt;設定作成します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;blendshape-listタブ&#34;&gt;BlendShape Listタブ&lt;/h4&gt;
+&lt;p&gt;BlendShapeタブで作成した値を見ることが出来ます。
+あまり使わない。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/blendshape_angry.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;material-listタブ&#34;&gt;Material Listタブ&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;BlendShapeによる&lt;/code&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/lookat/lookat_blendshape/&#34;&gt;LookAt&lt;/a&gt;(後述)や、BlendShapeで色を変える設定を作成することができます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/material_color.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;各blendshapeclipの設定&#34;&gt;各BlendShapeClipの設定&lt;/h2&gt;
+&lt;p&gt;各BlendShapeClipに対して顔を作ります(顔以外も可)。&lt;/p&gt;
+&lt;h3 id=&#34;1-対象のblendshapeclipを選ぶ&#34;&gt;1. 対象のBlendShapeClipを選ぶ&lt;/h3&gt;
+&lt;p&gt;BlendShapeAvatarのインスペクタから選択する&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeavatar.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;アセットのBlendShapeClipを直接選択する&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/select_blendshapeclip.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-スライダを操作して顔を作る&#34;&gt;2. スライダを操作して顔を作る&lt;/h3&gt;
+&lt;p&gt;モデルに存在するSKinnedMeshRendererの名前から、
 目的のBlendShapeのスライダーを探して値を設定します。
 変更値は即座に反映されます。
-&lt;code>Apply&lt;/code>ボタン不要になりました(v0.45)。&lt;/p>
-&lt;h3 id="3-previewの操作">3. Previewの操作&lt;/h3>
-&lt;p>&lt;code>Preview Weight Slider&lt;/code> で0~1の効き具合をテストできます。&lt;/p>
-&lt;p>&lt;code>左ドラッグ・右ドラッグ&lt;/code>向きを変えられます。&lt;/p>
-&lt;p>&lt;code>中ドラッグ&lt;/code>移動できます。&lt;/p>
-&lt;h3 id="中間値を許可しない設定v045">中間値を許可しない設定(v0.45)&lt;/h3>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/alicia_binary.png" alt="image">&lt;/p>
-&lt;p>スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p>
-&lt;p>ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/wiki/binary.png" alt="image">&lt;/p></description></item><item><title>Docs: エクスポート時にBlendShapeの状態をベイクする</title><link>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</link><pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</guid><description>
-&lt;p>UniVRM ではエクスポートするときに、 &lt;code>SkinnedMeshRenderer&lt;/code> のスライダーを上げておくとその状態を基本状態にすることができます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/blendshape_value.jpg" width="400" />
-&lt;p>&lt;code>Pose Freeze&lt;/code> のチェックボックスを有効にする必要があります。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/check_freeze.jpg" width="400" />
-&lt;p>エクスポートすると・・・&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/bake_blink.gif" />
-&lt;p>基本状態(blendShape が 0 の状態)が変更されます。&lt;/p></description></item><item><title>Docs: BlendShape の法線を確認しよう</title><link>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Mon, 01 Feb 2021 09:10:25 +0900</pubDate><guid>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
-&lt;p>最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">詳細&lt;/h4>
+&lt;code&gt;Apply&lt;/code&gt;ボタン不要になりました(v0.45)。&lt;/p&gt;
+&lt;h3 id=&#34;3-previewの操作&#34;&gt;3. Previewの操作&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Preview Weight Slider&lt;/code&gt; で0~1の効き具合をテストできます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;左ドラッグ・右ドラッグ&lt;/code&gt;向きを変えられます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;中ドラッグ&lt;/code&gt;移動できます。&lt;/p&gt;
+&lt;h3 id=&#34;中間値を許可しない設定v045&#34;&gt;中間値を許可しない設定(v0.45)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/alicia_binary.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。&lt;/p&gt;
+&lt;p&gt;ロードするアプリケーションがv0.45以降になっていると有効になります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/binary.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: エクスポート時にBlendShapeの状態をベイクする</title>
+      <link>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</link>
+      <pubDate>Mon, 27 Jul 2020 19:28:41 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/</guid>
+      <description>
+        
+        
+        &lt;p&gt;UniVRM ではエクスポートするときに、 &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; のスライダーを上げておくとその状態を基本状態にすることができます。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/blendshape_value.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;&lt;code&gt;Pose Freeze&lt;/code&gt; のチェックボックスを有効にする必要があります。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/check_freeze.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;エクスポートすると・・・&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/bake_blink.gif&#34;   /&gt;
+
+&lt;p&gt;基本状態(blendShape が 0 の状態)が変更されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BlendShape の法線を確認しよう</title>
+      <link>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</link>
+      <pubDate>Tue, 17 Nov 2020 16:23:29 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/blendshape/check_blendshape_normal/</guid>
+      <description>
+        
+        
+        &lt;p&gt;最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;詳細&lt;/h4&gt;
 BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 これに、計算された法線が設定されて意図しない変化をするようです。
 ベースになるメッシュの法線が加工されている場合、
 ミラーリングで左右が分かれている場合の境界などで顕著です。
-&lt;/div>
-&lt;h2 id="mtoonの法線デバッグ表示で法線を確認する">MToonの法線デバッグ表示で法線を確認する&lt;/h2>
-&lt;p>fbx の &lt;code>Materials&lt;/code> タブの &lt;code>Extract Materials...&lt;/code> を実行してマテリアルを取り出します。&lt;/p>
-&lt;p>すべてのマテリアルを選択します。&lt;/p>
-&lt;p>マテリアルの種類を &lt;code>VRM/MToon&lt;/code> に変更します。&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">法線確認&lt;/h4>
+&lt;/div&gt;
+
+&lt;h2 id=&#34;mtoonの法線デバッグ表示で法線を確認する&#34;&gt;MToonの法線デバッグ表示で法線を確認する&lt;/h2&gt;
+&lt;p&gt;fbx の &lt;code&gt;Materials&lt;/code&gt; タブの &lt;code&gt;Extract Materials...&lt;/code&gt; を実行してマテリアルを取り出します。&lt;/p&gt;
+&lt;p&gt;すべてのマテリアルを選択します。&lt;/p&gt;
+&lt;p&gt;マテリアルの種類を &lt;code&gt;VRM/MToon&lt;/code&gt; に変更します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
 法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
-&lt;/div>
-&lt;p>MToon の &lt;code>Options - Debugging Options - Visualize&lt;/code> を &lt;code>Normal&lt;/code> に変更します。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/mtoon_normal.gif" alt="debug normal">&lt;/p>
-&lt;p>SkinnedMeshRenderer を選択します。&lt;/p>
-&lt;p>BlendShape のスライダーを動かして法線を確認します。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/broken_normal.jpg" alt="debug normal">&lt;/p>
-&lt;ul>
-&lt;li>鼻先&lt;/li>
-&lt;li>下唇&lt;/li>
-&lt;/ul>
-&lt;p>の法線が顕著に乱れています。&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">モデル情報&lt;/h4>
-&lt;ul>
-&lt;li>vroid さんの vrm を blender に import&lt;/li>
-&lt;li>blender から fbx export&lt;/li>
-&lt;li>unity に import&lt;/li>
-&lt;/ul>
-&lt;p>したものです。
-&lt;/div>
-&lt;h2 id="blendshape-の法線をなおす">BlendShape の法線をなおす&lt;/h2>
-&lt;p>上記の方法で BlendShape がおかしいことが分かった場合に修復する方法。&lt;/p>
-&lt;p>fbx の &lt;code>Model&lt;/code> タブを選択。&lt;/p>
-&lt;p>&lt;code>Legacy Blend Shape Normals&lt;/code> をチェックして Apply。&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/legacy_normal_fixed.jpg" alt="fixed normal">&lt;/p>
-&lt;p>BlendShape がなおっていることを確認します。&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">修正前との違い&lt;/h4>
+&lt;/div&gt;
+
+&lt;p&gt;MToon の &lt;code&gt;Options - Debugging Options - Visualize&lt;/code&gt; を &lt;code&gt;Normal&lt;/code&gt; に変更します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_normal.gif&#34; alt=&#34;debug normal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;SkinnedMeshRenderer を選択します。&lt;/p&gt;
+&lt;p&gt;BlendShape のスライダーを動かして法線を確認します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/broken_normal.jpg&#34; alt=&#34;debug normal&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;鼻先&lt;/li&gt;
+&lt;li&gt;下唇&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の法線が顕著に乱れています。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;モデル情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;vroid さんの vrm を blender に import&lt;/li&gt;
+&lt;li&gt;blender から fbx export&lt;/li&gt;
+&lt;li&gt;unity に import&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;したものです。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;blendshape-の法線をなおす&#34;&gt;BlendShape の法線をなおす&lt;/h2&gt;
+&lt;p&gt;上記の方法で BlendShape がおかしいことが分かった場合に修復する方法。&lt;/p&gt;
+&lt;p&gt;fbx の &lt;code&gt;Model&lt;/code&gt; タブを選択。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Legacy Blend Shape Normals&lt;/code&gt; をチェックして Apply。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/legacy_normal_fixed.jpg&#34; alt=&#34;fixed normal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;BlendShape がなおっていることを確認します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;修正前との違い&lt;/h4&gt;
 鼻先、下唇に加えて、舌が全然違う法線になってます。
-&lt;/div></description></item></channel></rss>
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

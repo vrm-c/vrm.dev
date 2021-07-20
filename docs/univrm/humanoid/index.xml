@@ -1,174 +1,239 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Humanoid</title><link>https://vrm.dev/docs/univrm/humanoid/</link><description>Recent content in Humanoid on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: ヒューマノイド概要</title><link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Mon, 01 Feb 2021 09:10:25 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid><description>
-&lt;h2 id="概要">概要&lt;/h2>
-&lt;p>VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p>
-&lt;p>１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p>
-&lt;ul>
-&lt;li>hipsボーンの移動値&lt;/li>
-&lt;li>各ボーンの回転値&lt;/li>
-&lt;/ul>
-&lt;p>ある Gltf Scene (Unity Hierarhcy) がこのデータを受けて同じポーズを再現するには以下の条件必要です。&lt;/p>
-&lt;ul>
-&lt;li>Gltf Node (Unity GameObject) とボーン(hips, spine, chest&amp;hellip;)の対応が分かっている&lt;/li>
-&lt;li>ボーンの親子関係が決まっている&lt;/li>
-&lt;li>ポーズを受ける前の姿勢が決まっている =&amp;gt; T-Pose&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">備考&lt;/h4>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – Humanoid</title>
+    <link>https://vrm.dev/docs/univrm/humanoid/</link>
+    <description>Recent content in Humanoid on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Aug 2020 18:09:15 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/docs/univrm/humanoid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ヒューマノイド概要</title>
+      <link>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</link>
+      <pubDate>Wed, 16 Sep 2020 15:43:09 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/humanoid/humanoid_overview/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。&lt;/p&gt;
+&lt;p&gt;１フレームのモーション(ポーズ)は以下の情報で表される想定です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hipsボーンの移動値&lt;/li&gt;
+&lt;li&gt;各ボーンの回転値&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ある Gltf Scene (Unity Hierarhcy) がこのデータを受けて同じポーズを再現するには以下の条件必要です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gltf Node (Unity GameObject) とボーン(hips, spine, chest&amp;hellip;)の対応が分かっている&lt;/li&gt;
+&lt;li&gt;ボーンの親子関係が決まっている&lt;/li&gt;
+&lt;li&gt;ポーズを受ける前の姿勢が決まっている =&amp;gt; T-Pose&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;備考&lt;/h4&gt;
 細かく言えば、ボーンの長さが違うと同じポーズになりません。
 これを解決する技術を、リターゲットと言いますが VRM では特に指定していません。
 例えば、股-膝-足首-踵 の比率が違うと地面に対してすべります。
-&lt;/div>
-&lt;p>Unity の HumanoidAvatar を元に決めたのでだいたい同じです。&lt;/p>
-&lt;p>&lt;a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a>&lt;/p>
-&lt;p>さらに、プログラムでの扱いを簡単にするために&lt;/p>
-&lt;ul>
-&lt;li>すべての Gltf Node (Unity GameObject) の回転を0にしたときに初期ポーズになる&lt;/li>
-&lt;li>スケールは変化しない&lt;/li>
-&lt;/ul>
-&lt;p>を追加したものが VRM のヒューマノイドです。&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">備考&lt;/h4>
+&lt;/div&gt;
+
+&lt;p&gt;Unity の HumanoidAvatar を元に決めたのでだいたい同じです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&#34;&gt;https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;さらに、プログラムでの扱いを簡単にするために&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;すべての Gltf Node (Unity GameObject) の回転を0にしたときに初期ポーズになる&lt;/li&gt;
+&lt;li&gt;スケールは変化しない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を追加したものが VRM のヒューマノイドです。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;備考&lt;/h4&gt;
 特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。
-&lt;/div>
-&lt;h2 id="t-pose">T-Pose&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>T-Poseの例&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>腕と手の指についても規約があります。&lt;/p>
-&lt;ul>
-&lt;li>手の平は下向き&lt;/li>
-&lt;li>親指は水平でXZ平面(上から見て)45度&lt;/li>
-&lt;/ul>
-&lt;h2 id="unityのヒューマノイド">Unityのヒューマノイド&lt;/h2>
-&lt;p>Unity では、 Avatar というオブジェクトがあります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;t-pose&#34;&gt;T-Pose&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/T_pose.png&#34; alt=&#34;T_pose&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;T-Poseの例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;腕と手の指についても規約があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手の平は下向き&lt;/li&gt;
+&lt;li&gt;親指は水平でXZ平面(上から見て)45度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unityのヒューマノイド&#34;&gt;Unityのヒューマノイド&lt;/h2&gt;
+&lt;p&gt;Unity では、 Avatar というオブジェクトがあります。
 これを、 Humanoid モードに設定できます。
-Avatar は Unity の オブジェクトですが、Humanoid Avatar の設定画面は &lt;code>fbx importer&lt;/code> の一部です。
+Avatar は Unity の オブジェクトですが、Humanoid Avatar の設定画面は &lt;code&gt;fbx importer&lt;/code&gt; の一部です。
 このため、 fbx 以外のデータから Humanoid Avatar のあるモデルを作れません。
 ただし、Program から Humanoid Avatar を作成する関数はあるので、
-UniVRMは Humanoid Avatar を作成できます。 &lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">humanoid component&lt;/a>&lt;/p>
-&lt;h2 id="互換性のあるbvh">互換性のあるBVH&lt;/h2>
-&lt;p>初期姿勢が、 &lt;code>T-Pose&lt;/code> であるBVHと互換性があります。&lt;/p>
-&lt;ul>
-&lt;li>hips に移動値を代入して&lt;/li>
-&lt;li>hips から子に向かって ローカル回転を代入します&lt;/li>
-&lt;/ul>
-&lt;h2 id="詳細">詳細&lt;/h2>
-&lt;p>ボーンの一覧は、&lt;/p>
-&lt;p>&lt;a href="https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html">https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html&lt;/a>&lt;/p>
-&lt;p>と同じです。&lt;/p>
-&lt;ul>
-&lt;li>対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる&lt;/li>
-&lt;li>必須のボーンがすべて含まれている&lt;/li>
-&lt;li>ボーンの親子関係がヒューマノイドの定義を守っている(LowerLegの最初に見つかる祖先ボーンがUpperLegであるなど)&lt;/li>
-&lt;li>hipsをrootに以下の親子関係。カッコは必須でないボーン
-&lt;ul>
-&lt;li>
-&lt;p>hips - spine - chest - (upper chest) - neck - head&lt;/p>
-&lt;ul>
-&lt;li>headからleft - (eye)&lt;/li>
-&lt;li>headからright - (eye)&lt;/li>
-&lt;li>chestまたはupper chestからleft - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
-&lt;li>chestまたはupper chestからright - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
-&lt;li>hipsからleft - upper leg - lower leg - foot - (toes)&lt;/li>
-&lt;li>hipsからright - upper leg - lower leg - foot - (toes)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>間にヒューマノイドに関係ないノードが入ることは許す(LowerLegの親がemptyでその親がUpperLegであるなど)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>必須でないボーンは飛ばしてよい(UpperArmの親がshoulderじゃなくてchestなど)&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="関連イシュー">関連イシュー&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="参考">参考&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: BaseModel</title><link>https://vrm.dev/docs/univrm/humanoid/base_model/</link><pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid><description>
-&lt;p>以下の条件を満たす &lt;code>GameObject&lt;/code> をエクスポートして VRM にできます。&lt;/p>
-&lt;ul>
-&lt;li>Animator がアタッチされている&lt;/li>
-&lt;li>Animator に HumanoidAvatar がセットされている&lt;/li>
-&lt;/ul>
-&lt;h2 id="fbx">FBX&lt;/h2>
-&lt;p>fbx で上記の条件を満たすには、 &lt;code>fbx importer&lt;/code> の &lt;code>rig&lt;/code> 設定で &lt;code>humanoid&lt;/code> 化してください。
-fbx の prefab は、 humanoid 化すると Animator がアタッチされて &lt;code>HumanoidAvatar&lt;/code> がセットされた状態になります。&lt;/p>
-&lt;p>fbx が humanoid 化できるには、&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3">必須のボーン&lt;/a> がすべて含まれている&lt;/li>
-&lt;li>ボーンの親子関係が正しい&lt;/li>
-&lt;/ul>
-&lt;p>の２つの条件が必用です。&lt;/p>
-&lt;ul>
-&lt;li>ボーンの名前は自由です&lt;/li>
-&lt;/ul>
-&lt;p>参考&lt;/p>
-&lt;p>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/p>
-&lt;h2 id="fbx-をシーン上で加工する">FBX をシーン上で加工する&lt;/h2>
-&lt;p>問題ない&lt;/p>
-&lt;ul>
-&lt;li>fbx prefab 内の GameObject に子 GameObject を追加する&lt;/li>
-&lt;li>fbx prefab 内の GameObject を disable にする&lt;/li>
-&lt;/ul>
-&lt;p>うまくいかない場合あり&lt;/p>
-&lt;ul>
-&lt;li>fbx prefab 内の GameObject を削除する&lt;/li>
-&lt;li>fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)&lt;/li>
-&lt;/ul>
-&lt;p>何故問題があるかというと&lt;/p>
-&lt;ul>
-&lt;li>HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる&lt;/li>
-&lt;/ul>
-&lt;p>からです。
-HumanoidAvatar にはおそらく、&lt;/p>
-&lt;ul>
-&lt;li>元の姿勢&lt;/li>
-&lt;li>ヒューマンボーン(hipsなど)と GameObjectの対応関係&lt;/li>
-&lt;/ul>
-&lt;p>が記録されています。
+UniVRMは Humanoid Avatar を作成できます。 &lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/&#34;&gt;humanoid component&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;互換性のあるbvh&#34;&gt;互換性のあるBVH&lt;/h2&gt;
+&lt;p&gt;初期姿勢が、 &lt;code&gt;T-Pose&lt;/code&gt; であるBVHと互換性があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hips に移動値を代入して&lt;/li&gt;
+&lt;li&gt;hips から子に向かって ローカル回転を代入します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;詳細&#34;&gt;詳細&lt;/h2&gt;
+&lt;p&gt;ボーンの一覧は、&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html&#34;&gt;https://docs.unity3d.com/ja/2019.4/ScriptReference/HumanBodyBones.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;と同じです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる&lt;/li&gt;
+&lt;li&gt;必須のボーンがすべて含まれている&lt;/li&gt;
+&lt;li&gt;ボーンの親子関係がヒューマノイドの定義を守っている(LowerLegの最初に見つかる祖先ボーンがUpperLegであるなど)&lt;/li&gt;
+&lt;li&gt;hipsをrootに以下の親子関係。カッコは必須でないボーン
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;hips - spine - chest - (upper chest) - neck - head&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;headからleft - (eye)&lt;/li&gt;
+&lt;li&gt;headからright - (eye)&lt;/li&gt;
+&lt;li&gt;chestまたはupper chestからleft - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;chestまたはupper chestからright - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
+&lt;li&gt;hipsからleft - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;li&gt;hipsからright - upper leg - lower leg - foot - (toes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;間にヒューマノイドに関係ないノードが入ることは許す(LowerLegの親がemptyでその親がUpperLegであるなど)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;必須でないボーンは飛ばしてよい(UpperArmの親がshoulderじゃなくてchestなど)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;関連イシュー&#34;&gt;関連イシュー&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/87&#34;&gt;https://github.com/vrm-c/vrm-specification/issues/87&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/&#34;&gt;Mecanim Humanoids&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/ousttrue/items/aead1c943855561b62e7&#34;&gt;BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BaseModel</title>
+      <link>https://vrm.dev/docs/univrm/humanoid/base_model/</link>
+      <pubDate>Tue, 09 Feb 2021 10:16:43 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/humanoid/base_model/</guid>
+      <description>
+        
+        
+        &lt;p&gt;以下の条件を満たす &lt;code&gt;GameObject&lt;/code&gt; をエクスポートして VRM にできます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Animator がアタッチされている&lt;/li&gt;
+&lt;li&gt;Animator に HumanoidAvatar がセットされている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;fbx&#34;&gt;FBX&lt;/h2&gt;
+&lt;p&gt;fbx で上記の条件を満たすには、 &lt;code&gt;fbx importer&lt;/code&gt; の &lt;code&gt;rig&lt;/code&gt; 設定で &lt;code&gt;humanoid&lt;/code&gt; 化してください。
+fbx の prefab は、 humanoid 化すると Animator がアタッチされて &lt;code&gt;HumanoidAvatar&lt;/code&gt; がセットされた状態になります。&lt;/p&gt;
+&lt;p&gt;fbx が humanoid 化できるには、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3&#34;&gt;必須のボーン&lt;/a&gt; がすべて含まれている&lt;/li&gt;
+&lt;li&gt;ボーンの親子関係が正しい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の２つの条件が必用です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ボーンの名前は自由です&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://qiita.com/ousttrue/items/aead1c943855561b62e7&#34;&gt;BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fbx-をシーン上で加工する&#34;&gt;FBX をシーン上で加工する&lt;/h2&gt;
+&lt;p&gt;問題ない&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fbx prefab 内の GameObject に子 GameObject を追加する&lt;/li&gt;
+&lt;li&gt;fbx prefab 内の GameObject を disable にする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;うまくいかない場合あり&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fbx prefab 内の GameObject を削除する&lt;/li&gt;
+&lt;li&gt;fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;何故問題があるかというと&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;からです。
+HumanoidAvatar にはおそらく、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;元の姿勢&lt;/li&gt;
+&lt;li&gt;ヒューマンボーン(hipsなど)と GameObjectの対応関係&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;が記録されています。
 これに変更を加えた場合再作成する必用があります。
-下記の HumanoidComponent で作成できます。&lt;/p>
-&lt;h2 id="gameobject-から手動で-humanoidavatar-を作成する">GameObject から手動で HumanoidAvatar を作成する&lt;/h2>
-&lt;p>&lt;code>fbx importer&lt;/code> に頼らずに HumanoidAvatar を作成できます。&lt;/p>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/">HumanoidComponent&lt;/a>&lt;/p>
-&lt;p>これを使うと、&lt;/p>
-&lt;ul>
-&lt;li>人型の GLTF&lt;/li>
-&lt;li>シーン上でキューブを人型に積み上げる&lt;/li>
-&lt;/ul>
-&lt;p>などのヒエラルキーに対して、後付けで &lt;code>HumanoidAvatar&lt;/code> を作成することができます。
-HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p></description></item><item><title>Docs: HumanoidComponent</title><link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link><pubDate>Mon, 01 Feb 2021 09:10:25 +0900</pubDate><guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid><description>
-&lt;p>&lt;code>UniVRM-0.60.0&lt;/code>&lt;/p>
-&lt;p>fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p>
-&lt;h1 id="使い方">使い方&lt;/h1>
-&lt;p>ヒューマノイドボーンがあるシーンを用意します。&lt;/p>
-&lt;p>例として&lt;/p>
-&lt;p>&lt;a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a>&lt;/p>
-&lt;p>で説明します。&lt;/p>
-&lt;p>まず、 &lt;code>RiggedFigure.glb&lt;/code> を Asset フォルダに import してください。
-UniVRM の &lt;code>glb&lt;/code> import で prefab が生成されます。&lt;/p>
-&lt;p>新規のシーンに &lt;code>RiggedFigure&lt;/code> prefab をインスタンス化します。&lt;/p>
-&lt;p>AddComponent で &lt;code>Humanoid&lt;/code> を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/bone_required.jpg" />
-&lt;p>適当に Bone を当てはめます。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/create_avatar.jpg" />
-&lt;p>&lt;code>Create UnityEngine.Avatar&lt;/code> ボタンを押します。&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/humanoid_animator.jpg" />
-&lt;p>humanoid avatar が新規に作成されます。&lt;/p>
-&lt;p>このまま、T-Pose にして VRM 化することもできます。&lt;/p></description></item></channel></rss>
+下記の HumanoidComponent で作成できます。&lt;/p&gt;
+&lt;h2 id=&#34;gameobject-から手動で-humanoidavatar-を作成する&#34;&gt;GameObject から手動で HumanoidAvatar を作成する&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;fbx importer&lt;/code&gt; に頼らずに HumanoidAvatar を作成できます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/&#34;&gt;HumanoidComponent&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;これを使うと、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;人型の GLTF&lt;/li&gt;
+&lt;li&gt;シーン上でキューブを人型に積み上げる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などのヒエラルキーに対して、後付けで &lt;code&gt;HumanoidAvatar&lt;/code&gt; を作成することができます。
+HumanoidAvatar を作成した GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: HumanoidComponent</title>
+      <link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link>
+      <pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;UniVRM-0.60.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;fbx が無くても、シーンから直接 humanoid avatar を作成できます。&lt;/p&gt;
+&lt;h1 id=&#34;使い方&#34;&gt;使い方&lt;/h1&gt;
+&lt;p&gt;ヒューマノイドボーンがあるシーンを用意します。&lt;/p&gt;
+&lt;p&gt;例として&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure/glTF-Binary&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;で説明します。&lt;/p&gt;
+&lt;p&gt;まず、 &lt;code&gt;RiggedFigure.glb&lt;/code&gt; を Asset フォルダに import してください。
+UniVRM の &lt;code&gt;glb&lt;/code&gt; import で prefab が生成されます。&lt;/p&gt;
+&lt;p&gt;新規のシーンに &lt;code&gt;RiggedFigure&lt;/code&gt; prefab をインスタンス化します。&lt;/p&gt;
+&lt;p&gt;AddComponent で &lt;code&gt;Humanoid&lt;/code&gt; を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/bone_required.jpg&#34;   /&gt;
+
+&lt;p&gt;適当に Bone を当てはめます。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/create_avatar.jpg&#34;   /&gt;
+
+&lt;p&gt;&lt;code&gt;Create UnityEngine.Avatar&lt;/code&gt; ボタンを押します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/humanoid_animator.jpg&#34;   /&gt;
+
+&lt;p&gt;humanoid avatar が新規に作成されます。&lt;/p&gt;
+&lt;p&gt;このまま、T-Pose にして VRM 化することもできます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

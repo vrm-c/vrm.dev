@@ -1,595 +1,725 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Programming</title><link>https://vrm.dev/docs/univrm/programming/</link><description>Recent content in Programming on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: APIの変更履歴</title><link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link><pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid><description>
-&lt;h2 id="v077-importercontext-の整理">v0.77 ImporterContext の整理&lt;/h2>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">ランタイムインポーター&lt;/a>&lt;/p>
-&lt;h2 id="v068-importercontext-の整理">v0.68 ImporterContext の整理&lt;/h2>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">ランタイムインポーター&lt;/a>&lt;/p>
-&lt;h2 id="v0632-gltf-の-extension-の実装方法を変更">v0.63.2 gltf の extension の実装方法を変更&lt;/h2>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/">how_to_impl_extension&lt;/a>&lt;/p>
-&lt;h2 id="v056-blendshapekey-の仕様変更">v0.56 BlendShapeKey の仕様変更&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/wiki/ReleaseNote-v0.56.0%28ja%29#blendshapekey%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%82%92%E5%8E%B3%E6%A0%BC%E5%8C%96%E6%95%B4%E7%90%86">BlendShapeKeyのインタフェースを厳格化、整理&lt;/a>&lt;/p>
-&lt;h2 id="v036">v0.36&lt;/h2>
-&lt;h3 id="テクスチャ名の格納位置の修正">テクスチャ名の格納位置の修正&lt;/h3>
-&lt;p>GLTFの仕様に準拠しました。&lt;/p>
-&lt;ul>
-&lt;li>extraはextrasの間違い&lt;/li>
-&lt;li>imageはnameを持っていた&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.images&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>変更後&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.images&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.name&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ブレンドシェイプ名の格納位置の修正">ブレンドシェイプ名の格納位置の修正&lt;/h3>
-&lt;p>GLTFの仕様に準拠しました。&lt;/p>
-&lt;ul>
-&lt;li>extraはextrasの間違い&lt;/li>
-&lt;li>targetにextrasは不許可&lt;/li>
-&lt;li>&lt;a href="https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356">https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.targets&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extra.name&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>変更後&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#a00;background-color:#faa">json.meshes&lt;/span>[&lt;span style="color:#a00;background-color:#faa">i&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.primitives&lt;/span>[&lt;span style="color:#a00;background-color:#faa">j&lt;/span>]&lt;span style="color:#a00;background-color:#faa">.extras.targetNames&lt;/span>[&lt;span style="color:#a00;background-color:#faa">k&lt;/span>]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: ランタイムインポーター</title><link>https://vrm.dev/docs/univrm/programming/runtime_import/</link><pubDate>Mon, 14 Jun 2021 16:14:35 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid><description>
-&lt;h2 id="version-077">&lt;code>Version 0.77~&lt;/code>&lt;/h2>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/1018">DisposeOnGameObjectDestroyed&lt;/a>&lt;/p>
-&lt;p>&lt;code>ImporterContext&lt;/code> の仕様を変更しました。&lt;/p>
-&lt;p>&lt;code>Version 0.68&lt;/code> で導入した、 &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> が扱いづらかったためのでこれを取りやめ、
-&lt;code>ImporterContext.Load&lt;/code> が &lt;code>RuntimeGltfInstance&lt;/code> を返すようにしました。&lt;/p>
-&lt;p>&lt;code>RuntimeGltfInstance&lt;/code> は、 &lt;code>ImporterContext&lt;/code> の&lt;/p>
-&lt;ul>
-&lt;li>Root&lt;/li>
-&lt;li>EnableUpdateWhenOffscreen()&lt;/li>
-&lt;li>ShowMeshes()&lt;/li>
-&lt;/ul>
-&lt;p>を引き継ぎます。
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – Programming</title>
+    <link>https://vrm.dev/docs/univrm/programming/</link>
+    <description>Recent content in Programming on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 19 Aug 2020 18:27:05 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/docs/univrm/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: APIの変更履歴</title>
+      <link>https://vrm.dev/docs/univrm/programming/univrm_api_history/</link>
+      <pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/programming/univrm_api_history/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;v077-importercontext-の整理&#34;&gt;v0.77 ImporterContext の整理&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v068-importercontext-の整理&#34;&gt;v0.68 ImporterContext の整理&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v0632-gltf-の-extension-の実装方法を変更&#34;&gt;v0.63.2 gltf の extension の実装方法を変更&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/&#34;&gt;how_to_impl_extension&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v056-blendshapekey-の仕様変更&#34;&gt;v0.56 BlendShapeKey の仕様変更&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/ReleaseNote-v0.56.0%28ja%29#blendshapekey%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%82%92%E5%8E%B3%E6%A0%BC%E5%8C%96%E6%95%B4%E7%90%86&#34;&gt;BlendShapeKeyのインタフェースを厳格化、整理&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v036&#34;&gt;v0.36&lt;/h2&gt;
+&lt;h3 id=&#34;テクスチャ名の格納位置の修正&#34;&gt;テクスチャ名の格納位置の修正&lt;/h3&gt;
+&lt;p&gt;GLTFの仕様に準拠しました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;extraはextrasの間違い&lt;/li&gt;
+&lt;li&gt;imageはnameを持っていた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.images&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extra.name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;変更後&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.images&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ブレンドシェイプ名の格納位置の修正&#34;&gt;ブレンドシェイプ名の格納位置の修正&lt;/h3&gt;
+&lt;p&gt;GLTFの仕様に準拠しました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;extraはextrasの間違い&lt;/li&gt;
+&lt;li&gt;targetにextrasは不許可&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&#34;&gt;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.meshes&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.primitives&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.targets&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;k&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extra.name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;変更後&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.meshes&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.primitives&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extras.targetNames&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;k&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ランタイムインポーター</title>
+      <link>https://vrm.dev/docs/univrm/programming/runtime_import/</link>
+      <pubDate>Mon, 14 Jun 2021 16:14:35 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1018&#34;&gt;DisposeOnGameObjectDestroyed&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ImporterContext&lt;/code&gt; の仕様を変更しました。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Version 0.68&lt;/code&gt; で導入した、 &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; が扱いづらかったためのでこれを取りやめ、
+&lt;code&gt;ImporterContext.Load&lt;/code&gt; が &lt;code&gt;RuntimeGltfInstance&lt;/code&gt; を返すようにしました。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RuntimeGltfInstance&lt;/code&gt; は、 &lt;code&gt;ImporterContext&lt;/code&gt; の&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Root&lt;/li&gt;
+&lt;li&gt;EnableUpdateWhenOffscreen()&lt;/li&gt;
+&lt;li&gt;ShowMeshes()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を引き継ぎます。
 Load の呼び出し後の任意のタイミングで ImporterContext.Dispose で Importer を破棄してください。
-任意のタイミングで RuntimeGltfInstance を Destory することで紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM.Samples&lt;/span>
+任意のタイミングで RuntimeGltfInstance を Destory することで紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
+
+
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM.Samples&lt;/span&gt;
 {
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
-{
-_vrmGameObject = LoadVrm(_vrmFilePath);
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmSample&lt;/span&gt; : MonoBehaviour
+    {
+&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
+        {
+            _vrmGameObject = LoadVrm(_vrmFilePath);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject LoadVrm(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. GltfParser を呼び出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
+            parser.ParsePath(vrmFilePath);
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    VRMImporterContext は VRM のロードを実際に行うクラスです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                RuntimeGltfInstance instance = context.Load(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- `v0.77` でここが変わります。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 非同期版 async 関数の中で下記のようにしてください
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// RuntimeGltfInstance instance = await context.LoadAsync();
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                instance.EnableUpdateWhenOffscreen(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. VRM モデルを表示します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                instance.ShowMeshes(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. Root の GameObject を return します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; instance.Root; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            }
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. 生成された VRM の GameObject を破棄します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
+        }
+    }
 }
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-068&#34;&gt;&lt;code&gt;Version 0.68～&lt;/code&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;過去バージョンからの仕様変更&#34;&gt;過去バージョンからの仕様変更&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ImporterContext&lt;/code&gt; の仕様を変更しました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ロード処理が Parse と Load の 2 ステップに分かれました。
+&lt;ul&gt;
+&lt;li&gt;Parse 処理をメインスレッド以外で処理することができます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非同期ロード関数 &lt;code&gt;ImporterContext.LoadAsync&lt;/code&gt; の実装を &lt;code&gt;Task&lt;/code&gt; に変更しました。&lt;/li&gt;
+&lt;li&gt;これまで明示的に破棄できなかった &lt;code&gt;UnityEngine.Object&lt;/code&gt; リソースを破棄できるようになりました。
+&lt;ul&gt;
+&lt;li&gt;リソースのリークを防ぐことができます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ImporterContext.Dispose&lt;/code&gt; を呼び出すべきタイミングを「ロード処理終了時」に変更しました。
+&lt;ul&gt;
+&lt;li&gt;呼び出して破棄する前に、後述の &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; を呼び出してください。&lt;/li&gt;
+&lt;li&gt;以前の仕様は「生成したモデルの破棄時」に呼び出すべき関数でした。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; 関数を追加しました。
+&lt;ul&gt;
+&lt;li&gt;VRM モデルが必要とするリソース (Texture, Material, Mesh, etc) を破棄する責務を GameObject に移譲できます。&lt;/li&gt;
+&lt;li&gt;VRM の GameObject の破棄タイミングでリソース (Texture, Material, Mesh, etc) を破棄します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;サンプルコード同期的ロード&#34;&gt;サンプルコード（同期的ロード）&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
+
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;YourNameSpace&lt;/span&gt;
 {
-DestroyVrm(_vrmGameObject);
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmSample&lt;/span&gt; : MonoBehaviour
+    {
+&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
+        {
+            _vrmGameObject = LoadVrm(_vrmFilePath);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject LoadVrm(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. GltfParser を呼び出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
+            parser.ParsePath(vrmFilePath);
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    VRMImporterContext は VRM のロードを実際に行うクラスです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.Load();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.EnableUpdateWhenOffscreen();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. VRM モデルを表示します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.ShowMeshes();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.DisposeOnGameObjectDestroyed();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. Root の GameObject を return します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
+            }
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 9. 生成された VRM の GameObject を破棄します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
+        }
+    }
 }
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject LoadVrm(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;サンプルコード非同期ロード&#34;&gt;サンプルコード（非同期ロード）&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.IO&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Threading.Tasks&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
+
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;YourNameSpace&lt;/span&gt;
 {
-&lt;span style="color:#09f;font-style:italic">// 1. GltfParser を呼び出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-parser.ParsePath(vrmFilePath);
-&lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
-{
-&lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> RuntimeGltfInstance instance = context.Load(); &lt;span style="color:#09f;font-style:italic">// &amp;lt;- `v0.77` でここが変わります。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">// 非同期版 async 関数の中で下記のようにしてください
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// RuntimeGltfInstance instance = await context.LoadAsync();
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> instance.EnableUpdateWhenOffscreen(); &lt;span style="color:#09f;font-style:italic">// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">// 5. VRM モデルを表示します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> instance.ShowMeshes(); &lt;span style="color:#09f;font-style:italic">// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#09f;font-style:italic">// 6. Root の GameObject を return します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> instance.Root; &lt;span style="color:#09f;font-style:italic">// &amp;lt;- ImporterContext から RuntimeGltfInstance に移動しました。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;span style="color:#09f;font-style:italic">// 7. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
-{
-&lt;span style="color:#09f;font-style:italic">// 8. 生成された VRM の GameObject を破棄します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmAsyncSample&lt;/span&gt; : MonoBehaviour
+    {
+&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 簡便のため、このサンプルではキャンセル処理などは考慮しません。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            _vrmGameObject = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; LoadVrmAsync(_vrmFilePath);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
+        {
+            DestroyVrm(_vrmGameObject);
+        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. GltfParser を呼び出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GltfParser は Unity のメインスレッド以外で実行できます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; Task.Run(() =&amp;gt;
+            {
+                &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; file = File.ReadAllBytes(vrmFilePath);
+                parser.ParseGlb(file);
+            });
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    VRMImporterContext は VRM のロードを実際に行うクラスです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Load 処理は数フレームの時間を要します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; context.LoadAsync();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.EnableUpdateWhenOffscreen();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. VRM モデルを表示します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.ShowMeshes();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.DisposeOnGameObjectDestroyed();
+
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. Root の GameObject を return します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
+            }
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 9. 生成された VRM の GameObject を破棄します。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
+        }
+    }
 }
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-068">&lt;code>Version 0.68～&lt;/code>&lt;/h2>
-&lt;h3 id="過去バージョンからの仕様変更">過去バージョンからの仕様変更&lt;/h3>
-&lt;p>&lt;code>ImporterContext&lt;/code> の仕様を変更しました。&lt;/p>
-&lt;ul>
-&lt;li>ロード処理が Parse と Load の 2 ステップに分かれました。
-&lt;ul>
-&lt;li>Parse 処理をメインスレッド以外で処理することができます。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>非同期ロード関数 &lt;code>ImporterContext.LoadAsync&lt;/code> の実装を &lt;code>Task&lt;/code> に変更しました。&lt;/li>
-&lt;li>これまで明示的に破棄できなかった &lt;code>UnityEngine.Object&lt;/code> リソースを破棄できるようになりました。
-&lt;ul>
-&lt;li>リソースのリークを防ぐことができます。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>ImporterContext.Dispose&lt;/code> を呼び出すべきタイミングを「ロード処理終了時」に変更しました。
-&lt;ul>
-&lt;li>呼び出して破棄する前に、後述の &lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> を呼び出してください。&lt;/li>
-&lt;li>以前の仕様は「生成したモデルの破棄時」に呼び出すべき関数でした。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>ImporterContext.DisposeOnGameObjectDestroyed&lt;/code> 関数を追加しました。
-&lt;ul>
-&lt;li>VRM モデルが必要とするリソース (Texture, Material, Mesh, etc) を破棄する責務を GameObject に移譲できます。&lt;/li>
-&lt;li>VRM の GameObject の破棄タイミングでリソース (Texture, Material, Mesh, etc) を破棄します。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="サンプルコード同期的ロード">サンプルコード（同期的ロード）&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
-{
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmSample&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
-{
-_vrmGameObject = LoadVrm(_vrmFilePath);
-}
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
-{
-DestroyVrm(_vrmGameObject);
-}
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject LoadVrm(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
-{
-&lt;span style="color:#09f;font-style:italic">// 1. GltfParser を呼び出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-parser.ParsePath(vrmFilePath);
-&lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
-{
-&lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Load();
-&lt;span style="color:#09f;font-style:italic">// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 5. VRM モデルを表示します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#09f;font-style:italic">// 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// 7. Root の GameObject を return します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
-}
-&lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
-{
-&lt;span style="color:#09f;font-style:italic">// 9. 生成された VRM の GameObject を破棄します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
-}
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="サンプルコード非同期ロード">サンプルコード（非同期ロード）&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.IO&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Threading.Tasks&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UniGLTF&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">namespace&lt;/span> &lt;span style="color:#0cf;font-weight:bold">YourNameSpace&lt;/span>
-{
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">sealed&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">LoadVrmAsyncSample&lt;/span> : MonoBehaviour
-{
-&lt;span style="color:#309"> [SerializeField]&lt;/span> &lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#078;font-weight:bold">string&lt;/span> _vrmFilePath;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> GameObject _vrmGameObject;
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
-{
-&lt;span style="color:#09f;font-style:italic">// 簡便のため、このサンプルではキャンセル処理などは考慮しません。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> _vrmGameObject = &lt;span style="color:#069;font-weight:bold">await&lt;/span> LoadVrmAsync(_vrmFilePath);
-}
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> OnDestroy()
-{
-DestroyVrm(_vrmGameObject);
-}
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">async&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style="color:#078;font-weight:bold">string&lt;/span> vrmFilePath)
-{
-&lt;span style="color:#09f;font-style:italic">// 1. GltfParser を呼び出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser はファイルから JSON 情報とバイナリデータを読み出します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GltfParser は Unity のメインスレッド以外で実行できます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> parser = &lt;span style="color:#069;font-weight:bold">new&lt;/span> GltfParser();
-&lt;span style="color:#069;font-weight:bold">await&lt;/span> Task.Run(() =&amp;gt;
-{
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> file = File.ReadAllBytes(vrmFilePath);
-parser.ParseGlb(file);
-});
-&lt;span style="color:#09f;font-style:italic">// 2. GltfParser のインスタンスを引数にして VRMImporterContext を作成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// VRMImporterContext は VRM のロードを実際に行うクラスです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">using&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext(parser))
-{
-&lt;span style="color:#09f;font-style:italic">// 3. Load 関数を呼び出し、VRM の GameObject を生成します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Load 処理は数フレームの時間を要します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsync();
-&lt;span style="color:#09f;font-style:italic">// 4. （任意） SkinnedMeshRenderer の UpdateWhenOffscreen を有効にできる便利関数です。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// 5. VRM モデルを表示します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#09f;font-style:italic">// 6. VRM の GameObject が実際に使用している UnityEngine.Object リソースの寿命を VRM の GameObject に紐付けます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// つまり VRM の GameObject の破棄時に、実際に使用しているリソース (Texture, Material, Mesh, etc) をまとめて破棄することができます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.DisposeOnGameObjectDestroyed();
-&lt;span style="color:#09f;font-style:italic">// 7. Root の GameObject を return します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// Root の GameObject とは VRMMeta コンポーネントが付与されている GameObject のことです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
-}
-&lt;span style="color:#09f;font-style:italic">// 8. using スコープを抜けて context が破棄されると、 VRMImporterContext が保持する UnityEngine.Object リソースが破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// このとき破棄されるリソースは、 glTF ファイルには含まれているが VRM の GameObject には割り当てられていないテクスチャなどです。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// 手順 6. で VRM の GameObject に紐付けたリソースは、ここでは破棄されません。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> }
-&lt;span style="color:#069;font-weight:bold">private&lt;/span> &lt;span style="color:#069;font-weight:bold">void&lt;/span> DestroyVrm(GameObject vrmGameObject)
-{
-&lt;span style="color:#09f;font-style:italic">// 9. 生成された VRM の GameObject を破棄します。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// GameObject を破棄すれば、紐づくリソース (Texture, Material, Mesh, etc) も破棄されます。
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> UnityEngine.Object.Destroy(vrmGameObject);
-}
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h1 id="過去バージョンの情報">過去バージョンの情報&lt;/h1>
-&lt;h2 id="version-044-loadasyncの例">&lt;code>Version 0.44～&lt;/code> LoadAsyncの例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#09f;font-style:italic">// なんらかの方法でByte列を得る
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;過去バージョンの情報&#34;&gt;過去バージョンの情報&lt;/h1&gt;
+&lt;h2 id=&#34;version-044-loadasyncの例&#34;&gt;&lt;code&gt;Version 0.44～&lt;/code&gt; LoadAsyncの例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// なんらかの方法でByte列を得る
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
+
 context.ParseGlb(bytes);
-&lt;span style="color:#09f;font-style:italic">// metaが必要な場合
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#078;font-weight:bold">bool&lt;/span> createThumbnail=&lt;span style="color:#069;font-weight:bold">true&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(createThumbnail);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> thumbnail = meta.Thumbnail;
-&lt;span style="color:#09f;font-style:italic">// modelを構築
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>context.LoadAsync(_ =&amp;gt;
+
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// metaが必要な場合
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;bool&lt;/span&gt; createThumbnail=&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta(createThumbnail);
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; thumbnail = meta.Thumbnail;
+
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// modelを構築
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;context.LoadAsync(_ =&amp;gt;
 {
-context.ShowMeshes();
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go = context.Root;
-&lt;span style="color:#09f;font-style:italic">// load完了
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>},
+    context.ShowMeshes();
+    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go = context.Root;
+    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// load完了
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;},
 Debug.LogError);
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loadasynctaskを使う例">LoadAsyncTaskを使う例&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#099">#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
-&lt;/span>&lt;span style="color:#099">&lt;/span>&lt;span style="color:#069;font-weight:bold">async&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;loadasynctaskを使う例&#34;&gt;LoadAsyncTaskを使う例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#099&#34;&gt;#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
 {
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
-&lt;span style="color:#09f;font-style:italic">// GLB形式でJSONを取得しParseします
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
-&lt;span style="color:#069;font-weight:bold">try&lt;/span>
-{
-&lt;span style="color:#09f;font-style:italic">// ParseしたJSONをシーンオブジェクトに変換していく
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">await&lt;/span> context.LoadAsyncTask();
-&lt;span style="color:#09f;font-style:italic">// バウンディングボックスとカメラの位置関係で見切れるのを防止する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// SkinnedMeshRenderer.updateWhenOffscreen = true
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.EnableUpdateWhenOffscreen();
-&lt;span style="color:#09f;font-style:italic">// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#09f;font-style:italic">// ロード後に表示する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ShowMeshes();
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> context.Root;
+    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
+
+    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// GLB形式でJSONを取得しParseします
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    context.ParseGlb(bytes);
+
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ParseしたJSONをシーンオブジェクトに変換していく
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; context.LoadAsyncTask();
+
+        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// バウンディングボックスとカメラの位置関係で見切れるのを防止する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// SkinnedMeshRenderer.updateWhenOffscreen = true
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.EnableUpdateWhenOffscreen();
+
+        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// T-Poseのモデルを表示したくない場合、ShowMeshesする前に準備する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ロード後に表示する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.ShowMeshes();
+
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
+    }
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;catch&lt;/span&gt;(Exception ex)
+    {
+        Debug.LogError(ex);
+        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 関連するリソースを破棄する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.Destroy(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;);
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;throw&lt;/span&gt;;
+    }
 }
-&lt;span style="color:#069;font-weight:bold">catch&lt;/span>(Exception ex)
-{
-Debug.LogError(ex);
-&lt;span style="color:#09f;font-style:italic">// 関連するリソースを破棄する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.Destroy(&lt;span style="color:#069;font-weight:bold">true&lt;/span>);
-&lt;span style="color:#069;font-weight:bold">throw&lt;/span>;
-}
-}
-&lt;span style="color:#099">#endif
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="関連する記事など">関連する記事など&lt;/h2>
-&lt;p>こちらの記事がわかりやすいです。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6">UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>最新バージョンは&lt;a href="https://vrm.dev/docs/univrm/programming/runtime_import/">こちら&lt;/a>をご覧ください。&lt;/p>
-&lt;p>Unityで実行時にモデルをインポートする方法です。&lt;/p>
-&lt;h2 id="ファイルパスからvrmを開く">ファイルパスからVRMを開く&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRM.VRMImporter.LoadFromPath(path);
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="ファイルパスから非同期にvrmを開く">ファイルパスから非同期にVRMを開く&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
+&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;関連する記事など&#34;&gt;関連する記事など&lt;/h2&gt;
+&lt;p&gt;こちらの記事がわかりやすいです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6&#34;&gt;UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最新バージョンは&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;こちら&lt;/a&gt;をご覧ください。&lt;/p&gt;
+&lt;p&gt;Unityで実行時にモデルをインポートする方法です。&lt;/p&gt;
+&lt;h2 id=&#34;ファイルパスからvrmを開く&#34;&gt;ファイルパスからVRMを開く&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go=VRM.VRMImporter.LoadFromPath(path);
+Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;ファイルパスから非同期にvrmを開く&#34;&gt;ファイルパスから非同期にVRMを開く&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
 VRMImporter.LoadVrmAsync(path, go =&amp;gt; {
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
+    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
 });
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="バイト列からvrm開く">バイト列からVRM開く&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> path=&lt;span style="color:#c30">&amp;#34;sample.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> go=VRMImporter.LoadFromBytes(bytes);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="バイト列から非同期にvrmを開く">バイト列から非同期にVRMを開く&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">VRMImporter.LoadVrmAsync(bytes, go =&amp;gt; {
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;loaded {0}&amp;#34;&lt;/span>, go.name);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;バイト列からvrm開く&#34;&gt;バイト列からVRM開く&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go=VRMImporter.LoadFromBytes(bytes);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;バイト列から非同期にvrmを開く&#34;&gt;バイト列から非同期にVRMを開く&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;VRMImporter.LoadVrmAsync(bytes, go =&amp;gt; {
+    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
 });
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="vrmから情報を取り出す">VRMから情報を取り出す&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#099">#if UNITY_STANDALONE_WIN
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = FileDialogForWindows.FileDialog(&lt;span style="color:#c30">&amp;#34;open VRM&amp;#34;&lt;/span>, &lt;span style="color:#c30">&amp;#34;.vrm&amp;#34;&lt;/span>);
-&lt;span style="color:#099">#else
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> path = Application.dataPath + &lt;span style="color:#c30">&amp;#34;/default.vrm&amp;#34;&lt;/span>;
-&lt;span style="color:#099">#endif
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (&lt;span style="color:#078;font-weight:bold">string&lt;/span>.IsNullOrEmpty(path))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;vrmから情報を取り出す&#34;&gt;VRMから情報を取り出す&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#099&#34;&gt;#if UNITY_STANDALONE_WIN
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path = FileDialogForWindows.FileDialog(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;open VRM&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;.vrm&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#099&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path = Application.dataPath + &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;/default.vrm&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt;.IsNullOrEmpty(path))
+            {
+                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Byte列を得る
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
+
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// GLB形式をParseしてチャンクからJSONを取得しParseします
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            context.ParseGlb(bytes);
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// metaを取得
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta();
+            Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;meta: title:{0}&amp;#34;&lt;/span&gt;, meta.Title);
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// もしくはこちらでパースされたGLTF全体にアクセスできます
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = context.GLTF;
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ParseしたJSONをもとにシーンを構築します
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (m_loadAsync)
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 非同期に実行する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; now = Time.time;
+                VRMImporter.LoadVrmAsync(context, go=&amp;gt; {
+                    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; delta = Time.time - now;
+                    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span&gt;, delta);
+                    OnLoaded(go);
+                });
+            }
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 同期的に実行する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                VRMImporter.LoadFromBytes(context);
+                OnLoaded(context.Root);
+            }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;thumbnailを取得するv037から&#34;&gt;Thumbnailを取得する(v0.37から)&lt;/h2&gt;
+&lt;p&gt;ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Thumbnailテクスチャを作成する
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    Texture2D thumbnail=meta.Thumbnail;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BlendShapeProxyの使い方</title>
+      <link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+&lt;p&gt;UniVRM v0.58.0&lt;/p&gt;
+&lt;h2 id=&#34;使用するメソッド&#34;&gt;使用するメソッド&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[推奨] &lt;code&gt;SetValues&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[非推奨] &lt;code&gt;ImmediatelySetValue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[上級者向け] &lt;code&gt;AccumulateValue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[上級者向け] &lt;code&gt;Apply&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;スクリプトから-blendshape-weight-を適用する&#34;&gt;スクリプトから BlendShape weight を適用する&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;SetValues&lt;/code&gt; 関数のみを使用します。
+そのフレームで必要な表情の weight 値をすべて集めてから &lt;code&gt;SetValues&lt;/code&gt; を 1 回だけ呼んで設定します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+
+proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
 {
-&lt;span style="color:#069;font-weight:bold">return&lt;/span>;
-}
-&lt;span style="color:#09f;font-style:italic">// Byte列を得る
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> bytes = File.ReadAllBytes(path);
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> context = &lt;span style="color:#069;font-weight:bold">new&lt;/span> VRMImporterContext();
-&lt;span style="color:#09f;font-style:italic">// GLB形式をParseしてチャンクからJSONを取得しParseします
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> context.ParseGlb(bytes);
-&lt;span style="color:#09f;font-style:italic">// metaを取得
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta();
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;meta: title:{0}&amp;#34;&lt;/span>, meta.Title);
-&lt;span style="color:#09f;font-style:italic">// もしくはこちらでパースされたGLTF全体にアクセスできます
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> vrm = context.GLTF;
-&lt;span style="color:#09f;font-style:italic">// ParseしたJSONをもとにシーンを構築します
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (m_loadAsync)
-{
-&lt;span style="color:#09f;font-style:italic">// 非同期に実行する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#078;font-weight:bold">var&lt;/span> now = Time.time;
-VRMImporter.LoadVrmAsync(context, go=&amp;gt; {
-&lt;span style="color:#078;font-weight:bold">var&lt;/span> delta = Time.time - now;
-Debug.LogFormat(&lt;span style="color:#c30">&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span>, delta);
-OnLoaded(go);
-});
-}
-&lt;span style="color:#069;font-weight:bold">else&lt;/span>
-{
-&lt;span style="color:#09f;font-style:italic">// 同期的に実行する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> VRMImporter.LoadFromBytes(context);
-OnLoaded(context.Root);
-}
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="thumbnailを取得するv037から">Thumbnailを取得する(v0.37から)&lt;/h2>
-&lt;p>ReadMetaに引数を渡すことでThumbnailテクスチャを作成できます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs"> &lt;span style="color:#078;font-weight:bold">var&lt;/span> meta = context.ReadMeta(&lt;span style="color:#069;font-weight:bold">true&lt;/span>); &lt;span style="color:#09f;font-style:italic">// Thumbnailテクスチャを作成する
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> Texture2D thumbnail=meta.Thumbnail;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: BlendShapeProxyの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/</guid><description>
-&lt;h2 id="環境">環境&lt;/h2>
-&lt;p>UniVRM v0.58.0&lt;/p>
-&lt;h2 id="使用するメソッド">使用するメソッド&lt;/h2>
-&lt;ul>
-&lt;li>[推奨] &lt;code>SetValues&lt;/code>&lt;/li>
-&lt;li>[非推奨] &lt;code>ImmediatelySetValue&lt;/code>&lt;/li>
-&lt;li>[上級者向け] &lt;code>AccumulateValue&lt;/code>&lt;/li>
-&lt;li>[上級者向け] &lt;code>Apply&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="スクリプトから-blendshape-weight-を適用する">スクリプトから BlendShape weight を適用する&lt;/h2>
-&lt;p>&lt;code>SetValues&lt;/code> 関数のみを使用します。
-そのフレームで必要な表情の weight 値をすべて集めてから &lt;code>SetValues&lt;/code> を 1 回だけ呼んで設定します。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
-{
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// [0, 1] の範囲で Weight を指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// システム定義の表情は enum で指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> {BlendShapeKey.CreateUnknown(&lt;span style="color:#c30">&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span>), &lt;span style="color:#f60">1f&lt;/span>}, &lt;span style="color:#09f;font-style:italic">// ユーザ定義の表情は string で指定
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>});
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h2 id="複数の-blendshape-weight-を適用する際の競合の問題について">複数の BlendShape weight を適用する際の競合の問題について&lt;/h2>
-&lt;p>この節では、なぜ &lt;code>SetValues&lt;/code> を使わなければならないのかという疑問に回答します。&lt;/p>
-&lt;p>たとえば 2 つの VRMBlendShape &lt;code>Blink_L&lt;/code> と &lt;code>Blink_R&lt;/code> が&lt;/p>
-&lt;p>VRMBlendShape &lt;code>Blink_L&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>VRMBlendShape &lt;code>Blink_R&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_L&lt;/code> の weight 値 &lt;code>1&lt;/code>&lt;/li>
-&lt;li>Mesh &lt;code>A&lt;/code> の Blendshape &lt;code>eye_close_R&lt;/code> の weight 値 &lt;code>100&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>で定義されているとします。
-このとき両目を閉じたいモチベーションから、両方を有効にする意図で下記のように実行します。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>すると、左目だけが開いてしまいます。
-これは後から &lt;code>ImmediateSetValue&lt;/code> した &lt;code>Blink_R&lt;/code> が &lt;code>Blink_L&lt;/code> と競合して weight を上書きしてしまうからです。
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// [0, 1] の範囲で Weight を指定
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// システム定義の表情は enum で指定
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    {BlendShapeKey.CreateUnknown(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ユーザ定義の表情は string で指定
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;複数の-blendshape-weight-を適用する際の競合の問題について&#34;&gt;複数の BlendShape weight を適用する際の競合の問題について&lt;/h2&gt;
+&lt;p&gt;この節では、なぜ &lt;code&gt;SetValues&lt;/code&gt; を使わなければならないのかという疑問に回答します。&lt;/p&gt;
+&lt;p&gt;たとえば 2 つの VRMBlendShape &lt;code&gt;Blink_L&lt;/code&gt; と &lt;code&gt;Blink_R&lt;/code&gt; が&lt;/p&gt;
+&lt;p&gt;VRMBlendShape &lt;code&gt;Blink_L&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mesh &lt;code&gt;A&lt;/code&gt; の Blendshape &lt;code&gt;eye_close_L&lt;/code&gt; の weight 値 &lt;code&gt;100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Mesh &lt;code&gt;A&lt;/code&gt; の Blendshape &lt;code&gt;eye_close_R&lt;/code&gt; の weight 値 &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;VRMBlendShape &lt;code&gt;Blink_R&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mesh &lt;code&gt;A&lt;/code&gt; の Blendshape &lt;code&gt;eye_close_L&lt;/code&gt; の weight 値 &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Mesh &lt;code&gt;A&lt;/code&gt; の Blendshape &lt;code&gt;eye_close_R&lt;/code&gt; の weight 値 &lt;code&gt;100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;で定義されているとします。
+このとき両目を閉じたいモチベーションから、両方を有効にする意図で下記のように実行します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;すると、左目だけが開いてしまいます。
+これは後から &lt;code&gt;ImmediateSetValue&lt;/code&gt; した &lt;code&gt;Blink_R&lt;/code&gt; が &lt;code&gt;Blink_L&lt;/code&gt; と競合して weight を上書きしてしまうからです。
 したがって VRM の表情制御においては下記の 2 通りのどちらかの方法で書くことが求められます。
-これらの方法はこの競合の問題を解決して表情を設定することができます。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+これらの方法はこの競合の問題を解決して表情を設定することができます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
 {
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
 });
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>または&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>WIP&lt;/p>
-&lt;h2 id="何故複数のsetterがあるのか">何故、複数のSetterがあるのか&lt;/h2>
-&lt;ul>
-&lt;li>LipSync&lt;/li>
-&lt;li>瞬き&lt;/li>
-&lt;li>視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li>
-&lt;li>プログラムによる喜怒哀楽&lt;/li>
-&lt;/ul>
-&lt;p>上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;または&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// すぐに適用せずにたくわえる
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
+proxy.Apply(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 蓄積した値をまとめて適用する
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;WIP&lt;/p&gt;
+&lt;h2 id=&#34;何故複数のsetterがあるのか&#34;&gt;何故、複数のSetterがあるのか&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;LipSync&lt;/li&gt;
+&lt;li&gt;瞬き&lt;/li&gt;
+&lt;li&gt;視線制御(BlendShapeで視線を動かすタイプのモデル)&lt;/li&gt;
+&lt;li&gt;プログラムによる喜怒哀楽&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上記のような複数のBlendShapeが別々のコンポーネントから設定された場合に、
 BlendShape同士が競合することがわかりました。
 後で設定した値で上書きされて希望のBlendShapeが適用されないという状態になります。
-これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p>
-&lt;p>合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code>SetValues&lt;/code>&lt;/p>
-&lt;h2 id="immediatelysetvalue">ImmediatelySetValue&lt;/h2>
-&lt;p>簡単なテストプログラムでの利用を想定しています。&lt;/p>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style="color:#f60">1.0f&lt;/span>);
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accumulatevalue--apply">AccumulateValue + Apply&lt;/h2>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>); &lt;span style="color:#09f;font-style:italic">// すぐに適用せずにたくわえる
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>);
-proxy.Apply(); &lt;span style="color:#09f;font-style:italic">// 蓄積した値をまとめて適用する
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下記のSetValuesを推奨しています。&lt;/p>
-&lt;h2 id="setvalues">SetValues&lt;/h2>
-&lt;p>BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p>
-&lt;p>例：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#078;font-weight:bold">var&lt;/span> proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-proxy.SetValues(&lt;span style="color:#069;font-weight:bold">new&lt;/span> Dictionary&amp;lt;BlendShapeKey, &lt;span style="color:#078;font-weight:bold">float&lt;/span>&amp;gt;
+これを解決するために、一か所で中央集権的に制御する必要があります。&lt;/p&gt;
+&lt;p&gt;合成したり排他制御した、BlendShapeClipの集合のスナップショットをまとめて適用することを想定して &lt;code&gt;SetValues&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;immediatelysetvalue&#34;&gt;ImmediatelySetValue&lt;/h2&gt;
+&lt;p&gt;簡単なテストプログラムでの利用を想定しています。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+
+proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;accumulatevalue--apply&#34;&gt;AccumulateValue + Apply&lt;/h2&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+
+proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// すぐに適用せずにたくわえる
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
+proxy.Apply(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 蓄積した値をまとめて適用する
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下記のSetValuesを推奨しています。&lt;/p&gt;
+&lt;h2 id=&#34;setvalues&#34;&gt;SetValues&lt;/h2&gt;
+&lt;p&gt;BlendShape合成器が必要に応じ呼び出すことを想定しています。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
+
+proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
 {
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style="color:#f60">1.0f&lt;/span>},
-{BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style="color:#f60">1.0f&lt;/span>},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
+    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
 });
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: UniVRMの座標系変換について</title><link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid><description>
-&lt;p>UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p>
-&lt;h2 id="vrmの座標系">VRMの座標系&lt;/h2>
-&lt;p>VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
-OpenGL標準の右手系Y-UP座標系です。&lt;/p>
-&lt;ul>
-&lt;li>右:X+&lt;/li>
-&lt;li>上:Y+&lt;/li>
-&lt;li>前:Z-&lt;/li>
-&lt;/ul>
-&lt;h2 id="unityの座標系">Unityの座標系&lt;/h2>
-&lt;p>左手系Y-UP座標系です。&lt;/p>
-&lt;ul>
-&lt;li>右:X+&lt;/li>
-&lt;li>上:Y+&lt;/li>
-&lt;li>前:Z+(+-が反転)&lt;/li>
-&lt;/ul>
-&lt;h2 id="各値の変換">各値の変換&lt;/h2>
-&lt;p>Z軸を反転します。&lt;/p>
-&lt;h3 id="vector3position-normalなど">Vector3(Position, Normalなど)&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Vector3 ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Vector3 v)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRMの座標系変換について</title>
+      <link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid>
+      <description>
+        
+        
+        &lt;p&gt;UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p&gt;
+&lt;h2 id=&#34;vrmの座標系&#34;&gt;VRMの座標系&lt;/h2&gt;
+&lt;p&gt;VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
+OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;右:X+&lt;/li&gt;
+&lt;li&gt;上:Y+&lt;/li&gt;
+&lt;li&gt;前:Z-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unityの座標系&#34;&gt;Unityの座標系&lt;/h2&gt;
+&lt;p&gt;左手系Y-UP座標系です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;右:X+&lt;/li&gt;
+&lt;li&gt;上:Y+&lt;/li&gt;
+&lt;li&gt;前:Z+(+-が反転)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;各値の変換&#34;&gt;各値の変換&lt;/h2&gt;
+&lt;p&gt;Z軸を反転します。&lt;/p&gt;
+&lt;h3 id=&#34;vector3position-normalなど&#34;&gt;Vector3(Position, Normalなど)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Vector3 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Vector3 v)
 {
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> &lt;span style="color:#069;font-weight:bold">new&lt;/span> Vector3(v.x, v.y, -v.z);
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(v.x, v.y, -v.z);
 }
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h3 id="quaternionrotation">Quaternion(Rotation)&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Quaternion ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Quaternion q)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;quaternionrotation&#34;&gt;Quaternion(Rotation)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Quaternion ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Quaternion q)
 {
-&lt;span style="color:#078;font-weight:bold">float&lt;/span> angle;
-Vector3 axis;
-q.ToAngleAxis(&lt;span style="color:#069;font-weight:bold">out&lt;/span> angle, &lt;span style="color:#069;font-weight:bold">out&lt;/span> axis);
-&lt;span style="color:#069;font-weight:bold">return&lt;/span> Quaternion.AngleAxis(-angle, ReverseZ(axis));
+    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt; angle;
+    Vector3 axis;
+    q.ToAngleAxis(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; angle, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; axis);
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Quaternion.AngleAxis(-angle, ReverseZ(axis));
 }
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;h3 id="matrixbindmatrices">Matrix(BindMatrices)&lt;/h3>
-&lt;p>スケール値が入っているとうまくいきません&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">static&lt;/span> Matrix4x4 ReverseZ(&lt;span style="color:#069;font-weight:bold">this&lt;/span> Matrix4x4 m)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;matrixbindmatrices&#34;&gt;Matrix(BindMatrices)&lt;/h3&gt;
+&lt;p&gt;スケール値が入っているとうまくいきません&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Matrix4x4 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Matrix4x4 m)
 {
-&lt;span style="color:#099">#if UNITY_2017_1_OR_NEWER
-&lt;/span>&lt;span style="color:#099">&lt;/span> m.SetTRS(m.GetColumn(&lt;span style="color:#f60">3&lt;/span>).ReverseZ(), m.rotation.ReverseZ(), Vector3.one);
-&lt;span style="color:#099">#else
-&lt;/span>&lt;span style="color:#099">&lt;/span> m.SetTRS(m.ExtractPosition().ReverseZ(), m.ExtractRotation().ReverseZ(), Vector3.one);
-&lt;span style="color:#099">#endif
-&lt;/span>&lt;span style="color:#099">&lt;/span> &lt;span style="color:#069;font-weight:bold">return&lt;/span> m;
+&lt;span style=&#34;color:#099&#34;&gt;#if UNITY_2017_1_OR_NEWER
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.GetColumn(&lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;).ReverseZ(), m.rotation.ReverseZ(), Vector3.one);
+&lt;span style=&#34;color:#099&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.ExtractPosition().ReverseZ(), m.ExtractRotation().ReverseZ(), Vector3.one);
+&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; m;
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: VRMFirstPersonの使い方</title><link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link><pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid><description>
-&lt;h1 id="vrmfirstpersonの設定">VRMFirstPersonの設定&lt;/h1>
-&lt;p>&lt;a href="https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/">VRMFirstPerson&lt;/a>ではRendererに対して設定があります。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>FirstPersonFlag&lt;/th>
-&lt;th>レイヤー&lt;/th>
-&lt;th>備考&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Both&lt;/td>
-&lt;td>default&lt;/td>
-&lt;td>一人称と三人称で分ける必要のない部分に指定します&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>ThirdPersonOnly&lt;/td>
-&lt;td>VRMThirdPersonOnly&lt;/td>
-&lt;td>一人称時に描画したくない部分に指定します&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>FirstPersonOnly&lt;/td>
-&lt;td>VRMFirstPersonOnly&lt;/td>
-&lt;td>三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Auto&lt;/td>
-&lt;td>VRMThirdPersonOnly&lt;/td>
-&lt;td>実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>実行時に&lt;strong>VRMFirstPerson.Setup&lt;/strong>を呼び出すことで、上記のレイヤー設定を行うことができます。明示的に外部から呼び出してください。&lt;/p>
-&lt;h1 id="アプリケーションに追加の描画レイヤーを指定する">アプリケーションに追加の描画レイヤーを指定する&lt;/h1>
-&lt;p>定数で以下のレイヤーを定義しています。&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">VRMFirstPerson&lt;/span> : MonoBehaviour
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VRMFirstPersonの使い方</title>
+      <link>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</link>
+      <pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;vrmfirstpersonの設定&#34;&gt;VRMFirstPersonの設定&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/&#34;&gt;VRMFirstPerson&lt;/a&gt;ではRendererに対して設定があります。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;FirstPersonFlag&lt;/th&gt;
+&lt;th&gt;レイヤー&lt;/th&gt;
+&lt;th&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Both&lt;/td&gt;
+&lt;td&gt;default&lt;/td&gt;
+&lt;td&gt;一人称と三人称で分ける必要のない部分に指定します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ThirdPersonOnly&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
+&lt;td&gt;一人称時に描画したくない部分に指定します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FirstPersonOnly&lt;/td&gt;
+&lt;td&gt;VRMFirstPersonOnly&lt;/td&gt;
+&lt;td&gt;三人称時に描画したくない部分に指定します。自動作成した頭部無しモデルが使います&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Auto&lt;/td&gt;
+&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
+&lt;td&gt;実行時に一人称用モデルを自動で作成し、それをFIRSTPERSON_ONLY_LAYERに設定します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;実行時に&lt;strong&gt;VRMFirstPerson.Setup&lt;/strong&gt;を呼び出すことで、上記のレイヤー設定を行うことができます。明示的に外部から呼び出してください。&lt;/p&gt;
+&lt;h1 id=&#34;アプリケーションに追加の描画レイヤーを指定する&#34;&gt;アプリケーションに追加の描画レイヤーを指定する&lt;/h1&gt;
+&lt;p&gt;定数で以下のレイヤーを定義しています。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;VRMFirstPerson&lt;/span&gt; : MonoBehaviour
 {
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">int&lt;/span> FIRSTPERSON_ONLY_LAYER = &lt;span style="color:#f60">9&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">const&lt;/span> &lt;span style="color:#078;font-weight:bold">int&lt;/span> THIRDPERSON_ONLY_LAYER = &lt;span style="color:#f60">10&lt;/span>;
-&lt;span style="color:#09f;font-style:italic">// 省略
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/layer_setting.png" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>9番と１０番にLayerを設定&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h1 id="実行時にsetupを呼び出してカメラにlayermaskを設定する">実行時にSetupを呼び出して、カメラにLayerMaskを設定する&lt;/h1>
-&lt;ul>
-&lt;li>VRMFirstPerson.Setupの呼び出し&lt;/li>
-&lt;li>一人称カメラとその他のカメラに対してLayerMask&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Collections&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">System.Collections.Generic&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">UnityEngine&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">using&lt;/span> &lt;span style="color:#0cf;font-weight:bold">VRM&lt;/span>;
-&lt;span style="color:#069;font-weight:bold">public&lt;/span> &lt;span style="color:#069;font-weight:bold">class&lt;/span> &lt;span style="color:#0a8;font-weight:bold">SetupExample&lt;/span> : MonoBehaviour
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; FIRSTPERSON_ONLY_LAYER = &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt;;
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; THIRDPERSON_ONLY_LAYER = &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 省略
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/layer_setting.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;9番と１０番にLayerを設定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;実行時にsetupを呼び出してカメラにlayermaskを設定する&#34;&gt;実行時にSetupを呼び出して、カメラにLayerMaskを設定する&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;VRMFirstPerson.Setupの呼び出し&lt;/li&gt;
+&lt;li&gt;一人称カメラとその他のカメラに対してLayerMask&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Collections&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Collections.Generic&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
+
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;SetupExample&lt;/span&gt; : MonoBehaviour
 {
-&lt;span style="color:#309"> [SerializeField]&lt;/span>
-Camera m_firstPersonCamera; &lt;span style="color:#09f;font-style:italic">// HMDのカメラ
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#309">
-&lt;/span>&lt;span style="color:#309"> [SerializeField]&lt;/span>
-LayerMask m_firstPersonMask; &lt;span style="color:#09f;font-style:italic">// HMDのカメラにセットするマスク default | VRMFirstPersonOnly など
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#309">
-&lt;/span>&lt;span style="color:#309"> [SerializeField]&lt;/span>
-LayerMask m_otherMask; &lt;span style="color:#09f;font-style:italic">// HMDのカメラにセットするマスク default | VRMThirdPersonOnly など
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span>&lt;span style="color:#309">
-&lt;/span>&lt;span style="color:#309"> [SerializeField]&lt;/span>
-VRMFirstPerson m_firstPerson;
-&lt;span style="color:#069;font-weight:bold">void&lt;/span> Reset()
-{
-m_firstPerson = GameObject.FindObjectOfType&amp;lt;VRMFirstPerson&amp;gt;();
+&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
+    Camera m_firstPersonCamera; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// HMDのカメラ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
+    LayerMask m_firstPersonMask; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | VRMFirstPersonOnly など
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
+    LayerMask m_otherMask; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// HMDのカメラにセットするマスク default | VRMThirdPersonOnly など
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
+    VRMFirstPerson m_firstPerson;
+
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Reset()
+    {
+        m_firstPerson = GameObject.FindObjectOfType&amp;lt;VRMFirstPerson&amp;gt;();
+    }
+
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
+    {
+        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; camera &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;in&lt;/span&gt; GameObject.FindObjectsOfType&amp;lt;Camera&amp;gt;())
+        {
+            camera.cullingMask = (camera == m_firstPersonCamera)
+                ? m_firstPersonMask
+                : m_otherMask
+                ;
+        }
+
+        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// VRMFirstPersonの初期化
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (m_firstPerson != &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+        {
+            m_firstPerson.Setup();
+        }
+    }
 }
-&lt;span style="color:#069;font-weight:bold">void&lt;/span> Start()
-{
-&lt;span style="color:#069;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#078;font-weight:bold">var&lt;/span> camera &lt;span style="color:#069;font-weight:bold">in&lt;/span> GameObject.FindObjectsOfType&amp;lt;Camera&amp;gt;())
-{
-camera.cullingMask = (camera == m_firstPersonCamera)
-? m_firstPersonMask
-: m_otherMask
-;
-}
-&lt;span style="color:#09f;font-style:italic">// VRMFirstPersonの初期化
-&lt;/span>&lt;span style="color:#09f;font-style:italic">&lt;/span> &lt;span style="color:#069;font-weight:bold">if&lt;/span> (m_firstPerson != &lt;span style="color:#069;font-weight:bold">null&lt;/span>)
-{
-m_firstPerson.Setup();
-}
-}
-}
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,34 +1,77 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – fbx</title><link>https://vrm.dev/en/tags/fbx/</link><description>Recent content in fbx on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Nov 2020 11:21:12 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/fbx/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Check BlandShape Normal</title><link>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</link><pubDate>Mon, 16 Nov 2020 11:21:12 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</guid><description>
-&lt;p>Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model&amp;rsquo;s surface.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Details&lt;/h4>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – fbx</title>
+    <link>https://vrm.dev/en/tags/fbx/</link>
+    <description>Recent content in fbx on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Nov 2020 11:21:12 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/tags/fbx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Check BlandShape Normal</title>
+      <link>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</link>
+      <pubDate>Mon, 16 Nov 2020 11:21:12 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model&amp;rsquo;s surface.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Details&lt;/h4&gt;
 If the BlendShape normal is (0, 0, 0), the value of the surface normal should not be changed. It seems that the original BlendShape normal is replaced by the recalculated BlendShape normal, resulting in unexpected changes on the model&amp;rsquo;s surface
-&lt;/div>
-&lt;h2 id="validate-surface-normal-using-mtoons-debugging-options">Validate surface normal using MToon&amp;rsquo;s debugging options&lt;/h2>
-&lt;p>Drag fbx to the Hierarchy window and select it. In the Inspector, click &lt;code>Select -&amp;gt; Materials -&amp;gt; Extract Materials&lt;/code> and choose a folder to save these materials.
-Next, select all materials and change &lt;code>Shader&lt;/code> to &lt;code>VRM/MToon&lt;/code>.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Surface normal validation&lt;/h4>
+&lt;/div&gt;
+
+&lt;h2 id=&#34;validate-surface-normal-using-mtoons-debugging-options&#34;&gt;Validate surface normal using MToon&amp;rsquo;s debugging options&lt;/h2&gt;
+&lt;p&gt;Drag fbx to the Hierarchy window and select it. In the Inspector, click &lt;code&gt;Select -&amp;gt; Materials -&amp;gt; Extract Materials&lt;/code&gt; and choose a folder to save these materials.
+Next, select all materials and change &lt;code&gt;Shader&lt;/code&gt; to &lt;code&gt;VRM/MToon&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Surface normal validation&lt;/h4&gt;
 At this point we set all the materials to MToon for surface normal validation only, so setting up textures&amp;rsquo; properties is not required.
-&lt;/div>
-&lt;p>To visualize the surface normal, go to &lt;code>Options - Debugging Options - Visualize&lt;/code> and select &lt;code>Normal&lt;/code>:&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/mtoon_normal.gif" alt="debug normal">&lt;/p>
-&lt;p>Select a GameObject containing &lt;code>SkinnedMeshRenderer&lt;/code> with BlendShape. Drag the slider while observing surface normals:&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/broken_normal.jpg" alt="debug normal">&lt;/p>
-&lt;p>We can see surface normals around nose tip and mouth are not correct.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Steps to reproduce:&lt;/h4>
-&lt;ul>
-&lt;li>Import VRoid model into Blender&lt;/li>
-&lt;li>Export vrm as fbx&lt;/li>
-&lt;li>Import fbx into Unity&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;h2 id="fix-blendshape-normal">Fix BlendShape normal&lt;/h2>
-&lt;p>To fix BlendShape normal, in the fbx&amp;rsquo;s inspector, click &lt;code>Select -&amp;gt; Model -&amp;gt; Legacy Blend Shape Normals&lt;/code> and check the box.&lt;/p>
-&lt;p>Now confirm whether the BlendShape normal has been fixed:&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/legacy_normal_fixed.jpg" alt="fixed normal">&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Compare with the previous results&lt;/h4>
+&lt;/div&gt;
+
+&lt;p&gt;To visualize the surface normal, go to &lt;code&gt;Options - Debugging Options - Visualize&lt;/code&gt; and select &lt;code&gt;Normal&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_normal.gif&#34; alt=&#34;debug normal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Select a GameObject containing &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; with BlendShape. Drag the slider while observing surface normals:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/broken_normal.jpg&#34; alt=&#34;debug normal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We can see surface normals around nose tip and mouth are not correct.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Steps to reproduce:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Import VRoid model into Blender&lt;/li&gt;
+&lt;li&gt;Export vrm as fbx&lt;/li&gt;
+&lt;li&gt;Import fbx into Unity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;fix-blendshape-normal&#34;&gt;Fix BlendShape normal&lt;/h2&gt;
+&lt;p&gt;To fix BlendShape normal, in the fbx&amp;rsquo;s inspector, click &lt;code&gt;Select -&amp;gt; Model -&amp;gt; Legacy Blend Shape Normals&lt;/code&gt; and check the box.&lt;/p&gt;
+&lt;p&gt;Now confirm whether the BlendShape normal has been fixed:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/legacy_normal_fixed.jpg&#34; alt=&#34;fixed normal&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Compare with the previous results&lt;/h4&gt;
 Surface normals around the norse tip and mouth (e.g. tongue, lower lip) are totally different
-&lt;/div></description></item></channel></rss>
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

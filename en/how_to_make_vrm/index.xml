@@ -1,232 +1,357 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – How to make VRM file</title><link>https://vrm.dev/en/how_to_make_vrm/</link><description>Recent content in How to make VRM file on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Mar 2021 18:19:37 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 0. Create a Unity project and install UniVRM</title><link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link><pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate><guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid><description>
-&lt;h2 id="download-univrm">Download UniVRM&lt;/h2>
-&lt;p>Download the latest version of UniVRM (&lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code>) in the release page:&lt;/p>
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/download_unitypackage.png" alt="download_unitypackage">&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">XX YY&lt;/h4>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – How to make VRM file</title>
+    <link>https://vrm.dev/en/how_to_make_vrm/</link>
+    <description>Recent content in How to make VRM file on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Mar 2021 18:19:37 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/how_to_make_vrm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 0. Create a Unity project and install UniVRM</title>
+      <link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link>
+      <pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;download-univrm&#34;&gt;Download UniVRM&lt;/h2&gt;
+&lt;p&gt;Download the latest version of UniVRM (&lt;code&gt;UniVRM-0.XX.0_YYYY.unitypackage&lt;/code&gt;) in the release page:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/download_unitypackage.png&#34; alt=&#34;download_unitypackage&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;XX YY&lt;/h4&gt;
 XX is UniVRM version. YYYY is version ID
-&lt;/div>
-&lt;h2 id="install-unity">Install Unity&lt;/h2>
-&lt;p>&lt;a href="https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html">https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html&lt;/a>&lt;/p>
-&lt;p>Make sure the &lt;a href="https://vrm.dev/en/docs/univrm/install/unity_version/">Unity Version&lt;/a> you are going to download is compatible with UniVRM.&lt;/p>
-&lt;h2 id="create-an-empty-project-in-unity">Create an empty project in Unity&lt;/h2>
-&lt;p>Launch Unity and create a new project (&lt;code>New -&amp;gt; Create project&lt;/code>):&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/unity_new_project.png" />
-&lt;p>For Unity Hub, click &lt;code>Projects -&amp;gt; New -&amp;gt; 3D template -&amp;gt; CREATE&lt;/code>:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/new_project_en.jpg" />
-&lt;h2 id="import-univrm-package-into-the-created-project">Import UniVRM package into the created project&lt;/h2>
-&lt;p>Import the downloaded &lt;code>UniVRM-0.XX.0_YYYY.unitypackage&lt;/code> into the current project (&lt;code>Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code>). The imported files will be in the folders &lt;code>../Assets/VRM&lt;/code>, &lt;code>../Assets/UniGLTF&lt;/code> and &lt;code>../Assets/VRMShaders&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/package_import.jpg" alt="package_import" width="400" />
-&lt;p>&lt;strong>To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong>.&lt;/p>
-&lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
-&lt;p>If UniVRM import successes, &lt;code>VRM&lt;/code> menu will be displayed in the menu bar:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
-&lt;hr>
-&lt;p>Previous versions:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu_old.jpg" alt="vrm menu old" />
-&lt;hr>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">If you are using Unity-2018 and the VRM menu does not show up:&lt;/h4>
-Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> and check whether &lt;code>Scripting Runtime Version&lt;/code> is set to &lt;code>.Net4.X equivalent&lt;/code>
-&lt;/div>
-&lt;h3 id="console">Console&lt;/h3>
-&lt;p>The errors occurred in a Unity project can be shown in the Console window:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;p>Click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/error_in_console.jpg" alt="clear console" width="500" />
-&lt;hr>
-&lt;p>If no errors were found, we can proceed to the next step: &lt;a href="https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/">Create VRM from Humanoid 3D Model&lt;/a>&lt;/p>
-&lt;h2 id="univrm-manual">UniVRM Manual&lt;/h2>
-&lt;p>➡ &lt;a href="https://vrm.dev/en/docs/univrm/install/">Install&lt;/a>&lt;/p></description></item><item><title>Docs: 1. Create VRM from Humanoid 3D Models</title><link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link><pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid><description>
-&lt;p>After the UniVRM package is &lt;a href="https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/">installed&lt;/a> successfully, we can start converting the humanoid 3D model to VRM.&lt;/p>
-&lt;h2 id="prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity">Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2>
-&lt;p>First prepare &lt;strong>a 3D model made by your own or allowed to be modified for use as VR avatar. As there are &lt;a href="https://vrm.dev/en/docs/vrm/vrm_meta/">license settings&lt;/a> embedded in VRM file, users need to set them up according to Author&amp;rsquo;s (yourself or others) permission usage.&lt;/strong>&lt;/p>
-&lt;p>Then, ensure the &lt;a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones">required bones&lt;/a> are included so that the model can be recognized as &lt;code>Humanoid&lt;/code>.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Base VRM Model&lt;/h4>
-The conditions for creating a VRM model &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/base_model/">can be found here&lt;/a>
-&lt;/div>
-&lt;h2 id="import-a-fbx-model-into-unity">Import a FBX model into Unity&lt;/h2>
-&lt;p>Here we use &lt;a href="https://3d.nicovideo.jp/works/td14712">Alicia Solid&lt;/a> as an example.
-First, Drag and drop the FBX folder into the &lt;code>Assets&lt;/code> folder:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/fbx_folder.jpg" />
-&lt;hr>
-&lt;p>In the Project window, click blue icon (Alicia_Solid_Unity), which is fbx&amp;rsquo;s asset (prefab):&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/assets_fbx.jpg" />
-&lt;h2 id="fbxs-material-setup">FBX&amp;rsquo;s Material Setup&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/fbx_default.jpg" />
-&lt;hr>
-&lt;p>As shown in the image above, by default FBX&amp;rsquo;s materials are set as &lt;code>Standard&lt;/code> shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material&amp;rsquo;s &lt;code>Shader&lt;/code> to &lt;code>MToon&lt;/code> and &lt;code>Color&lt;/code> to white.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Shader&lt;/h4>
-VRM supports three types of shaders: &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon&lt;/a>, &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/">Unlit&lt;/a> and &lt;a href="https://vrm.dev/en/docs/univrm/shaders/univrm_standard/">Standard&lt;/a>
-&lt;/div>
-&lt;p>Create a folder (e.g. name the folder as &lt;code>Materials&lt;/code>) in FBX folder (&lt;code>/Assets/FBX/Materials&lt;/code>). In FBX&amp;rsquo;s Inspector window, click &lt;code>Materials&lt;/code> -&amp;gt; &lt;code>Extract Materials&lt;/code> and save extracted materials into &lt;code>Materials&lt;/code> folder. If the reference for each material has been assigned in &lt;code>On Demand Remap&lt;/code> section, skip this step. Another way to set up materials is by setting &lt;code>Location&lt;/code> as &lt;code>Use External Materials (Legacy)&lt;/code>. Here we only focus on the former one.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/extract_materials.jpg" alt="extract_materials" width="900" />
-&lt;hr>
-&lt;p>The result should look like this:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/material_folder.jpg" alt="material_folder" />
-&lt;hr>
-&lt;p>Next, select all materials and set &lt;code>Shader&lt;/code> to &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>MToon&lt;/code>:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/change_to_mtoon.jpg" alt="change_to_mtoon" />
-&lt;hr>
-&lt;p>Change &lt;code>Shade Color&lt;/code> to white:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/shade_color_to_white.jpg" alt="shade_color_to_white" />
-&lt;hr>
-&lt;img src="https://vrm.dev/images/vrm/alicia_preview.jpg" />
-&lt;hr>
-&lt;p>For more details about how to set up &lt;code>MToon&lt;/code> shader, refer to &lt;a href="https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/">MToon settings&lt;/a>.&lt;/p>
-&lt;h2 id="humanoid-setup">Humanoid Setup&lt;/h2>
-&lt;p>Originally the &lt;code>Animation Type&lt;/code> for FBX is &lt;code>generic&lt;/code>. Now we need to set it to &lt;code>Humanoid&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/rig_generic.jpg" />
-&lt;hr>
-&lt;p>Change to &lt;code>Humanoid&lt;/code> and click &lt;code>Apply&lt;/code> button:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/humanoid_apply.jpg" alt="humanoid_apply" width="900" />
-&lt;hr>
-&lt;p>Next, click &lt;code>Configure&lt;/code> button to configure your model. A message box will pop up asking whether you want to save the current scene. Click &lt;code>Save&lt;/code> to save it.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/SetModelAsHumanoid.png" alt="SetModelAsHumanoid" width="900" />
-&lt;hr>
-&lt;p>Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&amp;rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red. In this situation, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click &lt;code>Mapping&lt;/code> in the lowerleft of the interface, click &lt;code>clear&lt;/code> and then click &lt;code>Automap&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/BoneMapping.png" alt="BoneMapping" width="600" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/BoneAssignment.png" alt="BoneAssignment" width="900" />
-&lt;/p>
-&lt;p>However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/fix_eye.png" />
-&lt;hr>
-&lt;p>We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click &lt;code>Done&lt;/code> button to proceed to the next step.&lt;/p>
-&lt;h2 id="put-prefab-into-the-scene">Put Prefab into the Scene&lt;/h2>
-&lt;p>Drag the prefab from the Project window to the Hierarchy window.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/DragImportedModel.png" alt="DragImported3DModel" width="300" />
-&lt;hr>
-&lt;p>Now click the model in the Hierarchy window and check its position, rotation and scale:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/initial_position_rotation.jpg" alt="initial_position_rotation" width="800" />
-&lt;hr>
-&lt;ul>
-&lt;li>Model Position
-&lt;ul>
-&lt;li>The model should be placed at the origin&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Model Pose
-&lt;ul>
-&lt;li>The model should face towards +Z(axis) direction&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Model Scale
-&lt;ul>
-&lt;li>1.0 = 1m&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="check-fbxs-blendshape-normal">Check FBX&amp;rsquo;s BlendShape Normal&lt;/h2>
-&lt;p>Check whether the imported fbx has the correct BlendShape normals. The details &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/">can be found here&lt;/a>.&lt;/p>
-&lt;h2 id="export-the-model-as-vrm-from-menu">Export the model as VRM from menu&lt;/h2>
-&lt;p>Select the model GameObject in &lt;code>Hierarchy&lt;/code> window and export it from &lt;code>VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm_menu" width="250" />
-&lt;hr>
-&lt;p>Previous versions: &lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
-&lt;hr>
-&lt;p>&lt;a href="https://vrm.dev/en/docs/univrm/export/univrm_export/">Export dialog&lt;/a>:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/export_dialog_title_version_author_en.jpg" alt="export_dialog_title_version_author_en" width="900" />
-&lt;hr>
-&lt;p>Fill out required fields to resolve error messages displayed on the dialog. Also, don&amp;rsquo;t forget to enter license information about this model.
-If all red messages are gone, click &lt;code>Export&lt;/code> button to export the model. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file can be saved inside/outside the &lt;code>Assets&lt;/code> folder. If the file is saved inside the &lt;code>Assets&lt;/code> folder, its prefab file will be automatically generated.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Error Messages&lt;/h4>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/export062_empty_en.jpg" alt="vrm export" width="600" />&lt;/p>
-&lt;p>Before exporting as VRM, validation checks on each component in the model will be conducted:&lt;/p>
-&lt;ul>
-&lt;li>The error messages (red) need to be resolved&lt;/li>
-&lt;li>The warning messages (yellow) can be ignored if you want to export VRM straight away&lt;/li>
-&lt;/ul>
-&lt;p>For example, if ExportRoot is not valid, the error messages will be displayed on the dialog. See &lt;a href="https://vrm.dev/en/docs/univrm/export/univrm_export/#conditions-for-valid-exportroot">Conditions for Valid ExportRoot&lt;/a> for more information.&lt;/p>
-&lt;/div>
-&lt;h2 id="export-options">Export Options&lt;/h2>
-&lt;img src="https://vrm.dev/images/vrm/export_options_en.jpg" width="900" />
-&lt;hr>
-&lt;p>If the model is not in &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/#t-pose">T-Pose&lt;/a>, click &lt;code>Make T-Pose&lt;/code> to make one.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Pose Freeze&lt;/h4>
-&lt;code>Pose Freeze&lt;/code> is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;install-unity&#34;&gt;Install Unity&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html&#34;&gt;https://docs.unity3d.com/Manual/GettingStartedInstallingUnity.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Make sure the &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/unity_version/&#34;&gt;Unity Version&lt;/a&gt; you are going to download is compatible with UniVRM.&lt;/p&gt;
+&lt;h2 id=&#34;create-an-empty-project-in-unity&#34;&gt;Create an empty project in Unity&lt;/h2&gt;
+&lt;p&gt;Launch Unity and create a new project (&lt;code&gt;New -&amp;gt; Create project&lt;/code&gt;):&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/unity_new_project.png&#34;   /&gt;
+
+&lt;p&gt;For Unity Hub, click &lt;code&gt;Projects -&amp;gt; New -&amp;gt; 3D template -&amp;gt; CREATE&lt;/code&gt;:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/new_project_en.jpg&#34;   /&gt;
+
+&lt;h2 id=&#34;import-univrm-package-into-the-created-project&#34;&gt;Import UniVRM package into the created project&lt;/h2&gt;
+&lt;p&gt;Import the downloaded &lt;code&gt;UniVRM-0.XX.0_YYYY.unitypackage&lt;/code&gt; into the current project (&lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt;). The imported files will be in the folders &lt;code&gt;../Assets/VRM&lt;/code&gt;, &lt;code&gt;../Assets/UniGLTF&lt;/code&gt; and &lt;code&gt;../Assets/VRMShaders&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.jpg&#34; alt=&#34;package_import&#34; width=&#34;400&#34; /&gt;
+
+&lt;p&gt;&lt;strong&gt;To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;check-if-univrm-has-been-imported-successfully&#34;&gt;Check if UniVRM has been imported successfully&lt;/h2&gt;
+&lt;p&gt;If UniVRM import successes, &lt;code&gt;VRM&lt;/code&gt; menu will be displayed in the menu bar:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm menu&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Previous versions:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_old.jpg&#34; alt=&#34;vrm menu old&#34;  /&gt;
+
+&lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;If you are using Unity-2018 and the VRM menu does not show up:&lt;/h4&gt;
+Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; and check whether &lt;code&gt;Scripting Runtime Version&lt;/code&gt; is set to &lt;code&gt;.Net4.X equivalent&lt;/code&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;console&#34;&gt;Console&lt;/h3&gt;
+&lt;p&gt;The errors occurred in a Unity project can be shown in the Console window:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/show_console.jpg&#34; alt=&#34;show console&#34; width=&#34;500&#34; /&gt;
+
+&lt;p&gt;Click &lt;code&gt;clear&lt;/code&gt; button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/error_in_console.jpg&#34; alt=&#34;clear console&#34; width=&#34;500&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;If no errors were found, we can proceed to the next step: &lt;a href=&#34;https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/&#34;&gt;Create VRM from Humanoid 3D Model&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;univrm-manual&#34;&gt;UniVRM Manual&lt;/h2&gt;
+&lt;p&gt;➡ &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/&#34;&gt;Install&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 1. Create VRM from Humanoid 3D Models</title>
+      <link>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</link>
+      <pubDate>Tue, 25 Aug 2020 17:10:30 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/</guid>
+      <description>
+        
+        
+        &lt;p&gt;After the UniVRM package is &lt;a href=&#34;https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/&#34;&gt;installed&lt;/a&gt; successfully, we can start converting the humanoid 3D model to VRM.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-a-3d-model-that-can-be-handled-as-humanoid-in-unity&#34;&gt;Prepare a 3D model that can be handled as &amp;ldquo;Humanoid&amp;rdquo; in Unity&lt;/h2&gt;
+&lt;p&gt;First prepare &lt;strong&gt;a 3D model made by your own or allowed to be modified for use as VR avatar. As there are &lt;a href=&#34;https://vrm.dev/en/docs/vrm/vrm_meta/&#34;&gt;license settings&lt;/a&gt; embedded in VRM file, users need to set them up according to Author&amp;rsquo;s (yourself or others) permission usage.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Then, ensure the &lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones&#34;&gt;required bones&lt;/a&gt; are included so that the model can be recognized as &lt;code&gt;Humanoid&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Base VRM Model&lt;/h4&gt;
+The conditions for creating a VRM model &lt;a href=&#34;https://vrm.dev/en/docs/univrm/humanoid/base_model/&#34;&gt;can be found here&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;import-a-fbx-model-into-unity&#34;&gt;Import a FBX model into Unity&lt;/h2&gt;
+&lt;p&gt;Here we use &lt;a href=&#34;https://3d.nicovideo.jp/works/td14712&#34;&gt;Alicia Solid&lt;/a&gt; as an example.
+First, Drag and drop the FBX folder into the &lt;code&gt;Assets&lt;/code&gt; folder:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/fbx_folder.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;In the Project window, click blue icon (Alicia_Solid_Unity), which is fbx&amp;rsquo;s asset (prefab):&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/assets_fbx.jpg&#34;   /&gt;
+
+&lt;h2 id=&#34;fbxs-material-setup&#34;&gt;FBX&amp;rsquo;s Material Setup&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/fbx_default.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;As shown in the image above, by default FBX&amp;rsquo;s materials are set as &lt;code&gt;Standard&lt;/code&gt; shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material&amp;rsquo;s &lt;code&gt;Shader&lt;/code&gt; to &lt;code&gt;MToon&lt;/code&gt; and &lt;code&gt;Color&lt;/code&gt; to white.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Shader&lt;/h4&gt;
+VRM supports three types of shaders: &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon&lt;/a&gt;, &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;Unlit&lt;/a&gt; and &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_standard/&#34;&gt;Standard&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Create a folder (e.g. name the folder as &lt;code&gt;Materials&lt;/code&gt;) in FBX folder (&lt;code&gt;/Assets/FBX/Materials&lt;/code&gt;). In FBX&amp;rsquo;s Inspector window, click &lt;code&gt;Materials&lt;/code&gt; -&amp;gt; &lt;code&gt;Extract Materials&lt;/code&gt; and save extracted materials into &lt;code&gt;Materials&lt;/code&gt; folder. If the reference for each material has been assigned in &lt;code&gt;On Demand Remap&lt;/code&gt; section, skip this step. Another way to set up materials is by setting &lt;code&gt;Location&lt;/code&gt; as &lt;code&gt;Use External Materials (Legacy)&lt;/code&gt;. Here we only focus on the former one.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/extract_materials.jpg&#34; alt=&#34;extract_materials&#34; width=&#34;900&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;The result should look like this:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/material_folder.jpg&#34; alt=&#34;material_folder&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Next, select all materials and set &lt;code&gt;Shader&lt;/code&gt; to &lt;code&gt;VRM&lt;/code&gt; -&amp;gt; &lt;code&gt;MToon&lt;/code&gt;:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/change_to_mtoon.jpg&#34; alt=&#34;change_to_mtoon&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Change &lt;code&gt;Shade Color&lt;/code&gt; to white:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/shade_color_to_white.jpg&#34; alt=&#34;shade_color_to_white&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_preview.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;For more details about how to set up &lt;code&gt;MToon&lt;/code&gt; shader, refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon settings&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;humanoid-setup&#34;&gt;Humanoid Setup&lt;/h2&gt;
+&lt;p&gt;Originally the &lt;code&gt;Animation Type&lt;/code&gt; for FBX is &lt;code&gt;generic&lt;/code&gt;. Now we need to set it to &lt;code&gt;Humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/rig_generic.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Change to &lt;code&gt;Humanoid&lt;/code&gt; and click &lt;code&gt;Apply&lt;/code&gt; button:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/humanoid_apply.jpg&#34; alt=&#34;humanoid_apply&#34; width=&#34;900&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Next, click &lt;code&gt;Configure&lt;/code&gt; button to configure your model. A message box will pop up asking whether you want to save the current scene. Click &lt;code&gt;Save&lt;/code&gt; to save it.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/SetModelAsHumanoid.png&#34; alt=&#34;SetModelAsHumanoid&#34; width=&#34;900&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Now you will see the bone mapping details for this model. Unity will perform auto-mapping for each bone initially. You can check the model&amp;rsquo;s Body, Head, etc. if an assigned component fits, the leftmost icon will show as green, otherwise it will show as red. In this situation, click rightmost icon for a bone that has the failure bone mapping and select a component you think it fits this bone. To re-map the bones automatically, simply click &lt;code&gt;Mapping&lt;/code&gt; in the lowerleft of the interface, click &lt;code&gt;clear&lt;/code&gt; and then click &lt;code&gt;Automap&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BoneMapping.png&#34; alt=&#34;BoneMapping&#34; width=&#34;600&#34; /&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/BoneAssignment.png&#34; alt=&#34;BoneAssignment&#34; width=&#34;900&#34; /&gt;
+&lt;/p&gt;
+&lt;p&gt;However, in some cases the bone mapping results are not reasonable even all of them appear as green as shown in the figure below:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/fix_eye.png&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;We can see the Jaw and Eyes are assigned by the wrong components. As mentioned above, we can fix them by assigning the right corresponding components manually (e.g. eye_light_L will be replaced with eye_L). If the bone mappings are all right, click &lt;code&gt;Done&lt;/code&gt; button to proceed to the next step.&lt;/p&gt;
+&lt;h2 id=&#34;put-prefab-into-the-scene&#34;&gt;Put Prefab into the Scene&lt;/h2&gt;
+&lt;p&gt;Drag the prefab from the Project window to the Hierarchy window.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/DragImportedModel.png&#34; alt=&#34;DragImported3DModel&#34; width=&#34;300&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Now click the model in the Hierarchy window and check its position, rotation and scale:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/initial_position_rotation.jpg&#34; alt=&#34;initial_position_rotation&#34; width=&#34;800&#34; /&gt;
+
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;Model Position
+&lt;ul&gt;
+&lt;li&gt;The model should be placed at the origin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Model Pose
+&lt;ul&gt;
+&lt;li&gt;The model should face towards +Z(axis) direction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Model Scale
+&lt;ul&gt;
+&lt;li&gt;1.0 = 1m&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;check-fbxs-blendshape-normal&#34;&gt;Check FBX&amp;rsquo;s BlendShape Normal&lt;/h2&gt;
+&lt;p&gt;Check whether the imported fbx has the correct BlendShape normals. The details &lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/check_blendshape_normal/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;export-the-model-as-vrm-from-menu&#34;&gt;Export the model as VRM from menu&lt;/h2&gt;
+&lt;p&gt;Select the model GameObject in &lt;code&gt;Hierarchy&lt;/code&gt; window and export it from &lt;code&gt;VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm_menu&#34; width=&#34;250&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Previous versions: &lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/univrm_export/&#34;&gt;Export dialog&lt;/a&gt;:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_dialog_title_version_author_en.jpg&#34; alt=&#34;export_dialog_title_version_author_en&#34; width=&#34;900&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Fill out required fields to resolve error messages displayed on the dialog. Also, don&amp;rsquo;t forget to enter license information about this model.
+If all red messages are gone, click &lt;code&gt;Export&lt;/code&gt; button to export the model. To easily track this file, it is recommended to name the file like this: &amp;ldquo;Model_Name_Normalized.vrm&amp;rdquo;. The file can be saved inside/outside the &lt;code&gt;Assets&lt;/code&gt; folder. If the file is saved inside the &lt;code&gt;Assets&lt;/code&gt; folder, its prefab file will be automatically generated.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Error Messages&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export062_empty_en.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Before exporting as VRM, validation checks on each component in the model will be conducted:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The error messages (red) need to be resolved&lt;/li&gt;
+&lt;li&gt;The warning messages (yellow) can be ignored if you want to export VRM straight away&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, if ExportRoot is not valid, the error messages will be displayed on the dialog. See &lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/univrm_export/#conditions-for-valid-exportroot&#34;&gt;Conditions for Valid ExportRoot&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;export-options&#34;&gt;Export Options&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/export_options_en.jpg&#34;  width=&#34;900&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;If the model is not in &lt;a href=&#34;https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/#t-pose&#34;&gt;T-Pose&lt;/a&gt;, click &lt;code&gt;Make T-Pose&lt;/code&gt; to make one.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
+&lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export), the model normalization needs to be performed.
-&lt;/div>
-&lt;p>Related sections about UniVRM export:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/export/vrm_size/">VRM Size (BlendShape size reduction)&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>In the next section, we will introduce how to &lt;a href="https://vrm.dev/en/how_to_make_vrm/setup_vrm/">import and set up VRM file first time&lt;/a>.&lt;/p>
-&lt;h2 id="online-resources">Online Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://www.youtube.com/watch?v=i2pOourRdFU">From Blender to VRM: Prepare your own Vtuber Model&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: 2. Set up VRM</title><link>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</link><pubDate>Tue, 25 Aug 2020 17:26:05 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</guid><description>
-&lt;p>In the previous section, we have introduced how to convert a Humanoid 3D model to VRM.
-Now we are going to show how to import and set up a VRM file.&lt;/p>
-&lt;h2 id="import-the-vrm-file">Import the VRM file&lt;/h2>
-&lt;p>First &lt;strong>drag and drop a VRM file (~.vrm) into the Assets folder&lt;/strong>. The &lt;strong>prefab&lt;/strong> file associated with the VRM file can be automatically generated.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_prefab_en.png" />
-&lt;hr>
-&lt;p>Click the prefab file (normalized model) and check the inspector window. As seen in the image below, components such as &lt;code>VRMMeta&lt;/code>, &lt;code>Animator&lt;/code>, &lt;code>VRMBlendShapeProxy&lt;/code>, &lt;code>VRMFirstPerson&lt;/code>, &lt;code>VRMLookAtHead&lt;/code>, &lt;code>VRMLookAtBoneApplyer&lt;/code> are attached to the model:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_components.jpg" width="350" />
-&lt;hr>
-&lt;h2 id="open-vrm-prefab-in-the-scene">Open VRM prefab in the scene&lt;/h2>
-&lt;p>Create a new scene by &lt;code>File&lt;/code> - &lt;code>New Scene&lt;/code> or use an existing one, then drag the prefab file to the Hierarchy window:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/alicia_scene2.png" />
-&lt;hr>
-&lt;h3 id="custom-settings-in-vrm">Custom settings in VRM&lt;/h3>
-&lt;p>By clicking the prefab&amp;rsquo;s GameObject in &lt;code>Hierarchy&lt;/code>, the VRM model&amp;rsquo;s information will be displayed in the Inspector window. Note that &lt;strong>spring bone settings can be found in the GameObject named &amp;ldquo;secondary&amp;rdquo;&lt;/strong>. Also, in &lt;code>VRM Meta&lt;/code>, make sure &lt;a href="https://vrm.dev/en/docs/univrm/meta/univrm_meta/">title, author, license (the most important one)&lt;/a> are set.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
-&lt;hr>
-&lt;p>To make a VRM model fully functional, please set up the following components:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/">Expression and lip-sync (BlendShape)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/">First-person settings (Exclude model&amp;rsquo;s head in first-person view for VR applications)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/">Eye gaze movements controlled by bone or BlendShape&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/">Spring bone (SpringBone/SpringBoneCollider)&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="export-vrm-model-again">Export VRM model again&lt;/h3>
-&lt;p>After the all settings are completed, select the the model (topmost parent GameObject) in &lt;code>Hierarchy&lt;/code> and again export the model from &lt;code>VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm_menu" width="250" />
-&lt;br>&lt;/p>
-&lt;p>Previous versions: &lt;code>VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg" alt="UniVRMExportHumanoid" width="400" />
-&lt;br>&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Pose Freeze&lt;/h4>
-&lt;code>Pose Freeze&lt;/code> is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+&lt;/div&gt;
+
+&lt;p&gt;Related sections about UniVRM export:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/vrm_size/&#34;&gt;VRM Size (BlendShape size reduction)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the next section, we will introduce how to &lt;a href=&#34;https://vrm.dev/en/how_to_make_vrm/setup_vrm/&#34;&gt;import and set up VRM file first time&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;online-resources&#34;&gt;Online Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=i2pOourRdFU&#34;&gt;From Blender to VRM: Prepare your own Vtuber Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 2. Set up VRM</title>
+      <link>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</link>
+      <pubDate>Tue, 25 Aug 2020 17:26:05 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In the previous section, we have introduced how to convert a Humanoid 3D model to VRM.
+Now we are going to show how to import and set up a VRM file.&lt;/p&gt;
+&lt;h2 id=&#34;import-the-vrm-file&#34;&gt;Import the VRM file&lt;/h2&gt;
+&lt;p&gt;First &lt;strong&gt;drag and drop a VRM file (~.vrm) into the Assets folder&lt;/strong&gt;. The &lt;strong&gt;prefab&lt;/strong&gt; file associated with the VRM file can be automatically generated.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_prefab_en.png&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Click the prefab file (normalized model) and check the inspector window. As seen in the image below, components such as &lt;code&gt;VRMMeta&lt;/code&gt;, &lt;code&gt;Animator&lt;/code&gt;, &lt;code&gt;VRMBlendShapeProxy&lt;/code&gt;, &lt;code&gt;VRMFirstPerson&lt;/code&gt;, &lt;code&gt;VRMLookAtHead&lt;/code&gt;, &lt;code&gt;VRMLookAtBoneApplyer&lt;/code&gt; are attached to the model:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_components.jpg&#34;  width=&#34;350&#34; /&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;open-vrm-prefab-in-the-scene&#34;&gt;Open VRM prefab in the scene&lt;/h2&gt;
+&lt;p&gt;Create a new scene by &lt;code&gt;File&lt;/code&gt; - &lt;code&gt;New Scene&lt;/code&gt; or use an existing one, then drag the prefab file to the Hierarchy window:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_scene2.png&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&#34;custom-settings-in-vrm&#34;&gt;Custom settings in VRM&lt;/h3&gt;
+&lt;p&gt;By clicking the prefab&amp;rsquo;s GameObject in &lt;code&gt;Hierarchy&lt;/code&gt;, the VRM model&amp;rsquo;s information will be displayed in the Inspector window. Note that &lt;strong&gt;spring bone settings can be found in the GameObject named &amp;ldquo;secondary&amp;rdquo;&lt;/strong&gt;. Also, in &lt;code&gt;VRM Meta&lt;/code&gt;, make sure &lt;a href=&#34;https://vrm.dev/en/docs/univrm/meta/univrm_meta/&#34;&gt;title, author, license (the most important one)&lt;/a&gt; are set.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;To make a VRM model fully functional, please set up the following components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/&#34;&gt;Expression and lip-sync (BlendShape)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/&#34;&gt;First-person settings (Exclude model&amp;rsquo;s head in first-person view for VR applications)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/&#34;&gt;Eye gaze movements controlled by bone or BlendShape&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/springbone/univrm_secondary/&#34;&gt;Spring bone (SpringBone/SpringBoneCollider)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;export-vrm-model-again&#34;&gt;Export VRM model again&lt;/h3&gt;
+&lt;p&gt;After the all settings are completed, select the the model (topmost parent GameObject) in &lt;code&gt;Hierarchy&lt;/code&gt; and again export the model from &lt;code&gt;VRM0 -&amp;gt; Export UniVRM-0.XX&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm_menu&#34; width=&#34;250&#34; /&gt;
+
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Previous versions: &lt;code&gt;VRM -&amp;gt; UniVRM-0.XX -&amp;gt; Export humanoid&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/UniVRMExportHumanoid.jpg&#34; alt=&#34;UniVRMExportHumanoid&#34; width=&#34;400&#34; /&gt;
+
+&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
+&lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export or adding accessories to the VRM model), the model normalization needs to be performed.
-&lt;/div>
-&lt;p>Other settings such as &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/">Bake BlendShape State&lt;/a> is also available.&lt;/p>
-&lt;h3 id="done">Done！&lt;/h3>
-&lt;p>Your VRM file is good to go. Try to import the VRM file into &lt;a href="https://vrm.dev/en/vrm_applications/">applications&lt;/a> that support VRM!&lt;/p></description></item><item><title>Docs: Check Your VRM in Play Mode</title><link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link><pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate><guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid><description>
-&lt;p>In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p>
-&lt;h3 id="check-models-eye-movements">Check Model&amp;rsquo;s Eye Movements&lt;/h3>
-&lt;p>Set &lt;code>AnimationClip/AnimationController&lt;/code> and set &lt;a href="https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/#target">viewing target&lt;/a> in&lt;code>VRMLookAtHead -&amp;gt; Target&lt;/code>(the head orientation towards the target). For example, you can create a cube as a target from &lt;code>GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code>. Next, serach head component in&lt;code>VRMLookAtHead -&amp;gt; Head&lt;/code>. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are constantly tracking the object. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/LookAtTarget.png" alt="LookAtTarget" width="900" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/TargetTracking.png" alt="TargetTracking" width="500" />
-&lt;/p>
-&lt;h3 id="check-models-expressions">Check Model&amp;rsquo;s Expressions&lt;/h3>
-&lt;p>To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href="https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy">BlendShape&lt;/a>, click &lt;code>Add Component&lt;/code> at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href="https://github.com/vrm-c/UniVRM/releases">runtime VRM loader sample&lt;/a> (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/BlendShapeProxy.png" alt="BlendShapeProxy" width="650" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Double click the&lt;code>BlendShapeAvatar&lt;/code> field to set up expressions for the 3D model&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/AddExpressionScripts.png" alt="AddExpressionScripts" width="650" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/InspectorFaceView.png" alt="InspectorFaceView" width="400" />
-&lt;/p></description></item></channel></rss>
+&lt;/div&gt;
+
+&lt;p&gt;Other settings such as &lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/&#34;&gt;Bake BlendShape State&lt;/a&gt; is also available.&lt;/p&gt;
+&lt;h3 id=&#34;done&#34;&gt;Done！&lt;/h3&gt;
+&lt;p&gt;Your VRM file is good to go. Try to import the VRM file into &lt;a href=&#34;https://vrm.dev/en/vrm_applications/&#34;&gt;applications&lt;/a&gt; that support VRM!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Check Your VRM in Play Mode</title>
+      <link>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</link>
+      <pubDate>Tue, 25 Aug 2020 17:26:54 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/how_to_make_vrm/vrm_behavior_confirmation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this section, we assume you have made a VRM model and want to test it in play mode.&lt;/p&gt;
+&lt;h3 id=&#34;check-models-eye-movements&#34;&gt;Check Model&amp;rsquo;s Eye Movements&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;AnimationClip/AnimationController&lt;/code&gt; and set &lt;a href=&#34;https://vrm.dev/en/docs/univrm/lookat/univrm_lookat/#target&#34;&gt;viewing target&lt;/a&gt; in&lt;code&gt;VRMLookAtHead -&amp;gt; Target&lt;/code&gt;(the head orientation towards the target). For example, you can create a cube as a target from &lt;code&gt;GameObject -&amp;gt; 3D Object -&amp;gt; Cube&lt;/code&gt;. Next, serach head component in&lt;code&gt;VRMLookAtHead -&amp;gt; Head&lt;/code&gt;. After the corresponding components are assigned, check the model&amp;rsquo;s motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model&amp;rsquo;s eyes are constantly tracking the object. The model&amp;rsquo;s close-up face can be viewed in Inspector window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/LookAtTarget.png&#34; alt=&#34;LookAtTarget&#34; width=&#34;900&#34; /&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/TargetTracking.png&#34; alt=&#34;TargetTracking&#34; width=&#34;500&#34; /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;check-models-expressions&#34;&gt;Check Model&amp;rsquo;s Expressions&lt;/h3&gt;
+&lt;p&gt;To test the model&amp;rsquo;s expressions, fairly simple test scripts &amp;ldquo;AIUEO&amp;rdquo; and &amp;ldquo;Blinker&amp;rdquo; are provided. After setting up &lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/#vrmblendshapeproxy&#34;&gt;BlendShape&lt;/a&gt;, click &lt;code&gt;Add Component&lt;/code&gt; at the bottom of model&amp;rsquo;s Inspector window to add &amp;ldquo;AIUEO&amp;rdquo; script or drag the script directly to Inspector. After &amp;ldquo;AIUEO&amp;rdquo; is set, lip synchronization animation that &amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ih&amp;rdquo;, &amp;ldquo;ou&amp;rdquo;, &amp;ldquo;E&amp;rdquo;, &amp;ldquo;oh&amp;rdquo; switches in turn can be created in the scene. Similarly, if &amp;ldquo;Blinker&amp;rdquo; is set, eye blink animation that plays periodically can be created. See &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;runtime VRM loader sample&lt;/a&gt; (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/BlendShapeProxy.png&#34; alt=&#34;BlendShapeProxy&#34; width=&#34;650&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Double click the&lt;code&gt;BlendShapeAvatar&lt;/code&gt; field to set up expressions for the 3D model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/AddExpressionScripts.png&#34; alt=&#34;AddExpressionScripts&#34; width=&#34;650&#34; /&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/InspectorFaceView.png&#34; alt=&#34;InspectorFaceView&#34; width=&#34;400&#34; /&gt;
+&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

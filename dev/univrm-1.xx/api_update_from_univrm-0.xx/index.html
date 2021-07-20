@@ -1,155 +1,1574 @@
-<!doctype html><html lang=ja class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.74.3"><meta name=ROBOTS content="INDEX, FOLLOW"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>APIの変更点 | VRM</title><meta property="og:title" content="APIの変更点"><meta property="og:description" content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo"><meta property="og:type" content="article"><meta property="og:url" content="https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/"><meta property="og:image" content="https://vrm.dev/images/vrm/card.png"><meta property="article:published_time" content="2020-04-21T17:12:49+09:00"><meta property="article:modified_time" content="2021-02-01T09:10:25+09:00"><meta property="og:site_name" content="VRM"><meta itemprop=name content="APIの変更点"><meta itemprop=description content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo"><meta itemprop=datePublished content="2020-04-21T17:12:49+09:00"><meta itemprop=dateModified content="2021-02-01T09:10:25+09:00"><meta itemprop=wordCount content="1412"><meta itemprop=image content="https://vrm.dev/images/vrm/card.png"><meta itemprop=keywords content="api,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://vrm.dev/images/vrm/card.png"><meta name=twitter:title content="APIの変更点"><meta name=twitter:description content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-168395717-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preload href=/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css as=style><link href=/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script></head><body class=td-page><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/><span class=navbar-logo></span><span class="text-uppercase font-weight-bold">VRM</span></a><div class="td-navbar-nav-scroll ml-md-auto flex-grow-1" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/vrm/><span>VRMについて</span></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://github.com/vrm-c/vrm-specification/tree/master/specification target=_blank><span>技術仕様</span>
-<i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://vrm-consortium.org/ target=_blank><span>VRMコンソーシアム</span>
-<i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=https://github.com/vrm-c/UniVRM/releases target=_blank><span>ダウンロード <i class="fab fa-github fa-lg fa-fw"></i></span><i class="fas fa-external-link-alt"></i></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/docs/univrm/><span>UniVRMマニュアル</span></a></li><li class="nav-item mx-auto mb-1 mb-lg-0"><a class=nav-link href=/map/><span>サイトマップ</span></a></li><li class="nav-item dropdown d-none d-lg-block"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Japanese</a><div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink><a class=dropdown-item href=/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/>English</a></div></li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label=サイトを検索... autocomplete=off></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><input type=search class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label=サイトを検索... autocomplete=off>
-<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="collapse td-sidebar-nav" id=td-section-nav><div class="nav-item dropdown d-block d-lg-none"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Japanese</a><div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink><a class=dropdown-item href=/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/>English</a></div></div><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/ class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder-open fa-fw"></i>ドキュメント</a></li><ul><li class="collapse show" id=docs><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/vrm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>VRMについて</a></li><ul><li class=collapse id=vrm><a class="td-sidebar-link td-sidebar-link__page" id=m-vrm_about href=/vrm_about/><i class="fas fa-file fa-fw"></i>「VRM」って何？どんなことができる？</a><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/how_to_make_vrm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>VRMファイルを作ってみたい</a></li><ul><li class=collapse id=how_to_make_vrm><a class="td-sidebar-link td-sidebar-link__page" id=m-docsvrmhow_to_make_vrmsetup_unity href=/docs/vrm/how_to_make_vrm/setup_unity/><i class="fas fa-file fa-fw"></i>0. Unityを用意して、UniVRMをインストールする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-how_to_make_vrmconvert_from_humanoid_model href=/how_to_make_vrm/convert_from_humanoid_model/><i class="fas fa-file fa-fw"></i>1. VRMファイルを作成する</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-how_to_make_vrmsetup_vrm href=/how_to_make_vrm/setup_vrm/><i class="fas fa-file fa-fw"></i>2. VRMをセットアップする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-how_to_make_vrmvrm_behavior_confirmation href=/how_to_make_vrm/vrm_behavior_confirmation/><i class="fas fa-file fa-fw"></i>VRMの動作を確認する</a></li></ul></ul><a class="td-sidebar-link td-sidebar-link__page" id=m-how_to_view_vrm href=/how_to_view_vrm/><i class="fas fa-file fa-fw"></i>ビューアでVRMをインポートする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-vrm_applications href=/vrm_applications/><i class="fas fa-file fa-fw"></i>VRMファイルが使えるアプリケーションは？</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsvrmvrm_meta href=/docs/vrm/vrm_meta/><i class="fas fa-file fa-fw"></i>VRMファイルに設定できるライセンスデータ</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsvrmvrm_development href=/docs/vrm/vrm_development/><i class="fas fa-file fa-fw"></i>VRMで開発する</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>UniVRMマニュアル</a></li><ul><li class=collapse id=docsunivrm><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/install/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Install</a></li><ul><li class=collapse id=docsunivrminstall><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunity_version href=/docs/univrm/install/unity_version/><i class="fas fa-file fa-fw"></i>Unity のバージョン</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunivrm_install href=/docs/univrm/install/univrm_install/><i class="fas fa-file fa-fw"></i>UniVRMをインストールする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunivrm_upm href=/docs/univrm/install/univrm_upm/><i class="fas fa-file fa-fw"></i>UPMでUniVRMをインストールする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunivrm_install_samples href=/docs/univrm/install/univrm_install_samples/><i class="fas fa-file fa-fw"></i>UniVRMサンプルをインストールする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunivrm_uninstall href=/docs/univrm/install/univrm_uninstall/><i class="fas fa-file fa-fw"></i>UniVRMをアンインストールする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrminstallunivrm_version href=/docs/univrm/install/univrm_version/><i class="fas fa-file fa-fw"></i>UniVRM Version</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/export/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Export</a></li><ul><li class=collapse id=docsunivrmexport><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmexportunivrm_export href=/docs/univrm/export/univrm_export/><i class="fas fa-file fa-fw"></i>エクスポートダイアログ</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmexportvrm_size href=/docs/univrm/export/vrm_size/><i class="fas fa-file fa-fw"></i>VRMモデルのファイルサイズ</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/import/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Import</a></li><ul><li class=collapse id=docsunivrmimport><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmimportunivrm_import href=/docs/univrm/import/univrm_import/><i class="fas fa-file fa-fw"></i>VRMをインポートする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmimportprefab_importer_behaviour href=/docs/univrm/import/prefab_importer_behaviour/><i class="fas fa-file fa-fw"></i>PrefabがImportされるタイミングと上書きの注意</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/blendshape/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>BlendShape</a></li><ul><li class=collapse id=docsunivrmblendshape><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmblendshapeunivrm_blendshape href=/docs/univrm/blendshape/univrm_blendshape/><i class="fas fa-file fa-fw"></i>BlendShape</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmblendshapeblendshape_setup href=/docs/univrm/blendshape/blendshape_setup/><i class="fas fa-file fa-fw"></i>BlendShapeのセットアップ(v0.45)</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmblendshapeunivrm_bake_blendshape href=/docs/univrm/blendshape/univrm_bake_blendshape/><i class="fas fa-file fa-fw"></i>エクスポート時にBlendShapeの状態をベイクする</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmblendshapecheck_blendshape_normal href=/docs/univrm/blendshape/check_blendshape_normal/><i class="fas fa-file fa-fw"></i>BlendShape の法線を確認しよう</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/shaders/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Material</a></li><ul><li class=collapse id=docsunivrmshaders><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmshadersshader_mtoon href=/docs/univrm/shaders/shader_mtoon/><i class="fas fa-file fa-fw"></i>MToonの設定</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmshadersunivrm_unlit href=/docs/univrm/shaders/univrm_unlit/><i class="fas fa-file fa-fw"></i>UniUnlit</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmshadersunivrm_standard href=/docs/univrm/shaders/univrm_standard/><i class="fas fa-file fa-fw"></i>Standard</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmshadersunivrm_vrmshaders href=/docs/univrm/shaders/univrm_vrmshaders/><i class="fas fa-file fa-fw"></i>VRMShadersパッケージ</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmshaderstexture_import href=/docs/univrm/shaders/texture_import/><i class="fas fa-file fa-fw"></i>テクスチャーのインポート</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/lookat/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>LookAt</a></li><ul><li class=collapse id=docsunivrmlookat><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmlookatunivrm_lookat href=/docs/univrm/lookat/univrm_lookat/><i class="fas fa-file fa-fw"></i>LookAt</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmlookatlookat_bone href=/docs/univrm/lookat/lookat_bone/><i class="fas fa-file fa-fw"></i>LookAt(Bone)</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmlookatlookat_blendshape href=/docs/univrm/lookat/lookat_blendshape/><i class="fas fa-file fa-fw"></i>LookAt(Blendshape)</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmlookatlookat_uv href=/docs/univrm/lookat/lookat_uv/><i class="fas fa-file fa-fw"></i>LookAt(UV)</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/springbone/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>SpringBone</a></li><ul><li class=collapse id=docsunivrmspringbone><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmspringboneunivrm_secondary href=/docs/univrm/springbone/univrm_secondary/><i class="fas fa-file fa-fw"></i>揺れモノ</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/humanoid/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Humanoid</a></li><ul><li class=collapse id=docsunivrmhumanoid><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmhumanoidhumanoid_overview href=/docs/univrm/humanoid/humanoid_overview/><i class="fas fa-file fa-fw"></i>ヒューマノイド概要</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmhumanoidbase_model href=/docs/univrm/humanoid/base_model/><i class="fas fa-file fa-fw"></i>BaseModel</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmhumanoidmeshutility_humanoid href=/docs/univrm/humanoid/meshutility_humanoid/><i class="fas fa-file fa-fw"></i>HumanoidComponent</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/meta/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Meta</a></li><ul><li class=collapse id=docsunivrmmeta><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmmetaunivrm_meta href=/docs/univrm/meta/univrm_meta/><i class="fas fa-file fa-fw"></i>モデル情報</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/firstperson/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>FirstPerson</a></li><ul><li class=collapse id=docsunivrmfirstperson><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmfirstpersonunivrm_firstperson href=/docs/univrm/firstperson/univrm_firstperson/><i class="fas fa-file fa-fw"></i>VRMFirstPerson</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/gltf/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>GLTF</a></li><ul><li class=collapse id=docsunivrmgltf><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfgltf_about href=/docs/univrm/gltf/gltf_about/><i class="fas fa-file fa-fw"></i>GLTFとは</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfunigltf href=/docs/univrm/gltf/unigltf/><i class="fas fa-file fa-fw"></i>UniGLTF</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfglb_import href=/docs/univrm/gltf/glb_import/><i class="fas fa-file fa-fw"></i>Glbインポート</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfhow_to_create_glb href=/docs/univrm/gltf/how_to_create_glb/><i class="fas fa-file fa-fw"></i>Glbエクスポート</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfanimation_exporter href=/docs/univrm/gltf/animation_exporter/><i class="fas fa-file fa-fw"></i>アニメーション</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfmesh_utility href=/docs/univrm/gltf/mesh_utility/><i class="fas fa-file fa-fw"></i>Mesh Utility</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmgltfhow_to_impl_extension href=/docs/univrm/gltf/how_to_impl_extension/><i class="fas fa-file fa-fw"></i>拡張を実装する</a></li></ul></ul><ul class="td-sidebar-nav__section pr-md-3"><li class=td-sidebar-nav__section-title><a href=/docs/univrm/programming/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"><i class="fas fa-folder fa-fw"></i>Programming</a></li><ul><li class=collapse id=docsunivrmprogramming><a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_api_history href=/docs/univrm/programming/univrm_api_history/><i class="fas fa-file fa-fw"></i>APIの変更履歴</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingruntime_import href=/docs/univrm/programming/runtime_import/><i class="fas fa-file fa-fw"></i>ランタイムインポーター</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_use_blendshape href=/docs/univrm/programming/univrm_use_blendshape/><i class="fas fa-file fa-fw"></i>BlendShapeProxyの使い方</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_coordinate href=/docs/univrm/programming/univrm_coordinate/><i class="fas fa-file fa-fw"></i>座標系の変換について</a>
-<a class="td-sidebar-link td-sidebar-link__page" id=m-docsunivrmprogrammingunivrm_use_firstperson href=/docs/univrm/programming/univrm_use_firstperson/><i class="fas fa-file fa-fw"></i>一人称モードの使い方</a></li></ul></ul></li></ul></ul></li></ul></ul></nav></div></div><div class="d-none d-xl-block col-xl-2 td-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"><a href=https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/dev/univrm-1.xx/api_update_from_univrm-0.xx.md target=_blank><i class="fa fa-edit fa-fw"></i>ページの編集</a>
-<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=API%e3%81%ae%e5%a4%89%e6%9b%b4%e7%82%b9" target=_blank><i class="fab fa-github fa-fw"></i>ドキュメントのissueを作成</a></div><nav id=TableOfContents><ul><li><a href=#import>Import</a><ul><li><a href=#example>Example</a></li></ul></li><li><a href=#export>Export</a><ul><li><a href=#example-1>Example</a></li></ul></li><li><a href=#lookat>LookAt</a><ul><li><a href=#example-2>Example</a></li></ul></li></ul></nav></div><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main><nav aria-label=breadcrumb class="d-none d-md-block d-print-none"><ol class="breadcrumb spb-1"><li class=breadcrumb-item><a href=https://vrm.dev/docs/>ドキュメント</a></li><li class=breadcrumb-item><a href=https://vrm.dev/dev/univrm-1.xx/>UniVRM-1.XX</a></li><li class="breadcrumb-item active" aria-current=page><a href=https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/>APIの変更点</a></li></ol></nav><div class=td-content><h1>APIの変更点</h1><ul class=tags><li><a href=/tags/api>api</a></ul><div class=share><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-text="APIの変更点 - VRM" data-url=https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/ data-show-count=false>Tweet</a>
-<script async src=https://platform.twitter.com/widgets.js></script><a href=https://b.hatena.ne.jp/entry/https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/ class=hatena-bookmark-button data-hatena-bookmark-layout=basic-label-counter data-hatena-bookmark-lang=ja title=このエントリーをはてなブックマークに追加><img src=https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png alt=このエントリーをはてなブックマークに追加 width=20 height=20 style=border:none></a>
-<script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdev%2funivrm-1.xx%2fapi_update_from_univrm-0.xx%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId" width=68 height=20 style=border:none;overflow:hidden scrolling=no frameborder=0 allowtransparency=true></iframe></div><div class="text-muted mb-2 pt-3">2020-04-21 17:12:49 +0900 +0900<br>最終更新 2021/02/01: <a href=https://github.com/vrm-c/vrm.dev/commit/24fe59edb18ff7c2cbd398fffd775564ee09e5fa>update contents (24fe59e)</a></div><h2 id=import>Import</h2><ul><li>VRMをインポートするために（<code>UniGLTF.ImporterContext.Load</code>）使用されるクラス<code>VRM.VRMImporterContext</code>は削除されました。UniVRMインポーターはVRMデータ（<code>UniVRM10.VrmLoader.CreateVrmModel</code>）を<code>VrmLib.Model</code>に保存してからUnityに構築します</li><li><code>UniVRM10.UnityBuilder.ToUnityAsset</code>は<code>VrmLib.Model</code>からUnity Assetにデータを転送します。0.XXの <code>UniGLTF.ImporterContext.ShowMeshes</code>が<code>ToUnityAsset</code>のboolパラメータに変更されました</li><li><code>UniVRM10.ComponentBuilder.Build10</code>はVRM GameObjectに対してMeta, BlendShape, LookAtなどのコンポーネントをセットアップします</li></ul><h3 id=example>Example</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs>    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System.IO</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>UnityEngine</span>;
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.74.3" />
 
-    <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>class</span> <span style=color:#0a8;font-weight:700>MyClass</span> : MonoBehaviour
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>APIの変更点 | VRM</title><meta property="og:title" content="APIの変更点" />
+<meta property="og:description" content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/" />
+<meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
+<meta property="article:published_time" content="2020-04-21T17:12:49+09:00" />
+<meta property="article:modified_time" content="2020-09-15T20:06:14+09:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="APIの変更点">
+<meta itemprop="description" content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo">
+<meta itemprop="datePublished" content="2020-04-21T17:12:49+09:00" />
+<meta itemprop="dateModified" content="2020-09-15T20:06:14+09:00" />
+<meta itemprop="wordCount" content="1412">
+<meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
+
+
+
+<meta itemprop="keywords" content="api," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
+
+<meta name="twitter:title" content="APIの変更点"/>
+<meta name="twitter:description" content="Import VRMをインポートするために（UniGLTF.ImporterContext.Load）使用されるクラスVRM.VRMImporterCo"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css" as="style">
+<link href="/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">VRM</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto flex-grow-1" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+				
+				
+                <a class="nav-link" href="/vrm/" ><span>VRMについて</span>
+                                                        
+                </a>
+			</li>
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+                <a class="nav-link" href="https://github.com/vrm-c/vrm-specification/tree/master/specification" target="_blank" ><span>技術仕様</span>
+                    <i class='fas fa-external-link-alt'></i>                                    
+                </a>
+			</li>
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+                <a class="nav-link" href="https://vrm-consortium.org/" target="_blank" ><span>VRMコンソーシアム</span>
+                    <i class='fas fa-external-link-alt'></i>                                    
+                </a>
+			</li>
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+                <a class="nav-link" href="https://github.com/vrm-c/UniVRM/releases" target="_blank" ><span>ダウンロード <i class='fab fa-github fa-lg fa-fw'></i></span>
+                    <i class='fas fa-external-link-alt'></i>                                    
+                </a>
+			</li>
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+				
+				
+                <a class="nav-link" href="/docs/univrm/" ><span>UniVRMマニュアル</span>
+                                                        
+                </a>
+			</li>
+			
+			<li class="nav-item mx-auto mb-1 mb-lg-0">
+				
+				
+				
+				
+				
+				
+                <a class="nav-link" href="/map/" ><span>サイトマップ</span>
+                                                        
+                </a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/dev/univrm-1.xx/api_update_from_univrm-0.xx/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder-open fa-fw"></i>
+        
+        ドキュメント
+    </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/vrm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        VRMについて
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="vrm">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-vrm_about" href="/vrm_about/">
+          <i class="fas fa-file fa-fw"></i>
+          「VRM」って何？どんなことができる？
+      </a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/how_to_make_vrm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        VRMファイルを作ってみたい
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="how_to_make_vrm">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrmhow_to_make_vrmsetup_unity" href="/docs/vrm/how_to_make_vrm/setup_unity/">
+          <i class="fas fa-file fa-fw"></i>
+          0. Unityを用意して、UniVRMをインストールする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-how_to_make_vrmconvert_from_humanoid_model" href="/how_to_make_vrm/convert_from_humanoid_model/">
+          <i class="fas fa-file fa-fw"></i>
+          1. VRMファイルを作成する
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-how_to_make_vrmsetup_vrm" href="/how_to_make_vrm/setup_vrm/">
+          <i class="fas fa-file fa-fw"></i>
+          2. VRMをセットアップする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-how_to_make_vrmvrm_behavior_confirmation" href="/how_to_make_vrm/vrm_behavior_confirmation/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMの動作を確認する
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-how_to_view_vrm" href="/how_to_view_vrm/">
+          <i class="fas fa-file fa-fw"></i>
+          ビューアでVRMをインポートする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-vrm_applications" href="/vrm_applications/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMファイルが使えるアプリケーションは？
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrmvrm_meta" href="/docs/vrm/vrm_meta/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMファイルに設定できるライセンスデータ
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrmvrm_development" href="/docs/vrm/vrm_development/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMで開発する
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        UniVRMマニュアル
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrm">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/install/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Install
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrminstall">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunity_version" href="/docs/univrm/install/unity_version/">
+          <i class="fas fa-file fa-fw"></i>
+          Unity のバージョン
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunivrm_install" href="/docs/univrm/install/univrm_install/">
+          <i class="fas fa-file fa-fw"></i>
+          UniVRMをインストールする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunivrm_upm" href="/docs/univrm/install/univrm_upm/">
+          <i class="fas fa-file fa-fw"></i>
+          UPMでUniVRMをインストールする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunivrm_install_samples" href="/docs/univrm/install/univrm_install_samples/">
+          <i class="fas fa-file fa-fw"></i>
+          UniVRMサンプルをインストールする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunivrm_uninstall" href="/docs/univrm/install/univrm_uninstall/">
+          <i class="fas fa-file fa-fw"></i>
+          UniVRMをアンインストールする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrminstallunivrm_version" href="/docs/univrm/install/univrm_version/">
+          <i class="fas fa-file fa-fw"></i>
+          UniVRM Version
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/export/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Export
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmexport">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmexportunivrm_export" href="/docs/univrm/export/univrm_export/">
+          <i class="fas fa-file fa-fw"></i>
+          エクスポートダイアログ
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmexportvrm_size" href="/docs/univrm/export/vrm_size/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMモデルのファイルサイズ
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/import/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Import
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmimport">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmimportunivrm_import" href="/docs/univrm/import/univrm_import/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMをインポートする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmimportprefab_importer_behaviour" href="/docs/univrm/import/prefab_importer_behaviour/">
+          <i class="fas fa-file fa-fw"></i>
+          PrefabがImportされるタイミングと上書きの注意
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/blendshape/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        BlendShape
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmblendshape">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmblendshapeunivrm_blendshape" href="/docs/univrm/blendshape/univrm_blendshape/">
+          <i class="fas fa-file fa-fw"></i>
+          BlendShape
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmblendshapeblendshape_setup" href="/docs/univrm/blendshape/blendshape_setup/">
+          <i class="fas fa-file fa-fw"></i>
+          BlendShapeのセットアップ(v0.45)
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmblendshapeunivrm_bake_blendshape" href="/docs/univrm/blendshape/univrm_bake_blendshape/">
+          <i class="fas fa-file fa-fw"></i>
+          エクスポート時にBlendShapeの状態をベイクする
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmblendshapecheck_blendshape_normal" href="/docs/univrm/blendshape/check_blendshape_normal/">
+          <i class="fas fa-file fa-fw"></i>
+          BlendShape の法線を確認しよう
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/shaders/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Material
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmshaders">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
+          <i class="fas fa-file fa-fw"></i>
+          MToonの設定
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_unlit" href="/docs/univrm/shaders/univrm_unlit/">
+          <i class="fas fa-file fa-fw"></i>
+          UniUnlit
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_standard" href="/docs/univrm/shaders/univrm_standard/">
+          <i class="fas fa-file fa-fw"></i>
+          Standard
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_vrmshaders" href="/docs/univrm/shaders/univrm_vrmshaders/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMShadersパッケージ
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshaderstexture_import" href="/docs/univrm/shaders/texture_import/">
+          <i class="fas fa-file fa-fw"></i>
+          テクスチャーのインポート
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/lookat/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        LookAt
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmlookat">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmlookatunivrm_lookat" href="/docs/univrm/lookat/univrm_lookat/">
+          <i class="fas fa-file fa-fw"></i>
+          LookAt
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmlookatlookat_bone" href="/docs/univrm/lookat/lookat_bone/">
+          <i class="fas fa-file fa-fw"></i>
+          LookAt(Bone)
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmlookatlookat_blendshape" href="/docs/univrm/lookat/lookat_blendshape/">
+          <i class="fas fa-file fa-fw"></i>
+          LookAt(Blendshape)
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmlookatlookat_uv" href="/docs/univrm/lookat/lookat_uv/">
+          <i class="fas fa-file fa-fw"></i>
+          LookAt(UV)
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/springbone/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        SpringBone
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmspringbone">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmspringboneunivrm_secondary" href="/docs/univrm/springbone/univrm_secondary/">
+          <i class="fas fa-file fa-fw"></i>
+          揺れモノ
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/humanoid/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Humanoid
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmhumanoid">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmhumanoidhumanoid_overview" href="/docs/univrm/humanoid/humanoid_overview/">
+          <i class="fas fa-file fa-fw"></i>
+          ヒューマノイド概要
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmhumanoidbase_model" href="/docs/univrm/humanoid/base_model/">
+          <i class="fas fa-file fa-fw"></i>
+          BaseModel
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmhumanoidmeshutility_humanoid" href="/docs/univrm/humanoid/meshutility_humanoid/">
+          <i class="fas fa-file fa-fw"></i>
+          HumanoidComponent
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/meta/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Meta
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmmeta">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmmetaunivrm_meta" href="/docs/univrm/meta/univrm_meta/">
+          <i class="fas fa-file fa-fw"></i>
+          モデル情報
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/firstperson/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        FirstPerson
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmfirstperson">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmfirstpersonunivrm_firstperson" href="/docs/univrm/firstperson/univrm_firstperson/">
+          <i class="fas fa-file fa-fw"></i>
+          VRMFirstPerson
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/gltf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        GLTF
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmgltf">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfgltf_about" href="/docs/univrm/gltf/gltf_about/">
+          <i class="fas fa-file fa-fw"></i>
+          GLTFとは
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfunigltf" href="/docs/univrm/gltf/unigltf/">
+          <i class="fas fa-file fa-fw"></i>
+          UniGLTF
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfglb_import" href="/docs/univrm/gltf/glb_import/">
+          <i class="fas fa-file fa-fw"></i>
+          Glbインポート
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfhow_to_create_glb" href="/docs/univrm/gltf/how_to_create_glb/">
+          <i class="fas fa-file fa-fw"></i>
+          Glbエクスポート
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfanimation_exporter" href="/docs/univrm/gltf/animation_exporter/">
+          <i class="fas fa-file fa-fw"></i>
+          アニメーション
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfmesh_utility" href="/docs/univrm/gltf/mesh_utility/">
+          <i class="fas fa-file fa-fw"></i>
+          Mesh Utility
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmgltfhow_to_impl_extension" href="/docs/univrm/gltf/how_to_impl_extension/">
+          <i class="fas fa-file fa-fw"></i>
+          拡張を実装する
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/univrm/programming/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        Programming
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsunivrmprogramming">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmprogrammingunivrm_api_history" href="/docs/univrm/programming/univrm_api_history/">
+          <i class="fas fa-file fa-fw"></i>
+          APIの変更履歴
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmprogrammingruntime_import" href="/docs/univrm/programming/runtime_import/">
+          <i class="fas fa-file fa-fw"></i>
+          ランタイムインポーター
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmprogrammingunivrm_use_blendshape" href="/docs/univrm/programming/univrm_use_blendshape/">
+          <i class="fas fa-file fa-fw"></i>
+          BlendShapeProxyの使い方
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmprogrammingunivrm_coordinate" href="/docs/univrm/programming/univrm_coordinate/">
+          <i class="fas fa-file fa-fw"></i>
+          座標系の変換について
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmprogrammingunivrm_use_firstperson" href="/docs/univrm/programming/univrm_use_firstperson/">
+          <i class="fas fa-file fa-fw"></i>
+          一人称モードの使い方
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/dev/univrm-1.xx/api_update_from_univrm-0.xx.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=API%e3%81%ae%e5%a4%89%e6%9b%b4%e7%82%b9" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#import">Import</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#export">Export</a>
+      <ul>
+        <li><a href="#example-1">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#lookat">LookAt</a>
+      <ul>
+        <li><a href="#example-2">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://vrm.dev/docs/">ドキュメント</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://vrm.dev/dev/univrm-1.xx/">UniVRM-1.XX</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/">APIの変更点</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+    <h1>APIの変更点</h1>
+    
+<ul class="tags"><li><a href="/tags/api">api</a></ul>
+
+    
+    <div class="share">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+            data-text="APIの変更点 - VRM" data-url="https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/"
+            data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/dev/univrm-1.xx/api_update_from_univrm-0.xx/" class="hatena-bookmark-button"
+            data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja"
+            title="このエントリーをはてなブックマークに追加"><img
+                src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+                alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+        <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
+            async="async"></script>
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdev%2funivrm-1.xx%2fapi_update_from_univrm-0.xx%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
+            width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true"></iframe>
+    </div>
+    <div class="text-muted mb-2 pt-3">2020-04-21 17:12:49 &#43;0900 &#43;0900
+<br>
+最終更新 2020/09/15: <a  href="https://github.com/vrm-c/vrm.dev/commit/cdaf1eb29a3d15ebbae4bf20e3494ee3274c2a0b">tags(unity, detail, api, gltf...) (cdaf1eb2)</a>
+</div>
+
+    
+    <h2 id="import">Import</h2>
+<ul>
+<li>VRMをインポートするために（<code>UniGLTF.ImporterContext.Load</code>）使用されるクラス<code>VRM.VRMImporterContext</code>は削除されました。UniVRMインポーターはVRMデータ（<code>UniVRM10.VrmLoader.CreateVrmModel</code>）を<code>VrmLib.Model</code>に保存してからUnityに構築します</li>
+<li><code>UniVRM10.UnityBuilder.ToUnityAsset</code>は<code>VrmLib.Model</code>からUnity Assetにデータを転送します。0.XXの <code>UniGLTF.ImporterContext.ShowMeshes</code>が<code>ToUnityAsset</code>のboolパラメータに変更されました</li>
+<li><code>UniVRM10.ComponentBuilder.Build10</code>はVRM GameObjectに対してMeta, BlendShape, LookAtなどのコンポーネントをセットアップします</li>
+</ul>
+<h3 id="example">Example</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System.IO</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">UnityEngine</span>;
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyClass</span> : MonoBehaviour
     {
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>
-        <span style=color:#09f;font-style:italic>/**
-</span><span style=color:#09f;font-style:italic>         * VRMインポート
-</span><span style=color:#09f;font-style:italic>         *
-</span><span style=color:#09f;font-style:italic>         * @return vrmオブジェクト
-</span><span style=color:#09f;font-style:italic>         */</span>
-        <span style=color:#069;font-weight:700>public</span> GameObject Import()
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">         * VRMインポート
+</span><span style="color:#09f;font-style:italic">         *
+</span><span style="color:#09f;font-style:italic">         * @return vrmオブジェクト
+</span><span style="color:#09f;font-style:italic">         */</span>
+        <span style="color:#069;font-weight:bold">public</span> GameObject Import()
         {
-            <span style=color:#09f;font-style:italic>// ファイルパス
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> path = <span style=color:#c30>&#34;../YourModel.vrm&#34;</span>;
-            <span style=color:#078;font-weight:700>var</span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
+            <span style="color:#09f;font-style:italic">// ファイルパス
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> path = <span style="color:#c30">&#34;../YourModel.vrm&#34;</span>;
+            <span style="color:#078;font-weight:bold">var</span> model = UniVRM10.VrmLoader.CreateVrmModel(path);
 
-            <span style=color:#09f;font-style:italic>// UniVRM-0.XXのコンポーネントを構築する
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(model, showMesh: <span style=color:#069;font-weight:700>false</span>);
+            <span style="color:#09f;font-style:italic">// UniVRM-0.XXのコンポーネントを構築する
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(model, showMesh: <span style="color:#069;font-weight:bold">false</span>);
 
-            <span style=color:#09f;font-style:italic>// showRenderer = false のときに後で表示する例
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#069;font-weight:700>foreach</span> (<span style=color:#078;font-weight:700>var</span> renderer <span style=color:#069;font-weight:700>in</span> assets.Renderers)
+            <span style="color:#09f;font-style:italic">// showRenderer = false のときに後で表示する例
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#069;font-weight:bold">foreach</span> (<span style="color:#078;font-weight:bold">var</span> renderer <span style="color:#069;font-weight:bold">in</span> assets.Renderers)
             {
-                renderer.enabled = <span style=color:#069;font-weight:700>true</span>;             
-                <span style=color:#09f;font-style:italic>// カリングを避ける
-</span><span style=color:#09f;font-style:italic></span>                <span style=color:#069;font-weight:700>if</span> (renderer <span style=color:#069;font-weight:700>is</span> SkinnedMeshRenderer skinned)
+                renderer.enabled = <span style="color:#069;font-weight:bold">true</span>;             
+                <span style="color:#09f;font-style:italic">// カリングを避ける
+</span><span style="color:#09f;font-style:italic"></span>                <span style="color:#069;font-weight:bold">if</span> (renderer <span style="color:#069;font-weight:bold">is</span> SkinnedMeshRenderer skinned)
                 {
-                    skinned.updateWhenOffscreen = <span style=color:#069;font-weight:700>true</span>;
+                    skinned.updateWhenOffscreen = <span style="color:#069;font-weight:bold">true</span>;
                 }
             }
 
             UniVRM10.ComponentBuilder.Build10(model, assets);
-            <span style=color:#078;font-weight:700>var</span> vrmObject = assets.Root; 　　　　　　 
+            <span style="color:#078;font-weight:bold">var</span> vrmObject = assets.Root; 　　　　　　 
 
-            <span style=color:#069;font-weight:700>return</span> vrmObject;
+            <span style="color:#069;font-weight:bold">return</span> vrmObject;
         }
 
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>    }
-</code></pre></div><h2 id=export>Export</h2><ul><li>VRMをエクスポートするために（<code>UniGLTF.gltfExporter.Export</code>）使用されるクラス<code>VRM.VRMExporter</code>は削除されました。UniVRMエクスポーターはVRMデータ（<code>RuntimeVrmConverter.ToModelFrom10</code>）をVRM GameObjectから<code>VrmLib.Model</code>に転送してVRMファイルに保存します</li><li><code>Vrm10.ModelExtensions.ToGlb</code>はデータを<code>VrmLib.Model</code>からglbに転送します。<code>.glb</code>ファイルは<code>.vrm</code>と交換可能です。UnityとGLTF間の座標変換は <code>VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate</code>です</li></ul><h3 id=example-1>Example</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs>    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System.IO</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>UnityEngine</span>;
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>    }
+</code></pre></div><h2 id="export">Export</h2>
+<ul>
+<li>VRMをエクスポートするために（<code>UniGLTF.gltfExporter.Export</code>）使用されるクラス<code>VRM.VRMExporter</code>は削除されました。UniVRMエクスポーターはVRMデータ（<code>RuntimeVrmConverter.ToModelFrom10</code>）をVRM GameObjectから<code>VrmLib.Model</code>に転送してVRMファイルに保存します</li>
+<li><code>Vrm10.ModelExtensions.ToGlb</code>はデータを<code>VrmLib.Model</code>からglbに転送します。<code>.glb</code>ファイルは<code>.vrm</code>と交換可能です。UnityとGLTF間の座標変換は <code>VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate</code>です</li>
+</ul>
+<h3 id="example-1">Example</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System.IO</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">UnityEngine</span>;
 
-    <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>class</span> <span style=color:#0a8;font-weight:700>MyClass</span> : MonoBehaviour
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyClass</span> : MonoBehaviour
     {
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>
-        <span style=color:#09f;font-style:italic>/**
-</span><span style=color:#09f;font-style:italic>         * VRMエクスポート
-</span><span style=color:#09f;font-style:italic>         */</span>
-        <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>void</span> Export()
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">         * VRMエクスポート
+</span><span style="color:#09f;font-style:italic">         */</span>
+        <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">void</span> Export()
         {
-            <span style=color:#09f;font-style:italic>// ファイルパス
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> importPath = <span style=color:#c30>&#34;../YourModel.vrm&#34;</span>;
-            <span style=color:#078;font-weight:700>var</span> importedModel = UniVRM10.VrmLoader.CreateVrmModel(importPath);
-            <span style=color:#078;font-weight:700>var</span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(importedModel);
+            <span style="color:#09f;font-style:italic">// ファイルパス
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> importPath = <span style="color:#c30">&#34;../YourModel.vrm&#34;</span>;
+            <span style="color:#078;font-weight:bold">var</span> importedModel = UniVRM10.VrmLoader.CreateVrmModel(importPath);
+            <span style="color:#078;font-weight:bold">var</span> assets = UniVRM10.RuntimeUnityBuilder.ToUnityAsset(importedModel);
             UniVRM10.ComponentBuilder.Build10(importedModel, assets);　
             
-            <span style=color:#09f;font-style:italic>// 1.0でエクスポート
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> exporter = <span style=color:#069;font-weight:700>new</span> UniVRM10.RuntimeVrmConverter();
-            <span style=color:#078;font-weight:700>var</span> model = exporter.ToModelFrom10(assets.Root);
+            <span style="color:#09f;font-style:italic">// 1.0でエクスポート
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> exporter = <span style="color:#069;font-weight:bold">new</span> UniVRM10.RuntimeVrmConverter();
+            <span style="color:#078;font-weight:bold">var</span> model = exporter.ToModelFrom10(assets.Root);
 
-            <span style=color:#09f;font-style:italic>// 右手系に変換
-</span><span style=color:#09f;font-style:italic></span>            VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
-            <span style=color:#078;font-weight:700>var</span> exportedBytes = Vrm10.ModelExtensions.ToGlb(model);
+            <span style="color:#09f;font-style:italic">// 右手系に変換
+</span><span style="color:#09f;font-style:italic"></span>            VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
+            <span style="color:#078;font-weight:bold">var</span> exportedBytes = Vrm10.ModelExtensions.ToGlb(model);
             
-            <span style=color:#09f;font-style:italic>// 1.0モデルを書き出す
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> path = <span style=color:#c30>&#34;vrm10.vrm&#34;</span>;
+            <span style="color:#09f;font-style:italic">// 1.0モデルを書き出す
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> path = <span style="color:#c30">&#34;vrm10.vrm&#34;</span>;
             File.WriteAllBytes(path, exportedBytes);
         }
 
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>    }
-</code></pre></div><h2 id=lookat>LookAt</h2><ul><li>LookAt関連クラス<code>VRM.VRMLookAtBoneApplyer</code>、<code>VRM.VRMLookAtBlendShapeApplyer</code>、<code>VRM.VRMLookAtHead</code>が<code>UniVRM10.VRMController</code>に統合されました</li><li><code>VRM.LookAtType</code>は<code>UniVRM10.VRMController.LookAtTypes</code>に変更されました</li><li><code>VRMLookAtHead.Target</code>は<code>VRMController.Gaze</code>に置き換えられました</li><li><code>UniVRM10.VRMController.LookAtTargetTypes</code>を追加しました。自動で頭に対するyaw・pitch角度を取得するか、yaw・pitch角度をセットするの選択肢があります</li></ul><h3 id=example-2>Example</h3><div class=highlight><pre style=background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs>    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>System.IO</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>UnityEngine</span>;
-    <span style=color:#069;font-weight:700>using</span> <span style=color:#0cf;font-weight:700>UniVRM10</span>;
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>    }
+</code></pre></div><h2 id="lookat">LookAt</h2>
+<ul>
+<li>LookAt関連クラス<code>VRM.VRMLookAtBoneApplyer</code>、<code>VRM.VRMLookAtBlendShapeApplyer</code>、<code>VRM.VRMLookAtHead</code>が<code>UniVRM10.VRMController</code>に統合されました</li>
+<li><code>VRM.LookAtType</code>は<code>UniVRM10.VRMController.LookAtTypes</code>に変更されました</li>
+<li><code>VRMLookAtHead.Target</code>は<code>VRMController.Gaze</code>に置き換えられました</li>
+<li><code>UniVRM10.VRMController.LookAtTargetTypes</code>を追加しました。自動で頭に対するyaw・pitch角度を取得するか、yaw・pitch角度をセットするの選択肢があります</li>
+</ul>
+<h3 id="example-2">Example</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">System.IO</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">UnityEngine</span>;
+    <span style="color:#069;font-weight:bold">using</span> <span style="color:#0cf;font-weight:bold">UniVRM10</span>;
 
-    <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>class</span> <span style=color:#0a8;font-weight:700>MyClass</span> : MonoBehaviour
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyClass</span> : MonoBehaviour
     {
-<span style=color:#309>        [SerializeField]</span>
-        <span style=color:#069;font-weight:700>private</span> GameObject _vrmModel;
-<span style=color:#309>        
-</span><span style=color:#309>        [SerializeField]</span>
-        <span style=color:#069;font-weight:700>private</span> GameObject _targetObject;
+<span style="color:#309">        [SerializeField]</span>
+        <span style="color:#069;font-weight:bold">private</span> GameObject _vrmModel;
+<span style="color:#309">        
+</span><span style="color:#309">        [SerializeField]</span>
+        <span style="color:#069;font-weight:bold">private</span> GameObject _targetObject;
 
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>
-        <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>void</span> SpecifyLookAtTarget()
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">void</span> SpecifyLookAtTarget()
         {
-            <span style=color:#078;font-weight:700>var</span> proxy = _vrmModel.GetComponent&lt;VRMController&gt;();
+            <span style="color:#078;font-weight:bold">var</span> proxy = _vrmModel.GetComponent&lt;VRMController&gt;();
             proxy.LookAtTargetType = VRMController.LookAtTargetTypes.CalcYawPitchToGaze;
 
-            <span style=color:#09f;font-style:italic>// LookAtターゲットを指定する
-</span><span style=color:#09f;font-style:italic></span>            _vrmModel.GetComponent&lt;VRMController&gt;().Gaze = _targetObject.transform;
+            <span style="color:#09f;font-style:italic">// LookAtターゲットを指定する
+</span><span style="color:#09f;font-style:italic"></span>            _vrmModel.GetComponent&lt;VRMController&gt;().Gaze = _targetObject.transform;
 
-            <span style=color:#09f;font-style:italic>// 頭に対するyaw・pitch角度を取得する
-</span><span style=color:#09f;font-style:italic></span>            <span style=color:#078;font-weight:700>var</span> (yaw, pitch) = proxy.GetLookAtYawPitch();
+            <span style="color:#09f;font-style:italic">// 頭に対するyaw・pitch角度を取得する
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#078;font-weight:bold">var</span> (yaw, pitch) = proxy.GetLookAtYawPitch();
         }
 
-        <span style=color:#069;font-weight:700>public</span> <span style=color:#069;font-weight:700>void</span> SpecifyYawPitchAngle()
+        <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">void</span> SpecifyYawPitchAngle()
         {
-            <span style=color:#078;font-weight:700>var</span> proxy = _vrmModel.GetComponent&lt;VRMController&gt;();
+            <span style="color:#078;font-weight:bold">var</span> proxy = _vrmModel.GetComponent&lt;VRMController&gt;();
             proxy.LookAtTargetType = VRMController.LookAtTargetTypes.SetYawPitch;
 
-            <span style=color:#09f;font-style:italic>// yaw・pitch角度をセットする
-</span><span style=color:#09f;font-style:italic></span>            proxy.SetLookAtYawPitch(<span style=color:#f60>0</span>, <span style=color:#f60>0</span>);
+            <span style="color:#09f;font-style:italic">// yaw・pitch角度をセットする
+</span><span style="color:#09f;font-style:italic"></span>            proxy.SetLookAtYawPitch(<span style="color:#f60">0</span>, <span style="color:#f60">0</span>);
         }
 
-        <span style=color:#09f;font-style:italic>// ...
-</span><span style=color:#09f;font-style:italic></span>    }
-</code></pre></div><div class=section-index><hr class=panel-line></div><div class="text-muted mt-1 pt-3 border-top"></div><img src=/images/vrm/vrm_header.png alt="VRM - humanoid 3d avatar format for VR"></div></main></div></div><footer class="bg-dark py-5 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank href=https://github.com/vrm-c><i class="fab fa-github"></i></a></li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2"><small class=text-white>&copy; 2021 VRM Consortium All Rights Reserved</small></div></div></div></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js integrity=sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy crossorigin=anonymous></script><script src=/js/main.min.3f0b17baf1bd0a0469452a412c0b5944fc7f77d4ae2084267de1008e9295dcca.js integrity="sha256-PwsXuvG9CgRpRSpBLAtZRPx/d9SuIIQmfeEAjpKV3Mo=" crossorigin=anonymous></script></body></html>
+        <span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>    }
+</code></pre></div>
+
+    
+    <div class="section-index">
+    
+    
+    
+    <hr class="panel-line">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+    <div class="text-muted mt-1 pt-3 border-top">
+    </div>
+    <img src="/images/vrm/vrm_header.png" alt="VRM - humanoid 3d avatar format for VR">
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/vrm-c">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 VRM Consortium All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="/js/main.min.3f0b17baf1bd0a0469452a412c0b5944fc7f77d4ae2084267de1008e9295dcca.js" integrity="sha256-PwsXuvG9CgRpRSpBLAtZRPx/d9SuIIQmfeEAjpKV3Mo=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

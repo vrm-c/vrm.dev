@@ -1,617 +1,733 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – Install</title><link>https://vrm.dev/en/docs/univrm/install/</link><description>Recent content in Install on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 Feb 2021 09:10:25 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Unity Version</title><link>https://vrm.dev/en/docs/univrm/install/unity_version/</link><pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid><description>
-&lt;h2 id="univrm-0560-">UniVRM-0.56.0 ～&lt;/h2>
-&lt;p>Support &lt;code>Unity-2018.4&lt;/code> and above. &lt;code>Unity-2019.4 LTS&lt;/code> is recommended.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Unity Version&lt;/th>
-&lt;th>Compatibility&lt;/th>
-&lt;th>Scripting Runtime Version&lt;/th>
-&lt;th>UPM&lt;/th>
-&lt;th>Note&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Unity-2017&lt;/td>
-&lt;td>×&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2018.1&lt;/td>
-&lt;td>×&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2018.2&lt;/td>
-&lt;td>×&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2018.3&lt;/td>
-&lt;td>△&lt;/td>
-&lt;td>.Net4.X equivalent&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>C#7.3. Probably working. Not confirmed yet&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2018.4 LTS&lt;/td>
-&lt;td>◎&lt;/td>
-&lt;td>.Net4.X equivalent&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Current UniVRM development version&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2019.1&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>.Net4.X equivalent&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2019.2&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>.Net3.5 is removed. There is no need to set &lt;code>Scripting Runtime Version&lt;/code> to .Net4.X equivalent&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2019.3&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Support UPM from 2019.3.4f1&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2019.4 LTS&lt;/td>
-&lt;td>◎&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>Current version for UniVRM-0.XX UPM testing&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Unity-2020&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>○&lt;/td>
-&lt;td>Fixed Prefab behaviors, etc. in &lt;code>UniVRM-0.69.0&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="-univrm-055">～ UniVRM-0.55&lt;/h2>
-&lt;ul>
-&lt;li>Support &lt;code>Unity-5.6&lt;/code> and above&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Install UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid><description>
-&lt;h2 id="unity-version">Unity Version&lt;/h2>
-&lt;ul>
-&lt;li>The recommended version is &lt;code>Unity-2019.4&lt;/code>. Other supported Unity versions &lt;a href="https://vrm.dev/en/docs/univrm/install/unity_version/">can be found here&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>To install UniVRM with Unity Package Manager, please refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_upm/">Install UniVRM with UPM&lt;/a>.&lt;/p>
-&lt;h2 id="unitypackage">unitypackage&lt;/h2>
-&lt;p>Get unity package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
-&lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>&lt;/p>
-&lt;h2 id="before-installation">Before Installation&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>Create a new Unity project&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Rendering&lt;/code> - &lt;code>ColorSpace&lt;/code> and set &lt;code>ColorSpace&lt;/code> to &lt;code>Linear&lt;/code> (recommended setting)&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/linear_setting.jpg" alt="linear setting" width="600" />
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">If your Unity version is {Unity-2018.3, Unity-2018.4, Unity-2019.1}: &lt;/h4>
-&lt;ul>
-&lt;li>Go to &lt;code>ProjectSettings&lt;/code> - &lt;code>Player&lt;/code> - &lt;code>Other Settings&lt;/code> - &lt;code>Scripting Runtime Version&lt;/code> and set &lt;code>Scripting Runtime Version&lt;/code> to &lt;code>.Net4.X equivalent&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Install UniVRM in an Existing Project: &lt;/h4>
-If old UniVRM version exists, please delete &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/UniGLTF&lt;/code> (if exists), &lt;code>Assets/VRMShaders&lt;/code> (if exists) and &lt;code>Assets/MeshUtility&lt;/code> (if exists) before installation. Refer to &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_uninstall/">Uninstall UniVRM&lt;/a> for more information
-&lt;/div>
-&lt;h2 id="import-unitypackage">Import unitypackage&lt;/h2>
-&lt;p>Go to &lt;code>Assets&lt;/code> - &lt;code>Import Package&lt;/code> - &lt;code>Custom Package&lt;/code> and select &lt;code>UniVRM-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>Three folders: &lt;code>Assets/VRM&lt;/code>, &lt;code>Assets/UniGLTF&lt;/code> and &lt;code>Assets/VRMShaders&lt;/code> will be imported into the Unity project.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;img src="https://vrm.dev/images/vrm/package_import.jpg" alt="package_import" width="350" />
-&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Import Unity Package&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="check-if-univrm-has-been-imported-successfully">Check if UniVRM has been imported successfully&lt;/h2>
-&lt;p>If UniVRM import successes, &lt;code>VRM&lt;/code> menu will be displayed in the menu bar:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu.jpg" alt="vrm menu" />
-&lt;hr>
-&lt;p>Previous versions:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/vrm_menu_old.jpg" alt="vrm menu old" />
-&lt;hr>
-&lt;p>If menu does not show up:&lt;/p>
-&lt;ul>
-&lt;li>Open Console: click &lt;code>clear&lt;/code> button on the upper-left corner of the Console window to see if any error (message in red) occurs&lt;/li>
-&lt;/ul>
-&lt;img src="https://vrm.dev/images/vrm/show_console.jpg" alt="show console" width="500" />
-&lt;img src="https://vrm.dev/images/vrm/clear_console.jpg" alt="clear console" width="500" />
-&lt;h2 id="related-sections">Related Sections&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://vrm.dev/en/how_to_make_vrm/">How to make VRM file&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/import/univrm_import/">VRM Import&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Install UniVRM with UPM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_upm/</link><pubDate>Tue, 07 Jul 2020 18:33:59 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_upm/</guid><description>
-&lt;p>Starting with UniVRM-0.56, UniVRM can be installed with Unity Package Manager.&lt;/p>
-&lt;p>Installation prerequisites:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>Unity 2019.4 or later version&lt;/code>&lt;/li>
-&lt;li>&lt;a href="https://git-scm.com/">Git client&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="install-git-for-unity">Install git for Unity&lt;/h2>
-&lt;p>Please refer to &lt;a href="https://docs.unity3d.com/Manual/upm-git.html#req">&lt;code>Git dependencies -&amp;gt; Requirements&lt;/code>&lt;/a> for more information.&lt;/p>
-&lt;blockquote>
-&lt;p>To use Git dependencies in a project, make sure the &lt;a href="https://git-scm.com/">Git client&lt;/a> is installed on your machine and that you have added the Git executable path to the PATH system environment variable.&lt;/p>
-&lt;/blockquote>
-&lt;p>If git is not installed, the error messages like below will be shown:&lt;/p>
-&lt;blockquote>
-&lt;p>An error occurred while resolving packages:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – Install</title>
+    <link>https://vrm.dev/en/docs/univrm/install/</link>
+    <description>Recent content in Install on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Aug 2020 12:36:16 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/docs/univrm/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Unity Version</title>
+      <link>https://vrm.dev/en/docs/univrm/install/unity_version/</link>
+      <pubDate>Wed, 07 Oct 2020 17:19:08 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/unity_version/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;univrm-0560-&#34;&gt;UniVRM-0.56.0 ～&lt;/h2&gt;
+&lt;p&gt;Support &lt;code&gt;Unity-2018.4&lt;/code&gt; and above. &lt;code&gt;Unity-2019.4 LTS&lt;/code&gt; is recommended.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Unity Version&lt;/th&gt;
+&lt;th&gt;Compatibility&lt;/th&gt;
+&lt;th&gt;Scripting Runtime Version&lt;/th&gt;
+&lt;th&gt;UPM&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2017&lt;/td&gt;
+&lt;td&gt;×&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2018.1&lt;/td&gt;
+&lt;td&gt;×&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2018.2&lt;/td&gt;
+&lt;td&gt;×&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2018.3&lt;/td&gt;
+&lt;td&gt;△&lt;/td&gt;
+&lt;td&gt;.Net4.X equivalent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;C#7.3. Probably working. Not confirmed yet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2018.4 LTS&lt;/td&gt;
+&lt;td&gt;◎&lt;/td&gt;
+&lt;td&gt;.Net4.X equivalent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Current UniVRM development version&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2019.1&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;.Net4.X equivalent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2019.2&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;.Net3.5 is removed. There is no need to set  &lt;code&gt;Scripting Runtime Version&lt;/code&gt; to .Net4.X equivalent&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2019.3&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Support UPM from 2019.3.4f1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2019.4 LTS&lt;/td&gt;
+&lt;td&gt;◎&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;Current version for UniVRM-0.XX UPM testing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2020&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
+&lt;td&gt;Fixed Prefab behaviors, etc. in &lt;code&gt;UniVRM-0.69.0&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;-univrm-055&#34;&gt;～ UniVRM-0.55&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Support &lt;code&gt;Unity-5.6&lt;/code&gt; and above&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Install UniVRM</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_install/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_install/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;unity-version&#34;&gt;Unity Version&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The recommended version is &lt;code&gt;Unity-2019.4&lt;/code&gt;. Other supported Unity versions &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/unity_version/&#34;&gt;can be found here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To install UniVRM with Unity Package Manager, please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_upm/&#34;&gt;Install UniVRM with UPM&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;unitypackage&#34;&gt;unitypackage&lt;/h2&gt;
+&lt;p&gt;Get unity package in &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The package&amp;rsquo;s name will look like this: &lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;before-installation&#34;&gt;Before Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new Unity project&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Rendering&lt;/code&gt; - &lt;code&gt;ColorSpace&lt;/code&gt; and set &lt;code&gt;ColorSpace&lt;/code&gt; to &lt;code&gt;Linear&lt;/code&gt; (recommended setting)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/linear_setting.jpg&#34; alt=&#34;linear setting&#34; width=&#34;600&#34; /&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;If your Unity version is {Unity-2018.3, Unity-2018.4, Unity-2019.1}: &lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; and set &lt;code&gt;Scripting Runtime Version&lt;/code&gt; to &lt;code&gt;.Net4.X equivalent&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Install UniVRM in an Existing Project: &lt;/h4&gt;
+If old UniVRM version exists, please delete &lt;code&gt;Assets/VRM&lt;/code&gt;, &lt;code&gt;Assets/UniGLTF&lt;/code&gt; (if exists), &lt;code&gt;Assets/VRMShaders&lt;/code&gt; (if exists) and &lt;code&gt;Assets/MeshUtility&lt;/code&gt; (if exists) before installation. Refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_uninstall/&#34;&gt;Uninstall UniVRM&lt;/a&gt; for more information
+&lt;/div&gt;
+
+&lt;h2 id=&#34;import-unitypackage&#34;&gt;Import unitypackage&lt;/h2&gt;
+&lt;p&gt;Go to &lt;code&gt;Assets&lt;/code&gt; - &lt;code&gt;Import Package&lt;/code&gt; - &lt;code&gt;Custom Package&lt;/code&gt; and select &lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Three folders: &lt;code&gt;Assets/VRM&lt;/code&gt;, &lt;code&gt;Assets/UniGLTF&lt;/code&gt; and &lt;code&gt;Assets/VRMShaders&lt;/code&gt; will be imported into the Unity project.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/package_import.jpg&#34; alt=&#34;package_import&#34; width=&#34;350&#34; /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Import Unity Package&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;check-if-univrm-has-been-imported-successfully&#34;&gt;Check if UniVRM has been imported successfully&lt;/h2&gt;
+&lt;p&gt;If UniVRM import successes, &lt;code&gt;VRM&lt;/code&gt; menu will be displayed in the menu bar:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu.jpg&#34; alt=&#34;vrm menu&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Previous versions:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_menu_old.jpg&#34; alt=&#34;vrm menu old&#34;  /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;If menu does not show up:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open Console: click &lt;code&gt;clear&lt;/code&gt; button on the upper-left corner of the Console window to see if any error (message in red) occurs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/show_console.jpg&#34; alt=&#34;show console&#34; width=&#34;500&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm/clear_console.jpg&#34; alt=&#34;clear console&#34; width=&#34;500&#34; /&gt;
+
+&lt;h2 id=&#34;related-sections&#34;&gt;Related Sections&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/how_to_make_vrm/&#34;&gt;How to make VRM file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/import/univrm_import/&#34;&gt;VRM Import&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Install UniVRM with UPM</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_upm/</link>
+      <pubDate>Tue, 07 Jul 2020 18:33:59 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_upm/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Starting with UniVRM-0.56, UniVRM can be installed with Unity Package Manager.&lt;/p&gt;
+&lt;p&gt;Installation prerequisites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Unity 2019.4 or later version&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;Git client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-git-for-unity&#34;&gt;Install git for Unity&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://docs.unity3d.com/Manual/upm-git.html#req&#34;&gt;&lt;code&gt;Git dependencies -&amp;gt; Requirements&lt;/code&gt;&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To use Git dependencies in a project, make sure the &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git client&lt;/a&gt; is installed on your machine and that you have added the Git executable path to the PATH system environment variable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If git is not installed, the error messages like below will be shown:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An error occurred while resolving packages:
 Project has invalid dependencies:
-com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please install Git on your system then restart Unity and Unity Hub&lt;/p>
-&lt;/blockquote>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Check whether git.exe can be found on your machine&lt;/h4>
-&lt;p>As mentioned above, install &lt;a href="https://git-scm.com/">Git client&lt;/a> and get the directory of git.exe (by default, git.exe is in &lt;code>C:\Program Files\Git\cmd&lt;/code>). Then, add it to the PATH system environment variable.&lt;/p>
-&lt;p>To check the git version, for instance, open Windows PowerShell and type the command &lt;code>git --version&lt;/code>:&lt;/p>
-&lt;pre>&lt;code class="language-dos" data-lang="dos">&amp;gt; git --version
+com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please install Git on your system then restart Unity and Unity Hub&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Check whether git.exe can be found on your machine&lt;/h4&gt;
+&lt;p&gt;As mentioned above, install &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git client&lt;/a&gt; and get the directory of git.exe (by default, git.exe is in &lt;code&gt;C:\Program Files\Git\cmd&lt;/code&gt;). Then, add it to the PATH system environment variable.&lt;/p&gt;
+&lt;p&gt;To check the git version, for instance, open Windows PowerShell and type the command &lt;code&gt;git --version&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-dos&#34; data-lang=&#34;dos&#34;&gt;&amp;gt; git --version
 git version 2.29.2.windows.2
-&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;h3 id="install-using-unitypackagemanager-window">Install using UnityPackageManager window&lt;/h3>
-&lt;p>To open UPM, go to &lt;code>Windows&lt;/code> -&amp;gt; &lt;code>Package Manager&lt;/code>:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm10/menu_packagemanager.jpg" />
-&lt;hr>
-&lt;p>Select &lt;code>add package from git URL&lt;/code> to import the target package specified by its git url.&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm10/from_git.jpg" />
-&lt;hr>
-&lt;p>Whenever a new UniVRM version comes out, we will post git urls associated with this release.&lt;/p>
-&lt;p>For example, the git urls of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">v0.66.0&lt;/a> are:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0&lt;/code> =&amp;gt; depends on VRMShaders&lt;/li>
-&lt;li>&lt;code>https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0&lt;/code> =&amp;gt; depends on UniGLTF, VRMShaders&lt;/li>
-&lt;/ul>
-&lt;p>Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p>
-&lt;p>Now check your project window. The packages above should be in the Packages folder:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/upm_package.jpg" />
-&lt;hr>
-&lt;p>By changing the version number, you can switch to different version based on your needs.&lt;/p>
-&lt;h4 id="add-dependencies-in-packagesmanifestjson">Add dependencies in Packages/manifest.json&lt;/h4>
-&lt;p>An alternative way is to add necessary dependencies right in Packages/manifest.json.
-Open manifest.json with text/code editor and paste the following contents (example of &lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">v0.66.0&lt;/a>):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;install-using-unitypackagemanager-window&#34;&gt;Install using UnityPackageManager window&lt;/h3&gt;
+&lt;p&gt;To open UPM, go to &lt;code&gt;Windows&lt;/code&gt; -&amp;gt; &lt;code&gt;Package Manager&lt;/code&gt;:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/menu_packagemanager.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Select &lt;code&gt;add package from git URL&lt;/code&gt; to import the target package specified by its git url.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/from_git.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Whenever a new UniVRM version comes out, we will post git urls associated with this release.&lt;/p&gt;
+&lt;p&gt;For example, the git urls of &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0&#34;&gt;v0.66.0&lt;/a&gt; are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0&lt;/code&gt; =&amp;gt; depends on VRMShaders&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0&lt;/code&gt; =&amp;gt; depends on UniGLTF, VRMShaders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.&lt;/p&gt;
+&lt;p&gt;Now check your project window. The packages above should be in the Packages folder:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/upm_package.jpg&#34;   /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;By changing the version number, you can switch to different version based on your needs.&lt;/p&gt;
+&lt;h4 id=&#34;add-dependencies-in-packagesmanifestjson&#34;&gt;Add dependencies in Packages/manifest.json&lt;/h4&gt;
+&lt;p&gt;An alternative way is to add necessary dependencies right in Packages/manifest.json.
+Open manifest.json with text/code editor and paste the following contents (example of &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0&#34;&gt;v0.66.0&lt;/a&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="specify-git-commit">Specify git commit&lt;/h2>
-&lt;p>However, if you want to switch to the specific commit, you can manually change the hash value or append the specific commit in &lt;code>dependencies&lt;/code>.&lt;/p>
-&lt;p>Example:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#309;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span>,
-&lt;span style="color:#309;font-weight:bold">&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span>: &lt;span style="color:#c30">&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span>,
-&lt;span style="color:#a00;background-color:#faa">//&lt;/span> &lt;span style="color:#a00;background-color:#faa">...&lt;/span>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;specify-git-commit&#34;&gt;Specify git commit&lt;/h2&gt;
+&lt;p&gt;However, if you want to switch to the specific commit, you can manually change the hash value or append the specific commit in &lt;code&gt;dependencies&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#39d54ce7d3b0061d2d9ee236017dca129c7cdc51&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install UniVRM Samples</title><link>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</link><pubDate>Wed, 02 Sep 2020 12:28:08 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</guid><description>
-&lt;p>In this section, we assume you have &lt;a href="https://vrm.dev/en/docs/univrm/install/univrm_install/">installed UniVRM package&lt;/a>.&lt;/p>
-&lt;h2 id="univrm-samples-package">UniVRM Samples Package&lt;/h2>
-&lt;p>Get UniVRM Samples package in &lt;a href="https://github.com/vrm-c/UniVRM/releases">https://github.com/vrm-c/UniVRM/releases&lt;/a>.&lt;/p>
-&lt;p>The package&amp;rsquo;s name will look like this: &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.66.0).&lt;/p>
-&lt;h2 id="import">Import&lt;/h2>
-&lt;p>From the menu, go to &lt;code>Assets -&amp;gt; Import Package&lt;/code> and then click &lt;code>Custom Package&lt;/code> to import the package &lt;code>UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code>.&lt;/p>
-&lt;p>After you see the file information in the package as shown below, click &lt;code>Import&lt;/code> button:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_package_import.jpg" alt="sample_package_import" width="300" />
-&lt;h2 id="run-univrm-samples">Run UniVRM Samples&lt;/h2>
-&lt;p>Now the folder &lt;code>VRM.Samples&lt;/code> should be in &lt;code>Assets&lt;/code>. In Project window, please select &lt;code>SampleViewer&lt;/code>:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_scene.jpg" alt="sample_scene" width="300" />
-&lt;p>Next, select &lt;code>Game&lt;/code> view. You will see the &lt;code>SampleViewer&lt;/code> interface:&lt;/p>
-&lt;img src="https://vrm.dev/images/vrm/sample_viewer.jpg" alt="sample_viewer" width="500" />
-&lt;p>Click &lt;code>Play&lt;/code> button to enable &lt;code>SampleViewer&lt;/code>, and then click &lt;code>Open&lt;/code> button to import a VRM model into the scene at runtime:&lt;/p>
-&lt;p>&lt;img src="https://vrm.dev/images/vrm/play_mode.jpg" alt="play_mode" width="150" />
-&lt;br>
-&lt;br>
-&lt;img src="https://vrm.dev/images/vrm/sample_viewer_activate.jpg" alt="sample_viewer_activate" width="600" />
-&lt;/p>
-&lt;p>Other samples such as &lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs">Runtime VRM export&lt;/a> and &lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs">FirstPerson rendering&lt;/a> are available in &lt;code>VRM.Samples&lt;/code>.&lt;/p>
-&lt;p>Alicia model &lt;a href="https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm">can be found here&lt;/a>.&lt;/p></description></item><item><title>Docs: Uninstall UniVRM</title><link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link><pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid><description>
-&lt;p>Please delete the folders below:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>folder&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Note&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Assets/VRM&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/UniGLTF&lt;/td>
-&lt;td>v0.63.0 and above&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/VRMShaders&lt;/td>
-&lt;td>v0.56.0 and above&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/MeshUtility&lt;/td>
-&lt;td>From v0.59.0 to v0.63.0&lt;/td>
-&lt;td>UniVRM-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>folder&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Note&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Assets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Assets/StreamingAssets/VRM.Samples&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>UniVRM-samples-0.XX.0.unitypackage&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.&lt;/p>
-&lt;p>To remove packages installed by Unity Package Window, please click &lt;code>Remove&lt;/code> button at the lower right of the package interface in UPM window.&lt;/p></description></item><item><title>Docs: UniVRM Version</title><link>https://vrm.dev/en/docs/univrm/install/univrm_version/</link><pubDate>Mon, 01 Feb 2021 07:16:52 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/install/univrm_version/</guid><description>
-&lt;h1 id="v0550">v0.55.0&lt;/h1>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Date&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Bugs&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>2019&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0">0.55.0&lt;/a>&lt;/td>
-&lt;td>◎ Stable Version&lt;/td>
-&lt;td>The final version for supporting Unity-5.6&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h1 id="v0560-">v0.56.0 ~&lt;/h1>
-&lt;ul>
-&lt;li>If bugs are introduced after version bump, we will fix them as quick as we can and bump the minor version&lt;/li>
-&lt;/ul>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Date&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Bugs&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>2020&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0">0.56.0&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>The minimum version support for Unity is 2018.4&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1">0.56.1&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2">0.56.2&lt;/a>&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3">0.56.3&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0">0.57.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Bones with the same names will be renamed automatically&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1">0.57.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0">0.58.0&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Remade export dialog&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1">0.58.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0">0.59.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Improved validation checks on VRMSpringBone settings&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0">0.60.0&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Enhanced null-checks on VRM&amp;rsquo;s components when exporting&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0">0.61.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/20?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Made UniUnlit&amp;rsquo;s vertex color working properly. Fixed AOT compilation issue&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1">0.61.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0">0.62.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/21?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Fixed bugs when baking BlendShape&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2021 01/05&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0">0.63.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/25?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>JPG export bug. Separated UniGLTF from UniVRM&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/07&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1">0.63.1&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>JPG export bug&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/08&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2">0.63.2&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/15&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0">0.64.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/23?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Empty submesh will not be exported. vrm-1.0 Experiment kick-off&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/26&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0">0.65.0&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/28&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1">0.65.1&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/28?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Fixed export errors when Turkish locale is on &lt;a href="https://github.com/vrm-c/UniVRM/issues/696">#696&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>01/28&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2">0.65.2&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/29?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3">0.65.3&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Updated UniGLTF version number for UPM package. No unity package release&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>02/03&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0">0.66.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/26?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>✅ Stable Version&lt;/td>
-&lt;td>Added Warning messages when non-normalized Hierarchy contains spring bone colliders&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0">0.67.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/27?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Maintenance release&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1">0.67.1&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Only for UPM package. No unity package release&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h1 id="v0680-">v0.68.0 ~&lt;/h1>
-&lt;p>Working on VRM-1.0&amp;hellip;&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_api_history/">API&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Date&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Bugs&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0">0.68.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/30?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> &lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Added glb/gltf ReverseAxis settings. ImporterContext API&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>03/16&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1">0.68.1&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>03/17&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2">0.68.2&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>03/22&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0">0.69.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/31?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup> &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup> &lt;sup id="fnref:12">&lt;a href="#fn:12" class="footnote-ref" role="doc-noteref">12&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>Fixed SmoothTexture conversion &lt;a href="https://github.com/vrm-c/UniVRM/issues/388">#388&lt;/a>, support Unity2020&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>03/23&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1">0.69.1&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup> &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>03/31&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0">0.70.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/32?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>&lt;/td>
-&lt;td>impl &lt;code>WEIGHTS_0&lt;/code> not float4&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>04/05&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.71.0">0.71.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/33?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>IOS build&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>04/13&lt;/td>
-&lt;td>&lt;a href="http://github.com/vrm-c/UniVRM/releases/tag/v0.72.0">0.72.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/34?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>DivideVertexBuffer Option&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>04/22&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.73.0">0.73.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/35?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>* &lt;a href="https://github.com/vrm-c/UniVRM/pull/897">Fix/other permission url&lt;/a> * &lt;a href="https://github.com/vrm-c/UniVRM/pull/894">Fixed an issue where LookAtBlendShape cannot be exported after model normalization&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>05/12&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0">0.74.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/36?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>* &lt;a href="https://github.com/vrm-c/UniVRM/issues/922">Fixed the behavior of the SpringBone scale after runtime import&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>05/25&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0">0.75.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/37?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Fixed an issue where LookAtBone Applier mapping values were reset during the normalization process&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>06/08&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0">0.76.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/38?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Fixed an issue where namespace MeshUtility conflicts with UnityEditor.MeshUtility&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>06/17&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0">0.77.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/39?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="https://vrm.dev/en/docs/univrm/programming/univrm_api_history/">API Update&lt;/a>, &lt;a href="https://github.com/vrm-c/UniVRM/issues/1022">issue 1022&lt;/a>, &lt;a href="https://github.com/vrm-c/UniVRM/issues/496">issue 496&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>06/23&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0">0.78.0&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/milestone/40?closed=1">milestone&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;a href="https://github.com/vrm-c/UniVRM/pull/1049">https://github.com/vrm-c/UniVRM/pull/1049&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>Fixed a bug where Renderers in VRMFirstPerson were replicated after VRM import &lt;a href="https://github.com/vrm-c/UniVRM/issues/515">/#515&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
-&lt;p>Fixed bugs where SpringBone Collider transformation was done twice. &lt;a href="https://github.com/vrm-c/UniVRM/issues/576">#576&lt;/a> &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:3" role="doc-endnote">
-&lt;p>Bugs occurred when creating a screenshot as .jpg format. &lt;a href="https://github.com/vrm-c/UniVRM/issues/639">#639&lt;/a> &lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:4" role="doc-endnote">
-&lt;p>Fixed serialization bugs when exporting VRM file. &lt;a href="https://github.com/vrm-c/UniVRM/issues/654">#654&lt;/a> &lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:5" role="doc-endnote">
-&lt;p>Fixed MeshUtility&amp;rsquo;s reference issues. &lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:6" role="doc-endnote">
-&lt;p>Fixed MeshUtility&amp;rsquo;s assembly definitions. &lt;a href="https://github.com/vrm-c/UniVRM/pull/687">#687&lt;/a> &lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:7" role="doc-endnote">
-&lt;p>Fixed compile errors when building a program including UniVRM. &lt;a href="https://github.com/vrm-c/UniVRM/issues/701">#701&lt;/a> &lt;a href="#fnref:7" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:8" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/786">#786&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/issues/788">#788&lt;/a> &lt;a href="#fnref:8" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:9" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/790">#790&lt;/a> &lt;a href="https://github.com/vrm-c/UniVRM/issues/794">#794&lt;/a> &lt;a href="#fnref:9" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:10" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/836">#836&lt;/a> &lt;a href="#fnref:10" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:11" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/pull/831">#831&lt;/a> &lt;a href="#fnref:11" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:12" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/pull/812">#812&lt;/a> &lt;a href="#fnref:12" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Install UniVRM Samples</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</link>
+      <pubDate>Wed, 02 Sep 2020 12:28:08 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_install_samples/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this section, we assume you have &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install/&#34;&gt;installed UniVRM package&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;univrm-samples-package&#34;&gt;UniVRM Samples Package&lt;/h2&gt;
+&lt;p&gt;Get UniVRM Samples package in &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The package&amp;rsquo;s name will look like this: &lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.66.0).&lt;/p&gt;
+&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
+&lt;p&gt;From the menu, go to &lt;code&gt;Assets -&amp;gt; Import Package&lt;/code&gt; and then click &lt;code&gt;Custom Package&lt;/code&gt; to import the package &lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After you see the file information in the package as shown below, click &lt;code&gt;Import&lt;/code&gt; button:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/sample_package_import.jpg&#34; alt=&#34;sample_package_import&#34; width=&#34;300&#34; /&gt;
+
+&lt;h2 id=&#34;run-univrm-samples&#34;&gt;Run UniVRM Samples&lt;/h2&gt;
+&lt;p&gt;Now the folder &lt;code&gt;VRM.Samples&lt;/code&gt; should be in &lt;code&gt;Assets&lt;/code&gt;. In Project window, please select &lt;code&gt;SampleViewer&lt;/code&gt;:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/sample_scene.jpg&#34; alt=&#34;sample_scene&#34; width=&#34;300&#34; /&gt;
+
+&lt;p&gt;Next, select &lt;code&gt;Game&lt;/code&gt; view. You will see the &lt;code&gt;SampleViewer&lt;/code&gt; interface:&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer.jpg&#34; alt=&#34;sample_viewer&#34; width=&#34;500&#34; /&gt;
+
+&lt;p&gt;Click &lt;code&gt;Play&lt;/code&gt; button to enable &lt;code&gt;SampleViewer&lt;/code&gt;, and then click &lt;code&gt;Open&lt;/code&gt; button to import a VRM model into the scene at runtime:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/play_mode.jpg&#34; alt=&#34;play_mode&#34; width=&#34;150&#34; /&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer_activate.jpg&#34; alt=&#34;sample_viewer_activate&#34; width=&#34;600&#34; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Other samples such as &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs&#34;&gt;Runtime VRM export&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs&#34;&gt;FirstPerson rendering&lt;/a&gt; are available in &lt;code&gt;VRM.Samples&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Alicia model &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Uninstall UniVRM</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_uninstall/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Please delete the folders below:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;folder&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/VRM&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;UniVRM-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/UniGLTF&lt;/td&gt;
+&lt;td&gt;v0.63.0 and above&lt;/td&gt;
+&lt;td&gt;UniVRM-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/VRMShaders&lt;/td&gt;
+&lt;td&gt;v0.56.0 and above&lt;/td&gt;
+&lt;td&gt;UniVRM-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/MeshUtility&lt;/td&gt;
+&lt;td&gt;From v0.59.0 to v0.63.0&lt;/td&gt;
+&lt;td&gt;UniVRM-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;folder&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/VRM.Samples&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;UniVRM-samples-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Assets/StreamingAssets/VRM.Samples&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;UniVRM-samples-0.XX.0.unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.&lt;/p&gt;
+&lt;p&gt;To remove packages installed by Unity Package Window, please click &lt;code&gt;Remove&lt;/code&gt; button at the lower right of the package interface in UPM window.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRM Version</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_version/</link>
+      <pubDate>Mon, 01 Feb 2021 07:16:52 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_version/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;v0550&#34;&gt;v0.55.0&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2019&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0&#34;&gt;0.55.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;◎ Stable Version&lt;/td&gt;
+&lt;td&gt;The final version for supporting Unity-5.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;v0560-&#34;&gt;v0.56.0 ~&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;If bugs are introduced after version bump, we will fix them as quick as we can and bump the minor version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2020&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0&#34;&gt;0.56.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;The minimum version support for Unity is 2018.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1&#34;&gt;0.56.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2&#34;&gt;0.56.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34;&gt;0.56.3&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0&#34;&gt;0.57.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Bones with the same names will be renamed automatically&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1&#34;&gt;0.57.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0&#34;&gt;0.58.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Remade export dialog&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1&#34;&gt;0.58.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0&#34;&gt;0.59.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Improved validation checks on VRMSpringBone settings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0&#34;&gt;0.60.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Enhanced null-checks on VRM&amp;rsquo;s components when exporting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0&#34;&gt;0.61.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/20?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Made UniUnlit&amp;rsquo;s vertex color working properly. Fixed AOT compilation issue&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1&#34;&gt;0.61.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0&#34;&gt;0.62.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/21?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed bugs when baking BlendShape&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2021 01/05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0&#34;&gt;0.63.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/25?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;JPG export bug. Separated UniGLTF from UniVRM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/07&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1&#34;&gt;0.63.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;JPG export bug&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/08&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2&#34;&gt;0.63.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/15&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0&#34;&gt;0.64.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/23?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Empty submesh will not be exported. vrm-1.0 Experiment kick-off&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/26&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0&#34;&gt;0.65.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/28&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1&#34;&gt;0.65.1&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/28?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Fixed export errors when Turkish locale is on &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/696&#34;&gt;#696&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/28&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2&#34;&gt;0.65.2&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/29?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3&#34;&gt;0.65.3&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Updated UniGLTF version number for UPM package. No unity package release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;02/03&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0&#34;&gt;0.66.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/26?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;✅ Stable Version&lt;/td&gt;
+&lt;td&gt;Added Warning messages when non-normalized Hierarchy contains spring bone colliders&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0&#34;&gt;0.67.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/27?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Maintenance release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1&#34;&gt;0.67.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Only for UPM package. No unity package release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;v0680-&#34;&gt;v0.68.0 ~&lt;/h1&gt;
+&lt;p&gt;Working on VRM-1.0&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_api_history/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0&#34;&gt;0.68.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/30?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Added glb/gltf ReverseAxis settings. ImporterContext API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/16&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1&#34;&gt;0.68.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2&#34;&gt;0.68.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/22&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0&#34;&gt;0.69.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/31?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Fixed SmoothTexture conversion &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;#388&lt;/a&gt;, support Unity2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/23&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1&#34;&gt;0.69.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/31&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0&#34;&gt;0.70.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/32?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;impl &lt;code&gt;WEIGHTS_0&lt;/code&gt; not float4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.71.0&#34;&gt;0.71.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/33?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IOS build&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/13&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.72.0&#34;&gt;0.72.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/34?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;DivideVertexBuffer Option&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/22&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.73.0&#34;&gt;0.73.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/35?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/897&#34;&gt;Fix/other permission url&lt;/a&gt; * &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/894&#34;&gt;Fixed an issue where LookAtBlendShape cannot be exported after model normalization&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;05/12&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0&#34;&gt;0.74.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/36?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/922&#34;&gt;Fixed the behavior of the SpringBone scale after runtime import&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;05/25&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0&#34;&gt;0.75.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/37?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed an issue where LookAtBone Applier mapping values were reset during the normalization process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/08&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0&#34;&gt;0.76.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/38?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed an issue where namespace MeshUtility conflicts with UnityEditor.MeshUtility&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0&#34;&gt;0.77.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/39?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_api_history/&#34;&gt;API Update&lt;/a&gt;, &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1022&#34;&gt;issue 1022&lt;/a&gt;, &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/496&#34;&gt;issue 496&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/23&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0&#34;&gt;0.78.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/40?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1049&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1049&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed a bug where Renderers in VRMFirstPerson were replicated after VRM import &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/515&#34;&gt;/#515&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed bugs where SpringBone Collider transformation was done twice. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/576&#34;&gt;#576&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Bugs occurred when creating a screenshot as .jpg format. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/639&#34;&gt;#639&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed serialization bugs when exporting VRM file. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/654&#34;&gt;#654&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed MeshUtility&amp;rsquo;s reference issues. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed MeshUtility&amp;rsquo;s assembly definitions. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/687&#34;&gt;#687&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed compile errors when building a program including UniVRM. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/701&#34;&gt;#701&lt;/a&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/786&#34;&gt;#786&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/788&#34;&gt;#788&lt;/a&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/790&#34;&gt;#790&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/794&#34;&gt;#794&lt;/a&gt; &lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/836&#34;&gt;#836&lt;/a&gt; &lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/831&#34;&gt;#831&lt;/a&gt; &lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/812&#34;&gt;#812&lt;/a&gt; &lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
