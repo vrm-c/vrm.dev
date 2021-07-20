@@ -3,7 +3,7 @@ title: "UniVRM Version"
 tags: ["unity"]
 ---
 
-# v0.55.0
+## v0.55.0 (Unity-5.6 対応最終版)
 
 Unity-5.6 対応最終版
 
@@ -11,7 +11,7 @@ Unity-5.6 対応最終版
 |------|---------------------------------------------------------------|
 | 2019 | [0.55.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0) |
 
-# v0.56.0 ～
+## v0.56.0 ～
 
 * 更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス
 
@@ -42,7 +42,7 @@ Unity-5.6 対応最終版
 |            | [0.67.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/27?closed=1) |                        | UPM専用。パッケージリリース無し                                              |
 |            | [0.67.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1)                                                                    |                        | UPM専用。パッケージリリース無し                                              |
 
-# v0.68.0 ～
+## v0.68.0 ～ (VRM-1.0 作業 pre release)
 
 VRM-1.0 作業中
 
@@ -64,6 +64,14 @@ VRM-1.0 作業中
 | 06/08 | [0.76.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/38?closed=1) |                                                 | namespace MeshUtilityがUnityEditor.MeshUtility classと競合するのを修正                                                                                                        |
 | 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/39?closed=1) |                                                 | [API更新](https://vrm.dev/docs/univrm/programming/univrm_api_history/) https://github.com/vrm-c/UniVRM/issues/1022 https://github.com/vrm-c/UniVRM/issues/496                 |
 | 06/23 | [0.78.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/40?closed=1) |                                                 | https://github.com/vrm-c/UniVRM/pull/1049                                                                                                                                     |
+
+## v0.79.0 ～
+
+1.0 向けの改修終わり。
+
+| date | version                                                                                                                          | 安定性・バグ | 更新内容・備考       |
+|------|----------------------------------------------------------------------------------------------------------------------------------|--------------|----------------------|
+|      | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | pre release 運用終了 |
 
 [^springcollider]: スプリングボーンのコライダーの座標変換バグ。 [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: エクスポートダイアログのスクリーンショットボタンの jpg バグ。[\#639](https://github.com/vrm-c/UniVRM/issues/639)
