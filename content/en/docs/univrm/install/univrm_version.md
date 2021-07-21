@@ -4,13 +4,13 @@ date: 2021-02-01T07:16:52+09:00
 tags: ["unity"]
 ---
 
-# v0.55.0
+## v0.55.0
 
 | Date | Version                                                       | Bugs             | Notes                                      |
 |------|---------------------------------------------------------------|------------------|--------------------------------------------|
 | 2019 | [0.55.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0) | ◎ Stable Version | The final version for supporting Unity-5.6 |
 
-# v0.56.0 ~
+## v0.56.0 ~
 
 * If bugs are introduced after version bump, we will fix them as quick as we can and bump the minor version
 
@@ -41,7 +41,7 @@ tags: ["unity"]
 |            | [0.67.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/27?closed=1) |                        | Maintenance release                                                                               |
 |            | [0.67.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1)                                                                    |                        | Only for UPM package. No unity package release                                                    |
 
-# v0.68.0 ~
+## v0.68.0 ~ (VRM-1.0 pre release)
 
 Working on VRM-1.0...
 
@@ -63,6 +63,14 @@ Working on VRM-1.0...
 | 06/08 | [0.76.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/38?closed=1) |                                                  | Fixed an issue where namespace MeshUtility conflicts with UnityEditor.MeshUtility                     |
 | 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/39?closed=1) |                                                  | [API Update](https://vrm.dev/en/docs/univrm/programming/univrm_api_history/), [issue 1022](https://github.com/vrm-c/UniVRM/issues/1022), [issue 496](https://github.com/vrm-c/UniVRM/issues/496) |
 | 06/23 | [0.78.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/40?closed=1) |                                                  | https://github.com/vrm-c/UniVRM/pull/1049                                                             |
+
+## v0.79.0 ~
+
+Get ready for VRM-1.0.
+
+| date | version                                                                                                                          | Bugs         | Notes                                     |
+|------|----------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------------|
+|      | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | Changed `Pre release` to `Latest release` |
 
 [^springcollider]: Fixed bugs where SpringBone Collider transformation was done twice. [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: Bugs occurred when creating a screenshot as .jpg format. [\#639](https://github.com/vrm-c/UniVRM/issues/639)
