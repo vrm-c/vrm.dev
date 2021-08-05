@@ -1,5 +1,5 @@
 ---
-title: "UniVRMマニュアル"
+title: "UniVRM"
 weight: 11
 menu:
   main:
