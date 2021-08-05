@@ -21,18 +21,18 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>VRM-1.0について | VRM</title><meta property="og:title" content="VRM-1.0について" />
+<title>VRM-1.0β | VRM</title><meta property="og:title" content="VRM-1.0β" />
 <meta property="og:description" content="3D Humanoid Avatar format for VR" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vrm.dev/docs/vrm1/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2021-07-06T18:32:00+09:00" /><meta property="og:site_name" content="VRM" />
-<meta itemprop="name" content="VRM-1.0について">
+<meta property="og:updated_time" content="2021-08-05T15:38:10+09:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="VRM-1.0β">
 <meta itemprop="description" content="3D Humanoid Avatar format for VR">
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
-<meta name="twitter:title" content="VRM-1.0について"/>
+<meta name="twitter:title" content="VRM-1.0β"/>
 <meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
 
 
@@ -81,7 +81,7 @@
 				
 				
 				
-                <a class="nav-link active" href="/docs/vrm1/" ><span class="active">VRM-1.0について</span>
+                <a class="nav-link active" href="/docs/vrm1/" ><span class="active">VRM-1.0β</span>
                                                         
                 </a>
 			</li>
@@ -123,31 +123,7 @@
 				
 				
 				
-                <a class="nav-link" href="/docs/univrm/" ><span>UniVRMマニュアル</span>
-                                                        
-                </a>
-			</li>
-			
-			<li class="nav-item mx-auto mb-1 mb-lg-0">
-				
-				
-				
-				
-				
-				
-                <a class="nav-link" href="/docs/univrm1/" ><span>UniVRM-1.0β</span>
-                                                        
-                </a>
-			</li>
-			
-			<li class="nav-item mx-auto mb-1 mb-lg-0">
-				
-				
-				
-				
-				
-				
-                <a class="nav-link" href="/licenses/1.0/" ><span>ライセンス</span>
+                <a class="nav-link" href="/docs/univrm/" ><span>UniVRM</span>
                                                         
                 </a>
 			</li>
@@ -174,7 +150,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/">English</a>
+	<a class="dropdown-item" href="/en/docs/vrm1/">English</a>
 	
 </div>
 			</li>
@@ -218,7 +194,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/">English</a>
+	<a class="dropdown-item" href="/en/docs/vrm1/">English</a>
 	
 </div>
     </div>
@@ -395,12 +371,21 @@
         
         <i class="fas fa-folder-open fa-fw"></i>
         
-        VRM-1.0について
+        VRM-1.0β
     </a>
   </li>
   <ul>
     <li class="collapse show" id="docsvrm1">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrm1changed" href="/docs/vrm1/changed/">
+          <i class="fas fa-file fa-fw"></i>
+          VRM-1.0の変更点
+      </a>
       
       
     </li>
@@ -423,7 +408,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        UniVRMマニュアル
+        UniVRM
     </a>
   </li>
   <ul>
@@ -1387,7 +1372,7 @@
 
 
 <a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/vrm1/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
-<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=VRM-1.0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=VRM-1.0%ce%b2" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
 
 </div>
 
@@ -1395,29 +1380,6 @@
 
 
 
-
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#vrm-0x-からの変更点">VRM-0.X からの変更点</a></li>
-    <li><a href="#z-forward">z+ forward</a></li>
-    <li><a href="#divided-vertex-buffer">divided vertex buffer</a></li>
-    <li><a href="#vrmc_vrm-meta">VRMC_vrm: meta</a></li>
-    <li><a href="#vrmc_vrm-humanoid">VRMC_vrm: humanoid</a></li>
-    <li><a href="#vrmc_vrm-expression">VRMC_vrm: expression</a></li>
-    <li><a href="#vrmc_vrm-lookat">VRMC_vrm: lookat</a></li>
-    <li><a href="#vrmc_vrm-firstperson">VRMC_vrm: firstperson</a></li>
-    <li><a href="#vrmc_springbone">VRMC_springBone</a></li>
-    <li><a href="#vrmc_materials_hdr_emissivemultiplier">VRMC_materials_hdr_emissiveMultiplier</a></li>
-    <li><a href="#vrmc_materials_mtoon">VRMC_materials_mtoon</a></li>
-    <li><a href="#vrmc_node_constraint">VRMC_node_constraint</a>
-      <ul>
-        <li><a href="#translation">translation</a></li>
-        <li><a href="#rotation">rotation</a></li>
-        <li><a href="#aim">aim</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
 
 
 
@@ -1444,7 +1406,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://vrm.dev/docs/vrm1/">VRM-1.0について</a>
+	<a href="https://vrm.dev/docs/vrm1/">VRM-1.0β</a>
 </li>
 
 	</ol>
@@ -1452,12 +1414,12 @@
 
             
 <div class="td-content">
-    <h1>VRM-1.0について</h1>
+    <h1>VRM-1.0β</h1>
     
     
     <div class="share">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="VRM-1.0について - VRM" data-url="https://vrm.dev/docs/vrm1/"
+            data-text="VRM-1.0β - VRM" data-url="https://vrm.dev/docs/vrm1/"
             data-show-count="false">Tweet</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/docs/vrm1/" class="hatena-bookmark-button"
@@ -1472,289 +1434,15 @@
             width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true"></iframe>
     </div>
-    <div class="text-muted mb-2 pt-3">2021-07-06 18:32:00 &#43;0900 &#43;0900
+    <div class="text-muted mb-2 pt-3">2021-08-05 15:38:10 &#43;0900 &#43;0900
 <br>
-最終更新 2021/07/06: <a  href="https://github.com/vrm-c/vrm.dev/commit/dfca626c328fc0306c3143c5c9dc53f39bed5129">update (dfca626c)</a>
+最終更新 2021/08/05: <a  href="https://github.com/vrm-c/vrm.dev/commit/f9cbaa31e0d93c7eb881995882552c26a393f4d4">English (f9cbaa31)</a>
 </div>
 
     
-    <p>VRM-1.0 は VRM の正式版です。</p>
-<h2 id="vrm-0x-からの変更点">VRM-0.X からの変更点</h2>
-<ul>
-<li>VRM0 z- forward =&gt; z+ forward</li>
-<li>VRM0 shared bufferView =&gt; divided bufferView</li>
-<li>VRM0 meta =&gt; VRMC_vrm meta</li>
-<li>VRM0 humanoid =&gt; VRMC_vrm humanoid</li>
-<li>VRM0 blendshape =&gt; VRMC_vrm expression</li>
-<li>VRM0 lookat =&gt; VRMC_vrm lookat</li>
-<li>VRM0 firstperson =&gt; VRMC_vrm firstperson</li>
-<li>VRM0 springBone =&gt; VRMC_springBone</li>
-<li><code>新規</code> =&gt; VRMC_materials_hdr_emissiveMultiplier</li>
-<li>VRM0 mtoon =&gt; VRMC_materials_mtoon</li>
-<li><code>新規</code> =&gt; VRMC_node_constraint</li>
-</ul>
-<h2 id="z-forward">z+ forward</h2>
-<p>モデルは Z+ 方向が前方になるように格納します。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>forward</td>
-<td>z-</td>
-<td>z+</td>
-</tr>
-<tr>
-<td>right</td>
-<td>x+</td>
-<td>x-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="divided-vertex-buffer">divided vertex buffer</h2>
-<p>bufferView の primitive 間での共有をやめます。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bufferView</td>
-<td>shared</td>
-<td>divided</td>
-</tr>
-<tr>
-<td>利点</td>
-<td>GameEngine メモリレイアウトに近いので変換が少ない</td>
-<td>UniVRM 以外の glTF ローダーでメモリ使用量が爆発しない</td>
-</tr>
-<tr>
-<td>欠点</td>
-<td>UniVRM 以外の glTF ローダーでメモリ使用量が爆発する可能性</td>
-<td>export 時に頂点の増加・並び順の変化がありえる。import 時に連結する手間。morphTarget の扱いが煩雑</td>
-</tr>
-</tbody>
-</table>
-<h2 id="vrmc_vrm-meta">VRMC_vrm: meta</h2>
-<p><code>TODO</code></p>
-<h2 id="vrmc_vrm-humanoid">VRMC_vrm: humanoid</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>neck</td>
-<td>必須</td>
-<td></td>
-</tr>
-<tr>
-<td>head</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>hips</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>spine</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>chest</td>
-<td>必須</td>
-<td></td>
-</tr>
-<tr>
-<td>left/right UpperArm</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>left/right LowerArm</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>left/right Hand</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>left/right UpperLeg</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>left/right LowerLeg</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-<tr>
-<td>left/right Foot</td>
-<td>必須</td>
-<td>必須</td>
-</tr>
-</tbody>
-</table>
-<h2 id="vrmc_vrm-expression">VRMC_vrm: expression</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>BlendShape(Unity における MorphTarget 機能のことであり紛らわしかった)</td>
-<td>Expression</td>
-</tr>
-<tr>
-<td>喜</td>
-<td>joy</td>
-<td>happy</td>
-</tr>
-<tr>
-<td>怒</td>
-<td>angry</td>
-<td>angry</td>
-</tr>
-<tr>
-<td>哀</td>
-<td>sorrow</td>
-<td>sad</td>
-</tr>
-<tr>
-<td>楽</td>
-<td>fun</td>
-<td>relaxed</td>
-</tr>
-<tr>
-<td>驚</td>
-<td></td>
-<td>surprised</td>
-</tr>
-<tr>
-<td>あ</td>
-<td>a</td>
-<td>aa</td>
-</tr>
-<tr>
-<td>い</td>
-<td>i</td>
-<td>ih</td>
-</tr>
-<tr>
-<td>う</td>
-<td>u</td>
-<td>ou</td>
-</tr>
-<tr>
-<td>え</td>
-<td>e</td>
-<td>ee</td>
-</tr>
-<tr>
-<td>お</td>
-<td>o</td>
-<td>oh</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>overrideMouse, overrideLipSync, overrideBlink 設定の追加</li>
-<li>VRM0 の materialBind から MaterialColorBind と TextureTransformBind に整理</li>
-</ul>
-<h2 id="vrmc_vrm-lookat">VRMC_vrm: lookat</h2>
-<ul>
-<li><code>degreemap.curve</code> が廃止になります</li>
-</ul>
-<h2 id="vrmc_vrm-firstperson">VRMC_vrm: firstperson</h2>
-<ul>
-<li><code>firstPersonBone</code> は廃止になり、<code>Head</code> 固定になります</li>
-<li><code>firstPersonBoneOffset</code> は、<code>lookAt.offsetFromHeadBone</code> になります</li>
-</ul>
-<h2 id="vrmc_springbone">VRMC_springBone</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>設定単位</td>
-<td>房</td>
-<td>節</td>
-</tr>
-<tr>
-<td>子</td>
-<td>children[0]</td>
-<td>children のいずれか</td>
-</tr>
-<tr>
-<td>末端</td>
-<td>7cm の遠さに 自動で追加</td>
-<td>追加しない</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>拡張を分離</li>
-<li>Collider 形状に Capsule を追加</li>
-</ul>
-<h2 id="vrmc_materials_hdr_emissivemultiplier">VRMC_materials_hdr_emissiveMultiplier</h2>
-<p>エミッションによる発光表現です。</p>
-<p>glTF では emissiveFactor(float3) の値域が [0.0, 1.0] です。
-これに係数を追加することで、1.0 を越える値を表せるようにします。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>VRM0</th>
-<th>VRM1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mtoon の emissiveFactor</td>
-<td>独自に格納していた(0, 1 制限が無い)</td>
-<td>gltf material の emissiveFactor に格納(0, 1 制限がある)</td>
-</tr>
-</tbody>
-</table>
-<p>gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。</p>
-<h2 id="vrmc_materials_mtoon">VRMC_materials_mtoon</h2>
-<ul>
-<li>拡張を分離</li>
-</ul>
-<p><code>TODO</code></p>
-<h2 id="vrmc_node_constraint">VRMC_node_constraint</h2>
-<p><code>開発中</code></p>
-<h3 id="translation">translation</h3>
-<h3 id="rotation">rotation</h3>
-<h3 id="aim">aim</h3>
+    <p><a href="https://github.com/vrm-c/vrm-specification/tree/master/specification">VRM仕様 1.0 beta</a>を公開いたしました。</p>
+<p>また、VRMの独自ライセンスとして <a href="/licenses/1.0/">VRMパブリックライセンス文書1.0</a> を定義し、公開いたしました。</p>
+<p><a href="/docs/univrm1/">UniVRMのVRM-1.0実装</a>は準備中です。 <code>v0.80.0</code> から unitypackage を提供予定です。</p>
 
 
     
@@ -1763,6 +1451,17 @@
     
     
     <hr class="panel-line">
+    
+    
+    <div class="entry">
+    <h5>
+        <a href="/docs/vrm1/changed/">
+            <i class="fas fa-file fa-fw"></i>VRM-1.0の変更点</a>
+    </h5>
+    
+    <p></p>
+</div>
+    
     
     
     
