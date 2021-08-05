@@ -2,9 +2,6 @@
 title: "VRM PUBLIC LICENSE 1.0"
 linkTitle: "License"
 url: /licenses/1.0/en/
-menu:
-  main:
-    weight: 15
 ---
 
 <a href="/licenses/1.0/pdf/en.pdf" download="VRM Public License 1.0.pdf" target="_blank" rel="noopener">PDF</a>
