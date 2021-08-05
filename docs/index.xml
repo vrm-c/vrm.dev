@@ -15,6 +15,258 @@
     
     
     <item>
+      <title>Docs: fbx の import, T-Pose 初期エクスポート</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</link>
+      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</guid>
+      <description>
+        
+        
+        &lt;p&gt;この記事は、 &lt;code&gt;Unity-2019.4&lt;/code&gt; + &lt;code&gt;UniVRM-0.79&lt;/code&gt; で作成しています。&lt;/p&gt;
+&lt;h2 id=&#34;使用する素材&#34;&gt;使用する素材&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;new_seedsan.fbx&lt;/li&gt;
+&lt;li&gt;関連する *.png&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;fbx-の-import&#34;&gt;fbx の import&lt;/h2&gt;
+&lt;p&gt;Assets に作業用のフォルダ &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; を作ります。&lt;/p&gt;
+&lt;h3 id=&#34;texture-を-import&#34;&gt;Texture を import&lt;/h3&gt;
+&lt;p&gt;関連する png を &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; に import します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;backpack.png&lt;/li&gt;
+&lt;li&gt;body.png&lt;/li&gt;
+&lt;li&gt;faceparts.png&lt;/li&gt;
+&lt;li&gt;gradation.png&lt;/li&gt;
+&lt;li&gt;hair.png&lt;/li&gt;
+&lt;li&gt;nm_backpack_normals.png&lt;/li&gt;
+&lt;li&gt;nm_body_normals.png&lt;/li&gt;
+&lt;li&gt;nm_wear.png&lt;/li&gt;
+&lt;li&gt;planekun_face.png&lt;/li&gt;
+&lt;li&gt;robo_arm.png&lt;/li&gt;
+&lt;li&gt;wear.png&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fbx-を-import&#34;&gt;fbx を import&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;new_seedsan.fbx&lt;/code&gt; を &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; に import します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;fbx import&lt;/h4&gt;
+&lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_import.jpg&#34;   /&gt;&lt;/p&gt;
+&lt;p&gt;テクスチャの割り当てが一部うまくいきませんでした。
+次の手順で修正します。&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;material-の調整&#34;&gt;material の調整&lt;/h2&gt;
+&lt;h3 id=&#34;extract&#34;&gt;extract&lt;/h3&gt;
+&lt;p&gt;import した状態では material が SubAsset なっていて設定を変更することができません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;subasset&lt;/h4&gt;
+&lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
+また、設定を変更できないので inspector がグレーアウトしています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/embedded_subasset.jpg&#34;   /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;subasset を取り出します。&lt;/p&gt;
+&lt;p&gt;fbx importer の &lt;code&gt;Materials&lt;/code&gt; タブの &lt;code&gt;Extract Materials...&lt;/code&gt; ボタンを押してください。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/extract_materials.jpg&#34;   /&gt;
+
+&lt;p&gt;folder 選択ダイアログが現れるので &lt;code&gt;Assets/seedsan/materials&lt;/code&gt; を選択します。
+fbx の subasset であった material が指定したフォルダの中に取り出され、fbx importer の &lt;code&gt;Materials&lt;/code&gt; タブの &lt;code&gt;Remapped Materials&lt;/code&gt; にセットされます。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/extracted.jpg&#34;   /&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;fbx reset&lt;/h4&gt;
+&lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_reset.jpg&#34;   /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;material-の修正&#34;&gt;material の修正&lt;/h3&gt;
+&lt;p&gt;seedsan の 各マテリアルの texture は下記のとおりです。
+テクスチャの割り当てを確認するだけなので Shader は &lt;code&gt;Standard&lt;/code&gt; のままにします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Albedo&lt;/th&gt;
+&lt;th&gt;Normal Map&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;huku_bake&lt;/td&gt;
+&lt;td&gt;wear.png&lt;/td&gt;
+&lt;td&gt;✅nm_wear.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hair&lt;/td&gt;
+&lt;td&gt;hair.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;body_bake&lt;/td&gt;
+&lt;td&gt;body.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;eye&lt;/td&gt;
+&lt;td&gt;✅faceparts.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;eye_trans&lt;/td&gt;
+&lt;td&gt;✅faceparts.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arm_mat&lt;/td&gt;
+&lt;td&gt;✅robo_arm.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arm_plastic&lt;/td&gt;
+&lt;td&gt;✅robo_arm.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;green_emit&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;body_bake&lt;/td&gt;
+&lt;td&gt;body.png&lt;/td&gt;
+&lt;td&gt;✅nm_body_normals.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;body_nm&lt;/td&gt;
+&lt;td&gt;body.png&lt;/td&gt;
+&lt;td&gt;✅nm_body_normals.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;wear_metal&lt;/td&gt;
+&lt;td&gt;wear.png&lt;/td&gt;
+&lt;td&gt;✅nm_wear.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;huku_bake&lt;/td&gt;
+&lt;td&gt;wear.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;armgear_plastic&lt;/td&gt;
+&lt;td&gt;wear.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;robo_face&lt;/td&gt;
+&lt;td&gt;planekun_face.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;glass&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;backpack_metal&lt;/td&gt;
+&lt;td&gt;backpack.png&lt;/td&gt;
+&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;green_emit&lt;/td&gt;
+&lt;td&gt;backpack.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;backpack_nm&lt;/td&gt;
+&lt;td&gt;backpack.png&lt;/td&gt;
+&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;backpack_plastic&lt;/td&gt;
+&lt;td&gt;backpack.png&lt;/td&gt;
+&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;anim_logo&lt;/td&gt;
+&lt;td&gt;gradation.png&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;次に、法線マップの TextureType を &lt;code&gt;Normal map&lt;/code&gt; に変更して、右下の &lt;code&gt;apply&lt;/code&gt; ボタンを押します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/texturetype_normalmap.jpg&#34;   /&gt;
+
+&lt;h2 id=&#34;mesh-の調整&#34;&gt;mesh の調整&lt;/h2&gt;
+&lt;h3 id=&#34;blendshape-の法線確認&#34;&gt;BlendShape の法線確認&lt;/h3&gt;
+&lt;p&gt;head を選択して、&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; のインスペクタを表示します。
+&lt;code&gt;BlendShapes&lt;/code&gt; を開いて、スライダーを操作して確認します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
+blend shape の法線を確認したいので、shader は Standard のままにしています。
+&lt;/div&gt;
+
+&lt;p&gt;それほど目だないのですが唇の印影が付きすぎています。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg&#34;   /&gt;
+
+&lt;p&gt;fbx の import 設定を修正します。
+fbx の inspector の &lt;code&gt;Model&lt;/code&gt; タブの &lt;code&gt;BlendShape normals&lt;/code&gt; から &lt;code&gt;None&lt;/code&gt; を選択します。
+&lt;code&gt;Apply&lt;/code&gt; で適用します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_model_blendshapenormals.jpg&#34;   /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg&#34;   /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_none.jpg&#34;   /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/828&#34;&gt;#828&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;humanoid-の調整&#34;&gt;humanoid の調整&lt;/h2&gt;
+&lt;h3 id=&#34;animationtype-を-humanoid-にする&#34;&gt;AnimationType を humanoid にする&lt;/h3&gt;
+&lt;p&gt;fbx の import 設定を修正します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Rig&lt;/code&gt; タブの AnimationType を &lt;code&gt;Humanoid&lt;/code&gt; にして &lt;code&gt;Apply&lt;/code&gt; します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_animation_type.jpg&#34;   /&gt;
+
+&lt;h3 id=&#34;jaw-ボーンの割り当てを解除します&#34;&gt;jaw ボーンの割り当てを解除します。&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Rig&lt;/code&gt; タブの &lt;code&gt;Configure&lt;/code&gt; ボタンを押して、Humanoid のボーン割り当て設定画面に入ります。&lt;/p&gt;
+&lt;p&gt;fbx importer の自動割り当てで &lt;code&gt;jaw&lt;/code&gt; (顎) ボーンに &lt;code&gt;hair_A&lt;/code&gt; が割り当てられてしまいました。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/humanoid_jaw.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;割り当てを削除して 右下の &amp;lsquo;Done` ボタン押します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;jaw ボーンにご注意&lt;/h4&gt;
+fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
+前髪が変な動きをする場合、これが原因のことがあります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrm1-としてエクスポートします&#34;&gt;VRM1 としてエクスポートします&lt;/h2&gt;
+&lt;p&gt;VRMの詳細なセットアップをする前にここで一度出力します。
+このエクスポートにより以下の状態になります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;モデルが T-Pose になる&lt;/li&gt;
+&lt;li&gt;モデルが T-Pose の状態で 回転とスケールが 除去された状態になる&lt;/li&gt;
+&lt;li&gt;VRM1 として最低限必要な Meta が設定される&lt;/li&gt;
+&lt;li&gt;VRM1 としてインポートしなおすことで VRM1 のコンポーネントがアタッチされた状態になる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;prefab-をシーンに出して-t-pose-にする&#34;&gt;prefab をシーンに出して T-Pose にする&lt;/h3&gt;
+&lt;h3 id=&#34;vrm1-の-export-dialog-を出して-最小限の-meta-を入力する&#34;&gt;VRM1 の Export Dialog を出して 最小限の meta を入力する&lt;/h3&gt;
+&lt;h3 id=&#34;export-する&#34;&gt;export する&lt;/h3&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Unity のバージョン</title>
       <link>https://vrm.dev/docs/univrm/install/unity_version/</link>
       <pubDate>Mon, 22 Mar 2021 14:13:01 +0900</pubDate>
@@ -1156,6 +1408,60 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
 &lt;p&gt;なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると&lt;a href=&#34;https://virtualcast.jp/&#34;&gt;バーチャルキャスト&lt;/a&gt;から利用できます。&lt;/p&gt;
 &lt;h2 id=&#34;vrmを使うアプリケーションを開発する&#34;&gt;VRMを使うアプリケーションを開発する&lt;/h2&gt;
 &lt;p&gt;➡️ &lt;a href=&#34;https://vrm.dev/docs/vrm/vrm_development/&#34;&gt;VRMで開発する&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VrmObject と Extract</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</link>
+      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;vrm-10-の-subasset-を-extract-する&#34;&gt;vrm-1.0 の subasset を extract する&lt;/h2&gt;
+&lt;p&gt;vrm-1.0 を import した状態では、付属するアセット(texture, material, meshなど)は fbx と同様に subasset になります。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm1_subasset.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;この状態では、subasset の中身を変更することができません。
+extract により subasset を個別の Asset に展開します。&lt;/p&gt;
+&lt;h3 id=&#34;texturematerial-の-extract&#34;&gt;Texture/Material の Extract&lt;/h3&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_before.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;vrm の subasset の texture と material を外部アセットに展開します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_assets.jpg&#34;  width=&#34;400&#34; /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;vrm-関連の-extract&#34;&gt;VRM 関連の Extract&lt;/h3&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm_before.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;vrm の subasset の vrmobject と expression を外部アセットに展開します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;h2 id=&#34;vrmobject&#34;&gt;VrmObject&lt;/h2&gt;
+&lt;p&gt;VRM モデルには &lt;code&gt;VrmController&lt;/code&gt; コンポーネントがアタッチされており、
+&lt;code&gt;VrmController&lt;/code&gt; は &lt;code&gt;VrmObject&lt;/code&gt; を参照します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_controller.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;VrmObject は以下の４つの設定を持っています。
+これらの変更は、シーンではなくアセットに対する変更になります。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_object.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;h2 id=&#34;meta-画面hahahugoshortcode-s8-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/&#34;&gt;Meta 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;expression-画面hahahugoshortcode-s10-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/&#34;&gt;Expression 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;lookat-画面hahahugoshortcode-s12-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/&#34;&gt;LookAt 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;firstperson-画面hahahugoshortcode-s14-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/&#34;&gt;FirstPerson 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
 
       </description>
     </item>
@@ -4269,6 +4575,22 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Meta の設定</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</link>
+      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の &lt;code&gt;Meta&lt;/code&gt; GUI で設定します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: アニメーション</title>
       <link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link>
       <pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate>
@@ -4692,6 +5014,41 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Expression の設定</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</link>
+      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;旧blendShape&lt;/h4&gt;
+Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;expression-の割り当て設定&#34;&gt;Expression の割り当て設定&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の Expression GUI で設定します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h3 id=&#34;preset定義に対する割り当て&#34;&gt;Preset定義に対する割り当て&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;喜怒哀楽驚&lt;/li&gt;
+&lt;li&gt;あいうえお&lt;/li&gt;
+&lt;li&gt;まばたき&lt;/li&gt;
+&lt;li&gt;視線制御&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;custom-定義の-list-設定&#34;&gt;Custom 定義の List 設定&lt;/h3&gt;
+&lt;h2 id=&#34;個別の-expression-設定&#34;&gt;個別の Expression 設定&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression.jpg&#34;  width=&#34;400&#34; /&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Mesh Utility</title>
       <link>https://vrm.dev/docs/univrm/gltf/mesh_utility/</link>
       <pubDate>Wed, 21 Apr 2021 16:09:47 +0900</pubDate>
@@ -4745,962 +5102,6 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
 &lt;p&gt;Prefab GameObjectのすべての静的メッシュを一つに統合します。&lt;/p&gt;
 &lt;h3 id=&#34;bonemesheraser&#34;&gt;BoneMeshEraser&lt;/h3&gt;
 &lt;p&gt;ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRMで開発する</title>
-      <link>https://vrm.dev/docs/vrm/vrm_development/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/vrm/vrm_development/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/&#34;&gt;programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmの特徴開発者的な視点&#34;&gt;VRMの特徴(開発者的な視点)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;右手系Y-UPである ➡️ &lt;a href=&#34;https://vrm.dev/docs/univrm/programming/univrm_coordinate/&#34;&gt;Coordinate&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません&lt;/li&gt;
-&lt;li&gt;人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい&lt;/li&gt;
-&lt;li&gt;初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます&lt;/li&gt;
-&lt;li&gt;初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます&lt;/li&gt;
-&lt;li&gt;初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます&lt;/li&gt;
-&lt;li&gt;表情・視線操作が統一されている ➡️ &lt;a href=&#34;https://vrm.dev/docs/univrm/programming/univrm_use_blendshape/&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません&lt;/li&gt;
-&lt;li&gt;VRの設定が含まれている ➡️ &lt;a href=&#34;https://vrm.dev/docs/univrm/programming/univrm_use_firstperson/&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
-ランタイムにロードして動かす、という用途が想定されます。&lt;/p&gt;
-&lt;h2 id=&#34;univrmで-ランタイムロードする&#34;&gt;UniVRMで ランタイムロードする&lt;/h2&gt;
-&lt;p&gt;ランタイムで UniVRM の ロード機能を使うことができます。
-UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
-ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;univrmで-ランタイムエクスポートする&#34;&gt;UniVRMで ランタイムエクスポートする&lt;/h2&gt;
-&lt;p&gt;ランタイムで UniVRM の エクスポート機能 を使うことができます。
-この機能を使って、キャラクタークリエーションツール を実装することができます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;が例です。&lt;/p&gt;
-&lt;h2 id=&#34;univrm以外の実装&#34;&gt;UniVRM以外の実装&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ruyo/VRM4U&#34;&gt;https://github.com/ruyo/VRM4U&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/saturday06/VRM_IMPORTER_for_Blender&#34;&gt;https://github.com/saturday06/VRM_IMPORTER_for_Blender&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/virtual-cast/babylon-vrm-loader/&#34;&gt;https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pixiv/three-vrm/&#34;&gt;https://github.com/pixiv/three-vrm/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/V-Sekai/godot-vrm&#34;&gt;https://github.com/V-Sekai/godot-vrm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 拡張を実装する</title>
-      <link>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</link>
-      <pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/gltf/how_to_impl_extension/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;code&gt;UniVRM-0.63.2&lt;/code&gt; から &lt;a href=&#34;https://vrm.dev/docs/univrm/gltf/unigltf/&#34;&gt;UniGLTF&lt;/a&gt; の構成が変わって、 &lt;code&gt;extensions&lt;/code&gt; / &lt;code&gt;extras&lt;/code&gt; の実装方法が変わりました。&lt;/p&gt;
-&lt;h2 id=&#34;gltf-拡張とは&#34;&gt;GLTF 拡張とは&lt;/h2&gt;
-&lt;p&gt;例 &lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/extensions#extensions-vs-extras&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;asset&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f60&#34;&gt;2.0&lt;/span&gt;,
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;extras&amp;#34;&lt;/span&gt;: {
-      &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;guid&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;9abb92a3-39cf-4986-a758-c43d4bb4ab58&amp;#34;&lt;/span&gt;,
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;名前(JsonPath)が &lt;code&gt;asset.extras.guid&lt;/code&gt; で値が &lt;code&gt;&amp;quot;9abb92a3-39cf-4986-a758-c43d4bb4ab58&amp;quot;&lt;/code&gt; です。
-&lt;code&gt;extensions&lt;/code&gt; (&lt;code&gt;extras&lt;/code&gt; 。複数形に注意) の&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;JsonPath。例 &lt;code&gt;extensions.VRM&lt;/code&gt;, &lt;code&gt;asset.extras.guid&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;型、内容。例 object(VRMに関する諸々), string(guid文字列)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の取り決めが &lt;code&gt;GTTF拡張&lt;/code&gt; です。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;extensions&lt;/code&gt; はオフィシャルに仕様を策定して &lt;code&gt;JsonSchema&lt;/code&gt; として公開する。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/extensions&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/extensions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;extras&lt;/code&gt; は &lt;code&gt;JsonSchema&lt;/code&gt; を作るほどでもないちょっとした追加データを手軽に追加という気持ちの違いです。仕組みは同じです。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This enables glTF models to contain application-specific properties without creating a full glTF extension&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;extensions&lt;/code&gt; は、&lt;code&gt;{ベンダー名}_{拡張名}&lt;/code&gt; という命名規則です。
-ベンダー名は、 &lt;a href=&#34;https://github.com/KhronosGroup/glTF&#34;&gt;https://github.com/KhronosGroup/glTF&lt;/a&gt; に申し込んで登録できます。&lt;/p&gt;
-&lt;h2 id=&#34;unigltf-の-extensions&#34;&gt;UniGLTF の extensions&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;v0.63.0&lt;/code&gt; 以前は、&lt;code&gt;GLTF 型&lt;/code&gt; の &lt;code&gt;extensions&lt;/code&gt; フィールドに、&lt;code&gt;GLTFExtensions&lt;/code&gt; 型を定義して、&lt;code&gt;VRM&lt;/code&gt; フィールドを定義するという方法をとっていました。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;VRM&lt;/span&gt;
-{
-
-}
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GLTFExtensions&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; VRM VRM;
-}
-
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// すべての拡張の型を事前に知っている必要があり、拡張を分離できない
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GLTF&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; GLTFExtensions extensions;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 個々の extensions に対して別個の型を定義する必要がある
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GLTFMaterialExtensions&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; KHR_materials_unlit KHR_materials_unlit;
-}
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GLTFMaterial&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; GLTFMaterialExtensions extensions;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;この設計だと GLTF と拡張を別ライブラリとして分離することができませんでした。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;v0.63.1&lt;/code&gt; から設計を変更して、すべての &lt;code&gt;extensions/extras&lt;/code&gt; に同じ型の入れ物を使うように変更しました。
-UniGLTF は &lt;code&gt;import/export&lt;/code&gt; の具体的な内容を知らずに中間データの入れ物として扱います。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// extensions / extras の入れ物として使う型
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 実行時は、 glTFExtensionImport / glTFExtensionExport を使う
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;abstract&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;glTFExtension&lt;/span&gt;
-{
-
-}
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GLTF&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// UniGLTFは具体的な型を知らない。利用側が処理(serialize/deserialize)する
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; glTFExtension extensions;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unigltf-の拡張の書き方&#34;&gt;UniGLTF の拡張の書き方&lt;/h2&gt;
-&lt;p&gt;拡張は、以下の部品要素から作れます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;名前(JsonPath)。例: &lt;code&gt;extensions.VRM&lt;/code&gt;, &lt;code&gt;materials[*].extensions.KHR_materials_unlit&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;拡張の型。&lt;code&gt;T型&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;デシリアライザー(import)。 &lt;code&gt;jsonバイト列 =&amp;gt; T型&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;シリアライザーexport)。&lt;code&gt;T型 =&amp;gt; jsonバイト列&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;jsonpath-と-型を決める&#34;&gt;JSONPATH と 型を決める&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 型
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;GoodMaterial&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// `materials[*].extensions.CUSTOM_materials_good`
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; EXTENSION_NAME = &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;CUSTOM_materials_good&amp;#34;&lt;/span&gt;;
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; GoodValue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;import&#34;&gt;import&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;GoodMaterial DeserializeGoodMaterial(ListTreeNode&amp;lt;JsonValue&amp;gt; json)
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// デシリアライズ。手で書くかコード生成する(後述)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;}
-
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ユーティリティ関数例
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;bool&lt;/span&gt; TryGetExtension&amp;lt;T&amp;gt;(UniGLTF.glTFExtension extension, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; key, Func&amp;lt;ListTreeNode&amp;lt;JsonValue&amp;gt;, T&amp;gt; deserializer, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; T &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt;)
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(material.extensions &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;is&lt;/span&gt; UniGLTF.glTFExtensionsImport import)
-    {
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// null check 完了
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; kv &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;in&lt;/span&gt; import.ObjectItems())
-        {
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(kv.key.GetString()==key)
-            {
-                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt; = Deserialize(kv.Value);
-                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;;
-            }
-        }
-    }
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt; = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;default&lt;/span&gt;;
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;;
-}
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; ImportMaterial(UniGLTF.glTFMaterial material)
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// material の処理に割り込んで
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(TryGetExtension(material.extension, GoodMaterial.EXTENSION_NAME, DeserializeGoodMaterial, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; GoodMaterial good))
-    {
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// good material 独自の処理
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;export&#34;&gt;export&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; SerializeGoodMaterial(UniJSON.JsonFormatter f, GoodMaterial &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt;)
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// シリアライズ。手で書くかコード生成する(後述)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;}
-
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// ユーティリティ関数例
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; ArraySegment&amp;lt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;byte&lt;/span&gt;&amp;gt; SerializeExtension&amp;lt;T&amp;gt;(T &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt;, Func&amp;lt;T, ArraySegment&amp;lt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;byte&lt;/span&gt;&amp;gt;&amp;gt; serialize)
-{
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; f = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniJSON.JsonFormatter();
-    serialize(f, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt;);
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; f.GetStoreBytes();
-}
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; ExportGoodMaterial(UniGLTF.glTFMaterial material, GoodMaterial good)
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// material の処理に割り込んで
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(!(material.extensions &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;is&lt;/span&gt; UniGLTF.glTFExtensionsExport export))
-    {
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 無かった。新規作成
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        export = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.glTFExtensionsExport();
-        material.extensions = export;
-    }
-
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = SerializeExtension(good, SerializeGoodMaterial);
-    export.Add(GoodMaterial.EXTENSION_NAME, bytes);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実装例&#34;&gt;実装例&lt;/h2&gt;
-&lt;h3 id=&#34;gltf-gltf全体&#34;&gt;GLTF: GLTF全体&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;C#の型からコード生成&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Runtime\UniGLTF\Format\GltfSerializer.g.cs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Runtime\UniGLTF\Format\GltfDeserializer.g.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ジェネレーターの呼び出しコード&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Editor\UniGLTF\Serialization\SerializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Editor\UniGLTF\Serialization\DeserializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;生成コードの呼び出し&lt;/p&gt;
-&lt;h3 id=&#34;gltf-meshesextrastargetnames&#34;&gt;GLTF: &lt;code&gt;meshes[*].extras.targetNames&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;コード生成せずに手書き&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\gltf_mesh_extras_targetNames.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;生成コードの呼び出し&lt;/p&gt;
-&lt;h3 id=&#34;gltf-materialsextensionskhr_materials_unlit&#34;&gt;GLTF: &lt;code&gt;materials[*].extensions.KHR_materials_unlit&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;コード生成せずに手書き&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\KHR_materials_unlit.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;生成コードの呼び出し&lt;/p&gt;
-&lt;h3 id=&#34;gltf-materialsextensionskhr_texture_transform&#34;&gt;GLTF: &lt;code&gt;materials[*].extensions.KHR_texture_transform&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;コード生成せずに手書き&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\KHR_texture_transform.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;生成コードの呼び出し&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialImporter.cs#L296&#34;&gt;https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialImporter.cs#L296&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialExporter.cs#L193&#34;&gt;https://github.com/vrm-c/UniVRM/blob/master/Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialExporter.cs#L193&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;vrm0-extensionsvrm&#34;&gt;VRM0: &lt;code&gt;extensions.VRM&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;C#の型からコード生成&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM\Runtime\Format\VRMSerializer.g.cs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM\Runtime\Format\VRMDeserializer.g.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ジェネレーターの呼び出しコード&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM\Editor\VRMSerializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM\Editor\VRMDeserializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;生成コードの呼び出し&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMImporterContext.cs#L41&#34;&gt;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMImporterContext.cs#L41&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMExporter.cs#L209&#34;&gt;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM/Runtime/IO/VRMExporter.cs#L209&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;vrm1-extensionsvrmc_vrm-など&#34;&gt;VRM1: &lt;code&gt;extensions.VRMC_vrm&lt;/code&gt; など&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;JsonSchemaからコード生成&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;5つの Extensions に分かれたので個別に作成。
-ささる場所(JsonPath)が違うのに注意。&lt;/p&gt;
-&lt;h4 id=&#34;extensionsvrmc_vrm&#34;&gt;&lt;code&gt;extensions.VRMC_vrm&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Runtime\Format\VRM&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;materialsextensionsvrmc_materials_mtoon&#34;&gt;&lt;code&gt;materials[*].extensions.VRMC_materials_mtoon&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Runtime\Format\MaterialsMToon&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;nodesextensionsvrmc_node_collider&#34;&gt;&lt;code&gt;nodes[*].extensions.VRMC_node_collider&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Runtime\Format\NodeCollider&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;extensionsvrmc_springbone&#34;&gt;&lt;code&gt;extensions.VRMC_springBone&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Runtime\Format\SpringBone&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;extensionsvrmc_vrm_constraints&#34;&gt;&lt;code&gt;extensions.VRMC_vrm_constraints&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Runtime\Format\Constraints&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;ジェネレーターの呼び出しコード&#34;&gt;ジェネレーターの呼び出しコード&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\VRM10\Editor\GeneratorMenu.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;生成コードの呼び出し&#34;&gt;生成コードの呼び出し&lt;/h4&gt;
-&lt;h2 id=&#34;コード生成&#34;&gt;コード生成&lt;/h2&gt;
-&lt;p&gt;JSON と C# の型との シリアライズ/デシリアライズは定型コードになるので、ジェネレーターがあります。
-C# の型から生成するものと、JsonSchema から C# の型とともに生成するものがあります。&lt;/p&gt;
-&lt;h3 id=&#34;c-の型から生成&#34;&gt;C# の型から生成&lt;/h3&gt;
-&lt;h4 id=&#34;シリアライザー&#34;&gt;シリアライザー&lt;/h4&gt;
-&lt;p&gt;ジェネレーターを呼び出すコードを作成します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;元になる型&lt;/li&gt;
-&lt;li&gt;出力先&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の２つを決めます。static関数を生成するので、namespace と static class で囲ってあげます。&lt;/p&gt;
-&lt;p&gt;例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Editor\UniGLTF\Serialization\SerializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Collections.Generic&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.IO&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Reflection&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Text&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniJSON&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEditor&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;SerializerGenerator&lt;/span&gt;
-    {
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; Begin = &lt;span style=&#34;color:#c30&#34;&gt;@&amp;#34;// Don&amp;#39;t edit manually. This is generaged. 
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using System;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using System.Collections.Generic;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using UniJSON;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;namespace UniGLTF {
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;    static public class GltfSerializer
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;    {
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;&lt;/span&gt;;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; End = &lt;span style=&#34;color:#c30&#34;&gt;@&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;    } // class
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;} // namespace
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;&lt;/span&gt;;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; OutPath
-        {
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;get&lt;/span&gt;
-            {
-                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Path.Combine(UnityEngine.Application.dataPath,
-                &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;UniGLTF/UniGLTF/Scripts/IO/GltfSerializer.g.cs&amp;#34;&lt;/span&gt;);
-            }
-        }
-&lt;span style=&#34;color:#309&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;        [MenuItem(UniGLTFVersion.MENU + &amp;#34;/GLTF: Generate Serializer&amp;#34;)]&lt;/span&gt;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; GenerateSerializer()
-        {
-            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; info = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; ObjectSerialization(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(glTF), &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;gltf&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Serialize_&amp;#34;&lt;/span&gt;);
-            Debug.Log(info);
-
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; s = File.Open(OutPath, FileMode.Create))
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; w = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; StreamWriter(s, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UTF8Encoding(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;)))
-            {
-                w.Write(Begin);
-                info.GenerateSerializer(w, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Serialize&amp;#34;&lt;/span&gt;);
-                w.Write(End);
-            }
-
-            Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;write: {0}&amp;#34;&lt;/span&gt;, OutPath);
-            UnityPath.FromFullpath(OutPath).ImportAsset();
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;デシリアライザー&#34;&gt;デシリアライザー&lt;/h4&gt;
-&lt;p&gt;ジェネレーターを呼び出すコードを作成します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;元になる型&lt;/li&gt;
-&lt;li&gt;出力先&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の２つを決めます。static関数を生成するので、namespace と static class で囲ってあげます。&lt;/p&gt;
-&lt;p&gt;例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets\UniGLTF\Editor\UniGLTF\Serialization\DeserializerGenerator.cs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.IO&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Reflection&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Text&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEditor&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;/// &amp;lt;summary&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;/// Generate deserializer from ListTreeNode&amp;lt;JsonValue&amp;gt; to glTF using type reflection
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;/// &amp;lt;/summary&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;DeserializerGenerator&lt;/span&gt;
-    {
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; BindingFlags FIELD_FLAGS = BindingFlags.Instance | BindingFlags.Public;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; Begin = &lt;span style=&#34;color:#c30&#34;&gt;@&amp;#34;// Don&amp;#39;t edit manually. This is generaged. 
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using UniJSON;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using System;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using System.Collections.Generic;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;using UnityEngine;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;namespace UniGLTF {
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;public static class GltfDeserializer
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;{
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;&lt;/span&gt;;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; End = &lt;span style=&#34;color:#c30&#34;&gt;@&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;} // GltfDeserializer
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;} // UniGLTF 
-&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;&lt;/span&gt;;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; OutPath
-        {
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;get&lt;/span&gt;
-            {
-                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Path.Combine(UnityEngine.Application.dataPath,
-                &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;UniGLTF/UniGLTF/Scripts/IO/GltfDeserializer.g.cs&amp;#34;&lt;/span&gt;);
-            }
-        }
-&lt;span style=&#34;color:#309&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;        [MenuItem(UniGLTFVersion.MENU + &amp;#34;/GLTF: Generate Deserializer&amp;#34;)]&lt;/span&gt;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; GenerateSerializer()
-        {
-            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; info = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; ObjectSerialization(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(glTF), &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;gltf&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Deserialize_&amp;#34;&lt;/span&gt;);
-            Debug.Log(info);
-
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; s = File.Open(OutPath, FileMode.Create))
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; w = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; StreamWriter(s, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UTF8Encoding(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;)))
-            {
-                w.Write(Begin);
-                info.GenerateDeserializer(w, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Deserialize&amp;#34;&lt;/span&gt;);
-                w.Write(End);
-            }
-
-            Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;write: {0}&amp;#34;&lt;/span&gt;, OutPath);
-            UnityPath.FromFullpath(OutPath).ImportAsset();
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;キー出力の抑制&#34;&gt;キー出力の抑制&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;index&lt;/code&gt; に無効な値として &lt;code&gt;-1&lt;/code&gt; を入れる場合に、JSONではキーを出力しないとしたいことがあります。&lt;/p&gt;
-&lt;p&gt;TODO: &lt;code&gt;int?&lt;/code&gt; にするべきだった&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#309&#34;&gt;[JsonSchema(Minimum = 0)]&lt;/span&gt;
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; index = -&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;のようにすることで、キーの出力を抑制できます。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 生成コードのキー出力例
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;value&lt;/span&gt;.index&amp;gt;=&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;){
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;何も付けないと&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 出力制御無し
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;){
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;enum-のエンコーディング&#34;&gt;enum のエンコーディング&lt;/h4&gt;
-&lt;p&gt;enumの値の名前を文字列で使う、enumの値の数値を使うの2種類がありえます。
-enumの場合はデフォルト値が無いので必須です。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#309&#34;&gt;[JsonSchema(EnumSerializationType = EnumSerializationType.AsInt)]&lt;/span&gt;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; glBufferTarget target;
-&lt;span style=&#34;color:#309&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;[JsonSchema(EnumSerializationType = EnumSerializationType.AsLowerString)]&lt;/span&gt;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; ProjectionType type;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;jsonschemaから生成&#34;&gt;JsonSchemaから生成&lt;/h3&gt;
-&lt;p&gt;VRM-1.0 の実装&lt;/p&gt;
-&lt;p&gt;TODO:&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRMShadersパッケージ</title>
-      <link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link>
-      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; からフォルダ構成を変更して、
-&lt;code&gt;UniVRM&lt;/code&gt; のマテリアル関連の機能は、 &lt;code&gt;Assets/VRMShaders&lt;/code&gt; に移動しました。
-&lt;code&gt;VRMShaders&lt;/code&gt; 単体で独立したパッケージとして使用することができます。&lt;/p&gt;
-&lt;h2 id=&#34;サポートしている-unity-の-shader-と-gltf-マテリアル-の対応関係&#34;&gt;サポートしている Unity の Shader と glTF マテリアル の対応関係&lt;/h2&gt;
-&lt;p&gt;vrm は、&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PBR(gltfデフォルト)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;unlit(KHR_materials_unlit extensions)&lt;/code&gt; &lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MToon&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の３種類をサポートしています。
-&lt;code&gt;v0.44&lt;/code&gt; から、&lt;code&gt;PBR&lt;/code&gt;, &lt;code&gt;unlit&lt;/code&gt; に関しては glTF として記録するようになった。( &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; 導入 )&lt;/p&gt;
-&lt;p&gt;これらを unity に import すると、unity の&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;unlit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;VRM/MToon&lt;/code&gt; &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&gt;mtoon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;シェーダーになります。
-エクスポートするときは、その他の &lt;code&gt;unlit&lt;/code&gt; 系の shader にも対応しています。
-また、過去のバージョンに含まれていた &lt;code&gt;shader&lt;/code&gt; についてもここに記述します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Shader&lt;/th&gt;
-&lt;th&gt;glTF export&lt;/th&gt;
-&lt;th&gt;import&lt;/th&gt;
-&lt;th&gt;comment&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Standard(Unity標準)&lt;/td&gt;
-&lt;td&gt;PBR&lt;/td&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/StandardVColor&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;v0.xx.0 で削除されます。UniUnlitで代用を検討してください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent Cutout(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/UniUnlit(VRMShaders)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTexture(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparent(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitCutout(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite(UniVRM)&lt;/td&gt;
-&lt;td&gt;gltf表現が無い&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。MToonをご利用ください。0.44以前は、Unityのすべてのシェーダーをダンプしてた&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;extensions.VRM.materialProperties&lt;/td&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;VRMC_materials_mtoon&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;1.0版のMToon。開発中。ちょっと変わる&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;unity-と-gltf-の互換性&#34;&gt;Unity と glTF の互換性&lt;/h2&gt;
-&lt;h3 id=&#34;頂点色&#34;&gt;頂点色&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity Standard は、頂点カラーをサポートしていません。VRMShaders の UniUnlit は頂点カラーをサポートしています。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;マルチuv&#34;&gt;マルチUV&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF は任意のテクスチャが、複数のuvを使い分けることができる。Standard, UniUnlit, MToon ではできない。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;upm-パッケージ&#34;&gt;UPM パッケージ&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;manifest.json&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;抜粋&lt;/span&gt;
-{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.76.0&amp;#34;&lt;/span&gt;,
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniVRM Version</title>
-      <link>https://vrm.dev/docs/univrm/install/univrm_version/</link>
-      <pubDate>Tue, 20 Jul 2021 14:18:11 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/install/univrm_version/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;v0550-unity-56-対応最終版&#34;&gt;v0.55.0 (Unity-5.6 対応最終版)&lt;/h2&gt;
-&lt;p&gt;Unity-5.6 対応最終版&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;date&lt;/th&gt;
-&lt;th&gt;version&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;2019&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0&#34;&gt;0.55.0&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;v0560-&#34;&gt;v0.56.0 ～&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;date&lt;/th&gt;
-&lt;th&gt;version&lt;/th&gt;
-&lt;th&gt;安定性・バグ&lt;/th&gt;
-&lt;th&gt;更新内容・備考&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;2020&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0&#34;&gt;0.56.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;Unity-2018.4 に変更&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1&#34;&gt;0.56.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2&#34;&gt;0.56.2&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34;&gt;0.56.3&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0&#34;&gt;0.57.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;ボーン名重複時にに自動でリネームするようになりました&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1&#34;&gt;0.57.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0&#34;&gt;0.58.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;エクスポートダイアログの作り直し&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1&#34;&gt;0.58.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0&#34;&gt;0.59.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;springBone の Missing を検知してメッセージ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0&#34;&gt;0.60.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;null check 的なものが増えて、モデル改変してもエラーが出にくくなりました&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0&#34;&gt;0.61.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/20?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;UniUnlit の頂点カラー。AOT問題を修正&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1&#34;&gt;0.61.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0&#34;&gt;0.62.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/21?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;BlendShape bake の動作が正しくなった&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2021 01/05&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0&#34;&gt;0.63.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/25?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;jpg問題あり。UniGLTF分離&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/07&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1&#34;&gt;0.63.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;jpg問題あり&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/08&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2&#34;&gt;0.63.2&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/15&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0&#34;&gt;0.64.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/23?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;メッシュの一部を削除したときのエクスポートエラーを回避。vrm-1.0 Experimental&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/26&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0&#34;&gt;0.65.0&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/28&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1&#34;&gt;0.65.1&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/28?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;トルコ語のExportを修正&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/696&#34;&gt;#696&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;01/28&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2&#34;&gt;0.65.2&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/29?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3&#34;&gt;0.65.3&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;UniGLTFのバージョン。UPM専用。パッケージリリース無し&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;02/03&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0&#34;&gt;0.66.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/26?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;安定✅&lt;/td&gt;
-&lt;td&gt;未正規化ヒエラルキーにスプリングボーンがあるときの警告メッセージ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0&#34;&gt;0.67.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/27?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;UPM専用。パッケージリリース無し&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1&#34;&gt;0.67.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;UPM専用。パッケージリリース無し&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;v0680--vrm-10-作業-pre-release&#34;&gt;v0.68.0 ～ (VRM-1.0 作業 pre release)&lt;/h2&gt;
-&lt;p&gt;VRM-1.0 作業中&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/univrm_api_history/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;date&lt;/th&gt;
-&lt;th&gt;version&lt;/th&gt;
-&lt;th&gt;安定性・バグ&lt;/th&gt;
-&lt;th&gt;更新内容・備考&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0&#34;&gt;0.68.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/30?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;glb/gltf 座標軸オプション。ImporterContext API&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;03/16&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1&#34;&gt;0.68.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;03/17&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2&#34;&gt;0.68.2&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;03/22&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0&#34;&gt;0.69.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/31?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;SmoothTexture 変換の修正&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;#388&lt;/a&gt;, Unity2020対応&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;03/23&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1&#34;&gt;0.69.1&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;03/31&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0&#34;&gt;0.70.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/32?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;impl &lt;code&gt;WEIGHTS_0&lt;/code&gt; not float4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;04/05&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.71.0&#34;&gt;0.71.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/33?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;IOS build&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;04/13&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.72.0&#34;&gt;0.72.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/34?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;頂点バッファを分割するオプション。T-Pose&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;04/22&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.73.0&#34;&gt;0.73.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/35?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/897&#34;&gt;OtherPermissionUrl欄の修正&lt;/a&gt; * &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/894&#34;&gt;正規化するときにBlendShapeを使うLookAtがExportされない&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;05/12&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0&#34;&gt;0.74.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/36?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/922&#34;&gt;Runtime ロード後の　SpringBone　スケーリング挙動の修正&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;05/25&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0&#34;&gt;0.75.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/37?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;正規化時にLookAtのパラメーターが落ちてしまうのを修正&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;06/08&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0&#34;&gt;0.76.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/38?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;namespace MeshUtilityがUnityEditor.MeshUtility classと競合するのを修正&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;06/17&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0&#34;&gt;0.77.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/39?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/univrm_api_history/&#34;&gt;API更新&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1022&#34;&gt;https://github.com/vrm-c/UniVRM/issues/1022&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/496&#34;&gt;https://github.com/vrm-c/UniVRM/issues/496&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;06/23&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0&#34;&gt;0.78.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/40?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1049&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1049&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;v0790-&#34;&gt;v0.79.0 ～&lt;/h2&gt;
-&lt;p&gt;1.0 向けの改修終わり。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;date&lt;/th&gt;
-&lt;th&gt;version&lt;/th&gt;
-&lt;th&gt;安定性・バグ&lt;/th&gt;
-&lt;th&gt;更新内容・備考&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0&#34;&gt;0.79.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/41?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;pre release 運用終了&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;VRMFirstPerson のエディターインポートのバグ &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/515&#34;&gt;/#515&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;スプリングボーンのコライダーの座標変換バグ。 &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/576&#34;&gt;#576&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;エクスポートダイアログのスクリーンショットボタンの jpg バグ。&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/639&#34;&gt;#639&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;シリアライザのバグ。エクスポートしたファイルの互換性。 &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/654&#34;&gt;#654&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;MeshUtility フォルダの移動と参照の問題。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;他のパッケージと併用するときに install で問題が出る？ &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/687&#34;&gt;#687&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;build すると Exception( &lt;code&gt;#if UNITY_EDITOR&lt;/code&gt; )。 &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/701&#34;&gt;#701&lt;/a&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/786&#34;&gt;#786&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/788&#34;&gt;#788&lt;/a&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:9&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/790&#34;&gt;#790&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/794&#34;&gt;#794&lt;/a&gt; &lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:10&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/836&#34;&gt;#836&lt;/a&gt; &lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:11&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/831&#34;&gt;#831&lt;/a&gt; &lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:12&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/812&#34;&gt;#812&lt;/a&gt; &lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
 
       </description>
     </item>
