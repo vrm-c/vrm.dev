@@ -38,7 +38,8 @@ By exercising the Licensed Rights (as defined below), You (as defined below) acc
   <li><b>License grant</b>.</li>
   <ol type="1">
     <li>Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to make Model Use of the Licensed Work Data, and to perform any of the following acts that the Licensor specifies in the License Settings (collectively, the “<b>Licensed Rights</b>”) to:</li>
-    <ol type="A">
+    <!-- WORKAROUND: minifierが勝手にattributeをlowercaseにしてしまうため、styleで大文字にする -->
+    <ol type="A" style="list-style-type: upper-latin">
       <li>Redistribute the Licensed Work Data, in whole or in part;</li>
       <li>make Avatar Use of the Licensed Work Data;</li>
       <li>create or reproduce Adapted Work Data;</li>
@@ -52,7 +53,7 @@ By exercising the Licensed Rights (as defined below), You (as defined below) acc
     <li><u>Term</u>. The term of this Public License is specified in Section 6(a).</li>
     <li><u>Media and formats; technical modifications allowed</u>. The Licensor authorizes You to exercise the Licensed Rights inall media and formats whether now known or hereafter created, and to make technical modifications necessary todo so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumventEffective Technological Measures. For purposes of this Public License, simply making modifications authorized bythis Section 2(a)(7) shall not be deemed production of Adapted Work Data.</li>
     <li><u>Downstream recipients</u>.</li>
-    <ol type="A">
+    <ol type="A" style="list-style-type: upper-latin">
       <li><u>Offer from the Licensor - Licensed Work Data</u>. Everyrecipient of the Licensed Work Data automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.</li>
       <li><u>Additional offer from the Licensor - Adapted Work Data</u>. In cases where the Licensor grants the right todo the act listed in Section 2(a)(1)(D) as a Licensed Right in the License Settings, every recipient of Adapted Work Data from You automatically receivesan offer from the Licensor to exercise the Licensed Rights in the Adapted Work Data under the conditions of the Adapter’s License You apply.</li>
       <li><u>No downstream restrictions</u>. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Work Data if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Work Data.</li>
@@ -75,7 +76,7 @@ Your exercise of the Licensed Rights is expressly made subject to the following 
   <li><b>Attribution</b>.</li>
   <ol type="1">
     <li>If the Licensor indicates in the License Settings that this Section applies to You, and if You Redistribute, make Model Use, or make Avatar Use the Licensed Work Data (including in modified form, if applicable), You shall:</li>
-    <ol type="A">
+    <ol type="A" style="list-style-type: upper-latin">
       <li>retain the following if it is supplied by the Licensor with the Licensed Work Data:</li>
       <ol type="i">
         <li>identification of the creator(s) of the Licensed Work Data and any others designated by the Licensor to receive attribution, in any reasonable manner requested by the Licensor(including by pseudonym, if designated);</li>
