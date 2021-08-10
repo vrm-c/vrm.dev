@@ -3,8 +3,6 @@ title: fbx の import, T-Pose 初期エクスポート
 weight: 1
 ---
 
-この記事は、 `Unity-2019.4` + `UniVRM-0.79` で作成しています。
-
 ## 使用する素材
 
 * new_seedsan.fbx

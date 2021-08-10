@@ -70,7 +70,8 @@ Get ready for VRM-1.0.
 
 | date | version                                                                                                                          | Bugs         | Notes                                     |
 |------|----------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------------|
-|      | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | Changed `Pre release` to `Latest release` |
+|07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | Changed `Pre release` to `Latest release` |
+|      | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |              | VRM-1.0β unitypackage                     |
 
 [^springcollider]: Fixed bugs where SpringBone Collider transformation was done twice. [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: Bugs occurred when creating a screenshot as .jpg format. [\#639](https://github.com/vrm-c/UniVRM/issues/639)

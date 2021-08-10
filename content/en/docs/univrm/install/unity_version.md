@@ -5,7 +5,17 @@ weight: 1
 tags: ["unity"]
 ---
 
-## UniVRM-0.56.0 ～
+## UniVRM-0.80.0 ～
+
+We have discontinued support for Unity-2018.4LTS and updated the development version to Unity-2019.4LTS.
+
+| Unity Version    | Note                                                                        |
+|------------------|-----------------------------------------------------------------------------|
+| Unity-2019.4 LTS | Current UniVRM development version                                          |
+| Unity-2020.4 LTS | Current version for UniVRM UPM testing                                      |
+| Unity-2021       | Please report any issues to [github](https://github.com/vrm-c/UniVRM/issues)|
+
+## UniVRM-0.56.0 ～ 0.79.0
 
 Support `Unity-2018.4` and above. `Unity-2019.4 LTS` is recommended.
 
@@ -25,3 +35,4 @@ Support `Unity-2018.4` and above. `Unity-2019.4 LTS` is recommended.
 ## ～ UniVRM-0.55
 
 * Support `Unity-5.6` and above
+
