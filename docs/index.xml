@@ -15,305 +15,15 @@
     
     
     <item>
-      <title>Docs: VRM-1.0の変更点</title>
-      <link>https://vrm.dev/docs/vrm1/changed/</link>
-      <pubDate>Thu, 05 Aug 2021 15:26:27 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/vrm1/changed/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;vrm-0x-からの変更点&#34;&gt;VRM-0.X からの変更点&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;VRM0 z- forward =&amp;gt; z+ forward&lt;/li&gt;
-&lt;li&gt;VRM0 shared bufferView =&amp;gt; divided bufferView&lt;/li&gt;
-&lt;li&gt;VRM0 meta =&amp;gt; VRMC_vrm meta&lt;/li&gt;
-&lt;li&gt;VRM0 humanoid =&amp;gt; VRMC_vrm humanoid&lt;/li&gt;
-&lt;li&gt;VRM0 blendshape =&amp;gt; VRMC_vrm expression&lt;/li&gt;
-&lt;li&gt;VRM0 lookat =&amp;gt; VRMC_vrm lookat&lt;/li&gt;
-&lt;li&gt;VRM0 firstperson =&amp;gt; VRMC_vrm firstperson&lt;/li&gt;
-&lt;li&gt;VRM0 springBone =&amp;gt; VRMC_springBone&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;新規&lt;/code&gt; =&amp;gt; VRMC_materials_hdr_emissiveMultiplier&lt;/li&gt;
-&lt;li&gt;VRM0 mtoon =&amp;gt; VRMC_materials_mtoon&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;新規&lt;/code&gt; =&amp;gt; VRMC_node_constraint&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;z-forward&#34;&gt;z+ forward&lt;/h2&gt;
-&lt;p&gt;モデルは Z+ 方向が前方になるように格納します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;forward&lt;/td&gt;
-&lt;td&gt;z-&lt;/td&gt;
-&lt;td&gt;z+&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;right&lt;/td&gt;
-&lt;td&gt;x+&lt;/td&gt;
-&lt;td&gt;x-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;divided-vertex-buffer&#34;&gt;divided vertex buffer&lt;/h2&gt;
-&lt;p&gt;bufferView の primitive 間での共有をやめます。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;bufferView&lt;/td&gt;
-&lt;td&gt;shared&lt;/td&gt;
-&lt;td&gt;divided&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;利点&lt;/td&gt;
-&lt;td&gt;GameEngine メモリレイアウトに近いので変換が少ない&lt;/td&gt;
-&lt;td&gt;UniVRM 以外の glTF ローダーでメモリ使用量が爆発しない&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;欠点&lt;/td&gt;
-&lt;td&gt;UniVRM 以外の glTF ローダーでメモリ使用量が爆発する可能性&lt;/td&gt;
-&lt;td&gt;export 時に頂点の増加・並び順の変化がありえる。import 時に連結する手間。morphTarget の扱いが煩雑&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrmc_vrm-meta&#34;&gt;VRMC_vrm: meta&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;vrmc_vrm-humanoid&#34;&gt;VRMC_vrm: humanoid&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;neck&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;head&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;hips&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spine&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;chest&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right UpperArm&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right LowerArm&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right Hand&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right UpperLeg&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right LowerLeg&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;left/right Foot&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;td&gt;必須&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrmc_vrm-expression&#34;&gt;VRMC_vrm: expression&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;name&lt;/td&gt;
-&lt;td&gt;BlendShape(Unity における MorphTarget 機能のことであり紛らわしかった)&lt;/td&gt;
-&lt;td&gt;Expression&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;喜&lt;/td&gt;
-&lt;td&gt;joy&lt;/td&gt;
-&lt;td&gt;happy&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;怒&lt;/td&gt;
-&lt;td&gt;angry&lt;/td&gt;
-&lt;td&gt;angry&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;哀&lt;/td&gt;
-&lt;td&gt;sorrow&lt;/td&gt;
-&lt;td&gt;sad&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;楽&lt;/td&gt;
-&lt;td&gt;fun&lt;/td&gt;
-&lt;td&gt;relaxed&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;驚&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;surprised&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;あ&lt;/td&gt;
-&lt;td&gt;a&lt;/td&gt;
-&lt;td&gt;aa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;い&lt;/td&gt;
-&lt;td&gt;i&lt;/td&gt;
-&lt;td&gt;ih&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;う&lt;/td&gt;
-&lt;td&gt;u&lt;/td&gt;
-&lt;td&gt;ou&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;え&lt;/td&gt;
-&lt;td&gt;e&lt;/td&gt;
-&lt;td&gt;ee&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;お&lt;/td&gt;
-&lt;td&gt;o&lt;/td&gt;
-&lt;td&gt;oh&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;overrideMouse, overrideLipSync, overrideBlink 設定の追加&lt;/li&gt;
-&lt;li&gt;VRM0 の materialBind から MaterialColorBind と TextureTransformBind に整理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmc_vrm-lookat&#34;&gt;VRMC_vrm: lookat&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;degreemap.curve&lt;/code&gt; が廃止になります&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmc_vrm-firstperson&#34;&gt;VRMC_vrm: firstperson&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;firstPersonBone&lt;/code&gt; は廃止になり、&lt;code&gt;Head&lt;/code&gt; 固定になります&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;firstPersonBoneOffset&lt;/code&gt; は、&lt;code&gt;lookAt.offsetFromHeadBone&lt;/code&gt; になります&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmc_springbone&#34;&gt;VRMC_springBone&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;設定単位&lt;/td&gt;
-&lt;td&gt;房&lt;/td&gt;
-&lt;td&gt;節&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;子&lt;/td&gt;
-&lt;td&gt;children[0]&lt;/td&gt;
-&lt;td&gt;children のいずれか&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;末端&lt;/td&gt;
-&lt;td&gt;7cm の遠さに 自動で追加&lt;/td&gt;
-&lt;td&gt;追加しない&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;拡張を分離&lt;/li&gt;
-&lt;li&gt;Collider 形状に Capsule を追加&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
-&lt;p&gt;エミッションによる発光表現です。&lt;/p&gt;
-&lt;p&gt;glTF では emissiveFactor(float3) の値域が [0.0, 1.0] です。
-これに係数を追加することで、1.0 を越える値を表せるようにします。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;VRM0&lt;/th&gt;
-&lt;th&gt;VRM1&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;mtoon の emissiveFactor&lt;/td&gt;
-&lt;td&gt;独自に格納していた(0, 1 制限が無い)&lt;/td&gt;
-&lt;td&gt;gltf material の emissiveFactor に格納(0, 1 制限がある)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。&lt;/p&gt;
-&lt;h2 id=&#34;vrmc_materials_mtoon&#34;&gt;VRMC_materials_mtoon&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;拡張を分離&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;vrmc_node_constraint&#34;&gt;VRMC_node_constraint&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;開発中&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;translation&#34;&gt;translation&lt;/h3&gt;
-&lt;h3 id=&#34;rotation&#34;&gt;rotation&lt;/h3&gt;
-&lt;h3 id=&#34;aim&#34;&gt;aim&lt;/h3&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: fbx の import, T-Pose 初期エクスポート</title>
       <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</link>
-      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      <pubDate>Tue, 10 Aug 2021 18:51:50 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</guid>
       <description>
         
         
-        &lt;p&gt;この記事は、 &lt;code&gt;Unity-2019.4&lt;/code&gt; + &lt;code&gt;UniVRM-0.79&lt;/code&gt; で作成しています。&lt;/p&gt;
-&lt;h2 id=&#34;使用する素材&#34;&gt;使用する素材&lt;/h2&gt;
+        &lt;h2 id=&#34;使用する素材&#34;&gt;使用する素材&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;new_seedsan.fbx&lt;/li&gt;
 &lt;li&gt;関連する *.png&lt;/li&gt;
@@ -556,16 +266,364 @@ fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt
     </item>
     
     <item>
+      <title>Docs: VRM-1.0の変更点</title>
+      <link>https://vrm.dev/docs/vrm1/changed/</link>
+      <pubDate>Tue, 10 Aug 2021 18:22:13 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/vrm1/changed/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;vrm-0x-からの変更点&#34;&gt;VRM-0.X からの変更点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;glTF: z- forward =&amp;gt; z+ forward&lt;/li&gt;
+&lt;li&gt;glTF: shared bufferView =&amp;gt; divided bufferView&lt;/li&gt;
+&lt;li&gt;VRM0: meta =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; meta&lt;/li&gt;
+&lt;li&gt;VRM0: humanoid =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; humanoid&lt;/li&gt;
+&lt;li&gt;VRM0: blendshape =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; expression&lt;/li&gt;
+&lt;li&gt;VRM0: lookat =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; lookat&lt;/li&gt;
+&lt;li&gt;VRM0: firstperson =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; firstperson&lt;/li&gt;
+&lt;li&gt;VRM0: springBone =&amp;gt; &lt;code&gt;VRMC_springBone&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;新規&lt;/code&gt; =&amp;gt; &lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;VRM0: mtoon =&amp;gt; &lt;code&gt;VRMC_materials_mtoon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;新規&lt;/code&gt; =&amp;gt; &lt;code&gt;VRMC_node_constraint&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gltf-z-forward&#34;&gt;glTF: z+ forward&lt;/h2&gt;
+&lt;p&gt;モデルは Z+ 方向が前方になるように格納します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;forward&lt;/td&gt;
+&lt;td&gt;z-&lt;/td&gt;
+&lt;td&gt;z+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;right&lt;/td&gt;
+&lt;td&gt;x+&lt;/td&gt;
+&lt;td&gt;x-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;実装&lt;/h4&gt;
+&lt;p&gt;Y軸 180 度の回転になります。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 vrm0;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm1 = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(-vrm0.x, vrm0.y, -vrm0.z);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;gltf-divided-vertex-buffer&#34;&gt;glTF: divided vertex buffer&lt;/h2&gt;
+&lt;p&gt;bufferView の primitive 間での共有をやめます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bufferView&lt;/td&gt;
+&lt;td&gt;shared&lt;/td&gt;
+&lt;td&gt;divided&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;利点&lt;/td&gt;
+&lt;td&gt;GameEngine メモリレイアウトに近いので変換が少ない&lt;/td&gt;
+&lt;td&gt;一般的な glTF ローダーでロードできる&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;欠点&lt;/td&gt;
+&lt;td&gt;UniVRM 以外の glTF ローダーでメモリ使用量が爆発する可能性(ロードできるが頂点バッファに未使用領域ができてしまう)&lt;/td&gt;
+&lt;td&gt;export 時に頂点の増加・並び順の変化がありえる。import 時に連結する手間。morphTarget の扱いが煩雑&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;実装&lt;/h4&gt;
+&lt;code&gt;Vrm&lt;/code&gt; 専用の共有頂点ローダーをやめて、
+一般的な &lt;code&gt;glTF&lt;/code&gt; ローダーで問題ありません。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_vrm-meta&#34;&gt;VRMC_vrm: meta&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_vrm-humanoid&#34;&gt;VRMC_vrm: humanoid&lt;/h2&gt;
+&lt;p&gt;必須ボーンの見直し。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;neck&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;head&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hips&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spine&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chest&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right UpperArm&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right LowerArm&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right Hand&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right UpperLeg&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right LowerLeg&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right Foot&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;td&gt;必須&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;以下の項目が廃止になります(&lt;code&gt;VRMHumanoidDescription&lt;/code&gt; に記録されていた)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;armStretch&lt;/li&gt;
+&lt;li&gt;legStretch&lt;/li&gt;
+&lt;li&gt;upperArmTwist&lt;/li&gt;
+&lt;li&gt;lowerArmTwist&lt;/li&gt;
+&lt;li&gt;upperLegTwist&lt;/li&gt;
+&lt;li&gt;lowerLegTwist&lt;/li&gt;
+&lt;li&gt;feetSpacing&lt;/li&gt;
+&lt;li&gt;hasTranslationDoF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-expression&#34;&gt;VRMC_vrm: expression&lt;/h2&gt;
+&lt;p&gt;BlendShapeは、Expression に名称を変更します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;BlendShape&lt;/h4&gt;
+BlendShapeは Unity の MorphTarget 機能のことで、区別が付きにくかったためです。
+&lt;/div&gt;
+
+&lt;p&gt;preset の見直し&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;喜&lt;/td&gt;
+&lt;td&gt;joy(joyとfunが曖昧)&lt;/td&gt;
+&lt;td&gt;happy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;怒&lt;/td&gt;
+&lt;td&gt;angry&lt;/td&gt;
+&lt;td&gt;angry&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;哀&lt;/td&gt;
+&lt;td&gt;sorrow(文語)&lt;/td&gt;
+&lt;td&gt;sad&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;楽&lt;/td&gt;
+&lt;td&gt;fun(joyとfunが曖昧)&lt;/td&gt;
+&lt;td&gt;relaxed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;驚&lt;/td&gt;
+&lt;td&gt;(新規追加)&lt;/td&gt;
+&lt;td&gt;surprised&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;あ&lt;/td&gt;
+&lt;td&gt;a(非日本語で自然なように変更)&lt;/td&gt;
+&lt;td&gt;aa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;い&lt;/td&gt;
+&lt;td&gt;i(非日本語で自然なように変更)&lt;/td&gt;
+&lt;td&gt;ih&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;う&lt;/td&gt;
+&lt;td&gt;u(非日本語で自然なように変更)&lt;/td&gt;
+&lt;td&gt;ou&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;え&lt;/td&gt;
+&lt;td&gt;e(非日本語で自然なように変更)&lt;/td&gt;
+&lt;td&gt;ee&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;お&lt;/td&gt;
+&lt;td&gt;o(非日本語で自然なように変更)&lt;/td&gt;
+&lt;td&gt;oh&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;overrideMouse, overrideLipSync, overrideBlink 設定の追加&lt;/li&gt;
+&lt;li&gt;VRM0 の materialBind から MaterialColorBind と TextureTransformBind に整理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-lookat&#34;&gt;VRMC_vrm: lookat&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;degreemap.curve&lt;/code&gt; が廃止になります&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-firstperson&#34;&gt;VRMC_vrm: firstperson&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;firstPersonBone&lt;/code&gt; は廃止になり、&lt;code&gt;Head&lt;/code&gt; 固定になります&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;firstPersonBoneOffset&lt;/code&gt; は、&lt;code&gt;lookAt.offsetFromHeadBone&lt;/code&gt; になります&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_springbone&#34;&gt;VRMC_springBone&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;設定単位&lt;/td&gt;
+&lt;td&gt;房&lt;/td&gt;
+&lt;td&gt;節&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;子&lt;/td&gt;
+&lt;td&gt;children[0]&lt;/td&gt;
+&lt;td&gt;children のいずれか&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;末端&lt;/td&gt;
+&lt;td&gt;7cm の遠さに 自動で追加&lt;/td&gt;
+&lt;td&gt;追加しない&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;拡張を分離 =&amp;gt; 独立した &lt;code&gt;VRMC_springBone&lt;/code&gt; 拡張&lt;/li&gt;
+&lt;li&gt;Collider 形状に Capsule を追加&lt;/li&gt;
+&lt;li&gt;Unity座標系の混在を修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
+&lt;p&gt;エミッションによる発光表現です。&lt;/p&gt;
+&lt;p&gt;glTF では emissiveFactor(float3) の値域が [0.0, 1.0] です。
+これに係数を追加することで、1.0 を越える値を表せるようにします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;mtoon の emissiveFactor&lt;/td&gt;
+&lt;td&gt;独自に格納していた(0, 1 制限が無い)&lt;/td&gt;
+&lt;td&gt;gltf material の emissiveFactor に格納(0, 1 制限がある)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_materials_mtoon&#34;&gt;VRMC_materials_mtoon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;拡張を分離 =&amp;gt; 独立した &lt;code&gt;VRMC_materials_mtoon&lt;/code&gt; 拡張&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_node_constraint&#34;&gt;VRMC_node_constraint&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;開発中&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;translation&#34;&gt;translation&lt;/h3&gt;
+&lt;h3 id=&#34;rotation&#34;&gt;rotation&lt;/h3&gt;
+&lt;h3 id=&#34;aim&#34;&gt;aim&lt;/h3&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Unity のバージョン</title>
       <link>https://vrm.dev/docs/univrm/install/unity_version/</link>
-      <pubDate>Mon, 22 Mar 2021 14:13:01 +0900</pubDate>
+      <pubDate>Fri, 06 Aug 2021 19:54:46 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm/install/unity_version/</guid>
       <description>
         
         
-        &lt;h2 id=&#34;univrm-0560-&#34;&gt;UniVRM-0.56.0 ～&lt;/h2&gt;
-&lt;p&gt;Unity サポート状況は以下のようになっています。&lt;/p&gt;
+        &lt;h2 id=&#34;univrm-0800-&#34;&gt;UniVRM-0.80.0 ～&lt;/h2&gt;
+&lt;p&gt;Unity-2018.4LTS のサポートを終了して、開発バージョンをUnity-2019.4LTS更新しました。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Unity Version&lt;/th&gt;
+&lt;th&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2019.4 LTS&lt;/td&gt;
+&lt;td&gt;UniVRMの開発に使っているバージョン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2020.4 LTS&lt;/td&gt;
+&lt;td&gt;リリース時にUPMの動作確認をしてるバージョン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unity-2021&lt;/td&gt;
+&lt;td&gt;問題が発生した場合は &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues&#34;&gt;github&lt;/a&gt; にご報告ください&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;univrm-0560--0790&#34;&gt;UniVRM-0.56.0 ～ 0.79.0&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -642,7 +700,7 @@ fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Unity-2020&lt;/td&gt;
-&lt;td&gt;〇&lt;/td&gt;
+&lt;td&gt;○&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
 &lt;td&gt;○&lt;/td&gt;
 &lt;td&gt;Editor機能(Prefabなど)が一部動作せず。&lt;code&gt;UniVRM-0.69.0&lt;/code&gt; で修正&lt;/td&gt;
@@ -5305,7 +5363,7 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
     <item>
       <title>Docs: Expression の設定</title>
       <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</link>
-      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      <pubDate>Tue, 10 Aug 2021 18:51:50 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</guid>
       <description>
@@ -5322,15 +5380,8 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の Expression GUI で設定します。&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
 
-&lt;h3 id=&#34;preset定義に対する割り当て&#34;&gt;Preset定義に対する割り当て&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;喜怒哀楽驚&lt;/li&gt;
-&lt;li&gt;あいうえお&lt;/li&gt;
-&lt;li&gt;まばたき&lt;/li&gt;
-&lt;li&gt;視線制御&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;custom-定義の-list-設定&#34;&gt;Custom 定義の List 設定&lt;/h3&gt;
 &lt;h2 id=&#34;個別の-expression-設定&#34;&gt;個別の Expression 設定&lt;/h2&gt;
+&lt;p&gt;ひとつずつ独立したアセットです。&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression.jpg&#34;  width=&#34;400&#34; /&gt;
 
 

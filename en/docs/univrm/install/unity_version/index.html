@@ -21,19 +21,21 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Unity Version | VRM</title><meta property="og:title" content="Unity Version" />
-<meta property="og:description" content="UniVRM-0.56.0 ～ Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
-   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018.1 ×      Unity-2018.2 ×      Unity-2018.3 △ .Net4.X equivalent  C#7.3. Probably working. Not confirmed yet   Unity-2018.4 LTS ◎ .Net4.X equivalent  Current UniVRM development version   Unity-2019." />
+<meta property="og:description" content="UniVRM-0.80.0 ～ We have discontinued support for Unity-2018.4LTS and updated the development version to Unity-2019.4LTS.
+   Unity Version Note     Unity-2019.4 LTS Current UniVRM development version   Unity-2020.4 LTS Current version for UniVRM UPM testing   Unity-2021 Please report any issues to github    UniVRM-0.56.0 ～ 0.79.0 Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
+   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/en/docs/univrm/install/unity_version/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
 <meta property="article:published_time" content="2020-10-07T17:19:08+09:00" />
-<meta property="article:modified_time" content="2021-03-22T18:58:50+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:modified_time" content="2021-08-06T19:54:46+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="Unity Version">
-<meta itemprop="description" content="UniVRM-0.56.0 ～ Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
-   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018.1 ×      Unity-2018.2 ×      Unity-2018.3 △ .Net4.X equivalent  C#7.3. Probably working. Not confirmed yet   Unity-2018.4 LTS ◎ .Net4.X equivalent  Current UniVRM development version   Unity-2019.">
+<meta itemprop="description" content="UniVRM-0.80.0 ～ We have discontinued support for Unity-2018.4LTS and updated the development version to Unity-2019.4LTS.
+   Unity Version Note     Unity-2019.4 LTS Current UniVRM development version   Unity-2020.4 LTS Current version for UniVRM UPM testing   Unity-2021 Please report any issues to github    UniVRM-0.56.0 ～ 0.79.0 Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
+   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018.">
 <meta itemprop="datePublished" content="2020-10-07T17:19:08+09:00" />
-<meta itemprop="dateModified" content="2021-03-22T18:58:50+09:00" />
-<meta itemprop="wordCount" content="95">
+<meta itemprop="dateModified" content="2021-08-06T19:54:46+09:00" />
+<meta itemprop="wordCount" content="135">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -43,15 +45,16 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="Unity Version"/>
-<meta name="twitter:description" content="UniVRM-0.56.0 ～ Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
-   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018.1 ×      Unity-2018.2 ×      Unity-2018.3 △ .Net4.X equivalent  C#7.3. Probably working. Not confirmed yet   Unity-2018.4 LTS ◎ .Net4.X equivalent  Current UniVRM development version   Unity-2019."/>
+<meta name="twitter:description" content="UniVRM-0.80.0 ～ We have discontinued support for Unity-2018.4LTS and updated the development version to Unity-2019.4LTS.
+   Unity Version Note     Unity-2019.4 LTS Current UniVRM development version   Unity-2020.4 LTS Current version for UniVRM UPM testing   Unity-2021 Please report any issues to github    UniVRM-0.56.0 ～ 0.79.0 Support Unity-2018.4 and above. Unity-2019.4 LTS is recommended.
+   Unity Version Compatibility Scripting Runtime Version UPM Note     Unity-2017 ×      Unity-2018."/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css" as="style">
-<link href="/scss/main.min.24829a35149cd5c25b2efa2f5bc966e80038fb11a49435a5fd8abf1966b4b32a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" as="style">
+<link href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1190,6 +1193,14 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#univrm-0800-">UniVRM-0.80.0 ～</a></li>
+    <li><a href="#univrm-0560--0790">UniVRM-0.56.0 ～ 0.79.0</a></li>
+    <li><a href="#-univrm-055">～ UniVRM-0.55</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1265,13 +1276,41 @@
             width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true"></iframe>
     </div>
-    <div class="text-muted mb-2 pt-3">2020-10-07 17:19:08 &#43;0900 &#43;0900
-<br>
-Last modified March 22, 2021: <a  href="https://github.com/vrm-c/vrm.dev/commit/ffb6447945cce207494d0f60fad2fa254a3d2555">updated contents (ffb64479)</a>
-</div>
+    <div class="text-muted mb-2 pt-3"><div class="date">
+    <b>Created</b> October 7, 2020
+    <b>Last modified</b> August 6, 2021
+    
+    <a href="https://github.com/vrm-c/vrm.dev/commit/c29d3a670da5cec3b340903b28a4adcbb802b6f2"><i class='fab fa-github fa-lg fa-fw'></i>unity_version
+        (c29d3a67)</a>
+    
+</div></div>
 
     
-    <h2 id="univrm-0560-">UniVRM-0.56.0 ～</h2>
+    <h2 id="univrm-0800-">UniVRM-0.80.0 ～</h2>
+<p>We have discontinued support for Unity-2018.4LTS and updated the development version to Unity-2019.4LTS.</p>
+<table>
+<thead>
+<tr>
+<th>Unity Version</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unity-2019.4 LTS</td>
+<td>Current UniVRM development version</td>
+</tr>
+<tr>
+<td>Unity-2020.4 LTS</td>
+<td>Current version for UniVRM UPM testing</td>
+</tr>
+<tr>
+<td>Unity-2021</td>
+<td>Please report any issues to <a href="https://github.com/vrm-c/UniVRM/issues">github</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="univrm-0560--0790">UniVRM-0.56.0 ～ 0.79.0</h2>
 <p>Support <code>Unity-2018.4</code> and above. <code>Unity-2019.4 LTS</code> is recommended.</p>
 <table>
 <thead>
