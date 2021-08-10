@@ -1,3 +1,8 @@
-{{ .Date }}
-<br>
-{{ T "post_last_mod"}} {{ .Lastmod.Format .Site.Params.time_format_default }}{{ with .GitInfo }}: <a  href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .Subject }} ({{ .AbbreviatedHash }})</a>{{end }}
+<div class="date">
+    <b>{{ T "post_created"}}</b> {{ .Date.Format .Site.Params.time_format_default }}
+    <b>{{ T "post_last_mod"}}</b> {{ .Lastmod.Format .Site.Params.time_format_default }}
+    {{ with .GitInfo }}
+    <a href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}"><i class='fab fa-github fa-lg fa-fw'></i>{{ .Subject }}
+        ({{.AbbreviatedHash}})</a>
+    {{end }}
+</div>
