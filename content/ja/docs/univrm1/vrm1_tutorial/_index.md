@@ -3,4 +3,4 @@ title: VRM-1.0 のセットアップ
 weight: 5
 ---
 
-## fbx の import
+この記事は、 `Unity-2019.4` + `UniVRM-0.80.0 開発版` で作成しています。
