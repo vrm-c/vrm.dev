@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-08-10T18:51:50+09:00" />
-<meta property="article:modified_time" content="2021-08-10T18:51:50+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-08-11T18:25:12+09:00" />
+<meta property="article:modified_time" content="2021-08-11T18:25:12+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="Expression の設定">
 <meta itemprop="description" content="旧blendShape Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。 Expression の割り当て設定 VrmObject の Expression GUI で設定します。 個別の Expression 設定 ひとつずつ独立したアセットです">
-<meta itemprop="dateModified" content="2021-08-10T18:51:50+09:00" />
-<meta itemprop="wordCount" content="71">
+<meta itemprop="dateModified" content="2021-08-11T18:25:12+09:00" />
+<meta itemprop="wordCount" content="827">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -46,8 +46,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" as="style">
-<link href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" as="style">
+<link href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -355,43 +355,6 @@
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrmvrm_development" href="/docs/vrm/vrm_development/">
           <i class="fas fa-file fa-fw"></i>
           VRMで開発する
-      </a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
-        
-        <i class="fas fa-folder fa-fw"></i>
-        
-        VRM-1.0β
-    </a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsvrm1">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrm1changed" href="/docs/vrm1/changed/">
-          <i class="fas fa-file fa-fw"></i>
-          VRM-1.0の変更点
       </a>
       
       
@@ -1144,6 +1107,43 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        VRM-1.0β
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsvrm1">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrm1changed" href="/docs/vrm1/changed/">
+          <i class="fas fa-file fa-fw"></i>
+          VRM-1.0の変更点
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
         
         <i class="fas fa-folder-open fa-fw"></i>
@@ -1391,7 +1391,15 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#expression-の割り当て設定">Expression の割り当て設定</a></li>
-    <li><a href="#個別の-expression-設定">個別の Expression 設定</a></li>
+    <li><a href="#個別の-expression-設定">個別の Expression 設定</a>
+      <ul>
+        <li><a href="#morphtarget">MorphTarget</a></li>
+        <li><a href="#list">List</a></li>
+        <li><a href="#option">Option</a></li>
+        <li><a href="#preview">Preview</a></li>
+        <li><a href="#作業例">作業例</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1469,11 +1477,11 @@
             allowTransparency="true"></iframe>
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
-    <b>作成</b> 2021/08/10
-    <b>最終更新</b> 2021/08/10
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/1c936c2f749affd282cb55ed9219ce5580505c7a"><i class='fab fa-github fa-lg fa-fw'></i>update
-        (1c936c2f)</a>
+    <b>最終更新</b> 2021/08/11
+    
+    <a href="https://github.com/vrm-c/vrm.dev/commit/b9ff3024ef1dedf21dd8c5092fbe60b542104b94"><i class='fab fa-github fa-lg fa-fw'></i>update expression
+        (b9ff3024)</a>
     
 </div></div>
 
@@ -1487,12 +1495,134 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 
 <h2 id="expression-の割り当て設定">Expression の割り当て設定</h2>
 <p><a href="/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject</a> の Expression GUI で設定します。</p>
-<img src="https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg"  width="400" />
+<img src="https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg"  width="800" />
 
 <h2 id="個別の-expression-設定">個別の Expression 設定</h2>
 <p>ひとつずつ独立したアセットです。</p>
-<img src="https://vrm.dev/images/vrm10/tutorial/expression.jpg"  width="400" />
+<p><img src="https://vrm.dev/images/vrm10/tutorial/expression_asset.jpg"  width="400" />
 
+<img src="https://vrm.dev/images/vrm10/tutorial/expression.jpg"  width="400" />
+</p>
+<h3 id="morphtarget">MorphTarget</h3>
+<p>blend shape のある <code>SkinnedMeshRenderer</code> がリストされます。</p>
+<h3 id="list">List</h3>
+<h4 id="morphtarget-1">MorphTarget</h4>
+<ul>
+<li>MorphTarget の List 表示です</li>
+</ul>
+<h4 id="materialcolor">MaterialColor</h4>
+<p>Material 色を [0-1] の weight値でアニメーションさせることができます。</p>
+<ul>
+<li>Color</li>
+<li>EmissionColor</li>
+<li>ShadeColor</li>
+<li>RimColor</li>
+<li>OutlineColor</li>
+</ul>
+<h4 id="texturetransform">TextureTransform</h4>
+<p>Texture の offset, scale を [0-1] の weight値でアニメーションさせることができます。</p>
+<h3 id="option">Option</h3>
+<p>MorphTarget 以外の詳細な設定項目です。</p>
+<h4 id="isbinary">IsBinary</h4>
+<p>漫画風の表現などで、中間の値を見せたくない場合に有効にしてください。
+中間の値を取ることができなくなります。</p>
+<h4 id="override">Override</h4>
+<p>プロシージャルな Expression の値を制御します。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">プロシージャルなExpression</h4>
+<p>アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して <code>プロシージャルなExpression</code> を定義しました。
+3つのグループ <code>Blink</code>, <code>LookAt</code>, <code>Mouth</code> を設定しています。</p>
+<table>
+<thead>
+<tr>
+<th>グループ</th>
+<th>weight生成例</th>
+<th>含まれる Expression preset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blink</td>
+<td>ランダム</td>
+<td>Blink, BlinkLeft, BlinkRight</td>
+</tr>
+<tr>
+<td>LookAt</td>
+<td>VrmコンポーネントのLookAt機能による生成</td>
+<td>LookUp, LookDown, LookLeft, LookRight</td>
+</tr>
+<tr>
+<td>Mouth</td>
+<td>音声やテキスト解析による生成</td>
+<td>Aa, Ih, Ou, Ee, Oh</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
+その場合既存の Expression Weight との組み合わせで問題が発生する可能性があります。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Expressionの組み合わせで起こる問題の例</h4>
+<ul>
+<li>口が開く <code>happy</code> と同時に <code>aa</code> が適用される =&gt; 口が開きすぎて変になる</li>
+<li>目を閉じる <code>sad</code> と同時に <code>blink</code> が適用される =&gt; 目が2回閉じて瞼が頬を貫通してしまう</li>
+<li><code>blink</code> と同時に <code>lookRight</code> が適用される =&gt; 目が瞼を貫通してしまう</li>
+</ul>
+
+</div>
+
+<p>組み合わせ問題を回避するために自動生成される <code>Blink</code>, <code>LookAt</code>, <code>Mouth</code> の Weight 値を加工(Override)する機能です。
+Override 設定した Expression の Weight 値が 0 より大きいときに機能が有効になります。</p>
+<table>
+<thead>
+<tr>
+<th>設定</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>procedual.weight = procedual.weight</td>
+</tr>
+<tr>
+<td>Block</td>
+<td>procedual.weight = 0</td>
+</tr>
+<tr>
+<td>Blend</td>
+<td>procedual.weight = (1 - expression.weight)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preview">Preview</h3>
+<p>Expression アセットのインスペクターの下部の頭部表示画面です。
+Expression の設定を適用した結果を描画します。</p>
+<ul>
+<li>Preview Prefab</li>
+<li>Preview Weight: スライダーを動かすことで、[0-1] 間での変化をプレビューできます。Advanced の <code>IsBinary</code> チェックボックスの影響をテストできます。</li>
+</ul>
+<h3 id="作業例">作業例</h3>
+<table>
+<thead>
+<tr>
+<th>asset</th>
+<th>morphtarget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aa</td>
+<td>head.lip_a =&gt; 100</td>
+</tr>
+</tbody>
+</table>
 
 
     

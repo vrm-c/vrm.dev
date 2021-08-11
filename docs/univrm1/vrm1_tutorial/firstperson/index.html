@@ -21,16 +21,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>FirstPerson の設定 | VRM</title><meta property="og:title" content="FirstPerson の設定" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="VrmObject の FirstPerson GUI で設定します。 なんのための設定か VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-08-04T21:17:28+09:00" />
-<meta property="article:modified_time" content="2021-08-04T21:17:28+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-08-11T20:08:13+09:00" />
+<meta property="article:modified_time" content="2021-08-11T20:08:13+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="FirstPerson の設定">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2021-08-04T21:17:28+09:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="description" content="VrmObject の FirstPerson GUI で設定します。 なんのための設定か VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用">
+<meta itemprop="dateModified" content="2021-08-11T20:08:13+09:00" />
+<meta itemprop="wordCount" content="196">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -40,14 +40,14 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="FirstPerson の設定"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="VrmObject の FirstPerson GUI で設定します。 なんのための設定か VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用"/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" as="style">
-<link href="/scss/main.min.37ff28491eda3dc6633109e41218469e7849c985f7b19b6ef08ac77bd73a49c9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" as="style">
+<link href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -355,43 +355,6 @@
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrmvrm_development" href="/docs/vrm/vrm_development/">
           <i class="fas fa-file fa-fw"></i>
           VRMで開発する
-      </a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
-        
-        <i class="fas fa-folder fa-fw"></i>
-        
-        VRM-1.0β
-    </a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsvrm1">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrm1changed" href="/docs/vrm1/changed/">
-          <i class="fas fa-file fa-fw"></i>
-          VRM-1.0の変更点
       </a>
       
       
@@ -1144,6 +1107,43 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder fa-fw"></i>
+        
+        VRM-1.0β
+    </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsvrm1">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsvrm1changed" href="/docs/vrm1/changed/">
+          <i class="fas fa-file fa-fw"></i>
+          VRM-1.0の変更点
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
         
         <i class="fas fa-folder-open fa-fw"></i>
@@ -1388,6 +1388,19 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#なんのための設定か">なんのための設定か</a>
+      <ul>
+        <li><a href="#auto">Auto</a></li>
+        <li><a href="#both">Both</a></li>
+        <li><a href="#thirdpersononly">ThirdPersonOnly</a></li>
+        <li><a href="#firstpersononly">FirstPersonOnly</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1462,16 +1475,40 @@
             allowTransparency="true"></iframe>
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
-    <b>作成</b> 2021/08/04
-    <b>最終更新</b> 2021/08/04
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/55734e547a7004aecde7b1490a5839f80d1d82ab"><i class='fab fa-github fa-lg fa-fw'></i>WIP vrm-1.0 manual
-        (55734e54)</a>
+    <b>最終更新</b> 2021/08/11
+    
+    <a href="https://github.com/vrm-c/vrm.dev/commit/e8014701469034e69eb17f49f13b0fef7e525eda"><i class='fab fa-github fa-lg fa-fw'></i>update
+        (e8014701)</a>
     
 </div></div>
 
     
-    
+    <p><a href="/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject</a> の FirstPerson GUI で設定します。</p>
+<img src="https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg"  width="600" />
+
+<h2 id="なんのための設定か">なんのための設定か</h2>
+<p>VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用します。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">VRで見えてほしくない部分</h4>
+<p>VRではアバターの頭部に、一人称のカメラを位置させます。
+アバターの見えてほしくない部分が見えてしまう場合があります。</p>
+<ul>
+<li>近すぎて歯が見える</li>
+<li>MorphTargetで頭部に隠してあるものが見える</li>
+<li>髪が邪魔で前が見えない</li>
+<li>etc&hellip;</li>
+</ul>
+
+</div>
+
+<h3 id="auto">Auto</h3>
+<h3 id="both">Both</h3>
+<h3 id="thirdpersononly">ThirdPersonOnly</h3>
+<h3 id="firstpersononly">FirstPersonOnly</h3>
+
 
     
     <div class="section-index">
