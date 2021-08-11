@@ -1,6 +1,6 @@
 ---
 title: "UniVRM Manual"
-weight: 11
+weight: 2
 menu:
   main:
     weight: 11

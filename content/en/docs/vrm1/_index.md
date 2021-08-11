@@ -1,6 +1,6 @@
 ---
 title: "VRM-1.0β"
-weight: 2
+weight: 11
 menu:
   main:
     weight: 2

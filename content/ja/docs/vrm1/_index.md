@@ -1,6 +1,6 @@
 ---
 title: "VRM-1.0β"
-weight: 2
+weight: 11
 date: 2021-08-05
 menu:
   main:
