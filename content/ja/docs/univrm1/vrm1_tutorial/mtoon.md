@@ -1,4 +1,4 @@
 ---
-title: MToon の設定
+title: 🚧MToon の設定
 weight: 15
 ---
