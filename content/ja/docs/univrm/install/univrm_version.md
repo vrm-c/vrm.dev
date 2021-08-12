@@ -5,8 +5,6 @@ tags: ["unity"]
 
 ## v0.55.0 (Unity-5.6 対応最終版)
 
-Unity-5.6 対応最終版
-
 | date | version                                                       |
 |------|---------------------------------------------------------------|
 | 2019 | [0.55.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0) |
@@ -67,13 +65,13 @@ VRM-1.0 作業中
 
 ## v0.79.0 ～
 
-* 1.0 向けの改修
-* `0.80.0` からサポートする Unity の最低バージョンを `2019.4LTS` に更新しました
+* `0.80.0` からサポートする Unity の最低バージョンを `2019.4LTS` に更新しました。[Unity Version]({{< relref "unity_version.md" >}})。
+* `0.80.0` から `VRM-1.0β` のパッケージ提供を開始しました。
 
-| date  | version                                                                                                                          | 安定性・バグ | 更新内容・備考        |
-|-------|----------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------------|
-| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | pre release 運用終了  |
-|       | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |              | VRM-1.0β unitypackage |
+| date  | version                                                                                                                          | 安定性・バグ | 更新内容・備考         |
+|-------|----------------------------------------------------------------------------------------------------------------------------------|--------------|------------------------|
+| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | pre release 運用終了   |
+| 08/12 | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |              | `Unity-2019.4LTS` 以降 |
 
 [^springcollider]: スプリングボーンのコライダーの座標変換バグ。 [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: エクスポートダイアログのスクリーンショットボタンの jpg バグ。[\#639](https://github.com/vrm-c/UniVRM/issues/639)
