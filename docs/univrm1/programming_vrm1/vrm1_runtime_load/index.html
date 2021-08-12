@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://vrm.dev/docs/univrm/shaders/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +20,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Material | VRM</title><meta property="og:title" content="Material" />
-<meta property="og:description" content="3D Humanoid Avatar format for VR" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://vrm.dev/docs/univrm/shaders/" />
+<title>🚧vrm-1.0 Runtime ロード | VRM</title><meta property="og:title" content="🚧vrm-1.0 Runtime ロード" />
+<meta property="og:description" content="VRM-1.0 を使うアプリケーションは、 VRM-0.x の資産もロードしたいはずです。 VRM-1.0 と VRM-0.X の meta の非互換に Metaの自動的なマイグレーションは禁止する方針 となりました" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2020-08-06T18:09:15+09:00" /><meta property="og:site_name" content="VRM" />
-<meta itemprop="name" content="Material">
-<meta itemprop="description" content="3D Humanoid Avatar format for VR">
+<meta property="article:published_time" content="2021-08-12T21:22:24+09:00" />
+<meta property="article:modified_time" content="2021-08-12T21:22:24+09:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="🚧vrm-1.0 Runtime ロード">
+<meta itemprop="description" content="VRM-1.0 を使うアプリケーションは、 VRM-0.x の資産もロードしたいはずです。 VRM-1.0 と VRM-0.X の meta の非互換に Metaの自動的なマイグレーションは禁止する方針 となりました">
+<meta itemprop="dateModified" content="2021-08-12T21:22:24+09:00" />
+<meta itemprop="wordCount" content="216">
+<meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
-<meta name="twitter:title" content="Material"/>
-<meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
+<meta name="twitter:title" content="🚧vrm-1.0 Runtime ロード"/>
+<meta name="twitter:description" content="VRM-1.0 を使うアプリケーションは、 VRM-0.x の資産もロードしたいはずです。 VRM-1.0 と VRM-0.X の meta の非互換に Metaの自動的なマイグレーションは禁止する方針 となりました"/>
 
 
 
@@ -51,7 +58,7 @@
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -123,7 +130,7 @@
 				
 				
 				
-                <a class="nav-link active" href="/docs/univrm/" ><span class="active">UniVRM</span>
+                <a class="nav-link" href="/docs/univrm/" ><span>UniVRM</span>
                                                         
                 </a>
 			</li>
@@ -150,7 +157,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/univrm/shaders/">English</a>
+	<a class="dropdown-item" href="/en/">English</a>
 	
 </div>
 			</li>
@@ -194,7 +201,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/univrm/shaders/">English</a>
+	<a class="dropdown-item" href="/en/">English</a>
 	
 </div>
     </div>
@@ -367,15 +374,15 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
+    <a  href="/docs/univrm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder-open fa-fw"></i>
+        <i class="fas fa-folder fa-fw"></i>
         
         UniVRM
     </a>
   </li>
   <ul>
-    <li class="collapse show" id="docsunivrm">
+    <li class="collapse " id="docsunivrm">
       
       
       
@@ -627,15 +634,15 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm/shaders/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
+    <a  href="/docs/univrm/shaders/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder-open fa-fw"></i>
+        <i class="fas fa-folder fa-fw"></i>
         
         Material
     </a>
   </li>
   <ul>
-    <li class="collapse show" id="docsunivrmshaders">
+    <li class="collapse " id="docsunivrmshaders">
       
       
       
@@ -1137,15 +1144,15 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+    <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder fa-fw"></i>
+        <i class="fas fa-folder-open fa-fw"></i>
         
         UniVRM-1.0β
     </a>
   </li>
   <ul>
-    <li class="collapse " id="docsunivrm1">
+    <li class="collapse show" id="docsunivrm1">
       
       
       
@@ -1352,22 +1359,22 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm1/programming_vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+    <a  href="/docs/univrm1/programming_vrm1/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder fa-fw"></i>
+        <i class="fas fa-folder-open fa-fw"></i>
         
         🚧vrm-1.0 の開発
     </a>
   </li>
   <ul>
-    <li class="collapse " id="docsunivrm1programming_vrm1">
+    <li class="collapse show" id="docsunivrm1programming_vrm1">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_runtime_load" href="/docs/univrm1/programming_vrm1/vrm1_runtime_load/">
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsunivrm1programming_vrm1vrm1_runtime_load" href="/docs/univrm1/programming_vrm1/vrm1_runtime_load/">
           <i class="fas fa-file fa-fw"></i>
           🚧vrm-1.0 Runtime ロード
       </a>
@@ -1408,8 +1415,8 @@
 
 
 
-<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/univrm/shaders/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
-<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=Material" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/univrm1/programming_vrm1/vrm1_runtime_load.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=%f0%9f%9a%a7vrm-1.0%20Runtime%20%e3%83%ad%e3%83%bc%e3%83%89" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
 
 </div>
 
@@ -1417,6 +1424,13 @@
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#vrm-0x-を-vrm-10-コンポーネントに対してロードする">VRM-0.X を VRM-1.0 コンポーネントに対してロードする</a></li>
+    <li><a href="#runtimeload-例">RuntimeLoad 例</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1438,6 +1452,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://vrm.dev/docs/">ドキュメント</a>
 </li>
@@ -1446,14 +1463,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://vrm.dev/docs/univrm/">UniVRM</a>
+	<a href="https://vrm.dev/docs/univrm1/">UniVRM-1.0β</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://vrm.dev/docs/univrm1/programming_vrm1/">🚧vrm-1.0 の開発</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://vrm.dev/docs/univrm/shaders/">Material</a>
+	<a href="https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/">🚧vrm-1.0 Runtime ロード</a>
 </li>
 
 	</ol>
@@ -1461,15 +1485,15 @@
 
             
 <div class="td-content">
-    <h1>Material</h1>
+    <h1>🚧vrm-1.0 Runtime ロード</h1>
     
     
     <div class="share">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="Material - VRM" data-url="https://vrm.dev/docs/univrm/shaders/"
+            data-text="🚧vrm-1.0 Runtime ロード - VRM" data-url="https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/"
             data-show-count="false">Tweet</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/docs/univrm/shaders/" class="hatena-bookmark-button"
+        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/" class="hatena-bookmark-button"
             data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja"
             title="このエントリーをはてなブックマークに追加"><img
                 src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
@@ -1477,23 +1501,29 @@
         <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
             async="async"></script>
         <iframe
-            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2funivrm%2fshaders%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
+            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2funivrm1%2fprogramming_vrm1%2fvrm1_runtime_load%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
             width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true"></iframe>
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>作成</b> 2018/04/16
+    <b>最終更新</b> 2021/08/12
     
-    <b>最終更新</b> 2020/08/06
-    
-    <a href="https://github.com/vrm-c/vrm.dev/commit/dac162cdbce69879baa21c9f3a5cffde91b4a02a"><i class='fab fa-github fa-lg fa-fw'></i>update list order
-        (dac162cd)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/2cbb5322600ad17e481b1e7f9d9ce8d63fcc28b8"><i class='fab fa-github fa-lg fa-fw'></i>glow
+        (2cbb5322)</a>
     
 </div></div>
 
     
-    
+    <p>VRM-1.0 を使うアプリケーションは、 <code>VRM-0.x</code> の資産もロードしたいはずです。</p>
+<p><code>VRM-1.0</code> と <code>VRM-0.X</code> の meta の非互換に <a href="https://github.com/vrm-c/vrm-specification/issues/181">Metaの自動的なマイグレーションは禁止する方針</a> となりました。</p>
+<h2 id="vrm-0x-を-vrm-10-コンポーネントに対してロードする">VRM-0.X を VRM-1.0 コンポーネントに対してロードする</h2>
+<p><code>UniVRM-1.0</code> では、
+<code>VRM-0.X</code> のライセンスを保持したまま、<code>VRM-1.0</code> のコンポーネントにロードする機能を提供します(予定)。</p>
+<p>アプリケーションは、この方法でロードしたモデルは、<code>VRM-0.X</code> ライセンスとして扱ってください。</p>
+<h2 id="runtimeload-例">RuntimeLoad 例</h2>
+<p><code>vrm-0.x</code> と <code>vrm-1.0</code> 両方をロードしてライセンスを取得する例。</p>
+
 
     
     <div class="section-index">
@@ -1531,16 +1561,7 @@
     
     
     
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/shader_mtoon/">
-            <i class="fas fa-file fa-fw"></i>MToon</a>
-    </h5>
     
-<ul class="tags"><li><a href="/tags/unity">unity</a></ul>
-
-    <p></p>
-</div>
     
     
     
@@ -1568,16 +1589,7 @@
     
     
     
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/univrm_unlit/">
-            <i class="fas fa-file fa-fw"></i>UniUnlit</a>
-    </h5>
     
-<ul class="tags"><li><a href="/tags/unity">unity</a></ul>
-
-    <p></p>
-</div>
     
     
     
@@ -1593,16 +1605,7 @@
     
     
     
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/univrm_standard/">
-            <i class="fas fa-file fa-fw"></i>Standard</a>
-    </h5>
     
-<ul class="tags"><li><a href="/tags/detail">detail</a></ul>
-
-    <p></p>
-</div>
     
     
     
@@ -1660,16 +1663,7 @@
     
     
     
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/univrm_vrmshaders/">
-            <i class="fas fa-file fa-fw"></i>VRMShadersパッケージ</a>
-    </h5>
     
-<ul class="tags"><li><a href="/tags/unity">unity</a></ul>
-
-    <p></p>
-</div>
     
     
     
@@ -1704,23 +1698,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/texture_import/">
-            <i class="fas fa-file fa-fw"></i>テクスチャーのインポート</a>
-    </h5>
-    
-    <p></p>
-</div>
     
     
     

@@ -15,6 +15,27 @@
     
     
     <item>
+      <title>Docs: 🚧vrm-1.0 Runtime ロード</title>
+      <link>https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/</link>
+      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/</guid>
+      <description>
+        
+        
+        &lt;p&gt;VRM-1.0 を使うアプリケーションは、 &lt;code&gt;VRM-0.x&lt;/code&gt; の資産もロードしたいはずです。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VRM-1.0&lt;/code&gt; と &lt;code&gt;VRM-0.X&lt;/code&gt; の meta の非互換に &lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/181&#34;&gt;Metaの自動的なマイグレーションは禁止する方針&lt;/a&gt; となりました。&lt;/p&gt;
+&lt;h2 id=&#34;vrm-0x-を-vrm-10-コンポーネントに対してロードする&#34;&gt;VRM-0.X を VRM-1.0 コンポーネントに対してロードする&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;UniVRM-1.0&lt;/code&gt; では、
+&lt;code&gt;VRM-0.X&lt;/code&gt; のライセンスを保持したまま、&lt;code&gt;VRM-1.0&lt;/code&gt; のコンポーネントにロードする機能を提供します(予定)。&lt;/p&gt;
+&lt;p&gt;アプリケーションは、この方法でロードしたモデルは、&lt;code&gt;VRM-0.X&lt;/code&gt; ライセンスとして扱ってください。&lt;/p&gt;
+&lt;h2 id=&#34;runtimeload-例&#34;&gt;RuntimeLoad 例&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;vrm-0.x&lt;/code&gt; と &lt;code&gt;vrm-1.0&lt;/code&gt; 両方をロードしてライセンスを取得する例。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Unity のバージョン</title>
       <link>https://vrm.dev/docs/univrm/install/unity_version/</link>
       <pubDate>Wed, 11 Aug 2021 15:49:48 +0900</pubDate>
@@ -4922,9 +4943,9 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Meta の設定</title>
+      <title>Docs: 🚧Meta の設定</title>
       <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</link>
-      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</guid>
       <description>
@@ -5356,156 +5377,6 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
 &lt;p&gt;VRMSpringBoneはインポート時に&lt;code&gt;secondary&lt;/code&gt;ノードにアタッチされます。
 エクスポート時と違う場所に現れるのでご注意ください。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Expression の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</link>
-      <pubDate>Wed, 11 Aug 2021 18:25:12 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;旧blendShape&lt;/h4&gt;
-Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
-&lt;/div&gt;
-
-&lt;h2 id=&#34;expression-の割り当て設定&#34;&gt;Expression の割り当て設定&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の Expression GUI で設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;800&#34; /&gt;
-
-&lt;h2 id=&#34;個別の-expression-設定&#34;&gt;個別の Expression 設定&lt;/h2&gt;
-&lt;p&gt;ひとつずつ独立したアセットです。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_asset.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression.jpg&#34;  width=&#34;400&#34; /&gt;
-&lt;/p&gt;
-&lt;h3 id=&#34;morphtarget&#34;&gt;MorphTarget&lt;/h3&gt;
-&lt;p&gt;blend shape のある &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; がリストされます。&lt;/p&gt;
-&lt;h3 id=&#34;list&#34;&gt;List&lt;/h3&gt;
-&lt;h4 id=&#34;morphtarget-1&#34;&gt;MorphTarget&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;MorphTarget の List 表示です&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;materialcolor&#34;&gt;MaterialColor&lt;/h4&gt;
-&lt;p&gt;Material 色を [0-1] の weight値でアニメーションさせることができます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Color&lt;/li&gt;
-&lt;li&gt;EmissionColor&lt;/li&gt;
-&lt;li&gt;ShadeColor&lt;/li&gt;
-&lt;li&gt;RimColor&lt;/li&gt;
-&lt;li&gt;OutlineColor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;texturetransform&#34;&gt;TextureTransform&lt;/h4&gt;
-&lt;p&gt;Texture の offset, scale を [0-1] の weight値でアニメーションさせることができます。&lt;/p&gt;
-&lt;h3 id=&#34;option&#34;&gt;Option&lt;/h3&gt;
-&lt;p&gt;MorphTarget 以外の詳細な設定項目です。&lt;/p&gt;
-&lt;h4 id=&#34;isbinary&#34;&gt;IsBinary&lt;/h4&gt;
-&lt;p&gt;漫画風の表現などで、中間の値を見せたくない場合に有効にしてください。
-中間の値を取ることができなくなります。&lt;/p&gt;
-&lt;h4 id=&#34;override&#34;&gt;Override&lt;/h4&gt;
-&lt;p&gt;プロシージャルな Expression の値を制御します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;プロシージャルなExpression&lt;/h4&gt;
-&lt;p&gt;アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して &lt;code&gt;プロシージャルなExpression&lt;/code&gt; を定義しました。
-3つのグループ &lt;code&gt;Blink&lt;/code&gt;, &lt;code&gt;LookAt&lt;/code&gt;, &lt;code&gt;Mouth&lt;/code&gt; を設定しています。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;グループ&lt;/th&gt;
-&lt;th&gt;weight生成例&lt;/th&gt;
-&lt;th&gt;含まれる Expression preset&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Blink&lt;/td&gt;
-&lt;td&gt;ランダム&lt;/td&gt;
-&lt;td&gt;Blink, BlinkLeft, BlinkRight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;LookAt&lt;/td&gt;
-&lt;td&gt;VrmコンポーネントのLookAt機能による生成&lt;/td&gt;
-&lt;td&gt;LookUp, LookDown, LookLeft, LookRight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Mouth&lt;/td&gt;
-&lt;td&gt;音声やテキスト解析による生成&lt;/td&gt;
-&lt;td&gt;Aa, Ih, Ou, Ee, Oh&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
-その場合既存の Expression Weight との組み合わせで問題が発生する可能性があります。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Expressionの組み合わせで起こる問題の例&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;口が開く &lt;code&gt;happy&lt;/code&gt; と同時に &lt;code&gt;aa&lt;/code&gt; が適用される =&amp;gt; 口が開きすぎて変になる&lt;/li&gt;
-&lt;li&gt;目を閉じる &lt;code&gt;sad&lt;/code&gt; と同時に &lt;code&gt;blink&lt;/code&gt; が適用される =&amp;gt; 目が2回閉じて瞼が頬を貫通してしまう&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;blink&lt;/code&gt; と同時に &lt;code&gt;lookRight&lt;/code&gt; が適用される =&amp;gt; 目が瞼を貫通してしまう&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;組み合わせ問題を回避するために自動生成される &lt;code&gt;Blink&lt;/code&gt;, &lt;code&gt;LookAt&lt;/code&gt;, &lt;code&gt;Mouth&lt;/code&gt; の Weight 値を加工(Override)する機能です。
-Override 設定した Expression の Weight 値が 0 より大きいときに機能が有効になります。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;設定&lt;/th&gt;
-&lt;th&gt;機能&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;None&lt;/td&gt;
-&lt;td&gt;procedual.weight = procedual.weight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Block&lt;/td&gt;
-&lt;td&gt;procedual.weight = 0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Blend&lt;/td&gt;
-&lt;td&gt;procedual.weight = (1 - expression.weight)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
-&lt;p&gt;Expression アセットのインスペクターの下部の頭部表示画面です。
-Expression の設定を適用した結果を描画します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Preview Prefab&lt;/li&gt;
-&lt;li&gt;Preview Weight: スライダーを動かすことで、[0-1] 間での変化をプレビューできます。Advanced の &lt;code&gt;IsBinary&lt;/code&gt; チェックボックスの影響をテストできます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;作業例&#34;&gt;作業例&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;asset&lt;/th&gt;
-&lt;th&gt;morphtarget&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;aa&lt;/td&gt;
-&lt;td&gt;head.lip_a =&amp;gt; 100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 
       </description>
     </item>
