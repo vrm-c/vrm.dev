@@ -7,13 +7,31 @@ weight: 2
 
 float3 で値の範囲が [0-1] です。
 
+## 対象のシェーダー
+
+* `Standard`
+* `VRM10/MToon10`
+
 ## Unity などの PostEffect の グロー
 
-Emission の値が 1 を越える場合に発光させる実装です。
-
-{{% alert title="glow" color="info" %}}
+Emission の値が 1 を越える場合に発光させるポストエフェクトです。
 
 {{< img width=300 src="images/vrm10/glow.jpg" >}}
+
+1を超えて3や4にすることで強くなりますが `glTF` の仕様上この値を格納することができません。
+
+{{% alert title="割り算で1におさめる" color="info" %}}
+
+エクスポート時に下記の処理をして 最大値 1 に強制します。
+
+```cs
+Vector3 emission;
+var max_value = get_max(emission); // r, g, b で最大の値を得る
+if(max_value>1)
+{
+  emission = emission / max_value;
+}
+```
 
 {{% /alert %}}
 
@@ -28,11 +46,17 @@ EmissiveFactor に対して乗算する float 値 を定義します。
 
 MToon と PBR マテリアルで有効です。
 
-PostEffectを設定済みのサンプルシーンあります。
+PostEffectを設定済みのサンプルシーンがありますので
+お試しください。
+
+`UniVRM10-XXX.unitypackage`
+
+* `Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity`
+* `Assets\UniGLTF.Samples\LookDev\lilienstein_1k.unity`
+* `Assets\UniGLTF.Samples\LookDev\moonless_golf_1k.unity`
+* `Assets\UniGLTF.Samples\LookDev\spruit_sunrise_1k.unity`
 
 * https://github.com/vrm-c/UniVRM/pull/1123
-
-TODO: UnityPackage
 
 ## Unity アプリでロードする方法
 

@@ -82,6 +82,6 @@ VRM1 では、Material タブと VRM タブでリソースの extract ができ�
 ## まとめ
 
 VRM1 と GLB/GLTF(0.68以降) は `ScriptedImporter` の導入により、 `extract` と `remap` の仕組みがあります。
-既存の `fbx` importer の動きと似た動きになるようにしております。
+既存の `fbx` importer の動きと似た動きになるように実装しています。
 
 <https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html>
