@@ -486,9 +486,9 @@ Expression の設定を適用した結果を描画します。&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: 🚧LookAt の設定</title>
+      <title>Docs: LookAt の設定</title>
       <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
+      <pubDate>Mon, 16 Aug 2021 20:32:50 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</guid>
       <description>
@@ -500,11 +500,148 @@ Expression の設定を適用した結果を描画します。&lt;/p&gt;
 &lt;p&gt;VRM ３種類の LookAt をサポートしています。
 モデルに応じて、以下の３種類の何れかの設定をしてください。&lt;/p&gt;
 &lt;h2 id=&#34;boneタイプ&#34;&gt;Boneタイプ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;TODO: Alicia&lt;/code&gt; のセットアップ例&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Alicia&lt;/code&gt; を例に説明します。
+デフォルトでボーンタイプに設定されるので特に変更する必要ありません。
+以下の項目が関連します。&lt;/p&gt;
+&lt;p&gt;humanoid に eye ボーンが存在する。
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/alicia_humanoid.jpg&#34;  width=&#34;300&#34; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Bone&lt;/code&gt; を指定。
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_bone.jpg&#34;  width=&#34;500&#34; /&gt;
+&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_bone_anim.gif&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;動作確認 の項に進んでください。&lt;/p&gt;
 &lt;h2 id=&#34;expressionタイプmorph-target-タイプ&#34;&gt;Expressionタイプ(Morph Target タイプ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;TODO: seedsan&lt;/code&gt; のセットアップ例&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;new_seedsan&lt;/code&gt; を例に説明します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;preset&lt;/th&gt;
+&lt;th&gt;expression&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookLeft&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookleft.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookRight&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookright.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookUp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookup.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookDown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookdown.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Expression&lt;/code&gt; を指定。
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg&#34;  width=&#34;500&#34; /&gt;
+
+&lt;code&gt;Y Range&lt;/code&gt; に 1 を設定&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression_anim.gif&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;動作確認 の項に進んでください。&lt;/p&gt;
 &lt;h2 id=&#34;expressionタイプtexture-transform-タイプ&#34;&gt;Expressionタイプ(Texture Transform タイプ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;TODO: unitychan&lt;/code&gt; のセットアップ例&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;unity chan&lt;/code&gt; を例に説明します。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;© Unity Technologies Japan/UCL&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;preset&lt;/th&gt;
+&lt;th&gt;expression&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookLeft&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_left.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookRight&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_right.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookUp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_up.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LookDown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_down.jpg&#34;  width=&#34;600&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Expression&lt;/code&gt; を指定。
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg&#34;  width=&#34;500&#34; /&gt;
+
+&lt;code&gt;Y Range&lt;/code&gt; に 1 を設定&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_uv_anim.gif&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;動作確認&#34;&gt;動作確認&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;シーンに Cube を作成(scale [0.1, 0.1, 0.1])&lt;/li&gt;
+&lt;li&gt;VrmController の Gaze にセット&lt;/li&gt;
+&lt;li&gt;VrmController の LookAtTargetType に &lt;code&gt;Calc Yaw Pitch To Gaze&lt;/code&gt; を設定(デフォルト)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_targettype.jpg&#34;  width=&#34;500&#34; /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Play&lt;/li&gt;
+&lt;li&gt;Cube を動かして目が動くことを確認&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;lookat-基準位置を調整&#34;&gt;LookAt 基準位置を調整&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;HeadBone位置&lt;/code&gt; + &lt;code&gt;Offset From Head&lt;/code&gt; が LookAt の基準位置になります。
+両目の間辺りを目安に設定してください。
+この設定は、 VR 時の HMD 座標と兼用です。&lt;/p&gt;
+&lt;p&gt;TODO: UI&lt;/p&gt;
+&lt;h3 id=&#34;可動範囲を調整&#34;&gt;可動範囲を調整&lt;/h3&gt;
+&lt;p&gt;VrmObject の LookAt 画面下部の &lt;code&gt;HorizontalOuter&lt;/code&gt;, &lt;code&gt;HorizontalInner&lt;/code&gt;, &lt;code&gt;VerticalDown&lt;/code&gt;, &lt;code&gt;VerticalUp&lt;/code&gt; のスライダーを調整してください。&lt;/p&gt;
+&lt;h4 id=&#34;curve-x-range&#34;&gt;Curve X Range&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;大きくするゆっくり動く&lt;/li&gt;
+&lt;li&gt;小さくすると速く動く&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;LookAt は 以下の２直線の角度を計算します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LookAt 基準位置から Head ボーンの正面方向(local Z+)&lt;/li&gt;
+&lt;li&gt;LookAt 基準位置から 注視点方向(VrmControllerのGaze)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;角度を Yaw(水平) と Pitch(垂直) に分解します。
+Yaw は &lt;code&gt;+-180度&lt;/code&gt;、Pitch は &lt;code&gt;+-90度&lt;/code&gt; になります。
+Yaw, Pitch の上限角度を設定できます。
+&lt;code&gt;Curve X Range&lt;/code&gt; がその設定で初期設定は &lt;code&gt;90度&lt;/code&gt; です。&lt;/p&gt;
+&lt;h4 id=&#34;curve-y-rangelookat-type-bone&#34;&gt;Curve Y Range(LookAt Type: Bone)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;ボーンの回転角度の制限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上限を制限された角度をそのまま、 EyeBone  に代入すると回転しすぎになる場合が多いです。
+これを適当な角度に減らす設定が &lt;code&gt;Curve Y Range&lt;/code&gt; です。
+初期設定は &lt;code&gt;10度&lt;/code&gt; です。上限角度のときに &lt;code&gt;10度&lt;/code&gt; 回転します。&lt;/p&gt;
+&lt;p&gt;初期設定では、注視点が &lt;code&gt;90度&lt;/code&gt; のときに EyeBone が &lt;code&gt;10度&lt;/code&gt; 回転します。
+&lt;code&gt;0-90度&lt;/code&gt; では比例して回転し、&lt;code&gt;90度&lt;/code&gt; を超えないようになっています。&lt;/p&gt;
+&lt;h4 id=&#34;curve-y-rangelookat-type-expression&#34;&gt;Curve Y Range(LookAt Type: Expression)&lt;/h4&gt;
+&lt;p&gt;Expression は角度ではなく &lt;code&gt;0-1&lt;/code&gt; の Weight になります。
+&lt;code&gt;1&lt;/code&gt; を設定してください。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1&lt;/code&gt; で多すぎる場合はいかのいずれかの方法で調整してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1&lt;/code&gt; 以下に減らす&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Expression&lt;/code&gt; の設定を調整(お勧め)&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
@@ -560,15 +697,32 @@ Expression の設定を適用した結果を描画します。&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: 🚧MToon の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/mtoon/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
+      <title>Docs: 🚧Material の設定</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</link>
+      <pubDate>Mon, 16 Aug 2021 20:32:50 +0900</pubDate>
       
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/mtoon/</guid>
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</guid>
       <description>
         
         
-        
+        &lt;h2 id=&#34;amim_logo&#34;&gt;amim_logo&lt;/h2&gt;
+&lt;h2 id=&#34;arm_mat&#34;&gt;arm_mat&lt;/h2&gt;
+&lt;h2 id=&#34;arm_plastic&#34;&gt;arm_plastic&lt;/h2&gt;
+&lt;h2 id=&#34;armgear_plastic&#34;&gt;armgear_plastic&lt;/h2&gt;
+&lt;h2 id=&#34;backpack_metal&#34;&gt;backpack_metal&lt;/h2&gt;
+&lt;h2 id=&#34;backpack_nm&#34;&gt;backpack_nm&lt;/h2&gt;
+&lt;h2 id=&#34;backpack_plastic&#34;&gt;backpack_plastic&lt;/h2&gt;
+&lt;h2 id=&#34;body_bake&#34;&gt;body_bake&lt;/h2&gt;
+&lt;h2 id=&#34;body_nm&#34;&gt;body_nm&lt;/h2&gt;
+&lt;h2 id=&#34;eye&#34;&gt;eye&lt;/h2&gt;
+&lt;h2 id=&#34;eye_trans&#34;&gt;eye_trans&lt;/h2&gt;
+&lt;h2 id=&#34;glass&#34;&gt;glass&lt;/h2&gt;
+&lt;h2 id=&#34;green_emit&#34;&gt;green_emit&lt;/h2&gt;
+&lt;h2 id=&#34;huku_bake&#34;&gt;huku_bake&lt;/h2&gt;
+&lt;h2 id=&#34;newhair&#34;&gt;newhair&lt;/h2&gt;
+&lt;h2 id=&#34;robo_face&#34;&gt;robo_face&lt;/h2&gt;
+&lt;h2 id=&#34;wear_metal&#34;&gt;wear_metal&lt;/h2&gt;
+
       </description>
     </item>
     
