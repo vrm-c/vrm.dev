@@ -21,16 +21,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>🚧Material の設定 | VRM</title><meta property="og:title" content="🚧Material の設定" />
-<meta property="og:description" content="amim_logo arm_mat arm_plastic armgear_plastic backpack_metal backpack_nm backpack_plastic body_bake body_nm eye eye_trans glass green_emit huku_bake newhair robo_face wear_metal" />
+<meta property="og:description" content="new_seedsan のマテリアル構成 SkinnedMeshRenderer: hair Material0: hair(頭髪) Material1: huku_bake(髪留め) SkinnedMeshRenderer: hair_tail Material0: hair(頭髪。おさげ) SkinnedMeshRenderer: head Material0: body_bake(頭部、顔) Material1: e" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm1/vrm1_tutorial/material/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-08-16T20:32:50+09:00" />
-<meta property="article:modified_time" content="2021-08-16T20:32:50+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-08-17T21:49:15+09:00" />
+<meta property="article:modified_time" content="2021-08-17T21:49:15+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="🚧Material の設定">
-<meta itemprop="description" content="amim_logo arm_mat arm_plastic armgear_plastic backpack_metal backpack_nm backpack_plastic body_bake body_nm eye eye_trans glass green_emit huku_bake newhair robo_face wear_metal">
-<meta itemprop="dateModified" content="2021-08-16T20:32:50+09:00" />
-<meta itemprop="wordCount" content="17">
+<meta itemprop="description" content="new_seedsan のマテリアル構成 SkinnedMeshRenderer: hair Material0: hair(頭髪) Material1: huku_bake(髪留め) SkinnedMeshRenderer: hair_tail Material0: hair(頭髪。おさげ) SkinnedMeshRenderer: head Material0: body_bake(頭部、顔) Material1: e">
+<meta itemprop="dateModified" content="2021-08-17T21:49:15+09:00" />
+<meta itemprop="wordCount" content="490">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -40,7 +40,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="🚧Material の設定"/>
-<meta name="twitter:description" content="amim_logo arm_mat arm_plastic armgear_plastic backpack_metal backpack_nm backpack_plastic body_bake body_nm eye eye_trans glass green_emit huku_bake newhair robo_face wear_metal"/>
+<meta name="twitter:description" content="new_seedsan のマテリアル構成 SkinnedMeshRenderer: hair Material0: hair(頭髪) Material1: huku_bake(髪留め) SkinnedMeshRenderer: hair_tail Material0: hair(頭髪。おさげ) SkinnedMeshRenderer: head Material0: body_bake(頭部、顔) Material1: e"/>
 
 
 
@@ -1522,15 +1522,66 @@
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2021/08/16
+    <b>最終更新</b> 2021/08/17
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/110d9f1c4d9ab9b26cd43010444e2cf6a37a3538"><i class='fab fa-github fa-lg fa-fw'></i>update
-        (110d9f1c)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/2a20ee2c2999b6115f74beb4bba649600f6ca320"><i class='fab fa-github fa-lg fa-fw'></i>update
+        (2a20ee2c)</a>
     
 </div></div>
 
     
-    <h2 id="amim_logo">amim_logo</h2>
+    <ul>
+<li>new_seedsan のマテリアル構成
+<ul>
+<li>SkinnedMeshRenderer: hair
+<ul>
+<li>Material0: hair(頭髪)</li>
+<li>Material1: huku_bake(髪留め)</li>
+</ul>
+</li>
+<li>SkinnedMeshRenderer: hair_tail
+<ul>
+<li>Material0: hair(頭髪。おさげ)</li>
+</ul>
+</li>
+<li>SkinnedMeshRenderer: head
+<ul>
+<li>Material0: body_bake(頭部、顔)</li>
+<li>Material1: eye(瞳)</li>
+<li>Material2: eye_trans(?)</li>
+</ul>
+</li>
+<li>SkinnedMeshRenderer: robo_arm(背中のロボアーム)
+<ul>
+<li>Material0: arm_mat(ロボーアームの白パーツで覆われていない部分)</li>
+<li>Material1: arm_plastic(ロボアームの白いパーツ)</li>
+<li>Material2: green_emit(ロボアームの緑の発光部分)</li>
+</ul>
+</li>
+<li>SkinnedMeshRenderer: wear(体、バックパック)
+<ul>
+<li>Material0: body_bake(肌)</li>
+<li>Material1: body_nm(衣服)</li>
+<li>Material2: wear_metal(グローブの電極)</li>
+<li>Material3: huku_bake(衣服)</li>
+<li>Material4: armgear_plastic(グローブの白いパーツ)</li>
+<li>Material5: robo_face(グローブの顔モニター)</li>
+<li>Material6: glass(グローブの顔モニター)</li>
+<li>Material7: backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)</li>
+<li>Material8: green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)</li>
+<li>Material9: backpack_nm(バックパック下部水色のパーツ)</li>
+<li>Material10: backpack_plastic(バックパックの白いパーツ)</li>
+<li>Material11: anim_logo(胸の模様)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="amim_logo">amim_logo</h2>
+<ul>
+<li>MToon-1.0</li>
+<li>UV-Animation</li>
+</ul>
 <h2 id="arm_mat">arm_mat</h2>
 <h2 id="arm_plastic">arm_plastic</h2>
 <h2 id="armgear_plastic">armgear_plastic</h2>
