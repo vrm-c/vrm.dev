@@ -1,39 +1,40 @@
 ---
 title: 新しいEditorImporterの動作
-weight: 1
+weight: 12
+tags: ["gltf", "vrm-1.0"]
 ---
 
 ## AssetFile の作られ方
+
+### 以前の動作(独立したasset)
 
 VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。
 
 {{% alert title="vrm0 の import" color="warning" %}}
 
-{{< img width=200 src="images/vrm10/vrm0_import.jpg" >}}
+{{< img width=300 src="images/vrm10/vrm0_import.jpg" >}}
 
-*.vrm(*.glb) import 時
-
-* *.vrm 自体は Asset にならずに白い Asset ファイルとなる(何もしない)
-* この白いファイルに対して `*.meta` が作成されるときに AssetPostprocessor が動作して以下のリソースを作成します。
-* prefab を作成
-* prefab が参照するその他の Asset も作成
-  * texture(vrm に内包されている png, jpg をファイルとして書き出し)
-  * material
-  * mesh
-  * humanoid avatar
-  * vrm blendshape などの ScriptableObject
+* mesh や texture や material や blendshape などの関連アセットファイルが作成されます。
 
 {{% /alert %}}
+
+### 新しい動作(subasset)
 
 VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import されます。
 
 {{% alert title="vrm1 の import" color="warning" %}}
 
-{{< img width=200 src="images/vrm10/vrm1_import.jpg" >}}
+{{< img width=300 src="images/vrm10/vrm1_import.jpg" >}}
 
-* *.vrm 自体が Asset になります
-* この Asset は、prefab の root の GameObject を表します(Prefabのようもの)
-* この GameObject ヒエラルキーが参照する Asset は、 `*.vrm` Asset の SubAsset として作成されます(個別のファイルにならない)
+* mesh や material や texture や Expression が SubAsset として作成されます。
+
+{{% /alert %}}
+
+{{% alert title="glb の import" color="warning" %}}
+
+{{< img width=600 src="images/gltf/glb_extract_before.jpg" >}}
+
+* material と texture が SubAsset として作成されます
 
 {{% /alert %}}
 
@@ -50,6 +51,12 @@ FBX の Importer も同様の動作です。
 
 {{% /alert %}}
 
+VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。
+
+{{< img width=300 src="images/vrm10/extract_material.jpg" >}}
+{{< img width=300 src="images/vrm10/extract_vrm_empty.jpg" >}}
+{{< img width=300 src="images/vrm10/extract_vrm.jpg" >}}
+
 {{% alert title="fbx の extract" color="warning" %}}
 
 fbx importer の material タブには下記のようなボタンがあります。
@@ -61,21 +68,23 @@ fbx importer の material タブには下記のようなボタンがあります
 
 {{% /alert %}}
 
-VRM1 では、Material タブと VRM タブでリソースの extract ができます。
-
-* Materialsタブ: Texture と Material を Extract できます
-* Vrmタブ: VRM1Object(Meta, LookAt, FirstPerson) と VRM1Expression を Extract できます
-
-{{< img width=300 src="images/vrm10/extract_material.jpg" >}}
-
 ## 外部の Asset と VRM を関連付ける Remap
 
 初期状態では vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
 置き換えの関連付けを管理するのが Remap です。
 
-{{% alert title="remap" color="warning" %}}
+* None になっているときは、 `vrm`, `glb` に内部の SubAsset を使用しているという意味になります。
+* Extract以外にも、個別に既存のAssetを割り当てできます
+
+{{% alert title="extract 後" color="warning" %}}
 
 {{< img width=300 src="images/vrm10/remap_materials.jpg" >}}
+
+{{< img width=700 src="images/gltf/glb_extract_after.jpg" >}}
+
+{{< img width=700 src="images/gltf/vrm1_extract_after.jpg" >}}
+
+SubAsset が書き出され、それが Remap に代入されます。
 
 {{% /alert %}}
 

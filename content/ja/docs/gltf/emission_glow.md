@@ -1,11 +1,9 @@
 ---
 title: Emission と グロー(発光)
-weight: 2
+weight: 11
+tags: ["gltf", "mtoon-1.0"]
 ---
 
-## glTF の Emission
-
-float3 で値の範囲が [0-1] です。
 
 ## 対象のシェーダー
 
@@ -32,6 +30,12 @@ if(max_value>1)
   emission = emission / max_value;
 }
 ```
+
+{{% /alert %}}
+
+{{% alert title="vrm-0.x は保存できる" color="info" %}}
+
+vrm-0.x は [0-1] 制限が無いので保存できます。
 
 {{% /alert %}}
 
