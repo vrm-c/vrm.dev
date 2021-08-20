@@ -33,4 +33,4 @@ def main(ws: pathlib.Path):
 
 
 if __name__ == '__main__':
-    main(HERE)
+    main(HERE.parent)

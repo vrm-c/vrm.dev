@@ -7,10 +7,44 @@ menu:
 aliases: ["/en/univrm/"]
 ---
 
-- [How to make VRM file]({{< relref "how_to_make_vrm" >}})
-- [Download](https://github.com/vrm-c/UniVRM/releases)
+## How to Install
 
-# Bug Report
+* From `v0.81.0`, require two `unitypackage`
+* Install for `v0.80.0` or before is [univrm_install]({{< relref "univrm_install" >}})
+* [Download](https://github.com/vrm-c/UniVRM/releases)
+
+### UnityPackage Install
+
+Download from <https://github.com/vrm-c/UniVRM/releases>.
+Install `UniGLTF_VRMShaders` and `UniVRM` unitypackage.
+
+|          | UniGLTF_VRMShaders | UniVRM  | VRM     |
+|----------|--------------------|---------|---------|
+| for GLTF | install            |         |         |
+| for VRM  | install            | install |         |
+| for VRM1 | install            |         | install |
+
+* `Sample` merged to above.
+* Can install `UPM` PackageWindow `Sample` button.
+
+### UPM Install
+
+From `v0.81.0` 
+
+* Rename `com.vrmc.unigltf` to `com.vrmc.gltf`. for `com.vrmc.unigltf` version issue.
+
+```json
+{
+  "dependencies": {
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.81.0",
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.81.0", // <= rename unigltf to gltf (v0.81.0)
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.81.0",
+    // for VRM-1.0β
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.81.0",} // <= rename univrm1 to vrm (v0.81.0)
+}
+```
+
+### Bug Report
 
 Please check messages in Console (``Window -> Console``).
 

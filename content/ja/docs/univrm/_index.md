@@ -9,16 +9,14 @@ aliases: ["/univrm/"]
 
 ## Install 方法
 
-`v0.81.0` から `unitypackage` が２つ必要です。
-`v0.80.0` 以前のインストールは [こちら]({{< relref "univrm_install" >}})
+* `v0.81.0` から `unitypackage` が２つ必要です。
+* `v0.80.0` 以前のインストールは [こちら]({{< relref "univrm_install" >}})
+* [Download](https://github.com/vrm-c/UniVRM/releases)
 
 ### UnityPackage を使ったインストール
 
 <https://github.com/vrm-c/UniVRM/releases> から `unitypackage` をダウンロードしてください。
 `UniGLTF_VRMShaders` 、 `UniVRM` という順番で２つのパッケージをインストールしてください。
-
-`UnityPackage` は３種類あり用途は下記のとおりです。
-`v0.81.0` からパッケージの分け方を変更しました。
 
 |          | UniGLTF_VRMShaders | UniVRM  | VRM     |
 |----------|--------------------|---------|---------|
@@ -26,8 +24,8 @@ aliases: ["/univrm/"]
 | for VRM  | install            | install |         |
 | for VRM1 | install            |         | install |
 
-`Sample` パッケージは廃止になりました。 `UPM` の `Sample` 機能でインストールできます。
-
+* `Sample` パッケージは廃止になり中に含まれます。 
+* `UPM` の `Sample` 機能でインストールできます。
 ### UPM を使ったインストール
 
 `v0.81.0` から `com.vrmc.unigltf` が `com.vrmc.gltf` に変更になしました。(`com.vrmc.unigltf` が独自のバージョンを持っていたのをやめるため)。
