@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
-
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-
-<link rel="alternate" type="application/rss&#43;xml" href="https://vrm.dev/docs/univrm1/emission_glow/index.xml">
+<meta name="generator" content="Hugo 0.74.3" /><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,26 +17,34 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Emission と グロー(発光) | VRM</title><meta property="og:title" content="Emission と グロー(発光)" />
-<meta property="og:description" content="3D Humanoid Avatar format for VR" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://vrm.dev/docs/univrm1/emission_glow/" />
+<title>Emission と グロー(発光) | VRM</title>
+<meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="Emission と グロー(発光)" />
+<meta property="og:description" content="対象のシェーダー Standard VRM10/MToon10 Unity などの PostEffect の グロー Emission の値が 1 を越える場合に発光させるポストエフェクトです。 1を超えて3や4にすることで強くなりますが glTF の" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vrm.dev/docs/gltf/emission_glow/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2021-08-12T21:22:24+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-08-20T17:44:22+09:00" />
+<meta property="article:modified_time" content="2021-08-20T17:44:22+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="Emission と グロー(発光)">
-<meta itemprop="description" content="3D Humanoid Avatar format for VR">
+<meta itemprop="description" content="対象のシェーダー Standard VRM10/MToon10 Unity などの PostEffect の グロー Emission の値が 1 を越える場合に発光させるポストエフェクトです。 1を超えて3や4にすることで強くなりますが glTF の">
+<meta itemprop="dateModified" content="2021-08-20T17:44:22+09:00" />
+<meta itemprop="wordCount" content="436">
+<meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
+
+
+
+<meta itemprop="keywords" content="gltf,mtoon-1.0," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="Emission と グロー(発光)"/>
-<meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
+<meta name="twitter:description" content="対象のシェーダー Standard VRM10/MToon10 Unity などの PostEffect の グロー Emission の値が 1 を越える場合に発光させるポストエフェクトです。 1を超えて3や4にすることで強くなりますが glTF の"/>
 
 
 
 
-
-<link rel="preload" href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" as="style">
-<link href="/scss/main.min.3fc85876bb94e30271a76c06ddf0470d6733644377a693633c8604d425692fd6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.3b9f9cc9d33da00036d283c68d01d60de63f2aed8d0c6b73fe1c572bd54f992a.css" as="style">
+<link href="/scss/main.min.3b9f9cc9d33da00036d283c68d01d60de63f2aed8d0c6b73fe1c572bd54f992a.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -50,8 +54,11 @@
 
 
 
+
+
+
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -158,7 +165,7 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002; サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 </nav>
@@ -167,17 +174,14 @@
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
             
-
-
-
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
   
   <form class="td-sidebar__search d-flex align-items-center">
     
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002; サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -1100,6 +1104,61 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/gltf/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
+        
+        <i class="fas fa-folder-open fa-fw"></i>
+        
+        glTF
+    </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsgltf">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgltfupdate" href="/docs/gltf/update/">
+          <i class="fas fa-file fa-fw"></i>
+          v0.66からv0.79の変更点
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgltfemission_glow" href="/docs/gltf/emission_glow/">
+          <i class="fas fa-file fa-fw"></i>
+          Emission と グロー(発光)
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgltfscripted_importer" href="/docs/gltf/scripted_importer/">
+          <i class="fas fa-file fa-fw"></i>
+          新しいEditorImporterの動作
+      </a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
         
         <i class="fas fa-folder fa-fw"></i>
@@ -1137,72 +1196,16 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
+    <a  href="/docs/univrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder-open fa-fw"></i>
+        <i class="fas fa-folder fa-fw"></i>
         
         UniVRM-1.0β
     </a>
   </li>
   <ul>
-    <li class="collapse show" id="docsunivrm1">
+    <li class="collapse " id="docsunivrm1">
       
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm1/scripted_importer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
-        
-        <i class="fas fa-folder fa-fw"></i>
-        
-        新しいEditorImporterの動作
-    </a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsunivrm1scripted_importer">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/univrm1/emission_glow/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
-        
-        <i class="fas fa-folder-open fa-fw"></i>
-        
-        Emission と グロー(発光)
-    </a>
-  </li>
-  <ul>
-    <li class="collapse show" id="docsunivrm1emission_glow">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
       
       
       
@@ -1393,10 +1396,8 @@
 </div>
 
 
-
-
-          </div>
-          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 
 
@@ -1408,30 +1409,64 @@
 
 
 
-<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/univrm1/emission_glow/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/ja/docs/gltf/emission_glow.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
 <a href="https://github.com/vrm-c/vrm.dev/issues/new?title=Emission%20%e3%81%a8%20%e3%82%b0%e3%83%ad%e3%83%bc%28%e7%99%ba%e5%85%89%29" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
 
 </div>
 
 
 
+            
 
 
-
-<nav id="TableOfContents">
+<div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#gltf-の-emission">glTF の Emission</a></li>
     <li><a href="#対象のシェーダー">対象のシェーダー</a></li>
     <li><a href="#unity-などの-posteffect-の-グロー">Unity などの PostEffect の グロー</a></li>
     <li><a href="#vrmc_materials_hdr_emissivemultiplier-拡張を作成しました">VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました</a></li>
     <li><a href="#unity-アプリでロードする方法">Unity アプリでロードする方法</a></li>
     <li><a href="#仕様">仕様</a></li>
   </ul>
-</nav>
+</nav></div>
 
 
 
-          </div>
+            
+
+	
+		
+
+
+
+  
+  
+    <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      
+        <h5 class="taxonomy-title">Tags</h5>
+      
+      <ul class="taxonomy-terms">
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/api/" data-taxonomy-term="api"><span class="taxonomy-label">api</span><span class="taxonomy-count">9</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/detail/" data-taxonomy-term="detail"><span class="taxonomy-label">detail</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/fbx/" data-taxonomy-term="fbx"><span class="taxonomy-label">fbx</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/gltf/" data-taxonomy-term="gltf"><span class="taxonomy-label">gltf</span><span class="taxonomy-count">10</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/mtoon-1.0/" data-taxonomy-term="mtoon-1.0"><span class="taxonomy-label">mtoon-1.0</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">32</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/vrm-1.0/" data-taxonomy-term="vrm-1.0"><span class="taxonomy-label">vrm-1.0</span><span class="taxonomy-count">1</span></a></li>
+        
+      </ul>
+    </div>
+  
+
+	
+
+          </aside>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             
   
@@ -1457,14 +1492,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://vrm.dev/docs/univrm1/">UniVRM-1.0β</a>
+	<a href="https://vrm.dev/docs/gltf/">glTF</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://vrm.dev/docs/univrm1/emission_glow/">Emission と グロー(発光)</a>
+	<a href="https://vrm.dev/docs/gltf/emission_glow/">Emission と グロー(発光)</a>
 </li>
 
 	</ol>
@@ -1474,13 +1509,15 @@
 <div class="td-content">
     <h1>Emission と グロー(発光)</h1>
     
+<ul class="tags"><li><a href="/tags/gltf">gltf</a><li><a href="/tags/mtoon-1.0">mtoon-1.0</a></ul>
+
     
     <div class="share">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="Emission と グロー(発光) - VRM" data-url="https://vrm.dev/docs/univrm1/emission_glow/"
+            data-text="Emission と グロー(発光) - VRM" data-url="https://vrm.dev/docs/gltf/emission_glow/"
             data-show-count="false">Tweet</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/docs/univrm1/emission_glow/" class="hatena-bookmark-button"
+        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/docs/gltf/emission_glow/" class="hatena-bookmark-button"
             data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja"
             title="このエントリーをはてなブックマークに追加"><img
                 src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
@@ -1488,23 +1525,21 @@
         <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
             async="async"></script>
         <iframe
-            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2funivrm1%2femission_glow%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
+            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fdocs%2fgltf%2femission_glow%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
             width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true"></iframe>
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2021/08/12
+    <b>最終更新</b> 2021/08/20
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/2cbb5322600ad17e481b1e7f9d9ce8d63fcc28b8"><i class='fab fa-github fa-lg fa-fw'></i>glow
-        (2cbb5322)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/b994b2601929a1998aed252f45dd1f0776171135"><i class='fab fa-github fa-lg fa-fw'></i>`v0.81.0` のインストール
+        (b994b260)</a>
     
 </div></div>
 
     
-    <h2 id="gltf-の-emission">glTF の Emission</h2>
-<p>float3 で値の範囲が [0-1] です。</p>
-<h2 id="対象のシェーダー">対象のシェーダー</h2>
+    <h2 id="対象のシェーダー">対象のシェーダー</h2>
 <ul>
 <li><code>Standard</code></li>
 <li><code>VRM10/MToon10</code></li>
@@ -1518,7 +1553,8 @@
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">割り算で1におさめる</h4>
-<p>エクスポート時に下記の処理をして 最大値 1 に強制します。</p>
+
+    <p>エクスポート時に下記の処理をして 最大値 1 に強制します。</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">Vector3 emission;
 <span style="color:#078;font-weight:bold">var</span> max_value = get_max(emission); <span style="color:#09f;font-style:italic">// r, g, b で最大の値を得る
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span>(max_value&gt;<span style="color:#f60">1</span>)
@@ -1526,6 +1562,16 @@
   emission = emission / max_value;
 }
 </code></pre></div>
+
+</div>
+
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">vrm-0.x は保存できる</h4>
+
+    vrm-0.x は [0-1] 制限が無いので保存できます。
+
 </div>
 
 <h2 id="vrmc_materials_hdr_emissivemultiplier-拡張を作成しました">VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました</h2>
@@ -1764,6 +1810,10 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
     
     
     
+    
+    
+    
+    
 </div>
 
     <div class="text-muted mt-1 pt-3 border-top">
@@ -1790,7 +1840,7 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
 <ul class="list-inline mb-0">
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
-    <a class="text-white" target="_blank" href="https://github.com/vrm-c">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/vrm-c" aria-label="GitHub">
       <i class="fab fa-github"></i>
     </a>
   </li>
@@ -1813,9 +1863,19 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
 
 
     </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+ 
 
 
 
@@ -1823,7 +1883,13 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
 
 
 
-<script src="/js/main.min.3f0b17baf1bd0a0469452a412c0b5944fc7f77d4ae2084267de1008e9295dcca.js" integrity="sha256-PwsXuvG9CgRpRSpBLAtZRPx/d9SuIIQmfeEAjpKV3Mo=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="/js/main.min.9c624f254b178d98b7d5e0ade6aa005161a96e8325780df73dc3360503fb054a.js" integrity="sha256-nGJPJUsXjZi31eCt5qoAUWGpboMleA33PcM2BQP7BUo=" crossorigin="anonymous"></script>
+
 
 
 

@@ -31,7 +31,9 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;XX YY&lt;/h4&gt;
-XX is UniVRM version. YYYY is version ID
+
+    XX is UniVRM version. YYYY is version ID
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;install-unity&#34;&gt;Install Unity&lt;/h2&gt;
@@ -62,7 +64,9 @@ XX is UniVRM version. YYYY is version ID
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;If you are using Unity-2018 and the VRM menu does not show up:&lt;/h4&gt;
-Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; and check whether &lt;code&gt;Scripting Runtime Version&lt;/code&gt; is set to &lt;code&gt;.Net4.X equivalent&lt;/code&gt;
+
+    Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; and check whether &lt;code&gt;Scripting Runtime Version&lt;/code&gt; is set to &lt;code&gt;.Net4.X equivalent&lt;/code&gt;
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;console&#34;&gt;Console&lt;/h3&gt;
@@ -97,7 +101,9 @@ Go to &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Base VRM Model&lt;/h4&gt;
-The conditions for creating a VRM model &lt;a href=&#34;https://vrm.dev/en/docs/univrm/humanoid/base_model/&#34;&gt;can be found here&lt;/a&gt;
+
+    The conditions for creating a VRM model &lt;a href=&#34;https://vrm.dev/en/docs/univrm/humanoid/base_model/&#34;&gt;can be found here&lt;/a&gt;
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;import-a-fbx-model-into-unity&#34;&gt;Import a FBX model into Unity&lt;/h2&gt;
@@ -118,7 +124,9 @@ First, Drag and drop the FBX folder into the &lt;code&gt;Assets&lt;/code&gt; fol
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Shader&lt;/h4&gt;
-VRM supports three types of shaders: &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon&lt;/a&gt;, &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;Unlit&lt;/a&gt; and &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_standard/&#34;&gt;Standard&lt;/a&gt;
+
+    VRM supports three types of shaders: &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon&lt;/a&gt;, &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;Unlit&lt;/a&gt; and &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_standard/&#34;&gt;Standard&lt;/a&gt;
+
 &lt;/div&gt;
 
 &lt;p&gt;Create a folder (e.g. name the folder as &lt;code&gt;Materials&lt;/code&gt;) in FBX folder (&lt;code&gt;/Assets/FBX/Materials&lt;/code&gt;). In FBX&amp;rsquo;s Inspector window, click &lt;code&gt;Materials&lt;/code&gt; -&amp;gt; &lt;code&gt;Extract Materials&lt;/code&gt; and save extracted materials into &lt;code&gt;Materials&lt;/code&gt; folder. If the reference for each material has been assigned in &lt;code&gt;On Demand Remap&lt;/code&gt; section, skip this step. Another way to set up materials is by setting &lt;code&gt;Location&lt;/code&gt; as &lt;code&gt;Use External Materials (Legacy)&lt;/code&gt;. Here we only focus on the former one.&lt;/p&gt;
@@ -213,13 +221,15 @@ If all red messages are gone, click &lt;code&gt;Export&lt;/code&gt; button to ex
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Error Messages&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export062_empty_en.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/export062_empty_en.jpg&#34; alt=&#34;vrm export&#34; width=&#34;600&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Before exporting as VRM, validation checks on each component in the model will be conducted:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The error messages (red) need to be resolved&lt;/li&gt;
 &lt;li&gt;The warning messages (yellow) can be ignored if you want to export VRM straight away&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For example, if ExportRoot is not valid, the error messages will be displayed on the dialog. See &lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/univrm_export/#conditions-for-valid-exportroot&#34;&gt;Conditions for Valid ExportRoot&lt;/a&gt; for more information.&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -232,8 +242,10 @@ If all red messages are gone, click &lt;code&gt;Export&lt;/code&gt; button to ex
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
-&lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+
+    &lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export), the model normalization needs to be performed.
+
 &lt;/div&gt;
 
 &lt;p&gt;Related sections about UniVRM export:&lt;/p&gt;
@@ -299,8 +311,10 @@ Now we are going to show how to import and set up a VRM file.&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
-&lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+
+    &lt;code&gt;Pose Freeze&lt;/code&gt; is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Default (first VRM export or adding accessories to the VRM model), the model normalization needs to be performed.
+
 &lt;/div&gt;
 
 &lt;p&gt;Other settings such as &lt;a href=&#34;https://vrm.dev/en/docs/univrm/blendshape/univrm_bake_blendshape/&#34;&gt;Bake BlendShape State&lt;/a&gt; is also available.&lt;/p&gt;

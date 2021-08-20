@@ -51,10 +51,12 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;fbx import&lt;/h4&gt;
-&lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
+
+    &lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_import.jpg&#34;   /&gt;&lt;/p&gt;
 &lt;p&gt;テクスチャの割り当てが一部うまくいきませんでした。
 次の手順で修正します。&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -65,9 +67,11 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;subasset&lt;/h4&gt;
-&lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
+
+    &lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
 また、設定を変更できないので inspector がグレーアウトしています。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/embedded_subasset.jpg&#34;   /&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -83,8 +87,10 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;fbx reset&lt;/h4&gt;
-&lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
+
+    &lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_reset.jpg&#34;   /&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -213,7 +219,9 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
-blend shape の法線を確認したいので、shader は Standard のままにしています。
+
+    blend shape の法線を確認したいので、shader は Standard のままにしています。
+
 &lt;/div&gt;
 
 &lt;p&gt;それほど目だないのですが唇の印影が付きすぎています。&lt;/p&gt;
@@ -245,8 +253,10 @@ fbx の inspector の &lt;code&gt;Model&lt;/code&gt; タブの &lt;code&gt;Blend
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;jaw ボーンにご注意&lt;/h4&gt;
-fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
+
+    fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
 前髪が変な動きをする場合、これが原因のことがあります。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;vrm1-としてエクスポートします&#34;&gt;VRM1 としてエクスポートします&lt;/h2&gt;
@@ -348,7 +358,9 @@ extract により subasset を個別の Asset に展開します。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;旧blendShape&lt;/h4&gt;
-Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
+
+    Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;expression-の割り当て設定&#34;&gt;Expression の割り当て設定&lt;/h2&gt;
@@ -390,7 +402,8 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;プロシージャルなExpression&lt;/h4&gt;
-&lt;p&gt;アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して &lt;code&gt;プロシージャルなExpression&lt;/code&gt; を定義しました。
+
+    &lt;p&gt;アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して &lt;code&gt;プロシージャルなExpression&lt;/code&gt; を定義しました。
 3つのグループ &lt;code&gt;Blink&lt;/code&gt;, &lt;code&gt;LookAt&lt;/code&gt;, &lt;code&gt;Mouth&lt;/code&gt; を設定しています。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -419,6 +432,7 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
 &lt;/div&gt;
 
 &lt;p&gt;プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
@@ -427,11 +441,13 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Expressionの組み合わせで起こる問題の例&lt;/h4&gt;
-&lt;ul&gt;
+
+    &lt;ul&gt;
 &lt;li&gt;口が開く &lt;code&gt;happy&lt;/code&gt; と同時に &lt;code&gt;aa&lt;/code&gt; が適用される =&amp;gt; 口が開きすぎて変になる&lt;/li&gt;
 &lt;li&gt;目を閉じる &lt;code&gt;sad&lt;/code&gt; と同時に &lt;code&gt;blink&lt;/code&gt; が適用される =&amp;gt; 目が2回閉じて瞼が頬を貫通してしまう&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;blink&lt;/code&gt; と同時に &lt;code&gt;lookRight&lt;/code&gt; が適用される =&amp;gt; 目が瞼を貫通してしまう&lt;/li&gt;
 &lt;/ul&gt;
+
 
 &lt;/div&gt;
 
@@ -664,7 +680,8 @@ Yaw, Pitch の上限角度を設定できます。
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;VRで見えてほしくない部分&lt;/h4&gt;
-&lt;p&gt;VRではアバターの頭部に、一人称のカメラを位置させます。
+
+    &lt;p&gt;VRではアバターの頭部に、一人称のカメラを位置させます。
 アバターの見えてほしくない部分が見えてしまう場合があります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;近すぎて歯が見える&lt;/li&gt;
@@ -672,6 +689,7 @@ Yaw, Pitch の上限角度を設定できます。
 &lt;li&gt;髪が邪魔で前が見えない&lt;/li&gt;
 &lt;li&gt;etc&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
+
 
 &lt;/div&gt;
 

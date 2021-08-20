@@ -15,6 +15,63 @@
     
     
     <item>
+      <title>Docs: v0.66からv0.79の変更点</title>
+      <link>https://vrm.dev/docs/gltf/update/</link>
+      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/update/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;glTF&lt;/code&gt; 部分の &lt;code&gt;UniVRM-0.66&lt;/code&gt; からの主な更新点です。&lt;/p&gt;
+&lt;h2 id=&#34;scriptedimporter-の採用&#34;&gt;ScriptedImporter の採用&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIの変更&lt;/li&gt;
+&lt;li&gt;SubAssetsの挙動変更&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ForceText&lt;/code&gt; 時の動作が軽快に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/gltf/scripted_importer/&#34;&gt;ScriptedImporter&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;反転軸オプション追加&#34;&gt;反転軸オプション追加&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/755&#34;&gt;https://github.com/vrm-c/UniVRM/pull/755&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/958&#34;&gt;https://github.com/vrm-c/UniVRM/pull/958&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exporter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RuntimeImport&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EditorImport&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;material関連&#34;&gt;Material関連&lt;/h2&gt;
+&lt;h3 id=&#34;smoothnessgltf-と-roughnessunity-の変換ロジックを修正&#34;&gt;Smoothness(glTF) と Roughness(Unity) の変換ロジックを修正&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;https://github.com/vrm-c/UniVRM/issues/388&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;importexport時に-metallicroughnessocclusion-テクスチャーを一枚にまとめる&#34;&gt;Import/Export時に MetallicRoughnessOcclusion テクスチャーを一枚にまとめる&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/781&#34;&gt;https://github.com/vrm-c/UniVRM/issues/781&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mipmap-のインポート設定を修正&#34;&gt;MipMap のインポート設定を修正&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;, &lt;code&gt;mtoon&lt;/code&gt; 法線マップに影響が出やすい&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/947&#34;&gt;https://github.com/vrm-c/UniVRM/issues/947&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: 🚧vrm-1.0 Runtime ロード</title>
       <link>https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/</link>
       <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
@@ -197,10 +254,12 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;fbx import&lt;/h4&gt;
-&lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
+
+    &lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_import.jpg&#34;   /&gt;&lt;/p&gt;
 &lt;p&gt;テクスチャの割り当てが一部うまくいきませんでした。
 次の手順で修正します。&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -211,9 +270,11 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;subasset&lt;/h4&gt;
-&lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
+
+    &lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
 また、設定を変更できないので inspector がグレーアウトしています。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/embedded_subasset.jpg&#34;   /&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -229,8 +290,10 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;fbx reset&lt;/h4&gt;
-&lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
+
+    &lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_reset.jpg&#34;   /&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -359,7 +422,9 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
-blend shape の法線を確認したいので、shader は Standard のままにしています。
+
+    blend shape の法線を確認したいので、shader は Standard のままにしています。
+
 &lt;/div&gt;
 
 &lt;p&gt;それほど目だないのですが唇の印影が付きすぎています。&lt;/p&gt;
@@ -391,8 +456,10 @@ fbx の inspector の &lt;code&gt;Model&lt;/code&gt; タブの &lt;code&gt;Blend
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;jaw ボーンにご注意&lt;/h4&gt;
-fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
+
+    fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
 前髪が変な動きをする場合、これが原因のことがあります。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;vrm1-としてエクスポートします&#34;&gt;VRM1 としてエクスポートします&lt;/h2&gt;
@@ -461,10 +528,12 @@ fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;実装&lt;/h4&gt;
-&lt;p&gt;Y軸 180 度の回転になります。&lt;/p&gt;
+
+    &lt;p&gt;Y軸 180 度の回転になります。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 vrm0;
 &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm1 = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(-vrm0.x, vrm0.y, -vrm0.z);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -500,8 +569,10 @@ fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;実装&lt;/h4&gt;
-&lt;code&gt;Vrm&lt;/code&gt; 専用の共有頂点ローダーをやめて、
+
+    &lt;code&gt;Vrm&lt;/code&gt; 専用の共有頂点ローダーをやめて、
 一般的な &lt;code&gt;glTF&lt;/code&gt; ローダーで問題ありません。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;vrmc_vrm-meta&#34;&gt;VRMC_vrm: meta&lt;/h2&gt;
@@ -591,7 +662,9 @@ fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;BlendShape&lt;/h4&gt;
-BlendShapeは Unity の MorphTarget 機能のことで、区別が付きにくかったためです。
+
+    BlendShapeは Unity の MorphTarget 機能のことで、区別が付きにくかったためです。
+
 &lt;/div&gt;
 
 &lt;p&gt;preset の見直し&lt;/p&gt;
@@ -810,9 +883,11 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;備考&lt;/h4&gt;
-細かく言えば、ボーンの長さが違うと同じポーズになりません。
+
+    細かく言えば、ボーンの長さが違うと同じポーズになりません。
 これを解決する技術を、リターゲットと言いますが VRM では特に指定していません。
 例えば、股-膝-足首-踵 の比率が違うと地面に対してすべります。
+
 &lt;/div&gt;
 
 &lt;p&gt;Unity の HumanoidAvatar を元に決めたのでだいたい同じです。&lt;/p&gt;
@@ -827,7 +902,9 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;備考&lt;/h4&gt;
-特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。
+
+    特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;t-pose&#34;&gt;T-Pose&lt;/h2&gt;
@@ -923,7 +1000,9 @@ UniVRMは Humanoid Avatar を作成できます。 &lt;a href=&#34;https://vrm.d
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;XX YY&lt;/h4&gt;
-XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
+
+    XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;unity-をインストールする&#34;&gt;Unity をインストールする&lt;/h2&gt;
@@ -957,7 +1036,9 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Unity-2018 で menu が出てこない場合&lt;/h4&gt;
-&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; になっていることを確認してください
+
+    &lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; になっていることを確認してください
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;console&#34;&gt;Console&lt;/h3&gt;
@@ -2479,7 +2560,9 @@ Mesh, Texture, Prefabは上書きします。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;ベースモデル&lt;/h4&gt;
-使用可能なベースモデルの詳細は、 &lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/base_model/&#34;&gt;BaseModel&lt;/a&gt; を参照してください。
+
+    使用可能なベースモデルの詳細は、 &lt;a href=&#34;https://vrm.dev/docs/univrm/humanoid/base_model/&#34;&gt;BaseModel&lt;/a&gt; を参照してください。
+
 &lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3&#34;&gt;必須ボーン&lt;/a&gt;&lt;/p&gt;
@@ -2500,7 +2583,9 @@ VRM 向けなので、この例では全部 &lt;code&gt;MToon&lt;/code&gt; に�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Shader&lt;/h4&gt;
-VRMは、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon&lt;/a&gt;、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;Unlit&lt;/a&gt; と &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_standard/&#34;&gt;Standard&lt;/a&gt; の３種類を記録できます。
+
+    VRMは、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&gt;MToon&lt;/a&gt;、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;Unlit&lt;/a&gt; と &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_standard/&#34;&gt;Standard&lt;/a&gt; の３種類を記録できます。
+
 &lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;Extract Materials&lt;/code&gt; ボタンを押して fbx のフォルダに &lt;code&gt;Materials&lt;/code&gt; フォルダを作成してそこを選択。&lt;/p&gt;
@@ -2531,8 +2616,10 @@ VRMは、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;humanoid&lt;/h4&gt;
-このとき fbx importer がヒューマノイドボーンの割り当てを自動で推定します。
+
+    このとき fbx importer がヒューマノイドボーンの割り当てを自動で推定します。
 失敗する時もあり、成功しても間違っている場合もあります。
+
 &lt;/div&gt;
 
 &lt;p&gt;humanoid のボーン割り当て画面に入ります。&lt;/p&gt;
@@ -2544,11 +2631,13 @@ VRMは、&lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;bone&lt;/h4&gt;
-&lt;ul&gt;
+
+    &lt;ul&gt;
 &lt;li&gt;前髪に顎ボーンが割り当てられる&lt;/li&gt;
 &lt;li&gt;目のハイライトに目ボーンが割り当てられる&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;などにご注意ください。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;prefab-をシーンに展開&#34;&gt;prefab をシーンに展開&lt;/h2&gt;
@@ -2575,12 +2664,14 @@ fbx の prefab をシーンに展開します。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;エラー&lt;/h4&gt;
-&lt;p&gt;エクスポートダイアログで各種エラーチェックをしています。&lt;/p&gt;
+
+    &lt;p&gt;エクスポートダイアログで各種エラーチェックをしています。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;赤いメッセージは解決する必要があります。&lt;/li&gt;
 &lt;li&gt;黄色いメッセージは無視してエクスポートできます。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/export/univrm_export/&#34;&gt;エクスポートダイアログ&lt;/a&gt;&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -2593,9 +2684,11 @@ fbx の prefab をシーンに展開します。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;エクスポート先&lt;/h4&gt;
-エクスポート先には、Unity の Assets 内、外どちらでも選択できます。
+
+    エクスポート先には、Unity の Assets 内、外どちらでも選択できます。
 Assets 内を選択すると、Export 直後に Import が発動します(Importの方が重い)。
 Assets 内を選択する場合は、新規に専用のフォルダを作成すると分かりやすくなります。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;エクスポートオプション&#34;&gt;エクスポートオプション&lt;/h2&gt;
@@ -2605,15 +2698,19 @@ Assets 内を選択する場合は、新規に専用のフォルダを作成す�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;T-Poseにする&lt;/h4&gt;
-自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
+
+    自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。
+
 &lt;/div&gt;
 
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
-エクスポート時に正規化します。
+
+    エクスポート時に正規化します。
 最新版は、 &lt;code&gt;ExportRoot&lt;/code&gt; をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
+
 &lt;/div&gt;
 
 
@@ -3039,9 +3136,11 @@ v0.58 以降でダイアログを改善予定です。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合&lt;/h4&gt;
-&lt;ul&gt;
+
+    &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ProjectSettings&lt;/code&gt; - &lt;code&gt;Player&lt;/code&gt; - &lt;code&gt;Other Settings&lt;/code&gt; - &lt;code&gt;Scripting Runtime Version&lt;/code&gt; を &lt;code&gt;.Net4.X equivalent&lt;/code&gt; にしてください&lt;/li&gt;
 &lt;/ul&gt;
+
 
 &lt;/div&gt;
 
@@ -3049,8 +3148,10 @@ v0.58 以降でダイアログを改善予定です。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;既存のプロジェクト&lt;/h4&gt;
-事前に、古いバージョンの VRM を削除することを推奨しています。
+
+    事前に、古いバージョンの VRM を削除することを推奨しています。
 &lt;a href=&#34;https://vrm.dev/docs/univrm/install/univrm_uninstall/&#34;&gt;UniVRMをアンインストール&lt;/a&gt; を参照してください。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;unitypackage-の-import&#34;&gt;unitypackage の import&lt;/h2&gt;
@@ -3494,7 +3595,8 @@ UniVRM の &lt;code&gt;glb&lt;/code&gt; import で prefab が生成されます�
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Pose Freeze&lt;/h4&gt;
-&lt;p&gt;エクスポート時に正規化します。
+
+    &lt;p&gt;エクスポート時に正規化します。
 最新版は、 &lt;code&gt;ExportRoot&lt;/code&gt; をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
 最初の正規化以降でも、&lt;/p&gt;
 &lt;ul&gt;
@@ -3504,6 +3606,7 @@ UniVRM の &lt;code&gt;glb&lt;/code&gt; import で prefab が生成されます�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/blendshape/univrm_bake_blendshape/&#34;&gt;BlendShape の Bake&lt;/a&gt; もあります。&lt;/li&gt;
 &lt;/ul&gt;
+
 
 &lt;/div&gt;
 
@@ -3688,13 +3791,15 @@ com.vrmc.vrmshaders: No &amp;lsquo;git&amp;rsquo; executable was found. Please i
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;他のgit&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt; からインストールした git.exe (デフォルトは、 &lt;code&gt;C:\Program Files\Git\cmd\git.exe&lt;/code&gt;) が、Path の中で最初に見つかるように設定してください。&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt; からインストールした git.exe (デフォルトは、 &lt;code&gt;C:\Program Files\Git\cmd\git.exe&lt;/code&gt;) が、Path の中で最初に見つかるように設定してください。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;powershell からバージョンを確認した例 (20201130)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-dos&#34; data-lang=&#34;dos&#34;&gt;&amp;gt; git --version
 git version 2.29.2.windows.2
 &lt;/code&gt;&lt;/pre&gt;
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;unitypackagemanager-ウインドウによるインストール&#34;&gt;UnityPackageManager ウインドウによるインストール&lt;/h3&gt;
@@ -4071,10 +4176,12 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;詳細&lt;/h4&gt;
-BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
+
+    BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 これに、計算された法線が設定されて意図しない変化をするようです。
 ベースになるメッシュの法線が加工されている場合、
 ミラーリングで左右が分かれている場合の境界などで顕著です。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;mtoonの法線デバッグ表示で法線を確認する&#34;&gt;MToonの法線デバッグ表示で法線を確認する&lt;/h2&gt;
@@ -4085,7 +4192,9 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
-法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
+
+    法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
+
 &lt;/div&gt;
 
 &lt;p&gt;MToon の &lt;code&gt;Options - Debugging Options - Visualize&lt;/code&gt; を &lt;code&gt;Normal&lt;/code&gt; に変更します。&lt;/p&gt;
@@ -4102,12 +4211,14 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;モデル情報&lt;/h4&gt;
-&lt;ul&gt;
+
+    &lt;ul&gt;
 &lt;li&gt;vroid さんの vrm を blender に import&lt;/li&gt;
 &lt;li&gt;blender から fbx export&lt;/li&gt;
 &lt;li&gt;unity に import&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;したものです。
+
 &lt;/div&gt;
 
 &lt;h2 id=&#34;blendshape-の法線をなおす&#34;&gt;BlendShape の法線をなおす&lt;/h2&gt;
@@ -4120,7 +4231,9 @@ BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;修正前との違い&lt;/h4&gt;
-鼻先、下唇に加えて、舌が全然違う法線になってます。
+
+    鼻先、下唇に加えて、舌が全然違う法線になってます。
+
 &lt;/div&gt;
 
 
@@ -5279,104 +5392,6 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;その他ライセンス条件other-license-url&#34;&gt;その他ライセンス条件(Other License Url)&lt;/h4&gt;
 &lt;p&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRMSpringBone</title>
-      <link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid>
-      <description>
-        
-        
-        &lt;p&gt;揺れモノ設定。&lt;/p&gt;
-&lt;h1 id=&#34;コンポーネントのアタッチされるノード&#34;&gt;コンポーネントのアタッチされるノード&lt;/h1&gt;
-&lt;p&gt;VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VRMSpringBoneは、名前が&lt;code&gt;secondary&lt;/code&gt;のノードが自動的に作成されてそこにアタッチされます。&lt;/li&gt;
-&lt;li&gt;VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;VRMSpringBoneが見つからない場合には&lt;code&gt;secondary&lt;/code&gt;ノードをご確認ください。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
-&lt;p&gt;尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
-揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMSpringBone.png&#34; alt=&#34;lookat&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;RootBonesに髪の毛とリボンを設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;これだけで、指定したボーンが動きに合わせて揺れます。&lt;/p&gt;
-&lt;h1 id=&#34;オプションvrmspringbonecollidergroup当たり判定&#34;&gt;[オプション]VRMSpringBoneColliderGroup(当たり判定)&lt;/h1&gt;
-&lt;p&gt;揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/collider.png&#34; alt=&#34;collider&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_collider.png&#34; alt=&#34;set_collider&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/spring_gizmo.png&#34; alt=&#34;gizmo&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;動作時のGizmo。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;ひとつのvrmspringbonecollidergroupに複数の当たり判定を設定できます&#34;&gt;ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます&lt;/h2&gt;
-&lt;p&gt;VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。&lt;/p&gt;
-&lt;h1 id=&#34;設定したvrmspringboneが居なくなった&#34;&gt;設定したVRMSpringBoneが居なくなった&lt;/h1&gt;
-&lt;p&gt;VRMSpringBoneはインポート時に&lt;code&gt;secondary&lt;/code&gt;ノードにアタッチされます。
-エクスポート時と違う場所に現れるのでご注意ください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>

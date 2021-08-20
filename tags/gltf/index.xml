@@ -4,7 +4,7 @@
     <link>https://vrm.dev/tags/gltf/</link>
     <description>Recent content in gltf on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Apr 2021 16:09:47 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Aug 2021 17:44:22 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/tags/gltf/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,63 @@
         
       
     
+    
+    <item>
+      <title>Docs: v0.66からv0.79の変更点</title>
+      <link>https://vrm.dev/docs/gltf/update/</link>
+      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/update/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;glTF&lt;/code&gt; 部分の &lt;code&gt;UniVRM-0.66&lt;/code&gt; からの主な更新点です。&lt;/p&gt;
+&lt;h2 id=&#34;scriptedimporter-の採用&#34;&gt;ScriptedImporter の採用&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIの変更&lt;/li&gt;
+&lt;li&gt;SubAssetsの挙動変更&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ForceText&lt;/code&gt; 時の動作が軽快に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/gltf/scripted_importer/&#34;&gt;ScriptedImporter&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;反転軸オプション追加&#34;&gt;反転軸オプション追加&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/755&#34;&gt;https://github.com/vrm-c/UniVRM/pull/755&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/958&#34;&gt;https://github.com/vrm-c/UniVRM/pull/958&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exporter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RuntimeImport&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EditorImport&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;material関連&#34;&gt;Material関連&lt;/h2&gt;
+&lt;h3 id=&#34;smoothnessgltf-と-roughnessunity-の変換ロジックを修正&#34;&gt;Smoothness(glTF) と Roughness(Unity) の変換ロジックを修正&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;https://github.com/vrm-c/UniVRM/issues/388&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;importexport時に-metallicroughnessocclusion-テクスチャーを一枚にまとめる&#34;&gt;Import/Export時に MetallicRoughnessOcclusion テクスチャーを一枚にまとめる&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/781&#34;&gt;https://github.com/vrm-c/UniVRM/issues/781&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mipmap-のインポート設定を修正&#34;&gt;MipMap のインポート設定を修正&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;, &lt;code&gt;mtoon&lt;/code&gt; 法線マップに影響が出やすい&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/947&#34;&gt;https://github.com/vrm-c/UniVRM/issues/947&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Docs: GLTFについて</title>
@@ -931,6 +988,206 @@ enumの場合はデフォルト値が無いので必須です。&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;jsonschemaから生成&#34;&gt;JsonSchemaから生成&lt;/h3&gt;
 &lt;p&gt;VRM-1.0 の実装&lt;/p&gt;
 &lt;p&gt;TODO:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Emission と グロー(発光)</title>
+      <link>https://vrm.dev/docs/gltf/emission_glow/</link>
+      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/emission_glow/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;対象のシェーダー&#34;&gt;対象のシェーダー&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unity-などの-posteffect-の-グロー&#34;&gt;Unity などの PostEffect の グロー&lt;/h2&gt;
+&lt;p&gt;Emission の値が 1 を越える場合に発光させるポストエフェクトです。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;1を超えて3や4にすることで強くなりますが &lt;code&gt;glTF&lt;/code&gt; の仕様上この値を格納することができません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;割り算で1におさめる&lt;/h4&gt;
+
+    &lt;p&gt;エクスポート時に下記の処理をして 最大値 1 に強制します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// r, g, b で最大の値を得る
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+{
+  emission = emission / max_value;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x は保存できる&lt;/h4&gt;
+
+    vrm-0.x は [0-1] 制限が無いので保存できます。
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier-拡張を作成しました&#34;&gt;VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました&lt;/h2&gt;
+&lt;p&gt;emission に1を越える値を格納するために、&lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; を作りました。
+EmissiveFactor に対して乗算する float 値 を定義します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)&lt;/code&gt; となります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でVRM1/GLB/GLTF でエクスポート可能です。&lt;/p&gt;
+&lt;p&gt;MToon と PBR マテリアルで有効です。&lt;/p&gt;
+&lt;p&gt;PostEffectを設定済みのサンプルシーンがありますので
+お試しください。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unity-アプリでロードする方法&#34;&gt;Unity アプリでロードする方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でロードしてください&lt;/li&gt;
+&lt;li&gt;シーンに PostEffect を設定してください
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; サンプルの profile があります&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;仕様&#34;&gt;仕様&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 新しいEditorImporterの動作</title>
+      <link>https://vrm.dev/docs/gltf/scripted_importer/</link>
+      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/scripted_importer/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;assetfile-の作られ方&#34;&gt;AssetFile の作られ方&lt;/h2&gt;
+&lt;h3 id=&#34;以前の動作独立したasset&#34;&gt;以前の動作(独立したasset)&lt;/h3&gt;
+&lt;p&gt;VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm0 の import&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/vrm0_import.jpg&#34;  width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mesh や texture や material や blendshape などの関連アセットファイルが作成されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;新しい動作subasset&#34;&gt;新しい動作(subasset)&lt;/h3&gt;
+&lt;p&gt;VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm1 の import&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/vrm1_import.jpg&#34;  width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mesh や material や texture や Expression が SubAsset として作成されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;glb の import&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/gltf/glb_extract_before.jpg&#34;  width=&#34;600&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;material と texture が SubAsset として作成されます&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;subasset-を変更するには-extract-する&#34;&gt;SubAsset を変更するには Extract する&lt;/h2&gt;
+&lt;p&gt;新しい Importer で作られた SubAsset は 内容を変更ができません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;subasset&lt;/h4&gt;
+
+    &lt;p&gt;SubAsset は VRM 内のリソースを表しているためで、
+例えば Material を変更しても、その変更を即座に VRM に反映することができないためです。&lt;/p&gt;
+&lt;p&gt;FBX の Importer も同様の動作です。&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+&lt;p&gt;VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/extract_material.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm10/extract_vrm_empty.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm10/extract_vrm.jpg&#34;  width=&#34;300&#34; /&gt;
+&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;fbx の extract&lt;/h4&gt;
+
+    &lt;p&gt;fbx importer の material タブには下記のようなボタンがあります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/fbx_extract.jpg&#34;   /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Export Textures...&lt;/code&gt; や &lt;code&gt;Export Materials...&lt;/code&gt; すると fbx の中の material を 外にコピーして独立した Asset とすることができます。
+このコピーされた Asset は自由に変更することができます。&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;外部の-asset-と-vrm-を関連付ける-remap&#34;&gt;外部の Asset と VRM を関連付ける Remap&lt;/h2&gt;
+&lt;p&gt;初期状態では vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
+置き換えの関連付けを管理するのが Remap です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;None になっているときは、 &lt;code&gt;vrm&lt;/code&gt;, &lt;code&gt;glb&lt;/code&gt; に内部の SubAsset を使用しているという意味になります。&lt;/li&gt;
+&lt;li&gt;Extract以外にも、個別に既存のAssetを割り当てできます&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;extract 後&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/remap_materials.jpg&#34;  width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/gltf/glb_extract_after.jpg&#34;  width=&#34;700&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/gltf/vrm1_extract_after.jpg&#34;  width=&#34;700&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;SubAsset が書き出され、それが Remap に代入されます。&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;VRM1 と GLB/GLTF(0.68以降) は &lt;code&gt;ScriptedImporter&lt;/code&gt; の導入により、 &lt;code&gt;extract&lt;/code&gt; と &lt;code&gt;remap&lt;/code&gt; の仕組みがあります。
+既存の &lt;code&gt;fbx&lt;/code&gt; importer の動きと似た動きになるように実装しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html&#34;&gt;https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
