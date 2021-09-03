@@ -6,6 +6,14 @@ weight: 1
 tags: ["api"]
 ---
 
+## v0.82.1 Import時のMaterial差し替え(UPM対応)
+
+[ランタイムインポーター]({{< relref "runtime_import.md" >}})
+
+## v0.82.0 Import時のMaterial差し替え(UPM対応)
+
+使い勝手に問題ありのため、 `v0.82.1` 以降を使ってください。
+
 ## v0.77 ImporterContext の整理
 
 [ランタイムインポーター]({{< relref "runtime_import.md" >}})

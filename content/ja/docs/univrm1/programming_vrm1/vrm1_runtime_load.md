@@ -1,6 +1,6 @@
 ---
-title: 🚧vrm-1.0 Runtime ロード
-weight: 1
+title: 🚧Runtime ロード
+weight: 10
 ---
 
 VRM-1.0 を使うアプリケーションは、 `VRM-0.x` の資産もロードしたいはずです。

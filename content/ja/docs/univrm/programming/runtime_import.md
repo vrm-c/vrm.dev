@@ -6,6 +6,68 @@ aliases: ["/univrm/programming/univrm_import_runtime/"]
 weight: 2
 ---
 
+## `Version 0.82.1~`
+
+Import時の Material 差し替え機能。
+
+### VRM
+
+`materialGenerator` 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。
+
+```cs
+var data = new UniGLTF.GlbFileParser(path).Parse();
+var vrm = new VRM.VRMData(data);
+var loader = new VRM.VRMImporterContext(vrm, materialGenerator: new VRMUrpMaterialDescriptorGenerator(vrm.VrmExtension));
+```
+
+`VRMImporterContext` の引き数変更
+
+```cs
+var data = new UniGLTF.GlbFileParser(path).Parse();
+public VRMImporterContext(
+    GltfData data, // <- これ
+    VRM.glTF_VRM_extensions vrm = null, // <- これ
+    IReadOnlyDictionary<SubAssetKey, Object> externalObjectMap = null,
+    ITextureDeserializer textureDeserializer = null,
+    IMaterialDescriptorGenerator materialGenerator = null)
+```
+
+```cs
+var data = new UniGLTF.GlbFileParser(path).Parse();
+var vrm = new VRM.VRMData(data);
+public VRMImporterContext(
+    VRMData vrm, // <- これ
+    IReadOnlyDictionary<SubAssetKey, Object> externalObjectMap = null,
+    ITextureDeserializer textureDeserializer = null,
+    IMaterialDescriptorGenerator materialGenerator = null)
+```
+
+### GLB
+
+`materialGenerator` 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。
+
+```cs
+var data = new GlbFileParser(path).Parse();
+var loader = new UniGLTF.ImporterContext(data, materialGenerator: new GltfUrpMaterialDescriptorGenerator());
+```
+
+## `Version 0.82.0`
+
+`0.82.1` 以降を使ってください。
+
+## `Version 0.79`
+
+`GltfParser` と `GltfData` の分割
+
+```cs
+var parser = new GltfParser();
+parser.ParsePath(path);
+```
+
+```cs
+GltfData data = new GlbFileParser(path).Parse();
+```
+
 ## `Version 0.77~`
 
 [DisposeOnGameObjectDestroyed](https://github.com/vrm-c/UniVRM/issues/1018)

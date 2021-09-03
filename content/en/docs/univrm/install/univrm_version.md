@@ -69,10 +69,13 @@ Working on VRM-1.0...
 * From version `0.80.0`, Minimum version of Unity is `2019.4LTS`.[Unity Version]({{< relref "unity_version.md" >}})
 * From version `0.80.0`, Start `VRM-1.0β` UnityPackage.
 
-| date  | version                                                                                                                          | Bugs | Notes                                     |
-|-------|----------------------------------------------------------------------------------------------------------------------------------|------|-------------------------------------------|
-| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |      | Changed `Pre release` to `Latest release` |
-| 08/12 | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |      | VRM-1.0β unitypackage                     |
+| date  | version                                                                                                                          | Bugs              | Notes                                     |
+|-------|----------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------------------------------|
+| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |                   | Changed `Pre release` to `Latest release` |
+| 08/12 | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |                   | VRM-1.0β unitypackage                     |
+| 08/20 | [0.81.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.81.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/43?closed=1) |                   | 3 packages(UniGLTF, VRM, VRM-1.0beta)     |
+| 09/01 | [0.82.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.82.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/44?closed=1) | glb editor import | URP API                                   |
+| 09/03 | [0.82.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.82.1) [milestone](https://github.com/vrm-c/UniVRM/milestone/45?closed=1) |                   | URP API                                   |
 
 [^springcollider]: Fixed bugs where SpringBone Collider transformation was done twice. [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: Bugs occurred when creating a screenshot as .jpg format. [\#639](https://github.com/vrm-c/UniVRM/issues/639)
