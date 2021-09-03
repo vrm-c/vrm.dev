@@ -19,16 +19,16 @@
 
 <title>ランタイムインポーター | VRM</title>
 <meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="ランタイムインポーター" />
-<meta property="og:description" content="Version 0.77~ DisposeOnGameObjectDestroyed ImporterContext の仕様を変更しました。 Version 0.68 で導入した、 ImporterContext.DisposeOnGameObjectDestroyed が扱いづらかったためのでこれを取りやめ、 ImporterContext.Load が RuntimeGltfInstance を返すようにしました。 RuntimeGltfInstance は、 ImporterContext の Root EnableUpdateWhenOffscreen() ShowMeshes() を引き継" />
+<meta property="og:description" content="Version 0.82.1~ Import時の Material 差し替え機能。 VRM materialGenerator 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。 var data = new UniGLTF.GlbFileParser(path).Parse(); var vrm = new VRM.VRMData(data);" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm/programming/runtime_import/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-06-14T16:14:35+09:00" />
-<meta property="article:modified_time" content="2021-06-14T16:14:35+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-09-03T17:54:05+09:00" />
+<meta property="article:modified_time" content="2021-09-03T17:54:05+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="ランタイムインポーター">
-<meta itemprop="description" content="Version 0.77~ DisposeOnGameObjectDestroyed ImporterContext の仕様を変更しました。 Version 0.68 で導入した、 ImporterContext.DisposeOnGameObjectDestroyed が扱いづらかったためのでこれを取りやめ、 ImporterContext.Load が RuntimeGltfInstance を返すようにしました。 RuntimeGltfInstance は、 ImporterContext の Root EnableUpdateWhenOffscreen() ShowMeshes() を引き継">
-<meta itemprop="dateModified" content="2021-06-14T16:14:35+09:00" />
-<meta itemprop="wordCount" content="2896">
+<meta itemprop="description" content="Version 0.82.1~ Import時の Material 差し替え機能。 VRM materialGenerator 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。 var data = new UniGLTF.GlbFileParser(path).Parse(); var vrm = new VRM.VRMData(data);">
+<meta itemprop="dateModified" content="2021-09-03T17:54:05+09:00" />
+<meta itemprop="wordCount" content="3134">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -38,7 +38,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="ランタイムインポーター"/>
-<meta name="twitter:description" content="Version 0.77~ DisposeOnGameObjectDestroyed ImporterContext の仕様を変更しました。 Version 0.68 で導入した、 ImporterContext.DisposeOnGameObjectDestroyed が扱いづらかったためのでこれを取りやめ、 ImporterContext.Load が RuntimeGltfInstance を返すようにしました。 RuntimeGltfInstance は、 ImporterContext の Root EnableUpdateWhenOffscreen() ShowMeshes() を引き継"/>
+<meta name="twitter:description" content="Version 0.82.1~ Import時の Material 差し替え機能。 VRM materialGenerator 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。 var data = new UniGLTF.GlbFileParser(path).Parse(); var vrm = new VRM.VRMData(data);"/>
 
 
 
@@ -1331,7 +1331,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm0 モデルを vrm1 にアップグレードする
+        🚧vrm-0.x モデルを vrm-1.0 にアップグレードする
     </a>
   </li>
   <ul>
@@ -1359,7 +1359,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm-1.0 の開発
+        🚧vrm-1.0を使った開発
     </a>
   </li>
   <ul>
@@ -1372,7 +1372,43 @@
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_runtime_load" href="/docs/univrm1/programming_vrm1/vrm1_runtime_load/">
           <i class="fas fa-file fa-fw"></i>
-          🚧vrm-1.0 Runtime ロード
+          🚧Runtime ロード
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_get_humanoid" href="/docs/univrm1/programming_vrm1/vrm1_get_humanoid/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Humanoid
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_expression" href="/docs/univrm1/programming_vrm1/vrm1_expression/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Expression
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_lookat" href="/docs/univrm1/programming_vrm1/vrm1_lookat/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧LookAt
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_firstperson" href="/docs/univrm1/programming_vrm1/vrm1_firstperson/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧FirstPerson
       </a>
       
       
@@ -1421,6 +1457,14 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
+    <li><a href="#version-0821"><code>Version 0.82.1~</code></a>
+      <ul>
+        <li><a href="#vrm">VRM</a></li>
+        <li><a href="#glb">GLB</a></li>
+      </ul>
+    </li>
+    <li><a href="#version-0820"><code>Version 0.82.0</code></a></li>
+    <li><a href="#version-079"><code>Version 0.79</code></a></li>
     <li><a href="#version-077"><code>Version 0.77~</code></a></li>
     <li><a href="#version-068"><code>Version 0.68～</code></a>
       <ul>
@@ -1556,15 +1600,48 @@
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2021/06/14
+    <b>最終更新</b> 2021/09/03
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/a4c60a70bb5093470b93e9863f11d3684aac1717"><i class='fab fa-github fa-lg fa-fw'></i>update ImporterContext API
-        (a4c60a70)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/5b8d31a9f2abd782f48f6a9b6a342082bab88a43"><i class='fab fa-github fa-lg fa-fw'></i>v0.82.1
+        (5b8d31a9)</a>
     
 </div></div>
 
     
-    <h2 id="version-077"><code>Version 0.77~</code></h2>
+    <h2 id="version-0821"><code>Version 0.82.1~</code></h2>
+<p>Import時の Material 差し替え機能。</p>
+<h3 id="vrm">VRM</h3>
+<p><code>materialGenerator</code> 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#078;font-weight:bold">var</span> data = <span style="color:#069;font-weight:bold">new</span> UniGLTF.GlbFileParser(path).Parse();
+<span style="color:#078;font-weight:bold">var</span> vrm = <span style="color:#069;font-weight:bold">new</span> VRM.VRMData(data);
+<span style="color:#078;font-weight:bold">var</span> loader = <span style="color:#069;font-weight:bold">new</span> VRM.VRMImporterContext(vrm, materialGenerator: <span style="color:#069;font-weight:bold">new</span> VRMUrpMaterialDescriptorGenerator(vrm.VrmExtension));
+</code></pre></div><p><code>VRMImporterContext</code> の引き数変更</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#078;font-weight:bold">var</span> data = <span style="color:#069;font-weight:bold">new</span> UniGLTF.GlbFileParser(path).Parse();
+<span style="color:#069;font-weight:bold">public</span> VRMImporterContext(
+    GltfData data, <span style="color:#09f;font-style:italic">// &lt;- これ
+</span><span style="color:#09f;font-style:italic"></span>    VRM.glTF_VRM_extensions vrm = <span style="color:#069;font-weight:bold">null</span>, <span style="color:#09f;font-style:italic">// &lt;- これ
+</span><span style="color:#09f;font-style:italic"></span>    IReadOnlyDictionary&lt;SubAssetKey, Object&gt; externalObjectMap = <span style="color:#069;font-weight:bold">null</span>,
+    ITextureDeserializer textureDeserializer = <span style="color:#069;font-weight:bold">null</span>,
+    IMaterialDescriptorGenerator materialGenerator = <span style="color:#069;font-weight:bold">null</span>)
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#078;font-weight:bold">var</span> data = <span style="color:#069;font-weight:bold">new</span> UniGLTF.GlbFileParser(path).Parse();
+<span style="color:#078;font-weight:bold">var</span> vrm = <span style="color:#069;font-weight:bold">new</span> VRM.VRMData(data);
+<span style="color:#069;font-weight:bold">public</span> VRMImporterContext(
+    VRMData vrm, <span style="color:#09f;font-style:italic">// &lt;- これ
+</span><span style="color:#09f;font-style:italic"></span>    IReadOnlyDictionary&lt;SubAssetKey, Object&gt; externalObjectMap = <span style="color:#069;font-weight:bold">null</span>,
+    ITextureDeserializer textureDeserializer = <span style="color:#069;font-weight:bold">null</span>,
+    IMaterialDescriptorGenerator materialGenerator = <span style="color:#069;font-weight:bold">null</span>)
+</code></pre></div><h3 id="glb">GLB</h3>
+<p><code>materialGenerator</code> 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#078;font-weight:bold">var</span> data = <span style="color:#069;font-weight:bold">new</span> GlbFileParser(path).Parse();
+<span style="color:#078;font-weight:bold">var</span> loader = <span style="color:#069;font-weight:bold">new</span> UniGLTF.ImporterContext(data, materialGenerator: <span style="color:#069;font-weight:bold">new</span> GltfUrpMaterialDescriptorGenerator());
+</code></pre></div><h2 id="version-0820"><code>Version 0.82.0</code></h2>
+<p><code>0.82.1</code> 以降を使ってください。</p>
+<h2 id="version-079"><code>Version 0.79</code></h2>
+<p><code>GltfParser</code> と <code>GltfData</code> の分割</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#078;font-weight:bold">var</span> parser = <span style="color:#069;font-weight:bold">new</span> GltfParser();
+parser.ParsePath(path);
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">GltfData data = <span style="color:#069;font-weight:bold">new</span> GlbFileParser(path).Parse();
+</code></pre></div><h2 id="version-077"><code>Version 0.77~</code></h2>
 <p><a href="https://github.com/vrm-c/UniVRM/issues/1018">DisposeOnGameObjectDestroyed</a></p>
 <p><code>ImporterContext</code> の仕様を変更しました。</p>
 <p><code>Version 0.68</code> で導入した、 <code>ImporterContext.DisposeOnGameObjectDestroyed</code> が扱いづらかったためのでこれを取りやめ、
@@ -1946,6 +2023,14 @@ VRMImporter.LoadVrmAsync(path, go =&gt; {
     
     
     <hr class="panel-line">
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

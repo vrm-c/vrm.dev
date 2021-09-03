@@ -19,17 +19,17 @@
 
 <title>APIの変更履歴 | VRM</title>
 <meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="APIの変更履歴" />
-<meta property="og:description" content="v0.77 ImporterContext の整理 ランタイムインポーター v0.68 ImporterContext の整理 ランタイムインポーター v0.63.2 gltf の extension の実装方法を変更 how_to_impl_extension v0.56 BlendShapeKey の仕様変更 BlendShapeKeyのインタフ" />
+<meta property="og:description" content="v0.82.1 Import時のMaterial差し替え(UPM対応) ランタイムインポーター v0.82.0 Import時のMaterial差し替え(UPM対応) 使い勝" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm/programming/univrm_api_history/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
 <meta property="article:published_time" content="2018-05-21T10:00:00+09:00" />
-<meta property="article:modified_time" content="2021-06-14T16:14:35+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:modified_time" content="2021-09-03T17:54:05+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="APIの変更履歴">
-<meta itemprop="description" content="v0.77 ImporterContext の整理 ランタイムインポーター v0.68 ImporterContext の整理 ランタイムインポーター v0.63.2 gltf の extension の実装方法を変更 how_to_impl_extension v0.56 BlendShapeKey の仕様変更 BlendShapeKeyのインタフ">
+<meta itemprop="description" content="v0.82.1 Import時のMaterial差し替え(UPM対応) ランタイムインポーター v0.82.0 Import時のMaterial差し替え(UPM対応) 使い勝">
 <meta itemprop="datePublished" content="2018-05-21T10:00:00+09:00" />
-<meta itemprop="dateModified" content="2021-06-14T16:14:35+09:00" />
-<meta itemprop="wordCount" content="218">
+<meta itemprop="dateModified" content="2021-09-03T17:54:05+09:00" />
+<meta itemprop="wordCount" content="310">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -39,7 +39,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="APIの変更履歴"/>
-<meta name="twitter:description" content="v0.77 ImporterContext の整理 ランタイムインポーター v0.68 ImporterContext の整理 ランタイムインポーター v0.63.2 gltf の extension の実装方法を変更 how_to_impl_extension v0.56 BlendShapeKey の仕様変更 BlendShapeKeyのインタフ"/>
+<meta name="twitter:description" content="v0.82.1 Import時のMaterial差し替え(UPM対応) ランタイムインポーター v0.82.0 Import時のMaterial差し替え(UPM対応) 使い勝"/>
 
 
 
@@ -1332,7 +1332,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm0 モデルを vrm1 にアップグレードする
+        🚧vrm-0.x モデルを vrm-1.0 にアップグレードする
     </a>
   </li>
   <ul>
@@ -1360,7 +1360,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm-1.0 の開発
+        🚧vrm-1.0を使った開発
     </a>
   </li>
   <ul>
@@ -1373,7 +1373,43 @@
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_runtime_load" href="/docs/univrm1/programming_vrm1/vrm1_runtime_load/">
           <i class="fas fa-file fa-fw"></i>
-          🚧vrm-1.0 Runtime ロード
+          🚧Runtime ロード
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_get_humanoid" href="/docs/univrm1/programming_vrm1/vrm1_get_humanoid/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Humanoid
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_expression" href="/docs/univrm1/programming_vrm1/vrm1_expression/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Expression
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_lookat" href="/docs/univrm1/programming_vrm1/vrm1_lookat/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧LookAt
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_firstperson" href="/docs/univrm1/programming_vrm1/vrm1_firstperson/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧FirstPerson
       </a>
       
       
@@ -1422,6 +1458,8 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
+    <li><a href="#v0821-import時のmaterial差し替えupm対応">v0.82.1 Import時のMaterial差し替え(UPM対応)</a></li>
+    <li><a href="#v0820-import時のmaterial差し替えupm対応">v0.82.0 Import時のMaterial差し替え(UPM対応)</a></li>
     <li><a href="#v077-importercontext-の整理">v0.77 ImporterContext の整理</a></li>
     <li><a href="#v068-importercontext-の整理">v0.68 ImporterContext の整理</a></li>
     <li><a href="#v0632-gltf-の-extension-の実装方法を変更">v0.63.2 gltf の extension の実装方法を変更</a></li>
@@ -1549,15 +1587,19 @@
     
     <b>作成</b> 2018/05/21
     
-    <b>最終更新</b> 2021/06/14
+    <b>最終更新</b> 2021/09/03
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/a4c60a70bb5093470b93e9863f11d3684aac1717"><i class='fab fa-github fa-lg fa-fw'></i>update ImporterContext API
-        (a4c60a70)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/5b8d31a9f2abd782f48f6a9b6a342082bab88a43"><i class='fab fa-github fa-lg fa-fw'></i>v0.82.1
+        (5b8d31a9)</a>
     
 </div></div>
 
     
-    <h2 id="v077-importercontext-の整理">v0.77 ImporterContext の整理</h2>
+    <h2 id="v0821-import時のmaterial差し替えupm対応">v0.82.1 Import時のMaterial差し替え(UPM対応)</h2>
+<p><a href="/docs/univrm/programming/runtime_import/">ランタイムインポーター</a></p>
+<h2 id="v0820-import時のmaterial差し替えupm対応">v0.82.0 Import時のMaterial差し替え(UPM対応)</h2>
+<p>使い勝手に問題ありのため、 <code>v0.82.1</code> 以降を使ってください。</p>
+<h2 id="v077-importercontext-の整理">v0.77 ImporterContext の整理</h2>
 <p><a href="/docs/univrm/programming/runtime_import/">ランタイムインポーター</a></p>
 <h2 id="v068-importercontext-の整理">v0.68 ImporterContext の整理</h2>
 <p><a href="/docs/univrm/programming/runtime_import/">ランタイムインポーター</a></p>
@@ -1593,6 +1635,14 @@
     
     
     <hr class="panel-line">
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

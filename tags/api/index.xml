@@ -4,7 +4,7 @@
     <link>https://vrm.dev/tags/api/</link>
     <description>Recent content in api on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 Jun 2021 16:14:35 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 03 Sep 2021 17:54:05 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/tags/api/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,11 @@
       <description>
         
         
-        &lt;h2 id=&#34;v077-importercontext-の整理&#34;&gt;v0.77 ImporterContext の整理&lt;/h2&gt;
+        &lt;h2 id=&#34;v0821-import時のmaterial差し替えupm対応&#34;&gt;v0.82.1 Import時のMaterial差し替え(UPM対応)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v0820-import時のmaterial差し替えupm対応&#34;&gt;v0.82.0 Import時のMaterial差し替え(UPM対応)&lt;/h2&gt;
+&lt;p&gt;使い勝手に問題ありのため、 &lt;code&gt;v0.82.1&lt;/code&gt; 以降を使ってください。&lt;/p&gt;
+&lt;h2 id=&#34;v077-importercontext-の整理&#34;&gt;v0.77 ImporterContext の整理&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;v068-importercontext-の整理&#34;&gt;v0.68 ImporterContext の整理&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
@@ -58,13 +62,46 @@
     <item>
       <title>Docs: ランタイムインポーター</title>
       <link>https://vrm.dev/docs/univrm/programming/runtime_import/</link>
-      <pubDate>Mon, 14 Jun 2021 16:14:35 +0900</pubDate>
+      <pubDate>Fri, 03 Sep 2021 17:54:05 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid>
       <description>
         
         
-        &lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
+        &lt;h2 id=&#34;version-0821&#34;&gt;&lt;code&gt;Version 0.82.1~&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Import時の Material 差し替え機能。&lt;/p&gt;
+&lt;h3 id=&#34;vrm&#34;&gt;VRM&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;materialGenerator&lt;/code&gt; 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMData(data);
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; loader = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMImporterContext(vrm, materialGenerator: &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMUrpMaterialDescriptorGenerator(vrm.VrmExtension));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;VRMImporterContext&lt;/code&gt; の引き数変更&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; VRMImporterContext(
+    GltfData data, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    VRM.glTF_VRM_extensions vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    IReadOnlyDictionary&amp;lt;SubAssetKey, Object&amp;gt; externalObjectMap = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    ITextureDeserializer textureDeserializer = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    IMaterialDescriptorGenerator materialGenerator = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMData(data);
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; VRMImporterContext(
+    VRMData vrm, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    IReadOnlyDictionary&amp;lt;SubAssetKey, Object&amp;gt; externalObjectMap = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    ITextureDeserializer textureDeserializer = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    IMaterialDescriptorGenerator materialGenerator = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;glb&#34;&gt;GLB&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;materialGenerator&lt;/code&gt; 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; loader = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.ImporterContext(data, materialGenerator: &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfUrpMaterialDescriptorGenerator());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-0820&#34;&gt;&lt;code&gt;Version 0.82.0&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;0.82.1&lt;/code&gt; 以降を使ってください。&lt;/p&gt;
+&lt;h2 id=&#34;version-079&#34;&gt;&lt;code&gt;Version 0.79&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GltfParser&lt;/code&gt; と &lt;code&gt;GltfData&lt;/code&gt; の分割&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
+parser.ParsePath(path);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;GltfData data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GlbFileParser(path).Parse();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1018&#34;&gt;DisposeOnGameObjectDestroyed&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ImporterContext&lt;/code&gt; の仕様を変更しました。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Version 0.68&lt;/code&gt; で導入した、 &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; が扱いづらかったためのでこれを取りやめ、

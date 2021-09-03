@@ -23,12 +23,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm1/vrm1_tutorial/material/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-08-17T21:49:15+09:00" />
-<meta property="article:modified_time" content="2021-08-17T21:49:15+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-09-03T17:54:05+09:00" />
+<meta property="article:modified_time" content="2021-09-03T17:54:05+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="🚧Material の設定">
 <meta itemprop="description" content="new_seedsan のマテリアル構成 SkinnedMeshRenderer: hair Material0: hair(頭髪) Material1: huku_bake(髪留め) SkinnedMeshRenderer: hair_tail Material0: hair(頭髪。おさげ) SkinnedMeshRenderer: head Material0: body_bake(頭部、顔) Material1: e">
-<meta itemprop="dateModified" content="2021-08-17T21:49:15+09:00" />
-<meta itemprop="wordCount" content="490">
+<meta itemprop="dateModified" content="2021-09-03T17:54:05+09:00" />
+<meta itemprop="wordCount" content="1021">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -1331,7 +1331,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm0 モデルを vrm1 にアップグレードする
+        🚧vrm-0.x モデルを vrm-1.0 にアップグレードする
     </a>
   </li>
   <ul>
@@ -1359,7 +1359,7 @@
         
         <i class="fas fa-folder fa-fw"></i>
         
-        🚧vrm-1.0 の開発
+        🚧vrm-1.0を使った開発
     </a>
   </li>
   <ul>
@@ -1372,7 +1372,43 @@
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_runtime_load" href="/docs/univrm1/programming_vrm1/vrm1_runtime_load/">
           <i class="fas fa-file fa-fw"></i>
-          🚧vrm-1.0 Runtime ロード
+          🚧Runtime ロード
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_get_humanoid" href="/docs/univrm1/programming_vrm1/vrm1_get_humanoid/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Humanoid
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_expression" href="/docs/univrm1/programming_vrm1/vrm1_expression/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧Expression
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_lookat" href="/docs/univrm1/programming_vrm1/vrm1_lookat/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧LookAt
+      </a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrm1programming_vrm1vrm1_firstperson" href="/docs/univrm1/programming_vrm1/vrm1_firstperson/">
+          <i class="fas fa-file fa-fw"></i>
+          🚧FirstPerson
       </a>
       
       
@@ -1421,23 +1457,25 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#amim_logo">amim_logo</a></li>
-    <li><a href="#arm_mat">arm_mat</a></li>
-    <li><a href="#arm_plastic">arm_plastic</a></li>
-    <li><a href="#armgear_plastic">armgear_plastic</a></li>
-    <li><a href="#backpack_metal">backpack_metal</a></li>
-    <li><a href="#backpack_nm">backpack_nm</a></li>
-    <li><a href="#backpack_plastic">backpack_plastic</a></li>
-    <li><a href="#body_bake">body_bake</a></li>
-    <li><a href="#body_nm">body_nm</a></li>
-    <li><a href="#eye">eye</a></li>
-    <li><a href="#eye_trans">eye_trans</a></li>
-    <li><a href="#glass">glass</a></li>
-    <li><a href="#green_emit">green_emit</a></li>
-    <li><a href="#huku_bake">huku_bake</a></li>
-    <li><a href="#newhair">newhair</a></li>
-    <li><a href="#robo_face">robo_face</a></li>
-    <li><a href="#wear_metal">wear_metal</a></li>
+    <li><a href="#new_seedsan-のマテリアル構成">new_seedsan のマテリアル構成</a></li>
+    <li><a href="#vrm10mtoon10-newhair頭髪"><code>VRM10/MToon10</code> newhair(頭髪)</a></li>
+    <li><a href="#vrm10mtoon10-huku_bake髪留め衣服"><code>VRM10/MToon10</code> huku_bake(髪留め)(衣服)</a></li>
+    <li><a href="#vrm10mtoon10-body_bake頭部顔肌"><code>VRM10/MToon10</code> body_bake(頭部、顔)(肌)</a></li>
+    <li><a href="#vrm10mtoon10-body_nm衣服"><code>VRM10/MToon10</code> body_nm(衣服)</a></li>
+    <li><a href="#vrm10mtoon10-eye瞳"><code>VRM10/MToon10</code> eye(瞳)</a></li>
+    <li><a href="#vrm10mtoon10-eye_trans"><code>VRM10/MToon10</code> eye_trans(?)</a></li>
+    <li><a href="#vrm10mtoon10-arm_matロボーアームの白パーツで覆われていない部分"><code>VRM10/MToon10</code> arm_mat(ロボーアームの白パーツで覆われていない部分)</a></li>
+    <li><a href="#vrm10mtoon10-arm_plasticロボアームの白いパーツ"><code>VRM10/MToon10</code> arm_plastic(ロボアームの白いパーツ)</a></li>
+    <li><a href="#standard-green_emitロボアームの緑の発光部分"><code>Standard</code> green_emit(ロボアームの緑の発光部分)</a></li>
+    <li><a href="#standard-wear_metalグローブの電極"><code>Standard</code> wear_metal(グローブの電極)</a></li>
+    <li><a href="#vrm10mtoon10-armgear_plasticグローブの白いパーツ"><code>VRM10/MToon10</code> armgear_plastic(グローブの白いパーツ)</a></li>
+    <li><a href="#vrm10mtoon10-robo_faceグローブの顔モニター"><code>VRM10/MToon10</code> robo_face(グローブの顔モニター)</a></li>
+    <li><a href="#glassグローブの顔モニター">glass(グローブの顔モニター)</a></li>
+    <li><a href="#backpack_metalロボアームとバックパックをつなぐ円柱パーツ">backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)</a></li>
+    <li><a href="#green_emitロボアームとバックパックをつなぐ円柱パーツの発光部分">green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)</a></li>
+    <li><a href="#backpack_nmバックパック下部水色のパーツ">backpack_nm(バックパック下部水色のパーツ)</a></li>
+    <li><a href="#backpack_plasticバックパックの白いパーツ">backpack_plastic(バックパックの白いパーツ)</a></li>
+    <li><a href="#anim_logo胸の模様">anim_logo(胸の模様)</a></li>
   </ul>
 </nav></div>
 
@@ -1551,16 +1589,15 @@
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2021/08/17
+    <b>最終更新</b> 2021/09/03
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/2a20ee2c2999b6115f74beb4bba649600f6ca320"><i class='fab fa-github fa-lg fa-fw'></i>update
-        (2a20ee2c)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/5b8d31a9f2abd782f48f6a9b6a342082bab88a43"><i class='fab fa-github fa-lg fa-fw'></i>v0.82.1
+        (5b8d31a9)</a>
     
 </div></div>
 
     
-    <ul>
-<li>new_seedsan のマテリアル構成
+    <h2 id="new_seedsan-のマテリアル構成">new_seedsan のマテリアル構成</h2>
 <ul>
 <li>SkinnedMeshRenderer: hair
 <ul>
@@ -1604,29 +1641,432 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="amim_logo">amim_logo</h2>
-<ul>
-<li>MToon-1.0</li>
-<li>UV-Animation</li>
-</ul>
-<h2 id="arm_mat">arm_mat</h2>
-<h2 id="arm_plastic">arm_plastic</h2>
-<h2 id="armgear_plastic">armgear_plastic</h2>
-<h2 id="backpack_metal">backpack_metal</h2>
-<h2 id="backpack_nm">backpack_nm</h2>
-<h2 id="backpack_plastic">backpack_plastic</h2>
-<h2 id="body_bake">body_bake</h2>
-<h2 id="body_nm">body_nm</h2>
-<h2 id="eye">eye</h2>
-<h2 id="eye_trans">eye_trans</h2>
-<h2 id="glass">glass</h2>
-<h2 id="green_emit">green_emit</h2>
-<h2 id="huku_bake">huku_bake</h2>
-<h2 id="newhair">newhair</h2>
-<h2 id="robo_face">robo_face</h2>
-<h2 id="wear_metal">wear_metal</h2>
+<h2 id="vrm10mtoon10-newhair頭髪"><code>VRM10/MToon10</code> newhair(頭髪)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>hair.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0x959595</td>
+<td>hair.png</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-huku_bake髪留め衣服"><code>VRM10/MToon10</code> huku_bake(髪留め)(衣服)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>wear.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0x7D7D7D</td>
+<td>wear.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Normal Map</td>
+<td></td>
+<td>nm_wear_normal.png</td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineWidth</td>
+<td>0.001</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineColor</td>
+<td>0x6C7A82</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-body_bake頭部顔肌"><code>VRM10/MToon10</code> body_bake(頭部、顔)(肌)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>body_bake.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0x7D7D7D</td>
+<td>body_bake.png</td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td>outlinemask_body.png</td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineWidth</td>
+<td>0.001</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineColor</td>
+<td>0x87766E</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-body_nm衣服"><code>VRM10/MToon10</code> body_nm(衣服)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0xB0A9BC</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>NormalMap</td>
+<td></td>
+<td>nm_body_normals.png</td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineWidth</td>
+<td>0.002</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineColor</td>
+<td>0x25242C</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-eye瞳"><code>VRM10/MToon10</code> eye(瞳)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>faceparts.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0xB0A9BC</td>
+<td>faceparts.png</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-eye_trans"><code>VRM10/MToon10</code> eye_trans(?)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>faceparts.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0xFFFFFF</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-arm_matロボーアームの白パーツで覆われていない部分"><code>VRM10/MToon10</code> arm_mat(ロボーアームの白パーツで覆われていない部分)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0xB0A9BC</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>ParametricRimColor</td>
+<td>0x4F4F4F</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-arm_plasticロボアームの白いパーツ"><code>VRM10/MToon10</code> arm_plastic(ロボアームの白いパーツ)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0x9EA4B0</td>
+<td>robo_arm.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Matcap Rim</td>
+<td></td>
+<td>mat_oneside_spec.png</td>
+<td></td>
+</tr>
+<tr>
+<td>ParametricRimColor</td>
+<td>0x9F9F9F</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineWidth</td>
+<td>0.002</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineColor</td>
+<td>0x4F4F4F</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="standard-green_emitロボアームの緑の発光部分"><code>Standard</code> green_emit(ロボアームの緑の発光部分)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Albedo</td>
+<td>0xFFFFFF</td>
+<td>backpack.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Emission</td>
+<td>34,191,36:intensity=1.8</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="standard-wear_metalグローブの電極"><code>Standard</code> wear_metal(グローブの電極)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Albedo</td>
+<td>0xFFFFFF</td>
+<td>wear.png</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-armgear_plasticグローブの白いパーツ"><code>VRM10/MToon10</code> armgear_plastic(グローブの白いパーツ)</h2>
+<p><code>Opaque</code></p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>color</th>
+<th>texture</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LitColor, Alpha</td>
+<td>0xFFFFFF</td>
+<td>wear.png</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td>0xB0A9BC</td>
+<td>wear.png</td>
+<td></td>
+</tr>
+<tr>
+<td>MatcapRim</td>
+<td></td>
+<td>mat_oneside_spec.png</td>
+<td></td>
+</tr>
+<tr>
+<td>ParametricRimColor</td>
+<td>0xB0B0B0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineMode</td>
+<td>World</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineWidth</td>
+<td>0.001</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OutlineColor</td>
+<td>0x000000</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vrm10mtoon10-robo_faceグローブの顔モニター"><code>VRM10/MToon10</code> robo_face(グローブの顔モニター)</h2>
+<p><code>Opaque</code></p>
+<h2 id="glassグローブの顔モニター">glass(グローブの顔モニター)</h2>
+<h2 id="backpack_metalロボアームとバックパックをつなぐ円柱パーツ">backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)</h2>
+<h2 id="green_emitロボアームとバックパックをつなぐ円柱パーツの発光部分">green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)</h2>
+<h2 id="backpack_nmバックパック下部水色のパーツ">backpack_nm(バックパック下部水色のパーツ)</h2>
+<h2 id="backpack_plasticバックパックの白いパーツ">backpack_plastic(バックパックの白いパーツ)</h2>
+<h2 id="anim_logo胸の模様">anim_logo(胸の模様)</h2>
 
 
     
@@ -1635,6 +2075,14 @@
     
     
     <hr class="panel-line">
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

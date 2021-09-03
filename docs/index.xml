@@ -72,27 +72,6 @@
     </item>
     
     <item>
-      <title>Docs: 🚧vrm-1.0 Runtime ロード</title>
-      <link>https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/programming_vrm1/vrm1_runtime_load/</guid>
-      <description>
-        
-        
-        &lt;p&gt;VRM-1.0 を使うアプリケーションは、 &lt;code&gt;VRM-0.x&lt;/code&gt; の資産もロードしたいはずです。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;VRM-1.0&lt;/code&gt; と &lt;code&gt;VRM-0.X&lt;/code&gt; の meta の非互換に &lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/181&#34;&gt;Metaの自動的なマイグレーションは禁止する方針&lt;/a&gt; となりました。&lt;/p&gt;
-&lt;h2 id=&#34;vrm-0x-を-vrm-10-コンポーネントに対してロードする&#34;&gt;VRM-0.X を VRM-1.0 コンポーネントに対してロードする&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-1.0&lt;/code&gt; では、
-&lt;code&gt;VRM-0.X&lt;/code&gt; のライセンスを保持したまま、&lt;code&gt;VRM-1.0&lt;/code&gt; のコンポーネントにロードする機能を提供します(予定)。&lt;/p&gt;
-&lt;p&gt;アプリケーションは、この方法でロードしたモデルは、&lt;code&gt;VRM-0.X&lt;/code&gt; ライセンスとして扱ってください。&lt;/p&gt;
-&lt;h2 id=&#34;runtimeload-例&#34;&gt;RuntimeLoad 例&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;vrm-0.x&lt;/code&gt; と &lt;code&gt;vrm-1.0&lt;/code&gt; 両方をロードしてライセンスを取得する例。&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Unity のバージョン</title>
       <link>https://vrm.dev/docs/univrm/install/unity_version/</link>
       <pubDate>Wed, 11 Aug 2021 15:49:48 +0900</pubDate>
@@ -1105,7 +1084,11 @@ ProtocolBufferで定義して、Jsonのシリアライザを生成したもの�
       <description>
         
         
-        &lt;h2 id=&#34;v077-importercontext-の整理&#34;&gt;v0.77 ImporterContext の整理&lt;/h2&gt;
+        &lt;h2 id=&#34;v0821-import時のmaterial差し替えupm対応&#34;&gt;v0.82.1 Import時のMaterial差し替え(UPM対応)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;v0820-import時のmaterial差し替えupm対応&#34;&gt;v0.82.0 Import時のMaterial差し替え(UPM対応)&lt;/h2&gt;
+&lt;p&gt;使い勝手に問題ありのため、 &lt;code&gt;v0.82.1&lt;/code&gt; 以降を使ってください。&lt;/p&gt;
+&lt;h2 id=&#34;v077-importercontext-の整理&#34;&gt;v0.77 ImporterContext の整理&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;v068-importercontext-の整理&#34;&gt;v0.68 ImporterContext の整理&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/programming/runtime_import/&#34;&gt;ランタイムインポーター&lt;/a&gt;&lt;/p&gt;
@@ -1862,69 +1845,48 @@ glb形式ではJSON部とバイナリ部をひとつのファイルにまとめ�
     </item>
     
     <item>
-      <title>Docs: VrmObject と Extract</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</link>
-      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;vrm-10-の-subasset-を-extract-する&#34;&gt;vrm-1.0 の subasset を extract する&lt;/h2&gt;
-&lt;p&gt;vrm-1.0 を import した状態では、付属するアセット(texture, material, meshなど)は fbx と同様に subasset になります。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm1_subasset.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;p&gt;この状態では、subasset の中身を変更することができません。
-extract により subasset を個別の Asset に展開します。&lt;/p&gt;
-&lt;h3 id=&#34;texturematerial-の-extract&#34;&gt;Texture/Material の Extract&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_before.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;vrm の subasset の texture と material を外部アセットに展開します。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_assets.jpg&#34;  width=&#34;400&#34; /&gt;
-&lt;/p&gt;
-&lt;h3 id=&#34;vrm-関連の-extract&#34;&gt;VRM 関連の Extract&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm_before.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;vrm の subasset の vrmobject と expression を外部アセットに展開します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;h2 id=&#34;vrmobject&#34;&gt;VrmObject&lt;/h2&gt;
-&lt;p&gt;VRM モデルには &lt;code&gt;VrmController&lt;/code&gt; コンポーネントがアタッチされており、
-&lt;code&gt;VrmController&lt;/code&gt; は &lt;code&gt;VrmObject&lt;/code&gt; を参照します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_controller.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;VrmObject は以下の４つの設定を持っています。
-これらの変更は、シーンではなくアセットに対する変更になります。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_object.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;h2 id=&#34;meta-画面hahahugoshortcode-s8-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/&#34;&gt;Meta 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;expression-画面hahahugoshortcode-s10-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/&#34;&gt;Expression 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;lookat-画面hahahugoshortcode-s12-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/&#34;&gt;LookAt 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;firstperson-画面hahahugoshortcode-s14-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/&#34;&gt;FirstPerson 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: ランタイムインポーター</title>
       <link>https://vrm.dev/docs/univrm/programming/runtime_import/</link>
-      <pubDate>Mon, 14 Jun 2021 16:14:35 +0900</pubDate>
+      <pubDate>Fri, 03 Sep 2021 17:54:05 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm/programming/runtime_import/</guid>
       <description>
         
         
-        &lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
+        &lt;h2 id=&#34;version-0821&#34;&gt;&lt;code&gt;Version 0.82.1~&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Import時の Material 差し替え機能。&lt;/p&gt;
+&lt;h3 id=&#34;vrm&#34;&gt;VRM&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;materialGenerator&lt;/code&gt; 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMData(data);
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; loader = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMImporterContext(vrm, materialGenerator: &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMUrpMaterialDescriptorGenerator(vrm.VrmExtension));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;VRMImporterContext&lt;/code&gt; の引き数変更&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; VRMImporterContext(
+    GltfData data, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    VRM.glTF_VRM_extensions vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    IReadOnlyDictionary&amp;lt;SubAssetKey, Object&amp;gt; externalObjectMap = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    ITextureDeserializer textureDeserializer = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    IMaterialDescriptorGenerator materialGenerator = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRM.VRMData(data);
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; VRMImporterContext(
+    VRMData vrm, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- これ
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    IReadOnlyDictionary&amp;lt;SubAssetKey, Object&amp;gt; externalObjectMap = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    ITextureDeserializer textureDeserializer = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;,
+    IMaterialDescriptorGenerator materialGenerator = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;glb&#34;&gt;GLB&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;materialGenerator&lt;/code&gt; 引き数(省略可能)を指定することで URP マテリアルを生成するようにカスタムできます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GlbFileParser(path).Parse();
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; loader = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniGLTF.ImporterContext(data, materialGenerator: &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfUrpMaterialDescriptorGenerator());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-0820&#34;&gt;&lt;code&gt;Version 0.82.0&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;0.82.1&lt;/code&gt; 以降を使ってください。&lt;/p&gt;
+&lt;h2 id=&#34;version-079&#34;&gt;&lt;code&gt;Version 0.79&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GltfParser&lt;/code&gt; と &lt;code&gt;GltfData&lt;/code&gt; の分割&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
+parser.ParsePath(path);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;GltfData data = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GlbFileParser(path).Parse();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1018&#34;&gt;DisposeOnGameObjectDestroyed&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ImporterContext&lt;/code&gt; の仕様を変更しました。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Version 0.68&lt;/code&gt; で導入した、 &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; が扱いづらかったためのでこれを取りやめ、
@@ -2298,6 +2260,60 @@ VRMImporter.LoadVrmAsync(path, go =&amp;gt; {
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Thumbnailテクスチャを作成する
 &lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    Texture2D thumbnail=meta.Thumbnail;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VrmObject と Extract</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</link>
+      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;vrm-10-の-subasset-を-extract-する&#34;&gt;vrm-1.0 の subasset を extract する&lt;/h2&gt;
+&lt;p&gt;vrm-1.0 を import した状態では、付属するアセット(texture, material, meshなど)は fbx と同様に subasset になります。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm1_subasset.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;この状態では、subasset の中身を変更することができません。
+extract により subasset を個別の Asset に展開します。&lt;/p&gt;
+&lt;h3 id=&#34;texturematerial-の-extract&#34;&gt;Texture/Material の Extract&lt;/h3&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_before.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;vrm の subasset の texture と material を外部アセットに展開します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_assets.jpg&#34;  width=&#34;400&#34; /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;vrm-関連の-extract&#34;&gt;VRM 関連の Extract&lt;/h3&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm_before.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;vrm の subasset の vrmobject と expression を外部アセットに展開します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;h2 id=&#34;vrmobject&#34;&gt;VrmObject&lt;/h2&gt;
+&lt;p&gt;VRM モデルには &lt;code&gt;VrmController&lt;/code&gt; コンポーネントがアタッチされており、
+&lt;code&gt;VrmController&lt;/code&gt; は &lt;code&gt;VrmObject&lt;/code&gt; を参照します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_controller.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;p&gt;VrmObject は以下の４つの設定を持っています。
+これらの変更は、シーンではなくアセットに対する変更になります。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_object.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;h2 id=&#34;meta-画面hahahugoshortcode-s8-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/&#34;&gt;Meta 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;expression-画面hahahugoshortcode-s10-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/&#34;&gt;Expression 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;lookat-画面hahahugoshortcode-s12-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/&#34;&gt;LookAt 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;firstperson-画面hahahugoshortcode-s14-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/&#34;&gt;FirstPerson 画面&lt;/a&gt;&lt;/h2&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;400&#34; /&gt;
+
 
       </description>
     </item>
@@ -5392,6 +5408,104 @@ OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;その他ライセンス条件other-license-url&#34;&gt;その他ライセンス条件(Other License Url)&lt;/h4&gt;
 &lt;p&gt;上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VRMSpringBone</title>
+      <link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid>
+      <description>
+        
+        
+        &lt;p&gt;揺れモノ設定。&lt;/p&gt;
+&lt;h1 id=&#34;コンポーネントのアタッチされるノード&#34;&gt;コンポーネントのアタッチされるノード&lt;/h1&gt;
+&lt;p&gt;VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VRMSpringBoneは、名前が&lt;code&gt;secondary&lt;/code&gt;のノードが自動的に作成されてそこにアタッチされます。&lt;/li&gt;
+&lt;li&gt;VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VRMSpringBoneが見つからない場合には&lt;code&gt;secondary&lt;/code&gt;ノードをご確認ください。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
+&lt;p&gt;尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
+揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMSpringBone.png&#34; alt=&#34;lookat&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;RootBonesに髪の毛とリボンを設定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;これだけで、指定したボーンが動きに合わせて揺れます。&lt;/p&gt;
+&lt;h1 id=&#34;オプションvrmspringbonecollidergroup当たり判定&#34;&gt;[オプション]VRMSpringBoneColliderGroup(当たり判定)&lt;/h1&gt;
+&lt;p&gt;揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/collider.png&#34; alt=&#34;collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_collider.png&#34; alt=&#34;set_collider&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/spring_gizmo.png&#34; alt=&#34;gizmo&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;動作時のGizmo。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ひとつのvrmspringbonecollidergroupに複数の当たり判定を設定できます&#34;&gt;ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます&lt;/h2&gt;
+&lt;p&gt;VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。&lt;/p&gt;
+&lt;h1 id=&#34;設定したvrmspringboneが居なくなった&#34;&gt;設定したVRMSpringBoneが居なくなった&lt;/h1&gt;
+&lt;p&gt;VRMSpringBoneはインポート時に&lt;code&gt;secondary&lt;/code&gt;ノードにアタッチされます。
+エクスポート時と違う場所に現れるのでご注意ください。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
