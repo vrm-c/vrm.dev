@@ -1,5 +1,5 @@
 ---
-title: 🚧vrm0 モデルを vrm1 にアップグレードする
+title: 🚧vrm-0.x モデルを vrm-1.0 にアップグレードする
 weight: 10
 ---
 

@@ -68,10 +68,13 @@ VRM-1.0 作業中
 * `0.80.0` からサポートする Unity の最低バージョンを `2019.4LTS` に更新しました。[Unity Version]({{< relref "unity_version.md" >}})。
 * `0.80.0` から `VRM-1.0β` のパッケージ提供を開始しました。
 
-| date  | version                                                                                                                          | 安定性・バグ | 更新内容・備考         |
-|-------|----------------------------------------------------------------------------------------------------------------------------------|--------------|------------------------|
-| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |              | pre release 運用終了   |
-| 08/12 | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |              | `Unity-2019.4LTS` 以降 |
+| date  | version                                                                                                                          | 安定性・バグ  | 更新内容・備考                              |
+|-------|----------------------------------------------------------------------------------------------------------------------------------|---------------|---------------------------------------------|
+| 07/20 | [0.79.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/41?closed=1) |               | pre release 運用終了                        |
+| 08/12 | [0.80.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/42?closed=1) |               | `Unity-2019.4LTS` 以降                      |
+| 08/20 | [0.81.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.81.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/43?closed=1) |               | ３パッケージ構成(UniGLTF, VRM, VRM-1.0beta) |
+| 09/01 | [0.82.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.82.0) [milestone](https://github.com/vrm-c/UniVRM/milestone/44?closed=1) | glb の import | URP API                                     |
+| 09/03 | [0.82.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.82.1) [milestone](https://github.com/vrm-c/UniVRM/milestone/45?closed=1) |               | URP API                                     |
 
 [^springcollider]: スプリングボーンのコライダーの座標変換バグ。 [\#576](https://github.com/vrm-c/UniVRM/issues/576)
 [^jpg]: エクスポートダイアログのスクリーンショットボタンの jpg バグ。[\#639](https://github.com/vrm-c/UniVRM/issues/639)
