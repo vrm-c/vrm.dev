@@ -6,6 +6,7 @@ aliases: [
     "/docs/univrm/programming/runtime_import/",
     "/docs/univrm/programming/univrm_use_blendshape/",
     "/docs/univrm/programming/univrm_use_firstperson/",
+    "/docs/univrm/gltf/how_to_impl_extension/",
 ]
 weight: 30
 ---
