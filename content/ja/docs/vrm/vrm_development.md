@@ -5,7 +5,7 @@ aliases: [/how_to_view_vrm/]
 weight: 6
 ---
 
-* [programming](/docs/univrm/programming/)
+* [programming](https://vrm-c.github.io/UniVRM/)
 * [samples]({{< relref "univrm_install_samples.md" >}})
 
 ## VRMの特徴(開発者的な視点)
@@ -30,7 +30,7 @@ weight: 6
 UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
 ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。
 
-* [runtime load]({{< relref "runtime_import.md" >}})
+* [runtime load](https://vrm-c.github.io/UniVRM/)
 
 ## UniVRMで ランタイムエクスポートする
 
