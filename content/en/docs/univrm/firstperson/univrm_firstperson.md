@@ -61,7 +61,7 @@ Click the `gear icon ⚙` on the upper right corner of `VRM First Person(Script)
 ### Use Auto to split Mesh into Both and ThirdPersonOnly
 
 If `Auto` is specified, the mesh will be split into two parts (`Both` and `ThirdPersonOnly`) automatically during import.
-In UniVRM, call [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md#call-setup-function-at-runtime-and-set-layermask-in-camera" >}}) for auto splitting.
+In UniVRM, call [VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/articles/en/vrm0/firstperson#call-setup-function-at-runtime-and-set-layermask-in-camera) for auto splitting.
 
 #### MeshAnnotation.Auto Algorithm
 

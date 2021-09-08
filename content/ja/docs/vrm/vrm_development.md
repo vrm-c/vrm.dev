@@ -16,9 +16,9 @@ weight: 6
 * 初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます
 * 初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます
 * 初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます
-* 表情・視線操作が統一されている ➡️ [BlendShapeProxy]({{< relref "univrm_use_blendshape.md" >}})
+* 表情・視線操作が統一されている ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/articles/ja/vrm0/0_58_blendshape.html)
 * 物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません
-* VRの設定が含まれている ➡️ [FirstPerson]({{< relref "univrm_use_firstperson.md" >}})
+* VRの設定が含まれている ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/articles/ja/vrm0/firstperson.html)
 * ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます
 
 従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
