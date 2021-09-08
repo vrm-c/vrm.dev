@@ -66,7 +66,7 @@ VRMFirstPerson をリセットすることで再設定することができま�
 ### Auto による Both と ThirdPersonOnly への自動分割
 
 設定をAutoにしておくと、ロード時にメッシュを自動で `Both` と `ThirdPersonOnly` に分離することを指示できます。
-UniVRMでは [VRMFirstPerson.Setup()]({{< relref "univrm_use_firstperson.md#実行時にsetupを呼び出してカメラにlayermaskを設定する" >}}) を呼び出します。
+UniVRMでは [VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/articles/ja/vrm0/firstperson#call-setup-function-at-runtime-and-set-layermask-in-camera) を呼び出します。
 Autoによる自動分割は、重めの処理になります。
 
 分割基準は、
