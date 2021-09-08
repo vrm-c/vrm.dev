@@ -457,42 +457,6 @@ However, we can still create the Humanoid Avatar via program. See &lt;a href=&#3
     </item>
     
     <item>
-      <title>Docs: API Change History</title>
-      <link>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</link>
-      <pubDate>Mon, 21 May 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/programming/univrm_api_history/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;v077-reworked-importercontext&#34;&gt;v0.77 Reworked ImporterContext&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/runtime_import/&#34;&gt;Runtime Importer&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;v068-reworked-importercontext&#34;&gt;v0.68 Reworked ImporterContext&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/runtime_import/&#34;&gt;Runtime Importer&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;v0632-changed-implementation-method-of-gltf-extension&#34;&gt;v0.63.2 Changed implementation method of gltf extension&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/&#34;&gt;Implement GLTF Extension&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;v056-updated-blendshapekeys-specifications&#34;&gt;v0.56 Updated BlendShapeKey&amp;rsquo;s Specifications&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/wiki/ReleaseNote-v0.56.0%28en%29#reworks-blendshapekeys-interface&#34;&gt;Rework BlendShapeKey&amp;rsquo;s Interface&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;v036&#34;&gt;v0.36&lt;/h2&gt;
-&lt;h3 id=&#34;changed-storage-position-of-texture-name&#34;&gt;Changed Storage Position of Texture Name&lt;/h3&gt;
-&lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.images&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extra.name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the change&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.images&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;changed-storage-position-blendshape-name&#34;&gt;Changed Storage Position BlendShape Name&lt;/h3&gt;
-&lt;p&gt;Conforming to the GLTF specification.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;extras&amp;rdquo; is not allowed in target&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&#34;&gt;https://github.com/KhronosGroup/glTF/issues/1036#issuecomment-314078356&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.meshes&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.primitives&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.targets&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;k&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extra.name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the change&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;json.meshes&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.primitives&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;.extras.targetNames&lt;/span&gt;[&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;k&lt;/span&gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: BlendShape Setting</title>
       <link>https://vrm.dev/en/docs/univrm/blendshape/univrm_blendshape/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -1277,385 +1241,6 @@ The current provided software, &lt;a href=&#34;https://github.com/vrm-c/UniVRM&#
 Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in &lt;a href=&#34;https://virtualcast.jp/&#34;&gt;Virtual Cast&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;vrm-application-development&#34;&gt;VRM application development&lt;/h2&gt;
 &lt;p&gt;➡️ &lt;a href=&#34;https://vrm.dev/en/docs/vrm/vrm_development/&#34;&gt;VRM development&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Runtime Importer</title>
-      <link>https://vrm.dev/en/docs/univrm/programming/runtime_import/</link>
-      <pubDate>Fri, 25 Jun 2021 18:15:46 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/programming/runtime_import/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;version-077&#34;&gt;&lt;code&gt;Version 0.77~&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1018&#34;&gt;DisposeOnGameObjectDestroyed&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ImporterContext&lt;/code&gt; API has been modified.&lt;/p&gt;
-&lt;p&gt;The function &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; introduced in &lt;code&gt;Version 0.68&lt;/code&gt; has been discarded.&lt;br&gt;
-Instead, &lt;code&gt;ImporterContext.Load&lt;/code&gt; and &lt;code&gt;RuntimeGltfInstance&lt;/code&gt; are used in &lt;code&gt;v0.77&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In addition, &lt;code&gt;ImporterContext&lt;/code&gt;&#39;s members have been moved to &lt;code&gt;RuntimeGltfInstance&lt;/code&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Root&lt;/li&gt;
-&lt;li&gt;EnableUpdateWhenOffscreen()&lt;/li&gt;
-&lt;li&gt;ShowMeshes()&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To destroy the Importer, use &lt;code&gt;ImporterContext.Dispose&lt;/code&gt; after &lt;code&gt;Load&lt;/code&gt; is called.&lt;br&gt;
-By destroying RuntimeGltfInstance, the resources associated with the RuntimeGltfInstance (Texture, Material, Mesh, etc) will be destroyed.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM.Samples&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmSample&lt;/span&gt; : MonoBehaviour
-    {
-&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
-        {
-            _vrmGameObject = LoadVrm(_vrmFilePath);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
-        {
-            DestroyVrm(_vrmGameObject);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject LoadVrm(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. Call GltfParser function (it has been separated from ImporterContext)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    We use GltfParser to obtain JSON information and binary data from the VRM file
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
-            parser.ParsePath(vrmFilePath);
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    The class for loading VRM is VRMImporterContext
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
-            {
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Call Load function to create a VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                RuntimeGltfInstance instance = context.Load(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- `v0.77`
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// For asynchronous loading, use the following line instead:
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// RuntimeGltfInstance instance = await context.LoadAsync();
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. Enable UpdateWhenOffscreen
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                instance.EnableUpdateWhenOffscreen(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// This function has been moved from ImporterContext to RuntimeGltfInstance in `v0.77`
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. Display the model
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                instance.ShowMeshes(); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// This function has been moved from ImporterContext to RuntimeGltfInstance `v0.77`
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. Return Root GameObject (VRM model)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root GameObject is where VRMMeta component is attached
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; instance.Root; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// &amp;lt;- changed from ImporterContext to RuntimeGltfInstance in `v0.77`
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            }
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    In step 6, the resources associated with the VRM GameObject will not be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    The unused resources included in the glTF file (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. Destroy the generated VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will also be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-068&#34;&gt;&lt;code&gt;Version 0.68~&lt;/code&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;api-changes&#34;&gt;API Changes&lt;/h3&gt;
-&lt;p&gt;ImporterContext has been reworked.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Loading processing has been divided into two steps: &lt;code&gt;Parse&lt;/code&gt; and &lt;code&gt;Load&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Parse&lt;/code&gt; processing can be processed by other than the main thread&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;The implementation of asynchronous loading function &lt;code&gt;ImporterContext.LoadAsync&lt;/code&gt; has changed to &lt;code&gt;Task&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The method of explicitly destroying &lt;code&gt;UnityEngine.Object&lt;/code&gt; resources is now available. As such, resource leaks can be prevented&lt;/li&gt;
-&lt;li&gt;The timing of calling &lt;code&gt;ImporterContext.Dispose&lt;/code&gt; has been changed to when the loading process ends
-&lt;ul&gt;
-&lt;li&gt;Call &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; function (described below) before &lt;code&gt;ImporterContext.Dispose&lt;/code&gt; function is called&lt;/li&gt;
-&lt;li&gt;In the previous versions, &lt;code&gt;ImporterContext.Dispose&lt;/code&gt; is called when the generated VRM model is destroyed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Added &lt;code&gt;ImporterContext.DisposeOnGameObjectDestroyed&lt;/code&gt; function
-&lt;ul&gt;
-&lt;li&gt;The duty of destroying VRM resources (Texture, Material, Mesh, etc) has been transferred to GameObject&lt;/li&gt;
-&lt;li&gt;The resources (Texture, Material, Mesh, etc) will be destroyed when VRM&amp;rsquo;s GameObject is destroyed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;sample-codes-synchronous-loading&#34;&gt;Sample Codes (Synchronous Loading)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;YourNameSpace&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmSample&lt;/span&gt; : MonoBehaviour
-    {
-&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
-        {
-            _vrmGameObject = LoadVrm(_vrmFilePath);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
-        {
-            DestroyVrm(_vrmGameObject);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject LoadVrm(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. Call GltfParser function (it has been separated from ImporterContext)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    We use GltfParser to obtain JSON information and binary data from the VRM file
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
-            parser.ParsePath(vrmFilePath);
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    VRMImporterContext is the class for loading VRM
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
-            {
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Call Load function to create a VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.Load();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. Enable UpdateWhenOffscreen
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.EnableUpdateWhenOffscreen();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. Display the model
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.ShowMeshes();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.DisposeOnGameObjectDestroyed();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. Return Root GameObject (VRM model)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root GameObject is where VRMMeta component is attached
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
-            }
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 9. Destroy the generated VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sample-codes-asynchronous-loading&#34;&gt;Sample Codes (Asynchronous Loading)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.IO&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Threading.Tasks&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UniGLTF&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;YourNameSpace&lt;/span&gt;
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;LoadVrmAsyncSample&lt;/span&gt; : MonoBehaviour
-    {
-&lt;span style=&#34;color:#309&#34;&gt;        [SerializeField]&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; _vrmFilePath;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; GameObject _vrmGameObject;
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
-        {
-            _vrmGameObject = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; LoadVrmAsync(_vrmFilePath);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; OnDestroy()
-        {
-            DestroyVrm(_vrmGameObject);
-        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;GameObject&amp;gt; LoadVrmAsync(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; vrmFilePath)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 1. Call GltfParser function (it has been separated from ImporterContext)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    We use GltfParser to obtain JSON information and binary data from the VRM file
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    GltfParser can be run by other than the Unity&amp;#39;s main thread
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; parser = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; GltfParser();
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; Task.Run(() =&amp;gt;
-            {
-                &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; file = File.ReadAllBytes(vrmFilePath);
-                parser.ParseGlb(file);
-            });
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 2. Initialize a new VRMImporterContext object and pass `parser` as an argument to it
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    VRMImporterContext is the class for loading VRM
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext(parser))
-            {
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 3. Call LoadAsync function to create a VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    For loading process it will take several frames
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; context.LoadAsync();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 4. Enable UpdateWhenOffscreen
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    https://docs.unity3d.com/2019.4/Documentation/ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.EnableUpdateWhenOffscreen();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 5. Display the model
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.ShowMeshes();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 6. By calling this function, unity resources such as Texture, Material, Mesh, etc. used by VRM GameObject can be associated
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    In other words, when the VRM GameObject is destroyed, resources (Texture, Material, Mesh, etc) that are actually used by the VRM GameObject can be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                context.DisposeOnGameObjectDestroyed();
-
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 7. Return Root GameObject (VRM model)
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    Root GameObject is where VRMMeta component is attached
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
-            }
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 8. When using statement ends, UnityEngine.Object resources held by VRMImporterContext are destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    As mentioned in step 6, the resources associated with the VRM GameObject will not be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    The unused resources (not used by the VRM GameObject), i.e. unassigned textures, will be destroyed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        }
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; DestroyVrm(GameObject vrmGameObject)
-        {
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 9. Destroy the generated VRM GameObject
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//    If the VRM GameObject is destroyed, the associated unity resources (Texture, Material, Mesh, etc) will be destroyed, too
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            UnityEngine.Object.Destroy(vrmGameObject);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-044-loadasync-example&#34;&gt;&lt;code&gt;Version 0.44~&lt;/code&gt; LoadAsync Example&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the byte array
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
-
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
-context.ParseGlb(bytes);
-
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// When meta is needed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;bool&lt;/span&gt; createThumbnail=&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;;
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta(createThumbnail);
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; thumbnail = meta.Thumbnail;
-
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Construct a model
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;context.LoadAsync(_ =&amp;gt;
-{
-    context.ShowMeshes();
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go = context.Root;
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Load completed
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;},
-Debug.LogError);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;loadasynctask-example&#34;&gt;LoadAsyncTask Example&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#099&#34;&gt;#if (NET_4_6 &amp;amp;&amp;amp; UNITY_2017_1_OR_NEWER)
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Task&amp;lt;GameObject&amp;gt; LoadAsync(Byte[] bytes)
-{
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
-
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get JSON in GLB format and parse it
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    context.ParseGlb(bytes);
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;try&lt;/span&gt;
-    {
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Convert the parsed JSON to the scene object
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;await&lt;/span&gt; context.LoadAsyncTask();
-
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Prevent the model&amp;#39;s surface from being penetrated by
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// the positional relation between the bounding box and the camera
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// SkinnedMeshRenderer.updateWhenOffscreen = true
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.EnableUpdateWhenOffscreen();
-
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// If you do not want the program displaying the model&amp;#39;s T-Pose,
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// prepare it before ShowMeshes
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Display the model when the loading is finished
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.ShowMeshes();
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; context.Root;
-    }
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;catch&lt;/span&gt;(Exception ex)
-    {
-        Debug.LogError(ex);
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Destroy related resources
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        context.Destroy(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;);
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;throw&lt;/span&gt;;
-    }
-}
-&lt;span style=&#34;color:#099&#34;&gt;#endif
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;related-article&#34;&gt;Related-Article&lt;/h2&gt;
-&lt;p&gt;More details can be found in the link below (written in Japanese):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/sh_akira/items/8155e4b69107c2a7ede6&#34;&gt;UniVRMを使ってVRMモデルをランタイムロードする方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Examples of importing the VRM model with the latest version &lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/runtime_import/&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The followings are the methods to import a VRM model at runtime in Unity:&lt;/p&gt;
-&lt;h2 id=&#34;open-vrm-from-a-file-path&#34;&gt;Open VRM from a file path&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go=VRM.VRMImporter.LoadFromPath(path);
-Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;open-vrm-asynchronously-from-a-file-path&#34;&gt;Open VRM asynchronously from a file path&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
-VRMImporter.LoadVrmAsync(path, go =&amp;gt; {
-    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;open-vrm-from-a-byte-array&#34;&gt;Open VRM from a byte array&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path=&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;sample.vrm&amp;#34;&lt;/span&gt;;
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; go=VRMImporter.LoadFromBytes(bytes);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;open-vrm-asynchronously-from-a-byte-array&#34;&gt;Open VRM asynchronously from a byte array&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;VRMImporter.LoadVrmAsync(bytes, go =&amp;gt; {
-    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;loaded {0}&amp;#34;&lt;/span&gt;, go.name);
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;get-the-information-form-vrm&#34;&gt;Get the information form VRM&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#099&#34;&gt;#if UNITY_STANDALONE_WIN
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path = FileDialogForWindows.FileDialog(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;open VRM&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;.vrm&amp;#34;&lt;/span&gt;);
-&lt;span style=&#34;color:#099&#34;&gt;#else
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; path = Application.dataPath + &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;/default.vrm&amp;#34;&lt;/span&gt;;
-&lt;span style=&#34;color:#099&#34;&gt;#endif
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt;.IsNullOrEmpty(path))
-            {
-                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt;;
-            }
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the byte array
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
-
-            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; VRMImporterContext();
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get JSON in GLB format and parse it
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            context.ParseGlb(bytes);
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the meta
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta();
-            Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;meta: title:{0}&amp;#34;&lt;/span&gt;, meta.Title);
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// You can access the entire parsed GLTF here
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm = context.GLTF;
-
-            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Convert the parsed JSON to the Scene Object
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (m_loadAsync)
-            {
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Run asynchronously
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; now = Time.time;
-                VRMImporter.LoadVrmAsync(context, go=&amp;gt; {
-                    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; delta = Time.time - now;
-                    Debug.LogFormat(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;LoadVrmAsync {0:0.0} seconds&amp;#34;&lt;/span&gt;, delta);
-                    OnLoaded(go);
-                });
-            }
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;
-            {
-                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Run synchronously
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                VRMImporter.LoadFromBytes(context);
-                OnLoaded(context.Root);
-            }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;get-the-thumbnail-from-v037&#34;&gt;Get the thumbnail (From v0.37)&lt;/h2&gt;
-&lt;p&gt;A thumbnail texture can be created by passing arguments to ReadMeta.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; meta = context.ReadMeta(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Make a thumbnail texture
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    Texture2D thumbnail=meta.Thumbnail;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
       </description>
     </item>
@@ -3103,101 +2688,6 @@ Open manifest.json with text/code editor and paste the following contents (examp
     </item>
     
     <item>
-      <title>Docs: How to Use BlendShapeProxy</title>
-      <link>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;environment&#34;&gt;Environment&lt;/h2&gt;
-&lt;p&gt;UniVRM v0.58.0&lt;/p&gt;
-&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;[Recommended] &lt;code&gt;SetValues&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;[Not Recommended] &lt;code&gt;ImmediatelySetValue&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;[For Advanced Users] &lt;code&gt;AccumulateValue&lt;/code&gt;, &lt;code&gt;Apply&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;apply-blendshape-weight-from-script&#34;&gt;Apply BlendShape weight from script&lt;/h2&gt;
-&lt;p&gt;Call &lt;code&gt;SetValues&lt;/code&gt; function once to create the specific expression (merged by multiple BlendShapes) in a frame:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-
-proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
-{
-    {BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Assign the Weight of a BlendShape clip between 0 and 1
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Specify a system-defined BlendShape clip by enum
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;    {BlendShapeKey.CreateUnknown(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;USER_DEFINED_FACIAL&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#f60&#34;&gt;1f&lt;/span&gt;}, &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Specify a user-defined BlendShape clip by string
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;why-use-setvalues-for-synthesizing-multiple-blendshapes&#34;&gt;Why use &lt;code&gt;SetValues&lt;/code&gt; for synthesizing multiple BlendShapes?&lt;/h2&gt;
-&lt;p&gt;We found that multiple BlendShapes compete with each other when the following expressions are specified:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LipSync&lt;/li&gt;
-&lt;li&gt;Eye Blink&lt;/li&gt;
-&lt;li&gt;Eye Gaze control (if eye gaze movements are controlled by BlendShape)&lt;/li&gt;
-&lt;li&gt;Emotions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A BlendShape set first may be overwritten with followed BlendShapes so it turns out that the specified expression is not actually shown.&lt;/p&gt;
-&lt;p&gt;In order to address this issue, we can use &lt;code&gt;SetValues&lt;/code&gt; function to merge multiple BlendShapes into a specified expression while the BlendShape overwriting can be avoided.&lt;/p&gt;
-&lt;p&gt;Blink example:&lt;/p&gt;
-&lt;p&gt;For Blink_L&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The weight value for BlendShape &lt;code&gt;eye_L&lt;/code&gt; of &lt;code&gt;Mesh_A&lt;/code&gt; is 100&lt;/li&gt;
-&lt;li&gt;The weight value for BlendShape &lt;code&gt;eye_R&lt;/code&gt; of &lt;code&gt;Mesh_A&lt;/code&gt; is 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For Blink_R&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The weight value for BlendShape &lt;code&gt;eye_L&lt;/code&gt; of &lt;code&gt;Mesh_A&lt;/code&gt; is 1&lt;/li&gt;
-&lt;li&gt;The weight value for BlendShape &lt;code&gt;eye_R&lt;/code&gt; of &lt;code&gt;Mesh_A&lt;/code&gt; is 100&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If we use &lt;code&gt;ImmediatelySetValue&lt;/code&gt; function for eye blinking,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The weight values set for Blink_L will be overwritten by Blink_R. To resolve this issue, we use &lt;code&gt;SetValues&lt;/code&gt; or &lt;code&gt;AccumulateValue&lt;/code&gt; to correctly manipulate specified BlendShapes:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
-{
-    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
-    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Apply all the specified BlendShapes at once
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;proxy.Apply();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;More details are described below:&lt;/p&gt;
-&lt;h2 id=&#34;immediatelysetvalue&#34;&gt;ImmediatelySetValue&lt;/h2&gt;
-&lt;p&gt;Assumed to be used for a simple test program.&lt;/p&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-
-proxy.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.A), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;accumulatevalue--apply&#34;&gt;AccumulateValue + Apply&lt;/h2&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-
-proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-proxy.AccumulateValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;);
-&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Apply all the specified BlendShapes at once
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;proxy.Apply();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We recommend &lt;code&gt;SetValues&lt;/code&gt; (below) to handle the case of applying multiple BlendShapes.&lt;/p&gt;
-&lt;h2 id=&#34;setvalues&#34;&gt;SetValues&lt;/h2&gt;
-&lt;p&gt;Call &lt;code&gt;SetValues&lt;/code&gt; to combine multiple BlendShapes.&lt;/p&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; proxy = GetComponent&amp;lt;VRMBlendShapeProxy&amp;gt;();
-
-proxy.SetValues(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;BlendShapeKey, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt;&amp;gt;
-{
-    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_L), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
-    {BlendShapeKey.CreateFromPreset(BlendShapePreset.Blink_R), &lt;span style=&#34;color:#f60&#34;&gt;1.0f&lt;/span&gt;},
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Import VRM into Viewer</title>
       <link>https://vrm.dev/en/how_to_view_vrm/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -3298,7 +2788,7 @@ Click the &lt;code&gt;gear icon ⚙&lt;/code&gt; on the upper right corner of &l
 
 &lt;h3 id=&#34;use-auto-to-split-mesh-into-both-and-thirdpersononly&#34;&gt;Use Auto to split Mesh into Both and ThirdPersonOnly&lt;/h3&gt;
 &lt;p&gt;If &lt;code&gt;Auto&lt;/code&gt; is specified, the mesh will be split into two parts (&lt;code&gt;Both&lt;/code&gt; and &lt;code&gt;ThirdPersonOnly&lt;/code&gt;) automatically during import.
-In UniVRM, call &lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/#call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;VRMFirstPerson.Setup()&lt;/a&gt; for auto splitting.&lt;/p&gt;
+In UniVRM, call &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/vrm0/firstperson#call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;VRMFirstPerson.Setup()&lt;/a&gt; for auto splitting.&lt;/p&gt;
 &lt;h4 id=&#34;meshannotationauto-algorithm&#34;&gt;MeshAnnotation.Auto Algorithm&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;For a mesh specified as &lt;code&gt;Auto&lt;/code&gt;, each vertex will be checked whether it contains the weight of Head bone (or the child of the Head bone)&lt;/li&gt;
@@ -4427,123 +3917,6 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: How to Use VRMFirstPerson</title>
-      <link>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</link>
-      <pubDate>Tue, 29 May 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;vrmfirstperson-settings&#34;&gt;VRMFirstPerson Settings&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/firstperson/univrm_firstperson/&#34;&gt;VRMFirstPerson&lt;/a&gt; has the following settings for Renderer:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;FirstPersonFlag&lt;/th&gt;
-&lt;th&gt;Layer&lt;/th&gt;
-&lt;th&gt;Note&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Both&lt;/td&gt;
-&lt;td&gt;default&lt;/td&gt;
-&lt;td&gt;Specify parts that are not necessarily separated between first-person view and third-person view.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ThirdPersonOnly&lt;/td&gt;
-&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
-&lt;td&gt;Specify parts that are not rendered in first-person view.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;FirstPersonOnly&lt;/td&gt;
-&lt;td&gt;VRMFirstPersonOnly&lt;/td&gt;
-&lt;td&gt;Specify parts that are not rendered in third-person view. The auto-created headless model is used.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Auto&lt;/td&gt;
-&lt;td&gt;VRMThirdPersonOnly&lt;/td&gt;
-&lt;td&gt;Automatically create the model in first-person view at runtime and set it to FIRSTPERSON_ONLY_LAYER.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;By calling &lt;strong&gt;VRMFirstPerson.Setup&lt;/strong&gt; at runtime, the layer settings described above can be performed. Please call the function explicitly from outside.&lt;/p&gt;
-&lt;h1 id=&#34;specify-the-additional-render-layers-for-the-application&#34;&gt;Specify the additional render layers for the application&lt;/h1&gt;
-&lt;p&gt;The following layers are defined as constant:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;VRMFirstPerson&lt;/span&gt; : MonoBehaviour
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; FIRSTPERSON_ONLY_LAYER = &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt;;
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;int&lt;/span&gt; THIRDPERSON_ONLY_LAYER = &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt;;
-
-    &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// The following parts are omitted
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/layer_setting.png&#34;   /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Set Layer in #9 and #10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;Call Setup function at runtime and set LayerMask in Camera&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Call VRMFirstPerson.Setup&lt;/li&gt;
-&lt;li&gt;Set LayerMask for first-person camera view and other camera views&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Collections&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.Collections.Generic&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;VRM&lt;/span&gt;;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;SetupExample&lt;/span&gt; : MonoBehaviour
-{
-&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
-    Camera m_firstPersonCamera; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// HMD camera
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
-    LayerMask m_firstPersonMask; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Set a first-person mask (default | VRMFirstPersonOnly, etc.) in HMD camera
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
-    LayerMask m_otherMask; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Set other masks (default | VRMThirdPersonOnly, etc.) in HMD camera
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#309&#34;&gt;    [SerializeField]&lt;/span&gt;
-    VRMFirstPerson m_firstPerson;
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Reset()
-    {
-        m_firstPerson = GameObject.FindObjectOfType&amp;lt;VRMFirstPerson&amp;gt;();
-    }
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;void&lt;/span&gt; Start()
-    {
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; camera &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;in&lt;/span&gt; GameObject.FindObjectsOfType&amp;lt;Camera&amp;gt;())
-        {
-            camera.cullingMask = (camera == m_firstPersonCamera)
-                ? m_firstPersonMask
-                : m_otherMask
-                ;
-        }
-
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// VRMFirstPerson initialization
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (m_firstPerson != &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;)
-        {
-            m_firstPerson.Setup();
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: License settings in VRM</title>
       <link>https://vrm.dev/en/docs/vrm/vrm_meta/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -4781,9 +4154,9 @@ In this example, the model&amp;rsquo;s mesh are split into two parts: face and b
 &lt;li&gt;T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode&lt;/li&gt;
 &lt;li&gt;The initial pose has no rotation and scale&lt;/li&gt;
 &lt;li&gt;The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin&amp;rsquo;s bind matrices are not included)&lt;/li&gt;
-&lt;li&gt;Expression/eye gaze manipulation are in BlendShapeProxy ➡️ &lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_use_blendshape/&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Expression/eye gaze manipulation are in BlendShapeProxy ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/vrm0/0_58_blendshape.html&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Spring physics setup on clothes, hair and others ➡️ no interference with other physics&lt;/li&gt;
-&lt;li&gt;VR settings are available ➡️ &lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_use_firstperson/&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;VR settings are available ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/vrm0/firstperson.html&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;VRM is used for loading model into applications at runtime as opposed to the way that pre-makes models as asset for the use of the specific application.&lt;/p&gt;
@@ -4791,7 +4164,7 @@ In this example, the model&amp;rsquo;s mesh are split into two parts: face and b
 &lt;p&gt;UniVRM can load VRM into Unity as a GameObject instead of a prefab.
 The imported GameObject is the same as the instantiated GameObject from Prefab.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/runtime_import/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[runtime load]((&lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/vrm0/0_82_runtime_import.html&#34;&gt;https://vrm-c.github.io/UniVRM/articles/en/vrm0/0_82_runtime_import.html&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;runtime-export-with-univrm&#34;&gt;Runtime Export with UniVRM&lt;/h2&gt;
 &lt;p&gt;UniVRM can export the VRM model at runtime in Unity.
@@ -4809,20 +4182,6 @@ The export function can be used for applications such as character maker tool.&l
 &lt;li&gt;&lt;a href=&#34;https://github.com/pixiv/three-vrm/&#34;&gt;https://github.com/pixiv/three-vrm/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/V-Sekai/godot-vrm&#34;&gt;https://github.com/V-Sekai/godot-vrm&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Implement GLTF Extension</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</link>
-      <pubDate>Mon, 15 Mar 2021 12:02:02 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/how_to_impl_extension/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Work in progress&lt;/p&gt;
 
       </description>
     </item>
@@ -4960,6 +4319,691 @@ The following table summarizes all the &lt;code&gt;shaders&lt;/code&gt; used in 
     &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.76.0&amp;#34;&lt;/span&gt;,
   }
 }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Texture Import</title>
+      <link>https://vrm.dev/en/docs/univrm/shaders/texture_import/</link>
+      <pubDate>Wed, 17 Mar 2021 11:10:12 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/shaders/texture_import/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;texture-conversion-for-unitys-standard-shader&#34;&gt;Texture Conversion for Unity&amp;rsquo;s Standard Shader&lt;/h2&gt;
+&lt;p&gt;The table below is the RGB channel conversion between glTF&amp;rsquo;s material (PBR) and Unity Standard Shader:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Texture Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;glTF&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Unity&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Occlusion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;materials[*].occlusionTexture&amp;rsquo;s R channel&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Standard._MetallicGlossMap.G channel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Roughness&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s G channel&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Standard._MetallicGlossMap.A channel (smoothness = 1 - roughness) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Metallic&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;materials[*].pbrMetallicRoughness.metallicRoughnessTexture&amp;rsquo;s B channel&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Standard._OcclusionMap.R channel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;UniGLTF will perform the RGB channel conversion when textures are imported into Unity.&lt;/p&gt;
+&lt;h3 id=&#34;texture-import-behaviors&#34;&gt;Texture Import Behaviors&lt;/h3&gt;
+&lt;p&gt;Starting with &lt;code&gt;v0.69.0&lt;/code&gt;, Metallic, Smooth and Occlusion textures are integrated into one:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;import: glTF&amp;rsquo;s metallicRoughnessTexture and occlusionTexture are integrated into one (as seen in the table above)&lt;/li&gt;
+&lt;li&gt;export: Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap are integrated into one (as seen in the table above)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before &lt;code&gt;v0.69.0&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;import: convert and import textures to be used for _MetallicGlossMap and _OcclusionMap&lt;/li&gt;
+&lt;li&gt;export: convert and export Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gltf&#34;&gt;glTF&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#materialocclusiontexture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The occlusion values are sampled from the R channel&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#pbrmetallicroughnessmetallicroughnesstexture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The metalness values are sampled from the B channel. The roughness values are sampled from the G channel&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;unity&#34;&gt;Unity&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html&#34;&gt;https://docs.unity3d.com/Manual/StandardShaderMaterialParameterMetallic.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the Metallic levels for the material are controlled by the values in the Red channel of the texture
+the Smoothness levels for the material are controlled by the Alpha channel of the texture&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html&#34;&gt;https://docs.unity3d.com/Manual/StandardShaderMaterialParameterOcclusionMap.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;metallicroughness-texture&#34;&gt;&lt;code&gt;MetallicRoughness&lt;/code&gt; Texture&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;glTF&amp;rsquo;s Metallic =&amp;gt; Blue&lt;/li&gt;
+&lt;li&gt;glTF&amp;rsquo;s Roughness =&amp;gt; Green&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45&#34;&gt;https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json#L45&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The metalness values are sampled from the B channel. The roughness values are sampled from the G channel.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In Unity,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unity&amp;rsquo;s Standard(Metallic Alpha) Metallic =&amp;gt; Alpha&lt;/li&gt;
+&lt;li&gt;Unity&amp;rsquo;s Standard(Metallic Alpha) Smooth =&amp;gt; Red&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;which are assigned to different channels as compared to gltf spec.
+For &lt;code&gt;UniGLTF&lt;/code&gt;, it will load &lt;code&gt;png/jpg&lt;/code&gt; images first, and then create converted textures to be used in Unity&amp;rsquo;s Standard Shader.&lt;/p&gt;
+&lt;h2 id=&#34;unitys-linear-texture-behaviors&#34;&gt;Unity&amp;rsquo;s Linear Texture Behaviors&lt;/h2&gt;
+&lt;h3 id=&#34;runtime&#34;&gt;Runtime&lt;/h3&gt;
+&lt;p&gt;Initialize a new texture as linear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; texture = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Texture2D(width, height, format, mipChain, linear = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;asset&#34;&gt;Asset&lt;/h3&gt;
+&lt;p&gt;If textures are loaded from AssetFolder&amp;rsquo;s png/jpg:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; TextureImporter;
+textureImporter.sRGBTexture = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Linear
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;textureImporter.SaveAndReimport();
+
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// loaded as linear texture
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unitys-normalmap-behaviors&#34;&gt;Unity&amp;rsquo;s NormalMap Behaviors&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Same as MToon&amp;rsquo;s NormalMap&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;runtime-1&#34;&gt;Runtime&lt;/h3&gt;
+&lt;p&gt;Initialize a new texture for NormalMap:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; texture = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Texture2D(width, height, format, mipChain, linear = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since the normal texture needs to be converted to &lt;code&gt;DXT5nm&lt;/code&gt; format, we do the conversion described below:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-hlsl&#34; data-lang=&#34;hlsl&#34;&gt;half4 normal;
+normal.x = 1.0;
+normal.y = col.y;
+normal.z = 1.0;
+normal.w = col.x;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;asset-1&#34;&gt;Asset&lt;/h3&gt;
+&lt;p&gt;If textures are loaded from AssetFolder&amp;rsquo;s png/jpg:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; textureImporter = AssetImporter.GetAtPath(assetPath) &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; TextureImporter;
+textureImporter.textureType = TextureImporterType.NormalMap; &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// normalMap
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;textureImporter.SaveAndReimport();
+
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// loaded as DXT5nm format
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; texture =AssetDatabase.LoadAssetAtPath&amp;lt;Texture2D&amp;gt;(assetPath);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed roughness conversion in &lt;code&gt;v0.69.0&lt;/code&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;#388&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UniVRM Version</title>
+      <link>https://vrm.dev/en/docs/univrm/install/univrm_version/</link>
+      <pubDate>Mon, 01 Feb 2021 07:16:52 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/univrm/install/univrm_version/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;v0550-last-unity-56-compatible-version&#34;&gt;v0.55.0 (Last Unity-5.6 compatible version)&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2019&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.55.0&#34;&gt;0.55.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;◎ Stable Version&lt;/td&gt;
+&lt;td&gt;The final version for supporting Unity-5.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;v0560-&#34;&gt;v0.56.0 ~&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If bugs are introduced after version bump, we will fix them as quick as we can and bump the minor version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2020&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.0&#34;&gt;0.56.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;The minimum version support for Unity is 2018.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.1&#34;&gt;0.56.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.2&#34;&gt;0.56.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.56.3&#34;&gt;0.56.3&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.0&#34;&gt;0.57.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Bones with the same names will be renamed automatically&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.57.1&#34;&gt;0.57.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.0&#34;&gt;0.58.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Remade export dialog&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.58.1&#34;&gt;0.58.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.59.0&#34;&gt;0.59.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Improved validation checks on VRMSpringBone settings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.60.0&#34;&gt;0.60.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Enhanced null-checks on VRM&amp;rsquo;s components when exporting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.0&#34;&gt;0.61.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/20?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Made UniUnlit&amp;rsquo;s vertex color working properly. Fixed AOT compilation issue&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.61.1&#34;&gt;0.61.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.62.0&#34;&gt;0.62.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/21?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed bugs when baking BlendShape&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2021 01/05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.0&#34;&gt;0.63.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/25?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;JPG export bug. Separated UniGLTF from UniVRM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/07&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.1&#34;&gt;0.63.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;JPG export bug&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/08&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.63.2&#34;&gt;0.63.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/15&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.64.0&#34;&gt;0.64.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/23?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Empty submesh will not be exported. vrm-1.0 Experiment kick-off&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/26&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.0&#34;&gt;0.65.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/28&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.1&#34;&gt;0.65.1&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/28?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Fixed export errors when Turkish locale is on &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/696&#34;&gt;#696&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;01/28&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.2&#34;&gt;0.65.2&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/29?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.65.3&#34;&gt;0.65.3&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Updated UniGLTF version number for UPM package. No unity package release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;02/03&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0&#34;&gt;0.66.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/26?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;✅ Stable Version&lt;/td&gt;
+&lt;td&gt;Added Warning messages when non-normalized Hierarchy contains spring bone colliders&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0&#34;&gt;0.67.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/27?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Maintenance release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1&#34;&gt;0.67.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Only for UPM package. No unity package release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;v0680--vrm-10-pre-release&#34;&gt;v0.68.0 ~ (VRM-1.0 pre release)&lt;/h2&gt;
+&lt;p&gt;Working on VRM-1.0&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/history.html&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.0&#34;&gt;0.68.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/30?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Added glb/gltf ReverseAxis settings. ImporterContext API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/16&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.1&#34;&gt;0.68.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.68.2&#34;&gt;0.68.2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/22&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.0&#34;&gt;0.69.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/31?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Fixed SmoothTexture conversion &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;#388&lt;/a&gt;, support Unity2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/23&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.69.1&#34;&gt;0.69.1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;03/31&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.70.0&#34;&gt;0.70.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/32?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;impl &lt;code&gt;WEIGHTS_0&lt;/code&gt; not float4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.71.0&#34;&gt;0.71.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/33?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IOS build&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/13&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.72.0&#34;&gt;0.72.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/34?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;DivideVertexBuffer Option&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;04/22&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.73.0&#34;&gt;0.73.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/35?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/897&#34;&gt;Fix/other permission url&lt;/a&gt; * &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/894&#34;&gt;Fixed an issue where LookAtBlendShape cannot be exported after model normalization&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;05/12&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0&#34;&gt;0.74.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/36?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;* &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/922&#34;&gt;Fixed the behavior of the SpringBone scale after runtime import&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;05/25&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0&#34;&gt;0.75.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/37?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed an issue where LookAtBone Applier mapping values were reset during the normalization process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/08&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0&#34;&gt;0.76.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/38?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fixed an issue where namespace MeshUtility conflicts with UnityEditor.MeshUtility&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0&#34;&gt;0.77.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/39?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_api_history/&#34;&gt;API Update&lt;/a&gt;, &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/1022&#34;&gt;issue 1022&lt;/a&gt;, &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/496&#34;&gt;issue 496&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;06/23&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0&#34;&gt;0.78.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/40?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1049&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1049&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;v0790-&#34;&gt;v0.79.0 ~&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;From version &lt;code&gt;0.80.0&lt;/code&gt;, Minimum version of Unity is &lt;code&gt;2019.4LTS&lt;/code&gt;.&lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/unity_version/&#34;&gt;Unity Version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;From version &lt;code&gt;0.80.0&lt;/code&gt;, Start &lt;code&gt;VRM-1.0β&lt;/code&gt; UnityPackage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;date&lt;/th&gt;
+&lt;th&gt;version&lt;/th&gt;
+&lt;th&gt;Bugs&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;07/20&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.79.0&#34;&gt;0.79.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/41?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Changed &lt;code&gt;Pre release&lt;/code&gt; to &lt;code&gt;Latest release&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;08/12&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.80.0&#34;&gt;0.80.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/42?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;VRM-1.0β unitypackage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;08/20&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.81.0&#34;&gt;0.81.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/43?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;3 packages(UniGLTF, VRM, VRM-1.0beta)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;09/01&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.82.0&#34;&gt;0.82.0&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/44?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;glb editor import&lt;/td&gt;
+&lt;td&gt;URP API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;09/03&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://github.com/vrm-c/UniVRM/releases/tag/v0.82.1&#34;&gt;0.82.1&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/milestone/45?closed=1&#34;&gt;milestone&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;URP API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed a bug where Renderers in VRMFirstPerson were replicated after VRM import &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/515&#34;&gt;/#515&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed bugs where SpringBone Collider transformation was done twice. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/576&#34;&gt;#576&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Bugs occurred when creating a screenshot as .jpg format. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/639&#34;&gt;#639&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed serialization bugs when exporting VRM file. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/654&#34;&gt;#654&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed MeshUtility&amp;rsquo;s reference issues. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed MeshUtility&amp;rsquo;s assembly definitions. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/687&#34;&gt;#687&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Fixed compile errors when building a program including UniVRM. &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/701&#34;&gt;#701&lt;/a&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/786&#34;&gt;#786&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/788&#34;&gt;#788&lt;/a&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/790&#34;&gt;#790&lt;/a&gt; &lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/794&#34;&gt;#794&lt;/a&gt; &lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/836&#34;&gt;#836&lt;/a&gt; &lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/831&#34;&gt;#831&lt;/a&gt; &lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/812&#34;&gt;#812&lt;/a&gt; &lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Employ Unity Package Manager</title>
+      <link>https://vrm.dev/en/en/dev/univrm-1.xx/package/</link>
+      <pubDate>Mon, 11 May 2020 17:06:05 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/en/dev/univrm-1.xx/package/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;univrm-10s-unitypackage&#34;&gt;UniVRM-1.0&amp;rsquo;s UnityPackage&lt;/h2&gt;
+&lt;p&gt;UnityPackage is adopted experimentally in UniVRM-1.0.&lt;/p&gt;
+&lt;p&gt;As &lt;code&gt;package.json&lt;/code&gt; is placed in each module in github repository&amp;rsquo;s &lt;code&gt;Assets&lt;/code&gt; folder,
+&lt;code&gt;Unity 2019.3.4f1 or later version&lt;/code&gt; is required.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-use&#34;&gt;How to use&lt;/h3&gt;
+&lt;p&gt;UnityPackageManager&amp;rsquo;s Window&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/menu_packagemanager.jpg&#34;   /&gt;
+
+&lt;p&gt;&lt;code&gt;add package from git URL&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/from_git.jpg&#34;   /&gt;
+
+&lt;p&gt;Since there is no function that can automatically download the dependencies between packages, please add the following git urls in order:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10&lt;/code&gt; =&amp;gt; Depends on VRMShaders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;add-dependencies-in-packagesmanifestjson&#34;&gt;Add dependencies in Packages/manifest.json&lt;/h4&gt;
+&lt;p&gt;An alternative way is to add necessary dependencies right in Packages/manifest.json. Please copy and paste the following contents:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM_1_0.git?path=/Assets/Vrm10&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&#34;&gt;https://github.com/vrm-c/UniVRMUtility/blob/master/Packages/manifest.json&lt;/a&gt; is an example of using &lt;code&gt;UniVRM-1.0&lt;/code&gt;&#39;s &lt;code&gt;UnityPackage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The hash values in &lt;code&gt;lock&lt;/code&gt; can be updated automatically by Unity, there is no need to manually change them.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;  &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;lock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;:&lt;/span&gt; {
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.univrm&amp;#34;&lt;/span&gt;: {
+      &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;HEAD&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;198c2c605ded711b21781421e71ba9bdbe0f8728&amp;#34;&lt;/span&gt;
+    },
+    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: {
+      &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;revision&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;HEAD&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;hash&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;155acf354735288db0335878179f483901541851&amp;#34;&lt;/span&gt;
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BlendShapeProxy Updates</title>
+      <link>https://vrm.dev/en/en/dev/univrm-1.xx/blendshapeproxy/</link>
+      <pubDate>Mon, 11 May 2020 17:05:49 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/en/dev/univrm-1.xx/blendshapeproxy/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;update-order-for-blendshape-related-components&#34;&gt;Update order for BlendShape-related components&lt;/h2&gt;
+&lt;p&gt;As described in &lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order,&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#update-order,&lt;/a&gt; it is recommended to update as the following order:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Humanoid&lt;/li&gt;
+&lt;li&gt;LookAt&lt;/li&gt;
+&lt;li&gt;BlendShape&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;integrate-with-lookat&#34;&gt;Integrate with LookAt&lt;/h2&gt;
+&lt;p&gt;To reduce the processing order problem of LookAt and BlendShape, &lt;code&gt;VRMLookAtHead&lt;/code&gt;, &lt;code&gt;VRMLookAtBoneApplyer&lt;/code&gt; and &lt;code&gt;VRMLookAtBlendShapeApplyer&lt;/code&gt; have been integrated into &lt;code&gt;VRMBlendShapeProxy&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;blendshapeclips-exclude-functions&#34;&gt;BlendShapeClip&amp;rsquo;s exclude functions&lt;/h2&gt;
+&lt;p&gt;For example, when &lt;code&gt;fun&lt;/code&gt; and &lt;code&gt;blink&lt;/code&gt; are applied at the same time, there are models whose eyes become weird.
+To address this issue, a function that can disable &lt;code&gt;blink&lt;/code&gt; when applying &lt;code&gt;fun&lt;/code&gt; is created. As of vrm1.0, there are three types of exclude functions:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&#34;&gt;https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0_draft/README.md#blendshape-specification&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ignoreBlink&lt;/li&gt;
+&lt;li&gt;ignoreLookAt&lt;/li&gt;
+&lt;li&gt;ignoreMouth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;setvalue-and-apply&#34;&gt;SetValue and Apply&lt;/h2&gt;
+&lt;p&gt;In &lt;code&gt;UniVRM-0.X&lt;/code&gt; there are two systems &lt;code&gt;BlendShapeProxyy.SetValueImmediate&lt;/code&gt; and &lt;code&gt;BlendSahpeProxy.SetValue + Apply&lt;/code&gt;. In &lt;code&gt;UniVRM-1.X&lt;/code&gt;, &lt;code&gt;BlendShapeProxyy.SetValueImmediate&lt;/code&gt; has been removed.&lt;/p&gt;
+&lt;p&gt;To make &lt;code&gt;ignoreBlink&lt;/code&gt;, etc. functional, it is necessary to accumulate the rest of the included blendshape values and then process them at once. (Initially it was designed to be stored and applied by the application side)&lt;/p&gt;
+&lt;h2 id=&#34;the-timing-of-using-apply-function&#34;&gt;The timing of using Apply function&lt;/h2&gt;
+&lt;h3 id=&#34;none&#34;&gt;None&lt;/h3&gt;
+&lt;p&gt;Please call &lt;code&gt;Apply&lt;/code&gt; explicitly on the user application side.&lt;/p&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Apply&lt;/code&gt; is called in VRMBlendShapeProxy.Update.&lt;/p&gt;
+&lt;p&gt;Note that it is better to use VRMBlendShapeProxy.Apply when the necessary blendshape values are set.&lt;/p&gt;
+&lt;h3 id=&#34;lateupdate&#34;&gt;LateUpdate&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Apply&lt;/code&gt; is called in VRMBlendShapeProxy.LateUpdate.&lt;/p&gt;
+&lt;p&gt;When fine controlling is not required.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: API</title>
+      <link>https://vrm.dev/en/dev/univrm-1.xx/api/</link>
+      <pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/dev/univrm-1.xx/api/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Available in &lt;a href=&#34;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&#34;&gt;https://github.com/vrm-c/UniVRM_1_0/blob/master/Assets/UniVRM-1.0/PlayModeTests/ApiSampleTests.cs&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;System.IO&lt;/span&gt;;
+&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;UnityEngine&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;vrm-to-model&#34;&gt;VRM to Model&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;        VrmLib.Model ReadModel(&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;string&lt;/span&gt; path)
+        {
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = File.ReadAllBytes(path);
+
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (!VrmLib.Glb.TryParse(bytes, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; VrmLib.Glb glb, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; Exception ex))
+            {
+                Debug.LogError(&lt;span style=&#34;color:#c30&#34;&gt;$&amp;#34;fail to Glb.TryParse: {path} =&amp;gt; {ex}&amp;#34;&lt;/span&gt;);
+                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// both VRM-0.X and VRM-1.0
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; model = UniVRM10.VrmLoader.CreateVrmModel(path); 
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; model;
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;this-is-possible-on-a-thread&#34;&gt;This is possible on a thread&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Task.Run(()=&amp;gt;{
+    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; ReadModel(path);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;model-to-gameobject&#34;&gt;Model to GameObject&lt;/h2&gt;
+&lt;p&gt;This requires a ScriptThread.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;        ModelAsset BuildGameObject(VrmLib.Model model, &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;bool&lt;/span&gt; showMesh)
+        {
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; importer = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniVRM10.RuntimeUnityBuilder();
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; assets = importer.ToUnityAsset(model, showMesh);
+            UniVRM10.ComponentBuilder.Build10(model, importer, assets);
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; assets;
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;set-renderer-after-importing-the-model&#34;&gt;Set renderer after importing the model&lt;/h3&gt;
+&lt;p&gt;Various assets now are stored in ModelAsset.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; asset = BuildGameObject(srcModel, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// renderer setting
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; render &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;in&lt;/span&gt; asset.Renderers)
+            {
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// show when RuntimeUnityBuilder.ToUnity(showMesh = false)
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                render.enabled = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+                &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// avoid culling
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (render &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;is&lt;/span&gt; SkinnedMeshRenderer skinned)
+                {
+                    skinned.updateWhenOffscreen = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+                }
+            }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tackle-on-frame-rate-dropping-todo&#34;&gt;Tackle on frame rate dropping (TODO)&lt;/h3&gt;
+&lt;p&gt;Optimize the processing of each frame to reduce spikes.&lt;/p&gt;
+&lt;h2 id=&#34;gameobject-to-model&#34;&gt;GameObject to Model&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;        VrmLib.Model ToModel(UnityEngine.GameObject target)
+        {
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; exporter = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; UniVRM10.RuntimeVrmConverter();
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; model = exporter.ToModelFrom10(target);
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; model;
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;model-to-vrm&#34;&gt;Model to VRM&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;        &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;byte&lt;/span&gt;[] ToVrm10(VrmLib.Model model)
+        {
+            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// transform to right-handed coordinate system
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            VrmLib.ModelExtensionsForCoordinates.ConvertCoordinate(model, VrmLib.Coordinates.Gltf);
+            &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; bytes = Vrm10.ModelExtensions.ToGlb(model);
+            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; bytes;
+        }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
