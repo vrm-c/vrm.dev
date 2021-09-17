@@ -11,8 +11,6 @@ tags: ["unity"]
 
 * The recommended version is `Unity-2019.4`. Other supported Unity versions [can be found here]({{< relref "unity_version.md" >}}).
 
-To install UniVRM with Unity Package Manager, please refer to [Install UniVRM with UPM]({{< relref "univrm_upm.md" >}}).
-
 ## unitypackage
 
 Get unity package in https://github.com/vrm-c/UniVRM/releases.
