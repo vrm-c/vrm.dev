@@ -106,6 +106,7 @@ weight: 4
 | [ambr](https://ambr.co.jp/) | Windows VR, macOS |
 | [Connect Chat](https://store.steampowered.com/app/1424930/Connect_Chat/) | Windows VR |
 | [VZero](https://facevtuber.com/vzero/) | Web browser |
+| [Substrata](https://substrata.info/) | Windows, MacOS, Linux |
 
 ##  Game
 
@@ -118,7 +119,6 @@ weight: 4
 | [KOROKORO System](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [PilotXross](https://n-mattun.booth.pm/) | Windows VR |
 | [Primitier](https://ootamato.itch.io/primitier) | Windows VR |
-| [Action Drill](https://lasmi.booth.pm/items/1615146) | Windows |
 | [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |

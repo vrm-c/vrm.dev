@@ -16,9 +16,9 @@ weight: 6
 * 初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます
 * 初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます
 * 初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます
-* 表情・視線操作が統一されている ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/articles/ja/vrm0/0_58_blendshape.html)
+* 表情・視線操作が統一されている ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/ja/vrm0/0_58_blendshape.html)
 * 物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません
-* VRの設定が含まれている ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/articles/ja/vrm0/firstperson.html)
+* VRの設定が含まれている ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html)
 * ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます
 
 従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
@@ -30,7 +30,7 @@ weight: 6
 UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
 ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。
 
-* [runtime load](https://vrm-c.github.io/UniVRM/)
+* [runtime load](https://vrm-c.github.io/UniVRM/ja/)
 
 ## UniVRMで ランタイムエクスポートする
 
