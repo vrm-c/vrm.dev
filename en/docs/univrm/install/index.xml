@@ -153,7 +153,6 @@
 &lt;ul&gt;
 &lt;li&gt;The recommended version is &lt;code&gt;Unity-2019.4&lt;/code&gt;. Other supported Unity versions &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/unity_version/&#34;&gt;can be found here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To install UniVRM with Unity Package Manager, please refer to &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_upm/&#34;&gt;Install UniVRM with UPM&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;unitypackage&#34;&gt;unitypackage&lt;/h2&gt;
 &lt;p&gt;Get unity package in &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The package&amp;rsquo;s name will look like this: &lt;code&gt;UniVRM-0.XX.X_XXXX.unitypackage&lt;/code&gt;&lt;/p&gt;
@@ -329,10 +328,13 @@ Open manifest.json with text/code editor and paste the following contents (examp
         
         &lt;p&gt;In this section, we assume you have &lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install/&#34;&gt;installed UniVRM package&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;univrm-samples-package&#34;&gt;UniVRM Samples Package&lt;/h2&gt;
+&lt;p&gt;Starting with &lt;code&gt;v0.81.0&lt;/code&gt;, UniVRM Samples are included in the UniVRM package.&lt;br&gt;
+Feel free to jump to the &lt;a href=&#34;#run-univrm-samples&#34;&gt;Run UniVRM Samples&lt;/a&gt; section if the latest UniVRM version has been installed.&lt;/p&gt;
+&lt;h3 id=&#34;-v0800&#34;&gt;~ v0.80.0&lt;/h3&gt;
 &lt;p&gt;Get UniVRM Samples package in &lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The package&amp;rsquo;s name will look like this: &lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Make sure the version you downloaded matches the installed UniVRM version (e.g. UniVRM and UniVRM Samples are both v0.66.0).&lt;/p&gt;
-&lt;h2 id=&#34;import&#34;&gt;Import&lt;/h2&gt;
+&lt;h3 id=&#34;import&#34;&gt;Import&lt;/h3&gt;
 &lt;p&gt;From the menu, go to &lt;code&gt;Assets -&amp;gt; Import Package&lt;/code&gt; and then click &lt;code&gt;Custom Package&lt;/code&gt; to import the package &lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;After you see the file information in the package as shown below, click &lt;code&gt;Import&lt;/code&gt; button:&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_package_import.jpg&#34; alt=&#34;sample_package_import&#34; width=&#34;300&#34; /&gt;
@@ -341,9 +343,11 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;p&gt;Now the folder &lt;code&gt;VRM.Samples&lt;/code&gt; should be in &lt;code&gt;Assets&lt;/code&gt;. In Project window, please select &lt;code&gt;SampleViewer&lt;/code&gt;:&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_scene.jpg&#34; alt=&#34;sample_scene&#34; width=&#34;300&#34; /&gt;
 
+&lt;hr&gt;
 &lt;p&gt;Next, select &lt;code&gt;Game&lt;/code&gt; view. You will see the &lt;code&gt;SampleViewer&lt;/code&gt; interface:&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer.jpg&#34; alt=&#34;sample_viewer&#34; width=&#34;500&#34; /&gt;
 
+&lt;hr&gt;
 &lt;p&gt;Click &lt;code&gt;Play&lt;/code&gt; button to enable &lt;code&gt;SampleViewer&lt;/code&gt;, and then click &lt;code&gt;Open&lt;/code&gt; button to import a VRM model into the scene at runtime:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/play_mode.jpg&#34; alt=&#34;play_mode&#34; width=&#34;150&#34; /&gt;
 
@@ -351,7 +355,7 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer_activate.jpg&#34; alt=&#34;sample_viewer_activate&#34; width=&#34;600&#34; /&gt;
 &lt;/p&gt;
-&lt;p&gt;Other samples such as &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs&#34;&gt;Runtime VRM export&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs&#34;&gt;FirstPerson rendering&lt;/a&gt; are available in &lt;code&gt;VRM.Samples&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Other samples such as &lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample&#34;&gt;Runtime VRM export&lt;/a&gt; and &lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample&#34;&gt;FirstPerson rendering&lt;/a&gt; are available in &lt;code&gt;VRM.Samples&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Alicia model &lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
 
       </description>
@@ -616,7 +620,7 @@ Open manifest.json with text/code editor and paste the following contents (examp
 &lt;h2 id=&#34;v0680--vrm-10-pre-release&#34;&gt;v0.68.0 ~ (VRM-1.0 pre release)&lt;/h2&gt;
 &lt;p&gt;Working on VRM-1.0&amp;hellip;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/en/history.html&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;

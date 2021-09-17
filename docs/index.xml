@@ -3485,7 +3485,7 @@ VRMFirstPerson をリセットすることで再設定することができま�
 
 &lt;h3 id=&#34;auto-による-both-と-thirdpersononly-への自動分割&#34;&gt;Auto による Both と ThirdPersonOnly への自動分割&lt;/h3&gt;
 &lt;p&gt;設定をAutoにしておくと、ロード時にメッシュを自動で &lt;code&gt;Both&lt;/code&gt; と &lt;code&gt;ThirdPersonOnly&lt;/code&gt; に分離することを指示できます。
-UniVRMでは &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/ja/vrm0/firstperson#call-setup-function-at-runtime-and-set-layermask-in-camera&#34;&gt;VRMFirstPerson.Setup()&lt;/a&gt; を呼び出します。
+UniVRMでは &lt;a href=&#34;https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask&#34;&gt;VRMFirstPerson.Setup()&lt;/a&gt; を呼び出します。
 Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;p&gt;分割基準は、&lt;/p&gt;
 &lt;ul&gt;
@@ -3756,10 +3756,13 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
         
         &lt;p&gt;このセクションでは、&lt;a href=&#34;https://vrm.dev/docs/univrm/install/univrm_install/&#34;&gt;UniVRMパッケージをインストール&lt;/a&gt;したことを想定しています。&lt;/p&gt;
 &lt;h2 id=&#34;univrmサンプルのパッケージ&#34;&gt;UniVRMサンプルのパッケージ&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;v0.81.0&lt;/code&gt; からUniVRMサンプルはUniVRMパッケージに含まれています。&lt;br&gt;
+最新のUniVRMバージョンがインストールされている場合は、&lt;a href=&#34;#univrm%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%82%B7%E3%83%BC%E3%83%B3%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B&#34;&gt;UniVRMサンプルのシーンを実行する&lt;/a&gt;セクションをご覧ください。&lt;/p&gt;
+&lt;h3 id=&#34;-v0800&#34;&gt;~ v0.80.0&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/releases&#34;&gt;https://github.com/vrm-c/UniVRM/releases&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;です。&lt;/p&gt;
-&lt;h2 id=&#34;インポート&#34;&gt;インポート&lt;/h2&gt;
+&lt;h3 id=&#34;インポート&#34;&gt;インポート&lt;/h3&gt;
 &lt;p&gt;メニューから &lt;code&gt;Assets -&amp;gt; Import Package -&amp;gt; Custom Package&lt;/code&gt; で &lt;code&gt;UniVRM-samples-0.XX.X_XXXX.unitypackage&lt;/code&gt; を選択します。&lt;/p&gt;
 &lt;p&gt;以下の画像ようにインポートウィンドウを見たら、&lt;code&gt;Import&lt;/code&gt;ボタンをクリックしてください：&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_package_import.jpg&#34; alt=&#34;sample_package_import&#34; width=&#34;300&#34; /&gt;
@@ -3768,9 +3771,11 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VRM.Samples&lt;/code&gt;フォルダは&lt;code&gt;Assets&lt;/code&gt;にあります。プロジェクトウィンドウに&lt;code&gt;SampleViewer&lt;/code&gt;を選択します：&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_scene.jpg&#34; alt=&#34;sample_scene&#34; width=&#34;300&#34; /&gt;
 
+&lt;hr&gt;
 &lt;p&gt;&lt;code&gt;Game&lt;/code&gt;タブをクリックして、&lt;code&gt;SampleViewer&lt;/code&gt;のインタフェースを表示させます：&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer.jpg&#34; alt=&#34;sample_viewer&#34; width=&#34;500&#34; /&gt;
 
+&lt;hr&gt;
 &lt;p&gt;&lt;code&gt;Play&lt;/code&gt;ボタンをクリックして&lt;code&gt;SampleViewer&lt;/code&gt;を有効になります。実行時に&lt;code&gt;Open&lt;/code&gt;ボタンをクリックしてVRMモデルをシーンにインポートします：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/play_mode.jpg&#34; alt=&#34;play_mode&#34; width=&#34;150&#34; /&gt;
 
@@ -3778,7 +3783,7 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/sample_viewer_activate.jpg&#34; alt=&#34;sample_viewer_activate&#34; width=&#34;600&#34; /&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;VRM.Samples&lt;/code&gt;に&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeExporter.cs&#34;&gt;ランタイムVRMエクスポート&lt;/a&gt;と&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM.Samples/Scripts/VRMRuntimeLoader.cs&#34;&gt;一人称レンダリング&lt;/a&gt;のサンプルがあります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VRM.Samples&lt;/code&gt;に&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample&#34;&gt;ランタイムVRMエクスポート&lt;/a&gt;と&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample&#34;&gt;一人称レンダリング&lt;/a&gt;のサンプルがあります。&lt;/p&gt;
 &lt;p&gt;Aliciaモデルは&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 
       </description>
@@ -4151,6 +4156,10 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;td&gt;&lt;a href=&#34;https://facevtuber.com/vzero/&#34;&gt;VZero&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Web browser&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://substrata.info/&#34;&gt;Substrata&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Windows, MacOS, Linux&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;ゲームなど&#34;&gt;ゲームなど&lt;/h2&gt;
@@ -4189,10 +4198,6 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://ootamato.itch.io/primitier&#34;&gt;プリミティア&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Windows VR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://lasmi.booth.pm/items/1615146&#34;&gt;Action Drill&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Windows&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://store.steampowered.com/app/885000/Synth_Riders/&#34;&gt;Synth Riders&lt;/a&gt;&lt;/td&gt;
@@ -5059,9 +5064,9 @@ Expression の設定を適用した結果を描画します。&lt;/p&gt;
 &lt;li&gt;初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます&lt;/li&gt;
 &lt;li&gt;初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます&lt;/li&gt;
 &lt;li&gt;初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます&lt;/li&gt;
-&lt;li&gt;表情・視線操作が統一されている ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/ja/vrm0/0_58_blendshape.html&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;表情・視線操作が統一されている ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/ja/vrm0/0_58_blendshape.html&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません&lt;/li&gt;
-&lt;li&gt;VRの設定が含まれている ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/articles/ja/vrm0/firstperson.html&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;VRの設定が含まれている ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
@@ -5071,7 +5076,7 @@ Expression の設定を適用した結果を描画します。&lt;/p&gt;
 UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
 ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/ja/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;univrmで-ランタイムエクスポートする&#34;&gt;UniVRMで ランタイムエクスポートする&lt;/h2&gt;
 &lt;p&gt;ランタイムで UniVRM の エクスポート機能 を使うことができます。
