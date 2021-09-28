@@ -1034,48 +1034,6 @@ UniVRMは Humanoid Avatar を作成できます。 &lt;a href=&#34;https://vrm.d
     </item>
     
     <item>
-      <title>Docs: 構成</title>
-      <link>https://vrm.dev/dev/univrm-1.xx/structure/</link>
-      <pubDate>Tue, 21 Apr 2020 17:12:49 +0900</pubDate>
-      
-      <guid>https://vrm.dev/dev/univrm-1.xx/structure/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;assetsvrmlib&#34;&gt;Assets/vrmlib&lt;/h2&gt;
-&lt;p&gt;GLTFからバイト列を切り出して、index 参照を実体化して作業しやすくした中間の入れ物 &lt;code&gt;VrmLib.Model&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;assetsprotobufserializer&#34;&gt;Assets/ProtobufSerializer&lt;/h2&gt;
-&lt;p&gt;VRM-1.0 の読み書き。
-ProtocolBufferで定義して、Jsonのシリアライザを生成したもの。&lt;/p&gt;
-&lt;p&gt;VRM-1.0 から中間形式の &lt;code&gt;VrmLib.Model&lt;/code&gt; に移し替える。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;VRM-1.0 &amp;lt;=&amp;gt; VrmLib.Model&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;assetsvrm&#34;&gt;Assets/VRM&lt;/h2&gt;
-&lt;p&gt;UniVRM-0.55 に &lt;code&gt;package.json&lt;/code&gt; を追加したもの。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MToon shader&lt;/li&gt;
-&lt;li&gt;UniUnlit shader&lt;/li&gt;
-&lt;li&gt;VRM-0.X のシリアライザ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;assetsunivrm0xreader&#34;&gt;Assets/UniVRM0XReader&lt;/h2&gt;
-&lt;p&gt;VRM-0.X から中間形式の &lt;code&gt;VrmLib.Model&lt;/code&gt; に移し替える。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;VRM-0.x =&amp;gt; VrmLib.Model&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;assetsunivrm-10&#34;&gt;Assets/UniVRM-1.0&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;VrmLib.Model &amp;lt;=&amp;gt; Unity&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;右手系・左手系の変換&lt;/li&gt;
-&lt;li&gt;スクリプトスレッドで実行する必要あり&lt;/li&gt;
-&lt;li&gt;GLTF部分(Mesh, Texture, Material, GameObject, SkinnedMeshRendererなど)&lt;/li&gt;
-&lt;li&gt;VRM部分(HumanoidAvatar, BlendShapeProxy, LookAt, FirstPersonなど)&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: ブレンドシェイプの設定</title>
       <link>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -5255,6 +5213,45 @@ Yaw, Pitch の上限角度を設定できます。
 &lt;li&gt;&lt;code&gt;1&lt;/code&gt; 以下に減らす&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Expression&lt;/code&gt; の設定を調整(お勧め)&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 🚧FirstPerson の設定</title>
+      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</link>
+      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の FirstPerson GUI で設定します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;600&#34; /&gt;
+
+&lt;h2 id=&#34;なんのための設定か&#34;&gt;なんのための設定か&lt;/h2&gt;
+&lt;p&gt;VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;VRで見えてほしくない部分&lt;/h4&gt;
+
+    &lt;p&gt;VRではアバターの頭部に、一人称のカメラを位置させます。
+アバターの見えてほしくない部分が見えてしまう場合があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;近すぎて歯が見える&lt;/li&gt;
+&lt;li&gt;MorphTargetで頭部に隠してあるものが見える&lt;/li&gt;
+&lt;li&gt;髪が邪魔で前が見えない&lt;/li&gt;
+&lt;li&gt;etc&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;auto&#34;&gt;Auto&lt;/h3&gt;
+&lt;h3 id=&#34;both&#34;&gt;Both&lt;/h3&gt;
+&lt;h3 id=&#34;thirdpersononly&#34;&gt;ThirdPersonOnly&lt;/h3&gt;
+&lt;h3 id=&#34;firstpersononly&#34;&gt;FirstPersonOnly&lt;/h3&gt;
 
       </description>
     </item>
