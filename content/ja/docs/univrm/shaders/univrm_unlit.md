@@ -9,7 +9,7 @@ tags: ["unity"]
 
 ## Unlit
 
-glTF の [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit) 拡張としてVRMに保存されます。
+glTF の [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit) 拡張として保存されます。
 
 ## Unity で Unlit としてエクスポート可能なシェーダー
 

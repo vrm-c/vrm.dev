@@ -5,7 +5,7 @@ tags: ["detail"]
 aliases: ["/univrm/shaders/standard/"]
 ---
 
-いわゆる `Physically Based Rendering`
+`Physically Based Rendering`
 
 ## Standard シェーダー
 

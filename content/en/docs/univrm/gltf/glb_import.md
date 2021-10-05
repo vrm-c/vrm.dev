@@ -48,9 +48,9 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:
 
-* `texture_1.metallicRoughness` is converted from `texture_1` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
-* `texture_3.occlusion` is converted from `textrue_3` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
-* `texture_4.normal` is converted from `textrue_4` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
+* `texture_1.metallicRoughness` is converted from `texture_1` to be used in Unity's Standard Shader. 
+* `texture_3.occlusion` is converted from `textrue_3` to be used in Unity's Standard Shader. 
+* `texture_4.normal` is converted from `textrue_4` to be used in Unity's Standard Shader. 
 
 {{< img width=400 src="images/unigltf/glb_clear.jpg" >}}
 
