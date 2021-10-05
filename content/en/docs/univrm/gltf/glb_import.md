@@ -75,8 +75,8 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:
 
-* `Default_AO.occlusion` is converted from `Default_AO` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
-* `Defualt_metalRoughness.metallicRoughness` is converted from `Defualt_metalRoughness` to be used in Unity's Standard Shader. [Texture Import]({{< relref "texture_import.md" >}})
+* `Default_AO.occlusion` is converted from `Default_AO` to be used in Unity's Standard Shader. 
+* `Defualt_metalRoughness.metallicRoughness` is converted from `Defualt_metalRoughness` to be used in Unity's Standard Shader.
 
 {{< img width=400 src="images/unigltf/gltf_clear.jpg" >}}
 
