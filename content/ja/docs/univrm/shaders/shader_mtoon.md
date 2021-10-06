@@ -2,7 +2,7 @@
 title: "MToon"
 linkTitle: "MToonの設定"
 date: 2018-04-16T16:30:00+09:00
-weight: 1
+weight: 3
 aliases: ["/univrm/shaders/mtoon/", "/docs/univrm/shaders/mtoon/"]
 tags: ["unity"]
 ---
@@ -142,7 +142,3 @@ Rendering 項目では主色と影色、および描画方法を設定します�
 
 ### Color Lighting Mix
 `Color Mode` が `MixedLighting` のとき、その乗算係数を設定します。
-
-
-
-

@@ -49,9 +49,9 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。
 
-* `texture_1.metallicRoughness` は、`texture_1` を元に Unity の Standard Shader 向けに変換したものです。[テクスチャーのインポート]({{< relref "texture_import.md" >}})
-* `texture_3.occlusion` は、 `textrue_3` を元に Unity の Standard Shader 向けに変換したものです。[テクスチャーのインポート]({{< relref "texture_import.md" >}})
-* `texture_4.normal` は、 `textrue_4` を元に Unity の Standard Shader 向けに変換したものです。[テクスチャーのインポート]({{< relref "texture_import.md" >}})
+* `texture_1.metallicRoughness` は、`texture_1` を元に Unity の Standard Shader 向けに変換したものです。md" >}})
+* `texture_3.occlusion` は、 `textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
+* `texture_4.normal` は、 `textrue_4` を元に Unity の Standard Shader 向けに変換したものです。
 
 {{< img width=400 src="images/unigltf/glb_clear.jpg" >}}
 
@@ -76,8 +76,8 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。
 
-* `Default_AO.occlusion` は、 `Default_AO` を元に Unity の Standard Shader 向けに変換したものです。[テクスチャーのインポート]({{< relref "texture_import.md" >}})
-* `Defualt_metalRoughness.metallicRoughness` は、`Defualt_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。[テクスチャーのインポート]({{< relref "texture_import.md" >}})
+* `Default_AO.occlusion` は、 `Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
+* `Defualt_metalRoughness.metallicRoughness` は、`Defualt_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
 
 {{< img width=400 src="images/unigltf/gltf_clear.jpg" >}}
 

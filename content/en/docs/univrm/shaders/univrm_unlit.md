@@ -1,53 +1,37 @@
 ---
 title: "UniUnlit"
 date: 2020-08-03
-weight: 2
+weight: 1
 tags: ["unity"]
 ---
 
-## `UniGLTF/UniUnlit` shader
+Probably `UnLighting` for short `Unlit`
 
-Unity has Unlit-type shaders:
+## Unlit
 
-* Unlit/Color
-* Unlit/Texture
-* Unlit/Transparent
-* Unlit/Transparent Cutout
+It is saved as a glTF [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit) extension.
 
-In GLTF, unlit is supported by `KHR_materials_unlit` extension. 
-You can utilize `doubleSided`, the product of `Texture`, `Color` and `VertexColor` (if any), and `color`'s alpha mode. 
-Given that there is no shader that can handle these features on Unity side, we introduce `UniGLTF/UniUnlit`, which is fully compatible with all `unlit` shaders in Unity.
+## Shaders that can be exported as Unlit in Unity
 
-If Unlit-type shaders are re-imported after exporting, the shader will become `UniGLTF/UniUnlit`.
+| Function                   | color | texture | vertex_color | alpha / cutout | no culling |
+|----------------------------|-------|---------|--------------|----------------|------------|
+| glTF                       | ✅     | ✅       | ✅            | ✅              | ✅          |
+| UniGLTF / UniUnlit         | ✅     | ✅       | ✅            | ✅              | ✅          |
+| Unlit / Color              | ✅     |         |              |                |            |
+| Unlit / Texture            |       | ✅       |              |                |            |
+| Unlit / Transparent        |       | ✅       |              | blend          |            |
+| Unlit / Transparent Cutout |       | ✅       |              | cutout         |            |
 
-Below is the summary for Unlit-type shaders' export/import:
+{{% alert title = "vertex color" color = "warning"%}}
 
-| export                     | gltf                                 | import                     |
-|----------------------------|--------------------------------------|----------------------------|
-| Unlit/Color                | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Texture              | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent          | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent Cutout   | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTexture           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTransparent       | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitCutout            | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| UniGLTF/UniUnlit           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
+Only `UniGLTF / UniUnlit` supports vertex colors.
 
-Note that Only `UniGLTF/UniUnlit` supports `VertexColor`.
-More specifically, `VertexColor` can be enabled if the following two requirements are fulfilled:
+* Mesh contains vertex colors
+* Material is a `Unlit`
 
-* Mesh contains `VertexColor` data
-* Material is identified as `Unlit`
+In some cases, importing will apply the vertex color.
+If you apply Unity's `unlit` system material to a model that does not require vertex color and export it,
+The next time you import, the colors may change unintentionally.
+In this case, you can export `Mesh` without vertex colors by enabling` RemoveVertexColor` at the time of export.
 
-To disable `VertexColor`, enabling `RemoveVertexColor` in export dialog before exporting the VRM model. Otherwise, `VertexColor` will be applied automatically to the mesh that has `Unlit` material after importing.
-
-If `KHR_materials_unlit` is declared, core PBR properties are ignored except baseColor. Color values, alpha coverage and double sided will still apply to unlit materials.
-
-## GLTF
-
-| UniUnlit            | GLTF Unlit                                               |
-|:--------------------|:---------------------------------------------------------|
-| Color Factor        | /materials/pbrMetallicRoughness/baseColorFactor          |
-| Color Texture       | /materials/pbrMetallicRoughness/baseColorTexture         |
-| Rendering Mode      | /materials/alphaMode                                     |
-| Cull Mode           | /materials/doubleSided                                   |
+{{% / alert%}}

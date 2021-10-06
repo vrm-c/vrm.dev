@@ -1,60 +1,41 @@
 ---
 title: "Standard"
 tags: ["detail"]
-weight: 3
+weight: 2
 aliases: ["/en/univrm/shaders/material_settings/"]
 ---
 
-## Standard
+`Physically Based Rendering`
 
-The majority of [material parameters](https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html) in Unity's standard shader are compatible with GLTF PBR materials:
+## Standard Shader
 
-| Unity Standard      | GLTF PBR                                                 |
-|:--------------------|:---------------------------------------------------------|
-| Albedo Color        | /materials/pbrMetallicRoughness/baseColorFactor          |
-| Albedo Texture      | /materials/pbrMetallicRoughness/baseColorTexture         |
-| Metallic Level      | /materials/pbrMetallicRoughness/metallicFactor           |
-| Smoothness Level    | 1.0f - (/materials/pbrMetallicRoughness/roughnessFactor) |
-| Metallic Texture    | /materials/pbrMetallicRoughness/metallicRoughnessTexture |
-| Normal Map          | /materials/normalTexture                                 |
-| Bump scale          | /materials/normalTexture/scale                           |
-| Height Map          | N/A                                                      |
-| Occlusion Texture   | /materials/occlusionTexture                              |
-| Occlusion Strength  | /materials/occlusionTexture/strength                     |
-| Emission Color      | /materials/emissiveFactor                                |
-| Emission Texture    | /materials/emissiveTexture                               |
-| Detail Mask         | N/A                                                      |
-| Secondary Maps      | N/A                                                      |
-| Rendering Mode      | /materials/alphaMode                                     |
+`UniVRM` uses Unity's standard` Standard shader` instead of creating your own shader for PBR.
 
-For UniVRM's material import, the roughnessFactor value is baked into the Metallic Texture. For material export, the smoothness value is baked into the Metallic Texture ([discussion](https://github.com/vrm-c/UniVRM/pull/222)).
+{{% alert title = "Reflects shiny" color = "warning"%}}
 
-Since part of the texture specifications between Unity and GLTF are not interchangeable, we use UniVRM's `export/import` to convert textures between Unity and GLTF. 
+The Shader type is `Standard` (Unity standard) and the `metallic` and `smooth` values ​​are high.
+If you set the material shader to `Unlit/UniUnlit`, the texture can be displayed as it is.
 
-## Improvement: StandardShader's Texture Conversion
+{{% / alert%}}
 
-The processing of textures other than color texture type has been improved.
+## Correspondence table of Metallic, Roughness, Occlusion
 
-* NormalMap's import/export correction: since this fix is also applied to MToon shader, we put the details in the next section
-* Metallic, Roughness, OcclusionMap conversion:
-    * RGBA channel recombination
-    * The relative relation between Roughness value and Smoothness value
-    * Support sRGB and Linear
-    * Convert Texture by Importer, reverse conversion on Texture by Exporter
+| Applications | glTF material                                 |   |   | Unity Standard Shader                          |
+|:-------------|:----------------------------------------------|---|:--|------------------------------------------------|
+| Occlusion    | occlusionTexture                              | R | G | _MetallicGlossMap                              |
+| Roughness    | pbrMetallicRoughness.metallicRoughnessTexture | G | A | _MetallicGlossMap (smoothness = 1 - roughness) |
+| Metallic     | pbrMetallicRoughness.metallicRoughnessTexture | B | R | _OcclusionMap                                  |
 
-## Correction: NormalMap's Import/Export
+{{% alert title="MetallicSmoothOcclusion Combine textures into one  `v0.69.0`" color="warning" %}}
 
-Target for the textures of `Standard` and `MToon`.
-Normal map can be identified by the keyword `_BumpMap` in the material property.
+From `v0.69.0`, it works to combine textures into one sheet.
 
-* EditorImport: `TextureImporterType.NormalMap`
-* RuntimeImport: pack normal texture
-* Export: unpack normal texture
-* Support sRGB and Linear 
-* Support Tangent
+* import: The metallicRoughnessTexture and occlusionTexture of glTF are combined into one (see the table above).
+* export: Standard _MetallicGlossMap and _OcclusionMap are combined into one (see the table above).
 
-## Troubleshooting
+`v0.68.0` or earlier
 
-* The issue of causing glossy reflections:
-    * It occurs when the shader type is `Standard` (Unity standard) and the values of `metallic` and `smooth` are high. If you set the material's shader to `Unlit/UniUnlit`, the texture can be displayed as it supposes to be.
-    * When an unknown shader is selected (not supported by `VRM`), the shader is defaulted to Standard shader and it may result in glossy reflections. If you set the material's shader to `Unlit/UniUnlit`, the texture can be displayed as it supposes to be.
+* import: Convert and import two textures, one for _MetallicGlossMap and one for _OcclusionMap
+* export: Convert two textures from Standard's _MetallicGlossMap and _OcclusionMap and export
+
+{{% /alert %}}

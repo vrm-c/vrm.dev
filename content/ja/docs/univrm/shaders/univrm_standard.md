@@ -1,55 +1,41 @@
 ---
 title: "Standard"
-weight: 3
+weight: 2
 tags: ["detail"]
 aliases: ["/univrm/shaders/standard/"]
 ---
 
-## Standard
+`Physically Based Rendering`
 
-Unityの[デフォルト](https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html)でGLTF標準のPBRマテリアルとほぼ互換性があります。
+## Standard シェーダー
 
-| Unityのデフォルト        | GLTFのPBRマテリアル                                       |
-|:------------------------|:---------------------------------------------------------|
-| Albedo カラー            | /materials/pbrMetallicRoughness/baseColorFactor          |
-| Albedo テクスチャ        | /materials/pbrMetallicRoughness/baseColorTexture         |
-| Metallic レベル          | /materials/pbrMetallicRoughness/metallicFactor           |
-| Smoothness レベル        | 1.0f - (/materials/pbrMetallicRoughness/roughnessFactor) |
-| Metallic テクスチャ      | /materials/pbrMetallicRoughness/metallicRoughnessTexture |
-| 法線マップ               | /materials/normalTexture                                 |
-| バンプスケール           | /materials/normalTexture/scale                           |
-| ハイトマップ             | N/A                                                      |
-| オクルージョンテクスチャ  | /materials/occlusionTexture                              |
-| オクルージョン強度       | /materials/occlusionTexture/strength                     |
-| Emission カラー         | /materials/emissiveFactor                                |
-| Emission テクスチャ      | /materials/emissiveTexture                               |
-| 詳細マスク               | N/A                                                      |
-| セカンダリマップ         | N/A                                                      |
-| レンダリングモード       | /materials/alphaMode                                      |
+`UniVRM` は PBR 向けのシェーダーを独自に作成せずに Unity 標準の `Standard シェーダー` を使います。
 
-UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる[[参照]](https://github.com/vrm-c/UniVRM/pull/222)。
+{{% alert title="ピカピカに反射してしまう" color="warning" %}}
 
-Unity と GLTF でテクスチャーの仕様に非互換があるので、 `export/import` で変換しています。
+Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値が高い状態になっています。 
+マテリアルのシェーダーを `Unlit/UniUnlit` にするとテクスチャがそのまま表示できます。
 
-## テクスチャ変換
+{{% /alert %}}
 
-Standardシェーダーのカラー以外のテクスチャ(Linear)の処理について。
+## Metallic, Roughness, Occlusion の対応表
 
-* ノーマルマップの修正。MToonと共通なので次項で説明します
-    * Materialのプロパティ名 `_BumpMap` で判定します。
-    * EditorImport: `TextureImporterType.NormalMap`
-    * RuntimeImport: 法線テクスチャのPack
-    * Export: 法線テクスチャのUnpack
-    * sRGBとLinearの対応
-    * Tangentの対応
+| 用途      | glTF material                                 |   |   | Unity Standard Shader                          |
+|:----------|:----------------------------------------------|---|:--|------------------------------------------------|
+| Occlusion | occlusionTexture                              | R | G | _MetallicGlossMap                              |
+| Roughness | pbrMetallicRoughness.metallicRoughnessTexture | G | A | _MetallicGlossMap (smoothness = 1 - roughness) |
+| Metallic  | pbrMetallicRoughness.metallicRoughnessTexture | B | R | _OcclusionMap                                  |
 
-* Metallic, Roughnes, OcclusionMapの変換
-    * RGBAチャンネル組み換え
-    * Roughness値とSmoothness値の反転
-    * sRGBとLinearの対応
-    * Importerで変換、Exporterで逆変換
+{{% alert title="MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0`" color="warning" %}}
 
-## トラブルシューティング
+`v0.69.0` からテクスチャーを１枚にまとめる動作をします。
 
-* ピカピカに反射してしまう。
-    * Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値が高い状態になっています。 マテリアルのシェーダーを `Unlit/UniUnlit` にするとテクスチャがそのまま表示できます。
+* import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)
+* export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)
+
+`v0.68.0` 以前
+
+* import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import
+* export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export
+
+{{% /alert %}}

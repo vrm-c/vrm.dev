@@ -1,45 +1,30 @@
 ---
 title: "UniUnlit"
 date: 2020-08-03
-weight: 2
+weight: 1
 tags: ["unity"]
 ---
 
-## `UniGLTF/UniUnlit` シェーダー
+おそらく `UnLighting` 略して `Unlit`
 
-Unity の `Unlit` 系シェーダーは、機能ごとに
+## Unlit
 
-* Unlit/Color
-* Unlit/Texture
-* Unlit/Transparent
-* Unlit/Transparent Cutout
+glTF の [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit) 拡張として保存されます。
 
-のように分かれています。
+## Unity で Unlit としてエクスポート可能なシェーダー
 
-また、`GLTF` では設定可能なのだけど、標準の `Unlit` 系シェーダーでは再現できない組み合わせがあります。
+| 機能                     | color | texture | vertex_color | alpha/cutout | no culling |
+|--------------------------|-------|---------|--------------|--------------|------------|
+| glTF                     | ✅     | ✅       | ✅            | ✅            | ✅          |
+| UniGLTF/UniUnlit         | ✅     | ✅       | ✅            | ✅            | ✅          |
+| Unlit/Color              | ✅     |         |              |              |            |
+| Unlit/Texture            |       | ✅       |              |              |            |
+| Unlit/Transparent        |       | ✅       |              | blend        |            |
+| Unlit/Transparent Cutout |       | ✅       |              | cutout       |            |
 
-* `Texture` かつ `Color` の乗算
-* 頂点カラー
+{{% alert title="頂点カラー" color="warning" %}}
 
-これらを解決する、統一 `unlit` シェーダーとして `UniGLTF/UniUnlit` があります。
-
-`UniVRM` で、`GLTF` で `Unlit` 設定のマテリアルをインポートすると、
-すべて `UniGLTF/UniUnlit` 使うようになります。
-
-エクスポートしてからインポートする場合の対応表。
-
-| export                     | gltf                                 | import                     |
-|----------------------------|--------------------------------------|----------------------------|
-| Unlit/Color                | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Texture              | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent          | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| Unlit/Transparent Cutout   | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTexture           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitTransparent       | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| VRM/UnlitCutout            | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-| UniGLTF/UniUnlit           | KHR_materials_unlit                  | UniGLTF/UniUnlit           |
-
-なお、UniVRM がサポートするシェーダーの中で、`UniGLTF/UniUnlit` だけが頂点カラーをサポートしています。
+`UniGLTF/UniUnlit` だけが頂点カラーをサポートしています。
 
 * Meshに頂点カラーが含まれている
 * Materialが `Unlit` 判定である
@@ -49,11 +34,4 @@ Unity の `Unlit` 系シェーダーは、機能ごとに
 次にインポートするときに意図せずに色が変わる場合があります。
 この場合、エクスポート時に `RemoveVertexColor` を有効にすることで、頂点カラーを含まない `Mesh` をエクスポートすることができます。
 
-## GLTF
-
-| UniUnlit            | GLTF Unlit                                               |
-|:--------------------|:---------------------------------------------------------|
-| カラーファクター     | /materials/pbrMetallicRoughness/baseColorFactor          |
-| カラーテクスチャ    | /materials/pbrMetallicRoughness/baseColorTexture          |
-| レンダリングモード   | /materials/alphaMode                                     |
-| カリングモード       | /materials/doubleSided                                   |
+{{% /alert %}}
