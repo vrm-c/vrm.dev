@@ -4,7 +4,7 @@
     <link>https://vrm.dev/tags/detail/</link>
     <description>Recent content in detail on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Sep 2020 15:43:09 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 05 Oct 2021 21:15:11 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/tags/detail/index.xml" rel="self" type="application/rss+xml" />
     
@@ -142,118 +142,79 @@ UniVRMは Humanoid Avatar を作成できます。 &lt;a href=&#34;https://vrm.d
     <item>
       <title>Docs: Standard</title>
       <link>https://vrm.dev/docs/univrm/shaders/univrm_standard/</link>
-      <pubDate>Tue, 15 Sep 2020 20:06:14 +0900</pubDate>
+      <pubDate>Tue, 05 Oct 2021 21:15:11 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm/shaders/univrm_standard/</guid>
       <description>
         
         
-        &lt;h2 id=&#34;standard&#34;&gt;Standard&lt;/h2&gt;
-&lt;p&gt;Unityの&lt;a href=&#34;https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html&#34;&gt;デフォルト&lt;/a&gt;でGLTF標準のPBRマテリアルとほぼ互換性があります。&lt;/p&gt;
+        &lt;p&gt;&lt;code&gt;Physically Based Rendering&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;standard-シェーダー&#34;&gt;Standard シェーダー&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;UniVRM&lt;/code&gt; は PBR 向けのシェーダーを独自に作成せずに Unity 標準の &lt;code&gt;Standard シェーダー&lt;/code&gt; を使います。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;ピカピカに反射してしまう&lt;/h4&gt;
+
+    Shaderの種類が &lt;code&gt;Standard&lt;/code&gt; (Unityの標準) で &lt;code&gt;metallic&lt;/code&gt; と &lt;code&gt;smooth&lt;/code&gt; 値が高い状態になっています。
+マテリアルのシェーダーを &lt;code&gt;Unlit/UniUnlit&lt;/code&gt; にするとテクスチャがそのまま表示できます。
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;metallic-roughness-occlusion-の対応表&#34;&gt;Metallic, Roughness, Occlusion の対応表&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Unityのデフォルト&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;GLTFのPBRマテリアル&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;用途&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;glTF material&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th&gt;Unity Standard Shader&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Albedo カラー&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorFactor&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Occlusion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;occlusionTexture&lt;/td&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
+&lt;td&gt;_MetallicGlossMap&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Albedo テクスチャ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorTexture&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Roughness&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;pbrMetallicRoughness.metallicRoughnessTexture&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
+&lt;td&gt;_MetallicGlossMap (smoothness = 1 - roughness)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Metallic レベル&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/metallicFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Smoothness レベル&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1.0f - (/materials/pbrMetallicRoughness/roughnessFactor)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Metallic テクスチャ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/metallicRoughnessTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;法線マップ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/normalTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;バンプスケール&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/normalTexture/scale&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ハイトマップ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;オクルージョンテクスチャ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/occlusionTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;オクルージョン強度&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/occlusionTexture/strength&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Emission カラー&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/emissiveFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Emission テクスチャ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/emissiveTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;詳細マスク&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;セカンダリマップ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;N/A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;レンダリングモード&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/alphaMode&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Metallic&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;pbrMetallicRoughness.metallicRoughnessTexture&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R&lt;/td&gt;
+&lt;td&gt;_OcclusionMap&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/222&#34;&gt;[参照]&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;Unity と GLTF でテクスチャーの仕様に非互換があるので、 &lt;code&gt;export/import&lt;/code&gt; で変換しています。&lt;/p&gt;
-&lt;h2 id=&#34;テクスチャ変換&#34;&gt;テクスチャ変換&lt;/h2&gt;
-&lt;p&gt;Standardシェーダーのカラー以外のテクスチャ(Linear)の処理について。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0`&lt;/h4&gt;
+
+    &lt;p&gt;&lt;code&gt;v0.69.0&lt;/code&gt; からテクスチャーを１枚にまとめる動作をします。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ノーマルマップの修正。MToonと共通なので次項で説明します&lt;/p&gt;
+&lt;li&gt;import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)&lt;/li&gt;
+&lt;li&gt;export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;v0.68.0&lt;/code&gt; 以前&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Materialのプロパティ名 &lt;code&gt;_BumpMap&lt;/code&gt; で判定します。&lt;/li&gt;
-&lt;li&gt;EditorImport: &lt;code&gt;TextureImporterType.NormalMap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RuntimeImport: 法線テクスチャのPack&lt;/li&gt;
-&lt;li&gt;Export: 法線テクスチャのUnpack&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Tangentの対応&lt;/li&gt;
+&lt;li&gt;import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import&lt;/li&gt;
+&lt;li&gt;export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Metallic, Roughnes, OcclusionMapの変換&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;RGBAチャンネル組み換え&lt;/li&gt;
-&lt;li&gt;Roughness値とSmoothness値の反転&lt;/li&gt;
-&lt;li&gt;sRGBとLinearの対応&lt;/li&gt;
-&lt;li&gt;Importerで変換、Exporterで逆変換&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;ピカピカに反射してしまう。
-&lt;ul&gt;
-&lt;li&gt;Shaderの種類が &lt;code&gt;Standard&lt;/code&gt; (Unityの標準) で &lt;code&gt;metallic&lt;/code&gt; と &lt;code&gt;smooth&lt;/code&gt; 値が高い状態になっています。 マテリアルのシェーダーを &lt;code&gt;Unlit/UniUnlit&lt;/code&gt; にするとテクスチャがそのまま表示できます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
 
       </description>
     </item>

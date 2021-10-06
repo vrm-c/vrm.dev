@@ -260,6 +260,103 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
     </item>
     
     <item>
+      <title>Docs: UniUnlit</title>
+      <link>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</guid>
+      <description>
+        
+        
+        &lt;p&gt;おそらく &lt;code&gt;UnLighting&lt;/code&gt; 略して &lt;code&gt;Unlit&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unlit&#34;&gt;Unlit&lt;/h2&gt;
+&lt;p&gt;glTF の &lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit&#34;&gt;KHR_materials_unlit&lt;/a&gt; 拡張として保存されます。&lt;/p&gt;
+&lt;h2 id=&#34;unity-で-unlit-としてエクスポート可能なシェーダー&#34;&gt;Unity で Unlit としてエクスポート可能なシェーダー&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;機能&lt;/th&gt;
+&lt;th&gt;color&lt;/th&gt;
+&lt;th&gt;texture&lt;/th&gt;
+&lt;th&gt;vertex_color&lt;/th&gt;
+&lt;th&gt;alpha/cutout&lt;/th&gt;
+&lt;th&gt;no culling&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;glTF&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Color&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Texture&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;blend&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;cutout&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;頂点カラー&lt;/h4&gt;
+
+    &lt;p&gt;&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; だけが頂点カラーをサポートしています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshに頂点カラーが含まれている&lt;/li&gt;
+&lt;li&gt;Materialが &lt;code&gt;Unlit&lt;/code&gt; 判定である&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;場合に、import すると頂点カラーが適用されます。
+頂点カラーが不要であるモデルに、Unity の &lt;code&gt;unlit&lt;/code&gt; 系マテリアルを適用してエクスポートすると、
+次にインポートするときに意図せずに色が変わる場合があります。
+この場合、エクスポート時に &lt;code&gt;RemoveVertexColor&lt;/code&gt; を有効にすることで、頂点カラーを含まない &lt;code&gt;Mesh&lt;/code&gt; をエクスポートすることができます。&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: ブレンドシェイプの設定</title>
       <link>https://vrm.dev/docs/univrm/blendshape/univrm_blendshape/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -497,207 +594,6 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;p&gt;VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/firstperson.png&#34;   /&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: MToon</title>
-      <link>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;MToonの使い方&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;mtoon-について&#34;&gt;MToon について&lt;/h1&gt;
-&lt;p&gt;MToon は日本のアニメ的表現をすることを目標としています。
-主色 (Lit Color) と陰色 (Shade Color) の 2 色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;MToon を適用したニコニ立体ちゃん&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;手早く設定したい人向け&#34;&gt;手早く設定したい人向け&lt;/h1&gt;
-&lt;h2 id=&#34;共通項目&#34;&gt;共通項目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;目的のマテリアルを選択し、シェーダを &lt;code&gt;VRM/MToon&lt;/code&gt; に変更&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; と &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt; に同じテクスチャを設定&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; は白色 &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt; は好きな陰色を設定&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt; は好きな値。主色と影色をパキッとさせたいときは &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; は &lt;code&gt;Spheremap&lt;/code&gt; や &lt;code&gt;MatCap&lt;/code&gt; と同等のテクスチャを設定&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt; は輪郭線を必要とするなら &lt;code&gt;WorldCoordinates&lt;/code&gt; で、しないなら &lt;code&gt;None&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt; は 見た目上好きな値&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;普通のマテリアル&#34;&gt;普通のマテリアル&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Shading Shift&lt;/code&gt; は &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; は &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;キャラクタの顔など影があまりついてほしくないマテリアル&#34;&gt;キャラクタの顔など、影があまりついてほしくないマテリアル&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Shading Shift&lt;/code&gt; はマイナスの値&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; は &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;設定項目&#34;&gt;設定項目&lt;/h1&gt;
-&lt;h2 id=&#34;準備&#34;&gt;準備&lt;/h2&gt;
-&lt;p&gt;目的のマテリアルを選択し、シェーダを &lt;code&gt;VRM/MToon&lt;/code&gt; に変更します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Material の Shader を VRM/MToon に変更.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Rendering Inspector に含まれる項目.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Rendering 項目では主色と影色、および描画方法を設定します。&lt;/p&gt;
-&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
-&lt;p&gt;マテリアルが不透明か半透明かどうかを設定します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Opaque
-&lt;ul&gt;
-&lt;li&gt;不透明です。基本的には Opaque を設定することを推奨します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Cutout
-&lt;ul&gt;
-&lt;li&gt;不透明ですが &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; のアルファ値情報を参照して &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt; の値より小さな箇所の描画をスキップします。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Transparent
-&lt;ul&gt;
-&lt;li&gt;半透明です。&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; のアルファ値どおりの不透明度になります。&lt;/li&gt;
-&lt;li&gt;デメリットとして輪郭線描画は正しく行われません。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
-&lt;p&gt;ポリゴンのどちら側の面を描画するかを設定します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Back
-&lt;ul&gt;
-&lt;li&gt;表側を描画します。基本的にはこの Back を選択します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Front
-&lt;ul&gt;
-&lt;li&gt;裏側を描画します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;両面を描画します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Rendering Type&lt;/code&gt; が &lt;code&gt;Cutout&lt;/code&gt; であるときだけ設定する必要があります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
-&lt;ul&gt;
-&lt;li&gt;描画するしないのしきい値を設定します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
-&lt;p&gt;描画色を設定します。
-テクスチャと色は乗算されます。
-光が当たる主色は &lt;code&gt;Lit Color, Alpha&lt;/code&gt; に、光が当たらない陰色は &lt;code&gt;Shade Color&lt;/code&gt; に設定します。
-また &lt;code&gt;Lit Color, Alpha&lt;/code&gt; のアルファ値には不透明度情報を設定します。&lt;/p&gt;
-&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
-&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
-&lt;p&gt;光の当たり方に対して、主色と陰色のしきい値を調整します。
-&lt;code&gt;0&lt;/code&gt; のとき普通のライティングになります。
-マイナス値にするとアニメ的な、主色の範囲が広いライティングになります。
-マイナス値のときはセルフシャドウを無効化する必要があるため、表示された警告に従い &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; を &lt;code&gt;0&lt;/code&gt; に設定する必要があります。&lt;/p&gt;
-&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Shading Shift&lt;/code&gt; の項目における主色と陰色のしきい値付近を滑らかに変化させるか否かを設定します。
-&lt;code&gt;0&lt;/code&gt; のときは通常の Lambert モデルのような写実寄りの滑らかさになります。
-&lt;code&gt;1&lt;/code&gt; のときはしきい値ではっきり主色と陰色が変化するアニメ調のライティングになります。&lt;/p&gt;
-&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
-&lt;p&gt;セルフシャドウや落影の影響度を設定します。
-&lt;code&gt;0&lt;/code&gt; のときは影響を受けません。
-&lt;code&gt;1&lt;/code&gt; のときは影響を受けます。&lt;/p&gt;
-&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
-&lt;p&gt;光源の色の影響度を設定します。
-&lt;code&gt;0&lt;/code&gt; のときは光源の色の影響を受けます。
-&lt;code&gt;1&lt;/code&gt; のときは光源の色の影響を無効化し、光源の色の輝度だけを反映します。&lt;/p&gt;
-&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
-&lt;p&gt;カメラと法線の関係による追加光源を表現します。
-一般にはスフィアマップや MatCap と呼ばれます。&lt;/p&gt;
-&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
-&lt;p&gt;光源環境によらず一定な色を設定します。&lt;/p&gt;
-&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
-&lt;p&gt;法線マップを設定します。
-右側の値は法線マップの強さを設定します。&lt;/p&gt;
-&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;輪郭線を設定します。&lt;/p&gt;
-&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;None
-&lt;ul&gt;
-&lt;li&gt;輪郭線を描画しません&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;WorldCoordinates
-&lt;ul&gt;
-&lt;li&gt;世界に対して一定の幅の輪郭線を描画します&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;ScreenCoordinates
-&lt;ul&gt;
-&lt;li&gt;スクリーンに対して一定の幅の輪郭線を描画します&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
-&lt;p&gt;輪郭線の幅を設定します。
-&lt;code&gt;Width Mode&lt;/code&gt; が &lt;code&gt;WorldCoordinates&lt;/code&gt; のとき単位はメートルです。&lt;/p&gt;
-&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;FixedColor
-&lt;ul&gt;
-&lt;li&gt;固定色で描画します&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;MixedLighting
-&lt;ul&gt;
-&lt;li&gt;ライティングの影響を乗算します&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
-&lt;p&gt;輪郭線の色を設定します。&lt;/p&gt;
-&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Color Mode&lt;/code&gt; が &lt;code&gt;MixedLighting&lt;/code&gt; のとき、その乗算係数を設定します。&lt;/p&gt;
 
       </description>
     </item>
@@ -1113,124 +1009,6 @@ Assets 内を選択する場合は、新規に専用のフォルダを作成す�
 
 &lt;/div&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniUnlit</title>
-      <link>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</link>
-      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/shaders/univrm_unlit/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;unigltfuniunlit-シェーダー&#34;&gt;&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; シェーダー&lt;/h2&gt;
-&lt;p&gt;Unity の &lt;code&gt;Unlit&lt;/code&gt; 系シェーダーは、機能ごとに&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unlit/Color&lt;/li&gt;
-&lt;li&gt;Unlit/Texture&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent&lt;/li&gt;
-&lt;li&gt;Unlit/Transparent Cutout&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;のように分かれています。&lt;/p&gt;
-&lt;p&gt;また、&lt;code&gt;GLTF&lt;/code&gt; では設定可能なのだけど、標準の &lt;code&gt;Unlit&lt;/code&gt; 系シェーダーでは再現できない組み合わせがあります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Texture&lt;/code&gt; かつ &lt;code&gt;Color&lt;/code&gt; の乗算&lt;/li&gt;
-&lt;li&gt;頂点カラー&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;これらを解決する、統一 &lt;code&gt;unlit&lt;/code&gt; シェーダーとして &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; があります。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM&lt;/code&gt; で、&lt;code&gt;GLTF&lt;/code&gt; で &lt;code&gt;Unlit&lt;/code&gt; 設定のマテリアルをインポートすると、
-すべて &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; 使うようになります。&lt;/p&gt;
-&lt;p&gt;エクスポートしてからインポートする場合の対応表。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;export&lt;/th&gt;
-&lt;th&gt;gltf&lt;/th&gt;
-&lt;th&gt;import&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent Cutout&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTexture&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparent&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitCutout&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;なお、UniVRM がサポートするシェーダーの中で、&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; だけが頂点カラーをサポートしています。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Meshに頂点カラーが含まれている&lt;/li&gt;
-&lt;li&gt;Materialが &lt;code&gt;Unlit&lt;/code&gt; 判定である&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;場合に、import すると頂点カラーが適用されます。
-頂点カラーが不要であるモデルに、Unity の &lt;code&gt;unlit&lt;/code&gt; 系マテリアルを適用してエクスポートすると、
-次にインポートするときに意図せずに色が変わる場合があります。
-この場合、エクスポート時に &lt;code&gt;RemoveVertexColor&lt;/code&gt; を有効にすることで、頂点カラーを含まない &lt;code&gt;Mesh&lt;/code&gt; をエクスポートすることができます。&lt;/p&gt;
-&lt;h2 id=&#34;gltf&#34;&gt;GLTF&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;UniUnlit&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;GLTF Unlit&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;カラーファクター&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorFactor&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;カラーテクスチャ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/pbrMetallicRoughness/baseColorTexture&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;レンダリングモード&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/alphaMode&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;カリングモード&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;/materials/doubleSided&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 
       </description>
     </item>
@@ -1928,6 +1706,207 @@ git version 2.29.2.windows.2
     </item>
     
     <item>
+      <title>Docs: MToon</title>
+      <link>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</link>
+      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm/shaders/shader_mtoon/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/VirtualCast/vrm-mtoon&#34;&gt;MToonの使い方&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;mtoon-について&#34;&gt;MToon について&lt;/h1&gt;
+&lt;p&gt;MToon は日本のアニメ的表現をすることを目標としています。
+主色 (Lit Color) と陰色 (Shade Color) の 2 色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_about.png&#34; alt=&#34;alicia MToon&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MToon を適用したニコニ立体ちゃん&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;手早く設定したい人向け&#34;&gt;手早く設定したい人向け&lt;/h1&gt;
+&lt;h2 id=&#34;共通項目&#34;&gt;共通項目&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;目的のマテリアルを選択し、シェーダを &lt;code&gt;VRM/MToon&lt;/code&gt; に変更&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; と &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt; に同じテクスチャを設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; は白色 &lt;code&gt;Color-&amp;gt;Shade Color&lt;/code&gt; は好きな陰色を設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Shading-&amp;gt;Toony&lt;/code&gt; は好きな値。主色と影色をパキッとさせたいときは &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Rim-&amp;gt;Additive&lt;/code&gt; は &lt;code&gt;Spheremap&lt;/code&gt; や &lt;code&gt;MatCap&lt;/code&gt; と同等のテクスチャを設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Mode&lt;/code&gt; は輪郭線を必要とするなら &lt;code&gt;WorldCoordinates&lt;/code&gt; で、しないなら &lt;code&gt;None&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Outline-&amp;gt;Width-&amp;gt;Width&lt;/code&gt; は 見た目上好きな値&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;普通のマテリアル&#34;&gt;普通のマテリアル&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Shading Shift&lt;/code&gt; は &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; は &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;キャラクタの顔など影があまりついてほしくないマテリアル&#34;&gt;キャラクタの顔など、影があまりついてほしくないマテリアル&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Shading Shift&lt;/code&gt; はマイナスの値&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Shading Toony-&amp;gt;Shadow Receive Multiplier&lt;/code&gt; は &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;設定項目&#34;&gt;設定項目&lt;/h1&gt;
+&lt;h2 id=&#34;準備&#34;&gt;準備&lt;/h2&gt;
+&lt;p&gt;目的のマテリアルを選択し、シェーダを &lt;code&gt;VRM/MToon&lt;/code&gt; に変更します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_mtoon.png&#34; alt=&#34;select MToon&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Material の Shader を VRM/MToon に変更.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;rendering&#34;&gt;Rendering&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mtoon_inspector_rendering.png&#34; alt=&#34;MToon Rendering&#34;  /&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Rendering Inspector に含まれる項目.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Rendering 項目では主色と影色、および描画方法を設定します。&lt;/p&gt;
+&lt;h3 id=&#34;rendering-type&#34;&gt;Rendering Type&lt;/h3&gt;
+&lt;p&gt;マテリアルが不透明か半透明かどうかを設定します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Opaque
+&lt;ul&gt;
+&lt;li&gt;不透明です。基本的には Opaque を設定することを推奨します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cutout
+&lt;ul&gt;
+&lt;li&gt;不透明ですが &lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; のアルファ値情報を参照して &lt;code&gt;Color-&amp;gt;Alpha-&amp;gt;Cutoff&lt;/code&gt; の値より小さな箇所の描画をスキップします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Transparent
+&lt;ul&gt;
+&lt;li&gt;半透明です。&lt;code&gt;Color-&amp;gt;Lit Color, Alpha&lt;/code&gt; のアルファ値どおりの不透明度になります。&lt;/li&gt;
+&lt;li&gt;デメリットとして輪郭線描画は正しく行われません。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cull-mode&#34;&gt;Cull Mode&lt;/h3&gt;
+&lt;p&gt;ポリゴンのどちら側の面を描画するかを設定します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Back
+&lt;ul&gt;
+&lt;li&gt;表側を描画します。基本的にはこの Back を選択します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Front
+&lt;ul&gt;
+&lt;li&gt;裏側を描画します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;None
+&lt;ul&gt;
+&lt;li&gt;両面を描画します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;alpha&#34;&gt;Alpha&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Rendering Type&lt;/code&gt; が &lt;code&gt;Cutout&lt;/code&gt; であるときだけ設定する必要があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cutoff (&lt;code&gt;Color-&amp;gt;Alpha&lt;/code&gt;)
+&lt;ul&gt;
+&lt;li&gt;描画するしないのしきい値を設定します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;color&#34;&gt;Color&lt;/h2&gt;
+&lt;p&gt;描画色を設定します。
+テクスチャと色は乗算されます。
+光が当たる主色は &lt;code&gt;Lit Color, Alpha&lt;/code&gt; に、光が当たらない陰色は &lt;code&gt;Shade Color&lt;/code&gt; に設定します。
+また &lt;code&gt;Lit Color, Alpha&lt;/code&gt; のアルファ値には不透明度情報を設定します。&lt;/p&gt;
+&lt;h2 id=&#34;lighting&#34;&gt;Lighting&lt;/h2&gt;
+&lt;h3 id=&#34;shading-shift&#34;&gt;Shading Shift&lt;/h3&gt;
+&lt;p&gt;光の当たり方に対して、主色と陰色のしきい値を調整します。
+&lt;code&gt;0&lt;/code&gt; のとき普通のライティングになります。
+マイナス値にするとアニメ的な、主色の範囲が広いライティングになります。
+マイナス値のときはセルフシャドウを無効化する必要があるため、表示された警告に従い &lt;code&gt;Shadow Receive Multiplier&lt;/code&gt; を &lt;code&gt;0&lt;/code&gt; に設定する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;shading-toony&#34;&gt;Shading Toony&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Shading Shift&lt;/code&gt; の項目における主色と陰色のしきい値付近を滑らかに変化させるか否かを設定します。
+&lt;code&gt;0&lt;/code&gt; のときは通常の Lambert モデルのような写実寄りの滑らかさになります。
+&lt;code&gt;1&lt;/code&gt; のときはしきい値ではっきり主色と陰色が変化するアニメ調のライティングになります。&lt;/p&gt;
+&lt;h3 id=&#34;shadow-receive-multiplier&#34;&gt;Shadow Receive Multiplier&lt;/h3&gt;
+&lt;p&gt;セルフシャドウや落影の影響度を設定します。
+&lt;code&gt;0&lt;/code&gt; のときは影響を受けません。
+&lt;code&gt;1&lt;/code&gt; のときは影響を受けます。&lt;/p&gt;
+&lt;h3 id=&#34;lightcolor-attenuation&#34;&gt;LightColor Attenuation&lt;/h3&gt;
+&lt;p&gt;光源の色の影響度を設定します。
+&lt;code&gt;0&lt;/code&gt; のときは光源の色の影響を受けます。
+&lt;code&gt;1&lt;/code&gt; のときは光源の色の影響を無効化し、光源の色の輝度だけを反映します。&lt;/p&gt;
+&lt;h3 id=&#34;rim-additive&#34;&gt;Rim Additive&lt;/h3&gt;
+&lt;p&gt;カメラと法線の関係による追加光源を表現します。
+一般にはスフィアマップや MatCap と呼ばれます。&lt;/p&gt;
+&lt;h3 id=&#34;emission&#34;&gt;Emission&lt;/h3&gt;
+&lt;p&gt;光源環境によらず一定な色を設定します。&lt;/p&gt;
+&lt;h3 id=&#34;normal-map&#34;&gt;Normal Map&lt;/h3&gt;
+&lt;p&gt;法線マップを設定します。
+右側の値は法線マップの強さを設定します。&lt;/p&gt;
+&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;輪郭線を設定します。&lt;/p&gt;
+&lt;h3 id=&#34;width-mode&#34;&gt;Width Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;None
+&lt;ul&gt;
+&lt;li&gt;輪郭線を描画しません&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WorldCoordinates
+&lt;ul&gt;
+&lt;li&gt;世界に対して一定の幅の輪郭線を描画します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ScreenCoordinates
+&lt;ul&gt;
+&lt;li&gt;スクリーンに対して一定の幅の輪郭線を描画します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;width&#34;&gt;Width&lt;/h3&gt;
+&lt;p&gt;輪郭線の幅を設定します。
+&lt;code&gt;Width Mode&lt;/code&gt; が &lt;code&gt;WorldCoordinates&lt;/code&gt; のとき単位はメートルです。&lt;/p&gt;
+&lt;h3 id=&#34;color-mode&#34;&gt;Color Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;FixedColor
+&lt;ul&gt;
+&lt;li&gt;固定色で描画します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MixedLighting
+&lt;ul&gt;
+&lt;li&gt;ライティングの影響を乗算します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;color-1&#34;&gt;Color&lt;/h3&gt;
+&lt;p&gt;輪郭線の色を設定します。&lt;/p&gt;
+&lt;h3 id=&#34;color-lighting-mix&#34;&gt;Color Lighting Mix&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Color Mode&lt;/code&gt; が &lt;code&gt;MixedLighting&lt;/code&gt; のとき、その乗算係数を設定します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: VRMFirstPerson</title>
       <link>https://vrm.dev/docs/univrm/firstperson/univrm_firstperson/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -2534,146 +2513,6 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
 &lt;h3 id=&#34;bonemesheraser&#34;&gt;BoneMeshEraser&lt;/h3&gt;
 &lt;p&gt;ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRMShadersパッケージ</title>
-      <link>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</link>
-      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/shaders/univrm_vrmshaders/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;code&gt;UniVRM-0.56&lt;/code&gt; からフォルダ構成を変更して、
-&lt;code&gt;UniVRM&lt;/code&gt; のマテリアル関連の機能は、 &lt;code&gt;Assets/VRMShaders&lt;/code&gt; に移動しました。
-&lt;code&gt;VRMShaders&lt;/code&gt; 単体で独立したパッケージとして使用することができます。&lt;/p&gt;
-&lt;h2 id=&#34;サポートしている-unity-の-shader-と-gltf-マテリアル-の対応関係&#34;&gt;サポートしている Unity の Shader と glTF マテリアル の対応関係&lt;/h2&gt;
-&lt;p&gt;vrm は、&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PBR(gltfデフォルト)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;unlit(KHR_materials_unlit extensions)&lt;/code&gt; &lt;a href=&#34;https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit&#34;&gt;https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MToon&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の３種類をサポートしています。
-&lt;code&gt;v0.44&lt;/code&gt; から、&lt;code&gt;PBR&lt;/code&gt;, &lt;code&gt;unlit&lt;/code&gt; に関しては glTF として記録するようになった。( &lt;code&gt;VRM_USE_GLTFSHADER&lt;/code&gt; 導入 )&lt;/p&gt;
-&lt;p&gt;これらを unity に import すると、unity の&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;unlit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;VRM/MToon&lt;/code&gt; &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/shader_mtoon/&#34;&gt;mtoon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;シェーダーになります。
-エクスポートするときは、その他の &lt;code&gt;unlit&lt;/code&gt; 系の shader にも対応しています。
-また、過去のバージョンに含まれていた &lt;code&gt;shader&lt;/code&gt; についてもここに記述します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Shader&lt;/th&gt;
-&lt;th&gt;glTF export&lt;/th&gt;
-&lt;th&gt;import&lt;/th&gt;
-&lt;th&gt;comment&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Standard(Unity標準)&lt;/td&gt;
-&lt;td&gt;PBR&lt;/td&gt;
-&lt;td&gt;Standard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/StandardVColor&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;v0.xx.0 で削除されます。UniUnlitで代用を検討してください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Color(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Texture(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unlit/Transparent Cutout(Unity標準)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;UniGLTF/UniUnlit(VRMShaders)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTexture(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparent(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitCutout(UniVRM)&lt;/td&gt;
-&lt;td&gt;KHR_materials_unlit&lt;/td&gt;
-&lt;td&gt;UniGLTF/UniUnlit&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。UniUnlitをご利用ください&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/UnlitTransparentZWrite(UniVRM)&lt;/td&gt;
-&lt;td&gt;gltf表現が無い&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;v0.76.0 で削除されます。MToonをご利用ください。0.44以前は、Unityのすべてのシェーダーをダンプしてた&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;extensions.VRM.materialProperties&lt;/td&gt;
-&lt;td&gt;VRM/MToon&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;VRMC_materials_mtoon&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;1.0版のMToon。開発中。ちょっと変わる&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;unity-と-gltf-の互換性&#34;&gt;Unity と glTF の互換性&lt;/h2&gt;
-&lt;h3 id=&#34;頂点色&#34;&gt;頂点色&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity Standard は、頂点カラーをサポートしていません。VRMShaders の UniUnlit は頂点カラーをサポートしています。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;マルチuv&#34;&gt;マルチUV&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF は任意のテクスチャが、複数のuvを使い分けることができる。Standard, UniUnlit, MToon ではできない。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;upm-パッケージ&#34;&gt;UPM パッケージ&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;manifest.json&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;抜粋&lt;/span&gt;
-{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.76.0&amp;#34;&lt;/span&gt;,
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

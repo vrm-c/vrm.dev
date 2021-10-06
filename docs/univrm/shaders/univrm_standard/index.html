@@ -19,16 +19,16 @@
 
 <title>Standard | VRM</title>
 <meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="Standard" />
-<meta property="og:description" content="Standard UnityのデフォルトでGLTF標準のPBRマテリアルとほぼ互換性があります。 Unityのデフォルト GLTFのPBRマテリアル Albedo カラー /materials/pbrMetallicRoughness/baseColorFactor Albedo" />
+<meta property="og:description" content="Physically Based Rendering Standard シェーダー UniVRM は PBR 向けのシェーダーを独自に作成せずに Unity 標準の Standard シェーダー を使います。 ピカピカに反射してしまう Shaderの種類が Standard (U" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm/shaders/univrm_standard/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2020-09-15T20:06:14+09:00" />
-<meta property="article:modified_time" content="2020-09-15T20:06:14+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-10-05T21:15:11+09:00" />
+<meta property="article:modified_time" content="2021-10-05T21:15:11+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="Standard">
-<meta itemprop="description" content="Standard UnityのデフォルトでGLTF標準のPBRマテリアルとほぼ互換性があります。 Unityのデフォルト GLTFのPBRマテリアル Albedo カラー /materials/pbrMetallicRoughness/baseColorFactor Albedo">
-<meta itemprop="dateModified" content="2020-09-15T20:06:14+09:00" />
-<meta itemprop="wordCount" content="664">
+<meta itemprop="description" content="Physically Based Rendering Standard シェーダー UniVRM は PBR 向けのシェーダーを独自に作成せずに Unity 標準の Standard シェーダー を使います。 ピカピカに反射してしまう Shaderの種類が Standard (U">
+<meta itemprop="dateModified" content="2021-10-05T21:15:11+09:00" />
+<meta itemprop="wordCount" content="316">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -38,7 +38,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="Standard"/>
-<meta name="twitter:description" content="Standard UnityのデフォルトでGLTF標準のPBRマテリアルとほぼ互換性があります。 Unityのデフォルト GLTFのPBRマテリアル Albedo カラー /materials/pbrMetallicRoughness/baseColorFactor Albedo"/>
+<meta name="twitter:description" content="Physically Based Rendering Standard シェーダー UniVRM は PBR 向けのシェーダーを独自に作成せずに Unity 標準の Standard シェーダー を使います。 ピカピカに反射してしまう Shaderの種類が Standard (U"/>
 
 
 
@@ -646,15 +646,6 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
-          <i class="fas fa-file fa-fw"></i>
-          MToonの設定
-      </a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_unlit" href="/docs/univrm/shaders/univrm_unlit/">
           <i class="fas fa-file fa-fw"></i>
           UniUnlit
@@ -673,18 +664,9 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_vrmshaders" href="/docs/univrm/shaders/univrm_vrmshaders/">
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
           <i class="fas fa-file fa-fw"></i>
-          VRMShadersパッケージ
-      </a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshaderstexture_import" href="/docs/univrm/shaders/texture_import/">
-          <i class="fas fa-file fa-fw"></i>
-          テクスチャーのインポート
+          MToonの設定
       </a>
       
       
@@ -1339,9 +1321,8 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#standard">Standard</a></li>
-    <li><a href="#テクスチャ変換">テクスチャ変換</a></li>
-    <li><a href="#トラブルシューティング">トラブルシューティング</a></li>
+    <li><a href="#standard-シェーダー">Standard シェーダー</a></li>
+    <li><a href="#metallic-roughness-occlusion-の対応表">Metallic, Roughness, Occlusion の対応表</a></li>
   </ul>
 </nav></div>
 
@@ -1372,7 +1353,7 @@
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/mtoon-1.0/" data-taxonomy-term="mtoon-1.0"><span class="taxonomy-label">mtoon-1.0</span><span class="taxonomy-count">1</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">31</span></a></li>
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">30</span></a></li>
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/vrm-1.0/" data-taxonomy-term="vrm-1.0"><span class="taxonomy-label">vrm-1.0</span><span class="taxonomy-count">1</span></a></li>
         
@@ -1457,120 +1438,81 @@
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2020/09/15
+    <b>最終更新</b> 2021/10/05
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/cdaf1eb29a3d15ebbae4bf20e3494ee3274c2a0b"><i class='fab fa-github fa-lg fa-fw'></i>tags(unity, detail, api, gltf...)
-        (cdaf1eb2)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/5b151c8b5c817cafdfa7c6e3d669b34187bfe50d"><i class='fab fa-github fa-lg fa-fw'></i>update English
+        (5b151c8b)</a>
     
 </div></div>
 
     
-    <h2 id="standard">Standard</h2>
-<p>Unityの<a href="https://docs.unity3d.com/ja/2019.3/Manual/StandardShaderMaterialParameters.html">デフォルト</a>でGLTF標準のPBRマテリアルとほぼ互換性があります。</p>
+    <p><code>Physically Based Rendering</code></p>
+<h2 id="standard-シェーダー">Standard シェーダー</h2>
+<p><code>UniVRM</code> は PBR 向けのシェーダーを独自に作成せずに Unity 標準の <code>Standard シェーダー</code> を使います。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">ピカピカに反射してしまう</h4>
+
+    Shaderの種類が <code>Standard</code> (Unityの標準) で <code>metallic</code> と <code>smooth</code> 値が高い状態になっています。
+マテリアルのシェーダーを <code>Unlit/UniUnlit</code> にするとテクスチャがそのまま表示できます。
+
+</div>
+
+<h2 id="metallic-roughness-occlusion-の対応表">Metallic, Roughness, Occlusion の対応表</h2>
 <table>
 <thead>
 <tr>
-<th align="left">Unityのデフォルト</th>
-<th align="left">GLTFのPBRマテリアル</th>
+<th align="left">用途</th>
+<th align="left">glTF material</th>
+<th></th>
+<th align="left"></th>
+<th>Unity Standard Shader</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Albedo カラー</td>
-<td align="left">/materials/pbrMetallicRoughness/baseColorFactor</td>
+<td align="left">Occlusion</td>
+<td align="left">occlusionTexture</td>
+<td>R</td>
+<td align="left">G</td>
+<td>_MetallicGlossMap</td>
 </tr>
 <tr>
-<td align="left">Albedo テクスチャ</td>
-<td align="left">/materials/pbrMetallicRoughness/baseColorTexture</td>
+<td align="left">Roughness</td>
+<td align="left">pbrMetallicRoughness.metallicRoughnessTexture</td>
+<td>G</td>
+<td align="left">A</td>
+<td>_MetallicGlossMap (smoothness = 1 - roughness)</td>
 </tr>
 <tr>
-<td align="left">Metallic レベル</td>
-<td align="left">/materials/pbrMetallicRoughness/metallicFactor</td>
-</tr>
-<tr>
-<td align="left">Smoothness レベル</td>
-<td align="left">1.0f - (/materials/pbrMetallicRoughness/roughnessFactor)</td>
-</tr>
-<tr>
-<td align="left">Metallic テクスチャ</td>
-<td align="left">/materials/pbrMetallicRoughness/metallicRoughnessTexture</td>
-</tr>
-<tr>
-<td align="left">法線マップ</td>
-<td align="left">/materials/normalTexture</td>
-</tr>
-<tr>
-<td align="left">バンプスケール</td>
-<td align="left">/materials/normalTexture/scale</td>
-</tr>
-<tr>
-<td align="left">ハイトマップ</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">オクルージョンテクスチャ</td>
-<td align="left">/materials/occlusionTexture</td>
-</tr>
-<tr>
-<td align="left">オクルージョン強度</td>
-<td align="left">/materials/occlusionTexture/strength</td>
-</tr>
-<tr>
-<td align="left">Emission カラー</td>
-<td align="left">/materials/emissiveFactor</td>
-</tr>
-<tr>
-<td align="left">Emission テクスチャ</td>
-<td align="left">/materials/emissiveTexture</td>
-</tr>
-<tr>
-<td align="left">詳細マスク</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">セカンダリマップ</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">レンダリングモード</td>
-<td align="left">/materials/alphaMode</td>
+<td align="left">Metallic</td>
+<td align="left">pbrMetallicRoughness.metallicRoughnessTexture</td>
+<td>B</td>
+<td align="left">R</td>
+<td>_OcclusionMap</td>
 </tr>
 </tbody>
 </table>
-<p>UniVRMのマテリアルインポートに関して、roughnessFactor値はMetallicテクスチャにベイクされる。マテリアルエクスポートではsmoothness値はMetallicテクスチャにベイクされる<a href="https://github.com/vrm-c/UniVRM/pull/222">[参照]</a>。</p>
-<p>Unity と GLTF でテクスチャーの仕様に非互換があるので、 <code>export/import</code> で変換しています。</p>
-<h2 id="テクスチャ変換">テクスチャ変換</h2>
-<p>Standardシェーダーのカラー以外のテクスチャ(Linear)の処理について。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0`</h4>
+
+    <p><code>v0.69.0</code> からテクスチャーを１枚にまとめる動作をします。</p>
 <ul>
-<li>
-<p>ノーマルマップの修正。MToonと共通なので次項で説明します</p>
+<li>import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)</li>
+<li>export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)</li>
+</ul>
+<p><code>v0.68.0</code> 以前</p>
 <ul>
-<li>Materialのプロパティ名 <code>_BumpMap</code> で判定します。</li>
-<li>EditorImport: <code>TextureImporterType.NormalMap</code></li>
-<li>RuntimeImport: 法線テクスチャのPack</li>
-<li>Export: 法線テクスチャのUnpack</li>
-<li>sRGBとLinearの対応</li>
-<li>Tangentの対応</li>
+<li>import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import</li>
+<li>export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export</li>
 </ul>
-</li>
-<li>
-<p>Metallic, Roughnes, OcclusionMapの変換</p>
-<ul>
-<li>RGBAチャンネル組み換え</li>
-<li>Roughness値とSmoothness値の反転</li>
-<li>sRGBとLinearの対応</li>
-<li>Importerで変換、Exporterで逆変換</li>
-</ul>
-</li>
-</ul>
-<h2 id="トラブルシューティング">トラブルシューティング</h2>
-<ul>
-<li>ピカピカに反射してしまう。
-<ul>
-<li>Shaderの種類が <code>Standard</code> (Unityの標準) で <code>metallic</code> と <code>smooth</code> 値が高い状態になっています。 マテリアルのシェーダーを <code>Unlit/UniUnlit</code> にするとテクスチャがそのまま表示できます。</li>
-</ul>
-</li>
-</ul>
+
+
+</div>
+
 
 
     
@@ -1579,10 +1521,6 @@
     
     
     <hr class="panel-line">
-    
-    
-    
-    
     
     
     

@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm/shaders/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2020-08-06T18:09:15+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="og:updated_time" content="2021-10-05T20:55:21+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="Material">
 <meta itemprop="description" content="3D Humanoid Avatar format for VR">
 <meta name="twitter:card" content="summary_large_image"/>
@@ -639,15 +639,6 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
-          <i class="fas fa-file fa-fw"></i>
-          MToonの設定
-      </a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_unlit" href="/docs/univrm/shaders/univrm_unlit/">
           <i class="fas fa-file fa-fw"></i>
           UniUnlit
@@ -666,18 +657,9 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_vrmshaders" href="/docs/univrm/shaders/univrm_vrmshaders/">
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
           <i class="fas fa-file fa-fw"></i>
-          VRMShadersパッケージ
-      </a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshaderstexture_import" href="/docs/univrm/shaders/texture_import/">
-          <i class="fas fa-file fa-fw"></i>
-          テクスチャーのインポート
+          MToonの設定
       </a>
       
       
@@ -1357,7 +1339,7 @@
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/mtoon-1.0/" data-taxonomy-term="mtoon-1.0"><span class="taxonomy-label">mtoon-1.0</span><span class="taxonomy-count">1</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">31</span></a></li>
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">30</span></a></li>
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/vrm-1.0/" data-taxonomy-term="vrm-1.0"><span class="taxonomy-label">vrm-1.0</span><span class="taxonomy-count">1</span></a></li>
         
@@ -1432,15 +1414,123 @@
     
     <b>作成</b> 2018/04/16
     
-    <b>最終更新</b> 2020/08/06
+    <b>最終更新</b> 2021/10/05
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/dac162cdbce69879baa21c9f3a5cffde91b4a02a"><i class='fab fa-github fa-lg fa-fw'></i>update list order
-        (dac162cd)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/c90aad3512473b89f8d99559ad3ef727a663d2b4"><i class='fab fa-github fa-lg fa-fw'></i>マテリアル関連を整理
+        (c90aad35)</a>
     
 </div></div>
 
     
-    
+    <p>VRM のサポートしているマテリアル(シェーダー)は ３種類 で、
+<code>unlit</code>, <code>standard</code>, <code>MToon</code> です。</p>
+<p>UniGLTF では <code>unlit</code>, <code>standard</code> の２種類をサポートしています。</p>
+<h2 id="export--import-の対応表">export / import の対応表</h2>
+<table>
+<thead>
+<tr>
+<th>support</th>
+<th>export</th>
+<th>gltf</th>
+<th>import</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅</td>
+<td>Standard(Unity標準)</td>
+<td>PBR</td>
+<td>Standard</td>
+<td></td>
+</tr>
+<tr>
+<td>❌v0.xx.0</td>
+<td>UniGLTF/StandardVColor</td>
+<td></td>
+<td></td>
+<td>UniUnlitに頂点カラーがあります</td>
+</tr>
+<tr>
+<td>✅</td>
+<td>Unlit/Color(Unity標準)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td></td>
+</tr>
+<tr>
+<td>✅</td>
+<td>Unlit/Texture(Unity標準)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td></td>
+</tr>
+<tr>
+<td>✅</td>
+<td>Unlit/Transparent(Unity標準)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td></td>
+</tr>
+<tr>
+<td>✅</td>
+<td>Unlit/Transparent Cutout(Unity標準)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td></td>
+</tr>
+<tr>
+<td>✅</td>
+<td>UniGLTF/UniUnlit(VRMShaders)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td></td>
+</tr>
+<tr>
+<td>❌v0.76.0</td>
+<td>VRM/UnlitTexture(UniVRM)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td>UniUnlitをご利用ください</td>
+</tr>
+<tr>
+<td>❌v0.76.0</td>
+<td>VRM/UnlitTransparent(UniVRM)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td>UniUnlitをご利用ください</td>
+</tr>
+<tr>
+<td>❌v0.76.0</td>
+<td>VRM/UnlitCutout(UniVRM)</td>
+<td>KHR_materials_unlit</td>
+<td>UniGLTF/UniUnlit</td>
+<td>UniUnlitをご利用ください</td>
+</tr>
+<tr>
+<td>❌v0.76.0</td>
+<td>VRM/UnlitTransparentZWrite(UniVRM)</td>
+<td>gltf表現が無い</td>
+<td></td>
+<td>MToonにTransparentZWriteがあります</td>
+</tr>
+<tr>
+<td>✅</td>
+<td>VRM/MToon</td>
+<td>extensions.VRM.materialProperties</td>
+<td>VRM/MToon</td>
+<td></td>
+</tr>
+<tr>
+<td>🚧</td>
+<td>VRM10/MToon10</td>
+<td>VRMC_materials_mtoon</td>
+<td>VRM10/MToon10</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 
     
     <div class="section-index">
@@ -1448,47 +1538,6 @@
     
     
     <hr class="panel-line">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/shader_mtoon/">
-            <i class="fas fa-file fa-fw"></i>MToon</a>
-    </h5>
-    
-<ul class="tags"><li><a href="/tags/unity">unity</a></ul>
-
-    <p></p>
-</div>
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -1515,10 +1564,6 @@
 
     <p></p>
 </div>
-    
-    
-    
-    
     
     
     
@@ -1585,18 +1630,10 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="entry">
     <h5>
-        <a href="/docs/univrm/shaders/univrm_vrmshaders/">
-            <i class="fas fa-file fa-fw"></i>VRMShadersパッケージ</a>
+        <a href="/docs/univrm/shaders/shader_mtoon/">
+            <i class="fas fa-file fa-fw"></i>MToon</a>
     </h5>
     
 <ul class="tags"><li><a href="/tags/unity">unity</a></ul>
@@ -1648,14 +1685,43 @@
     
     
     
-    <div class="entry">
-    <h5>
-        <a href="/docs/univrm/shaders/texture_import/">
-            <i class="fas fa-file fa-fw"></i>テクスチャーのインポート</a>
-    </h5>
     
-    <p></p>
-</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

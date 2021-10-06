@@ -19,17 +19,17 @@
 
 <title>UniUnlit | VRM</title>
 <meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="UniUnlit" />
-<meta property="og:description" content="UniGLTF/UniUnlit シェーダー Unity の Unlit 系シェーダーは、機能ごとに Unlit/Color Unlit/Texture Unlit/Transparent Unlit/Transparent Cutout のように分かれています。 また、GLTF では設定可能なのだけど、標準の Unlit 系シェーダーでは" />
+<meta property="og:description" content="おそらく UnLighting 略して Unlit Unlit glTF の KHR_materials_unlit 拡張として保存されます。 Unity で Unlit としてエクスポート可能なシェーダー 機能 color texture vertex_color alpha/cutout no culling glTF ✅ ✅ ✅ ✅ ✅ UniGLTF/UniUnlit ✅ ✅ ✅ ✅ ✅ Unlit/Color ✅ Unlit/Texture ✅ Unlit/Transparent" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm/shaders/univrm_unlit/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
 <meta property="article:published_time" content="2020-08-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-15T20:06:14+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:modified_time" content="2021-10-05T21:15:11+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="UniUnlit">
-<meta itemprop="description" content="UniGLTF/UniUnlit シェーダー Unity の Unlit 系シェーダーは、機能ごとに Unlit/Color Unlit/Texture Unlit/Transparent Unlit/Transparent Cutout のように分かれています。 また、GLTF では設定可能なのだけど、標準の Unlit 系シェーダーでは">
+<meta itemprop="description" content="おそらく UnLighting 略して Unlit Unlit glTF の KHR_materials_unlit 拡張として保存されます。 Unity で Unlit としてエクスポート可能なシェーダー 機能 color texture vertex_color alpha/cutout no culling glTF ✅ ✅ ✅ ✅ ✅ UniGLTF/UniUnlit ✅ ✅ ✅ ✅ ✅ Unlit/Color ✅ Unlit/Texture ✅ Unlit/Transparent">
 <meta itemprop="datePublished" content="2020-08-03T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-09-15T20:06:14+09:00" />
-<meta itemprop="wordCount" content="503">
+<meta itemprop="dateModified" content="2021-10-05T21:15:11+09:00" />
+<meta itemprop="wordCount" content="285">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -39,7 +39,7 @@
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
 <meta name="twitter:title" content="UniUnlit"/>
-<meta name="twitter:description" content="UniGLTF/UniUnlit シェーダー Unity の Unlit 系シェーダーは、機能ごとに Unlit/Color Unlit/Texture Unlit/Transparent Unlit/Transparent Cutout のように分かれています。 また、GLTF では設定可能なのだけど、標準の Unlit 系シェーダーでは"/>
+<meta name="twitter:description" content="おそらく UnLighting 略して Unlit Unlit glTF の KHR_materials_unlit 拡張として保存されます。 Unity で Unlit としてエクスポート可能なシェーダー 機能 color texture vertex_color alpha/cutout no culling glTF ✅ ✅ ✅ ✅ ✅ UniGLTF/UniUnlit ✅ ✅ ✅ ✅ ✅ Unlit/Color ✅ Unlit/Texture ✅ Unlit/Transparent"/>
 
 
 
@@ -647,15 +647,6 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
-          <i class="fas fa-file fa-fw"></i>
-          MToonの設定
-      </a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsunivrmshadersunivrm_unlit" href="/docs/univrm/shaders/univrm_unlit/">
           <i class="fas fa-file fa-fw"></i>
           UniUnlit
@@ -674,18 +665,9 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersunivrm_vrmshaders" href="/docs/univrm/shaders/univrm_vrmshaders/">
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshadersshader_mtoon" href="/docs/univrm/shaders/shader_mtoon/">
           <i class="fas fa-file fa-fw"></i>
-          VRMShadersパッケージ
-      </a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsunivrmshaderstexture_import" href="/docs/univrm/shaders/texture_import/">
-          <i class="fas fa-file fa-fw"></i>
-          テクスチャーのインポート
+          MToonの設定
       </a>
       
       
@@ -1338,6 +1320,13 @@
             
 
 
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#unlit">Unlit</a></li>
+    <li><a href="#unity-で-unlit-としてエクスポート可能なシェーダー">Unity で Unlit としてエクスポート可能なシェーダー</a></li>
+  </ul>
+</nav></div>
+
 
 
             
@@ -1365,7 +1354,7 @@
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/mtoon-1.0/" data-taxonomy-term="mtoon-1.0"><span class="taxonomy-label">mtoon-1.0</span><span class="taxonomy-count">1</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">31</span></a></li>
+          <li><a class="taxonomy-term" href="https://vrm.dev/tags/unity/" data-taxonomy-term="unity"><span class="taxonomy-label">unity</span><span class="taxonomy-count">30</span></a></li>
         
           <li><a class="taxonomy-term" href="https://vrm.dev/tags/vrm-1.0/" data-taxonomy-term="vrm-1.0"><span class="taxonomy-label">vrm-1.0</span><span class="taxonomy-count">1</span></a></li>
         
@@ -1452,84 +1441,86 @@
     
     <b>作成</b> 2020/08/03
     
-    <b>最終更新</b> 2020/09/15
+    <b>最終更新</b> 2021/10/05
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/cdaf1eb29a3d15ebbae4bf20e3494ee3274c2a0b"><i class='fab fa-github fa-lg fa-fw'></i>tags(unity, detail, api, gltf...)
-        (cdaf1eb2)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/5b151c8b5c817cafdfa7c6e3d669b34187bfe50d"><i class='fab fa-github fa-lg fa-fw'></i>update English
+        (5b151c8b)</a>
     
 </div></div>
 
     
-    <h2 id="unigltfuniunlit-シェーダー"><code>UniGLTF/UniUnlit</code> シェーダー</h2>
-<p>Unity の <code>Unlit</code> 系シェーダーは、機能ごとに</p>
-<ul>
-<li>Unlit/Color</li>
-<li>Unlit/Texture</li>
-<li>Unlit/Transparent</li>
-<li>Unlit/Transparent Cutout</li>
-</ul>
-<p>のように分かれています。</p>
-<p>また、<code>GLTF</code> では設定可能なのだけど、標準の <code>Unlit</code> 系シェーダーでは再現できない組み合わせがあります。</p>
-<ul>
-<li><code>Texture</code> かつ <code>Color</code> の乗算</li>
-<li>頂点カラー</li>
-</ul>
-<p>これらを解決する、統一 <code>unlit</code> シェーダーとして <code>UniGLTF/UniUnlit</code> があります。</p>
-<p><code>UniVRM</code> で、<code>GLTF</code> で <code>Unlit</code> 設定のマテリアルをインポートすると、
-すべて <code>UniGLTF/UniUnlit</code> 使うようになります。</p>
-<p>エクスポートしてからインポートする場合の対応表。</p>
+    <p>おそらく <code>UnLighting</code> 略して <code>Unlit</code></p>
+<h2 id="unlit">Unlit</h2>
+<p>glTF の <a href="https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit">KHR_materials_unlit</a> 拡張として保存されます。</p>
+<h2 id="unity-で-unlit-としてエクスポート可能なシェーダー">Unity で Unlit としてエクスポート可能なシェーダー</h2>
 <table>
 <thead>
 <tr>
-<th>export</th>
-<th>gltf</th>
-<th>import</th>
+<th>機能</th>
+<th>color</th>
+<th>texture</th>
+<th>vertex_color</th>
+<th>alpha/cutout</th>
+<th>no culling</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Unlit/Color</td>
-<td>KHR_materials_unlit</td>
+<td>glTF</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
 <td>UniGLTF/UniUnlit</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Unlit/Color</td>
+<td>✅</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>Unlit/Texture</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
+<td></td>
+<td>✅</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>Unlit/Transparent</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
+<td></td>
+<td>✅</td>
+<td></td>
+<td>blend</td>
+<td></td>
 </tr>
 <tr>
 <td>Unlit/Transparent Cutout</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
-</tr>
-<tr>
-<td>VRM/UnlitTexture</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
-</tr>
-<tr>
-<td>VRM/UnlitTransparent</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
-</tr>
-<tr>
-<td>VRM/UnlitCutout</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
-</tr>
-<tr>
-<td>UniGLTF/UniUnlit</td>
-<td>KHR_materials_unlit</td>
-<td>UniGLTF/UniUnlit</td>
+<td></td>
+<td>✅</td>
+<td></td>
+<td>cutout</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>なお、UniVRM がサポートするシェーダーの中で、<code>UniGLTF/UniUnlit</code> だけが頂点カラーをサポートしています。</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">頂点カラー</h4>
+
+    <p><code>UniGLTF/UniUnlit</code> だけが頂点カラーをサポートしています。</p>
 <ul>
 <li>Meshに頂点カラーが含まれている</li>
 <li>Materialが <code>Unlit</code> 判定である</li>
@@ -1538,33 +1529,10 @@
 頂点カラーが不要であるモデルに、Unity の <code>unlit</code> 系マテリアルを適用してエクスポートすると、
 次にインポートするときに意図せずに色が変わる場合があります。
 この場合、エクスポート時に <code>RemoveVertexColor</code> を有効にすることで、頂点カラーを含まない <code>Mesh</code> をエクスポートすることができます。</p>
-<h2 id="gltf">GLTF</h2>
-<table>
-<thead>
-<tr>
-<th align="left">UniUnlit</th>
-<th align="left">GLTF Unlit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">カラーファクター</td>
-<td align="left">/materials/pbrMetallicRoughness/baseColorFactor</td>
-</tr>
-<tr>
-<td align="left">カラーテクスチャ</td>
-<td align="left">/materials/pbrMetallicRoughness/baseColorTexture</td>
-</tr>
-<tr>
-<td align="left">レンダリングモード</td>
-<td align="left">/materials/alphaMode</td>
-</tr>
-<tr>
-<td align="left">カリングモード</td>
-<td align="left">/materials/doubleSided</td>
-</tr>
-</tbody>
-</table>
+
+
+</div>
+
 
 
     
@@ -1573,10 +1541,6 @@
     
     
     <hr class="panel-line">
-    
-    
-    
-    
     
     
     
