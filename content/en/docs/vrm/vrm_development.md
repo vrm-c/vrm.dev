@@ -11,7 +11,7 @@ WIP
 
 ## VRM Features (for Developers)
 
-* Right-handed Y-Up coordinate system ➡️ [Coordinate]({{< relref "univrm_coordinate.md" >}})
+* Right-handed Y-Up coordinate system ➡️ [Coordinate](https://vrm-c.github.io/UniVRM/en/implementation/coordinate.html)
 * Metric unit is meter
 * Humanoid bones ➡️ compatible with humanoid motion and motion capture
 * T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode
