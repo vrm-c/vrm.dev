@@ -1,7 +1,7 @@
 ---
 title: "GLB Import"
 date: 2020-10-12T15:51:08+09:00
-weight: 3
+weight: 1
 tags: ["gltf"]
 ---
 

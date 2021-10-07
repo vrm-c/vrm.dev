@@ -1,11 +1,9 @@
 ---
 title: アニメーション
 tags: ["unity", "gltf"]
-weight: 5
+weight: 3
 aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 ---
-
-GLTF は、Animation の定義があります。
 
 > VRM は、Animation を使わないという仕様です
 

@@ -1,32 +1,41 @@
 ---
 title: "glTF"
 weight: 3
+aliases: [
+    "/docs/univrm/gltf/gltf_about/", 
+    "/docs/univrm/gltf/unigltf/", 
+    "/docs/gltf/unigltf/",
+    "/docs/gltf/scripted_importer/",
+    "/docs/gltf/update/"
+]
 ---
 
+[glTF™ (GL Transmission Format)](https://www.khronos.org/gltf/) は `OpenGL` の仕様策定をしている `KHRONOS` による3Dフォーマットです。
+2017年にVersion2が策定されました。
 
-`UniVRM-0.79.0` 以降でリニューアルした `glTF` 関連の情報。
+* [glTF™ 2.0 Specification](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html)
+* [github](https://github.com/KhronosGroup/glTF)
 
-## フォルダ
+`VRM` は `glTF-2.0` をベースとしたフォーマットです。
 
-* `Assets/UniGLTF`
-* `Assets/VRMShaders`
+## UniGLTF
 
-## unitypackage
+`UniVRM` のパッケージに含まれる `UniGLTF` は、 `glTF` ファイルとバイナリ版の `glb` ファイルを読み書きできます。
 
-`UniVRM-0.81.0` ～
+|                              | UniGLTF | UniVRM |                             |
+|------------------------------|---------|--------|-----------------------------|
+| mesh(morph target, skinning) | ✅       | ✅      |                             |
+| material(pbr)                | ✅       | ✅      |                             |
+| material(unlit)              | ✅       | ✅      | KHR_materials_unlit 拡張    |
+| material(MToon)              |         | ✅      |                             |
+| animation                    | ✅       |        | VRMではサポートしていません |
+| camera                       |         |        |                             |
 
-* `UniGLTF_VRMShaders-XXX.unitypackage`
+{{% alert title="VRMのglTF部分を3D Builderで表示する" color="warning" %}}
 
-## UPM
+{{< img width=400 src="images/vrm/alicia_3dbuilder.png" >}}
 
-`UniVRM-0.81.0` ～ 
+拡張子を `.vrm` から `.glb` に変えると、`gltf` 対応のアプリケーション(Windows 10標準搭載の3D Builderなど)でロードできます。
+（ただしVRM独自の設定は反映されません)
 
-* UPM の id を `com.vrmc.unigltf` から `com.vrmc.gltf` に id を変更しました。
-* UPM のバージョン番号を `UniGLTF` と同じに統一しました。
-
-```json
-{
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.81.0",
-    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.81.0",
-}
-```
+{{% /alert %}}

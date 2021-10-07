@@ -1,8 +1,75 @@
 ---
-title: 新しいEditorImporterの動作
-weight: 12
-tags: ["gltf", "vrm-1.0"]
+title: "Glbインポート"
+date: 2020-10-12T17:04:00+09:00
+weight: 1
+tags: ["gltf"]
 ---
+
+# import
+
+glb ファイルを Unity の Assets 下のフォルダに投入すると、glb を Asset 化できます。
+
+## import option
+### `ReverseAxis` 反転軸の設定
+
+glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転する軸を選択できます。
+
+* Z軸 (v0.68.0 より前と同じ)
+* X軸 (v0.68.0 から追加)
+
+{{< img width=400 src="images/unigltf/glb_axis.gif" >}}
+
+選択して `Apply` を押すと反映されます。
+
+## glb の extract
+
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
+
+### clear
+
+初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。
+
+* `texture_1.metallicRoughness` は、`texture_1` を元に Unity の Standard Shader 向けに変換したものです。md" >}})
+* `texture_3.occlusion` は、 `textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
+* `texture_4.normal` は、 `textrue_4` を元に Unity の Standard Shader 向けに変換したものです。
+
+{{< img width=400 src="images/unigltf/glb_clear.jpg" >}}
+
+### extract
+
+`Extract Materials and Textures ...` を押すと下記のように変化します。
+
+* `Material_MR.mat` の生成
+* `texture_0.jpg` の生成(color)
+* `texture_1.metallicRoughness.png` の生成。`texture_1` を元に Unity の Standard Shader 向けに変換したものです。
+* `texture_2.jpg` の生成(emission)
+* `texture_3.occlusion.png` の生成。`textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
+* `texture_4.jpg` の生成(normalMap)
+
+{{< img width=400 src="images/unigltf/glb_extract.jpg" >}}
+
+## gltf の extract
+
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
+
+### clear
+
+初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。
+
+* `Default_AO.occlusion` は、 `Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
+* `Defualt_metalRoughness.metallicRoughness` は、`Defualt_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
+
+{{< img width=400 src="images/unigltf/gltf_clear.jpg" >}}
+
+### extract
+
+`Extract Materials and Textures ...` を押すと下記のように変化します。
+
+* `Material_MR.mat` の生成
+* `Default_AO.occlusion.png` の生成。`Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
+* `Default_metalRoughness.metallicRoughness.png` の生成。`Default_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
+
+{{< img width=400 src="images/unigltf/gltf_extract.jpg" >}}
 
 ## AssetFile の作られ方
 
@@ -87,10 +154,3 @@ fbx importer の material タブには下記のようなボタンがあります
 SubAsset が書き出され、それが Remap に代入されます。
 
 {{% /alert %}}
-
-## まとめ
-
-VRM1 と GLB/GLTF(0.68以降) は `ScriptedImporter` の導入により、 `extract` と `remap` の仕組みがあります。
-既存の `fbx` importer の動きと似た動きになるように実装しています。
-
-<https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html>

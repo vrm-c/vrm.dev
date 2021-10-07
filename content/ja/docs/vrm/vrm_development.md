@@ -10,7 +10,7 @@ weight: 6
 
 ## VRMの特徴(開発者的な視点)
 
-* 右手系Y-UPである ➡️ [Coordinate]({{< relref "univrm_coordinate.md" >}})
+* 右手系Y-UPである ➡️ [Coordinate](https://vrm-c.github.io/UniVRM/ja/implementation/coordinate.html)
 * メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません
 * 人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい
 * 初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます
