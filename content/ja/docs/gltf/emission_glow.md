@@ -11,7 +11,7 @@ tags: ["gltf", "mtoon-1.0"]
 * `Standard`
 * `VRM10/MToon10`
 
-## Unity などの PostEffect の グロー
+## Unity の PostEffect の グロー
 
 Emission の値が 1 を越える場合に発光させるポストエフェクトです。
 

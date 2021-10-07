@@ -31,16 +31,11 @@ aliases: [
 | animation                    | ✅       |        | VRMではサポートしていません |
 | camera                       |         |        |                             |
 
-* `KHR_materials_unlit` の読み書き
-    * unityの unlit 系マテリアルのエクスポート
-    * VRMShadersの [UniUnlit]({{< relref "univrm_unlit.md" >}}) shader としてのインポート
-* `KHR_texture_transform` の読み書き
-* morphTarget(blendShape)の名前を `/meshes/*/primitives/*/extras/targetNames`, `/meshes/*/extras/targetNames` に読み書きする
-
 {{% alert title="VRMのglTF部分を3D Builderで表示する" color="warning" %}}
 
 {{< img width=400 src="images/vrm/alicia_3dbuilder.png" >}}
 
-～.vrmとなっているファイル拡張子を ～.glb に変更すると、**Windows 10標準搭載の3D Builderなどの gltf対応アプリケーションで読み込み確認することができます**（ただしVRM独自の設定は反映されません)。
+拡張子を `.vrm` から `.glb` に変えると、`gltf` 対応のアプリケーション(Windows 10標準搭載の3D Builderなど)でロードできます。
+（ただしVRM独自の設定は反映されません)
 
 {{% /alert %}}

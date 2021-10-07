@@ -1,7 +1,7 @@
 ---
 title: GLB Export
 date: 2020-08-03T16:07:54+09:00
-weight: 4
+weight: 2
 aliases: ["/en/dev/univrm-0.xx/gltf/how_to_create_glb/"]
 tags: ["gltf"]
 ---
