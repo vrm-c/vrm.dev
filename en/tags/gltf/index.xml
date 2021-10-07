@@ -4,7 +4,7 @@
     <link>https://vrm.dev/en/tags/gltf/</link>
     <description>Recent content in gltf on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Mar 2021 12:22:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Oct 2021 21:04:07 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/en/tags/gltf/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,241 +15,11 @@
     
     
     <item>
-      <title>Docs: About GLTF</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid>
-      <description>
-        
-        
-        &lt;p&gt;glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF&#34;&gt;https://github.com/KhronosGroup/glTF&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;what-kind-of-information-can-be-stored-in-gltf&#34;&gt;What kind of information can be stored in glTF?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Mesh (Vertex array、index array)
-&lt;ul&gt;
-&lt;li&gt;Morph target&lt;/li&gt;
-&lt;li&gt;Skinning (4weight)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Texture&lt;/li&gt;
-&lt;li&gt;Material (PBR)&lt;/li&gt;
-&lt;li&gt;Scene&lt;/li&gt;
-&lt;li&gt;Animation&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Camera&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Light source&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;An entire 3D scene can be stored.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;OpenGL right-handed, Y-UP coordinate system&lt;/li&gt;
-&lt;li&gt;Meter (unit)&lt;/li&gt;
-&lt;li&gt;Little endian&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;gltf-format-outline&#34;&gt;glTF format outline&lt;/h2&gt;
-&lt;p&gt;glTF format comprises two parts: the JSON scene description part and the binary part (where images and vertex array buffers are stored). External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;glb-format&#34;&gt;glb format&lt;/h2&gt;
-&lt;p&gt;A structure that consists of &lt;code&gt;Header part + Chunk parts&lt;/code&gt;.
-More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Header part&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;ldquo;glTF&amp;rdquo;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;glTF version&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;file size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Chunk part&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk type&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;ldquo;JSON&amp;rdquo; or &amp;ldquo;BIN\x00&amp;rdquo;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk body&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;byte array&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;example-of-parsing-glb-with-python3&#34;&gt;Example of parsing glb with python3&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;struct&lt;/span&gt;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;json&lt;/span&gt;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;Reader&lt;/span&gt;:
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self, data: &lt;span style=&#34;color:#366&#34;&gt;bytes&lt;/span&gt;)&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;None:
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; data
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read_str&lt;/span&gt;(self, size):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos: self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; size]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; size
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;strip()
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read&lt;/span&gt;(self, size):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos: self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; size]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; size
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read_uint&lt;/span&gt;(self):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; struct&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;unpack(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;I&amp;#39;&lt;/span&gt;, self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos:self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;])[&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result
-
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;parse_glb&lt;/span&gt;(data: &lt;span style=&#34;color:#366&#34;&gt;bytes&lt;/span&gt;):
-    reader &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Reader(data)
-    magic &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_str(&lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;)
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;  magic &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;glTF&amp;#39;&lt;/span&gt;:
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;magic not found: #{magic}&amp;#39;&lt;/span&gt;)
-
-    version &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; version &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt;:
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;version:#{version} is not 2&amp;#39;&lt;/span&gt;)
-
-    size &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-    size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;12&lt;/span&gt;
-
-    json_str &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; None
-    body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; None
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; size &lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;:
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#print(size)&lt;/span&gt;
-
-        chunk_size &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-
-        chunk_type &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_str(&lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;)
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-
-        chunk_data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read(chunk_size)
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; chunk_size
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; chunk_type &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;BIN&lt;/span&gt;&lt;span style=&#34;color:#c30;font-weight:bold&#34;&gt;\x00&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;&lt;/span&gt;:
-            body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; chunk_data
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;elif&lt;/span&gt; chunk_type &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;JSON&amp;#39;&lt;/span&gt;:
-            json_str &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; chunk_data
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;:
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;unknown chunk_type: {chunk_type}&amp;#39;&lt;/span&gt;)
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; json&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;loads(json_str), body
-
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;AliciaSolid.vrm&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; f:
-    parsed, body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; parse_glb(f&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read())&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;vrm-extension&#34;&gt;VRM extension&lt;/h2&gt;
-&lt;p&gt;Information of VRM extension is stored in&lt;code&gt;json[&#39;extensions&#39;][&#39;VRM&#39;]&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md&#34;&gt;VRM specifications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;import-vrms-gltf-part-into-3d-builder&#34;&gt;Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_3dbuilder.png&#34;   /&gt;
-
-&lt;p&gt;To visualize a VRM model in &lt;strong&gt;Windows 3D Builder&lt;/strong&gt;, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Not supported in VRM &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;VRM adopts glb format &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniGLTF</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link>
-      <pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Starting with &lt;code&gt;UniVRM-0.63.2&lt;/code&gt;, &lt;code&gt;UniGLTF&lt;/code&gt; is separated from &lt;code&gt;UniVRM&lt;/code&gt; and can be used as a UPM package.&lt;/p&gt;
-&lt;p&gt;The directory for &lt;code&gt;UniGLTF&lt;/code&gt; is &lt;code&gt;Assets/UniGLTF&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;unitypackage&#34;&gt;UnityPackage&lt;/h2&gt;
-&lt;p&gt;UniGLTF can be installed by importing UniVRM unity package (&lt;code&gt;UniVRM-0.XX.unitypackage&lt;/code&gt;). gltf/glb import/export can still be used even the VRM folder (&lt;code&gt;Assets/VRM&lt;/code&gt;) is deleted.&lt;/p&gt;
-&lt;h2 id=&#34;upm&#34;&gt;UPM&lt;/h2&gt;
-&lt;p&gt;UniGLTF depends on VRMShaders.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unigltf-features&#34;&gt;UniGLTF Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF/glb import/export&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;gltf-extensions&#34;&gt;glTF Extensions&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;KHR_materials_unlit import/export
-&lt;ul&gt;
-&lt;li&gt;export: unity&amp;rsquo;s unlit-type shaders&lt;/li&gt;
-&lt;li&gt;import: VRMShaders&amp;rsquo; &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;UniUnlit&lt;/a&gt; shader&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;KHR_texture_transform import/export&lt;/li&gt;
-&lt;li&gt;The name of MorphTarget (BlendShape) is imported/exported to &lt;code&gt;/meshes/*/primitives/*/extras/targetNames&lt;/code&gt;, &lt;code&gt;/meshes/*/extras/targetNames&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: GLB Import</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link>
+      <link>https://vrm.dev/en/docs/gltf/glb_import/</link>
       <pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate>
       
-      <guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid>
+      <guid>https://vrm.dev/en/docs/gltf/glb_import/</guid>
       <description>
         
         
@@ -327,10 +97,10 @@ Click &lt;code&gt;Clear&lt;/code&gt; button to reset Material/Texture reference 
     
     <item>
       <title>Docs: GLB Export</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link>
+      <link>https://vrm.dev/en/docs/gltf/glb_export/</link>
       <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
       
-      <guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid>
+      <guid>https://vrm.dev/en/docs/gltf/glb_export/</guid>
       <description>
         
         
@@ -388,10 +158,10 @@ Its translation, rotation and scale should be default values.&lt;/p&gt;
     
     <item>
       <title>Docs: Animation</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link>
+      <link>https://vrm.dev/en/docs/gltf/animation_exporter/</link>
       <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
       
-      <guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid>
+      <guid>https://vrm.dev/en/docs/gltf/animation_exporter/</guid>
       <description>
         
         
@@ -465,11 +235,97 @@ Its translation, rotation and scale should be default values.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Emission and glow</title>
+      <link>https://vrm.dev/en/docs/gltf/emission_glow/</link>
+      <pubDate>Thu, 07 Oct 2021 21:04:07 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/emission_glow/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;This is not an official extension of gltf.&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;target-shader&#34;&gt;Target shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;glow-of-posteffect-in-unity&#34;&gt;Glow of PostEffect in Unity&lt;/h2&gt;
+&lt;p&gt;A post effect that emits light when the Emission value exceeds 1.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be stored due to the specifications of &lt;code&gt;glTF&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Divide to 1&lt;/h4&gt;
+
+    &lt;p&gt;When exporting, do the following to force the maximum value to 1.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the maximum value with r, g, b
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+{
+  emission = emission / max_value;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x can be saved&lt;/h4&gt;
+
+    vrm-0.x can be saved as there is no [0-1] limit.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
+&lt;p&gt;We created &lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; to store a value greater than 1 in the emission.
+Defines a float value to multiply against EmissiveFactor.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It can be exported as VRM1 / GLB / GLTF with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later.&lt;/p&gt;
+&lt;p&gt;Valid for MToon and PBR materials.&lt;/p&gt;
+&lt;p&gt;Since there is a sample scene with PostEffect set
+Please try it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-load-in-unity-app&#34;&gt;How to load in Unity app&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Please load with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later&lt;/li&gt;
+&lt;li&gt;Set PostEffect for your scene
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; There is a sample profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Mesh Utility</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</link>
+      <link>https://vrm.dev/en/docs/gltf/mesh_utility/</link>
       <pubDate>Tue, 02 Mar 2021 12:22:00 +0900</pubDate>
       
-      <guid>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</guid>
+      <guid>https://vrm.dev/en/docs/gltf/mesh_utility/</guid>
       <description>
         
         

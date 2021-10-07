@@ -85,6 +85,87 @@
     </item>
     
     <item>
+      <title>Docs: GLB Import</title>
+      <link>https://vrm.dev/en/docs/gltf/glb_import/</link>
+      <pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/glb_import/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;import-glb-file-in-editor-mode&#34;&gt;Import GLB file in Editor Mode&lt;/h2&gt;
+&lt;p&gt;The procedure is the same as &lt;a href=&#34;https://vrm.dev/en/docs/univrm/import/univrm_import/&#34;&gt;VRM import&lt;/a&gt;. Just drag and drop the GLB file into the &lt;strong&gt;Assets&lt;/strong&gt; folder.&lt;/p&gt;
+&lt;p&gt;Starting with &lt;code&gt;v0.68.0&lt;/code&gt;, we use &lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet&#34;&gt;DamagedHelmet&lt;/a&gt; as an example to illustrate import settings.&lt;/p&gt;
+&lt;h3 id=&#34;reverseaxis-setting&#34;&gt;&lt;code&gt;ReverseAxis&lt;/code&gt; Setting&lt;/h3&gt;
+&lt;p&gt;The axis you want to reverse can be selected when transforming from glTF&amp;rsquo;s right-handed, Y-UP coordinate to Unity&amp;rsquo;s left-handed Y-UP coordinate.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Z-axis (same as before v0.68.0)&lt;/li&gt;
+&lt;li&gt;X-axis (added from v0.68.0)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_axis.gif&#34;  width=&#34;400&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Select &lt;code&gt;Reverse Axis&lt;/code&gt; X or Z and click &lt;code&gt;Apply&lt;/code&gt; button. The result will be reflected as shown in the image above.&lt;/p&gt;
+&lt;h3 id=&#34;extract-materials-and-textures-&#34;&gt;&lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Same as we did in &lt;a href=&#34;https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/#fbxs-material-setup&#34;&gt;fbx import&lt;/a&gt;, initially material and textures will be imported into GLB.
+In this state, the settings for materials/textures are unchangeable (&lt;code&gt;Readonly&lt;/code&gt; mode).&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_material_tab.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials and textures are extracted as external assets (&lt;code&gt;Material.asset&lt;/code&gt;, &lt;code&gt;Texture.png/jpg&lt;/code&gt;).
+In this way, the settings for materials/textures can be changed.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_material_tab_extracted.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;The image above shows that reference resources for materials/textures are properly assigned in &lt;code&gt;Remapped Materials&lt;/code&gt; and &lt;code&gt;Remapped Textures&lt;/code&gt; sections.
+Click &lt;code&gt;Clear&lt;/code&gt; button to reset Material/Texture reference settings.&lt;/p&gt;
+&lt;h3 id=&#34;glb-extract&#34;&gt;glb extract&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;clear&#34;&gt;clear&lt;/h4&gt;
+&lt;p&gt;In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness&lt;/code&gt; is converted from &lt;code&gt;texture_1&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_3.occlusion&lt;/code&gt; is converted from &lt;code&gt;textrue_3&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_4.normal&lt;/code&gt; is converted from &lt;code&gt;textrue_4&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_clear.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h4 id=&#34;extract&#34;&gt;extract&lt;/h4&gt;
+&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials/textures listed below will be generated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_0.jpg&lt;/code&gt; (color)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness.png&lt;/code&gt;. Converted from &lt;code&gt;texture_1&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_2.jpg&lt;/code&gt; (emission)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_3.occlusion.png&lt;/code&gt;. Converted from &lt;code&gt;texture_3&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_4.jpg&lt;/code&gt; (normalMap)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_extract.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h3 id=&#34;gltf-extract&#34;&gt;gltf extract&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;clear-1&#34;&gt;clear&lt;/h4&gt;
+&lt;p&gt;In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Default_AO.occlusion&lt;/code&gt; is converted from &lt;code&gt;Default_AO&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Defualt_metalRoughness.metallicRoughness&lt;/code&gt; is converted from &lt;code&gt;Defualt_metalRoughness&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_clear.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h4 id=&#34;extract-1&#34;&gt;extract&lt;/h4&gt;
+&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials/textures listed below will be generated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Default_AO.occlusion.png&lt;/code&gt;. Converted from &lt;code&gt;Default_AO&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Default_metalRoughness.metallicRoughness.png&lt;/code&gt;. Converted from &lt;code&gt;Default_metalRoughness&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_extract.jpg&#34;  width=&#34;400&#34; /&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: VRM Import</title>
       <link>https://vrm.dev/en/docs/univrm/import/univrm_import/</link>
       <pubDate>Mon, 12 Oct 2020 15:19:15 +0900</pubDate>
@@ -799,195 +880,6 @@ Please set up one of them listed in the followings based on the format of your m
     </item>
     
     <item>
-      <title>Docs: About GLTF</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/gltf_about/</guid>
-      <description>
-        
-        
-        &lt;p&gt;glTF is a 3D format created by Khronos Group, which is developing openGL specifications. glTF 2.0 was released in 2017. VRM is based on glTF 2.0.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF&#34;&gt;https://github.com/KhronosGroup/glTF&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;what-kind-of-information-can-be-stored-in-gltf&#34;&gt;What kind of information can be stored in glTF?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Mesh (Vertex array、index array)
-&lt;ul&gt;
-&lt;li&gt;Morph target&lt;/li&gt;
-&lt;li&gt;Skinning (4weight)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Texture&lt;/li&gt;
-&lt;li&gt;Material (PBR)&lt;/li&gt;
-&lt;li&gt;Scene&lt;/li&gt;
-&lt;li&gt;Animation&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Camera&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Light source&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;An entire 3D scene can be stored.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;OpenGL right-handed, Y-UP coordinate system&lt;/li&gt;
-&lt;li&gt;Meter (unit)&lt;/li&gt;
-&lt;li&gt;Little endian&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;gltf-format-outline&#34;&gt;glTF format outline&lt;/h2&gt;
-&lt;p&gt;glTF format comprises two parts: the JSON scene description part and the binary part (where images and vertex array buffers are stored). External binary data can be accessed by referencing Url or path. For glb format, it combines a JSON part and a binary part into one file. The binary data can be accessed via the offset into the buffer (byteOffset). For a program, it is easier to handle the glb format which is no need to access external files&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;glb-format&#34;&gt;glb format&lt;/h2&gt;
-&lt;p&gt;A structure that consists of &lt;code&gt;Header part + Chunk parts&lt;/code&gt;.
-More specifically, it is&lt;code&gt;Header part + JSON CHUNk + BINARY CHUNK&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Header part&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;ldquo;glTF&amp;rdquo;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;glTF version&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;file size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Chunk part&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Length&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Content&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;int32&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk type&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ascii&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;ldquo;JSON&amp;rdquo; or &amp;ldquo;BIN\x00&amp;rdquo;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;chunk size&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;chunk body&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;byte array&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;example-of-parsing-glb-with-python3&#34;&gt;Example of parsing glb with python3&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;struct&lt;/span&gt;
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;json&lt;/span&gt;
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;Reader&lt;/span&gt;:
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self, data: &lt;span style=&#34;color:#366&#34;&gt;bytes&lt;/span&gt;)&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;None:
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; data
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read_str&lt;/span&gt;(self, size):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos: self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; size]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; size
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;strip()
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read&lt;/span&gt;(self, size):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos: self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; size]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; size
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;read_uint&lt;/span&gt;(self):
-        result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; struct&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;unpack(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;I&amp;#39;&lt;/span&gt;, self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;data[self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos:self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;])[&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;]
-        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;pos &lt;span style=&#34;color:#555&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result
-
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;parse_glb&lt;/span&gt;(data: &lt;span style=&#34;color:#366&#34;&gt;bytes&lt;/span&gt;):
-    reader &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Reader(data)
-    magic &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_str(&lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;)
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;  magic &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;glTF&amp;#39;&lt;/span&gt;:
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;magic not found: #{magic}&amp;#39;&lt;/span&gt;)
-
-    version &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; version &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt;:
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;version:#{version} is not 2&amp;#39;&lt;/span&gt;)
-
-    size &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-    size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;12&lt;/span&gt;
-
-    json_str &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; None
-    body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; None
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; size &lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;:
-        &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#print(size)&lt;/span&gt;
-
-        chunk_size &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_uint()
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-
-        chunk_type &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read_str(&lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;)
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4&lt;/span&gt;
-
-        chunk_data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; reader&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read(chunk_size)
-        size &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; chunk_size
-
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; chunk_type &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;BIN&lt;/span&gt;&lt;span style=&#34;color:#c30;font-weight:bold&#34;&gt;\x00&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;&lt;/span&gt;:
-            body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; chunk_data
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;elif&lt;/span&gt; chunk_type &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;JSON&amp;#39;&lt;/span&gt;:
-            json_str &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; chunk_data
-        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;:
-            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt;(f&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;unknown chunk_type: {chunk_type}&amp;#39;&lt;/span&gt;)
-
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; json&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;loads(json_str), body
-
-
-&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;AliciaSolid.vrm&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; f:
-    parsed, body &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; parse_glb(f&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;read())&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;vrm-extension&#34;&gt;VRM extension&lt;/h2&gt;
-&lt;p&gt;Information of VRM extension is stored in&lt;code&gt;json[&#39;extensions&#39;][&#39;VRM&#39;]&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md&#34;&gt;VRM specifications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;import-vrms-gltf-part-into-3d-builder&#34;&gt;Import VRM&amp;rsquo;s glTF part into 3D Builder&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/alicia_3dbuilder.png&#34;   /&gt;
-
-&lt;p&gt;To visualize a VRM model in &lt;strong&gt;Windows 3D Builder&lt;/strong&gt;, just change the file extension from ~. vrm to ~.glb. However, custom settings for VRM model will not be reflected.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Not supported in VRM &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;VRM adopts glb format &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: What is &#34;VRM&#34;? What can VRM do?</title>
       <link>https://vrm.dev/en/vrm_about/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -1141,47 +1033,6 @@ If you set the material shader to &lt;code&gt;Unlit/UniUnlit&lt;/code&gt;, the t
 
 &lt;/div&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniGLTF</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/unigltf/</link>
-      <pubDate>Fri, 08 Jan 2021 17:13:11 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/unigltf/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Starting with &lt;code&gt;UniVRM-0.63.2&lt;/code&gt;, &lt;code&gt;UniGLTF&lt;/code&gt; is separated from &lt;code&gt;UniVRM&lt;/code&gt; and can be used as a UPM package.&lt;/p&gt;
-&lt;p&gt;The directory for &lt;code&gt;UniGLTF&lt;/code&gt; is &lt;code&gt;Assets/UniGLTF&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;unitypackage&#34;&gt;UnityPackage&lt;/h2&gt;
-&lt;p&gt;UniGLTF can be installed by importing UniVRM unity package (&lt;code&gt;UniVRM-0.XX.unitypackage&lt;/code&gt;). gltf/glb import/export can still be used even the VRM folder (&lt;code&gt;Assets/VRM&lt;/code&gt;) is deleted.&lt;/p&gt;
-&lt;h2 id=&#34;upm&#34;&gt;UPM&lt;/h2&gt;
-&lt;p&gt;UniGLTF depends on VRMShaders.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unigltf-features&#34;&gt;UniGLTF Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF/glb import/export&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;gltf-extensions&#34;&gt;glTF Extensions&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;KHR_materials_unlit import/export
-&lt;ul&gt;
-&lt;li&gt;export: unity&amp;rsquo;s unlit-type shaders&lt;/li&gt;
-&lt;li&gt;import: VRMShaders&amp;rsquo; &lt;a href=&#34;https://vrm.dev/en/docs/univrm/shaders/univrm_unlit/&#34;&gt;UniUnlit&lt;/a&gt; shader&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;KHR_texture_transform import/export&lt;/li&gt;
-&lt;li&gt;The name of MorphTarget (BlendShape) is imported/exported to &lt;code&gt;/meshes/*/primitives/*/extras/targetNames&lt;/code&gt;, &lt;code&gt;/meshes/*/extras/targetNames&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
@@ -1524,6 +1375,67 @@ For instance, in Hierarchy if a mesh&amp;rsquo;s rotation or scale is not Defaul
 &lt;li&gt;HorizontalInner: The movable range of horizontal inward direction&lt;/li&gt;
 &lt;li&gt;VerticalDown: The movable range of vertical downward direction&lt;/li&gt;
 &lt;li&gt;VerticalUp: The movable range of vertical upward direction&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GLB Export</title>
+      <link>https://vrm.dev/en/docs/gltf/glb_export/</link>
+      <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/glb_export/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Starting with &lt;code&gt;v0.68.0&lt;/code&gt;, the &lt;code&gt;glb&lt;/code&gt; file can be create with &lt;code&gt;UniGLTF&lt;/code&gt; module.&lt;/p&gt;
+&lt;p&gt;The procedure for creating a glb file is described as follows:&lt;/p&gt;
+&lt;h3 id=&#34;1-open-unigltfexport-unigltf-2xy&#34;&gt;1. Open &lt;code&gt;UniGLTF/Export UniGLTF-2.X.Y&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;At the top of Unity Editor, click &lt;code&gt;UniGLTF&lt;/code&gt; -&amp;gt; &lt;code&gt;UniGLTF-2.X.Y&lt;/code&gt; to open the dialog:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_export_dialog.jpg&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-assign-a-gameobject-to-exportroot&#34;&gt;2. Assign a GameObject to &lt;code&gt;ExportRoot&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;From the Hierarchy window, drag and drop a GameObject into the &lt;code&gt;ExportRoot&lt;/code&gt; field,
+or you can click ◎ button on the right of the &lt;code&gt;ExportRoot&lt;/code&gt; field and select a GameObject from the dropdown list.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Note that the root (topmost parent) of a GameObject you select should not be a &lt;code&gt;GLTF&lt;/code&gt; node, but a node stored in the scene with default position, rotation and scale.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-click-export-button&#34;&gt;3. Click &lt;code&gt;Export&lt;/code&gt; button&lt;/h3&gt;
+&lt;p&gt;A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.&lt;/p&gt;
+&lt;h2 id=&#34;exportable-components-for-glb&#34;&gt;Exportable Components for GLB&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Attach them to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Attach it to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt;, &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;before-v0680&#34;&gt;Before &lt;code&gt;v0.68.0&lt;/code&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
+&lt;p&gt;The following is the procedure for creating the &lt;code&gt;glb&lt;/code&gt; file with UniGLTF module:&lt;/p&gt;
+&lt;h3 id=&#34;1-create-an-empty-scene&#34;&gt;1. Create an empty scene.&lt;/h3&gt;
+&lt;h3 id=&#34;2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale&#34;&gt;2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3&gt;
+&lt;p&gt;The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
+Its translation, rotation and scale should be default values.&lt;/p&gt;
+&lt;h3 id=&#34;3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject&#34;&gt;3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3&gt;
+&lt;p&gt;(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-select-the-topmost-parent-gameobject-and-click-export-unigltf-xxx-export&#34;&gt;4. Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt; (&lt;code&gt;UniGLTF-x.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file&#34;&gt;5. Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/h3&gt;
+&lt;h2 id=&#34;exportable-components-for-glb-1&#34;&gt;Exportable Components for GLB&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Attach them to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Attach it to the child other than the topmost parent)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-shader-1&#34;&gt;Available Shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -1925,87 +1837,6 @@ If UniVRM package is installed, the &lt;code&gt;Prefab&lt;/code&gt; file can be 
     </item>
     
     <item>
-      <title>Docs: GLB Import</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/glb_import/</link>
-      <pubDate>Mon, 12 Oct 2020 15:51:08 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/glb_import/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;import-glb-file-in-editor-mode&#34;&gt;Import GLB file in Editor Mode&lt;/h2&gt;
-&lt;p&gt;The procedure is the same as &lt;a href=&#34;https://vrm.dev/en/docs/univrm/import/univrm_import/&#34;&gt;VRM import&lt;/a&gt;. Just drag and drop the GLB file into the &lt;strong&gt;Assets&lt;/strong&gt; folder.&lt;/p&gt;
-&lt;p&gt;Starting with &lt;code&gt;v0.68.0&lt;/code&gt;, we use &lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet&#34;&gt;DamagedHelmet&lt;/a&gt; as an example to illustrate import settings.&lt;/p&gt;
-&lt;h3 id=&#34;reverseaxis-setting&#34;&gt;&lt;code&gt;ReverseAxis&lt;/code&gt; Setting&lt;/h3&gt;
-&lt;p&gt;The axis you want to reverse can be selected when transforming from glTF&amp;rsquo;s right-handed, Y-UP coordinate to Unity&amp;rsquo;s left-handed Y-UP coordinate.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Z-axis (same as before v0.68.0)&lt;/li&gt;
-&lt;li&gt;X-axis (added from v0.68.0)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_axis.gif&#34;  width=&#34;400&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;Select &lt;code&gt;Reverse Axis&lt;/code&gt; X or Z and click &lt;code&gt;Apply&lt;/code&gt; button. The result will be reflected as shown in the image above.&lt;/p&gt;
-&lt;h3 id=&#34;extract-materials-and-textures-&#34;&gt;&lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Same as we did in &lt;a href=&#34;https://vrm.dev/en/how_to_make_vrm/convert_from_humanoid_model/#fbxs-material-setup&#34;&gt;fbx import&lt;/a&gt;, initially material and textures will be imported into GLB.
-In this state, the settings for materials/textures are unchangeable (&lt;code&gt;Readonly&lt;/code&gt; mode).&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_material_tab.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials and textures are extracted as external assets (&lt;code&gt;Material.asset&lt;/code&gt;, &lt;code&gt;Texture.png/jpg&lt;/code&gt;).
-In this way, the settings for materials/textures can be changed.&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_material_tab_extracted.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;The image above shows that reference resources for materials/textures are properly assigned in &lt;code&gt;Remapped Materials&lt;/code&gt; and &lt;code&gt;Remapped Textures&lt;/code&gt; sections.
-Click &lt;code&gt;Clear&lt;/code&gt; button to reset Material/Texture reference settings.&lt;/p&gt;
-&lt;h3 id=&#34;glb-extract&#34;&gt;glb extract&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;clear&#34;&gt;clear&lt;/h4&gt;
-&lt;p&gt;In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness&lt;/code&gt; is converted from &lt;code&gt;texture_1&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_3.occlusion&lt;/code&gt; is converted from &lt;code&gt;textrue_3&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_4.normal&lt;/code&gt; is converted from &lt;code&gt;textrue_4&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_clear.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h4 id=&#34;extract&#34;&gt;extract&lt;/h4&gt;
-&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials/textures listed below will be generated:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_0.jpg&lt;/code&gt; (color)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness.png&lt;/code&gt;. Converted from &lt;code&gt;texture_1&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_2.jpg&lt;/code&gt; (emission)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_3.occlusion.png&lt;/code&gt;. Converted from &lt;code&gt;texture_3&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;texture_4.jpg&lt;/code&gt; (normalMap)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_extract.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h3 id=&#34;gltf-extract&#34;&gt;gltf extract&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;clear-1&#34;&gt;clear&lt;/h4&gt;
-&lt;p&gt;In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Default_AO.occlusion&lt;/code&gt; is converted from &lt;code&gt;Default_AO&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Defualt_metalRoughness.metallicRoughness&lt;/code&gt; is converted from &lt;code&gt;Defualt_metalRoughness&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_clear.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h4 id=&#34;extract-1&#34;&gt;extract&lt;/h4&gt;
-&lt;p&gt;By clicking &lt;code&gt;Extract Materials and Textures ...&lt;/code&gt;, materials/textures listed below will be generated:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Default_AO.occlusion.png&lt;/code&gt;. Converted from &lt;code&gt;Default_AO&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Default_metalRoughness.metallicRoughness.png&lt;/code&gt;. Converted from &lt;code&gt;Default_metalRoughness&lt;/code&gt; to be used in Unity&amp;rsquo;s Standard Shader&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_extract.jpg&#34;  width=&#34;400&#34; /&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: 2. Set up VRM</title>
       <link>https://vrm.dev/en/how_to_make_vrm/setup_vrm/</link>
       <pubDate>Tue, 25 Aug 2020 17:26:05 +0900</pubDate>
@@ -2162,7 +1993,7 @@ Next, we will introduce size calculation for BlendShape, which may cause total s
 &lt;blockquote&gt;
 &lt;p&gt;The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/gltf/mesh_utility/&#34;&gt;Mesh Utility&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/gltf/mesh_utility/&#34;&gt;Mesh Utility&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;If you got a gigantic size of VRM model from export, check out the model&amp;rsquo;s BlendShape and texture images first.&lt;/p&gt;
 
@@ -2198,6 +2029,84 @@ In the default setting, please remove &lt;code&gt;VRMLookAtBoneApplyer&lt;/code&
 &lt;li&gt;yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code&gt;Curve Y Range Degree&lt;/code&gt; to 1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please set up &lt;code&gt;VerticalDown&lt;/code&gt;, &lt;code&gt;VerticalUp&lt;/code&gt; and &lt;code&gt;Horizontal&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Animation</title>
+      <link>https://vrm.dev/en/docs/gltf/animation_exporter/</link>
+      <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/animation_exporter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The definition for Animation is available in GLTF.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VRM specification does not include the Animation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v0.44&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;support-status&#34;&gt;Support Status&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-to-export-an-animator&#34;&gt;How to Export an Animator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animator component to a root GameObject&lt;/li&gt;
+&lt;li&gt;Create an AnimatorController and set it in the Controller box (&lt;code&gt;Animator&lt;/code&gt;-&amp;gt;&lt;code&gt;Controller&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-to-export-an-animation&#34;&gt;How to Export an Animation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an Animation component to a root GameObject&lt;/li&gt;
+&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
+&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
+&lt;li&gt;Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code&gt;Legacy&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Set the created AnimationClip in the Animation box (&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;) in the Inspector window&lt;/li&gt;
+&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
+&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
+&lt;li&gt;For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li&gt;
+&lt;li&gt;Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li&gt;
+&lt;/ol&gt;
 
       </description>
     </item>
@@ -2865,125 +2774,6 @@ Since we have found where the eye materials are, we set the X and Y values back 
 &lt;li&gt;yaw, pitch angle range is mapped to BlendShape [0, 1]. Please set &lt;code&gt;Curve Y Range Degree&lt;/code&gt; to 1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please set up &lt;code&gt;VerticalDown&lt;/code&gt;, &lt;code&gt;VerticalUp&lt;/code&gt; and &lt;code&gt;Horizontal&lt;/code&gt;.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: GLB Export</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</link>
-      <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/how_to_create_glb/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Starting with &lt;code&gt;v0.68.0&lt;/code&gt;, the &lt;code&gt;glb&lt;/code&gt; file can be create with &lt;code&gt;UniGLTF&lt;/code&gt; module.&lt;/p&gt;
-&lt;p&gt;The procedure for creating a glb file is described as follows:&lt;/p&gt;
-&lt;h3 id=&#34;1-open-unigltfexport-unigltf-2xy&#34;&gt;1. Open &lt;code&gt;UniGLTF/Export UniGLTF-2.X.Y&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;At the top of Unity Editor, click &lt;code&gt;UniGLTF&lt;/code&gt; -&amp;gt; &lt;code&gt;UniGLTF-2.X.Y&lt;/code&gt; to open the dialog:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_export_dialog.jpg&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-assign-a-gameobject-to-exportroot&#34;&gt;2. Assign a GameObject to &lt;code&gt;ExportRoot&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;From the Hierarchy window, drag and drop a GameObject into the &lt;code&gt;ExportRoot&lt;/code&gt; field,
-or you can click ◎ button on the right of the &lt;code&gt;ExportRoot&lt;/code&gt; field and select a GameObject from the dropdown list.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Note that the root (topmost parent) of a GameObject you select should not be a &lt;code&gt;GLTF&lt;/code&gt; node, but a node stored in the scene with default position, rotation and scale.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-click-export-button&#34;&gt;3. Click &lt;code&gt;Export&lt;/code&gt; button&lt;/h3&gt;
-&lt;p&gt;A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.&lt;/p&gt;
-&lt;h2 id=&#34;exportable-components-for-glb&#34;&gt;Exportable Components for GLB&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Attach them to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Attach it to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;available-shader&#34;&gt;Available Shader&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt;, &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;before-v0680&#34;&gt;Before &lt;code&gt;v0.68.0&lt;/code&gt;&lt;/h1&gt;
-&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;
-&lt;p&gt;The following is the procedure for creating the &lt;code&gt;glb&lt;/code&gt; file with UniGLTF module:&lt;/p&gt;
-&lt;h3 id=&#34;1-create-an-empty-scene&#34;&gt;1. Create an empty scene.&lt;/h3&gt;
-&lt;h3 id=&#34;2-create-an-empty-gameobject-topmost-parent-no-translation-rotation-and-scale&#34;&gt;2. Create an empty GameObject (topmost parent). No translation, rotation and scale.&lt;/h3&gt;
-&lt;p&gt;The topmost parent (root) should not be a GLTF GameObject, but a GameObject in the scene.
-Its translation, rotation and scale should be default values.&lt;/p&gt;
-&lt;h3 id=&#34;3-select-an-object-you-want-to-export-and-add-it-to-the-created-parent-gameobject&#34;&gt;3. Select an object you want to export and add it to the created parent GameObject.&lt;/h3&gt;
-&lt;p&gt;(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4-select-the-topmost-parent-gameobject-and-click-export-unigltf-xxx-export&#34;&gt;4. Select the topmost parent GameObject and click &lt;code&gt;Export&lt;/code&gt; (&lt;code&gt;UniGLTF-x.xx&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;).&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;5-enter-the-file-name-and-the-selected-gameobject-can-be-exported-as-the-glb-file&#34;&gt;5. Enter the file name and the selected GameObject can be exported as the &lt;code&gt;glb&lt;/code&gt; file.&lt;/h3&gt;
-&lt;h2 id=&#34;exportable-components-for-glb-1&#34;&gt;Exportable Components for GLB&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (Attach them to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (Attach it to the child other than the topmost parent)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;available-shader-1&#34;&gt;Available Shader&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;, &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt; and &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniVRM Coordinate Transformations</title>
-      <link>https://vrm.dev/en/docs/univrm/programming/univrm_coordinate/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/programming/univrm_coordinate/</guid>
-      <description>
-        
-        
-        &lt;p&gt;UniVRM automatically performs the coordinate transformation with GLTF during import / export.&lt;/p&gt;
-&lt;h2 id=&#34;vrm-coordinate-system&#34;&gt;VRM coordinate system&lt;/h2&gt;
-&lt;p&gt;Since VRM is an extension of GLTF, it conforms to the coordinate system of GLTF.
-It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Right: X+&lt;/li&gt;
-&lt;li&gt;Up: Y+&lt;/li&gt;
-&lt;li&gt;In front: Z-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unity-coordinate-system&#34;&gt;Unity coordinate system&lt;/h2&gt;
-&lt;p&gt;Left-handed Y-UP coordinate system。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Right:X+&lt;/li&gt;
-&lt;li&gt;Up:Y+&lt;/li&gt;
-&lt;li&gt;In front:Z+ (+- is inverted)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;transformation-matrix&#34;&gt;Transformation matrix&lt;/h2&gt;
-&lt;p&gt;Z-axis is inverted.&lt;/p&gt;
-&lt;h3 id=&#34;vector3-position-normal-etc&#34;&gt;Vector3 (Position, Normal, etc.)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Vector3 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Vector3 v)
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(v.x, v.y, -v.z);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;quaternion-rotation&#34;&gt;Quaternion (Rotation)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Quaternion ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Quaternion q)
-{
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt; angle;
-    Vector3 axis;
-    q.ToAngleAxis(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; angle, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; axis);
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Quaternion.AngleAxis(-angle, ReverseZ(axis));
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;matrix-bindmatrices&#34;&gt;Matrix (BindMatrices)&lt;/h3&gt;
-&lt;p&gt;Not working well if a scale value is contained.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Matrix4x4 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Matrix4x4 m)
-{
-&lt;span style=&#34;color:#099&#34;&gt;#if UNITY_2017_1_OR_NEWER
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.GetColumn(&lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;).ReverseZ(), m.rotation.ReverseZ(), Vector3.one);
-&lt;span style=&#34;color:#099&#34;&gt;#else
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.ExtractPosition().ReverseZ(), m.ExtractRotation().ReverseZ(), Vector3.one);
-&lt;span style=&#34;color:#099&#34;&gt;#endif
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; m;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
       </description>
     </item>
@@ -3674,84 +3464,6 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Animation</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</link>
-      <pubDate>Mon, 03 Aug 2020 16:07:54 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/gltf/animation_exporter/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The definition for Animation is available in GLTF.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;VRM specification does not include the Animation.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;v0.44&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;support-status&#34;&gt;Support Status&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;how-to-export-an-animator&#34;&gt;How to Export an Animator&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Add an Animator component to a root GameObject&lt;/li&gt;
-&lt;li&gt;Create an AnimatorController and set it in the Controller box (&lt;code&gt;Animator&lt;/code&gt;-&amp;gt;&lt;code&gt;Controller&lt;/code&gt;) in the Inspector window&lt;/li&gt;
-&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
-&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
-&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
-&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;how-to-export-an-animation&#34;&gt;How to Export an Animation&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Add an Animation component to a root GameObject&lt;/li&gt;
-&lt;li&gt;From the UnityEditor&amp;rsquo;s toolbar, select &lt;code&gt;Windows&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt; to open the Animation window&lt;/li&gt;
-&lt;li&gt;Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip&lt;/li&gt;
-&lt;li&gt;Now select the created AnimationClip (the Project window) and switch to Debug mode (the Inspector window), and then turn on &lt;code&gt;Legacy&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Set the created AnimationClip in the Animation box (&lt;code&gt;Animation&lt;/code&gt;-&amp;gt;&lt;code&gt;Animation&lt;/code&gt;) in the Inspector window&lt;/li&gt;
-&lt;li&gt;Add animation keys to this clip&lt;/li&gt;
-&lt;li&gt;Export as the glb file from &lt;code&gt;UniGLTF&lt;/code&gt;-&amp;gt;&lt;code&gt;Export&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
-&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
-&lt;li&gt;For the Animator, all edited clips can be exported. However, the Animator states are not saved&lt;/li&gt;
-&lt;li&gt;Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: License settings in VRM</title>
       <link>https://vrm.dev/en/docs/vrm/vrm_meta/</link>
       <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
@@ -3910,11 +3622,151 @@ It is right-handed Y-UP (OpenGL standard) coordinate system.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: VRM development</title>
+      <link>https://vrm.dev/en/docs/vrm/vrm_development/</link>
+      <pubDate>Thu, 08 Oct 2020 18:48:17 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/vrm/vrm_development/</guid>
+      <description>
+        
+        
+        &lt;p&gt;WIP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../univrm/programming/&#34;&gt;programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrm-features-for-developers&#34;&gt;VRM Features (for Developers)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Right-handed Y-Up coordinate system ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/implementation/coordinate.html&#34;&gt;Coordinate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Metric unit is meter&lt;/li&gt;
+&lt;li&gt;Humanoid bones ➡️ compatible with humanoid motion and motion capture&lt;/li&gt;
+&lt;li&gt;T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode&lt;/li&gt;
+&lt;li&gt;The initial pose has no rotation and scale&lt;/li&gt;
+&lt;li&gt;The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin&amp;rsquo;s bind matrices are not included)&lt;/li&gt;
+&lt;li&gt;Expression/eye gaze manipulation are in BlendShapeProxy ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/vrm0/0_58_blendshape.html&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring physics setup on clothes, hair and others ➡️ no interference with other physics&lt;/li&gt;
+&lt;li&gt;VR settings are available ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/vrm0/firstperson.html&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;VRM is used for loading model into applications at runtime as opposed to the way that pre-makes models as asset for the use of the specific application.&lt;/p&gt;
+&lt;h2 id=&#34;runtime-import-with-univrm&#34;&gt;Runtime Import with UniVRM&lt;/h2&gt;
+&lt;p&gt;UniVRM can load VRM into Unity as a GameObject instead of a prefab.
+The imported GameObject is the same as the instantiated GameObject from Prefab.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;runtime-export-with-univrm&#34;&gt;Runtime Export with UniVRM&lt;/h2&gt;
+&lt;p&gt;UniVRM can export the VRM model at runtime in Unity.
+The export function can be used for applications such as character maker tool.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exporter sample can be found in:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;other-vrm-implementations&#34;&gt;Other VRM Implementations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruyo/VRM4U&#34;&gt;https://github.com/ruyo/VRM4U&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/saturday06/VRM_IMPORTER_for_Blender&#34;&gt;https://github.com/saturday06/VRM_IMPORTER_for_Blender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/virtual-cast/babylon-vrm-loader/&#34;&gt;https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pixiv/three-vrm/&#34;&gt;https://github.com/pixiv/three-vrm/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/V-Sekai/godot-vrm&#34;&gt;https://github.com/V-Sekai/godot-vrm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Emission and glow</title>
+      <link>https://vrm.dev/en/docs/gltf/emission_glow/</link>
+      <pubDate>Thu, 07 Oct 2021 21:04:07 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/emission_glow/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;This is not an official extension of gltf.&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;target-shader&#34;&gt;Target shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;glow-of-posteffect-in-unity&#34;&gt;Glow of PostEffect in Unity&lt;/h2&gt;
+&lt;p&gt;A post effect that emits light when the Emission value exceeds 1.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be stored due to the specifications of &lt;code&gt;glTF&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Divide to 1&lt;/h4&gt;
+
+    &lt;p&gt;When exporting, do the following to force the maximum value to 1.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the maximum value with r, g, b
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+{
+  emission = emission / max_value;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x can be saved&lt;/h4&gt;
+
+    vrm-0.x can be saved as there is no [0-1] limit.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
+&lt;p&gt;We created &lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; to store a value greater than 1 in the emission.
+Defines a float value to multiply against EmissiveFactor.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It can be exported as VRM1 / GLB / GLTF with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later.&lt;/p&gt;
+&lt;p&gt;Valid for MToon and PBR materials.&lt;/p&gt;
+&lt;p&gt;Since there is a sample scene with PostEffect set
+Please try it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-load-in-unity-app&#34;&gt;How to load in Unity app&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Please load with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later&lt;/li&gt;
+&lt;li&gt;Set PostEffect for your scene
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; There is a sample profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Mesh Utility</title>
-      <link>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</link>
+      <link>https://vrm.dev/en/docs/gltf/mesh_utility/</link>
       <pubDate>Tue, 02 Mar 2021 12:22:00 +0900</pubDate>
       
-      <guid>https://vrm.dev/en/docs/univrm/gltf/mesh_utility/</guid>
+      <guid>https://vrm.dev/en/docs/gltf/mesh_utility/</guid>
       <description>
         
         
@@ -3963,60 +3815,6 @@ In this example, the model&amp;rsquo;s mesh are split into two parts: face and b
 &lt;p&gt;Integrate all the static meshes of a (prefab) GameObject (Root and its children).&lt;/p&gt;
 &lt;h3 id=&#34;bonemesheraser&#34;&gt;BoneMeshEraser&lt;/h3&gt;
 &lt;p&gt;Eliminate meshes associated with the bones in EraseRoot hierarchy.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRM development</title>
-      <link>https://vrm.dev/en/docs/vrm/vrm_development/</link>
-      <pubDate>Thu, 08 Oct 2020 18:48:17 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/vrm/vrm_development/</guid>
-      <description>
-        
-        
-        &lt;p&gt;WIP&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../univrm/programming/&#34;&gt;programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrm-features-for-developers&#34;&gt;VRM Features (for Developers)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Right-handed Y-Up coordinate system ➡️ &lt;a href=&#34;https://vrm.dev/en/docs/univrm/programming/univrm_coordinate/&#34;&gt;Coordinate&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Metric unit is meter&lt;/li&gt;
-&lt;li&gt;Humanoid bones ➡️ compatible with humanoid motion and motion capture&lt;/li&gt;
-&lt;li&gt;T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode&lt;/li&gt;
-&lt;li&gt;The initial pose has no rotation and scale&lt;/li&gt;
-&lt;li&gt;The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin&amp;rsquo;s bind matrices are not included)&lt;/li&gt;
-&lt;li&gt;Expression/eye gaze manipulation are in BlendShapeProxy ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/vrm0/0_58_blendshape.html&#34;&gt;BlendShapeProxy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Spring physics setup on clothes, hair and others ➡️ no interference with other physics&lt;/li&gt;
-&lt;li&gt;VR settings are available ➡️ &lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/vrm0/firstperson.html&#34;&gt;FirstPerson&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;VRM is used for loading model into applications at runtime as opposed to the way that pre-makes models as asset for the use of the specific application.&lt;/p&gt;
-&lt;h2 id=&#34;runtime-import-with-univrm&#34;&gt;Runtime Import with UniVRM&lt;/h2&gt;
-&lt;p&gt;UniVRM can load VRM into Unity as a GameObject instead of a prefab.
-The imported GameObject is the same as the instantiated GameObject from Prefab.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm-c.github.io/UniVRM/en/&#34;&gt;runtime load&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;runtime-export-with-univrm&#34;&gt;Runtime Export with UniVRM&lt;/h2&gt;
-&lt;p&gt;UniVRM can export the VRM model at runtime in Unity.
-The export function can be used for applications such as character maker tool.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://vrm.dev/en/docs/univrm/install/univrm_install_samples/&#34;&gt;samples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Exporter sample can be found in:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;other-vrm-implementations&#34;&gt;Other VRM Implementations&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ruyo/VRM4U&#34;&gt;https://github.com/ruyo/VRM4U&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/saturday06/VRM_IMPORTER_for_Blender&#34;&gt;https://github.com/saturday06/VRM_IMPORTER_for_Blender&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/virtual-cast/babylon-vrm-loader/&#34;&gt;https://github.com/virtual-cast/babylon-vrm-loader/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pixiv/three-vrm/&#34;&gt;https://github.com/pixiv/three-vrm/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/V-Sekai/godot-vrm&#34;&gt;https://github.com/V-Sekai/godot-vrm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>

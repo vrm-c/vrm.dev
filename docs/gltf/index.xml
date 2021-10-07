@@ -4,7 +4,7 @@
     <link>https://vrm.dev/docs/gltf/</link>
     <description>Recent content in glTF on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Aug 2021 17:44:22 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Oct 2021 21:04:07 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/docs/gltf/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,157 +15,69 @@
     
     
     <item>
-      <title>Docs: v0.66からv0.79の変更点</title>
-      <link>https://vrm.dev/docs/gltf/update/</link>
-      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
+      <title>Docs: Glbインポート</title>
+      <link>https://vrm.dev/docs/gltf/glb_import/</link>
+      <pubDate>Mon, 12 Oct 2020 17:04:00 +0900</pubDate>
       
-      <guid>https://vrm.dev/docs/gltf/update/</guid>
+      <guid>https://vrm.dev/docs/gltf/glb_import/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;code&gt;glTF&lt;/code&gt; 部分の &lt;code&gt;UniVRM-0.66&lt;/code&gt; からの主な更新点です。&lt;/p&gt;
-&lt;h2 id=&#34;scriptedimporter-の採用&#34;&gt;ScriptedImporter の採用&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+        &lt;h1 id=&#34;import&#34;&gt;import&lt;/h1&gt;
+&lt;p&gt;glb ファイルを Unity の Assets 下のフォルダに投入すると、glb を Asset 化できます。&lt;/p&gt;
+&lt;h2 id=&#34;import-option&#34;&gt;import option&lt;/h2&gt;
+&lt;h3 id=&#34;reverseaxis-反転軸の設定&#34;&gt;&lt;code&gt;ReverseAxis&lt;/code&gt; 反転軸の設定&lt;/h3&gt;
+&lt;p&gt;glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転する軸を選択できます。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;UIの変更&lt;/li&gt;
-&lt;li&gt;SubAssetsの挙動変更&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ForceText&lt;/code&gt; 時の動作が軽快に&lt;/li&gt;
+&lt;li&gt;Z軸 (v0.68.0 より前と同じ)&lt;/li&gt;
+&lt;li&gt;X軸 (v0.68.0 から追加)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/gltf/scripted_importer/&#34;&gt;ScriptedImporter&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;反転軸オプション追加&#34;&gt;反転軸オプション追加&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;glb&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_axis.gif&#34;  width=&#34;400&#34; /&gt;
+
+&lt;p&gt;選択して &lt;code&gt;Apply&lt;/code&gt; を押すと反映されます。&lt;/p&gt;
+&lt;h2 id=&#34;glb-の-extract&#34;&gt;glb の extract&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;clear&#34;&gt;clear&lt;/h3&gt;
+&lt;p&gt;初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/755&#34;&gt;https://github.com/vrm-c/UniVRM/pull/755&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/958&#34;&gt;https://github.com/vrm-c/UniVRM/pull/958&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Exporter&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;RuntimeImport&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;EditorImport&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness&lt;/code&gt; は、&lt;code&gt;texture_1&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。md&amp;rdquo; &amp;gt;}})&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_3.occlusion&lt;/code&gt; は、 &lt;code&gt;textrue_3&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_4.normal&lt;/code&gt; は、 &lt;code&gt;textrue_4&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;material関連&#34;&gt;Material関連&lt;/h2&gt;
-&lt;h3 id=&#34;smoothnessgltf-と-roughnessunity-の変換ロジックを修正&#34;&gt;Smoothness(glTF) と Roughness(Unity) の変換ロジックを修正&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_clear.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h3 id=&#34;extract&#34;&gt;extract&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Extract Materials and Textures ...&lt;/code&gt; を押すと下記のように変化します。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/388&#34;&gt;https://github.com/vrm-c/UniVRM/issues/388&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt; の生成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_0.jpg&lt;/code&gt; の生成(color)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_1.metallicRoughness.png&lt;/code&gt; の生成。&lt;code&gt;texture_1&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_2.jpg&lt;/code&gt; の生成(emission)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_3.occlusion.png&lt;/code&gt; の生成。&lt;code&gt;textrue_3&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;texture_4.jpg&lt;/code&gt; の生成(normalMap)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;importexport時に-metallicroughnessocclusion-テクスチャーを一枚にまとめる&#34;&gt;Import/Export時に MetallicRoughnessOcclusion テクスチャーを一枚にまとめる&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_extract.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h2 id=&#34;gltf-の-extract&#34;&gt;gltf の extract&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&#34;&gt;https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;clear-1&#34;&gt;clear&lt;/h3&gt;
+&lt;p&gt;初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/781&#34;&gt;https://github.com/vrm-c/UniVRM/issues/781&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Default_AO.occlusion&lt;/code&gt; は、 &lt;code&gt;Default_AO&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Defualt_metalRoughness.metallicRoughness&lt;/code&gt; は、&lt;code&gt;Defualt_metalRoughness&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;mipmap-のインポート設定を修正&#34;&gt;MipMap のインポート設定を修正&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;pbr&lt;/code&gt;, &lt;code&gt;mtoon&lt;/code&gt; 法線マップに影響が出やすい&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_clear.jpg&#34;  width=&#34;400&#34; /&gt;
+
+&lt;h3 id=&#34;extract-1&#34;&gt;extract&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Extract Materials and Textures ...&lt;/code&gt; を押すと下記のように変化します。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/947&#34;&gt;https://github.com/vrm-c/UniVRM/issues/947&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Material_MR.mat&lt;/code&gt; の生成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Default_AO.occlusion.png&lt;/code&gt; の生成。&lt;code&gt;Default_AO&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Default_metalRoughness.metallicRoughness.png&lt;/code&gt; の生成。&lt;code&gt;Default_metalRoughness&lt;/code&gt; を元に Unity の Standard Shader 向けに変換したものです。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&#34;https://vrm.dev/images/unigltf/gltf_extract.jpg&#34;  width=&#34;400&#34; /&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Emission と グロー(発光)</title>
-      <link>https://vrm.dev/docs/gltf/emission_glow/</link>
-      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/gltf/emission_glow/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;対象のシェーダー&#34;&gt;対象のシェーダー&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unity-などの-posteffect-の-グロー&#34;&gt;Unity などの PostEffect の グロー&lt;/h2&gt;
-&lt;p&gt;Emission の値が 1 を越える場合に発光させるポストエフェクトです。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
-
-&lt;p&gt;1を超えて3や4にすることで強くなりますが &lt;code&gt;glTF&lt;/code&gt; の仕様上この値を格納することができません。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;割り算で1におさめる&lt;/h4&gt;
-
-    &lt;p&gt;エクスポート時に下記の処理をして 最大値 1 に強制します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
-&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// r, g, b で最大の値を得る
-&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
-{
-  emission = emission / max_value;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x は保存できる&lt;/h4&gt;
-
-    vrm-0.x は [0-1] 制限が無いので保存できます。
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier-拡張を作成しました&#34;&gt;VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました&lt;/h2&gt;
-&lt;p&gt;emission に1を越える値を格納するために、&lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; を作りました。
-EmissiveFactor に対して乗算する float 値 を定義します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)&lt;/code&gt; となります。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でVRM1/GLB/GLTF でエクスポート可能です。&lt;/p&gt;
-&lt;p&gt;MToon と PBR マテリアルで有効です。&lt;/p&gt;
-&lt;p&gt;PostEffectを設定済みのサンプルシーンがありますので
-お試しください。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unity-アプリでロードする方法&#34;&gt;Unity アプリでロードする方法&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でロードしてください&lt;/li&gt;
-&lt;li&gt;シーンに PostEffect を設定してください
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; サンプルの profile があります&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;仕様&#34;&gt;仕様&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 新しいEditorImporterの動作</title>
-      <link>https://vrm.dev/docs/gltf/scripted_importer/</link>
-      <pubDate>Fri, 20 Aug 2021 17:44:22 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/gltf/scripted_importer/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;assetfile-の作られ方&#34;&gt;AssetFile の作られ方&lt;/h2&gt;
+&lt;h2 id=&#34;assetfile-の作られ方&#34;&gt;AssetFile の作られ方&lt;/h2&gt;
 &lt;h3 id=&#34;以前の動作独立したasset&#34;&gt;以前の動作(独立したasset)&lt;/h3&gt;
 &lt;p&gt;VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。&lt;/p&gt;
 
@@ -263,10 +175,284 @@ EmissiveFactor に対して乗算する float 値 を定義します。&lt;/p&gt
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;VRM1 と GLB/GLTF(0.68以降) は &lt;code&gt;ScriptedImporter&lt;/code&gt; の導入により、 &lt;code&gt;extract&lt;/code&gt; と &lt;code&gt;remap&lt;/code&gt; の仕組みがあります。
-既存の &lt;code&gt;fbx&lt;/code&gt; importer の動きと似た動きになるように実装しています。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html&#34;&gt;https://docs.unity3d.com/ja/current/Manual/FBXImporter-Materials.html&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Glbエクスポート</title>
+      <link>https://vrm.dev/docs/gltf/glb_export/</link>
+      <pubDate>Thu, 07 Oct 2021 20:43:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/glb_export/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;v0.68.0&lt;/code&gt; 以降&lt;/p&gt;
+&lt;p&gt;UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+以下、手順を説明します。&lt;/p&gt;
+&lt;h3 id=&#34;1-unigltfexport-unigltf-2xy-メニューからダイアログを開きます&#34;&gt;1. &lt;code&gt;UniGLTF/Export UniGLTF-2.X.Y&lt;/code&gt; メニューからダイアログを開きます&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/unigltf/glb_export_dialog.jpg&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-exportroot-に対象の-gameiobject-をセットしてください&#34;&gt;2. &lt;code&gt;ExportRoot&lt;/code&gt; に対象の GameIObject をセットしてください&lt;/h3&gt;
+&lt;p&gt;ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-export-を押す&#34;&gt;3. &lt;code&gt;Export&lt;/code&gt; を押す&lt;/h3&gt;
+&lt;p&gt;ファイル保存ダイアログが表示されるので出力先を指定してください。&lt;/p&gt;
+&lt;h2 id=&#34;glbのエクスポート対象になるコンポーネント&#34;&gt;Glbのエクスポート対象になるコンポーネント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (一番親以外の子供につけてください)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (一番親以外の子供につけてください)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;対応しているshader&#34;&gt;対応しているShader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt;, &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;v0680-より前&#34;&gt;&lt;code&gt;v0.68.0&lt;/code&gt; より前&lt;/h1&gt;
+&lt;h2 id=&#34;手順&#34;&gt;手順&lt;/h2&gt;
+&lt;p&gt;UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+以下、手順を説明します。&lt;/p&gt;
+&lt;h3 id=&#34;1-空のシーンを用意します&#34;&gt;1. 空のシーンを用意します。&lt;/h3&gt;
+&lt;h3 id=&#34;2-一番親になるemptyを作成します移動回転拡縮は無し&#34;&gt;2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。&lt;/h3&gt;
+&lt;p&gt;一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。&lt;/p&gt;
+&lt;h3 id=&#34;3-エクスポートしたいオブジェクトをemptyの子にします&#34;&gt;3. エクスポートしたいオブジェクトをemptyの子にします。&lt;/h3&gt;
+&lt;p&gt;(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/root_cube.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-一番親のオブジェクトを選択してエクスポートメニューを起動します&#34;&gt;4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/wiki/menu_unigltf_export.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-ファイル名を選択して-glb-ファイルを書き出せば完了です&#34;&gt;5. ファイル名を選択して &lt;code&gt;glb&lt;/code&gt; ファイルを書き出せば完了です。&lt;/h3&gt;
+&lt;h2 id=&#34;glbのエクスポート対象になるコンポーネント-1&#34;&gt;Glbのエクスポート対象になるコンポーネント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MeshRenderer + MeshFilter&lt;/code&gt; (一番親以外の子供につけてください)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; (一番親以外の子供につけてください)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Animation&lt;/code&gt; (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;対応しているshader-1&#34;&gt;対応しているShader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt; もしくは &lt;code&gt;Unlit/Color&lt;/code&gt;, &lt;code&gt;Unlit/Texture&lt;/code&gt;, &lt;code&gt;Unlit/Transparent&lt;/code&gt;, &lt;code&gt;Unlit/Transparent Cutout&lt;/code&gt;, &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: アニメーション</title>
+      <link>https://vrm.dev/docs/gltf/animation_exporter/</link>
+      <pubDate>Thu, 07 Oct 2021 20:43:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/animation_exporter/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;VRM は、Animation を使わないという仕様です&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;対応バージョン&#34;&gt;対応バージョン&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v0.44&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;対応状況&#34;&gt;対応状況&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;animatorをエクスポートする場合&#34;&gt;Animatorをエクスポートする場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ルートGameObjectにAnimatorコンポーネントを追加&lt;/li&gt;
+&lt;li&gt;AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li&gt;
+&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
+&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
+&lt;li&gt;このクリップに対してアニメーションキーを追加&lt;/li&gt;
+&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;animationをエクスポートする場合&#34;&gt;Animationをエクスポートする場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ルートGameObjectにAnimationコンポーネントを追加&lt;/li&gt;
+&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
+&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
+&lt;li&gt;Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
+&lt;li&gt;AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li&gt;
+&lt;li&gt;クリップに対してアニメーションキーを追加&lt;/li&gt;
+&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注意事項&#34;&gt;注意事項&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li&gt;
+&lt;li&gt;Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Emission と グロー(発光)</title>
+      <link>https://vrm.dev/docs/gltf/emission_glow/</link>
+      <pubDate>Thu, 07 Oct 2021 21:04:07 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/emission_glow/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;vrm-1.0 向けの独自拡張です&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;対象のシェーダー&#34;&gt;対象のシェーダー&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unity-の-posteffect-の-グロー&#34;&gt;Unity の PostEffect の グロー&lt;/h2&gt;
+&lt;p&gt;Emission の値が 1 を越える場合に発光させるポストエフェクトです。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;1を超えて3や4にすることで強くなりますが &lt;code&gt;glTF&lt;/code&gt; の仕様上この値を格納することができません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;割り算で1におさめる&lt;/h4&gt;
+
+    &lt;p&gt;エクスポート時に下記の処理をして 最大値 1 に強制します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// r, g, b で最大の値を得る
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+{
+  emission = emission / max_value;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x は保存できる&lt;/h4&gt;
+
+    vrm-0.x は [0-1] 制限が無いので保存できます。
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier-拡張を作成しました&#34;&gt;VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました&lt;/h2&gt;
+&lt;p&gt;emission に1を越える値を格納するために、&lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; を作りました。
+EmissiveFactor に対して乗算する float 値 を定義します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)&lt;/code&gt; となります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でVRM1/GLB/GLTF でエクスポート可能です。&lt;/p&gt;
+&lt;p&gt;MToon と PBR マテリアルで有効です。&lt;/p&gt;
+&lt;p&gt;PostEffectを設定済みのサンプルシーンがありますので
+お試しください。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets\UniGLTF.Samples\LookDev\spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unity-アプリでロードする方法&#34;&gt;Unity アプリでロードする方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UniVRM-0.79&lt;/code&gt; 以降でロードしてください&lt;/li&gt;
+&lt;li&gt;シーンに PostEffect を設定してください
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; サンプルの profile があります&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;仕様&#34;&gt;仕様&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Mesh Utility</title>
+      <link>https://vrm.dev/docs/gltf/mesh_utility/</link>
+      <pubDate>Wed, 21 Apr 2021 16:09:47 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/mesh_utility/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;MeshUtility&lt;/code&gt;はメッシュ処理のツールです。&lt;br&gt;
+現在利用可能な機能： &lt;code&gt;MeshSeparator&lt;/code&gt;、&lt;code&gt;MeshIntegrator&lt;/code&gt;、&lt;code&gt;StaticMeshIntegrator&lt;/code&gt;と&lt;code&gt;BoneMeshEraser&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;使用例&#34;&gt;使用例&lt;/h2&gt;
+&lt;p&gt;ここでは、&lt;code&gt;MeshSeparator&lt;/code&gt;の使い方を紹介していきます。他の機能の使い方は大体同じです。&lt;br&gt;
+&lt;code&gt;MeshSeparator&lt;/code&gt;が適用されると、BlendShapeを含むメッシュは分割されます。
+先ず、ヒエラルキーにモデルのGameObjectを選択します。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_exp1.jpg&#34;  width=&#34;200&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;または、GameObjectを&lt;code&gt;TargetObject&lt;/code&gt;フィールドにドラッグ＆ドロップします。&lt;br&gt;
+メッシュ処理のウィンドウを表示するため、メニューから&lt;code&gt;UniGLTF&lt;/code&gt; -&amp;gt; &lt;code&gt;MeshUtility&lt;/code&gt; -&amp;gt; &lt;code&gt;MeshProcessing Wizard&lt;/code&gt;をクリックしてください：&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_ja_exp2.jpg&#34;  width=&#34;800&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;Process&lt;/code&gt;ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（&lt;code&gt;VRM0&lt;/code&gt; -&amp;gt; &lt;code&gt;Export UniVRM-0.xx&lt;/code&gt;）。&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_exp3.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;hr&gt;
+&lt;p&gt;分割されたメッシュも&lt;code&gt;Assets&lt;/code&gt;フォルダーに保存されます。&lt;br&gt;
+この例では、モデルのメッシュは顔と体の2つの部分に分割された。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;顔: BlendShapeを含む      　&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;体: BlendShapeを含まない&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_sep_result_1.jpg&#34;  width=&#34;200&#34; /&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_sep_result_2.jpg&#34;  width=&#34;200&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;meshseparator&#34;&gt;MeshSeparator&lt;/h3&gt;
+&lt;p&gt;BlendShapeを含むメッシュは分割されます。BlendShapeのサイズを削減できます。&lt;/p&gt;
+&lt;h3 id=&#34;meshintegrator&#34;&gt;MeshIntegrator&lt;/h3&gt;
+&lt;p&gt;Prefab GameObjectのすべてのメッシュを統合します。BlendShapeを含むメッシュは独立して統合されます。&lt;/p&gt;
+&lt;h3 id=&#34;staticmeshintegrator&#34;&gt;StaticMeshIntegrator&lt;/h3&gt;
+&lt;p&gt;Prefab GameObjectのすべての静的メッシュを一つに統合します。&lt;/p&gt;
+&lt;h3 id=&#34;bonemesheraser&#34;&gt;BoneMeshEraser&lt;/h3&gt;
+&lt;p&gt;ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。&lt;/p&gt;
 
       </description>
     </item>

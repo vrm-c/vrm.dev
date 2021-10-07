@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VRM – mtoon-1.0</title>
+    <link>https://vrm.dev/en/tags/mtoon-1.0/</link>
+    <description>Recent content in mtoon-1.0 on VRM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 07 Oct 2021 21:04:07 +0900</lastBuildDate>
+    
+	  <atom:link href="https://vrm.dev/en/tags/mtoon-1.0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Emission and glow</title>
+      <link>https://vrm.dev/en/docs/gltf/emission_glow/</link>
+      <pubDate>Thu, 07 Oct 2021 21:04:07 +0900</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/gltf/emission_glow/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;code&gt;This is not an official extension of gltf.&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;target-shader&#34;&gt;Target shader&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;glow-of-posteffect-in-unity&#34;&gt;Glow of PostEffect in Unity&lt;/h2&gt;
+&lt;p&gt;A post effect that emits light when the Emission value exceeds 1.&lt;/p&gt;
+&lt;img src=&#34;https://vrm.dev/images/vrm10/glow.jpg&#34;  width=&#34;300&#34; /&gt;
+
+&lt;p&gt;It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be stored due to the specifications of &lt;code&gt;glTF&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Divide to 1&lt;/h4&gt;
+
+    &lt;p&gt;When exporting, do the following to force the maximum value to 1.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 emission;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; max_value = get_max(emission); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Get the maximum value with r, g, b
+&lt;/span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt;(max_value&amp;gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+{
+  emission = emission / max_value;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;vrm-0.x can be saved&lt;/h4&gt;
+
+    vrm-0.x can be saved as there is no [0-1] limit.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
+&lt;p&gt;We created &lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt; to store a value greater than 1 in the emission.
+Defines a float value to multiply against EmissiveFactor.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It can be exported as VRM1 / GLB / GLTF with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later.&lt;/p&gt;
+&lt;p&gt;Valid for MToon and PBR materials.&lt;/p&gt;
+&lt;p&gt;Since there is a sample scene with PostEffect set
+Please try it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UniVRM10-XXX.unitypackage&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/ballroom_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/lilienstein_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/moonless_golf_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/spruit_sunrise_1k.unity&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/pull/1123&#34;&gt;https://github.com/vrm-c/UniVRM/pull/1123&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-load-in-unity-app&#34;&gt;How to load in Unity app&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Please load with &lt;code&gt;UniVRM-0.79&lt;/code&gt; or later&lt;/li&gt;
+&lt;li&gt;Set PostEffect for your scene
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset&lt;/code&gt; There is a sample profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&#34;&gt;https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

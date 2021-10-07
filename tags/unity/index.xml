@@ -4,7 +4,7 @@
     <link>https://vrm.dev/tags/unity/</link>
     <description>Recent content in unity on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Sep 2021 17:48:54 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Oct 2021 20:43:28 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
@@ -594,49 +594,6 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 &lt;p&gt;VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。&lt;/p&gt;
 &lt;img src=&#34;https://vrm.dev/images/vrm/firstperson.png&#34;   /&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniGLTF</title>
-      <link>https://vrm.dev/docs/univrm/gltf/unigltf/</link>
-      <pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid>
-      <description>
-        
-        
-        &lt;p&gt;この記事は、 &lt;code&gt;UniVRM-0.63.2&lt;/code&gt; 以降を対象としています。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM&lt;/code&gt; に内包されていた &lt;code&gt;UniGLTF&lt;/code&gt; を単体で使えるように整理しました。
-&lt;code&gt;Assets/UniGLTF&lt;/code&gt; フォルダに展開されます。&lt;/p&gt;
-&lt;h2 id=&#34;unitypackage&#34;&gt;UnityPackage&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-0.XX.unitypackage&lt;/code&gt; でインストールできます。
-&lt;code&gt;Assets/VRM&lt;/code&gt; を削除すると &lt;code&gt;glTF&lt;/code&gt; 関連の機能だけを単体で利用できます。&lt;/p&gt;
-&lt;h2 id=&#34;upm&#34;&gt;UPM&lt;/h2&gt;
-&lt;p&gt;UniGLTF は　VRMShaders に依存しています。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unigltf-に含まれる機能&#34;&gt;UniGLTF に含まれる機能&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF/glb の読み書き&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;gltf拡張&#34;&gt;glTF拡張&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;KHR_materials_unlit の読み書き
-&lt;ul&gt;
-&lt;li&gt;unityの unlit 系マテリアルのエクスポート&lt;/li&gt;
-&lt;li&gt;VRMShadersの &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;UniUnlit&lt;/a&gt; shader としてのインポート&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;KHR_texture_transform の読み書き&lt;/li&gt;
-&lt;li&gt;morphTarget(blendShape)の名前を &lt;code&gt;/meshes/*/primitives/*/extras/targetNames&lt;/code&gt;, &lt;code&gt;/meshes/*/extras/targetNames&lt;/code&gt; に読み書きする&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
@@ -1457,6 +1414,81 @@ v0.58 以降でダイアログを改善予定です。&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: アニメーション</title>
+      <link>https://vrm.dev/docs/gltf/animation_exporter/</link>
+      <pubDate>Thu, 07 Oct 2021 20:43:28 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/gltf/animation_exporter/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;VRM は、Animation を使わないという仕様です&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;対応バージョン&#34;&gt;対応バージョン&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v0.44&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;対応状況&#34;&gt;対応状況&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;animatorをエクスポートする場合&#34;&gt;Animatorをエクスポートする場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ルートGameObjectにAnimatorコンポーネントを追加&lt;/li&gt;
+&lt;li&gt;AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li&gt;
+&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
+&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
+&lt;li&gt;このクリップに対してアニメーションキーを追加&lt;/li&gt;
+&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;animationをエクスポートする場合&#34;&gt;Animationをエクスポートする場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ルートGameObjectにAnimationコンポーネントを追加&lt;/li&gt;
+&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
+&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
+&lt;li&gt;Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
+&lt;li&gt;AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li&gt;
+&lt;li&gt;クリップに対してアニメーションキーを追加&lt;/li&gt;
+&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注意事項&#34;&gt;注意事項&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br&gt;
+&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li&gt;
+&lt;li&gt;Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: HumanoidComponent</title>
       <link>https://vrm.dev/docs/univrm/humanoid/meshutility_humanoid/</link>
       <pubDate>Thu, 15 Oct 2020 18:23:26 +0900</pubDate>
@@ -2215,82 +2247,6 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: アニメーション</title>
-      <link>https://vrm.dev/docs/univrm/gltf/animation_exporter/</link>
-      <pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/gltf/animation_exporter/</guid>
-      <description>
-        
-        
-        &lt;p&gt;GLTF は、Animation の定義があります。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;VRM は、Animation を使わないという仕様です&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;対応バージョン&#34;&gt;対応バージョン&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;v0.44&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;対応状況&#34;&gt;対応状況&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;KeyName&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;TranslationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;RotationKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ScaleKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;○&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;BlendShapeKey&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;×&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;animatorをエクスポートする場合&#34;&gt;Animatorをエクスポートする場合&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;ルートGameObjectにAnimatorコンポーネントを追加&lt;/li&gt;
-&lt;li&gt;AnimatorControllerを作成し、それをAnimatorのController項目に設定&lt;/li&gt;
-&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
-&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
-&lt;li&gt;このクリップに対してアニメーションキーを追加&lt;/li&gt;
-&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;animationをエクスポートする場合&#34;&gt;Animationをエクスポートする場合&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;ルートGameObjectにAnimationコンポーネントを追加&lt;/li&gt;
-&lt;li&gt;UnityEditorのツールバーからWindow&amp;gt;AnimationでAnimationウインドウを開く&lt;/li&gt;
-&lt;li&gt;ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る&lt;/li&gt;
-&lt;li&gt;Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/wiki/LegacyClip.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
-&lt;li&gt;AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定&lt;/li&gt;
-&lt;li&gt;クリップに対してアニメーションキーを追加&lt;/li&gt;
-&lt;li&gt;UniGLTF&amp;gt;Exportからglbを出力する&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;注意事項&#34;&gt;注意事項&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること&lt;br&gt;
-&lt;img src=&#34;https://vrm.dev/images/wiki/Interpolation.png&#34; alt=&#34;Interpolation&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない&lt;/li&gt;
-&lt;li&gt;Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: UniVRMをアンインストールする</title>
       <link>https://vrm.dev/docs/univrm/install/univrm_uninstall/</link>
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
@@ -2460,15 +2416,14 @@ Autoによる自動分割は、重めの処理になります。&lt;/p&gt;
     
     <item>
       <title>Docs: Mesh Utility</title>
-      <link>https://vrm.dev/docs/univrm/gltf/mesh_utility/</link>
+      <link>https://vrm.dev/docs/gltf/mesh_utility/</link>
       <pubDate>Wed, 21 Apr 2021 16:09:47 +0900</pubDate>
       
-      <guid>https://vrm.dev/docs/univrm/gltf/mesh_utility/</guid>
+      <guid>https://vrm.dev/docs/gltf/mesh_utility/</guid>
       <description>
         
         
-        &lt;h1 id=&#34;meshutility&#34;&gt;MeshUtility&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;MeshUtility&lt;/code&gt;はメッシュ処理のツールです。&lt;br&gt;
+        &lt;p&gt;&lt;code&gt;MeshUtility&lt;/code&gt;はメッシュ処理のツールです。&lt;br&gt;
 現在利用可能な機能： &lt;code&gt;MeshSeparator&lt;/code&gt;、&lt;code&gt;MeshIntegrator&lt;/code&gt;、&lt;code&gt;StaticMeshIntegrator&lt;/code&gt;と&lt;code&gt;BoneMeshEraser&lt;/code&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;使用例&#34;&gt;使用例&lt;/h2&gt;
 &lt;p&gt;ここでは、&lt;code&gt;MeshSeparator&lt;/code&gt;の使い方を紹介していきます。他の機能の使い方は大体同じです。&lt;br&gt;

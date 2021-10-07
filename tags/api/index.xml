@@ -4,7 +4,7 @@
     <link>https://vrm.dev/tags/api/</link>
     <description>Recent content in api on VRM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Mar 2021 17:10:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 12:29:28 +0900</lastBuildDate>
     
 	  <atom:link href="https://vrm.dev/tags/api/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,49 +13,6 @@
         
       
     
-    
-    <item>
-      <title>Docs: UniGLTF</title>
-      <link>https://vrm.dev/docs/univrm/gltf/unigltf/</link>
-      <pubDate>Mon, 15 Mar 2021 17:10:43 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/gltf/unigltf/</guid>
-      <description>
-        
-        
-        &lt;p&gt;この記事は、 &lt;code&gt;UniVRM-0.63.2&lt;/code&gt; 以降を対象としています。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UniVRM&lt;/code&gt; に内包されていた &lt;code&gt;UniGLTF&lt;/code&gt; を単体で使えるように整理しました。
-&lt;code&gt;Assets/UniGLTF&lt;/code&gt; フォルダに展開されます。&lt;/p&gt;
-&lt;h2 id=&#34;unitypackage&#34;&gt;UnityPackage&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;UniVRM-0.XX.unitypackage&lt;/code&gt; でインストールできます。
-&lt;code&gt;Assets/VRM&lt;/code&gt; を削除すると &lt;code&gt;glTF&lt;/code&gt; 関連の機能だけを単体で利用できます。&lt;/p&gt;
-&lt;h2 id=&#34;upm&#34;&gt;UPM&lt;/h2&gt;
-&lt;p&gt;UniGLTF は　VRMShaders に依存しています。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.vrmshaders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;&amp;#34;com.vrmc.unigltf&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.63.2&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#a00;background-color:#faa&#34;&gt;...&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unigltf-に含まれる機能&#34;&gt;UniGLTF に含まれる機能&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;glTF/glb の読み書き&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;gltf拡張&#34;&gt;glTF拡張&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;KHR_materials_unlit の読み書き
-&lt;ul&gt;
-&lt;li&gt;unityの unlit 系マテリアルのエクスポート&lt;/li&gt;
-&lt;li&gt;VRMShadersの &lt;a href=&#34;https://vrm.dev/docs/univrm/shaders/univrm_unlit/&#34;&gt;UniUnlit&lt;/a&gt; shader としてのインポート&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;KHR_texture_transform の読み書き&lt;/li&gt;
-&lt;li&gt;morphTarget(blendShape)の名前を &lt;code&gt;/meshes/*/primitives/*/extras/targetNames&lt;/code&gt;, &lt;code&gt;/meshes/*/extras/targetNames&lt;/code&gt; に読み書きする&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
     
     <item>
       <title>Docs: UniVRMサンプルをインストールする</title>
@@ -97,64 +54,6 @@
 &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VRM.Samples&lt;/code&gt;に&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample&#34;&gt;ランタイムVRMエクスポート&lt;/a&gt;と&lt;a href=&#34;https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample&#34;&gt;一人称レンダリング&lt;/a&gt;のサンプルがあります。&lt;/p&gt;
 &lt;p&gt;Aliciaモデルは&lt;a href=&#34;https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UniVRMの座標系変換について</title>
-      <link>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/programming/univrm_coordinate/</guid>
-      <description>
-        
-        
-        &lt;p&gt;UniVRMは、インポート・エクスポート時に自動でGLTFとの座標変換を実行しています。&lt;/p&gt;
-&lt;h2 id=&#34;vrmの座標系&#34;&gt;VRMの座標系&lt;/h2&gt;
-&lt;p&gt;VRMはGLTFの拡張なので、GLTFの座標系に準拠します。
-OpenGL標準の右手系Y-UP座標系です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;右:X+&lt;/li&gt;
-&lt;li&gt;上:Y+&lt;/li&gt;
-&lt;li&gt;前:Z-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unityの座標系&#34;&gt;Unityの座標系&lt;/h2&gt;
-&lt;p&gt;左手系Y-UP座標系です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;右:X+&lt;/li&gt;
-&lt;li&gt;上:Y+&lt;/li&gt;
-&lt;li&gt;前:Z+(+-が反転)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;各値の変換&#34;&gt;各値の変換&lt;/h2&gt;
-&lt;p&gt;Z軸を反転します。&lt;/p&gt;
-&lt;h3 id=&#34;vector3position-normalなど&#34;&gt;Vector3(Position, Normalなど)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Vector3 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Vector3 v)
-{
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(v.x, v.y, -v.z);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;quaternionrotation&#34;&gt;Quaternion(Rotation)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Quaternion ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Quaternion q)
-{
-    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;float&lt;/span&gt; angle;
-    Vector3 axis;
-    q.ToAngleAxis(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; angle, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;out&lt;/span&gt; axis);
-    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; Quaternion.AngleAxis(-angle, ReverseZ(axis));
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;matrixbindmatrices&#34;&gt;Matrix(BindMatrices)&lt;/h3&gt;
-&lt;p&gt;スケール値が入っているとうまくいきません&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;static&lt;/span&gt; Matrix4x4 ReverseZ(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;this&lt;/span&gt; Matrix4x4 m)
-{
-&lt;span style=&#34;color:#099&#34;&gt;#if UNITY_2017_1_OR_NEWER
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.GetColumn(&lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;).ReverseZ(), m.rotation.ReverseZ(), Vector3.one);
-&lt;span style=&#34;color:#099&#34;&gt;#else
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    m.SetTRS(m.ExtractPosition().ReverseZ(), m.ExtractRotation().ReverseZ(), Vector3.one);
-&lt;span style=&#34;color:#099&#34;&gt;#endif
-&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; m;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
       </description>
     </item>
