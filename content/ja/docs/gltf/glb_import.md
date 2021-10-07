@@ -1,20 +1,15 @@
 ---
 title: "Glbインポート"
 date: 2020-10-12T17:04:00+09:00
-weight: 3
+weight: 1
 tags: ["gltf"]
 ---
 
-## エディタモードでGlbファイルをインポートする
+# import
 
-インポートする手順は[VRM import]({{< relref "univrm_import" >}})と同じです。UnityのAssetsにドラッグ＆ドロップするだけでGlbファイルをインポートできます。
+glb ファイルを Unity の Assets 下のフォルダに投入すると、glb を Asset 化できます。
 
-`v0.68.0` 以降。
-
-https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
-
-をサンプルに使っています。
-
+## import option
 ### `ReverseAxis` 反転軸の設定
 
 glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転する軸を選択できます。
@@ -26,26 +21,11 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 
 選択して `Apply` を押すと反映されます。
 
-### `Extract Materials and Textures ...`
-
-fbx の import と同様に Material と Texture が glb の配下に import されます。
-この状態では、Material と Texture は Readonly で設定を変更できません。
-
-{{< img width=400 src="images/unigltf/glb_material_tab.jpg" >}}
-
-`Extract Materials and Textures ...` を押すことで Material と Texture を外部アセット(`Material.asset`, `Texture.png/jpg`) として展開します。
-通常の Material と同様に設定を変更できます。
-
-{{< img width=400 src="images/unigltf/glb_material_tab_extracted.jpg" >}}
-
-`Remaped Materials`と `Remaped Textures` に参照しているリソースが設定されます。
-`Clear` で extract する前の状態に戻ります。
-
-### glb の extract
+## glb の extract
 
 https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
 
-#### clear
+### clear
 
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。
 
@@ -55,7 +35,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 {{< img width=400 src="images/unigltf/glb_clear.jpg" >}}
 
-#### extract
+### extract
 
 `Extract Materials and Textures ...` を押すと下記のように変化します。
 
@@ -68,11 +48,11 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 {{< img width=400 src="images/unigltf/glb_extract.jpg" >}}
 
-### gltf の extract
+## gltf の extract
 
 https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
 
-#### clear
+### clear
 
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。
 
@@ -81,7 +61,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 
 {{< img width=400 src="images/unigltf/gltf_clear.jpg" >}}
 
-#### extract
+### extract
 
 `Extract Materials and Textures ...` を押すと下記のように変化します。
 
@@ -90,3 +70,87 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 * `Default_metalRoughness.metallicRoughness.png` の生成。`Default_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
 
 {{< img width=400 src="images/unigltf/gltf_extract.jpg" >}}
+
+## AssetFile の作られ方
+
+### 以前の動作(独立したasset)
+
+VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。
+
+{{% alert title="vrm0 の import" color="warning" %}}
+
+{{< img width=300 src="images/vrm10/vrm0_import.jpg" >}}
+
+* mesh や texture や material や blendshape などの関連アセットファイルが作成されます。
+
+{{% /alert %}}
+
+### 新しい動作(subasset)
+
+VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import されます。
+
+{{% alert title="vrm1 の import" color="warning" %}}
+
+{{< img width=300 src="images/vrm10/vrm1_import.jpg" >}}
+
+* mesh や material や texture や Expression が SubAsset として作成されます。
+
+{{% /alert %}}
+
+{{% alert title="glb の import" color="warning" %}}
+
+{{< img width=600 src="images/gltf/glb_extract_before.jpg" >}}
+
+* material と texture が SubAsset として作成されます
+
+{{% /alert %}}
+
+## SubAsset を変更するには Extract する
+
+新しい Importer で作られた SubAsset は 内容を変更ができません。
+
+{{% alert title="subasset" color="warning" %}}
+
+SubAsset は VRM 内のリソースを表しているためで、
+例えば Material を変更しても、その変更を即座に VRM に反映することができないためです。
+
+FBX の Importer も同様の動作です。
+
+{{% /alert %}}
+
+VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。
+
+{{< img width=300 src="images/vrm10/extract_material.jpg" >}}
+{{< img width=300 src="images/vrm10/extract_vrm_empty.jpg" >}}
+{{< img width=300 src="images/vrm10/extract_vrm.jpg" >}}
+
+{{% alert title="fbx の extract" color="warning" %}}
+
+fbx importer の material タブには下記のようなボタンがあります。
+
+{{< img src="images/vrm10/fbx_extract.jpg" >}}
+
+`Export Textures...` や `Export Materials...` すると fbx の中の material を 外にコピーして独立した Asset とすることができます。
+このコピーされた Asset は自由に変更することができます。
+
+{{% /alert %}}
+
+## 外部の Asset と VRM を関連付ける Remap
+
+初期状態では vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
+置き換えの関連付けを管理するのが Remap です。
+
+* None になっているときは、 `vrm`, `glb` に内部の SubAsset を使用しているという意味になります。
+* Extract以外にも、個別に既存のAssetを割り当てできます
+
+{{% alert title="extract 後" color="warning" %}}
+
+{{< img width=300 src="images/vrm10/remap_materials.jpg" >}}
+
+{{< img width=700 src="images/gltf/glb_extract_after.jpg" >}}
+
+{{< img width=700 src="images/gltf/vrm1_extract_after.jpg" >}}
+
+SubAsset が書き出され、それが Remap に代入されます。
+
+{{% /alert %}}

@@ -1,7 +1,10 @@
 ---
 title: Glbエクスポート
-weight: 4
-aliases: ["/dev/univrm-0.xx/gltf/how_to_create_glb/"]
+weight: 2
+aliases: [
+    "/dev/univrm-0.xx/gltf/how_to_create_glb/",
+    "/docs/univrm/gltf/how_to_create_glb/", 
+]
 tags: ["gltf"]
 ---
 
