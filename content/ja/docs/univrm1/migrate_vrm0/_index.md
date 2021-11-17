@@ -1,8 +1,15 @@
 ---
-title: 🚧vrm-0.x モデルを vrm-1.0 にアップグレードする
+title: 🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする
 weight: 10
 ---
 
-TODO: ライセンスの非互換を補う入力UIが必用
+UniVRM は従来の VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。
 
-[Metaの自動的なマイグレーションは禁止する方針](https://github.com/vrm-c/vrm-specification/issues/181)
+ほとんどの要素は元の表現を維持したままアップグレードされますが、一部の要素は変わる場合があります。
+また、ライセンス情報は自動的にアップグレードできないため、元の情報が維持されます。
+([#181](https://github.com/vrm-c/vrm-specification/issues/181))
+
+
+## 動作確認環境
+- Unity 2019.4.30f1
+- UniVRM 0.80.0
