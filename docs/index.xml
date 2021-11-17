@@ -4884,6 +4884,80 @@ Yaw, Pitch の上限角度を設定できます。
     </item>
     
     <item>
+      <title>Docs: 🚧アップグレードに対応する機能</title>
+      <link>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</link>
+      <pubDate>Wed, 17 Nov 2021 21:46:30 +0900</pubDate>
+      
+      <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ここでは VRM-0.x モデルから VRM-1.0β モデルにアップグレードする際の機能の対応を述べます。
+主に名称の変更と、明確に変更される機能について述べます。&lt;/p&gt;
+&lt;h2 id=&#34;動作確認環境&#34;&gt;動作確認環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Unity 2019.4.30f1&lt;/li&gt;
+&lt;li&gt;UniVRM 0.80.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;meta&#34;&gt;Meta&lt;/h2&gt;
+&lt;p&gt;VRM-0.x の元の情報がそのまま維持されます。&lt;/p&gt;
+&lt;p&gt;ライセンス情報は自動的にアップグレードできないためです。&lt;/p&gt;
+&lt;h2 id=&#34;humanoid&#34;&gt;Humanoid&lt;/h2&gt;
+&lt;p&gt;ほとんどの表現は維持されます。&lt;/p&gt;
+&lt;p&gt;ただし Unity に依存しているが VRM としては使用していなかった内部のデータが一部削除されます。&lt;/p&gt;
+&lt;h2 id=&#34;blendshape&#34;&gt;BlendShape&lt;/h2&gt;
+&lt;p&gt;表現は維持されます。
+また名称は VRM-0.x の BlendShape から VRM-1.0β の Expression に変わります。&lt;/p&gt;
+&lt;p&gt;ただし &lt;code&gt;Neutral&lt;/code&gt; の BlendShape は非推奨となります。&lt;/p&gt;
+&lt;h2 id=&#34;lookat&#34;&gt;LookAt&lt;/h2&gt;
+&lt;p&gt;ほとんどの表現は維持されます。&lt;/p&gt;
+&lt;p&gt;ただし、目線の角度と実際の BlendShape の値の対応付けからカーブの情報がなくなり、リニアのみになります。&lt;/p&gt;
+&lt;h2 id=&#34;firstperson&#34;&gt;FirstPerson&lt;/h2&gt;
+&lt;p&gt;通常の使用範囲では表現が維持されます。&lt;/p&gt;
+&lt;p&gt;一人称の位置の親ボーン指定がなくなり、頭ボーンのみになりました。&lt;/p&gt;
+&lt;h2 id=&#34;springbone&#34;&gt;SpringBone&lt;/h2&gt;
+&lt;p&gt;表現が維持されます。&lt;/p&gt;
+&lt;p&gt;VRM-1.0β ではより自由度の高い SpringBone が表現できるようになっています。&lt;/p&gt;
+&lt;h2 id=&#34;material&#34;&gt;Material&lt;/h2&gt;
+&lt;h3 id=&#34;pbr&#34;&gt;PBR&lt;/h3&gt;
+&lt;h3 id=&#34;unlit&#34;&gt;Unlit&lt;/h3&gt;
+&lt;p&gt;ほとんどの Unlit シェーダは &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; シェーダにアップグレードされます。
+&lt;code&gt;VRM/UnlitTransparentZWrite&lt;/code&gt; シェーダは &lt;code&gt;MToon10&lt;/code&gt; シェーダにアップグレードされます。&lt;/p&gt;
+&lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;VRM/MToon&lt;/code&gt; シェーダは &lt;code&gt;VRM10/MToon10&lt;/code&gt; シェーダにアップグレードされます。&lt;/p&gt;
+&lt;p&gt;ほとんどのプロパティは引き継がれて表現は維持されますが、以下のプロパティが削除されます。
+削除の理由は、効果が薄く使用頻度が低いためです。 (&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/161&#34;&gt;vrm-specification#161&lt;/a&gt;)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;プロパティ&lt;/th&gt;
+&lt;th&gt;アップグレード時の動作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Shadow Receive Multiplier&lt;/td&gt;
+&lt;td&gt;削除されます.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lit &amp;amp; Shade Mixing Multiplier&lt;/td&gt;
+&lt;td&gt;削除されます.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LightColorAttenuation&lt;/td&gt;
+&lt;td&gt;削除されます.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WidthScaledMaxDistance&lt;/td&gt;
+&lt;td&gt;削除されます.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Emission と グロー(発光)</title>
       <link>https://vrm.dev/docs/gltf/emission_glow/</link>
       <pubDate>Thu, 07 Oct 2021 21:04:07 +0900</pubDate>
@@ -5453,71 +5527,23 @@ EmissiveFactor に対して乗算する float 値 を定義します。&lt;/p&gt
     </item>
     
     <item>
-      <title>Docs: 🚧Constraint の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
+      <title>Docs: 🚧Editor でアップグレードする</title>
+      <link>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</link>
+      <pubDate>Wed, 17 Nov 2021 21:52:46 +0900</pubDate>
       
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</guid>
+      <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</guid>
       <description>
         
         
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Mesh Utility</title>
-      <link>https://vrm.dev/docs/gltf/mesh_utility/</link>
-      <pubDate>Wed, 21 Apr 2021 16:09:47 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/gltf/mesh_utility/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;code&gt;MeshUtility&lt;/code&gt;はメッシュ処理のツールです。&lt;br&gt;
-現在利用可能な機能： &lt;code&gt;MeshSeparator&lt;/code&gt;、&lt;code&gt;MeshIntegrator&lt;/code&gt;、&lt;code&gt;StaticMeshIntegrator&lt;/code&gt;と&lt;code&gt;BoneMeshEraser&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;使用例&#34;&gt;使用例&lt;/h2&gt;
-&lt;p&gt;ここでは、&lt;code&gt;MeshSeparator&lt;/code&gt;の使い方を紹介していきます。他の機能の使い方は大体同じです。&lt;br&gt;
-&lt;code&gt;MeshSeparator&lt;/code&gt;が適用されると、BlendShapeを含むメッシュは分割されます。
-先ず、ヒエラルキーにモデルのGameObjectを選択します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_exp1.jpg&#34;  width=&#34;200&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;または、GameObjectを&lt;code&gt;TargetObject&lt;/code&gt;フィールドにドラッグ＆ドロップします。&lt;br&gt;
-メッシュ処理のウィンドウを表示するため、メニューから&lt;code&gt;UniGLTF&lt;/code&gt; -&amp;gt; &lt;code&gt;MeshUtility&lt;/code&gt; -&amp;gt; &lt;code&gt;MeshProcessing Wizard&lt;/code&gt;をクリックしてください：&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_ja_exp2.jpg&#34;  width=&#34;800&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;&lt;code&gt;Process&lt;/code&gt;ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（&lt;code&gt;VRM0&lt;/code&gt; -&amp;gt; &lt;code&gt;Export UniVRM-0.xx&lt;/code&gt;）。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_utility_exp3.jpg&#34;  width=&#34;300&#34; /&gt;
-
-&lt;hr&gt;
-&lt;p&gt;分割されたメッシュも&lt;code&gt;Assets&lt;/code&gt;フォルダーに保存されます。&lt;br&gt;
-この例では、モデルのメッシュは顔と体の2つの部分に分割された。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;顔: BlendShapeを含む      　&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;体: BlendShapeを含まない&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_sep_result_1.jpg&#34;  width=&#34;200&#34; /&gt;
-&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/mesh_sep_result_2.jpg&#34;  width=&#34;200&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;meshseparator&#34;&gt;MeshSeparator&lt;/h3&gt;
-&lt;p&gt;BlendShapeを含むメッシュは分割されます。BlendShapeのサイズを削減できます。&lt;/p&gt;
-&lt;h3 id=&#34;meshintegrator&#34;&gt;MeshIntegrator&lt;/h3&gt;
-&lt;p&gt;Prefab GameObjectのすべてのメッシュを統合します。BlendShapeを含むメッシュは独立して統合されます。&lt;/p&gt;
-&lt;h3 id=&#34;staticmeshintegrator&#34;&gt;StaticMeshIntegrator&lt;/h3&gt;
-&lt;p&gt;Prefab GameObjectのすべての静的メッシュを一つに統合します。&lt;/p&gt;
-&lt;h3 id=&#34;bonemesheraser&#34;&gt;BoneMeshEraser&lt;/h3&gt;
-&lt;p&gt;ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。&lt;/p&gt;
+        &lt;p&gt;Unity Editor 上で VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。&lt;/p&gt;
+&lt;h2 id=&#34;動作確認環境&#34;&gt;動作確認環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Unity 2019.4.30f1&lt;/li&gt;
+&lt;li&gt;UniVRM 0.89.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;注意&#34;&gt;注意&lt;/h2&gt;
+&lt;p&gt;UniVRM 0.89.0 現在、VRM-1.0β モデルの出力にバグがあり、正常に行うことができません。&lt;/p&gt;
+&lt;h2 id=&#34;wip&#34;&gt;WIP&lt;/h2&gt;
 
       </description>
     </item>
