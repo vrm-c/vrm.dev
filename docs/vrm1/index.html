@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vrm.dev/docs/vrm1/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2021-08-11T16:33:56+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="og:updated_time" content="2021-11-18T14:30:16+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="VRM-1.0β">
 <meta itemprop="description" content="3D Humanoid Avatar format for VR">
 <meta name="twitter:card" content="summary_large_image"/>
@@ -1294,6 +1294,20 @@
             
 
 
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#vrm-10-とは">VRM 1.0 とは</a></li>
+    <li><a href="#vrm-10β-とは">VRM 1.0β とは</a></li>
+    <li><a href="#公開文書">公開文書</a>
+      <ul>
+        <li><a href="#vrm-10-仕様">VRM 1.0 仕様</a></li>
+        <li><a href="#vrmパブリックライセンス文書-10">VRMパブリック・ライセンス文書 1.0</a></li>
+      </ul>
+    </li>
+    <li><a href="#実装">実装</a></li>
+  </ul>
+</nav></div>
+
 
 
             
@@ -1384,17 +1398,36 @@
     
     <b>作成</b> 2021/08/05
     
-    <b>最終更新</b> 2021/08/11
+    <b>最終更新</b> 2021/11/18
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/0d2b1b9e3e6a598b1a2c4ac4b469cdfab421a510"><i class='fab fa-github fa-lg fa-fw'></i>weight
-        (0d2b1b9e)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/fb71319758fddbbce1a3a3c79136cd6d5163b104"><i class='fab fa-github fa-lg fa-fw'></i>VRM 1.0 βについての説明を拡充
+        (fb713197)</a>
     
 </div></div>
 
     
-    <p><a href="https://github.com/vrm-c/vrm-specification/tree/master/specification">VRM仕様 1.0 beta</a>を公開いたしました。</p>
-<p>また、VRMの独自ライセンスとして <a href="/licenses/1.0/">VRMパブリックライセンス文書1.0</a> を定義し、公開いたしました。</p>
-<p><a href="/docs/univrm1/">UniVRMのVRM-1.0実装</a>は準備中です。 <code>v0.80.0</code> から unitypackage を提供予定です。</p>
+    <h2 id="vrm-10-とは">VRM 1.0 とは</h2>
+<p>2018 年に発表した 3D アバターファイルフォーマット「VRM」において、
+利用が進むにつれて判明した課題やエラーを修正し、 今後必要になると考えられる機能を追加した規格となります。</p>
+<p>従来のVRMは今後 VRM 0.x と分類され非推奨となり、今後は VRM 1.0 が正式な規格となる予定です。</p>
+<h2 id="vrm-10β-とは">VRM 1.0β とは</h2>
+<p>VRM 1.0 は複数の部品にわかれて策定が進んでいます。
+各々の部品は 3 つの策定段階のうちいずれかの状態を取ります。
+1 つ目はまだ大きく変更される可能性のある「ドラフト段階」です。
+2 つ目は確定したとはいえないものの充分利用できる「β段階」です。
+3 つ目は規格として確定している「正式版」です。</p>
+<p>2021年11月時点で、ドラフト段階にある部品（VRM_node_constraint）も残されています。
+しかし全体を通して利用できる段階にあるため、Constraint 機能を除いたものを VRM 1.0β と呼称しています。</p>
+<h2 id="公開文書">公開文書</h2>
+<h3 id="vrm-10-仕様">VRM 1.0 仕様</h3>
+<p>文書 および JSON Schema を用いて定義された VRM 1.0 の仕様です。</p>
+<p><a href="https://github.com/vrm-c/vrm-specification/tree/master/specification">https://github.com/vrm-c/vrm-specification/tree/master/specification</a></p>
+<h3 id="vrmパブリックライセンス文書-10">VRMパブリック・ライセンス文書 1.0</h3>
+<p>アバターの人格に関する許諾を考慮した、VRM 独自のライセンスです。</p>
+<p><a href="/licenses/1.0/">VRMパブリック・ライセンス文書 1.0</a></p>
+<h2 id="実装">実装</h2>
+<p>公式の実装として Unity での実装「UniVRM」が存在します。</p>
+<p><a href="/docs/univrm1/">UniVRM-1.0β</a></p>
 
 
     
