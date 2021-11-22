@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" /><link rel="alternate" type="application/rss&#43;xml" href="https://vrm.dev/en/docs/univrm1/index.xml">
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta name="generator" content="Hugo 0.74.3" /><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -18,20 +17,32 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>UniVRM-1.0β | VRM</title>
-<meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="UniVRM-1.0β" />
-<meta property="og:description" content="3D Humanoid Avatar format for VR" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://vrm.dev/en/docs/univrm1/" />
+<title>VRM-1.0 Changes | VRM</title>
+<meta name="description" content="3D Humanoid Avatar format for VR"><meta property="og:title" content="VRM-1.0 Changes" />
+<meta property="og:description" content="Changes from VRM-0.X  glTF: z- forward =&gt; z&#43; forward glTF: shared bufferView =&gt; divided bufferView VRM0: meta =&gt; VRMC_vrm meta VRM0: humanoid =&gt; VRMC_vrm humanoid VRM0: blendshape =&gt; VRMC_vrm expression VRM0: lookat =&gt; VRMC_vrm lookat VRM0: firstperson =&gt; VRMC_vrm firstperson VRM0: springBone =&gt; VRMC_springBone new addition =&gt; VRMC_materials_hdr_emissiveMultiplier VRM0: mtoon =&gt; VRMC_materials_mtoon new addition =&gt; VRMC_node_constraint  glTF: z&#43; forward The model stores the Z&#43; direction forward.
+    VRM0 VRM1     forward z- z&#43;   right x&#43; x-    implemantation Y-axis 180-degree rotation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vrm.dev/en/docs/vrm1/changed/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="og:updated_time" content="2021-08-05T15:38:10+09:00" /><meta property="og:site_name" content="VRM" />
-<meta itemprop="name" content="UniVRM-1.0β">
-<meta itemprop="description" content="3D Humanoid Avatar format for VR">
+<meta property="article:published_time" content="2021-11-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-22T19:11:49+09:00" /><meta property="og:site_name" content="VRM" />
+<meta itemprop="name" content="VRM-1.0 Changes">
+<meta itemprop="description" content="Changes from VRM-0.X  glTF: z- forward =&gt; z&#43; forward glTF: shared bufferView =&gt; divided bufferView VRM0: meta =&gt; VRMC_vrm meta VRM0: humanoid =&gt; VRMC_vrm humanoid VRM0: blendshape =&gt; VRMC_vrm expression VRM0: lookat =&gt; VRMC_vrm lookat VRM0: firstperson =&gt; VRMC_vrm firstperson VRM0: springBone =&gt; VRMC_springBone new addition =&gt; VRMC_materials_hdr_emissiveMultiplier VRM0: mtoon =&gt; VRMC_materials_mtoon new addition =&gt; VRMC_node_constraint  glTF: z&#43; forward The model stores the Z&#43; direction forward.
+    VRM0 VRM1     forward z- z&#43;   right x&#43; x-    implemantation Y-axis 180-degree rotation.">
+<meta itemprop="datePublished" content="2021-11-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-22T19:11:49+09:00" />
+<meta itemprop="wordCount" content="443">
+<meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://vrm.dev/images/vrm/card.png"/>
 
-<meta name="twitter:title" content="UniVRM-1.0β"/>
-<meta name="twitter:description" content="3D Humanoid Avatar format for VR"/>
+<meta name="twitter:title" content="VRM-1.0 Changes"/>
+<meta name="twitter:description" content="Changes from VRM-0.X  glTF: z- forward =&gt; z&#43; forward glTF: shared bufferView =&gt; divided bufferView VRM0: meta =&gt; VRMC_vrm meta VRM0: humanoid =&gt; VRMC_vrm humanoid VRM0: blendshape =&gt; VRMC_vrm expression VRM0: lookat =&gt; VRMC_vrm lookat VRM0: firstperson =&gt; VRMC_vrm firstperson VRM0: springBone =&gt; VRMC_springBone new addition =&gt; VRMC_materials_hdr_emissiveMultiplier VRM0: mtoon =&gt; VRMC_materials_mtoon new addition =&gt; VRMC_node_constraint  glTF: z&#43; forward The model stores the Z&#43; direction forward.
+    VRM0 VRM1     forward z- z&#43;   right x&#43; x-    implemantation Y-axis 180-degree rotation."/>
 
 
 
@@ -51,7 +62,7 @@
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -91,7 +102,7 @@
 				
 				
 				
-                <a class="nav-link" href="/en/docs/vrm1/" ><span>VRM-1.0β</span>
+                <a class="nav-link active" href="/en/docs/vrm1/" ><span class="active">VRM-1.0β</span>
                                                         
                 </a>
 			</li>
@@ -150,7 +161,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/docs/univrm1/">Japanese</a>
+	<a class="dropdown-item" href="/docs/vrm1/changed/">Japanese</a>
 	
 </div>
 			</li>
@@ -191,7 +202,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/docs/univrm1/">Japanese</a>
+	<a class="dropdown-item" href="/docs/vrm1/changed/">Japanese</a>
 	
 </div>
     </div>
@@ -1016,22 +1027,22 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/vrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+    <a  href="/en/docs/vrm1/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder fa-fw"></i>
+        <i class="fas fa-folder-open fa-fw"></i>
         
         VRM-1.0β
     </a>
   </li>
   <ul>
-    <li class="collapse " id="endocsvrm1">
+    <li class="collapse show" id="endocsvrm1">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsvrm1changed" href="/en/docs/vrm1/changed/">
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-endocsvrm1changed" href="/en/docs/vrm1/changed/">
           <i class="fas fa-file fa-fw"></i>
           VRM-1.0 Changes
       </a>
@@ -1053,15 +1064,15 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/univrm1/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
+    <a  href="/en/docs/univrm1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
         
-        <i class="fas fa-folder-open fa-fw"></i>
+        <i class="fas fa-folder fa-fw"></i>
         
         UniVRM-1.0β
     </a>
   </li>
   <ul>
-    <li class="collapse show" id="endocsunivrm1">
+    <li class="collapse " id="endocsunivrm1">
       
       
       
@@ -1092,8 +1103,8 @@
 
 
 
-<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/en/docs/univrm1/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=UniVRM-1.0%ce%b2" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/vrm-c/vrm.dev/edit/master/content/en/docs/vrm1/changed.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/vrm-c/vrm.dev/issues/new?title=VRM-1.0%20Changes" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -1101,6 +1112,29 @@
 
             
 
+
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#changes-from-vrm-0x">Changes from VRM-0.X</a></li>
+    <li><a href="#gltf-z-forward">glTF: z+ forward</a></li>
+    <li><a href="#gltf-divided-vertex-buffer">glTF: divided vertex buffer</a></li>
+    <li><a href="#vrmc_vrm-meta">VRMC_vrm: meta</a></li>
+    <li><a href="#vrmc_vrm-humanoid">VRMC_vrm: humanoid</a></li>
+    <li><a href="#vrmc_vrm-expression">VRMC_vrm: expression</a></li>
+    <li><a href="#vrmc_vrm-lookat">VRMC_vrm: lookat</a></li>
+    <li><a href="#vrmc_vrm-firstperson">VRMC_vrm: firstperson</a></li>
+    <li><a href="#vrmc_springbone">VRMC_springBone</a></li>
+    <li><a href="#vrmc_materials_hdr_emissivemultiplier">VRMC_materials_hdr_emissiveMultiplier</a></li>
+    <li><a href="#vrmc_materials_mtoon">VRMC_materials_mtoon</a></li>
+    <li><a href="#vrmc_node_constraint">VRMC_node_constraint</a>
+      <ul>
+        <li><a href="#translation">translation</a></li>
+        <li><a href="#rotation">rotation</a></li>
+        <li><a href="#aim">aim</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
 
 
 
@@ -1152,6 +1186,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://vrm.dev/en/docs/">Documentation</a>
 </li>
@@ -1159,8 +1196,15 @@
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://vrm.dev/en/docs/vrm1/">VRM-1.0β</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://vrm.dev/en/docs/univrm1/">UniVRM-1.0β</a>
+	<a href="https://vrm.dev/en/docs/vrm1/changed/">VRM-1.0 Changes</a>
 </li>
 
 	</ol>
@@ -1168,15 +1212,15 @@
 
             
 <div class="td-content">
-    <h1>UniVRM-1.0β</h1>
+    <h1>VRM-1.0 Changes</h1>
     
     
     <div class="share">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="UniVRM-1.0β - VRM" data-url="https://vrm.dev/en/docs/univrm1/"
+            data-text="VRM-1.0 Changes - VRM" data-url="https://vrm.dev/en/docs/vrm1/changed/"
             data-show-count="false">Tweet</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/en/docs/univrm1/" class="hatena-bookmark-button"
+        <a href="https://b.hatena.ne.jp/entry/https://vrm.dev/en/docs/vrm1/changed/" class="hatena-bookmark-button"
             data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja"
             title="このエントリーをはてなブックマークに追加"><img
                 src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
@@ -1184,21 +1228,328 @@
         <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
             async="async"></script>
         <iframe
-            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fen%2fdocs%2funivrm1%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
+            src="https://www.facebook.com/plugins/share_button.php?href=https%3a%2f%2fvrm.dev%2fen%2fdocs%2fvrm1%2fchanged%2f&layout=button&size=small&mobile_iframe=false&width=68&height=20&appId"
             width="68" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true"></iframe>
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>Last modified</b> August 5, 2021
+    <b>Created</b> November 22, 2021
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/f9cbaa31e0d93c7eb881995882552c26a393f4d4"><i class='fab fa-github fa-lg fa-fw'></i>English
-        (f9cbaa31)</a>
+    <b>Last modified</b> November 22, 2021
+    
+    <a href="https://github.com/vrm-c/vrm.dev/commit/c29eb2122d0ca4f47ebbfef380f45c7081e8caa2"><i class='fab fa-github fa-lg fa-fw'></i>en changed.md
+        (c29eb212)</a>
     
 </div></div>
 
     
-    
+    <h2 id="changes-from-vrm-0x">Changes from VRM-0.X</h2>
+<ul>
+<li>glTF: z- forward =&gt; z+ forward</li>
+<li>glTF: shared bufferView =&gt; divided bufferView</li>
+<li>VRM0: meta =&gt; <code>VRMC_vrm</code> meta</li>
+<li>VRM0: humanoid =&gt; <code>VRMC_vrm</code> humanoid</li>
+<li>VRM0: blendshape =&gt; <code>VRMC_vrm</code> expression</li>
+<li>VRM0: lookat =&gt; <code>VRMC_vrm</code> lookat</li>
+<li>VRM0: firstperson =&gt; <code>VRMC_vrm</code> firstperson</li>
+<li>VRM0: springBone =&gt; <code>VRMC_springBone</code></li>
+<li><code>new addition</code> =&gt; <code>VRMC_materials_hdr_emissiveMultiplier</code></li>
+<li>VRM0: mtoon =&gt; <code>VRMC_materials_mtoon</code></li>
+<li><code>new addition</code> =&gt; <code>VRMC_node_constraint</code></li>
+</ul>
+<h2 id="gltf-z-forward">glTF: z+ forward</h2>
+<p>The model stores the Z+ direction forward.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forward</td>
+<td>z-</td>
+<td>z+</td>
+</tr>
+<tr>
+<td>right</td>
+<td>x+</td>
+<td>x-</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">implemantation</h4>
+
+    <p>Y-axis 180-degree rotation.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">Vector3 vrm0;
+<span style="color:#078;font-weight:bold">var</span> vrm1 = <span style="color:#069;font-weight:bold">new</span> Vector3(-vrm0.x, vrm0.y, -vrm0.z);
+</code></pre></div><p><code>TODO</code></p>
+
+
+</div>
+
+<h2 id="gltf-divided-vertex-buffer">glTF: divided vertex buffer</h2>
+<p>Stop sharing bufferView between primitives.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bufferView</td>
+<td>shared</td>
+<td>divided</td>
+</tr>
+<tr>
+<td>Pros</td>
+<td>Less conversions due to close to GameEngine memory layout</td>
+<td>Compatible with generic glTF loaders</td>
+</tr>
+<tr>
+<td>Cons</td>
+<td>Non-UniVRM glTF loaders can cause memory usage to explode (can be loaded but unused space in the vertex buffer)</td>
+<td>There can be an increase in vertices and a change in order at export. Effort to concatenated during import. Clutter handling morphTarget</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">implemantation</h4>
+
+    Stop the &lsquo;Vrm&rsquo; dedicated shared vertex loader and use the general &lsquo;glTF&rsquo; loader.
+
+</div>
+
+<h2 id="vrmc_vrm-meta">VRMC_vrm: meta</h2>
+<p><code>TODO</code></p>
+<h2 id="vrmc_vrm-humanoid">VRMC_vrm: humanoid</h2>
+<p>Review of required bones.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>neck</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>head</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>hips</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>spine</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>chest</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>left/right UpperArm</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>left/right LowerArm</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>left/right Hand</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>left/right UpperLeg</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>left/right LowerLeg</td>
+<td>required</td>
+<td>required</td>
+</tr>
+<tr>
+<td>left/right Foot</td>
+<td>required</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<p>The following items will be removed (recorded in &lsquo;VRMHumanoidDescription&rsquo;):</p>
+<ul>
+<li>armStretch</li>
+<li>legStretch</li>
+<li>upperArmTwist</li>
+<li>lowerArmTwist</li>
+<li>upperLegTwist</li>
+<li>lowerLegTwist</li>
+<li>feetSpacing</li>
+<li>hasTranslationDoF</li>
+</ul>
+<h2 id="vrmc_vrm-expression">VRMC_vrm: expression</h2>
+<p>Rename BlendShape to Expression.</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">BlendShape</h4>
+
+    BlendShape is Unity&rsquo;s MorphTarget feature, which is confusing.
+
+</div>
+
+<p>Review of expresion preset.</p>
+<table>
+<thead>
+<tr>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>joy(joy and fun are ambiguous)</td>
+<td>happy</td>
+</tr>
+<tr>
+<td>angry</td>
+<td>angry</td>
+</tr>
+<tr>
+<td>sorrow(written language)</td>
+<td>sad</td>
+</tr>
+<tr>
+<td>fun(joy and fun are ambiguous)</td>
+<td>relaxed</td>
+</tr>
+<tr>
+<td>(new addition)</td>
+<td>surprised</td>
+</tr>
+<tr>
+<td>a(Changed to be natural in non-Japanese)</td>
+<td>aa</td>
+</tr>
+<tr>
+<td>i(Changed to be natural in non-Japanese)</td>
+<td>ih</td>
+</tr>
+<tr>
+<td>u(Changed to be natural in non-Japanese)</td>
+<td>ou</td>
+</tr>
+<tr>
+<td>e(Changed to be natural in non-Japanese)</td>
+<td>ee</td>
+</tr>
+<tr>
+<td>o(Changed to be natural in non-Japanese)</td>
+<td>oh</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Add overrideMouse, overrideLipSync and overrideBlink.</li>
+<li>Separate VRM0 materialBind from MaterialColorBind and TextureTransformBind.</li>
+</ul>
+<h2 id="vrmc_vrm-lookat">VRMC_vrm: lookat</h2>
+<ul>
+<li>Remove <code>degreemap.curve</code>.</li>
+</ul>
+<h2 id="vrmc_vrm-firstperson">VRMC_vrm: firstperson</h2>
+<ul>
+<li>Remove <code>firstPersonBone</code> and fixed to <code>Head</code>.</li>
+<li><code>firstPersonBoneOffset</code> is changed to <code>lookAt.offsetFromHeadBone</code>.</li>
+</ul>
+<h2 id="vrmc_springbone">VRMC_springBone</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>configuration unit</td>
+<td>Spring</td>
+<td>Joint</td>
+</tr>
+<tr>
+<td>child</td>
+<td>children[0]</td>
+<td>One of children</td>
+</tr>
+<tr>
+<td>leaf</td>
+<td>Automatically add 7cm distance</td>
+<td>Not add</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Separate to independent extension <code>VRMC_springBone</code></li>
+<li>Add <code>capsule shape</code> to collider.</li>
+<li>Fixed mixing of Unity coordinate systems.</li>
+</ul>
+<h2 id="vrmc_materials_hdr_emissivemultiplier">VRMC_materials_hdr_emissiveMultiplier</h2>
+<p>In glTF, the emissiveFactor(float3) value range is [0.0, 1.0].
+Add a factor to this so that it can represent values beyond 1.0.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VRM0</th>
+<th>VRM1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mtoon emissiveFactor</td>
+<td>stored in extension (0, 1 no limit)</td>
+<td>stored in gltf material&rsquo;s emissiveFactor(The range is limited to 0, 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Available from gltf-2.0 standard materials (PBR), VRMC_materials_mtoon.</p>
+<h2 id="vrmc_materials_mtoon">VRMC_materials_mtoon</h2>
+<ul>
+<li>Separate to independent extension <code>VRMC_materials_mtoon</code>.</li>
+</ul>
+<p><code>TODO</code></p>
+<h2 id="vrmc_node_constraint">VRMC_node_constraint</h2>
+<p><code>in development</code></p>
+<h3 id="translation">translation</h3>
+<h3 id="rotation">rotation</h3>
+<h3 id="aim">aim</h3>
+
 
     
     <div class="section-index">

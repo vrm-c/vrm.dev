@@ -15,6 +15,324 @@
     
     
     <item>
+      <title>Docs: VRM-1.0 Changes</title>
+      <link>https://vrm.dev/en/docs/vrm1/changed/</link>
+      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrm.dev/en/docs/vrm1/changed/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;changes-from-vrm-0x&#34;&gt;Changes from VRM-0.X&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;glTF: z- forward =&amp;gt; z+ forward&lt;/li&gt;
+&lt;li&gt;glTF: shared bufferView =&amp;gt; divided bufferView&lt;/li&gt;
+&lt;li&gt;VRM0: meta =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; meta&lt;/li&gt;
+&lt;li&gt;VRM0: humanoid =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; humanoid&lt;/li&gt;
+&lt;li&gt;VRM0: blendshape =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; expression&lt;/li&gt;
+&lt;li&gt;VRM0: lookat =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; lookat&lt;/li&gt;
+&lt;li&gt;VRM0: firstperson =&amp;gt; &lt;code&gt;VRMC_vrm&lt;/code&gt; firstperson&lt;/li&gt;
+&lt;li&gt;VRM0: springBone =&amp;gt; &lt;code&gt;VRMC_springBone&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;new addition&lt;/code&gt; =&amp;gt; &lt;code&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;VRM0: mtoon =&amp;gt; &lt;code&gt;VRMC_materials_mtoon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;new addition&lt;/code&gt; =&amp;gt; &lt;code&gt;VRMC_node_constraint&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gltf-z-forward&#34;&gt;glTF: z+ forward&lt;/h2&gt;
+&lt;p&gt;The model stores the Z+ direction forward.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;forward&lt;/td&gt;
+&lt;td&gt;z-&lt;/td&gt;
+&lt;td&gt;z+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;right&lt;/td&gt;
+&lt;td&gt;x+&lt;/td&gt;
+&lt;td&gt;x-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;implemantation&lt;/h4&gt;
+
+    &lt;p&gt;Y-axis 180-degree rotation.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;Vector3 vrm0;
+&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;var&lt;/span&gt; vrm1 = &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Vector3(-vrm0.x, vrm0.y, -vrm0.z);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;gltf-divided-vertex-buffer&#34;&gt;glTF: divided vertex buffer&lt;/h2&gt;
+&lt;p&gt;Stop sharing bufferView between primitives.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bufferView&lt;/td&gt;
+&lt;td&gt;shared&lt;/td&gt;
+&lt;td&gt;divided&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pros&lt;/td&gt;
+&lt;td&gt;Less conversions due to close to GameEngine memory layout&lt;/td&gt;
+&lt;td&gt;Compatible with generic glTF loaders&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cons&lt;/td&gt;
+&lt;td&gt;Non-UniVRM glTF loaders can cause memory usage to explode (can be loaded but unused space in the vertex buffer)&lt;/td&gt;
+&lt;td&gt;There can be an increase in vertices and a change in order at export. Effort to concatenated during import. Clutter handling morphTarget&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;implemantation&lt;/h4&gt;
+
+    Stop the &amp;lsquo;Vrm&amp;rsquo; dedicated shared vertex loader and use the general &amp;lsquo;glTF&amp;rsquo; loader.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;vrmc_vrm-meta&#34;&gt;VRMC_vrm: meta&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_vrm-humanoid&#34;&gt;VRMC_vrm: humanoid&lt;/h2&gt;
+&lt;p&gt;Review of required bones.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;neck&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;head&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hips&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spine&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chest&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right UpperArm&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right LowerArm&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right Hand&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right UpperLeg&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right LowerLeg&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;left/right Foot&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;td&gt;required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The following items will be removed (recorded in &amp;lsquo;VRMHumanoidDescription&amp;rsquo;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;armStretch&lt;/li&gt;
+&lt;li&gt;legStretch&lt;/li&gt;
+&lt;li&gt;upperArmTwist&lt;/li&gt;
+&lt;li&gt;lowerArmTwist&lt;/li&gt;
+&lt;li&gt;upperLegTwist&lt;/li&gt;
+&lt;li&gt;lowerLegTwist&lt;/li&gt;
+&lt;li&gt;feetSpacing&lt;/li&gt;
+&lt;li&gt;hasTranslationDoF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-expression&#34;&gt;VRMC_vrm: expression&lt;/h2&gt;
+&lt;p&gt;Rename BlendShape to Expression.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;BlendShape&lt;/h4&gt;
+
+    BlendShape is Unity&amp;rsquo;s MorphTarget feature, which is confusing.
+
+&lt;/div&gt;
+
+&lt;p&gt;Review of expresion preset.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;joy(joy and fun are ambiguous)&lt;/td&gt;
+&lt;td&gt;happy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;angry&lt;/td&gt;
+&lt;td&gt;angry&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sorrow(written language)&lt;/td&gt;
+&lt;td&gt;sad&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fun(joy and fun are ambiguous)&lt;/td&gt;
+&lt;td&gt;relaxed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(new addition)&lt;/td&gt;
+&lt;td&gt;surprised&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a(Changed to be natural in non-Japanese)&lt;/td&gt;
+&lt;td&gt;aa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;i(Changed to be natural in non-Japanese)&lt;/td&gt;
+&lt;td&gt;ih&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;u(Changed to be natural in non-Japanese)&lt;/td&gt;
+&lt;td&gt;ou&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;e(Changed to be natural in non-Japanese)&lt;/td&gt;
+&lt;td&gt;ee&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;o(Changed to be natural in non-Japanese)&lt;/td&gt;
+&lt;td&gt;oh&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Add overrideMouse, overrideLipSync and overrideBlink.&lt;/li&gt;
+&lt;li&gt;Separate VRM0 materialBind from MaterialColorBind and TextureTransformBind.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-lookat&#34;&gt;VRMC_vrm: lookat&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove &lt;code&gt;degreemap.curve&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_vrm-firstperson&#34;&gt;VRMC_vrm: firstperson&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove &lt;code&gt;firstPersonBone&lt;/code&gt; and fixed to &lt;code&gt;Head&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;firstPersonBoneOffset&lt;/code&gt; is changed to &lt;code&gt;lookAt.offsetFromHeadBone&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_springbone&#34;&gt;VRMC_springBone&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration unit&lt;/td&gt;
+&lt;td&gt;Spring&lt;/td&gt;
+&lt;td&gt;Joint&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;child&lt;/td&gt;
+&lt;td&gt;children[0]&lt;/td&gt;
+&lt;td&gt;One of children&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;leaf&lt;/td&gt;
+&lt;td&gt;Automatically add 7cm distance&lt;/td&gt;
+&lt;td&gt;Not add&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Separate to independent extension &lt;code&gt;VRMC_springBone&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;capsule shape&lt;/code&gt; to collider.&lt;/li&gt;
+&lt;li&gt;Fixed mixing of Unity coordinate systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vrmc_materials_hdr_emissivemultiplier&#34;&gt;VRMC_materials_hdr_emissiveMultiplier&lt;/h2&gt;
+&lt;p&gt;In glTF, the emissiveFactor(float3) value range is [0.0, 1.0].
+Add a factor to this so that it can represent values beyond 1.0.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VRM0&lt;/th&gt;
+&lt;th&gt;VRM1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;mtoon emissiveFactor&lt;/td&gt;
+&lt;td&gt;stored in extension (0, 1 no limit)&lt;/td&gt;
+&lt;td&gt;stored in gltf material&amp;rsquo;s emissiveFactor(The range is limited to 0, 1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Available from gltf-2.0 standard materials (PBR), VRMC_materials_mtoon.&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_materials_mtoon&#34;&gt;VRMC_materials_mtoon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Separate to independent extension &lt;code&gt;VRMC_materials_mtoon&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;TODO&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vrmc_node_constraint&#34;&gt;VRMC_node_constraint&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;in development&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;translation&#34;&gt;translation&lt;/h3&gt;
+&lt;h3 id=&#34;rotation&#34;&gt;rotation&lt;/h3&gt;
+&lt;h3 id=&#34;aim&#34;&gt;aim&lt;/h3&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: 0. Create a Unity project and install UniVRM</title>
       <link>https://vrm.dev/en/docs/vrm/how_to_make_vrm/setup_unity/</link>
       <pubDate>Thu, 12 Nov 2020 11:24:17 +0900</pubDate>
