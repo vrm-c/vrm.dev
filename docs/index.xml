@@ -4886,7 +4886,7 @@ Yaw, Pitch の上限角度を設定できます。
     <item>
       <title>Docs: 🚧アップグレードに対応する機能</title>
       <link>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</link>
-      <pubDate>Wed, 17 Nov 2021 21:46:30 +0900</pubDate>
+      <pubDate>Thu, 02 Dec 2021 17:42:46 +0900</pubDate>
       
       <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</guid>
       <description>
@@ -4953,6 +4953,26 @@ Yaw, Pitch の上限角度を設定できます。
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h4 id=&#34;特殊なマイグレーション&#34;&gt;特殊なマイグレーション&lt;/h4&gt;
+&lt;h5 id=&#34;shade-texture-の指定がない場合&#34;&gt;Shade Texture の指定がない場合&lt;/h5&gt;
+&lt;p&gt;旧来の &lt;code&gt;VRM/MToon&lt;/code&gt; の Global Illumination には実装不備がありました。
+そこで &lt;code&gt;VRM10/MToon10&lt;/code&gt; ではこの実装が修正され、全体の Global Illumination 反映がより良いものになりました。&lt;/p&gt;
+&lt;p&gt;しかしその修正により Shade Texture の指定がない場合の挙動に大きく差異があります。
+その場合、旧来の &lt;code&gt;VRM/MToon&lt;/code&gt; では実装不備により、通常のシーン光源下では一見して正しく描画できていました。
+しかし &lt;code&gt;VRM10/MToon10&lt;/code&gt; では正しくシーン照明が反映されるようになったので、Shade Texture の指定が無いことが明らかになる見た目になりました。&lt;/p&gt;
+&lt;p&gt;したがって以下のように Shade Texture を破壊的にマイグレーションし、モデル制作者の意図した見た目に近づけるようにします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;条件
+&lt;ul&gt;
+&lt;li&gt;Lit Texture が指定されている、かつ、Shade Texture が指定されていないとき&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;マイグレーション方法
+&lt;ul&gt;
+&lt;li&gt;Shade Texture を Lit Texture と同じ Texture に指定する。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>

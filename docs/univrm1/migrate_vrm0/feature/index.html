@@ -23,12 +23,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vrm.dev/docs/univrm1/migrate_vrm0/feature/" />
 <meta property="og:image" content="https://vrm.dev/images/vrm/card.png"/>
-<meta property="article:published_time" content="2021-11-17T21:46:30+09:00" />
-<meta property="article:modified_time" content="2021-11-17T21:46:30+09:00" /><meta property="og:site_name" content="VRM" />
+<meta property="article:published_time" content="2021-12-02T17:42:46+09:00" />
+<meta property="article:modified_time" content="2021-12-02T17:42:46+09:00" /><meta property="og:site_name" content="VRM" />
 <meta itemprop="name" content="🚧アップグレードに対応する機能">
 <meta itemprop="description" content="ここでは VRM-0.x モデルから VRM-1.0β モデルにアップグレードする際の機能の対応を述べます。 主に名称の変更と、明確に変更される機能について述べま">
-<meta itemprop="dateModified" content="2021-11-17T21:46:30+09:00" />
-<meta itemprop="wordCount" content="605">
+<meta itemprop="dateModified" content="2021-12-02T17:42:46+09:00" />
+<meta itemprop="wordCount" content="937">
 <meta itemprop="image" content="https://vrm.dev/images/vrm/card.png"/>
 
 
@@ -1428,10 +1428,10 @@
     </div>
     <div class="text-muted mb-2 pt-3"><div class="date">
     
-    <b>最終更新</b> 2021/11/17
+    <b>最終更新</b> 2021/12/02
     
-    <a href="https://github.com/vrm-c/vrm.dev/commit/7be0cf4cbc212b93ce1c5b8979e9b8778f464d01"><i class='fab fa-github fa-lg fa-fw'></i>Meta に関する記述を追加
-        (7be0cf4c)</a>
+    <a href="https://github.com/vrm-c/vrm.dev/commit/ccd76f3609ab4e976f3e373b8d2caf9c6ff39d29"><i class='fab fa-github fa-lg fa-fw'></i>MToon の特殊なマイグレーションについて追記
+        (ccd76f36)</a>
     
 </div></div>
 
@@ -1497,6 +1497,26 @@
 </tr>
 </tbody>
 </table>
+<h4 id="特殊なマイグレーション">特殊なマイグレーション</h4>
+<h5 id="shade-texture-の指定がない場合">Shade Texture の指定がない場合</h5>
+<p>旧来の <code>VRM/MToon</code> の Global Illumination には実装不備がありました。
+そこで <code>VRM10/MToon10</code> ではこの実装が修正され、全体の Global Illumination 反映がより良いものになりました。</p>
+<p>しかしその修正により Shade Texture の指定がない場合の挙動に大きく差異があります。
+その場合、旧来の <code>VRM/MToon</code> では実装不備により、通常のシーン光源下では一見して正しく描画できていました。
+しかし <code>VRM10/MToon10</code> では正しくシーン照明が反映されるようになったので、Shade Texture の指定が無いことが明らかになる見た目になりました。</p>
+<p>したがって以下のように Shade Texture を破壊的にマイグレーションし、モデル制作者の意図した見た目に近づけるようにします。</p>
+<ul>
+<li>条件
+<ul>
+<li>Lit Texture が指定されている、かつ、Shade Texture が指定されていないとき</li>
+</ul>
+</li>
+<li>マイグレーション方法
+<ul>
+<li>Shade Texture を Lit Texture と同じ Texture に指定する。</li>
+</ul>
+</li>
+</ul>
 
 
     
