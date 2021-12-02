@@ -61,3 +61,19 @@ VRM-1.0β ではより自由度の高い SpringBone が表現できるように�
 | Lit & Shade Mixing Multiplier | 削除されます.          |
 | LightColorAttenuation         | 削除されます.          |
 | WidthScaledMaxDistance        | 削除されます.          |
+
+#### 特殊なマイグレーション
+##### Shade Texture の指定がない場合
+旧来の `VRM/MToon` の Global Illumination には実装不備がありました。
+そこで `VRM10/MToon10` ではこの実装が修正され、全体の Global Illumination 反映がより良いものになりました。
+
+しかしその修正により Shade Texture の指定がない場合の挙動に大きく差異があります。
+その場合、旧来の `VRM/MToon` では実装不備により、通常のシーン光源下では一見して正しく描画できていました。
+しかし `VRM10/MToon10` では正しくシーン照明が反映されるようになったので、Shade Texture の指定が無いことが明らかになる見た目になりました。
+
+したがって以下のように Shade Texture を破壊的にマイグレーションし、モデル制作者の意図した見た目に近づけるようにします。
+
+- 条件
+  - Lit Texture が指定されている、かつ、Shade Texture が指定されていないとき
+- マイグレーション方法
+  - Shade Texture を Lit Texture と同じ Texture に指定する。
