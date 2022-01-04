@@ -5,10 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "sphinx",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "module": "sphinx",
+            "args": [
+                "content/ja/docs",
+                "build",
+                "-b=dirhtml"
+            ],
             "console": "integratedTerminal"
         }
     ]
