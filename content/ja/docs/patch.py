@@ -21,11 +21,25 @@ def parse(self, inputstring: str, document: nodes.document) -> None:
                         content="{}", map=[0, 0])] + tokens
 
     header_text = None
-    if len(tokens) <= 1 or tokens[1].type != 'heading_open':
+    if tokens[0].type == 'front_matter':
         # insert heading
         import pathlib
-        header_text = Token("text", "", 0, content=pathlib.Path(
-            document.current_source).stem)
+        path = pathlib.Path(
+            document.current_source)
+        title = path.stem
+        if title in ('index', '_index'):
+            title = path.parent.stem
+        if title == 'vrm_about':
+            pass
+
+        try:
+            import yaml
+            data = yaml.safe_load(tokens[0].content)
+            title = data['title']
+        except Exception as ex:
+            pass
+
+        header_text = Token("text", "", 0, content=title)
         tokens = [tokens[0],
                   Token("heading_open", "h1", 1, content="{}", map=[0, 0]),
                   Token("inline", "", 0, content="{}", map=[
@@ -35,15 +49,5 @@ def parse(self, inputstring: str, document: nodes.document) -> None:
                   ] + tokens[1:]
 
     parser.renderer.render(tokens, parser.options, env)
-
-    # fix heading name from front matter
-    if header_text:
-        field_list = document.children[0]
-        if isinstance(field_list, nodes.field_list):
-            for field in field_list.children:
-                name, body = field.children
-                if name.rawsource == 'title':
-                    header_text.content = body.rawsource
-
 
 myst_parser.sphinx_parser.MystParser.parse = parse
