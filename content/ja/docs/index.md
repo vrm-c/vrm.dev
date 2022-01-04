@@ -1,9 +1,9 @@
-# VRM
+# ドキュメント
 
 {date}`2018-04-16T16:30:00+09:00`
 
 ```{toctree}
-vrm/_index
+vrm/index
 ```
 
 {{< blocks/cover title="VRM - VR向け3Dアバターファイルフォーマット -" image_anchor="top" height="min" color="primary" >}}
