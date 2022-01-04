@@ -6,3 +6,12 @@ menu:
   main:
     weight: 1
 ---
+
+```{toctree}
+vrm_about
+how_to_make_vrm/index
+how_to_view_vrm
+vrm_applications
+vrm_meta
+vrm_development
+```

@@ -5,6 +5,13 @@ weight: 2
 aliases: ["/docs/univrm/univrm_workflow/"]
 ---
 
+```{toctree}
+setup_unity
+convert_from_humanoid_model
+setup_vrm
+vrm_behavior_confirmation
+```
+
 UniVRMを使うVRM化作業のながれは以下のようになります：
 
 1. 元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する
