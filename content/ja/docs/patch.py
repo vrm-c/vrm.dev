@@ -22,7 +22,11 @@ def parse(self, inputstring: str, document: nodes.document) -> None:
 
     header_text = None
     if tokens[0].type == 'front_matter':
-        # insert heading
+        #
+        # Hugo article migration
+        # 
+        # * get title from frontmatter(yaml)
+        # 
         import pathlib
         path = pathlib.Path(
             document.current_source)

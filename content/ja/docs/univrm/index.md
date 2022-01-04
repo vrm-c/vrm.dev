@@ -7,6 +7,20 @@ menu:
 aliases: ["/univrm/"]
 ---
 
+```{toctree}
+install/index
+export/index
+import/index
+blendshape/index
+shaders/index
+lookat/index
+springbone/index
+humanoid/index
+meta/index
+firstperson/index
+programming/index
+```
+
 ## Install 方法
 
 * `v0.81.0` から `unitypackage` が２つ必要です。
