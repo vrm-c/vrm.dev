@@ -8,6 +8,7 @@ menu:
 ---
 
 ```{toctree}
+:maxdepth: 1
 vrm_about
 how_to_make_vrm/index
 how_to_view_vrm
