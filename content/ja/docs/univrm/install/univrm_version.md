@@ -65,7 +65,7 @@ VRM-1.0 作業中
 
 ## v0.79.0 ～
 
-* `0.80.0` からサポートする Unity の最低バージョンを `2019.4LTS` に更新しました。[Unity Version]({{< relref "unity_version.md" >}})。
+* `0.80.0` からサポートする Unity の最低バージョンを `2019.4LTS` に更新しました。[Unity Version](/univrm/install/unity_version)。
 * `0.80.0` から `VRM-1.0β` のパッケージ提供を開始しました。
 
 | date  | version                                                                                                                          | 安定性・バグ  | 更新内容・備考                              |

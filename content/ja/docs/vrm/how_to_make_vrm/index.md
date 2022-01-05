@@ -15,7 +15,7 @@ vrm_behavior_confirmation
 UniVRMを使うVRM化作業のながれは以下のようになります：
 
 1. 元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する
-1. 上記出力した VRMファイルを読み込み、Unity上でVRM独自の設定（[ライセンス]({{< relref "univrm_meta.md" >}})・[揺れ物]({{< relref "univrm_secondary.md" >}})・[表情]({{< relref "univrm_blendshape.md" >}})・[目線]({{< relref "univrm_lookat.md" >}})・[一人称表示]({{< relref "univrm_firstperson.md" >}})など）を行い、正規化せずにVRMファイルを出力する
+1. 上記出力した VRMファイルを読み込み、Unity上でVRM独自の設定（[ライセンス](/univrm/meta/univrm_meta)・[揺れ物](/univrm/springbone/univrm_secondary)・[表情](/univrm/blendshape/univrm_blendshape)・[目線](/univrm/lookat/univrm_lookat)・[一人称表示](/univrm/firstperson/univrm_firstperson)など）を行い、正規化せずにVRMファイルを出力する
 
 ポイントは、 
 

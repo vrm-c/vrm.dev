@@ -5,7 +5,7 @@ url: /how_to_view_vrm/
 weight: 3
 ---
 
-VRMビューアアプリは[こちら]({{< relref "vrm_applications.md#ビューア" >}})。
+VRMビューアアプリは[こちら](/vrm/vrm_applications#ビューア)。
 
 または[UniVRMTest](https://github.com/vrm-c/UniVRMTest/)のビューアを使用できます：
 

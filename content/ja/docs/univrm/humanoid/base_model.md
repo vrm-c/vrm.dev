@@ -58,7 +58,7 @@ HumanoidAvatar にはおそらく、
 
 `fbx importer` に頼らずに HumanoidAvatar を作成できます。
 
-[HumanoidComponent]({{< relref "meshutility_humanoid.md" >}})
+[HumanoidComponent](/univrm/humanoid/meshutility_humanoid)
 
 これを使うと、
 

@@ -9,8 +9,8 @@ tags: ["unity"]
 
 UniVRM v0.45で導入された新機能は
 
-* [設定画面]({{< relref "blendshape_setup.md" >}})
-* [BlendShapeの状態をベイクする]({{< relref "univrm_bake_blendshape.md" >}})
+* [設定画面](/univrm/blendshape/blendshape_setup)
+* [BlendShapeの状態をベイクする](/univrm/blendshape/univrm_bake_blendshape)
 
 をご覧ください。
 

@@ -8,7 +8,7 @@ tags: ["unity"]
 
 ## Unity Version
 
-* Unity-2019.4 が推奨バージョンです。その他のバージョンは、[Unityのバージョン]({{< relref "unity_version.md" >}}) を参照してください。
+* Unity-2019.4 が推奨バージョンです。その他のバージョンは、[Unityのバージョン](/univrm/install/unity_version) を参照してください。
 
 ## unitypackage の入手
 
@@ -33,7 +33,7 @@ https://github.com/vrm-c/UniVRM/releases
 
 {{% alert title="既存のプロジェクト" color="warning" %}}
 事前に、古いバージョンの VRM を削除することを推奨しています。
-[UniVRMをアンインストール]({{< relref "univrm_uninstall.md" >}}) を参照してください。
+[UniVRMをアンインストール](/univrm/install/univrm_uninstall) を参照してください。
 {{% /alert %}}
 
 
@@ -71,5 +71,5 @@ menu が出てこない場合は、
 
 ## 関連セクション
 
-- [VRMファイルを作ってみたい]({{< relref "how_to_make_vrm" >}})
-- [VRMをインポートする]({{< relref "univrm_import" >}})
+- [VRMファイルを作ってみたい](/vrm/how_to_make_vrm/index)
+- [VRMをインポートする](/univrm/import/univrm_import)

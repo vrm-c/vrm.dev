@@ -65,7 +65,7 @@ Unity では、 Avatar というオブジェクトがあります。
 Avatar は Unity の オブジェクトですが、Humanoid Avatar の設定画面は `fbx importer` の一部です。
 このため、 fbx 以外のデータから Humanoid Avatar のあるモデルを作れません。
 ただし、Program から Humanoid Avatar を作成する関数はあるので、
-UniVRMは Humanoid Avatar を作成できます。 [humanoid component]({{< relref "meshutility_humanoid.md" >}})
+UniVRMは Humanoid Avatar を作成できます。 [humanoid component](/univrm/humanoid/meshutility_humanoid)
 
 ## 互換性のあるBVH
 

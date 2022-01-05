@@ -25,7 +25,7 @@ programming/index
 ## Install 方法
 
 * `v0.81.0` から `unitypackage` が２つ必要です。
-* `v0.80.0` 以前のインストールは [こちら]({{< relref "univrm_install" >}})
+* `v0.80.0` 以前のインストールは [こちら](/univrm/install/univrm_install)
 * [Download](https://github.com/vrm-c/UniVRM/releases)
 
 ### UnityPackage を使ったインストール

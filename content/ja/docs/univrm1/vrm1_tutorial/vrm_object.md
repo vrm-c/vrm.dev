@@ -42,18 +42,18 @@ VrmObject は以下の４つの設定を持っています。
 
 {{< img width=600 src="images/vrm10/tutorial/vrm_object.jpg" >}}
 
-## [Meta 画面]({{< relref "meta.md" >}})
+## [Meta 画面](/univrm1/vrm1_tutorial/meta)
 
 {{< img width=400 src="images/vrm10/tutorial/vrm_meta_settings.jpg" >}}
 
-## [Expression 画面]({{< relref "expression.md" >}})
+## [Expression 画面](/univrm1/vrm1_tutorial/expression)
 
 {{< img width=400 src="images/vrm10/tutorial/vrm_expression_settings.jpg" >}}
 
-## [LookAt 画面]({{< relref "lookat.md" >}})
+## [LookAt 画面](/univrm1/vrm1_tutorial/lookat)
 
 {{< img width=400 src="images/vrm10/tutorial/vrm_lookat_settings.jpg" >}}
 
-## [FirstPerson 画面]({{< relref "firstperson.md" >}})
+## [FirstPerson 画面](/univrm1/vrm1_tutorial/firstperson)
 
 {{< img width=400 src="images/vrm10/tutorial/vrm_firstperson_settings.jpg" >}}

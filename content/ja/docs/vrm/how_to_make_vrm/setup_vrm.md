@@ -31,14 +31,14 @@ prefab をシーンに展開します。
 {{< img src="images/vrm/vrm_settings.png" >}}
 
 読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目** があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
-**少なくとも、[タイトル・作者・ライセンス情報]({{< relref "univrm_meta.md" >}})** は埋めるようにしてください。 **特にライセンス情報は重要です！**
+**少なくとも、[タイトル・作者・ライセンス情報](/univrm/meta/univrm_meta)** は埋めるようにしてください。 **特にライセンス情報は重要です！**
 
 ほかに、
 
-* [表情や口パクの設定（BlendShape）]({{< relref "univrm_blendshape.md" >}})
-* [一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）]({{< relref "univrm_firstperson.md" >}})
-* [視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。]({{< relref "univrm_lookat.md" >}})
-* [揺れ物（SpringBone/SpringBoneCollider）の設定]({{< relref "univrm_secondary.md" >}})
+* [表情や口パクの設定（BlendShape）](/univrm/blendshape/univrm_blendshape)
+* [一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）](/univrm/firstperson/univrm_firstperson)
+* [視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。](/univrm/lookat/univrm_lookat)
+* [揺れ物（SpringBone/SpringBoneCollider）の設定](/univrm/springbone/univrm_secondary)
 
 がありますので必要に応じて設定していきます。
 
@@ -63,9 +63,9 @@ prefab をシーンに展開します。
 
 などの場合に必要です。 `ExportRoot` を再セットすれば自動判定します。
 
-* [BlendShape の Bake]({{< relref "univrm_bake_blendshape.md" >}}) もあります。
+* [BlendShape の Bake](/univrm/blendshape/univrm_bake_blendshape) もあります。
 
 {{% /alert %}}
 
 ### 完成！
-これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション]({{< relref "vrm_applications.md" >}})に読み込ませてみましょう！
+これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/vrm/vrm_applications)に読み込ませてみましょう！

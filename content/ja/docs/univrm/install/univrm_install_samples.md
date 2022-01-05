@@ -5,7 +5,7 @@ weight: 4
 tags: ["api"]
 ---
 
-このセクションでは、[UniVRMパッケージをインストール]({{< relref "univrm_install.md" >}})したことを想定しています。
+このセクションでは、[UniVRMパッケージをインストール](/univrm/install/univrm_install)したことを想定しています。
 
 ## UniVRMサンプルのパッケージ
 

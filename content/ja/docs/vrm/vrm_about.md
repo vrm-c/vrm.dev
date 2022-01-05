@@ -11,12 +11,12 @@ VRMでは「人型」の「キャラクター・アバター」を取り扱う�
 
 * ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できる。
 * テクスチャやマテリアルなどすべてのデータが１ファイルにまとまり、**簡単に実行時にロードできる**。
-* 「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。ユーザー操作で表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ [BlendShape]({{< relref "univrm_blendshape.md" >}})
-* 3種類のマテリアル(シェーダー)に対応 ➡️ [MToon]({{< relref "shader_mtoon.md" >}}), [Unlit]({{< relref "univrm_unlit.md" >}}), [PBR]({{< relref "univrm_standard.md" >}})
-* 3種類の視線制御に対応 ➡️ [ボーンによる視線]({{< relref "lookat_bone.md" >}})、 [BlendShapeによる視線]({{< relref "lookat_blendshape.md" >}})、 [TextureUVによる視線]({{< relref "lookat_uv.md" >}})
-* キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意 ➡️ [SpringBone]({{< relref "univrm_secondary.md" >}})
-* VRでのアバター利用のための、**「一人称視点再現のための情報」** ➡️ [FirstPerson]({{< relref "univrm_firstperson.md" >}})
-* タイトル・作者名などのメタ情報だけでなく、サムネイルや **VR時代に即した、アバターに特化したライセンス情報** も内包可能 ➡️ [Meta]({{< relref "vrm_meta.md" >}})
+* 「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されている。ユーザー操作で表情を選択したり、音声からリップシンクしたり、ランダムで瞬きしたり、フェイシャルキャプチャーを割り当てたりできる ➡️ [BlendShape](/univrm/blendshape/univrm_blendshape)
+* 3種類のマテリアル(シェーダー)に対応 ➡️ [MToon](/univrm/shaders/shader_mtoon), [Unlit](/univrm/shaders/univrm_unlit), [PBR](/univrm/shaders/univrm_standard)
+* 3種類の視線制御に対応 ➡️ [ボーンによる視線](/univrm/lookat/lookat_bone)、 [BlendShapeによる視線](/univrm/lookat/lookat_blendshape)、 [TextureUVによる視線](/univrm/lookat/lookat_uv)
+* キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装を用意 ➡️ [SpringBone](/univrm/springbone/univrm_secondary)
+* VRでのアバター利用のための、**「一人称視点再現のための情報」** ➡️ [FirstPerson](/univrm/firstperson/univrm_firstperson)
+* タイトル・作者名などのメタ情報だけでなく、サムネイルや **VR時代に即した、アバターに特化したライセンス情報** も内包可能 ➡️ [Meta](/vrm/vrm_meta)
 
 というように単なるモデルデータに留まらず、**アプリケーションでロードしてすぐに使えるようになっています**。
 
@@ -39,7 +39,7 @@ VRMでは「人型」の「キャラクター・アバター」を取り扱う�
 
 ---
 
- ➡️ [VRMファイルが使えるアプリケーション]({{< relref "vrm_applications.md" >}})
+ ➡️ [VRMファイルが使えるアプリケーション](/vrm/vrm_applications)
 
 ## VRMの特徴
 
@@ -83,4 +83,4 @@ VRでのアバター表現が急速に盛り上がるなか、こういった状
 
 ## VRMを使うアプリケーションを開発する
 
- ➡️ [VRMで開発する]({{< relref "vrm_development.md" >}})
+ ➡️ [VRMで開発する](/vrm/vrm_development)

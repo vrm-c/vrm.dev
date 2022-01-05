@@ -47,5 +47,5 @@ UniVRM-XXX.unitypackageファイルをUnityにインポートしてください�
 
 ## 関連セクション
 
-- [vrm独自の設定を行う]({{< relref "setup_vrm#vrm独自の設定を行う" >}})
-- [VRMをエクスポートする]({{< relref "univrm_export" >}})
+- [vrm独自の設定を行う](/vrm/how_to_make_vrm/setup_vrm#vrm独自の設定を行う)
+- [VRMをエクスポートする](/univrm/export/univrm_export)

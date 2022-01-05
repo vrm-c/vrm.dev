@@ -6,7 +6,7 @@ weight: 6
 ---
 
 * [programming](https://vrm-c.github.io/UniVRM/)
-* [samples]({{< relref "univrm_install_samples.md" >}})
+* [samples](/univrm/install/univrm_install_samples)
 
 ## VRMの特徴(開発者的な視点)
 
@@ -37,7 +37,7 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 ランタイムで UniVRM の エクスポート機能 を使うことができます。
 この機能を使って、キャラクタークリエーションツール を実装することができます。
 
-* [samples]({{< relref "univrm_install_samples.md" >}})
+* [samples](/univrm/install/univrm_install_samples)
 
 `Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity`
 

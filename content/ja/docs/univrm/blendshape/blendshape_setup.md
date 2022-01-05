@@ -49,7 +49,7 @@ BlendShapeタブで作成した値を見ることが出来ます。
 
 #### Material Listタブ
 
-`BlendShapeによる`[LookAt]({{< relref "lookat_blendshape.md" >}})(後述)や、BlendShapeで色を変える設定を作成することができます。
+`BlendShapeによる`[LookAt](/univrm/lookat/lookat_blendshape)(後述)や、BlendShapeで色を変える設定を作成することができます。
 
 ![image](/images/wiki/material_color.png)
 

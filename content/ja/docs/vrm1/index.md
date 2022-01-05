@@ -32,12 +32,12 @@ https://github.com/vrm-c/vrm-specification/tree/master/specification
 ### VRMパブリック・ライセンス文書 1.0
 アバターの人格に関する許諾を考慮した、VRM 独自のライセンスです。
 
-[VRMパブリック・ライセンス文書 1.0]({{< relref "licenses/1.0/_index.md" >}})
+[VRMパブリック・ライセンス文書 1.0](/licenses/1.0/_index)
 
 ## 実装
 公式の実装として Unity での実装「UniVRM」が存在します。
 
-[UniVRM-1.0β]({{< relref "univrm1" >}})
+[UniVRM-1.0β](/univrm1/index)
 
 ```{toctree}
 :maxdepth: 1

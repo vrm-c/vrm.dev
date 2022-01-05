@@ -103,7 +103,7 @@ Indexバッファは、Intの配列を使っています。
 
 ### ブレンドシェイプの容量対策
 
-[エクスポートダイアログ]({{< relref "univrm_export" >}})
+[エクスポートダイアログ](/univrm/export/univrm_export)
 の以下のオプションがブレンドシェイプの容量に関連します。
 
 #### エクスポートオプション
@@ -158,7 +158,7 @@ BlendShapeのNormal, Tangent をエクスポートしない。
 
 > ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある
 
-[Mesh Utility]({{< relref "mesh_utility.md" >}})
+[Mesh Utility](/gltf/mesh_utility)
 
 ## まとめ
 

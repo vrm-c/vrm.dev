@@ -20,7 +20,7 @@ weight: 2
 また、Humanoid として認識させるために必須のボーンがすべて含まれている必要があります。
 
 {{% alert title="ベースモデル" color="info" %}}
-使用可能なベースモデルの詳細は、 [BaseModel]({{< relref "base_model.md" >}}) を参照してください。
+使用可能なベースモデルの詳細は、 [BaseModel](/univrm/humanoid/base_model) を参照してください。
 {{% /alert %}}
 
 [必須ボーン](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3)
@@ -45,7 +45,7 @@ unity
 VRM 向けなので、この例では全部 `MToon` にします。
 
 {{% alert title="Shader" color="info" %}}
-VRMは、[MToon]({{< relref "shader_mtoon.md" >}})、[Unlit]({{< relref "univrm_unlit.md" >}}) と [Standard]({{< relref "univrm_standard.md" >}}) の３種類を記録できます。
+VRMは、[MToon](/univrm/shaders/shader_mtoon)、[Unlit](/univrm/shaders/univrm_unlit) と [Standard](/univrm/shaders/univrm_standard) の３種類を記録できます。
 {{% /alert %}}
 
 `Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。
@@ -65,7 +65,7 @@ MToon の `Shade Color` を白に変更
 
 {{< img src="images/vrm/alicia_preview.jpg" >}}
 
-ちゃんとした設定はこちら。[MToonの設定]({{< relref "shader_mtoon.md" >}})
+ちゃんとした設定はこちら。[MToonの設定](/univrm/shaders/shader_mtoon)
 
 手順の説明なので先に進みます。
 
@@ -112,7 +112,7 @@ fbx の prefab をシーンに展開します。
 
 BlendShapeで変な影が出る場合の対策です。
 
-[BlendShape の法線を確認しよう]({{< relref "check_blendshape_normal.md" >}})
+[BlendShape の法線を確認しよう](/univrm/blendshape/check_blendshape_normal)
 
 ## エクスポート
 
@@ -135,7 +135,7 @@ BlendShapeで変な影が出る場合の対策です。
 * 赤いメッセージは解決する必要があります。
 * 黄色いメッセージは無視してエクスポートできます。
 
-[エクスポートダイアログ]({{< relref "univrm_export.md" >}})
+[エクスポートダイアログ](/univrm/export/univrm_export)
 {{% /alert %}}
 
 {{< img src="images/vrm/export_dialog_title_version_author.jpg" width="900" >}}

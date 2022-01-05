@@ -11,7 +11,7 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 
 ## Expression の割り当て設定
 
-[VrmObject]({{< relref "vrm_object.md" >}}) の Expression GUI で設定します。
+[VrmObject](/univrm1/vrm1_tutorial/vrm_object) の Expression GUI で設定します。
 
 {{< img width=800 src="images/vrm10/tutorial/vrm_expression_settings.jpg" >}}
 

@@ -3,7 +3,7 @@ title: LookAt の設定
 weight: 7
 ---
 
-[VrmObject]({{< relref "vrm_object.md" >}}) の LookAt GUI で設定します。
+[VrmObject](/univrm1/vrm1_tutorial/vrm_object) の LookAt GUI で設定します。
 
 {{< img width=600 src="images/vrm10/tutorial/vrm_lookat_settings.jpg" >}}
 

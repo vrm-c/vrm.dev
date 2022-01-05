@@ -53,4 +53,4 @@ VRMSpringBoneColliderGroupには最初からひとつの球が設定されます
 VRMSpringBoneはインポート時に```secondary```ノードにアタッチされます。
 エクスポート時と違う場所に現れるのでご注意ください。
 
-[VRMSpringBone]({{< relref "univrm_secondary.md#コンポーネントのアタッチされるノード" >}})
+[VRMSpringBone](/univrm/springbone/univrm_secondary#コンポーネントのアタッチされるノード)

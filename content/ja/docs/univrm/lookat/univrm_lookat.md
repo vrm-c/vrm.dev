@@ -18,15 +18,15 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 
 ### Bone
 
-[eye ボーンが回転するタイプ]({{< relref "lookat_bone.md" >}})
+[eye ボーンが回転するタイプ](/univrm/lookat/lookat_bone)
 
 ### BlendShape
 
-[BlendShapeの頂点移動で制御するタイプ]({{< relref "lookat_blendshape.md" >}})
+[BlendShapeの頂点移動で制御するタイプ](/univrm/lookat/lookat_blendshape)
 
 ### TextureUV
 
-[目のテクスチャの `UV Offset` で制御するタイプ]({{< relref "lookat_uv.md" >}})
+[目のテクスチャの `UV Offset` で制御するタイプ](/univrm/lookat/lookat_uv)
 
 ## VRMLookAtHead
 
