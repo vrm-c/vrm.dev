@@ -8,6 +8,7 @@ aliases: ["/univrm/"]
 ---
 
 ```{toctree}
+:maxdepth: 1
 install/index
 export/index
 import/index

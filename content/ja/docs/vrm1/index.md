@@ -38,3 +38,8 @@ https://github.com/vrm-c/vrm-specification/tree/master/specification
 公式の実装として Unity での実装「UniVRM」が存在します。
 
 [UniVRM-1.0β]({{< relref "univrm1" >}})
+
+```{toctree}
+:maxdepth: 1
+changed
+```
