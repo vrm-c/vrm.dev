@@ -22,7 +22,10 @@ glTF の [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/ex
 | Unlit/Transparent        |       | ✅       |              | blend        |            |
 | Unlit/Transparent Cutout |       | ✅       |              | cutout       |            |
 
-{{% alert title="頂点カラー" color="warning" %}}
+```{admonition} 頂点カラー
+:class: warning
+
+
 
 `UniGLTF/UniUnlit` だけが頂点カラーをサポートしています。
 
@@ -34,4 +37,6 @@ glTF の [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/main/ex
 次にインポートするときに意図せずに色が変わる場合があります。
 この場合、エクスポート時に `RemoveVertexColor` を有効にすることで、頂点カラーを含まない `Mesh` をエクスポートすることができます。
 
-{{% /alert %}}
+
+```
+

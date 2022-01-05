@@ -11,12 +11,17 @@ aliases: ["/univrm/shaders/standard/"]
 
 `UniVRM` は PBR 向けのシェーダーを独自に作成せずに Unity 標準の `Standard シェーダー` を使います。
 
-{{% alert title="ピカピカに反射してしまう" color="warning" %}}
+```{admonition} ピカピカに反射してしまう
+:class: warning
+
+
 
 Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値が高い状態になっています。 
 マテリアルのシェーダーを `Unlit/UniUnlit` にするとテクスチャがそのまま表示できます。
 
-{{% /alert %}}
+
+```
+
 
 ## Metallic, Roughness, Occlusion の対応表
 
@@ -26,7 +31,10 @@ Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値�
 | Roughness | pbrMetallicRoughness.metallicRoughnessTexture | G | A | _MetallicGlossMap (smoothness = 1 - roughness) |
 | Metallic  | pbrMetallicRoughness.metallicRoughnessTexture | B | R | _OcclusionMap                                  |
 
-{{% alert title="MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0`" color="warning" %}}
+```{admonition} MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0`
+:class: warning
+
+
 
 `v0.69.0` からテクスチャーを１枚にまとめる動作をします。
 
@@ -38,4 +46,6 @@ Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値�
 * import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import
 * export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して Export
 
-{{% /alert %}}
+
+```
+

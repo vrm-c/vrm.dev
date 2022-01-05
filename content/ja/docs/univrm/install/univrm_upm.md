@@ -24,7 +24,10 @@ com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your s
 というようなエラーが出ます。
 
 
-{{% alert title="他のgit" color="warning" %}}
+```{admonition} 他のgit
+:class: warning
+
+
 https://git-scm.com/ からインストールした git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、Path の中で最初に見つかるように設定してください。
 
 * powershell からバージョンを確認した例 (20201130)
@@ -33,7 +36,9 @@ https://git-scm.com/ からインストールした git.exe (デフォルトは�
 git version 2.29.2.windows.2
 ```
 
-{{% /alert %}}
+
+```
+
 
 
 

@@ -31,14 +31,19 @@ aliases: [
 | animation                    | ✅       |        | VRMではサポートしていません |
 | camera                       |         |        |                             |
 
-{{% alert title="VRMのglTF部分を3D Builderで表示する" color="warning" %}}
+```{admonition} VRMのglTF部分を3D Builderで表示する
+:class: warning
+
+
 
 {{< img width=400 src="images/vrm/alicia_3dbuilder.png" >}}
 
 拡張子を `.vrm` から `.glb` に変えると、`gltf` 対応のアプリケーション(Windows 10標準搭載の3D Builderなど)でロードできます。
 （ただしVRM独自の設定は反映されません)
 
-{{% /alert %}}
+
+```
+
 
 ```{toctree}
 :maxdepth: 1

@@ -15,9 +15,14 @@ https://github.com/vrm-c/UniVRM/releases
 
 ![download_unitypackage](/images/vrm/download_unitypackage.png)
 
-{{% alert title="XX YY" color="info" %}}
+```{admonition} XX YY
+:class: note
+
+
 XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
-{{% /alert %}}
+
+```
+
 
 ## Unity をインストールする
 
@@ -59,9 +64,14 @@ VRM menu が表示されていれば動作しています：
 {{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
 <hr>
 
-{{% alert title="Unity-2018 で menu が出てこない場合" color="warning" %}}
+```{admonition} Unity-2018 で menu が出てこない場合
+:class: warning
+
+
 `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
-{{% /alert %}}
+
+```
+
 
 ### Console
 

@@ -6,14 +6,19 @@ tags: ["unity", "fbx"]
 
 最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。
 
-{{% alert title="詳細" color="info" %}}
+```{admonition} 詳細
+:class: note
+
+
 
 BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
 これに、計算された法線が設定されて意図しない変化をするようです。
 ベースになるメッシュの法線が加工されている場合、
 ミラーリングで左右が分かれている場合の境界などで顕著です。
 
-{{% /alert %}}
+
+```
+
 
 ## MToonの法線デバッグ表示で法線を確認する
 
@@ -23,11 +28,16 @@ fbx の `Materials` タブの `Extract Materials...` を実行してマテリア
 
 マテリアルの種類を `VRM/MToon` に変更します。
 
-{{% alert title="法線確認" color="info" %}}
+```{admonition} 法線確認
+:class: note
+
+
 
 法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
 
-{{% /alert %}}
+
+```
+
 
 MToon の `Options - Debugging Options - Visualize` を `Normal` に変更します。
 
@@ -44,7 +54,10 @@ BlendShape のスライダーを動かして法線を確認します。
 
 の法線が顕著に乱れています。
 
-{{% alert title="モデル情報" color="info" %}}
+```{admonition} モデル情報
+:class: note
+
+
 
 * vroid さんの vrm を blender に import
 * blender から fbx export
@@ -52,7 +65,9 @@ BlendShape のスライダーを動かして法線を確認します。
 
 したものです。
 
-{{% /alert %}}
+
+```
+
 
 ## BlendShape の法線をなおす
 
@@ -66,8 +81,13 @@ fbx の `Model` タブを選択。
 
 BlendShape がなおっていることを確認します。
 
-{{% alert title="修正前との違い" color="info" %}}
+```{admonition} 修正前との違い
+:class: note
+
+
 
 鼻先、下唇に加えて、舌が全然違う法線になってます。
 
-{{% /alert %}}
+
+```
+

@@ -26,11 +26,16 @@ VRMのヒューマノイドは、主にモーションキャプチャーの Forw
 * ボーンの親子関係が決まっている
 * ポーズを受ける前の姿勢が決まっている => T-Pose
 
-{{% alert title="備考" color="info" %}}
+```{admonition} 備考
+:class: note
+
+
 細かく言えば、ボーンの長さが違うと同じポーズになりません。
 これを解決する技術を、リターゲットと言いますが VRM では特に指定していません。
 例えば、股-膝-足首-踵 の比率が違うと地面に対してすべります。
-{{% /alert %}}
+
+```
+
 
 Unity の HumanoidAvatar を元に決めたのでだいたい同じです。
 
@@ -43,9 +48,14 @@ https://docs.unity3d.com/Manual/AvatarCreationandSetup.html
 
 を追加したものが VRM のヒューマノイドです。
 
-{{% alert title="備考" color="info" %}}
+```{admonition} 備考
+:class: note
+
+
 特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。
-{{% /alert %}}
+
+```
+
 
 ## T-Pose
 

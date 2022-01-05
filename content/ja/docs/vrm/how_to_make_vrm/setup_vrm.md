@@ -54,7 +54,10 @@ prefab をシーンに展開します。
 {{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
 <br>
 
-{{% alert title="Pose Freeze" color="info" %}}
+```{admonition} Pose Freeze
+:class: note
+
+
 エクスポート時に正規化します。
 最新版は、 `ExportRoot` をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
 最初の正規化以降でも、
@@ -65,7 +68,9 @@ prefab をシーンに展開します。
 
 * [BlendShape の Bake](/univrm/blendshape/univrm_bake_blendshape) もあります。
 
-{{% /alert %}}
+
+```
+
 
 ### 完成！
 これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/vrm/vrm_applications)に読み込ませてみましょう！

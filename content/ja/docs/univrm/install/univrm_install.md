@@ -26,15 +26,25 @@ https://github.com/vrm-c/UniVRM/releases
 
 {{< img src="images/vrm/linear_setting.jpg" width="600" alt="linear setting">}}
 
-{{% alert title="Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合" color="warning" %}}
+```{admonition} Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
+:class: warning
+
+
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
-{{% /alert %}}
 
-{{% alert title="既存のプロジェクト" color="warning" %}}
+```
+
+
+```{admonition} 既存のプロジェクト
+:class: warning
+
+
 事前に、古いバージョンの VRM を削除することを推奨しています。
 [UniVRMをアンインストール](/univrm/install/univrm_uninstall) を参照してください。
-{{% /alert %}}
+
+```
+
 
 
 ## unitypackage の import

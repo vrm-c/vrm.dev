@@ -8,6 +8,9 @@ HERE = pathlib.Path(__file__).absolute().parent
 MD_RELREF = re.compile(r'\({{<\s+relref\s+([^>]+) >}}\)')
 RELREF = re.compile(r'{{<\s+relref\s+([^>]+) >}}')
 
+ALERT = re.compile(
+    r'\{\{%\s+alert\s+title="([^"]+)"\s+color="([^"]+)"\s+%\}\}(.*?)\{\{%\s+/alert\s+%\}\}', re.DOTALL)
+
 
 def traverse(dir: pathlib.Path) -> Iterable[pathlib.Path]:
     for f in dir.iterdir():
@@ -96,6 +99,23 @@ if __name__ == '__main__':
                 # return result + hash
                 return f'{{doc}}`{result}`'
             dst = re.sub(RELREF, rep, dst)
+
+
+            # alert
+            def rep_alert(m):
+                level = m.group(2)
+                if level == 'info':
+                    level = 'note'
+
+                print(m.group(1), level)
+                # return m.group(0)
+                return f'''```{{admonition}} {m.group(1)}
+:class: {level}
+
+{m.group(3)}
+```
+'''
+            dst = re.sub(ALERT, rep_alert, dst)
 
             if dst != src:
                 f.write_text(dst, encoding='utf-8')
