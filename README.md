@@ -24,9 +24,3 @@ $ hugo server -w --disableFastRender -D -F
 Access your local version of vrm.dev at http://localhost:1313/ to preview update/changes made in scripts.
 
 vrm.dev adopts Hugo theme [Docsy](https://github.com/google/docsy). Refer to [the Docsy's documentation](https://www.docsy.dev/docs/adding-content/lookandfeel/) for extending the layout.
-
-<!--
-## License
-
-[UNKNOWN]({{< relref "LICENSE.md" >}})
--->

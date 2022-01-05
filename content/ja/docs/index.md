@@ -14,7 +14,7 @@ univrm1/index
 
 {{< blocks/cover title="VRM - VR向け3Dアバターファイルフォーマット -" image_anchor="top" height="min" color="primary" >}}
 <div class="mx-auto">
-  <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs/vrm/vrm_about" >}}">
+  <a class="btn btn-lg btn-primary mr-3 mb-4" href="/vrm/vrm_about">
     もっと詳しく <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   </a>
   <p class="lead mt-5">VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット</p>
