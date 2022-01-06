@@ -18,14 +18,14 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の Expression GUI で設定します。
 
-{{< img width=800 src="images/vrm10/tutorial/vrm_expression_settings.jpg" >}}
+![img](/_static/images/vrm10/tutorial/vrm_expression_settings.jpg)
 
 ## 個別の Expression 設定
 
 ひとつずつ独立したアセットです。
 
-{{< img width=400 src="images/vrm10/tutorial/expression_asset.jpg" >}}
-{{< img width=400 src="images/vrm10/tutorial/expression.jpg" >}}
+![img](/_static/images/vrm10/tutorial/expression_asset.jpg)
+![img](/_static/images/vrm10/tutorial/expression.jpg)
 
 ### MorphTarget
 

@@ -39,7 +39,7 @@ Assets に作業用のフォルダ `Assets/seedsan/fbx` を作ります。
 
 import した fbx シーンに出しました。
 
-{{< img src="images/vrm10/tutorial/fbx_import.jpg" >}}
+![img](/_static/images/vrm10/tutorial/fbx_import.jpg)
 
 テクスチャの割り当てが一部うまくいきませんでした。
 次の手順で修正します。
@@ -62,7 +62,7 @@ import した状態では material が SubAsset なっていて設定を変更�
 subasset というのは asset の子アセットでファイルとして独立していません。
 また、設定を変更できないので inspector がグレーアウトしています。
 
-{{< img src="images/vrm10/tutorial/embedded_subasset.jpg" >}}
+![img](/_static/images/vrm10/tutorial/embedded_subasset.jpg)
 
 
 ```
@@ -72,12 +72,12 @@ subasset を取り出します。
 
 fbx importer の `Materials` タブの `Extract Materials...` ボタンを押してください。
 
-{{< img src="images/vrm10/tutorial/extract_materials.jpg" >}}
+![img](/_static/images/vrm10/tutorial/extract_materials.jpg)
 
 folder 選択ダイアログが現れるので `Assets/seedsan/materials` を選択します。
 fbx の subasset であった material が指定したフォルダの中に取り出され、fbx importer の `Materials` タブの `Remapped Materials` にセットされます。
 
-{{< img src="images/vrm10/tutorial/extracted.jpg" >}}
+![img](/_static/images/vrm10/tutorial/extracted.jpg)
 
 ```{admonition} fbx reset
 :class: note
@@ -86,7 +86,7 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 fbx を初期状態に戻すには ⚙メニューから `reset` でできます。
 
-{{< img src="images/vrm10/tutorial/fbx_reset.jpg" >}}
+![img](/_static/images/vrm10/tutorial/fbx_reset.jpg)
 
 
 ```
@@ -122,7 +122,7 @@ seedsan の 各マテリアルの texture は下記のとおりです。
 
 次に、法線マップの TextureType を `Normal map` に変更して、右下の `apply` ボタンを押します。
 
-{{< img src="images/vrm10/tutorial/texturetype_normalmap.jpg" >}}
+![img](/_static/images/vrm10/tutorial/texturetype_normalmap.jpg)
 
 ## mesh の調整
 
@@ -144,16 +144,16 @@ blend shape の法線を確認したいので、shader は Standard のままに
 
 それほど目だないのですが唇の印影が付きすぎています。
 
-{{< img src="images/vrm10/tutorial/blendshape_normal_aa.jpg" >}}
+![img](/_static/images/vrm10/tutorial/blendshape_normal_aa.jpg)
 
 fbx の import 設定を修正します。
 fbx の inspector の `Model` タブの `BlendShape normals` から `None` を選択します。
 `Apply` で適用します。
 
-{{< img src="images/vrm10/tutorial/fbx_model_blendshapenormals.jpg" >}}
+![img](/_static/images/vrm10/tutorial/fbx_model_blendshapenormals.jpg)
 
-{{< img src="images/vrm10/tutorial/blendshape_normal_aa.jpg" >}}
-{{< img src="images/vrm10/tutorial/blendshape_normal_none.jpg" >}}
+![img](/_static/images/vrm10/tutorial/blendshape_normal_aa.jpg)
+![img](/_static/images/vrm10/tutorial/blendshape_normal_none.jpg)
 
 [#828](https://github.com/vrm-c/UniVRM/issues/828)
 
@@ -165,7 +165,7 @@ fbx の import 設定を修正します。
 
 `Rig` タブの AnimationType を `Humanoid` にして `Apply` します。
 
-{{< img src="images/vrm10/tutorial/fbx_animation_type.jpg" >}}
+![img](/_static/images/vrm10/tutorial/fbx_animation_type.jpg)
 
 ### jaw ボーンの割り当てを解除します。
 
@@ -173,7 +173,7 @@ fbx の import 設定を修正します。
 
 fbx importer の自動割り当てで `jaw` (顎) ボーンに `hair_A` が割り当てられてしまいました。
 
-{{< img width=300 src="images/vrm10/tutorial/humanoid_jaw.jpg" >}}
+![img](/_static/images/vrm10/tutorial/humanoid_jaw.jpg)
 
 割り当てを削除して 右下の 'Done` ボタン押します。
 

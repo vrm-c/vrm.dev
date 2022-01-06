@@ -46,12 +46,12 @@ git version 2.29.2.windows.2
 
 UnityPackageManagerのWindow
 
-{{< img src="images/vrm10/menu_packagemanager.jpg" >}}
+![img](/_static/images/vrm10/menu_packagemanager.jpg)
 <hr>
 
 `add package from git URL`
 
-{{< img src="images/vrm10/from_git.jpg" >}}
+![img](/_static/images/vrm10/from_git.jpg)
 
 <hr>
 
@@ -67,7 +67,7 @@ UnityPackageManagerのWindow
 
 ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する：
 
-{{< img src="images/vrm/upm_package.jpg" >}}
+![img](/_static/images/vrm/upm_package.jpg)
 <hr>
 
 バージョン番号を変更することで、お好きなバージョンに切り替えることができます。

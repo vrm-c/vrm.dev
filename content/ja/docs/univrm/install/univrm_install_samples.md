@@ -26,26 +26,26 @@ https://github.com/vrm-c/UniVRM/releases
 
 以下の画像ようにインポートウィンドウを見たら、`Import`ボタンをクリックしてください：
 
-{{< img src="images/vrm/sample_package_import.jpg" width="300" height="300" alt="sample_package_import" >}}
+![sample_package_import](/_static/images/vrm/sample_package_import.jpg)
 
 ## UniVRMサンプルのシーンを実行する
 
 `VRM.Samples`フォルダは`Assets`にあります。プロジェクトウィンドウに`SampleViewer`を選択します：
 
-{{< img src="images/vrm/sample_scene.jpg" width="300" height="300" alt="sample_scene" >}}
+![sample_scene](/_static/images/vrm/sample_scene.jpg)
 <hr>
 
 `Game`タブをクリックして、`SampleViewer`のインタフェースを表示させます：
 
-{{< img src="images/vrm/sample_viewer.jpg" width="500" alt="sample_viewer" >}}
+![sample_viewer](/_static/images/vrm/sample_viewer.jpg)
 <hr>
 
 `Play`ボタンをクリックして`SampleViewer`を有効になります。実行時に`Open`ボタンをクリックしてVRMモデルをシーンにインポートします：
 
-{{< img src="images/vrm/play_mode.jpg" width="150" alt="play_mode" >}}
+![play_mode](/_static/images/vrm/play_mode.jpg)
 <br>
 <br>
-{{< img src="images/vrm/sample_viewer_activate.jpg" width="600" alt="sample_viewer_activate" >}}
+![sample_viewer_activate](/_static/images/vrm/sample_viewer_activate.jpg)
 
 `VRM.Samples`に[ランタイムVRMエクスポート](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample)と[一人称レンダリング](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample)のサンプルがあります。
 

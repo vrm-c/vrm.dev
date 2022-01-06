@@ -119,44 +119,24 @@ if __name__ == '__main__':
 '''
             dst = re.sub(ALERT, rep_alert, dst)
 
-            # md image
-            def rep_md_image(m: re.Match):
-                result = f'![{m.group(1)}](/_static{m.group(2)})'
-                print(result)
-                return result
-            dst = re.sub(MD_IMAGE, rep_md_image, dst)
+            # # md image
+            # def rep_md_image(m: re.Match):
+            #     result = f'![{m.group(1)}](/_static{m.group(2)})'
+            #     print(result)
+            #     return result
+            # dst = re.sub(MD_IMAGE, rep_md_image, dst)
 
-            # # image
-            # def rep_image_table(m):
-            #     attr_map = {}
-            #     for kv in re.finditer(KEY_VALUE, m.group(1)):
-            #         attr_map[kv.group(1)] = kv.group(2)
-            #     # print(attr_map)
-            #     src = attr_map["src"]
-            #     alt = attr_map.get("alt", "alt")
-            #     print(attr_map)
-            #     return f'|![{alt}](/_static/{src})'
-            # dst = re.sub(TABLE_IMAGE, rep_image_table, dst)
-
-            # # image
-            # def rep_image(m):
-            #     attr_map = {}
-            #     for kv in re.finditer(KEY_VALUE, m.group(1)):
-            #         attr_map[kv.group(1)] = kv.group(2)
-            #     # print(attr_map)
-            #     sio = io.StringIO()
-            #     sio.write('\n')
-            #     src = attr_map["src"]
-            #     sio.write(f'```{{image}} /_static/{src}\n')
-            #     for k, v in attr_map.items():
-            #         if k == 'src':
-            #             continue
-            #         sio.write(f':{k}: {v}\n')
-            #     sio.write('```\n')
-
-            #     print(attr_map)
-            #     return sio.getvalue()
-            # dst = re.sub(IMAGE, rep_image, dst)
+            # image
+            def rep_image(m):
+                attr_map = {}
+                for kv in re.finditer(KEY_VALUE, m.group(1)):
+                    attr_map[kv.group(1)] = kv.group(2)
+                # print(attr_map)
+                src = attr_map["src"]
+                alt = attr_map.get('alt', 'img')
+                print(attr_map)
+                return f'![{alt}](/_static/{src})'
+            dst = re.sub(IMAGE, rep_image, dst)
 
             if dst != src:
                 f.write_text(dst, encoding='utf-8')

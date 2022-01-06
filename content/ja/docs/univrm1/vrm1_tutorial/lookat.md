@@ -5,7 +5,7 @@ weight: 7
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の LookAt GUI で設定します。
 
-{{< img width=600 src="images/vrm10/tutorial/vrm_lookat_settings.jpg" >}}
+![img](/_static/images/vrm10/tutorial/vrm_lookat_settings.jpg)
 
 VRM ３種類の LookAt をサポートしています。
 モデルに応じて、以下の３種類の何れかの設定をしてください。
@@ -17,12 +17,12 @@ VRM ３種類の LookAt をサポートしています。
 以下の項目が関連します。
 
 humanoid に eye ボーンが存在する。
-{{< img width=300 src="images/vrm10/tutorial/alicia_humanoid.jpg" >}}
+![img](/_static/images/vrm10/tutorial/alicia_humanoid.jpg)
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Bone` を指定。
-{{< img width=500 src="images/vrm10/tutorial/lookat_bone.jpg" >}}
+![img](/_static/images/vrm10/tutorial/lookat_bone.jpg)
 
-{{< img width=400 src="images/vrm10/tutorial/lookat_bone_anim.gif" >}}
+![img](/_static/images/vrm10/tutorial/lookat_bone_anim.gif)
 
 
 動作確認 の項に進んでください。
@@ -39,10 +39,10 @@ humanoid に eye ボーンが存在する。
 | `LookDown`  | ![img](/_static/images/vrm10/tutorial/expression_lookdown.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
-{{< img width=500 src="images/vrm10/tutorial/lookat_expression.jpg" >}}
+![img](/_static/images/vrm10/tutorial/lookat_expression.jpg)
 `Y Range` に 1 を設定
 
-{{< img width=400 src="images/vrm10/tutorial/lookat_expression_anim.gif" >}}
+![img](/_static/images/vrm10/tutorial/lookat_expression_anim.gif)
 
 
 動作確認 の項に進んでください。
@@ -61,10 +61,10 @@ humanoid に eye ボーンが存在する。
 | `LookDown`  | ![img](/_static/images/vrm10/tutorial/uv_down.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
-{{< img width=500 src="images/vrm10/tutorial/lookat_expression.jpg" >}}
+![img](/_static/images/vrm10/tutorial/lookat_expression.jpg)
 `Y Range` に 1 を設定
 
-{{< img width=400 src="images/vrm10/tutorial/lookat_uv_anim.gif" >}}
+![img](/_static/images/vrm10/tutorial/lookat_uv_anim.gif)
 
 ## 動作確認
 
@@ -72,7 +72,7 @@ humanoid に eye ボーンが存在する。
 * VrmController の Gaze にセット
 * VrmController の LookAtTargetType に `Calc Yaw Pitch To Gaze` を設定(デフォルト)
 
-{{< img width=500 src="images/vrm10/tutorial/lookat_targettype.jpg" >}}
+![img](/_static/images/vrm10/tutorial/lookat_targettype.jpg)
 
 * Play
 * Cube を動かして目が動くことを確認

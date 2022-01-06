@@ -13,10 +13,10 @@ weight: 4
 
 `AnimationClip/AnimationController`をセットしたり、`VRMLookAtHead`の`Target`に[GameObject](/univrm/lookat/univrm_lookat#target)をセットしたり（視線がどこを向くかの設定）、`Head`欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、``GameObject -> 3D Object -> Cube``からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。
 
-{{< img src="images/vrm/LookAtTarget.png" width="900" height="280" alt="LookAtTarget" >}}
+![LookAtTarget](/_static/images/vrm/LookAtTarget.png)
 <br>
 <br>
-{{< img src="images/vrm/TargetTracking.png" width="500" height="330" alt="TargetTracking" >}}
+![TargetTracking](/_static/images/vrm/TargetTracking.png)
 
 ### 表情を確認する
 
@@ -26,7 +26,7 @@ weight: 4
 |--------------------------------------------------------------------------------|
 | ``BlendShapeAvatar``フィールドにダブルクリックして、3Dモデルの表情を設定します |
 
-{{< img src="images/vrm/AddExpressionScripts.png" width="650" height="260" alt="AddExpressionScripts" >}}
+![AddExpressionScripts](/_static/images/vrm/AddExpressionScripts.png)
 <br>
 <br>
-{{< img src="images/vrm/InspectorFaceView.png" width="400" height="280" alt="InspectorFaceView" >}}
+![InspectorFaceView](/_static/images/vrm/InspectorFaceView.png)

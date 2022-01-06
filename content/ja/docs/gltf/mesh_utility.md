@@ -15,18 +15,18 @@ tags: ["unity", "gltf"]
 `MeshSeparator`が適用されると、BlendShapeを含むメッシュは分割されます。
 先ず、ヒエラルキーにモデルのGameObjectを選択します。
 
-{{< img src="images/vrm/mesh_utility_exp1.jpg" width="200" >}}
+![img](/_static/images/vrm/mesh_utility_exp1.jpg)
 <hr>
 
 または、GameObjectを`TargetObject`フィールドにドラッグ＆ドロップします。  
 メッシュ処理のウィンドウを表示するため、メニューから`UniGLTF` -> `MeshUtility` -> `MeshProcessing Wizard`をクリックしてください：
 
-{{< img src="images/vrm/mesh_utility_ja_exp2.jpg" width="800" >}}
+![img](/_static/images/vrm/mesh_utility_ja_exp2.jpg)
 <hr>
 
 `Process`ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（`VRM0` -> `Export UniVRM-0.xx`）。
 
-{{< img src="images/vrm/mesh_utility_exp3.jpg" width="300" >}}
+![img](/_static/images/vrm/mesh_utility_exp3.jpg)
 <hr>
 
 分割されたメッシュも`Assets`フォルダーに保存されます。  

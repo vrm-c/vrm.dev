@@ -13,7 +13,7 @@ tags: ["unity"]
 
 ## v0.58~
 
-{{< img src="images/vrm/export062_dialog.png" width="900" alt="vrm export" >}}
+![vrm export](/_static/images/vrm/export062_dialog.png)
 
 Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html) で画面を作成しています。
 
@@ -23,12 +23,12 @@ Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.ht
 
 以前と同じメニューから表示できます。
 
-{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+![vrm_menu](/_static/images/vrm/vrm_menu.jpg)
 <br>
 
 前のバージョン：
 
-{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+![UniVRMExportHumanoid](/_static/images/vrm/UniVRMExportHumanoid.jpg)
 
 * シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました
 
@@ -36,15 +36,15 @@ Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.ht
 
 * Drag
 
-{{< img src="images/vrm/export058_drag.gif" width="600" alt="vrm export" >}}
+![vrm export](/_static/images/vrm/export058_drag.gif)
 
 * Selector
 
-{{< img src="images/vrm/export058_select.gif" width="600" alt="vrm export" >}}
+![vrm export](/_static/images/vrm/export058_select.gif)
 
 #### ExportRootの条件
 
-{{< img src="images/vrm/export058_empty.jpg" width="600" alt="vrm export" >}}
+![vrm export](/_static/images/vrm/export058_empty.jpg)
 
 ExportRoot が以下の条件を満たすと設定画面が表示されます。
 
@@ -188,7 +188,7 @@ standard, unlit, mtoon 以外のマテリアルは、standard になります。
 
 ## v0.57
 
-{{< img src="images/vrm/export_dialog_56.jpg" width="600" alt="vrm export" >}}
+![vrm export](/_static/images/vrm/export_dialog_56.jpg)
 
 Unityの [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html) で画面を作成しています。
 v0.58 以降でダイアログを改善予定です。

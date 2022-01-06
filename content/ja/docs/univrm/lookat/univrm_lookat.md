@@ -47,4 +47,4 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 
 VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。
 
-{{< img src="images/vrm/firstperson.png" >}}
+![img](/_static/images/vrm/firstperson.png)

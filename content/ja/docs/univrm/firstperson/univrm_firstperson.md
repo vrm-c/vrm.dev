@@ -61,7 +61,7 @@ VRMFirstPerson をリセットすることで再設定することができま�
 
 `VRM First Person(Script)` インスペクタの右上角の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
 
-{{< img src="images/vrm/firstperson_reset.gif" width="600" alt="firstperson reset" >}}
+![firstperson reset](/_static/images/vrm/firstperson_reset.gif)
 
 ### Auto による Both と ThirdPersonOnly への自動分割
 

@@ -24,7 +24,7 @@ https://github.com/vrm-c/UniVRM/releases
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
-{{< img src="images/vrm/linear_setting.jpg" width="600" alt="linear setting">}}
+![linear setting](/_static/images/vrm/linear_setting.jpg)
 
 ```{admonition} Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
 :class: warning
@@ -63,21 +63,21 @@ https://github.com/vrm-c/UniVRM/releases
 
 VRM menu が表示されていれば動作しています：
 
-{{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+![vrm menu](/_static/images/vrm/vrm_menu.jpg)
 <hr>
 
 前のバージョン：
 
-{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
+![vrm menu old](/_static/images/vrm/vrm_menu_old.jpg)
 <hr>
 
 menu が出てこない場合は、
 
 * Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
 
-{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
+![show console](/_static/images/vrm/show_console.jpg)
 
-{{< img src="images/vrm/clear_console.jpg" width="500" alt="clear console" >}}
+![clear console](/_static/images/vrm/clear_console.jpg)
 
 ## 関連セクション
 

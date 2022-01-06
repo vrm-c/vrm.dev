@@ -15,7 +15,7 @@ tags: ["gltf", "mtoon-1.0"]
 
 Emission の値が 1 を越える場合に発光させるポストエフェクトです。
 
-{{< img width=300 src="images/vrm10/glow.jpg" >}}
+![img](/_static/images/vrm10/glow.jpg)
 
 1を超えて3や4にすることで強くなりますが `glTF` の仕様上この値を格納することができません。
 

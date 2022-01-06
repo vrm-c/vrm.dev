@@ -35,11 +35,11 @@ UniVRMの対応するバージョンの Unity をインストールしてくだ�
 
 ## Unityで空のプロジェクトを作る
 
-{{< img src="images/vrm/unity_new_project.png" >}}
+![img](/_static/images/vrm/unity_new_project.png)
 
 もしくは
 
-{{< img src="images/vrm/new_project.jpg" >}}
+![img](/_static/images/vrm/new_project.jpg)
 
 Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
 
@@ -48,7 +48,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 メニューの `Assets` - `Import pacakge` - `Custom Package` を選択して、
 ダウンロードした `UniVRM-0.XX.0_YYYY.unitypackage` を選んでください。
 
-{{< img src="images/vrm/package_import.jpg" width="400" alt="package_import" >}}
+![package_import](/_static/images/vrm/package_import.jpg)
 
 右下の `import` ボタンを押します。
 
@@ -56,12 +56,12 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 
 VRM menu が表示されていれば動作しています：
 
-{{< img src="images/vrm/vrm_menu.jpg" alt="vrm menu" >}}
+![vrm menu](/_static/images/vrm/vrm_menu.jpg)
 <hr>
 
 前のバージョン：
 
-{{< img src="images/vrm/vrm_menu_old.jpg" alt="vrm menu old" >}}
+![vrm menu old](/_static/images/vrm/vrm_menu_old.jpg)
 <hr>
 
 ```{admonition} Unity-2018 で menu が出てこない場合
@@ -77,11 +77,11 @@ VRM menu が表示されていれば動作しています：
 
 Console を表示させると、Unity のエラーメッセージが見れます。
 
-{{< img src="images/vrm/show_console.jpg"  width="500" alt="show console">}}
+![show console](/_static/images/vrm/show_console.jpg)
 
 Console左上の clear ボタンを押して赤いメッセージが消えない場合は unitypackage のインストールに失敗しているなど、unity project に異常があります。
 
-{{< img src="images/vrm/error_in_console.jpg" width="500" alt="clear console" >}}
+![clear console](/_static/images/vrm/error_in_console.jpg)
 
 ## Manual
 

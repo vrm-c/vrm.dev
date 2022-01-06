@@ -34,17 +34,17 @@ weight: 2
 
 fbx のフォルダを unityの Assets フォルダにドロップします。
 
-{{< img src="images/vrm/fbx_folder.jpg" >}}
+![img](/_static/images/vrm/fbx_folder.jpg)
 
 unity
 
-{{< img src="images/vrm/assets_fbx.jpg" >}}
+![img](/_static/images/vrm/assets_fbx.jpg)
 
 青いアイコンが fbx の asset(prefab) です。
 
 ## fbx の material を設定する
 
-{{< img src="images/vrm/fbx_default.jpg" >}}
+![img](/_static/images/vrm/fbx_default.jpg)
 
 この時点では fbx importer による初期状態になっており、マテリアルがデフォルト状態(StandardShaderでColor, ColorTexture割り当てのみ。半透明設定が無いなど)なので、マテリアルを最低限設定します。
 VRM 向けなので、この例では全部 `MToon` にします。
@@ -60,20 +60,20 @@ VRMは、[MToon](/univrm/shaders/shader_mtoon)、[Unlit](/univrm/shaders/univrm_
 
 `Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。
 
-{{< img src="images/vrm/extract_materials.jpg" width="900" height="200" alt="extract_materials" >}}
+![extract_materials](/_static/images/vrm/extract_materials.jpg)
 <hr>
 
 Shader をすべて `VRM/Mtoon` に変更
 
-{{< img src="images/vrm/change_to_mtoon.jpg" alt="change_to_mtoon" >}}
+![change_to_mtoon](/_static/images/vrm/change_to_mtoon.jpg)
 <hr>
 
 MToon の `Shade Color` を白に変更
 
-{{< img src="images/vrm/shade_color_to_white.jpg" alt="shade_color_to_white" >}}
+![shade_color_to_white](/_static/images/vrm/shade_color_to_white.jpg)
 <hr>
 
-{{< img src="images/vrm/alicia_preview.jpg" >}}
+![img](/_static/images/vrm/alicia_preview.jpg)
 
 ちゃんとした設定はこちら。[MToonの設定](/univrm/shaders/shader_mtoon)
 
@@ -83,11 +83,11 @@ MToon の `Shade Color` を白に変更
 
 fbx デフォルトは、generic 設定です。
 
-{{< img src="images/vrm/rig_generic.jpg" >}}
+![img](/_static/images/vrm/rig_generic.jpg)
 
 humanoid に変更します。
 
-{{< img src="images/vrm/select_humanoid.jpg" >}}
+![img](/_static/images/vrm/select_humanoid.jpg)
 
 `apply` を押します。
 
@@ -105,7 +105,7 @@ humanoid のボーン割り当て画面に入ります。
 
 `configure` ボタンを押します。
 
-{{< img src="images/vrm/BoneMapping.png" width="600" height="700" alt="BoneMapping" >}}
+![BoneMapping](/_static/images/vrm/BoneMapping.png)
 
 ボーンの割り当てを確認してください。
 
@@ -126,7 +126,7 @@ humanoid のボーン割り当て画面に入ります。
 `File` - `New Scene` として、
 fbx の prefab をシーンに展開します。
 
-{{< img src="images/vrm/DragImportedModel.png" width="600" height="700" >}}
+![img](/_static/images/vrm/DragImportedModel.png)
 
 ## fbx の blendshpae の法線が乱れていないか確認する
 
@@ -136,17 +136,17 @@ BlendShapeで変な影が出る場合の対策です。
 
 ## エクスポート
 
-{{< img src="images/vrm/vrm_menu.jpg" width="250" height="225" alt="vrm_menu">}}
+![vrm_menu](/_static/images/vrm/vrm_menu.jpg)
 <br>
 
 `VRM0` - `Export UniVRM-0.XX` を押してダイアログを表示します。
 
-{{< img src="images/vrm/UniVRMExportHumanoid.jpg" width="400" height="225" alt="UniVRMExportHumanoid">}}
+![UniVRMExportHumanoid](/_static/images/vrm/UniVRMExportHumanoid.jpg)
 <br>
 
 前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。
 
-{{< img src="images/vrm/export058_empty.jpg" width="600" height="700" >}}
+![img](/_static/images/vrm/export058_empty.jpg)
 
 `Export Root` に prefab をシーンに展開した GameObject をドロップします。
 
@@ -163,7 +163,7 @@ BlendShapeで変な影が出る場合の対策です。
 ```
 
 
-{{< img src="images/vrm/export_dialog_title_version_author.jpg" width="900" >}}
+![img](/_static/images/vrm/export_dialog_title_version_author.jpg)
 <br>
 ライセンス情報を入力してください。赤いメッセージな無くなれば Export を押せます。
 次の作業のため、`Assets/models/vrm` フォルダを作成してそこにエクスポートしました。
@@ -181,7 +181,7 @@ Assets 内を選択する場合は、新規に専用のフォルダを作成す�
 
 ## エクスポートオプション
 
-{{< img src="images/vrm/export_options.jpg" width="900" height="700" >}}
+![img](/_static/images/vrm/export_options.jpg)
 
 ```{admonition} T-Poseにする
 :class: note

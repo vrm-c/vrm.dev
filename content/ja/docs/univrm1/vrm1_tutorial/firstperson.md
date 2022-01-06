@@ -5,7 +5,7 @@ weight: 8
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の FirstPerson GUI で設定します。
 
-{{< img width=600 src="images/vrm10/tutorial/vrm_firstperson_settings.jpg" >}}
+![img](/_static/images/vrm10/tutorial/vrm_firstperson_settings.jpg)
 
 ## なんのための設定か
 

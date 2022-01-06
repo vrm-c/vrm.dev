@@ -17,7 +17,7 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 * Z軸 (v0.68.0 より前と同じ)
 * X軸 (v0.68.0 から追加)
 
-{{< img width=400 src="images/unigltf/glb_axis.gif" >}}
+![img](/_static/images/unigltf/glb_axis.gif)
 
 選択して `Apply` を押すと反映されます。
 
@@ -33,7 +33,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 * `texture_3.occlusion` は、 `textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
 * `texture_4.normal` は、 `textrue_4` を元に Unity の Standard Shader 向けに変換したものです。
 
-{{< img width=400 src="images/unigltf/glb_clear.jpg" >}}
+![img](/_static/images/unigltf/glb_clear.jpg)
 
 ### extract
 
@@ -46,7 +46,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 * `texture_3.occlusion.png` の生成。`textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
 * `texture_4.jpg` の生成(normalMap)
 
-{{< img width=400 src="images/unigltf/glb_extract.jpg" >}}
+![img](/_static/images/unigltf/glb_extract.jpg)
 
 ## gltf の extract
 
@@ -59,7 +59,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 * `Default_AO.occlusion` は、 `Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
 * `Defualt_metalRoughness.metallicRoughness` は、`Defualt_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
 
-{{< img width=400 src="images/unigltf/gltf_clear.jpg" >}}
+![img](/_static/images/unigltf/gltf_clear.jpg)
 
 ### extract
 
@@ -69,7 +69,7 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 * `Default_AO.occlusion.png` の生成。`Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
 * `Default_metalRoughness.metallicRoughness.png` の生成。`Default_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
 
-{{< img width=400 src="images/unigltf/gltf_extract.jpg" >}}
+![img](/_static/images/unigltf/gltf_extract.jpg)
 
 ## AssetFile の作られ方
 
@@ -82,7 +82,7 @@ VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import さ�
 
 
 
-{{< img width=300 src="images/vrm10/vrm0_import.jpg" >}}
+![img](/_static/images/vrm10/vrm0_import.jpg)
 
 * mesh や texture や material や blendshape などの関連アセットファイルが作成されます。
 
@@ -99,7 +99,7 @@ VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import さ�
 
 
 
-{{< img width=300 src="images/vrm10/vrm1_import.jpg" >}}
+![img](/_static/images/vrm10/vrm1_import.jpg)
 
 * mesh や material や texture や Expression が SubAsset として作成されます。
 
@@ -112,7 +112,7 @@ VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import さ�
 
 
 
-{{< img width=600 src="images/gltf/glb_extract_before.jpg" >}}
+![img](/_static/images/gltf/glb_extract_before.jpg)
 
 * material と texture が SubAsset として作成されます
 
@@ -140,9 +140,9 @@ FBX の Importer も同様の動作です。
 
 VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。
 
-{{< img width=300 src="images/vrm10/extract_material.jpg" >}}
-{{< img width=300 src="images/vrm10/extract_vrm_empty.jpg" >}}
-{{< img width=300 src="images/vrm10/extract_vrm.jpg" >}}
+![img](/_static/images/vrm10/extract_material.jpg)
+![img](/_static/images/vrm10/extract_vrm_empty.jpg)
+![img](/_static/images/vrm10/extract_vrm.jpg)
 
 ```{admonition} fbx の extract
 :class: warning
@@ -151,7 +151,7 @@ VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract がで�
 
 fbx importer の material タブには下記のようなボタンがあります。
 
-{{< img src="images/vrm10/fbx_extract.jpg" >}}
+![img](/_static/images/vrm10/fbx_extract.jpg)
 
 `Export Textures...` や `Export Materials...` すると fbx の中の material を 外にコピーして独立した Asset とすることができます。
 このコピーされた Asset は自由に変更することができます。
@@ -173,11 +173,11 @@ fbx importer の material タブには下記のようなボタンがあります
 
 
 
-{{< img width=300 src="images/vrm10/remap_materials.jpg" >}}
+![img](/_static/images/vrm10/remap_materials.jpg)
 
-{{< img width=700 src="images/gltf/glb_extract_after.jpg" >}}
+![img](/_static/images/gltf/glb_extract_after.jpg)
 
-{{< img width=700 src="images/gltf/vrm1_extract_after.jpg" >}}
+![img](/_static/images/gltf/vrm1_extract_after.jpg)
 
 SubAsset が書き出され、それが Remap に代入されます。
 

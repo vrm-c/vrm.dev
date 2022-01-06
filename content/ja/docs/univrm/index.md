@@ -61,11 +61,11 @@ programming/index
 コンソール画面の内容をご確認ください。
 コンソール画面はメニューから表示できます。
 
-{{< img src="images/vrm/window_console.png" alt="コンソール画面を表示するメニュー" >}}
+![コンソール画面を表示するメニュー](/_static/images/vrm/window_console.png)
 
 表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。
 
-{{< img src="images/vrm/error.png" alt="エラーの例" >}}
+![エラーの例](/_static/images/vrm/error.png)
 
 エラー報告は、起こった現象に
 
