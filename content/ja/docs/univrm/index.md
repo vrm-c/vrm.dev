@@ -45,7 +45,7 @@ programming/index
 
 `v0.81.0` から `com.vrmc.unigltf` が `com.vrmc.gltf` に変更になしました。(`com.vrmc.unigltf` が独自のバージョンを持っていたのをやめるため)。
 
-```json
+```js
 {
   "dependencies": {
     "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.81.0",
