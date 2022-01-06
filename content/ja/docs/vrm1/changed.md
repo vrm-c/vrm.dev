@@ -34,7 +34,7 @@ date: 2021-08-05
 
 Y軸 180 度の回転になります。
 
-```cs
+```csharp
 Vector3 vrm0;
 var vrm1 = new Vector3(-vrm0.x, vrm0.y, -vrm0.z);
 ```

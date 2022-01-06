@@ -111,7 +111,7 @@ BlendShapeClipに対して事前定義された名前です。
 
 コードからは以下のように呼び出せます。
 
-```cs
+```csharp
 // unknownなのでstringで呼び出し
 proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 ```
