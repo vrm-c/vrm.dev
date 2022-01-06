@@ -55,9 +55,9 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets/VRM`、`Assets/UniGLTF`お及び`Assets/VRMShaders` の３つのフォルダに import されます。
 
-|{{< img src="images/vrm/package_import.jpg" width="350" alt="package_import" >}}|
-|-----|
-|UnityPackageをインポート|
+| ![package_import](/_static/images/vrm/package_import.jpg) |
+|-----------------------------------------------------------|
+| UnityPackageをインポート                                  |
 
 ## import が成功したか確認する方法
 

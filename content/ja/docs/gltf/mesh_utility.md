@@ -32,9 +32,9 @@ tags: ["unity", "gltf"]
 分割されたメッシュも`Assets`フォルダーに保存されます。  
 この例では、モデルのメッシュは顔と体の2つの部分に分割された。
 
-顔: BlendShapeを含む      　| 体: BlendShapeを含まない
-:-------------------------:|:-------------------------:
-{{< img src="images/vrm/mesh_sep_result_1.jpg" width="200" >}} | {{< img src="images/vrm/mesh_sep_result_2.jpg" width="200" >}}
+|               顔: BlendShapeを含む               |             体: BlendShapeを含まない             |
+|:------------------------------------------------:|:------------------------------------------------:|
+| ![img](/_static/images/vrm/mesh_sep_result_1.jpg) | ![img](/_static/images/vrm/mesh_sep_result_2.jpg) |
 
 ### MeshSeparator
 

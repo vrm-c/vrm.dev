@@ -22,9 +22,9 @@ weight: 4
 
 モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape](/univrm/blendshape/univrm_blendshape#vrmblendshapeproxy)をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
 
-|{{< img src="images/vrm/BlendShapeProxy.png" width="650" height="75" alt="BlendShapeProxy" >}}|
-|-----|
-|``BlendShapeAvatar``フィールドにダブルクリックして、3Dモデルの表情を設定します|
+| ![BlendShapeProxy](/_static/images/vrm/BlendShapeProxy.png)                    |
+|--------------------------------------------------------------------------------|
+| ``BlendShapeAvatar``フィールドにダブルクリックして、3Dモデルの表情を設定します |
 
 {{< img src="images/vrm/AddExpressionScripts.png" width="650" height="260" alt="AddExpressionScripts" >}}
 <br>

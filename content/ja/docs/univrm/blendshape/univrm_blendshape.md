@@ -16,9 +16,9 @@ UniVRM v0.45で導入された新機能は
 
 ## VRMBlendShapeProxy
 
-|{{< img src="images/vrm/VRMBlendShapeProxy.png" >}}|
-|-----|
-|実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます|
+| ![img](/_static/images/vrm/VRMBlendShapeProxy.png)                               |
+|----------------------------------------------------------------------------------|
+| 実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます |
 
 使い方は、
 
@@ -31,26 +31,26 @@ UniVRM v0.45で導入された新機能は
 
 このアセットのインスペクタで表情設定を作成します。
 
-|{{< img src="images/vrm/VRMBlendShapeProxyEditor.png" >}}|
-|-----|
-|これをダブルクリックする|
+| ![img](/_static/images/vrm/VRMBlendShapeProxyEditor.png) |
+|----------------------------------------------------------|
+| これをダブルクリックする                                 |
 
 か
 
-|{{< img src="images/vrm/BlendShapeAvatarAsset.png" >}}|
-|-----|
-|これを選択状態にする|
+| ![img](/_static/images/vrm/BlendShapeAvatarAsset.png) |
+|-------------------------------------------------------|
+| これを選択状態にする                                  |
 
-|{{< img src="images/vrm/BlendShapeAvatarEditor.png" >}}|
-|-----|
-|BlendShapeEditorのインスペクタ|
+| ![img](/_static/images/vrm/BlendShapeAvatarEditor.png) |
+|--------------------------------------------------------|
+| BlendShapeEditorのインスペクタ                         |
 
 作りたい表情の名前を選択して表示を切り替えます。
 以下、Funを選択した例です。
 
-|{{< img src="images/vrm/BlendShapeClip.png" >}}|
-|-----|
-|mouth_smileとeye_smileとeyeblow_smileを100にする|
+| ![img](/_static/images/vrm/BlendShapeClip.png)   |
+|--------------------------------------------------|
+| mouth_smileとeye_smileとeyeblow_smileを100にする |
 
 画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。
 
@@ -58,9 +58,9 @@ Sliderを変更してBlendShapeを作った後はApplyを押して値を記録�
 
 ## BlendShapeのプリセット
 
-|{{< img src="images/vrm/BlendShape_Preset.png" >}}|
-|-----|
-|Presetを選択する|
+| ![img](/_static/images/vrm/BlendShape_Preset.png) |
+|---------------------------------------------------|
+| Presetを選択する                                  |
 
 BlendShapeClipに対して事前定義された名前です。
 以下のものがあります。
@@ -89,25 +89,25 @@ BlendShapeClipに対して事前定義された名前です。
 
 ## BlendShapeProxyの値を変更する(実行時)
 
-|{{< img src="images/vrm/VRMBlendShapeProxyRuntime.png" >}}|
-|-----|
-|Presetを使う|
+| ![img](/_static/images/vrm/VRMBlendShapeProxyRuntime.png) |
+|-----------------------------------------------------------|
+| Presetを使う                                              |
 
 インスペクタから操作できます。
 
 
 ## [オプション]表情を追加する
 
-|{{< img src="images/vrm/VRMBlendShapeProxyRuntime.png" >}}|
-|-----|
-|ボタンを押します|
+| ![img](/_static/images/vrm/VRMBlendShapeProxyRuntime.png) |
+|-----------------------------------------------------------|
+| ボタンを押します                                          |
 
 保存ファイルを決めます。
 一番後ろのボタンを選択して名前を入力して設定を作成してください。
 
-|{{< img src="images/vrm/BlendShapeClipOption.png" >}}|
-|-----|
-|ボタンを押します|
+| ![img](/_static/images/vrm/BlendShapeClipOption.png) |
+|------------------------------------------------------|
+| ボタンを押します                                     |
 
 コードからは以下のように呼び出せます。
 
@@ -118,9 +118,6 @@ proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 
 ## [オプション]マテリアルの色をモーフする
 
-|{{< img src="images/vrm/BlendShapeClipMaterial.png" >}}|
-|-----|
-|Materialモーフの設定|
-
-
-
+| ![img](/_static/images/vrm/BlendShapeClipMaterial.png) |
+|--------------------------------------------------------|
+| Materialモーフの設定                                   |

@@ -59,9 +59,9 @@ https://docs.unity3d.com/Manual/AvatarCreationandSetup.html
 
 ## T-Pose
 
-| {{< img src="images/vrm/T_pose.png" alt="T_pose" >}} |
-|------------------------------------------------------|
-| T-Poseの例                                           |
+| ![T_pose](/_static/images/vrm/T_pose.png) |
+|-------------------------------------------|
+| T-Poseの例                                |
 
 腕と手の指についても規約があります。
 

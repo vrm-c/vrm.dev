@@ -83,10 +83,10 @@ Autoによる自動分割は、重めの処理になります。
 * 頭に `ThirdPersonOnly` を指定
 * 体に `Both` を指定
 
-| {{< img src="images/vrm/firstperson.png" >}}                                          |
+| ![img](/_static/images/vrm/firstperson.png)                                           |
 |---------------------------------------------------------------------------------------|
 | 立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。 |
 
-| {{< img src="images/vrm/firstperson_runtime.png" alt="firstperson" >}}       |
+| ![firstperson](/_static/images/vrm/firstperson_runtime.png)                  |
 |------------------------------------------------------------------------------|
 | 動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。 |

@@ -31,12 +31,12 @@ humanoid に eye ボーンが存在する。
 
 `new_seedsan` を例に説明します。
 
-| preset      | expression                                                                 |
-|-------------|----------------------------------------------------------------------------|
-| `LookLeft`  | {{< img width=600 src="images/vrm10/tutorial/expression_lookleft.jpg" >}}  |
-| `LookRight` | {{< img width=600 src="images/vrm10/tutorial/expression_lookright.jpg" >}} |
-| `LookUp`    | {{< img width=600 src="images/vrm10/tutorial/expression_lookup.jpg" >}}    |
-| `LookDown`  | {{< img width=600 src="images/vrm10/tutorial/expression_lookdown.jpg" >}}  |
+| preset      | expression                                                      |
+|-------------|-----------------------------------------------------------------|
+| `LookLeft`  | ![img](/_static/images/vrm10/tutorial/expression_lookleft.jpg)  |
+| `LookRight` | ![img](/_static/images/vrm10/tutorial/expression_lookright.jpg) |
+| `LookUp`    | ![img](/_static/images/vrm10/tutorial/expression_lookup.jpg)    |
+| `LookDown`  | ![img](/_static/images/vrm10/tutorial/expression_lookdown.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
 {{< img width=500 src="images/vrm10/tutorial/lookat_expression.jpg" >}}
@@ -53,12 +53,12 @@ humanoid に eye ボーンが存在する。
 
 > © Unity Technologies Japan/UCL
 
-| preset      | expression                                                     |
-|-------------|----------------------------------------------------------------|
-| `LookLeft`  | {{< img width=600 src="images/vrm10/tutorial/uv_left.jpg" >}}  |
-| `LookRight` | {{< img width=600 src="images/vrm10/tutorial/uv_right.jpg" >}} |
-| `LookUp`    | {{< img width=600 src="images/vrm10/tutorial/uv_up.jpg" >}}    |
-| `LookDown`  | {{< img width=600 src="images/vrm10/tutorial/uv_down.jpg" >}}  |
+| preset      | expression                                          |
+|-------------|-----------------------------------------------------|
+| `LookLeft`  | ![img](/_static/images/vrm10/tutorial/uv_left.jpg)  |
+| `LookRight` | ![img](/_static/images/vrm10/tutorial/uv_right.jpg) |
+| `LookUp`    | ![img](/_static/images/vrm10/tutorial/uv_up.jpg)    |
+| `LookDown`  | ![img](/_static/images/vrm10/tutorial/uv_down.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
 {{< img width=500 src="images/vrm10/tutorial/lookat_expression.jpg" >}}

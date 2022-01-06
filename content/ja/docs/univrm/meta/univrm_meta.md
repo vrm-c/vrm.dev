@@ -8,9 +8,9 @@ tags: ["unity"]
 
 ## VRMMeta
 
-|{{< img src="images/vrm/meta_new.jpg" width="800" alt="meta" >}}|
-|-----|
-|VRMMetaコンポーネント|
+| ![meta](/_static/images/vrm/meta_new.jpg) |
+|-------------------------------------------|
+| VRMMetaコンポーネント                     |
 
 ### 情報(Information)
 #### タイトル(Title)

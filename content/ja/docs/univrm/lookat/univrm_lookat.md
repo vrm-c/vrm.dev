@@ -30,9 +30,9 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 
 ## VRMLookAtHead
 
-|{{< img src="images/vrm/VRMLookAtHead.png" >}}|
-|-----|
-|VRMLookAtHead|
+| ![img](/_static/images/vrm/VRMLookAtHead.png) |
+|-----------------------------------------------|
+| VRMLookAtHead                                 |
 
 このコンポーネントは頭から見たTargetの方向を計算します。
 

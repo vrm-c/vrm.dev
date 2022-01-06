@@ -12,9 +12,9 @@ VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み�
 
 ## ボーン制御の視線: VRMLookAtBoneApplyer
 
-|{{< img src="images/vrm/VRMLookAtBoneApplyer.png" >}}|
-|-----|
-|VRMLookAtBoneApplyer|
+| ![img](/_static/images/vrm/VRMLookAtBoneApplyer.png) |
+|------------------------------------------------------|
+| VRMLookAtBoneApplyer                                 |
 
 VRMLookAtHeadの計算した視線方向のパラメーターをEyeBoneに適用します。
 
