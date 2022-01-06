@@ -42,7 +42,7 @@ VRMをインポートしたとき、揺れモノ関連のコンポーネント�
 |------------------------------------------------------------------------------------|
 | headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定 |
 
-| ![gizmo](_static/images/vrm/spring_gizmo.png) |
+| ![gizmo](/_static/images/vrm/spring_gizmo.png) |
 |-----------------------------------------------|
 | 動作時のGizmo。                               |
 
