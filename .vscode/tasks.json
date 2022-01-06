@@ -16,6 +16,32 @@
             "command": "sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser",
             "isBackground": true,
             "problemMatcher": []
+        },
+        {
+            "label": "sphinx-build",
+            "type": "shell",
+            "command": "sphinx-build content/ja/docs build -b=dirhtml -E",
+            "presentation": {
+                "reveal": "always",
+                "echo": true,
+                "showReuseMessage": false,
+                "clear": true,
+            },
+            "problemMatcher": [
+                {
+                    "owner": "sphinx",
+                    "fileLocation": "absolute",
+                    "pattern": [
+                        {
+                            "regexp": "^(\\w:[^:]+):(\\d+):\\s*(\\w+):\\s*(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4,
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
