@@ -18,6 +18,24 @@
             "problemMatcher": []
         },
         {
+            "label": "sphinx-pot",
+            "type": "shell",
+            "command": "sphinx-build -M gettext . _pot",
+            "options": {
+                "cwd": "${workspaceFolder}/content/ja/docs"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "sphinx-po",
+            "type": "shell",
+            "command": "sphinx-intl update -p _pot/gettext -l en",
+            "options": {
+                "cwd": "${workspaceFolder}/content/ja/docs"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "sphinx-build",
             "type": "shell",
             "command": "sphinx-build content/ja/docs build -b=dirhtml -E",
