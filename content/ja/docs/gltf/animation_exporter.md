@@ -33,14 +33,14 @@ aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 2. UnityEditorのツールバーからWindow>AnimationでAnimationウインドウを開く
 3. ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る
 4. Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする  
-![Interpolation](/images/wiki/LegacyClip.png)
+![Interpolation](/_static/images/wiki/LegacyClip.png)
 5. AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定
 6. クリップに対してアニメーションキーを追加
 7. UniGLTF>Exportからglbを出力する
 
 ### 注意事項
 1. RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること  
-![Interpolation](/images/wiki/Interpolation.png)
+![Interpolation](/_static/images/wiki/Interpolation.png)
 2. Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない
 3. Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）
 

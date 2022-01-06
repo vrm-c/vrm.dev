@@ -13,7 +13,7 @@ https://github.com/vrm-c/UniVRM/releases
 から最新版をダウンロードしてください。
 ファイル名は、`UniVRM-0.XX.0_YYYY.unitypackage` です。
 
-![download_unitypackage](/images/vrm/download_unitypackage.png)
+![download_unitypackage](/_static/images/vrm/download_unitypackage.png)
 
 ```{admonition} XX YY
 :class: note

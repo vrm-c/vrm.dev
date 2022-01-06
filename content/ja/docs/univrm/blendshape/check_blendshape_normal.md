@@ -41,13 +41,13 @@ fbx の `Materials` タブの `Extract Materials...` を実行してマテリア
 
 MToon の `Options - Debugging Options - Visualize` を `Normal` に変更します。
 
-![debug normal](/images/vrm/mtoon_normal.gif)
+![debug normal](/_static/images/vrm/mtoon_normal.gif)
 
 SkinnedMeshRenderer を選択します。
 
 BlendShape のスライダーを動かして法線を確認します。
 
-![debug normal](/images/vrm/broken_normal.jpg)
+![debug normal](/_static/images/vrm/broken_normal.jpg)
 
 * 鼻先
 * 下唇
@@ -77,7 +77,7 @@ fbx の `Model` タブを選択。
 
 `Legacy Blend Shape Normals` をチェックして Apply。
 
-![fixed normal](/images/vrm/legacy_normal_fixed.jpg)
+![fixed normal](/_static/images/vrm/legacy_normal_fixed.jpg)
 
 BlendShape がなおっていることを確認します。
 

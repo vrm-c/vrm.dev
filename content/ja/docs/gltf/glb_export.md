@@ -15,7 +15,7 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 
 ### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
 
-![image](/images/unigltf/glb_export_dialog.jpg)
+![image](/_static/images/unigltf/glb_export_dialog.jpg)
 
 ### 2. `ExportRoot` に対象の GameIObject をセットしてください
 
@@ -57,11 +57,11 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 ### 3. エクスポートしたいオブジェクトをemptyの子にします。
 (この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)
 
-![image](/images/wiki/root_cube.png)
+![image](/_static/images/wiki/root_cube.png)
 
 ### 4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。
 
-![image](/images/wiki/menu_unigltf_export.png)
+![image](/_static/images/wiki/menu_unigltf_export.png)
 
 ### 5. ファイル名を選択して `glb` ファイルを書き出せば完了です。
 
