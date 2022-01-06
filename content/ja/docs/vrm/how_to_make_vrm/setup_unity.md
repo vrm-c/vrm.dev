@@ -31,7 +31,7 @@ https://create.unity3d.com/jp-howto-install-win
 UniVRMの対応するバージョンの Unity をインストールしてください。
 対応するUnityのバージョンは、`UniVRM をダウンロードする` の URL をご確認ください。
 
-推奨バージョン以外を使う場合は、 [インストール](/docs/univrm/install/) もご確認ください。
+推奨バージョン以外を使う場合は、 [インストール](/univrm/install/index) もご確認ください。
 
 ## Unityで空のプロジェクトを作る
 
@@ -85,4 +85,4 @@ Console左上の clear ボタンを押して赤いメッセージが消えない
 
 ## Manual
 
-➡ [インストール](/docs/univrm/install/)
+➡ [インストール](/univrm/install/index)
