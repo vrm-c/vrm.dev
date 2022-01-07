@@ -1,7 +1,3 @@
----
-weight: 5
----
-
 # 🚧Meta の設定
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の `Meta` GUI で設定します。

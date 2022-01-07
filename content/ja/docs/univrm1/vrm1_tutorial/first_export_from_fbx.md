@@ -1,7 +1,3 @@
----
-weight: 1
----
-
 # fbx の import, T-Pose 初期エクスポート
 
 ## 使用する素材

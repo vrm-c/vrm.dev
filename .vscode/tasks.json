@@ -36,31 +36,16 @@
             "problemMatcher": []
         },
         {
-            "label": "sphinx-build(en)",
+            "label": "sphinx-autobuild(en)",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-build",
-            "args": [
-                "-D",
-                "language=en",
-                "-A",
-                "language=en",
-                "content/ja/docs",
-                "build/en",
-                "-b",
-                "dirhtml",
-                "-E",
-            ],
-            "options": {
-                "env": {
-                    "SPHINXOPTS": "-D language='en'"
-                }
-            },
+            "command": ".venv/Scripts/sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser --port=0 -D=language=en -A=language=en",
+            "isBackground": true,
             "problemMatcher": []
         },
         {
             "label": "sphinx-build",
             "type": "shell",
-            "command": "sphinx-build content/ja/docs build -b=dirhtml -E",
+            "command": ".venv/Scripts/sphinx-build content/ja/docs build -b=dirhtml -E",
             "presentation": {
                 "reveal": "always",
                 "echo": true,

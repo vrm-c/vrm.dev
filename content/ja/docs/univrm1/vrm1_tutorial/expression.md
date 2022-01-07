@@ -1,7 +1,3 @@
----
-weight: 6
----
-
 # Expression の設定
 
 ```{admonition} 旧blendShape
