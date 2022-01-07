@@ -12,7 +12,7 @@ date: 2018-04-16T16:30:00+09:00
 
 [もっと詳しく](/vrm/vrm_about)
 
-<img src="/_static/images/vrm/vrm_topheader.png" alt="VRM - humanoid 3d avatar format for VR" style="height: auto; width: 100%">
+![VRM - humanoid 3d avatar format for VR](/_static/images/vrm/vrm_topheader.png)
 
 ```{toctree}
 :maxdepth: 1
