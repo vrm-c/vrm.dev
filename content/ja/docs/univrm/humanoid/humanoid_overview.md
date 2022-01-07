@@ -1,5 +1,4 @@
 ---
-title: ヒューマノイド概要
 aliases: [
     "/univrm/humanoid/humanoid/", 
     "/docs/univrm/humanoid/humanoid/", 
@@ -10,6 +9,8 @@ aliases: [
 tags: ["detail"]
 weight: 1
 ---
+
+# ヒューマノイド概要
 
 ## 概要
 

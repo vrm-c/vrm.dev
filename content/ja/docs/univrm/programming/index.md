@@ -1,5 +1,4 @@
 ---
-title: "Programming"
 aliases: [
     "/dev/univrm-0.xx/programming/",
     "/docs/univrm/programming/univrm_api_history/",
@@ -10,6 +9,8 @@ aliases: [
 ]
 weight: 30
 ---
+
+# Programming
 
 ## お知らせ
 

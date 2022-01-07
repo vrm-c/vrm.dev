@@ -1,11 +1,12 @@
 ---
-title: "MToon"
 linkTitle: "MToonの設定"
 date: 2018-04-16T16:30:00+09:00
 weight: 3
 aliases: ["/univrm/shaders/mtoon/", "/docs/univrm/shaders/mtoon/"]
 tags: ["unity"]
 ---
+
+# MToon
 
 [MToonの使い方](https://www.slideshare.net/VirtualCast/vrm-mtoon)
 

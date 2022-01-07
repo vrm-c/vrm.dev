@@ -1,5 +1,4 @@
 ---
-title: LookAt(Bone)
 weight: 2
 aliases: [
     "/univrm/settings/lookat_settings/",
@@ -7,6 +6,8 @@ aliases: [
     ]
 tags: ["unity"]
 ---
+
+# LookAt(Bone)
 
 VRMLookAtHead + VRMLookAtBoneApplyer の２つのコンポーネントを組み合わせます。
 

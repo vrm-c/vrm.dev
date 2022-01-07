@@ -1,8 +1,9 @@
 ---
-title: "Unity のバージョン"
 weight: 1
 tags: ["unity"]
 ---
+
+# Unity のバージョン
 
 ## UniVRM-0.80.0 ～
 

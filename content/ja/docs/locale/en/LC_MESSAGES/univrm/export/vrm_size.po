@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 19:22+0900\n"
+"POT-Creation-Date: 2022-01-07 19:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,263 +21,267 @@ msgstr ""
 msgid "{}"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:9
+#: ../../univrm/export/vrm_size.md:8
+msgid "VRMモデルのファイルサイズ"
+msgstr ""
+
+#: ../../univrm/export/vrm_size.md:10
 msgid "VRMは、GLB形式なので、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:11
+#: ../../univrm/export/vrm_size.md:12
 msgid "`VRMエクスポートしたファイルのサイズ => glb のサイズ`"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:13
+#: ../../univrm/export/vrm_size.md:14
 msgid "`glb => json + binary`"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:15
+#: ../../univrm/export/vrm_size.md:16
 msgid "です。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:17
+#: ../../univrm/export/vrm_size.md:18
 msgid "json はテキストなので通常は 1MB にもなりません。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:19
+#: ../../univrm/export/vrm_size.md:20
 msgid "binary で主なものは、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:21
+#: ../../univrm/export/vrm_size.md:22
 msgid "`image` と `mesh` です。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:23
+#: ../../univrm/export/vrm_size.md:24
 msgid "5万頂点、5万三角形のモデルを例としてどれくらいの容量になるかを計算する目安を説明します。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:25
+#: ../../univrm/export/vrm_size.md:26
 msgid "Image"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:27
+#: ../../univrm/export/vrm_size.md:28
 msgid ""
 "Material が参照する Texture の PNG(JPG) のバイト列がそのまま入っています。 Meta の Thumbnail "
 "も対象になります。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:30
+#: ../../univrm/export/vrm_size.md:31
 msgid ""
 "v0.56 でローカルの元ファイルをそのまま使うようにした結果、 "
 "元ファイルが巨大であった場合に、以前に比べて大きくなる問題が発生しています。4000x4000のような大きなファイルはPNG(JPG)を縮小してください。v0.58"
 " 修正予定。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:33
+#: ../../univrm/export/vrm_size.md:34
 msgid "https://github.com/vrm-c/UniVRM/issues/502"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:35
+#: ../../univrm/export/vrm_size.md:36
 msgid "Mesh"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:37
+#: ../../univrm/export/vrm_size.md:38
 msgid "Index バッファ と 頂点バッファです。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:39
+#: ../../univrm/export/vrm_size.md:40
 msgid "Indexバッファ"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:41
+#: ../../univrm/export/vrm_size.md:42
 msgid "Indexバッファは、Intの配列を使っています。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:43
+#: ../../univrm/export/vrm_size.md:44
 msgid "5万三角形のモデルの場合、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:45
+#: ../../univrm/export/vrm_size.md:46
 msgid "`50000 x 4(Int=4byte) x 3(三角形の3頂点) => 0.6MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:47
+#: ../../univrm/export/vrm_size.md:48
 msgid ""
 "GLTFの仕様的には unsigned short も可能ですが、UniVRM のエクスポーターは未対応。65536 頂点までなので 50000 "
 "三角形は格納できません。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:49
+#: ../../univrm/export/vrm_size.md:50
 msgid "頂点バッファ"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:51
+#: ../../univrm/export/vrm_size.md:52
 msgid "一頂点は、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:63
+#: ../../univrm/export/vrm_size.md:64
 msgid "となっています。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:65
+#: ../../univrm/export/vrm_size.md:66
 msgid "頂点カラー、2つめのUV(未対応)などバリエーションがありうる。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:67
+#: ../../univrm/export/vrm_size.md:68
 msgid ""
 "GLTFにはTangent(float4)も保存できますが、UniVRMでは保存せずUnityに計算させています。法線とUVから `MIKK T "
 "Space` アルゴリズムで計算したものを使う仕様です。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:69
+#: ../../univrm/export/vrm_size.md:70
 msgid "５万頂点のモデルの場合、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:71
+#: ../../univrm/export/vrm_size.md:72
 msgid "`50000 x (12 + 12 + 8 + 8 + 16) => 2.8MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:73
+#: ../../univrm/export/vrm_size.md:74
 msgid "基本容量"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:75
+#: ../../univrm/export/vrm_size.md:76
 msgid ""
 "以上、 `画像サイズ合計 + インデックスバッファ + 頂点バッファ` の合計がモデルの基本容量になります。 5万頂点、5万三角形のモデルの場合、"
 " `3.4MB + 画像サイズ合計` が基本容量になります。 基本容量は計算通りの値になります。 "
 "以降、時として容量爆発の原因となるブレンドシェイプの容量についてです。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:80
+#: ../../univrm/export/vrm_size.md:81
 msgid "ブレンドシェイプ(MorphTarget)の容量"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:91
+#: ../../univrm/export/vrm_size.md:92
 msgid "ひとつのブレンドシェイプで `50000 x (12 + 12) => 1.2MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:93
+#: ../../univrm/export/vrm_size.md:94
 msgid "20のブレンドシェイプがあったとすると, `50000 x (12 + 12) x 20 => 24MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:96
+#: ../../univrm/export/vrm_size.md:97
 msgid "60のブレンドシェイプがあると、 `50000 x (12 + 12) x 60 => 72MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:99
+#: ../../univrm/export/vrm_size.md:100
 msgid "大量のBlendShapeがある"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:100
+#: ../../univrm/export/vrm_size.md:101
 msgid "BlendShapeのある場所と無い場所が分割されていない"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:102
+#: ../../univrm/export/vrm_size.md:103
 msgid "の条件が揃うと大容量になることに注意してください。 以降、ブレンドシェイプ容量の削減方法についてです。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:105
+#: ../../univrm/export/vrm_size.md:106
 msgid "ブレンドシェイプの容量対策"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:107
+#: ../../univrm/export/vrm_size.md:108
 msgid "[エクスポートダイアログ](/univrm/export/univrm_export) の以下のオプションがブレンドシェイプの容量に関連します。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:110
+#: ../../univrm/export/vrm_size.md:111
 msgid "エクスポートオプション"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:112
+#: ../../univrm/export/vrm_size.md:113
 msgid "最初の２つは安全にです。３つめは修正中。4つめは、UniVRM-0.53(含む)以前でロードエラーになるバージョン問題があります。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:114
+#: ../../univrm/export/vrm_size.md:115
 msgid "ReduceBlendshape"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:115
+#: ../../univrm/export/vrm_size.md:116
 msgid "BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。 ファイルサイズを削減できます。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:118
+#: ../../univrm/export/vrm_size.md:119
 msgid "ReduceBlendshapeClip"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:119
+#: ../../univrm/export/vrm_size.md:120
 msgid "Presetが Unknown であるBlendShapeClipをエクスポートしない。 ReduceBlendshapeと組み合わせて使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:122
+#: ../../univrm/export/vrm_size.md:123
 msgid "UseSparseAccessor"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:123
+#: ../../univrm/export/vrm_size.md:124
 msgid "BlendShapeが多数ある場合にファイルサイズを削減できます。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:125
+#: ../../univrm/export/vrm_size.md:126
 msgid "ブレンドシェイプの値が、 `0` でない頂点のみを飛び飛びに記録することで容量を削減する GLTF の仕様です。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:127
+#: ../../univrm/export/vrm_size.md:128
 msgid "修正中: GLTFの互換性の問題があって、UniVRM以外のローダーでエラーになる"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:139
+#: ../../univrm/export/vrm_size.md:140
 msgid "`BlendShapeの有効な頂点数 x (12 + 12 + 4) => ?MB`"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:141
+#: ../../univrm/export/vrm_size.md:142
 msgid "保存方法だけ変わる"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:143
+#: ../../univrm/export/vrm_size.md:144
 msgid "OnlyBlendshapePosition"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:144
+#: ../../univrm/export/vrm_size.md:145
 msgid "BlendShapeのNormal, Tangent をエクスポートしない。 ファイルサイズを削減できます。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:147
+#: ../../univrm/export/vrm_size.md:148
 msgid "UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:149
+#: ../../univrm/export/vrm_size.md:150
 msgid "MeshUtility で BlendShape の あるMesh と ないMesh に分割する"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:151
+#: ../../univrm/export/vrm_size.md:152
 msgid "例えば、顔(BlendShapeあり)が 10000 頂点、体(BlendShapeなし)が 40000 頂点に分割されていると、"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:153
+#: ../../univrm/export/vrm_size.md:154
 msgid "ひとつのブレンドシェイプで `10000 x (12 + 12) => 0.24MB` の容量を使います。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:155
+#: ../../univrm/export/vrm_size.md:156
 msgid "分割前の一体型のモデル"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:157
+#: ../../univrm/export/vrm_size.md:158
 msgid "`50000 x (12 + 12) => 1.2MB`"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:159
+#: ../../univrm/export/vrm_size.md:160
 msgid "に比べて容量を節約できます。"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:161
+#: ../../univrm/export/vrm_size.md:162
 msgid "ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:163
+#: ../../univrm/export/vrm_size.md:164
 msgid "[Mesh Utility](/gltf/mesh_utility)"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:165
+#: ../../univrm/export/vrm_size.md:166
 msgid "まとめ"
 msgstr ""
 
-#: ../../univrm/export/vrm_size.md:167
+#: ../../univrm/export/vrm_size.md:168
 msgid "予想より大容量になってしまうときはブレンドシェイプ、次に画像に注意してください。"
 msgstr ""
 

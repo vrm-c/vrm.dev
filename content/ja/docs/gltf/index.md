@@ -1,5 +1,4 @@
 ---
-title: "glTF"
 weight: 3
 aliases: [
     "/docs/univrm/gltf/gltf_about/", 
@@ -9,6 +8,8 @@ aliases: [
     "/docs/gltf/update/"
 ]
 ---
+
+# glTF
 
 [glTF™ (GL Transmission Format)](https://www.khronos.org/gltf/) は `OpenGL` の仕様策定をしている `KHRONOS` による3Dフォーマットです。
 2017年にVersion2が策定されました。

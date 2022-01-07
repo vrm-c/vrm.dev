@@ -1,9 +1,10 @@
 ---
-title: "Material"
 date: 2018-04-16T16:30:00+09:00
 weight: 15
 aliases: ["/univrm/shaders/univrm_shaders/"]
 ---
+
+# Material
 
 VRM のサポートしているマテリアル(シェーダー)は ３種類 で、
 `unlit`, `standard`, `MToon` です。

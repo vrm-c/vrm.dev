@@ -1,5 +1,4 @@
 ---
-title: LookAt(Blendshape)
 weight: 3
 aliases: [
     "/univrm/settings/lookat_settings/",
@@ -7,6 +6,8 @@ aliases: [
     ]
 tags: ["unity"]
 ---
+
+# LookAt(Blendshape)
 
 VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。
 `VRMLookAtBoneApplyer` を削除して、代わりに `VRMLookAtBlendShapeApplyer` をアタッチしてください。

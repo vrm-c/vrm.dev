@@ -1,11 +1,12 @@
 ---
-title: "VRMの動作を確認する"
 date: 2020-08-26T15:52:48+09:00
 url: "/how_to_make_vrm/vrm_behavior_confirmation/"
 description: "Unityを Play モードにして、BlendShape、SpringBone などの動作を確認する"
 tags: ["unity"]
 weight: 4
 ---
+
+# VRMの動作を確認する
 
 このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。
 

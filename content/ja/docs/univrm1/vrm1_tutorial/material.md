@@ -1,7 +1,8 @@
 ---
-title: 🚧Material の設定
 weight: 15
 ---
+
+# 🚧Material の設定
 
 ## new_seedsan のマテリアル構成
 

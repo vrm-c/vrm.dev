@@ -13,14 +13,14 @@
         {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": "sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser",
+            "command": ".venv/Scripts/sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser --port=0",
             "isBackground": true,
             "problemMatcher": []
         },
         {
             "label": "sphinx-pot",
             "type": "shell",
-            "command": "sphinx-build -M gettext . _pot",
+            "command": "${workspaceFolder}/.venv/Scripts/sphinx-build -M gettext . _pot",
             "options": {
                 "cwd": "${workspaceFolder}/content/ja/docs"
             },
@@ -29,9 +29,31 @@
         {
             "label": "sphinx-po",
             "type": "shell",
-            "command": "sphinx-intl update -p _pot/gettext -l en",
+            "command": "${workspaceFolder}/.venv/Scripts/sphinx-intl update -p _pot/gettext -l en",
             "options": {
                 "cwd": "${workspaceFolder}/content/ja/docs"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "sphinx-build(en)",
+            "type": "shell",
+            "command": ".venv/Scripts/sphinx-build",
+            "args": [
+                "-D",
+                "language=en",
+                "-A",
+                "language=en",
+                "content/ja/docs",
+                "build/en",
+                "-b",
+                "dirhtml",
+                "-E",
+            ],
+            "options": {
+                "env": {
+                    "SPHINXOPTS": "-D language='en'"
+                }
             },
             "problemMatcher": []
         },

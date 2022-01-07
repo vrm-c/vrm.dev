@@ -1,9 +1,10 @@
 ---
-title: "ビューアでVRMをインポートする"
 date: 2018-04-16T16:30:00+09:00
 url: /how_to_view_vrm/
 weight: 3
 ---
+
+# ビューアでVRMをインポートする
 
 VRMビューアアプリは[こちら](/vrm/vrm_applications#ビューア)。
 

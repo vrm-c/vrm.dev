@@ -1,10 +1,11 @@
 ---
-title: "VRMモデルのファイルサイズ"
 date: 2020-08-13
 weight: 3
 tags: ["detail"]
 aliases: []
 ---
+
+# VRMモデルのファイルサイズ
 
 VRMは、GLB形式なので、
 

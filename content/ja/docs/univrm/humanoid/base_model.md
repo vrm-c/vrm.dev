@@ -1,9 +1,10 @@
 ---
-title: BaseModel
 tags: ["unity"]
 weight: 2
 description: "VRMの元になる条件"
 ---
+
+# BaseModel
 
 以下の条件を満たす `GameObject` をエクスポートして VRM にできます。
 

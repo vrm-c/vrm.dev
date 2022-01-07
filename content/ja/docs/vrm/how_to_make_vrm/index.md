@@ -1,9 +1,10 @@
 ---
-title: "VRMファイルを作ってみたい"
 url: "/how_to_make_vrm/"
 weight: 2
 aliases: ["/docs/univrm/univrm_workflow/"]
 ---
+
+# VRMファイルを作ってみたい
 
 ```{toctree}
 setup_unity

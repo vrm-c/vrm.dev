@@ -1,7 +1,8 @@
 ---
-title: LookAt の設定
 weight: 7
 ---
+
+# LookAt の設定
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の LookAt GUI で設定します。
 

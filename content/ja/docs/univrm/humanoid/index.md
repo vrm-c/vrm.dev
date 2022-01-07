@@ -1,8 +1,9 @@
 ---
-title: Humanoid
 weight: 18
 aliases: ["/univrm/"]
 ---
+
+# Humanoid
 
 ```{toctree}
 :maxdepth: 1

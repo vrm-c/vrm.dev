@@ -1,7 +1,8 @@
 ---
-title: 🚧Editor でアップグレードする
 weight: 20
 ---
+
+# 🚧Editor でアップグレードする
 
 Unity Editor 上で VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。
 

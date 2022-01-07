@@ -1,11 +1,12 @@
 ---
-title: "1. VRMファイルを作成する"
 date: 2020-08-26T15:52:06+09:00
 url: "/how_to_make_vrm/convert_from_humanoid_model/"
 description: "ベースモデル(fbx)を Unity にインポートして、Bone割り当てを確認、T-Pose にする、ライセンスを記述して出力(正規化)する"
 tags: ["unity"]
 weight: 2
 ---
+
+# 1. VRMファイルを作成する
 
 ## UnityでHumanoidとして扱えるモデルデータを用意します
 

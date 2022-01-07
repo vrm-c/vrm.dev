@@ -1,8 +1,9 @@
 ---
-title: BlendShape の法線を確認しよう
 weight: 4
 tags: ["unity", "fbx"]
 ---
+
+# BlendShape の法線を確認しよう
 
 最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。
 

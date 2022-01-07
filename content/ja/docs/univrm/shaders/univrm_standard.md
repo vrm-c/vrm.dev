@@ -1,9 +1,10 @@
 ---
-title: "Standard"
 weight: 2
 tags: ["detail"]
 aliases: ["/univrm/shaders/standard/"]
 ---
+
+# Standard
 
 `Physically Based Rendering`
 

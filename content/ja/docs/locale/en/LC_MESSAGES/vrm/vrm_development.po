@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 19:22+0900\n"
+"POT-Creation-Date: 2022-01-07 19:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,123 +21,127 @@ msgstr ""
 msgid "{}"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:8
+#: ../../vrm/vrm_development.md:7
+msgid "VRMで開発する"
+msgstr ""
+
+#: ../../vrm/vrm_development.md:9
 msgid "[programming](https://vrm-c.github.io/UniVRM/)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:9 ../../vrm/vrm_development.md:40
+#: ../../vrm/vrm_development.md:10 ../../vrm/vrm_development.md:41
 msgid "[samples](/univrm/install/univrm_install_samples)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:11
+#: ../../vrm/vrm_development.md:12
 msgid "VRMの特徴(開発者的な視点)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:13
+#: ../../vrm/vrm_development.md:14
 msgid ""
 "右手系Y-UPである ➡️ "
 "[Coordinate](https://vrm-c.github.io/UniVRM/ja/implementation/coordinate.html)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:14
+#: ../../vrm/vrm_development.md:15
 msgid "メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:15
+#: ../../vrm/vrm_development.md:16
 msgid "人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:16
+#: ../../vrm/vrm_development.md:17
 msgid "初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:17
+#: ../../vrm/vrm_development.md:18
 msgid "初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:18
+#: ../../vrm/vrm_development.md:19
 msgid ""
 "初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ "
 "Meshを加工する前にBakeするなどの負担が軽減できます"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:19
+#: ../../vrm/vrm_development.md:20
 msgid ""
 "表情・視線操作が統一されている ➡️ "
 "[BlendShapeProxy](https://vrm-c.github.io/UniVRM/ja/vrm0/0_58_blendshape.html)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:20
+#: ../../vrm/vrm_development.md:21
 msgid "物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:21
+#: ../../vrm/vrm_development.md:22
 msgid ""
 "VRの設定が含まれている ➡️ "
 "[FirstPerson](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:22
+#: ../../vrm/vrm_development.md:23
 msgid "ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:24
+#: ../../vrm/vrm_development.md:25
 msgid "従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、 ランタイムにロードして動かす、という用途が想定されます。"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:27
+#: ../../vrm/vrm_development.md:28
 msgid "UniVRMで ランタイムロードする"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:29
+#: ../../vrm/vrm_development.md:30
 msgid ""
 "ランタイムで UniVRM の ロード機能を使うことができます。 UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 "
 "GameObject を作ります。 ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:33
+#: ../../vrm/vrm_development.md:34
 msgid "[runtime load](https://vrm-c.github.io/UniVRM/ja/)"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:35
+#: ../../vrm/vrm_development.md:36
 msgid "UniVRMで ランタイムエクスポートする"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:37
+#: ../../vrm/vrm_development.md:38
 msgid ""
 "ランタイムで UniVRM の エクスポート機能 を使うことができます。 この機能を使って、キャラクタークリエーションツール "
 "を実装することができます。"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:42
+#: ../../vrm/vrm_development.md:43
 msgid "`Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity`"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:44
+#: ../../vrm/vrm_development.md:45
 msgid "が例です。"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:46
+#: ../../vrm/vrm_development.md:47
 msgid "UniVRM以外の実装"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:48
+#: ../../vrm/vrm_development.md:49
 msgid "https://github.com/ruyo/VRM4U"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:49
+#: ../../vrm/vrm_development.md:50
 msgid "https://github.com/saturday06/VRM_IMPORTER_for_Blender"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:50
+#: ../../vrm/vrm_development.md:51
 msgid "https://github.com/virtual-cast/babylon-vrm-loader/"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:51
+#: ../../vrm/vrm_development.md:52
 msgid "https://github.com/pixiv/three-vrm/"
 msgstr ""
 
-#: ../../vrm/vrm_development.md:52
+#: ../../vrm/vrm_development.md:53
 msgid "https://github.com/V-Sekai/godot-vrm"
 msgstr ""
 

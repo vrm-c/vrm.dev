@@ -1,10 +1,11 @@
 ---
-title: "エクスポートダイアログ"
 date: 2020-07-08
 weight: 2
 aliases: ["/univrm/univrm_export/", "/univrm/export/univrm_export/"]
 tags: ["unity"]
 ---
+
+# エクスポートダイアログ
 
 | 用語         | 意味                                                   |
 |--------------|--------------------------------------------------------|

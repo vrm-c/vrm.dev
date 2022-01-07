@@ -1,8 +1,9 @@
 ---
-title: FirstPerson
 weight: 20
 aliases: ["/univrm/"]
 ---
+
+# FirstPerson
 
 ```{toctree}
 :maxdepth: 1

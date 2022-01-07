@@ -1,9 +1,10 @@
 ---
-title: "Glbインポート"
 date: 2020-10-12T17:04:00+09:00
 weight: 1
 tags: ["gltf"]
 ---
+
+# Glbインポート
 
 # import
 

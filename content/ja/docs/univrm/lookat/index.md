@@ -1,8 +1,9 @@
 ---
-title: "LookAt"
 weight: 16
 aliases: ["/univrm/"]
 ---
+
+# LookAt
 
 ```{toctree}
 :maxdepth: 1

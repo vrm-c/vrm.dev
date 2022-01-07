@@ -1,11 +1,12 @@
 ---
-title: "UniVRM"
 weight: 2
 menu:
   main:
     weight: 11
 aliases: ["/univrm/"]
 ---
+
+# UniVRM
 
 ```{toctree}
 :maxdepth: 1

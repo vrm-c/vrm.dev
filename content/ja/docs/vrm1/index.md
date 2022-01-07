@@ -1,11 +1,12 @@
 ---
-title: "VRM-1.0β"
 weight: 11
 date: 2021-08-05
 menu:
   main:
     weight: 2
 ---
+
+# VRM-1.0β
 
 ## VRM 1.0 とは
 2018 年に発表した 3D アバターファイルフォーマット「VRM」において、 

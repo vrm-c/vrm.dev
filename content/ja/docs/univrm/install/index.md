@@ -1,8 +1,9 @@
 ---
-title: "Install"
 weight: 11
 aliases: ["/univrm/"]
 ---
+
+# Install
 
 ```{toctree}
 :maxdepth: 1

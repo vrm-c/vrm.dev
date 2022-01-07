@@ -14,6 +14,8 @@ IMAGE = re.compile(r'{{<\s*img\s+(.*?)\s*>}}', re.DOTALL)
 KEY_VALUE = re.compile(r'(\w+)="([^"]+)"')
 MD_IMAGE = re.compile(r'!\[([^\]]+)\]\(([^\)]+)\)')
 
+FRONT_TITLE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
+
 
 def traverse(dir: pathlib.Path) -> Iterable[pathlib.Path]:
     for f in dir.iterdir():
@@ -137,6 +139,26 @@ if __name__ == '__main__':
                 print(attr_map)
                 return f'![{alt}](/_static/{src})'
             dst = re.sub(IMAGE, rep_image, dst)
+
+            def rep_title(m):
+                sio = io.StringIO()
+                title = None
+                for l in m.group(0).splitlines():
+                    if l.startswith('title:'):
+                        title = l[len('title:'):].strip()
+                        if title[0] == '"':
+                            # unquote
+                            title = title[1:-1]
+                    else:
+                        sio.write(l)
+                        sio.write('\n')
+
+                if title:
+                    return sio.getvalue() + f'\n# {title}\n'
+                else:
+                    print(m)
+                    return m.group(0)
+            dst = re.sub(FRONT_TITLE, rep_title, dst)
 
             if dst != src:
                 f.write_text(dst, encoding='utf-8')

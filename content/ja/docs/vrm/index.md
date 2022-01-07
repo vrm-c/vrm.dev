@@ -1,11 +1,12 @@
 ---
-title: "VRMについて"
 url: "/vrm/"
 weight: 1
 menu:
   main:
     weight: 1
 ---
+
+# VRMについて
 
 ```{toctree}
 :maxdepth: 1

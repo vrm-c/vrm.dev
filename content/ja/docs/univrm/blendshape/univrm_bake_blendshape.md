@@ -1,10 +1,11 @@
 ---
-title: "エクスポート時にBlendShapeの状態をベイクする"
 date: 2020-07-27T19:28:41+09:00
 tags: ["unity"]
 aliases: ["/univrm/univrm_bake_blendshape/"]
 weight: 3
 ---
+
+# エクスポート時にBlendShapeの状態をベイクする
 
 UniVRM ではエクスポートするときに、 `SkinnedMeshRenderer` のスライダーを上げておくとその状態を基本状態にすることができます。
 

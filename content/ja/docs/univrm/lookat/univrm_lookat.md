@@ -1,10 +1,11 @@
 ---
-title: "LookAt"
 date: 2018-04-16T16:30:00+09:00
 weight: 1
 aliases: ["/univrm/components/univrm_lookat/"]
 tags: ["unity"]
 ---
+
+# LookAt
 
 VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て、
 目に適用できます。

@@ -1,8 +1,9 @@
 ---
-title: Emission と グロー(発光)
 weight: 10
 tags: ["gltf", "mtoon-1.0"]
 ---
+
+# Emission と グロー(発光)
 
 `vrm-1.0 向けの独自拡張です`
 

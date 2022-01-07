@@ -1,7 +1,8 @@
 ---
-title: VrmObject と Extract
 weight: 2
 ---
+
+# VrmObject と Extract
 
 ## vrm-1.0 の subasset を extract する
 

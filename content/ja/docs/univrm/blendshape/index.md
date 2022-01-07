@@ -1,8 +1,9 @@
 ---
-title: BlendShape
 weight: 14
 aliases: ["/univrm/"]
 ---
+
+# BlendShape
 
 ```{toctree}
 :maxdepth: 1

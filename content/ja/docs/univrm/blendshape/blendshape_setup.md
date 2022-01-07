@@ -1,9 +1,10 @@
 ---
-title: BlendShapeのセットアップ(v0.45)
 weight: 2
 aliases: ["/univrm/settings/blendshape_setup/"]
 tags: ["unity"]
 ---
+
+# BlendShapeのセットアップ(v0.45)
 
 ## BlendShape関連のアセット
 VRMをImportすると、`モデル名から拡張子を除いた名前 + BlendShapes` フォルダにPresetを表すBlendShapeClipが作成されます。

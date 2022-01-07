@@ -53,6 +53,17 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'furo'
+html_sidebars = {
+    '**': [
+        "sidebar/scroll-start.html",
+        'language.html',
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+    ],
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -62,3 +73,4 @@ html_static_path = ['_static']
 # sphinx-intl
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
+language = "ja"

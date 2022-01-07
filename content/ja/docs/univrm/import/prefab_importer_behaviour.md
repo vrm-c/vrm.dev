@@ -1,9 +1,10 @@
 ---
-title: PrefabがImportされるタイミングと上書きの注意
 weight: 2
 aliases: ["/univrm/settings/prefab_importer_behaviour/"]
 tags: ["unity"]
 ---
+
+# PrefabがImportされるタイミングと上書きの注意
 
 ## 0.49
 

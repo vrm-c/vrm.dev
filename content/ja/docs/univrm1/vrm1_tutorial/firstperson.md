@@ -1,7 +1,8 @@
 ---
-title: 🚧FirstPerson の設定
 weight: 8
 ---
+
+# 🚧FirstPerson の設定
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の FirstPerson GUI で設定します。
 

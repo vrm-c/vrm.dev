@@ -24,17 +24,15 @@ def parse(self, inputstring: str, document: nodes.document) -> None:
     if tokens[0].type == 'front_matter':
         #
         # Hugo article migration
-        # 
+        #
         # * get title from frontmatter(yaml)
-        # 
+        #
         import pathlib
         path = pathlib.Path(
             document.current_source)
         title = path.stem
         if title in ('index', '_index'):
             title = path.parent.stem
-        if title == 'vrm_about':
-            pass
 
         try:
             import yaml
@@ -43,15 +41,17 @@ def parse(self, inputstring: str, document: nodes.document) -> None:
         except Exception as ex:
             pass
 
-        header_text = Token("text", "", 0, content=title)
+        header_text = Token("text", "", 0, content=title, map=tokens[0].map)
         tokens = [tokens[0],
-                  Token("heading_open", "h1", 1, content="{}", map=[0, 0]),
-                  Token("inline", "", 0, content="{}", map=[
-                        0, 0], children=[header_text]),
+                  Token("heading_open", "h1", 1,
+                        content="{}", map=header_text.map),
+                  Token("inline", "", 0, content="{}",
+                        map=header_text.map, children=[header_text]),
                   Token("heading_close", "h1", -1,
-                        content="{}", map=[0, 0])
+                        content="{}", map=header_text.map)
                   ] + tokens[1:]
 
     parser.renderer.render(tokens, parser.options, env)
 
-myst_parser.sphinx_parser.MystParser.parse = parse
+
+# myst_parser.sphinx_parser.MystParser.parse = parse

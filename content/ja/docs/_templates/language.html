@@ -1,0 +1,15 @@
+{% if language == "ja" %}
+{% set href = (pathto(root_doc) + "en/" + pagename) if root_doc!=pagename else "en/" %}
+<ul>
+    <li>日本語
+    <li><a href="{{ href }}">英語</a>
+</ul>
+{% elif language == "en" %}
+{% set href = (pathto(root_doc) + "../" + pagename) if root_doc!=pagename else "../" %}
+<ul>
+    <li><a href="{{ href }}">Japanese</a>
+    <li>English
+</ul>
+{% else %}
+unknown {{language}}
+{% endif %}
