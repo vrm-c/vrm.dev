@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../vrm/vrm_development.md:7
 msgid "VRMで開発する"
-msgstr ""
+msgstr "VRM development"
 
 #: ../../vrm/vrm_development.md:9
 msgid "[programming](https://vrm-c.github.io/UniVRM/)"
@@ -35,83 +35,86 @@ msgstr ""
 
 #: ../../vrm/vrm_development.md:12
 msgid "VRMの特徴(開発者的な視点)"
-msgstr ""
+msgstr "VRM Features (for Developers)"
 
 #: ../../vrm/vrm_development.md:14
 msgid ""
 "右手系Y-UPである ➡️ "
 "[Coordinate](https://vrm-c.github.io/UniVRM/ja/implementation/coordinate.html)"
-msgstr ""
+msgstr "Right-handed Y-Up coordinate system ➡️"
+"[Coordinate](https://vrm-c.github.io/UniVRM/en/implementation/coordinate.html)"
 
 #: ../../vrm/vrm_development.md:15
 msgid "メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません"
-msgstr ""
+msgstr "Metric unit is meter"
 
 #: ../../vrm/vrm_development.md:16
 msgid "人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい"
-msgstr ""
+msgstr "Humanoid bones ➡️ compatible with humanoid motion and motion capture"
 
 #: ../../vrm/vrm_development.md:17
 msgid "初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます"
-msgstr ""
+msgstr "T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode"
 
 #: ../../vrm/vrm_development.md:18
 msgid "初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます"
-msgstr ""
+msgstr "The initial pose has no rotation and scale"
 
 #: ../../vrm/vrm_development.md:19
 msgid ""
 "初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ "
 "Meshを加工する前にBakeするなどの負担が軽減できます"
-msgstr ""
+msgstr "The mesh is aligned with the Humanoid Skeleton in the initial pose (only skin's bind matrices are not included)"
 
 #: ../../vrm/vrm_development.md:20
 msgid ""
 "表情・視線操作が統一されている ➡️ "
 "[BlendShapeProxy](https://vrm-c.github.io/UniVRM/ja/vrm0/0_58_blendshape.html)"
-msgstr ""
+msgstr "Expression/eye gaze manipulation are in BlendShapeProxy ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/en/vrm0/0_58_blendshape.html)"
 
 #: ../../vrm/vrm_development.md:21
 msgid "物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません"
-msgstr ""
+msgstr "Spring physics setup on clothes, hair and others ➡️ no interference with other physics"
 
 #: ../../vrm/vrm_development.md:22
 msgid ""
 "VRの設定が含まれている ➡️ "
 "[FirstPerson](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html)"
-msgstr ""
+msgstr "VR settings are available ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/en/vrm0/firstperson.html)"
 
 #: ../../vrm/vrm_development.md:23
 msgid "ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます"
-msgstr ""
+msgstr "Licenses settings such as permission to use the avatar, permissions for violent and sexual activities, etc. are defined"
 
 #: ../../vrm/vrm_development.md:25
 msgid "従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、 ランタイムにロードして動かす、という用途が想定されます。"
-msgstr ""
+msgstr "VRM is used for loading model into applications at runtime as opposed to the way that pre-makes models as asset for the use of the specific application."
 
 #: ../../vrm/vrm_development.md:28
 msgid "UniVRMで ランタイムロードする"
-msgstr ""
+msgstr "Runtime Import with UniVRM"
 
 #: ../../vrm/vrm_development.md:30
 msgid ""
 "ランタイムで UniVRM の ロード機能を使うことができます。 UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 "
 "GameObject を作ります。 ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。"
-msgstr ""
+msgstr "UniVRM can load VRM into Unity as a GameObject instead of a prefab.
+The imported GameObject is the same as the instantiated GameObject from Prefab."
 
 #: ../../vrm/vrm_development.md:34
 msgid "[runtime load](https://vrm-c.github.io/UniVRM/ja/)"
-msgstr ""
+msgstr "[runtime load](https://vrm-c.github.io/UniVRM/en/)"
 
 #: ../../vrm/vrm_development.md:36
 msgid "UniVRMで ランタイムエクスポートする"
-msgstr ""
+msgstr "Runtime Export with UniVRM"
 
 #: ../../vrm/vrm_development.md:38
 msgid ""
 "ランタイムで UniVRM の エクスポート機能 を使うことができます。 この機能を使って、キャラクタークリエーションツール "
 "を実装することができます。"
-msgstr ""
+msgstr "UniVRM can export the VRM model at runtime in Unity.
+The export function can be used for applications such as character maker tool."
 
 #: ../../vrm/vrm_development.md:43
 msgid "`Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity`"
@@ -119,11 +122,11 @@ msgstr ""
 
 #: ../../vrm/vrm_development.md:45
 msgid "が例です。"
-msgstr ""
+msgstr "Exporter sample can be found in:"
 
 #: ../../vrm/vrm_development.md:47
 msgid "UniVRM以外の実装"
-msgstr ""
+msgstr "Other VRM Implementations"
 
 #: ../../vrm/vrm_development.md:49
 msgid "https://github.com/ruyo/VRM4U"
