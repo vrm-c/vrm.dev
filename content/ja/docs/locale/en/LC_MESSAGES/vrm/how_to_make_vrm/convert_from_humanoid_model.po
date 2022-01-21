@@ -51,7 +51,7 @@ msgstr "Then, ensure the [required bones](https://github.com/vrm-c/vrm-specifica
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:23
 msgid "ベースモデル"
-msgstr ""
+msgstr "BaseModel"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:2
 msgid "使用可能なベースモデルの詳細は、 [BaseModel](/univrm/humanoid/base_model) を参照してください。"
@@ -62,15 +62,15 @@ msgstr ""
 msgid ""
 "[必須ボーン](https://github.com/vrm-c/vrm-"
 "specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3)"
-msgstr ""
+msgstr "[required bones](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones)"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:34
 msgid "unity に fbx を import する"
-msgstr ""
+msgstr "Import a FBX model into Unity"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:36
 msgid "fbx のフォルダを unityの Assets フォルダにドロップします。"
-msgstr ""
+msgstr "Drag and drop the FBX folder into the `Assets` folder"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:38
 msgid "![img](/_static/images/vrm/fbx_folder.jpg)"
@@ -99,11 +99,11 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:44
 msgid "青いアイコンが fbx の asset(prefab) です。"
-msgstr ""
+msgstr "In the Project window, click blue icon (Alicia_Solid_Unity), which is fbx's asset (prefab):"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:46
 msgid "fbx の material を設定する"
-msgstr ""
+msgstr "FBX's Material Setup"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:48
 msgid "![img](/_static/images/vrm/fbx_default.jpg)"
@@ -114,7 +114,7 @@ msgid ""
 "この時点では fbx importer による初期状態になっており、マテリアルがデフォルト状態(StandardShaderでColor, "
 "ColorTexture割り当てのみ。半透明設定が無いなど)なので、マテリアルを最低限設定します。 VRM 向けなので、この例では全部 "
 "`MToon` にします。"
-msgstr ""
+msgstr "As shown in the image above, by default FBX's materials are set as `Standard` shader with default parameters. For the demonstration of VRM conversion under the minimum material setup, we set the material's `Shader` to `MToon` and `Color` to white."
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:53
 msgid "Shader"
@@ -124,11 +124,12 @@ msgstr ""
 msgid ""
 "VRMは、[MToon](/univrm/shaders/shader_mtoon)、[Unlit](/univrm/shaders/univrm_unlit)"
 " と [Standard](/univrm/shaders/univrm_standard) の３種類を記録できます。"
-msgstr ""
+msgstr "VRM supports three types of shaders: "
+"[MToon](/univrm/shaders/shader_mtoon), [Unlit](/univrm/shaders/univrm_unlit) and [Standard](/univrm/shaders/univrm_standard)"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:62
 msgid "`Extract Materials` ボタンを押して fbx のフォルダに `Materials` フォルダを作成してそこを選択。"
-msgstr ""
+msgstr "Create a folder (e.g. name the folder as `Materials`) in FBX folder (`/Assets/FBX/Materials`). In FBX's Inspector window, click `Materials` -> `Extract Materials` and save extracted materials into `Materials` folder. If the reference for each material has been assigned in `On Demand Remap` section, skip this step. Another way to set up materials is by setting `Location` as `Use External Materials (Legacy)`. Here we only focus on the former one."
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:64
 msgid "![extract_materials](/_static/images/vrm/extract_materials.jpg)"
@@ -140,7 +141,7 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:67
 msgid "Shader をすべて `VRM/Mtoon` に変更"
-msgstr ""
+msgstr "Next, select all materials and set `Shader` to `VRM` -> `MToon`:"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:69
 msgid "![change_to_mtoon](/_static/images/vrm/change_to_mtoon.jpg)"
@@ -245,11 +246,11 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:125
 msgid "prefab をシーンに展開"
-msgstr ""
+msgstr "Put Prefab into the Scene"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:127
 msgid "`File` - `New Scene` として、 fbx の prefab をシーンに展開します。"
-msgstr ""
+msgstr "Drag the prefab from the Project window to the Hierarchy window."
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:130
 msgid "![img](/_static/images/vrm/DragImportedModel.png)"
@@ -269,7 +270,7 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:138
 msgid "エクスポート"
-msgstr ""
+msgstr "Export the model as VRM from menu"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:140
 msgid "![vrm_menu](/_static/images/vrm/vrm_menu.jpg) <br>"
@@ -293,7 +294,7 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:148
 msgid "前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。"
-msgstr ""
+msgstr "Previous versions: `VRM -> UniVRM-0.XX -> Export humanoid`."
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:150
 msgid "![img](/_static/images/vrm/export058_empty.jpg)"
@@ -305,7 +306,7 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:154
 msgid "エラー"
-msgstr ""
+msgstr "Error"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:2
 msgid "エクスポートダイアログで各種エラーチェックをしています。"
@@ -313,11 +314,11 @@ msgstr ""
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:3
 msgid "赤いメッセージは解決する必要があります。"
-msgstr ""
+msgstr "The error messages (red) need to be resolved"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:4
 msgid "黄色いメッセージは無視してエクスポートできます。"
-msgstr ""
+msgstr "The warning messages (yellow) can be ignored if you want to export VRM straight away"
 
 #: ../../vrm/how_to_make_vrm/convert_from_humanoid_model.md:6
 msgid "[エクスポートダイアログ](/univrm/export/univrm_export)"
@@ -365,5 +366,6 @@ msgstr ""
 msgid ""
 "エクスポート時に正規化します。 最新版は、 `ExportRoot` "
 "をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。"
-msgstr ""
+msgstr "`Pose Freeze` is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
+For instance, in Hierarchy if a mesh's rotation or scale is not Default (first VRM export), the model normalization needs to be performed."
 
