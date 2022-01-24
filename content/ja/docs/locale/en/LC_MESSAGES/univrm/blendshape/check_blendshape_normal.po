@@ -23,51 +23,51 @@ msgstr ""
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:6
 msgid "BlendShape の法線を確認しよう"
-msgstr ""
+msgstr "Check BlandShape Normal"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:8
 msgid ""
 "最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape "
 "法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。"
-msgstr ""
+msgstr "Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model's surface."
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:10
 msgid "詳細"
-msgstr ""
+msgstr "Details"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:3
 msgid ""
 "BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。 これに、計算された法線が設定されて意図しない変化をするようです。"
 " ベースになるメッシュの法線が加工されている場合、 ミラーリングで左右が分かれている場合の境界などで顕著です。"
-msgstr ""
+msgstr "If the BlendShape normal is (0, 0, 0), the value of the surface normal should not be changed. It seems that the original BlendShape normal is replaced by the recalculated BlendShape normal, resulting in unexpected changes on the model's surface"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:24
 msgid "MToonの法線デバッグ表示で法線を確認する"
-msgstr ""
+msgstr "Validate surface normal using MToon's debugging options"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:26
 msgid "fbx の `Materials` タブの `Extract Materials...` を実行してマテリアルを取り出します。"
-msgstr ""
+msgstr "Drag fbx to the Hierarchy window and select it. In the Inspector, click `Select -> Materials -> Extract Materials` and choose a folder to save these materials."
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:28
 msgid "すべてのマテリアルを選択します。"
-msgstr ""
+msgstr "Next, select all materials"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:30
 msgid "マテリアルの種類を `VRM/MToon` に変更します。"
-msgstr ""
+msgstr "and change `Shader` to `VRM/MToon`."
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:32
 msgid "法線確認"
-msgstr ""
+msgstr "Surface normal validation"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:3
 msgid "法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。"
-msgstr ""
+msgstr "At this point we set all the materials to MToon for surface normal validation only, so setting up textures' properties is not required. "
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:43
 msgid "MToon の `Options - Debugging Options - Visualize` を `Normal` に変更します。"
-msgstr ""
+msgstr "To visualize the surface normal, go to `Options - Debugging Options - Visualize` and select `Normal`:"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:45
 msgid "![debug normal](/_static/images/vrm/mtoon_normal.gif)"
@@ -80,11 +80,11 @@ msgstr ""
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:47
 msgid "SkinnedMeshRenderer を選択します。"
-msgstr ""
+msgstr "Select a GameObject containing `SkinnedMeshRenderer` with BlendShape. Drag the slider while observing surface normals:"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:49
 msgid "BlendShape のスライダーを動かして法線を確認します。"
-msgstr ""
+msgstr "We can see surface normals around nose tip and mouth are not correct."
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:51
 msgid "![debug normal](/_static/images/vrm/broken_normal.jpg)"
@@ -92,15 +92,15 @@ msgstr ""
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:53
 msgid "鼻先"
-msgstr ""
+msgstr "Surface normals around the norse tip"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:54
 msgid "下唇"
-msgstr ""
+msgstr "and mouth (e.g. tongue, lower lip)"
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:56
 msgid "の法線が顕著に乱れています。"
-msgstr ""
+msgstr "are totally different "
 
 #: ../../univrm/blendshape/check_blendshape_normal.md:58
 msgid "モデル情報"
