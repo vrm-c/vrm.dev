@@ -30,7 +30,8 @@ msgid ""
 "VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを組み合わせます。 "
 "`VRMLookAtBoneApplyer` を削除して、代わりに `VRMLookAtBlendShapeApplyer` "
 "をアタッチしてください。"
-msgstr ""
+msgstr "`LookAt UV` requires `VRMLookAtHead` and `VRMLookAtBlendShapeApplyer` components. "
+"In the default setting, please remove `VRMLookAtBoneApplyer` and add `VRMLookAtBlendShapeApplyer` in the VRM model’s Inspector window."
 
 #: ../../univrm/lookat/lookat_uv.md:15
 msgid "`Inspector -> Add Component -> VRMLookAtBlendShapeApplyer`."
@@ -48,7 +49,7 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:19
 msgid "TextureのUV操作による視線制御"
-msgstr ""
+msgstr "Control the Eye Gaze with the Texture's UV"
 
 #: ../../univrm/lookat/lookat_uv.md:21
 msgid "![image](/_static/images/wiki/blendshape_applyer.png)"
@@ -56,15 +57,16 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:23
 msgid "Textureを上下左右にスライドさせることで目線を移動させる方法です。 `Unityちゃん` はこのタイプです。"
-msgstr ""
+msgstr "A method that can move the model's eyes by sliding Texture up, down, left, or right."
+"`Unity Chan` belongs to this type."
 
 #: ../../univrm/lookat/lookat_uv.md:26
 msgid "目のマテリアルを探す"
-msgstr ""
+msgstr "Search the eye material"
 
 #: ../../univrm/lookat/lookat_uv.md:28
 msgid "マテリアルのインスペクタの目のテクスチャの `Tiling Offset` の設定に注目してください。"
-msgstr ""
+msgstr "Please search the eye material in the Project window. The `Tiling Offset` setting will be displayed in the Inspector window:"
 
 #: ../../univrm/lookat/lookat_uv.md:30
 msgid "![image](/_static/images/wiki/material_tiling_offset.png)"
@@ -72,31 +74,32 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:32
 msgid "`1, 1, 0, 0` になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。"
-msgstr ""
+msgstr "The values should be `1, 1, 0, 0` (if the values are different, the followings are for reference only)."
 
 #: ../../univrm/lookat/lookat_uv.md:34
 msgid ""
 "試しに、`Offset` Xの値を増減させてみてください。目が左右に動きます。Yの値では上下に動くはずです。 "
 "目的の設定が見つかったので元に戻して次に進みます。"
-msgstr ""
+msgstr "Now you can try to change the values of `Offset` X and Y. X value is left or right movements for the eyes. Y value is for moving the eyes up and down."
+"Since we have found where the eye materials are, we set the X and Y values back to `0` and proceed to the next step."
 
 #: ../../univrm/lookat/lookat_uv.md:37
 msgid "BlendShapeの準備"
-msgstr ""
+msgstr "Set up LookUp, LookDown, LookLeft and LookRight"
 
 #: ../../univrm/lookat/lookat_uv.md:38
 msgid ""
 "LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラーマテリアルの UV "
 "を操作するようにします。 例では、Materialに `unlit/transparent cutout` を使用しています。"
-msgstr ""
+msgstr "In the following example, we will set up the eye movement based on UV value for the material `eye_L1` (see the above image). `unlit/transparent cutout` is applied in the material."
 
 #: ../../univrm/lookat/lookat_uv.md:41
 msgid "LookLeftの例"
-msgstr ""
+msgstr "LookLeft example"
 
 #: ../../univrm/lookat/lookat_uv.md:42
 msgid "`LookLeft` 選択してください。"
-msgstr ""
+msgstr "Please select the `LookLeft` asset in the Project window:"
 
 #: ../../univrm/lookat/lookat_uv.md:44
 msgid "![image](/_static/images/wiki/lookleft.png)"
@@ -104,19 +107,19 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:46
 msgid "`Material List` タブを選択"
-msgstr ""
+msgstr "Click `Material List`"
 
 #: ../../univrm/lookat/lookat_uv.md:47
 msgid "`+` を選択"
-msgstr ""
+msgstr "Click `+`"
 
 #: ../../univrm/lookat/lookat_uv.md:48
 msgid "`eye_L1` - `_MainTex_ST` を選択"
-msgstr ""
+msgstr "Select `eye_L1` - `_MainTex_ST`"
 
 #: ../../univrm/lookat/lookat_uv.md:49
 msgid "`Tliling = 1, 1`, `Offset = 0, 0` に設定します"
-msgstr ""
+msgstr "Set `Tliling = 1, 1`, `Offset = 0, 0`"
 
 #: ../../univrm/lookat/lookat_uv.md:51
 msgid "![image](/_static/images/wiki/tiling_offset_1100.png)"
@@ -124,11 +127,11 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:53
 msgid "Offsetを調整してLookLeftを作ります"
-msgstr ""
+msgstr "Adjust Offset value in the LookLeft setting"
 
 #: ../../univrm/lookat/lookat_uv.md:54
 msgid "`eye_R1` も同様に"
-msgstr ""
+msgstr "Repeat the same procedure for `eye_R1`"
 
 #: ../../univrm/lookat/lookat_uv.md:56
 msgid "![image](/_static/images/wiki/look_left.png)"
@@ -144,29 +147,29 @@ msgstr ""
 
 #: ../../univrm/lookat/lookat_uv.md:62
 msgid "以下の設定で、目標物への相対角度 yaw, pitch の適用度合を調整できます。"
-msgstr ""
+msgstr "In the default setting, when the look angle between the target and the model's head reaches 90 degrees, the BlendShape value is set to 1. "
 
 #: ../../univrm/lookat/lookat_uv.md:64
 msgid "yaw, pitch 角の上限値 => Curve X Range Degree"
-msgstr ""
+msgstr "Any angle greater than 90 degrees will clamp the BlendShape value to 1. "
 
 #: ../../univrm/lookat/lookat_uv.md:65
 msgid "yaw, pitch が上限の時の blendShape の適用割合(0 ～ 1)。1にしてください => Curve Y Range Degree"
-msgstr ""
+msgstr "If `Curve X Range Degree` is set to a lower degree, the pupil will move widely even at a small angle change."
 
 #: ../../univrm/lookat/lookat_uv.md:67
 msgid "次の３つを設定してください。"
-msgstr ""
+msgstr "Please set up `VerticalDown`, `VerticalUp` and `Horizontal`."
 
 #: ../../univrm/lookat/lookat_uv.md:69
 msgid "VerticalDown"
-msgstr ""
+msgstr "."
 
 #: ../../univrm/lookat/lookat_uv.md:70
 msgid "VerticalUp"
-msgstr ""
+msgstr "."
 
 #: ../../univrm/lookat/lookat_uv.md:71
 msgid "Horizontal"
-msgstr ""
+msgstr "."
 
