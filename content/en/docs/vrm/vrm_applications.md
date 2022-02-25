@@ -57,6 +57,10 @@ weight: 4
 | [VSeeFace](https://www.vseeface.icu/) | Windows + optional hand tracking |
 | [ZZ3D](https://halmin.wixsite.com/zz3d) | iOS |
 | [LIV](https://liv.tv/) | Windows VR |
+| [Animaze by FaceRig](https://store.steampowered.com/app/1364390/Animaze_by_FaceRig/) | Windows |
+| [VTmini](https://store.steampowered.com/app/1801480/VTmini/) | Windows |
+| [JINS MEME VTUNER](https://apps.apple.com/jp/app/jins-meme-vtuner/id1554040568) | iOS |
+| [RiBLA Broadcast](https://ribla-laboratory.booth.pm/items/3642935) | Windows, macOS |
 
 ##  Motion capture
 
@@ -67,6 +71,10 @@ weight: 4
 | [ThreeDPoseTracker](https://github.com/digital-standard/ThreeDPoseTracker) | Windows |
 | [TDPT](https://digital-standard.com/tdpt_lp/en/) | iOS |
 | [EasyVirtualMotionCaptureForUnity](https://booth.pm/en/items/1801535) | Windows, Windows VR |
+| [Webcam Motion Capture](https://webcammotioncapture.info/) | Windows, macOS |
+| [iFacialMocap](https://www.ifacialmocap.com/) | Windows, macOS, iOS |
+| [FACEMOTION3D](https://apps.apple.com/tt/app/facemotion3d/id1507538005) | iOS |
+| [Kalidoface 3D](https://github.com/yeemachine/kalidoface-3d) | Windows |
 
 ##  Animation
 
@@ -75,6 +83,10 @@ weight: 4
 | [Ls ENGINE](https://lsengine.net/en/lsengine_en/) | Windows |
 | [AI4Animation](https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit) | Unity library |
 | [Dance Dance Maker!](https://booth.pm/en/items/2216222) | Oculus Quest |
+| [DanceDreamMV](https://maruapps.com/dancedreammv/) | iOS, Android |
+| [Doll Dancer](https://play.google.com/store/apps/details?id=com.personuo.dolldancer) | [iOS](https://apps.apple.com/jp/app/doll-dancer-mmd-vroid-amv-app/id1394822854?platform=iphone), Android |
+| [Dan Sing Sing MV Maker](https://store.steampowered.com/app/1688750/DAN_Sing_SING_for_Vroid_and_MMD_Live_AMV/) | Windows |
+| [PlayAniMaker](https://sites.google.com/view/playanimaker) | Windows VR, Oculus Quest |
 
 ##  Photography
 
@@ -82,15 +94,17 @@ weight: 4
 |-------------|----------|
 | [VRM Doll Play (PC)](https://120byte.booth.pm/items/1654585) | Windows |
 | [VRM Doll Play](https://120byte.booth.pm/items/1099618) | Windows VR |
-| [Vtabi](https://app.famitsu.com/gametitle/8356/) | iOS, Android |
+| [Vtabi](https://app.famitsu.com/gametitle/8356/) | Android, iOS |
 | [Vismuth](https://vismuth.com/) | Android, iOS |
-| [vstamp](https://bnut.jp/vstamp) | iOS, Android |
+| [vstamp](https://bnut.jp/vstamp) | Android, iOS |
 | [VRM Automatic Photographing](https://matsuvr.booth.pm/items/2223918) | Windows 10 |
 | [VRMCardMaker](https://booth.pm/en/items/1808860) | Windows |
-| [Pose Arc‪h](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
+| [Pose Arch](https://apps.apple.com/jp/app/pose-arch/id1483326327) | iOS |
 | [COCOPStudio](https://cocop.site/cocopstudio/) | Android, iOS, Windows |
 | [Emmv Studio](https://booth.pm/en/items/2495794) | Windows |
 | [PaSha!](https://ayato3d.booth.pm/items/2202577) | Windows 10 |
+| [PoseMixerAR](https://maruapps.com/posemixerar/) | Android, iOS |
+| [VRM Posing](https://games.soarhap.com/vrmposing-mobile/) | Mobile, [Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/) |
 
 ##  Metaverse
 
@@ -118,7 +132,7 @@ weight: 4
 | [TSUN-TSUN VR](https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/) | Windows VR |
 | [KOROKORO System](https://www.mediaplex.co.jp/korokoro/) | Oculus Rift |
 | [PilotXross](https://n-mattun.booth.pm/) | Windows VR |
-| [Primitier](https://ootamato.itch.io/primitier) | Windows VR |
+| [Primitier](https://store.steampowered.com/app/1745170/Primitier/) | Windows VR |
 | [Synth Riders](https://store.steampowered.com/app/885000/Synth_Riders/) | Windows VR |
 | [SOUNDART](https://store.steampowered.com/app/1144460/SOUNDART/) | Windows VR |
 | [VRAST!](https://rc-cobalt.booth.pm/items/1756359) | Windows |
@@ -133,6 +147,9 @@ weight: 4
 | [TouroReminiscence](https://booth.pm/en/items/2349960) | Windows |
 | [VRM Cyber walk](https://ktamayan.booth.pm/items/2790105) | Windows |
 | [Virtual Home Run Derby](https://paldynojosh.booth.pm/items/1485218) | Windows |
+| [Food Delivery Battle](https://store.steampowered.com/app/1708710/Food_Delivery_Battle/) | Windows |
+| [Old Coin Pusher Friends](https://store.steampowered.com/app/1722020/Old_Coin_Pusher_Friends/) | Windows |
+| [AVATAVI](https://avatavi.com/en/index.html) | iOS |
 
 ###  Browser Game
 
@@ -146,6 +163,7 @@ weight: 4
 | [VRM Bike](https://unityroom.com/games/vrm_bike) | Web browser |
 | [VRM Triple Jump](https://unityroom.com/games/vrmtriplejump) | Web browser |
 | [Step Panel Match](https://unityroom.com/games/step-panel-match) | Web browser |
+| [VBlade](https://unityroom.com/games/vblade) | Web browser |
 
 ##  Viewer
 
@@ -157,7 +175,7 @@ weight: 4
 | [VRMViewer](https://w.atwiki.jp/beamman/) | Windows |
 | [VRM Viewer](https://vrm-viewer.yukimochi.io/) | Web browser |
 | [VRMQuickLook](https://github.com/magicien/VRMQuickLook) | macOS |
-| [VRM Live Viewer](http://fantom1x.blog130.fc2.com/blog-entry-309.html) | Windows |
+| [VRM Live Viewer](https://booth.pm/ja/items/1783082) | Windows |
 | [UniWinApi Example project](https://github.com/kirurobo/UniWinApi) | Unity library |
 | [KinectV2VRM](https://github.com/m2wasabi/KinectV2VRM) | Unity library |
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm_en.html) | Windows VR, Looking Glass |
@@ -178,6 +196,14 @@ weight: 4
 | [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
 | [[HANA_Tool_v2] Control BlendShapes Tool](https://kuniyan.booth.pm/items/2604269) | Windows |
 | [Virtual Studio](https://natsunatsu.booth.pm/items/2956377) | Windows |
+| [BlendShapeClipEditor](https://120byte.booth.pm/items/2152326) | Windows |
+| [VRMTextureReplacer](https://120byte.booth.pm/items/2177538) | Windows |
+| [Item Shop](https://suzuki-cecil.booth.pm/items/3250368) | Windows |
+| [meebits-blender-utils](https://github.com/MeebitsDAO/meebits-blender-utils) | Windows |
+| [The Meebits - Larva Labs](https://meebits.larvalabs.com/) | Windows |
+| [MiloQ+](https://www.miloq-plus.com/) | Android, iOS |
+| [SimpleURPToonLitOutlineExample](https://github.com/simplestargame/SimpleURPToonLitOutlineExample) | Windows |
+| [Kalidokit](https://github.com/yeemachine/kalidokit) | Windows |
 
 ##  Services using VRM internally
 
