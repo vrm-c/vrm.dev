@@ -1,349 +1,264 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VRM – detail</title>
-    <link>https://vrm.dev/en/tags/detail/</link>
-    <description>Recent content in detail on VRM</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 05 Oct 2021 21:15:11 +0900</lastBuildDate>
-    
-	  <atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: Humanoid Overview</title>
-      <link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link>
-      <pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;VRM humanoid is compatible with the motion of MotionCapture&amp;rsquo;s FK (Forward Kinematics).&lt;/p&gt;
-&lt;p&gt;The motion for one frame has the information described below:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The Translation for Hips bone&lt;/li&gt;
-&lt;li&gt;The Rotation for each bone&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To reproduce the same pose in the Unity Scene (transferring data to a GameObject containing humanoid structure), the following conditions need to be satisfied:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Each bone (hips, spine, chest&amp;hellip;) corresponds to its humanoid skeleton in GLTF Node (Unity GameObject)&lt;/li&gt;
-&lt;li&gt;The Bones&amp;rsquo; parent-child relationships are known.&lt;/li&gt;
-&lt;li&gt;T-Pose must be the initial pose&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-
-    If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose cannot be reproduced.
-
-&lt;/div&gt;
-
-&lt;p&gt;The creation of humanoid avatar is pretty much the same as the original:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&#34;&gt;https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In addition, to make it easier to handle in the program, VRM Humanoid has the following features:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For the initial pose, all the Gltf Nodes (Unity GameObject) have no rotation&lt;/li&gt;
-&lt;li&gt;No scaling changes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;t-pose&#34;&gt;T-Pose&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/T_pose.png&#34; alt=&#34;T_pose&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;T-Pose example&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;Palm faces downward, and it is parallel to the ground along x axis&lt;/li&gt;
-&lt;li&gt;Thumb is parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;unity-humanoid&#34;&gt;Unity Humanoid&lt;/h2&gt;
-&lt;p&gt;In Unity, there is an object called &lt;code&gt;Avatar&lt;/code&gt;, which can be used to set up the model in humanoid mode.
-Since the Humanoid Avatar settings are part of &lt;code&gt;fbx importer&lt;/code&gt;, basically the model with Humanoid Avatar from data other than fbx cannot be created.
-However, we can still create the Humanoid Avatar via program. See &lt;a href=&#34;https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/&#34;&gt;humanoid component&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;compatible-with-bvh&#34;&gt;Compatible with BVH&lt;/h2&gt;
-&lt;p&gt;Compatible with BVH that has the initial pose as &lt;code&gt;T-Pose&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Substitute the translation value into hips&lt;/li&gt;
-&lt;li&gt;Substitute the relative rotation value into its child&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;details&#34;&gt;Details&lt;/h2&gt;
-&lt;p&gt;For the list of human bones, please refer to:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html&#34;&gt;https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Target nodes not containing skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.) can be selected&lt;/li&gt;
-&lt;li&gt;All required bones must be included&lt;/li&gt;
-&lt;li&gt;The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li&gt;
-&lt;li&gt;The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;hips - spine - chest - (upper chest) - neck - head&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[Branch] from head - left - (eye)&lt;/li&gt;
-&lt;li&gt;[Branch] from head - right - (eye)&lt;/li&gt;
-&lt;li&gt;[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
-&lt;li&gt;[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li&gt;
-&lt;li&gt;[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li&gt;
-&lt;li&gt;[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Inserting non-bone objects between humanoid bones is allowable (e.g., LowerLeg’s parent is a Cube GameObject and this Cube’s parent is UpperLeg, etc.)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Non-required bones can be skipped (UpperArm&amp;rsquo;s parent can be chest instead of shoulder)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;related-issues&#34;&gt;Related Issues&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/87&#34;&gt;https://github.com/vrm-c/vrm-specification/issues/87&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/&#34;&gt;Mecanim Humanoids&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/ousttrue/items/aead1c943855561b62e7&#34;&gt;BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;supplementary-information-regarding-t-pose&#34;&gt;Supplementary Information regarding T-Pose&lt;/h2&gt;
-&lt;p&gt;To normalize a model, the model with T-Pose is required.&lt;/p&gt;
-&lt;p&gt;If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Click &lt;code&gt;Menu&lt;/code&gt; on top and select &lt;code&gt;Export humanoid&lt;/code&gt; from &lt;code&gt;VRM&lt;/code&gt; -&amp;gt; &lt;code&gt;UniVRM-0.XX&lt;/code&gt; -&amp;gt; &lt;code&gt;Export humanoid&lt;/code&gt;. The export dialog will pop up. Enable &lt;code&gt;force T-Pose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p&gt;
-&lt;p&gt;Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Force T-Pose&lt;/code&gt; option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p&gt;
-&lt;h2 id=&#34;common-issues&#34;&gt;Common Issues&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code&gt;jaw&lt;/code&gt; (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;. There is no influence on model if jaw bone is not used&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code&gt;jaw&lt;/code&gt; bone setting from the model&amp;rsquo;s (FBX) &lt;code&gt;Import setting&lt;/code&gt; -&amp;gt; &lt;code&gt;Rig&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Standard</title>
-      <link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link>
-      <pubDate>Tue, 05 Oct 2021 21:15:11 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;code&gt;Physically Based Rendering&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;standard-shader&#34;&gt;Standard Shader&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;UniVRM&lt;/code&gt; uses Unity&amp;rsquo;s standard&lt;code&gt; Standard shader&lt;/code&gt; instead of creating your own shader for PBR.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Reflects shiny&lt;/h4&gt;
-
-    The Shader type is &lt;code&gt;Standard&lt;/code&gt; (Unity standard) and the &lt;code&gt;metallic&lt;/code&gt; and &lt;code&gt;smooth&lt;/code&gt; values ​​are high.
-If you set the material shader to &lt;code&gt;Unlit/UniUnlit&lt;/code&gt;, the texture can be displayed as it is.
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;correspondence-table-of-metallic-roughness-occlusion&#34;&gt;Correspondence table of Metallic, Roughness, Occlusion&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Applications&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;glTF material&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;th&gt;Unity Standard Shader&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Occlusion&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;occlusionTexture&lt;/td&gt;
-&lt;td&gt;R&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
-&lt;td&gt;_MetallicGlossMap&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Roughness&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;pbrMetallicRoughness.metallicRoughnessTexture&lt;/td&gt;
-&lt;td&gt;G&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
-&lt;td&gt;_MetallicGlossMap (smoothness = 1 - roughness)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Metallic&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;pbrMetallicRoughness.metallicRoughnessTexture&lt;/td&gt;
-&lt;td&gt;B&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R&lt;/td&gt;
-&lt;td&gt;_OcclusionMap&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;MetallicSmoothOcclusion Combine textures into one  `v0.69.0`&lt;/h4&gt;
-
-    &lt;p&gt;From &lt;code&gt;v0.69.0&lt;/code&gt;, it works to combine textures into one sheet.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;import: The metallicRoughnessTexture and occlusionTexture of glTF are combined into one (see the table above).&lt;/li&gt;
-&lt;li&gt;export: Standard _MetallicGlossMap and _OcclusionMap are combined into one (see the table above).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;v0.68.0&lt;/code&gt; or earlier&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;import: Convert and import two textures, one for _MetallicGlossMap and one for _OcclusionMap&lt;/li&gt;
-&lt;li&gt;export: Convert two textures from Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap and export&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Precautions on Prefab Import and Overwrite Issue</title>
-      <link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link>
-      <pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;049&#34;&gt;0.49&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder .
-In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p&gt;
-&lt;h2 id=&#34;046&#34;&gt;0.46&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code&gt;Assets&lt;/code&gt; folder.
-However, Mesh, Texture and Prefab will be overwritten.&lt;/p&gt;
-&lt;p&gt;Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
-If you want to overwrite, delete them before importing.&lt;/p&gt;
-&lt;h2 id=&#34;045-and-before&#34;&gt;0.45 and before&lt;/h2&gt;
-&lt;p&gt;When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VRM Size</title>
-      <link>https://vrm.dev/en/docs/univrm/export/vrm_size/</link>
-      <pubDate>Mon, 17 Aug 2020 16:12:54 +0900</pubDate>
-      
-      <guid>https://vrm.dev/en/docs/univrm/export/vrm_size/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Since VRM is a GLB-based format, we know that&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;exported VRM file size =&amp;gt; glb file size&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;where&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;glb =&amp;gt; json + binary&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;json is a text-based format. Generally it is less than 1MB.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Image&lt;/code&gt; and &lt;code&gt;Mesh&lt;/code&gt; are two major parts in &lt;code&gt;binary&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Here we show an example of how to calculate the size for a model with 50k vertices and 50k triangles:&lt;/p&gt;
-&lt;h2 id=&#34;image&#34;&gt;Image&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Image&lt;/code&gt; contains &lt;code&gt;Texture&lt;/code&gt; (referenced by Material) and &lt;code&gt;Thumbnail&lt;/code&gt; (in VRM Meta). Those images are stored as PNG(JPG) bytes.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In v0.56, a large texture (e.g. 4096x4096) in the model fails to export as a smaller size texture (e.g. set to 1024x1024 by Texture Importer Settings -&amp;gt; MaxSize). We have fixed this issue in v0.58&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/502&#34;&gt;https://github.com/vrm-c/UniVRM/issues/502&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mesh&#34;&gt;Mesh&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Mesh&lt;/code&gt; contains index buffer and vertex buffer.&lt;/p&gt;
-&lt;h3 id=&#34;index-buffer&#34;&gt;Index Buffer&lt;/h3&gt;
-&lt;p&gt;Index buffer uses &lt;code&gt;Int&lt;/code&gt; array.&lt;/p&gt;
-&lt;p&gt;To calculate the required size for a model with 50k triangles:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;50000 x 4(Int=4byte) x 3(three vertices in a triangle) =&amp;gt; 0.6MB&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It is possible to store index using &lt;code&gt;unsigned short&lt;/code&gt; in GLTF. However, UniVRM does not support it due to the fact that the Max vertices number is 65536, which is unable to store 50k triangles or more in a model&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;vertex-buffer&#34;&gt;Vertex Buffer&lt;/h3&gt;
-&lt;p&gt;The size for a vertex along with its attributes is:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-    float3 Position; // Vertex Position 4(float size) x 3(xyz) =&amp;gt; 12byte
-    float3 Normal; // Vertex Normal 4(float size x 3(xyz) =&amp;gt; 12byte
-    float2 TEXCOORD_0; // Vertex UV 4(float size) x 2(xy) =&amp;gt; 8byte
-    short4 JOINTS_0; // Vertex BoneIndex 2(short size) x 4(up to 4 bones) =&amp;gt; 8byte
-    float4 WEIGHTS_0; // Vertex Weight 4(float size) x 4(up to 4 bones) =&amp;gt; 16byte
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – detail</title><link>https://vrm.dev/en/tags/detail/</link><description>Recent content in detail on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 05 Oct 2021 21:15:11 +0900</lastBuildDate><atom:link href="https://vrm.dev/en/tags/detail/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Humanoid Overview</title><link>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</link><pubDate>Fri, 18 Sep 2020 13:02:07 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/humanoid/humanoid_overview/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>VRM humanoid is compatible with the motion of MotionCapture&amp;rsquo;s FK (Forward Kinematics).&lt;/p>
+&lt;p>The motion for one frame has the information described below:&lt;/p>
+&lt;ul>
+&lt;li>The Translation for Hips bone&lt;/li>
+&lt;li>The Rotation for each bone&lt;/li>
+&lt;/ul>
+&lt;p>To reproduce the same pose in the Unity Scene (transferring data to a GameObject containing humanoid structure), the following conditions need to be satisfied:&lt;/p>
+&lt;ul>
+&lt;li>Each bone (hips, spine, chest&amp;hellip;) corresponds to its humanoid skeleton in GLTF Node (Unity GameObject)&lt;/li>
+&lt;li>The Bones&amp;rsquo; parent-child relationships are known.&lt;/li>
+&lt;li>T-Pose must be the initial pose&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose cannot be reproduced.
+&lt;/div>
+&lt;p>The creation of humanoid avatar is pretty much the same as the original:&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">https://docs.unity3d.com/Manual/AvatarCreationandSetup.html&lt;/a>&lt;/p>
+&lt;p>In addition, to make it easier to handle in the program, VRM Humanoid has the following features:&lt;/p>
+&lt;ul>
+&lt;li>For the initial pose, all the Gltf Nodes (Unity GameObject) have no rotation&lt;/li>
+&lt;li>No scaling changes&lt;/li>
+&lt;/ul>
+&lt;h2 id="t-pose">T-Pose&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/T_pose.png" alt="T_pose" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>T-Pose example&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>Palm faces downward, and it is parallel to the ground along x axis&lt;/li>
+&lt;li>Thumb is parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top)&lt;/li>
+&lt;/ul>
+&lt;h2 id="unity-humanoid">Unity Humanoid&lt;/h2>
+&lt;p>In Unity, there is an object called &lt;code>Avatar&lt;/code>, which can be used to set up the model in humanoid mode.
+Since the Humanoid Avatar settings are part of &lt;code>fbx importer&lt;/code>, basically the model with Humanoid Avatar from data other than fbx cannot be created.
+However, we can still create the Humanoid Avatar via program. See &lt;a href="https://vrm.dev/en/docs/univrm/humanoid/meshutility_humanoid/">humanoid component&lt;/a>.&lt;/p>
+&lt;h2 id="compatible-with-bvh">Compatible with BVH&lt;/h2>
+&lt;p>Compatible with BVH that has the initial pose as &lt;code>T-Pose&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>Substitute the translation value into hips&lt;/li>
+&lt;li>Substitute the relative rotation value into its child&lt;/li>
+&lt;/ul>
+&lt;h2 id="details">Details&lt;/h2>
+&lt;p>For the list of human bones, please refer to:&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html">https://docs.unity3d.com/2019.4/Documentation/ScriptReference/HumanBodyBones.html&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Target nodes not containing skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.) can be selected&lt;/li>
+&lt;li>All required bones must be included&lt;/li>
+&lt;li>The Bone&amp;rsquo;s parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)&lt;/li>
+&lt;li>The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):
+&lt;ul>
+&lt;li>
+&lt;p>hips - spine - chest - (upper chest) - neck - head&lt;/p>
+&lt;ul>
+&lt;li>[Branch] from head - left - (eye)&lt;/li>
+&lt;li>[Branch] from head - right - (eye)&lt;/li>
+&lt;li>[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>[Branch] from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)&lt;/li>
+&lt;li>[Branch] from hips - left - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;li>[Branch] from hips - right - upper leg - lower leg - foot - (toes)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Inserting non-bone objects between humanoid bones is allowable (e.g., LowerLeg’s parent is a Cube GameObject and this Cube’s parent is UpperLeg, etc.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Non-required bones can be skipped (UpperArm&amp;rsquo;s parent can be chest instead of shoulder)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="related-issues">Related Issues&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/vrm-c/vrm-specification/issues/87">https://github.com/vrm-c/vrm-specification/issues/87&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://blogs.unity3d.com/jp/2014/05/26/mecanim-humanoids/">Mecanim Humanoids&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://qiita.com/ousttrue/items/aead1c943855561b62e7">BlenderからUnityのHumanoid互換でfbxをエクスポートする&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="supplementary-information-regarding-t-pose">Supplementary Information regarding T-Pose&lt;/h2>
+&lt;p>To normalize a model, the model with T-Pose is required.&lt;/p>
+&lt;p>If the model doesn&amp;rsquo;t have T-Pose, you can make a T-Pose by doing any of the followings:&lt;/p>
+&lt;ul>
+&lt;li>Click &lt;code>Menu&lt;/code> on top and select &lt;code>Export humanoid&lt;/code> from &lt;code>VRM&lt;/code> -&amp;gt; &lt;code>UniVRM-0.XX&lt;/code> -&amp;gt; &lt;code>Export humanoid&lt;/code>. The export dialog will pop up. Enable &lt;code>force T-Pose&lt;/code>&lt;/li>
+&lt;li>Make T-Pose for the model by manually adjusting the rotation of the arm etc.&lt;/li>
+&lt;/ul>
+&lt;p>If the T-Pose made by the first option (automatic T-Pose) didn&amp;rsquo;t go well, try to make T-Pose manually.&lt;/p>
+&lt;p>Also, if a model&amp;rsquo;s normalization have been done once before, please avoid re-normalizing the model as much as you can as the accuracy may gradually deviate from standard.&lt;/p>
+&lt;p>The &lt;code>Force T-Pose&lt;/code> option will be unchecked by default if the model&amp;rsquo;s normalization was already done before. That being said, the system will detect whether the model contain Meta component.&lt;/p>
+&lt;h2 id="common-issues">Common Issues&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Jaw&amp;rsquo;s position is incorrect: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. If this is the case, please remove &lt;code>jaw&lt;/code> (chin) bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>. There is no influence on model if jaw bone is not used&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Facial parts (bangs, etc.) have weird movements: during T-Pose process, there is a possibility that the jaw&amp;rsquo;s position is different than before. That is, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone. As such, bangs&amp;rsquo; movements become weird due to this issue. Please remove &lt;code>jaw&lt;/code> bone setting from the model&amp;rsquo;s (FBX) &lt;code>Import setting&lt;/code> -&amp;gt; &lt;code>Rig&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Standard</title><link>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</link><pubDate>Tue, 05 Oct 2021 21:15:11 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/shaders/univrm_standard/</guid><description>
+&lt;p>&lt;code>Physically Based Rendering&lt;/code>&lt;/p>
+&lt;h2 id="standard-shader">Standard Shader&lt;/h2>
+&lt;p>&lt;code>UniVRM&lt;/code> uses Unity&amp;rsquo;s standard&lt;code> Standard shader&lt;/code> instead of creating your own shader for PBR.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Reflects shiny&lt;/h4>
+The Shader type is &lt;code>Standard&lt;/code> (Unity standard) and the &lt;code>metallic&lt;/code> and &lt;code>smooth&lt;/code> values ​​are high.
+If you set the material shader to &lt;code>Unlit/UniUnlit&lt;/code>, the texture can be displayed as it is.
+&lt;/div>
+&lt;h2 id="correspondence-table-of-metallic-roughness-occlusion">Correspondence table of Metallic, Roughness, Occlusion&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th align="left">Applications&lt;/th>
+&lt;th align="left">glTF material&lt;/th>
+&lt;th>&lt;/th>
+&lt;th align="left">&lt;/th>
+&lt;th>Unity Standard Shader&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td align="left">Occlusion&lt;/td>
+&lt;td align="left">occlusionTexture&lt;/td>
+&lt;td>R&lt;/td>
+&lt;td align="left">G&lt;/td>
+&lt;td>_MetallicGlossMap&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Roughness&lt;/td>
+&lt;td align="left">pbrMetallicRoughness.metallicRoughnessTexture&lt;/td>
+&lt;td>G&lt;/td>
+&lt;td align="left">A&lt;/td>
+&lt;td>_MetallicGlossMap (smoothness = 1 - roughness)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="left">Metallic&lt;/td>
+&lt;td align="left">pbrMetallicRoughness.metallicRoughnessTexture&lt;/td>
+&lt;td>B&lt;/td>
+&lt;td align="left">R&lt;/td>
+&lt;td>_OcclusionMap&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">MetallicSmoothOcclusion Combine textures into one `v0.69.0`&lt;/h4>
+&lt;p>From &lt;code>v0.69.0&lt;/code>, it works to combine textures into one sheet.&lt;/p>
+&lt;ul>
+&lt;li>import: The metallicRoughnessTexture and occlusionTexture of glTF are combined into one (see the table above).&lt;/li>
+&lt;li>export: Standard _MetallicGlossMap and _OcclusionMap are combined into one (see the table above).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>v0.68.0&lt;/code> or earlier&lt;/p>
+&lt;ul>
+&lt;li>import: Convert and import two textures, one for _MetallicGlossMap and one for _OcclusionMap&lt;/li>
+&lt;li>export: Convert two textures from Standard&amp;rsquo;s _MetallicGlossMap and _OcclusionMap and export&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Docs: Precautions on Prefab Import and Overwrite Issue</title><link>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</link><pubDate>Mon, 12 Oct 2020 18:24:15 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/import/prefab_importer_behaviour/</guid><description>
+&lt;h2 id="049">0.49&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder .
+In that case, the Material&amp;rsquo;s and BlendShapeAvatar&amp;rsquo;s references from Prefab will be set to reference existing files.&lt;/p>
+&lt;h2 id="046">0.46&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the &lt;code>Assets&lt;/code> folder.
+However, Mesh, Texture and Prefab will be overwritten.&lt;/p>
+&lt;p>Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.
+If you want to overwrite, delete them before importing.&lt;/p>
+&lt;h2 id="045-and-before">0.45 and before&lt;/h2>
+&lt;p>When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.&lt;/p></description></item><item><title>Docs: VRM Size</title><link>https://vrm.dev/en/docs/univrm/export/vrm_size/</link><pubDate>Mon, 17 Aug 2020 16:12:54 +0900</pubDate><guid>https://vrm.dev/en/docs/univrm/export/vrm_size/</guid><description>
+&lt;p>Since VRM is a GLB-based format, we know that&lt;/p>
+&lt;p>&lt;code>exported VRM file size =&amp;gt; glb file size&lt;/code>&lt;/p>
+&lt;p>where&lt;/p>
+&lt;p>&lt;code>glb =&amp;gt; json + binary&lt;/code>&lt;/p>
+&lt;p>json is a text-based format. Generally it is less than 1MB.&lt;/p>
+&lt;p>&lt;code>Image&lt;/code> and &lt;code>Mesh&lt;/code> are two major parts in &lt;code>binary&lt;/code>.&lt;/p>
+&lt;p>Here we show an example of how to calculate the size for a model with 50k vertices and 50k triangles:&lt;/p>
+&lt;h2 id="image">Image&lt;/h2>
+&lt;p>&lt;code>Image&lt;/code> contains &lt;code>Texture&lt;/code> (referenced by Material) and &lt;code>Thumbnail&lt;/code> (in VRM Meta). Those images are stored as PNG(JPG) bytes.&lt;/p>
+&lt;blockquote>
+&lt;p>In v0.56, a large texture (e.g. 4096x4096) in the model fails to export as a smaller size texture (e.g. set to 1024x1024 by Texture Importer Settings -&amp;gt; MaxSize). We have fixed this issue in v0.58&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/502">https://github.com/vrm-c/UniVRM/issues/502&lt;/a>&lt;/p>
+&lt;h2 id="mesh">Mesh&lt;/h2>
+&lt;p>&lt;code>Mesh&lt;/code> contains index buffer and vertex buffer.&lt;/p>
+&lt;h3 id="index-buffer">Index Buffer&lt;/h3>
+&lt;p>Index buffer uses &lt;code>Int&lt;/code> array.&lt;/p>
+&lt;p>To calculate the required size for a model with 50k triangles:&lt;/p>
+&lt;p>&lt;code>50000 x 4(Int=4byte) x 3(three vertices in a triangle) =&amp;gt; 0.6MB&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>It is possible to store index using &lt;code>unsigned short&lt;/code> in GLTF. However, UniVRM does not support it due to the fact that the Max vertices number is 65536, which is unable to store 50k triangles or more in a model&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="vertex-buffer">Vertex Buffer&lt;/h3>
+&lt;p>The size for a vertex along with its attributes is:&lt;/p>
+&lt;pre>&lt;code>{
+float3 Position; // Vertex Position 4(float size) x 3(xyz) =&amp;gt; 12byte
+float3 Normal; // Vertex Normal 4(float size x 3(xyz) =&amp;gt; 12byte
+float2 TEXCOORD_0; // Vertex UV 4(float size) x 2(xy) =&amp;gt; 8byte
+short4 JOINTS_0; // Vertex BoneIndex 2(short size) x 4(up to 4 bones) =&amp;gt; 8byte
+float4 WEIGHTS_0; // Vertex Weight 4(float size) x 4(up to 4 bones) =&amp;gt; 16byte
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;Some models contain Vertex Color or Secondary UV (not supported), so the required size may vary&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In UniVRM, Tangent(float4) can be calculated in Unity instead of being stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via &lt;code&gt;MIKK T Space&lt;/code&gt; algorithm&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The case for a model containing 50k vertices:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;basic-size&#34;&gt;Basic Size&lt;/h2&gt;
-&lt;p&gt;As described above, the basic size for a model is &lt;code&gt;Total Image Size + Index Buffer + Vertex Buffer&lt;/code&gt;.
-The basic size for a model with 50k vertices and 50k triangles is &lt;code&gt;3.4MB + Total Image Size&lt;/code&gt;.
-Next, we will introduce size calculation for BlendShape, which may cause total size explosion in some circumstances.&lt;/p&gt;
-&lt;h2 id=&#34;blendshape-morphtarget-size&#34;&gt;BlendShape (MorphTarget) Size&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-BlendShape&#34; data-lang=&#34;BlendShape&#34;&gt;{
-    float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
-    float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
-    float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>Some models contain Vertex Color or Secondary UV (not supported), so the required size may vary&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>In UniVRM, Tangent(float4) can be calculated in Unity instead of being stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via &lt;code>MIKK T Space&lt;/code> algorithm&lt;/p>
+&lt;/blockquote>
+&lt;p>The case for a model containing 50k vertices:&lt;/p>
+&lt;p>&lt;code>50000 x (12 + 12 + 8 + 8 + 16) =&amp;gt; 2.8MB&lt;/code>&lt;/p>
+&lt;h2 id="basic-size">Basic Size&lt;/h2>
+&lt;p>As described above, the basic size for a model is &lt;code>Total Image Size + Index Buffer + Vertex Buffer&lt;/code>.
+The basic size for a model with 50k vertices and 50k triangles is &lt;code>3.4MB + Total Image Size&lt;/code>.
+Next, we will introduce size calculation for BlendShape, which may cause total size explosion in some circumstances.&lt;/p>
+&lt;h2 id="blendshape-morphtarget-size">BlendShape (MorphTarget) Size&lt;/h2>
+&lt;pre>&lt;code class="language-BlendShape" data-lang="BlendShape">{
+float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
+float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
+float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If 1 BlendShape is added, the size will be: &lt;code&gt;50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;If 20 BlendShapes are added, the size will be: &lt;code&gt;50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;If 60 BlendShapes are added, the size will be: &lt;code&gt;50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code&gt;&amp;hellip;&lt;/p&gt;
-&lt;p&gt;We can infer that if the number of BlendShapes are scaled to the hundreds, the size will become incredibly big. Moreover, most of the models do not actually use BlendShape on every single vertex. Reserving the space for BlendShape data for each vertex results in huge size.&lt;/p&gt;
-&lt;p&gt;To resolve this issue, below we provide several methods that may help shrink the total size.&lt;/p&gt;
-&lt;h3 id=&#34;options-for-blendshape-size-reduction&#34;&gt;Options for BlendShape Size Reduction&lt;/h3&gt;
-&lt;p&gt;In &lt;a href=&#34;https://vrm.dev/en/docs/univrm/export/univrm_export/&#34;&gt;Export Dialog&lt;/a&gt;, there are several options related to BlendShape size optimization.&lt;/p&gt;
-&lt;h4 id=&#34;export-option&#34;&gt;Export Option&lt;/h4&gt;
-&lt;p&gt;To reduce BlendShape size, the first two, &lt;code&gt;ReduceBlendshape&lt;/code&gt; and &lt;code&gt;ReduceBlendshapeClip&lt;/code&gt;, are the safest ways (no errors). We are working on &lt;code&gt;UseSparseAccessor&lt;/code&gt; to resolve the importing issue for some of the VRM loaders (UniVRM loader is fine). &lt;code&gt;OnlyBlendshapePosition&lt;/code&gt; has importing errors if the model is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
-&lt;h5 id=&#34;reduceblendshape&#34;&gt;ReduceBlendshape&lt;/h5&gt;
-&lt;p&gt;BlendShapes that are not referenced by BlendShapeClips will not be exported. The file size can be reduced.&lt;/p&gt;
-&lt;h5 id=&#34;reduceblendshapeclip&#34;&gt;ReduceBlendshapeClip&lt;/h5&gt;
-&lt;p&gt;BlendShapeClip belonging to Preset.Unknown will not be exported. Used in combination with ReduceBlendshape.&lt;/p&gt;
-&lt;h5 id=&#34;usesparseaccessor&#34;&gt;UseSparseAccessor&lt;/h5&gt;
-&lt;p&gt;Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p&gt;
-&lt;p&gt;If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM is fine)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code class=&#34;language-BlendShape&#34; data-lang=&#34;BlendShape&#34;&gt;{
-    int Index; // Valid BlendShape index (non-zero value) =&amp;gt; 4
-    float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
-    float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
-    float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
+&lt;/code>&lt;/pre>&lt;p>If 1 BlendShape is added, the size will be: &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
+&lt;p>If 20 BlendShapes are added, the size will be: &lt;code>50000 x (12 + 12) x 20 =&amp;gt; 24MB&lt;/code>&lt;/p>
+&lt;p>If 60 BlendShapes are added, the size will be: &lt;code>50000 x (12 + 12) x 60 =&amp;gt; 72MB&lt;/code>&amp;hellip;&lt;/p>
+&lt;p>We can infer that if the number of BlendShapes are scaled to the hundreds, the size will become incredibly big. Moreover, most of the models do not actually use BlendShape on every single vertex. Reserving the space for BlendShape data for each vertex results in huge size.&lt;/p>
+&lt;p>To resolve this issue, below we provide several methods that may help shrink the total size.&lt;/p>
+&lt;h3 id="options-for-blendshape-size-reduction">Options for BlendShape Size Reduction&lt;/h3>
+&lt;p>In &lt;a href="https://vrm.dev/en/docs/univrm/export/univrm_export/">Export Dialog&lt;/a>, there are several options related to BlendShape size optimization.&lt;/p>
+&lt;h4 id="export-option">Export Option&lt;/h4>
+&lt;p>To reduce BlendShape size, the first two, &lt;code>ReduceBlendshape&lt;/code> and &lt;code>ReduceBlendshapeClip&lt;/code>, are the safest ways (no errors). We are working on &lt;code>UseSparseAccessor&lt;/code> to resolve the importing issue for some of the VRM loaders (UniVRM loader is fine). &lt;code>OnlyBlendshapePosition&lt;/code> has importing errors if the model is made by UniVRM-0.53 or earlier versions.&lt;/p>
+&lt;h5 id="reduceblendshape">ReduceBlendshape&lt;/h5>
+&lt;p>BlendShapes that are not referenced by BlendShapeClips will not be exported. The file size can be reduced.&lt;/p>
+&lt;h5 id="reduceblendshapeclip">ReduceBlendshapeClip&lt;/h5>
+&lt;p>BlendShapeClip belonging to Preset.Unknown will not be exported. Used in combination with ReduceBlendshape.&lt;/p>
+&lt;h5 id="usesparseaccessor">UseSparseAccessor&lt;/h5>
+&lt;p>Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.&lt;/p>
+&lt;p>If the model contains multiple BlendShapes, enabling this can help reduce the file size.&lt;/p>
+&lt;blockquote>
+&lt;p>WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM is fine)&lt;/p>
+&lt;/blockquote>
+&lt;pre>&lt;code class="language-BlendShape" data-lang="BlendShape">{
+int Index; // Valid BlendShape index (non-zero value) =&amp;gt; 4
+float3 Position; // Vertex Position 4 x 3 =&amp;gt; 12byte. required
+float3 Normal; // Vertex Normal 4 x 3 =&amp;gt; 12byte. optional
+float3 Tangent; // Vertex Tangent 4 x 3 =&amp;gt; 12byte. not recorded in VRM
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;The number of valid BlendShape vertices x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&#34;onlyblendshapeposition&#34;&gt;OnlyBlendshapePosition&lt;/h5&gt;
-&lt;p&gt;BlendShape’s Normal and Tangent will not be exported if this option is selected. The file size can be reduced. Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p&gt;
-&lt;h4 id=&#34;meshutility-split-mesh-withwithout-blendshape&#34;&gt;MeshUtility: Split Mesh with/without BlendShape&lt;/h4&gt;
-&lt;p&gt;For instance, a model&amp;rsquo;s mesh contains 50k vertices. It has 10k (with BlendShape) on face and 40k (without BlendShape) on body.&lt;/p&gt;
-&lt;p&gt;Setting up one BlendShape needs: &lt;code&gt;50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;If we split the mesh into two (face mesh and body mesh) based on BlendShape availability,&lt;/p&gt;
-&lt;p&gt;Setting up one BlendShape only needs: &lt;code&gt;10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/en/docs/gltf/mesh_utility/&#34;&gt;Mesh Utility&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;p&gt;If you got a gigantic size of VRM model from export, check out the model&amp;rsquo;s BlendShape and texture images first.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;p>&lt;code>The number of valid BlendShape vertices x (12 + 12 + 4) =&amp;gt; ?MB&lt;/code>&lt;/p>
+&lt;h5 id="onlyblendshapeposition">OnlyBlendshapePosition&lt;/h5>
+&lt;p>BlendShape’s Normal and Tangent will not be exported if this option is selected. The file size can be reduced. Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.&lt;/p>
+&lt;h4 id="meshutility-split-mesh-withwithout-blendshape">MeshUtility: Split Mesh with/without BlendShape&lt;/h4>
+&lt;p>For instance, a model&amp;rsquo;s mesh contains 50k vertices. It has 10k (with BlendShape) on face and 40k (without BlendShape) on body.&lt;/p>
+&lt;p>Setting up one BlendShape needs: &lt;code>50000 x (12 + 12) =&amp;gt; 1.2MB&lt;/code>&lt;/p>
+&lt;p>If we split the mesh into two (face mesh and body mesh) based on BlendShape availability,&lt;/p>
+&lt;p>Setting up one BlendShape only needs: &lt;code>10000 x (12 + 12) =&amp;gt; 0.24MB&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://vrm.dev/en/docs/gltf/mesh_utility/">Mesh Utility&lt;/a>&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>If you got a gigantic size of VRM model from export, check out the model&amp;rsquo;s BlendShape and texture images first.&lt;/p></description></item></channel></rss>

@@ -1,154 +1,98 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VRM – 🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする</title>
-    <link>https://vrm.dev/docs/univrm1/migrate_vrm0/</link>
-    <description>Recent content in 🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする on VRM</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Nov 2021 15:02:10 +0900</lastBuildDate>
-    
-	  <atom:link href="https://vrm.dev/docs/univrm1/migrate_vrm0/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: 🚧アップグレードに対応する機能</title>
-      <link>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</link>
-      <pubDate>Thu, 02 Dec 2021 17:42:46 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</guid>
-      <description>
-        
-        
-        &lt;p&gt;ここでは VRM-0.x モデルから VRM-1.0β モデルにアップグレードする際の機能の対応を述べます。
-主に名称の変更と、明確に変更される機能について述べます。&lt;/p&gt;
-&lt;h2 id=&#34;動作確認環境&#34;&gt;動作確認環境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity 2019.4.30f1&lt;/li&gt;
-&lt;li&gt;UniVRM 0.80.0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;meta&#34;&gt;Meta&lt;/h2&gt;
-&lt;p&gt;VRM-0.x の元の情報がそのまま維持されます。&lt;/p&gt;
-&lt;p&gt;ライセンス情報は自動的にアップグレードできないためです。&lt;/p&gt;
-&lt;h2 id=&#34;humanoid&#34;&gt;Humanoid&lt;/h2&gt;
-&lt;p&gt;ほとんどの表現は維持されます。&lt;/p&gt;
-&lt;p&gt;ただし Unity に依存しているが VRM としては使用していなかった内部のデータが一部削除されます。&lt;/p&gt;
-&lt;h2 id=&#34;blendshape&#34;&gt;BlendShape&lt;/h2&gt;
-&lt;p&gt;表現は維持されます。
-また名称は VRM-0.x の BlendShape から VRM-1.0β の Expression に変わります。&lt;/p&gt;
-&lt;p&gt;ただし &lt;code&gt;Neutral&lt;/code&gt; の BlendShape は非推奨となります。&lt;/p&gt;
-&lt;h2 id=&#34;lookat&#34;&gt;LookAt&lt;/h2&gt;
-&lt;p&gt;ほとんどの表現は維持されます。&lt;/p&gt;
-&lt;p&gt;ただし、目線の角度と実際の BlendShape の値の対応付けからカーブの情報がなくなり、リニアのみになります。&lt;/p&gt;
-&lt;h2 id=&#34;firstperson&#34;&gt;FirstPerson&lt;/h2&gt;
-&lt;p&gt;通常の使用範囲では表現が維持されます。&lt;/p&gt;
-&lt;p&gt;一人称の位置の親ボーン指定がなくなり、頭ボーンのみになりました。&lt;/p&gt;
-&lt;h2 id=&#34;springbone&#34;&gt;SpringBone&lt;/h2&gt;
-&lt;p&gt;表現が維持されます。&lt;/p&gt;
-&lt;p&gt;VRM-1.0β ではより自由度の高い SpringBone が表現できるようになっています。&lt;/p&gt;
-&lt;h2 id=&#34;material&#34;&gt;Material&lt;/h2&gt;
-&lt;h3 id=&#34;pbr&#34;&gt;PBR&lt;/h3&gt;
-&lt;h3 id=&#34;unlit&#34;&gt;Unlit&lt;/h3&gt;
-&lt;p&gt;ほとんどの Unlit シェーダは &lt;code&gt;UniGLTF/UniUnlit&lt;/code&gt; シェーダにアップグレードされます。
-&lt;code&gt;VRM/UnlitTransparentZWrite&lt;/code&gt; シェーダは &lt;code&gt;MToon10&lt;/code&gt; シェーダにアップグレードされます。&lt;/p&gt;
-&lt;h3 id=&#34;mtoon&#34;&gt;MToon&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;VRM/MToon&lt;/code&gt; シェーダは &lt;code&gt;VRM10/MToon10&lt;/code&gt; シェーダにアップグレードされます。&lt;/p&gt;
-&lt;p&gt;ほとんどのプロパティは引き継がれて表現は維持されますが、以下のプロパティが削除されます。
-削除の理由は、効果が薄く使用頻度が低いためです。 (&lt;a href=&#34;https://github.com/vrm-c/vrm-specification/issues/161&#34;&gt;vrm-specification#161&lt;/a&gt;)&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;プロパティ&lt;/th&gt;
-&lt;th&gt;アップグレード時の動作&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Shadow Receive Multiplier&lt;/td&gt;
-&lt;td&gt;削除されます.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Lit &amp;amp; Shade Mixing Multiplier&lt;/td&gt;
-&lt;td&gt;削除されます.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;LightColorAttenuation&lt;/td&gt;
-&lt;td&gt;削除されます.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;WidthScaledMaxDistance&lt;/td&gt;
-&lt;td&gt;削除されます.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;特殊なマイグレーション&#34;&gt;特殊なマイグレーション&lt;/h4&gt;
-&lt;h5 id=&#34;shade-texture-の指定がない場合&#34;&gt;Shade Texture の指定がない場合&lt;/h5&gt;
-&lt;p&gt;旧来の &lt;code&gt;VRM/MToon&lt;/code&gt; の Global Illumination には実装不備がありました。
-そこで &lt;code&gt;VRM10/MToon10&lt;/code&gt; ではこの実装が修正され、全体の Global Illumination 反映がより良いものになりました。&lt;/p&gt;
-&lt;p&gt;しかしその修正により Shade Texture の指定がない場合の挙動に大きく差異があります。
-その場合、旧来の &lt;code&gt;VRM/MToon&lt;/code&gt; では実装不備により、通常のシーン光源下では一見して正しく描画できていました。
-しかし &lt;code&gt;VRM10/MToon10&lt;/code&gt; では正しくシーン照明が反映されるようになったので、Shade Texture の指定が無いことが明らかになる見た目になりました。&lt;/p&gt;
-&lt;p&gt;したがって以下のように Shade Texture を破壊的にマイグレーションし、モデル制作者の意図した見た目に近づけるようにします。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;条件
-&lt;ul&gt;
-&lt;li&gt;Lit Texture が指定されている、かつ、Shade Texture が指定されていないとき&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;マイグレーション方法
-&lt;ul&gt;
-&lt;li&gt;Shade Texture を Lit Texture と同じ Texture に指定する。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧Editor でアップグレードする</title>
-      <link>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</link>
-      <pubDate>Wed, 17 Nov 2021 21:52:46 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Unity Editor 上で VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。&lt;/p&gt;
-&lt;h2 id=&#34;動作確認環境&#34;&gt;動作確認環境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity 2019.4.30f1&lt;/li&gt;
-&lt;li&gt;UniVRM 0.89.0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;注意&#34;&gt;注意&lt;/h2&gt;
-&lt;p&gt;UniVRM 0.89.0 現在、VRM-1.0β モデルの出力にバグがあり、正常に行うことができません。&lt;/p&gt;
-&lt;h2 id=&#34;wip&#34;&gt;WIP&lt;/h2&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧Runtime でアップグレードする</title>
-      <link>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_runtime/</link>
-      <pubDate>Wed, 17 Nov 2021 21:52:46 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_runtime/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Unity で作成したアプリケーションの実行時に VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。&lt;/p&gt;
-&lt;h2 id=&#34;動作確認環境&#34;&gt;動作確認環境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Unity 2019.4.30f1&lt;/li&gt;
-&lt;li&gt;UniVRM 0.80.0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;wip&#34;&gt;WIP&lt;/h2&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする</title><link>https://vrm.dev/docs/univrm1/migrate_vrm0/</link><description>Recent content in 🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 18 Nov 2021 15:02:10 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm1/migrate_vrm0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 🚧アップグレードに対応する機能</title><link>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</link><pubDate>Thu, 02 Dec 2021 17:42:46 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/migrate_vrm0/feature/</guid><description>
+&lt;p>ここでは VRM-0.x モデルから VRM-1.0β モデルにアップグレードする際の機能の対応を述べます。
+主に名称の変更と、明確に変更される機能について述べます。&lt;/p>
+&lt;h2 id="動作確認環境">動作確認環境&lt;/h2>
+&lt;ul>
+&lt;li>Unity 2019.4.30f1&lt;/li>
+&lt;li>UniVRM 0.80.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="meta">Meta&lt;/h2>
+&lt;p>VRM-0.x の元の情報がそのまま維持されます。&lt;/p>
+&lt;p>ライセンス情報は自動的にアップグレードできないためです。&lt;/p>
+&lt;h2 id="humanoid">Humanoid&lt;/h2>
+&lt;p>ほとんどの表現は維持されます。&lt;/p>
+&lt;p>ただし Unity に依存しているが VRM としては使用していなかった内部のデータが一部削除されます。&lt;/p>
+&lt;h2 id="blendshape">BlendShape&lt;/h2>
+&lt;p>表現は維持されます。
+また名称は VRM-0.x の BlendShape から VRM-1.0β の Expression に変わります。&lt;/p>
+&lt;p>ただし &lt;code>Neutral&lt;/code> の BlendShape は非推奨となります。&lt;/p>
+&lt;h2 id="lookat">LookAt&lt;/h2>
+&lt;p>ほとんどの表現は維持されます。&lt;/p>
+&lt;p>ただし、目線の角度と実際の BlendShape の値の対応付けからカーブの情報がなくなり、リニアのみになります。&lt;/p>
+&lt;h2 id="firstperson">FirstPerson&lt;/h2>
+&lt;p>通常の使用範囲では表現が維持されます。&lt;/p>
+&lt;p>一人称の位置の親ボーン指定がなくなり、頭ボーンのみになりました。&lt;/p>
+&lt;h2 id="springbone">SpringBone&lt;/h2>
+&lt;p>表現が維持されます。&lt;/p>
+&lt;p>VRM-1.0β ではより自由度の高い SpringBone が表現できるようになっています。&lt;/p>
+&lt;h2 id="material">Material&lt;/h2>
+&lt;h3 id="pbr">PBR&lt;/h3>
+&lt;h3 id="unlit">Unlit&lt;/h3>
+&lt;p>ほとんどの Unlit シェーダは &lt;code>UniGLTF/UniUnlit&lt;/code> シェーダにアップグレードされます。
+&lt;code>VRM/UnlitTransparentZWrite&lt;/code> シェーダは &lt;code>MToon10&lt;/code> シェーダにアップグレードされます。&lt;/p>
+&lt;h3 id="mtoon">MToon&lt;/h3>
+&lt;p>&lt;code>VRM/MToon&lt;/code> シェーダは &lt;code>VRM10/MToon10&lt;/code> シェーダにアップグレードされます。&lt;/p>
+&lt;p>ほとんどのプロパティは引き継がれて表現は維持されますが、以下のプロパティが削除されます。
+削除の理由は、効果が薄く使用頻度が低いためです。 (&lt;a href="https://github.com/vrm-c/vrm-specification/issues/161">vrm-specification#161&lt;/a>)&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>プロパティ&lt;/th>
+&lt;th>アップグレード時の動作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Shadow Receive Multiplier&lt;/td>
+&lt;td>削除されます.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Lit &amp;amp; Shade Mixing Multiplier&lt;/td>
+&lt;td>削除されます.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LightColorAttenuation&lt;/td>
+&lt;td>削除されます.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WidthScaledMaxDistance&lt;/td>
+&lt;td>削除されます.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="特殊なマイグレーション">特殊なマイグレーション&lt;/h4>
+&lt;h5 id="shade-texture-の指定がない場合">Shade Texture の指定がない場合&lt;/h5>
+&lt;p>旧来の &lt;code>VRM/MToon&lt;/code> の Global Illumination には実装不備がありました。
+そこで &lt;code>VRM10/MToon10&lt;/code> ではこの実装が修正され、全体の Global Illumination 反映がより良いものになりました。&lt;/p>
+&lt;p>しかしその修正により Shade Texture の指定がない場合の挙動に大きく差異があります。
+その場合、旧来の &lt;code>VRM/MToon&lt;/code> では実装不備により、通常のシーン光源下では一見して正しく描画できていました。
+しかし &lt;code>VRM10/MToon10&lt;/code> では正しくシーン照明が反映されるようになったので、Shade Texture の指定が無いことが明らかになる見た目になりました。&lt;/p>
+&lt;p>したがって以下のように Shade Texture を破壊的にマイグレーションし、モデル制作者の意図した見た目に近づけるようにします。&lt;/p>
+&lt;ul>
+&lt;li>条件
+&lt;ul>
+&lt;li>Lit Texture が指定されている、かつ、Shade Texture が指定されていないとき&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>マイグレーション方法
+&lt;ul>
+&lt;li>Shade Texture を Lit Texture と同じ Texture に指定する。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: 🚧Editor でアップグレードする</title><link>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</link><pubDate>Wed, 17 Nov 2021 21:52:46 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_editor/</guid><description>
+&lt;p>Unity Editor 上で VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。&lt;/p>
+&lt;h2 id="動作確認環境">動作確認環境&lt;/h2>
+&lt;ul>
+&lt;li>Unity 2019.4.30f1&lt;/li>
+&lt;li>UniVRM 0.89.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="注意">注意&lt;/h2>
+&lt;p>UniVRM 0.89.0 現在、VRM-1.0β モデルの出力にバグがあり、正常に行うことができません。&lt;/p>
+&lt;h2 id="wip">WIP&lt;/h2></description></item><item><title>Docs: 🚧Runtime でアップグレードする</title><link>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_runtime/</link><pubDate>Wed, 17 Nov 2021 21:52:46 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/migrate_vrm0/migrate_runtime/</guid><description>
+&lt;p>Unity で作成したアプリケーションの実行時に VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。&lt;/p>
+&lt;h2 id="動作確認環境">動作確認環境&lt;/h2>
+&lt;ul>
+&lt;li>Unity 2019.4.30f1&lt;/li>
+&lt;li>UniVRM 0.80.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="wip">WIP&lt;/h2></description></item></channel></rss>

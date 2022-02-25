@@ -1,1214 +1,999 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VRM – 🚧VRM-1.0β モデルを作成する</title>
-    <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/</link>
-    <description>Recent content in 🚧VRM-1.0β モデルを作成する on VRM</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Nov 2021 20:13:19 +0900</lastBuildDate>
-    
-	  <atom:link href="https://vrm.dev/docs/univrm1/vrm1_tutorial/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: fbx の import, T-Pose 初期エクスポート</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</link>
-      <pubDate>Tue, 10 Aug 2021 18:51:50 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;使用する素材&#34;&gt;使用する素材&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;new_seedsan.fbx&lt;/li&gt;
-&lt;li&gt;関連する *.png&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;fbx-の-import&#34;&gt;fbx の import&lt;/h2&gt;
-&lt;p&gt;Assets に作業用のフォルダ &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; を作ります。&lt;/p&gt;
-&lt;h3 id=&#34;texture-を-import&#34;&gt;Texture を import&lt;/h3&gt;
-&lt;p&gt;関連する png を &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; に import します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;backpack.png&lt;/li&gt;
-&lt;li&gt;body.png&lt;/li&gt;
-&lt;li&gt;faceparts.png&lt;/li&gt;
-&lt;li&gt;gradation.png&lt;/li&gt;
-&lt;li&gt;hair.png&lt;/li&gt;
-&lt;li&gt;nm_backpack_normals.png&lt;/li&gt;
-&lt;li&gt;nm_body_normals.png&lt;/li&gt;
-&lt;li&gt;nm_wear.png&lt;/li&gt;
-&lt;li&gt;planekun_face.png&lt;/li&gt;
-&lt;li&gt;robo_arm.png&lt;/li&gt;
-&lt;li&gt;wear.png&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;fbx-を-import&#34;&gt;fbx を import&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;new_seedsan.fbx&lt;/code&gt; を &lt;code&gt;Assets/seedsan/fbx&lt;/code&gt; に import します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;fbx import&lt;/h4&gt;
-
-    &lt;p&gt;import した fbx シーンに出しました。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_import.jpg&#34;   /&gt;&lt;/p&gt;
-&lt;p&gt;テクスチャの割り当てが一部うまくいきませんでした。
-次の手順で修正します。&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;material-の調整&#34;&gt;material の調整&lt;/h2&gt;
-&lt;h3 id=&#34;extract&#34;&gt;extract&lt;/h3&gt;
-&lt;p&gt;import した状態では material が SubAsset なっていて設定を変更することができません。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;subasset&lt;/h4&gt;
-
-    &lt;p&gt;subasset というのは asset の子アセットでファイルとして独立していません。
-また、設定を変更できないので inspector がグレーアウトしています。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/embedded_subasset.jpg&#34;   /&gt;&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;p&gt;subasset を取り出します。&lt;/p&gt;
-&lt;p&gt;fbx importer の &lt;code&gt;Materials&lt;/code&gt; タブの &lt;code&gt;Extract Materials...&lt;/code&gt; ボタンを押してください。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/extract_materials.jpg&#34;   /&gt;
-
-&lt;p&gt;folder 選択ダイアログが現れるので &lt;code&gt;Assets/seedsan/materials&lt;/code&gt; を選択します。
-fbx の subasset であった material が指定したフォルダの中に取り出され、fbx importer の &lt;code&gt;Materials&lt;/code&gt; タブの &lt;code&gt;Remapped Materials&lt;/code&gt; にセットされます。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/extracted.jpg&#34;   /&gt;
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;fbx reset&lt;/h4&gt;
-
-    &lt;p&gt;fbx を初期状態に戻すには ⚙メニューから &lt;code&gt;reset&lt;/code&gt; でできます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_reset.jpg&#34;   /&gt;&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;h3 id=&#34;material-の修正&#34;&gt;material の修正&lt;/h3&gt;
-&lt;p&gt;seedsan の 各マテリアルの texture は下記のとおりです。
-テクスチャの割り当てを確認するだけなので Shader は &lt;code&gt;Standard&lt;/code&gt; のままにします。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Albedo&lt;/th&gt;
-&lt;th&gt;Normal Map&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;huku_bake&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;✅nm_wear.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;hair&lt;/td&gt;
-&lt;td&gt;hair.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;body_bake&lt;/td&gt;
-&lt;td&gt;body.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;eye&lt;/td&gt;
-&lt;td&gt;✅faceparts.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;eye_trans&lt;/td&gt;
-&lt;td&gt;✅faceparts.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;arm_mat&lt;/td&gt;
-&lt;td&gt;✅robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;arm_plastic&lt;/td&gt;
-&lt;td&gt;✅robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;green_emit&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;body_bake&lt;/td&gt;
-&lt;td&gt;body.png&lt;/td&gt;
-&lt;td&gt;✅nm_body_normals.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;body_nm&lt;/td&gt;
-&lt;td&gt;body.png&lt;/td&gt;
-&lt;td&gt;✅nm_body_normals.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;wear_metal&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;✅nm_wear.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;huku_bake&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;armgear_plastic&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;robo_face&lt;/td&gt;
-&lt;td&gt;planekun_face.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;glass&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;backpack_metal&lt;/td&gt;
-&lt;td&gt;backpack.png&lt;/td&gt;
-&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;green_emit&lt;/td&gt;
-&lt;td&gt;backpack.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;backpack_nm&lt;/td&gt;
-&lt;td&gt;backpack.png&lt;/td&gt;
-&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;backpack_plastic&lt;/td&gt;
-&lt;td&gt;backpack.png&lt;/td&gt;
-&lt;td&gt;✅nm_backpack_normals.png&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;anim_logo&lt;/td&gt;
-&lt;td&gt;gradation.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;次に、法線マップの TextureType を &lt;code&gt;Normal map&lt;/code&gt; に変更して、右下の &lt;code&gt;apply&lt;/code&gt; ボタンを押します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/texturetype_normalmap.jpg&#34;   /&gt;
-
-&lt;h2 id=&#34;mesh-の調整&#34;&gt;mesh の調整&lt;/h2&gt;
-&lt;h3 id=&#34;blendshape-の法線確認&#34;&gt;BlendShape の法線確認&lt;/h3&gt;
-&lt;p&gt;head を選択して、&lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; のインスペクタを表示します。
-&lt;code&gt;BlendShapes&lt;/code&gt; を開いて、スライダーを操作して確認します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;法線確認&lt;/h4&gt;
-
-    blend shape の法線を確認したいので、shader は Standard のままにしています。
-
-&lt;/div&gt;
-
-&lt;p&gt;それほど目だないのですが唇の印影が付きすぎています。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg&#34;   /&gt;
-
-&lt;p&gt;fbx の import 設定を修正します。
-fbx の inspector の &lt;code&gt;Model&lt;/code&gt; タブの &lt;code&gt;BlendShape normals&lt;/code&gt; から &lt;code&gt;None&lt;/code&gt; を選択します。
-&lt;code&gt;Apply&lt;/code&gt; で適用します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_model_blendshapenormals.jpg&#34;   /&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg&#34;   /&gt;
-
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/blendshape_normal_none.jpg&#34;   /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vrm-c/UniVRM/issues/828&#34;&gt;#828&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;humanoid-の調整&#34;&gt;humanoid の調整&lt;/h2&gt;
-&lt;h3 id=&#34;animationtype-を-humanoid-にする&#34;&gt;AnimationType を humanoid にする&lt;/h3&gt;
-&lt;p&gt;fbx の import 設定を修正します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Rig&lt;/code&gt; タブの AnimationType を &lt;code&gt;Humanoid&lt;/code&gt; にして &lt;code&gt;Apply&lt;/code&gt; します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/fbx_animation_type.jpg&#34;   /&gt;
-
-&lt;h3 id=&#34;jaw-ボーンの割り当てを解除します&#34;&gt;jaw ボーンの割り当てを解除します。&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Rig&lt;/code&gt; タブの &lt;code&gt;Configure&lt;/code&gt; ボタンを押して、Humanoid のボーン割り当て設定画面に入ります。&lt;/p&gt;
-&lt;p&gt;fbx importer の自動割り当てで &lt;code&gt;jaw&lt;/code&gt; (顎) ボーンに &lt;code&gt;hair_A&lt;/code&gt; が割り当てられてしまいました。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/humanoid_jaw.jpg&#34;  width=&#34;300&#34; /&gt;
-
-&lt;p&gt;割り当てを削除して 右下の &amp;lsquo;Done` ボタン押します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;jaw ボーンにご注意&lt;/h4&gt;
-
-    fbx の自動割り当てで前髪などが誤って &lt;code&gt;jaw&lt;/code&gt; に割り当てられることがよくあります。
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – 🚧VRM-1.0β モデルを作成する</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/</link><description>Recent content in 🚧VRM-1.0β モデルを作成する on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 17 Nov 2021 20:13:19 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm1/vrm1_tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: fbx の import, T-Pose 初期エクスポート</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</link><pubDate>Tue, 10 Aug 2021 18:51:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/first_export_from_fbx/</guid><description>
+&lt;h2 id="使用する素材">使用する素材&lt;/h2>
+&lt;ul>
+&lt;li>new_seedsan.fbx&lt;/li>
+&lt;li>関連する *.png&lt;/li>
+&lt;/ul>
+&lt;h2 id="fbx-の-import">fbx の import&lt;/h2>
+&lt;p>Assets に作業用のフォルダ &lt;code>Assets/seedsan/fbx&lt;/code> を作ります。&lt;/p>
+&lt;h3 id="texture-を-import">Texture を import&lt;/h3>
+&lt;p>関連する png を &lt;code>Assets/seedsan/fbx&lt;/code> に import します。&lt;/p>
+&lt;ul>
+&lt;li>backpack.png&lt;/li>
+&lt;li>body.png&lt;/li>
+&lt;li>faceparts.png&lt;/li>
+&lt;li>gradation.png&lt;/li>
+&lt;li>hair.png&lt;/li>
+&lt;li>nm_backpack_normals.png&lt;/li>
+&lt;li>nm_body_normals.png&lt;/li>
+&lt;li>nm_wear.png&lt;/li>
+&lt;li>planekun_face.png&lt;/li>
+&lt;li>robo_arm.png&lt;/li>
+&lt;li>wear.png&lt;/li>
+&lt;/ul>
+&lt;h3 id="fbx-を-import">fbx を import&lt;/h3>
+&lt;p>&lt;code>new_seedsan.fbx&lt;/code> を &lt;code>Assets/seedsan/fbx&lt;/code> に import します。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">fbx import&lt;/h4>
+&lt;p>import した fbx シーンに出しました。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/fbx_import.jpg" />&lt;/p>
+&lt;p>テクスチャの割り当てが一部うまくいきませんでした。
+次の手順で修正します。&lt;/p>
+&lt;/div>
+&lt;h2 id="material-の調整">material の調整&lt;/h2>
+&lt;h3 id="extract">extract&lt;/h3>
+&lt;p>import した状態では material が SubAsset なっていて設定を変更することができません。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">subasset&lt;/h4>
+&lt;p>subasset というのは asset の子アセットでファイルとして独立していません。
+また、設定を変更できないので inspector がグレーアウトしています。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/embedded_subasset.jpg" />&lt;/p>
+&lt;/div>
+&lt;p>subasset を取り出します。&lt;/p>
+&lt;p>fbx importer の &lt;code>Materials&lt;/code> タブの &lt;code>Extract Materials...&lt;/code> ボタンを押してください。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/extract_materials.jpg" />
+&lt;p>folder 選択ダイアログが現れるので &lt;code>Assets/seedsan/materials&lt;/code> を選択します。
+fbx の subasset であった material が指定したフォルダの中に取り出され、fbx importer の &lt;code>Materials&lt;/code> タブの &lt;code>Remapped Materials&lt;/code> にセットされます。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/extracted.jpg" />
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">fbx reset&lt;/h4>
+&lt;p>fbx を初期状態に戻すには ⚙メニューから &lt;code>reset&lt;/code> でできます。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/fbx_reset.jpg" />&lt;/p>
+&lt;/div>
+&lt;h3 id="material-の修正">material の修正&lt;/h3>
+&lt;p>seedsan の 各マテリアルの texture は下記のとおりです。
+テクスチャの割り当てを確認するだけなので Shader は &lt;code>Standard&lt;/code> のままにします。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Albedo&lt;/th>
+&lt;th>Normal Map&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>huku_bake&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>✅nm_wear.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>hair&lt;/td>
+&lt;td>hair.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>body_bake&lt;/td>
+&lt;td>body.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>eye&lt;/td>
+&lt;td>✅faceparts.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>eye_trans&lt;/td>
+&lt;td>✅faceparts.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>arm_mat&lt;/td>
+&lt;td>✅robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>arm_plastic&lt;/td>
+&lt;td>✅robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>green_emit&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>body_bake&lt;/td>
+&lt;td>body.png&lt;/td>
+&lt;td>✅nm_body_normals.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>body_nm&lt;/td>
+&lt;td>body.png&lt;/td>
+&lt;td>✅nm_body_normals.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>wear_metal&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>✅nm_wear.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>huku_bake&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>armgear_plastic&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>robo_face&lt;/td>
+&lt;td>planekun_face.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>glass&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>backpack_metal&lt;/td>
+&lt;td>backpack.png&lt;/td>
+&lt;td>✅nm_backpack_normals.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>green_emit&lt;/td>
+&lt;td>backpack.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>backpack_nm&lt;/td>
+&lt;td>backpack.png&lt;/td>
+&lt;td>✅nm_backpack_normals.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>backpack_plastic&lt;/td>
+&lt;td>backpack.png&lt;/td>
+&lt;td>✅nm_backpack_normals.png&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>anim_logo&lt;/td>
+&lt;td>gradation.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>次に、法線マップの TextureType を &lt;code>Normal map&lt;/code> に変更して、右下の &lt;code>apply&lt;/code> ボタンを押します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/texturetype_normalmap.jpg" />
+&lt;h2 id="mesh-の調整">mesh の調整&lt;/h2>
+&lt;h3 id="blendshape-の法線確認">BlendShape の法線確認&lt;/h3>
+&lt;p>head を選択して、&lt;code>SkinnedMeshRenderer&lt;/code> のインスペクタを表示します。
+&lt;code>BlendShapes&lt;/code> を開いて、スライダーを操作して確認します。&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">法線確認&lt;/h4>
+blend shape の法線を確認したいので、shader は Standard のままにしています。
+&lt;/div>
+&lt;p>それほど目だないのですが唇の印影が付きすぎています。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg" />
+&lt;p>fbx の import 設定を修正します。
+fbx の inspector の &lt;code>Model&lt;/code> タブの &lt;code>BlendShape normals&lt;/code> から &lt;code>None&lt;/code> を選択します。
+&lt;code>Apply&lt;/code> で適用します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/fbx_model_blendshapenormals.jpg" />
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/blendshape_normal_aa.jpg" />
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/blendshape_normal_none.jpg" />
+&lt;/p>
+&lt;p>&lt;a href="https://github.com/vrm-c/UniVRM/issues/828">#828&lt;/a>&lt;/p>
+&lt;h2 id="humanoid-の調整">humanoid の調整&lt;/h2>
+&lt;h3 id="animationtype-を-humanoid-にする">AnimationType を humanoid にする&lt;/h3>
+&lt;p>fbx の import 設定を修正します。&lt;/p>
+&lt;p>&lt;code>Rig&lt;/code> タブの AnimationType を &lt;code>Humanoid&lt;/code> にして &lt;code>Apply&lt;/code> します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/fbx_animation_type.jpg" />
+&lt;h3 id="jaw-ボーンの割り当てを解除します">jaw ボーンの割り当てを解除します。&lt;/h3>
+&lt;p>&lt;code>Rig&lt;/code> タブの &lt;code>Configure&lt;/code> ボタンを押して、Humanoid のボーン割り当て設定画面に入ります。&lt;/p>
+&lt;p>fbx importer の自動割り当てで &lt;code>jaw&lt;/code> (顎) ボーンに &lt;code>hair_A&lt;/code> が割り当てられてしまいました。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/humanoid_jaw.jpg" width="300" />
+&lt;p>割り当てを削除して 右下の &amp;lsquo;Done` ボタン押します。&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">jaw ボーンにご注意&lt;/h4>
+fbx の自動割り当てで前髪などが誤って &lt;code>jaw&lt;/code> に割り当てられることがよくあります。
 前髪が変な動きをする場合、これが原因のことがあります。
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;vrm1-としてエクスポートします&#34;&gt;VRM1 としてエクスポートします&lt;/h2&gt;
-&lt;p&gt;VRMの詳細なセットアップをする前にここで一度出力します。
-このエクスポートにより以下の状態になります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;モデルが T-Pose になる&lt;/li&gt;
-&lt;li&gt;モデルが T-Pose の状態で 回転とスケールが 除去された状態になる&lt;/li&gt;
-&lt;li&gt;VRM1 として最低限必要な Meta が設定される&lt;/li&gt;
-&lt;li&gt;VRM1 としてインポートしなおすことで VRM1 のコンポーネントがアタッチされた状態になる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;prefab-をシーンに出して-t-pose-にする&#34;&gt;prefab をシーンに出して T-Pose にする&lt;/h3&gt;
-&lt;h3 id=&#34;vrm1-の-export-dialog-を出して-最小限の-meta-を入力する&#34;&gt;VRM1 の Export Dialog を出して 最小限の meta を入力する&lt;/h3&gt;
-&lt;h3 id=&#34;export-する&#34;&gt;export する&lt;/h3&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: VrmObject と Extract</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</link>
-      <pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;vrm-10-の-subasset-を-extract-する&#34;&gt;vrm-1.0 の subasset を extract する&lt;/h2&gt;
-&lt;p&gt;vrm-1.0 を import した状態では、付属するアセット(texture, material, meshなど)は fbx と同様に subasset になります。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm1_subasset.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;p&gt;この状態では、subasset の中身を変更することができません。
-extract により subasset を個別の Asset に展開します。&lt;/p&gt;
-&lt;h3 id=&#34;texturematerial-の-extract&#34;&gt;Texture/Material の Extract&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_before.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;vrm の subasset の texture と material を外部アセットに展開します。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_assets.jpg&#34;  width=&#34;400&#34; /&gt;
-&lt;/p&gt;
-&lt;h3 id=&#34;vrm-関連の-extract&#34;&gt;VRM 関連の Extract&lt;/h3&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm_before.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;vrm の subasset の vrmobject と expression を外部アセットに展開します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;h2 id=&#34;vrmobject&#34;&gt;VrmObject&lt;/h2&gt;
-&lt;p&gt;VRM モデルには &lt;code&gt;VrmController&lt;/code&gt; コンポーネントがアタッチされており、
-&lt;code&gt;VrmController&lt;/code&gt; は &lt;code&gt;VrmObject&lt;/code&gt; を参照します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_controller.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;VrmObject は以下の４つの設定を持っています。
-これらの変更は、シーンではなくアセットに対する変更になります。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_object.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;h2 id=&#34;meta-画面hahahugoshortcode-s8-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/&#34;&gt;Meta 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;expression-画面hahahugoshortcode-s10-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/&#34;&gt;Expression 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;lookat-画面hahahugoshortcode-s12-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/&#34;&gt;LookAt 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;firstperson-画面hahahugoshortcode-s14-hbhb&#34;&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/&#34;&gt;FirstPerson 画面&lt;/a&gt;&lt;/h2&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧Meta の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の &lt;code&gt;Meta&lt;/code&gt; GUI で設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg&#34;  width=&#34;400&#34; /&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Expression の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</link>
-      <pubDate>Wed, 11 Aug 2021 18:25:12 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;旧blendShape&lt;/h4&gt;
-
-    Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;expression-の割り当て設定&#34;&gt;Expression の割り当て設定&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の Expression GUI で設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg&#34;  width=&#34;800&#34; /&gt;
-
-&lt;h2 id=&#34;個別の-expression-設定&#34;&gt;個別の Expression 設定&lt;/h2&gt;
-&lt;p&gt;ひとつずつ独立したアセットです。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_asset.jpg&#34;  width=&#34;400&#34; /&gt;
-
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression.jpg&#34;  width=&#34;400&#34; /&gt;
-&lt;/p&gt;
-&lt;h3 id=&#34;morphtarget&#34;&gt;MorphTarget&lt;/h3&gt;
-&lt;p&gt;blend shape のある &lt;code&gt;SkinnedMeshRenderer&lt;/code&gt; がリストされます。&lt;/p&gt;
-&lt;h3 id=&#34;list&#34;&gt;List&lt;/h3&gt;
-&lt;h4 id=&#34;morphtarget-1&#34;&gt;MorphTarget&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;MorphTarget の List 表示です&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;materialcolor&#34;&gt;MaterialColor&lt;/h4&gt;
-&lt;p&gt;Material 色を [0-1] の weight値でアニメーションさせることができます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Color&lt;/li&gt;
-&lt;li&gt;EmissionColor&lt;/li&gt;
-&lt;li&gt;ShadeColor&lt;/li&gt;
-&lt;li&gt;RimColor&lt;/li&gt;
-&lt;li&gt;OutlineColor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;texturetransform&#34;&gt;TextureTransform&lt;/h4&gt;
-&lt;p&gt;Texture の offset, scale を [0-1] の weight値でアニメーションさせることができます。&lt;/p&gt;
-&lt;h3 id=&#34;option&#34;&gt;Option&lt;/h3&gt;
-&lt;p&gt;MorphTarget 以外の詳細な設定項目です。&lt;/p&gt;
-&lt;h4 id=&#34;isbinary&#34;&gt;IsBinary&lt;/h4&gt;
-&lt;p&gt;漫画風の表現などで、中間の値を見せたくない場合に有効にしてください。
-中間の値を取ることができなくなります。&lt;/p&gt;
-&lt;h4 id=&#34;override&#34;&gt;Override&lt;/h4&gt;
-&lt;p&gt;プロシージャルな Expression の値を制御します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;プロシージャルなExpression&lt;/h4&gt;
-
-    &lt;p&gt;アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して &lt;code&gt;プロシージャルなExpression&lt;/code&gt; を定義しました。
-3つのグループ &lt;code&gt;Blink&lt;/code&gt;, &lt;code&gt;LookAt&lt;/code&gt;, &lt;code&gt;Mouth&lt;/code&gt; を設定しています。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;グループ&lt;/th&gt;
-&lt;th&gt;weight生成例&lt;/th&gt;
-&lt;th&gt;含まれる Expression preset&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Blink&lt;/td&gt;
-&lt;td&gt;ランダム&lt;/td&gt;
-&lt;td&gt;Blink, BlinkLeft, BlinkRight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;LookAt&lt;/td&gt;
-&lt;td&gt;VrmコンポーネントのLookAt機能による生成&lt;/td&gt;
-&lt;td&gt;LookUp, LookDown, LookLeft, LookRight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Mouth&lt;/td&gt;
-&lt;td&gt;音声やテキスト解析による生成&lt;/td&gt;
-&lt;td&gt;Aa, Ih, Ou, Ee, Oh&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;/div&gt;
-
-&lt;p&gt;プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
-その場合既存の Expression Weight との組み合わせで問題が発生する可能性があります。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Expressionの組み合わせで起こる問題の例&lt;/h4&gt;
-
-    &lt;ul&gt;
-&lt;li&gt;口が開く &lt;code&gt;happy&lt;/code&gt; と同時に &lt;code&gt;aa&lt;/code&gt; が適用される =&amp;gt; 口が開きすぎて変になる&lt;/li&gt;
-&lt;li&gt;目を閉じる &lt;code&gt;sad&lt;/code&gt; と同時に &lt;code&gt;blink&lt;/code&gt; が適用される =&amp;gt; 目が2回閉じて瞼が頬を貫通してしまう&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;blink&lt;/code&gt; と同時に &lt;code&gt;lookRight&lt;/code&gt; が適用される =&amp;gt; 目が瞼を貫通してしまう&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;p&gt;組み合わせ問題を回避するために自動生成される &lt;code&gt;Blink&lt;/code&gt;, &lt;code&gt;LookAt&lt;/code&gt;, &lt;code&gt;Mouth&lt;/code&gt; の Weight 値を加工(Override)する機能です。
-Override 設定した Expression の Weight 値が 0 より大きいときに機能が有効になります。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;設定&lt;/th&gt;
-&lt;th&gt;機能&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;None&lt;/td&gt;
-&lt;td&gt;procedual.weight = procedual.weight&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Block&lt;/td&gt;
-&lt;td&gt;procedual.weight = 0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Blend&lt;/td&gt;
-&lt;td&gt;procedual.weight = (1 - expression.weight)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
-&lt;p&gt;Expression アセットのインスペクターの下部の頭部表示画面です。
-Expression の設定を適用した結果を描画します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Preview Prefab&lt;/li&gt;
-&lt;li&gt;Preview Weight: スライダーを動かすことで、[0-1] 間での変化をプレビューできます。Advanced の &lt;code&gt;IsBinary&lt;/code&gt; チェックボックスの影響をテストできます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;作業例&#34;&gt;作業例&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;asset&lt;/th&gt;
-&lt;th&gt;morphtarget&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;aa&lt;/td&gt;
-&lt;td&gt;head.lip_a =&amp;gt; 100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: LookAt の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</link>
-      <pubDate>Mon, 16 Aug 2021 20:32:50 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の LookAt GUI で設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;p&gt;VRM ３種類の LookAt をサポートしています。
-モデルに応じて、以下の３種類の何れかの設定をしてください。&lt;/p&gt;
-&lt;h2 id=&#34;boneタイプ&#34;&gt;Boneタイプ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Alicia&lt;/code&gt; を例に説明します。
+&lt;/div>
+&lt;h2 id="vrm1-としてエクスポートします">VRM1 としてエクスポートします&lt;/h2>
+&lt;p>VRMの詳細なセットアップをする前にここで一度出力します。
+このエクスポートにより以下の状態になります。&lt;/p>
+&lt;ul>
+&lt;li>モデルが T-Pose になる&lt;/li>
+&lt;li>モデルが T-Pose の状態で 回転とスケールが 除去された状態になる&lt;/li>
+&lt;li>VRM1 として最低限必要な Meta が設定される&lt;/li>
+&lt;li>VRM1 としてインポートしなおすことで VRM1 のコンポーネントがアタッチされた状態になる&lt;/li>
+&lt;/ul>
+&lt;h3 id="prefab-をシーンに出して-t-pose-にする">prefab をシーンに出して T-Pose にする&lt;/h3>
+&lt;h3 id="vrm1-の-export-dialog-を出して-最小限の-meta-を入力する">VRM1 の Export Dialog を出して 最小限の meta を入力する&lt;/h3>
+&lt;h3 id="export-する">export する&lt;/h3></description></item><item><title>Docs: VrmObject と Extract</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</link><pubDate>Wed, 04 Aug 2021 21:17:28 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/</guid><description>
+&lt;h2 id="vrm-10-の-subasset-を-extract-する">vrm-1.0 の subasset を extract する&lt;/h2>
+&lt;p>vrm-1.0 を import した状態では、付属するアセット(texture, material, meshなど)は fbx と同様に subasset になります。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm1_subasset.jpg" width="400" />
+&lt;p>この状態では、subasset の中身を変更することができません。
+extract により subasset を個別の Asset に展開します。&lt;/p>
+&lt;h3 id="texturematerial-の-extract">Texture/Material の Extract&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_before.jpg" width="600" />
+&lt;p>vrm の subasset の texture と material を外部アセットに展開します。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_extract_material.jpg" width="600" />
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_extract_material_assets.jpg" width="400" />
+&lt;/p>
+&lt;h3 id="vrm-関連の-extract">VRM 関連の Extract&lt;/h3>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm_before.jpg" width="600" />
+&lt;p>vrm の subasset の vrmobject と expression を外部アセットに展開します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_extract_vrm.jpg" width="600" />
+&lt;h2 id="vrmobject">VrmObject&lt;/h2>
+&lt;p>VRM モデルには &lt;code>VrmController&lt;/code> コンポーネントがアタッチされており、
+&lt;code>VrmController&lt;/code> は &lt;code>VrmObject&lt;/code> を参照します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_controller.jpg" width="600" />
+&lt;p>VrmObject は以下の４つの設定を持っています。
+これらの変更は、シーンではなくアセットに対する変更になります。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_object.jpg" width="600" />
+&lt;h2 id="meta-画面hahahugoshortcode-s8-hbhb">&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/">Meta 画面&lt;/a>&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg" width="400" />
+&lt;h2 id="expression-画面hahahugoshortcode-s10-hbhb">&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/">Expression 画面&lt;/a>&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg" width="400" />
+&lt;h2 id="lookat-画面hahahugoshortcode-s12-hbhb">&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/">LookAt 画面&lt;/a>&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg" width="400" />
+&lt;h2 id="firstperson-画面hahahugoshortcode-s14-hbhb">&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/">FirstPerson 画面&lt;/a>&lt;/h2>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg" width="400" /></description></item><item><title>Docs: 🚧Meta の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</link><pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/meta/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject&lt;/a> の &lt;code>Meta&lt;/code> GUI で設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_meta_settings.jpg" width="400" /></description></item><item><title>Docs: Expression の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</link><pubDate>Wed, 11 Aug 2021 18:25:12 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/expression/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">旧blendShape&lt;/h4>
+Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
+&lt;/div>
+&lt;h2 id="expression-の割り当て設定">Expression の割り当て設定&lt;/h2>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject&lt;/a> の Expression GUI で設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_expression_settings.jpg" width="800" />
+&lt;h2 id="個別の-expression-設定">個別の Expression 設定&lt;/h2>
+&lt;p>ひとつずつ独立したアセットです。&lt;/p>
+&lt;p>&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression_asset.jpg" width="400" />
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression.jpg" width="400" />
+&lt;/p>
+&lt;h3 id="morphtarget">MorphTarget&lt;/h3>
+&lt;p>blend shape のある &lt;code>SkinnedMeshRenderer&lt;/code> がリストされます。&lt;/p>
+&lt;h3 id="list">List&lt;/h3>
+&lt;h4 id="morphtarget-1">MorphTarget&lt;/h4>
+&lt;ul>
+&lt;li>MorphTarget の List 表示です&lt;/li>
+&lt;/ul>
+&lt;h4 id="materialcolor">MaterialColor&lt;/h4>
+&lt;p>Material 色を [0-1] の weight値でアニメーションさせることができます。&lt;/p>
+&lt;ul>
+&lt;li>Color&lt;/li>
+&lt;li>EmissionColor&lt;/li>
+&lt;li>ShadeColor&lt;/li>
+&lt;li>RimColor&lt;/li>
+&lt;li>OutlineColor&lt;/li>
+&lt;/ul>
+&lt;h4 id="texturetransform">TextureTransform&lt;/h4>
+&lt;p>Texture の offset, scale を [0-1] の weight値でアニメーションさせることができます。&lt;/p>
+&lt;h3 id="option">Option&lt;/h3>
+&lt;p>MorphTarget 以外の詳細な設定項目です。&lt;/p>
+&lt;h4 id="isbinary">IsBinary&lt;/h4>
+&lt;p>漫画風の表現などで、中間の値を見せたくない場合に有効にしてください。
+中間の値を取ることができなくなります。&lt;/p>
+&lt;h4 id="override">Override&lt;/h4>
+&lt;p>プロシージャルな Expression の値を制御します。&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">プロシージャルなExpression&lt;/h4>
+&lt;p>アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して &lt;code>プロシージャルなExpression&lt;/code> を定義しました。
+3つのグループ &lt;code>Blink&lt;/code>, &lt;code>LookAt&lt;/code>, &lt;code>Mouth&lt;/code> を設定しています。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>グループ&lt;/th>
+&lt;th>weight生成例&lt;/th>
+&lt;th>含まれる Expression preset&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Blink&lt;/td>
+&lt;td>ランダム&lt;/td>
+&lt;td>Blink, BlinkLeft, BlinkRight&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LookAt&lt;/td>
+&lt;td>VrmコンポーネントのLookAt機能による生成&lt;/td>
+&lt;td>LookUp, LookDown, LookLeft, LookRight&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mouth&lt;/td>
+&lt;td>音声やテキスト解析による生成&lt;/td>
+&lt;td>Aa, Ih, Ou, Ee, Oh&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;p>プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
+その場合既存の Expression Weight との組み合わせで問題が発生する可能性があります。&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Expressionの組み合わせで起こる問題の例&lt;/h4>
+&lt;ul>
+&lt;li>口が開く &lt;code>happy&lt;/code> と同時に &lt;code>aa&lt;/code> が適用される =&amp;gt; 口が開きすぎて変になる&lt;/li>
+&lt;li>目を閉じる &lt;code>sad&lt;/code> と同時に &lt;code>blink&lt;/code> が適用される =&amp;gt; 目が2回閉じて瞼が頬を貫通してしまう&lt;/li>
+&lt;li>&lt;code>blink&lt;/code> と同時に &lt;code>lookRight&lt;/code> が適用される =&amp;gt; 目が瞼を貫通してしまう&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>組み合わせ問題を回避するために自動生成される &lt;code>Blink&lt;/code>, &lt;code>LookAt&lt;/code>, &lt;code>Mouth&lt;/code> の Weight 値を加工(Override)する機能です。
+Override 設定した Expression の Weight 値が 0 より大きいときに機能が有効になります。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>設定&lt;/th>
+&lt;th>機能&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>None&lt;/td>
+&lt;td>procedual.weight = procedual.weight&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Block&lt;/td>
+&lt;td>procedual.weight = 0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Blend&lt;/td>
+&lt;td>procedual.weight = (1 - expression.weight)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="preview">Preview&lt;/h3>
+&lt;p>Expression アセットのインスペクターの下部の頭部表示画面です。
+Expression の設定を適用した結果を描画します。&lt;/p>
+&lt;ul>
+&lt;li>Preview Prefab&lt;/li>
+&lt;li>Preview Weight: スライダーを動かすことで、[0-1] 間での変化をプレビューできます。Advanced の &lt;code>IsBinary&lt;/code> チェックボックスの影響をテストできます。&lt;/li>
+&lt;/ul>
+&lt;h3 id="作業例">作業例&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>asset&lt;/th>
+&lt;th>morphtarget&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>aa&lt;/td>
+&lt;td>head.lip_a =&amp;gt; 100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: LookAt の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</link><pubDate>Mon, 16 Aug 2021 20:32:50 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/lookat/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject&lt;/a> の LookAt GUI で設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_lookat_settings.jpg" width="600" />
+&lt;p>VRM ３種類の LookAt をサポートしています。
+モデルに応じて、以下の３種類の何れかの設定をしてください。&lt;/p>
+&lt;h2 id="boneタイプ">Boneタイプ&lt;/h2>
+&lt;p>&lt;code>Alicia&lt;/code> を例に説明します。
 デフォルトでボーンタイプに設定されるので特に変更する必要ありません。
-以下の項目が関連します。&lt;/p&gt;
-&lt;p&gt;humanoid に eye ボーンが存在する。
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/alicia_humanoid.jpg&#34;  width=&#34;300&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Bone&lt;/code&gt; を指定。
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_bone.jpg&#34;  width=&#34;500&#34; /&gt;
-&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_bone_anim.gif&#34;  width=&#34;400&#34; /&gt;
-
-&lt;p&gt;動作確認 の項に進んでください。&lt;/p&gt;
-&lt;h2 id=&#34;expressionタイプmorph-target-タイプ&#34;&gt;Expressionタイプ(Morph Target タイプ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;new_seedsan&lt;/code&gt; を例に説明します。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;preset&lt;/th&gt;
-&lt;th&gt;expression&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookLeft&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookleft.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookRight&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookright.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookUp&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookup.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookDown&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/expression_lookdown.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Expression&lt;/code&gt; を指定。
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg&#34;  width=&#34;500&#34; /&gt;
-
-&lt;code&gt;Y Range&lt;/code&gt; に 1 を設定&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression_anim.gif&#34;  width=&#34;400&#34; /&gt;
-
-&lt;p&gt;動作確認 の項に進んでください。&lt;/p&gt;
-&lt;h2 id=&#34;expressionタイプtexture-transform-タイプ&#34;&gt;Expressionタイプ(Texture Transform タイプ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;unity chan&lt;/code&gt; を例に説明します。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;© Unity Technologies Japan/UCL&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;preset&lt;/th&gt;
-&lt;th&gt;expression&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookLeft&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_left.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookRight&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_right.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookUp&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_up.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;LookDown&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/uv_down.jpg&#34;  width=&#34;600&#34; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;code&gt;VrmObject&lt;/code&gt; の &lt;code&gt;LookAt&lt;/code&gt; 設定で &lt;code&gt;LookAtType&lt;/code&gt; に &lt;code&gt;Expression&lt;/code&gt; を指定。
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg&#34;  width=&#34;500&#34; /&gt;
-
-&lt;code&gt;Y Range&lt;/code&gt; に 1 を設定&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_uv_anim.gif&#34;  width=&#34;400&#34; /&gt;
-
-&lt;h2 id=&#34;動作確認&#34;&gt;動作確認&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;シーンに Cube を作成(scale [0.1, 0.1, 0.1])&lt;/li&gt;
-&lt;li&gt;VrmController の Gaze にセット&lt;/li&gt;
-&lt;li&gt;VrmController の LookAtTargetType に &lt;code&gt;Calc Yaw Pitch To Gaze&lt;/code&gt; を設定(デフォルト)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/lookat_targettype.jpg&#34;  width=&#34;500&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Play&lt;/li&gt;
-&lt;li&gt;Cube を動かして目が動くことを確認&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;lookat-基準位置を調整&#34;&gt;LookAt 基準位置を調整&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;HeadBone位置&lt;/code&gt; + &lt;code&gt;Offset From Head&lt;/code&gt; が LookAt の基準位置になります。
+以下の項目が関連します。&lt;/p>
+&lt;p>humanoid に eye ボーンが存在する。
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/alicia_humanoid.jpg" width="300" />
+&lt;/p>
+&lt;p>&lt;code>VrmObject&lt;/code> の &lt;code>LookAt&lt;/code> 設定で &lt;code>LookAtType&lt;/code> に &lt;code>Bone&lt;/code> を指定。
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_bone.jpg" width="500" />
+&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_bone_anim.gif" width="400" />
+&lt;p>動作確認 の項に進んでください。&lt;/p>
+&lt;h2 id="expressionタイプmorph-target-タイプ">Expressionタイプ(Morph Target タイプ)&lt;/h2>
+&lt;p>&lt;code>new_seedsan&lt;/code> を例に説明します。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>preset&lt;/th>
+&lt;th>expression&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>LookLeft&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression_lookleft.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookRight&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression_lookright.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookUp&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression_lookup.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookDown&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/expression_lookdown.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>VrmObject&lt;/code> の &lt;code>LookAt&lt;/code> 設定で &lt;code>LookAtType&lt;/code> に &lt;code>Expression&lt;/code> を指定。
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg" width="500" />
+&lt;code>Y Range&lt;/code> に 1 を設定&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_expression_anim.gif" width="400" />
+&lt;p>動作確認 の項に進んでください。&lt;/p>
+&lt;h2 id="expressionタイプtexture-transform-タイプ">Expressionタイプ(Texture Transform タイプ)&lt;/h2>
+&lt;p>&lt;code>unity chan&lt;/code> を例に説明します。&lt;/p>
+&lt;blockquote>
+&lt;p>© Unity Technologies Japan/UCL&lt;/p>
+&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>preset&lt;/th>
+&lt;th>expression&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>LookLeft&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/uv_left.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookRight&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/uv_right.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookUp&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/uv_up.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LookDown&lt;/code>&lt;/td>
+&lt;td>&lt;img src="https://vrm.dev/images/vrm10/tutorial/uv_down.jpg" width="600" />
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>VrmObject&lt;/code> の &lt;code>LookAt&lt;/code> 設定で &lt;code>LookAtType&lt;/code> に &lt;code>Expression&lt;/code> を指定。
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_expression.jpg" width="500" />
+&lt;code>Y Range&lt;/code> に 1 を設定&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_uv_anim.gif" width="400" />
+&lt;h2 id="動作確認">動作確認&lt;/h2>
+&lt;ul>
+&lt;li>シーンに Cube を作成(scale [0.1, 0.1, 0.1])&lt;/li>
+&lt;li>VrmController の Gaze にセット&lt;/li>
+&lt;li>VrmController の LookAtTargetType に &lt;code>Calc Yaw Pitch To Gaze&lt;/code> を設定(デフォルト)&lt;/li>
+&lt;/ul>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/lookat_targettype.jpg" width="500" />
+&lt;ul>
+&lt;li>Play&lt;/li>
+&lt;li>Cube を動かして目が動くことを確認&lt;/li>
+&lt;/ul>
+&lt;h3 id="lookat-基準位置を調整">LookAt 基準位置を調整&lt;/h3>
+&lt;p>&lt;code>HeadBone位置&lt;/code> + &lt;code>Offset From Head&lt;/code> が LookAt の基準位置になります。
 両目の間辺りを目安に設定してください。
-この設定は、 VR 時の HMD 座標と兼用です。&lt;/p&gt;
-&lt;p&gt;TODO: UI&lt;/p&gt;
-&lt;h3 id=&#34;可動範囲を調整&#34;&gt;可動範囲を調整&lt;/h3&gt;
-&lt;p&gt;VrmObject の LookAt 画面下部の &lt;code&gt;HorizontalOuter&lt;/code&gt;, &lt;code&gt;HorizontalInner&lt;/code&gt;, &lt;code&gt;VerticalDown&lt;/code&gt;, &lt;code&gt;VerticalUp&lt;/code&gt; のスライダーを調整してください。&lt;/p&gt;
-&lt;h4 id=&#34;curve-x-range&#34;&gt;Curve X Range&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;大きくするゆっくり動く&lt;/li&gt;
-&lt;li&gt;小さくすると速く動く&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;LookAt は 以下の２直線の角度を計算します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LookAt 基準位置から Head ボーンの正面方向(local Z+)&lt;/li&gt;
-&lt;li&gt;LookAt 基準位置から 注視点方向(VrmControllerのGaze)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;角度を Yaw(水平) と Pitch(垂直) に分解します。
-Yaw は &lt;code&gt;+-180度&lt;/code&gt;、Pitch は &lt;code&gt;+-90度&lt;/code&gt; になります。
+この設定は、 VR 時の HMD 座標と兼用です。&lt;/p>
+&lt;p>TODO: UI&lt;/p>
+&lt;h3 id="可動範囲を調整">可動範囲を調整&lt;/h3>
+&lt;p>VrmObject の LookAt 画面下部の &lt;code>HorizontalOuter&lt;/code>, &lt;code>HorizontalInner&lt;/code>, &lt;code>VerticalDown&lt;/code>, &lt;code>VerticalUp&lt;/code> のスライダーを調整してください。&lt;/p>
+&lt;h4 id="curve-x-range">Curve X Range&lt;/h4>
+&lt;ul>
+&lt;li>大きくするゆっくり動く&lt;/li>
+&lt;li>小さくすると速く動く&lt;/li>
+&lt;/ul>
+&lt;p>LookAt は 以下の２直線の角度を計算します。&lt;/p>
+&lt;ul>
+&lt;li>LookAt 基準位置から Head ボーンの正面方向(local Z+)&lt;/li>
+&lt;li>LookAt 基準位置から 注視点方向(VrmControllerのGaze)&lt;/li>
+&lt;/ul>
+&lt;p>角度を Yaw(水平) と Pitch(垂直) に分解します。
+Yaw は &lt;code>+-180度&lt;/code>、Pitch は &lt;code>+-90度&lt;/code> になります。
 Yaw, Pitch の上限角度を設定できます。
-&lt;code&gt;Curve X Range&lt;/code&gt; がその設定で初期設定は &lt;code&gt;90度&lt;/code&gt; です。&lt;/p&gt;
-&lt;h4 id=&#34;curve-y-rangelookat-type-bone&#34;&gt;Curve Y Range(LookAt Type: Bone)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;ボーンの回転角度の制限&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;上限を制限された角度をそのまま、 EyeBone  に代入すると回転しすぎになる場合が多いです。
-これを適当な角度に減らす設定が &lt;code&gt;Curve Y Range&lt;/code&gt; です。
-初期設定は &lt;code&gt;10度&lt;/code&gt; です。上限角度のときに &lt;code&gt;10度&lt;/code&gt; 回転します。&lt;/p&gt;
-&lt;p&gt;初期設定では、注視点が &lt;code&gt;90度&lt;/code&gt; のときに EyeBone が &lt;code&gt;10度&lt;/code&gt; 回転します。
-&lt;code&gt;0-90度&lt;/code&gt; では比例して回転し、&lt;code&gt;90度&lt;/code&gt; を超えないようになっています。&lt;/p&gt;
-&lt;h4 id=&#34;curve-y-rangelookat-type-expression&#34;&gt;Curve Y Range(LookAt Type: Expression)&lt;/h4&gt;
-&lt;p&gt;Expression は角度ではなく &lt;code&gt;0-1&lt;/code&gt; の Weight になります。
-&lt;code&gt;1&lt;/code&gt; を設定してください。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;1&lt;/code&gt; で多すぎる場合はいかのいずれかの方法で調整してください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1&lt;/code&gt; 以下に減らす&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Expression&lt;/code&gt; の設定を調整(お勧め)&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧FirstPerson の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/&#34;&gt;VrmObject&lt;/a&gt; の FirstPerson GUI で設定します。&lt;/p&gt;
-&lt;img src=&#34;https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg&#34;  width=&#34;600&#34; /&gt;
-
-&lt;h2 id=&#34;なんのための設定か&#34;&gt;なんのための設定か&lt;/h2&gt;
-&lt;p&gt;VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用します。&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;VRで見えてほしくない部分&lt;/h4&gt;
-
-    &lt;p&gt;VRではアバターの頭部に、一人称のカメラを位置させます。
-アバターの見えてほしくない部分が見えてしまう場合があります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;近すぎて歯が見える&lt;/li&gt;
-&lt;li&gt;MorphTargetで頭部に隠してあるものが見える&lt;/li&gt;
-&lt;li&gt;髪が邪魔で前が見えない&lt;/li&gt;
-&lt;li&gt;etc&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;h3 id=&#34;auto&#34;&gt;Auto&lt;/h3&gt;
-&lt;h3 id=&#34;both&#34;&gt;Both&lt;/h3&gt;
-&lt;h3 id=&#34;thirdpersononly&#34;&gt;ThirdPersonOnly&lt;/h3&gt;
-&lt;h3 id=&#34;firstpersononly&#34;&gt;FirstPersonOnly&lt;/h3&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧SpringBone の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/springbone/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/springbone/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧Material の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</link>
-      <pubDate>Fri, 03 Sep 2021 17:54:05 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;new_seedsan-のマテリアル構成&#34;&gt;new_seedsan のマテリアル構成&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;SkinnedMeshRenderer: hair
-&lt;ul&gt;
-&lt;li&gt;Material0: hair(頭髪)&lt;/li&gt;
-&lt;li&gt;Material1: huku_bake(髪留め)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;SkinnedMeshRenderer: hair_tail
-&lt;ul&gt;
-&lt;li&gt;Material0: hair(頭髪。おさげ)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;SkinnedMeshRenderer: head
-&lt;ul&gt;
-&lt;li&gt;Material0: body_bake(頭部、顔)&lt;/li&gt;
-&lt;li&gt;Material1: eye(瞳)&lt;/li&gt;
-&lt;li&gt;Material2: eye_trans(?)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;SkinnedMeshRenderer: robo_arm(背中のロボアーム)
-&lt;ul&gt;
-&lt;li&gt;Material0: arm_mat(ロボーアームの白パーツで覆われていない部分)&lt;/li&gt;
-&lt;li&gt;Material1: arm_plastic(ロボアームの白いパーツ)&lt;/li&gt;
-&lt;li&gt;Material2: green_emit(ロボアームの緑の発光部分)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;SkinnedMeshRenderer: wear(体、バックパック)
-&lt;ul&gt;
-&lt;li&gt;Material0: body_bake(肌)&lt;/li&gt;
-&lt;li&gt;Material1: body_nm(衣服)&lt;/li&gt;
-&lt;li&gt;Material2: wear_metal(グローブの電極)&lt;/li&gt;
-&lt;li&gt;Material3: huku_bake(衣服)&lt;/li&gt;
-&lt;li&gt;Material4: armgear_plastic(グローブの白いパーツ)&lt;/li&gt;
-&lt;li&gt;Material5: robo_face(グローブの顔モニター)&lt;/li&gt;
-&lt;li&gt;Material6: glass(グローブの顔モニター)&lt;/li&gt;
-&lt;li&gt;Material7: backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)&lt;/li&gt;
-&lt;li&gt;Material8: green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)&lt;/li&gt;
-&lt;li&gt;Material9: backpack_nm(バックパック下部水色のパーツ)&lt;/li&gt;
-&lt;li&gt;Material10: backpack_plastic(バックパックの白いパーツ)&lt;/li&gt;
-&lt;li&gt;Material11: anim_logo(胸の模様)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;vrm10mtoon10-newhair頭髪&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; newhair(頭髪)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;hair.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0x959595&lt;/td&gt;
-&lt;td&gt;hair.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-huku_bake髪留め衣服&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; huku_bake(髪留め)(衣服)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0x7D7D7D&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Normal Map&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;nm_wear_normal.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineWidth&lt;/td&gt;
-&lt;td&gt;0.001&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineColor&lt;/td&gt;
-&lt;td&gt;0x6C7A82&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-body_bake頭部顔肌&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; body_bake(頭部、顔)(肌)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;body_bake.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0x7D7D7D&lt;/td&gt;
-&lt;td&gt;body_bake.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;outlinemask_body.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineWidth&lt;/td&gt;
-&lt;td&gt;0.001&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineColor&lt;/td&gt;
-&lt;td&gt;0x87766E&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-body_nm衣服&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; body_nm(衣服)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0xB0A9BC&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;NormalMap&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;nm_body_normals.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineWidth&lt;/td&gt;
-&lt;td&gt;0.002&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineColor&lt;/td&gt;
-&lt;td&gt;0x25242C&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-eye瞳&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; eye(瞳)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;faceparts.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0xB0A9BC&lt;/td&gt;
-&lt;td&gt;faceparts.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-eye_trans&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; eye_trans(?)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;faceparts.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-arm_matロボーアームの白パーツで覆われていない部分&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; arm_mat(ロボーアームの白パーツで覆われていない部分)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0xB0A9BC&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ParametricRimColor&lt;/td&gt;
-&lt;td&gt;0x4F4F4F&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-arm_plasticロボアームの白いパーツ&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; arm_plastic(ロボアームの白いパーツ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0x9EA4B0&lt;/td&gt;
-&lt;td&gt;robo_arm.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Matcap Rim&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;mat_oneside_spec.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ParametricRimColor&lt;/td&gt;
-&lt;td&gt;0x9F9F9F&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineWidth&lt;/td&gt;
-&lt;td&gt;0.002&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineColor&lt;/td&gt;
-&lt;td&gt;0x4F4F4F&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;standard-green_emitロボアームの緑の発光部分&#34;&gt;&lt;code&gt;Standard&lt;/code&gt; green_emit(ロボアームの緑の発光部分)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Albedo&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;backpack.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Emission&lt;/td&gt;
-&lt;td&gt;34,191,36:intensity=1.8&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;standard-wear_metalグローブの電極&#34;&gt;&lt;code&gt;Standard&lt;/code&gt; wear_metal(グローブの電極)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Albedo&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-armgear_plasticグローブの白いパーツ&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; armgear_plastic(グローブの白いパーツ)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;property&lt;/th&gt;
-&lt;th&gt;color&lt;/th&gt;
-&lt;th&gt;texture&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;LitColor, Alpha&lt;/td&gt;
-&lt;td&gt;0xFFFFFF&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Shader&lt;/td&gt;
-&lt;td&gt;0xB0A9BC&lt;/td&gt;
-&lt;td&gt;wear.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;MatcapRim&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;mat_oneside_spec.png&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ParametricRimColor&lt;/td&gt;
-&lt;td&gt;0xB0B0B0&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineMode&lt;/td&gt;
-&lt;td&gt;World&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineWidth&lt;/td&gt;
-&lt;td&gt;0.001&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;OutlineColor&lt;/td&gt;
-&lt;td&gt;0x000000&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;vrm10mtoon10-robo_faceグローブの顔モニター&#34;&gt;&lt;code&gt;VRM10/MToon10&lt;/code&gt; robo_face(グローブの顔モニター)&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Opaque&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;glassグローブの顔モニター&#34;&gt;glass(グローブの顔モニター)&lt;/h2&gt;
-&lt;h2 id=&#34;backpack_metalロボアームとバックパックをつなぐ円柱パーツ&#34;&gt;backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)&lt;/h2&gt;
-&lt;h2 id=&#34;green_emitロボアームとバックパックをつなぐ円柱パーツの発光部分&#34;&gt;green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)&lt;/h2&gt;
-&lt;h2 id=&#34;backpack_nmバックパック下部水色のパーツ&#34;&gt;backpack_nm(バックパック下部水色のパーツ)&lt;/h2&gt;
-&lt;h2 id=&#34;backpack_plasticバックパックの白いパーツ&#34;&gt;backpack_plastic(バックパックの白いパーツ)&lt;/h2&gt;
-&lt;h2 id=&#34;anim_logo胸の模様&#34;&gt;anim_logo(胸の模様)&lt;/h2&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 🚧Constraint の設定</title>
-      <link>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</link>
-      <pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;code>Curve X Range&lt;/code> がその設定で初期設定は &lt;code>90度&lt;/code> です。&lt;/p>
+&lt;h4 id="curve-y-rangelookat-type-bone">Curve Y Range(LookAt Type: Bone)&lt;/h4>
+&lt;ul>
+&lt;li>ボーンの回転角度の制限&lt;/li>
+&lt;/ul>
+&lt;p>上限を制限された角度をそのまま、 EyeBone に代入すると回転しすぎになる場合が多いです。
+これを適当な角度に減らす設定が &lt;code>Curve Y Range&lt;/code> です。
+初期設定は &lt;code>10度&lt;/code> です。上限角度のときに &lt;code>10度&lt;/code> 回転します。&lt;/p>
+&lt;p>初期設定では、注視点が &lt;code>90度&lt;/code> のときに EyeBone が &lt;code>10度&lt;/code> 回転します。
+&lt;code>0-90度&lt;/code> では比例して回転し、&lt;code>90度&lt;/code> を超えないようになっています。&lt;/p>
+&lt;h4 id="curve-y-rangelookat-type-expression">Curve Y Range(LookAt Type: Expression)&lt;/h4>
+&lt;p>Expression は角度ではなく &lt;code>0-1&lt;/code> の Weight になります。
+&lt;code>1&lt;/code> を設定してください。&lt;/p>
+&lt;p>&lt;code>1&lt;/code> で多すぎる場合はいかのいずれかの方法で調整してください。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>1&lt;/code> 以下に減らす&lt;/li>
+&lt;li>&lt;code>Expression&lt;/code> の設定を調整(お勧め)&lt;/li>
+&lt;/ul></description></item><item><title>Docs: 🚧FirstPerson の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</link><pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/firstperson/</guid><description>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm1/vrm1_tutorial/vrm_object/">VrmObject&lt;/a> の FirstPerson GUI で設定します。&lt;/p>
+&lt;img src="https://vrm.dev/images/vrm10/tutorial/vrm_firstperson_settings.jpg" width="600" />
+&lt;h2 id="なんのための設定か">なんのための設定か&lt;/h2>
+&lt;p>VRアプリケーション向けの設定で、VRアバターとして使用したときに描画しない部位を指定する目的で使用します。&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">VRで見えてほしくない部分&lt;/h4>
+&lt;p>VRではアバターの頭部に、一人称のカメラを位置させます。
+アバターの見えてほしくない部分が見えてしまう場合があります。&lt;/p>
+&lt;ul>
+&lt;li>近すぎて歯が見える&lt;/li>
+&lt;li>MorphTargetで頭部に隠してあるものが見える&lt;/li>
+&lt;li>髪が邪魔で前が見えない&lt;/li>
+&lt;li>etc&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h3 id="auto">Auto&lt;/h3>
+&lt;h3 id="both">Both&lt;/h3>
+&lt;h3 id="thirdpersononly">ThirdPersonOnly&lt;/h3>
+&lt;h3 id="firstpersononly">FirstPersonOnly&lt;/h3></description></item><item><title>Docs: 🚧SpringBone の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/springbone/</link><pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/springbone/</guid><description/></item><item><title>Docs: 🚧Material の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</link><pubDate>Fri, 03 Sep 2021 17:54:05 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/material/</guid><description>
+&lt;h2 id="new_seedsan-のマテリアル構成">new_seedsan のマテリアル構成&lt;/h2>
+&lt;ul>
+&lt;li>SkinnedMeshRenderer: hair
+&lt;ul>
+&lt;li>Material0: hair(頭髪)&lt;/li>
+&lt;li>Material1: huku_bake(髪留め)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SkinnedMeshRenderer: hair_tail
+&lt;ul>
+&lt;li>Material0: hair(頭髪。おさげ)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SkinnedMeshRenderer: head
+&lt;ul>
+&lt;li>Material0: body_bake(頭部、顔)&lt;/li>
+&lt;li>Material1: eye(瞳)&lt;/li>
+&lt;li>Material2: eye_trans(?)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SkinnedMeshRenderer: robo_arm(背中のロボアーム)
+&lt;ul>
+&lt;li>Material0: arm_mat(ロボーアームの白パーツで覆われていない部分)&lt;/li>
+&lt;li>Material1: arm_plastic(ロボアームの白いパーツ)&lt;/li>
+&lt;li>Material2: green_emit(ロボアームの緑の発光部分)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SkinnedMeshRenderer: wear(体、バックパック)
+&lt;ul>
+&lt;li>Material0: body_bake(肌)&lt;/li>
+&lt;li>Material1: body_nm(衣服)&lt;/li>
+&lt;li>Material2: wear_metal(グローブの電極)&lt;/li>
+&lt;li>Material3: huku_bake(衣服)&lt;/li>
+&lt;li>Material4: armgear_plastic(グローブの白いパーツ)&lt;/li>
+&lt;li>Material5: robo_face(グローブの顔モニター)&lt;/li>
+&lt;li>Material6: glass(グローブの顔モニター)&lt;/li>
+&lt;li>Material7: backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)&lt;/li>
+&lt;li>Material8: green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)&lt;/li>
+&lt;li>Material9: backpack_nm(バックパック下部水色のパーツ)&lt;/li>
+&lt;li>Material10: backpack_plastic(バックパックの白いパーツ)&lt;/li>
+&lt;li>Material11: anim_logo(胸の模様)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="vrm10mtoon10-newhair頭髪">&lt;code>VRM10/MToon10&lt;/code> newhair(頭髪)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>hair.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0x959595&lt;/td>
+&lt;td>hair.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-huku_bake髪留め衣服">&lt;code>VRM10/MToon10&lt;/code> huku_bake(髪留め)(衣服)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0x7D7D7D&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Normal Map&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>nm_wear_normal.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineWidth&lt;/td>
+&lt;td>0.001&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineColor&lt;/td>
+&lt;td>0x6C7A82&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-body_bake頭部顔肌">&lt;code>VRM10/MToon10&lt;/code> body_bake(頭部、顔)(肌)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>body_bake.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0x7D7D7D&lt;/td>
+&lt;td>body_bake.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>outlinemask_body.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineWidth&lt;/td>
+&lt;td>0.001&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineColor&lt;/td>
+&lt;td>0x87766E&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-body_nm衣服">&lt;code>VRM10/MToon10&lt;/code> body_nm(衣服)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0xB0A9BC&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NormalMap&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>nm_body_normals.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineWidth&lt;/td>
+&lt;td>0.002&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineColor&lt;/td>
+&lt;td>0x25242C&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-eye瞳">&lt;code>VRM10/MToon10&lt;/code> eye(瞳)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>faceparts.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0xB0A9BC&lt;/td>
+&lt;td>faceparts.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-eye_trans">&lt;code>VRM10/MToon10&lt;/code> eye_trans(?)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>faceparts.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-arm_matロボーアームの白パーツで覆われていない部分">&lt;code>VRM10/MToon10&lt;/code> arm_mat(ロボーアームの白パーツで覆われていない部分)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0xB0A9BC&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ParametricRimColor&lt;/td>
+&lt;td>0x4F4F4F&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-arm_plasticロボアームの白いパーツ">&lt;code>VRM10/MToon10&lt;/code> arm_plastic(ロボアームの白いパーツ)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0x9EA4B0&lt;/td>
+&lt;td>robo_arm.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Matcap Rim&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>mat_oneside_spec.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ParametricRimColor&lt;/td>
+&lt;td>0x9F9F9F&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineWidth&lt;/td>
+&lt;td>0.002&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineColor&lt;/td>
+&lt;td>0x4F4F4F&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="standard-green_emitロボアームの緑の発光部分">&lt;code>Standard&lt;/code> green_emit(ロボアームの緑の発光部分)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Albedo&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>backpack.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Emission&lt;/td>
+&lt;td>34,191,36:intensity=1.8&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="standard-wear_metalグローブの電極">&lt;code>Standard&lt;/code> wear_metal(グローブの電極)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Albedo&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-armgear_plasticグローブの白いパーツ">&lt;code>VRM10/MToon10&lt;/code> armgear_plastic(グローブの白いパーツ)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>property&lt;/th>
+&lt;th>color&lt;/th>
+&lt;th>texture&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LitColor, Alpha&lt;/td>
+&lt;td>0xFFFFFF&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Shader&lt;/td>
+&lt;td>0xB0A9BC&lt;/td>
+&lt;td>wear.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MatcapRim&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>mat_oneside_spec.png&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ParametricRimColor&lt;/td>
+&lt;td>0xB0B0B0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineMode&lt;/td>
+&lt;td>World&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineWidth&lt;/td>
+&lt;td>0.001&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OutlineColor&lt;/td>
+&lt;td>0x000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="vrm10mtoon10-robo_faceグローブの顔モニター">&lt;code>VRM10/MToon10&lt;/code> robo_face(グローブの顔モニター)&lt;/h2>
+&lt;p>&lt;code>Opaque&lt;/code>&lt;/p>
+&lt;h2 id="glassグローブの顔モニター">glass(グローブの顔モニター)&lt;/h2>
+&lt;h2 id="backpack_metalロボアームとバックパックをつなぐ円柱パーツ">backpack_metal(ロボアームとバックパックをつなぐ円柱パーツ)&lt;/h2>
+&lt;h2 id="green_emitロボアームとバックパックをつなぐ円柱パーツの発光部分">green_emit(ロボアームとバックパックをつなぐ円柱パーツの発光部分)&lt;/h2>
+&lt;h2 id="backpack_nmバックパック下部水色のパーツ">backpack_nm(バックパック下部水色のパーツ)&lt;/h2>
+&lt;h2 id="backpack_plasticバックパックの白いパーツ">backpack_plastic(バックパックの白いパーツ)&lt;/h2>
+&lt;h2 id="anim_logo胸の模様">anim_logo(胸の模様)&lt;/h2></description></item><item><title>Docs: 🚧Constraint の設定</title><link>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</link><pubDate>Thu, 12 Aug 2021 21:22:24 +0900</pubDate><guid>https://vrm.dev/docs/univrm1/vrm1_tutorial/constraint/</guid><description/></item></channel></rss>

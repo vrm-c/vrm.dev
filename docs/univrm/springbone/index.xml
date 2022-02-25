@@ -1,116 +1,86 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VRM – SpringBone</title>
-    <link>https://vrm.dev/docs/univrm/springbone/</link>
-    <description>Recent content in SpringBone on VRM</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate>
-    
-	  <atom:link href="https://vrm.dev/docs/univrm/springbone/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: VRMSpringBone</title>
-      <link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link>
-      <pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid>
-      <description>
-        
-        
-        &lt;p&gt;揺れモノ設定。&lt;/p&gt;
-&lt;h1 id=&#34;コンポーネントのアタッチされるノード&#34;&gt;コンポーネントのアタッチされるノード&lt;/h1&gt;
-&lt;p&gt;VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VRMSpringBoneは、名前が&lt;code&gt;secondary&lt;/code&gt;のノードが自動的に作成されてそこにアタッチされます。&lt;/li&gt;
-&lt;li&gt;VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/vrm_settings.png&#34;   /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;VRMSpringBoneが見つからない場合には&lt;code&gt;secondary&lt;/code&gt;ノードをご確認ください。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;vrmspringbone&#34;&gt;VRMSpringBone&lt;/h1&gt;
-&lt;p&gt;尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
-揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/VRMSpringBone.png&#34; alt=&#34;lookat&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;RootBonesに髪の毛とリボンを設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;これだけで、指定したボーンが動きに合わせて揺れます。&lt;/p&gt;
-&lt;h1 id=&#34;オプションvrmspringbonecollidergroup当たり判定&#34;&gt;[オプション]VRMSpringBoneColliderGroup(当たり判定)&lt;/h1&gt;
-&lt;p&gt;揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/collider.png&#34; alt=&#34;collider&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/set_collider.png&#34; alt=&#34;set_collider&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;img src=&#34;https://vrm.dev/images/vrm/spring_gizmo.png&#34; alt=&#34;gizmo&#34;  /&gt;
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;動作時のGizmo。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;ひとつのvrmspringbonecollidergroupに複数の当たり判定を設定できます&#34;&gt;ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます&lt;/h2&gt;
-&lt;p&gt;VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。&lt;/p&gt;
-&lt;h1 id=&#34;設定したvrmspringboneが居なくなった&#34;&gt;設定したVRMSpringBoneが居なくなった&lt;/h1&gt;
-&lt;p&gt;VRMSpringBoneはインポート時に&lt;code&gt;secondary&lt;/code&gt;ノードにアタッチされます。
-エクスポート時と違う場所に現れるのでご注意ください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード&#34;&gt;VRMSpringBone&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRM – SpringBone</title><link>https://vrm.dev/docs/univrm/springbone/</link><description>Recent content in SpringBone on VRM</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 16 Apr 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://vrm.dev/docs/univrm/springbone/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: VRMSpringBone</title><link>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</link><pubDate>Mon, 16 Apr 2018 16:30:00 +0900</pubDate><guid>https://vrm.dev/docs/univrm/springbone/univrm_secondary/</guid><description>
+&lt;p>揺れモノ設定。&lt;/p>
+&lt;h1 id="コンポーネントのアタッチされるノード">コンポーネントのアタッチされるノード&lt;/h1>
+&lt;p>VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。&lt;/p>
+&lt;ul>
+&lt;li>VRMSpringBoneは、名前が&lt;code>secondary&lt;/code>のノードが自動的に作成されてそこにアタッチされます。&lt;/li>
+&lt;li>VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/vrm_settings.png" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VRMSpringBoneが見つからない場合には&lt;code>secondary&lt;/code>ノードをご確認ください。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="vrmspringbone">VRMSpringBone&lt;/h1>
+&lt;p>尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
+揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/VRMSpringBone.png" alt="lookat" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>RootBonesに髪の毛とリボンを設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>これだけで、指定したボーンが動きに合わせて揺れます。&lt;/p>
+&lt;h1 id="オプションvrmspringbonecollidergroup当たり判定">[オプション]VRMSpringBoneColliderGroup(当たり判定)&lt;/h1>
+&lt;p>揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/collider.png" alt="collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/set_collider.png" alt="set_collider" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://vrm.dev/images/vrm/spring_gizmo.png" alt="gizmo" />
+&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>動作時のGizmo。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="ひとつのvrmspringbonecollidergroupに複数の当たり判定を設定できます">ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます&lt;/h2>
+&lt;p>VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。&lt;/p>
+&lt;h1 id="設定したvrmspringboneが居なくなった">設定したVRMSpringBoneが居なくなった&lt;/h1>
+&lt;p>VRMSpringBoneはインポート時に&lt;code>secondary&lt;/code>ノードにアタッチされます。
+エクスポート時と違う場所に現れるのでご注意ください。&lt;/p>
+&lt;p>&lt;a href="https://vrm.dev/docs/univrm/springbone/univrm_secondary/#コンポーネントのアタッチされるノード">VRMSpringBone&lt;/a>&lt;/p></description></item></channel></rss>
