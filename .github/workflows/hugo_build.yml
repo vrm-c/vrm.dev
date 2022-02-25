@@ -25,7 +25,7 @@ jobs:
           # Download (if necessary) and use Hugo extended version. Example: true
           extended: true
       - name: Build Hugo
-        run: hugo -v
+        run: HUGO_ENV=production hugo -v --minify
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
