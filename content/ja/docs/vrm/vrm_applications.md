@@ -75,6 +75,7 @@ weight: 4
 | [iFacialMocap](https://www.ifacialmocap.com/home/japanese/) | Windows, macOS, iOS |
 | [FACEMOTION3D](https://apps.apple.com/jp/app/facemotion3d/id1507538005) | iOS |
 | [Kalidoface 3D](https://github.com/yeemachine/kalidoface-3d) | Windows |
+| [VIRTU: Avatar Camera](https://virtu.booth.pm/items/3684467) | PC, [iOS](https://apps.apple.com/app/virtu-avatar-camera/id1597220065) |
 
 ##  アニメーション
 
@@ -104,7 +105,7 @@ weight: 4
 | [Emmv Studio](https://booth.pm/ja/items/2495794) | Windows |
 | [PaSha!](https://ayato3d.booth.pm/items/2202577) | Windows 10 |
 | [PoseMixerAR](https://maruapps.com/posemixerar/) | Android, iOS |
-| [VRM Posing](https://games.soarhap.com/ja/vrmposing-mobile/) | Mobile, [Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/) |
+| [VRMポージング](https://games.soarhap.com/ja/vrmposing-mobile/) | Mobile, [Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/) |
 
 ##  メタバース
 
@@ -147,8 +148,8 @@ weight: 4
 | [TouroReminiscence](https://booth.pm/ja/items/2349960) | Windows |
 | [VRM Cyber walk](https://ktamayan.booth.pm/items/2790105) | Windows |
 | [Virtual Home Run Derby](https://paldynojosh.booth.pm/items/1485218) | Windows |
-| [Food Delivery Battle](https://store.steampowered.com/app/1708710/Food_Delivery_Battle/) | Windows |
-| [Old Coin Pusher Friends](https://store.steampowered.com/app/1722020/Old_Coin_Pusher_Friends/) | Windows |
+| [フードデリバリーバトル](https://store.steampowered.com/app/1708710/Food_Delivery_Battle/) | Windows |
+| [古銭プッシャーフレンズ](https://store.steampowered.com/app/1722020/Old_Coin_Pusher_Friends/) | Windows |
 | [AVATAVI](https://avatavi.com/jp/index.html) | iOS |
 
 ###  ブラウザゲーム
@@ -163,7 +164,7 @@ weight: 4
 | [二輪VRM](https://unityroom.com/games/vrm_bike) | Web browser |
 | [VRM三段跳び](https://unityroom.com/games/vrmtriplejump) | Web browser |
 | [(超)STEP PANEL MATCH](https://unityroom.com/games/step-panel-match) | Web browser |
-| [VBlade](https://unityroom.com/games/vblade) | Web browser |
+| [Vブレード](https://unityroom.com/games/vblade) | Web browser |
 
 ##  ビューア
 
@@ -181,6 +182,7 @@ weight: 4
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
 | [Desktop Magic Engine](https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/) | Windows |
+| [TSO AR Viewer](https://seed.online/static/guide-arviewer) | Android, iOS |
 
 ##  その他のVRM対応アプリ
 
@@ -196,12 +198,12 @@ weight: 4
 | [STYLY](https://styly.cc/) | Windows, Windows VR, Android, iOS |
 | [[HANA] BlendShapeをコントロールするツール](https://kuniyan.booth.pm/items/2437978) | Windows |
 | [Virtual Studio](https://natsunatsu.booth.pm/items/2956377) | Windows |
-| [BlendShapeClipEditor](https://120byte.booth.pm/items/2152326) | Windows |
-| [VRMTextureReplacer](https://120byte.booth.pm/items/2177538) | Windows |
-| [Item Shop](https://suzuki-cecil.booth.pm/items/3250368) | Windows |
+| [VRM表情設定するやつ](https://120byte.booth.pm/items/2152326) | Windows |
+| [VRMテクスチャ差し替えるやつ](https://120byte.booth.pm/items/2177538) | Windows |
+| [アイテムショップ](https://suzuki-cecil.booth.pm/items/3250368) | Windows |
 | [meebits-blender-utils](https://github.com/MeebitsDAO/meebits-blender-utils) | Windows |
 | [The Meebits - Larva Labs](https://meebits.larvalabs.com/) | Windows |
-| [MiloQ+](https://www.miloq-plus.com/) | Android, iOS |
+| [ミロックプラス](https://www.miloq-plus.com/) | Android, iOS |
 | [SimpleURPToonLitOutlineExample](https://github.com/simplestargame/SimpleURPToonLitOutlineExample) | Windows |
 | [Kalidokit](https://github.com/yeemachine/kalidokit) | Windows |
 
