@@ -75,6 +75,7 @@ weight: 4
 | [iFacialMocap](https://www.ifacialmocap.com/) | Windows, macOS, iOS |
 | [FACEMOTION3D](https://apps.apple.com/tt/app/facemotion3d/id1507538005) | iOS |
 | [Kalidoface 3D](https://github.com/yeemachine/kalidoface-3d) | Windows |
+| [VIRTU: Avatar Camera](https://virtu.booth.pm/items/3684467) | PC, [iOS](https://apps.apple.com/app/virtu-avatar-camera/id1597220065) |
 
 ##  Animation
 
@@ -181,6 +182,7 @@ weight: 4
 | [MocuMocuVRM](http://www.vrai.jp/vr_mocuvrm_en.html) | Windows VR, Looking Glass |
 | [VRM Display](https://akarimichi.github.io/vrm-display-releases/) | Windows |
 | [Desktop Magic Engine](https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/) | Windows |
+| [TSO AR Viewer](https://seed.online/en/static/en/guide-arviewer) | Android, iOS |
 
 ##  Others
 
