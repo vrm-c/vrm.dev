@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../univrm/humanoid/base_model.md:1
-msgid "{}"
-msgstr ""
-
 #: ../../univrm/humanoid/base_model.md:7
 msgid "BaseModel"
 msgstr "Create Base VRM Model"
 
 #: ../../univrm/humanoid/base_model.md:9
 msgid "以下の条件を満たす `GameObject` をエクスポートして VRM にできます。"
-msgstr "The target `GameObject` can be exported as VRM if the following two conditions are fulfilled:"
+msgstr ""
+"The target `GameObject` can be exported as VRM if the following two "
+"conditions are fulfilled:"
 
 #: ../../univrm/humanoid/base_model.md:11
 msgid "Animator がアタッチされている"
@@ -46,8 +44,11 @@ msgid ""
 "fbx で上記の条件を満たすには、 `fbx importer` の `rig` 設定で `humanoid` 化してください。 fbx の "
 "prefab は、 humanoid 化すると Animator がアタッチされて `HumanoidAvatar` "
 "がセットされた状態になります。"
-msgstr "To meet the conditions described above for an imported fbx, set the fbx model as `humanoid` from `Import Settings -> Rig -> Animation Type`."
-"After `humanoid` type is applied, `Animator` component with `HumanoidAvatar` will be attached to the fbx's prefab."
+msgstr ""
+"To meet the conditions described above for an imported fbx, set the fbx "
+"model as `humanoid` from `Import Settings -> Rig -> Animation Type`.After"
+" `humanoid` type is applied, `Animator` component with `HumanoidAvatar` "
+"will be attached to the fbx's prefab."
 
 #: ../../univrm/humanoid/base_model.md:19
 msgid "fbx が humanoid 化できるには、"
@@ -59,11 +60,16 @@ msgid ""
 "[必須のボーン](https://github.com/vrm-c/vrm-"
 "specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3)"
 " がすべて含まれている"
-msgstr "All [required bones](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones) are included"
+msgstr ""
+"All [required bones](https://github.com/vrm-c/vrm-"
+"specification/blob/master/specification/0.0/README.md#defined-bones) are "
+"included"
 
 #: ../../univrm/humanoid/base_model.md:22
 msgid "ボーンの親子関係が正しい"
-msgstr "Bones' parent-child relationships are correct (e.g. hips -> leg -> foot. not the other way around)."
+msgstr ""
+"Bones' parent-child relationships are correct (e.g. hips -> leg -> foot. "
+"not the other way around)."
 
 #: ../../univrm/humanoid/base_model.md:24
 msgid "の２つの条件が必用です。"
@@ -79,7 +85,9 @@ msgstr "Reference"
 
 #: ../../univrm/humanoid/base_model.md:30
 msgid "[BlenderからUnityのHumanoid互換でfbxをエクスポートする](https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
-msgstr "[Export fbx from Blender compatible with Unity Humanoid] (https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
+msgstr ""
+"[Export fbx from Blender compatible with Unity Humanoid] "
+"(https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
 
 #: ../../univrm/humanoid/base_model.md:32
 msgid "FBX をシーン上で加工する"
@@ -131,7 +139,9 @@ msgstr "Correspondence between Human Bone (hips etc.) and GameObject"
 
 #: ../../univrm/humanoid/base_model.md:54
 msgid "が記録されています。 これに変更を加えた場合再作成する必用があります。 下記の HumanoidComponent で作成できます。"
-msgstr "If you want to change the hierarchy structure, please refer to `HumanoidComponent`, which is described in the next section."
+msgstr ""
+"If you want to change the hierarchy structure, please refer to "
+"`HumanoidComponent`, which is described in the next section."
 
 #: ../../univrm/humanoid/base_model.md:58
 msgid "GameObject から手動で HumanoidAvatar を作成する"
@@ -143,7 +153,9 @@ msgstr "`HumanoidAvatar` can be created without using `fbx importer`."
 
 #: ../../univrm/humanoid/base_model.md:62
 msgid "[HumanoidComponent](/univrm/humanoid/meshutility_humanoid)"
-msgstr "Check out [Humanoid Component]({{< relref "meshutility_humanoid.md" >}}) for more details."
+msgstr ""
+"Check out [Humanoid Component]({{< relref \"meshutility_humanoid.md\" "
+">}}) for more details."
 
 #: ../../univrm/humanoid/base_model.md:64
 msgid "これを使うと、"
@@ -161,5 +173,12 @@ msgstr "Humanoid-like model made by cubes and so on"
 msgid ""
 "などのヒエラルキーに対して、後付けで `HumanoidAvatar` を作成することができます。 HumanoidAvatar を作成した "
 "GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。"
-msgstr "The `HumanoidAvatar` can be created as long as each required bone is assigned accordingly based on the object in Hierarchy."
-"Finally, to export the target `GameObject` as VRM, attach `Animator` component and assign the created `HumanoidAvatar` to `Avatar` field."
+msgstr ""
+"The `HumanoidAvatar` can be created as long as each required bone is "
+"assigned accordingly based on the object in Hierarchy.Finally, to export "
+"the target `GameObject` as VRM, attach `Animator` component and assign "
+"the created `HumanoidAvatar` to `Avatar` field."
+
+#~ msgid "{}"
+#~ msgstr ""
+

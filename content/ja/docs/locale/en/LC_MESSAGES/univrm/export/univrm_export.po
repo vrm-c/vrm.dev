@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-
-#: ../../univrm/export/univrm_export.md:1
-msgid "{}"
-msgstr ""
 
 #: ../../univrm/export/univrm_export.md:8
 msgid "エクスポートダイアログ"
@@ -70,7 +66,9 @@ msgid ""
 "Unityの "
 "[EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)"
 " で画面を作成しています。"
-msgstr "The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)"
+msgstr ""
+"The export dialog is based on Unity's "
+"[EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)"
 
 #: ../../univrm/export/univrm_export.md:21
 msgid "使い方"
@@ -106,7 +104,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:34
 msgid "シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました"
-msgstr "You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first. "
+msgstr ""
+"You can directly pick up exportable target in the Project Window. There "
+"is no need to put the Prefab in the scene first. "
 
 #: ../../univrm/export/univrm_export.md:36
 msgid "対象のオブジェクトをセットする"
@@ -138,7 +138,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:50
 msgid "ExportRoot が以下の条件を満たすと設定画面が表示されます。"
-msgstr "The setting screen for ExportRoot will show up if the following conditions are satisfied:"
+msgstr ""
+"The setting screen for ExportRoot will show up if the following "
+"conditions are satisfied:"
 
 #: ../../univrm/export/univrm_export.md:52
 msgid "Root である(親が無い)"
@@ -146,7 +148,9 @@ msgstr "Must be topmost parent"
 
 #: ../../univrm/export/univrm_export.md:53
 msgid "Root に回転・スケールが無い(移動は可能)"
-msgstr "Root's Rotation and Scaling are Default (changing Translation is allowable)"
+msgstr ""
+"Root's Rotation and Scaling are Default (changing Translation is "
+"allowable)"
 
 #: ../../univrm/export/univrm_export.md:54
 msgid "ヒューマノイドである(Animatorコンポーネントがアタッチしてあり、Humanoid.Avatarがセットしてある)"
@@ -154,7 +158,9 @@ msgstr "Has Animator component attached and Animator.avatar is humanoid"
 
 #: ../../univrm/export/univrm_export.md:55
 msgid "Z+向きである(左足と右足のボーン位置から判定)"
-msgstr "Faces the positive Z-axis (identified by the bone positions of left and right feet)"
+msgstr ""
+"Faces the positive Z-axis (identified by the bone positions of left and "
+"right feet)"
 
 #: ../../univrm/export/univrm_export.md:56
 msgid "ヒエラルキーの中に enable な mesh を含む"
@@ -169,10 +175,12 @@ msgid ""
 "Metaやエクスポートオプションを設定してください。 警告は修正するかしないかを判断して、問題無ければ無視してください。 "
 "選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の `export` ボタンを押すことができるようになります。 "
 "VRMモデルのファイルサイズの詳しい内容は[こちら](/univrm/export/vrm_size)を参考してください。"
-msgstr "Please set up `Meta` and `ExportSettings`."
-"If you get warning messages, it is optional for you to correct those warnings or not."
-"If there is no error messages shown, you can go ahead and press `export` button at the lower right corner of the dialog."
-"Details about VRM size calculation [can be found here](/univrm/export/vrm_size)."
+msgstr ""
+"Please set up `Meta` and `ExportSettings`.If you get warning messages, it"
+" is optional for you to correct those warnings or not.If there is no "
+"error messages shown, you can go ahead and press `export` button at the "
+"lower right corner of the dialog.Details about VRM size calculation [can "
+"be found here](/univrm/export/vrm_size)."
 
 #: ../../univrm/export/univrm_export.md:65
 msgid "オプション"
@@ -188,8 +196,9 @@ msgstr "Force T Pose"
 
 #: ../../univrm/export/univrm_export.md:71
 msgid "エクスポート前に強制的にT-Poseにします。 手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。"
-msgstr "Force T-Pose before export."
-"If you can manually make T-Pose for model, it's ok without selecting this option."
+msgstr ""
+"Force T-Pose before export.If you can manually make T-Pose for model, "
+"it's ok without selecting this option."
 
 #: ../../univrm/export/univrm_export.md:74
 msgid "Pose Freeze"
@@ -199,14 +208,18 @@ msgstr ""
 msgid ""
 "モデルを正規化します。 正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。 "
 "正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。"
-msgstr "Model's normalization."
-"If Model's normalization is already done, there is no need to perform model normalization again. "
-"However, if additional parts are added into the model (not normalized yet), model normalization is required."
-"In Hierarchy, all GameObjects' rotation should be 0, and their scale should be 1 if a model has been normalized."
+msgstr ""
+"Model's normalization.If Model's normalization is already done, there is "
+"no need to perform model normalization again. However, if additional "
+"parts are added into the model (not normalized yet), model normalization "
+"is required.In Hierarchy, all GameObjects' rotation should be 0, and "
+"their scale should be 1 if a model has been normalized."
 
 #: ../../univrm/export/univrm_export.md:79
 msgid "0.58 では自動でチェックボックスが On/Off されます"
-msgstr "In v0.58, the system can automatically identify whether the export target needs PoseFreeze"
+msgstr ""
+"In v0.58, the system can automatically identify whether the export target"
+" needs PoseFreeze"
 
 #: ../../univrm/export/univrm_export.md:81
 msgid "UseExperimentalExporter"
@@ -214,7 +227,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:82
 msgid "シリアライザーのバージョン。 どちらでも動作します。"
-msgstr "Exporter's Serializer version.It will not affect the output whether this option is selected or not."
+msgstr ""
+"Exporter's Serializer version.It will not affect the output whether this "
+"option is selected or not."
 
 #: ../../univrm/export/univrm_export.md:85
 msgid "UseSparseAccessor"
@@ -222,7 +237,10 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:86
 msgid "BlendShapeが多数ある場合にファイルサイズを削減できます。"
-msgstr "Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.If the model contains multiple BlendShapes, enabling this can help reduce the file size."
+msgstr ""
+"Uses Sparse Accessor feature in GLTF: only records BlendShape vertices "
+"with non-zero value.If the model contains multiple BlendShapes, enabling "
+"this can help reduce the file size."
 
 #: ../../univrm/export/univrm_export.md:88
 msgid "OnlyBlendshapePosition"
@@ -232,9 +250,11 @@ msgstr ""
 msgid ""
 "BlendShapeのNormal, Tangent をエクスポートしない。 ファイルサイズを削減できます。 UniVRM-0.53 "
 "より前のバージョンはインポート時にエラーになるのに注意してください。"
-msgstr "BlendShape's Normal and Tangent will not be exported if this option is selected."
-"The file size can be reduced."
-"Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions."
+msgstr ""
+"BlendShape's Normal and Tangent will not be exported if this option is "
+"selected.The file size can be reduced.Be aware that errors may occur "
+"during import if the export target is made by UniVRM-0.53 or earlier "
+"versions."
 
 #: ../../univrm/export/univrm_export.md:93
 msgid "ReduceBlendshape"
@@ -242,8 +262,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:94
 msgid "BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。 ファイルサイズを削減できます。"
-msgstr "BlendShapes that are not referenced by BlendShapeClips will not be exported."
-"The file size can be reduced."
+msgstr ""
+"BlendShapes that are not referenced by BlendShapeClips will not be "
+"exported.The file size can be reduced."
 
 #: ../../univrm/export/univrm_export.md:97
 msgid "ReduceBlendshapeClip"
@@ -251,8 +272,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:98
 msgid "Presetが Unknown であるBlendShapeClipをエクスポートしない。 ReduceBlendshapeと組み合わせて使います。"
-msgstr "BlendShapeClip belonging to Preset.Unknown will not be exported."
-"Used in combination with ReduceBlendshape."
+msgstr ""
+"BlendShapeClip belonging to Preset.Unknown will not be exported.Used in "
+"combination with ReduceBlendshape."
 
 #: ../../univrm/export/univrm_export.md:101
 msgid "RemoveVertexColor"
@@ -262,9 +284,10 @@ msgstr ""
 msgid ""
 "頂点カラーをエクスポートしない。 GLTFには、頂点カラーを含むが使わないという設定がありません。 UniVRMでは、 `unlit` "
 "のみ頂点カラー対応です。"
-msgstr "Vertex color will not be exported."
-"In GLTF, there is no setting that can disable the color vertex usage."
-"UniVRM supports vertex color for `unlit` shader."
+msgstr ""
+"Vertex color will not be exported.In GLTF, there is no setting that can "
+"disable the color vertex usage.UniVRM supports vertex color for `unlit` "
+"shader."
 
 #: ../../univrm/export/univrm_export.md:106
 msgid "エラー項目"
@@ -379,7 +402,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:128
 msgid "エクスポート可能なオブジェクトをシーンで選択してださい"
-msgstr "Please select a valid object that can be exported as VRM file in the scene."
+msgstr ""
+"Please select a valid object that can be exported as VRM file in the "
+"scene."
 
 #: ../../univrm/export/univrm_export.md:130
 msgid "Require animator."
@@ -413,7 +438,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:140
 msgid "RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください"
-msgstr "Please change the setting to `humanoid` (from Inspector: `FBX Import` -> `rig` -> `AnimationType`)."
+msgstr ""
+"Please change the setting to `humanoid` (from Inspector: `FBX Import` -> "
+"`rig` -> `AnimationType`)."
 
 #: ../../univrm/export/univrm_export.md:142
 msgid "Require Title."
@@ -455,9 +482,10 @@ msgstr "Material, Texture and Mesh names are too long. Please rename them."
 msgid ""
 "Rootに移動・回転・スケール値が設定されている。 そのままエクスポートした場合、ルートの TRS は無くなります。 "
 "移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。"
-msgstr "A model is allowed to export if Root's translation, rotation and scale are not Default values. "
-"However, those values will be lost."
-"We recommend moving this object in the Hierarchy to be Root's child."
+msgstr ""
+"A model is allowed to export if Root's translation, rotation and scale "
+"are not Default values. However, those values will be lost.We recommend "
+"moving this object in the Hierarchy to be Root's child."
 
 #: ../../univrm/export/univrm_export.md:163
 msgid ""
@@ -470,11 +498,13 @@ msgid ""
 "humanoid設定に顎が含まれている。  FBXインポート時に意図せずに自動で割り当てられる場合があります。 "
 "間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。 FBX importer の rig "
 "設定に戻って設定を解除することをおすすめします。"
-msgstr "Jaw (chin) bone is included in humanoid setting."
-"There is a possibility that the jaw bone is automatically assigned during FBX import. "
-"As a result, facial parts (e.g. bangs) are mis-recognized as jaw and being assigned to Jaw bone."
-"Therefore, bangs will have weird movements due to this issue."
-"Please remove this setting in Inspector `FBX Importer` -> `rig`"
+msgstr ""
+"Jaw (chin) bone is included in humanoid setting.There is a possibility "
+"that the jaw bone is automatically assigned during FBX import. As a "
+"result, facial parts (e.g. bangs) are mis-recognized as jaw and being "
+"assigned to Jaw bone.Therefore, bangs will have weird movements due to "
+"this issue.Please remove this setting in Inspector `FBX Importer` -> "
+"`rig`"
 
 #: ../../univrm/export/univrm_export.md:170
 msgid ""
@@ -484,8 +514,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:171
 msgid "ヒエラルキーの中に同じ名前のGameObjectが含まれている。 エクスポートした場合に自動でリネームする。"
-msgstr "A model is allowed to export if there are bones with the same name in this model. "
-"Only the warning message will be given in Export dialog. "
+msgstr ""
+"A model is allowed to export if there are bones with the same name in "
+"this model. Only the warning message will be given in Export dialog. "
 "Those bones will be renamed automatically."
 
 #: ../../univrm/export/univrm_export.md:174
@@ -494,7 +525,9 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:176
 msgid "ヒエラルキーに含まれる mesh に頂点カラーが含まれている。"
-msgstr "If you see this message, there are meshes that contain vertex color in the Hierarchy."
+msgstr ""
+"If you see this message, there are meshes that contain vertex color in "
+"the Hierarchy."
 
 #: ../../univrm/export/univrm_export.md
 msgid "頂点カラー"
@@ -540,8 +573,10 @@ msgstr ""
 
 #: ../../univrm/export/univrm_export.md:186
 msgid "unknown material '{0}' is used. this will export as `Standard` fallback"
-msgstr "If `Unlit` is used, there is no setting that can disable vertex color usage."
-"If necessary, please choose `Remove Vertex Color` option to direct remove vertex color data from the model."
+msgstr ""
+"If `Unlit` is used, there is no setting that can disable vertex color "
+"usage.If necessary, please choose `Remove Vertex Color` option to direct "
+"remove vertex color data from the model."
 
 #: ../../univrm/export/univrm_export.md:188
 msgid "standard, unlit, mtoon 以外のマテリアルは、standard になります。"
@@ -560,6 +595,11 @@ msgid ""
 "Unityの "
 "[ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html)"
 " で画面を作成しています。 v0.58 以降でダイアログを改善予定です。"
-msgstr "The export dialog is based on Unity's [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html)."
-"We will improve it in the later version."
+msgstr ""
+"The export dialog is based on Unity's "
+"[ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html).We"
+" will improve it in the later version."
+
+#~ msgid "{}"
+#~ msgstr ""
 

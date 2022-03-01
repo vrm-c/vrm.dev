@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-
-#: ../../gltf/mesh_utility.md:1
-msgid "{}"
-msgstr ""
 
 #: ../../gltf/mesh_utility.md:7
 msgid "Mesh Utility"
@@ -30,10 +26,13 @@ msgid ""
 "`MeshUtility`はメッシュ処理のツールです。   現在利用可能な機能： "
 "`MeshSeparator`、`MeshIntegrator`、`StaticMeshIntegrator`と`BoneMeshEraser`。"
 msgstr ""
+"Mesh processing tool in Unity platform. Current available functions: "
+"`MeshSeparator`, `MeshIntegrator`, `StaticMeshIntegrator` and "
+"`BoneMeshEraser`."
 
 #: ../../gltf/mesh_utility.md:13
 msgid "使用例"
-msgstr ""
+msgstr "Example of Usage"
 
 #: ../../gltf/mesh_utility.md:15
 msgid ""
@@ -41,6 +40,9 @@ msgid ""
 "`MeshSeparator`が適用されると、BlendShapeを含むメッシュは分割されます。 "
 "先ず、ヒエラルキーにモデルのGameObjectを選択します。"
 msgstr ""
+"Here we show how to use `MeshSeparator`. The usages for all the functions"
+" are roughly the same.  Suppose we want to split meshes contained "
+"BlendShape.We first select the GameObject of a model:"
 
 #: ../../gltf/mesh_utility.md:19
 msgid "![img](/_static/images/vrm/mesh_utility_exp1.jpg)"
@@ -57,6 +59,8 @@ msgid ""
 "メッシュ処理のウィンドウを表示するため、メニューから`UniGLTF` -> `MeshUtility` -> `MeshProcessing "
 "Wizard`をクリックしてください："
 msgstr ""
+"Or directly drag and drop the GameObject to the `TargetObject` field as "
+"shown below"
 
 #: ../../gltf/mesh_utility.md:25
 msgid "![img](/_static/images/vrm/mesh_utility_ja_exp2.jpg)"
@@ -67,6 +71,8 @@ msgid ""
 "`Process`ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（`VRM0`"
 " -> `Export UniVRM-0.xx`）。"
 msgstr ""
+"Click `Process` to generate the output (GameObject) and export it by "
+"`VRM0` -> `Export UniVRM-0.xx`:"
 
 #: ../../gltf/mesh_utility.md:30
 msgid "![img](/_static/images/vrm/mesh_utility_exp3.jpg)"
@@ -75,14 +81,16 @@ msgstr ""
 #: ../../gltf/mesh_utility.md:33
 msgid "分割されたメッシュも`Assets`フォルダーに保存されます。   この例では、モデルのメッシュは顔と体の2つの部分に分割された。"
 msgstr ""
+"The split meshes are also saved in the `Assets` folder.In this example, "
+"the model's mesh are split into two parts: face and body:"
 
 #: ../../gltf/mesh_utility.md
 msgid "顔: BlendShapeを含む"
-msgstr ""
+msgstr "Face: with BlendShape"
 
 #: ../../gltf/mesh_utility.md
 msgid "体: BlendShapeを含まない"
-msgstr ""
+msgstr "Body: without BlendShape"
 
 #: ../../gltf/mesh_utility.md
 msgid "![img](/_static/images/vrm/mesh_sep_result_1.jpg)"
@@ -99,6 +107,8 @@ msgstr ""
 #: ../../gltf/mesh_utility.md:42
 msgid "BlendShapeを含むメッシュは分割されます。BlendShapeのサイズを削減できます。"
 msgstr ""
+"Separate meshes contained BlendShape. The BlendShape size can be "
+"potentially reduced."
 
 #: ../../gltf/mesh_utility.md:44
 msgid "MeshIntegrator"
@@ -107,6 +117,8 @@ msgstr ""
 #: ../../gltf/mesh_utility.md:46
 msgid "Prefab GameObjectのすべてのメッシュを統合します。BlendShapeを含むメッシュは独立して統合されます。"
 msgstr ""
+"Integrate all the meshes of a (prefab) GameObject. Meshes w/ BlendShape "
+"will be grouped into another one."
 
 #: ../../gltf/mesh_utility.md:48
 msgid "StaticMeshIntegrator"
@@ -115,6 +127,8 @@ msgstr ""
 #: ../../gltf/mesh_utility.md:50
 msgid "Prefab GameObjectのすべての静的メッシュを一つに統合します。"
 msgstr ""
+"Integrate all the static meshes of a (prefab) GameObject (Root and its "
+"children)."
 
 #: ../../gltf/mesh_utility.md:52
 msgid "BoneMeshEraser"
@@ -122,5 +136,8 @@ msgstr ""
 
 #: ../../gltf/mesh_utility.md:54
 msgid "ボーン（Erase Rootのヒエラルキー）に関連するメッシュを削除します。"
-msgstr ""
+msgstr "Eliminate meshes associated with the bones in EraseRoot hierarchy."
+
+#~ msgid "{}"
+#~ msgstr ""
 

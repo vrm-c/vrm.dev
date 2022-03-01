@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../gltf/emission_glow.md:1
-msgid "{}"
-msgstr ""
-
 #: ../../gltf/emission_glow.md:6
 msgid "Emission と グロー(発光)"
-msgstr ""
+msgstr "Emission and glow"
 
 #: ../../gltf/emission_glow.md:8
 msgid "`vrm-1.0 向けの独自拡張です`"
-msgstr ""
+msgstr "`This is not an official extension of gltf.`"
 
 #: ../../gltf/emission_glow.md:10
 msgid "対象のシェーダー"
-msgstr ""
+msgstr "Target shader"
 
 #: ../../gltf/emission_glow.md:12
 msgid "`Standard`"
@@ -43,11 +39,11 @@ msgstr ""
 
 #: ../../gltf/emission_glow.md:15
 msgid "Unity の PostEffect の グロー"
-msgstr ""
+msgstr "Glow of PostEffect in Unity"
 
 #: ../../gltf/emission_glow.md:17
 msgid "Emission の値が 1 を越える場合に発光させるポストエフェクトです。"
-msgstr ""
+msgstr "A post effect that emits light when the Emission value exceeds 1."
 
 #: ../../gltf/emission_glow.md:19
 msgid "![img](/_static/images/vrm10/glow.jpg)"
@@ -60,36 +56,40 @@ msgstr ""
 #: ../../gltf/emission_glow.md:21
 msgid "1を超えて3や4にすることで強くなりますが `glTF` の仕様上この値を格納することができません。"
 msgstr ""
+"It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be "
+"stored due to the specifications of `glTF`."
 
 #: ../../gltf/emission_glow.md:23
 msgid "割り算で1におさめる"
-msgstr ""
+msgstr "Divide to 1"
 
 #: ../../gltf/emission_glow.md:3
 msgid "エクスポート時に下記の処理をして 最大値 1 に強制します。"
-msgstr ""
+msgstr "When exporting, do the following to force the maximum value to 1."
 
 #: ../../gltf/emission_glow.md:54
 msgid "VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました"
 msgstr ""
+"We created `VRMC_materials_hdr_emissiveMultiplier` to store a value "
+"greater than 1 in the emission."
 
 #: ../../gltf/emission_glow.md:56
 msgid ""
 "emission に1を越える値を格納するために、`VRMC_materials_hdr_emissiveMultiplier` を作りました。 "
 "EmissiveFactor に対して乗算する float 値 を定義します。"
-msgstr ""
+msgstr "Defines a float value to multiply against EmissiveFactor."
 
 #: ../../gltf/emission_glow.md:59
 msgid "`EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)` となります。"
-msgstr ""
+msgstr "`EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)`"
 
 #: ../../gltf/emission_glow.md:61
 msgid "`UniVRM-0.79` 以降でVRM1/GLB/GLTF でエクスポート可能です。"
-msgstr ""
+msgstr "It can be exported as VRM1 / GLB / GLTF with `UniVRM-0.79` or later."
 
 #: ../../gltf/emission_glow.md:63
 msgid "MToon と PBR マテリアルで有効です。"
-msgstr ""
+msgstr "Valid for MToon and PBR materials."
 
 #: ../../gltf/emission_glow.md:65
 msgid "PostEffectを設定済みのサンプルシーンがありますので お試しください。"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../gltf/emission_glow.md:68
 msgid "`UniVRM10-XXX.unitypackage`"
-msgstr ""
+msgstr "Since there is a sample scene with PostEffect set. Please try it."
 
 #: ../../gltf/emission_glow.md:70
 msgid "`Assets\\UniGLTF.Samples\\LookDev\\ballroom_1k.unity`"
@@ -121,29 +121,34 @@ msgstr ""
 
 #: ../../gltf/emission_glow.md:77
 msgid "Unity アプリでロードする方法"
-msgstr ""
+msgstr "How to load in Unity app"
 
 #: ../../gltf/emission_glow.md:79
 msgid "`UniVRM-0.79` 以降でロードしてください"
-msgstr ""
+msgstr "Please load with `UniVRM-0.79` or later"
 
 #: ../../gltf/emission_glow.md:80
 msgid "シーンに PostEffect を設定してください"
-msgstr ""
+msgstr "Set PostEffect for your scene"
 
 #: ../../gltf/emission_glow.md:81
 msgid ""
 "`Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset`"
 " サンプルの profile があります"
 msgstr ""
+"`Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset`"
+" There is a sample profile"
 
 #: ../../gltf/emission_glow.md:83
 msgid "仕様"
-msgstr ""
+msgstr "Specification"
 
 #: ../../gltf/emission_glow.md:85
 msgid ""
 "<https://github.com/vrm-c/vrm-"
 "specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft>"
 msgstr ""
+
+#~ msgid "{}"
+#~ msgstr ""
 

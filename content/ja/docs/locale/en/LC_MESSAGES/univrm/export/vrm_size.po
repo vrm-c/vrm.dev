@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../univrm/export/vrm_size.md:1
-msgid "{}"
-msgstr ""
-
 #: ../../univrm/export/vrm_size.md:8
 msgid "VRMモデルのファイルサイズ"
 msgstr "VRM Size"
 
 #: ../../univrm/export/vrm_size.md:10
 msgid "VRMは、GLB形式なので、"
-msgstr "Since VRM is a GLB-based format, we know that 
-"
+msgstr "Since VRM is a GLB-based format, we know tha"
 
 #: ../../univrm/export/vrm_size.md:12
 msgid "`VRMエクスポートしたファイルのサイズ => glb のサイズ`"
@@ -56,7 +51,9 @@ msgstr "`Image` and `Mesh` are two major parts in `binary`."
 
 #: ../../univrm/export/vrm_size.md:24
 msgid "5万頂点、5万三角形のモデルを例としてどれくらいの容量になるかを計算する目安を説明します。"
-msgstr "Here we show an example of how to calculate the size for a model with 50k vertices and 50k triangles:"
+msgstr ""
+"Here we show an example of how to calculate the size for a model with 50k"
+" vertices and 50k triangles:"
 
 #: ../../univrm/export/vrm_size.md:26
 msgid "Image"
@@ -66,14 +63,19 @@ msgstr ""
 msgid ""
 "Material が参照する Texture の PNG(JPG) のバイト列がそのまま入っています。 Meta の Thumbnail "
 "も対象になります。"
-msgstr "`Image` contains `Texture` (referenced by Material) and `Thumbnail` (in VRM Meta). Those images are stored as PNG(JPG) bytes."
+msgstr ""
+"`Image` contains `Texture` (referenced by Material) and `Thumbnail` (in "
+"VRM Meta). Those images are stored as PNG(JPG) bytes."
 
 #: ../../univrm/export/vrm_size.md:31
 msgid ""
 "v0.56 でローカルの元ファイルをそのまま使うようにした結果、 "
 "元ファイルが巨大であった場合に、以前に比べて大きくなる問題が発生しています。4000x4000のような大きなファイルはPNG(JPG)を縮小してください。v0.58"
 " 修正予定。"
-msgstr "In v0.56, a large texture (e.g. 4096x4096) in the model fails to export as a smaller size texture (e.g. set to 1024x1024 by Texture Importer Settings -> MaxSize). We have fixed this issue in v0.58"
+msgstr ""
+"In v0.56, a large texture (e.g. 4096x4096) in the model fails to export "
+"as a smaller size texture (e.g. set to 1024x1024 by Texture Importer "
+"Settings -> MaxSize). We have fixed this issue in v0.58"
 
 #: ../../univrm/export/vrm_size.md:34
 msgid "https://github.com/vrm-c/UniVRM/issues/502"
@@ -107,7 +109,10 @@ msgstr "`50000 x 4(Int=4byte) x 3(three vertices in a triangle) => 0.6MB`"
 msgid ""
 "GLTFの仕様的には unsigned short も可能ですが、UniVRM のエクスポーターは未対応。65536 頂点までなので 50000 "
 "三角形は格納できません。"
-msgstr "It is possible to store index using `unsigned short` in GLTF. However, UniVRM does not support it due to the fact that the Max vertices number is 65536, which is unable to store 50k triangles or more in a model"
+msgstr ""
+"It is possible to store index using `unsigned short` in GLTF. However, "
+"UniVRM does not support it due to the fact that the Max vertices number "
+"is 65536, which is unable to store 50k triangles or more in a model"
 
 #: ../../univrm/export/vrm_size.md:50
 msgid "頂点バッファ"
@@ -123,13 +128,18 @@ msgstr "."
 
 #: ../../univrm/export/vrm_size.md:66
 msgid "頂点カラー、2つめのUV(未対応)などバリエーションがありうる。"
-msgstr "Some models contain Vertex Color or Secondary UV (not supported), so the required size may vary"
+msgstr ""
+"Some models contain Vertex Color or Secondary UV (not supported), so the "
+"required size may vary"
 
 #: ../../univrm/export/vrm_size.md:68
 msgid ""
 "GLTFにはTangent(float4)も保存できますが、UniVRMでは保存せずUnityに計算させています。法線とUVから `MIKK T "
 "Space` アルゴリズムで計算したものを使う仕様です。"
-msgstr "In UniVRM, Tangent(float4) can be calculated in Unity instead of being stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via `MIKK T Space` algorithm"
+msgstr ""
+"In UniVRM, Tangent(float4) can be calculated in Unity instead of being "
+"stored in GLTF. Given Vertex Normal and UV, Tangent can be obtained via "
+"`MIKK T Space` algorithm"
 
 #: ../../univrm/export/vrm_size.md:70
 msgid "５万頂点のモデルの場合、"
@@ -148,9 +158,12 @@ msgid ""
 "以上、 `画像サイズ合計 + インデックスバッファ + 頂点バッファ` の合計がモデルの基本容量になります。 5万頂点、5万三角形のモデルの場合、"
 " `3.4MB + 画像サイズ合計` が基本容量になります。 基本容量は計算通りの値になります。 "
 "以降、時として容量爆発の原因となるブレンドシェイプの容量についてです。"
-msgstr "As described above, the basic size for a model is `Total Image Size + Index Buffer + Vertex Buffer`."
-"The basic size for a model with 50k vertices and 50k triangles is `3.4MB + Total Image Size`."
-"Next, we will introduce size calculation for BlendShape, which may cause total size explosion in some circumstances."
+msgstr ""
+"As described above, the basic size for a model is `Total Image Size + "
+"Index Buffer + Vertex Buffer`.The basic size for a model with 50k "
+"vertices and 50k triangles is `3.4MB + Total Image Size`.Next, we will "
+"introduce size calculation for BlendShape, which may cause total size "
+"explosion in some circumstances."
 
 #: ../../univrm/export/vrm_size.md:81
 msgid "ブレンドシェイプ(MorphTarget)の容量"
@@ -162,11 +175,15 @@ msgstr "If 1 BlendShape is added, the size will be: `50000 x (12 + 12) => 1.2MB`
 
 #: ../../univrm/export/vrm_size.md:94
 msgid "20のブレンドシェイプがあったとすると, `50000 x (12 + 12) x 20 => 24MB` の容量を使います。"
-msgstr "If 20 BlendShapes are added, the size will be: `50000 x (12 + 12) x 20 => 24MB`"
+msgstr ""
+"If 20 BlendShapes are added, the size will be: `50000 x (12 + 12) x 20 =>"
+" 24MB`"
 
 #: ../../univrm/export/vrm_size.md:97
 msgid "60のブレンドシェイプがあると、 `50000 x (12 + 12) x 60 => 72MB` の容量を使います。"
-msgstr "If 60 BlendShapes are added, the size will be: `50000 x (12 + 12) x 60 => 72MB`..."
+msgstr ""
+"If 60 BlendShapes are added, the size will be: `50000 x (12 + 12) x 60 =>"
+" 72MB`..."
 
 #: ../../univrm/export/vrm_size.md:100
 msgid "大量のBlendShapeがある"
@@ -174,11 +191,17 @@ msgstr ""
 
 #: ../../univrm/export/vrm_size.md:101
 msgid "BlendShapeのある場所と無い場所が分割されていない"
-msgstr "We can infer that if the number of BlendShapes are scaled to the hundreds, the size will become incredibly big. Moreover, most of the models do not actually use BlendShape on every single vertex. Reserving the space for BlendShape data for each vertex results in huge size."
+msgstr ""
+"We can infer that if the number of BlendShapes are scaled to the "
+"hundreds, the size will become incredibly big. Moreover, most of the "
+"models do not actually use BlendShape on every single vertex. Reserving "
+"the space for BlendShape data for each vertex results in huge size."
 
 #: ../../univrm/export/vrm_size.md:103
 msgid "の条件が揃うと大容量になることに注意してください。 以降、ブレンドシェイプ容量の削減方法についてです。"
-msgstr "To resolve this issue, below we provide several methods that may help shrink the total size."
+msgstr ""
+"To resolve this issue, below we provide several methods that may help "
+"shrink the total size."
 
 #: ../../univrm/export/vrm_size.md:106
 msgid "ブレンドシェイプの容量対策"
@@ -186,7 +209,9 @@ msgstr "Options for BlendShape Size Reduction"
 
 #: ../../univrm/export/vrm_size.md:108
 msgid "[エクスポートダイアログ](/univrm/export/univrm_export) の以下のオプションがブレンドシェイプの容量に関連します。"
-msgstr "In [Export Dialog](/univrm/export/univrm_export), there are several options related to BlendShape size optimization."
+msgstr ""
+"In [Export Dialog](/univrm/export/univrm_export), there are several "
+"options related to BlendShape size optimization."
 
 #: ../../univrm/export/vrm_size.md:111
 msgid "エクスポートオプション"
@@ -194,7 +219,12 @@ msgstr "Export Option"
 
 #: ../../univrm/export/vrm_size.md:113
 msgid "最初の２つは安全にです。３つめは修正中。4つめは、UniVRM-0.53(含む)以前でロードエラーになるバージョン問題があります。"
-msgstr "To reduce BlendShape size, the first two, `ReduceBlendshape` and `ReduceBlendshapeClip`, are the safest ways (no errors). We are working on `UseSparseAccessor` to resolve the importing issue for some of the VRM loaders (UniVRM loader is fine). `OnlyBlendshapePosition` has importing errors if the model is made by UniVRM-0.53 or earlier versions."
+msgstr ""
+"To reduce BlendShape size, the first two, `ReduceBlendshape` and "
+"`ReduceBlendshapeClip`, are the safest ways (no errors). We are working "
+"on `UseSparseAccessor` to resolve the importing issue for some of the VRM"
+" loaders (UniVRM loader is fine). `OnlyBlendshapePosition` has importing "
+"errors if the model is made by UniVRM-0.53 or earlier versions."
 
 #: ../../univrm/export/vrm_size.md:115
 msgid "ReduceBlendshape"
@@ -202,7 +232,9 @@ msgstr ""
 
 #: ../../univrm/export/vrm_size.md:116
 msgid "BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。 ファイルサイズを削減できます。"
-msgstr "BlendShapes that are not referenced by BlendShapeClips will not be exported. The file size can be reduced."
+msgstr ""
+"BlendShapes that are not referenced by BlendShapeClips will not be "
+"exported. The file size can be reduced."
 
 #: ../../univrm/export/vrm_size.md:119
 msgid "ReduceBlendshapeClip"
@@ -210,7 +242,9 @@ msgstr ""
 
 #: ../../univrm/export/vrm_size.md:120
 msgid "Presetが Unknown であるBlendShapeClipをエクスポートしない。 ReduceBlendshapeと組み合わせて使います。"
-msgstr "BlendShapeClip belonging to Preset.Unknown will not be exported. Used in combination with ReduceBlendshape."
+msgstr ""
+"BlendShapeClip belonging to Preset.Unknown will not be exported. Used in "
+"combination with ReduceBlendshape."
 
 #: ../../univrm/export/vrm_size.md:123
 msgid "UseSparseAccessor"
@@ -218,15 +252,21 @@ msgstr ""
 
 #: ../../univrm/export/vrm_size.md:124
 msgid "BlendShapeが多数ある場合にファイルサイズを削減できます。"
-msgstr "Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value."
+msgstr ""
+"Uses Sparse Accessor feature in GLTF: only records BlendShape vertices "
+"with non-zero value."
 
 #: ../../univrm/export/vrm_size.md:126
 msgid "ブレンドシェイプの値が、 `0` でない頂点のみを飛び飛びに記録することで容量を削減する GLTF の仕様です。"
-msgstr "If the model contains multiple BlendShapes, enabling this can help reduce the file size."
+msgstr ""
+"If the model contains multiple BlendShapes, enabling this can help reduce"
+" the file size."
 
 #: ../../univrm/export/vrm_size.md:128
 msgid "修正中: GLTFの互換性の問題があって、UniVRM以外のローダーでエラーになる"
-msgstr "WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM is fine)"
+msgstr ""
+"WIP: fix importing error if the model has Sparse Accessor in GLTF (UniVRM"
+" is fine)"
 
 #: ../../univrm/export/vrm_size.md:140
 msgid "`BlendShapeの有効な頂点数 x (12 + 12 + 4) => ?MB`"
@@ -242,11 +282,15 @@ msgstr ""
 
 #: ../../univrm/export/vrm_size.md:145
 msgid "BlendShapeのNormal, Tangent をエクスポートしない。 ファイルサイズを削減できます。"
-msgstr "BlendShape’s Normal and Tangent will not be exported if this option is selected. "
+msgstr ""
+"BlendShape’s Normal and Tangent will not be exported if this option is "
+"selected. "
 
 #: ../../univrm/export/vrm_size.md:148
 msgid "UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。"
-msgstr "The file size can be reduced. Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions."
+msgstr ""
+"The file size can be reduced. Be aware that errors may occur during "
+"import if the export target is made by UniVRM-0.53 or earlier versions."
 
 #: ../../univrm/export/vrm_size.md:150
 msgid "MeshUtility で BlendShape の あるMesh と ないMesh に分割する"
@@ -254,7 +298,9 @@ msgstr "MeshUtility: Split Mesh with/without BlendShape"
 
 #: ../../univrm/export/vrm_size.md:152
 msgid "例えば、顔(BlendShapeあり)が 10000 頂点、体(BlendShapeなし)が 40000 頂点に分割されていると、"
-msgstr "For instance, a model's mesh contains 50k vertices. It has 10k (with BlendShape) on face and 40k (without BlendShape) on body."
+msgstr ""
+"For instance, a model's mesh contains 50k vertices. It has 10k (with "
+"BlendShape) on face and 40k (without BlendShape) on body."
 
 #: ../../univrm/export/vrm_size.md:154
 msgid "ひとつのブレンドシェイプで `10000 x (12 + 12) => 0.24MB` の容量を使います。"
@@ -274,7 +320,10 @@ msgstr "."
 
 #: ../../univrm/export/vrm_size.md:162
 msgid "ランタイムにも良い可能性があるが、ドローコールは増えるかもしれないのでトレードオフがある"
-msgstr "The runtime performance will benefit to this mesh splitting as well. The trade-off is that Draw call is likely increasing since the number of rendering meshes increases"
+msgstr ""
+"The runtime performance will benefit to this mesh splitting as well. The "
+"trade-off is that Draw call is likely increasing since the number of "
+"rendering meshes increases"
 
 #: ../../univrm/export/vrm_size.md:164
 msgid "[Mesh Utility](/gltf/mesh_utility)"
@@ -286,4 +335,10 @@ msgstr "Summary"
 
 #: ../../univrm/export/vrm_size.md:168
 msgid "予想より大容量になってしまうときはブレンドシェイプ、次に画像に注意してください。"
-msgstr "If you got a gigantic size of VRM model from export, check out the model's BlendShape and texture images first."
+msgstr ""
+"If you got a gigantic size of VRM model from export, check out the "
+"model's BlendShape and texture images first."
+
+#~ msgid "{}"
+#~ msgstr ""
+

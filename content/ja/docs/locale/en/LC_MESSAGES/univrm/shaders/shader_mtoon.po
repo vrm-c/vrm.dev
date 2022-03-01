@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-
-#: ../../univrm/shaders/shader_mtoon.md:1
-msgid "{}"
-msgstr ""
 
 #: ../../univrm/shaders/shader_mtoon.md:9
 msgid "MToon"
@@ -37,7 +33,10 @@ msgstr "About MToon"
 msgid ""
 "MToon は日本のアニメ的表現をすることを目標としています。 主色 (Lit Color) と陰色 (Shade Color) の 2 "
 "色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。"
-msgstr "MToon aims for making Japanese anime expressions. It is achieved by mixing `Lit Color` and `Shade Color` based on Lighting parameters and light source environment. "
+msgstr ""
+"MToon aims for making Japanese anime expressions. It is achieved by "
+"mixing `Lit Color` and `Shade Color` based on Lighting parameters and "
+"light source environment. "
 
 #: ../../univrm/shaders/shader_mtoon.md
 msgid "![alicia MToon](/_static/images/vrm/mtoon_about.png)"
@@ -65,23 +64,33 @@ msgstr "Select the target material and change the shader to `VRM/MToon`"
 
 #: ../../univrm/shaders/shader_mtoon.md:24
 msgid "`Color->Lit Color, Alpha` と `Color->Shade Color` に同じテクスチャを設定"
-msgstr "lick the shader panel and set the same texture in `Color->Lit Color, Alpha` and `Color->Shade Color`"
+msgstr ""
+"lick the shader panel and set the same texture in `Color->Lit Color, "
+"Alpha` and `Color->Shade Color`"
 
 #: ../../univrm/shaders/shader_mtoon.md:25
 msgid "`Color->Lit Color, Alpha` は白色 `Color->Shade Color` は好きな陰色を設定"
-msgstr "Set white color in `Color->Lit Color, Alpha` and set the preference shade color in `Color->Shade Color`"
+msgstr ""
+"Set white color in `Color->Lit Color, Alpha` and set the preference shade"
+" color in `Color->Shade Color`"
 
 #: ../../univrm/shaders/shader_mtoon.md:26
 msgid "`Shading->Toony` は好きな値。主色と影色をパキッとさせたいときは `1`"
-msgstr "Set the preference value in `Shading->Toony`. Make the lit color and shade color sharp:`1`"
+msgstr ""
+"Set the preference value in `Shading->Toony`. Make the lit color and "
+"shade color sharp:`1`"
 
 #: ../../univrm/shaders/shader_mtoon.md:27
 msgid "`Rim->Additive` は `Spheremap` や `MatCap` と同等のテクスチャを設定"
-msgstr "Set the texture in `Rim->Additive` (equivalent to `sphere map` or `Matcap`)"
+msgstr ""
+"Set the texture in `Rim->Additive` (equivalent to `sphere map` or "
+"`Matcap`)"
 
 #: ../../univrm/shaders/shader_mtoon.md:28
 msgid "`Outline->Width->Mode` は輪郭線を必要とするなら `WorldCoordinates` で、しないなら `None`"
-msgstr "If outline is necessary, select `WorldCoordinates` in `Outline->Width->Mode`. Select `None` if outline is not needed"
+msgstr ""
+"If outline is necessary, select `WorldCoordinates` in "
+"`Outline->Width->Mode`. Select `None` if outline is not needed"
 
 #: ../../univrm/shaders/shader_mtoon.md:29
 msgid "`Outline->Width->Width` は 見た目上好きな値"
@@ -179,7 +188,10 @@ msgstr ""
 msgid ""
 "不透明ですが `Color->Lit Color, Alpha` のアルファ値情報を参照して `Color->Alpha->Cutoff` "
 "の値より小さな箇所の描画をスキップします。"
-msgstr "Although it is opaque, it refers to the alpha value in `Color->Lit Color, Alpha`. Therefore, it skips rendering for places having smaller value than `Color->Alpha->Cutoff`."
+msgstr ""
+"Although it is opaque, it refers to the alpha value in `Color->Lit Color,"
+" Alpha`. Therefore, it skips rendering for places having smaller value "
+"than `Color->Alpha->Cutoff`."
 
 #: ../../univrm/shaders/shader_mtoon.md:61
 msgid "Transparent"
@@ -251,7 +263,11 @@ msgstr ""
 msgid ""
 "描画色を設定します。 テクスチャと色は乗算されます。 光が当たる主色は `Lit Color, Alpha` に、光が当たらない陰色は "
 "`Shade Color` に設定します。 また `Lit Color, Alpha` のアルファ値には不透明度情報を設定します。"
-msgstr "Set the rendering color.The texture and color are multiplied.Set the color hit by the light ray in `Lit Color, Alpha` and set the color not hit by the light ray in `Shade Color`. Also, set the the alpha value in `Lit Color, Alpha` for opacity information."
+msgstr ""
+"Set the rendering color.The texture and color are multiplied.Set the "
+"color hit by the light ray in `Lit Color, Alpha` and set the color not "
+"hit by the light ray in `Shade Color`. Also, set the the alpha value in "
+"`Lit Color, Alpha` for opacity information."
 
 #: ../../univrm/shaders/shader_mtoon.md:87
 msgid "Lighting"
@@ -267,10 +283,13 @@ msgid ""
 "マイナス値にするとアニメ的な、主色の範囲が広いライティングになります。 "
 "マイナス値のときはセルフシャドウを無効化する必要があるため、表示された警告に従い `Shadow Receive Multiplier` を "
 "`0` に設定する必要があります。"
-msgstr "Adjust the threshold value of the lit color and shade color for how the light ray hits the object."
-"When the value is `0`, it is the normal lighting."
-"When the value is negative, it becomes the lighting with anime-like, wide range of lit color. "
-"It is necessary to disable the self-shadow with setting the value to `0` in `Shadow Receive Multiplier` according to the displayed warning message."
+msgstr ""
+"Adjust the threshold value of the lit color and shade color for how the "
+"light ray hits the object.When the value is `0`, it is the normal "
+"lighting.When the value is negative, it becomes the lighting with anime-"
+"like, wide range of lit color. It is necessary to disable the self-shadow"
+" with setting the value to `0` in `Shadow Receive Multiplier` according "
+"to the displayed warning message."
 
 #: ../../univrm/shaders/shader_mtoon.md:94
 msgid "Shading Toony"
@@ -281,9 +300,12 @@ msgid ""
 "`Shading Shift` の項目における主色と陰色のしきい値付近を滑らかに変化させるか否かを設定します。 `0` のときは通常の "
 "Lambert モデルのような写実寄りの滑らかさになります。 `1` "
 "のときはしきい値ではっきり主色と陰色が変化するアニメ調のライティングになります。"
-msgstr "Set whether to smoothly change the lit color and shade color around the threshold value in `Shade Shift`."
-"When the value is `0`, it becomes realistically smooth like a general Lambert model."
-"When the value is `1`, it becomes animation-style lighting. The lit color and shade color change rapidly around the threshold value."
+msgstr ""
+"Set whether to smoothly change the lit color and shade color around the "
+"threshold value in `Shade Shift`.When the value is `0`, it becomes "
+"realistically smooth like a general Lambert model.When the value is `1`, "
+"it becomes animation-style lighting. The lit color and shade color change"
+" rapidly around the threshold value."
 
 #: ../../univrm/shaders/shader_mtoon.md:99
 msgid "Shadow Receive Multiplier"
@@ -291,7 +313,9 @@ msgstr ""
 
 #: ../../univrm/shaders/shader_mtoon.md:100
 msgid "セルフシャドウや落影の影響度を設定します。 `0` のときは影響を受けません。 `1` のときは影響を受けます。"
-msgstr "Set the influence of the self-shadow and shadow. `0`: Not affected. `1`: Affected."
+msgstr ""
+"Set the influence of the self-shadow and shadow. `0`: Not affected. `1`: "
+"Affected."
 
 #: ../../univrm/shaders/shader_mtoon.md:104
 msgid "LightColor Attenuation"
@@ -301,9 +325,10 @@ msgstr ""
 msgid ""
 "光源の色の影響度を設定します。 `0` のときは光源の色の影響を受けます。 `1` "
 "のときは光源の色の影響を無効化し、光源の色の輝度だけを反映します。"
-msgstr "Set the influence of the light source color."
-"`0`: Affected by the light source color."
-"`1`: Not affected by the light source color. It only reflects the luminance of the light source color."
+msgstr ""
+"Set the influence of the light source color.`0`: Affected by the light "
+"source color.`1`: Not affected by the light source color. It only "
+"reflects the luminance of the light source color."
 
 #: ../../univrm/shaders/shader_mtoon.md:109
 msgid "Rim Additive"
@@ -311,7 +336,9 @@ msgstr ""
 
 #: ../../univrm/shaders/shader_mtoon.md:110
 msgid "カメラと法線の関係による追加光源を表現します。 一般にはスフィアマップや MatCap と呼ばれます。"
-msgstr "Display additional light sources based on the relationship between the camera and the normal.In general it is called sphere map or matcap."
+msgstr ""
+"Display additional light sources based on the relationship between the "
+"camera and the normal.In general it is called sphere map or matcap."
 
 #: ../../univrm/shaders/shader_mtoon.md:113
 msgid "Emission"
@@ -367,7 +394,9 @@ msgstr ""
 
 #: ../../univrm/shaders/shader_mtoon.md:132
 msgid "輪郭線の幅を設定します。 `Width Mode` が `WorldCoordinates` のとき単位はメートルです。"
-msgstr "Set the width of the outline. The unit of distance is meter when `Width Mode->WorldCoordinates` is chosen."
+msgstr ""
+"Set the width of the outline. The unit of distance is meter when `Width "
+"Mode->WorldCoordinates` is chosen."
 
 #: ../../univrm/shaders/shader_mtoon.md:135
 msgid "Color Mode"
@@ -400,4 +429,7 @@ msgstr ""
 #: ../../univrm/shaders/shader_mtoon.md:145
 msgid "`Color Mode` が `MixedLighting` のとき、その乗算係数を設定します。"
 msgstr "Set the multiplier coefficient when `Color Mode->MixedLighting` is chosen."
+
+#~ msgid "{}"
+#~ msgstr ""
 

@@ -28,12 +28,12 @@ VRM 1.0 は複数の部品にわかれて策定が進んでいます。
 ### VRM 1.0 仕様
 文書 および JSON Schema を用いて定義された VRM 1.0 の仕様です。
 
-https://github.com/vrm-c/vrm-specification/tree/master/specification
+<https://github.com/vrm-c/vrm-specification/tree/master/specification>
 
 ### VRMパブリック・ライセンス文書 1.0
 アバターの人格に関する許諾を考慮した、VRM 独自のライセンスです。
 
-[VRMパブリック・ライセンス文書 1.0](/licenses/1.0/_index)
+[VRMパブリック・ライセンス文書 1.0](https://vrm.dev/licenses/1.0/)
 
 ## 実装
 公式の実装として Unity での実装「UniVRM」が存在します。

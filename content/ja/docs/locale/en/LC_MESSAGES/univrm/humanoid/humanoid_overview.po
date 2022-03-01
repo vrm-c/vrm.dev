@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-
-#: ../../univrm/humanoid/humanoid_overview.md:1
-msgid "{}"
-msgstr ""
 
 #: ../../univrm/humanoid/humanoid_overview.md:13
 msgid "ヒューマノイド概要"
@@ -31,7 +27,9 @@ msgstr "Overview"
 
 #: ../../univrm/humanoid/humanoid_overview.md:17
 msgid "VRMのヒューマノイドは、主にモーションキャプチャーの Forward kinematics のモーションを受けられることを基準に決めました。"
-msgstr "VRM humanoid is compatible with the motion of MotionCapture's FK (Forward Kinematics)."
+msgstr ""
+"VRM humanoid is compatible with the motion of MotionCapture's FK (Forward"
+" Kinematics)."
 
 #: ../../univrm/humanoid/humanoid_overview.md:19
 msgid "１フレームのモーション(ポーズ)は以下の情報で表される想定です。"
@@ -47,11 +45,16 @@ msgstr "The Rotation for each bone"
 
 #: ../../univrm/humanoid/humanoid_overview.md:24
 msgid "ある Gltf Scene (Unity Hierarhcy) がこのデータを受けて同じポーズを再現するには以下の条件必要です。"
-msgstr "To reproduce the same pose in the Unity Scene (transferring data to a GameObject containing humanoid structure), the following conditions need to be satisfied: "
+msgstr ""
+"To reproduce the same pose in the Unity Scene (transferring data to a "
+"GameObject containing humanoid structure), the following conditions need "
+"to be satisfied: "
 
 #: ../../univrm/humanoid/humanoid_overview.md:26
 msgid "Gltf Node (Unity GameObject) とボーン(hips, spine, chest...)の対応が分かっている"
-msgstr "Each bone (hips, spine, chest...) corresponds to its humanoid skeleton in GLTF Node (Unity GameObject) "
+msgstr ""
+"Each bone (hips, spine, chest...) corresponds to its humanoid skeleton in"
+" GLTF Node (Unity GameObject) "
 
 #: ../../univrm/humanoid/humanoid_overview.md:27
 msgid "ボーンの親子関係が決まっている"
@@ -70,7 +73,9 @@ msgstr "Note"
 msgid ""
 "細かく言えば、ボーンの長さが違うと同じポーズになりません。 これを解決する技術を、リターゲットと言いますが VRM では特に指定していません。 "
 "例えば、股-膝-足首-踵 の比率が違うと地面に対してすべります。"
-msgstr "If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose cannot be reproduced. "
+msgstr ""
+"If the ratio (e.g. crotch - knee - ankle) is uncommon, the same pose "
+"cannot be reproduced. "
 
 #: ../../univrm/humanoid/humanoid_overview.md:41
 msgid "Unity の HumanoidAvatar を元に決めたのでだいたい同じです。"
@@ -82,11 +87,15 @@ msgstr ""
 
 #: ../../univrm/humanoid/humanoid_overview.md:45
 msgid "さらに、プログラムでの扱いを簡単にするために"
-msgstr "In addition, to make it easier to handle in the program, VRM Humanoid has the following features: "
+msgstr ""
+"In addition, to make it easier to handle in the program, VRM Humanoid has"
+" the following features: "
 
 #: ../../univrm/humanoid/humanoid_overview.md:47
 msgid "すべての Gltf Node (Unity GameObject) の回転を0にしたときに初期ポーズになる"
-msgstr "For the initial pose, all the Gltf Nodes (Unity GameObject) have no rotation"
+msgstr ""
+"For the initial pose, all the Gltf Nodes (Unity GameObject) have no "
+"rotation"
 
 #: ../../univrm/humanoid/humanoid_overview.md:48
 msgid "スケールは変化しない"
@@ -98,7 +107,10 @@ msgstr "."
 
 #: ../../univrm/humanoid/humanoid_overview.md:2
 msgid "特にスケールは難しい問題で、スケール中心が原点以外、負のスケール、XYZ別々のスケールなどを考慮したプログラム書くのは大変な負担となります。"
-msgstr "In particular, scaling is a difficult problem, and creating a program that considers non-origin scales, negative scales, and individual XYZ scales can be a heavy burden."
+msgstr ""
+"In particular, scaling is a difficult problem, and creating a program "
+"that considers non-origin scales, negative scales, and individual XYZ "
+"scales can be a heavy burden."
 
 #: ../../univrm/humanoid/humanoid_overview.md:61
 msgid "T-Pose"
@@ -126,7 +138,9 @@ msgstr "and it is parallel to the ground along x axis"
 
 #: ../../univrm/humanoid/humanoid_overview.md:70
 msgid "親指は水平でXZ平面(上から見て)45度"
-msgstr "Thumb is parallel to the ground half way 45 degrees between x and z axis (the perspective view from the top) "
+msgstr ""
+"Thumb is parallel to the ground half way 45 degrees between x and z axis "
+"(the perspective view from the top) "
 
 #: ../../univrm/humanoid/humanoid_overview.md:72
 msgid "Unityのヒューマノイド"
@@ -139,9 +153,13 @@ msgid ""
 "以外のデータから Humanoid Avatar のあるモデルを作れません。 ただし、Program から Humanoid Avatar "
 "を作成する関数はあるので、 UniVRMは Humanoid Avatar を作成できます。 [humanoid "
 "component](/univrm/humanoid/meshutility_humanoid)"
-msgstr "In Unity, there is an object called `Avatar`, which can be used to set up the model in humanoid mode."
-"Since the Humanoid Avatar settings are part of `fbx importer`, basically the model with Humanoid Avatar from data other than fbx cannot be created."
-"However, we can still create the Humanoid Avatar via program. See [humanoid component](/univrm/humanoid/meshutility_humanoid)."
+msgstr ""
+"In Unity, there is an object called `Avatar`, which can be used to set up"
+" the model in humanoid mode.Since the Humanoid Avatar settings are part "
+"of `fbx importer`, basically the model with Humanoid Avatar from data "
+"other than fbx cannot be created.However, we can still create the "
+"Humanoid Avatar via program. See [humanoid "
+"component](/univrm/humanoid/meshutility_humanoid)."
 
 #: ../../univrm/humanoid/humanoid_overview.md:81
 msgid "互換性のあるBVH"
@@ -177,7 +195,9 @@ msgstr "."
 
 #: ../../univrm/humanoid/humanoid_overview.md:96
 msgid "対象となるノードはスキニング(GLTFのskinおよびjoint、UnityのSkinnedMeshRendererなど)とは無関係に選択できる"
-msgstr "Target nodes not containing skinning (GLTF skin, joint and Unity SkinnedMeshRenderer, etc.) can be selected"
+msgstr ""
+"Target nodes not containing skinning (GLTF skin, joint and Unity "
+"SkinnedMeshRenderer, etc.) can be selected"
 
 #: ../../univrm/humanoid/humanoid_overview.md:97
 msgid "必須のボーンがすべて含まれている"
@@ -185,11 +205,15 @@ msgstr "All required bones must be included"
 
 #: ../../univrm/humanoid/humanoid_overview.md:98
 msgid "ボーンの親子関係がヒューマノイドの定義を守っている(LowerLegの最初に見つかる祖先ボーンがUpperLegであるなど)"
-msgstr "The Bone's parent-child relationship follows the humanoid definition (The first ancestor bone found in LowerLeg is UpperLeg etc.)"
+msgstr ""
+"The Bone's parent-child relationship follows the humanoid definition (The"
+" first ancestor bone found in LowerLeg is UpperLeg etc.)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:99
 msgid "hipsをrootに以下の親子関係。カッコは必須でないボーン"
-msgstr "The parent-child relationships for hips as root are described below. Bones that are in parentheses are non-required bones (optional):"
+msgstr ""
+"The parent-child relationships for hips as root are described below. "
+"Bones that are in parentheses are non-required bones (optional):"
 
 #: ../../univrm/humanoid/humanoid_overview.md:100
 msgid "hips - spine - chest - (upper chest) - neck - head"
@@ -207,13 +231,17 @@ msgstr "[Branch] from head - right - (eye)"
 msgid ""
 "chestまたはupper chestからleft - (shoulder) - upper arm - lower arm - hand - "
 "(fingers)"
-msgstr "[Branch] from chest or upper chest - left - (shoulder) - upper arm - lower arm - hand - (fingers)"
+msgstr ""
+"[Branch] from chest or upper chest - left - (shoulder) - upper arm - "
+"lower arm - hand - (fingers)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:104
 msgid ""
 "chestまたはupper chestからright - (shoulder) - upper arm - lower arm - hand - "
 "(fingers)"
-msgstr "from chest or upper chest - right - (shoulder) - upper arm - lower arm - hand - (fingers)"
+msgstr ""
+"from chest or upper chest - right - (shoulder) - upper arm - lower arm - "
+"hand - (fingers)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:105
 msgid "hipsからleft - upper leg - lower leg - foot - (toes)"
@@ -225,11 +253,16 @@ msgstr "[Branch] from hips - right - upper leg - lower leg - foot - (toes)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:108
 msgid "間にヒューマノイドに関係ないノードが入ることは許す(LowerLegの親がemptyでその親がUpperLegであるなど)"
-msgstr "Inserting non-bone objects between humanoid bones is allowable (e.g., LowerLeg’s parent is a Cube GameObject and this Cube’s parent is UpperLeg, etc.)"
+msgstr ""
+"Inserting non-bone objects between humanoid bones is allowable (e.g., "
+"LowerLeg’s parent is a Cube GameObject and this Cube’s parent is "
+"UpperLeg, etc.)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:109
 msgid "必須でないボーンは飛ばしてよい(UpperArmの親がshoulderじゃなくてchestなど)"
-msgstr "Non-required bones can be skipped (UpperArm's parent can be chest instead of shoulder)"
+msgstr ""
+"Non-required bones can be skipped (UpperArm's parent can be chest instead"
+" of shoulder)"
 
 #: ../../univrm/humanoid/humanoid_overview.md:111
 msgid "関連イシュー"
@@ -252,3 +285,7 @@ msgstr ""
 #: ../../univrm/humanoid/humanoid_overview.md:118
 msgid "[BlenderからUnityのHumanoid互換でfbxをエクスポートする](https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
 msgstr ""
+
+#~ msgid "{}"
+#~ msgstr ""
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 19:18+0900\n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../gltf/glb_export.md:1
-msgid "{}"
-msgstr ""
-
 #: ../../gltf/glb_export.md:10
 msgid "Glbエクスポート"
-msgstr ""
+msgstr "GLB Export"
 
 #: ../../gltf/glb_export.md:12
 msgid "`v0.68.0` 以降"
 msgstr ""
+"Starting with `v0.68.0`, the `glb` file can be create with `UniGLTF` "
+"module."
 
 #: ../../gltf/glb_export.md:14 ../../gltf/glb_export.md:48
 msgid "UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。 以下、手順を説明します。"
-msgstr ""
+msgstr "The procedure for creating a glb file is described as follows:"
 
 #: ../../gltf/glb_export.md:17
 msgid "1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます"
-msgstr ""
+msgstr "1: Open `UniGLTF/Export UniGLTF-2.X.Y`"
 
 #: ../../gltf/glb_export.md:19
 msgid "![image](/_static/images/unigltf/glb_export_dialog.jpg)"
@@ -48,45 +46,60 @@ msgstr ""
 
 #: ../../gltf/glb_export.md:21
 msgid "2. `ExportRoot` に対象の GameIObject をセットしてください"
-msgstr ""
+msgstr "2: Assign a GameObject to `ExportRoot`"
 
 #: ../../gltf/glb_export.md:23
 msgid "ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。"
 msgstr ""
+"From the Hierarchy window, drag and drop a GameObject into the "
+"`ExportRoot` field, or you can click ◎ button on the right of the "
+"`ExportRoot` field and select a GameObject from the dropdown list."
 
 #: ../../gltf/glb_export.md:25 ../../gltf/glb_export.md:56
 msgid "一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。"
 msgstr ""
+"Note that the root (topmost parent) of a GameObject you select should not"
+" be a `GLTF` node, but a node stored in the scene with default position, "
+"rotation and scale."
 
 #: ../../gltf/glb_export.md:27
 msgid "3. `Export` を押す"
-msgstr ""
+msgstr "3: Click `Export` button"
 
 #: ../../gltf/glb_export.md:29
 msgid "ファイル保存ダイアログが表示されるので出力先を指定してください。"
 msgstr ""
+"A SaveFileDialog will pop up, choose a directory and export the "
+"GameObject as GLB."
 
 #: ../../gltf/glb_export.md:31 ../../gltf/glb_export.md:69
 msgid "Glbのエクスポート対象になるコンポーネント"
-msgstr ""
+msgstr "Exportable Components for GLB"
 
 #: ../../gltf/glb_export.md:33 ../../gltf/glb_export.md:71
 msgid "`MeshRenderer + MeshFilter` (一番親以外の子供につけてください)"
 msgstr ""
+"`MeshRenderer + MeshFilter` (Attach them to the child other than the "
+"topmost parent)"
 
 #: ../../gltf/glb_export.md:34 ../../gltf/glb_export.md:72
 msgid "`SkinnedMeshRenderer` (一番親以外の子供につけてください)"
 msgstr ""
+"`SkinnedMeshRenderer` (Attach it to the child other than the topmost "
+"parent)"
 
 #: ../../gltf/glb_export.md:35 ../../gltf/glb_export.md:73
 msgid ""
 "`Animation` "
 "(一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)"
 msgstr ""
+"`Animation` (Attach it to the topmost parent. For rotation, input the "
+"keyframe of Quaternion. Translation, rotation and scaling are supported. "
+"BlendShape is not supported yet)"
 
 #: ../../gltf/glb_export.md:37 ../../gltf/glb_export.md:75
 msgid "対応しているShader"
-msgstr ""
+msgstr "Available Shader"
 
 #: ../../gltf/glb_export.md:39
 msgid "`Standard`"
@@ -100,27 +113,33 @@ msgstr ""
 
 #: ../../gltf/glb_export.md:44
 msgid "`v0.68.0` より前"
-msgstr ""
+msgstr "Before `v0.68.0`"
 
 #: ../../gltf/glb_export.md:46
 msgid "手順"
-msgstr ""
+msgstr "Procedure"
 
 #: ../../gltf/glb_export.md:51
 msgid "1. 空のシーンを用意します。"
-msgstr ""
+msgstr "1: Create an empty scene."
 
 #: ../../gltf/glb_export.md:54
 msgid "2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。"
 msgstr ""
+"2: Create an empty GameObject (topmost parent). No translation, rotation "
+"and scale."
 
 #: ../../gltf/glb_export.md:58
 msgid "3. エクスポートしたいオブジェクトをemptyの子にします。"
 msgstr ""
+"3: Select an object you want to export and add it to the created parent "
+"GameObject."
 
 #: ../../gltf/glb_export.md:59
 msgid "(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)"
 msgstr ""
+"(In this example a Cube object is created. You can add arbitrary objects "
+"such as Prefab.)"
 
 #: ../../gltf/glb_export.md:61
 msgid "![image](/_static/images/wiki/root_cube.png)"
@@ -129,6 +148,8 @@ msgstr ""
 #: ../../gltf/glb_export.md:63
 msgid "4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。"
 msgstr ""
+"4: Select the topmost parent GameObject and click `Export` "
+"(`UniGLTF-x.xx`->`Export`)."
 
 #: ../../gltf/glb_export.md:65
 msgid "![image](/_static/images/wiki/menu_unigltf_export.png)"
@@ -137,10 +158,17 @@ msgstr ""
 #: ../../gltf/glb_export.md:67
 msgid "5. ファイル名を選択して `glb` ファイルを書き出せば完了です。"
 msgstr ""
+"5: Enter the file name and the selected GameObject can be exported as the"
+" `glb` file. "
 
 #: ../../gltf/glb_export.md:77
 msgid ""
 "`Standard` もしくは `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, "
 "`Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`"
 msgstr ""
+"`Standard`, `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, "
+"`Unlit/Transparent Cutout` and `UniGLTF/UniUnlit`"
+
+#~ msgid "{}"
+#~ msgstr ""
 
