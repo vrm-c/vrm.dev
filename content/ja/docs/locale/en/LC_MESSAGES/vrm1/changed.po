@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-01 21:20+0900\n"
+"POT-Creation-Date: 2022-03-07 19:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../vrm1/changed.md:6
 msgid "VRM-1.0の変更点"
-msgstr ""
+msgstr "VRM-1.0 Changes"
 
 #: ../../vrm1/changed.md:8
 msgid "VRM-0.X からの変更点"
-msgstr ""
+msgstr "Changes from VRM-0.X"
 
 #: ../../vrm1/changed.md:10
 msgid "glTF: z- forward => z+ forward"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../vrm1/changed.md:18
 msgid "`新規` => `VRMC_materials_hdr_emissiveMultiplier`"
-msgstr ""
+msgstr "`new addition` => `VRMC_materials_hdr_emissiveMultiplier`"
 
 #: ../../vrm1/changed.md:19
 msgid "VRM0: mtoon => `VRMC_materials_mtoon`"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../vrm1/changed.md:20
 msgid "`新規` => `VRMC_node_constraint`"
-msgstr ""
+msgstr "`new addition` => `VRMC_node_constraint`"
 
 #: ../../vrm1/changed.md:22
 msgid "glTF: z+ forward"
@@ -75,13 +75,15 @@ msgstr ""
 
 #: ../../vrm1/changed.md:24
 msgid "モデルは Z+ 方向が前方になるように格納します。"
-msgstr ""
+msgstr "The model stores the Z+ direction forward."
 
-#: ../../vrm1/changed.md ../../vrm1/changed.md:31 ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md ../../vrm1/changed.md:31 ../../vrm1/changed.md:55
+#: ../../vrm1/changed.md:104
 msgid "VRM0"
 msgstr ""
 
-#: ../../vrm1/changed.md ../../vrm1/changed.md:31 ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md ../../vrm1/changed.md:31 ../../vrm1/changed.md:55
+#: ../../vrm1/changed.md:104
 msgid "VRM1"
 msgstr ""
 
@@ -109,385 +111,437 @@ msgstr ""
 msgid "x-"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:31 ../../vrm1/changed.md:55
 msgid "実装"
-msgstr ""
+msgstr "implementation"
 
 #: ../../vrm1/changed.md:3
 msgid "Y軸 180 度の回転になります。"
-msgstr ""
+msgstr "Y-axis 180-degree rotation."
 
-#: ../../vrm1/changed.md:43 ../../vrm1/changed.md:73 ../../vrm1/changed.md:175
+#: ../../vrm1/changed.md:43 ../../vrm1/changed.md:69 ../../vrm1/changed.md:171
 msgid "`TODO`"
 msgstr ""
 
-#: ../../vrm1/changed.md:71
+#: ../../vrm1/changed.md:45
+msgid "glTF: divided vertex buffer"
+msgstr ""
+
+#: ../../vrm1/changed.md:47
+msgid "bufferView の primitive 間での共有をやめます。"
+msgstr "Stop sharing bufferView between primitives."
+
+#: ../../vrm1/changed.md:31
+msgid "bufferView"
+msgstr ""
+
+#: ../../vrm1/changed.md:31
+msgid "shared"
+msgstr ""
+
+#: ../../vrm1/changed.md:31
+msgid "divided"
+msgstr ""
+
+#: ../../vrm1/changed.md:31
+msgid "利点"
+msgstr "Pros"
+
+#: ../../vrm1/changed.md:31
+msgid "GameEngine メモリレイアウトに近いので変換が少ない"
+msgstr "Less conversions due to close to GameEngine memory"
+
+#: ../../vrm1/changed.md:31
+msgid "一般的な glTF ローダーでロードできる"
+msgstr "Compatible with generic glTF loaders"
+
+#: ../../vrm1/changed.md:31
+msgid "欠点"
+msgstr "Cons"
+
+#: ../../vrm1/changed.md:31
+msgid "UniVRM 以外の glTF ローダーでメモリ使用量が爆発する可能性(ロードできるが頂点バッファに未使用領域ができてしまう)"
+msgstr "Non-UniVRM glTF loaders can cause memory usage to explode (can be loaded but unused space in the vertex buffer)"
+
+#: ../../vrm1/changed.md:31
+msgid "export 時に頂点の増加・並び順の変化がありえる。import 時に連結する手間。morphTarget の扱いが煩雑"
+msgstr "There can be an increase in vertices and a change in order at export. Effort to concatenated during import. Clutter handling morphTarget"
+
+#: ../../vrm1/changed.md:3
+msgid "`Vrm` 専用の共有頂点ローダーをやめて、 一般的な `glTF` ローダーで問題ありません。"
+msgstr "Stop the 'Vrm' dedicated shared vertex loader and use the general 'glTF' loader."
+
+#: ../../vrm1/changed.md:67
 msgid "VRMC_vrm: meta"
 msgstr ""
 
-#: ../../vrm1/changed.md:75
+#: ../../vrm1/changed.md:71
 msgid "VRMC_vrm: humanoid"
 msgstr ""
 
-#: ../../vrm1/changed.md:77
+#: ../../vrm1/changed.md:73
 msgid "必須ボーンの見直し。"
-msgstr ""
+msgstr "Review of required bones."
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "neck"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "必須"
-msgstr ""
+msgstr "required"
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "head"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "hips"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "spine"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "chest"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right UpperArm"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right LowerArm"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right Hand"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right UpperLeg"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right LowerLeg"
 msgstr ""
 
-#: ../../vrm1/changed.md:31
+#: ../../vrm1/changed.md:55
 msgid "left/right Foot"
 msgstr ""
 
-#: ../../vrm1/changed.md:93
+#: ../../vrm1/changed.md:89
 msgid "以下の項目が廃止になります(`VRMHumanoidDescription` に記録されていた)。"
 msgstr ""
+"The following items will be removed (recorded in "
+"'VRMHumanoidDescription'):"
 
-#: ../../vrm1/changed.md:95
+#: ../../vrm1/changed.md:91
 msgid "armStretch"
 msgstr ""
 
-#: ../../vrm1/changed.md:96
+#: ../../vrm1/changed.md:92
 msgid "legStretch"
 msgstr ""
 
-#: ../../vrm1/changed.md:97
+#: ../../vrm1/changed.md:93
 msgid "upperArmTwist"
 msgstr ""
 
-#: ../../vrm1/changed.md:98
+#: ../../vrm1/changed.md:94
 msgid "lowerArmTwist"
 msgstr ""
 
-#: ../../vrm1/changed.md:99
+#: ../../vrm1/changed.md:95
 msgid "upperLegTwist"
 msgstr ""
 
-#: ../../vrm1/changed.md:100
+#: ../../vrm1/changed.md:96
 msgid "lowerLegTwist"
 msgstr ""
 
-#: ../../vrm1/changed.md:101
+#: ../../vrm1/changed.md:97
 msgid "feetSpacing"
 msgstr ""
 
-#: ../../vrm1/changed.md:102
+#: ../../vrm1/changed.md:98
 msgid "hasTranslationDoF"
 msgstr ""
 
-#: ../../vrm1/changed.md:104
+#: ../../vrm1/changed.md:100
 msgid "VRMC_vrm: expression"
 msgstr ""
 
-#: ../../vrm1/changed.md:106
+#: ../../vrm1/changed.md:102
 msgid "BlendShapeは、Expression に名称を変更します。"
-msgstr ""
+msgstr "Rename BlendShape to Expression."
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "BlendShape"
 msgstr ""
 
 #: ../../vrm1/changed.md:3
 msgid "BlendShapeは Unity の MorphTarget 機能のことで、区別が付きにくかったためです。"
-msgstr ""
+msgstr "BlendShape is Unity's MorphTarget feature, which is confusing."
 
-#: ../../vrm1/changed.md:119
+#: ../../vrm1/changed.md:115
 msgid "preset の見直し"
-msgstr ""
+msgstr "Review of expression preset."
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "喜"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "joy(joyとfunが曖昧)"
-msgstr ""
+msgstr "joy(joy and fun are ambiguous)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "happy"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "怒"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "angry"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "哀"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "sorrow(文語)"
-msgstr ""
+msgstr "sorrow"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "sad"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "楽"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "fun(joyとfunが曖昧)"
-msgstr ""
+msgstr "fun(joy and fun are ambiguous)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "relaxed"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "驚"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "(新規追加)"
-msgstr ""
+msgstr "(new addition)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "surprised"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "あ"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "a(非日本語で自然なように変更)"
-msgstr ""
+msgstr "a(Changed to be natural in non-Japanese)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "aa"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "い"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "i(非日本語で自然なように変更)"
-msgstr ""
+msgstr "i(Changed to be natural in non-Japanese)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "ih"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "う"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "u(非日本語で自然なように変更)"
-msgstr ""
+msgstr "u(Changed to be natural in non-Japanese)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "ou"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "え"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "e(非日本語で自然なように変更)"
-msgstr ""
+msgstr "e(Changed to be natural in non-Japanese)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "ee"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "お"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "o(非日本語で自然なように変更)"
-msgstr ""
+msgstr "o(Changed to be natural in non-Japanese)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "oh"
 msgstr ""
 
-#: ../../vrm1/changed.md:134
+#: ../../vrm1/changed.md:130
 msgid "overrideMouse, overrideLipSync, overrideBlink 設定の追加"
-msgstr ""
+msgstr "Add overrideMouse, overrideLipSync and overrideBlink."
 
-#: ../../vrm1/changed.md:135
+#: ../../vrm1/changed.md:131
 msgid "VRM0 の materialBind から MaterialColorBind と TextureTransformBind に整理"
 msgstr ""
+"Separate VRM0 materialBind from MaterialColorBind and "
+"TextureTransformBind."
 
-#: ../../vrm1/changed.md:137
+#: ../../vrm1/changed.md:133
 msgid "VRMC_vrm: lookat"
 msgstr ""
 
-#: ../../vrm1/changed.md:139
+#: ../../vrm1/changed.md:135
 msgid "`degreemap.curve` が廃止になります"
-msgstr ""
+msgstr "Remove `degreemap.curve`."
 
-#: ../../vrm1/changed.md:141
+#: ../../vrm1/changed.md:137
 msgid "VRMC_vrm: firstperson"
 msgstr ""
 
-#: ../../vrm1/changed.md:143
+#: ../../vrm1/changed.md:139
 msgid "`firstPersonBone` は廃止になり、`Head` 固定になります"
-msgstr ""
+msgstr "Remove `firstPersonBone` and fixed to `Head`."
 
-#: ../../vrm1/changed.md:144
+#: ../../vrm1/changed.md:140
 msgid "`firstPersonBoneOffset` は、`lookAt.offsetFromHeadBone` になります"
-msgstr ""
+msgstr "`firstPersonBoneOffset` is changed to `lookAt.offsetFromHeadBone`."
 
-#: ../../vrm1/changed.md:146
+#: ../../vrm1/changed.md:142
 msgid "VRMC_springBone"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "設定単位"
-msgstr ""
+msgstr "configuration unit"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "房"
-msgstr ""
+msgstr "Spring"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "節"
-msgstr ""
+msgstr "Joint"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "子"
-msgstr ""
+msgstr "child"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "children[0]"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "children のいずれか"
-msgstr ""
+msgstr "One of children"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "末端"
-msgstr ""
+msgstr "leaf"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "7cm の遠さに 自動で追加"
-msgstr ""
+msgstr "Automatically add 7cm distance"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "追加しない"
-msgstr ""
+msgstr "Not add"
+
+#: ../../vrm1/changed.md:150
+msgid "拡張を分離 => 独立した `VRMC_springBone` 拡張"
+msgstr "Separate to independent extension `VRMC_springBone`"
+
+#: ../../vrm1/changed.md:151
+msgid "Collider 形状に Capsule を追加"
+msgstr "Add `capsule shape` to collider."
+
+#: ../../vrm1/changed.md:152
+msgid "Unity座標系の混在を修正"
+msgstr "Fixed mixing of Unity coordinate systems."
 
 #: ../../vrm1/changed.md:154
-msgid "拡張を分離 => 独立した `VRMC_springBone` 拡張"
-msgstr ""
-
-#: ../../vrm1/changed.md:155
-msgid "Collider 形状に Capsule を追加"
-msgstr ""
-
-#: ../../vrm1/changed.md:156
-msgid "Unity座標系の混在を修正"
-msgstr ""
-
-#: ../../vrm1/changed.md:158
 msgid "VRMC_materials_hdr_emissiveMultiplier"
 msgstr ""
 
-#: ../../vrm1/changed.md:160
+#: ../../vrm1/changed.md:156
 msgid "エミッションによる発光表現です。"
-msgstr ""
+msgstr "In glTF, the emissiveFactor(float3) value range is [0.0, 1.0]."
 
-#: ../../vrm1/changed.md:162
+#: ../../vrm1/changed.md:158
 msgid ""
 "glTF では emissiveFactor(float3) の値域が [0.0, 1.0] です。 これに係数を追加することで、1.0 "
 "を越える値を表せるようにします。"
-msgstr ""
+msgstr "Add a factor to this so that it can represent values beyond 1.0."
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "mtoon の emissiveFactor"
 msgstr ""
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "独自に格納していた(0, 1 制限が無い)"
-msgstr ""
+msgstr "stored in extension (0, 1 no limit)"
 
-#: ../../vrm1/changed.md:108
+#: ../../vrm1/changed.md:104
 msgid "gltf material の emissiveFactor に格納(0, 1 制限がある)"
-msgstr ""
+msgstr "material's emissiveFactor(The range is limited to 0, 1)"
 
-#: ../../vrm1/changed.md:169
+#: ../../vrm1/changed.md:165
 msgid "gltf-2.0 の標準マテリアル(PBR), VRMC_materials_mtoon から利用します。"
-msgstr ""
+msgstr "Available from gltf-2.0 standard materials (PBR), VRMC_materials_mtoon."
 
-#: ../../vrm1/changed.md:171
+#: ../../vrm1/changed.md:167
 msgid "VRMC_materials_mtoon"
 msgstr ""
 
-#: ../../vrm1/changed.md:173
+#: ../../vrm1/changed.md:169
 msgid "拡張を分離 => 独立した `VRMC_materials_mtoon` 拡張"
-msgstr ""
+msgstr "Separate to independent extension `VRMC_materials_mtoon`."
 
-#: ../../vrm1/changed.md:177
+#: ../../vrm1/changed.md:173
 msgid "VRMC_node_constraint"
 msgstr ""
 
-#: ../../vrm1/changed.md:179
+#: ../../vrm1/changed.md:175
 msgid "`開発中`"
-msgstr ""
+msgstr "`in development`"
 
-#: ../../vrm1/changed.md:181
+#: ../../vrm1/changed.md:177
 msgid "translation"
 msgstr ""
 
-#: ../../vrm1/changed.md:183
+#: ../../vrm1/changed.md:179
 msgid "rotation"
 msgstr ""
 
-#: ../../vrm1/changed.md:185
+#: ../../vrm1/changed.md:181
 msgid "aim"
 msgstr ""
 

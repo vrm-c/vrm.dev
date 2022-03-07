@@ -42,10 +42,6 @@ var vrm1 = new Vector3(-vrm0.x, vrm0.y, -vrm0.z);
 
 `TODO`
 
-
-```
-
-
 ## glTF: divided vertex buffer
 
 bufferView の primitive 間での共有をやめます。
