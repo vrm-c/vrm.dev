@@ -1,7 +1,4 @@
----
-title: "VRMパブリック・ライセンス文書 1.0"
-linkTitle: "ライセンス"
----
+# VRMパブリック・ライセンス文書 1.0
 
 <a href="/licenses/1.0/pdf/jp.pdf" download="VRMパブリック・ライセンス文書 1.0.pdf" target="_blank" rel="noopener">PDF</a>
 

@@ -1,5 +1,10 @@
+import sphinx.config
+import sphinx.application
 import pathlib
 import sys
+import shutil
+import logging
+logger = logging.getLogger(__name__)
 HERE = pathlib.Path(__file__).absolute().parent
 sys.path.append(str(HERE))
 
@@ -70,13 +75,41 @@ html_sidebars = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_logo = "vrm_topheader.png"
-html_extra_path = [
-    'licenses/1.0/pdf/jp.pdf',
-    'licenses/1.0/pdf/en.pdf',
-]
 html_favicon = 'favicon.ico'
 
 # sphinx-intl
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
 language = "ja"
+
+
+def setup(app: sphinx.application.Sphinx):
+    '''
+    https://vrm.dev/licenses/1.0/
+    https://vrm.dev/licenses/1.0/en/
+    https://vrm.dev/licenses/1.0/pdf/jp.pdf
+    https://vrm.dev/licenses/1.0/pdf/en.pdf
+    '''
+
+    #
+    # markdown の差し替え
+    # gettext を使わずに全文差し替えを使うためにビルド前にファイルを入れ替える
+    #
+    def copy_license_md(app: sphinx.application.Sphinx, config: sphinx.config.Config):
+        dst = pathlib.Path(app.confdir) / 'licenses/1.0/index.md'
+        if config.language == 'ja':
+            src = pathlib.Path(app.confdir).parent / \
+                'licenses/ja/1.0/_index.md'
+            if src.read_bytes() != dst.read_bytes():
+                logger.debug(f'copy {src} to {dst}')
+                shutil.copy(src, dst)
+        elif config.language == 'en':
+            src = pathlib.Path(app.confdir).parent / \
+                'licenses/en/1.0/_index.md'
+            if src.read_bytes() != dst.read_bytes():
+                logger.debug(f'copy {src} to {dst}')
+                shutil.copy(src, dst)
+        else:
+            raise RuntimeError(f'unknown language: {config.language}')
+
+    app.connect('config-inited', copy_license_md, priority=800)
