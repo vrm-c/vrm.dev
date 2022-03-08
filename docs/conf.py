@@ -74,6 +74,7 @@ html_extra_path = [
     'licenses/1.0/pdf/jp.pdf',
     'licenses/1.0/pdf/en.pdf',
 ]
+html_favicon = 'favicon.ico'
 
 # sphinx-intl
 locale_dirs = ['locale/']   # path is example but recommended.
