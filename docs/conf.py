@@ -71,8 +71,8 @@ html_sidebars = {
 html_static_path = ['_static']
 html_logo = "vrm_topheader.png"
 html_extra_path = [
-    'licenses/1.0/pdf/jp.pdf'
-    'licenses/1.0/pdf/en.pdf'
+    'licenses/1.0/pdf/jp.pdf',
+    'licenses/1.0/pdf/en.pdf',
 ]
 
 # sphinx-intl
