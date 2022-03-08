@@ -10,7 +10,7 @@ tags: ["unity"]
 * `Unity 2019.4以降` が必要です。
 * [Git client](https://git-scm.com/) のインストールが必要です。
 
-### Unity 向けの git のインストール
+## Unity 向けの git のインストール
 
 Unity Manual [Requirements](https://docs.unity3d.com/Manual/upm-git.html#req) を参照してください。
 
@@ -43,7 +43,7 @@ git version 2.29.2.windows.2
 
 
 
-### UnityPackageManager ウインドウによるインストール
+## UnityPackageManager ウインドウによるインストール
 
 UnityPackageManagerのWindow
 
@@ -73,7 +73,7 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
 
 バージョン番号を変更することで、お好きなバージョンに切り替えることができます。
 
-### packages/manifest.json 直接編集によるインストール
+## packages/manifest.json 直接編集によるインストール
 
 以下の内容を追記してください（[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0)の例)。
 
@@ -88,7 +88,7 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
 }
 ```
 
-## gitの特定コミットを指定する場合
+### gitの特定コミットを指定する場合
 
 `dependencies` に特定のコミットを指定します。
 

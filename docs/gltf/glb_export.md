@@ -14,6 +14,7 @@ tags: ["gltf"]
 UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
 以下、手順を説明します。
 
+## 手順
 ### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
 
 ![image](/_static/images/unigltf/glb_export_dialog.jpg)
