@@ -4,16 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "hugo",
-            "type": "shell",
-            "command": "hugo server -w --disableFastRender -D -F",
-            "isBackground": true,
-            "problemMatcher": []
-        },
-        {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser --port=0",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0",
             "isBackground": true,
             "problemMatcher": []
         },
@@ -38,14 +31,14 @@
         {
             "label": "sphinx-autobuild(en)",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser --port=0 -D=language=en -A=language=en",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0 -D=language=en -A=language=en",
             "isBackground": true,
             "problemMatcher": []
         },
         {
             "label": "sphinx-build",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-build content/ja/docs build -b=dirhtml -E",
+            "command": ".venv/Scripts/sphinx-build docs build -b=dirhtml -E",
             "presentation": {
                 "reveal": "always",
                 "echo": true,

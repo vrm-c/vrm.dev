@@ -16,11 +16,11 @@ jobs:
       - run: sudo apt install gettext
       - run: pip install -r requirements.txt
       - name: sphinx build(ja)
-        working-directory: ./content/ja/docs
-        run: sphinx-build . ../../../public
+        working-directory: ./docs
+        run: sphinx-build . ../public
       - name: sphinx build(en)
-        working-directory: ./content/ja/docs
-        run: sphinx-build . ../../../public/en -D language=en -A language=en
+        working-directory: ./docs
+        run: sphinx-build . ../public/en -D language=en -A language=en
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
