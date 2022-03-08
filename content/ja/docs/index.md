@@ -12,8 +12,6 @@ date: 2018-04-16T16:30:00+09:00
 
 [もっと詳しく](/vrm/vrm_about)
 
-![VRM - humanoid 3d avatar format for VR](/_static/images/vrm/vrm_topheader.png)
-
 ```{toctree}
 :maxdepth: 1
 vrm/index
