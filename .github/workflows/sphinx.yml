@@ -22,8 +22,8 @@ jobs:
         working-directory: ./docs
         run: sphinx-build . ../public/en -D language=en -A language=en
       - run: mkdir -p licenses/1.0/pdf
-      - run: copy docs/_static/licenses/1.0/pdf/jp.pdf licenses/1.0/pdf/jp.pdf
-      - run: copy docs/_static/licenses/1.0/pdf/en.pdf licenses/1.0/pdf/en.pdf
+      - run: cp docs/_static/licenses/1.0/pdf/jp.pdf licenses/1.0/pdf/jp.pdf
+      - run: cp docs/_static/licenses/1.0/pdf/en.pdf licenses/1.0/pdf/en.pdf
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
