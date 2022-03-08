@@ -1,6 +1,6 @@
 # VRM PUBLIC LICENSE 1.0
 
-<a href="/licenses/1.0/pdf/en.pdf" download="VRM Public License 1.0.pdf" target="_blank" rel="noopener">PDF</a>
+<a href="https://vrm.dev/licenses/1.0/pdf/en.pdf" download="VRM Public License 1.0.pdf" target="_blank" rel="noopener">PDF</a>
 
 By exercising the Licensed Rights (as defined below), You (as defined below) accept and agree to be bound by the terms and conditions of this VRM Public License 1.0 (this “<b>Public License</b>”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor (as defined below) grants You such rights in consideration of benefits the Licensor receives from making the Licensed Work Data (as defined below) available under these terms and conditions.
 

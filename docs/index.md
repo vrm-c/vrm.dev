@@ -20,3 +20,10 @@ gltf/index
 vrm1/index
 univrm1/index
 ```
+
+```{toctree}
+:caption: 外部リンク
+ダウンロード <https://github.com/vrm-c/UniVRM/releases>
+技術仕様 <https://github.com/vrm-c/vrm-specification/tree/master/specification>
+VRMコンソーシアム <https://vrm-consortium.org/>
+```
