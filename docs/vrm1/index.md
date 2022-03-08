@@ -42,5 +42,6 @@ VRM 1.0 は複数の部品にわかれて策定が進んでいます。
 
 ```{toctree}
 :maxdepth: 1
+licenses/1.0
 changed
 ```
