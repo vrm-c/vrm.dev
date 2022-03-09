@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-01 21:20+0900\n"
+"POT-Creation-Date: 2022-03-09 16:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,19 +193,15 @@ msgstr ""
 "Click the `gear icon ⚙` on the upper right corner of `VRM First "
 "Person(Script)` inspector and select `Reset` shown as follow:"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:65
-msgid "![firstperson reset](/_static/images/vrm/firstperson_reset.gif)"
-msgstr ""
-
-#: ../../univrm/firstperson/univrm_firstperson.md:65
+#: ../../univrm/firstperson/univrm_firstperson.md:1
 msgid "firstperson reset"
 msgstr ""
 
-#: ../../univrm/firstperson/univrm_firstperson.md:67
+#: ../../univrm/firstperson/univrm_firstperson.md:69
 msgid "Auto による Both と ThirdPersonOnly への自動分割"
 msgstr "Use Auto to split Mesh into Both and ThirdPersonOnly"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:69
+#: ../../univrm/firstperson/univrm_firstperson.md:71
 msgid ""
 "設定をAutoにしておくと、ロード時にメッシュを自動で `Both` と `ThirdPersonOnly` に分離することを指示できます。 "
 "UniVRMでは "
@@ -217,67 +213,66 @@ msgstr ""
 "[VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/en/vrm0/firstperson.html#setuplayermask)"
 " for auto splitting."
 
-#: ../../univrm/firstperson/univrm_firstperson.md:73
+#: ../../univrm/firstperson/univrm_firstperson.md:75
 msgid "分割基準は、"
 msgstr ""
 "For a mesh specified as `Auto`, each vertex will be checked whether it "
 "contains the weight of Head bone (or the child of the Head bone)"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:75
+#: ../../univrm/firstperson/univrm_firstperson.md:77
 msgid "含まれる頂点が `head` か `head` の子孫の weight を持っているか否か"
 msgstr ""
 "Split the mesh into two groups: the first group contains triangles with "
 "HeadBone-related vertices while the second group contains triangles with "
 "the rest of the vertices"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:77
+#: ../../univrm/firstperson/univrm_firstperson.md:79
 msgid "です。 すべて同じ側の場合は分割せずに、`Both` か `ThirdPersonOnly` として扱います。"
 msgstr ""
 "Set the mesh containing the HeadBone-related vertices as "
 "`ThirdPersonOnly`. And another mesh is set as `Both`"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:80
+#: ../../univrm/firstperson/univrm_firstperson.md:82
 msgid "推奨される構成"
 msgstr "Recommended Structure"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:82
+#: ../../univrm/firstperson/univrm_firstperson.md:84
 msgid "あらかじめ、頭と体にモデルを分割しておき"
 msgstr "Split the model into `Head` and `Body`."
 
-#: ../../univrm/firstperson/univrm_firstperson.md:84
+#: ../../univrm/firstperson/univrm_firstperson.md:86
 msgid "頭に `ThirdPersonOnly` を指定"
 msgstr "Specify `ThirdPersonOnly` for `Head`"
 
-#: ../../univrm/firstperson/univrm_firstperson.md:85
+#: ../../univrm/firstperson/univrm_firstperson.md:87
 msgid "体に `Both` を指定"
 msgstr "Specify `Both` for `Body` "
 
-#: ../../univrm/firstperson/univrm_firstperson.md
-msgid "![img](/_static/images/vrm/firstperson.png)"
-msgstr ""
-
-#: ../../univrm/firstperson/univrm_firstperson.md:87
-msgid "img"
-msgstr ""
-
-#: ../../univrm/firstperson/univrm_firstperson.md
+#: ../../univrm/firstperson/univrm_firstperson.md:1
 msgid "立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。"
 msgstr ""
 "Alicia's `Body` is set as `Both`, while the parts related to `Head` are "
 "set as `ThirdPersonOnly`."
 
-#: ../../univrm/firstperson/univrm_firstperson.md
-msgid "![firstperson](/_static/images/vrm/firstperson_runtime.png)"
-msgstr ""
-
-#: ../../univrm/firstperson/univrm_firstperson.md:91
-msgid "firstperson"
-msgstr ""
-
-#: ../../univrm/firstperson/univrm_firstperson.md
+#: ../../univrm/firstperson/univrm_firstperson.md:1
 msgid "動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。"
 msgstr "The meshes with `ThirdPersonOnly` setting are not rendered in FirstPerson."
 
 #~ msgid "{}"
+#~ msgstr ""
+
+#~ msgid "![firstperson reset](/_static/images/vrm/firstperson_reset.gif)"
+#~ msgstr ""
+
+#~ msgid "![img](/_static/images/vrm/firstperson.png)"
+#~ msgstr ""
+
+#~ msgid "img"
+#~ msgstr ""
+
+#~ msgid "![firstperson](/_static/images/vrm/firstperson_runtime.png)"
+#~ msgstr ""
+
+#~ msgid "firstperson"
 #~ msgstr ""
 
