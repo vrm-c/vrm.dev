@@ -24,6 +24,7 @@ UniVRMを使うVRM化作業のながれは以下のようになります：
 
 ところとなります。
 
-| ![vrm workflow](/_static/images/vrm/VRM_changeVRM_jp.png) |
-|-----------------------------------------------------------|
-| **VRMファイルを作るワークフロー**                         |
+```{figure} /_static/images/vrm/VRM_changeVRM_jp.png
+
+**VRMファイルを作るワークフロー**
+```

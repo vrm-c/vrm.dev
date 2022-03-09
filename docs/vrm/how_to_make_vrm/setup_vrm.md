@@ -26,10 +26,13 @@ weight: 3
 
 prefab をシーンに展開します。
 
-![img](/_static/images/vrm/alicia_scene2.png)
+```{figure} /_static/images/vrm/alicia_scene2.png
+```
 
 ## VRM独自の設定を行う
-![img](/_static/images/vrm/vrm_settings.png)
+
+```{figure} /_static/images/vrm/vrm_settings.png
+```
 
 読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目** があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
 **少なくとも、[タイトル・作者・ライセンス情報](/univrm/meta/univrm_meta)** は埋めるようにしてください。 **特にライセンス情報は重要です！**
@@ -47,13 +50,15 @@ prefab をシーンに展開します。
 
 調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから`VRM0` - `Export UniVRM-0.XX`を実行します。
 
-![vrm_menu](/_static/images/vrm/vrm_menu.jpg)
-<br>
+```{figure} /_static/images/vrm/vrm_menu.jpg
+vrm_menu
+```
 
 前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。
 
-![UniVRMExportHumanoid](/_static/images/vrm/UniVRMExportHumanoid.jpg)
-<br>
+```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
+UniVRMExportHumanoid
+```
 
 ```{admonition} Pose Freeze
 :class: note
@@ -68,10 +73,7 @@ prefab をシーンに展開します。
 などの場合に必要です。 `ExportRoot` を再セットすれば自動判定します。
 
 * [BlendShape の Bake](/univrm/blendshape/univrm_bake_blendshape) もあります。
-
-
 ```
-
 
 ### 完成！
 これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/vrm/vrm_applications)に読み込ませてみましょう！
