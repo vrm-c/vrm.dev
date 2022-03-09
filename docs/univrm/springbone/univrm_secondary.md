@@ -16,36 +16,36 @@ VRMをインポートしたとき、揺れモノ関連のコンポーネント�
 * VRMSpringBoneは、名前が```secondary```のノードが自動的に作成されてそこにアタッチされます。
 * VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。
 
-| ![img](/_static/images/vrm/vrm_settings.png)                             |
-|--------------------------------------------------------------------------|
-| VRMSpringBoneが見つからない場合には``secondary``ノードをご確認ください。 |
+```{figure} /_static/images/vrm/vrm_settings.png
+VRMSpringBoneが見つからない場合には``secondary``ノードをご確認ください。
+```
 
 # VRMSpringBone
 尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
 揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。
 
-| ![lookat](/_static/images/vrm/VRMSpringBone.png) |
-|--------------------------------------------------|
-| RootBonesに髪の毛とリボンを設定                  |
+```{figure} /_static/images/vrm/VRMSpringBone.png
+RootBonesに髪の毛とリボンを設定
+```
 
 これだけで、指定したボーンが動きに合わせて揺れます。
 
 # [オプション]VRMSpringBoneColliderGroup(当たり判定)
 揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。
 
-| ![collider](/_static/images/vrm/collider.png)          |
-|--------------------------------------------------------|
-| headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定 |
+```{figure} /_static/images/vrm/collider.png
+headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定
+```
 
 当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。
 
-| ![set_collider](/_static/images/vrm/set_collider.png)                              |
-|------------------------------------------------------------------------------------|
-| headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定 |
+```{figure} /_static/images/vrm/set_collider.png
+headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定
+```
 
-| ![gizmo](/_static/images/vrm/spring_gizmo.png) |
-|-----------------------------------------------|
-| 動作時のGizmo。                               |
+```{figure} /_static/images/vrm/spring_gizmo.png
+動作時のGizmo。
+```
 
 ## ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます
 VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。

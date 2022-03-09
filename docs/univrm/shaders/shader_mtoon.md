@@ -14,9 +14,11 @@ tags: ["unity"]
 MToon は日本のアニメ的表現をすることを目標としています。
 主色 (Lit Color) と陰色 (Shade Color) の 2 色を、Lighting パラメータや光源環境に応じて混合することでそれを実現します。
 
-| ![alicia MToon](/_static/images/vrm/mtoon_about.png) |
-|------------------------------------------------------|
-| MToon を適用したニコニ立体ちゃん                     |
+```{figure} /_static/images/vrm/mtoon_about.png
+:name: alicia MToon
+
+MToon を適用したニコニ立体ちゃん
+```
 
 ## 手早く設定したい人向け
 ### 共通項目
@@ -40,14 +42,19 @@ MToon は日本のアニメ的表現をすることを目標としています�
 ## 準備
 目的のマテリアルを選択し、シェーダを `VRM/MToon` に変更します。
 
-| ![select MToon](/_static/images/vrm/set_mtoon.png) |
-|----------------------------------------------------|
-| Material の Shader を VRM/MToon に変更.            |
+```{figure} /_static/images/vrm/set_mtoon.png
+:name: select MToon
+
+Material の Shader を VRM/MToon に変更.
+```
 
 ## Rendering
-| ![MToon Rendering](/_static/images/vrm/mtoon_inspector_rendering.png) |
-|-----------------------------------------------------------------------|
-| Rendering Inspector に含まれる項目.                                   |
+
+```{figure} /_static/images/vrm/mtoon_inspector_rendering.png
+:name: MToon Rendering
+
+Rendering Inspector に含まれる項目.
+```
 
 Rendering 項目では主色と影色、および描画方法を設定します。
 

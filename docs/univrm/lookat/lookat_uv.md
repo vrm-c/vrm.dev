@@ -14,11 +14,13 @@ VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを�
 
 `Inspector -> Add Component -> VRMLookAtBlendShapeApplyer`.
 
-![image](/_static/images/vrm/add_vrm_lookat_blendshape.jpg)
+```{figure} /_static/images/vrm/add_vrm_lookat_blendshape.jpg
+```
 
 ## TextureのUV操作による視線制御
 
-![image](/_static/images/wiki/blendshape_applyer.png)
+```{figure} /_static/images/wiki/blendshape_applyer.png
+```
 
 Textureを上下左右にスライドさせることで目線を移動させる方法です。
 `Unityちゃん` はこのタイプです。
@@ -27,7 +29,8 @@ Textureを上下左右にスライドさせることで目線を移動させる�
 
 マテリアルのインスペクタの目のテクスチャの `Tiling Offset` の設定に注目してください。
 
-![image](/_static/images/wiki/material_tiling_offset.png)
+```{figure} /_static/images/wiki/material_tiling_offset.png
+```
 
 `1, 1, 0, 0` になっているはずです(なっていない場合は特殊なので以降を適切に読み替えてください)。
 
@@ -41,19 +44,22 @@ LookUp, LookDown, LookLeft, LookRight が、目標のマテリアルのカラー
 ### LookLeftの例
 `LookLeft` 選択してください。
 
-![image](/_static/images/wiki/lookleft.png)
+```{figure} /_static/images/wiki/lookleft.png
+```
 
 * `Material List` タブを選択
 * `+` を選択
 * `eye_L1` - `_MainTex_ST` を選択
 * `Tliling = 1, 1`, `Offset = 0, 0` に設定します
 
-![image](/_static/images/wiki/tiling_offset_1100.png)
+```{figure} /_static/images/wiki/tiling_offset_1100.png
+```
 
 * Offsetを調整してLookLeftを作ります
 * `eye_R1` も同様に
 
-![image](/_static/images/wiki/look_left.png)
+```{figure} /_static/images/wiki/look_left.png
+```
 
 [© UTJ/UCL](http://unity-chan.com/)
 

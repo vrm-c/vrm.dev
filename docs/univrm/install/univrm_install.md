@@ -25,7 +25,9 @@ https://github.com/vrm-c/UniVRM/releases
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
-![linear setting](/_static/images/vrm/linear_setting.jpg)
+```{figure} /_static/images/vrm/linear_setting.jpg
+linear setting
+```
 
 ```{admonition} Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
 :class: warning
@@ -36,7 +38,6 @@ https://github.com/vrm-c/UniVRM/releases
 
 ```
 
-
 ```{admonition} 既存のプロジェクト
 :class: warning
 
@@ -46,8 +47,6 @@ https://github.com/vrm-c/UniVRM/releases
 
 ```
 
-
-
 ## unitypackage の import
 
 `unitypackage` を Import します。
@@ -56,29 +55,37 @@ https://github.com/vrm-c/UniVRM/releases
 
 `Assets/VRM`、`Assets/UniGLTF`お及び`Assets/VRMShaders` の３つのフォルダに import されます。
 
-| ![package_import](/_static/images/vrm/package_import.jpg) |
-|-----------------------------------------------------------|
-| UnityPackageをインポート                                  |
+```{figure} /_static/images/vrm/package_import.jpg
+:name: package_import
+
+UnityPackageをインポート
+```
 
 ## import が成功したか確認する方法
 
 VRM menu が表示されていれば動作しています：
 
-![vrm menu](/_static/images/vrm/vrm_menu.jpg)
-<hr>
+```{figure} /_static/images/vrm/vrm_menu.jpg
+vrm menu
+```
 
 前のバージョン：
 
-![vrm menu old](/_static/images/vrm/vrm_menu_old.jpg)
-<hr>
+```{figure} /_static/images/vrm/vrm_menu_old.jpg
+vrm menu old
+```
 
 menu が出てこない場合は、
 
 * Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
 
-![show console](/_static/images/vrm/show_console.jpg)
+```{figure} /_static/images/vrm/show_console.jpg
+show console
+```
 
-![clear console](/_static/images/vrm/clear_console.jpg)
+```{figure} /_static/images/vrm/clear_console.jpg
+clear console
+```
 
 ## 関連セクション
 

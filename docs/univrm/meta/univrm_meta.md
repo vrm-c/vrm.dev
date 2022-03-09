@@ -9,9 +9,9 @@ tags: ["unity"]
 
 ## VRMMeta
 
-| ![meta](/_static/images/vrm/meta_new.jpg) |
-|-------------------------------------------|
-| VRMMetaコンポーネント                     |
+```{figure} /_static/images/vrm/meta_new.jpg
+VRMMetaコンポーネント
+```
 
 ### 情報(Information)
 #### タイトル(Title)
@@ -69,6 +69,3 @@ tags: ["unity"]
 
 ##### その他ライセンス条件(Other License Url)
 上記許諾条件以外のライセンス条件がある場合はそのライセンス文書へのURLを記述
-
-
-

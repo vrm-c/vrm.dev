@@ -62,7 +62,9 @@ VRMFirstPerson をリセットすることで再設定することができま�
 
 `VRM First Person(Script)` インスペクタの右上角の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
 
-![firstperson reset](/_static/images/vrm/firstperson_reset.gif)
+```{figure} /_static/images/vrm/firstperson_reset.gif
+firstperson reset
+```
 
 ### Auto による Both と ThirdPersonOnly への自動分割
 
@@ -84,10 +86,10 @@ Autoによる自動分割は、重めの処理になります。
 * 頭に `ThirdPersonOnly` を指定
 * 体に `Both` を指定
 
-| ![img](/_static/images/vrm/firstperson.png)                                           |
-|---------------------------------------------------------------------------------------|
-| 立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。 |
+```{figure} /_static/images/vrm/firstperson.png
+立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。
+```
 
-| ![firstperson](/_static/images/vrm/firstperson_runtime.png)                  |
-|------------------------------------------------------------------------------|
-| 動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。 |
+```{figure} /_static/images/vrm/firstperson_runtime.png
+動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。
+```

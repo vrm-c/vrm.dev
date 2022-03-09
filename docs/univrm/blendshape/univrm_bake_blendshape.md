@@ -9,17 +9,17 @@ weight: 3
 
 UniVRM ではエクスポートするときに、 `SkinnedMeshRenderer` のスライダーを上げておくとその状態を基本状態にすることができます。
 
-![img](/_static/images/vrm/blendshape_value.jpg)
+```{figure} /_static/images/vrm/blendshape_value.jpg
+```
 
 `Pose Freeze` のチェックボックスを有効にする必要があります。
 
-![img](/_static/images/vrm/check_freeze.jpg)
+```{figure} /_static/images/vrm/check_freeze.jpg
+```
 
 エクスポートすると・・・
 
-![img](/_static/images/vrm/bake_blink.gif)
+```{figure} /_static/images/vrm/bake_blink.gif
+```
 
 基本状態(blendShape が 0 の状態)が変更されます。
-
-
-

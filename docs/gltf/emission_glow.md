@@ -16,16 +16,16 @@ tags: ["gltf", "mtoon-1.0"]
 
 Emission の値が 1 を越える場合に発光させるポストエフェクトです。
 
-![img](/_static/images/vrm10/glow.jpg)
+```{figure} /_static/images/vrm10/glow.jpg
+```
 
 1を超えて3や4にすることで強くなりますが `glTF` の仕様上この値を格納することができません。
 
 ```{admonition} 割り算で1におさめる
 :class: note
 
-
-
 エクスポート時に下記の処理をして 最大値 1 に強制します。
+```
 
 ```csharp
 Vector3 emission;
@@ -36,20 +36,11 @@ if(max_value>1)
 }
 ```
 
-
-```
-
-
 ```{admonition} vrm-0.x は保存できる
 :class: note
 
-
-
 vrm-0.x は [0-1] 制限が無いので保存できます。
-
-
 ```
-
 
 ## VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました
 

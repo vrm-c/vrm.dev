@@ -9,11 +9,13 @@ tags: ["unity"]
 ## BlendShape関連のアセット
 VRMをImportすると、`モデル名から拡張子を除いた名前 + BlendShapes` フォルダにPresetを表すBlendShapeClipが作成されます。
 
-![image](/_static/images/wiki/blendshapeclip_assets.png)
+```{figure} /_static/images/wiki/blendshapeclip_assets.png
+```
 
 BlendShapeAvatarアセット。
 
-![image](/_static/images/wiki/blendshapeavatar.png)
+```{figure} /_static/images/wiki/blendshapeavatar.png
+```
 
 
 ## 設定画面
@@ -25,13 +27,15 @@ BlendShapeAvatarアセット。
 
 BlendShapeClip選択・設定作成
 
-![image](/_static/images/wiki/select_blendshapeavatar.png)
+```{figure /_static/images/wiki/select_blendshapeavatar.png
+```
 
 #### Listタブ(v0.45から)
 
 BlendShapeClipのリスト
 
-![image](/_static/images/wiki/list.png)
+```{figure /_static/images/wiki/list.png
+```
 
 ### BlendShapeClipアセットのインスペクタ。
 
@@ -39,20 +43,23 @@ BlendShapeClipのリスト
 
 設定作成します。
 
-![image](/_static/images/wiki/alicia_binary.png)
+```{figure} /_static/images/wiki/alicia_binary.png
+```
 
 #### BlendShape Listタブ
 
 BlendShapeタブで作成した値を見ることが出来ます。
 あまり使わない。
 
-![image](/_static/images/wiki/blendshape_angry.png)
+```{figure} /_static/images/wiki/blendshape_angry.png
+```
 
 #### Material Listタブ
 
 `BlendShapeによる`[LookAt](/univrm/lookat/lookat_blendshape)(後述)や、BlendShapeで色を変える設定を作成することができます。
 
-![image](/_static/images/wiki/material_color.png)
+```{figure} /_static/images/wiki/material_color.png
+```
 
 ## 各BlendShapeClipの設定
 
@@ -62,11 +69,13 @@ BlendShapeタブで作成した値を見ることが出来ます。
 
 BlendShapeAvatarのインスペクタから選択する
 
-![image](/_static/images/wiki/select_blendshapeavatar.png)
+```{figure} /_static/images/wiki/select_blendshapeavatar.png
+```
 
 アセットのBlendShapeClipを直接選択する
 
-![image](/_static/images/wiki/select_blendshapeclip.png)
+```{figure} /_static/images/wiki/select_blendshapeclip.png
+```
 
 ### 2. スライダを操作して顔を作る
 
@@ -85,13 +94,12 @@ BlendShapeAvatarのインスペクタから選択する
 
 ### 中間値を許可しない設定(v0.45)
 
-![image](/_static/images/wiki/alicia_binary.png)
+```{figure} /_static/images/wiki/alicia_binary.png
+```
 
 スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。
 
 ロードするアプリケーションがv0.45以降になっていると有効になります。
 
-![image](/_static/images/wiki/binary.png)
-
-
-
+```{figure} /_static/images/wiki/binary.png
+```
