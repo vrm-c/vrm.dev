@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, VRMコンソーシアム
+# This file is distributed under the same license as the VRM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VRM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-09 16:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../univrm/install/univrm_upm.md:8
+msgid "UPMでUniVRMをインストールする"
+msgstr "Install UniVRM with UPM"
+
+#: ../../univrm/install/univrm_upm.md:10
+msgid "`Unity 2019.4以降` が必要です。"
+msgstr "require `Unity 2019.4 or later version`"
+
+#: ../../univrm/install/univrm_upm.md:11
+msgid "[Git client](https://git-scm.com/) のインストールが必要です。"
+msgstr "require [Git client](https://git-scm.com/)"
+
+#: ../../univrm/install/univrm_upm.md:13
+msgid "Unity 向けの git のインストール"
+msgstr "Install git for Unity"
+
+#: ../../univrm/install/univrm_upm.md:15
+msgid ""
+"Unity Manual [Requirements](https://docs.unity3d.com/Manual/upm-"
+"git.html#req) を参照してください。"
+msgstr ""
+"Please refer to [`Git dependencies -> "
+"Requirements`](https://docs.unity3d.com/Manual/upm-git.html#req) for more"
+" information."
+
+#: ../../univrm/install/univrm_upm.md:17
+msgid ""
+"To use Git dependencies in a project, make sure the [Git client](https"
+"://git-scm.com/) is installed on your machine and that you have added the"
+" Git executable path to the PATH system environment variable."
+msgstr ""
+"To use Git dependencies in a project, make sure the [Git client](https"
+"://git-scm.com/) is installed on your machine and that you have added the"
+" Git executable path to the PATH system environment variable."
+
+#: ../../univrm/install/univrm_upm.md:19
+msgid "未インストールだと"
+msgstr "If git is not installed, the error messages like below will be shown: "
+
+#: ../../univrm/install/univrm_upm.md:21
+msgid ""
+"An error occurred while resolving packages: Project has invalid "
+"dependencies: com.vrmc.vrmshaders: No 'git' executable was found. Please "
+"install Git on your system then restart Unity and Unity Hub"
+msgstr ""
+
+#: ../../univrm/install/univrm_upm.md:25
+msgid "というようなエラーが出ます。"
+msgstr "."
+
+#: ../../univrm/install/univrm_upm.md:28
+msgid "他のgit"
+msgstr "Check whether git.exe can be found on your machine"
+
+#: ../../univrm/install/univrm_upm.md:2
+msgid ""
+"https://git-scm.com/ からインストールした git.exe (デフォルトは、 `C:\\Program "
+"Files\\Git\\cmd\\git.exe`) が、Path の中で最初に見つかるように設定してください。"
+msgstr ""
+"As mentioned above, install [Git client](https://git-scm.com/) and get "
+"the directory of git.exe (by default, git.exe is in `C:\\Program "
+"Files\\Git\\cmd`). Then, add it to the PATH system environment variable."
+
+#: ../../univrm/install/univrm_upm.md:35
+msgid "powershell からバージョンを確認した例 (20201130)"
+msgstr ""
+"To check the git version, for instance, open Windows PowerShell and type "
+"the command `git --version`:"
+
+#: ../../univrm/install/univrm_upm.md:42
+msgid "UnityPackageManager ウインドウによるインストール"
+msgstr "Install using UnityPackageManager window"
+
+#: ../../univrm/install/univrm_upm.md:1
+msgid "UnityPackageManagerのWindow"
+msgstr "To open UPM, go to `Windows` -> `Package Manager`:"
+
+#: ../../univrm/install/univrm_upm.md:1
+msgid "add package from git URL"
+msgstr ""
+
+#: ../../univrm/install/univrm_upm.md:52
+msgid "新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。"
+msgstr ""
+"Whenever a new UniVRM version comes out, we will post git urls associated"
+" with this release."
+
+#: ../../univrm/install/univrm_upm.md:54
+msgid ""
+"たとえば、[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) のgit"
+" urlは次のとおりです："
+msgstr ""
+"For example, the git urls of "
+"[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) are:"
+
+#: ../../univrm/install/univrm_upm.md:56
+msgid "`https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0`"
+msgstr ""
+
+#: ../../univrm/install/univrm_upm.md:57
+msgid ""
+"`https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0` => "
+"VRMShaders に依存"
+msgstr "depends on VRMShaders"
+
+#: ../../univrm/install/univrm_upm.md:58
+msgid ""
+"`https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0` => "
+"UniGLTFとVRMShaders に依存"
+msgstr "depends on UniGLTF, VRMShaders"
+
+#: ../../univrm/install/univrm_upm.md:60
+msgid "パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。"
+msgstr ""
+"Since there is no function that can automatically download the "
+"dependencies between packages, please add above git urls in order."
+
+#: ../../univrm/install/univrm_upm.md:62
+msgid "ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する："
+msgstr ""
+"Now check your project window. The packages above should be in the "
+"Packages folder:"
+
+#: ../../univrm/install/univrm_upm.md:67
+msgid "バージョン番号を変更することで、お好きなバージョンに切り替えることができます。"
+msgstr ""
+"By changing the version number, you can switch to different version based"
+" on your needs."
+
+#: ../../univrm/install/univrm_upm.md:69
+msgid "packages/manifest.json 直接編集によるインストール"
+msgstr "Add dependencies in Packages/manifest.json"
+
+#: ../../univrm/install/univrm_upm.md:71
+msgid "以下の内容を追記してください（[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0)の例)。"
+msgstr ""
+"An alternative way is to add necessary dependencies right in "
+"Packages/manifest.json"
+
+#: ../../univrm/install/univrm_upm.md:84
+msgid "gitの特定コミットを指定する場合"
+msgstr "Specify git commit"
+
+#: ../../univrm/install/univrm_upm.md:86
+msgid "`dependencies` に特定のコミットを指定します。"
+msgstr ""
+"However, if you want to switch to the specific commit, you can manually "
+"change the hash value or append the specific commit in `dependencies`."
+
+#: ../../univrm/install/univrm_upm.md:88
+msgid "例："
+msgstr "Example:"
+
+#~ msgid "{}"
+#~ msgstr ""
+
+#~ msgid "git --version git version 2.29.2.windows.2"
+#~ msgstr ""
+
+#~ msgid "![img](/_static/images/vrm10/menu_packagemanager.jpg)"
+#~ msgstr ""
+
+#~ msgid "img"
+#~ msgstr ""
+
+#~ msgid "`add package from git URL`"
+#~ msgstr ""
+
+#~ msgid "![img](/_static/images/vrm10/from_git.jpg)"
+#~ msgstr ""
+
+#~ msgid "![img](/_static/images/vrm/upm_package.jpg)"
+#~ msgstr ""
+

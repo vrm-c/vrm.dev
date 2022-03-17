@@ -1,0 +1,31 @@
+name: Sphinx
+
+on:
+  push:
+    branches:
+      - sphinx
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    steps:
+      - uses: actions/checkout@v1
+      - run: sudo apt install gettext
+      - run: pip install -r requirements.txt
+      - name: sphinx build(ja)
+        working-directory: ./docs
+        run: sphinx-build . ../public
+      - name: sphinx build(en)
+        working-directory: ./docs
+        run: sphinx-build . ../public/en -D language=en -A language=en
+      - run: mkdir -p licenses/1.0/pdf
+      - run: cp docs/_static/licenses/1.0/pdf/jp.pdf licenses/1.0/pdf/jp.pdf
+      - run: cp docs/_static/licenses/1.0/pdf/en.pdf licenses/1.0/pdf/en.pdf
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

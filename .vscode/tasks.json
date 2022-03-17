@@ -4,11 +4,62 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "hugo",
+            "label": "sphinx-autobuild",
             "type": "shell",
-            "command": "hugo server -w --disableFastRender -D -F",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0",
             "isBackground": true,
             "problemMatcher": []
+        },
+        {
+            "label": "sphinx-pot",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/Scripts/sphinx-build -M gettext . _pot",
+            "options": {
+                "cwd": "${workspaceFolder}/docs"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "sphinx-po",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/Scripts/sphinx-intl update -p _pot/gettext -l en",
+            "options": {
+                "cwd": "${workspaceFolder}/docs"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "sphinx-autobuild(en)",
+            "type": "shell",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0 -D=language=en -A=language=en",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "sphinx-build",
+            "type": "shell",
+            "command": ".venv/Scripts/sphinx-build docs build -b=dirhtml -E",
+            "presentation": {
+                "reveal": "always",
+                "echo": true,
+                "showReuseMessage": false,
+                "clear": true,
+            },
+            "problemMatcher": [
+                {
+                    "owner": "sphinx",
+                    "fileLocation": "absolute",
+                    "pattern": [
+                        {
+                            "regexp": "^(\\w:[^:]+):(\\d+):\\s*(\\w+):\\s*(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4,
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

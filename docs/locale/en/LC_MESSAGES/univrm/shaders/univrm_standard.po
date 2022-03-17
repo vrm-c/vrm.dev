@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, VRMコンソーシアム
+# This file is distributed under the same license as the VRM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VRM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../univrm/shaders/univrm_standard.md:7
+msgid "Standard"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:9
+msgid "`Physically Based Rendering`"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:11
+msgid "Standard シェーダー"
+msgstr "Standard Shader"
+
+#: ../../univrm/shaders/univrm_standard.md:13
+msgid "`UniVRM` は PBR 向けのシェーダーを独自に作成せずに Unity 標準の `Standard シェーダー` を使います。"
+msgstr ""
+"`UniVRM` uses Unity's standard` Standard shader` instead of creating your"
+" own shader for PBR."
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "ピカピカに反射してしまう"
+msgstr "Reflects shiny"
+
+#: ../../univrm/shaders/univrm_standard.md:3
+msgid ""
+"Shaderの種類が `Standard` (Unityの標準) で `metallic` と `smooth` 値が高い状態になっています。  "
+"マテリアルのシェーダーを `Unlit/UniUnlit` にするとテクスチャがそのまま表示できます。"
+msgstr ""
+"The Shader type is `Standard` (Unity standard) and the `metallic` and "
+"`smooth` values ​​are high.If you set the material shader to "
+"`Unlit/UniUnlit`, the texture can be displayed as it is."
+
+#: ../../univrm/shaders/univrm_standard.md:27
+msgid "Metallic, Roughness, Occlusion の対応表"
+msgstr "Correspondence table of Metallic, Roughness, Occlusion"
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "用途"
+msgstr "Applications"
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "glTF material"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "Unity Standard Shader"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "Occlusion"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "occlusionTexture"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "R"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "G"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "_MetallicGlossMap"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "Roughness"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "pbrMetallicRoughness.metallicRoughnessTexture"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "A"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "_MetallicGlossMap (smoothness = 1 - roughness)"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "Metallic"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "B"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:15
+msgid "_OcclusionMap"
+msgstr ""
+
+#: ../../univrm/shaders/univrm_standard.md:35
+msgid ""
+"```{admonition} MetallicSmoothOcclusionテクスチャを１枚にまとめる `v0.69.0` :class: "
+"warning"
+msgstr ""
+"{admonition} MetallicSmoothOcclusion Combine textures into one  `v0.69.0`"
+" :class: warning"
+
+#: ../../univrm/shaders/univrm_standard.md:40
+msgid "`v0.69.0` からテクスチャーを１枚にまとめる動作をします。"
+msgstr "MetallicSmoothOcclusion Combine textures into one  `v0.69.0`"
+
+#: ../../univrm/shaders/univrm_standard.md:42
+msgid "import: glTFの metallicRoughnessTexture と occlusionTexture を１枚にまとめます(上表参照)"
+msgstr ""
+"import: The metallicRoughnessTexture and occlusionTexture of glTF are "
+"combined into one (see the table above)."
+
+#: ../../univrm/shaders/univrm_standard.md:43
+msgid "export: Standard の _MetallicGlossMap と _OcclusionMap を1枚にまとめます(上表参照)"
+msgstr ""
+"export: Standard _MetallicGlossMap and _OcclusionMap are combined into "
+"one (see the table above)."
+
+#: ../../univrm/shaders/univrm_standard.md:45
+msgid "`v0.68.0` 以前"
+msgstr "`v0.68.0` or earlier"
+
+#: ../../univrm/shaders/univrm_standard.md:47
+msgid "import: _MetallicGlossMap 用と _OcclusionMap 用の２枚のテクスチャを変換して Import"
+msgstr ""
+"import: Convert and import two textures, one for _MetallicGlossMap and "
+"one for _OcclusionMap"
+
+#: ../../univrm/shaders/univrm_standard.md:48
+msgid ""
+"export: Standard の _MetallicGlossMap と _OcclusionMap から２枚のテクスチャを変換して "
+"Export"
+msgstr ""
+"export: Convert two textures from Standard's _MetallicGlossMap and "
+"_OcclusionMap and export"
+
+#~ msgid "{}"
+#~ msgstr ""
+

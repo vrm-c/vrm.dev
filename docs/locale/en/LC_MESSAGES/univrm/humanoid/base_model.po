@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, VRMコンソーシアム
+# This file is distributed under the same license as the VRM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VRM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 21:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../univrm/humanoid/base_model.md:7
+msgid "BaseModel"
+msgstr "Create Base VRM Model"
+
+#: ../../univrm/humanoid/base_model.md:9
+msgid "以下の条件を満たす `GameObject` をエクスポートして VRM にできます。"
+msgstr ""
+"The target `GameObject` can be exported as VRM if the following two "
+"conditions are fulfilled:"
+
+#: ../../univrm/humanoid/base_model.md:11
+msgid "Animator がアタッチされている"
+msgstr "`Animator` component is attached "
+
+#: ../../univrm/humanoid/base_model.md:12
+msgid "Animator に HumanoidAvatar がセットされている"
+msgstr "`Animator's HumanoidAvatar` is set up"
+
+#: ../../univrm/humanoid/base_model.md:14
+msgid "FBX"
+msgstr ""
+
+#: ../../univrm/humanoid/base_model.md:16
+msgid ""
+"fbx で上記の条件を満たすには、 `fbx importer` の `rig` 設定で `humanoid` 化してください。 fbx の "
+"prefab は、 humanoid 化すると Animator がアタッチされて `HumanoidAvatar` "
+"がセットされた状態になります。"
+msgstr ""
+"To meet the conditions described above for an imported fbx, set the fbx "
+"model as `humanoid` from `Import Settings -> Rig -> Animation Type`.After"
+" `humanoid` type is applied, `Animator` component with `HumanoidAvatar` "
+"will be attached to the fbx's prefab."
+
+#: ../../univrm/humanoid/base_model.md:19
+msgid "fbx が humanoid 化できるには、"
+msgstr "To convert the fbx model to `humanoid` type successfully:"
+
+#: ../../univrm/humanoid/base_model.md:21
+#, python-format
+msgid ""
+"[必須のボーン](https://github.com/vrm-c/vrm-"
+"specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3)"
+" がすべて含まれている"
+msgstr ""
+"All [required bones](https://github.com/vrm-c/vrm-"
+"specification/blob/master/specification/0.0/README.md#defined-bones) are "
+"included"
+
+#: ../../univrm/humanoid/base_model.md:22
+msgid "ボーンの親子関係が正しい"
+msgstr ""
+"Bones' parent-child relationships are correct (e.g. hips -> leg -> foot. "
+"not the other way around)."
+
+#: ../../univrm/humanoid/base_model.md:24
+msgid "の２つの条件が必用です。"
+msgstr "."
+
+#: ../../univrm/humanoid/base_model.md:26
+msgid "ボーンの名前は自由です"
+msgstr "No restrictions on bone naming."
+
+#: ../../univrm/humanoid/base_model.md:28
+msgid "参考"
+msgstr "Reference"
+
+#: ../../univrm/humanoid/base_model.md:30
+msgid "[BlenderからUnityのHumanoid互換でfbxをエクスポートする](https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
+msgstr ""
+"[Export fbx from Blender compatible with Unity Humanoid] "
+"(https://qiita.com/ousttrue/items/aead1c943855561b62e7)"
+
+#: ../../univrm/humanoid/base_model.md:32
+msgid "FBX をシーン上で加工する"
+msgstr "Modify FBX in the scene"
+
+#: ../../univrm/humanoid/base_model.md:34
+msgid "問題ない"
+msgstr "You can modify fbx's GameObject by"
+
+#: ../../univrm/humanoid/base_model.md:36
+msgid "fbx prefab 内の GameObject に子 GameObject を追加する"
+msgstr "adding children GameObjects to Parent GameObjects"
+
+#: ../../univrm/humanoid/base_model.md:37
+msgid "fbx prefab 内の GameObject を disable にする"
+msgstr "disabling GameObjects"
+
+#: ../../univrm/humanoid/base_model.md:39
+msgid "うまくいかない場合あり"
+msgstr "May not work:"
+
+#: ../../univrm/humanoid/base_model.md:41
+msgid "fbx prefab 内の GameObject を削除する"
+msgstr "Delete the GameObject in the fbx prefab"
+
+#: ../../univrm/humanoid/base_model.md:42
+msgid "fbx prefab 内の GameObject を動かす(移動、回転、拡大・縮小、親の付け替え)"
+msgstr "Move GameObject in fbx prefab (move, rotate, zoom in / out, change parent)"
+
+#: ../../univrm/humanoid/base_model.md:44
+msgid "何故問題があるかというと"
+msgstr "The reason why there is a problem"
+
+#: ../../univrm/humanoid/base_model.md:46
+msgid "HumanoidAvatar が GameObject ヒエラルキーと一致しなくなる"
+msgstr "HumanoidAvatar no longer matches the GameObject hierarchy"
+
+#: ../../univrm/humanoid/base_model.md:48
+msgid "からです。 HumanoidAvatar にはおそらく、"
+msgstr "HumanoidAvatar probably records:"
+
+#: ../../univrm/humanoid/base_model.md:51
+msgid "元の姿勢"
+msgstr "Original posture"
+
+#: ../../univrm/humanoid/base_model.md:52
+msgid "ヒューマンボーン(hipsなど)と GameObjectの対応関係"
+msgstr "Correspondence between Human Bone (hips etc.) and GameObject"
+
+#: ../../univrm/humanoid/base_model.md:54
+msgid "が記録されています。 これに変更を加えた場合再作成する必用があります。 下記の HumanoidComponent で作成できます。"
+msgstr ""
+"If you want to change the hierarchy structure, please refer to "
+"`HumanoidComponent`, which is described in the next section."
+
+#: ../../univrm/humanoid/base_model.md:58
+msgid "GameObject から手動で HumanoidAvatar を作成する"
+msgstr "Create HumanoidAvatar manually from GameObject"
+
+#: ../../univrm/humanoid/base_model.md:60
+msgid "`fbx importer` に頼らずに HumanoidAvatar を作成できます。"
+msgstr "`HumanoidAvatar` can be created without using `fbx importer`."
+
+#: ../../univrm/humanoid/base_model.md:62
+msgid "[HumanoidComponent](/univrm/humanoid/meshutility_humanoid)"
+msgstr ""
+"Check out [Humanoid Component]({{< relref \"meshutility_humanoid.md\" "
+">}}) for more details."
+
+#: ../../univrm/humanoid/base_model.md:64
+msgid "これを使うと、"
+msgstr "If the following types of models are in the scene:"
+
+#: ../../univrm/humanoid/base_model.md:66
+msgid "人型の GLTF"
+msgstr "Humanoid model in GLTF format"
+
+#: ../../univrm/humanoid/base_model.md:67
+msgid "シーン上でキューブを人型に積み上げる"
+msgstr "Humanoid-like model made by cubes and so on"
+
+#: ../../univrm/humanoid/base_model.md:69
+msgid ""
+"などのヒエラルキーに対して、後付けで `HumanoidAvatar` を作成することができます。 HumanoidAvatar を作成した "
+"GameObject (シーン上、Prefabの両方) は エクスポートして VRM にすることができます。"
+msgstr ""
+"The `HumanoidAvatar` can be created as long as each required bone is "
+"assigned accordingly based on the object in Hierarchy.Finally, to export "
+"the target `GameObject` as VRM, attach `Animator` component and assign "
+"the created `HumanoidAvatar` to `Avatar` field."
+
+#~ msgid "{}"
+#~ msgstr ""
+
