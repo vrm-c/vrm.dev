@@ -1,0 +1,569 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="2. VRMをセットアップする" href="setup_vrm.html" /><link rel="prev" title="0. Unityを用意して、UniVRMをインストールする" href="setup_unity.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+        <title>1. VRMファイルを作成する - VRM ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">VRM  ドキュメント</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll">
+
+<ul>
+    <li>日本語
+    <li><a href="../../en/vrm/how_to_make_vrm/convert_from_humanoid_model">英語</a>
+</ul>
+<a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/vrm_topheader.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VRM  ドキュメント</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=検索 name="q" aria-label="検索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">VRMについて</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vrm_about.html">「VRM」って何？どんなことができる？</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">VRMファイルを作ってみたい</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="setup_unity.html">0. Unityを用意して、UniVRMをインストールする</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">1. VRMファイルを作成する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vrm.html">2. VRMをセットアップする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vrm_behavior_confirmation.html">VRMの動作を確認する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to_view_vrm.html">ビューアでVRMをインポートする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vrm_applications.html">VRMファイルが使えるアプリケーションは？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vrm_meta.html">VRMファイルに設定できるライセンスデータ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vrm_development.html">VRMで開発する</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../univrm/index.html">UniVRM</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/install/index.html">Install</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/unity_version.html">Unity のバージョン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/univrm_install.html">UniVRMをインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/univrm_upm.html">UPMでUniVRMをインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/univrm_install_samples.html">UniVRMサンプルをインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/univrm_uninstall.html">UniVRMをアンインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/install/univrm_version.html">UniVRM Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/export/index.html">Export</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/export/univrm_export.html">エクスポートダイアログ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/export/vrm_size.html">VRMモデルのファイルサイズ</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/import/index.html">Import</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/import/univrm_import.html">VRMをインポートする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/import/prefab_importer_behaviour.html">PrefabがImportされるタイミングと上書きの注意</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/blendshape/index.html">BlendShape</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/blendshape/univrm_blendshape.html">ブレンドシェイプの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/blendshape/blendshape_setup.html">BlendShapeのセットアップ(v0.45)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/blendshape/univrm_bake_blendshape.html">エクスポート時にBlendShapeの状態をベイクする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/blendshape/check_blendshape_normal.html">BlendShape の法線を確認しよう</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/shaders/index.html">Material</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/univrm_unlit.html">UniUnlit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/univrm_standard.html">Standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/shader_mtoon.html">MToon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/shader_mtoon.html#id6">設定項目</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/lookat/index.html">LookAt</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/lookat/univrm_lookat.html">LookAt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/lookat/lookat_bone.html">LookAt(Bone)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/lookat/lookat_blendshape.html">LookAt(Blendshape)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/lookat/lookat_uv.html">LookAt(UV)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/springbone/index.html">SpringBone</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html">VRMSpringBone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id1">コンポーネントのアタッチされるノード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id2">VRMSpringBone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#vrmspringbonecollidergroup">[オプション]VRMSpringBoneColliderGroup(当たり判定)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id4">設定したVRMSpringBoneが居なくなった</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/humanoid/index.html">Humanoid</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/humanoid_overview.html">ヒューマノイド概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/base_model.html">BaseModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/meshutility_humanoid.html">HumanoidComponent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/meshutility_humanoid.html#id1">使い方</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/meta/index.html">Meta</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/meta/univrm_meta.html">モデル情報</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/firstperson/index.html">FirstPerson</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html">VRMFirstPerson</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../univrm/programming/index.html">Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gltf/index.html">glTF</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/glb_import.html">Glbインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/glb_import.html#import">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/glb_export.html">Glbエクスポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/glb_export.html#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/animation_exporter.html">アニメーション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/emission_glow.html">Emission と グロー(発光)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gltf/mesh_utility.html">Mesh Utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vrm1/index.html">VRM-1.0β</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vrm1/changed.html">VRM-1.0の変更点</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../univrm1/index.html">UniVRM-1.0β</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm1/vrm1_tutorial/index.html">🚧VRM-1.0β モデルを作成する</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/first_export_from_fbx.html">fbx の import, T-Pose 初期エクスポート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/vrm_object.html">VrmObject と Extract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/meta.html">🚧Meta の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/expression.html">Expression の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/lookat.html">LookAt の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/firstperson.html">🚧FirstPerson の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/springbone.html">🚧SpringBone の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/material.html">🚧Material の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/vrm1_tutorial/constraint.html">🚧Constraint の設定</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm1/migrate_vrm0/index.html">🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/migrate_vrm0/feature.html">🚧アップグレードに対応する機能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/migrate_vrm0/migrate_editor.html">🚧Editor でアップグレードする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm1/migrate_vrm0/migrate_runtime.html">🚧Runtime でアップグレードする</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../univrm1/import/index.html">🚧VRM-1.0β ファイルを読み込む</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">外部リンク</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/vrm-c/UniVRM/releases">ダウンロード</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/vrm-c/vrm-specification/tree/master/specification">技術仕様</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://vrm-consortium.org/">VRMコンソーシアム</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="vrm">
+<h1>1. VRMファイルを作成する<a class="headerlink" href="#vrm" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<section id="unityhumanoid">
+<h2>UnityでHumanoidとして扱えるモデルデータを用意します<a class="headerlink" href="#unityhumanoid" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ヒューマノイドモデルは、</p>
+<ul class="simple">
+<li><p><strong>必ずご自分で作られたモデル、ないし、加工しVRアバターとして使うことが許諾されているモデルデータをご用意ください</strong>。</p></li>
+</ul>
+<p>後述しますが、</p>
+<ul class="simple">
+<li><p><strong>VRMファイル自体にライセンス情報を記述する項目がありますので、特にその項目については権利者自身が設定する</strong> ようにしてください。</p></li>
+</ul>
+<p>また、Humanoid として認識させるために必須のボーンがすべて含まれている必要があります。</p>
+<div class="note admonition">
+<p class="admonition-title">ベースモデル</p>
+<p>使用可能なベースモデルの詳細は、 <a class="reference internal" href="../../univrm/humanoid/base_model.html"><span class="doc std std-doc">BaseModel</span></a> を参照してください。</p>
+</div>
+<p><a class="reference external" href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.ja.md#%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9C%E3%83%BC%E3%83%B3">必須ボーン</a></p>
+</section>
+<section id="unity-fbx-import">
+<h2>unity に fbx を import する<a class="headerlink" href="#unity-fbx-import" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>fbx のフォルダを unityの Assets フォルダにドロップします。</p>
+<figure class="align-default">
+<img alt="../../_images/fbx_folder.jpg" src="../../_images/fbx_folder.jpg"/>
+</figure>
+<p>unity</p>
+<figure class="align-default">
+<img alt="../../_images/assets_fbx.jpg" src="../../_images/assets_fbx.jpg"/>
+</figure>
+<p>青いアイコンが fbx の asset(prefab) です。</p>
+</section>
+<section id="fbx-material">
+<h2>fbx の material を設定する<a class="headerlink" href="#fbx-material" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<figure class="align-default">
+<img alt="../../_images/fbx_default.jpg" src="../../_images/fbx_default.jpg"/>
+</figure>
+<p>この時点では fbx importer による初期状態になっており、マテリアルがデフォルト状態(StandardShaderでColor, ColorTexture割り当てのみ。半透明設定が無いなど)なので、マテリアルを最低限設定します。
+VRM 向けなので、この例では全部 <code class="docutils literal notranslate"><span class="pre">MToon</span></code> にします。</p>
+<div class="note admonition">
+<p class="admonition-title">Shader</p>
+<p>VRMは、<a class="reference internal" href="../../univrm/shaders/shader_mtoon.html"><span class="doc std std-doc">MToon</span></a>、<a class="reference internal" href="../../univrm/shaders/univrm_unlit.html"><span class="doc std std-doc">Unlit</span></a> と <a class="reference internal" href="../../univrm/shaders/univrm_standard.html"><span class="doc std std-doc">Standard</span></a> の３種類を記録できます。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Materials</span></code> ボタンを押して fbx のフォルダに <code class="docutils literal notranslate"><span class="pre">Materials</span></code> フォルダを作成してそこを選択。</p>
+<figure class="align-default" id="id3">
+<img alt="../../_images/extract_materials1.jpg" src="../../_images/extract_materials1.jpg"/>
+<figcaption>
+<p><span class="caption-text">extract_materials</span><a class="headerlink" href="#id3" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>Shader をすべて <code class="docutils literal notranslate"><span class="pre">VRM/Mtoon</span></code> に変更</p>
+<figure class="align-default" id="id4">
+<img alt="../../_images/change_to_mtoon.jpg" src="../../_images/change_to_mtoon.jpg"/>
+<figcaption>
+<p><span class="caption-text">change_to_mtoon</span><a class="headerlink" href="#id4" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>MToon の <code class="docutils literal notranslate"><span class="pre">Shade</span> <span class="pre">Color</span></code> を白に変更</p>
+<figure class="align-default" id="id5">
+<img alt="../../_images/shade_color_to_white.jpg" src="../../_images/shade_color_to_white.jpg"/>
+<figcaption>
+<p><span class="caption-text">shade_color_to_white</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default">
+<img alt="../../_images/alicia_preview.jpg" src="../../_images/alicia_preview.jpg"/>
+</figure>
+<p>ちゃんとした設定はこちら。<a class="reference internal" href="../../univrm/shaders/shader_mtoon.html"><span class="doc std std-doc">MToonの設定</span></a></p>
+<p>手順の説明なので先に進みます。</p>
+</section>
+<section id="fbx-humanoid">
+<h2>fbx を humanoid 設定にする<a class="headerlink" href="#fbx-humanoid" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>fbx デフォルトは、generic 設定です。</p>
+<figure class="align-default">
+<img alt="../../_images/rig_generic.jpg" src="../../_images/rig_generic.jpg"/>
+</figure>
+<p>humanoid に変更します。</p>
+<figure class="align-default">
+<img alt="../../_images/select_humanoid.jpg" src="../../_images/select_humanoid.jpg"/>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">apply</span></code> を押します。</p>
+<div class="note admonition">
+<p class="admonition-title">humanoid</p>
+<p>このとき fbx importer がヒューマノイドボーンの割り当てを自動で推定します。
+失敗する時もあり、成功しても間違っている場合もあります。</p>
+</div>
+<p>humanoid のボーン割り当て画面に入ります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">configure</span></code> ボタンを押します。</p>
+<figure class="align-default" id="id6">
+<img alt="../../_images/BoneMapping.png" src="../../_images/BoneMapping.png"/>
+<figcaption>
+<p><span class="caption-text">BoneMapping</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>ボーンの割り当てを確認してください。</p>
+<div class="note admonition">
+<p class="admonition-title">bone</p>
+<ul class="simple">
+<li><p>前髪に顎ボーンが割り当てられる</p></li>
+<li><p>目のハイライトに目ボーンが割り当てられる</p></li>
+</ul>
+<p>などにご注意ください。</p>
+</div>
+</section>
+<section id="prefab">
+<h2>prefab をシーンに展開<a class="headerlink" href="#prefab" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">File</span></code> - <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Scene</span></code> として、
+fbx の prefab をシーンに展開します。</p>
+<figure class="align-default">
+<img alt="../../_images/DragImportedModel.png" src="../../_images/DragImportedModel.png"/>
+</figure>
+</section>
+<section id="fbx-blendshpae">
+<h2>fbx の blendshpae の法線が乱れていないか確認する<a class="headerlink" href="#fbx-blendshpae" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>BlendShapeで変な影が出る場合の対策です。</p>
+<p><a class="reference internal" href="../../univrm/blendshape/check_blendshape_normal.html"><span class="doc std std-doc">BlendShape の法線を確認しよう</span></a></p>
+</section>
+<section id="id1">
+<h2>エクスポート<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<figure class="align-default" id="id7">
+<img alt="../../_images/vrm_menu.jpg" src="../../_images/vrm_menu.jpg"/>
+<figcaption>
+<p><span class="caption-text">vrm_menu</span><a class="headerlink" href="#id7" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">VRM0</span></code> - <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">UniVRM-0.XX</span></code> を押してダイアログを表示します。</p>
+<figure class="align-default" id="id8">
+<img alt="../../_images/UniVRMExportHumanoid.jpg" src="../../_images/UniVRMExportHumanoid.jpg"/>
+<figcaption>
+<p><span class="caption-text">UniVRMExportHumanoid</span><a class="headerlink" href="#id8" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>前のバージョンは <code class="docutils literal notranslate"><span class="pre">VRM</span></code> - <code class="docutils literal notranslate"><span class="pre">UniVRM-0.XX</span></code> - <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">humanoid</span></code>。</p>
+<figure class="align-default">
+<img alt="../../_images/export058_empty.jpg" src="../../_images/export058_empty.jpg"/>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Root</span></code> に prefab をシーンに展開した GameObject をドロップします。</p>
+<div class="warning admonition">
+<p class="admonition-title">エラー</p>
+<p>エクスポートダイアログで各種エラーチェックをしています。</p>
+<ul class="simple">
+<li><p>赤いメッセージは解決する必要があります。</p></li>
+<li><p>黄色いメッセージは無視してエクスポートできます。</p></li>
+</ul>
+<p><a class="reference internal" href="../../univrm/export/univrm_export.html"><span class="doc std std-doc">エクスポートダイアログ</span></a></p>
+</div>
+<figure class="align-default">
+<img alt="../../_images/export_dialog_title_version_author.jpg" src="../../_images/export_dialog_title_version_author.jpg"/>
+</figure>
+<p>ライセンス情報を入力してください。赤いメッセージな無くなれば Export を押せます。
+次の作業のため、<code class="docutils literal notranslate"><span class="pre">Assets/models/vrm</span></code> フォルダを作成してそこにエクスポートしました。</p>
+<div class="note admonition">
+<p class="admonition-title">エクスポート先</p>
+<p>エクスポート先には、Unity の Assets 内、外どちらでも選択できます。
+Assets 内を選択すると、Export 直後に Import が発動します(Importの方が重い)。
+Assets 内を選択する場合は、新規に専用のフォルダを作成すると分かりやすくなります。</p>
+</div>
+</section>
+<section id="id2">
+<h2>エクスポートオプション<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<figure class="align-default">
+<img alt="../../_images/export_options.jpg" src="../../_images/export_options.jpg"/>
+</figure>
+<div class="note admonition">
+<p class="admonition-title">T-Poseにする</p>
+<p>自動で T-Pose 化します。このオプションを使わずにシーン上で見た目で T-Pose にしても問題ありません。</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Pose Freeze</p>
+<p>エクスポート時に正規化します。
+最新版は、 <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。</p>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="setup_vrm.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">2. VRMをセットアップする</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="setup_unity.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">0. Unityを用意して、UniVRMをインストールする</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2022, VRMコンソーシアム |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../_sources/vrm/how_to_make_vrm/convert_from_humanoid_model.md.txt"
+               rel="nofollow">
+              ソースコードを表示
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            コンテンツ
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">1. VRMファイルを作成する</a><ul>
+<li><a class="reference internal" href="#unityhumanoid">UnityでHumanoidとして扱えるモデルデータを用意します</a></li>
+<li><a class="reference internal" href="#unity-fbx-import">unity に fbx を import する</a></li>
+<li><a class="reference internal" href="#fbx-material">fbx の material を設定する</a></li>
+<li><a class="reference internal" href="#fbx-humanoid">fbx を humanoid 設定にする</a></li>
+<li><a class="reference internal" href="#prefab">prefab をシーンに展開</a></li>
+<li><a class="reference internal" href="#fbx-blendshpae">fbx の blendshpae の法線が乱れていないか確認する</a></li>
+<li><a class="reference internal" href="#id1">エクスポート</a></li>
+<li><a class="reference internal" href="#id2">エクスポートオプション</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/translations.js"></script>
+    </body>
+</html>
