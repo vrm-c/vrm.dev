@@ -168,6 +168,9 @@ def setup(app: sphinx.application.Sphinx):
             if src.read_bytes() != dst.read_bytes():
                 logger.debug(f'copy {src} to {dst}')
                 shutil.copy(src, dst)
+            copy = {k: v for k, v in redirects.items()}
+            for k, v in copy.items():
+                redirects[k] = f'/en{v}'
         else:
             raise RuntimeError(f'unknown language: {config.language}')
 
