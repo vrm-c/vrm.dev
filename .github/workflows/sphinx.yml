@@ -25,9 +25,9 @@ jobs:
       - run: cp docs/_static/licenses/1.0/pdf/jp.pdf licenses/1.0/pdf/jp.pdf
       - run: cp docs/_static/licenses/1.0/pdf/en.pdf licenses/1.0/pdf/en.pdf
       - run: touch public/.nojekyll
+      - run: echo vrm.dev > public/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          cname: vrm.dev
