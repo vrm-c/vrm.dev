@@ -27,14 +27,14 @@ BlendShapeAvatarアセット。
 
 BlendShapeClip選択・設定作成
 
-```{figure /_static/images/wiki/select_blendshapeavatar.png
+```{figure} /_static/images/wiki/select_blendshapeavatar.png
 ```
 
 #### Listタブ(v0.45から)
 
 BlendShapeClipのリスト
 
-```{figure /_static/images/wiki/list.png
+```{figure} /_static/images/wiki/list.png
 ```
 
 ### BlendShapeClipアセットのインスペクタ。

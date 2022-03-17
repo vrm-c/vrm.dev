@@ -1,165 +1,165 @@
-# VRM PUBLIC LICENSE 1.0
+# VRMパブリック・ライセンス文書 1.0
 
-<a href="https://vrm.dev/licenses/1.0/pdf/en.pdf" download="VRM Public License 1.0.pdf" target="_blank" rel="noopener">PDF</a>
+<a href="https://vrm.dev/licenses/1.0/pdf/jp.pdf" download="VRMパブリック・ライセンス文書 1.0.pdf" target="_blank" rel="noopener">PDF</a>
 
-By exercising the Licensed Rights (as defined below), You (as defined below) accept and agree to be bound by the terms and conditions of this VRM Public License 1.0 (this “<b>Public License</b>”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor (as defined below) grants You such rights in consideration of benefits the Licensor receives from making the Licensed Work Data (as defined below) available under these terms and conditions.
+「あなた」（以下に定義します）は、「ライセンスされた権利」（以下に定義します）の行使をもって、VRMパブリック・ライセンス文書（以下「本ライセンス文書」といいます。）の条項に拘束されることを承諾し同意します。本ライセンス文書が契約と解釈され得る限度において、「あなた」は、本ライセンス文書の条項を承諾することと引換えに、「ライセンスされた権利」を付与されます。「ライセンサー」（以下に定義します）は、「あなた」に対し、本ライセンス文書の条項に従って「ライセンス対象作品データ」（以下に定義します）を利用可能にすることによって「ライセンサー」が受領する利益と引換えに、当該権利を付与します。
 
-## Section 1. Definitions.
+## 第1条　定義
 
 <ol type="a">
-  <li>“<b>Adapted Work Data</b>” means a VRM file subject to Copyright and Similar Rights that is derived from or based upon the Licensed Work Data and in which the Licensed Work Data is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor.</li></li>
-  <li>“<b>Adapter’s License</b>” means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Work Data in accordance with the terms and conditions of this Public License.</li>
-  <li>“<b>Copyright and Similar Rights</b>” means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and sui generis database rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Sections 2(b)(1) and (2) are not Copyright and Similar Rights.</li>
-  <li>“<b>Effective Technological Measures</b>” means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 ofthe WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.</li>
-  <li>“<b>Exceptions and Limitations</b>” means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Work Data.</li>
-  <li>“<b>Licensed Work Data</b>” means a 3D model data created using VRM (VRM file) that is the subject of the license under this Public License and is licensed for use under such license.</li>
-  <li>“<b>Licensed Rights</b>” means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your useof the Licensed Work Data and that the Licensor has authority to license.</li>
-  <li>“<b>License Settings</b>” means the part of the Licensed Work Data that contains the Licensor’s designation of the subject and terms of the license under this Public License. The License Setting constitutes, together with this Public License, the terms and conditions of the license of the Licensed Work Data grantedto You.</li>
-  <li>“<b>Licensor</b>” means the individual(s) or entity(ies) granting the Licensed Rights under this Public License.</li>
-  <li>“<b>Non-commercial</b>” means not primarily intended for, and not primarily directed to, commercial gain or monetary compensation. For purposes of this Public License, an exchange of Licensed Work Data for other material covered by Copyright and Similar Rights is non-commercial if no monetary compensation is paid in connection with the exchange.</li>
-  <li>“<b>Redistribution</b>” means to provide a VRM file to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make a VRM file available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them. For the avoidance of doubt, reproduction or otherwise using the Licensed Work Data to the extent necessary for ModelUse or Avatar Use (if applicable) of the Licensed Work Data does not constitute Redistribution.</li>
-  <li>“<b>You</b>” means the individual or entity exercising the Licensed Rights under this Public License. “<b>Your</b>” has a corresponding meaning.</li>
-  <li>“<b>Manipulation</b>” means adding motion (including adding sound)to the 3D avatar pertaining to a specific VRM file by executing the VRM file on an application.</li>
-  <li>“<b>Model Use</b>” means publicly transmitting, making available for transmission, or showing of a series of images obtained by Manipulating the 3D avatar pertaining to a specific VRM file for the purpose of having a third party view it, excluding Avatar Use.</li>
-  <li>“<b>Personify</b>” means to Manipulate the 3D avatar of a specific VRM file by expressly or implicitly stating that such manipulation expresses words and actions reflecting the intentions of a real or virtual personality.
-  <li>“<b>Avatar Use</b>” means publicly transmitting, making available fortransmission, or showing of a series of images obtained by Personifying the 3D avatar pertaining to a specific VRM file for the purpose of having a third party view it.</li>
+  <li><b>「改変作品データ」</b>とは、「ライセンス対象作品データ」から派生し又はそれに基づく、「著作権等」の対象であるVRMファイルであって、「ライセンサー」が有する「著作権等」に基づく許諾が必要となるような態様で「ライセンス対象作品データ」が翻案され、改変され、編集され、変形され、又はその他の方法により変更された作品データをいいます。</li>
+  <li><b>「改変者のライセンス」</b>とは、本ライセンス文書の条項に従って、「改変作品データ」に対して「あなた」が寄与した部分に生じる「あなた」の「著作権等」に適用されるライセンスをいいます。</li>
+  <li><b>「著作権等」</b>とは、名称及び分類の如何を問わず、著作権及び／又は著作権に密接に関連する類似の権利（実演権、放送権、録音権及びデータベース権を含みますが、これらに限られません。）をいいます。本ライセンス文書においては、第2条(b)(1)及び(2)において規定される権利は、「著作権等」ではありません。</li>
+  <li><b>「効果的な技術的手段」</b>とは、1996年12月20日に採択されたWIPO著作権条約第11条及び／又は類似の国際協定に基づく義務を充足する法令の下で、正当な権限なしに回避されてはならないとされている手段をいいます。</li>
+  <li><b>「例外及び権利制限規定」</b>とは、「ライセンス対象作品データ」を「あなた」が利用する場合に適用される、フェアユース、フェアディーリング及び／又は著作権等に対するその他の例外若しくは権利制限規定をいいます。</li>
+  <li><b>「ライセンス対象作品データ」</b>とは、本ライセンス文書に基づくライセンスの対象であって、当該ライセンスに基づいて利用することが許諾されている、VRMを用いて作成された3Dモデルデータ（VRMファイル）をいいます。</li>
+  <li><b>「ライセンスされた権利」</b>とは、本ライセンス文書の条項に従うことを条件として「あなた」に付与された権利をいいます。かかる権利は、全ての「著作権等」のうち、「ライセンス対象作品データ」の「あなた」による利用に適用されるものであって、かつ、「ライセンサー」がライセンス権限を有するものに限られます。</li>
+  <li><b>「ライセンス設定」</b>とは、本ライセンス文書に基づくライセンスの対象及び条件について「ライセンサー」が指定した事項が記載された、「ライセンス対象作品データ」内の部分といいます。「ライセンス設定」は、本ライセンス文書と一体のものとして、「ライセンス対象作品データ」の「あなた」に対するライセンスの条件及び条項を構成します。</li>
+  <li><b>「ライセンサー」</b>とは、本ライセンス文書に基づき「ライセンスされた権利」を付与する個人又は団体をいいます。</li>
+  <li><b>「非商用」</b>とは、商業的な利得や金銭的報酬を主たる目的とせず、それらに主に向けられてもいないことをいいます。本ライセンス文書においては、「ライセンス対象作品データ」と「著作権等」の対象となるその他の素材との交換は、その交換に関連して金銭的報酬の支払いがない場合は、非商用に該当します。</li>
+  <li><b>「再配布」</b>とは、複製、公の展示、公の上演・演奏、頒布、配布、通信又は輸入のような、「ライセンスされた権利」に基づく許諾を必要とするような手段又は手法により、公衆にVRMファイルを提供すること、及び、公衆がVRMファイルを利用できるようにすること（公衆の各人が、自ら選択した場所及び時間においてVRMファイルにアクセスすることができる方法を含みます）をいいます。誤解を避けるために記すと、「ライセンス対象作品データ」について「モデル利用」又は「アバター利用」（適用がある場合）するために必要と認められる限度において、当該「ライセンス対象作品データ」について複製等の利用をすることは、「再配布」に該当しません。</li>
+  <li><b>「あなた」</b>とは、本ライセンス文書に基づき付与された権利（すなわち、「ライセンスされた権利」）を行使する個人又は団体をいいます。</li>
+  <li><b>「操作」</b>とは、特定のVRMファイルをアプリケーション上で実行することによって当該VRMファイルに係る3Dアバターに動作を加えること（音声の付与を行うことを含みます。）をいいます。</li>
+  <li><b>「モデル利用」</b>とは、特定のVRMファイルに係る3Dアバターを「操作」して得られる一連の影像を、第三者に対して視聴させることを目的として、公衆送信、送信可能化又は上映を行うことであって、「アバター利用」以外の場合をいいます。</li>
+  <li><b>「人格付与」</b>とは、特定のVRMファイルに係る3Dアバターを、実在又は仮想の人格が有する意思に基づく言動を表現している旨を明示又は黙示に表明して「操作」することをいいます。</li>
+  <li><b>「アバター利用」</b>とは、特定のVRMファイルに係る3Dアバターについて「人格付与」して得られる一連の影像を、第三者に対して視聴させることを目的として、公衆送信、送信可能化又は上映を行うことをいいます。</li>
 </ol>
 
-## Section 2. Scope.
+## 第2条　権利の範囲
 
 <ol type="a">
-  <li><b>License grant</b>.</li>
+  <li><b>ライセンス付与</b></li>
   <ol type="1">
-    <li>Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to make Model Use of the Licensed Work Data, and to perform any of the following acts that the Licensor specifies in the License Settings (collectively, the “<b>Licensed Rights</b>”) to:</li>
+    <li>本ライセンス文書の条項に従うことを条件として、「ライセンサー」は、「あなた」に対し、「ライセンス対象作品データ」について、「ライセンス対象作品データ」について「モデル利用」を行う権利、並びに、以下に掲げる行為のうち、「ライセンス設定」において「ライセンサー」が指定した行為を行う権利（総称して、「ライセンスされた権利」）を行使できる全世界的な、無償、再許諾不可、非独占的、かつ取消不可能なライセンスを付与します。</li>
     <!-- WORKAROUND: minifierが勝手にattributeをlowercaseにしてしまうため、styleで大文字にする -->
     <ol type="A" style="list-style-type: upper-latin">
-      <li>Redistribute the Licensed Work Data, in whole or in part;</li>
-      <li>make Avatar Use of the Licensed Work Data;</li>
-      <li>create or reproduce Adapted Work Data;</li>
-      <li>Redistribute any Adapted Work Data; and</li>
-      <li>in addition to the foregoing, to conduct any other acts specified by the Licensor in the License Settings.</li>
+      <li>「ライセンス対象作品データ」の全部又は一部を「再配布」すること</li>
+      <li>「ライセンス対象作品データ」について「アバター利用」を行うこと</li>
+      <li>「改変作品データ」を作成又は複製すること</li>
+      <li>「改変作品データ」を「再配布」すること</li>
+      <li>前各号に掲げるもののほか、「ライセンス設定」においてライセンサーが独自に指定した行為</li>
     </ol>
-    <li>If the Licensor so specifies in the License Settings, the license in Section 2(a)(1) is granted only if You make the use described in the said Section for Non-commercial purposes.</li>
-    <li>If the Licensor so specifies in the License Settings, the license in Section 2(a)(1) is granted only to You for Your personal use as set forth in the said Section.</li>
-    <li>If the Licensor establishes its own terms in the License Settings other than those set forth in this Public License, the license under Section 2(a)(1) is granted only if You comply with such terms.</li>
-    <li><u>Exceptions and Limitations</u>. For the avoidance of doubt, where Exceptions and Limitations apply to Your use of theLicensed Work Data, this Public License does not apply, and You do not need to comply with its terms and conditions.</li>
-    <li><u>Term</u>. The term of this Public License is specified in Section 6(a).</li>
-    <li><u>Media and formats; technical modifications allowed</u>. The Licensor authorizes You to exercise the Licensed Rights inall media and formats whether now known or hereafter created, and to make technical modifications necessary todo so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumventEffective Technological Measures. For purposes of this Public License, simply making modifications authorized bythis Section 2(a)(7) shall not be deemed production of Adapted Work Data.</li>
-    <li><u>Downstream recipients</u>.</li>
+    <li>「ライセンサー」が、「ライセンス設定」においてその旨指定した場合、第2条(a)(1)におけるライセンスは、「あなた」が「非商用」目的で同項に規定する利用を行う場合に限り、付与されます。</li>
+    <li>「ライセンサー」が、「ライセンス設定」においてその旨指定した場合、第2条(a)(1)におけるライセンスは、「あなた」が個人として同項に規定する利用を行う場合に限り、付与されます。</li>
+    <li>「ライセンサー」が、「ライセンス設定」において、本ライセンス文書に定める条件以外の条件を独自に付した場合、第2条(a)(1)におけるライセンスは、「あなた」が当該条件に従う場合に限り、付与されます。</li>
+    <li><u>例外及び権利制限規定</u>　誤解を避けるために記すと、「あなた」の行う「ライセンス対象作品データ」の利用に「例外及び権利制限規定」が適用される場合、本ライセンス文書の適用はなされず、「あなた」は、本ライセンス文書の条項に従う必要はありません。</li>
+    <li><u>有効期間</u>　本ライセンス文書の有効期間は、第6条(a)において規定されます。</li>
+    <li><u>媒体及び形式並びに許可される技術的改変</u>　「ライセンサー」は、「あなた」に対し、あらゆる媒体や形式（現在知られているか又は今後考案されるかを問いません）で「ライセンスされた権利」を行使することのできる権限を付与し、当該行使に必要とされる技術的な改変を行う権限を付与します。「ライセンサー」は、「あなた」が、「ライセンスされた権利」を行使するために必要とされる技術的な改変（効果的な技術的手段を回避するために必要とされる技術的な改変を含みます。）を禁止するいかなる権利又は権限も放棄し、及び／又はこれらの権利又は権限を行使しないことに同意します。本ライセンス文書の関係では、本第2条(a)(7)で認められている改変は、「改変作品データ」の作成とはみなされません。</li>
+    <li><u>下流の受領者</u></li>
     <ol type="A" style="list-style-type: upper-latin">
-      <li><u>Offer from the Licensor - Licensed Work Data</u>. Everyrecipient of the Licensed Work Data automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.</li>
-      <li><u>Additional offer from the Licensor - Adapted Work Data</u>. In cases where the Licensor grants the right todo the act listed in Section 2(a)(1)(D) as a Licensed Right in the License Settings, every recipient of Adapted Work Data from You automatically receivesan offer from the Licensor to exercise the Licensed Rights in the Adapted Work Data under the conditions of the Adapter’s License You apply.</li>
-      <li><u>No downstream restrictions</u>. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Work Data if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Work Data.</li>
+      <li><u>ライセンサーからの申し出－ライセンス対象作品データ</u>　「ライセンス対象作品データ」を受領した者は、本ライセンス文書の条項に基づいて「ライセンスされた権利」を行使できるという「ライセンサー」からの申し出を自動的に受領します。</li>
+      <li><u>ライセンサーからのその他の申し出－改変作品データ</u>　「ライセンサー」が、「ライセンス設定」において、「ライセンスされた権利」として第2条(a)(1)Dに掲げる行為を行う権利を指定した場合、「あなた」から「改変作品データ」を受領した者は、「あなた」が適用した「改変者のライセンス」の条件に従った「改変作品データ」における「ライセンスされた権利」を行使できるという「ライセンサー」からの申し出を自動的に受領します。</li>
+      <li><u>下流に対する制限の禁止</u>　「あなた」は、それが「ライセンス対象作品データ」を受領した者に対する「ライセンスされた権利」の行使に対する制限となる場合、「ライセンス対象作品データ」に対し、いかなる追加条項又は異なる条項も提案し又は課してはならず、いかなる効果的な技術的手段も適用してはなりません。</li>
     </ol>
-    <li><u>No endorsement</u>. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Work Data is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i) (as applicable).</li>
+    <li><u>推奨禁止</u>　本ライセンス文書は、「あなた」又は「ライセンス対象作品データ」の「あなた」による利用が、「ライセンサー」又は第3条(a)(1)(A)(i)に定められているクレジット表示（適用がある場合）の対象として指定されたその他の者と関連し、それらの者から援助を受け、推奨され、又は公的地位を付与されているという主張又は示唆を行うことを許諾するものではなく、そのように解釈されてはなりません。</li>
   </ol>
-  <b><li>Other rights</b>.</li>
+  <b><li>その他の権利</b></li>
   <ol type="1">
-    <li>Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.</li>
-    <li>Patent and trademark rights are not licensed under this Public License.</li>
-    <li>To the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expresslyreserves any right to collect such royalties.</li>
+    <li>同一性保持権のような著作者人格権は、本ライセンス文書に基づくライセンスの対象ではありません。パブリシティ権、プライバシー権、及び／又はこれに類するその他の人格権も同様です。ただし、「ライセンサー」は、可能なかぎり、「あなた」が「ライセンスされた権利」を行使するために必要とされる限度で、また、その限度でのみ、ライセンサーが保有するかかる権利を放棄し、及び／又は主張しないことに同意します。</li>
+    <li>特許権及び商標権は、本ライセンス文書に基づくライセンスの対象ではありません。</li>
+    <li>「ライセンサー」は、可能な限度において、任意の又は放棄可能な法的若しくは強制的なライセンスの枠組みの下で、直接又は集中管理団体を通じて、「ライセンスされた権利」の行使について、「あなた」からロイヤリティを徴収する権利を放棄します。その他一切の場合において、「ライセンサー」は、かかるロイヤリティを徴収する権利を明示的に留保します。</li>
   </ol>
 </ol>
 
-## Section 3. License Conditions.
+## 第3条　ライセンス条件
 
-Your exercise of the Licensed Rights is expressly made subject to the following conditions:
+「あなた」が「ライセンスされた権利」を行使するにあたっては、以下の条件に従う必要があります。
 
 <ol type="a">
-  <li><b>Attribution</b>.</li>
+  <li><b>クレジット表示</b></li>
   <ol type="1">
-    <li>If the Licensor indicates in the License Settings that this Section applies to You, and if You Redistribute, make Model Use, or make Avatar Use the Licensed Work Data (including in modified form, if applicable), You shall:</li>
+    <li>「ライセンサー」が、「ライセンス設定」において本項が適用される旨を指示した場合において、「あなた」が「ライセンス対象作品データ」（適用がある場合、変更されたものを含みます。）を「再配布」、「モデル利用」又は「アバター利用」する場合、以下のことを行う必要があります。</li>
     <ol type="A" style="list-style-type: upper-latin">
-      <li>retain the following if it is supplied by the Licensor with the Licensed Work Data:</li>
+      <li>「ライセンス対象作品データ」と共に「ライセンサー」から提供されている場合、以下のものを保持すること。</li>
       <ol type="i">
-        <li>identification of the creator(s) of the Licensed Work Data and any others designated by the Licensor to receive attribution, in any reasonable manner requested by the Licensor(including by pseudonym, if designated);</li>
-        <li>a copyright notice;</li>
-        <li>a notice that refers to this Public License;</li>
-        <li>a notice that refers to the disclaimer of warranties; and</li>
-        <li>a URI or hyperlink to the Licensed Work Data to the extent reasonably practicable;</li>
+        <li>「ライセンス対象作品データ」の作者、その他クレジット表示される者として「ライセンサー」が指定するその他の者を特定する情報の表示（「ライセンサー」によって要請された合理的な形式による。これには、指定された場合の別名も含む）</li>
+        <li>著作権表示</li>
+        <li>本ライセンス文書に言及する表示</li>
+        <li>無保証に言及する表示</li>
+        <li>合理的に実施可能な場合、「ライセンス対象作品データ」のURI又はハイパーリンクの表示</li>
       </ol>
-      <li>indicate if You modified the Licensed Work Data andretain an indication of any previous modifications; and</li>
-      <li>indicate the Licensed Work Data is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.</li>
+      <li>「ライセンス対象作品データ」を改変した場合はその旨を記し、従前の改変点についての表示も保持すること。</li>
+      <li>「ライセンス対象作品データ」が本ライセンス文書に基づきライセンスされていることを示すこと、及び、本ライセンス文書の全文、そのURI又は本ライセンス文書へのハイパーリンクを記載すること。</li>
     </ol>
-    <li>If requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.</li>
+    <li>「ライセンサー」から要請があれば、「あなた」は、第3条(a)(1)(A)で求められたいかなる情報も、合理的に現実的な限度で削除しなければなりません。</li>
   </ol>
-  <li><b>Conditions for Redistribution of Adaptation</b>.</li>
+  <li><b>改変物の再配布条件</b></li>
   <ol type="1">
-    <li>If You Redistribute Adapted Work Data that You created, the Adapter’s License that You grant shall not prevent therecipients of the Adapted Work Data from applying this Public License to the Licensed Work Data.</li>
-    <li>The subject acts and terms of the Adapter’s License granted by You shall be the same as or more restrictive than those in this Public License.</li>
-    <li>If You Redistribute the Adapted Work Data that You created, You shall include the terms of the Adapter’s License that applies to You in the License Settings of the Adapted Work Data.</li>
+    <li>「あなた」が作成した「改変作品データ」を「再配布」する場合、「あなた」が付与する「改変者のライセンス」は、「ライセンス対象作品データ」について「改変作品データ」の受領者に本ライセンス文書が適用されることを妨げてはなりません。</li>
+    <li>「あなた」が付与する「改変者のライセンス」におけるライセンスの付与対象行為及び付与条件は、本ライセンス文書におけるそれと同じか、それより制限的なものとしなければなりません。</li>
+    <li>あなたが作成した「改変作品データ」を「再配布」する場合、「あなた」は、「あなた」が適用する「改変者のライセンス」の内容を、「改変作品データ」の「ライセンス設定」に含めなければなりません。</li>
   </ol>
-  <li><b>Designation of Personifying Person</b>.</li>
-  If the Licensor has indicated in the License Settings that this Section applies, Avatar Use using the Licensed Work Data may not be performed by any person other than the person identified in the License Settings as the person who can perform Avatar Use of the Licensed Work Data.
-  <li><b>Designation of Prohibited Expression</b>.</li>
-  If the Licensor has indicated in the License Settings that this Section applies, and when using the Licensed Work Data for Model Use or Avatar Use, the images generated for such use shall not include any of the following expressions specified in the License Settings
+  <li><b>人格付与者指定</b></li>
+  「ライセンサー」が、「ライセンス設定」において本項が適用される旨を指示した場合において、「ライセンス対象作品データ」を用いて行う「アバター利用」は、「ライセンス対象作品データ」について「アバター利用」ができる者として「ライセンス設定」において特定された者以外の者が行うことはできません。
+  <li><b>禁止表現指定</b></li>
+  「ライセンサー」が、「ライセンス設定」において本項が適用される旨を指示した場合において、「ライセンス対象作品データ」を用いて「モデル利用」又は「アバター利用」する場合、当該利用にあたって生成された影像には、以下の表現のうち、「ライセンス設定」において指定された表現を含んではなりません。
   <ol type="1">
-    <li>excessively violent expressions</li>
-    <li>excessively sexual expressions</li>
-    <li>antisocial expressions or hate expressions</li>
-    <li>religious expressions or political expressions</li>
+    <li>成人向け暴力表現</li>
+    <li>成人向け性表現</li>
+    <li>反社会的行為表現又は憎悪表現</li>
+    <li>宗教目的表現又は政治目的表現</li>
   </ol>
   <p>
-    For the purposes of this Section,
+    本項の関係では、
   </p>
   <p>
-    “excessively violent expressions” means expressions that may induce or encourage the coarseness or cruelty of youths and may impede with their sound development;
+    「成人向け暴力表現」とは、青少年の粗暴性又は残虐性を誘発し、又は助長し、その健全な育成を阻害するおそれのある表現をいい、
   </p>
   <p>
-    “excessively sexual expressions” means expressions that may stimulate the sexual feelings of youths and may impede their sound development;
+    「成人向け性表現」とは、青少年の性的感情を刺激し、その健全な育成を阻害するおそれのある表現をいい、
   </p>
   <p>
-    “antisocial expressions” means expressions that may induce or encourage crime or suicide;
+    「反社会的行為表現」とは、犯罪又は自殺を誘発し、又は助長するおそれのある表現をいい、
   </p>
   <p>
-    “hate expressions” means expressions that disparage, slander, or threaten a specific individual or group for the purpose of excluding them from society, restricting their rights and freedoms, or stirring up hatred, discrimination, or violence;
+    「憎悪表現」とは、特定の個人・集団を社会から排除し、その権利・自由を制限し、又は憎悪・差別の意識若しくは暴力をあおる目的で、侮蔑・誹謗中傷し、又は脅威を感じさせる表現をいい、
   </p>
   <p>
-    “religious expressions” means expressions intended to spread religious doctrines, conduct ceremonial events, or indoctrinate and train believers; and
+    「宗教目的表現」とは、宗教の教義を広め、儀式行事を行い、又は信者を教化育成することを目的とする表現をいい、
   </p>
   <p>
-    “political expression” means an expression intended to promote, support or oppose political principles.
+    「政治目的表現」とは、政治上の主義を推進し、支持し、又はこれに反対することを目的とする表現をいいます。
   </p>
 </ol>
 
-## Section 4. Disclaimer of Warranties and Limitation of Liability.
+## 第4条　無保証及び責任制限
 
 <ol type="a">
-  <li><b>Unless otherwise separately undertaken by the Licensor,to the extent possible, the Licensor offers the Licensed Work Data as-is and as-available, and makes no representations or warranties of any kind concerning theLicensed Work Data, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence oferrors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.</b></li>
-  <li><b>To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damagesarising out of this Public License or use of the Licensed Work Data, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.</b></li>
-  <li>The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.</li>
+  <li><b>「ライセンサー」が別途引き受けない限り、「ライセンサー」は、可能な限度において、「ライセンス対象作品データ」を、現状有姿のまま、現時点で利用可能な限りで提供し、明示、黙示、法令上、その他に関わらず、「ライセンス対象作品データ」について一切の表明又は保証をしません。これには、権利の帰属、商品性、特定の利用目的への適合性、権利侵害の不存在、隠れた瑕疵その他の瑕疵の不存在、正確性又は誤りの存在もしくは不存在を含みますが、これに限られず、既知であるか否か、発見可能であるか否かを問いません。全部又は一部について無保証が認められない場合、この無保証は「あなた」に適用されない可能性があります。</b></li>
+  <li><b>可能な限度において、本ライセンス文書もしくは「ライセンス対象作品データ」の利用によって生じる直接、特別、間接、偶発、結果的、懲罰的その他の損失、費用、経費又は損害について、たとえ、かかる損失、費用、経費又は損害の可能性について「ライセンサー」が知らされていたとしても、「ライセンサー」は、「あなた」に対し、いかなる法理（過失責任を含みますが、これに限られません。）その他に基づいても、責任を負いません。全部又は一部について責任制限が認められない場合、この制限は「あなた」には適用されない可能性があります。</b></li>
+  <li>上記の無保証及び責任制限は、可能な限度において、全責任の完全な免責及び免除に最も近いものとして解釈するものとします。</li>
 </ol>
 
-## Section 5. Term and Termination.
+## 第5条　期間及び終了
 
 <ol type="a">
-  <li>This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.</li>
-  <li>Where Your right to use the Licensed Work Data has terminatedunderSection 5(a), it reinstates:</li>
+  <li>本ライセンス文書は、本書においてライセンスされた「著作権等」が有効な期間に適用されます。ただし、「あなた」が本ライセンス文書に違反した場合、本ライセンス文書に基づく「あなた」の権利は自動的に終了します。</li>
+  <li>「ライセンス対象作品データ」を「あなた」が利用する権利が第5条(a)に基づき終了した場合、以下のいずれかが適用されます。</li>
   <ol type="1">
-    <li>automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or</li>
-    <li>upon express reinstatement by the Licensor.</li>
+    <li>「あなた」が違反を発見してから30日以内に違反を是正した場合、違反を是正した日をもって、自動的に復活します。</li>
+    <li>「ライセンサー」による明示的な復活がなされ次第、復活します。</li>
   </ol>
-  <p>For the avoidance of doubt, this Section 5(b) does not affect anyright the Licensor may have to seek remedies for Your violationsof this Public License.</p>
-  <li>For the avoidance of doubt, the Licensor may also offer the Licensed Work Data under separate terms or conditions or stop distributing the Licensed Work Data at any time; however, doing so will not terminate this Public License.</li>
-  <li>Sections 1, 4, 5, 6, and 7 survive termination of this Public License.</li>
+  <p>誤解を避けるために記すと、本第5条(b)は、「ライセンサー」が、「あなた」の本ライセンス文書の違反に対する救済を求めるために有する可能性のあるいかなる権利にも影響を及ぼしません。</p>
+  <li>誤解を避けるために記すと、「ライセンサー」は、いつでも、別の条項に基づき「ライセンス対象作品データ」を提供し、「ライセンス対象作品データ」の配布を停止することができます。ただし、その場合でも、本ライセンス文書は終了しません。</li>
+  <li>第1条、第4条、第5条、第6条、第7条は、本ライセンス文書が終了してもなお有効に存続します。</li>
 </ol>
 
-## Section 6. Other Terms and Conditions.
+## 第6条　その他の条項
 
 <ol type="a">
-  <li>The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.</li>
-  <li>Any arrangements, understandings, or agreements regarding the Licensed Work Data not stated herein are separate from and independent of the terms and conditions of this Public License.</li>
+  <li>「ライセンサー」は、明示的に同意しない限り、「あなた」が通知するいかなる追加的な又は異なる条項・条件にも拘束されないものとします。</li>
+  <li>本書に記載のない「ライセンス対象作品データ」に関するあらゆる取決め、了解事項又は合意事項は、本ライセンス文書の条項とは切り離され、独立したものです。</li>
 </ol>
 
-## Section 7. Interpretation.
+## 第7条　解釈
 
 <ol type="a">
-  <li>For the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Work Data that could lawfully be made without permission under this Public License.</li>
-  <li>To the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.</li>
-  <li>No term or condition of this Public License will be waived and nofailure to comply consented to unless expressly agreed to by the Licensor.</li>
-  <li>Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunitiesthat apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.</li>
+  <li>誤解を避けるために記すと、本ライセンス文書は、本ライセンス文書に基づく許諾なしに行われる「ライセンス対象作品データ」のいかなる合法的な利用も減縮したり、限定したり、制限したり、条件を課したりするものではなく、またそのように解釈されてはなりません。</li>
+  <li>可能な限度において、本ライセンス文書のいずれかの規定が執行不能とみなされた場合、本ライセンス文書は、執行可能とするために必要最小限度の範囲で自動的に変更されるものとします。当該規定の変更が不可能な場合、残余の条項の執行可能性に影響を与えることなく、当該規定は本ライセンス文書から切り離されるものとします。</li>
+  <li>「ライセンサー」の明示的な同意がない限り、本ライセンス文書のいかなる条項も、放棄されず、遵守しないことに同意されないものとします。</li>
+  <li>本ライセンス文書のいかなる条項も、「ライセンサー」や「あなた」に適用される、あらゆる特権や免責（司法権や当局の法的手続からの特権や免責を含みます。）に対する制限や放棄を構成するものではなく、またそのように解釈されるものではありません。</li>
 </ol>
 
 <p class="revised-date">
-  Version 1.0: Established as of August 5, 2021.
+  バージョン 1.0: 2021年8月5日　制定
 </p>
