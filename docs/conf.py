@@ -87,19 +87,16 @@ redirects = {
     "docs/univrm/shaders/shader_mtoon/index.html": "/univrm/shaders/shader_mtoon",
     "docs/univrm/shaders/univrm_standard/index.html": "/univrm/shaders/univrm_standard",
     "docs/univrm/shaders/univrm_unlit/index.html": "/univrm/shaders/univrm_unlit",
-    "docs/univrm/springbone/index.html": "/univrm/springbone/index",
     "docs/univrm/springbone/univrm_secondary/index.html": "/univrm/springbone/univrm_secondary",
     "docs/vrm/how_to_make_vrm/setup_unity/index.html": "/vrm/how_to_make_vrm/setup_unity",
     "docs/vrm/vrm_development/index.html": "/vrm/vrm_development",
     "docs/vrm/vrm_meta/index.html": "/vrm/vrm_meta",
     "how_to_view_vrm/index.html": "/vrm/how_to_view_vrm",
-    "how_to_make_vrm/index.html": "/vrm/how_to_make_vrm/index",
     "how_to_make_vrm/convert_from_humanoid_model/index.html": "/vrm/how_to_make_vrm/convert_from_humanoid_model",
     "how_to_make_vrm/setup_vrm/index.html": "/vrm/how_to_make_vrm/setup_vrm",
     "how_to_make_vrm/vrm_behavior_confirmation/index.html": "/vrm/how_to_make_vrm/vrm_behavior_confirmation",
     "vrm_about/index.html": "/vrm/vrm_about",
     "vrm_applications/index.html": "/vrm/vrm_applications",
-    "vrm/index.html": "/vrm",
 }
 
 # Add any paths that contain templates here, relative to this directory.
