@@ -99,7 +99,7 @@ redirects = {
     "how_to_make_vrm/vrm_behavior_confirmation/index.html": "/vrm/how_to_make_vrm/vrm_behavior_confirmation",
     "vrm_about/index.html": "/vrm/vrm_about",
     "vrm_applications/index.html": "/vrm/vrm_applications",
-    "vrm/index.html": "/vrm/index",
+    "vrm/index.html": "/vrm",
 }
 
 # Add any paths that contain templates here, relative to this directory.
