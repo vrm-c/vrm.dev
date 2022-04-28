@@ -6,12 +6,9 @@ tags: ["gltf"]
 
 # Glbインポート
 
-# import
-
 glb ファイルを Unity の Assets 下のフォルダに投入すると、glb を Asset 化できます。
 
-## import option
-### `ReverseAxis` 反転軸の設定
+## `ReverseAxis` 反転軸の設定 `v0.68.0`
 
 glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転する軸を選択できます。
 
@@ -25,15 +22,14 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 
 ## glb の extract
 
-https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
+<https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary>
+
+を例に説明します。
 
 ### clear
 
-初期状態(clear)では、関連する Asset (Mesh, Material, Texture, AnimationClip)は SubAsset として配下にあります。
-
-* `texture_1.metallicRoughness` は、`texture_1` を元に Unity の Standard Shader 向けに変換したものです。md" >}})
-* `texture_3.occlusion` は、 `textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
-* `texture_4.normal` は、 `textrue_4` を元に Unity の Standard Shader 向けに変換したものです。
+初期状態(clear)では、glb に含まれる Asset (Mesh, Material, Texture, AnimationClip) は SubAsset として glb(DamagedHelmet) の配下になります。
+配下のアセットは変更することはできずに ReadOnly です。
 
 ```{figure} /_static/images/unigltf/glb_clear.jpg
 ```
@@ -41,60 +37,61 @@ https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
 ### extract
 
 `Extract Materials and Textures ...` を押すと下記のように変化します。
-
-* `Material_MR.mat` の生成
-* `texture_0.jpg` の生成(color)
-* `texture_1.metallicRoughness.png` の生成。`texture_1` を元に Unity の Standard Shader 向けに変換したものです。
-* `texture_2.jpg` の生成(emission)
-* `texture_3.occlusion.png` の生成。`textrue_3` を元に Unity の Standard Shader 向けに変換したものです。
-* `texture_4.jpg` の生成(normalMap)
+glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset になります。
+取り出されたアセットは変更可能になります。
 
 ```{figure} /_static/images/unigltf/glb_extract.jpg
 ```
 
 ## gltf の extract
 
-https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
+<https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF>
+
+を例に説明します。
 
 ### clear
 
-初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下にあります。
-
-* `Default_AO.occlusion` は、 `Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
-* `Defualt_metalRoughness.metallicRoughness` は、`Defualt_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
+初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下になります。
+配下のアセットは変更することはできずに ReadOnly です。
 
 ```{figure} /_static/images/unigltf/gltf_clear.jpg
+```
+
+```{admonition} gltf の関連 asset
+:class: warning
+
+glTF では元々テクスチャーなどは独立したファイルですが、
+変換が必要な場合は使われないことに注意してください。
+上記の例では、Default_metalRoughness, Default_AO は変換対象です。
 ```
 
 ### extract
 
 `Extract Materials and Textures ...` を押すと下記のように変化します。
-
-* `Material_MR.mat` の生成
-* `Default_AO.occlusion.png` の生成。`Default_AO` を元に Unity の Standard Shader 向けに変換したものです。
-* `Default_metalRoughness.metallicRoughness.png` の生成。`Default_metalRoughness` を元に Unity の Standard Shader 向けに変換したものです。
+glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset になります。
+取り出されたアセットは変更可能になります。
 
 ```{figure} /_static/images/unigltf/gltf_extract.jpg
 ```
 
 ## AssetFile の作られ方
 
-### 以前の動作(独立したasset)
+### VRM0 とv0.67以前のGLB/GLTF の Importer
 
-VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。
+以下のように import されます。
 
 ```{admonition} vrm0 の import
 :class: warning
 
 ![img](/_static/images/vrm10/vrm0_import.jpg)
 
-* mesh や texture や material や blendshape などの関連アセットファイルが作成されます。
+* mesh や texture や material や blendshape などの `独立した` 関連アセットファイルが作成されます。
 ```
 
 
-### 新しい動作(subasset)
+### VRM1 とv0.68以降のGLB/GLTF の Importer
 
-VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import されます。
+以下のように import されます。
 
 ```{admonition} vrm1 の import
 :class: warning
@@ -103,38 +100,31 @@ VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import さ�
 
 ![img](/_static/images/vrm10/vrm1_import.jpg)
 
-* mesh や material や texture や Expression が SubAsset として作成されます。
-
-
+* mesh や material や texture や Expression が `SubAsset` として作成されます。
 ```
 
 
 ```{admonition} glb の import
 :class: warning
 
-
-
 ![img](/_static/images/gltf/glb_extract_before.jpg)
 
-* material と texture が SubAsset として作成されます
-
-
+* material と texture が `SubAsset` として作成されます
 ```
 
 
 ## SubAsset を変更するには Extract する
 
-新しい Importer で作られた SubAsset は 内容を変更ができません。
+新しい Importer で作られた SubAsset は 変更ができません。
 
 ```{admonition} subasset
 :class: warning
 
-SubAsset は VRM 内のリソースを表しているためで、
-例えば Material を変更しても、その変更を即座に VRM に反映することができないためです。
+SubAsset は glb や VRM 内のリソースを表しているためで、
+例えば Material を変更しても、その変更を元の glb / VRM に反映することができません。
 
 FBX の Importer も同様の動作です。
 ```
-
 
 VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。
 
@@ -158,13 +148,13 @@ fbx importer の material タブには下記のようなボタンがあります
 このコピーされた Asset は自由に変更することができます。
 ```
 
-## 外部の Asset と VRM を関連付ける Remap
+## 外部の Asset と glb / VRM を関連付ける Remap
 
-初期状態では vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
+初期状態では glb / vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
 置き換えの関連付けを管理するのが Remap です。
 
-* None になっているときは、 `vrm`, `glb` に内部の SubAsset を使用しているという意味になります。
-* Extract以外にも、個別に既存のAssetを割り当てできます
+* None になっているときは、 `glb`, `vrm` 内部の SubAsset を使用しているという意味になります。
+* 既存のAssetを割り当てることができます
 
 ```{admonition} extract 後
 :class: warning

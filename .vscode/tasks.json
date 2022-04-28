@@ -6,7 +6,7 @@
         {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml",
             "isBackground": true,
             "problemMatcher": []
         },
@@ -31,14 +31,14 @@
         {
             "label": "sphinx-autobuild(en)",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml --open-browser --port=0 -D=language=en -A=language=en",
+            "command": ".venv/Scripts/sphinx-autobuild docs build -b=dirhtml -D=language=en -A=language=en --host=0.0.0.0",
             "isBackground": true,
             "problemMatcher": []
         },
         {
             "label": "sphinx-build",
             "type": "shell",
-            "command": ".venv/Scripts/sphinx-build docs build -b=dirhtml -E",
+            "command": ".venv/Scripts/sphinx-build docs build -b=dirhtml -E --host=0.0.0.0",
             "presentation": {
                 "reveal": "always",
                 "echo": true,
