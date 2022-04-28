@@ -9,37 +9,63 @@ tags: ["gltf"]
 
 # Glbエクスポート
 
-`v0.68.0` 以降
+## `v0.68.0` 以降
 
-UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
+`UniVRM` に含まれる `UniGLTF` で `glb` ファイルを作成することが出来ます。
+`vrm` はヒューマノイドが対象ですが、 `glb` は特に制限は無くヒエラルキーを何でも出力できます。
+
 以下、手順を説明します。
 
-## 手順
-### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
+### 手順
+#### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
 
 ```{figure} /_static/images/unigltf/glb_export_dialog.jpg
 ```
 
-### 2. `ExportRoot` に対象の GameIObject をセットしてください
+#### 2. `ExportRoot` に対象の GameIObject をセットしてください
 
 ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。
 
 * 一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。
 
-### 3. `Export` を押す
+#### 3. `Export` を押す
 
 ファイル保存ダイアログが表示されるので出力先を指定してください。
 
-## Glbのエクスポート対象になるコンポーネント
+### Glbのエクスポート対象になるコンポーネント
 
 * `MeshRenderer + MeshFilter` (一番親以外の子供につけてください)
 * `SkinnedMeshRenderer` (一番親以外の子供につけてください)
+
+```{admonition} 一番親は glTF の scene になります
+UniGLTF では glTF のデータ構造を以下のように処理しています。
+シーンはノードではないので、移動・回転・拡縮、meshの有無がありません。
+
+* scene0
+  * node00
+  * node01
+      * node010
+```
+
 * `Animation` (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)
 
-## 対応しているShader
+```{admonition} glTF の Animation は node にアタッチされない
+node にアタッチせずにシーンに記述されるようなデータ構造です。
+```
+
+### 対応しているShader
 
 * `Standard`
+
+```{admonition} glTF のデフォルトマテリアル
+glTF の Default material である PBR になります。
+```
+
 * `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
+
+```{admonition} glTF の KHR_materials_unlit
+glTF の `KHR_materials_unlit` 拡張として記録します。
+```
 
 ----
 
