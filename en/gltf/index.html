@@ -248,9 +248,7 @@
 </li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">glTF</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="glb_import.html">GLB Import</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glb_export.html">GLB Export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_export.html#v0-68-0">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="animation_exporter.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emission_glow.html">Emission and glow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
@@ -362,7 +360,7 @@
 <tr class="row-odd"><td><p>camera</p></td>
 <td><p></p></td>
 <td><p></p></td>
-<td><p></p></td>
+<td><p>Not supported by UniGLTF</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -372,17 +370,34 @@
 <p><span class="caption-text">If you change the extension from <code class="docutils literal notranslate"><span class="pre">.vrm</span></code> to<code class="docutils literal notranslate"> <span class="pre">.glb</span></code>, you can load it with an application that supports <code class="docutils literal notranslate"><span class="pre">gltf</span></code> (such as 3D Builder that comes standard with Windows 10).(However, VRM-specific settings are not reflected)</span><a class="headerlink" href="#vrmgltf3d-builder" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="id1">
+<h2>UniGLTF preference<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-</span> <span class="pre">Preferences</span> <span class="pre">-</span> <span class="pre">UniGLTF</span></code></p>
+<figure class="align-default">
+<img alt="../_images/unigltf_preference.jpg" src="../_images/unigltf_preference.jpg"/>
+</figure>
+<section id="lang">
+<h3>Lang<a class="headerlink" href="#lang" title="Permalink to this headline">¶</a></h3>
+<p>Display and message language switching for Unity Editor</p>
+</section>
+<section id="default-invert-axis">
+<h3>Default invert axis<a class="headerlink" href="#default-invert-axis" title="Permalink to this headline">¶</a></h3>
+<p>glTF is in the right-handed coordinate system, while Unity is in the left-handed coordinate system.Z-axis inversion, X-axis inversion can be selected. For historical reasons (vrm-0.x is Z-axis inversion), the initial value is <code class="docutils literal notranslate"><span class="pre">Z-axis</span> <span class="pre">inversion</span></code>.</p>
+</section>
+<section id="enable-zip-importer-that-contains-gltf">
+<h3>Enable zip importer that contains gltf<a class="headerlink" href="#enable-zip-importer-that-contains-gltf" title="Permalink to this headline">¶</a></h3>
+<p>Allows you to import if you have gltf in your zip archive. This is an experimental function.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="glb_import.html">GLB Import</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glb_export.html">GLB Export</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glb_export.html#v0-68-0">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="animation_exporter.html">Animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emission_glow.html">Emission and glow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
 </ul>
 </div>
+</section>
 </section>
 </section>
 
@@ -439,6 +454,12 @@
             <ul>
 <li><a class="reference internal" href="#">glTF</a><ul>
 <li><a class="reference internal" href="#unigltf">UniGLTF</a></li>
+<li><a class="reference internal" href="#id1">UniGLTF preference</a><ul>
+<li><a class="reference internal" href="#lang">Lang</a></li>
+<li><a class="reference internal" href="#default-invert-axis">Default invert axis</a></li>
+<li><a class="reference internal" href="#enable-zip-importer-that-contains-gltf">Enable zip importer that contains gltf</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

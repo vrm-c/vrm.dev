@@ -248,9 +248,7 @@
 </li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">glTF</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="glb_import.html">Glbインポート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glb_export.html">Glbエクスポート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_export.html#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animation_exporter.html">アニメーション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emission_glow.html">Emission と グロー(発光)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
@@ -363,7 +361,7 @@
 <tr class="row-odd"><td><p>camera</p></td>
 <td><p></p></td>
 <td><p></p></td>
-<td><p></p></td>
+<td><p>UniGLTFではサポートしていません</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -374,17 +372,38 @@
 （ただしVRM独自の設定は反映されません)</span><a class="headerlink" href="#vrmgltf3d-builder" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="id1">
+<h2>UniGLTFの全体設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-</span> <span class="pre">Preferences</span> <span class="pre">-</span> <span class="pre">UniGLTF</span></code></p>
+<figure class="align-default">
+<img alt="../_images/unigltf_preference.jpg" src="../_images/unigltf_preference.jpg"/>
+</figure>
+<section id="lang">
+<h3>Lang<a class="headerlink" href="#lang" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Editor 表示/メッセージの言語切り替え</p>
+</section>
+<section id="default-invert-axis">
+<h3>Default invert axis<a class="headerlink" href="#default-invert-axis" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>glTF は右手座標系であるのに対して Unity は左手座標系です。
+import / export 時に座標を変換する必要があります。
+2つの選択肢が有り、Z軸反転、 X軸反転を選択できます。
+歴史的理由(vrm-0.x がZ軸反転)により、初期値は <code class="docutils literal notranslate"><span class="pre">Z軸反転</span></code> です。</p>
+</section>
+<section id="enable-zip-importer-that-contains-gltf">
+<h3>Enable zip importer that contains gltf<a class="headerlink" href="#enable-zip-importer-that-contains-gltf" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>zip アーカイブの中に gltf が入っている場合に import できるようにします。
+実験的な機能です。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="glb_import.html">Glbインポート</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glb_export.html">Glbエクスポート</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glb_export.html#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a></li>
 <li class="toctree-l1"><a class="reference internal" href="animation_exporter.html">アニメーション</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emission_glow.html">Emission と グロー(発光)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
 </ul>
 </div>
+</section>
 </section>
 </section>
 
@@ -441,6 +460,12 @@
             <ul>
 <li><a class="reference internal" href="#">glTF</a><ul>
 <li><a class="reference internal" href="#unigltf">UniGLTF</a></li>
+<li><a class="reference internal" href="#id1">UniGLTFの全体設定</a><ul>
+<li><a class="reference internal" href="#lang">Lang</a></li>
+<li><a class="reference internal" href="#default-invert-axis">Default invert axis</a></li>
+<li><a class="reference internal" href="#enable-zip-importer-that-contains-gltf">Enable zip importer that contains gltf</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

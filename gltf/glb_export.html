@@ -248,9 +248,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">glTF</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="glb_import.html">Glbインポート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Glbエクスポート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animation_exporter.html">アニメーション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emission_glow.html">Emission と グロー(発光)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
@@ -316,89 +314,125 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="glb">
 <h1>Glbエクスポート<a class="headerlink" href="#glb" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> 以降</p>
-<p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
-以下、手順を説明します。</p>
+<section id="v0-68-0">
+<h2><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> 以降<a class="headerlink" href="#v0-68-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">UniVRM</span></code> に含まれる <code class="docutils literal notranslate"><span class="pre">UniGLTF</span></code> で <code class="docutils literal notranslate"><span class="pre">glb</span></code> ファイルを作成することが出来ます。
+<code class="docutils literal notranslate"><span class="pre">vrm</span></code> はヒューマノイドが対象ですが、 <code class="docutils literal notranslate"><span class="pre">glb</span></code> は特に制限は無くヒエラルキーを何でも出力できます。</p>
+<p>以下、手順を説明します。</p>
 <section id="id1">
-<h2>手順<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>手順<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <section id="unigltf-export-unigltf-2-x-y">
-<h3>1. <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code> メニューからダイアログを開きます<a class="headerlink" href="#unigltf-export-unigltf-2-x-y" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h4>1. <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code> メニューからダイアログを開きます<a class="headerlink" href="#unigltf-export-unigltf-2-x-y" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <figure class="align-default">
 <img alt="../_images/glb_export_dialog.jpg" src="../_images/glb_export_dialog.jpg"/>
 </figure>
 </section>
 <section id="exportroot-gameiobject">
-<h3>2. <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> に対象の GameIObject をセットしてください<a class="headerlink" href="#exportroot-gameiobject" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h4>2. <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> に対象の GameIObject をセットしてください<a class="headerlink" href="#exportroot-gameiobject" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>ドラッグアンドドロップや、右の◎ボタンを押すことで選択できます。</p>
 <ul class="simple">
 <li><p>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。</p></li>
 </ul>
 </section>
 <section id="export">
-<h3>3. <code class="docutils literal notranslate"><span class="pre">Export</span></code> を押す<a class="headerlink" href="#export" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h4>3. <code class="docutils literal notranslate"><span class="pre">Export</span></code> を押す<a class="headerlink" href="#export" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>ファイル保存ダイアログが表示されるので出力先を指定してください。</p>
 </section>
 </section>
 <section id="id2">
-<h2>Glbのエクスポート対象になるコンポーネント<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>Glbのエクスポート対象になるコンポーネント<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">MeshRenderer</span> <span class="pre">+</span> <span class="pre">MeshFilter</span></code> (一番親以外の子供につけてください)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SkinnedMeshRenderer</span></code> (一番親以外の子供につけてください)</p></li>
+</ul>
+<div class="admonition-gltf-scene admonition">
+<p class="admonition-title">一番親は glTF の scene になります</p>
+<p>UniGLTF では glTF のデータ構造を以下のように処理しています。
+シーンはノードではないので、移動・回転・拡縮、meshの有無がありません。</p>
+<ul class="simple">
+<li><p>scene0</p>
+<ul>
+<li><p>node00</p></li>
+<li><p>node01</p>
+<ul>
+<li><p>node010</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Animation</span></code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)</p></li>
 </ul>
+<div class="admonition-gltf-animation-node admonition">
+<p class="admonition-title">glTF の Animation は node にアタッチされない</p>
+<p>node にアタッチせずにシーンに記述されるようなデータ構造です。</p>
+</div>
 </section>
 <section id="shader">
-<h2>対応しているShader<a class="headerlink" href="#shader" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>対応しているShader<a class="headerlink" href="#shader" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Standard</span></code></p></li>
+</ul>
+<div class="admonition-gltf admonition">
+<p class="admonition-title">glTF のデフォルトマテリアル</p>
+<p>glTF の Default material である PBR になります。</p>
+</div>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Unlit/Color</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Texture</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span> <span class="pre">Cutout</span></code>, <code class="docutils literal notranslate"><span class="pre">UniGLTF/UniUnlit</span></code></p></li>
 </ul>
+<div class="admonition-gltf-khr-materials-unlit admonition">
+<p class="admonition-title">glTF の KHR_materials_unlit</p>
+<p>glTF の <code class="docutils literal notranslate"><span class="pre">KHR_materials_unlit</span></code> 拡張として記録します。</p>
+</div>
 </section>
 </section>
 <hr class="docutils"/>
-<section class="tex2jax_ignore mathjax_ignore" id="v0-68-0">
-<h1><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前<a class="headerlink" href="#v0-68-0" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <section id="id3">
-<h2>手順<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id4">
+<h3>手順<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ます。
 以下、手順を説明します。</p>
-<section id="id4">
-<h3>1. 空のシーンを用意します。<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id5">
+<h4>1. 空のシーンを用意します。<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
 </section>
 <section id="empty">
-<h3>2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。<a class="headerlink" href="#empty" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h4>2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。<a class="headerlink" href="#empty" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>一番親は、GLTFのノードではなくシーンとして記録しています。シーンには、移動・回転・拡縮 がありません。</p>
 </section>
-<section id="id5">
-<h3>3. エクスポートしたいオブジェクトをemptyの子にします。<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id6">
+<h4>3. エクスポートしたいオブジェクトをemptyの子にします。<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>(この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)</p>
 <figure class="align-default">
 <img alt="../_images/root_cube.png" src="../_images/root_cube.png"/>
 </figure>
 </section>
-<section id="id6">
-<h3>4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id7">
+<h4>4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <figure class="align-default">
 <img alt="../_images/menu_unigltf_export.png" src="../_images/menu_unigltf_export.png"/>
 </figure>
 </section>
-<section id="id7">
-<h3>5. ファイル名を選択して <code class="docutils literal notranslate"><span class="pre">glb</span></code> ファイルを書き出せば完了です。<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
-</section>
-</section>
 <section id="id8">
-<h2>Glbのエクスポート対象になるコンポーネント<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h4>5. ファイル名を選択して <code class="docutils literal notranslate"><span class="pre">glb</span></code> ファイルを書き出せば完了です。<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h4>
+</section>
+</section>
+<section id="id9">
+<h3>Glbのエクスポート対象になるコンポーネント<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">MeshRenderer</span> <span class="pre">+</span> <span class="pre">MeshFilter</span></code> (一番親以外の子供につけてください)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SkinnedMeshRenderer</span></code> (一番親以外の子供につけてください)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Animation</span></code> (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>対応しているShader<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id10">
+<h3>対応しているShader<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Standard</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">Unlit/Color</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Texture</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span> <span class="pre">Cutout</span></code>, <code class="docutils literal notranslate"><span class="pre">UniGLTF/UniUnlit</span></code></p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -454,6 +488,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Glbエクスポート</a><ul>
+<li><a class="reference internal" href="#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> 以降</a><ul>
 <li><a class="reference internal" href="#id1">手順</a><ul>
 <li><a class="reference internal" href="#unigltf-export-unigltf-2-x-y">1. <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code> メニューからダイアログを開きます</a></li>
 <li><a class="reference internal" href="#exportroot-gameiobject">2. <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> に対象の GameIObject をセットしてください</a></li>
@@ -464,17 +499,19 @@
 <li><a class="reference internal" href="#shader">対応しているShader</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#v0-68-0"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a><ul>
-<li><a class="reference internal" href="#id3">手順</a><ul>
-<li><a class="reference internal" href="#id4">1. 空のシーンを用意します。</a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code> より前</a><ul>
+<li><a class="reference internal" href="#id4">手順</a><ul>
+<li><a class="reference internal" href="#id5">1. 空のシーンを用意します。</a></li>
 <li><a class="reference internal" href="#empty">2. 一番親になるemptyを作成します。移動・回転・拡縮は無し。</a></li>
-<li><a class="reference internal" href="#id5">3. エクスポートしたいオブジェクトをemptyの子にします。</a></li>
-<li><a class="reference internal" href="#id6">4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。</a></li>
-<li><a class="reference internal" href="#id7">5. ファイル名を選択して <code class="docutils literal notranslate"><span class="pre">glb</span></code> ファイルを書き出せば完了です。</a></li>
+<li><a class="reference internal" href="#id6">3. エクスポートしたいオブジェクトをemptyの子にします。</a></li>
+<li><a class="reference internal" href="#id7">4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。</a></li>
+<li><a class="reference internal" href="#id8">5. ファイル名を選択して <code class="docutils literal notranslate"><span class="pre">glb</span></code> ファイルを書き出せば完了です。</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">Glbのエクスポート対象になるコンポーネント</a></li>
-<li><a class="reference internal" href="#id9">対応しているShader</a></li>
+<li><a class="reference internal" href="#id9">Glbのエクスポート対象になるコンポーネント</a></li>
+<li><a class="reference internal" href="#id10">対応しているShader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -23,14 +23,14 @@ aliases: [
 
 `UniVRM` のパッケージに含まれる `UniGLTF` は、 `glTF` ファイルとバイナリ版の `glb` ファイルを読み書きできます。
 
-|                              | UniGLTF | UniVRM |                             |
-|------------------------------|---------|--------|-----------------------------|
-| mesh(morph target, skinning) | ✅       | ✅      |                             |
-| material(pbr)                | ✅       | ✅      |                             |
-| material(unlit)              | ✅       | ✅      | KHR_materials_unlit 拡張    |
-| material(MToon)              |         | ✅      |                             |
-| animation                    | ✅       |        | VRMではサポートしていません |
-| camera                       |         |        |                             |
+|                              | UniGLTF | UniVRM |                                 |
+|------------------------------|---------|--------|---------------------------------|
+| mesh(morph target, skinning) | ✅      | ✅     |                                 |
+| material(pbr)                | ✅      | ✅     |                                 |
+| material(unlit)              | ✅      | ✅     | KHR_materials_unlit 拡張        |
+| material(MToon)              |         | ✅     |                                 |
+| animation                    | ✅      |        | VRMではサポートしていません     |
+| camera                       |         |        | UniGLTFではサポートしていません |
 
 ```{figure} /_static/images/vrm/alicia_3dbuilder.png
 :name: VRMのglTF部分を3D Builderで表示する
@@ -38,6 +38,29 @@ aliases: [
 拡張子を `.vrm` から `.glb` に変えると、`gltf` 対応のアプリケーション(Windows 10標準搭載の3D Builderなど)でロードできます。
 （ただしVRM独自の設定は反映されません)
 ```
+
+## UniGLTFの全体設定
+
+`Edit - Preferences - UniGLTF`
+
+```{figure} unigltf_preference.jpg
+```
+
+### Lang
+
+Editor 表示/メッセージの言語切り替え
+
+### Default invert axis 
+
+glTF は右手座標系であるのに対して Unity は左手座標系です。
+import / export 時に座標を変換する必要があります。
+2つの選択肢が有り、Z軸反転、 X軸反転を選択できます。
+歴史的理由(vrm-0.x がZ軸反転)により、初期値は `Z軸反転` です。
+
+### Enable zip importer that contains gltf
+
+zip アーカイブの中に gltf が入っている場合に import できるようにします。
+実験的な機能です。
 
 ```{toctree}
 :maxdepth: 1
@@ -47,3 +70,4 @@ animation_exporter
 emission_glow
 mesh_utility
 ```
+

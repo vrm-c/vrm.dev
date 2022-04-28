@@ -248,9 +248,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">glTF</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">GLB Import</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#import">import</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glb_export.html">GLB Export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_export.html#v0-68-0">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="animation_exporter.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emission_glow.html">Emission and glow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
@@ -316,14 +314,9 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="glb">
 <h1>GLB Import<a class="headerlink" href="#glb" title="Permalink to this headline">¶</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="import">
-<h1>import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h1>
 <p>The procedure is the same as <span class="xref myst">VRM import</span>. Just drag and drop the GLB file into the <strong>Assets</strong> folder.</p>
-<section id="import-option">
-<h2>import option<a class="headerlink" href="#import-option" title="Permalink to this headline">¶</a></h2>
-<section id="reverseaxis">
-<h3><code class="docutils literal notranslate"><span class="pre">ReverseAxis</span></code> Setting<a class="headerlink" href="#reverseaxis" title="Permalink to this headline">¶</a></h3>
+<section id="reverseaxis-v0-68-0">
+<h2><code class="docutils literal notranslate"><span class="pre">ReverseAxis</span></code> Setting <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code><a class="headerlink" href="#reverseaxis-v0-68-0" title="Permalink to this headline">¶</a></h2>
 <p>The axis you want to reverse can be selected when transforming from glTF’s right-handed, Y-UP coordinate to Unity’s left-handed Y-UP coordinate.</p>
 <ul class="simple">
 <li><p>Z-axis (same as before v0.68.0)</p></li>
@@ -334,33 +327,20 @@
 </figure>
 <p>Select <code class="docutils literal notranslate"><span class="pre">Reverse</span> <span class="pre">Axis</span></code> X or Z and click <code class="docutils literal notranslate"><span class="pre">Apply</span></code> button. The result will be reflected as shown in the image above.</p>
 </section>
-</section>
 <section id="glb-extract">
 <h2>glb extract<a class="headerlink" href="#glb-extract" title="Permalink to this headline">¶</a></h2>
-<p>https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary</p>
+<p><a class="reference external" href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary</a></p>
+<p>Let’s take this as an example</p>
 <section id="clear">
 <h3>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h3>
-<p>In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_1.metallicRoughness</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">texture_1</span></code> to be used in Unity’s Standard Shader.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_3.occlusion</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">textrue_3</span></code> to be used in Unity’s Standard Shader.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_4.normal</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">textrue_4</span></code> to be used in Unity’s Standard Shader.</p></li>
-</ul>
+<p>In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset of GLB.Subordinate assets cannot be changed and ReadOnly.</p>
 <figure class="align-default">
 <img alt="../_images/glb_clear.jpg" src="../_images/glb_clear.jpg"/>
 </figure>
 </section>
 <section id="extract">
 <h3>extract<a class="headerlink" href="#extract" title="Permalink to this headline">¶</a></h3>
-<p>By clicking <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Materials</span> <span class="pre">and</span> <span class="pre">Textures</span> <span class="pre">...</span></code>, materials/textures listed below will be generated:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Material_MR.mat</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_0.jpg</span></code> (color)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_1.metallicRoughness.png</span></code>. Converted from <code class="docutils literal notranslate"><span class="pre">texture_1</span></code> to be used in Unity’s Standard Shader</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_2.jpg</span></code> (emission)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_3.occlusion.png</span></code>. Converted from <code class="docutils literal notranslate"><span class="pre">texture_3</span></code> to be used in Unity’s Standard Shader</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">texture_4.jpg</span></code> (normalMap)</p></li>
-</ul>
+<p>When you press <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Materials</span> <span class="pre">and</span> <span class="pre">Textures</span> <span class="pre">...</span></code>, it changes as follows.It is extracted from under glb(DamagedHelmet) and becomes an independent Asset. The retrieved assets can be modified.</p>
 <figure class="align-default">
 <img alt="../_images/glb_extract.jpg" src="../_images/glb_extract.jpg"/>
 </figure>
@@ -368,73 +348,68 @@
 </section>
 <section id="gltf-extract">
 <h2>gltf extract<a class="headerlink" href="#gltf-extract" title="Permalink to this headline">¶</a></h2>
-<p>https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF</p>
+<p><a class="reference external" href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF">https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF</a></p>
+<p>Let’s take this as an example</p>
 <section id="id1">
 <h3>clear<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Default_AO.occlusion</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">Default_AO</span></code> to be used in Unity’s Standard Shader.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Defualt_metalRoughness.metallicRoughness</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">Defualt_metalRoughness</span></code> to be used in Unity’s Standard Shader.</p></li>
-</ul>
+<p>In the initial state (clear), the related Asset (Mesh, Material, Texture, AnimationClip) are stored as SubAsset:The assets under it cannot be changed and are ReadOnly.</p>
 <figure class="align-default">
 <img alt="../_images/gltf_clear.jpg" src="../_images/gltf_clear.jpg"/>
 </figure>
+<div class="warning admonition">
+<p class="admonition-title">gltf extract</p>
+<p>In glTF, textures etc. are originally independent files, but they are not used if conversion is needed.In the above example, Default_metalRoughness and Default_AO are the conversion targets.</p>
+</div>
 </section>
 <section id="id2">
 <h3>extract<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>By clicking <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Materials</span> <span class="pre">and</span> <span class="pre">Textures</span> <span class="pre">...</span></code>, materials/textures listed below will be generated:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Material_MR.mat</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Default_AO.occlusion.png</span></code>. Converted from <code class="docutils literal notranslate"><span class="pre">Default_AO</span></code> to be used in Unity’s Standard Shader</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Default_metalRoughness.metallicRoughness.png</span></code>. Converted from <code class="docutils literal notranslate"><span class="pre">Default_metalRoughness</span></code> to be used in Unity’s Standard Shader</p></li>
-</ul>
+<p>When you press <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Materials</span> <span class="pre">and</span> <span class="pre">Textures</span> <span class="pre">...</span></code>, it changes as follows.It is extracted from under glb(DamagedHelmet) and becomes an independent Asset. The retrieved assets can be modified.</p>
 <figure class="align-default">
 <img alt="../_images/gltf_extract.jpg" src="../_images/gltf_extract.jpg"/>
 </figure>
 </section>
 </section>
 <section id="assetfile">
-<h2>AssetFile の作られ方<a class="headerlink" href="#assetfile" title="Permalink to this headline">¶</a></h2>
-<section id="asset">
-<h3>以前の動作(独立したasset)<a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h3>
-<p>VRM0 とv0.67以前のGLB/GLTF の Importerは、以下のように import されます。</p>
+<h2>How to create AssetFiles<a class="headerlink" href="#assetfile" title="Permalink to this headline">¶</a></h2>
+<section id="vrm0-v0-67glb-gltf-importer">
+<h3>GLB / GLTF Importer for VRM0 and v0.67 and earlier<a class="headerlink" href="#vrm0-v0-67glb-gltf-importer" title="Permalink to this headline">¶</a></h3>
+<p>It will be imported as follows.</p>
 <div class="warning admonition">
-<p class="admonition-title">vrm0 の import</p>
+<p class="admonition-title">vrm0 import</p>
 <p><img alt="img" src="../_images/vrm0_import.jpg"/></p>
 <ul class="simple">
-<li><p>mesh や texture や material や blendshape などの関連アセットファイルが作成されます。</p></li>
+<li><p>Creates <code class="docutils literal notranslate"><span class="pre">independent</span></code> related asset files such as mesh, texture, material and blendshape.</p></li>
 </ul>
 </div>
 </section>
-<section id="subasset">
-<h3>新しい動作(subasset)<a class="headerlink" href="#subasset" title="Permalink to this headline">¶</a></h3>
-<p>VRM1 とv0.68以降のGLB/GLTF の Importerは、以下のように import されます。</p>
+<section id="vrm1-v0-68glb-gltf-importer">
+<h3>GLB / GLTF Importer for VRM1 and v0.68 or later<a class="headerlink" href="#vrm1-v0-68glb-gltf-importer" title="Permalink to this headline">¶</a></h3>
+<p>It will be imported as follows.</p>
 <div class="warning admonition">
-<p class="admonition-title">vrm1 の import</p>
+<p class="admonition-title">vrm1 import</p>
 <p><img alt="img" src="../_images/vrm1_import.jpg"/></p>
 <ul class="simple">
-<li><p>mesh や material や texture や Expression が SubAsset として作成されます。</p></li>
+<li><p>mesh, material, texture and Expression are created as <code class="docutils literal notranslate"><span class="pre">SubAsset</span></code>.</p></li>
 </ul>
 </div>
 <div class="warning admonition">
-<p class="admonition-title">glb の import</p>
+<p class="admonition-title">glb import</p>
 <p><img alt="img" src="../_images/glb_extract_before.jpg"/></p>
 <ul class="simple">
-<li><p>material と texture が SubAsset として作成されます</p></li>
+<li><p>material and texture are created as <code class="docutils literal notranslate"><span class="pre">SubAsset</span></code></p></li>
 </ul>
 </div>
 </section>
 </section>
 <section id="subasset-extract">
-<h2>SubAsset を変更するには Extract する<a class="headerlink" href="#subasset-extract" title="Permalink to this headline">¶</a></h2>
-<p>新しい Importer で作られた SubAsset は 内容を変更ができません。</p>
+<h2>Extract to change SubAsset<a class="headerlink" href="#subasset-extract" title="Permalink to this headline">¶</a></h2>
+<p>SubAssets created with the new Importer cannot be modified.</p>
 <div class="warning admonition">
 <p class="admonition-title">subasset</p>
-<p>SubAsset は VRM 内のリソースを表しているためで、
-例えば Material を変更しても、その変更を即座に VRM に反映することができないためです。</p>
-<p>FBX の Importer も同様の動作です。</p>
+<p>Because SubAsset represents a resource in glb or VRM, for example, changing a Material cannot reflect that change in the original glb / VRM.</p>
+<p>The FBX Importer works in the same way.</p>
 </div>
-<p>VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。</p>
+<p>In VRM1 and GLB / GLTF after v0.68, you can extract in Material tab etc.</p>
 <figure class="align-default">
 <img alt="../_images/extract_material.jpg" src="../_images/extract_material.jpg"/>
 </figure>
@@ -445,27 +420,25 @@
 <img alt="../_images/extract_vrm.jpg" src="../_images/extract_vrm.jpg"/>
 </figure>
 <div class="warning admonition">
-<p class="admonition-title">fbx の extract</p>
-<p>fbx importer の material タブには下記のようなボタンがあります。</p>
+<p class="admonition-title">fbx extract</p>
+<p>The material tab of fbx importer has the following buttons.</p>
 <p><img alt="img" src="../_images/fbx_extract.jpg"/></p>
-<p><code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Textures...</span></code> や <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Materials...</span></code> すると fbx の中の material を 外にコピーして独立した Asset とすることができます。
-このコピーされた Asset は自由に変更することができます。</p>
+<p>You can copy the material in fbx to the outside and make it an independent Asset by doing <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Textures</span> <span class="pre">...</span></code> or <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Materials</span> <span class="pre">...</span></code>.You are free to modify this copied Asset.</p>
 </div>
 </section>
-<section id="asset-vrm-remap">
-<h2>外部の Asset と VRM を関連付ける Remap<a class="headerlink" href="#asset-vrm-remap" title="Permalink to this headline">¶</a></h2>
-<p>初期状態では vrm 内部の Asset が使用されますが、これを外部の Asset と置き換えることができます。
-置き換えの関連付けを管理するのが Remap です。</p>
+<section id="asset-glb-vrm-remap">
+<h2>Remap associating glb / VRM with external Asset<a class="headerlink" href="#asset-glb-vrm-remap" title="Permalink to this headline">¶</a></h2>
+<p>Initially, the assets inside glb / vrm are used, but you can replace them with external assets.Remap manages replacement associations.</p>
 <ul class="simple">
-<li><p>None になっているときは、 <code class="docutils literal notranslate"><span class="pre">vrm</span></code>, <code class="docutils literal notranslate"><span class="pre">glb</span></code> に内部の SubAsset を使用しているという意味になります。</p></li>
-<li><p>Extract以外にも、個別に既存のAssetを割り当てできます</p></li>
+<li><p>When it is None, it means that you are using the SubAsset inside <code class="docutils literal notranslate"><span class="pre">glb</span></code>,<code class="docutils literal notranslate"> <span class="pre">vrm</span></code>.</p></li>
+<li><p>You can assign an existing Asset</p></li>
 </ul>
 <div class="warning admonition">
-<p class="admonition-title">extract 後</p>
+<p class="admonition-title">After extract</p>
 <p><img alt="img" src="../_images/remap_materials.jpg"/></p>
 <p><img alt="img" src="../_images/glb_extract_after.jpg"/></p>
 <p><img alt="img" src="../_images/vrm1_extract_after.jpg"/></p>
-<p>SubAsset が書き出され、それが Remap に代入されます。</p>
+<p>A SubAsset is exported and assigned to Remap.</p>
 </div>
 </section>
 </section>
@@ -521,12 +494,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">GLB Import</a></li>
-<li><a class="reference internal" href="#import">import</a><ul>
-<li><a class="reference internal" href="#import-option">import option</a><ul>
-<li><a class="reference internal" href="#reverseaxis"><code class="docutils literal notranslate"><span class="pre">ReverseAxis</span></code> Setting</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">GLB Import</a><ul>
+<li><a class="reference internal" href="#reverseaxis-v0-68-0"><code class="docutils literal notranslate"><span class="pre">ReverseAxis</span></code> Setting <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a></li>
 <li><a class="reference internal" href="#glb-extract">glb extract</a><ul>
 <li><a class="reference internal" href="#clear">clear</a></li>
 <li><a class="reference internal" href="#extract">extract</a></li>
@@ -537,13 +506,13 @@
 <li><a class="reference internal" href="#id2">extract</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#assetfile">AssetFile の作られ方</a><ul>
-<li><a class="reference internal" href="#asset">以前の動作(独立したasset)</a></li>
-<li><a class="reference internal" href="#subasset">新しい動作(subasset)</a></li>
+<li><a class="reference internal" href="#assetfile">How to create AssetFiles</a><ul>
+<li><a class="reference internal" href="#vrm0-v0-67glb-gltf-importer">GLB / GLTF Importer for VRM0 and v0.67 and earlier</a></li>
+<li><a class="reference internal" href="#vrm1-v0-68glb-gltf-importer">GLB / GLTF Importer for VRM1 and v0.68 or later</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#subasset-extract">SubAsset を変更するには Extract する</a></li>
-<li><a class="reference internal" href="#asset-vrm-remap">外部の Asset と VRM を関連付ける Remap</a></li>
+<li><a class="reference internal" href="#subasset-extract">Extract to change SubAsset</a></li>
+<li><a class="reference internal" href="#asset-glb-vrm-remap">Remap associating glb / VRM with external Asset</a></li>
 </ul>
 </li>
 </ul>

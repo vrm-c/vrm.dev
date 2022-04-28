@@ -248,9 +248,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">glTF</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="glb_import.html">GLB Import</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glb_import.html#import">import</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">GLB Export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-68-0">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="animation_exporter.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emission_glow.html">Emission and glow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesh_utility.html">Mesh Utility</a></li>
@@ -316,87 +314,122 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="glb">
 <h1>GLB Export<a class="headerlink" href="#glb" title="Permalink to this headline">¶</a></h1>
-<p>Starting with <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code>, the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file can be create with <code class="docutils literal notranslate"><span class="pre">UniGLTF</span></code> module.</p>
-<p>The procedure for creating a glb file is described as follows:</p>
+<section id="v0-68-0">
+<h2>Starting with <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code>, the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file can be create with <code class="docutils literal notranslate"><span class="pre">UniGLTF</span></code> module.<a class="headerlink" href="#v0-68-0" title="Permalink to this headline">¶</a></h2>
+<p>You can create a <code class="docutils literal notranslate"><span class="pre">glb</span></code> file with<code class="docutils literal notranslate"> <span class="pre">UniGLTF</span></code> contained in <code class="docutils literal notranslate"><span class="pre">UniVRM</span></code>.<code class="docutils literal notranslate"><span class="pre">vrm</span></code> is for humanoids, but <code class="docutils literal notranslate"><span class="pre">glb</span></code> has no particular restrictions and can output any hierarchy.</p>
+<p>The procedure is explained below.</p>
 <section id="id1">
-<h2>Procedure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>Procedure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <section id="unigltf-export-unigltf-2-x-y">
-<h3>1: Open <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code><a class="headerlink" href="#unigltf-export-unigltf-2-x-y" title="Permalink to this headline">¶</a></h3>
+<h4>1: Open <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code><a class="headerlink" href="#unigltf-export-unigltf-2-x-y" title="Permalink to this headline">¶</a></h4>
 <figure class="align-default">
 <img alt="../_images/glb_export_dialog.jpg" src="../_images/glb_export_dialog.jpg"/>
 </figure>
 </section>
 <section id="exportroot-gameiobject">
-<h3>2: Assign a GameObject to <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code><a class="headerlink" href="#exportroot-gameiobject" title="Permalink to this headline">¶</a></h3>
+<h4>2: Assign a GameObject to <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code><a class="headerlink" href="#exportroot-gameiobject" title="Permalink to this headline">¶</a></h4>
 <p>From the Hierarchy window, drag and drop a GameObject into the <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> field, or you can click ◎ button on the right of the <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code> field and select a GameObject from the dropdown list.</p>
 <ul class="simple">
 <li><p>Note that the root (topmost parent) of a GameObject you select should not be a <code class="docutils literal notranslate"><span class="pre">GLTF</span></code> node, but a node stored in the scene with default position, rotation and scale.</p></li>
 </ul>
 </section>
 <section id="export">
-<h3>3: Click <code class="docutils literal notranslate"><span class="pre">Export</span></code> button<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h3>
+<h4>3: Click <code class="docutils literal notranslate"><span class="pre">Export</span></code> button<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h4>
 <p>A SaveFileDialog will pop up, choose a directory and export the GameObject as GLB.</p>
 </section>
 </section>
 <section id="id2">
-<h2>Exportable Components for GLB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h3>Exportable Components for GLB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">MeshRenderer</span> <span class="pre">+</span> <span class="pre">MeshFilter</span></code> (Attach them to the child other than the topmost parent)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SkinnedMeshRenderer</span></code> (Attach it to the child other than the topmost parent)</p></li>
+</ul>
+<div class="admonition-gltf-scene admonition">
+<p class="admonition-title">The top node will be the glTF scene</p>
+<p>UniGLTF processes glTF data structures as follows:Since the scene is not a node, there is no movement / rotation / scaling and mesh.</p>
+<ul class="simple">
+<li><p>scene0</p>
+<ul>
+<li><p>node00</p></li>
+<li><p>node01</p>
+<ul>
+<li><p>node010</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Animation</span></code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)</p></li>
 </ul>
+<div class="admonition-gltf-animation-node admonition">
+<p class="admonition-title">glTF Animation is not attached to node</p>
+<p>It is a data structure that is described in the scene without attaching to node.</p>
+</div>
 </section>
 <section id="shader">
-<h2>Available Shader<a class="headerlink" href="#shader" title="Permalink to this headline">¶</a></h2>
+<h3>Available Shader<a class="headerlink" href="#shader" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Standard</span></code></p></li>
+</ul>
+<div class="admonition-gltf admonition">
+<p class="admonition-title">default material for glTF</p>
+<p>It will be PBR, which is the default material of glTF.</p>
+</div>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Unlit/Color</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Texture</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span> <span class="pre">Cutout</span></code>, <code class="docutils literal notranslate"><span class="pre">UniGLTF/UniUnlit</span></code></p></li>
 </ul>
+<div class="admonition-gltf-khr-materials-unlit admonition">
+<p class="admonition-title">glTF KHR_materials_unlit</p>
+<p>Record as a glTF <code class="docutils literal notranslate"><span class="pre">KHR_materials_unlit</span></code> extension.</p>
+</div>
 </section>
 </section>
 <hr class="docutils"/>
-<section class="tex2jax_ignore mathjax_ignore" id="v0-68-0">
-<h1>Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code><a class="headerlink" href="#v0-68-0" title="Permalink to this headline">¶</a></h1>
 <section id="id3">
-<h2>Procedure<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>The procedure for creating a glb file is described as follows:</p>
+<h2>Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <section id="id4">
-<h3>1: Create an empty scene.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Procedure<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The procedure for creating a glb file is described as follows:</p>
+<section id="id5">
+<h4>1: Create an empty scene.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 </section>
 <section id="empty">
-<h3>2: Create an empty GameObject (topmost parent). No translation, rotation and scale.<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
+<h4>2: Create an empty GameObject (topmost parent). No translation, rotation and scale.<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h4>
 <p>Note that the root (topmost parent) of a GameObject you select should not be a <code class="docutils literal notranslate"><span class="pre">GLTF</span></code> node, but a node stored in the scene with default position, rotation and scale.</p>
 </section>
-<section id="id5">
-<h3>3: Select an object you want to export and add it to the created parent GameObject.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<section id="id6">
+<h4>3: Select an object you want to export and add it to the created parent GameObject.<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>(In this example a Cube object is created. You can add arbitrary objects such as Prefab.)</p>
 <figure class="align-default">
 <img alt="../_images/root_cube.png" src="../_images/root_cube.png"/>
 </figure>
 </section>
-<section id="id6">
-<h3>4: Select the topmost parent GameObject and click <code class="docutils literal notranslate"><span class="pre">Export</span></code> (<code class="docutils literal notranslate"><span class="pre">UniGLTF-x.xx</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Export</span></code>).<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<section id="id7">
+<h4>4: Select the topmost parent GameObject and click <code class="docutils literal notranslate"><span class="pre">Export</span></code> (<code class="docutils literal notranslate"><span class="pre">UniGLTF-x.xx</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Export</span></code>).<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <figure class="align-default">
 <img alt="../_images/menu_unigltf_export.png" src="../_images/menu_unigltf_export.png"/>
 </figure>
 </section>
-<section id="id7">
-<h3>5: Enter the file name and the selected GameObject can be exported as the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file.<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-</section>
-</section>
 <section id="id8">
-<h2>Exportable Components for GLB<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h4>5: Enter the file name and the selected GameObject can be exported as the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file.<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id9">
+<h3>Exportable Components for GLB<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">MeshRenderer</span> <span class="pre">+</span> <span class="pre">MeshFilter</span></code> (Attach them to the child other than the topmost parent)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SkinnedMeshRenderer</span></code> (Attach it to the child other than the topmost parent)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Animation</span></code> (Attach it to the topmost parent. For rotation, input the keyframe of Quaternion. Translation, rotation and scaling are supported. BlendShape is not supported yet)</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>Available Shader<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<section id="id10">
+<h3>Available Shader<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Standard</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Color</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Texture</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span></code>, <code class="docutils literal notranslate"><span class="pre">Unlit/Transparent</span> <span class="pre">Cutout</span></code> and <code class="docutils literal notranslate"><span class="pre">UniGLTF/UniUnlit</span></code></p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -452,6 +485,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">GLB Export</a><ul>
+<li><a class="reference internal" href="#v0-68-0">Starting with <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code>, the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file can be create with <code class="docutils literal notranslate"><span class="pre">UniGLTF</span></code> module.</a><ul>
 <li><a class="reference internal" href="#id1">Procedure</a><ul>
 <li><a class="reference internal" href="#unigltf-export-unigltf-2-x-y">1: Open <code class="docutils literal notranslate"><span class="pre">UniGLTF/Export</span> <span class="pre">UniGLTF-2.X.Y</span></code></a></li>
 <li><a class="reference internal" href="#exportroot-gameiobject">2: Assign a GameObject to <code class="docutils literal notranslate"><span class="pre">ExportRoot</span></code></a></li>
@@ -462,17 +496,19 @@
 <li><a class="reference internal" href="#shader">Available Shader</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#v0-68-0">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a><ul>
-<li><a class="reference internal" href="#id3">Procedure</a><ul>
-<li><a class="reference internal" href="#id4">1: Create an empty scene.</a></li>
+<li><a class="reference internal" href="#id3">Before <code class="docutils literal notranslate"><span class="pre">v0.68.0</span></code></a><ul>
+<li><a class="reference internal" href="#id4">Procedure</a><ul>
+<li><a class="reference internal" href="#id5">1: Create an empty scene.</a></li>
 <li><a class="reference internal" href="#empty">2: Create an empty GameObject (topmost parent). No translation, rotation and scale.</a></li>
-<li><a class="reference internal" href="#id5">3: Select an object you want to export and add it to the created parent GameObject.</a></li>
-<li><a class="reference internal" href="#id6">4: Select the topmost parent GameObject and click <code class="docutils literal notranslate"><span class="pre">Export</span></code> (<code class="docutils literal notranslate"><span class="pre">UniGLTF-x.xx</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Export</span></code>).</a></li>
-<li><a class="reference internal" href="#id7">5: Enter the file name and the selected GameObject can be exported as the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file.</a></li>
+<li><a class="reference internal" href="#id6">3: Select an object you want to export and add it to the created parent GameObject.</a></li>
+<li><a class="reference internal" href="#id7">4: Select the topmost parent GameObject and click <code class="docutils literal notranslate"><span class="pre">Export</span></code> (<code class="docutils literal notranslate"><span class="pre">UniGLTF-x.xx</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Export</span></code>).</a></li>
+<li><a class="reference internal" href="#id8">5: Enter the file name and the selected GameObject can be exported as the <code class="docutils literal notranslate"><span class="pre">glb</span></code> file.</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">Exportable Components for GLB</a></li>
-<li><a class="reference internal" href="#id9">Available Shader</a></li>
+<li><a class="reference internal" href="#id9">Exportable Components for GLB</a></li>
+<li><a class="reference internal" href="#id10">Available Shader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
