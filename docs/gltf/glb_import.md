@@ -6,7 +6,7 @@ tags: ["gltf"]
 
 # Glbインポート
 
-# import
+## import
 
 glb ファイルを Unity の Assets 下のフォルダに投入すると、glb を Asset 化できます。
 
