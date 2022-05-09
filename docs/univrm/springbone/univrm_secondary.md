@@ -6,52 +6,49 @@ aliases: ["/univrm/components/univrm_secondary/"]
 tags: ["unity"]
 ---
 
-# VRMSpringBone
-
-揺れモノ設定。
-
-# コンポーネントのアタッチされるノード
-VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。
-
-* VRMSpringBoneは、名前が```secondary```のノードが自動的に作成されてそこにアタッチされます。
-* VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。
+# 概要
+揺れモノ設定に関するコンポーネント群です。
+# コンポーネントが追加される場所
+### VRMSpringBone
+VRMのインポートの際は、自動的生成される```secondary```という名前のゲームオブジェクトに追加されます。
+### VRMSpringBoneColliderGroup
+VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにそのまま追加されます。
 
 ```{figure} /_static/images/vrm/vrm_settings.png
-VRMSpringBoneが見つからない場合には``secondary``ノードをご確認ください。
+VRMSpringBoneが見つからない場合には``secondary``という名前のゲームオブジェクトをご確認ください。
 ```
-
 # VRMSpringBone
-尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。
-揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。
+揺れモノとして尻尾・髪の毛・衣装などの動きに合わせて揺れて欲しい部位の設定です。  
+揺らしたい部位の一番親のGameObjectをRootBonesに指定してください。
 
 ```{figure} /_static/images/vrm/VRMSpringBone.png
-RootBonesに髪の毛とリボンを設定
+RootBonesに髪の毛とリボンの根本を指定
 ```
 
-これだけで、指定したボーンが動きに合わせて揺れます。
+RootBonesに指定した部位の子ボーンも含めて動きに合わせて揺れます。
 
-# [オプション]VRMSpringBoneColliderGroup(当たり判定)
-揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。
+# [オプション] VRMSpringBoneColliderGroup
+揺れモノが特定の部位を貫通しないように当たり判定を追加できます。
 
 ```{figure} /_static/images/vrm/collider.png
-headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定
+頭に当たり判定(VRMSpringBoneColliderGroup)を追加
 ```
 
-当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。
+当たり判定を入れたいボーンにVRMSpringBoneColliderGroupを追加した後にVRMSpringBoneのColliderGroupsで指定してください。
 
 ```{figure} /_static/images/vrm/set_collider.png
-headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定
+headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定
 ```
 
 ```{figure} /_static/images/vrm/spring_gizmo.png
 動作時のGizmo。
 ```
+# 設定したVRMSpringBoneが無い
+VRMSpringBoneはインポート時に```secondary```ノードに追加されます。エクスポート時と違う場所に現れるのでご注意ください。
 
-## ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます
-VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。
+# 複雑な当たり判定の設定
+複雑な当たり判定の設定をする際は、追加した１つのVRMSpringBoneColliderGroupで複数の球を設定します。
 
-# 設定したVRMSpringBoneが居なくなった
-VRMSpringBoneはインポート時に```secondary```ノードにアタッチされます。
-エクスポート時と違う場所に現れるのでご注意ください。
-
-[VRMSpringBone](/univrm/springbone/univrm_secondary#コンポーネントのアタッチされるノード)
+# 移動する際の揺れ防止
+通常のVRMSpringBoneはワールド原点を基準に計算しています。VRMSpringBoneのCenterにゲームオブジェクトを指定すると揺れモノの基準点を変更できます。
+例えば、歩行の際に移動する親ゲームオブジェクトを指定すると揺れモノの不要な揺れが防止できます。
