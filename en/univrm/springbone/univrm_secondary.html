@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Humanoid" href="../humanoid/index.html" /><link rel="prev" title="SpringBone" href="index.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>VRMSpringBone - VRM documentation</title>
+        <title>概要 - VRM documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -221,11 +221,13 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">SpringBone</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">VRMSpringBone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Nodes attached by spring bones</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">VRMSpringBone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vrmspringbonecollidergroup">[Option] VRMSpringBoneColliderGroup (Collision detection)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">VRMSpringBone set before was gone</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">コンポーネントが追加される場所</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">VRMSpringBone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">[オプション] VRMSpringBoneColliderGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">設定したVRMSpringBoneが無い</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">複雑な当たり判定の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">移動する際の揺れ防止</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../humanoid/index.html">Humanoid</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -240,7 +242,12 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../firstperson/index.html">FirstPerson</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html">VRMFirstPerson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html#id2">Headset Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html#vr">VR Visibility Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html#id7">Recommended Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html#auto">Autoの可視設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firstperson/univrm_firstperson.html#id9">Reset Visibility Setting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming/index.html">Programming</a></li>
@@ -312,66 +319,74 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="vrmspringbone">
-<h1>VRMSpringBone<a class="headerlink" href="#vrmspringbone" title="Permalink to this headline">¶</a></h1>
-<p>Instruction video on how to set up spring bones <a class="reference external" href="https://www.youtube.com/watch?v=tpl_mqU8i7U">can be found here</a>.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Nodes attached by spring bones<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>When importing a VRM, the components related to shaking objects are attached as follows.</p>
-<ul class="simple">
-<li><p>VRMSpringBone is attached to the node <code class="docutils literal notranslate"><span class="pre">secondary</span></code>.</p></li>
-<li><p>VRMSpringBoneColliderGroup is attached to nodes exported last time.</p></li>
-</ul>
-<figure class="align-default" id="id5">
-<img alt="../../_images/vrm_settings.png" src="../../_images/vrm_settings.png"/>
-<figcaption>
-<p><span class="caption-text">Please check <code class="docutils literal notranslate"><span class="pre">secondary</span></code> in the Hierarchy window if you cannot find VRMSpringBone</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>揺れモノ設定に関するコンポーネント群です。</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id2">
-<h1>VRMSpringBone<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
-<p>The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object’s parent Gameobject in<code class="docutils literal notranslate"><span class="pre">Root</span> <span class="pre">Bones</span></code>. To do that, drag a target object (e.g.<code class="docutils literal notranslate"><span class="pre">hair1_L</span></code>) from<code class="docutils literal notranslate"><span class="pre">Hierarchy</span></code>to the<code class="docutils literal notranslate"><span class="pre">Element</span> <span class="pre">X</span></code>field (or click the rightmost icon of<code class="docutils literal notranslate"><span class="pre">Element</span> <span class="pre">X</span></code>then you can see a list of selectable components). Adjust<code class="docutils literal notranslate"><span class="pre">Size</span></code>to change the number of<code class="docutils literal notranslate"><span class="pre">Root</span> <span class="pre">Bones</span></code>you want to put in.</p>
-<figure class="align-default" id="id6">
+<h1>コンポーネントが追加される場所<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<section id="vrmspringbone">
+<h2>VRMSpringBone<a class="headerlink" href="#vrmspringbone" title="Permalink to this headline">¶</a></h2>
+<p>VRMのインポートの際は、自動的生成される<code class="docutils literal notranslate"><span class="pre">secondary</span></code>という名前のゲームオブジェクトに追加されます。</p>
+</section>
+<section id="vrmspringbonecollidergroup">
+<h2>VRMSpringBoneColliderGroup<a class="headerlink" href="#vrmspringbonecollidergroup" title="Permalink to this headline">¶</a></h2>
+<p>VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにそのまま追加されます。</p>
+<figure class="align-default" id="id8">
+<img alt="../../_images/vrm_settings.png" src="../../_images/vrm_settings.png"/>
+<figcaption>
+<p><span class="caption-text">VRMSpringBoneが見つからない場合には<code class="docutils literal notranslate"><span class="pre">secondary</span></code>という名前のゲームオブジェクトをご確認ください。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>VRMSpringBone<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>揺れモノとして尻尾・髪の毛・衣装などの動きに合わせて揺れて欲しい部位の設定です。<br/>
+揺らしたい部位の一番親のGameObjectをRootBonesに指定してください。</p>
+<figure class="align-default" id="id9">
 <img alt="../../_images/VRMSpringBone.png" src="../../_images/VRMSpringBone.png"/>
 <figcaption>
-<p><span class="caption-text">Example: Set the hair and ribbon in <code class="docutils literal notranslate"><span class="pre">Root</span> <span class="pre">Bones</span></code></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RootBonesに髪の毛とリボンの根本を指定</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>That’s it. Try to adjust <code class="docutils literal notranslate"><span class="pre">Stiffness</span> <span class="pre">Force</span></code>, <code class="docutils literal notranslate"><span class="pre">Gravity</span> <span class="pre">Power</span></code>, etc. The target objects will perform swaying movements.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="vrmspringbonecollidergroup">
-<h1>[Option] VRMSpringBoneColliderGroup (Collision detection)<a class="headerlink" href="#vrmspringbonecollidergroup" title="Permalink to this headline">¶</a></h1>
-<p>The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.</p>
-<figure class="align-default" id="id7">
-<img alt="../../_images/collider.png" src="../../_images/collider.png"/>
-<figcaption>
-<p><span class="caption-text">Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>For example, hit <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Component</span></code> to attach VRMSpringBoneColliderGroup script to<code class="docutils literal notranslate"><span class="pre">head</span></code>and drag<code class="docutils literal notranslate"><span class="pre">head</span></code>to the<code class="docutils literal notranslate"><span class="pre">Element</span> <span class="pre">0</span></code>field in<code class="docutils literal notranslate"><span class="pre">Collider</span> <span class="pre">Groups</span></code>. You can change its offset and radius value by double clicking the<code class="docutils literal notranslate"><span class="pre">Element</span> <span class="pre">0</span></code>field in<code class="docutils literal notranslate"><span class="pre">Collider</span> <span class="pre">Groups</span></code>.</p>
-<figure class="align-default" id="id8">
-<img alt="../../_images/set_collider.png" src="../../_images/set_collider.png"/>
-<figcaption>
-<p><span class="caption-text">Attach the VRMSpringBoneColliderGroup script to <code class="docutils literal notranslate"><span class="pre">head</span></code> and set <code class="docutils literal notranslate"><span class="pre">head</span></code> in <code class="docutils literal notranslate"><span class="pre">Collider</span> <span class="pre">Groups</span></code></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id9">
-<img alt="../../_images/spring_gizmo.png" src="../../_images/spring_gizmo.png"/>
-<figcaption>
-<p><span class="caption-text">Gizmo at runtime (check <code class="docutils literal notranslate"><span class="pre">Draw</span> <span class="pre">Gizmo</span></code> in the Inspector of VRMSpringBone)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<section id="id3">
-<h2>Set multiple collision detections in VRMSpringBoneColliderGroup<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Though the default is only set for one collision detection (a sphere range from the target), users can change the setting to multiple detections (multiple sphere ranges from multiple targets) by adjusting the value of <code class="docutils literal notranslate"><span class="pre">Size</span></code> and multiple targets can then be put into <code class="docutils literal notranslate"><span class="pre">Element</span></code> fields.</p>
-</section>
+<p>RootBonesに指定した部位の子ボーンも含めて動きに合わせて揺れます。</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id4">
-<h1>VRMSpringBone set before was gone<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
-<p>VRMSpringBone was attached to the node <code class="docutils literal notranslate"><span class="pre">secondary</span></code> during import.</p>
-<p><a class="reference external" href="/univrm/springbone/univrm_secondary#nodes-attached-by-spring-bones">VRMSpringBone</a></p>
+<h1>[オプション] VRMSpringBoneColliderGroup<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<p>揺れモノが特定の部位を貫通しないように当たり判定を追加できます。</p>
+<figure class="align-default" id="id10">
+<img alt="../../_images/collider.png" src="../../_images/collider.png"/>
+<figcaption>
+<p><span class="caption-text">頭に当たり判定(VRMSpringBoneColliderGroup)を追加</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>当たり判定を入れたいボーンにVRMSpringBoneColliderGroupを追加した後にVRMSpringBoneのColliderGroupsで指定してください。</p>
+<figure class="align-default" id="id11">
+<img alt="../../_images/set_collider.png" src="../../_images/set_collider.png"/>
+<figcaption>
+<p><span class="caption-text">headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<img alt="../../_images/spring_gizmo.png" src="../../_images/spring_gizmo.png"/>
+<figcaption>
+<p><span class="caption-text">Gizmo at runtime (check <code class="docutils literal notranslate"><span class="pre">Draw</span> <span class="pre">Gizmo</span></code> in the Inspector of VRMSpringBone)</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>設定したVRMSpringBoneが無い<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<p>VRMSpringBoneはインポート時に<code class="docutils literal notranslate"><span class="pre">secondary</span></code>ノードに追加されます。エクスポート時と違う場所に現れるのでご注意ください。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>複雑な当たり判定の設定<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>複雑な当たり判定の設定をする際は、追加した１つのVRMSpringBoneColliderGroupで複数の球を設定します。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>移動する際の揺れ防止<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>通常のVRMSpringBoneはワールド原点を基準に計算しています。VRMSpringBoneのCenterにゲームオブジェクトを指定すると揺れモノの基準点を変更できます。
+例えば、歩行の際に移動する親ゲームオブジェクトを指定すると揺れモノの不要な揺れが防止できます。</p>
 </section>
 
         </article>
@@ -425,14 +440,17 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">VRMSpringBone</a></li>
-<li><a class="reference internal" href="#id1">Nodes attached by spring bones</a></li>
-<li><a class="reference internal" href="#id2">VRMSpringBone</a></li>
-<li><a class="reference internal" href="#vrmspringbonecollidergroup">[Option] VRMSpringBoneColliderGroup (Collision detection)</a><ul>
-<li><a class="reference internal" href="#id3">Set multiple collision detections in VRMSpringBoneColliderGroup</a></li>
+<li><a class="reference internal" href="#">概要</a></li>
+<li><a class="reference internal" href="#id2">コンポーネントが追加される場所</a><ul>
+<li><a class="reference internal" href="#vrmspringbone">VRMSpringBone</a></li>
+<li><a class="reference internal" href="#vrmspringbonecollidergroup">VRMSpringBoneColliderGroup</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4">VRMSpringBone set before was gone</a></li>
+<li><a class="reference internal" href="#id3">VRMSpringBone</a></li>
+<li><a class="reference internal" href="#id4">[オプション] VRMSpringBoneColliderGroup</a></li>
+<li><a class="reference internal" href="#id5">設定したVRMSpringBoneが無い</a></li>
+<li><a class="reference internal" href="#id6">複雑な当たり判定の設定</a></li>
+<li><a class="reference internal" href="#id7">移動する際の揺れ防止</a></li>
 </ul>
 
           </div>

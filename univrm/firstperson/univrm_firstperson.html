@@ -6,7 +6,7 @@
 <link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="Programming" href="../programming/index.html" /><link rel="prev" title="FirstPerson" href="index.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>VRMFirstPerson - VRM ドキュメント</title>
+        <title>概要 - VRM ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -221,11 +221,13 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../springbone/index.html">SpringBone</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html">VRMSpringBone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id1">コンポーネントのアタッチされるノード</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id2">VRMSpringBone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#vrmspringbonecollidergroup">[オプション]VRMSpringBoneColliderGroup(当たり判定)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id4">設定したVRMSpringBoneが居なくなった</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id2">コンポーネントが追加される場所</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id3">VRMSpringBone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id4">[オプション] VRMSpringBoneColliderGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id5">設定したVRMSpringBoneが無い</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id6">複雑な当たり判定の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../springbone/univrm_secondary.html#id7">移動する際の揺れ防止</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../humanoid/index.html">Humanoid</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -240,7 +242,12 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">FirstPerson</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">VRMFirstPerson</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">ヘッドセットの位置指定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vr">VRの可視設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">推奨される構成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auto">Autoの可視設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">設定のリセット</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming/index.html">Programming</a></li>
@@ -312,45 +319,37 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="vrmfirstperson">
-<h1>VRMFirstPerson<a class="headerlink" href="#vrmfirstperson" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>２系統の設定があります。</p>
-<ul class="simple">
-<li><p>VRMモデル内で、VRヘッドセット位置を指定する</p></li>
-<li><p>VRで、メッシュごとにカメラの可視設定を分ける</p></li>
-</ul>
-<p>※ アプリケーション側でこれらのパラメーターを使っている場合のみ有効です</p>
-<section id="id1">
-<h2>ヘッドセットの位置指定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ヘッドの動きの頭部への反映を微調整できます。</p>
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>概要<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>VRMFirstPersonにはヘッドセットの位置指定とVRの可視設定という2種類の設定があります。<br/>
+<strong>アプリケーション側が対応している場合のみ有効となる設定です。</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>ヘッドセットの位置指定<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>VRMモデル内でVRヘッドセット（HMD）位置を指定する設定です。HMDとアバターの頭の追随を調整できます。</p>
 <section id="firstpersonbone">
-<h3>FirstPersonBone<a class="headerlink" href="#firstpersonbone" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>通常頭ボーンを指定します。
-一人称時にヘッドセットに追随させるボーンです。</p>
+<h2>FirstPersonBone<a class="headerlink" href="#firstpersonbone" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>一人称の際にHMDに追随させるボーンです。頭ボーンを指定してください。</p>
 </section>
 <section id="firstpersonoffset">
-<h3>FirstPersonOffset<a class="headerlink" href="#firstpersonoffset" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>追随する位置をFirstPersonBoneの位置からオフセットします。
-デフォルト値[0, 0.06, 0]は、Headから両目の間へのオフセットを想定しています。</p>
+<h2>FirstPersonOffset<a class="headerlink" href="#firstpersonoffset" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>追随する位置をFirstPersonBoneの位置から調整します。アバターの両目の間に調整してください。</p>
 </section>
 </section>
-<section id="vr">
-<h2>VRの可視設定<a class="headerlink" href="#vr" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>VRアプリでの可視設定です。
-VRアプリでは２種類のカメラが想定されます。</p>
-<ul class="simple">
-<li><p>一人称(HMDにレンダリングされる)</p></li>
-<li><p>三人称(HMD以外。配信用、鏡、マルチユーザーの他のユーザーのHMD)</p></li>
-</ul>
-<p>です。
-このとき、一人称で普通に自身のモデルがすべて見えると不都合があります。</p>
-<ul class="simple">
-<li><p>近平面で自分の輪切りが見える</p></li>
-<li><p>髪が邪魔で何も見えない</p></li>
-<li><p>自分モデルの頭部の中身が見えてしまう(歯とか)</p></li>
-</ul>
-<p>など。
-これらの自体に対処するために、メッシュ毎に２種類のカメラに対する可視性を設定できます。</p>
+<section class="tex2jax_ignore mathjax_ignore" id="vr">
+<h1>VRの可視設定<a class="headerlink" href="#vr" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>VRアプリ向けにメッシュごとのカメラの可視設定を分ける設定です。VRアプリでは２種類のカメラが想定されます。<br/>
+この一人称カメラで自身のアバターが見えた際に起きる不都合に対処するため、メッシュごとに可視性を設定出来るようになっています。</p>
+<section id="id3">
+<h2>一人称カメラ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HMDに出力される映像</p>
+</section>
+<section id="id4">
+<h2>三人称カメラ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HMD以外に出力される映像・配信用映像・鏡・マルチプレイでの他ユーザーのHMD</p>
+</section>
+<section id="id5">
+<h2>可視設定<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>設定</p></th>
@@ -360,74 +359,82 @@ VRアプリでは２種類のカメラが想定されます。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Both</p></td>
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-<td><p>体、手、足など頭部から遠い部位を指する</p></td>
+<tr class="row-even"><td><p>Auto</p></td>
+<td><p>△</p></td>
+<td><p>△</p></td>
+<td><p>初期設定。詳細は後述</p></td>
 </tr>
-<tr class="row-odd"><td><p>FirstPersonOnly</p></td>
+<tr class="row-odd"><td><p>Both</p></td>
 <td><p>〇</p></td>
-<td><p></p></td>
-<td><p>使わない？</p></td>
+<td><p>〇</p></td>
+<td><p>体・手・足など頭部から遠い部位を指定する</p></td>
 </tr>
 <tr class="row-even"><td><p>ThirdPersonOnly</p></td>
 <td><p></p></td>
 <td><p>〇</p></td>
-<td><p>外部カメラしか見えない。頭部、髪、帽子などを指定する</p></td>
+<td><p>頭部・髪・帽子などを指定する</p></td>
 </tr>
-<tr class="row-odd"><td><p>Auto</p></td>
-<td><p>後述</p></td>
-<td><p>後述</p></td>
-<td><p>デフォルト</p></td>
+<tr class="row-odd"><td><p>FirstPersonOnly</p></td>
+<td><p>〇</p></td>
+<td><p></p></td>
+<td><p>設定項目自体が不要の可能性がある</p></td>
 </tr>
 </tbody>
 </table></div>
-<section id="id2">
-<h3>設定のリセット<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>FirstPerson は、最初に自動で Auto の設定になるようになっています。
-Mesh が増減するなどでモデルの構成が変わった場合に、参照が <code class="docutils literal notranslate"><span class="pre">Missing</span></code> になるなどエクスポートできない状態になる場合があります。
-VRMFirstPerson をリセットすることで再設定することができます。
-リセットする方法は、</p>
-<p><code class="docutils literal notranslate"><span class="pre">VRM</span> <span class="pre">First</span> <span class="pre">Person(Script)</span></code> インスペクタの右上角の <code class="docutils literal notranslate"><span class="pre">歯車アイコン</span> <span class="pre">⚙</span></code> で表示されるメニューから <code class="docutils literal notranslate"><span class="pre">Reset</span></code> を選択してください。</p>
-<figure class="align-default" id="id4">
-<img alt="../../_images/firstperson_reset.gif" src="../../_images/firstperson_reset.gif"/>
-<figcaption>
-<p><span class="caption-text">firstperson reset</span><a class="headerlink" href="#id4" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
 </section>
-<section id="auto-both-thirdpersononly">
-<h3>Auto による Both と ThirdPersonOnly への自動分割<a class="headerlink" href="#auto-both-thirdpersononly" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>設定をAutoにしておくと、ロード時にメッシュを自動で <code class="docutils literal notranslate"><span class="pre">Both</span></code> と <code class="docutils literal notranslate"><span class="pre">ThirdPersonOnly</span></code> に分離することを指示できます。
-UniVRMでは <a class="reference external" href="https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask">VRMFirstPerson.Setup()</a> を呼び出します。
-Autoによる自動分割は、重めの処理になります。</p>
-<p>分割基準は、</p>
+<section id="id6">
+<h2>不都合の例<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><p>含まれる頂点が <code class="docutils literal notranslate"><span class="pre">head</span></code> か <code class="docutils literal notranslate"><span class="pre">head</span></code> の子孫の weight を持っているか否か</p></li>
+<li><p>近平面で自分のアバターの輪切りが見える</p></li>
+<li><p>アバターの髪が邪魔で何も見えない</p></li>
+<li><p>歯などの自身のアバターの中身が見えてしまう</p></li>
 </ul>
-<p>です。
-すべて同じ側の場合は分割せずに、<code class="docutils literal notranslate"><span class="pre">Both</span></code> か <code class="docutils literal notranslate"><span class="pre">ThirdPersonOnly</span></code> として扱います。</p>
 </section>
-<section id="id3">
-<h3>推奨される構成<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>あらかじめ、頭と体にモデルを分割しておき</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>推奨される構成<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アバター作成段階で頭と体にメッシュを分割することを推奨しています。</p>
 <ul class="simple">
 <li><p>頭に <code class="docutils literal notranslate"><span class="pre">ThirdPersonOnly</span></code> を指定</p></li>
 <li><p>体に <code class="docutils literal notranslate"><span class="pre">Both</span></code> を指定</p></li>
 </ul>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id11">
 <img alt="../../_images/firstperson.png" src="../../_images/firstperson.png"/>
 <figcaption>
-<p><span class="caption-text">立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに設定します。</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します。</span><a class="headerlink" href="#id11" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id12">
 <img alt="../../_images/firstperson_runtime.png" src="../../_images/firstperson_runtime.png"/>
 <figcaption>
-<p><span class="caption-text">動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。</span><a class="headerlink" href="#id12" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="auto">
+<h1>Autoの可視設定<a class="headerlink" href="#auto" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>可視設定がAutoの場合はインポート時にメッシュが <code class="docutils literal notranslate"><span class="pre">Both</span></code> と <code class="docutils literal notranslate"><span class="pre">ThirdPersonOnly</span></code> に自動分割されます。<br/>
+分割されない場合はメッシュの全てが <code class="docutils literal notranslate"><span class="pre">Both</span></code> か <code class="docutils literal notranslate"><span class="pre">ThirdPersonOnly</span></code> になります。<br/>
+UniVRMでは <a class="reference external" href="https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask">VRMFirstPerson.Setup()</a> を呼び出します。
+Autoによる自動分割は重めの処理になります。</p>
+<section id="id8">
+<h2>分割基準<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>含まれる頂点が <code class="docutils literal notranslate"><span class="pre">head</span></code> か <code class="docutils literal notranslate"><span class="pre">head</span></code> の子孫のボーンのウェイトを持っているか</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>設定のリセット<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>FirstPerson は初期設定で Auto を指定しますが、エクスポートに失敗する場合はVRMFirstPerson をリセットすることで再設定することができます。
+メッシュが増減するなどのアバターの構成が変わった場合に参照が <code class="docutils literal notranslate"><span class="pre">Missing</span></code> になったときなどがエクスポートに失敗する場合です。</p>
+<section id="id10">
+<h2>リセット方法<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">VRM</span> <span class="pre">First</span> <span class="pre">Person</span> <span class="pre">(Script)</span></code> インスペクタの右上の <code class="docutils literal notranslate"><span class="pre">歯車アイコン</span> <span class="pre">⚙</span></code> で表示されるメニューから <code class="docutils literal notranslate"><span class="pre">Reset</span></code> を選択してください。</p>
+<figure class="align-default" id="id13">
+<img alt="../../_images/firstperson_reset.gif" src="../../_images/firstperson_reset.gif"/>
+<figcaption>
+<p><span class="caption-text">firstperson を reset</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -482,18 +489,26 @@ Autoによる自動分割は、重めの処理になります。</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">VRMFirstPerson</a><ul>
-<li><a class="reference internal" href="#id1">ヘッドセットの位置指定</a><ul>
+<li><a class="reference internal" href="#">概要</a></li>
+<li><a class="reference internal" href="#id2">ヘッドセットの位置指定</a><ul>
 <li><a class="reference internal" href="#firstpersonbone">FirstPersonBone</a></li>
 <li><a class="reference internal" href="#firstpersonoffset">FirstPersonOffset</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vr">VRの可視設定</a><ul>
-<li><a class="reference internal" href="#id2">設定のリセット</a></li>
-<li><a class="reference internal" href="#auto-both-thirdpersononly">Auto による Both と ThirdPersonOnly への自動分割</a></li>
-<li><a class="reference internal" href="#id3">推奨される構成</a></li>
+<li><a class="reference internal" href="#id3">一人称カメラ</a></li>
+<li><a class="reference internal" href="#id4">三人称カメラ</a></li>
+<li><a class="reference internal" href="#id5">可視設定</a></li>
+<li><a class="reference internal" href="#id6">不都合の例</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id7">推奨される構成</a></li>
+<li><a class="reference internal" href="#auto">Autoの可視設定</a><ul>
+<li><a class="reference internal" href="#id8">分割基準</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">設定のリセット</a><ul>
+<li><a class="reference internal" href="#id10">リセット方法</a></li>
 </ul>
 </li>
 </ul>
