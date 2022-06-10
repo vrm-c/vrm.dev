@@ -23,14 +23,14 @@ aliases: [
 
 `UniVRM` のパッケージに含まれる `UniGLTF` は、 `glTF` ファイルとバイナリ版の `glb` ファイルを読み書きできます。
 
-|                              | UniGLTF | UniVRM |                                 |
-|------------------------------|---------|--------|---------------------------------|
-| mesh(morph target, skinning) | ✅      | ✅     |                                 |
-| material(pbr)                | ✅      | ✅     |                                 |
-| material(unlit)              | ✅      | ✅     | KHR_materials_unlit 拡張        |
-| material(MToon)              |         | ✅     |                                 |
-| animation                    | ✅      |        | VRMではサポートしていません     |
-| camera                       |         |        | UniGLTFではサポートしていません |
+|                              | UniGLTF | UniVRM | 備考                                         |
+|------------------------------|---------|--------|----------------------------------------------|
+| mesh(morph target, skinning) | ✅       | ✅      |                                              |
+| material(pbr)                | ✅       | ✅      | KHR_materials_emissive_strength `from v0.99` |
+| material(unlit)              | ✅       | ✅      | KHR_materials_unlit                          |
+| material(MToon)              |         | ✅      |                                              |
+| animation                    | ✅       |        | VRMではサポートしていません                  |
+| camera                       |         |        | UniGLTFではサポートしていません              |
 
 ```{figure} /_static/images/vrm/alicia_3dbuilder.png
 :name: VRMのglTF部分を3D Builderで表示する
