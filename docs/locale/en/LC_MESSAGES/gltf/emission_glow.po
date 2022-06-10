@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 16:15+0900\n"
+"POT-Creation-Date: 2022-06-10 16:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,116 +22,159 @@ msgid "Emission と グロー(発光)"
 msgstr "Emission and glow"
 
 #: ../../gltf/emission_glow.md:8
-msgid "`vrm-1.0 向けの独自拡張です`"
-msgstr "`This is not an official extension of gltf.`"
+msgid "`v0.99` から `KHR_materials_emissive_strength` の読み書きをサポートしています。"
+msgstr "Starting with version `v0.99`, it supports reading and writing of `KHR_materials_emissive_strength` ."
 
 #: ../../gltf/emission_glow.md:10
-msgid "対象のシェーダー"
-msgstr "Target shader"
-
-#: ../../gltf/emission_glow.md:12
-msgid "`Standard`"
-msgstr ""
-
-#: ../../gltf/emission_glow.md:13
-msgid "`VRM10/MToon10`"
-msgstr ""
-
-#: ../../gltf/emission_glow.md:15
-msgid "Unity の PostEffect の グロー"
-msgstr "Glow of PostEffect in Unity"
-
-#: ../../gltf/emission_glow.md:17
-msgid "Emission の値が 1 を越える場合に発光させるポストエフェクトです。"
-msgstr "A post effect that emits light when the Emission value exceeds 1."
-
-#: ../../gltf/emission_glow.md:22
-msgid "1を超えて3や4にすることで強くなりますが `glTF` の仕様上この値を格納することができません。"
-msgstr ""
-"It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be "
-"stored due to the specifications of `glTF`."
-
-#: ../../gltf/emission_glow.md:24
-msgid "割り算で1におさめる"
-msgstr "Divide to 1"
-
-#: ../../gltf/emission_glow.md:1
-msgid "エクスポート時に下記の処理をして 最大値 1 に強制します。"
-msgstr "When exporting, do the following to force the maximum value to 1."
-
-#: ../../gltf/emission_glow.md:39
-msgid "vrm-0.x は保存できる"
-msgstr ""
-
-#: ../../gltf/emission_glow.md:1
-msgid "vrm-0.x は [0-1] 制限が無いので保存できます。"
-msgstr ""
-
-#: ../../gltf/emission_glow.md:45
-msgid "VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました"
+#, fuzzy
+msgid "VRMC_materials_hdr_emissiveMultiplier は、非推奨になりました"
 msgstr ""
 "We created `VRMC_materials_hdr_emissiveMultiplier` to store a value "
 "greater than 1 in the emission."
 
-#: ../../gltf/emission_glow.md:47
+#: ../../gltf/emission_glow.md:1
+msgid ""
+"同じ機能である `VRMC_materials_hdr_emissiveMultiplier` は、非推奨になりました。 "
+"以降も読み込み能力は保持しますが、書き出し時は `KHR_materials_emissive_strength` を使い "
+"`VRMC_materials_hdr_emissiveMultiplier` は使われません。"
+msgstr "The same feature, `VRMC_materials_hdr_emissiveMultiplier`, has been deprecated."
+"It retains readability, but uses `KHR_materials_emissive_strength` when exporting, "
+"and does not use` VRMC_materials_hdr_emissiveMultiplier`."
+
+#: ../../gltf/emission_glow.md:16
+msgid "対象のシェーダー"
+msgstr "Target shader"
+
+#: ../../gltf/emission_glow.md:18
+msgid "`Standard`"
+msgstr ""
+
+#: ../../gltf/emission_glow.md:19
+msgid "`VRM10/MToon10`"
+msgstr ""
+
+#: ../../gltf/emission_glow.md:21
+msgid "Unity の PostEffect の グロー"
+msgstr "Glow of PostEffect in Unity"
+
+#: ../../gltf/emission_glow.md:23
+msgid "Emission の値が 1 を越える場合に発光させるポストエフェクトです。"
+msgstr "A post effect that emits light when the Emission value exceeds 1."
+
+#: ../../gltf/emission_glow.md:28
+msgid "1を超えて3や4にすることで強くなりますが、 `glTF` の Emission 最大値は `1` となっています。"
+msgstr "It gets stronger by going over 1 to 3 or 4, but the maximum Emission value for `glTF` is` 1`."
+
+#: ../../gltf/emission_glow.md:30
+msgid "割り算で1におさめる"
+msgstr "Divide to 1"
+
+#: ../../gltf/emission_glow.md:1
+#, fuzzy
+msgid "エクスポート時に下記の処理をして Emission の 最大値を 1 に修正します。"
+msgstr "When exporting, do the following to force the maximum value to 1."
+
+#: ../../gltf/emission_glow.md:45
+msgid "vrm-0.x は保存できる"
+msgstr "vrm-0.x can be saved"
+
+#: ../../gltf/emission_glow.md:1
+msgid "vrm-0.x は [0-1] 制限が無いので保存できます。"
+msgstr "vrm-0.x can be saved as it has no [0-1] limit."
+
+#: ../../gltf/emission_glow.md:51
+msgid "KHR_materials_emissive_strength に対応"
+msgstr "Supports KHR_materials_emissive_strength"
+
+#: ../../gltf/emission_glow.md:53
+msgid "`v0.99` から `KHR_materials_emissive_strength` の読み書きに対応しています。"
+msgstr "It supports reading and writing from `v0.99` to` KHR_materials_emissive_strength`."
+
+#: ../../gltf/emission_glow.md:55
+msgid "<https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength>"
+msgstr ""
+
+#: ../../gltf/emission_glow.md:57
+msgid "`UniVRM-0.99` 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。"
+msgstr "Since `UniVRM-0.99`, it is valid for MToon / PBR with VRM1 / GLB / GLTF."
+
+#: ../../gltf/emission_glow.md:59
+#, fuzzy
+msgid "VRMC_materials_hdr_emissiveMultiplier (deprecated)"
+msgstr ""
+"We created `VRMC_materials_hdr_emissiveMultiplier` to store a value "
+"greater than 1 in the emission."
+
+#: ../../gltf/emission_glow.md:61
+msgid ""
+"<https://github.com/vrm-c/vrm-"
+"specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0>"
+msgstr ""
+
+#: ../../gltf/emission_glow.md:63
+msgid "`KHR_materials_emissive_strength` と機能が重複したので不要になりました。"
+msgstr "It is no longer needed because it has the same function as `KHR_materials_emissive_strength`."
+
+#: ../../gltf/emission_glow.md:65
 msgid ""
 "emission に1を越える値を格納するために、`VRMC_materials_hdr_emissiveMultiplier` を作りました。 "
 "EmissiveFactor に対して乗算する float 値 を定義します。"
 msgstr "Defines a float value to multiply against EmissiveFactor."
 
-#: ../../gltf/emission_glow.md:50
+#: ../../gltf/emission_glow.md:68
 msgid "`EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)` となります。"
 msgstr "`EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)`"
 
-#: ../../gltf/emission_glow.md:52
-msgid "`UniVRM-0.79` 以降でVRM1/GLB/GLTF でエクスポート可能です。"
-msgstr "It can be exported as VRM1 / GLB / GLTF with `UniVRM-0.79` or later."
+#: ../../gltf/emission_glow.md:70
+msgid "`UniVRM-0.79` 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。"
+msgstr "Since `UniVRM-0.79`, it is valid for MToon / PBR with VRM1 / GLB / GLTF."
 
-#: ../../gltf/emission_glow.md:54
-msgid "MToon と PBR マテリアルで有効です。"
-msgstr "Valid for MToon and PBR materials."
+#: ../../gltf/emission_glow.md:72
+msgid "サンプルシーン"
+msgstr "Sample scene"
 
-#: ../../gltf/emission_glow.md:56
+#: ../../gltf/emission_glow.md:74
 msgid "PostEffectを設定済みのサンプルシーンがありますので お試しください。"
-msgstr ""
+msgstr "There is a sample scene with PostEffect set, so please try it."
 
-#: ../../gltf/emission_glow.md:59
+#: ../../gltf/emission_glow.md:77
 msgid "`UniVRM10-XXX.unitypackage`"
 msgstr "Since there is a sample scene with PostEffect set. Please try it."
 
-#: ../../gltf/emission_glow.md:61
+#: ../../gltf/emission_glow.md:79
 msgid "`Assets\\UniGLTF.Samples\\LookDev\\ballroom_1k.unity`"
 msgstr ""
 
-#: ../../gltf/emission_glow.md:62
+#: ../../gltf/emission_glow.md:80
 msgid "`Assets\\UniGLTF.Samples\\LookDev\\lilienstein_1k.unity`"
 msgstr ""
 
-#: ../../gltf/emission_glow.md:63
+#: ../../gltf/emission_glow.md:81
 msgid "`Assets\\UniGLTF.Samples\\LookDev\\moonless_golf_1k.unity`"
 msgstr ""
 
-#: ../../gltf/emission_glow.md:64
+#: ../../gltf/emission_glow.md:82
 msgid "`Assets\\UniGLTF.Samples\\LookDev\\spruit_sunrise_1k.unity`"
 msgstr ""
 
-#: ../../gltf/emission_glow.md:66
+#: ../../gltf/emission_glow.md:84
 msgid "https://github.com/vrm-c/UniVRM/pull/1123"
 msgstr ""
 
-#: ../../gltf/emission_glow.md:68
+#: ../../gltf/emission_glow.md:86
 msgid "Unity アプリでロードする方法"
 msgstr "How to load in Unity app"
 
-#: ../../gltf/emission_glow.md:70
-msgid "`UniVRM-0.79` 以降でロードしてください"
+#: ../../gltf/emission_glow.md:88
+#, fuzzy
+msgid "`UniVRM-0.99` 以降でロードしてください"
 msgstr "Please load with `UniVRM-0.79` or later"
 
-#: ../../gltf/emission_glow.md:71
+#: ../../gltf/emission_glow.md:89
 msgid "シーンに PostEffect を設定してください"
 msgstr "Set PostEffect for your scene"
 
-#: ../../gltf/emission_glow.md:72
+#: ../../gltf/emission_glow.md:90
 msgid ""
 "`Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset`"
 " サンプルの profile があります"
@@ -139,22 +182,4 @@ msgstr ""
 "`Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset`"
 " There is a sample profile"
 
-#: ../../gltf/emission_glow.md:74
-msgid "仕様"
-msgstr "Specification"
-
-#: ../../gltf/emission_glow.md:76
-msgid ""
-"<https://github.com/vrm-c/vrm-"
-"specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft>"
-msgstr ""
-
-#~ msgid "{}"
-#~ msgstr ""
-
-#~ msgid "![img](/_static/images/vrm10/glow.jpg)"
-#~ msgstr ""
-
-#~ msgid "img"
-#~ msgstr ""
 
