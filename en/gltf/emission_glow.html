@@ -321,7 +321,11 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="emission">
 <h1>Emission and glow<a class="headerlink" href="#emission" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">an</span> <span class="pre">official</span> <span class="pre">extension</span> <span class="pre">of</span> <span class="pre">gltf.</span></code></p>
+<p>Starting with version <code class="docutils literal notranslate"><span class="pre">v0.99</span></code>, it supports reading and writing of <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> .</p>
+<div class="warning admonition">
+<p class="admonition-title">VRMC_materials_hdr_emissiveMultiplier は、非推奨になりました </p>
+<p>The same feature, <code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code>, has been deprecated.It retains readability, but uses <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> when exporting, and does not use<code class="docutils literal notranslate"> <span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code>.</p>
+</div>
 <section id="id1">
 <h2>Target shader<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -335,10 +339,10 @@
 <figure class="align-default">
 <img alt="../_images/glow.jpg" src="../_images/glow.jpg"/>
 </figure>
-<p>It becomes stronger by exceeding 1 to 3 or 4, but this value cannot be stored due to the specifications of <code class="docutils literal notranslate"><span class="pre">glTF</span></code>.</p>
+<p>It gets stronger by going over 1 to 3 or 4, but the maximum Emission value for <code class="docutils literal notranslate"><span class="pre">glTF</span></code> is<code class="docutils literal notranslate"> <span class="pre">1</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Divide to 1</p>
-<p>When exporting, do the following to force the maximum value to 1.</p>
+<p>エクスポート時に下記の処理をして Emission の 最大値を 1 に修正します。</p>
 </div>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Vector3</span><span class="w"> </span><span class="n">emission</span><span class="p">;</span><span class="w"></span>
 <span class="kt">var</span><span class="w"> </span><span class="n">max_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">get_max</span><span class="p">(</span><span class="n">emission</span><span class="p">);</span><span class="w"> </span><span class="c1">// r, g, b で最大の値を得る</span>
@@ -349,18 +353,27 @@
 </pre></div>
 </div>
 <div class="note admonition">
-<p class="admonition-title">vrm-0.x は保存できる</p>
-<p>vrm-0.x は [0-1] 制限が無いので保存できます。</p>
+<p class="admonition-title">vrm-0.x can be saved</p>
+<p>vrm-0.x can be saved as it has no [0-1] limit.</p>
 </div>
 </section>
-<section id="vrmc-materials-hdr-emissivemultiplier">
-<h2>We created <code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code> to store a value greater than 1 in the emission.<a class="headerlink" href="#vrmc-materials-hdr-emissivemultiplier" title="Permalink to this headline">¶</a></h2>
+<section id="khr-materials-emissive-strength">
+<h2>Supports KHR_materials_emissive_strength<a class="headerlink" href="#khr-materials-emissive-strength" title="Permalink to this headline">¶</a></h2>
+<p>It supports reading and writing from <code class="docutils literal notranslate"><span class="pre">v0.99</span></code> to<code class="docutils literal notranslate"> <span class="pre">KHR_materials_emissive_strength</span></code>.</p>
+<p><a class="reference external" href="https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength">https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength</a></p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">UniVRM-0.99</span></code>, it is valid for MToon / PBR with VRM1 / GLB / GLTF.</p>
+</section>
+<section id="vrmc-materials-hdr-emissivemultiplier-deprecated">
+<h2>VRMC_materials_hdr_emissiveMultiplier (deprecated)<a class="headerlink" href="#vrmc-materials-hdr-emissivemultiplier-deprecated" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0">https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0</a></p>
+<p>It is no longer needed because it has the same function as <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code>.</p>
 <p>Defines a float value to multiply against EmissiveFactor.</p>
 <p><code class="docutils literal notranslate"><span class="pre">EmissiveFactor</span> <span class="pre">=</span> <span class="pre">EmissiveFactor</span> <span class="pre">*</span> <span class="pre">multiplier</span> <span class="pre">(value</span> <span class="pre">greater</span> <span class="pre">than</span> <span class="pre">1)</span></code></p>
-<p>It can be exported as VRM1 / GLB / GLTF with <code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code> or later.</p>
-<p>Valid for MToon and PBR materials.</p>
-<p>PostEffectを設定済みのサンプルシーンがありますので
-お試しください。</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code>, it is valid for MToon / PBR with VRM1 / GLB / GLTF.</p>
+</section>
+<section id="id2">
+<h2>Sample scene<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>There is a sample scene with PostEffect set, so please try it.</p>
 <p>Since there is a sample scene with PostEffect set. Please try it.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity</span></code></p></li>
@@ -373,17 +386,13 @@
 <section id="unity">
 <h2>How to load in Unity app<a class="headerlink" href="#unity" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Please load with <code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code> or later</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.99</span></code> 以降でロードしてください</p></li>
 <li><p>Set PostEffect for your scene</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset</span></code> There is a sample profile</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="id2">
-<h2>Specification<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft">https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft</a></p>
 </section>
 </section>
 
@@ -441,9 +450,10 @@
 <li><a class="reference internal" href="#">Emission and glow</a><ul>
 <li><a class="reference internal" href="#id1">Target shader</a></li>
 <li><a class="reference internal" href="#unity-posteffect">Glow of PostEffect in Unity</a></li>
-<li><a class="reference internal" href="#vrmc-materials-hdr-emissivemultiplier">We created <code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code> to store a value greater than 1 in the emission.</a></li>
+<li><a class="reference internal" href="#khr-materials-emissive-strength">Supports KHR_materials_emissive_strength</a></li>
+<li><a class="reference internal" href="#vrmc-materials-hdr-emissivemultiplier-deprecated">VRMC_materials_hdr_emissiveMultiplier (deprecated)</a></li>
+<li><a class="reference internal" href="#id2">Sample scene</a></li>
 <li><a class="reference internal" href="#unity">How to load in Unity app</a></li>
-<li><a class="reference internal" href="#id2">Specification</a></li>
 </ul>
 </li>
 </ul>

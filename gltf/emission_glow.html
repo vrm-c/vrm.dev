@@ -321,7 +321,12 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="emission">
 <h1>Emission と グロー(発光)<a class="headerlink" href="#emission" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">vrm-1.0</span> <span class="pre">向けの独自拡張です</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.99</span></code> から <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> の読み書きをサポートしています。</p>
+<div class="warning admonition">
+<p class="admonition-title">VRMC_materials_hdr_emissiveMultiplier は、非推奨になりました </p>
+<p>同じ機能である <code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code> は、非推奨になりました。
+以降も読み込み能力は保持しますが、書き出し時は <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> を使い <code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code> は使われません。</p>
+</div>
 <section id="id1">
 <h2>対象のシェーダー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
@@ -335,10 +340,10 @@
 <figure class="align-default">
 <img alt="../_images/glow.jpg" src="../_images/glow.jpg"/>
 </figure>
-<p>1を超えて3や4にすることで強くなりますが <code class="docutils literal notranslate"><span class="pre">glTF</span></code> の仕様上この値を格納することができません。</p>
+<p>1を超えて3や4にすることで強くなりますが、 <code class="docutils literal notranslate"><span class="pre">glTF</span></code> の Emission 最大値は <code class="docutils literal notranslate"><span class="pre">1</span></code> となっています。</p>
 <div class="note admonition">
 <p class="admonition-title">割り算で1におさめる</p>
-<p>エクスポート時に下記の処理をして 最大値 1 に強制します。</p>
+<p>エクスポート時に下記の処理をして Emission の 最大値を 1 に修正します。</p>
 </div>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Vector3</span><span class="w"> </span><span class="n">emission</span><span class="p">;</span><span class="w"></span>
 <span class="kt">var</span><span class="w"> </span><span class="n">max_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">get_max</span><span class="p">(</span><span class="n">emission</span><span class="p">);</span><span class="w"> </span><span class="c1">// r, g, b で最大の値を得る</span>
@@ -353,13 +358,23 @@
 <p>vrm-0.x は [0-1] 制限が無いので保存できます。</p>
 </div>
 </section>
-<section id="vrmc-materials-hdr-emissivemultiplier">
-<h2>VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました<a class="headerlink" href="#vrmc-materials-hdr-emissivemultiplier" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="khr-materials-emissive-strength">
+<h2>KHR_materials_emissive_strength に対応<a class="headerlink" href="#khr-materials-emissive-strength" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">v0.99</span></code> から <code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> の読み書きに対応しています。</p>
+<p><a class="reference external" href="https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength">https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.99</span></code> 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。</p>
+</section>
+<section id="vrmc-materials-hdr-emissivemultiplier-deprecated">
+<h2>VRMC_materials_hdr_emissiveMultiplier (deprecated)<a class="headerlink" href="#vrmc-materials-hdr-emissivemultiplier-deprecated" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0">https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">KHR_materials_emissive_strength</span></code> と機能が重複したので不要になりました。</p>
 <p>emission に1を越える値を格納するために、<code class="docutils literal notranslate"><span class="pre">VRMC_materials_hdr_emissiveMultiplier</span></code> を作りました。
 EmissiveFactor に対して乗算する float 値 を定義します。</p>
 <p><code class="docutils literal notranslate"><span class="pre">EmissiveFactor</span> <span class="pre">=</span> <span class="pre">EmissiveFactor</span> <span class="pre">*</span> <span class="pre">multiplier(1より大きい値)</span></code> となります。</p>
-<p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code> 以降でVRM1/GLB/GLTF でエクスポート可能です。</p>
-<p>MToon と PBR マテリアルで有効です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code> 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。</p>
+</section>
+<section id="id2">
+<h2>サンプルシーン<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>PostEffectを設定済みのサンプルシーンがありますので
 お試しください。</p>
 <p><code class="docutils literal notranslate"><span class="pre">UniVRM10-XXX.unitypackage</span></code></p>
@@ -374,17 +389,13 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
 <section id="unity">
 <h2>Unity アプリでロードする方法<a class="headerlink" href="#unity" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.79</span></code> 以降でロードしてください</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UniVRM-0.99</span></code> 以降でロードしてください</p></li>
 <li><p>シーンに PostEffect を設定してください</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset</span></code> サンプルの profile があります</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="id2">
-<h2>仕様<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference external" href="https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft">https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0_draft</a></p>
 </section>
 </section>
 
@@ -442,9 +453,10 @@ EmissiveFactor に対して乗算する float 値 を定義します。</p>
 <li><a class="reference internal" href="#">Emission と グロー(発光)</a><ul>
 <li><a class="reference internal" href="#id1">対象のシェーダー</a></li>
 <li><a class="reference internal" href="#unity-posteffect">Unity の PostEffect の グロー</a></li>
-<li><a class="reference internal" href="#vrmc-materials-hdr-emissivemultiplier">VRMC_materials_hdr_emissiveMultiplier 拡張を作成しました</a></li>
+<li><a class="reference internal" href="#khr-materials-emissive-strength">KHR_materials_emissive_strength に対応</a></li>
+<li><a class="reference internal" href="#vrmc-materials-hdr-emissivemultiplier-deprecated">VRMC_materials_hdr_emissiveMultiplier (deprecated)</a></li>
+<li><a class="reference internal" href="#id2">サンプルシーン</a></li>
 <li><a class="reference internal" href="#unity">Unity アプリでロードする方法</a></li>
-<li><a class="reference internal" href="#id2">仕様</a></li>
 </ul>
 </li>
 </ul>
