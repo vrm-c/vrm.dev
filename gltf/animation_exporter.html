@@ -321,42 +321,76 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>アニメーション<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>VRM は、Animation を使わないという仕様です</p>
-</div></blockquote>
+<p><a class="reference external" href="https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations">https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.44</span></code> から部分的に対応しています。</p>
+<div class="warning admonition">
+<p class="admonition-title">VRM のアニメーション</p>
+<p>VRM は、Animation を使わないという仕様です。</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Export は Runtime では動作しません</p>
+<p>Runtime では AnimationClip の情報を取得できないため、Export は動作しません。</p>
+</div>
 <section id="id2">
-<h2>対応バージョン<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<ul class="simple">
-<li><p>v0.44</p></li>
-</ul>
-</section>
-<section id="id3">
-<h2>対応状況<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>対応状況<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>KeyName</p></th>
-<th class="text-center head"><p></p></th>
+<tr class="row-odd"><th class="text-left head"><p>channel.path</p></th>
+<th class="head"><p>type</p></th>
+<th class="text-center head"><p>import</p></th>
+<th class="text-center head"><p>export</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>TranslationKey</p></td>
+<tr class="row-even"><td class="text-left"><p>translation</p></td>
+<td><p>vec3</p></td>
+<td class="text-center"><p>○</p></td>
 <td class="text-center"><p>○</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>RotationKey</p></td>
+<tr class="row-odd"><td class="text-left"><p>rotation</p></td>
+<td><p>quaternion</p></td>
+<td class="text-center"><p>○</p></td>
 <td class="text-center"><p>○</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>ScaleKey</p></td>
+<tr class="row-even"><td class="text-left"><p>scale</p></td>
+<td><p>vec3</p></td>
+<td class="text-center"><p>○</p></td>
 <td class="text-center"><p>○</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>BlendShapeKey</p></td>
+<tr class="row-odd"><td class="text-left"><p>weights(morphTarget)</p></td>
+<td><p>float[]</p></td>
+<td class="text-center"><p>○</p></td>
 <td class="text-center"><p>×</p></td>
 </tr>
 </tbody>
 </table></div>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>interpolation</p></th>
+<th class="head"><p>import</p></th>
+<th class="head"><p>export</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LINEAR</p></td>
+<td><p>○ tangent を linear になるように</p></td>
+<td><p>○</p></td>
+</tr>
+<tr class="row-odd"><td><p>STEP</p></td>
+<td><p>○ PositiveInfinity</p></td>
+<td><p>○</p></td>
+</tr>
+<tr class="row-even"><td><p>CUBICSPLINE</p></td>
+<td><p>何もしてない</p></td>
+<td><p>LINEAR</p></td>
+</tr>
+</tbody>
+</table></div>
 </section>
-<hr class="docutils"/>
+<section id="export">
+<h2>Export<a class="headerlink" href="#export" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <section id="animator">
-<h2>Animatorをエクスポートする場合<a class="headerlink" href="#animator" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>Animatorをエクスポートする場合<a class="headerlink" href="#animator" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li><p>ルートGameObjectにAnimatorコンポーネントを追加</p></li>
 <li><p>AnimatorControllerを作成し、それをAnimatorのController項目に設定</p></li>
@@ -367,17 +401,17 @@
 </ol>
 </section>
 <section id="animation">
-<h2>Animationをエクスポートする場合<a class="headerlink" href="#animation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>Animationをエクスポートする場合<a class="headerlink" href="#animation" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li><p>ルートGameObjectにAnimationコンポーネントを追加</p></li>
 <li><p>UnityEditorのツールバーからWindow&gt;AnimationでAnimationウインドウを開く</p></li>
 <li><p>ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る</p></li>
 <li><p>Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする</p></li>
 </ol>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id4">
 <img alt="../_images/LegacyClip.png" src="../_images/LegacyClip.png"/>
 <figcaption>
-<p><span class="caption-text">Interpolation</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">Interpolation</span><a class="headerlink" href="#id4" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -386,21 +420,70 @@
 <li><p>UniGLTF&gt;Exportからglbを出力する</p></li>
 </ol>
 </section>
-<section id="id4">
-<h2>注意事項<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id3">
+<h3>注意事項<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li><p>RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること</p></li>
 </ol>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id5">
 <img alt="../_images/Interpolation.png" src="../_images/Interpolation.png"/>
 <figcaption>
-<p><span class="caption-text">Interpolation</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">Interpolation</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
 <li><p>Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない</p></li>
 <li><p>Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）</p></li>
 </ol>
+</section>
+<section id="export-properties">
+<h3>export properties<a class="headerlink" href="#export-properties" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF/Editor/Animation/AnimationExporter.cs</span></code></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>property</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>m_LocalPosition</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table></div>
+<ul class="simple">
+<li><p>"localEulerAnglesRaw" (未実装)</p></li>
+<li><p>"m_LocalRotation"</p></li>
+<li><p>"m_LocalScale"</p></li>
+<li><p>"blendShape"</p></li>
+</ul>
+</section>
+<section id="interpolation">
+<h3>interpolation<a class="headerlink" href="#interpolation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF/Editor/Animation/AnimationExporter.cs</span></code></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>unity</p></th>
+<th class="head"><p>export</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AnimationUtility.TangentMode.Linear</p></td>
+<td><p>glTFAnimationTarget.Interpolations.LINEAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnimationUtility.TangentMode.Constant</p></td>
+<td><p>glTFAnimationTarget.Interpolations.STEP</p></td>
+</tr>
+<tr class="row-even"><td><p>その他</p></td>
+<td><p>glTFAnimationTarget.Interpolations.LINEAR</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+</section>
+<section id="import">
+<h2>Import<a class="headerlink" href="#import" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF/Runtime/UniGLTF/IO/AnimationIO/AnimationImporterUtil.cs</span></code></p>
 </section>
 </section>
 
@@ -456,11 +539,16 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">アニメーション</a><ul>
-<li><a class="reference internal" href="#id2">対応バージョン</a></li>
-<li><a class="reference internal" href="#id3">対応状況</a></li>
+<li><a class="reference internal" href="#id2">対応状況</a></li>
+<li><a class="reference internal" href="#export">Export</a><ul>
 <li><a class="reference internal" href="#animator">Animatorをエクスポートする場合</a></li>
 <li><a class="reference internal" href="#animation">Animationをエクスポートする場合</a></li>
-<li><a class="reference internal" href="#id4">注意事項</a></li>
+<li><a class="reference internal" href="#id3">注意事項</a></li>
+<li><a class="reference internal" href="#export-properties">export properties</a></li>
+<li><a class="reference internal" href="#interpolation">interpolation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#import">Import</a></li>
 </ul>
 </li>
 </ul>
