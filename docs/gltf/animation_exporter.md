@@ -27,7 +27,7 @@ Runtime では AnimationClip の情報を取得できないため、Export は�
 | translation          | vec3       |   ○    |   ○    |
 | rotation             | quaternion |   ○    |   ○    |
 | scale                | vec3       |   ○    |   ○    |
-| weights(morphTarget) | float[]    |   ○    |   ×    |
+| weights(morphTarget) | float[]    |   ○    |   ○    |
 
 | interpolation | import                           | export |
 |---------------|----------------------------------|--------|
@@ -71,13 +71,13 @@ Interpolation
 
 `Assets/UniGLTF/Editor/Animation/AnimationExporter.cs`
 
-| property        |  |
-|-----------------|--|
-| m_LocalPosition |  |
-* "localEulerAnglesRaw" (未実装)
-* "m_LocalRotation"
-* "m_LocalScale"
-* "blendShape"
+| property            |                                                      |
+|---------------------|------------------------------------------------------|
+| m_LocalPosition     | vec3                                                 |
+| localEulerAnglesRaw | 未実装                                               |
+| m_LocalRotation     | quaternion                                           |
+| m_LocalScale        | vec3                                                 |
+| blendShape          | float[] すべての blendShape の状態をまとめて記録する |
 
 ### interpolation
 
