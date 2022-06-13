@@ -6,7 +6,7 @@ aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 
 # アニメーション
 
-<https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations>
+- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations>
 
 `v0.44` から部分的に対応しています。
 
@@ -29,11 +29,11 @@ Runtime では AnimationClip の情報を取得できないため、Export は�
 | scale                | vec3       |   ○    |   ○    |
 | weights(morphTarget) | float[]    |   ○    |   ○    |
 
-| interpolation | import                           | export |
-|---------------|----------------------------------|--------|
-| LINEAR        | ○ tangent を linear になるように | ○      |
-| STEP          | ○ PositiveInfinity               | ○      |
-| CUBICSPLINE   | 何もしてない                     | LINEAR |
+| interpolation | import | export |
+|---------------|--------|--------|
+| LINEAR        | ○      | ○      |
+| STEP          | ○      | ○      |
+| CUBICSPLINE   | ○      | LINEAR |
 
 ## Export
 ### Animatorをエクスポートする場合
@@ -89,6 +89,6 @@ Interpolation
 | AnimationUtility.TangentMode.Constant | glTFAnimationTarget.Interpolations.STEP   |
 | その他                                | glTFAnimationTarget.Interpolations.LINEAR |
 
-## Import
+## glTF: CUBICSPLINE == AnimationUtility.TangentMode.Free
 
-`Assets/UniGLTF/Runtime/UniGLTF/IO/AnimationIO/AnimationImporterUtil.cs`
+- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic>
