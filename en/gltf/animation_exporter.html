@@ -321,7 +321,9 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Animation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations">https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations">https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations</a></p></li>
+</ul>
 <p><code class="docutils literal notranslate"><span class="pre">v0.44</span></code> から部分的に対応しています。</p>
 <div class="warning admonition">
 <p class="admonition-title">VRM のアニメーション</p>
@@ -373,15 +375,15 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>LINEAR</p></td>
-<td><p>○ tangent を linear になるように</p></td>
+<td><p>○</p></td>
 <td><p>○</p></td>
 </tr>
 <tr class="row-odd"><td><p>STEP</p></td>
-<td><p>○ PositiveInfinity</p></td>
+<td><p>○</p></td>
 <td><p>○</p></td>
 </tr>
 <tr class="row-even"><td><p>CUBICSPLINE</p></td>
-<td><p>何もしてない</p></td>
+<td><p>○</p></td>
 <td><p>LINEAR</p></td>
 </tr>
 </tbody>
@@ -487,9 +489,11 @@
 </table></div>
 </section>
 </section>
-<section id="import">
-<h2>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Assets/UniGLTF/Runtime/UniGLTF/IO/AnimationIO/AnimationImporterUtil.cs</span></code></p>
+<section id="gltf-cubicspline-animationutility-tangentmode-free">
+<h2>glTF: CUBICSPLINE == AnimationUtility.TangentMode.Free<a class="headerlink" href="#gltf-cubicspline-animationutility-tangentmode-free" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic">https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -554,7 +558,7 @@
 <li><a class="reference internal" href="#interpolation">interpolation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#import">Import</a></li>
+<li><a class="reference internal" href="#gltf-cubicspline-animationutility-tangentmode-free">glTF: CUBICSPLINE == AnimationUtility.TangentMode.Free</a></li>
 </ul>
 </li>
 </ul>
