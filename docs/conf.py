@@ -30,8 +30,8 @@ import patch  # nopep8
 # -- Project information -----------------------------------------------------
 
 project = 'VRM'
-copyright = '2022, VRMコンソーシアム'
-author = 'VRMコンソーシアム'
+copyright = '2022, VRM Consortium'
+author = 'VRM Consortium'
 
 
 # -- General configuration ---------------------------------------------------
