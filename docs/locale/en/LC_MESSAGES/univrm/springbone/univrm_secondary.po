@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VRM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 16:15+0900\n"
+"POT-Creation-Date: 2022-06-10 16:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,47 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: ../../univrm/springbone/univrm_secondary.md:9
-#: ../../univrm/springbone/univrm_secondary.md:23
-msgid "VRMSpringBone"
+msgid "概要"
+msgstr ""
+
+#: ../../univrm/springbone/univrm_secondary.md:10
+msgid "揺れモノ設定に関するコンポーネント群です。"
 msgstr ""
 
 #: ../../univrm/springbone/univrm_secondary.md:11
-msgid "揺れモノ設定。"
-msgstr ""
-"Instruction video on how to set up spring bones [can be found "
-"here](https://www.youtube.com/watch?v=tpl_mqU8i7U)."
-
-#: ../../univrm/springbone/univrm_secondary.md:13
-msgid "コンポーネントのアタッチされるノード"
+#, fuzzy
+msgid "コンポーネントが追加される場所"
 msgstr "Nodes attached by spring bones"
 
-#: ../../univrm/springbone/univrm_secondary.md:14
-msgid "VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。"
+#: ../../univrm/springbone/univrm_secondary.md:12
+#: ../../univrm/springbone/univrm_secondary.md:20
+msgid "VRMSpringBone"
 msgstr ""
-"When importing a VRM, the components related to shaking objects are "
-"attached as follows."
 
-#: ../../univrm/springbone/univrm_secondary.md:16
-msgid "VRMSpringBoneは、名前が```secondary```のノードが自動的に作成されてそこにアタッチされます。"
-msgstr "VRMSpringBone is attached to the node `secondary`."
+#: ../../univrm/springbone/univrm_secondary.md:13
+msgid "VRMのインポートの際は、自動的生成される```secondary```という名前のゲームオブジェクトに追加されます。"
+msgstr ""
 
-#: ../../univrm/springbone/univrm_secondary.md:17
-msgid "VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。"
-msgstr "VRMSpringBoneColliderGroup is attached to nodes exported last time."
+#: ../../univrm/springbone/univrm_secondary.md:14
+msgid "VRMSpringBoneColliderGroup"
+msgstr ""
+
+#: ../../univrm/springbone/univrm_secondary.md:15
+msgid "VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにそのまま追加されます。"
+msgstr ""
 
 #: ../../univrm/springbone/univrm_secondary.md:1
-msgid "VRMSpringBoneが見つからない場合には``secondary``ノードをご確認ください。"
+#, fuzzy
+msgid "VRMSpringBoneが見つからない場合には``secondary``という名前のゲームオブジェクトをご確認ください。"
 msgstr ""
 "Please check `secondary` in the Hierarchy window if you cannot find "
 "VRMSpringBone"
 
-#: ../../univrm/springbone/univrm_secondary.md:24
+#: ../../univrm/springbone/univrm_secondary.md:21
+#, fuzzy
 msgid ""
-"尻尾、髪の毛、衣装などで動きに合わせて揺れて欲しいものの設定です。 "
-"揺らしたいオブジェクトの一番親のGameObjectをRootBonesにセットしてください。"
+"揺れモノとして尻尾・髪の毛・衣装などの動きに合わせて揺れて欲しい部位の設定です。   "
+"揺らしたい部位の一番親のGameObjectをRootBonesに指定してください。"
 msgstr ""
 "The setting for making objects swaying such as tail, hair, clothes and so"
 " on. Please set the target object's parent Gameobject in``Root Bones``. "
@@ -65,33 +68,39 @@ msgstr ""
 " number of``Root Bones``you want to put in."
 
 #: ../../univrm/springbone/univrm_secondary.md:1
-msgid "RootBonesに髪の毛とリボンを設定"
+#, fuzzy
+msgid "RootBonesに髪の毛とリボンの根本を指定"
 msgstr "Example: Set the hair and ribbon in `Root Bones`"
 
-#: ../../univrm/springbone/univrm_secondary.md:31
-msgid "これだけで、指定したボーンが動きに合わせて揺れます。"
+#: ../../univrm/springbone/univrm_secondary.md:28
+#, fuzzy
+msgid "RootBonesに指定した部位の子ボーンも含めて動きに合わせて揺れます。"
 msgstr ""
 "That's it. Try to adjust `Stiffness Force`, `Gravity Power`, etc. The "
 "target objects will perform swaying movements."
 
-#: ../../univrm/springbone/univrm_secondary.md:33
-msgid "[オプション]VRMSpringBoneColliderGroup(当たり判定)"
+#: ../../univrm/springbone/univrm_secondary.md:30
+#, fuzzy
+msgid "[オプション] VRMSpringBoneColliderGroup"
 msgstr "[Option] VRMSpringBoneColliderGroup (Collision detection)"
 
-#: ../../univrm/springbone/univrm_secondary.md:34
-msgid "揺れモノが特定の部位を貫通しないように、当たり判定を入れることができます。"
+#: ../../univrm/springbone/univrm_secondary.md:31
+#, fuzzy
+msgid "揺れモノが特定の部位を貫通しないように当たり判定を追加できます。"
 msgstr ""
 "The collision detection mechanism can be added to prevent swaying objects"
 " from penetrating user-specified parts."
 
 #: ../../univrm/springbone/univrm_secondary.md:1
-msgid "headに頭に当たり判定(VRMSpringBoneColliderGroup)を設定"
+#, fuzzy
+msgid "頭に当たり判定(VRMSpringBoneColliderGroup)を追加"
 msgstr ""
 "Add the collision detection mechanism on the head "
 "(VRMSpringBoneColliderGroup)"
 
-#: ../../univrm/springbone/univrm_secondary.md:40
-msgid "当たり判定を入れたいボーンにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのColliderGroupsにセットしてください。"
+#: ../../univrm/springbone/univrm_secondary.md:37
+#, fuzzy
+msgid "当たり判定を入れたいボーンにVRMSpringBoneColliderGroupを追加した後にVRMSpringBoneのColliderGroupsで指定してください。"
 msgstr ""
 "For example, hit `Add Component` to attach VRMSpringBoneColliderGroup "
 "script to``head``and drag``head``to the``Element 0``field in``Collider "
@@ -99,7 +108,8 @@ msgstr ""
 "the``Element 0``field in``Collider Groups``."
 
 #: ../../univrm/springbone/univrm_secondary.md:1
-msgid "headにVRMSpringBoneColliderGroupをアタッチして、VRMSpringBoneのCollierGroupsに設定"
+#, fuzzy
+msgid "headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定"
 msgstr ""
 "Attach the VRMSpringBoneColliderGroup script to `head` and set `head` in "
 "`Collider Groups`"
@@ -108,34 +118,32 @@ msgstr ""
 msgid "動作時のGizmo。"
 msgstr "Gizmo at runtime (check `Draw Gizmo` in the Inspector of VRMSpringBone)"
 
-#: ../../univrm/springbone/univrm_secondary.md:50
-msgid "ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます"
-msgstr "Set multiple collision detections in VRMSpringBoneColliderGroup"
-
-#: ../../univrm/springbone/univrm_secondary.md:51
-msgid "VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。"
+#: ../../univrm/springbone/univrm_secondary.md:46
+msgid "設定したVRMSpringBoneが無い"
 msgstr ""
-"Though the default is only set for one collision detection (a sphere "
-"range from the target), users can change the setting to multiple "
-"detections (multiple sphere ranges from multiple targets) by adjusting "
-"the value of `Size` and multiple targets can then be put into `Element` "
-"fields."
 
-#: ../../univrm/springbone/univrm_secondary.md:53
-msgid "設定したVRMSpringBoneが居なくなった"
-msgstr "VRMSpringBone set before was gone"
-
-#: ../../univrm/springbone/univrm_secondary.md:54
-msgid ""
-"VRMSpringBoneはインポート時に```secondary```ノードにアタッチされます。 "
-"エクスポート時と違う場所に現れるのでご注意ください。"
+#: ../../univrm/springbone/univrm_secondary.md:47
+#, fuzzy
+msgid "VRMSpringBoneはインポート時に```secondary```ノードに追加されます。エクスポート時と違う場所に現れるのでご注意ください。"
 msgstr "VRMSpringBone was attached to the node `secondary` during import."
 
-#: ../../univrm/springbone/univrm_secondary.md:57
-msgid "[VRMSpringBone](/univrm/springbone/univrm_secondary#コンポーネントのアタッチされるノード)"
+#: ../../univrm/springbone/univrm_secondary.md:49
+msgid "複雑な当たり判定の設定"
 msgstr ""
-"[VRMSpringBone](/univrm/springbone/univrm_secondary#nodes-attached-by-"
-"spring-bones)"
+
+#: ../../univrm/springbone/univrm_secondary.md:50
+msgid "複雑な当たり判定の設定をする際は、追加した１つのVRMSpringBoneColliderGroupで複数の球を設定します。"
+msgstr ""
+
+#: ../../univrm/springbone/univrm_secondary.md:52
+msgid "移動する際の揺れ防止"
+msgstr ""
+
+#: ../../univrm/springbone/univrm_secondary.md:53
+msgid ""
+"通常のVRMSpringBoneはワールド原点を基準に計算しています。VRMSpringBoneのCenterにゲームオブジェクトを指定すると揺れモノの基準点を変更できます。"
+" 例えば、歩行の際に移動する親ゲームオブジェクトを指定すると揺れモノの不要な揺れが防止できます。"
+msgstr ""
 
 #~ msgid "{}"
 #~ msgstr ""
@@ -169,4 +177,44 @@ msgstr ""
 
 #~ msgid "gizmo"
 #~ msgstr ""
+
+#~ msgid "揺れモノ設定。"
+#~ msgstr ""
+#~ "Instruction video on how to set up"
+#~ " spring bones [can be found "
+#~ "here](https://www.youtube.com/watch?v=tpl_mqU8i7U)."
+
+#~ msgid "VRMをインポートしたとき、揺れモノ関連のコンポーネントは以下のようにアタッチされます。"
+#~ msgstr ""
+#~ "When importing a VRM, the components "
+#~ "related to shaking objects are attached"
+#~ " as follows."
+
+#~ msgid "VRMSpringBoneは、名前が```secondary```のノードが自動的に作成されてそこにアタッチされます。"
+#~ msgstr "VRMSpringBone is attached to the node `secondary`."
+
+#~ msgid "VRMSpringBoneColliderGroupは、エクスポート時にアタッチされていたノードに復旧されます。"
+#~ msgstr "VRMSpringBoneColliderGroup is attached to nodes exported last time."
+
+#~ msgid "ひとつのVRMSpringBoneColliderGroupに複数の当たり判定を設定できます"
+#~ msgstr "Set multiple collision detections in VRMSpringBoneColliderGroup"
+
+#~ msgid "VRMSpringBoneColliderGroupには最初からひとつの球が設定されますが、複数の球をセットすることができます。"
+#~ msgstr ""
+#~ "Though the default is only set for"
+#~ " one collision detection (a sphere "
+#~ "range from the target), users can "
+#~ "change the setting to multiple "
+#~ "detections (multiple sphere ranges from "
+#~ "multiple targets) by adjusting the value"
+#~ " of `Size` and multiple targets can"
+#~ " then be put into `Element` fields."
+
+#~ msgid "設定したVRMSpringBoneが居なくなった"
+#~ msgstr "VRMSpringBone set before was gone"
+
+#~ msgid "[VRMSpringBone](/univrm/springbone/univrm_secondary#コンポーネントのアタッチされるノード)"
+#~ msgstr ""
+#~ "[VRMSpringBone](/univrm/springbone/univrm_secondary#nodes-"
+#~ "attached-by-spring-bones)"
 
