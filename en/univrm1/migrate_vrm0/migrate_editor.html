@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="🚧Runtime でアップグレードする" href="migrate_runtime.html" /><link rel="prev" title="🚧アップグレードに対応する機能" href="feature.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="🚧VRM-1.0β ファイルを読み込む" href="../import/index.html" /><link rel="prev" title="アップグレードの互換性" href="feature.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>🚧Editor でアップグレードする - VRM documentation</title>
+        <title>Editor でアップグレードする - VRM documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -210,7 +210,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/univrm_unlit.html">UniUnlit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/univrm_standard.html">Standard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/shader_mtoon.html">MToon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/shaders/shader_mtoon.html#id6">Items Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/lookat/index.html">LookAt</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -221,20 +220,13 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/springbone/index.html">SpringBone</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html">概要</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id2">コンポーネントが追加される場所</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id3">VRMSpringBone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id4">[オプション] VRMSpringBoneColliderGroup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id5">設定したVRMSpringBoneが無い</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id6">複雑な当たり判定の設定</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html#id7">移動する際の揺れ防止</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/springbone/univrm_secondary.html">VRMSpringBone</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/humanoid/index.html">Humanoid</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/humanoid_overview.html">Humanoid Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/base_model.html">Create Base VRM Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/meshutility_humanoid.html">HumanoidComponent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/humanoid/meshutility_humanoid.html#id1">How to use</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/meta/index.html">Meta</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -242,12 +234,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../univrm/firstperson/index.html">FirstPerson</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html">概要</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html#id2">Headset Position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html#vr">VR Visibility Setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html#id7">Recommended Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html#auto">Autoの可視設定</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html#id9">Reset Visibility Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../univrm/firstperson/univrm_firstperson.html">VRMFirstPerson</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../univrm/programming/index.html">Programming</a></li>
@@ -278,10 +265,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../vrm1_tutorial/constraint.html">🚧Constraint の設定</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">🚧VRM-0.x モデルを VRM-1.0β モデルにアップグレードする</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="feature.html">🚧アップグレードに対応する機能</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">🚧Editor でアップグレードする</a></li>
-<li class="toctree-l3"><a class="reference internal" href="migrate_runtime.html">🚧Runtime でアップグレードする</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">VRM-0.x モデルを VRM-1.0β モデルにアップグレードする</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="feature.html">アップグレードの互換性</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Editor でアップグレードする</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../import/index.html">🚧VRM-1.0β ファイルを読み込む</a></li>
@@ -320,21 +306,49 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="editor">
-<h1>🚧Editor でアップグレードする<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h1>
-<p>Unity Editor 上で VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。</p>
+<h1>Editor でアップグレードする<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h1>
+<p>UniVRM は従来の VRM-0.x モデルを VRM-1.0β モデルにアップグレードすることができます。
+手順を説明します。</p>
 <section id="id1">
 <h2>動作確認環境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Unity 2019.4.30f1</p></li>
-<li><p>UniVRM 0.89.0</p></li>
+<li><p>Unity 2020.3.34f1</p></li>
+<li><p>UniVRM 0.103.0</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>注意<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>UniVRM 0.89.0 現在、VRM-1.0β モデルの出力にバグがあり、正常に行うことができません。</p>
+<section id="asset">
+<h2>Asset のアップグレード<a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h2>
+<p>以下の手順でアップグレードできます。</p>
+<ol class="arabic simple">
+<li><p>vrm0.x の vrm ファイルを Unity Project Asset に投入</p></li>
+<li><p>インスペクタで Migration フラグを有効にし Apply</p></li>
+<li><p>ライセンスなどを適切に修正する</p></li>
+<li><p>Prefab を vrm1.0 としてそのまま Export する</p></li>
+</ol>
 </section>
-<section id="wip">
-<h2>WIP<a class="headerlink" href="#wip" title="Permalink to this headline">¶</a></h2>
+<section id="asset-inspector">
+<h2>Asset の Inspector によるアップグレード<a class="headerlink" href="#asset-inspector" title="Permalink to this headline">¶</a></h2>
+<div class="info admonition">
+<p class="admonition-title">Editor</p>
+<p><code class="docutils literal notranslate"><span class="pre">VRM-0.XXX.0_faa1.unitypackage</span></code> の機能です。
+UPM では <code class="docutils literal notranslate"><span class="pre">com.vrmc.univrm1</span></code></p>
+</div>
+<p>Asset に <code class="docutils literal notranslate"><span class="pre">vrm-0.x</span></code> を投入してください。
+Inspector に migration ボタンが表示されます。</p>
+<figure class="align-default" id="id2">
+<img alt="../../_images/editor_migration.jpg" src="../../_images/editor_migration.jpg"/>
+<figcaption>
+<p><span class="caption-text">Migrate to Vrm1</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>cehckbox を有効にして <code class="docutils literal notranslate"><span class="pre">apply</span></code> ボタンを押します。</p>
+<figure class="align-default" id="id3">
+<img alt="../../_images/editor_migrated.jpg" src="../../_images/editor_migrated.jpg"/>
+<figcaption>
+<p><span class="caption-text">Migrated</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">vrm-1.0</span></code> の prefab が生成されます。</p>
 </section>
 </section>
 
@@ -343,12 +357,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="migrate_runtime.html">
+          <a class="next-page" href="../import/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">🚧Runtime でアップグレードする</div>
+                <div class="title">🚧VRM-1.0β ファイルを読み込む</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -359,7 +373,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">🚧アップグレードに対応する機能</div>
+                <div class="title">アップグレードの互換性</div>
                 
               </div>
             </a>
@@ -389,10 +403,10 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">🚧Editor でアップグレードする</a><ul>
+<li><a class="reference internal" href="#">Editor でアップグレードする</a><ul>
 <li><a class="reference internal" href="#id1">動作確認環境</a></li>
-<li><a class="reference internal" href="#id2">注意</a></li>
-<li><a class="reference internal" href="#wip">WIP</a></li>
+<li><a class="reference internal" href="#asset">Asset のアップグレード</a></li>
+<li><a class="reference internal" href="#asset-inspector">Asset の Inspector によるアップグレード</a></li>
 </ul>
 </li>
 </ul>
