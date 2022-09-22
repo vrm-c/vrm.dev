@@ -4,6 +4,7 @@ import pathlib
 import sys
 import shutil
 import logging
+import os
 logger = logging.getLogger(__name__)
 HERE = pathlib.Path(__file__).absolute().parent
 sys.path.append(str(HERE))
@@ -152,16 +153,23 @@ def setup(app: sphinx.application.Sphinx):
     # gettext を使わずに全文差し替えを使うためにビルド前にファイルを入れ替える
     #
     def copy_license_md(app: sphinx.application.Sphinx, config: sphinx.config.Config):
-        dst = pathlib.Path(app.confdir) / 'licenses/1.0/index.md'
+        # ensure directory
+        license_directory = pathlib.Path(app.confdir) / 'licenses/1.0'
+        os.makedirs(license_directory, exist_ok=True)
+
+        # ensure empty file if not exists
+        dst = license_directory / 'index.md'
+        if not os.path.isfile(dst):
+            f = open(dst, 'w')
+            f.close()
+
         if config.language == 'ja':
-            src = pathlib.Path(app.confdir).parent / \
-                'licenses/ja/1.0/_index.md'
+            src = pathlib.Path(app.confdir).parent / 'licenses/ja/1.0/_index.md'
             if src.read_bytes() != dst.read_bytes():
                 logger.debug(f'copy {src} to {dst}')
                 shutil.copy(src, dst)
         elif config.language == 'en':
-            src = pathlib.Path(app.confdir).parent / \
-                'licenses/en/1.0/_index.md'
+            src = pathlib.Path(app.confdir).parent / 'licenses/en/1.0/_index.md'
             if src.read_bytes() != dst.read_bytes():
                 logger.debug(f'copy {src} to {dst}')
                 shutil.copy(src, dst)
