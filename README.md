@@ -8,10 +8,23 @@ This repository contains source files for vrm.dev.
 
 vrm.dev requires [Sphinx](https://www.sphinx-doc.org/en/master/).
 
-### dependencies
+### requirements
 
-* python
-* python modules: sphinx myst_parser furo
+* Python 3.10
+* pip
+  * sphinx
+  * myst_parser
+  * furo
+
+### setup
+We recommended using a virtual environment of Python (e.g. venv, anaconda).
+
+```shell
+$ python
+Python 3.10.6
+
+$ pip install --requirement ./requirement.txt
+```
 
 ### local preview
 
