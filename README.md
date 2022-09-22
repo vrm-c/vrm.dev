@@ -31,9 +31,7 @@ $ pip install --requirement ./requirement.txt
 Start a local website server by running the following commands:
 
 ```console
-$ git clone --recursive https://github.com/vrm-c/vrm.dev.git
-$ cd vrm.dev
-$ sphinx-autobuild content/ja/docs build -b=dirhtml --open-browser
+$ sphinx-autobuild docs build -b=dirhtml --open-browser
 ```
 
 Access your local version of vrm.dev at http://localhost:8000/ to preview update/changes made in scripts.
