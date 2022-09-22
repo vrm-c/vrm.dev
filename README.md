@@ -17,7 +17,7 @@ vrm.dev requires [Sphinx](https://www.sphinx-doc.org/en/master/).
   * furo
 
 ### setup
-We recommended using a virtual environment of Python (e.g. venv, anaconda).
+We recommend using a virtual environment of Python (e.g. venv, anaconda).
 
 ```shell
 $ python
