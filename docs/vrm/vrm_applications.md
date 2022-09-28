@@ -9,23 +9,25 @@ weight: 4
 
 ##  3Dキャラクターのプラットフォーム
 
-* [ザ・シードオンライン](https://seed.online/)
-* [ニコニ立体](https://3d.nicovideo.jp/)
-* [VRoid Hub](https://hub.vroid.com/)
-* [DMM VR CONNECT](https://connect.vrlab.dmm.com/)
-* [CryptoAvatars](https://cryptoavatars.io/home)
+| VRM | プラットフォーム ||
+|-----|------------------|-|
+|`1.0`|[ザ・シードオンライン](https://seed.online/)| `1.0` アップロード可。3D viewer は `1.0` 未対応|
+|     |[ニコニ立体](https://3d.nicovideo.jp/)|
+|     |[VRoid Hub](https://hub.vroid.com/)|
+|     |[DMM VR CONNECT](https://connect.vrlab.dmm.com/)|
+|     |[CryptoAvatars](https://cryptoavatars.io/home)|
 
 ##  プラグイン
 
-| アプリケーション | プラットフォーム |
-|------------------|------------------|
-| [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ |
-| [VRM Add-on for Blender](https://vrm-addon-for-blender.info/ja) | Blenderアドオン |
-| [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
-| [godot-vrm](https://github.com/V-Sekai/godot-vrm) | Godotアドオン |
-| [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
-| [VRM Converter for VRChat](https://pokemori.booth.pm/items/1025226) | Unityエディタ拡張 |
-| [UniVRMExtensions](https://pokemori.booth.pm/items/1788660) | Unityエディタ拡張 |
+| VRM | アプリケーション | プラットフォーム |
+|-----|------------------|------------------|
+|`1.0`| [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ |
+|     | [VRM Add-on for Blender](https://vrm-addon-for-blender.info/ja) | Blenderアドオン |
+|     | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
+|     | [godot-vrm](https://github.com/V-Sekai/godot-vrm) | Godotアドオン |
+|     | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
+|     | [VRM Converter for VRChat](https://pokemori.booth.pm/items/1025226) | Unityエディタ拡張 |
+|     | [UniVRMExtensions](https://pokemori.booth.pm/items/1788660) | Unityエディタ拡張 |
 
 ##  キャラメイクツール
 
@@ -110,20 +112,20 @@ weight: 4
 
 ##  メタバース
 
-| アプリケーション | プラットフォーム |
-|------------------|------------------|
-| [バーチャルキャスト](https://virtualcast.jp/) | [Windows VR](https://store.steampowered.com/app/947890/VirtualCast/), [Oculus Quest](https://www.oculus.com/experiences/quest/4174249979259348/) |
-| [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
-| [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
-| [Exokit](https://exokit.org/) | Windows, macOS, Linux, VR |
-| [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
-| [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
-| [Webaverse](https://webaverse.com/) | Web browser |
-| [ambr](https://ambr.co.jp/) | Windows VR, macOS |
-| [Connect Chat](https://store.steampowered.com/app/1424930/Connect_Chat/) | Windows VR |
-| [VZero](https://facevtuber.com/vzero/) | Web browser |
-| [Substrata](https://substrata.info/) | Windows, MacOS, Linux |
-| [Hyperfy](https://hyperfy.io/) | Web browser, mobile <-> VR |
+| VRM | アプリケーション | プラットフォーム |
+|-----|------------------|------------------|
+|`1.0`| [バーチャルキャスト](https://virtualcast.jp/) | [Windows VR](https://store.steampowered.com/app/947890/VirtualCast/), [Oculus Quest](https://www.oculus.com/experiences/quest/4174249979259348/) |
+|     | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
+|     | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
+|     | [Exokit](https://exokit.org/) | Windows, macOS, Linux, VR |
+|     | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
+|     | [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
+|     | [Webaverse](https://webaverse.com/) | Web browser |
+|     | [ambr](https://ambr.co.jp/) | Windows VR, macOS |
+|     | [Connect Chat](https://store.steampowered.com/app/1424930/Connect_Chat/) | Windows VR |
+|     | [VZero](https://facevtuber.com/vzero/) | Web browser |
+|     | [Substrata](https://substrata.info/) | Windows, MacOS, Linux |
+|     | [Hyperfy](https://hyperfy.io/) | Web browser, mobile <-> VR |
 
 ##  ゲームなど
 

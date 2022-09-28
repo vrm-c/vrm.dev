@@ -8,6 +8,14 @@ date: 2018-04-16T16:30:00+09:00
 「VRM」は**VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット**です。
 [glTF2.0](https://www.khronos.org/gltf/)をベースとしており、誰でも自由に利用することができます。
 
+
+```{admonition} VRM-1.0
+:class: info
+
+[VRM-1.0](/vrm1/index) がリリースされました。
+
+```
+
 また、[Unity](https://unity3d.com/jp)向けのVRMファイルの読み書きを行うC#による標準実装（[UniVRM](https://github.com/vrm-c/UniVRM)）がオープンソースで提供されます。
 
 [もっと詳しく](/vrm/vrm_about)

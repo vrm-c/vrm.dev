@@ -6,14 +6,14 @@
         {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": "sphinx-autobuild docs build -b=dirhtml",
+            "command": "${workspaceFolder}/.venv/bin/sphinx-autobuild docs build -b=dirhtml",
             "isBackground": true,
             "problemMatcher": []
         },
         {
             "label": "sphinx-pot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/sphinx-build -M gettext . _pot",
+            "command": "${workspaceFolder}/.venv/bin/sphinx-build -M gettext . _pot",
             "options": {
                 "cwd": "${workspaceFolder}/docs"
             },
@@ -22,7 +22,7 @@
         {
             "label": "sphinx-po",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/sphinx-intl update -p _pot/gettext -l en",
+            "command": "${workspaceFolder}/.venv/bin/sphinx-intl update -p _pot/gettext -l en",
             "options": {
                 "cwd": "${workspaceFolder}/docs"
             },
