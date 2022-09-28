@@ -30,6 +30,10 @@ VRM 1.0 は複数の部品にわかれて策定が進んでいます。
 
 <https://github.com/vrm-c/vrm-specification/tree/master/specification>
 
+### サンプルモデル
+
+<https://github.com/vrm-c/vrm-specification/tree/master/samples>
+
 ### VRMパブリック・ライセンス文書 1.0
 アバターの人格に関する許諾を考慮した、VRM 独自のライセンスです。
 
