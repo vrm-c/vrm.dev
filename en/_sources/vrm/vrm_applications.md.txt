@@ -13,7 +13,7 @@ weight: 4
 |-----|------------------|-|
 |`1.0`|[ザ・シードオンライン](https://seed.online/)| `1.0` アップロード可。3D viewer は `1.0` 未対応|
 |     |[ニコニ立体](https://3d.nicovideo.jp/)|
-|     |[VRoid Hub](https://hub.vroid.com/)|
+|`1.0`|[VRoid Hub](https://hub.vroid.com/)|
 |     |[DMM VR CONNECT](https://connect.vrlab.dmm.com/)|
 |     |[CryptoAvatars](https://cryptoavatars.io/home)|
 
@@ -21,13 +21,15 @@ weight: 4
 
 | VRM | アプリケーション | プラットフォーム |
 |-----|------------------|------------------|
-|`1.0`| [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ |
+|`1.0`| [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ。 `1.0` 版は `0.x` と両方がロードできます |
+|`1.0`| [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
 |     | [VRM Add-on for Blender](https://vrm-addon-for-blender.info/ja) | Blenderアドオン |
 |     | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
 |     | [godot-vrm](https://github.com/V-Sekai/godot-vrm) | Godotアドオン |
 |     | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
 |     | [VRM Converter for VRChat](https://pokemori.booth.pm/items/1025226) | Unityエディタ拡張 |
 |     | [UniVRMExtensions](https://pokemori.booth.pm/items/1788660) | Unityエディタ拡張 |
+https://github.com/pixiv/three-vrm
 
 ##  キャラメイクツール
 
@@ -175,7 +177,6 @@ weight: 4
 | アプリケーション | プラットフォーム |
 |------------------|------------------|
 | [Babylon VRM Viewer](https://github.com/virtual-cast/babylon-vrm-loader/) | Babylon.js拡張 |
-| [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
 | [VPocket](https://booooooh.booth.pm/items/1033823) | Android, iOS |
 | [VRMビュアー](https://w.atwiki.jp/beamman/) | Windows |
 | [VRM Viewer](https://vrm-viewer.yukimochi.io/) | Webブラウザ |
