@@ -29,7 +29,6 @@ weight: 4
 |     | [glTF-Maya-Exporter](https://github.com/kashikacojp/glTF-Maya-Exporter) | Mayaスクリプト |
 |     | [VRM Converter for VRChat](https://pokemori.booth.pm/items/1025226) | Unityエディタ拡張 |
 |     | [UniVRMExtensions](https://pokemori.booth.pm/items/1788660) | Unityエディタ拡張 |
-https://github.com/pixiv/three-vrm
 
 ##  キャラメイクツール
 
