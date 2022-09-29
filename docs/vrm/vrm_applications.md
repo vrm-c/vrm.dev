@@ -22,7 +22,7 @@ weight: 4
 | VRM | アプリケーション | プラットフォーム |
 |-----|------------------|------------------|
 |`1.0`| [UniVRM](https://github.com/vrm-c/UniVRM) | Unityエディタ拡張, Unityライブラリ。 `1.0` 版は `0.x` と両方がロードできます |
-|`1.0`| [Three-VRM](https://github.com/pixiv/three-vrm/) | three.js拡張 |
+|`1.0`| [@pixiv/three-vrm](https://github.com/pixiv/three-vrm/) | Three.js用ライブラリ。従来のVRMとVRM 1.0の双方がロードできます |
 |     | [VRM Add-on for Blender](https://vrm-addon-for-blender.info/ja) | Blenderアドオン |
 |     | [VRM4U](https://github.com/ruyo/VRM4U) | UnrealEngineプラグイン |
 |     | [godot-vrm](https://github.com/V-Sekai/godot-vrm) | Godotアドオン |
