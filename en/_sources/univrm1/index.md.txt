@@ -2,12 +2,12 @@
 weight: 12
 ---
 
-# UniVRM-1.0β
+# UniVRM-1.0
 
 UniVRM は VRM 規格を実装した Unity のライブラリアセットです。
 UniVRM を利用して、Unity から VRM ファイルを生成したり、読み込むことができます。
 
-ここでは UniVRM を利用して VRM-1.0β 規格の VRM ファイルを扱うことを説明します。
+ここでは UniVRM を利用して VRM-1.0 規格の VRM ファイルを扱うことを説明します。
 
 ## アセット構成
 vrm-1.0 ファイルを Editor インポートした場合
