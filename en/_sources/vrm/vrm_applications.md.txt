@@ -127,6 +127,7 @@ weight: 4
 |     | [VZero](https://facevtuber.com/vzero/) | Web browser |
 |     | [Substrata](https://substrata.info/) | Windows, MacOS, Linux |
 |     | [Hyperfy](https://hyperfy.io/) | Web browser, mobile <-> VR |
+|`1.0`| [Mona](https://monaverse.com) | Web browser |
 
 ##  ゲームなど
 
