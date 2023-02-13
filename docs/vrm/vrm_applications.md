@@ -80,6 +80,7 @@ weight: 4
 | [FACEMOTION3D](https://apps.apple.com/jp/app/facemotion3d/id1507538005) | iOS |
 | [Kalidoface 3D](https://github.com/yeemachine/kalidoface-3d) | Windows |
 | [VIRTU: Avatar Camera](https://virtu.booth.pm/items/3684467) | PC, [iOS](https://apps.apple.com/app/virtu-avatar-camera/id1597220065) |
+| [VRigUnity](https://github.com/Kariaro/VRigUnity) | Windows, macOS, Linux |
 
 ##  アニメーション
 
