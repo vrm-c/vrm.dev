@@ -109,7 +109,7 @@ weight: 4
 | [Emmv Studio](https://booth.pm/ja/items/2495794) | Windows |
 | [PaSha!](https://ayato3d.booth.pm/items/2202577) | Windows 10 |
 | [PoseMixerAR](https://maruapps.com/posemixerar/) | Android, iOS |
-| [VRMポージング](https://games.soarhap.com/ja/vrmposing-mobile/) | Mobile, [Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/) |
+| [VRMポージング](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/) | [Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/), [Mobile] (https://evelyngamedev.com/vrmposing-mobile/) |
 
 ##  メタバース
 
