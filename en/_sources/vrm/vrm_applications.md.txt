@@ -65,6 +65,7 @@ weight: 4
 | [VTmini](https://store.steampowered.com/app/1801480/VTmini/) | Windows |
 | [JINS MEME VTUNER](https://apps.apple.com/jp/app/jins-meme-vtuner/id1554040568) | iOS |
 | [RiBLA Broadcast](https://ribla-laboratory.booth.pm/items/3642935) | Windows, macOS |
+| [Vフレット](https://nkjzm.jp/vfret) | Windows, macOS |
 
 ##  モーションキャプチャ
 
