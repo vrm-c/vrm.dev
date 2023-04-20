@@ -13,7 +13,7 @@ By exercising the Licensed Rights (as defined below), You (as defined below) acc
   <li>“<b>Effective Technological Measures</b>” means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.</li>
   <li>“<b>Exceptions and Limitations</b>” means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Work Data.</li>
   <li>“<b>Licensed Work Data</b>” means a 3D model data created using VRM (VRM file) that is the subject of the license under this Public License and is licensed for use under such license.</li>
-  <li>“<b>Licensed Rights</b>” means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your useof the Licensed Work Data and that the Licensor has authority to license.</li>
+  <li>“<b>Licensed Rights</b>” means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Work Data and that the Licensor has authority to license.</li>
   <li>“<b>License Settings</b>” means the part of the Licensed Work Data that contains the Licensor’s designation of the subject and terms of the license under this Public License. The License Setting constitutes, together with this Public License, the terms and conditions of the license of the Licensed Work Data granted to You.</li>
   <li>“<b>Licensor</b>” means the individual(s) or entity(ies) granting the Licensed Rights under this Public License.</li>
   <li>“<b>Non-commercial</b>” means not primarily intended for, and not primarily directed to, commercial gain or monetary compensation. For purposes of this Public License, an exchange of Licensed Work Data for other material covered by Copyright and Similar Rights is non-commercial if no monetary compensation is paid in connection with the exchange.</li>
@@ -22,7 +22,7 @@ By exercising the Licensed Rights (as defined below), You (as defined below) acc
   <li>“<b>Manipulation</b>” means adding motion (including adding sound) to the 3D avatar pertaining to a specific VRM file by executing the VRM file on an application.</li>
   <li>“<b>Model Use</b>” means publicly transmitting, making available for transmission, or showing of a series of images obtained by Manipulating the 3D avatar pertaining to a specific VRM file for the purpose of having a third party view it, excluding Avatar Use.</li>
   <li>“<b>Personify</b>” means to Manipulate the 3D avatar of a specific VRM file by expressly or implicitly stating that such manipulation expresses words and actions reflecting the intentions of a real or virtual personality.
-  <li>“<b>Avatar Use</b>” means publicly transmitting, making available fortransmission, or showing of a series of images obtained by Personifying the 3D avatar pertaining to a specific VRM file for the purpose of having a third party view it.</li>
+  <li>“<b>Avatar Use</b>” means publicly transmitting, making available for transmission, or showing of a series of images obtained by Personifying the 3D avatar pertaining to a specific VRM file for the purpose of having a third party view it.</li>
 </ol>
 
 ## Section 2. Scope.
@@ -53,7 +53,7 @@ By exercising the Licensed Rights (as defined below), You (as defined below) acc
     </ol>
     <li><u>No endorsement</u>. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Work Data is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i) (as applicable).</li>
   </ol>
-  <b><li>Other rights</b>.</li>
+  <li><b>Other rights</b>.</li>
   <ol type="1">
     <li>Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.</li>
     <li>Patent and trademark rights are not licensed under this Public License.</li>
@@ -102,30 +102,20 @@ Your exercise of the Licensed Rights is expressly made subject to the following 
   <p>
     For the purposes of this Section,
   </p>
-  <p>
-    “excessively violent expressions” means expressions that may induce or encourage the coarseness or cruelty of youths and may impede with their sound development;
-  </p>
-  <p>
-    “excessively sexual expressions” means expressions that may stimulate the sexual feelings of youths and may impede their sound development;
-  </p>
-  <p>
-    “antisocial expressions” means expressions that may induce or encourage crime or suicide;
-  </p>
-  <p>
-    “hate expressions” means expressions that disparage, slander, or threaten a specific individual or group for the purpose of excluding them from society, restricting their rights and freedoms, or stirring up hatred, discrimination, or violence;
-  </p>
-  <p>
-    “religious expressions” means expressions intended to spread religious doctrines, conduct ceremonial events, or indoctrinate and train believers; and
-  </p>
-  <p>
-    “political expression” means an expression intended to promote, support or oppose political principles.
-  </p>
+  <ul>
+    <li>“excessively violent expressions” means expressions that may induce or encourage the coarseness or cruelty of youths and may impede with their sound development;</li>
+    <li>“excessively sexual expressions” means expressions that may stimulate the sexual feelings of youths and may impede their sound development;</li>
+    <li>“antisocial expressions” means expressions that may induce or encourage crime or suicide;</li>
+    <li>“hate expressions” means expressions that disparage, slander, or threaten a specific individual or group for the purpose of excluding them from society, restricting their rights and freedoms, or stirring up hatred, discrimination, or violence;</li>
+    <li>“religious expressions” means expressions intended to spread religious doctrines, conduct ceremonial events, or indoctrinate and train believers; and</li>
+    <li>“political expression” means an expression intended to promote, support or oppose political principles.</li>
+  </ul>
 </ol>
 
 ## Section 4. Disclaimer of Warranties and Limitation of Liability.
 
 <ol type="a">
-  <li><b>Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Work Data as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Work Data, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence oferrors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.</b></li>
+  <li><b>Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Work Data as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Work Data, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.</b></li>
   <li><b>To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Work Data, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.</b></li>
   <li>The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.</li>
 </ol>
