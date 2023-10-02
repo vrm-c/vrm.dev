@@ -15,7 +15,8 @@ weight: 4
 |     |[ニコニ立体](https://3d.nicovideo.jp/)|
 |`1.0`|[VRoid Hub](https://hub.vroid.com/)|
 |     |[DMM VR CONNECT](https://connect.vrlab.dmm.com/)|
-|     |[CryptoAvatars](https://cryptoavatars.io/home)|
+|     |[CryptoAvatars](https://cryptoavatars.io/home)|アバターの所有権と相互運用性を可能にするブロックチェーンプロトコル
+|     |[VIPE - Virtual Persona](https://vipe.io)|アーティストのためのオールインワンアバタープラットフォーム、マーケットプレイス、およびハブ
 
 ##  プラグイン
 
@@ -66,6 +67,7 @@ weight: 4
 | [JINS MEME VTUNER](https://apps.apple.com/jp/app/jins-meme-vtuner/id1554040568) | iOS |
 | [RiBLA Broadcast](https://ribla-laboratory.booth.pm/items/3642935) | Windows, macOS |
 | [Vフレット](https://nkjzm.jp/vfret) | Windows, macOS |
+| [Avatar.Webcam](https://avatar.webcam) | Windows, macOS |
 
 ##  モーションキャプチャ
 
