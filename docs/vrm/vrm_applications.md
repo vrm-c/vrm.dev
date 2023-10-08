@@ -215,7 +215,7 @@ weight: 4
 | [ミロックプラス](https://www.miloq-plus.com/) | Android, iOS |
 | [SimpleURPToonLitOutlineExample](https://github.com/simplestargame/SimpleURPToonLitOutlineExample) | Windows |
 | [Kalidokit](https://github.com/yeemachine/kalidokit) | Windows |
-| [Wicked Engine](https://github.com/turanszkij/WickedEngine) | Windows, Linux |
+| [Wicked Engine](https://github.com/turanszkij/WickedEngine) | Windows, Linux, Xbox Series, PlayStation 5 |
 
 ##  内部的にVRMを活用しているサービス
 
