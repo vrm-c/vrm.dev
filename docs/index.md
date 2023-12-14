@@ -34,4 +34,6 @@ univrm1/index
 ダウンロード <https://github.com/vrm-c/UniVRM/releases>
 技術仕様 <https://github.com/vrm-c/vrm-specification/tree/master/specification>
 VRMコンソーシアム <https://vrm-consortium.org/>
+【C4】新しい概念を規格として定義する～アバターのための規格「VRM」を考えた話 <https://www.youtube.com/watch?v=rya1SeMBkxY>
+【Unite Tokyo 2019】3Dアバターファイルフォーマット「VRM」詳説 <https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996>
 ```
