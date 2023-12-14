@@ -333,12 +333,12 @@
 <p class="admonition-title">割り算で1におさめる</p>
 <p>エクスポート時に下記の処理をして Emission の 最大値を 1 に修正します。</p>
 </div>
-<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Vector3</span><span class="w"> </span><span class="n">emission</span><span class="p">;</span><span class="w"></span>
-<span class="kt">var</span><span class="w"> </span><span class="n">max_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">get_max</span><span class="p">(</span><span class="n">emission</span><span class="p">);</span><span class="w"> </span><span class="c1">// r, g, b で最大の値を得る</span>
-<span class="k">if</span><span class="p">(</span><span class="n">max_value</span><span class="p">&gt;</span><span class="m">1</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">emission</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">emission</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">max_value</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Vector3</span><span class="w"> </span><span class="n">emission</span><span class="p">;</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">max_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_max</span><span class="p">(</span><span class="n">emission</span><span class="p">);</span><span class="w"> </span><span class="c1">// r, g, b で最大の値を得る</span>
+<span class="k">if</span><span class="p">(</span><span class="n">max_value</span><span class="o">&gt;</span><span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">emission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emission</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">max_value</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="note admonition">
