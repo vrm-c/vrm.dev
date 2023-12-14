@@ -5,20 +5,19 @@ tags: ["unity"]
 description: "作業準備、Unity Download, UnityのProject作成, UniVRM Download, UniVRM package導入"
 ---
 
-# 0. Unityを用意して、UniVRMをインストールする
+# 0 Create a Unity project and install UniVRM
 
-## UniVRM をダウンロードする
+## Download UniVRM
 
 <https://github.com/vrm-c/UniVRM/releases>
 
-から最新版をダウンロードしてください。
-ファイル名は、`UniVRM-0.XX.0_YYYY.unitypackage` です。
+Download the latest version of UniVRM (`UniVRM-0.XX.0_YYYY.unitypackage`) in the release page:
 
 ```{admonition} XX YY
 :class: note
 
 
-XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
+XX is UniVRM version. YYYY is version ID
 
 ```
 
@@ -27,68 +26,64 @@ XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 download_unitypackage
 ```
 
-## Unity をインストールする
+## Install Unity
 
 <https://create.unity3d.com/jp-howto-install-win>
 
-UniVRMの対応するバージョンの Unity をインストールしてください。
-対応するUnityのバージョンは、`UniVRM をダウンロードする` の URL をご確認ください。
+Make sure the [Unity Version](/univrm/install/unity_version) you are going to download is compatible with UniVRM.
 
-推奨バージョン以外を使う場合は、 [インストール](/univrm/install/index) もご確認ください。
-
-## Unityで空のプロジェクトを作る
+## Create an empty project in Unity
 
 ```{figure} /_static/images/vrm/unity_new_project.png
 ```
 
-もしくは
+or
 
 ```{figure} /_static/images/vrm/new_project.jpg
 ```
 
-Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
+For Unity Hub, click ``Projects -> New -> 3D template -> CREATE``:
 
-## Unity に UniVRM unitypackage を Import
+## Import UniVRM package into the created project
 
-メニューの `Assets` - `Import pacakge` - `Custom Package` を選択して、
-ダウンロードした `UniVRM-0.XX.0_YYYY.unitypackage` を選んでください。
+Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folders ``../Assets/VRM``, ``../Assets/UniGLTF`` and  ``../Assets/VRMShaders``
 
 ```{figure} /_static/images/vrm/package_import.jpg
 package_import
 ```
 
-右下の `import` ボタンを押します。
+click `import` button.
 
-## import が成功したか確認する方法
+## Check if UniVRM has been imported successfully
 
-VRM menu が表示されていれば動作しています：
+If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
 ```{figure} /_static/images/vrm/vrm_menu.jpg
 vrm menu
 ```
 
 ```{figure} /_static/images/vrm/vrm_menu_old.jpg
-前のバージョン
+Previous versions:
 ```
 
-```{admonition} Unity-2018 で menu が出てこない場合
+```{admonition} If you are using Unity-2018 and the VRM menu does not show up:
 :class: warning
 
-
-`ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
+"Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting "
+"Runtime Version` and check whether `Scripting Runtime Version` is set to "
+"`.Net4.X equivalent`"
 
 ```
-
 
 ### Console
 
-Console を表示させると、Unity のエラーメッセージが見れます。
+The errors occurred in a Unity project can be shown in the Console window:
 
 ```{figure} /_static/images/vrm/show_console.jpg
 show console
 ```
 
-Console左上の clear ボタンを押して赤いメッセージが消えない場合は unitypackage のインストールに失敗しているなど、unity project に異常があります。
+Click `clear` button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.
 
 ```{figure} /_static/images/vrm/error_in_console.jpg
 clear console
@@ -96,4 +91,5 @@ clear console
 
 ## Manual
 
-➡ [インストール](/univrm/install/index)
+➡ [Install](/univrm/install/index)
+
