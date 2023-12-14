@@ -3,22 +3,21 @@ date: 2018-04-16T16:30:00+09:00
 ---
 
 # VRM
-## VRM - VR向け3Dアバターファイルフォーマット
+## VRM - 3D Avatar File Format for VR
 
-「VRM」は**VRアプリケーション向けの人型3Dアバター（3Dモデル）データを扱うためのファイルフォーマット**です。
-[glTF2.0](https://www.khronos.org/gltf/)をベースとしており、誰でも自由に利用することができます。
-
+`VRM` is **a file format for handling 3D humanoid avatar (3D model) data for VR applications**. It is based on [glTF2.0](https://www.khronos.org/gltf/). Anyone is free to use it.
 
 ```{admonition} VRM-1.0
 :class: info
 
-[VRM-1.0](/vrm1/index) がリリースされました。
-
+[VRM-1.0](/vrm1/index) has been released.
 ```
 
-また、[Unity](https://unity3d.com/jp)向けのVRMファイルの読み書きを行うC#による標準実装（[UniVRM](https://github.com/vrm-c/UniVRM)）がオープンソースで提供されます。
+In addition, a standard implementation 
+([UniVRM](https://github.com/vrm-c/UniVRM)) in c# that can import and 
+export VRM file in [Unity](https://unity3d.com/) is released as open source
 
-[もっと詳しく](/vrm/vrm_about)
+[Learn More](/vrm/vrm_about)
 
 ```{toctree}
 :maxdepth: 1
@@ -30,10 +29,10 @@ univrm1/index
 ```
 
 ```{toctree}
-:caption: 外部リンク
-ダウンロード <https://github.com/vrm-c/UniVRM/releases>
-技術仕様 <https://github.com/vrm-c/vrm-specification/tree/master/specification>
-VRMコンソーシアム <https://vrm-consortium.org/>
-【C4】新しい概念を規格として定義する～アバターのための規格「VRM」を考えた話 <https://www.youtube.com/watch?v=rya1SeMBkxY>
-【Unite Tokyo 2019】3Dアバターファイルフォーマット「VRM」詳説 <https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996>
+:caption: External
+Download <https://github.com/vrm-c/UniVRM/releases>
+VRM's Technical Specs <https://github.com/vrm-c/vrm-specification/tree/master/specification>
+VRM Consortium <https://vrm-consortium.org/>
+[C4] Defining a new concept as a standard - A story about creating the standard "VRM" for avatars <https://www.youtube.com/watch?v=rya1SeMBkxY>
+[Unite Tokyo 2019] Detailed explanation of 3D avatar file format “VRM” <https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996>
 ```

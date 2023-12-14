@@ -6,7 +6,7 @@ menu:
     weight: 1
 ---
 
-# VRMについて
+# About VRM
 
 ```{toctree}
 :maxdepth: 1

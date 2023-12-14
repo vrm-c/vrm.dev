@@ -6,7 +6,12 @@
         {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/sphinx-autobuild docs build -b=dirhtml",
+            "linux": {
+                "command": "${workspaceFolder}/.venv/bin/sphinx-autobuild docs build -b=dirhtml",
+            },
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/sphinx-autobuild docs build -b=dirhtml",
+            },
             "isBackground": true,
             "problemMatcher": []
         },

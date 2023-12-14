@@ -1,8 +1,12 @@
-# vrm.dev
+# vrm.dev.en
 
-This repository contains source files for vrm.dev.
+https://github.com/vrm-c/vrm.dev.en
 
-このレポジトリはvrm.devのソースファイルを含みます。
+This repository is an English translation of [vrm.dev](https://github.com/vrm-c/vrm.dev).
+このリポジトリは [vrm.dev](https://github.com/vrm-c/vrm.dev) の英訳版です。
+
+[オープンソースドキュメント翻訳プラットフォームとしての GitHub (React 日本語ドキュメントの例)](https://zenn.dev/smikitky/articles/0d250f7367eda9)
+を参考に作業手順を整備中です。
 
 ## Contributing
 
