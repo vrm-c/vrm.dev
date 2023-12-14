@@ -122,7 +122,7 @@ weight: 4
 |`1.0`| [バーチャルキャスト](https://virtualcast.jp/) | [Windows VR](https://store.steampowered.com/app/947890/VirtualCast/), [Oculus Quest](https://www.oculus.com/experiences/quest/4174249979259348/) |
 |     | [cluster](https://cluster.mu/) | PCVR, Windows, macOS, iOS, Android |
 |     | [Clarie](https://biscrat.booth.pm/items/1193414) | Windows VR |
-|     | [Exokit](https://exokit.org/) | Windows, macOS, Linux, VR |
+|     | [Exokit](https://github.com/exokitxr/avatars) | Windows, macOS, Linux, VR |
 |     | [TECO](https://teco-vr.com/) | Windows, macOS, Oculus |
 |     | [コラボル](https://brother-pv.booth.pm/items/2016717) | Windows VR |
 |     | [Webaverse](https://webaverse.com/) | Web browser |
@@ -215,6 +215,7 @@ weight: 4
 | [ミロックプラス](https://www.miloq-plus.com/) | Android, iOS |
 | [SimpleURPToonLitOutlineExample](https://github.com/simplestargame/SimpleURPToonLitOutlineExample) | Windows |
 | [Kalidokit](https://github.com/yeemachine/kalidokit) | Windows |
+| [Wicked Engine](https://github.com/turanszkij/WickedEngine) | Windows, Linux, Xbox Series, PlayStation 5 |
 
 ##  内部的にVRMを活用しているサービス
 
