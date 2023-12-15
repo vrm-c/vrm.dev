@@ -6,55 +6,53 @@ tags: ["unity"]
 weight: 3
 ---
 
-# 2. VRMをセットアップする
+# 2 Set up VRM
 
-## VRMモデル
+## VRM Model
 
-前節で VRM 出力したモデルの prefab。
+In the previous section, we have introduced how to convert a Humanoid 3D model to VRM
 
-**VRMファイルを、UnityのAssetsにドラッグ＆ドロップする** だけで、VRMファイルがインポートされ **モデルデータのPrefabが生成されます** 。
+First **drag and drop a VRM file (~.vrm) into the Assets folder**. The **prefab** file associated with the VRM file can be automatically generated.
 
 ![img](/_static/images/vrm/vrm_prefab.png)
 ![img](/_static/images/vrm/vrm_components.jpg)
 
-* 正規化されている
-* VRMMeta, Animator, VRMBlendShapeProxy, VRMFirstPerson, VRMLookAtHead, VRMLookAtBoneApplyer 等がアタッチされている
+* normalized
+* Click the prefab file (normalized model) and check the inspector window. As seen in the image below, components such as `VRMMeta`, `Animator`, `VRMBlendShapeProxy`, `VRMFirstPerson`, `VRMLookAtHead`, `VRMLookAtBoneApplyer` are attached to the model:
 
-## VRM の Prefabをシーンに展開する
+## Open VRM prefab in the scene
 
 `File` - `New Scene`
 
-prefab をシーンに展開します。
+Deploy the prefab into a scene.
 
 ```{figure} /_static/images/vrm/alicia_scene2.png
 ```
 
-## VRM独自の設定を行う
+## Configure VRM-specific settings
+Create a new scene by `File` - `New Scene` or use an existing one, then drag the prefab file to the Hierarchy window:
 
 ```{figure} /_static/images/vrm/vrm_settings.png
 ```
 
-読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目** があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
-**少なくとも、[タイトル・作者・ライセンス情報](/univrm/meta/univrm_meta)** は埋めるようにしてください。 **特にライセンス情報は重要です！**
+By clicking the prefab's GameObject in `Hierarchy`, the VRM model's information will be displayed in the Inspector window. Note that **spring bone settings can be found in the GameObject named `secondary` **. Also, in `VRM Meta`, make sure [title, author, license (the most important one)](univrm_meta) are set.
 
-ほかに、
+To make a VRM model fully functional, please set up the following components:
 
-* [表情や口パクの設定（BlendShape）](/univrm/blendshape/univrm_blendshape)
-* [一人称視点の設定（一人称視点でモデルを操作する場合、邪魔になる頭などのパーツを指定する、標準の視点位置を設定する）](/univrm/firstperson/univrm_firstperson)
-* [視線・眼球の可動範囲と可動曲線の設定。ボーンによる眼球回転だけでなく、BlendShapeによる眼球アニメーションにも対応。](/univrm/lookat/univrm_lookat)
-* [揺れ物（SpringBone/SpringBoneCollider）の設定](/univrm/springbone/univrm_secondary)
+* [Expression and lip-sync (BlendShape)](univrm_blendshape)
+* [First-person settings (Exclude model's head in first-person view for VR applications)](univrm_firstperson)
+* [Eye gaze movements controlled by bone or BlendShape](univrm_lookat)
+* [Spring bone (SpringBone/SpringBoneCollider)](univrm_secondary.md)
 
-がありますので必要に応じて設定していきます。
+### Export VRM model again
 
-### VRMファイルを出力する
-
-調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから`VRM0` - `Export UniVRM-0.XX`を実行します。
+After the all settings are completed, select the the model (topmost parent GameObject) in `Hierarchy` and again export the model from `VRM0 -> Export UniVRM-0.XX`.
 
 ```{figure} /_static/images/vrm/vrm_menu.jpg
 vrm_menu
 ```
 
-前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。
+Previous versions: ``VRM -> UniVRM-0.XX -> Export humanoid``.
 
 ```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
 UniVRMExportHumanoid
@@ -64,16 +62,15 @@ UniVRMExportHumanoid
 :class: note
 
 
-エクスポート時に正規化します。
-最新版は、 `ExportRoot` をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
-最初の正規化以降でも、
+`Pose Freeze` is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 
-* アクセサリを追加
+* For instance,
 
-などの場合に必要です。 `ExportRoot` を再セットすれば自動判定します。
+in Hierarchy if a mesh's rotation or scale is not Default (first VRM export or adding accessories to the VRM model), the model normalization"needs to be performed.
 
-* [BlendShape の Bake](/univrm/blendshape/univrm_bake_blendshape) もあります。
+* Other settings such as [Bake BlendShape State](/univrm/blendshape/univrm_bake_blendshape) is also available.
 ```
 
-### 完成！
-これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/vrm/vrm_applications)に読み込ませてみましょう！
+### Done!
+Your VRM file is good to go. Try to import the VRM file into [applications](/vrm/vrm_applications) that support VRM!
+

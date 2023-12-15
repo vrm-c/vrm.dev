@@ -4,7 +4,7 @@ url: /vrm_about/
 weight: 1
 ---
 
-# What is `VRM` ? What can VRM do ?
+# What is VRM ? What can VRM do ?
 
 ## What is VRM?
 
