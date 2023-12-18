@@ -5,40 +5,38 @@ aliases: ["/univrm/univrm_export/", "/univrm/export/univrm_export/"]
 tags: ["unity"]
 ---
 
-# エクスポートダイアログ
+# VRM Export Dialog
 
-| 用語         | 意味                                                   |
+| Terminology         | Meaning                                                   |
 |--------------|--------------------------------------------------------|
-| Root         | エクスポート対象となる一番親のオブジェクト(ひとつだけ) |
-| ヒエラルキー | Root自身と子孫全部                                     |
-
+| Root         | Topmost parent of an object |
+| Hierarchy    | Root and its children                                     |
 ## v0.58~
 
 ```{figure} /_static/images/vrm/export062_dialog.png
 vrm export
 ```
 
-Unityの [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html) で画面を作成しています。
+The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)
 
-### 使い方
+### How to use
 
-#### Window を表示する
+#### VRM Exporter Window
 
-以前と同じメニューから表示できます。
+Open VRM Exporter Window by `VRM0 -> Export UniVRM-0.XX`
 
 ```{figure} /_static/images/vrm/vrm_menu.jpg
 vrm_menu
 ```
-
-前のバージョン：
+Previous versions:
 
 ```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
 UniVRMExportHumanoid
 ```
 
-* シーン側でエクスポート可能なオブジェクトを先に選択する必要が無くなりました
+* You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first. 
 
-#### 対象のオブジェクトをセットする
+#### Export Target Setup
 
 * Drag
 
@@ -52,151 +50,148 @@ vrm export
 vrm export
 ```
 
-#### ExportRootの条件
+#### Conditions for Valid ExportRoot
 
 ```{figure} /_static/images/vrm/export058_empty.jpg
 vrm export
 ```
 
-ExportRoot が以下の条件を満たすと設定画面が表示されます。
+The setting screen for ExportRoot will show up if the following conditions are satisfied:
 
-* Root である(親が無い)
-* Root に回転・スケールが無い(移動は可能)
-* ヒューマノイドである(Animatorコンポーネントがアタッチしてあり、Humanoid.Avatarがセットしてある)
-* Z+向きである(左足と右足のボーン位置から判定)
-* ヒエラルキーの中に enable な mesh を含む
+* Must be topmost parent
+*"Root's Rotation and Scaling are Default (changing Translation is allowable)
+* Has Animator component attached and Animator.avatar is humanoid
+* Faces the positive Z-axis (identified by the bone positions of left and right feet)
+* Contains active mesh in the Hierarchy
 
-#### エクスポート設定画面
+#### Exporter Interface
 
-Metaやエクスポートオプションを設定してください。
-警告は修正するかしないかを判断して、問題無ければ無視してください。
-選択状態のオブジェクトがエクスポート可能であれば、ダイアログ右下の `export` ボタンを押すことができるようになります。
-VRMモデルのファイルサイズの詳しい内容は[こちら](/univrm/export/vrm_size)を参考してください。
+Please set up `Meta` and `ExportSettings`.If you get warning messages, it is optional for you to correct those warnings or not.If there is no error messages shown, you can go ahead and press `export` button at the lower right corner of the dialog.Details about VRM size calculation [can be found here](/univrm/export/vrm_size).
 
-## オプション
+## Export Option
 
-エクスポートのオプションです。
-チェックするとエクスポート前に追加の処理を実行します。
+Here is a list of additional processing during export:
 
 ### Force T Pose
-エクスポート前に強制的にT-Poseにします。
-手動でだいたいT-Poseに出来た場合は、チェックしなくても問題ありません。
+
+Force T-Pose before export.If you can manually make T-Pose for model, it's ok without selecting this option.
 
 ### Pose Freeze
-モデルを正規化します。
-正規化済みのモデルを再正規化する必用はありませんが、正規化されていない部品を追加した場合は必要です。
-正規化されているか否かは、ヒエラルキーのすべてのGameObjectの回転が0 スケールが1 であるか否かです。
 
-> 0.58 では自動でチェックボックスが On/Off されます
+Model's normalization.If Model's normalization is already done, there is no need to perform model normalization again. However, if additional parts are added into the model (not normalized yet), model normalization is required.In Hierarchy, all GameObjects' rotation should be 0, and their scale should be 1 if a model has been normalized.
+
+> In v0.58, the system can automatically identify whether the export target
 
 ### UseExperimentalExporter
-シリアライザーのバージョン。
-どちらでも動作します。
+
+Exporter's Serializer version.It will not affect the output whether this option is selected or not.
 
 ### UseSparseAccessor
-BlendShapeが多数ある場合にファイルサイズを削減できます。
+
+Uses Sparse Accessor feature in GLTF: only records BlendShape vertices with non-zero value.If the model contains multiple BlendShapes, enabling 
 
 ### OnlyBlendshapePosition
-BlendShapeのNormal, Tangent をエクスポートしない。
-ファイルサイズを削減できます。
-UniVRM-0.53 より前のバージョンはインポート時にエラーになるのに注意してください。
+
+BlendShape's Normal and Tangent will not be exported if this option is selected.The file size can be reduced.Be aware that errors may occur during import if the export target is made by UniVRM-0.53 or earlier versions.
 
 ### ReduceBlendshape
-BlendShapeClip設定から参照されないBlendShapeをエクスポートしない。
-ファイルサイズを削減できます。
+
+BlendShapes that are not referenced by BlendShapeClips will not be exported.The file size can be reduced.
 
 ### ReduceBlendshapeClip
-Presetが Unknown であるBlendShapeClipをエクスポートしない。
-ReduceBlendshapeと組み合わせて使います。
+
+BlendShapeClip belonging to Preset.Unknown will not be exported.Used in combination with ReduceBlendshape.
 
 ### RemoveVertexColor
-頂点カラーをエクスポートしない。
-GLTFには、頂点カラーを含むが使わないという設定がありません。
-UniVRMでは、 `unlit` のみ頂点カラー対応です。
 
-## エラー項目
+Vertex color will not be exported.In GLTF, there is no setting that can disable the color vertex usage.UniVRM supports vertex color for `unlit` shader.
 
-バージョン毎の判定。
+## List of Error Messages
 
 | message                                                  | 0.56  | 0.57               | 0.58                     |
 |----------------------------------------------------------|-------|--------------------|--------------------------|
-| The Root translation, rotation and scale will be dropped | error | warn               | error(移動は可)          |
+| The Root translation, rotation and scale will be dropped | error | warn               | error (changing translation is OK)          |
 | Jaw bone                                                 | warn  | warn               | warn                     |
-| Same name bone                                           | error | warn(自動リネーム) | warn                     |
+| Same name bone                                           | error | warn (auto-rename) | warn                     |
 | Vertex color                                             | warn  | warn               | warn                     |
 | Unknown shader                                           | warn  | warn               | warn                     |
 | Require source                                           | error | error              | error                    |
-| Require no parent                                        | ok    | ok                 | error(新規)              |
-| Require Z+ forward                                       | ok    | ok                 | error(新規)              |
+| Require no parent                                        | ok    | ok                 | error(new)              |
+| Require Z+ forward                                       | ok    | ok                 | error(new)              |
 | Require animator                                         | error | error              | error                    |
 | Require humanoid avatar                                  | error | error              | error                    |
 | Require Title/Version/Author                             | error | error              | error                    |
 | No active mesh                                           | error | error              | error                    |
-| Prefab export                                            | error | error              | ok(NO_ACTIVE_MESHだった) |
+| Prefab export                                            | error | error              | No active mesh |
 | Springbone validation                                    | ok    | ok                 | warn                     |
 
 ### Require source
-エクスポート可能なオブジェクトをシーンで選択してださい
+
+Please select a valid object that can be exported as VRM file in the scene.
 
 ### Require animator.
-RootにAnimatorコンポーネントがついていません(ヒューマノイドでない)
+
+Animator component cannot be found in Root (non-humanoid).
 
 ### Require animator.avatar
-RootのAnimatorにavatarがありません(ヒューマノイドでない)
+
+avatar cannot be found in Root's Animator (non-humanoid).
 
 ### Animator.avatar is not valid.
-RootのAnimatorのavatarが正常でない(ヒューマノイドでない)
+
+Animator.avatar is not humanoid.
 
 ### Animator.avatar is not humanoid. Please change model's AnimationType to humanoid.
-RootのAnimatorのavatarがhumanoidでない。FBXのimport設定の rig で humanoidに変更してください
+
+Please change the setting to `humanoid` (from Inspector: `FBX Import` -> `rig` -> `AnimationType`).
 
 ### Require Title.
-ダイアログのタイトルを入力してください(必須項目)
+
+Please enter the title of this model in the dialog.
 
 ### Require Version.
-ダイアログのバージョンを入力してください(必須項目)
+
+Please enter the version of this model in the dialog.
 
 ### Require Author.
-ダイアログのAuthorを入力してください(必須項目)
+
+Please enter the author of this model in the dialog.
 
 ### No active mesh
-ヒエラルキーに active なメッシュが含まれていない
+
+No active mesh in hierarchy.
 
 ### FileName '{0}' is too long.
-material, texture, mesh の名前が長すぎる。
-リネームしてください
+
+Material, Texture and Mesh names are too long. Please rename them.
 
 ### The Root translation, rotation and scale will be dropped
-Rootに移動・回転・スケール値が設定されている。
-そのままエクスポートした場合、ルートの TRS は無くなります。
-移動に関しては問題がない場合が多いと思われますが、回転・スケールに関しては意図したとおりにならないこともありそうなのでご注意ください。
+
+A model is allowed to export if Root's translation, rotation and scale are not Default values. However, those values will be lost.We recommend moving this object in the Hierarchy to be Root's child.
 
 ### Jaw bone is included. It may not what you intended. Please check the humanoid avatar setting screen 
 
-humanoid設定に顎が含まれている。 
-FBXインポート時に意図せずに自動で割り当てられる場合があります。
-間違えて、前髪等が顎になっていて顎にポーズが入力した場合に微妙に動く場合があります。
-FBX importer の rig 設定に戻って設定を解除することをおすすめします。
-
+The humanoid setting includes a jaw.
+It may be automatically assigned unintentionally when importing FBX.
+If you make a mistake and your bangs are part of your chin, and you input a pose to the chin, it may move slightly.
+We recommend going back to the FBX importer's rig settings and unsetting it.
 ### There are bones with the same name in the hierarchy. They will be automatically renamed after export
-ヒエラルキーの中に同じ名前のGameObjectが含まれている。
-エクスポートした場合に自動でリネームする。
+
+A model is allowed to export if there are bones with the same name in this model. Only the warning message will be given in Export dialog. Those bones will be renamed automatically.
 
 ### This model contains vertex color
 
-ヒエラルキーに含まれる mesh に頂点カラーが含まれている。
+If you see this message, there are meshes that contain vertex color in the Hierarchy.
 
-| 頂点カラー      | 含まれている挙動 | 挙動                         |
+| Vertex Color    | If contained     | Behavior                     |
 |-----------------|------------------|------------------------------|
-| UniVRM-0.53以前 | 未対応           | 含まれているけど無視する挙動 |
-| UniVRM-0.54～   | 使う             | 含まれているものは使う挙動   |
+| before UniVRM-0.53 | not applied   | ignore vertex color effect   |
+| UniVRM-0.54~    | applied          | show vertex color effect     |
 
-Unlitで頂点カラーが含まれているが使わないという設定がありせん。
-必要ない場合は、`Remove Vertex Color` オプションで削除できます。
+Although vertex colors are included in Unlit, there is no setting to not use them. If you don't need it, you can remove it with the `Remove Vertex Color` option.
 
 ### unknown material '{0}' is used. this will export as `Standard` fallback 
-
-standard, unlit, mtoon 以外のマテリアルは、standard になります。
+Materials other than Standard, Unlit, MToon will be defaulted to Standard.
 
 ## v0.57
 
@@ -204,5 +199,5 @@ standard, unlit, mtoon 以外のマテリアルは、standard になります。
 vrm export
 ```
 
-Unityの [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html) で画面を作成しています。
-v0.58 以降でダイアログを改善予定です。
+The export dialog is based on Unity's [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html).We will improve it in the later version.
+

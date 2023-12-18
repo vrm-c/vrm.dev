@@ -4,14 +4,13 @@ weight: 4
 tags: ["api"]
 ---
 
-# UniVRMサンプルをインストールする
+# Install UniVRM Samples
 
-このセクションでは、[UniVRMパッケージをインストール](/univrm/install/univrm_install)したことを想定しています。
+In this section, we assume you have [installed UniVRM package](/univrm/install/univrm_install).
 
-## UniVRMサンプルのパッケージ
+## UniVRM Samples Package
 
-`v0.81.0` からUniVRMサンプルはUniVRMパッケージに含まれています。  
-最新のUniVRMバージョンがインストールされている場合は、[UniVRMサンプルのシーンを実行する](#univrmサンプルのシーンを実行する)セクションをご覧ください。
+Starting with `v0.81.0`, UniVRM Samples are included in the UniVRM package
 
 ### ~ v0.80.0
 
@@ -19,33 +18,31 @@ tags: ["api"]
 
 `UniVRM-samples-0.XX.X_XXXX.unitypackage`
 
-です。
+### Import
 
-### インポート
+From the menu, go to `Assets -> Import Package` and then click `Custom Package` to import the package `UniVRM-samples-0.XX.X_XXXX.unitypackage`.
 
-メニューから `Assets -> Import Package -> Custom Package` で `UniVRM-samples-0.XX.X_XXXX.unitypackage` を選択します。
-
-以下の画像ようにインポートウィンドウを見たら、`Import`ボタンをクリックしてください：
+After you see the file information in the package as shown below, click `Import` button:
 
 ```{figure} /_static/images/vrm/sample_package_import.jpg
 sample_package_import
 ```
 
-## UniVRMサンプルのシーンを実行する
+## Run UniVRM Samples
 
-`VRM.Samples`フォルダは`Assets`にあります。プロジェクトウィンドウに`SampleViewer`を選択します：
+Now the folder `VRM.Samples` should be in `Assets`. In Project window, please select `SampleViewer`:
 
 ```{figure} /_static/images/vrm/sample_scene.jpg
 sample_scene
 ```
 
-`Game`タブをクリックして、`SampleViewer`のインタフェースを表示させます：
+Next, select `Game` view. You will see the `SampleViewer` interface:
 
 ```{figure} /_static/images/vrm/sample_viewer.jpg
 sample_viewer
 ```
 
-`Play`ボタンをクリックして`SampleViewer`を有効になります。実行時に`Open`ボタンをクリックしてVRMモデルをシーンにインポートします：
+Click `Play` button to enable `SampleViewer`, and then click `Open` button to import a VRM model into the scene at runtime:
 
 ```{figure} /_static/images/vrm/play_mode.jpg
 play_mode
@@ -54,7 +51,9 @@ play_mode
 ```{figure} /_static/images/vrm/sample_viewer_activate.jpg
 sample_viewer_activate
 ```
+Other samples such as [Runtime VRM export](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample)
 
-`VRM.Samples`に[ランタイムVRMエクスポート](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample)と[一人称レンダリング](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample)のサンプルがあります。
+and [FirstPerson rendering](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample) are available in `VRM.Samples`.
 
-Aliciaモデルは[こちら](https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm)。
+Alicia model [can be found here](https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm).
+
