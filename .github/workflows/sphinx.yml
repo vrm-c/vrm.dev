@@ -6,28 +6,37 @@ on:
       - master
   workflow_dispatch:
 
+# GITHUB_TOKEN のパーミッションを設定し、GitHub Pages へのデプロイを許可します
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 1 つの同時デプロイメントを可能にする
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
-      - uses: actions/checkout@v1
-      - run: sudo apt install gettext
+      - uses: actions/checkout@v4
       - run: pip install -r requirements.txt
-      - name: sphinx build(ja)
+      - name: sphinx build
         working-directory: ./docs
         run: sphinx-build . ../public
-      - name: sphinx build(en)
-        working-directory: ./docs
-        run: sphinx-build . ../public/en -D language=en -A language=en
-      - run: mkdir -p public/licenses/1.0/pdf
-      - run: cp docs/_static/licenses/1.0/pdf/jp.pdf public/licenses/1.0/pdf/jp.pdf
-      - run: cp docs/_static/licenses/1.0/pdf/en.pdf public/licenses/1.0/pdf/en.pdf
       - run: touch public/.nojekyll
-      - run: echo vrm.dev > public/CNAME
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          # dist リポジトリのアップロード
+          path: './public'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
