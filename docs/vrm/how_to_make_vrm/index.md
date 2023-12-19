@@ -4,7 +4,7 @@ weight: 2
 aliases: ["/docs/univrm/univrm_workflow/"]
 ---
 
-# VRMファイルを作ってみたい
+# How to make VRM file
 
 ```{toctree}
 setup_unity
@@ -13,18 +13,18 @@ setup_vrm
 vrm_behavior_confirmation
 ```
 
-UniVRMを使うVRM化作業のながれは以下のようになります：
+We use [UniVRM](https://github.com/vrm-c/UniVRM) to make VRM files. The workflow of making a VRM file is summarized as follows:
 
-1. 元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する
-1. 上記出力した VRMファイルを読み込み、Unity上でVRM独自の設定（[ライセンス](/univrm/meta/univrm_meta)・[揺れ物](/univrm/springbone/univrm_secondary)・[表情](/univrm/blendshape/univrm_blendshape)・[目線](/univrm/lookat/univrm_lookat)・[一人称表示](/univrm/firstperson/univrm_firstperson)など）を行い、正規化せずにVRMファイルを出力する
+* Import a 3D model into a Unity project and set up its materials, etc. Make a T-Pose for the model and enable the model normalization, and then export the 3D model as VRM in Unity
 
-ポイントは、 
+* Import the VRM file into the Unity project and customize settings such as [license](/univrm/meta/index), [spring bone](/univrm/springbone/index), [expression](/univrm/blendshape/index) [eyelook](/univrm/lookat/index) [first-person](/univrm/firstperson/index). To make sure customized settings (e.g. facial expression) are working, check your model in play mode
 
-* **一度仮のVRMファイルを作り、それを再度読み込んでから細かい調整・設定を行う**
+* Export the 3D model as VRM again. Setup completed
 
-ところとなります。
+The environment Setup for UniVRM is in Section `0`.The detailed walkthrough is presented in the Section `1` and `2`. The last Section is about VRM model testings such as eye movement and expression.
 
 ```{figure} /_static/images/vrm/VRM_changeVRM_jp.png
 
-**VRMファイルを作るワークフロー**
+**Workflow for making VRM files**
 ```
+

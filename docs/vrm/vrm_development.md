@@ -4,47 +4,45 @@ aliases: [/how_to_view_vrm/]
 weight: 6
 ---
 
-# VRMで開発する
+# VRM development
 
 * [programming](https://vrm-c.github.io/UniVRM/)
 * [samples](/univrm/install/univrm_install_samples)
 
-## VRMの特徴(開発者的な視点)
+## VRM Features (for Developers)
 
-* 右手系Y-UPである ➡️ [Coordinate](https://vrm-c.github.io/UniVRM/ja/implementation/coordinate.html)
-* メートル単位である ➡️ 1が、1メートルなのか、1cmなのか心配がありません
-* 人型モデルでありボーン構成が決まっている ➡️ 汎用の人型モーションやモーションキャプチャーが使いやすい
-* 初期姿勢が決まっている(Z-向きのT-Pose) ➡️ TPS的な用途でそのまま使えます
-* 初期姿勢で回転・スケールが無いことが保証されている ➡️ 初期姿勢を加味したコードを書く負担が軽減できます
-* 初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます
-* 表情・視線操作が統一されている ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/ja/vrm0/0_58_blendshape.html)
-* 物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません
-* VRの設定が含まれている ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html)
-* ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます
+* Right-handed Y-Up coordinate system ➡️[Coordinate](https://vrm-c.github.io/UniVRM/en/implementation/coordinate.html)
 
-従来のゲーム開発のようにプロジェクトにアセットとして作り込むというよりは、
-ランタイムにロードして動かす、という用途が想定されます。
+* Metric unit is meter ➡️  You don't have to worry about whether 1 is 1 meter or 1 cm.
+* It is a humanoid model and has a fixed bone configuration ➡️  Easy to use general-purpose humanoid motion and motion capture
+* T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode
 
-## UniVRMで ランタイムロードする
+* Guaranteed that there is no rotation or scale in the initial posture ➡️ The burden of writing code that takes initial posture into account can be reduced.
+* It is guaranteed that bones and mesh overlap in the initial posture (the skinning Bind matrix only includes movement) ➡️ The burden of baking before processing the mesh can be reduced.
+* Expression/eye gaze manipulation are in BlendShapeProxy ➡️ [BlendShapeProxy](https://vrm-c.github.io/UniVRM/en/vrm0/0_58_blendshape.html)
+* A non-physical shaking thing has been set up ➡️ It shakes without interfering with physics, so it won't interfere with the game's gimmicks or become violent.
+* VR settings are available ➡️ [FirstPerson](https://vrm-c.github.io/UniVRM/en/vrm0/firstperson.html)
+* License information is defined ➡️ You can avoid using the model in a way that does not meet the wishes of the model owner.
 
-ランタイムで UniVRM の ロード機能を使うことができます。
-UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject を作ります。
-ロードした GameObject は、Instanciate した Prefab と同様に扱うことができます。
+Rather than packaging it as an asset in a traditional game development project,
+The intended use is to load it dynamically at runtime.
+
+## Runtime Import with UniVRM
+
+You can use UniVRM's loading functionality at runtime. UniVRM creates GameObjects directly on the scene without creating Assets (Prefabs). A loaded GameObject can be treated like an instantiated Prefab.
 
 * [runtime load](https://vrm-c.github.io/UniVRM/ja/)
 
-## UniVRMで ランタイムエクスポートする
+## Runtime Export with UniVRM
 
-ランタイムで UniVRM の エクスポート機能 を使うことができます。
-この機能を使って、キャラクタークリエーションツール を実装することができます。
+You can use UniVRM's export functionality at runtime.
+You can use this feature to implement a character creation tool.
 
 * [samples](/univrm/install/univrm_install_samples)
 
 `Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity`
 
-が例です。
-
-## UniVRM以外の実装
+## Other VRM Implementations
 
 * https://github.com/ruyo/VRM4U
 * https://github.com/saturday06/VRM_IMPORTER_for_Blender

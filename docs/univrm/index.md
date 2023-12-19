@@ -23,16 +23,15 @@ firstperson/index
 programming/index
 ```
 
-## Install 方法
+## How to Install
 
-* `v0.81.0` から `unitypackage` が２つ必要です。
-* `v0.80.0` 以前のインストールは [こちら](/univrm/install/univrm_install)
+* From `v0.81.0`, require two `unitypackage`
+* Install for `v0.80.0` or before is [univrm_install](/univrm/install/univrm_install)
 * [Download](https://github.com/vrm-c/UniVRM/releases)
 
-### UnityPackage を使ったインストール
+### UnityPackage Install
 
-<https://github.com/vrm-c/UniVRM/releases> から `unitypackage` をダウンロードしてください。
-`UniGLTF_VRMShaders` 、 `UniVRM` という順番で２つのパッケージをインストールしてください。
+Download from <https://github.com/vrm-c/UniVRM/releases>.Install `UniGLTF_VRMShaders` and `UniVRM` unitypackage.
 
 |          | UniGLTF_VRMShaders | UniVRM  | VRM     |
 |----------|--------------------|---------|---------|
@@ -40,46 +39,45 @@ programming/index
 | for VRM  | install            | install |         |
 | for VRM1 | install            |         | install |
 
-* `Sample` パッケージは廃止になり中に含まれます。 
-* `UPM` の `Sample` 機能でインストールできます。
-### UPM を使ったインストール
+* `Sample` merged to above.
+* Can install `UPM` PackageWindow `Sample` button.
 
-`v0.81.0` から `com.vrmc.unigltf` が `com.vrmc.gltf` に変更になしました。(`com.vrmc.unigltf` が独自のバージョンを持っていたのをやめるため)。
+### UPM Install
+
+From `v0.81.0`Rename `com.vrmc.unigltf` to `com.vrmc.gltf`. for `com.vrmc.unigltf` version issue.
 
 ```js
 {
   "dependencies": {
     "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.81.0",
-    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.81.0", // <= unigltf から変わりました(v0.81.0)
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.81.0", // <= change from unigltf(v0.81.0)
     "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.81.0",
     // for VRM-1.0
-    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.81.0",} // <= univrm1 から変わりました(v0.81.0)
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.81.0",} // <= change from univrm1(v0.81.0)
 }
 ```
 
-### エラーが出る場合
+### Bug Report
 
-コンソール画面の内容をご確認ください。
-コンソール画面はメニューから表示できます。
+Please check messages in Console (``Window -> Console``).
 
 ```{figure} /_static/images/vrm/window_console.png
-コンソール画面を表示するメニュー
+menu
 ```
 
-表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。
+If messages like the following are shown in the Console window, there may be errors somewhere in the program. 
 
 ```{figure} /_static/images/vrm/error.png
-エラーの例
+error
 ```
 
-エラー報告は、起こった現象に
+Please report bugs you got via:
 
-* OS(Windows10 64bitなど)
-* Unityのバージョン(Unity-5.6.3p1など)
-* UniVRMのバージョン(0.40など)
-
-を添えて
+* OS (Windows10 64bit, etc.)
+* Unity version (Unity-5.6.3p1, etc.)
+* UniVRM version (0.40, etc.)
 
 * https://github.com/vrm-c/UniVRM/issues/new/choose
 
-にお知らせください。
+More details provided in the report will be very helpful for us to look into your problem. For example:
+

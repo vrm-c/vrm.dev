@@ -5,41 +5,37 @@ aliases: ["/univrm/univrm_upm/", "/univrm/install/univrm_upm/"]
 tags: ["unity"]
 ---
 
-# UPMでUniVRMをインストールする
+# Install UniVRM with UPM
 
-* `Unity 2019.4以降` が必要です。
-* [Git client](https://git-scm.com/) のインストールが必要です。
+* require `Unity 2019.4 or later version`
+* require [Git client](https://git-scm.com/)
 
-## Unity 向けの git のインストール
+## Install git for Unity
 
-Unity Manual [Requirements](https://docs.unity3d.com/Manual/upm-git.html#req) を参照してください。
+Please refer to [`Git dependencies -> Requirements`](https://docs.unity3d.com/Manual/upm-git.html#req) for more information.
 
 > To use Git dependencies in a project, make sure the [Git client](https://git-scm.com/) is installed on your machine and that you have added the Git executable path to the PATH system environment variable.
 
-未インストールだと
+If git is not installed, the error messages like below will be shown: 
 
 > An error occurred while resolving packages:
 Project has invalid dependencies:
 com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your system then restart Unity and Unity Hub
 
-というようなエラーが出ます。
-
-
-```{admonition} 他のgit
+```{admonition} Check whether git.exe can be found on your machine
 :class: warning
 
-
-https://git-scm.com/ からインストールした git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、Path の中で最初に見つかるように設定してください。
+As mentioned above, install [Git client](https://git-scm.com/) and get the directory of git.exe (by default, git.exe is in `C:\\Program Files\\Git\\cmd`). Then, add it to the PATH system environment variable.
 ```
 
-* powershell からバージョンを確認した例 (20201130)
+* To check the git version, for instance, open Windows PowerShell and type the command `git --version`:
 
 ```
 > git --version
 git version 2.29.2.windows.2
 ```
 
-## UnityPackageManager ウインドウによるインストール
+## Install using UnityPackageManager window
 
 ```{figure} /_static/images/vrm10/menu_packagemanager.jpg
 UnityPackageManagerのWindow
@@ -49,26 +45,24 @@ UnityPackageManagerのWindow
 add package from git URL
 ```
 
-新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。
+Whenever a new UniVRM version comes out, we will post git urls associated with this release.
 
-たとえば、[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) のgit urlは次のとおりです：
+For example, the git urls of [v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) are:
 
 * `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.66.0`
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0` => VRMShaders に依存
-* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0` => UniGLTFとVRMShaders に依存
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.66.0` => depends on VRMShaders
+* `https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.66.0` => depends on UniGLTF and VRMShaders
 
-パッケージ同士の依存関係を自動でダウンロードしてくれる機能は無いので、以上の git url を順に追加してください。
-
-ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する：
+Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
 ```{figure} /_static/images/vrm/upm_package.jpg
 ```
 
-バージョン番号を変更することで、お好きなバージョンに切り替えることができます。
+By changing the version number, you can switch to different version based on your needs.
 
-## packages/manifest.json 直接編集によるインストール
+## By changing the version number, you can switch to different version based on your needs.
 
-以下の内容を追記してください（[v0.66.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.66.0)の例)。
+An alternative way is to add necessary dependencies right in Packages/manifest.json
 
 ```js
 {
@@ -81,11 +75,11 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
 }
 ```
 
-### gitの特定コミットを指定する場合
+### Specify git commit
 
-`dependencies` に特定のコミットを指定します。
+However, if you want to switch to the specific commit, you can manually change the hash value or append the specific commit in `dependencies`.
 
-例：
+Example:
 
 ```js
 {
@@ -97,3 +91,4 @@ ProjectウィンドウのPackagesフォルダにインポートしたパッケ�
     // ...
 }
 ```
+

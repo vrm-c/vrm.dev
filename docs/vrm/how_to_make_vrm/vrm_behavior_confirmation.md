@@ -6,13 +6,13 @@ tags: ["unity"]
 weight: 4
 ---
 
-# VRMの動作を確認する
+# Check Your VRM in Play Mode
 
-このセクションでは、作成したVRMモデルをUnity上で再生し挙動を確認することを想定しています。
+In this section, we assume you have made a VRM model and want to test it in play mode.
 
-## 目の動きを確認する
+## Check Model's Eye Movements
 
-`AnimationClip/AnimationController`をセットしたり、`VRMLookAtHead`の`Target`に[GameObject](/univrm/lookat/univrm_lookat#target)をセットしたり（視線がどこを向くかの設定）、`Head`欄にヘッドコンポーネントを探したり、実際にUnity上で動作を確認します。モデルはプレイモードでターゲット位置を追跡します（たとえば、``GameObject -> 3D Object -> Cube``からターゲットとしてキュ​​ーブをヒエラルキーに作成できます）。シーンに配置されたオブジェクトをドラッグして、モデルの目がリアルタイムでオブジェクトを追跡しているかどうかをテストできます。モデルのクローズアップフェイスは、インスペクターウィンドウで見れます。
+Set `AnimationClip/AnimationController` and set [viewing target](univrm_lookat.md#target) in``VRMLookAtHead -> Target``(the head orientation towards the target). For example, you can create a cube as a target from ``GameObject -> 3D Object -> Cube``. Next, serach head component in``VRMLookAtHead -> Head``. After the corresponding components are assigned, check the model's motion in the scene. The model will track the target position in Play Mode. You can drag the object position to test whether the model's eyes are constantly tracking the object. The model's close-up face can be viewed in Inspector window.
 
 ```{figure} /_static/images/vrm/LookAtTarget.png
 LookAtTarget
@@ -22,14 +22,16 @@ LookAtTarget
 TargetTracking
 ```
 
-## 表情を確認する
+## Check Model's Expressions
 
-モデルの表情を確認するには、非常に簡単なテストスクリプト「AIUEO」と「Blinker」を用意しています。[BlendShape](/univrm/blendshape/univrm_blendshape#vrmblendshapeproxy)をセットアップした後、`Add Component`から「AIUEO」を選んでセットすれば「あ」「い」「う」「え」「お」の口の形に順番に切り替わるアニメーションが、「Blinker」を選んでセットすれば定期的にまばたきのアニメーションが行われます。
+"To test the model's expressions, fairly simple test scripts `AIUEO` and `Blinker` are provided. After setting up [BlendShape](univrm_blendshape.md#vrmblendshapeproxy), click `Add Component` at the bottom of model's Inspector window to add `AIUEO` script or drag the script directly to Inspector. After `AIUEO` is set, lip synchronization animation that `aa`, `ih`, `ou`, `E`, `oh` switches in turn can be created in the scene. Similarly, if `Blinker` is set, eye blink animation that plays periodically can be created. See [runtime VRM loader sample](https://github.com/vrm-c/UniVRM/releases) (download UniVRM-RuntimeLoaderSample-0.XX) for more details on how to use these scripts.
 
 ```{figure} /_static/images/vrm/BlendShapeProxy.png
 :name: BlendShapeProxy
 
-`BlendShapeAvatar` フィールドにダブルクリックして、3Dモデルの表情を設定します
+
+Double click the``BlendShapeAvatar`` field to set up expressions for the 3D model
+
 ```
 
 ```{figure} /_static/images/vrm/AddExpressionScripts.png

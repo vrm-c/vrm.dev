@@ -6,22 +6,23 @@ aliases: []
 tags: ["unity"]
 ---
 
-# UniVRMをアンインストールする
+# Uninstall UniVRM
 
-以下のフォルダを削除してください。
+Please delete the folders below:
 
-| folder             | Version             | 備考                       |
+| folder             | Version             | Note                       |
 |--------------------|---------------------|----------------------------|
 | Assets/VRM         |                     | UniVRM-0.XX.0.unitypackage |
-| Assets/UniGLTF     | v0.63.0以降         | UniVRM-0.XX.0.unitypackage |
-| Assets/VRMShaders  | v0.56.0以降         | UniVRM-0.XX.0.unitypackage |
-| Assets/MeshUtility | v0.59.0以降～v0.63.0 | UniVRM-0.XX.0.unitypackage |
+| Assets/UniGLTF     | v0.63.0 or later         | UniVRM-0.XX.0.unitypackage |
+| Assets/VRMShaders  | v0.56.0 or later         | UniVRM-0.XX.0.unitypackage |
+| Assets/MeshUtility | v0.59.0 or later ~ v0.63.0 | UniVRM-0.XX.0.unitypackage |
 
-| folder                             | Version | 備考                               |
+| folder                             | Version | Note                               |
 |------------------------------------|---------|------------------------------------|
 | Assets/VRM.Samples                 |         | UniVRM-samples-0.XX.0.unitypackage |
 | Assets/StreamingAssets/VRM.Samples |         | UniVRM-samples-0.XX.0.unitypackage |
 
-UniVRMのバージョンを更新する前に一度上記を削除する方が安全です。
+If you want to upgrade UniVRM to the latest version in a Unity project, it is recommended to delete all the folders mentioned above since the locations of files/folders may change between different versions.
 
-* バージョン間でファイルが移動していた場合に、元の場所で上書きされて不整合を起こす場合があります。
+* To remove packages installed by Unity Package Window, please click `Remove` button at the lower right of the package interface in UPM window.
+

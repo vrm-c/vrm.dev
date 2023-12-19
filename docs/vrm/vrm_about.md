@@ -4,102 +4,106 @@ url: /vrm_about/
 weight: 1
 ---
 
-# 「VRM」って何？どんなことができる？
+# What is VRM ? What can VRM do ?
 
-## 「VRM」とは
+## What is VRM?
 
-VRMでは「人型」の「キャラクター・アバター」を取り扱うことができます。
+VRM can handle `humanoid` `character avatars`.
 
-- **UnityでVRMファイルを読み書きする標準実装(UniVRM)が提供されます**
+- **Provides a standard implementation (UniVRM) for reading and writing VRM**
 	- ➡️ [Download](https://github.com/vrm-c/UniVRM/releases)
-- フォーマットは **glTF ベース** なので **クロスプラットフォーム** です。他のゲームエンジンやWebでも取り扱うことが可能です。
+- The format is **glTF based**, so it's **cross-platform**. It can also be handled by other game engines and the Web.
 	- ➡️ [glTF](https://www.khronos.org/gltf/)
 
-### 内容
+### Contents
 
-* ヒューマノイドを定義しているのでモーションキャプチャーや人型向けの汎用のモーションを再生できます。
-* テクスチャやマテリアルなどすべてのデータが１ファイルにまとまり、**簡単に実行時にロード** できます。
-* 「喜怒哀楽」「瞬き」「あいうえお」といった標準の顔操作が定義されていて以下のようなことができます。
-	- ユーザー操作で表情を選択
-	- 音声からリップシンク
-	- ランダムで瞬き
-	- フェイシャルキャプチャーを割り当てる 
+* VRM is formulated on top of the 3D standard format **glTF2.0** to handle the humanoid model. The humanoid motion (e.g. from motion capture) can be reproduced based on defined Humanoid bones in VRM
+* **Runtime VRM Import**: all data including textures and materials is compacted as one file. To import the VRM model into applications, only one single file is needed
+* Standard face operations such as `emotions`, `blinks`, and `aiueo` are defined, and you can do the following.
+
+  - Select facial expressions by user operation
+  - Lip sync from voice
+  - Random blink
+  - Assign facial capture
 	- ➡️ [BlendShape](/univrm/blendshape/univrm_blendshape)
-* 3種類のマテリアル(シェーダー)に対応しています。
+* It supports 3 types of materials (shaders).
 	- ➡️ [PBR](/univrm/shaders/univrm_standard)
 	- ➡️ [Unlit](/univrm/shaders/univrm_unlit)
 	- ➡️ [MToon](/univrm/shaders/shader_mtoon)
-* 3種類の視線制御に対応しています。
-	- ➡️ [ボーンによる視線](/univrm/lookat/lookat_bone)
-	- ➡️ [BlendShapeによる視線](/univrm/lookat/lookat_blendshape)
-	- ➡️ [TextureUVによる視線](/univrm/lookat/lookat_uv)
-* キャラクターの髪の毛などについて、物理エンジンに依存しない「揺れ物」標準実装があります。
+
+* It supports 3 types of line-of-sight control.
+  - ➡️ [Gaze by Bone](/univrm/lookat/lookat_bone)
+  - ➡️ [Gaze by BlendShape](/univrm/lookat/lookat_blendshape)
+  - ➡️ [Gaze by TextureUV](/univrm/lookat/lookat_uv)
+
+* There is a standard implementation of `swaying objects` that does not depend on the physics engine, such as the character's hair.
 	- ➡️ [SpringBone](/univrm/springbone/univrm_secondary)
-* VRでのアバター利用のための **「一人称視点再現のための情報」** があります。
+
+* Avatar's **first-person view** is available in VR
 	- ➡️ [FirstPerson](/univrm/firstperson/univrm_firstperson)
-* タイトル・作者名などのメタ情報だけでなく、サムネイルや **VR時代に即した、アバターに特化したライセンス情報** も内包できます。
+
+* Despite the Meta information such as Model Title and Author Name, with the advent of the VR era, Thumbnail and **License Information** are also included in the VRM file.
 	- ➡️ [Meta](/vrm/vrm_meta)
 
-単なるモデルデータに留まらず、**アプリケーションでロードしてすぐに使える** ように構成されています。
+As described above, VRM is not just a 3D model data. **It is designed for being able to be used right away once being loaded into applications**.
 
-## VRMで何ができるの？
+## What can you do with VRM?
 
-**異なるVRM対応アプリケーション間で同じアバター（3Dモデル）データを使う** ことができます。
-対応アプリケーションが揃うと、こんな未来になるはず…
+**The same avatar (VRM model) data can be used in any application that "supports VRM**. As long as various VRM applications are made, the future will look like the one described below for sure...
 
-* VRM対応のキャラクタ製作ツールで自分のアバターをつくる
-* 自分のアバターで生放送をしていたら、友達も生放送をはじめたので友達の放送に凸しに行った
-* 放送後そのままVRゲームを起動、自分のアバターでVR世界を探索
-* ゲームに飽きたのでVR世界のチャットへ移動。同じアバターで友達と遊ぶ
-* 翌日はVR勉強会にVR参加。もちろんアバターはいつもの姿で
+* Create your own avatar with the character maker in VRM format 
+* Use your own avatar to host a live streaming event and show up on your friends' live channels
+* After the live streaming, start a VR game to explore the VR world with your own avatar 
+* After the game, move to the chat room in the VR world. Use the same avatar character to hang out with friends
+* Tomorrow join the VR study group in VR. Of course, the same avatar appearance
 
-**「自分の」アバター（3Dモデルデータ）を「VRM」で取り扱うことで、いろいろなVRM対応アプリケーションやゲームで相互に行き来できるようになります。**
+**By using your own avatar (3D model data) in VRM format, you can access various applications and games that support VRM**.
 
-生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。
+Live streaming, video creation, games, chat.... The virtual worlds are not connected with each other. Using VRM is the first step to bridge those virtual worlds
 
 ![VRM applications](/_static/images/vrm/VRM_WorldConnect_jp.png)
 
+➡️ [Applications that support VRM](/vrm/vrm_applications)
 
- ➡️ [VRMファイルが使えるアプリケーション](/vrm/vrm_applications)
+## VRM features
 
-## VRMの特徴
+In the past, handling **3D humanoid avatar (3D model)** in Virtual Reality, Virtual YouTuber, etc. was not trivial as it was necessary to develop unique systems for applications and fine-tune the 3D model data due to
 
-VR(Virtual Reality)やVTuberなどにおいて **「キャラクターや人型のアバター（の3Dモデル）」** を取り扱おうとした場合、従来はアプリケーションごと・3Dモデルデータごとに独自のシステムを開発したり細かく調整したりする必要がありました。
+Because...
 
-というのも…
+* The output data is depend on how creators make the 3D model and what modeling tools are used
+  * The coordinate system, scale, initial pose, and the way to express expressions are all different...
+  * Needless to say, the way bones put into the 3D model is also different
+  * The initial posture is different (T-Pose, A-Pose, Z + orientation, Z-direction).
+  * The expression method of facial expressions is different (Morph, Bone, identification method).
+  * Needless to say, the way bones put into the 3D model is also different
 
-* 3Dモデルを作成したクリエイターや使用したモデリングツールによって「作法」が違いデータの状況がひとつひとつ異なっている。
-	* 座標系が異なっていたり (Y-UP, Z-UP, 右手系、左手系)。
-	* スケールが異なっていたり(メートル単位、cm単位)。
-	* 初期姿勢が異なっていたり(T-Pose, A-Pose, Z+向き、Z-向き)。
-	* 表情の表現方法が異なっていたり(Morph, Bone, 識別方法)。
-	* 骨（ボーン）の入れ方も状況によって異なっていたり(ボーンの識別方法、親子、リグ)。
-* 3Dモデルデータを取り扱うフォーマットは、各社各様で仕様が必要以上に複雑であったり、必要な情報が足りなかったりしている。
-	* 対応ソフトが多い「FBXファイル」はアプリケーションごとに読めたり読めなかったり。どのアプリケーションのどのバージョンで出力したFBXなのか…というのを気にしたかたも多いと思います。
-	* ゲームエンジンはアセットとして取り込むことはできても、ランタイムロードは想定されていないことが多い。
-* 3Dモデルデータを「アバターとして使用する」という観点で見ると、必要な情報が整備されていません。
-	* たとえば一人称視点を実現するための視点の位置はどこか、一人称視点から表示するためには頭部の表示を消さなければならないが、具体的にはどこを消すのか、など。
+* Each company has its own specifications for handling the 3D model data, which are way more complex than usual. Also, the necessary information about their file formats is not fully provided
+  * Whether the FBX file, which is compatible with various software, is viable for an application and which version of the application can process the FBX file are main issues concerned by most of the users.
+  * Game engines can be captured as assets, but run-time loading is often not expected.
 
-VRでのアバター表現が急速に盛り上がるなか、こういった状況が続くとアプリケーション開発者にとっても、3Dモデルクリエイターにとっても二度手間三度手間になってしまいます。
-この状況を改善するために
+* There is not enough necessary information available from the viewpoint of using the 3D model data as Avatar
+  * For example, in the first-person view, how to get the right viewpoint position, how to exclude head due to the view blocking issue and so on
 
-* 「人型のキャラクターやアバター」において
-* 細かいモデルデータの差違を吸収・統一し
-* アプリケーション側の取り扱いを簡単にする
+With the use of avatar in VR applications grows exponentially, if the situations mentioned above remain unchanged, application developers and 3D model creators will have to spend double or triple effort. To improve the current situation, based on the humanoid character and avatar, we can do the followings:
 
-**「VRM」は、このような特徴のある「プラットフォーム非依存の3Dアバターファイルフォーマット」を提案する** ものです。
+* In `Humanoid Characters and Avatar`
+* Effectively absorb and unify the differences from the model data
+* Make handling the 3D model easy on the application side
 
-## VRMファイルを投稿する・探す
+Here we propose a **platform-independent, 3D avatar file format** called **VRM** that has the above features.
+
+## Upload / Download VRM file
 
 * [The Seed Online](https://seed.online/)
 * [VRoid Hub](https://hub.vroid.com/)
-* [ニコニ立体](https://3d.nicovideo.jp/)
+* [niconisolid](https://3d.nicovideo.jp/)
 
-でVRMファイルの投稿ができます。
-ニコニ立体では[こちら](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)から投稿されたVRMモデルデータのリストが見られます。ライセンスなど確認して使ってみてください。
+For Nikonisolid, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)
 
-なお、ニコニ立体にご自分でVRMファイルを投稿する際、「バーチャルキャスト連携」を有効にすると[バーチャルキャスト](https://virtualcast.jp/)から利用できます。
+Also, when uploading a VRM file to Nikoni 3D, there is an option「バーチャルキャスト連携」(virtual cast cooperation) which can let users use the VRM model in [Virtual Cast](https://virtualcast.jp/).
 
-## VRMを使うアプリケーションを開発する
+## VRM application development
 
- ➡️ [VRMで開発する](/vrm/vrm_development)
+ ➡️ [VRM development](/vrm/vrm_development)
+

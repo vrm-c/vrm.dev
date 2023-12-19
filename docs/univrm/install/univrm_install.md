@@ -5,79 +5,72 @@ aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
 tags: ["unity"]
 ---
 
-# UniVRMをインストールする
+# Install UniVRM
 
 ## Unity Version
 
-* Unity-2019.4 が推奨バージョンです。その他のバージョンは、[Unityのバージョン](/univrm/install/unity_version) を参照してください。
+* The recommended version is `Unity-2019.4`. Other supported Unity versions [can be found here](/univrm/install/unity_version).
 
-## unitypackage の入手
+## Get unity package in
 
 https://github.com/vrm-c/UniVRM/releases
 
 `UniVRM-0.XX.X_XXXX.unitypackage`
 
-です。
+## Before Installation
 
-## インストール前の準備
+* Create a new Unity project
 
-* Unityで新規のプロジェクトを作成します
-
-* `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
+* "Go to `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` and set `ColorSpace` to `Linear` (recommended setting)
 
 ```{figure} /_static/images/vrm/linear_setting.jpg
 linear setting
 ```
 
-```{admonition} Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
+```{admonition} If your Unity version is {Unity-2018.3, Unity-2018.4, Unity-2019.1}:
 :class: warning
 
-
-
-* `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
+* "Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent`
 
 ```
 
-```{admonition} 既存のプロジェクト
+```{admonition} Install UniVRM in an Existing Project:
 :class: warning
 
-
-事前に、古いバージョンの VRM を削除することを推奨しています。
-[UniVRMをアンインストール](/univrm/install/univrm_uninstall) を参照してください。
-
+"If old UniVRM version exists, please delete `Assets/VRM`, `Assets/UniGLTF` (if exists), `Assets/VRMShaders` (if exists) and `Assets/MeshUtility` (if exists) before installation. Refer to [Uninstall UniVRM](/univrm/install/univrm_uninstall) for more information"
 ```
 
-## unitypackage の import
+## Import unitypackage
 
-`unitypackage` を Import します。
+Import `unitypackage`
 
-`Assets` - `Import Package` - `Custom Package...` で `UniVRM-0.XX.X_XXXX.unitypackage` を選択します。
+Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
 
-`Assets/VRM`、`Assets/UniGLTF`お及び`Assets/VRMShaders` の３つのフォルダに import されます。
+Three folders: `Assets/VRM`, `Assets/UniGLTF` and `Assets/VRMShaders` will be imported into the Unity project.
 
 ```{figure} /_static/images/vrm/package_import.jpg
 :name: package_import
 
-UnityPackageをインポート
+Import Unity Package
 ```
 
-## import が成功したか確認する方法
+## Check if UniVRM has been imported successfully
 
-VRM menu が表示されていれば動作しています：
+If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
 ```{figure} /_static/images/vrm/vrm_menu.jpg
 vrm menu
 ```
 
-前のバージョン：
+Previous versions:
 
 ```{figure} /_static/images/vrm/vrm_menu_old.jpg
 vrm menu old
 ```
 
-menu が出てこない場合は、
+If menu does not show up:
 
-* Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
+* Open Console: click `clear` button on the upper-left corner of the Console window to see if any error (message in red) occurs
 
 ```{figure} /_static/images/vrm/show_console.jpg
 show console
@@ -87,7 +80,8 @@ show console
 clear console
 ```
 
-## 関連セクション
+## Related Sections
 
-- [VRMファイルを作ってみたい](/vrm/how_to_make_vrm/index)
-- [VRMをインポートする](/univrm/import/univrm_import)
+- [How to make VRM file](/vrm/how_to_make_vrm/index)
+- [VRM Import](/univrm/import/univrm_import)
+

@@ -4,12 +4,13 @@ url: /how_to_view_vrm/
 weight: 3
 ---
 
-# ビューアでVRMをインポートする
+# Import VRM into Viewer
 
-VRMビューアアプリは[こちら](/vrm/vrm_applications#ビューア)。
+VRM viewers [can be found here](/vrm/vrm_applications#viewer).
 
-または[UniVRMTest](https://github.com/vrm-c/UniVRMTest/)のビューアを使用できます：
+or you can use the viewer in [UniVRMTest](https://github.com/vrm-c/UniVRMTest/):
 
-1. [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases)からVRMビューア(VRMViewer_v0.xx.x.zip)をダウンロードしてください
-2. プログラム（VRMViewer_v0.xx.x.exe）を実行して``VRMモデル``ボタンをクリックしてください
-3. VRMモデルを選んでモデルがシーンに表示されます
+1. Download the VRM viewer (VRMViewer_v0.xx.x.zip) from [UniVRMTest/releases](https://github.com/vrm-c/UniVRMTest/releases).
+2. Run the program (VRMViewer_v0.xx.x.exe) and click``VRM Model``
+3. Select a VRM model available on your computer. The VRM model can be shown in the scene
+
