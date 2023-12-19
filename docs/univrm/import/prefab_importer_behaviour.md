@@ -4,24 +4,19 @@ aliases: ["/univrm/settings/prefab_importer_behaviour/"]
 tags: ["unity"]
 ---
 
-# PrefabがImportされるタイミングと上書きの注意
+# Precautions on Prefab Import and Overwrite Issue
 
 ## 0.49
 
-UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatarが既存の場合は上書きしません。
-その場合に、Prefab からの Material, BlendShapeAvatarへの参照は既存のファイルを参照するようにしました。
+When VRM is imported with Unity Editor, Material and BlendShapeAvatar will not be overwritten if they already exist in the `Assets` folder .In that case, the Material's and BlendShapeAvatar's references from Prefab will be set to reference existing files.
 
 ## 0.46
 
-UnityEditorでVRMをAssetImportしたときに、Material, BlendShapeAvatar, BlendShapeClip が既存の場合は上書きしません。
-Mesh, Texture, Prefabは上書きします。
+When VRM is imported with Unity Editor, Material, BlendShapeAvatar, BlendShapeClip will not be overwritten if they already exist in the `Assets` folder.However, Mesh, Texture and Prefab will be overwritten.
 
-Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更しているかもしれないので上書きしないことにしました。
-上書きしたい場合はImport前に削除してください。
+Considering that users may have their own settings for Material, BlendShapeAvatar, BlendShapeClip, existing Material, BlendShapeAvatar and BlendShapeClip files will not be overwritten.If you want to overwrite, delete them before importing.
 
-## 0.45以前
+## 0.45 and before
 
-UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。
-
-
+When VRM is imported with Unity Editor, Material, Mesh, Texture, Material, BlendShape, Prefab will be overwritten.
 

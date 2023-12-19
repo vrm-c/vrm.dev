@@ -3,81 +3,75 @@ weight: 4
 tags: ["unity", "fbx"]
 ---
 
-# BlendShape の法線を確認しよう
+# Check BlandShape Normal
 
-最近のバージョンの Unity（Unity 2018~）では、 fbx を import したときに blendshape 法線が自動で再計算される挙動になっていて blendshape の見た目がおかしくなることがあります。
+Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model's surface.
 
-```{admonition} 詳細
+```{admonition} Details
 :class: note
 
-BlendShape の法線が (0, 0, 0) ならば、法線が変化しません。
-これに、計算された法線が設定されて意図しない変化をするようです。
-ベースになるメッシュの法線が加工されている場合、
-ミラーリングで左右が分かれている場合の境界などで顕著です。
+If the BlendShape normal is (0, 0, 0), the value of the surface normal should not be changed. It seems that the original BlendShape normal is replaced by the recalculated BlendShape normal, resulting in unexpected changes on the model's surface
+
 ```
 
+## Validate surface normal using MToon's debugging options
 
-## MToonの法線デバッグ表示で法線を確認する
+Drag fbx to the Hierarchy window and select it. In the Inspector, click `Select -> Materials -> Extract Materials` and choose a folder to save these materials.
 
-fbx の `Materials` タブの `Extract Materials...` を実行してマテリアルを取り出します。
+Next, select all materials
 
-すべてのマテリアルを選択します。
+and change `Shader` to `VRM/MToon`.
 
-マテリアルの種類を `VRM/MToon` に変更します。
-
-```{admonition} 法線確認
+```{admonition} Surface normal validation
 :class: note
 
-法線確認のために仮に MToon 化するだけなので、テクスチャ等の設定は不要です。
+At this point we set all the materials to MToon for surface normal validation only, so setting up textures' properties is not required.
 ```
 
-
-MToon の `Options - Debugging Options - Visualize` を `Normal` に変更します。
+To visualize the surface normal, go to `Options - Debugging Options - Visualize` and select `Normal`:
 
 ```{figure} /_static/images/vrm/mtoon_normal.gif
 debug normal
 ```
 
-SkinnedMeshRenderer を選択します。
+Select a GameObject containing `SkinnedMeshRenderer` with BlendShape. Drag the slider while observing surface normals:
 
-BlendShape のスライダーを動かして法線を確認します。
+We can see surface normals around nose tip and mouth are not correct.
 
 ```{figure} /_static/images/vrm/broken_normal.jpg
 debug normal
 ```
 
-* 鼻先
-* 下唇
+* Surface normals around the norse tip
+* and mouth (e.g. tongue, lower lip)
 
-の法線が顕著に乱れています。
+are totally different 
 
-```{admonition} モデル情報
+```{admonition} detail
 :class: note
 
-* vroid さんの vrm を blender に import
-* blender から fbx export
-* unity に import
-
-したものです。
+* import vroid model by blender
+* fbx export from blender
+* import to unity import
 ```
 
+## fix BlendShape normal
 
-## BlendShape の法線をなおす
+How to fix BlendShape if you find something wrong with the above method
 
-上記の方法で BlendShape がおかしいことが分かった場合に修復する方法。
+Select the `Model` tab in fbx.
 
-fbx の `Model` タブを選択。
-
-`Legacy Blend Shape Normals` をチェックして Apply。
+Check and Apply `Legacy Blend Shape Normals`.
 
 ```{figure} /_static/images/vrm/legacy_normal_fixed.jpg
 fixed normal
 ```
 
-BlendShape がなおっていることを確認します。
+Make sure the BlendShape is correct.
 
-```{admonition} 修正前との違い
+```{admonition} Differences from before correction
 :class: note
 
-鼻先、下唇に加えて、舌が全然違う法線になってます。
+In addition to the tip of the nose and lower lip, the tongue has a completely different normal line.
 ```
+

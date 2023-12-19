@@ -6,119 +6,116 @@ aliases: ["/univrm/components/univrm_blendshape/"]
 tags: ["unity"]
 ---
 
-# ブレンドシェイプの設定
+# BlendShape Setting
 
-UniVRM v0.45で導入された新機能は
+New features introduced in UniVRM v0.45:
 
-* [設定画面](/univrm/blendshape/blendshape_setup)
-* [BlendShapeの状態をベイクする](/univrm/blendshape/univrm_bake_blendshape)
-
-をご覧ください。
+* [BlendShape setting in Inspector](/univrm/blendshape/blendshape_setup)
+* [Bake BlendShape state](/univrm/blendshape/univrm_bake_blendshape)
 
 ## VRMBlendShapeProxy
 
 ```{figure} /_static/images/vrm/VRMBlendShapeProxy.png
-実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます
+The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode
 ```
 
-使い方は、
+How to use:
 
-* BlendShapeAvatarのインスペクタで設定する(Editor)
-* BlendShapeClipの値を０~１に変更する(実行時)
-
-となっています。
+* Set BlendShapeAvatar `VRMBlendShapeProxy->BlendShapeAvatar` in the Inspector
+* Change BlendShapeClip value between 0 and 1 at runtime (e.g. BLINK, JOY)
 
 ## BlendShapeAvatar
 
-このアセットのインスペクタで表情設定を作成します。
+Expressions can be created in the Inspector.
 
 ```{figure} /_static/images/vrm/VRMBlendShapeProxyEditor.png
-これをダブルクリックする
+Double click the``Blend Shape Avatar``field
 ```
 
-か
+Or
 
 ```{figure} /_static/images/vrm/BlendShapeAvatarAsset.png
-これを選択状態にする
+Click``BlendShape``directly in the Project view
 ```
 
 ```{figure} /_static/images/vrm/BlendShapeAvatarEditor.png
-BlendShapeEditorのインスペクタ
+The Inspector of BlendShape editor
 ```
 
-作りたい表情の名前を選択して表示を切り替えます。
-以下、Funを選択した例です。
+Select expressions and customize the values. For example, we select``Fun``and edit its expressions as shown in the following: 
 
 ```{figure} /_static/images/vrm/BlendShapeClip.png
-mouth_smileとeye_smileとeyeblow_smileを100にする
+Example: Set`mouth_smile`,`eye_smile`and`eyeblow_smile`to 100
 ```
 
-画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。
+The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified. 
 
-Sliderを変更してBlendShapeを作った後はApplyを押して値を記録してください。
+After changing slider value and creating BlendShape, click the Apply button for saving the current status.
 
-## BlendShapeのプリセット
+## BlendShape preset
 
 ```{figure} /_static/images/vrm/BlendShape_Preset.png
-Presetを選択する
+Select `Preset`
 ```
 
-BlendShapeClipに対して事前定義された名前です。
-以下のものがあります。
+The predefined names for the BlendShape clips. The following predefined expressions are available:
 
 ### NEUTRAL
-標準の表情を指定します。
-待機状態で使うことを想定しています。
+
+Specified as the standard facial expression and assumed to be used in standby state.
 
 ### A, I, U, E, O
-リップシンクの``あ・い・う・え・お``の音声に対応します。
+
+Corresponds to the sound of lip-sync``aa・ih・ou・E・oh``.
 
 ### Blink
-まばたきです。
+
+Eye blink.
 
 ### Blink_L, Blink_R
-片目だけつぶる動作です。
+
+Blinks with only one eye.
 
 ### Joy, Angry, Sorrow, Fun
-喜怒哀楽です。
+
+Emotion.
 
 ### LookUp, LookDown, LookLeft, LookRight
-目線がモーフで制御されているタイプのモデルで使います。
+
+Used when the model's eyes are controlled by BlendShape.
 
 ### Unknown
-事前定義に無い表情などを作るときに指定します。
 
-## BlendShapeProxyの値を変更する(実行時)
+New created expressions are specified as `Unknown`.
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-Presetを使う
-```
-
-インスペクタから操作できます。
-
-
-## [オプション]表情を追加する
+## Change the value of BlendShapeProxy (at runtime)
 
 ```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-ボタンを押します
+`Preset`is used
 ```
 
-保存ファイルを決めます。
-一番後ろのボタンを選択して名前を入力して設定を作成してください。
+You can operate expressions from the Inspector.
+
+## [Option] Add additional facial expressions
+
+```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
+```
+
+Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.
 
 ```{figure} /_static/images/vrm/BlendShapeClipOption.png
-ボタンを押します
 ```
 
-コードからは以下のように呼び出せます。
+You can call it from the codes shown as follows:
 
 ```csharp
 // unknownなのでstringで呼び出し
 proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 ```
 
-## [オプション]マテリアルの色をモーフする
+## [Option] Morph material color
 
 ```{figure} /_static/images/vrm/BlendShapeClipMaterial.png
-Materialモーフの設定
+The setting of Material morph. Double click the``Current clip``field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view
 ```
+
