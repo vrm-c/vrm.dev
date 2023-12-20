@@ -7,60 +7,61 @@ tags: ["unity"]
 ---
 
 # VRMSpringBone
-## 概要
+## Overview
 
-揺れモノ設定に関するコンポーネント群です。
+A group of components related to oscillating mono settings.
 
-## コンポーネントが追加される場所
+## Where components are added
 ### VRMSpringBone
 
-VRMのインポートの際は、自動的生成される```secondary```という名前のゲームオブジェクトに追加されます。
+When importing a VRM, it will be added to an automatically generated game object named secondary.
 
 ### VRMSpringBoneColliderGroup
 
-VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにそのまま追加されます。
+When importing VRM, it will be added to the game object added during export.
 
 ```{figure} /_static/images/vrm/vrm_settings.png
-VRMSpringBoneが見つからない場合には``secondary``という名前のゲームオブジェクトをご確認ください。
+Please check `secondary` in the Hierarchy window if you cannot find VRMSpringBone
 ```
+
 ## VRMSpringBone
 
-揺れモノとして尻尾・髪の毛・衣装などの動きに合わせて揺れて欲しい部位の設定です。  
-揺らしたい部位の一番親のGameObjectをRootBonesに指定してください。
+The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object's parent Gameobject in``Root Bones``. To do that, drag a target object (e.g.``hair1_L``) from``Hierarchy``to the``Element X``field (or click the rightmost icon of``Element X``then you can see a list of selectable components). Adjust``Size``to change the number of``Root Bones``you want to put in.
 
 ```{figure} /_static/images/vrm/VRMSpringBone.png
-RootBonesに髪の毛とリボンの根本を指定
+Example: Set the hair and ribbon in `Root Bones`
 ```
 
-RootBonesに指定した部位の子ボーンも含めて動きに合わせて揺れます。
+That's it. Try to adjust `Stiffness Force`, `Gravity Power`, etc. The target objects will perform swaying movements.
 
-## [オプション] VRMSpringBoneColliderGroup
+## [Option] VRMSpringBoneColliderGroup (Collision detection)
 
-揺れモノが特定の部位を貫通しないように当たり判定を追加できます。
+The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.
 
 ```{figure} /_static/images/vrm/collider.png
-頭に当たり判定(VRMSpringBoneColliderGroup)を追加
+Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)
 ```
 
-当たり判定を入れたいボーンにVRMSpringBoneColliderGroupを追加した後にVRMSpringBoneのColliderGroupsで指定してください。
+For example, hit `Add Component` to attach VRMSpringBoneColliderGroup script to``head``and drag``head``to the``Element 0``field in``Collider Groups``. You can change its offset and radius value by double clicking the``Element 0``field in``Collider Groups``.
 
 ```{figure} /_static/images/vrm/set_collider.png
-headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定
+Attach the VRMSpringBoneColliderGroup script to `head` and set `head` in `Collider Groups`
 ```
 
 ```{figure} /_static/images/vrm/spring_gizmo.png
-動作時のGizmo。
+Gizmo at runtime (check `Draw Gizmo` in the Inspector of VRMSpringBone)
 ```
 
-## 設定したVRMSpringBoneが無い
+## There is no set VRMSpringBone
 
-VRMSpringBoneはインポート時に```secondary```ノードに追加されます。エクスポート時と違う場所に現れるのでご注意ください。
+VRMSpringBone was attached to the node `secondary` during import.
 
-## 複雑な当たり判定の設定
+## Complex hit detection settings
 
-複雑な当たり判定の設定をする際は、追加した１つのVRMSpringBoneColliderGroupで複数の球を設定します。
+When setting up complex collision detection, set multiple spheres in one added VRMSpringBoneColliderGroup.
 
-## 移動する際の揺れ防止
+## Prevents shaking when moving
 
-通常のVRMSpringBoneはワールド原点を基準に計算しています。VRMSpringBoneのCenterにゲームオブジェクトを指定すると揺れモノの基準点を変更できます。
-例えば、歩行の際に移動する親ゲームオブジェクトを指定すると揺れモノの不要な揺れが防止できます。
+Normal VRMSpringBone is calculated based on the world origin. By specifying a game object as the Center of VRMSpringBone, you can change the reference point of the shaking object.
+Normal VRMSpringBone is calculated based on the world origin. By specifying a game object as the Center of VRMSpringBone, you can change the reference point of the shaking object.
+

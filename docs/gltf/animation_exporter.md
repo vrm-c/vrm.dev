@@ -4,23 +4,23 @@ weight: 3
 aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 ---
 
-# アニメーション
+# Animation
 
 - <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations>
 
-`v0.44` から部分的に対応しています。
+Partially supported from `v0.44`.
 
-```{admonition} VRM のアニメーション
+```{admonition} Animation
 :class: warning
-VRM は、Animation を使わないという仕様です。
+VRM specification does not include the Animation.
 ```
 
-```{admonition} Export は Runtime では動作しません
+```{admonition} Export does not work in Runtime
 :class: warning
-Runtime では AnimationClip の情報を取得できないため、Export は動作しません。
+Export will not work because Runtime cannot retrieve AnimationClip information.
 ```
 
-## 対応状況
+## Support Status
 
 | channel.path         | type       | import | export |
 |:---------------------|------------|:------:|:------:|
@@ -36,36 +36,40 @@ Runtime では AnimationClip の情報を取得できないため、Export は�
 | CUBICSPLINE   | ○      | LINEAR |
 
 ## Export
-### Animatorをエクスポートする場合
-1. ルートGameObjectにAnimatorコンポーネントを追加
-2. AnimatorControllerを作成し、それをAnimatorのController項目に設定
-3. UnityEditorのツールバーからWindow>AnimationでAnimationウインドウを開く
-4. ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る
-5. このクリップに対してアニメーションキーを追加
-6. UniGLTF>Exportからglbを出力する
+### How to Export an Animator
 
-### Animationをエクスポートする場合
-1. ルートGameObjectにAnimationコンポーネントを追加
-2. UnityEditorのツールバーからWindow>AnimationでAnimationウインドウを開く
-3. ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る
-4. Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする 
+1. Add an Animator component to a root GameObject
+2. Create an AnimatorController and set it in the Controller box (`Animator`->`Controller`) in the Inspector window
+3. From the UnityEditor's toolbar, select `Windows`->`Animation`->`Animation` to open the Animation window
+4. Make sure the root GameObject is selected and click the Create button in the center of the Animation window for creating AnimationClip
+5. Add animation keys to this clip
+6. Export as the glb file from `UniGLTF`->`Export`
+
+### How to Export an Animation
+
+1. Add an Animation component to a root GameObject
+2. Open the Animation window by selecting Window>Animation from the UnityEditor toolbar.
+3. Make sure that the root GameObject is selected and press the Create button displayed in the center of the Animation window to create an AnimationClip.
+4. Set the Inspector settings to Debug mode and turn on the Legacy flag of AnimationClip
+
 ```{figure} /_static/images/wiki/LegacyClip.png
 Interpolation
 ```
 
-5. AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定
-6. クリップに対してアニメーションキーを追加
-7. UniGLTF>Exportからglbを出力する
+5. Set the created AnimationClip in the Animation item of the Animation component
+6. Add animation keys to this clip
+7. Output glb from UniGLTF>Export
 
+### Notes
 
-### 注意事項
-1. RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること  
+1. Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
+
 ```{figure} /_static/images/wiki/Interpolation.png
 Interpolation
 ```
 
-2. Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない
-3. Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）
+2. For the Animator, all edited clips can be exported. However, the Animator states are not saved
+3. Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one
 
 ### export properties
 
@@ -74,10 +78,10 @@ Interpolation
 | property            |                                                      |
 |---------------------|------------------------------------------------------|
 | m_LocalPosition     | vec3                                                 |
-| localEulerAnglesRaw | 未実装                                               |
+| localEulerAnglesRaw | Unimplemented|
 | m_LocalRotation     | quaternion                                           |
 | m_LocalScale        | vec3                                                 |
-| blendShape          | float[] すべての blendShape の状態をまとめて記録する |
+| blendShape          | float[] Record the state of all blendShapes together
 
 ### interpolation
 
