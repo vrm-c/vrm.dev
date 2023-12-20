@@ -3,78 +3,74 @@ weight: 10
 tags: ["gltf", "mtoon-1.0"]
 ---
 
-# Emission と グロー(発光)
+# Emission and glow
 
-`v0.99` から `KHR_materials_emissive_strength` の読み書きをサポートしています。
+Starting with version `v0.99`, it supports reading and writing of `KHR_materials_emissive_strength` .
 
-```{admonition} VRMC_materials_hdr_emissiveMultiplier は、非推奨になりました 
+```{admonition} VRMC_materials_hdr_emissiveMultiplier has been deprecated
 :class: warning
-同じ機能である `VRMC_materials_hdr_emissiveMultiplier` は、非推奨になりました。
-以降も読み込み能力は保持しますが、書き出し時は `KHR_materials_emissive_strength` を使い `VRMC_materials_hdr_emissiveMultiplier` は使われません。
+
+The same feature, `VRMC_materials_hdr_emissiveMultiplier`, has been deprecated.It retains readability, but uses `KHR_materials_emissive_strength` when exporting, and does not use` VRMC_materials_hdr_emissiveMultiplier`.
 ```
 
-## 対象のシェーダー
+## Target shader
 
 * `Standard`
 * `VRM10/MToon10`
 
-## Unity の PostEffect の グロー
+## Glow of PostEffect in Unity
 
-Emission の値が 1 を越える場合に発光させるポストエフェクトです。
+A post effect that emits light when the Emission value exceeds 1.
 
 ```{figure} /_static/images/vrm10/glow.jpg
 ```
 
-1を超えて3や4にすることで強くなりますが、 `glTF` の Emission 最大値は `1` となっています。
+It gets stronger by going over 1 to 3 or 4, but the maximum Emission value for `glTF` is` 1`.
 
-```{admonition} 割り算で1におさめる
+```{admonition} Divide to 1
 :class: note
 
-エクスポート時に下記の処理をして Emission の 最大値を 1 に修正します。
+When exporting, do the following to force the maximum value to 1.
 ```
 
 ```csharp
 Vector3 emission;
-var max_value = get_max(emission); // r, g, b で最大の値を得る
+var max_value = get_max(emission); // Get the maximum value with r, g, b
 if(max_value>1)
 {
   emission = emission / max_value;
 }
 ```
 
-```{admonition} vrm-0.x は保存できる
+```{admonition} vrm-0.x can be saved
 :class: note
 
-vrm-0.x は [0-1] 制限が無いので保存できます。
+vrm-0.x can be saved as it has no [0-1] limit.
 ```
 
-## KHR_materials_emissive_strength に対応
+## Supports KHR_materials_emissive_strength
 
-`v0.99` から `KHR_materials_emissive_strength` の読み書きに対応しています。
+It supports reading and writing from `v0.99` to` KHR_materials_emissive_strength`.
 
 <https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength>
 
-`UniVRM-0.99` 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。
+Since `UniVRM-0.99`, it is valid for MToon / PBR with VRM1 / GLB / GLTF.
 
 ## VRMC_materials_hdr_emissiveMultiplier (deprecated)
 
 <https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0>
 
-`KHR_materials_emissive_strength` と機能が重複したので不要になりました。
+It is no longer needed because it has the same function as `KHR_materials_emissive_strength`.
 
-emission に1を越える値を格納するために、`VRMC_materials_hdr_emissiveMultiplier` を作りました。
-EmissiveFactor に対して乗算する float 値 を定義します。
+Defines a float value to multiply against EmissiveFactor.
 
-`EmissiveFactor = EmissiveFactor * multiplier(1より大きい値)` となります。
+`EmissiveFactor = EmissiveFactor * multiplier (value greater than 1)`
+Since `UniVRM-0.79`, it is valid for MToon / PBR with VRM1 / GLB / GLTF.
 
-`UniVRM-0.79` 以降、 VRM1/GLB/GLTF で MToon/PBR で有効です。
+## Sample scene
 
-## サンプルシーン
-
-PostEffectを設定済みのサンプルシーンがありますので
-お試しください。
-
-`UniVRM10-XXX.unitypackage`
+There is a sample scene with PostEffect set, so please try it.
+Since there is a sample scene with PostEffect set. Please try it.
 
 * `Assets\UniGLTF.Samples\LookDev\ballroom_1k.unity`
 * `Assets\UniGLTF.Samples\LookDev\lilienstein_1k.unity`
@@ -83,8 +79,9 @@ PostEffectを設定済みのサンプルシーンがありますので
 
 * https://github.com/vrm-c/UniVRM/pull/1123
 
-## Unity アプリでロードする方法
+## How to load in Unity app
 
-* `UniVRM-0.99` 以降でロードしてください
-* シーンに PostEffect を設定してください
-  * `Assets/UniGLTF.Samples/LookDev/RenderingServicePostProcessingProfile.asset` サンプルの profile があります
+* Please load with `UniVRM-0.79` or later
+* Set PostEffect for your scene
+  * `Assets/UniGLTF/Samples/LookDev/RenderingServicePostProcessingProfile.asset` There is a sample profile
+

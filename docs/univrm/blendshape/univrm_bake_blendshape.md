@@ -5,21 +5,22 @@ aliases: ["/univrm/univrm_bake_blendshape/"]
 weight: 3
 ---
 
-# エクスポート時にBlendShapeの状態をベイクする
+# Bake BlendShape State When Exporting
 
-UniVRM ではエクスポートするときに、 `SkinnedMeshRenderer` のスライダーを上げておくとその状態を基本状態にすることができます。
+When exporting the VRM model, current BlendShape value can be set to the basic state.For example, in `SkinnedMeshRenderer`, click on `BlendShapes` and adjust `bs_face.eye_blink` slider to change the value from 0 to 57.8.
 
 ```{figure} /_static/images/vrm/blendshape_value.jpg
 ```
 
-`Pose Freeze` のチェックボックスを有効にする必要があります。
+In export dialog, enabling `Pose Freeze` is required.
 
 ```{figure} /_static/images/vrm/check_freeze.jpg
 ```
 
-エクスポートすると・・・
+After VRM export:
 
 ```{figure} /_static/images/vrm/bake_blink.gif
 ```
 
-基本状態(blendShape が 0 の状態)が変更されます。
+Basic state (BlendShape value = 0) is changed (eyes are not open fully).
+

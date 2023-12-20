@@ -6,86 +6,86 @@ tags: ["unity"]
 ---
 
 # VRMFirstPerson
-## 概要
+## Overview
 
-VRMFirstPersonにはヘッドセットの位置指定とVRの可視設定という2種類の設定があります。  
+VRMFirstPerson has two types of settings: headset positioning and VR visibility settings.
 
-__アプリケーション側が対応している場合のみ有効となる設定です。__
+__This setting is valid only if the application supports it.__
 
-## ヘッドセットの位置指定
+## Headset Position
 
-VRMモデル内でVRヘッドセット（HMD）位置を指定する設定です。HMDとアバターの頭の追随を調整できます。
+This setting specifies the VR headset (HMD) position within the VRM model. You can adjust the HMD and avatar's head tracking.
 
 ### FirstPersonBone
 
-一人称の際にHMDに追随させるボーンです。頭ボーンを指定してください。
+This is a bone that follows the HMD when in first person. Please specify the head bone.
 
 ### FirstPersonOffset
 
-追随する位置をFirstPersonBoneの位置から調整します。アバターの両目の間に調整してください。
+Adjust the following position from the FirstPersonBone position. Adjust between the avatar's eyes.
 
-## VRの可視設定
+## VR Visibility Setting
 
-VRアプリ向けにメッシュごとのカメラの可視設定を分ける設定です。VRアプリでは２種類のカメラが想定されます。  
-この一人称カメラで自身のアバターが見えた際に起きる不都合に対処するため、メッシュごとに可視性を設定出来るようになっています。
+This is a setting that separates camera visibility settings for each mesh for VR applications. Two types of cameras are assumed for VR applications.
+In order to deal with the inconvenience that occurs when your avatar is visible with this first-person camera, visibility can be set for each mesh.
 
-### 一人称カメラ
+### First-Person Camera
 
-HMDに出力される映像
+Video output to HMD
 
-### 三人称カメラ
+### Third-Person Camera
 
-HMD以外に出力される映像・配信用映像・鏡・マルチプレイでの他ユーザーのHMD
+Video output to a device other than the HMD, video for distribution, mirrors, and other users' HMDs in multiplayer
 
-### 可視設定
+### VR Visibility Setting
 
-| 設定            | 一人称カメラ | 三人称カメラ | 備考                                                 |
+| Setting            | First-Person Camera | Third-Person Camera | Note                                                 |
 |-----------------|--------------|--------------|------------------------------------------------------|
-| Auto            | △         | △         | 初期設定。詳細は後述                                         |
-| Both            | 〇           | 〇           | 体・手・足など頭部から遠い部位を指定する               |
-| ThirdPersonOnly |              | 〇           | 頭部・髪・帽子などを指定する |
-| FirstPersonOnly | 〇           |              | 設定項目自体が不要の可能性がある                                           |
+| Auto            | △         | △         | Initial setting. Details below                                         |
+| Both            | 〇           | 〇           | The part with a certain distance from the head (e.g. body, hands and feet)               |
+| ThirdPersonOnly |              | 〇           | Only visible from the external camera (e.g. head, hair, hat) |
+| FirstPersonOnly | 〇           |              | The setting item itself may not be necessary.                                           |
 
-### 不都合の例
+### Example of inconvenience
 
-* 近平面で自分のアバターの輪切りが見える
-* アバターの髪が邪魔で何も見えない
-* 歯などの自身のアバターの中身が見えてしまう
+* Model's head gets cut by the near plane
+* The view is blocked by the Model's hair
+* The contents of your avatar, such as your teeth, are exposed
 
-## 推奨される構成
+## Recommended Structure
 
-アバター作成段階で頭と体にメッシュを分割することを推奨しています。
-* 頭に `ThirdPersonOnly` を指定
-* 体に `Both` を指定
+We recommend dividing the mesh into the head and body at the avatar creation stage.
+
+* Specify `ThirdPersonOnly` for `Head`
+* Specify `Both` for `Body`
 
 ```{figure} /_static/images/vrm/firstperson.png
-立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します。
+Alicia's `Body` is set as `Both`, while the parts related to `Head` are set as `ThirdPersonOnly`.
 ```
 
 ```{figure} /_static/images/vrm/firstperson_runtime.png
-動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。
+The meshes with `ThirdPersonOnly` setting are not rendered in FirstPerson.
 ```
 
-## Autoの可視設定
+## VR Visibility Setting
 
-可視設定がAutoの場合はインポート時にメッシュが `Both` と `ThirdPersonOnly` に自動分割されます。  
-分割されない場合はメッシュの全てが `Both` か `ThirdPersonOnly` になります。  
-UniVRMでは [VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask) を呼び出します。
-Autoによる自動分割は重めの処理になります。  
+[VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask)
+Automatic division using Auto is a heavy process.
 
-### 分割基準
+### Division criteria
 
-含まれる頂点が `head` か `head` の子孫のボーンのウェイトを持っているか
+Split the mesh into two groups: the first group contains triangles with HeadBone-related vertices while the second group contains triangles with the rest of the vertices
 
-## 設定のリセット
+## Reset Visibility Setting
 
-FirstPerson は初期設定で Auto を指定しますが、エクスポートに失敗する場合はVRMFirstPerson をリセットすることで再設定することができます。
-メッシュが増減するなどのアバターの構成が変わった場合に参照が `Missing` になったときなどがエクスポートに失敗する場合です。
+FirstPerson is set to Auto by default, but if export fails, you can reset VRMFirstPerson to reset it.
+Export may fail when the reference becomes `Missing` when the configuration of the avatar changes, such as when the mesh increases or decreases.
 
-### リセット方法
+### Reset Visibility Setting
 
-`VRM First Person (Script)` インスペクタの右上の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
+Click the `gear icon ⚙` on the upper right corner of `VRM First Person(Script)` inspector and select `Reset` shown as follow:
 
 ```{figure} /_static/images/vrm/firstperson_reset.gif
 firstperson を reset
 ```
+

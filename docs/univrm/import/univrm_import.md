@@ -4,50 +4,50 @@ weight: 1
 tags: ["unity"]
 ---
 
-# VRMをインポートする
+# VRM Import
 
-## エディタモードでVRMファイルをインポートする
+## Import VRM file in Editor Mode
 
-### 1.Unityで空のプロジェクトを作る
+### 1 Create an empty project in Unity
 
 ```{figure} /_static/images/vrm/unity_new_project.png
 ```
 
-もしくは
+Or
 
 ```{figure} /_static/images/vrm/new_project.jpg
 ```
 
-Unityを起動し、プロジェクトを新規作成します。
+Launch Unity and create a new project (`New -> Create project`):
 
-### 2.UnityにUniVRMをインストール
+### 2 Import UniVRM package into the created project
 
-[UniVRM/releases](https://github.com/vrm-c/UniVRM/releases)から最新のunitypackageをダウンロードし、`Assets/VRM`、`Assets/UniGLTF`及び`Assets/VRMShaders`にインストールします。
-**既存のUniVRMが存在している場合、あらかじめVRM、UniGLTF、VRMShaders、そしてMeshUtilityフォルダを削除することを推奨**しています。
-UniVRM-XXX.unitypackageファイルをUnityにインポートしてください。
+**To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import**.
 
 ```{figure} /_static/images/vrm/package_import.jpg
 package_import
 ```
 
-### 3.VRMファイルをUnity上に読み込む
+### 3 Import VRM file into Unity
 
-**VRMファイルを、UnityのAssetsにドラッグ＆ドロップする**だけで、VRMファイルがインポートされ**モデルデータのPrefabが生成されます**。
+**Drag and drop a VRM file (~.vrm) into the Assets folder**. The **prefab** file associated with the VRM file can be automatically generated.
 
 ```{figure} /_static/images/vrm/vrm_prefab.png
 ```
 
-**VRMから生成されたPrefabをシーンに配置します**。すると、モデルデータが表示されます。
+Create a new scene by `File` - `New Scene` or use an existing one, then drag the prefab file to the Hierarchy window. The model can be visualized as shown in the image below:
 
 ```{figure} /_static/images/vrm/alicia_scene2.png
 ```
 
-読み込まれたモデルデータをHierarchyで選択すると、インスペクタに各種情報が表示されます。
+By clicking the prefab's GameObject in `Hierarchy`, the VRM model's information will be displayed in the Inspector window. Note that spring bone settings can be found in the GameObject named `secondary`.
 
 ```{figure} /_static/images/vrm/vrm_settings.png
 ```
 
-## 関連セクション
+## Related Sections
 
-- [vrm独自の設定を行う](/vrm/how_to_make_vrm/setup_vrm#vrm独自の設定を行う)
-- [VRMをエクスポートする](/univrm/export/univrm_export)
+- [Custom settings in VRM](/vrm/how_to_make_vrm/setup_vrm#custom-settings-in-vrm)\" >}})
+
+- [VRM Export](/univrm/export/univrm_export)
+

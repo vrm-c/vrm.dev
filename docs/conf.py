@@ -137,7 +137,7 @@ html_favicon = 'favicon.ico'
 # sphinx-intl
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
-language = "ja"
+language = "en"
 
 
 def setup(app: sphinx.application.Sphinx):
