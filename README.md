@@ -8,6 +8,10 @@ This repository is an English translation of [vrm.dev](https://github.com/vrm-c/
 [オープンソースドキュメント翻訳プラットフォームとしての GitHub (React 日本語ドキュメントの例)](https://zenn.dev/smikitky/articles/0d250f7367eda9)
 を参考に作業手順を整備中です。
 
+## 更新
+
+- 20240111 英語版を sphinx gettext から [fork](https://github.com/vrm-c/vrm.dev.en) に変更
+
 ## Contributing
 
 vrm.dev requires [Sphinx](https://www.sphinx-doc.org/en/master/).
