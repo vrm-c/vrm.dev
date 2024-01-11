@@ -4,6 +4,10 @@ This repository contains source files for vrm.dev.
 
 このレポジトリはvrm.devのソースファイルを含みます。
 
+## 更新
+
+- 20240111 英語版を sphinx gettext から [fork](https://github.com/vrm-c/vrm.dev.en) に変更
+
 ## Contributing
 
 vrm.dev requires [Sphinx](https://www.sphinx-doc.org/en/master/).

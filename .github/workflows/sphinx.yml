@@ -18,9 +18,6 @@ jobs:
       - name: sphinx build(ja)
         working-directory: ./docs
         run: sphinx-build . ../public
-      - name: sphinx build(en)
-        working-directory: ./docs
-        run: sphinx-build . ../public/en -D language=en -A language=en
       - run: mkdir -p public/licenses/1.0/pdf
       - run: cp docs/_static/licenses/1.0/pdf/jp.pdf public/licenses/1.0/pdf/jp.pdf
       - run: cp docs/_static/licenses/1.0/pdf/en.pdf public/licenses/1.0/pdf/en.pdf
