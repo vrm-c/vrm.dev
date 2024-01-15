@@ -149,8 +149,10 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} VRM Consortium. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      // theme: prismThemes.github,
+      theme: prismThemes.xonokai,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
 };
