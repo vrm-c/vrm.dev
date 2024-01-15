@@ -1,6 +1,6 @@
 # FirstPerson
 
-[FirstPerson と Renderer の可視制御 ](/implementation/first_person)
+[FirstPerson と Renderer の可視制御 ](/api/first_person)
 
 :::warning VR 用の機能です
 
