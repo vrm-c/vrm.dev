@@ -18,24 +18,19 @@ UniVRM は従来の VRM-0.x モデルを VRM-1.0 モデルにアップグレー�
 
 ## Asset の Inspector によるアップグレード
 
-```{admonition} Editor
-:class: info
+:::info Editor
 
 `VRM-0.XXX.0_faa1.unitypackage` の機能です。
 UPM では `com.vrmc.univrm1`
-```
+:::
 
 Asset に `vrm-0.x` を投入してください。
 Inspector に migration ボタンが表示されます。
 
-```{figure} /_static/images/vrm10/editor_migration.jpg
-Migrate to Vrm1
-```
+![Migrate to Vrm1](/images/vrm10/editor_migration.jpg)
 
 cehckbox を有効にして `apply` ボタンを押します。
 
-```{figure} /_static/images/vrm10/editor_migrated.jpg
-Migrated
-```
+![Migrated](/images/vrm10/editor_migrated.jpg)
 
 `vrm-1.0` の prefab が生成されます。
