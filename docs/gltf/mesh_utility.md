@@ -35,7 +35,7 @@ tags: ["unity", "gltf"]
 
 |               顔: BlendShapeを含む               |             体: BlendShapeを含まない             |
 |:------------------------------------------------:|:------------------------------------------------:|
-| ![img](/_static/images/vrm/mesh_sep_result_1.jpg) | ![img](/_static/images/vrm/mesh_sep_result_2.jpg) |
+| ![img](/images/vrm/mesh_sep_result_1.jpg) | ![img](/images/vrm/mesh_sep_result_2.jpg) |
 
 ### MeshSeparator
 

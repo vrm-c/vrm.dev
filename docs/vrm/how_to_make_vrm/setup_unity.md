@@ -9,7 +9,7 @@ description: "作業準備、Unity Download, UnityのProject作成, UniVRM Downl
 
 ## Download UniVRM
 
-<https://github.com/vrm-c/UniVRM/releases>
+https://github.com/vrm-c/UniVRM/releases
 
 Download the latest version of UniVRM (`UniVRM-0.XX.0_YYYY.unitypackage`) in the release page:
 
@@ -28,7 +28,7 @@ download_unitypackage
 
 ## Install Unity
 
-<https://create.unity3d.com/jp-howto-install-win>
+https://create.unity3d.com/jp-howto-install-win
 
 Make sure the [Unity Version](/univrm/install/unity_version) you are going to download is compatible with UniVRM.
 
@@ -91,5 +91,5 @@ clear console
 
 ## Manual
 
-➡ [Install](/univrm/install/index)
+➡ [Install](/univrm/install/)
 

@@ -17,7 +17,7 @@ We use [UniVRM](https://github.com/vrm-c/UniVRM) to make VRM files. The workflow
 
 * Import a 3D model into a Unity project and set up its materials, etc. Make a T-Pose for the model and enable the model normalization, and then export the 3D model as VRM in Unity
 
-* Import the VRM file into the Unity project and customize settings such as [license](/univrm/meta/index), [spring bone](/univrm/springbone/index), [expression](/univrm/blendshape/index) [eyelook](/univrm/lookat/index) [first-person](/univrm/firstperson/index). To make sure customized settings (e.g. facial expression) are working, check your model in play mode
+* Import the VRM file into the Unity project and customize settings such as [license](/univrm/meta/), [spring bone](/univrm/springbone/), [expression](/univrm/blendshape/) [eyelook](/univrm/lookat/) [first-person](/univrm/firstperson/). To make sure customized settings (e.g. facial expression) are working, check your model in play mode
 
 * Export the 3D model as VRM again. Setup completed
 

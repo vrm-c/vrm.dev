@@ -14,7 +14,7 @@ Starting with `v0.81.0`, UniVRM Samples are included in the UniVRM package
 
 ### ~ v0.80.0
 
-<https://github.com/vrm-c/UniVRM/releases>
+https://github.com/vrm-c/UniVRM/releases
 
 `UniVRM-samples-0.XX.X_XXXX.unitypackage`
 

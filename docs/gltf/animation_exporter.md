@@ -6,7 +6,7 @@ aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 
 # Animation
 
-- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations>
+- https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations
 
 Partially supported from `v0.44`.
 
@@ -95,4 +95,4 @@ Interpolation
 
 ## glTF: CUBICSPLINE == AnimationUtility.TangentMode.Free
 
-- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic>
+- https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic

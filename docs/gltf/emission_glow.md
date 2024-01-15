@@ -52,13 +52,13 @@ vrm-0.x can be saved as it has no [0-1] limit.
 
 It supports reading and writing from `v0.99` to` KHR_materials_emissive_strength`.
 
-<https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength>
+https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_emissive_strength
 
 Since `UniVRM-0.99`, it is valid for MToon / PBR with VRM1 / GLB / GLTF.
 
 ## VRMC_materials_hdr_emissiveMultiplier (deprecated)
 
-<https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0>
+https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_hdr_emissiveMultiplier-1.0
 
 It is no longer needed because it has the same function as `KHR_materials_emissive_strength`.
 

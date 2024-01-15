@@ -61,7 +61,7 @@ As described above, VRM is not just a 3D model data. **It is designed for being 
 
 Live streaming, video creation, games, chat.... The virtual worlds are not connected with each other. Using VRM is the first step to bridge those virtual worlds
 
-![VRM applications](/_static/images/vrm/VRM_WorldConnect_jp.png)
+![VRM applications](/images/vrm/VRM_WorldConnect_jp.png)
 
 ➡️ [Applications that support VRM](/vrm/vrm_applications)
 
