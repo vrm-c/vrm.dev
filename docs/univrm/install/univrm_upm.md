@@ -24,13 +24,10 @@ com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your s
 
 というようなエラーが出ます。
 
-
-```{admonition} 他のgit
-:class: warning
-
+:::warning 他のgit
 
 https://git-scm.com/ からインストールした git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、Path の中で最初に見つかるように設定してください。
-```
+:::
 
 * powershell からバージョンを確認した例 (20201130)
 
@@ -41,13 +38,9 @@ git version 2.29.2.windows.2
 
 ## UnityPackageManager ウインドウによるインストール
 
-```{figure} /_static/images/vrm10/menu_packagemanager.jpg
-UnityPackageManagerのWindow
-```
+![UnityPackageManagerのWindow](/images/vrm10/menu_packagemanager.jpg)
 
-```{figure} /_static/images/vrm10/from_git.jpg
-add package from git URL
-```
+![add package from git URL](/images/vrm10/from_git.jpg)
 
 新しいUniVRMバージョンがリリースされる時に、このバージョンに関連するgit urlsを公開します。
 
@@ -61,8 +54,7 @@ add package from git URL
 
 ProjectウィンドウのPackagesフォルダにインポートしたパッケージを確認する：
 
-```{figure} /_static/images/vrm/upm_package.jpg
-```
+![figure](/images/vrm/upm_package.jpg)
 
 バージョン番号を変更することで、お好きなバージョンに切り替えることができます。
 

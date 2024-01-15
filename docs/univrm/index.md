@@ -8,21 +8,6 @@ aliases: ["/univrm/"]
 
 # UniVRM
 
-```{toctree}
-:maxdepth: 1
-install/index
-export/index
-import/index
-blendshape/index
-shaders/index
-lookat/index
-springbone/index
-humanoid/index
-meta/index
-firstperson/index
-programming/index
-```
-
 ## Install 方法
 
 * `v0.81.0` から `unitypackage` が２つ必要です。
@@ -62,15 +47,11 @@ https://github.com/vrm-c/UniVRM/releases から `unitypackage` をダウンロ�
 コンソール画面の内容をご確認ください。
 コンソール画面はメニューから表示できます。
 
-```{figure} /_static/images/vrm/window_console.png
-コンソール画面を表示するメニュー
-```
+![コンソール画面を表示するメニュー](/images/vrm/window_console.png)
 
 表示されたコンソール画面にエラーメッセージ(赤い)が表示されている場合、なんらかの不具合がある可能性があります。
 
-```{figure} /_static/images/vrm/error.png
-エラーの例
-```
+![エラーの例](/images/vrm/error.png)
 
 エラー報告は、起こった現象に
 

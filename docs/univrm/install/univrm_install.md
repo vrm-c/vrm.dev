@@ -25,27 +25,20 @@ https://github.com/vrm-c/UniVRM/releases
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
-```{figure} /_static/images/vrm/linear_setting.jpg
-linear setting
-```
+![linear setting](/images/vrm/linear_setting.jpg)
 
-```{admonition} Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
-:class: warning
-
-
+:::warning Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
 
 * `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
 
-```
+:::
 
-```{admonition} 既存のプロジェクト
-:class: warning
-
+:::warning 既存のプロジェクト
 
 事前に、古いバージョンの VRM を削除することを推奨しています。
 [UniVRMをアンインストール](/univrm/install/univrm_uninstall) を参照してください。
 
-```
+:::
 
 ## unitypackage の import
 
@@ -55,39 +48,28 @@ linear setting
 
 `Assets/VRM`、`Assets/UniGLTF`お及び`Assets/VRMShaders` の３つのフォルダに import されます。
 
-```{figure} /_static/images/vrm/package_import.jpg
-:name: package_import
-
-UnityPackageをインポート
-```
+![package_import](/images/vrm/package_import.jpg)
 
 ## import が成功したか確認する方法
 
 VRM menu が表示されていれば動作しています：
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm menu
-```
+![vrm menu](/images/vrm/vrm_menu.jpg)
 
 前のバージョン：
 
-```{figure} /_static/images/vrm/vrm_menu_old.jpg
-vrm menu old
-```
+![vrm menu old](/images/vrm/vrm_menu_old.jpg)
 
 menu が出てこない場合は、
 
 * Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
 
-```{figure} /_static/images/vrm/show_console.jpg
-show console
-```
+![show console](/images/vrm/show_console.jpg)
 
-```{figure} /_static/images/vrm/clear_console.jpg
-clear console
-```
+![clear console](/images/vrm/clear_console.jpg)
 
 ## 関連セクション
 
 - [VRMファイルを作ってみたい](/vrm/how_to_make_vrm)
 - [VRMをインポートする](/univrm/import/univrm_import)
+

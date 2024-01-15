@@ -31,9 +31,7 @@ VRMでは頭から目標(注視点)への相対的な回転(Yaw, Pitch)を得て
 
 ## VRMLookAtHead
 
-```{figure} /_static/images/vrm/VRMLookAtHead.png
-VRMLookAtHead
-```
+![VRMLookAtHead](/images/vrm/VRMLookAtHead.png)
 
 このコンポーネントは頭から見たTargetの方向を計算します。
 
@@ -48,5 +46,4 @@ VRMLookAtHead
 
 VRMFirstPerson の FirstPersonOffset で Head ボーンからの相対的な基準位置を設定できます。
 
-```{figure} /_static/images/vrm/firstperson.png
-```
+![figure](/images/vrm/firstperson.png)

@@ -55,14 +55,14 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Home',
+      title: '',
       logo: {
         alt: 'Vrm Logo',
         src: 'images/vrm/card.png',
       },
       items: [
         {
-          label: 'Vrm',
+          label: 'vrmについて',
           type: 'docSidebar',
           sidebarId: 'vrmSidebar',
           position: 'left',
