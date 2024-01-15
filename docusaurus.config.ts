@@ -105,12 +105,6 @@ const config: Config = {
           sidebarId: 'apiSidebar',
           position: 'right',
         },
-        {
-          label: 'Implementation',
-          type: 'docSidebar',
-          sidebarId: 'implSidebar',
-          position: 'right',
-        },
 
         {
           label: 'ReleaseNote',
