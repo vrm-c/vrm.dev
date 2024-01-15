@@ -49,5 +49,5 @@ package_import
 
 ## 関連セクション
 
-- [vrm独自の設定を行う](/vrm/how_to_make_vrm/setup_vrm#vrm独自の設定を行う)
+- [vrm独自の設定を行う](/vrm/how_to_make_vrm/setup_vrm)
 - [VRMをエクスポートする](/univrm/export/univrm_export)

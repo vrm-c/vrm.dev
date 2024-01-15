@@ -31,7 +31,7 @@ programming/index
 
 ### UnityPackage を使ったインストール
 
-<https://github.com/vrm-c/UniVRM/releases> から `unitypackage` をダウンロードしてください。
+https://github.com/vrm-c/UniVRM/releases から `unitypackage` をダウンロードしてください。
 `UniGLTF_VRMShaders` 、 `UniVRM` という順番で２つのパッケージをインストールしてください。
 
 |          | UniGLTF_VRMShaders | UniVRM  | VRM     |

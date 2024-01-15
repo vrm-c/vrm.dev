@@ -89,5 +89,5 @@ clear console
 
 ## 関連セクション
 
-- [VRMファイルを作ってみたい](/vrm/how_to_make_vrm/index)
+- [VRMファイルを作ってみたい](/vrm/how_to_make_vrm)
 - [VRMをインポートする](/univrm/import/univrm_import)

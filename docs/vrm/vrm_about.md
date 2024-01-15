@@ -57,7 +57,7 @@ VRMでは「人型」の「キャラクター・アバター」を取り扱う�
 
 生放送、動画作成、ゲーム、チャット…。いまは複数のVR世界が分断されています。この分断されたVR世界をつなぐための第一歩、それがVRMなのです。
 
-![VRM applications](/_static/images/vrm/VRM_WorldConnect_jp.png)
+![VRM applications](/images/vrm/VRM_WorldConnect_jp.png)
 
 
  ➡️ [VRMファイルが使えるアプリケーション](/vrm/vrm_applications)

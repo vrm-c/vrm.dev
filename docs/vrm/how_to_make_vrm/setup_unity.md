@@ -9,7 +9,7 @@ description: "作業準備、Unity Download, UnityのProject作成, UniVRM Downl
 
 ## UniVRM をダウンロードする
 
-<https://github.com/vrm-c/UniVRM/releases>
+https://github.com/vrm-c/UniVRM/releases
 
 から最新版をダウンロードしてください。
 ファイル名は、`UniVRM-0.XX.0_YYYY.unitypackage` です。
@@ -29,12 +29,12 @@ download_unitypackage
 
 ## Unity をインストールする
 
-<https://create.unity3d.com/jp-howto-install-win>
+https://create.unity3d.com/jp-howto-install-win
 
 UniVRMの対応するバージョンの Unity をインストールしてください。
 対応するUnityのバージョンは、`UniVRM をダウンロードする` の URL をご確認ください。
 
-推奨バージョン以外を使う場合は、 [インストール](/univrm/install/index) もご確認ください。
+推奨バージョン以外を使う場合は、 [インストール](/univrm/install/) もご確認ください。
 
 ## Unityで空のプロジェクトを作る
 
@@ -96,4 +96,4 @@ clear console
 
 ## Manual
 
-➡ [インストール](/univrm/install/index)
+➡ [インストール](/univrm/install/)

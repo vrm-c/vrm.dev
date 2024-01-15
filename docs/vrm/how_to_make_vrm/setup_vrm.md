@@ -14,8 +14,8 @@ weight: 3
 
 **VRMファイルを、UnityのAssetsにドラッグ＆ドロップする** だけで、VRMファイルがインポートされ **モデルデータのPrefabが生成されます** 。
 
-![img](/_static/images/vrm/vrm_prefab.png)
-![img](/_static/images/vrm/vrm_components.jpg)
+![img](/images/vrm/vrm_prefab.png)
+![img](/images/vrm/vrm_components.jpg)
 
 * 正規化されている
 * VRMMeta, Animator, VRMBlendShapeProxy, VRMFirstPerson, VRMLookAtHead, VRMLookAtBoneApplyer 等がアタッチされている
