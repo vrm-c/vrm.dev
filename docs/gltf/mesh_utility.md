@@ -6,7 +6,6 @@ tags: ["unity", "gltf"]
 
 # Mesh Utility
 
-
 `MeshUtility`はメッシュ処理のツールです。  
 現在利用可能な機能： `MeshSeparator`、`MeshIntegrator`、`StaticMeshIntegrator`と`BoneMeshEraser`。
 
@@ -16,19 +15,16 @@ tags: ["unity", "gltf"]
 `MeshSeparator`が適用されると、BlendShapeを含むメッシュは分割されます。
 先ず、ヒエラルキーにモデルのGameObjectを選択します。
 
-```{figure} /_static/images/vrm/mesh_utility_exp1.jpg
-```
+![figure](/images/vrm/mesh_utility_exp1.jpg)
 
 または、GameObjectを`TargetObject`フィールドにドラッグ＆ドロップします。  
 メッシュ処理のウィンドウを表示するため、メニューから`UniGLTF` -> `MeshUtility` -> `MeshProcessing Wizard`をクリックしてください：
 
-```{figure} /_static/images/vrm/mesh_utility_ja_exp2.jpg
-```
+![figure](/images/vrm/mesh_utility_ja_exp2.jpg)
 
 `Process`ボタンをクリックすると、処理したモデルのGameObjectを生成されます。このGameObjectを選択してエクスポータします（`VRM0` -> `Export UniVRM-0.xx`）。
 
-```{figure} /_static/images/vrm/mesh_utility_exp3.jpg
-```
+![figure](/images/vrm/mesh_utility_exp3.jpg)
 
 分割されたメッシュも`Assets`フォルダーに保存されます。  
 この例では、モデルのメッシュは顔と体の2つの部分に分割された。
