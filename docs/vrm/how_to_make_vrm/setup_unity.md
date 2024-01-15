@@ -13,18 +13,13 @@ https://github.com/vrm-c/UniVRM/releases
 
 Download the latest version of UniVRM (`UniVRM-0.XX.0_YYYY.unitypackage`) in the release page:
 
-```{admonition} XX YY
-:class: note
-
+:::note XX YY
 
 XX is UniVRM version. YYYY is version ID
 
-```
+![download_unitypackage](/images/vrm/download_unitypackage.png)
 
-```{figure} /_static/images/vrm/download_unitypackage.png
-
-download_unitypackage
-```
+:::
 
 ## Install Unity
 
@@ -34,13 +29,11 @@ Make sure the [Unity Version](/univrm/install/unity_version) you are going to do
 
 ## Create an empty project in Unity
 
-```{figure} /_static/images/vrm/unity_new_project.png
-```
+![figure](/images/vrm/unity_new_project.png)
 
 or
 
-```{figure} /_static/images/vrm/new_project.jpg
-```
+![figure](/images/vrm/new_project.jpg)
 
 For Unity Hub, click ``Projects -> New -> 3D template -> CREATE``:
 
@@ -48,9 +41,7 @@ For Unity Hub, click ``Projects -> New -> 3D template -> CREATE``:
 
 Import the downloaded `UniVRM-0.XX.0_YYYY.unitypackage` into the current project (``Assets -> Import Package -> Custom Package``). The imported files will be in the folders ``../Assets/VRM``, ``../Assets/UniGLTF`` and  ``../Assets/VRMShaders``
 
-```{figure} /_static/images/vrm/package_import.jpg
-package_import
-```
+![package_import](/images/vrm/package_import.jpg)
 
 click `import` button.
 
@@ -58,38 +49,29 @@ click `import` button.
 
 If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm menu
-```
+![vrm menu](/images/vrm/vrm_menu.jpg)
 
-```{figure} /_static/images/vrm/vrm_menu_old.jpg
-Previous versions:
-```
+![Previous versions](/images/vrm/vrm_menu_old.jpg)
 
-```{admonition} If you are using Unity-2018 and the VRM menu does not show up:
-:class: warning
+:::warning If you are using Unity-2018 and the VRM menu does not show up:
 
 "Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting "
 "Runtime Version` and check whether `Scripting Runtime Version` is set to "
 "`.Net4.X equivalent`"
 
-```
+:::
 
 ### Console
 
 The errors occurred in a Unity project can be shown in the Console window:
 
-```{figure} /_static/images/vrm/show_console.jpg
-show console
-```
+![show console](/images/vrm/show_console.jpg)
 
 Click `clear` button on the upper-left corner of the Console window and see if any error (message in red) is left in the console. In most of the cases, errors originate from the UniVRM installation failure.
 
-```{figure} /_static/images/vrm/error_in_console.jpg
-clear console
-```
+![clear console](/images/vrm/error_in_console.jpg)
 
 ## Manual
 
-➡ [Install](/univrm/install/)
+➡ [Install](/univrm/install/univrm_install)
 

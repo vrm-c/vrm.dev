@@ -10,15 +10,13 @@ aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 
 Partially supported from `v0.44`.
 
-```{admonition} Animation
-:class: warning
+:::warning Animation
 VRM specification does not include the Animation.
-```
+:::
 
-```{admonition} Export does not work in Runtime
-:class: warning
+:::warning Export does not work in Runtime
 Export will not work because Runtime cannot retrieve AnimationClip information.
-```
+:::
 
 ## Support Status
 
@@ -52,9 +50,7 @@ Export will not work because Runtime cannot retrieve AnimationClip information.
 3. Make sure that the root GameObject is selected and press the Create button displayed in the center of the Animation window to create an AnimationClip.
 4. Set the Inspector settings to Debug mode and turn on the Legacy flag of AnimationClip
 
-```{figure} /_static/images/wiki/LegacyClip.png
-Interpolation
-```
+![Interpolation](/images/wiki/LegacyClip.png)
 
 5. Set the created AnimationClip in the Animation item of the Animation component
 6. Add animation keys to this clip
@@ -64,9 +60,7 @@ Interpolation
 
 1. Please set the Interpolation of RotationKey to either Quaternion or Euler Angles (Quaternion)
 
-```{figure} /_static/images/wiki/Interpolation.png
-Interpolation
-```
+![Interpolation](/images/wiki/Interpolation.png)
 
 2. For the Animator, all edited clips can be exported. However, the Animator states are not saved
 3. Though a created Animator goes through multiple animations (Animation State Machine), the UniGLTF Importer (UniGLTF-1.25) will only import the first one

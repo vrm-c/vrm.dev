@@ -15,9 +15,9 @@ New features introduced in UniVRM v0.45:
 
 ## VRMBlendShapeProxy
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxy.png
+![figure](/images/vrm/VRMBlendShapeProxy.png)
+
 The figure above is VRMBlendShapeProxy in the Inspector window at runtime. VRMBlendShapeProxy can be enabled by clicking the play button in edit mode
-```
 
 How to use:
 
@@ -28,25 +28,17 @@ How to use:
 
 Expressions can be created in the Inspector.
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyEditor.png
-Double click the``Blend Shape Avatar``field
-```
+![Double click the``Blend Shape Avatar``field](/images/vrm/VRMBlendShapeProxyEditor.png)
 
 Or
 
-```{figure} /_static/images/vrm/BlendShapeAvatarAsset.png
-Click``BlendShape``directly in the Project view
-```
+![Click``BlendShape``directly in the Project view](/images/vrm/BlendShapeAvatarAsset.png)
 
-```{figure} /_static/images/vrm/BlendShapeAvatarEditor.png
-The Inspector of BlendShape editor
-```
+![The Inspector of BlendShape editor](/images/vrm/BlendShapeAvatarEditor.png)
 
 Select expressions and customize the values. For example, we select``Fun``and edit its expressions as shown in the following: 
 
-```{figure} /_static/images/vrm/BlendShapeClip.png
-Example: Set`mouth_smile`,`eye_smile`and`eyeblow_smile`to 100
-```
+![Example: Set`mouth_smile`,`eye_smile`and`eyeblow_smile`to 100](/images/vrm/BlendShapeClip.png)
 
 The individual blend shapes such as eyebrow, eye and mouth can be merged into one expression like the image above. Created BlendShape names can be specified. 
 
@@ -54,9 +46,7 @@ After changing slider value and creating BlendShape, click the Apply button for 
 
 ## BlendShape preset
 
-```{figure} /_static/images/vrm/BlendShape_Preset.png
-Select `Preset`
-```
+![Select `Preset`](/images/vrm/BlendShape_Preset.png)
 
 The predefined names for the BlendShape clips. The following predefined expressions are available:
 
@@ -90,21 +80,18 @@ New created expressions are specified as `Unknown`.
 
 ## Change the value of BlendShapeProxy (at runtime)
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-`Preset`is used
-```
+![`Preset`is used](/images/vrm/VRMBlendShapeProxyRuntime.png)
 
 You can operate expressions from the Inspector.
 
+
 ## [Option] Add additional facial expressions
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-```
+![figure](/images/vrm/VRMBlendShapeProxyRuntime.png)
 
 Enter a name for the new BlendShapeClip file (BlendShapeClipName.asset) and save it. Then, select the new generated button in the BlendShapeClip list (the last button) and enter a name. Also, please set facial expression values for new BlendShape clips.
 
-```{figure} /_static/images/vrm/BlendShapeClipOption.png
-```
+![figure](/images/vrm/BlendShapeClipOption.png)
 
 You can call it from the codes shown as follows:
 
@@ -115,7 +102,7 @@ proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 
 ## [Option] Morph material color
 
-```{figure} /_static/images/vrm/BlendShapeClipMaterial.png
+![figure](/images/vrm/BlendShapeClipMaterial.png)
+
 The setting of Material morph. Double click the``Current clip``field or directly select the BlendShape clip (e.g. BlendShape.XXX or your created name) in the Project view
-```
 

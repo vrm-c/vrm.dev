@@ -23,62 +23,48 @@ https://github.com/vrm-c/UniVRM/releases
 
 * "Go to `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` and set `ColorSpace` to `Linear` (recommended setting)
 
-```{figure} /_static/images/vrm/linear_setting.jpg
-linear setting
-```
+![linear setting](/images/vrm/linear_setting.jpg)
 
-```{admonition} If your Unity version is {Unity-2018.3, Unity-2018.4, Unity-2019.1}:
-:class: warning
+:::warning If your Unity version is `Unity-2018.3, Unity-2018.4, Unity-2019.1`:
 
 * "Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent`
 
-```
+:::
 
-```{admonition} Install UniVRM in an Existing Project:
-:class: warning
+:::warning Install UniVRM in an Existing Project:
 
 "If old UniVRM version exists, please delete `Assets/VRM`, `Assets/UniGLTF` (if exists), `Assets/VRMShaders` (if exists) and `Assets/MeshUtility` (if exists) before installation. Refer to [Uninstall UniVRM](/univrm/install/univrm_uninstall) for more information"
-```
+:::
 
-## Import unitypackage
+## `Import` unitypackage
 
-Import `unitypackage`
+`Import` `unitypackage`
 
 Go to `Assets` - `Import Package` - `Custom Package` and select `UniVRM-0.XX.X_XXXX.unitypackage`.
 
 Three folders: `Assets/VRM`, `Assets/UniGLTF` and `Assets/VRMShaders` will be imported into the Unity project.
 
-```{figure} /_static/images/vrm/package_import.jpg
-:name: package_import
+![package_import](/images/vrm/package_import.jpg)
 
-Import Unity Package
-```
+`Import` Unity Package
 
 ## Check if UniVRM has been imported successfully
 
 If UniVRM import successes, `VRM` menu will be displayed in the menu bar:
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm menu
-```
+![vrm menu](/images/vrm/vrm_menu.jpg)
 
 Previous versions:
 
-```{figure} /_static/images/vrm/vrm_menu_old.jpg
-vrm menu old
-```
+![vrm menu old](/images/vrm/vrm_menu_old.jpg)
 
 If menu does not show up:
 
 * Open Console: click `clear` button on the upper-left corner of the Console window to see if any error (message in red) occurs
 
-```{figure} /_static/images/vrm/show_console.jpg
-show console
-```
+![show console](/images/vrm/show_console.jpg)
 
-```{figure} /_static/images/vrm/clear_console.jpg
-clear console
-```
+![clear console](/images/vrm/clear_console.jpg)
 
 ## Related Sections
 

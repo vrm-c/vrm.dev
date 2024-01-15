@@ -20,17 +20,13 @@ When importing a VRM, it will be added to an automatically generated game object
 
 When importing VRM, it will be added to the game object added during export.
 
-```{figure} /_static/images/vrm/vrm_settings.png
-Please check `secondary` in the Hierarchy window if you cannot find VRMSpringBone
-```
+![Please check `secondary` in the Hierarchy window if you cannot find VRMSpringBone](/images/vrm/vrm_settings.png)
 
 ## VRMSpringBone
 
 The setting for making objects swaying such as tail, hair, clothes and so on. Please set the target object's parent Gameobject in``Root Bones``. To do that, drag a target object (e.g.``hair1_L``) from``Hierarchy``to the``Element X``field (or click the rightmost icon of``Element X``then you can see a list of selectable components). Adjust``Size``to change the number of``Root Bones``you want to put in.
 
-```{figure} /_static/images/vrm/VRMSpringBone.png
-Example: Set the hair and ribbon in `Root Bones`
-```
+![Example: Set the hair and ribbon in `Root Bones`](/images/vrm/VRMSpringBone.png)
 
 That's it. Try to adjust `Stiffness Force`, `Gravity Power`, etc. The target objects will perform swaying movements.
 
@@ -38,19 +34,13 @@ That's it. Try to adjust `Stiffness Force`, `Gravity Power`, etc. The target obj
 
 The collision detection mechanism can be added to prevent swaying objects from penetrating user-specified parts.
 
-```{figure} /_static/images/vrm/collider.png
-Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)
-```
+![Add the collision detection mechanism on the head (VRMSpringBoneColliderGroup)](/images/vrm/collider.png)
 
 For example, hit `Add Component` to attach VRMSpringBoneColliderGroup script to``head``and drag``head``to the``Element 0``field in``Collider Groups``. You can change its offset and radius value by double clicking the``Element 0``field in``Collider Groups``.
 
-```{figure} /_static/images/vrm/set_collider.png
-Attach the VRMSpringBoneColliderGroup script to `head` and set `head` in `Collider Groups`
-```
+![Attach the VRMSpringBoneColliderGroup script to `head` and set `head` in `Collider Groups`](/images/vrm/set_collider.png)
 
-```{figure} /_static/images/vrm/spring_gizmo.png
-Gizmo at runtime (check `Draw Gizmo` in the Inspector of VRMSpringBone)
-```
+![Gizmo at runtime (check `Draw Gizmo` in the Inspector of VRMSpringBone)](/images/vrm/spring_gizmo.png)
 
 ## There is no set VRMSpringBone
 

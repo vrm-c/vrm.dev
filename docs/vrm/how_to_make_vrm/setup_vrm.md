@@ -26,17 +26,13 @@ First **drag and drop a VRM file (~.vrm) into the Assets folder**. The **prefab*
 
 Deploy the prefab into a scene.
 
-```{figure} /_static/images/vrm/alicia_scene2.png
-
-```
+![figure](/images/vrm/alicia_scene2.png)
 
 ## Configure VRM-specific settings
 
 Create a new scene by `File` - `New Scene` or use an existing one, then drag the prefab file to the Hierarchy window:
 
-```{figure} /_static/images/vrm/vrm_settings.png
-
-```
+![figure](/images/vrm/vrm_settings.png)
 
 By clicking the prefab's GameObject in `Hierarchy`, the VRM model's information will be displayed in the Inspector window. Note that **spring bone settings can be found in the GameObject named `secondary` **. Also, in `VRM Meta`, make sure [title, author, license (the most important one)](/univrm/meta/univrm_meta) are set.
 
@@ -51,19 +47,13 @@ To make a VRM model fully functional, please set up the following components:
 
 After the all settings are completed, select the the model (topmost parent GameObject) in `Hierarchy` and again export the model from `VRM0 -> Export UniVRM-0.XX`.
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm_menu
-```
+![vrm_menu](/images/vrm/vrm_menu.jpg)
 
 Previous versions: `VRM -> UniVRM-0.XX -> Export humanoid`.
 
-```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
-UniVRMExportHumanoid
-```
+![UniVRMExportHumanoid](/images/vrm/UniVRMExportHumanoid.jpg)
 
-```{admonition} Pose Freeze
-:class: note
-
+:::note Pose Freeze
 
 `Pose Freeze` is for model normalization during export. The exporter will automatically check whether the export target needs to be normalized.
 
@@ -72,7 +62,8 @@ UniVRMExportHumanoid
 in Hierarchy if a mesh's rotation or scale is not Default (first VRM export or adding accessories to the VRM model), the model normalization"needs to be performed.
 
 * Other settings such as [Bake BlendShape State](/univrm/blendshape/univrm_bake_blendshape) is also available.
-```
+
+:::
 
 ### Done!
 

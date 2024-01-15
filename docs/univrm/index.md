@@ -8,21 +8,6 @@ aliases: ["/univrm/"]
 
 # UniVRM
 
-```{toctree}
-:maxdepth: 1
-install/index
-export/index
-import/index
-blendshape/index
-shaders/index
-lookat/index
-springbone/index
-humanoid/index
-meta/index
-firstperson/index
-programming/index
-```
-
 ## How to Install
 
 * From `v0.81.0`, require two `unitypackage`
@@ -61,15 +46,11 @@ From `v0.81.0`Rename `com.vrmc.unigltf` to `com.vrmc.gltf`. for `com.vrmc.uniglt
 
 Please check messages in Console (``Window -> Console``).
 
-```{figure} /_static/images/vrm/window_console.png
-menu
-```
+![menu](/images/vrm/window_console.png)
 
 If messages like the following are shown in the Console window, there may be errors somewhere in the program. 
 
-```{figure} /_static/images/vrm/error.png
-error
-```
+![error](/images/vrm/error.png)
 
 Please report bugs you got via:
 

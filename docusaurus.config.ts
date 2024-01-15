@@ -55,14 +55,14 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Home',
+      title: '',
       logo: {
         alt: 'Vrm Logo',
         src: '/images/vrm/card.png',
       },
       items: [
         {
-          label: 'Vrm',
+          label: 'vrmについて',
           type: 'docSidebar',
           sidebarId: 'vrmSidebar',
           position: 'left',
@@ -105,12 +105,6 @@ const config: Config = {
           sidebarId: 'apiSidebar',
           position: 'right',
         },
-        {
-          label: 'Implementation',
-          type: 'docSidebar',
-          sidebarId: 'implSidebar',
-          position: 'right',
-        },
 
         {
           label: 'ReleaseNote',
@@ -149,8 +143,10 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} VRM Consortium. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      // theme: prismThemes.github,
+      theme: prismThemes.xonokai,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
 };

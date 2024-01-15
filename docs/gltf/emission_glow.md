@@ -7,11 +7,10 @@ tags: ["gltf", "mtoon-1.0"]
 
 Starting with version `v0.99`, it supports reading and writing of `KHR_materials_emissive_strength` .
 
-```{admonition} VRMC_materials_hdr_emissiveMultiplier has been deprecated
-:class: warning
+:::warning VRMC_materials_hdr_emissiveMultiplier has been deprecated
 
 The same feature, `VRMC_materials_hdr_emissiveMultiplier`, has been deprecated.It retains readability, but uses `KHR_materials_emissive_strength` when exporting, and does not use` VRMC_materials_hdr_emissiveMultiplier`.
-```
+:::
 
 ## Target shader
 
@@ -22,16 +21,14 @@ The same feature, `VRMC_materials_hdr_emissiveMultiplier`, has been deprecated.I
 
 A post effect that emits light when the Emission value exceeds 1.
 
-```{figure} /_static/images/vrm10/glow.jpg
-```
+![figure](/images/vrm10/glow.jpg)
 
 It gets stronger by going over 1 to 3 or 4, but the maximum Emission value for `glTF` is` 1`.
 
-```{admonition} Divide to 1
-:class: note
+:::note Divide to 1
 
 When exporting, do the following to force the maximum value to 1.
-```
+:::
 
 ```csharp
 Vector3 emission;
@@ -42,11 +39,10 @@ if(max_value>1)
 }
 ```
 
-```{admonition} vrm-0.x can be saved
-:class: note
+:::note vrm-0.x can be saved
 
 vrm-0.x can be saved as it has no [0-1] limit.
-```
+:::
 
 ## Supports KHR_materials_emissive_strength
 

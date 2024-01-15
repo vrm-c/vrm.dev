@@ -7,12 +7,11 @@ tags: ["unity", "fbx"]
 
 Since Unity 2018, when importing fbx into Unity, the BlendShape normal is automatically recalculated. As a result, there is a possibility that artifacts are produced on the model's surface.
 
-```{admonition} Details
-:class: note
+:::note Details
 
 If the BlendShape normal is (0, 0, 0), the value of the surface normal should not be changed. It seems that the original BlendShape normal is replaced by the recalculated BlendShape normal, resulting in unexpected changes on the model's surface
 
-```
+:::
 
 ## Validate surface normal using MToon's debugging options
 
@@ -22,38 +21,32 @@ Next, select all materials
 
 and change `Shader` to `VRM/MToon`.
 
-```{admonition} Surface normal validation
-:class: note
+:::note Surface normal validation
 
 At this point we set all the materials to MToon for surface normal validation only, so setting up textures' properties is not required.
-```
+:::
 
 To visualize the surface normal, go to `Options - Debugging Options - Visualize` and select `Normal`:
 
-```{figure} /_static/images/vrm/mtoon_normal.gif
-debug normal
-```
+![debug normal](/images/vrm/mtoon_normal.gif)
 
 Select a GameObject containing `SkinnedMeshRenderer` with BlendShape. Drag the slider while observing surface normals:
 
 We can see surface normals around nose tip and mouth are not correct.
 
-```{figure} /_static/images/vrm/broken_normal.jpg
-debug normal
-```
+![debug normal](/images/vrm/broken_normal.jpg)
 
 * Surface normals around the norse tip
 * and mouth (e.g. tongue, lower lip)
 
 are totally different 
 
-```{admonition} detail
-:class: note
+:::note detail
 
 * import vroid model by blender
 * fbx export from blender
 * import to unity import
-```
+:::
 
 ## fix BlendShape normal
 
@@ -63,15 +56,12 @@ Select the `Model` tab in fbx.
 
 Check and Apply `Legacy Blend Shape Normals`.
 
-```{figure} /_static/images/vrm/legacy_normal_fixed.jpg
-fixed normal
-```
+![fixed normal](/images/vrm/legacy_normal_fixed.jpg)
 
 Make sure the BlendShape is correct.
 
-```{admonition} Differences from before correction
-:class: note
+:::note Differences from before correction
 
 In addition to the tip of the nose and lower lip, the tongue has a completely different normal line.
-```
+:::
 

@@ -24,33 +24,24 @@ From the menu, go to `Assets -> Import Package` and then click `Custom Package` 
 
 After you see the file information in the package as shown below, click `Import` button:
 
-```{figure} /_static/images/vrm/sample_package_import.jpg
-sample_package_import
-```
+![sample_package_import](/images/vrm/sample_package_import.jpg)
 
 ## Run UniVRM Samples
 
 Now the folder `VRM.Samples` should be in `Assets`. In Project window, please select `SampleViewer`:
 
-```{figure} /_static/images/vrm/sample_scene.jpg
-sample_scene
-```
+![sample_scene](/images/vrm/sample_scene.jpg)
 
 Next, select `Game` view. You will see the `SampleViewer` interface:
 
-```{figure} /_static/images/vrm/sample_viewer.jpg
-sample_viewer
-```
+![sample_viewer](/images/vrm/sample_viewer.jpg)
 
 Click `Play` button to enable `SampleViewer`, and then click `Open` button to import a VRM model into the scene at runtime:
 
-```{figure} /_static/images/vrm/play_mode.jpg
-play_mode
-```
+![play_mode](/images/vrm/play_mode.jpg)
 
-```{figure} /_static/images/vrm/sample_viewer_activate.jpg
-sample_viewer_activate
-```
+![sample_viewer_activate](/images/vrm/sample_viewer_activate.jpg)
+
 Other samples such as [Runtime VRM export](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample)
 
 and [FirstPerson rendering](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample) are available in `VRM.Samples`.
