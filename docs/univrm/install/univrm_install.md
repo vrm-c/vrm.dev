@@ -82,6 +82,6 @@ clear console
 
 ## Related Sections
 
-- [How to make VRM file](/vrm/how_to_make_vrm/index)
+- [How to make VRM file](/vrm/how_to_make_vrm/)
 - [VRM Import](/univrm/import/univrm_import)
 

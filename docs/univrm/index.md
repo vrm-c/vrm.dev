@@ -31,7 +31,7 @@ programming/index
 
 ### UnityPackage Install
 
-Download from <https://github.com/vrm-c/UniVRM/releases>.Install `UniGLTF_VRMShaders` and `UniVRM` unitypackage.
+Download from https://github.com/vrm-c/UniVRM/releases .Install `UniGLTF_VRMShaders` and `UniVRM` unitypackage.
 
 |          | UniGLTF_VRMShaders | UniVRM  | VRM     |
 |----------|--------------------|---------|---------|
