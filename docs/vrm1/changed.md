@@ -28,10 +28,7 @@ date: 2021-08-05
 | forward | z-   | z+   |
 | right   | x+   | x-   |
 
-```{admonition} 実装
-:class: warning
-
-
+:::warning 実装
 
 Y軸 180 度の回転になります。
 
@@ -39,8 +36,7 @@ Y軸 180 度の回転になります。
 Vector3 vrm0;
 var vrm1 = new Vector3(-vrm0.x, vrm0.y, -vrm0.z);
 ```
-
-`TODO`
+:::
 
 ## glTF: divided vertex buffer
 
@@ -52,17 +48,12 @@ bufferView の primitive 間での共有をやめます。
 | 利点       | GameEngine メモリレイアウトに近いので変換が少ない                                                               | 一般的な glTF ローダーでロードできる                                                             |
 | 欠点       | UniVRM 以外の glTF ローダーでメモリ使用量が爆発する可能性(ロードできるが頂点バッファに未使用領域ができてしまう) | export 時に頂点の増加・並び順の変化がありえる。import 時に連結する手間。morphTarget の扱いが煩雑 |
 
-```{admonition} 実装
-:class: warning
-
-
+:::warning 実装
 
 `Vrm` 専用の共有頂点ローダーをやめて、
 一般的な `glTF` ローダーで問題ありません。
 
-
-```
-
+:::
 
 ## VRMC_vrm: meta
 
@@ -101,16 +92,11 @@ bufferView の primitive 間での共有をやめます。
 
 BlendShapeは、Expression に名称を変更します。
 
-```{admonition} BlendShape
-:class: warning
-
-
+:::warning BlendShape
 
 BlendShapeは Unity の MorphTarget 機能のことで、区別が付きにくかったためです。
 
-
-```
-
+:::
 
 preset の見直し
 

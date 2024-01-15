@@ -29,9 +29,3 @@ UniGLTF では `unlit`, `standard` の２種類をサポートしています。
 | ✅        | VRM/MToon                           | extensions.VRM.materialProperties | VRM/MToon        |                                    |
 | 🚧       | VRM10/MToon10                       | VRMC_materials_mtoon              | VRM10/MToon10    |                                    |
 
-```{toctree}
-:maxdepth: 1
-univrm_unlit
-univrm_standard
-shader_mtoon
-```

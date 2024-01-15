@@ -13,9 +13,7 @@ tags: ["unity"]
 | Hierarchy    | Root and its children                                     |
 ## v0.58~
 
-```{figure} /_static/images/vrm/export062_dialog.png
-vrm export
-```
+![vrm export](/images/vrm/export062_dialog.png)
 
 The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/ScriptReference/EditorWindow.html)
 
@@ -25,14 +23,11 @@ The export dialog is based on Unity's [EditorWindow](https://docs.unity3d.com/Sc
 
 Open VRM Exporter Window by `VRM0 -> Export UniVRM-0.XX`
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm_menu
-```
+![vrm_menu](/images/vrm/vrm_menu.jpg)
+
 Previous versions:
 
-```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
-UniVRMExportHumanoid
-```
+![UniVRMExportHumanoid](/images/vrm/UniVRMExportHumanoid.jpg)
 
 * You can directly pick up exportable target in the Project Window. There is no need to put the Prefab in the scene first. 
 
@@ -40,21 +35,15 @@ UniVRMExportHumanoid
 
 * Drag
 
-```{figure} /_static/images/vrm/export058_drag.gif
-vrm export
-```
+![vrm export](/images/vrm/export058_drag.gif)
 
 * Selector
 
-```{figure} /_static/images/vrm/export058_select.gif
-vrm export
-```
+![vrm export](/images/vrm/export058_select.gif)
 
 #### Conditions for Valid ExportRoot
 
-```{figure} /_static/images/vrm/export058_empty.jpg
-vrm export
-```
+![vrm export](/images/vrm/export058_empty.jpg)
 
 The setting screen for ExportRoot will show up if the following conditions are satisfied:
 
@@ -195,9 +184,7 @@ Materials other than Standard, Unlit, MToon will be defaulted to Standard.
 
 ## v0.57
 
-```{figure} /_static/images/vrm/export_dialog_56.jpg
-vrm export
-```
+![vrm export](/images/vrm/export_dialog_56.jpg)
 
 The export dialog is based on Unity's [ScriptableWizard](https://docs.unity3d.com/ScriptReference/ScriptableWizard.html).We will improve it in the later version.
 

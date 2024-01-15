@@ -1,15 +1,10 @@
 # Expression の設定
 
-```{admonition} 旧blendShape
-:class: warning
-
-
+:::warning 旧blendShape
 
 Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しました。
 
-
-```
-
+:::
 
 ## Expression の割り当て設定
 
@@ -27,7 +22,6 @@ Vrm-0.X の BlendShape は、 Vrm-1.0 の Expression に名称を変更しまし
 ### MorphTarget
 
 blend shape のある `SkinnedMeshRenderer` がリストされます。
-
 
 ### List
 #### MorphTarget
@@ -61,10 +55,7 @@ MorphTarget 以外の詳細な設定項目です。
 
 プロシージャルな Expression の値を制御します。
 
-```{admonition} プロシージャルなExpression
-:class: warning
-
-
+:::warning プロシージャルなExpression
 
 アプリケーションが自動的に weight 値を生成することが多いと想定される Expression に対して `プロシージャルなExpression` を定義しました。
 3つのグループ `Blink`, `LookAt`, `Mouth` を設定しています。
@@ -75,25 +66,18 @@ MorphTarget 以外の詳細な設定項目です。
 | LookAt   | VrmコンポーネントのLookAt機能による生成 | LookUp, LookDown, LookLeft, LookRight |
 | Mouth    | 音声やテキスト解析による生成            | Aa, Ih, Ou, Ee, Oh                    |
 
-
-```
-
+:::
 
 プロシージャルな Expression の Weight はシステムにより自動生成されることが想定され、
 その場合既存の Expression Weight との組み合わせで問題が発生する可能性があります。
 
-```{admonition} Expressionの組み合わせで起こる問題の例
-:class: warning
-
-
+:::warning Expressionの組み合わせで起こる問題の例
 
 * 口が開く `happy` と同時に `aa` が適用される => 口が開きすぎて変になる
 * 目を閉じる `sad` と同時に `blink` が適用される => 目が2回閉じて瞼が頬を貫通してしまう
 * `blink` と同時に `lookRight` が適用される => 目が瞼を貫通してしまう
 
-
-```
-
+:::
 
 組み合わせ問題を回避するために自動生成される `Blink`, `LookAt`, `Mouth` の Weight 値を加工(Override)する機能です。
 Override 設定した Expression の Weight 値が 0 より大きいときに機能が有効になります。

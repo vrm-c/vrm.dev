@@ -36,15 +36,11 @@ https://github.com/vrm-c/vrm-specification/tree/master/samples
 
 [UniVRM-1.0](/univrm1/)
 
-```{toctree}
-:maxdepth: 1
-changed
-```
-
 ### API
 
-* [VRM-1.0 の API](https://vrm-c.github.io/UniVRM/ja/vrm1/index.html)
+* [VRM-1.0 の API](/api/)
 
 ## 対応アプリケーション
 
 * [アプリケーション](/vrm/vrm_applications/)
+

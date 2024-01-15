@@ -7,11 +7,10 @@
 
 - [\# 1863](https://github.com/vrm-c/UniVRM/pull/1868)
 
-```{admonition} 外力
-:class: info
+:::info 外力
 
 ジャンプや風など、一時的な力の表現を想定した機能です。
-```
+:::
 
 ```csharp
 VRM10Instance instance;
@@ -23,11 +22,10 @@ instance.Runtime.ExternalForce = new Vector3(0.1f, 0, 0);
 
 ## `v0.106.0` SpringBone の手動更新
 
-```{admonition} 手動更新
-:class: info
+:::info 手動更新
 
 開始前に処理を回して SpringBone を安定させるなど、特殊用途向けです。
-```
+:::
 
 * FastSpringBoneService.UpdateTypes.Manual を追加
 * FastSpringBoneService.ManualUpdate を追加

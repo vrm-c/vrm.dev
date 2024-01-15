@@ -29,21 +29,16 @@ Assets に作業用のフォルダ `Assets/seedsan/fbx` を作ります。
 
 `new_seedsan.fbx` を `Assets/seedsan/fbx` に import します。
 
-```{admonition} fbx import
-:class: note
+:::note fbx import
 
-
-
-import した fbx シーンに出しました。
+`import` した fbx シーンに出しました。
 
 ![img](/images/vrm10/tutorial/fbx_import.jpg)
 
 テクスチャの割り当てが一部うまくいきませんでした。
 次の手順で修正します。
 
-
-```
-
+:::
 
 ## material の調整
 
@@ -51,19 +46,14 @@ import した fbx シーンに出しました。
 
 `import` した状態では material が SubAsset なっていて設定を変更することができません。
 
-```{admonition} subasset
-:class: note
-
-
+:::note subasset
 
 subasset というのは asset の子アセットでファイルとして独立していません。
 また、設定を変更できないので inspector がグレーアウトしています。
 
 ![img](/images/vrm10/tutorial/embedded_subasset.jpg)
 
-
-```
-
+:::
 
 subasset を取り出します。
 
@@ -76,18 +66,13 @@ fbx の subasset であった material が指定したフォルダの中に取�
 
 ![img](/images/vrm10/tutorial/extracted.jpg)
 
-```{admonition} fbx reset
-:class: note
-
-
+:::note fbx reset
 
 fbx を初期状態に戻すには ⚙メニューから `reset` でできます。
 
 ![img](/images/vrm10/tutorial/fbx_reset.jpg)
 
-
-```
-
+:::
 
 ### material の修正
 
@@ -128,16 +113,11 @@ seedsan の 各マテリアルの texture は下記のとおりです。
 head を選択して、`SkinnedMeshRenderer` のインスペクタを表示します。
 `BlendShapes` を開いて、スライダーを操作して確認します。
 
-```{admonition} 法線確認
-:class: note
-
-
+:::note 法線確認
 
 blend shape の法線を確認したいので、shader は Standard のままにしています。
 
-
-```
-
+:::
 
 それほど目だないのですが唇の印影が付きすぎています。
 
@@ -174,17 +154,12 @@ fbx importer の自動割り当てで `jaw` (顎) ボーンに `hair_A` が割�
 
 割り当てを削除して 右下の 'Done` ボタン押します。
 
-```{admonition} jaw ボーンにご注意
-:class: warning
-
-
+:::warning jaw ボーンにご注意
 
 fbx の自動割り当てで前髪などが誤って `jaw` に割り当てられることがよくあります。
 前髪が変な動きをする場合、これが原因のことがあります。
 
-
-```
-
+:::
 
 ## VRM1 としてエクスポートします
 

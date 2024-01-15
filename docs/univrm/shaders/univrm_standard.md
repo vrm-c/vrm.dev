@@ -12,11 +12,10 @@ aliases: ["/univrm/shaders/standard/"]
 
 `UniVRM` uses Unity's standard` Standard shader` instead of creating your own shader for PBR.
 
-```{admonition} Reflects shiny
-:class: warning
+:::warning Reflects shiny
 
 The Shader type is `Standard` (Unity standard) and the `metallic` and `smooth` values ​​are high.If you set the material shader to `Unlit/UniUnlit`, the texture can be displayed as it is.
-```
+:::
 
 ## Correspondence table of Metallic, Roughness, Occlusion
 
@@ -26,8 +25,7 @@ The Shader type is `Standard` (Unity standard) and the `metallic` and `smooth` v
 | Roughness | pbrMetallicRoughness.metallicRoughnessTexture | G | A | _MetallicGlossMap (smoothness = 1 - roughness) |
 | Metallic  | pbrMetallicRoughness.metallicRoughnessTexture | B | R | _OcclusionMap                                  |
 
-```{admonition} MetallicSmoothOcclusion Combine textures into one 
-:class: warning
+:::warning MetallicSmoothOcclusion Combine textures into one 
 
 `v0.69.0`
 
@@ -39,5 +37,5 @@ The Shader type is `Standard` (Unity standard) and the `metallic` and `smooth` v
 * import: Convert and import two textures, one for _MetallicGlossMap and one for _OcclusionMap
 * export: Convert two textures from Standard's _MetallicGlossMap and _OcclusionMap and export
 
-```
+:::
 

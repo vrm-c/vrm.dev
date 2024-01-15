@@ -9,7 +9,8 @@ VR アプリで FistPerson の設定に合わせて、可視設定を反映す�
 
 の描画を例示します。
 
-```{gitinclude} v0.87.0 Assets/VRM_Samples/FirstPersonSample/VRMRuntimeLoader.cs
+```
+{gitinclude} v0.87.0 Assets/VRM_Samples/FirstPersonSample/VRMRuntimeLoader.cs
 :language: csharp
 :linenos:
 :lines: 31-53

@@ -59,13 +59,10 @@ We recommend dividing the mesh into the head and body at the avatar creation sta
 * Specify `ThirdPersonOnly` for `Head`
 * Specify `Both` for `Body`
 
-```{figure} /_static/images/vrm/firstperson.png
-Alicia's `Body` is set as `Both`, while the parts related to `Head` are set as `ThirdPersonOnly`.
-```
 
-```{figure} /_static/images/vrm/firstperson_runtime.png
-The meshes with `ThirdPersonOnly` setting are not rendered in FirstPerson.
-```
+![Alicia's `Body` is set as `Both`, while the parts related to `Head` are set as `ThirdPersonOnly`.](/images/vrm/firstperson.png)
+
+![The meshes with `ThirdPersonOnly` setting are not rendered in FirstPerson.](/images/vrm/firstperson_runtime.png)
 
 ## VR Visibility Setting
 
@@ -85,7 +82,5 @@ Export may fail when the reference becomes `Missing` when the configuration of t
 
 Click the `gear icon ⚙` on the upper right corner of `VRM First Person(Script)` inspector and select `Reset` shown as follow:
 
-```{figure} /_static/images/vrm/firstperson_reset.gif
-firstperson を reset
-```
+![firstperson を reset](/images/vrm/firstperson_reset.gif)
 

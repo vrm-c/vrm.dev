@@ -10,13 +10,11 @@ tags: ["unity"]
 
 ### 1 Create an empty project in Unity
 
-```{figure} /_static/images/vrm/unity_new_project.png
-```
+![figure](/images/vrm/unity_new_project.png)
 
 Or
 
-```{figure} /_static/images/vrm/new_project.jpg
-```
+![figure](/images/vrm/new_project.jpg)
 
 Launch Unity and create a new project (`New -> Create project`):
 
@@ -24,26 +22,23 @@ Launch Unity and create a new project (`New -> Create project`):
 
 **To replace UniVRM with a newer version, it is recommended to delete the existing VRM, UniGLTF, VRMShaders and MeshUtility folders (if any) before package import**.
 
-```{figure} /_static/images/vrm/package_import.jpg
-package_import
-```
+![package_import](/images/vrm/package_import.jpg)
 
 ### 3 Import VRM file into Unity
 
 **Drag and drop a VRM file (~.vrm) into the Assets folder**. The **prefab** file associated with the VRM file can be automatically generated.
 
-```{figure} /_static/images/vrm/vrm_prefab.png
+![figure](/images/vrm/vrm_prefab.png)
 ```
 
 Create a new scene by `File` - `New Scene` or use an existing one, then drag the prefab file to the Hierarchy window. The model can be visualized as shown in the image below:
 
-```{figure} /_static/images/vrm/alicia_scene2.png
+![figure](/images/vrm/alicia_scene2.png)
 ```
 
 By clicking the prefab's GameObject in `Hierarchy`, the VRM model's information will be displayed in the Inspector window. Note that spring bone settings can be found in the GameObject named `secondary`.
 
-```{figure} /_static/images/vrm/vrm_settings.png
-```
+![figure](/images/vrm/vrm_settings.png)
 
 ## Related Sections
 

@@ -26,9 +26,3 @@ RunTime の VRM ヒエラルキーにアタッチされるコンポーネント
 * VrmSpringBone
 * VrmConstraint
 
-```{toctree}
-:maxdepth: 1
-vrm1_tutorial/index
-migrate_vrm0/index
-import/index
-```

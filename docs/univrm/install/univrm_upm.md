@@ -22,11 +22,10 @@ If git is not installed, the error messages like below will be shown:
 Project has invalid dependencies:
 com.vrmc.vrmshaders: No 'git' executable was found. Please install Git on your system then restart Unity and Unity Hub
 
-```{admonition} Check whether git.exe can be found on your machine
-:class: warning
+:::warning Check whether git.exe can be found on your machine
 
 As mentioned above, install [Git client](https://git-scm.com/) and get the directory of git.exe (by default, git.exe is in `C:\\Program Files\\Git\\cmd`). Then, add it to the PATH system environment variable.
-```
+:::
 
 * To check the git version, for instance, open Windows PowerShell and type the command `git --version`:
 
@@ -37,13 +36,9 @@ git version 2.29.2.windows.2
 
 ## Install using UnityPackageManager window
 
-```{figure} /_static/images/vrm10/menu_packagemanager.jpg
-UnityPackageManagerのWindow
-```
+![UnityPackageManagerのWindow](/images/vrm10/menu_packagemanager.jpg)
 
-```{figure} /_static/images/vrm10/from_git.jpg
-add package from git URL
-```
+![add package from git URL](/images/vrm10/from_git.jpg)
 
 Whenever a new UniVRM version comes out, we will post git urls associated with this release.
 
@@ -55,8 +50,7 @@ For example, the git urls of [v0.66.0](https://github.com/vrm-c/UniVRM/releases/
 
 Since there is no function that can automatically download the dependencies between packages, please add above git urls in order.
 
-```{figure} /_static/images/vrm/upm_package.jpg
-```
+![figure](/images/vrm/upm_package.jpg)
 
 By changing the version number, you can switch to different version based on your needs.
 
