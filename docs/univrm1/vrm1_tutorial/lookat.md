@@ -2,7 +2,7 @@
 
 [VrmObject](/univrm1/vrm1_tutorial/vrm_object) の LookAt GUI で設定します。
 
-![img](/_static/images/vrm10/tutorial/vrm_lookat_settings.jpg)
+![img](/images/vrm10/tutorial/vrm_lookat_settings.jpg)
 
 VRM ３種類の LookAt をサポートしています。
 モデルに応じて、以下の３種類の何れかの設定をしてください。
@@ -14,12 +14,12 @@ VRM ３種類の LookAt をサポートしています。
 以下の項目が関連します。
 
 humanoid に eye ボーンが存在する。
-![img](/_static/images/vrm10/tutorial/alicia_humanoid.jpg)
+![img](/images/vrm10/tutorial/alicia_humanoid.jpg)
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Bone` を指定。
-![img](/_static/images/vrm10/tutorial/lookat_bone.jpg)
+![img](/images/vrm10/tutorial/lookat_bone.jpg)
 
-![img](/_static/images/vrm10/tutorial/lookat_bone_anim.gif)
+![img](/images/vrm10/tutorial/lookat_bone_anim.gif)
 
 
 動作確認 の項に進んでください。
@@ -30,16 +30,16 @@ humanoid に eye ボーンが存在する。
 
 | preset      | expression                                                      |
 |-------------|-----------------------------------------------------------------|
-| `LookLeft`  | ![img](/_static/images/vrm10/tutorial/expression_lookleft.jpg)  |
-| `LookRight` | ![img](/_static/images/vrm10/tutorial/expression_lookright.jpg) |
-| `LookUp`    | ![img](/_static/images/vrm10/tutorial/expression_lookup.jpg)    |
-| `LookDown`  | ![img](/_static/images/vrm10/tutorial/expression_lookdown.jpg)  |
+| `LookLeft`  | ![img](/images/vrm10/tutorial/expression_lookleft.jpg)  |
+| `LookRight` | ![img](/images/vrm10/tutorial/expression_lookright.jpg) |
+| `LookUp`    | ![img](/images/vrm10/tutorial/expression_lookup.jpg)    |
+| `LookDown`  | ![img](/images/vrm10/tutorial/expression_lookdown.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
-![img](/_static/images/vrm10/tutorial/lookat_expression.jpg)
+![img](/images/vrm10/tutorial/lookat_expression.jpg)
 `Y Range` に 1 を設定
 
-![img](/_static/images/vrm10/tutorial/lookat_expression_anim.gif)
+![img](/images/vrm10/tutorial/lookat_expression_anim.gif)
 
 
 動作確認 の項に進んでください。
@@ -52,16 +52,16 @@ humanoid に eye ボーンが存在する。
 
 | preset      | expression                                          |
 |-------------|-----------------------------------------------------|
-| `LookLeft`  | ![img](/_static/images/vrm10/tutorial/uv_left.jpg)  |
-| `LookRight` | ![img](/_static/images/vrm10/tutorial/uv_right.jpg) |
-| `LookUp`    | ![img](/_static/images/vrm10/tutorial/uv_up.jpg)    |
-| `LookDown`  | ![img](/_static/images/vrm10/tutorial/uv_down.jpg)  |
+| `LookLeft`  | ![img](/images/vrm10/tutorial/uv_left.jpg)  |
+| `LookRight` | ![img](/images/vrm10/tutorial/uv_right.jpg) |
+| `LookUp`    | ![img](/images/vrm10/tutorial/uv_up.jpg)    |
+| `LookDown`  | ![img](/images/vrm10/tutorial/uv_down.jpg)  |
 
 `VrmObject` の `LookAt` 設定で `LookAtType` に `Expression` を指定。
-![img](/_static/images/vrm10/tutorial/lookat_expression.jpg)
+![img](/images/vrm10/tutorial/lookat_expression.jpg)
 `Y Range` に 1 を設定
 
-![img](/_static/images/vrm10/tutorial/lookat_uv_anim.gif)
+![img](/images/vrm10/tutorial/lookat_uv_anim.gif)
 
 ## 動作確認
 
@@ -69,7 +69,7 @@ humanoid に eye ボーンが存在する。
 * VrmController の Gaze にセット
 * VrmController の LookAtTargetType に `Calc Yaw Pitch To Gaze` を設定(デフォルト)
 
-![img](/_static/images/vrm10/tutorial/lookat_targettype.jpg)
+![img](/images/vrm10/tutorial/lookat_targettype.jpg)
 
 * Play
 * Cube を動かして目が動くことを確認
