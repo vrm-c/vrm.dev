@@ -9,14 +9,11 @@ tags: ["unity"]
 ## BlendShape関連のアセット
 VRMをImportすると、`モデル名から拡張子を除いた名前 + BlendShapes` フォルダにPresetを表すBlendShapeClipが作成されます。
 
-```{figure} /_static/images/wiki/blendshapeclip_assets.png
-```
+![figure](/images/wiki/blendshapeclip_assets.png)
 
 BlendShapeAvatarアセット。
 
-```{figure} /_static/images/wiki/blendshapeavatar.png
-```
-
+![figure](/images/wiki/blendshapeavatar.png)
 
 ## 設定画面
 アセットには以下の設定画面があります。
@@ -27,15 +24,13 @@ BlendShapeAvatarアセット。
 
 BlendShapeClip選択・設定作成
 
-```{figure} /_static/images/wiki/select_blendshapeavatar.png
-```
+![figure](/images/wiki/select_blendshapeavatar.png)
 
 #### Listタブ(v0.45から)
 
 BlendShapeClipのリスト
 
-```{figure} /_static/images/wiki/list.png
-```
+![figure](/images/wiki/list.png)
 
 ### BlendShapeClipアセットのインスペクタ。
 
@@ -43,23 +38,20 @@ BlendShapeClipのリスト
 
 設定作成します。
 
-```{figure} /_static/images/wiki/alicia_binary.png
-```
+![figure](/images/wiki/alicia_binary.png)
 
 #### BlendShape Listタブ
 
 BlendShapeタブで作成した値を見ることが出来ます。
 あまり使わない。
 
-```{figure} /_static/images/wiki/blendshape_angry.png
-```
+![figure](/images/wiki/blendshape_angry.png)
 
 #### Material Listタブ
 
 `BlendShapeによる`[LookAt](/univrm/lookat/lookat_blendshape)(後述)や、BlendShapeで色を変える設定を作成することができます。
 
-```{figure} /_static/images/wiki/material_color.png
-```
+![figure](/images/wiki/material_color.png)
 
 ## 各BlendShapeClipの設定
 
@@ -69,13 +61,11 @@ BlendShapeタブで作成した値を見ることが出来ます。
 
 BlendShapeAvatarのインスペクタから選択する
 
-```{figure} /_static/images/wiki/select_blendshapeavatar.png
-```
+![figure](/images/wiki/select_blendshapeavatar.png)
 
 アセットのBlendShapeClipを直接選択する
 
-```{figure} /_static/images/wiki/select_blendshapeclip.png
-```
+![figure](/images/wiki/select_blendshapeclip.png)
 
 ### 2. スライダを操作して顔を作る
 
@@ -94,12 +84,11 @@ BlendShapeAvatarのインスペクタから選択する
 
 ### 中間値を許可しない設定(v0.45)
 
-```{figure} /_static/images/wiki/alicia_binary.png
-```
+![figure](/images/wiki/alicia_binary.png)
 
 スクリーンショットのような記号的表現でBlendShapeの中間値を表示したくない場合を想定して、二値化フラグを追加しました。四捨五入(round)で実装しています。
 
 ロードするアプリケーションがv0.45以降になっていると有効になります。
 
-```{figure} /_static/images/wiki/binary.png
-```
+![figure](/images/wiki/binary.png)
+

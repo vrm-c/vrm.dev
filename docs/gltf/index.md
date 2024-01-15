@@ -32,19 +32,16 @@ aliases: [
 | animation                    | ✅       |        | VRMではサポートしていません                  |
 | camera                       |         |        | UniGLTFではサポートしていません              |
 
-```{figure} /_static/images/vrm/alicia_3dbuilder.png
-:name: VRMのglTF部分を3D Builderで表示する
+![VRMのglTF部分を3D Builderで表示する](/images/vrm/alicia_3dbuilder.png)
 
 拡張子を `.vrm` から `.glb` に変えると、`gltf` 対応のアプリケーション(Windows 10標準搭載の3D Builderなど)でロードできます。
 （ただしVRM独自の設定は反映されません)
-```
 
 ## UniGLTFの全体設定
 
 `Edit - Preferences - UniGLTF`
 
-```{figure} unigltf_preference.jpg
-```
+![figure](./unigltf_preference.jpg)
 
 ### Lang
 
@@ -61,13 +58,4 @@ import / export 時に座標を変換する必要があります。
 
 zip アーカイブの中に gltf が入っている場合に import できるようにします。
 実験的な機能です。
-
-```{toctree}
-:maxdepth: 1
-glb_import
-glb_export
-animation_exporter
-emission_glow
-mesh_utility
-```
 

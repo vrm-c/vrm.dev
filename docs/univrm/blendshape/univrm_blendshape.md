@@ -17,9 +17,7 @@ UniVRM v0.45で導入された新機能は
 
 ## VRMBlendShapeProxy
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxy.png
-実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます
-```
+![実行時のVRMBlendShapeProxyのインスペクタ。Editorをプレイ状態にすると表示されます](/images/vrm/VRMBlendShapeProxy.png)
 
 使い方は、
 
@@ -32,26 +30,18 @@ UniVRM v0.45で導入された新機能は
 
 このアセットのインスペクタで表情設定を作成します。
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyEditor.png
-これをダブルクリックする
-```
+![これをダブルクリックする](/images/vrm/VRMBlendShapeProxyEditor.png)
 
 か
 
-```{figure} /_static/images/vrm/BlendShapeAvatarAsset.png
-これを選択状態にする
-```
+![これを選択状態にする](/images/vrm/BlendShapeAvatarAsset.png)
 
-```{figure} /_static/images/vrm/BlendShapeAvatarEditor.png
-BlendShapeEditorのインスペクタ
-```
+![BlendShapeEditorのインスペクタ](/images/vrm/BlendShapeAvatarEditor.png)
 
 作りたい表情の名前を選択して表示を切り替えます。
 以下、Funを選択した例です。
 
-```{figure} /_static/images/vrm/BlendShapeClip.png
-mouth_smileとeye_smileとeyeblow_smileを100にする
-```
+![mouth_smileとeye_smileとeyeblow_smileを100にする](/images/vrm/BlendShapeClip.png)
 
 画像のように眉毛と目と口のBlendShapeがわかれているBlendShapeをグループ化して名前とプリセットを指定することができます。
 
@@ -59,9 +49,7 @@ Sliderを変更してBlendShapeを作った後はApplyを押して値を記録�
 
 ## BlendShapeのプリセット
 
-```{figure} /_static/images/vrm/BlendShape_Preset.png
-Presetを選択する
-```
+![Presetを選択する](/images/vrm/BlendShape_Preset.png)
 
 BlendShapeClipに対して事前定義された名前です。
 以下のものがあります。
@@ -90,25 +78,18 @@ BlendShapeClipに対して事前定義された名前です。
 
 ## BlendShapeProxyの値を変更する(実行時)
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-Presetを使う
-```
+![Presetを使う](/images/vrm/VRMBlendShapeProxyRuntime.png)
 
 インスペクタから操作できます。
 
-
 ## [オプション]表情を追加する
 
-```{figure} /_static/images/vrm/VRMBlendShapeProxyRuntime.png
-ボタンを押します
-```
+![ボタンを押します](/images/vrm/VRMBlendShapeProxyRuntime.png)
 
 保存ファイルを決めます。
 一番後ろのボタンを選択して名前を入力して設定を作成してください。
 
-```{figure} /_static/images/vrm/BlendShapeClipOption.png
-ボタンを押します
-```
+![ボタンを押します](/images/vrm/BlendShapeClipOption.png)
 
 コードからは以下のように呼び出せます。
 
@@ -119,6 +100,5 @@ proxy.ImmediatelySetValue("びっくり", 1.0f); // 0から1で指定
 
 ## [オプション]マテリアルの色をモーフする
 
-```{figure} /_static/images/vrm/BlendShapeClipMaterial.png
-Materialモーフの設定
-```
+![Materialモーフの設定](/images/vrm/BlendShapeClipMaterial.png)
+

@@ -2,8 +2,7 @@
 
 VRM-1.0 は正規化が仕様から除かれました。
 
-```{admonition} 正規化
-:class: info
+:::info 正規化
 
 正規化とは、ヒエラルキーからの 回転、スケールの除去。
 その状態での Binding 行列再生成。
@@ -11,29 +10,27 @@ VRM-1.0 は正規化が仕様から除かれました。
 
 すべてのノードの回転が 0 のときが初期姿勢(T-Pose)であるという仕様で、
 プログラムから統一的にモデルを操作することが可能でした。
-```
+:::
 
-`v0.103` 正規化されていないモデルも含めて統一的にポーズを付けるインターフェスとして、 `ControlRig` が新規に導入されました。 
+`v0.103` 正規化されていないモデルも含めて統一的にポーズを付けるインターフェスとして、 `ControlRig` が新規に導入されました。
 
 > Vrm10RuntimeControlRig.GetBoneTransform が導入されました。`v0.104` で Animator.getBoneTransform が
-使えるようになったので特に使う必要が無くなりました。
+> 使えるようになったので特に使う必要が無くなりました。
 
 `v0.104` `UnityEngine.Animator.getBoneTransform` が ControlRig のボーンを返すようになりました。
 
-```{admonition} HumanoidAvatar の材料に ControlRig のボーンを使う
-:class: info
+:::info HumanoidAvatar の材料に ControlRig のボーンを使う
 
 ControlRigGenerationOption.Generate の時は、AvatarBuilder.BuildHumanAvatar の引き数にオリジナルのヒエラルキーでは無く、 ControlRig のボーンを渡します。
-```
+:::
 
 ## ControlRig は ランタイムロード時に生成されます
 
-```{admonition} ランタイムロード専用
-:class: warning
+:::warning ランタイムロード専用
 
 `v0.103` 現在この機能は Editor で Asset 生成されたモデルでは動作しません。
-VRMモデルをセットアップするときに邪魔になってしまうので、Editor では生成しないようにしています。
-```
+VRM モデルをセットアップするときに邪魔になってしまうので、Editor では生成しないようにしています。
+:::
 
 デフォルトで ControlRig を生成 `ControlRigGenerationOption.Generate` します。
 `ControlRigGenerationOption.None` は ControlRig を生成しません。
@@ -108,11 +105,9 @@ public void UpdateControlRigImplicit(Animator src)
 
 ## 詳細
 
-```{figure} ./ControlRig.png
-ControlRig
-```
+![ControlRig](./ControlRig.png)
 
-毎フレーム `Vrm10Instance` が `Vrm10RuntimeControlRig` からVRM-1.0のヒエラルキーにポーズをコピーします。
+毎フレーム `Vrm10Instance` が `Vrm10RuntimeControlRig` から VRM-1.0 のヒエラルキーにポーズをコピーします。
 コピーするときに、各関節の回転を初期姿勢を加味したものに加工しています。
 
 `GlobalInit.Inverse * localPose * GlobalInit` という式がロジックです。

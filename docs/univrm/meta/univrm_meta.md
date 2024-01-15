@@ -9,9 +9,7 @@ tags: ["unity"]
 
 ## VRMMeta
 
-```{figure} /_static/images/vrm/meta_new.jpg
-VRMMetaコンポーネント
-```
+![VRMMetaコンポーネント](/images/vrm/meta_new.jpg)
 
 ### 情報(Information)
 #### タイトル(Title)

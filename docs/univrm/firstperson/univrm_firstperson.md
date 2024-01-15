@@ -58,13 +58,9 @@ HMD以外に出力される映像・配信用映像・鏡・マルチプレイ�
 * 頭に `ThirdPersonOnly` を指定
 * 体に `Both` を指定
 
-```{figure} /_static/images/vrm/firstperson.png
-立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します。
-```
+![立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します](/images/vrm/firstperson.png)
 
-```{figure} /_static/images/vrm/firstperson_runtime.png
-動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。
-```
+![動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました](/images/vrm/firstperson_runtime.png)
 
 ## Autoの可視設定
 
@@ -86,6 +82,5 @@ FirstPerson は初期設定で Auto を指定しますが、エクスポート�
 
 `VRM First Person (Script)` インスペクタの右上の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
 
-```{figure} /_static/images/vrm/firstperson_reset.gif
-firstperson を reset
-```
+![firstperson を reset](/images/vrm/firstperson_reset.gif)
+
