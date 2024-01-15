@@ -14,18 +14,13 @@ https://github.com/vrm-c/UniVRM/releases
 から最新版をダウンロードしてください。
 ファイル名は、`UniVRM-0.XX.0_YYYY.unitypackage` です。
 
-```{admonition} XX YY
-:class: note
-
+:::note XX YY
 
 XX は UniVRM のバージョン。YYYY は バージョン識別 ID です。
 
-```
+![download_unitypackage](/images/vrm/download_unitypackage.png)
 
-```{figure} /_static/images/vrm/download_unitypackage.png
-
-download_unitypackage
-```
+:::
 
 ## Unity をインストールする
 
@@ -38,13 +33,11 @@ UniVRMの対応するバージョンの Unity をインストールしてくだ�
 
 ## Unityで空のプロジェクトを作る
 
-```{figure} /_static/images/vrm/unity_new_project.png
-```
+![figure](/images/vrm/unity_new_project.png)
 
 もしくは
 
-```{figure} /_static/images/vrm/new_project.jpg
-```
+![figure](/images/vrm/new_project.jpg)
 
 Unityを起動し、プロジェクトを新規作成します。New→Create projectをクリック。
 
@@ -53,9 +46,7 @@ Unityを起動し、プロジェクトを新規作成します。New→Create pr
 メニューの `Assets` - `Import pacakge` - `Custom Package` を選択して、
 ダウンロードした `UniVRM-0.XX.0_YYYY.unitypackage` を選んでください。
 
-```{figure} /_static/images/vrm/package_import.jpg
-package_import
-```
+![package_import](/images/vrm/package_import.jpg)
 
 右下の `import` ボタンを押します。
 
@@ -63,36 +54,25 @@ package_import
 
 VRM menu が表示されていれば動作しています：
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm menu
-```
+![vrm menu](/images/vrm/vrm_menu.jpg)
 
-```{figure} /_static/images/vrm/vrm_menu_old.jpg
-前のバージョン
-```
+![前のバージョン](/images/vrm/vrm_menu_old.jpg)
 
-```{admonition} Unity-2018 で menu が出てこない場合
-:class: warning
-
+:::warning Unity-2018 で menu が出てこない場合
 
 `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` になっていることを確認してください
 
-```
-
+:::
 
 ### Console
 
 Console を表示させると、Unity のエラーメッセージが見れます。
 
-```{figure} /_static/images/vrm/show_console.jpg
-show console
-```
+![show console](/images/vrm/show_console.jpg)
 
 Console左上の clear ボタンを押して赤いメッセージが消えない場合は unitypackage のインストールに失敗しているなど、unity project に異常があります。
 
-```{figure} /_static/images/vrm/error_in_console.jpg
-clear console
-```
+![clear console](/images/vrm/error_in_console.jpg)
 
 ## Manual
 
