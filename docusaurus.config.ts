@@ -117,9 +117,10 @@ const config: Config = {
           position: 'right',
         },
         {
-          label: 'GitHub',
           href: 'https://github.com/vrm-c/vrm.dev',
           position: 'right',
+          className: "github-link icon-black",
+          "aria-label": "GitHub repository",
         },
       ],
     },
@@ -127,15 +128,57 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'More',
+          title: 'VRM Consortium',
           items: [
+            {
+              label: 'VRM Consortium',
+              href: 'https://vrm-consortium.org',
+            },
+            {
+              label: 'vrm.dev(This site)',
+              href: 'https://github.com/vrm-c/vrm.dev',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+            {
+              label: 'vrm.dev.en (English translation)',
+              href: 'https://github.com/vrm-c/vrm.dev.en',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+            {
+              label: 'vrm-specification',
+              href: 'https://github.com/vrm-c/vrm-specification',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+          ]
+        },
+        {
+          title: 'UniVRM',
+          items: [
+            {
+              label: 'UniVRM',
+              href: 'https://github.com/vrm-c/UniVRM',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
             {
               label: 'ReleaseNote',
               to: '/release',
             },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'glTF',
+              href: 'https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io',
             },
           ],
         },
@@ -144,7 +187,7 @@ const config: Config = {
     },
     prism: {
       // theme: prismThemes.github,
-      theme: prismThemes.xonokai,
+      theme: prismThemes.duotoneLight,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['csharp'],
     },
