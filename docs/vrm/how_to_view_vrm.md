@@ -6,7 +6,7 @@ weight: 3
 
 # Import VRM into Viewer
 
-VRM viewers [can be found here](/vrm/vrm_applications#viewer).
+VRM viewers [can be found here](/showcase).
 
 or you can use the viewer in [UniVRMTest](https://github.com/vrm-c/UniVRMTest/):
 

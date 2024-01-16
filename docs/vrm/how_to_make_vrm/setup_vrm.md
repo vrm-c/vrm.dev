@@ -67,4 +67,5 @@ in Hierarchy if a mesh's rotation or scale is not Default (first VRM export or a
 
 ### Done!
 
-Your VRM file is good to go. Try to import the VRM file into [applications](/vrm/vrm_applications) that support VRM!
+Your VRM file is good to go. Try to import the VRM file into [applications](/showcase) that support VRM!
+
