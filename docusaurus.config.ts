@@ -62,9 +62,22 @@ const config: Config = {
       },
       items: [
         {
-          label: 'vrmについて',
+          label: 'VRM',
           type: 'docSidebar',
           sidebarId: 'vrmSidebar',
+          position: 'left',
+        },
+        { to: '/showcase', label: 'ShowCase', position: 'left' },
+        {
+          label: 'VRM-1.0',
+          type: 'docSidebar',
+          sidebarId: 'vrm1Sidebar',
+          position: 'left',
+        },
+        {
+          label: 'UniVRM-1.0',
+          type: 'docSidebar',
+          sidebarId: 'univrm1Sidebar',
           position: 'left',
         },
         {
@@ -79,18 +92,7 @@ const config: Config = {
           sidebarId: 'gltfSidebar',
           position: 'left',
         },
-        {
-          label: 'Vrm-1.0',
-          type: 'docSidebar',
-          sidebarId: 'vrm1Sidebar',
-          position: 'left',
-        },
-        {
-          label: 'UniVRM-1.0',
-          type: 'docSidebar',
-          sidebarId: 'univrm1Sidebar',
-          position: 'left',
-        },
+        { to: '/tags', label: 'Tags', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         //
         {
