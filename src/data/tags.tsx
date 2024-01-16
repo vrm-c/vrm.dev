@@ -2,15 +2,15 @@ export type TagType =
   | 'CharacterPlatform'
   | 'CharacterCreation'
   | 'ImporterExporter'
-  | 'Broadcaster'
+  | 'Streaming'
   | 'MotionCapture'
   | 'Animation'
-  | 'Photograph'
+  | 'Photography'
   | 'Metaverse'
   | 'Game'
   | 'WebBrowser'
   | 'Viewer'
-  | 'UsingInternal'
+  | 'UsingInternally'
   | 'Other'
   ;
 
@@ -24,12 +24,12 @@ export type Tag = {
 export const Tags: { [type in TagType]: Tag } = {
   'CharacterPlatform': {
     ja: '3Dキャラクターのプラットフォーム',
-    en: '3D character platform',
+    en: 'Platform for 3D models',
     color: '#e9669e',
   },
   'CharacterCreation': {
     ja: 'キャラメイクツール',
-    en: '3D character creation',
+    en: 'Character maker',
     color: '#dfd545',
   },
   'ImporterExporter': {
@@ -37,9 +37,9 @@ export const Tags: { [type in TagType]: Tag } = {
     en: 'Plugin',
     color: '#39ca30',
   },
-  'Broadcaster': {
+  'Streaming': {
     ja: '配信ツール',
-    en: 'broadcaster',
+    en: 'Live streaming tool',
     color: '#a44fb7',
   },
   'MotionCapture': {
@@ -52,9 +52,9 @@ export const Tags: { [type in TagType]: Tag } = {
     en: 'Animation',
     color: '#fe6829',
   },
-  'Photograph': {
+  'Photography': {
     ja: '撮影',
-    en: 'Photograph',
+    en: 'Photography',
     color: '#8c2f00',
   },
   'Metaverse': {
@@ -77,9 +77,9 @@ export const Tags: { [type in TagType]: Tag } = {
     en: 'Viewer',
     color: '#ed62ff',
   },
-  'UsingInternal': {
-    ja: '内部でVrmを使っている',
-    en: 'UseInternal',
+  'UsingInternally': {
+    ja: '内部でVRMを使っている',
+    en: 'Using VRM internally',
     color: '#f34545',
   },
   'Other': {
