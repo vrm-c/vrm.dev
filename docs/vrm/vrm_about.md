@@ -60,7 +60,7 @@ VRMでは「人型」の「キャラクター・アバター」を取り扱う�
 ![VRM applications](/images/vrm/VRM_WorldConnect_jp.png)
 
 
- ➡️ [VRMファイルが使えるアプリケーション](/vrm/vrm_applications)
+ ➡️ [VRMファイルが使えるアプリケーション](/showcase)
 
 ## VRMの特徴
 

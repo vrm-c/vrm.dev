@@ -70,7 +70,7 @@ export default function LocaleDropdownNavbarItem({
       }
       items={[
         {
-          label: `英語`,
+          label: 'English',
           lang: "en",
           to,
           target: '_self',

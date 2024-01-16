@@ -42,5 +42,5 @@ https://github.com/vrm-c/vrm-specification/tree/master/samples
 
 ## 対応アプリケーション
 
-* [アプリケーション](/vrm/vrm_applications/)
+* [アプリケーション](/showcase)
 

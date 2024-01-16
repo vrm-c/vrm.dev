@@ -62,9 +62,22 @@ const config: Config = {
       },
       items: [
         {
-          label: 'vrmについて',
+          label: 'VRM',
           type: 'docSidebar',
           sidebarId: 'vrmSidebar',
+          position: 'left',
+        },
+        { to: '/showcase', label: 'ShowCase', position: 'left' },
+        {
+          label: 'VRM-1.0',
+          type: 'docSidebar',
+          sidebarId: 'vrm1Sidebar',
+          position: 'left',
+        },
+        {
+          label: 'UniVRM-1.0',
+          type: 'docSidebar',
+          sidebarId: 'univrm1Sidebar',
           position: 'left',
         },
         {
@@ -79,18 +92,7 @@ const config: Config = {
           sidebarId: 'gltfSidebar',
           position: 'left',
         },
-        {
-          label: 'Vrm-1.0',
-          type: 'docSidebar',
-          sidebarId: 'vrm1Sidebar',
-          position: 'left',
-        },
-        {
-          label: 'UniVRM-1.0',
-          type: 'docSidebar',
-          sidebarId: 'univrm1Sidebar',
-          position: 'left',
-        },
+        { to: '/tags', label: 'Tags', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         //
         {
@@ -117,9 +119,10 @@ const config: Config = {
           position: 'right',
         },
         {
-          label: 'GitHub',
           href: 'https://github.com/vrm-c/vrm.dev',
           position: 'right',
+          className: "github-link icon-black",
+          "aria-label": "GitHub repository",
         },
       ],
     },
@@ -127,15 +130,57 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'More',
+          title: 'VRM Consortium',
           items: [
+            {
+              label: 'VRM Consortium',
+              href: 'https://vrm-consortium.org',
+            },
+            {
+              label: 'vrm.dev(This site)',
+              href: 'https://github.com/vrm-c/vrm.dev',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+            {
+              label: 'vrm.dev.en (English translation)',
+              href: 'https://github.com/vrm-c/vrm.dev.en',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+            {
+              label: 'vrm-specification',
+              href: 'https://github.com/vrm-c/vrm-specification',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
+          ]
+        },
+        {
+          title: 'UniVRM',
+          items: [
+            {
+              label: 'UniVRM',
+              href: 'https://github.com/vrm-c/UniVRM',
+              className: "footer__link-item github-link icon-white",
+              "aria-label": "GitHub repository",
+            },
             {
               label: 'ReleaseNote',
               to: '/release',
             },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'glTF',
+              href: 'https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io',
             },
           ],
         },
@@ -143,18 +188,25 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} VRM Consortium. Built with Docusaurus.`,
     },
     prism: {
-      // theme: prismThemes.github,
-      theme: prismThemes.xonokai,
+      theme: prismThemes.duotoneLight,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/showcase',
+            from: '/vrm/vrm_application/',
+          },
+        ],
+      },
+    ],
+  ],
 };
-
-
-// for debug
-// config.url = 'https://ousttrue.github.io';
-// config.baseUrl = '/vrm.dev/';
-
 
 export default config;
