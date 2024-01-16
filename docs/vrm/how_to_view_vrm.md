@@ -6,7 +6,7 @@ weight: 3
 
 # ビューアでVRMをインポートする
 
-VRMビューアアプリは[こちら](/vrm/vrm_applications)。
+VRMビューアアプリは[こちら](/showcase)。
 
 または[UniVRMTest](https://github.com/vrm-c/UniVRMTest/)のビューアを使用できます：
 

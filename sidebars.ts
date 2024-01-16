@@ -28,7 +28,6 @@ const sidebars: SidebarsConfig = {
         ],
       },
       { type: 'doc', id: 'vrm/how_to_view_vrm' },
-      { type: 'doc', id: 'vrm/vrm_applications' },
       { type: 'doc', id: 'vrm/vrm_meta' },
       { type: 'doc', id: 'vrm/vrm_development' },
     ],

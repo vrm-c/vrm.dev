@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from '@theme/Layout';
-import Markdown from 'https://esm.sh/react-markdown@9'
+import Markdown from 'react-markdown'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import {
