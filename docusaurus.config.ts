@@ -188,18 +188,25 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} VRM Consortium. Built with Docusaurus.`,
     },
     prism: {
-      // theme: prismThemes.github,
       theme: prismThemes.duotoneLight,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/showcase',
+            from: '/vrm/vrm_application/',
+          },
+        ],
+      },
+    ],
+  ],
 };
-
-
-// for debug
-// config.url = 'https://ousttrue.github.io';
-// config.baseUrl = '/vrm.dev/';
-
 
 export default config;
