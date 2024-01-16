@@ -63,7 +63,7 @@ Live streaming, video creation, games, chat.... The virtual worlds are not conne
 
 ![VRM applications](/images/vrm/VRM_WorldConnect_jp.png)
 
-➡️ [Applications that support VRM](/vrm/vrm_applications)
+➡️ [Applications that support VRM](/showcase)
 
 ## VRM features
 
