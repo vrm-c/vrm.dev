@@ -96,6 +96,12 @@ const config: Config = {
         { to: '/blog', label: 'Blog', position: 'left' },
         //
         {
+          label: 'Site',
+          type: 'docSidebar',
+          sidebarId: 'siteSidebar',
+          position: 'right',
+        },
+        {
           label: 'UniHumanoid',
           type: 'docSidebar',
           sidebarId: 'unihumanoidSidebar',
