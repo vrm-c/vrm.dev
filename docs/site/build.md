@@ -1,15 +1,15 @@
-# ビルド
+# Build the site
 
-github-action でビルドしています。 
+We are building with github-action.
 
 https://github.com/vrm-c/vrm.dev/blob/master/.github/workflows/docusaurus.yml
 
-- vrm.dev の master 更新でトリガーします
-- TODO: vrm.dev.en が更新された場合にトリガーする方法
+- build is triggered on master update of vrm.dev
+- TODO: How to trigger build if vrm.dev.en is updated
 
 ## build sequence
 
-- vrm.dev をビルド => `/build`
-- vrm.dev.en をビルド => `build/en`(master head)
-- gh-pages に `/build` を deploy
+- Build the vrm.dev => `/build`
+- Buidl the vrm.dev.en => `build/en`(master head)
+- Deploy the `/build` to gh-pages
 

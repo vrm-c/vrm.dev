@@ -1,17 +1,17 @@
-# 記事更新
+# Update articles
 
-## vrm.dev への Pull Request の送りかた
+## How to send a pull request to vrm.dev
 
-markdown 記事をこちらに pull request してください。
+Please submit a pull request for the markdown article here.
 
 https://github.com/vrm-c/vrm.dev/pulls
 
-## vrm.dev.en への Pull Request の送りかた
+## How to send a pull request to vrm.dev.en
 
-markdown 記事の英訳をこちらに pull request してください。
+Please submit a pull request here for an English translation of the markdown article.
 
 https://github.com/vrm-c/vrm.dev.en/pulls
 
-`vrm.dev` と `vrm.dev.en` のどちらか迷う場合は
-`vrm.dev` に送ってください。
+If you are confused between `vrm.dev` and `vrm.dev.en`,
+Please send it to `vrm.dev`.
 

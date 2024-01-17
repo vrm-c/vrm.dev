@@ -1,66 +1,66 @@
-# 翻訳
+# Translation
 
-言語ごとに 別の docusaurus リポジトリを個別に運営しています。
-日本語を原本として、英語版を fork しています。
+We maintain separate docusaurus repositories for each language.
+The Japanese version is the original, and the English version is forked.
 
-:::note sphinx の gettext 方式を fork 方式に変更しました
+:::note Changed sphinx's gettext method to fork method
 
-参考 [オープンソースドキュメント翻訳プラットフォームとしての GitHub (React 日本語ドキュメントの例)](https://zenn.dev/smikitky/articles/0d250f7367eda9)
+Reference [GitHub as an open source document translation platform (React Japanese documentation example)](https://zenn.dev/smikitky/articles/0d250f7367eda9)
 
 :::
 
-## 日本語
+## Japnanese
 
 https://github.com/vrm-c/vrm.dev
 
-日本語を原本サイトとして https://vrm.dev にデプロイします。
+Deploy the Japanese version to https://vrm.dev as the base site.
 
-## 英語
+## English
 
 https://github.com/vrm-c/vrm.dev.en
 
-英語版を https://vrm.dev/en にデプロイします。
+Deploy the English version to https://vrm.dev/en.
 
-:::note github-action でまとめてビルド
+:::note Build all at once with github-action
 
-日本語サイトをビルド時に
-`/en` ディレクトリにビルドしています。
+When building a Japanese site
+It is built in the `/en` directory.
 
 :::
 
-## 翻訳手順
+## Translation sequence
 
-- vrm.dev の内容が更新される
-- vrm.dev の更新を vrm.dev.en に反映する(fetch merge して push する)。この作業は、`vrm.dev` の管理者が定期的(毎週？)に実行します
-  - 未訳部分が増えます
-  - conflict する場合があるが、docusaurus のビルドが通る場合は そのまま commit してよい。TODO: 自動化
-- vrm.dev.en に未訳部分を英訳したり、英文の更新 PullReq を送る
+- The contents of vrm.dev are updated
+- Reflect updates in vrm.dev to vrm.dev.en (fetch merge and push). This task is performed regularly (weekly?) by the `vrm.dev` administrator.
+  - Untranslated parts will increase
+  - There may be a conflict, but if the docusaurus build passes, you can just commit. TODO: Automate
+- Translate untranslated parts into English or send an English update PullReq to vrm.dev.en
 
-## 作業例(github の website 上)
+## Example (on the github website)
 
-TODO: markdown ひとつだけならこれでもできるはず。
+TODO:
 
-## 作業例(ローカル)
+## Example (Local)
 
-### preview を起動
+### Start preview
 
 ```sh
 $ git clone https://github.com/vrm-c/vrm.dev.en.git
-$ git switch -c fix/EN_TOPIC # 適当な重複しない branch 名をつけてください
+$ git switch -c fix/EN_TOPIC # Please give a suitable and unique branch name
 $ cd vrm.dev.en
 $ npm install
 $ npm run dev
 
-# https://localhost:3000 にアクセス。翻訳記事を見る。
+# Access https://localhost:3000. View translated article.
 ```
 
-### エディターで翻訳
+### Translate with editor
 
-push して `pull request`
+Push `pull request`
 
-## 作業例(管理者向け。日本語への追随)
+## Example (For administrators. Follow-up to Japanese)
 
-TODO: bot で自動化
+TODO: bot automation.
 
 ```sh
 $ git clone https://github.com/vrm-c/vrm.dev.en.git
@@ -72,8 +72,8 @@ $ git fetch ja master
 $ git merge ja master
 $ npm run build
 
-# エラーがある場合は conflict を解決してビルドを通す。
-# build が透る場合は merge を commit して先に進めてよい。
+# If there is an error, resolve the conflict and proceed with the build.
+# If the build is transparent, you can commit the merge and proceed.
 
 $ git commit
 $ git push

@@ -13,12 +13,12 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   vrmSidebar: [{
     type: 'category',
-    label: 'vrmについて',
+    label: 'About VRM',
     items: [
       { type: 'doc', id: 'vrm/vrm_about' },
       {
         type: 'category',
-        label: 'VRMファイルを作ってみたい',
+        label: 'How to make VRM',
         link: { type: 'doc', id: 'vrm/how_to_make_vrm/index' },
         items: [
           { type: 'doc', id: 'vrm/how_to_make_vrm/setup_unity' },
@@ -39,7 +39,7 @@ const sidebars: SidebarsConfig = {
     items: [
       {
         type: 'category',
-        label: 'Install方法',
+        label: 'How to install',
         items: [
           { type: 'doc', id: 'univrm/install/unity_version' },
           { type: 'doc', id: 'univrm/install/univrm_install' },
@@ -161,7 +161,7 @@ const sidebars: SidebarsConfig = {
       { type: 'doc', id: 'univrm1/folder_structure' },
       {
         type: 'category',
-        label: 'VRM-1.0モデルを作成する',
+        label: 'How to create VRM-1.0',
         link: { type: 'doc', id: 'univrm1/vrm1_tutorial/index' },
         items: [
           { type: 'doc', id: 'univrm1/vrm1_tutorial/first_export_from_fbx' },
@@ -177,7 +177,7 @@ const sidebars: SidebarsConfig = {
       },
       {
         type: 'category',
-        label: 'VRM-0.x モデルを VRM-1.0 モデルにアップグレードする',
+        label: 'Migrate VRM-0.x to VRM-1.0',
         link: { type: 'doc', id: 'univrm1/migrate_vrm0/index' },
         items: [
           { type: 'doc', id: 'univrm1/migrate_vrm0/feature' },
@@ -190,7 +190,7 @@ const sidebars: SidebarsConfig = {
 
   siteSidebar: [{
     type: 'category',
-    label: 'サイト管理',
+    label: 'Site maintenance',
     // link: { type: 'doc', id: 'site/index' },
     items: [
       { type: 'doc', id: 'site/system' },

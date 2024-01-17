@@ -1,38 +1,28 @@
 ---
-title: 英語版のURLについて
+title: About the English version URL
 authors: [vrmc]
 tags: [maintenance]
 ---
 
-2024-01-15 からサイト更新作業を実施しました。
+We are working on updating the site from 2024-01-15.
 
-英語版の url 変更によりリンク切れが発生しました。
-url を維持するようにデプロイ方法を変更しました。
-現在、元の url でアクセスできるはずです。
+A broken link occurred due to a change in the URL of the English version.
+Changed the deployment method to preserve the url.
+You can now access it at the original URL.
 
 :::note vrm.dev.en
 
-英語版の記事を
+English version of the article https://github.com/vrm-c/vrm.dev.en
+Deploy to https://vrm-c.github.io/vrm.dev.en/
 
-https://github.com/vrm-c/vrm.dev.en
+Change the deployment URL to https://vrm.dev/en/
 
-で管理して、
-
-https://vrm-c.github.io/vrm.dev.en/
-
-にデプロイしていましたが、
-デプロイ先を
-
-https://vrm.dev/en/
-
-に修正しました。
-
+It has been corrected.
 :::
 
-:::info 不具合は
+:::info The problem
+Please let us know here
 
 https://github.com/vrm-c/vrm.dev/issues
-
-にお知らせください。
 :::
 
