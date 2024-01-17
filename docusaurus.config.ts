@@ -195,17 +195,6 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/showcase',
-            from: '/vrm/vrm_applications/',
-          },
-        ],
-      },
-    ],
   ],
 };
 
