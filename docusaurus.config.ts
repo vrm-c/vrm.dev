@@ -8,10 +8,10 @@ const config: Config = {
   favicon: 'favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://vrm-c.github.io',
+  url: 'https://vrm.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/vrm.dev.en/',
+  baseUrl: '/en/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -201,7 +201,7 @@ const config: Config = {
         redirects: [
           {
             to: '/showcase',
-            from: '/vrm/vrm_application/',
+            from: '/vrm/vrm_applications/',
           },
         ],
       },

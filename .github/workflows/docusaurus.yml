@@ -27,16 +27,29 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # build ja
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-
       - name: Install dependencies
         run: npm install
       - name: Build website
         run: npm run build
+
+      # build en
+      - name: Checkout english
+        uses: actions/checkout@v4
+        with:
+          repository: vrm-c/vrm.dev.en
+          path: vrm.dev.en
+      - name: build and copy
+        run: |
+          cd vrm.dev.en
+          npm install
+          npm run build
+          mv ./build ../build/en
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
