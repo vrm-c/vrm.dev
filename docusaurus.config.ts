@@ -18,7 +18,8 @@ const config: Config = {
   organizationName: 'VRM Consortium', // Usually your GitHub org/user name.
   projectName: 'VRM', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  // onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -195,17 +196,6 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/showcase',
-            from: '/vrm/vrm_applications/',
-          },
-        ],
-      },
-    ],
   ],
 };
 

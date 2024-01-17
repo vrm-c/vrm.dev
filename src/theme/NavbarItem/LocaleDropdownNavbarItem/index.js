@@ -45,16 +45,15 @@ export default function LocaleDropdownNavbarItem({
   // });
   // const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter];
   // Mobile is handled a bit differently
-  const base = 'https://vrm.dev';
   // const baseTo = `pathname://${alternatePageUtils.createUrl({
   //   locale,
   //   fullyQualified: false,
   // })}`;
   let location_path = pathname;
-  if (location_path.startsWith("/vrm.dev.en")) {
-    location_path = location_path.substring("/vrm.dev.en".length);
+  if (location_path.startsWith("/en/")) {
+    location_path = location_path.substring("/en/".length - 1);
   }
-  const to = `${base}${location_path}`;
+  const to = `${location_path}`;
   const dropdownLabel = mobile
     ? translate({
       message: 'Languages',
