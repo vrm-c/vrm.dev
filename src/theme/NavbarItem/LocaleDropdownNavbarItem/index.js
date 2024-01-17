@@ -74,7 +74,7 @@ export default function LocaleDropdownNavbarItem({
       }
       items={[
         {
-          label: `日本語`,
+          label: `Japanese`,
           lang: "ja",
           to,
           target: '_self',

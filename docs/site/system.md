@@ -1,10 +1,10 @@
-# サイト構成
+# Site structure
 
 ## documents
 
-:::note sphinx の markdown を引き継ぎ
+:::note Inheriting sphinx markdown
 
-先代の sphinx 、その前の hugo の markdown 記事をそのまま引き継いでいます。
+It is inherited from the previous sphinx and previous hugo markdown articles.
 
 :::
 
@@ -20,7 +20,7 @@ React
 
 ### /showcase/
 
-VRM 対応アプリケーション
+VRM-enabled applications
 
 React
 
@@ -30,8 +30,9 @@ React
 
 ## customize
 
-言語切り替えメニューを改造しています。
+The language switching menu has been modified.
 
 [Swizzling | Docusaurus](https://docusaurus.io/docs/swizzling)
 
 https://github.com/vrm-c/vrm.dev/blob/master/src/theme/NavbarItem/LocaleDropdownNavbarItem/index.js
+

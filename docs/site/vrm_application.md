@@ -1,13 +1,13 @@
-# 対応Applicationの登録
+# Registration of VRM applications
 
-以下の内容で [こちら](https://github.com/vrm-c/vrm.dev/issues) に `issue` で依頼をしてください。
-`PullRequest` にしなくても大丈夫です。
-内容がわかれば、JSON でなくても受け付けております。
-英語が省略された場合は、日本語をコピーします。
+Please submit a request via `issue` to [here](https://github.com/vrm-c/vrm.dev/issues) with the following content.
+You don't have to use `PullRequest`.
+If we understand the content, we will accept it even if it is not JSON.
+If Japanese is omitted, copy English.
 
 ```js
 {
-  tag: 'CharacterPlatform', // 分類。空欄であればこちらで判断します
+  tag: 'CharacterPlatform', // Classification. If it is blank, we will judge here.
   ja: { // 日本語
     title: 'ザ・シードオンライン',
     url: 'https://virtualcast.jp/store/',
@@ -18,12 +18,12 @@
     url: 'https://virtualcast.jp/store/',
     description: '`1.0` can be uploaded. 3D viewer does not support `1.0`', // markdown可能
   },
-  vrm: '1.0', // vrm-1.0 の対応状況. '', '1.0', '0.x only', '1.0 only'
-  // showcase の VRM カラムです
+  vrm: '1.0', // vrm-1.0 status. '', '1.0', '0.x only', '1.0 only'
+  // This is the VRM column of showcase.
 }
 ```
 
-:::note tag の一覧
+:::note list of tags
 - CharacterPlatform
 - CharacterCreation
 - ImporterExporter
