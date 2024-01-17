@@ -51,10 +51,10 @@ export default function(props) {
     }}>
 
       <h1>
-        VRMファイルが使えるアプリケーションは？
+        What applications can use VRM files?
       </h1>
 
-      <div style={{ margin: '1em' }}>登録、更新の依頼は<a href="https://github.com/vrm-c/vrm.dev/issues">こちら</a>へ。</div>
+      <div style={{ margin: '1em' }}>Click <a href="https://github.com/vrm-c/vrm.dev/issues">here</a> to request registration or renewal</div>
 
       <table>
         <tr><th>Type</th><th>URL</th><th>Description</th><th>VRM</th></tr>
