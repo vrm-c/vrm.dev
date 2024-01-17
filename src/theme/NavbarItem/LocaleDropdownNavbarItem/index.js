@@ -16,7 +16,7 @@ export default function LocaleDropdownNavbarItem({
   const {
     i18n: { currentLocale, locales, localeConfigs },
   } = useDocusaurusContext();
-  const alternatePageUtils = useAlternatePageUtils();
+  // const alternatePageUtils = useAlternatePageUtils();
   const { pathname, search, hash } = useLocation();
   // const localeItems = locales.map((locale) => {
   //   const baseTo = `pathname://${alternatePageUtils.createUrl({
@@ -45,7 +45,7 @@ export default function LocaleDropdownNavbarItem({
   // });
   // const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter];
   // Mobile is handled a bit differently
-  const base = 'https://vrm-c.github.io/vrm.dev.en';
+  const base = 'https://vrm.dev/en';
   // const baseTo = `pathname://${alternatePageUtils.createUrl({
   //   locale,
   //   fullyQualified: false,
