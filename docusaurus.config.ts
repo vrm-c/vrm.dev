@@ -201,7 +201,7 @@ const config: Config = {
         redirects: [
           {
             to: '/showcase',
-            from: '/vrm/vrm_application/',
+            from: '/vrm/vrm_applications/',
           },
         ],
       },
