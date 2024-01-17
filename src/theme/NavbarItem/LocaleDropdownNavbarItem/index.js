@@ -16,7 +16,7 @@ export default function LocaleDropdownNavbarItem({
   const {
     i18n: { currentLocale, locales, localeConfigs },
   } = useDocusaurusContext();
-  const alternatePageUtils = useAlternatePageUtils();
+  // const alternatePageUtils = useAlternatePageUtils();
   const { pathname, search, hash } = useLocation();
   // const localeItems = locales.map((locale) => {
   //   const baseTo = `pathname://${alternatePageUtils.createUrl({
@@ -45,6 +45,7 @@ export default function LocaleDropdownNavbarItem({
   // });
   // const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter];
   // Mobile is handled a bit differently
+  const base = 'https://vrm.dev';
   // const baseTo = `pathname://${alternatePageUtils.createUrl({
   //   locale,
   //   fullyQualified: false,
@@ -53,7 +54,7 @@ export default function LocaleDropdownNavbarItem({
   if (location_path.startsWith("/en/")) {
     location_path = location_path.substring("/en/".length - 1);
   }
-  const to = `${location_path}`;
+  const to = `${base}${location_path}`;
   const dropdownLabel = mobile
     ? translate({
       message: 'Languages',
