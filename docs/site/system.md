@@ -35,3 +35,41 @@ React
 [Swizzling | Docusaurus](https://docusaurus.io/docs/swizzling)
 
 https://github.com/vrm-c/vrm.dev/blob/master/src/theme/NavbarItem/LocaleDropdownNavbarItem/index.js
+
+## meta
+
+:::info
+英訳も確認すること。
+:::
+
+### title
+
+`hard coding`
+
+- /src/pages/index.tsx
+
+```js
+`${metaTitle} | ${config.title} `;
+```
+
+- /docusaurus.config.ts
+
+との組合せ(template)
+
+### description
+
+`hard coding`
+
+- /src/pages/index.tsx
+
+### image
+
+https://docusaurus.io/docs/api/themes/configuration#meta-image
+
+```js title="docusaurus.config.js"
+epport default {
+  themeConfig: {
+    image: 'img/docusaurus.png',
+  }
+}
+```
