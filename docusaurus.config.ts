@@ -2,16 +2,18 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
+const cardImage = "images/vrm/card.png";
+
 const config: Config = {
-  title: 'VRM',
-  tagline: '3D humanoid avatar file format for VR',
-  favicon: 'favicon.ico',
+  title: "VRM",
+  tagline: "3D humanoid avatar file format for VR",
+  favicon: "favicon.ico",
 
   // Set the production url of your site here
   url: "https://vrm.dev",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/en/',
+  baseUrl: "/en/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -19,15 +21,15 @@ const config: Config = {
   projectName: "VRM", // Usually your repo name.
 
   // onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
@@ -48,18 +50,21 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        sitemap: {
+          ignorePatterns: ["/tags/**"],
+        },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: "images/vrm_topheader.png",
+    image: cardImage,
     navbar: {
       title: "",
       logo: {
         alt: "Vrm Logo",
-        src: "images/vrm/card.png",
+        src: cardImage,
       },
       items: [
         {
@@ -93,7 +98,6 @@ const config: Config = {
           sidebarId: "gltfSidebar",
           position: "left",
         },
-        { to: "/tags", label: "Tags", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         //
         {
@@ -201,8 +205,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: [
-  ],
+  plugins: [],
 };
 
 export default config;
