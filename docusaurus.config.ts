@@ -2,6 +2,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
+const cardImage = "images/vrm/card.png";
+
 const config: Config = {
   title: 'VRM',
   tagline: '3D humanoid avatar file format for VR',
@@ -48,18 +50,21 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        sitemap: {
+          ignorePatterns: ["/tags/**"],
+        },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: "images/vrm_topheader.png",
+    image: cardImage,
     navbar: {
       title: "",
       logo: {
         alt: "Vrm Logo",
-        src: "images/vrm/card.png",
+        src: cardImage,
       },
       items: [
         {
@@ -93,7 +98,6 @@ const config: Config = {
           sidebarId: "gltfSidebar",
           position: "left",
         },
-        { to: "/tags", label: "Tags", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         //
         {
