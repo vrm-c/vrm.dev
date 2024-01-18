@@ -49,6 +49,9 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        sitemap: {
+          ignorePatterns: ["/tags/**"],
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -94,7 +97,6 @@ const config: Config = {
           sidebarId: "gltfSidebar",
           position: "left",
         },
-        { to: "/tags", label: "Tags", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         //
         {
