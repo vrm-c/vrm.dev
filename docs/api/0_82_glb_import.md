@@ -10,7 +10,7 @@
 
 ### glb ファイルパスからパースする
 
-* `vrm` もこの関数を使います。
+- `vrm` もこの関数を使います。
 
 ```csharp
 GltfData Load(string path)
@@ -21,7 +21,7 @@ GltfData Load(string path)
 
 ### glb バイト列をパースする
 
-* `vrm` もこの関数を使います。
+- `vrm` もこの関数を使います。
 
 ```csharp
 GltfData Load(byte[] bytes)
@@ -96,7 +96,7 @@ async RuntimeGltfInstance Load(GltfData data)
 
 ### materialGenerator で URP 用のマテリアルをロードする
 
-[Import 時に生成される Material をカスタマイズする ](how_to_customize_material_import)
+[Import 時に生成される Material をカスタマイズする](/api/how_to_customize_material_import)
 
 ## 3. インスタンスを使用する
 
@@ -107,7 +107,8 @@ instance.EnableUpdateWhenOffscreen();
 instance.ShowMeshes();
 ```
 
-使用後に以下のように破棄してください。関連する Asset(Texture, Material, Meshなど)も破棄されます。
+使用後に以下のように破棄してください。関連する Asset(Texture, Material, Mesh など)も破棄されます。
+
 ```csharp
 GameObject.Destroy(instance);
 ```
