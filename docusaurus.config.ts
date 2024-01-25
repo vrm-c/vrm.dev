@@ -102,28 +102,22 @@ const config: Config = {
         { to: "/blog", label: "Blog", position: "left" },
         //
         {
-          label: "Site",
-          type: "docSidebar",
-          sidebarId: "siteSidebar",
-          position: "right",
-        },
-        {
-          label: "UniHumanoid",
-          type: "docSidebar",
-          sidebarId: "unihumanoidSidebar",
-          position: "right",
-        },
-        {
-          label: "API",
+          label: "UniVRM-API",
           type: "docSidebar",
           sidebarId: "apiSidebar",
           position: "right",
         },
 
         {
-          label: "ReleaseNote",
+          label: "UniVRM-Release",
           type: "docSidebar",
           sidebarId: "releaseSidebar",
+          position: "right",
+        },
+        {
+          label: "Site",
+          type: "docSidebar",
+          sidebarId: "siteSidebar",
           position: "right",
         },
         {
