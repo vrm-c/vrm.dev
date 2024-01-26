@@ -19,6 +19,7 @@ export type UserInfo = {
   title: string;
   url: string;
   description?: string;
+  preview?: string;
 };
 export type User = {
   tag: TagType,
