@@ -232,6 +232,7 @@ function ShowcaseCards() {
                 <ShowcaseCard
                   key={user[currentLocale].title}
                   user={user[currentLocale]}
+                  tag={user.tag}
                 />
               ))}
             </ul>
@@ -247,6 +248,7 @@ function ShowcaseCards() {
               <ShowcaseCard
                 key={user[currentLocale].title}
                 user={user[currentLocale]}
+                tag={user.tag}
               />
             ))}
           </ul>

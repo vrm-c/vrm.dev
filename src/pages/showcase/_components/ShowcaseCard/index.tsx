@@ -5,8 +5,31 @@ import Link from "@docusaurus/Link";
 import Image from "@theme/IdealImage";
 import Heading from "@theme/Heading";
 import { type UserInfo } from "@site/src/data/user";
+import { tags } from "@site/src/data/tags";
+import { type TagInfo } from "@site/src/data/tag";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./styles.module.css";
+
+const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
+  ({ tag, color, ja, en }, ref) => {
+    const {
+      i18n: { currentLocale },
+    } = useDocusaurusContext();
+
+    return (
+      <li ref={ref} className={styles.tag} title={ja}>
+        <span className={styles.textLabel}>
+          {currentLocale == "ja" ? ja : en}
+        </span>
+        <span
+          className={styles.colorLabel}
+          style={{ backgroundColor: color }}
+        />
+      </li>
+    );
+  }
+);
 
 function getCardImage(user: UserInfo): string {
   return (
@@ -17,8 +40,11 @@ function getCardImage(user: UserInfo): string {
   );
 }
 
-function ShowcaseCard({ user }: { user: UserInfo }) {
+function ShowcaseCard({ user, tag }: { user: UserInfo; tag: string }) {
   const image = getCardImage(user);
+
+  const tagObj = tags.find((x) => x.tag == tag);
+
   return (
     <li key={user.title} className="card shadow--md">
       <div className={clsx("card__image", styles.showcaseCardImage)}>
@@ -36,6 +62,9 @@ function ShowcaseCard({ user }: { user: UserInfo }) {
           <Markdown>{user.description}</Markdown>
         </div>
       </div>
+      <ul className={clsx("card__footer", styles.cardFooter)}>
+        <TagComp {...tagObj} />
+      </ul>
     </li>
   );
 }
