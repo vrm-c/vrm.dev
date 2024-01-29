@@ -31,24 +31,22 @@ const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
   }
 );
 
-function getCardImage(user: UserInfo): string {
-  return (
-    user.preview ??
-    `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
-      user.url
-    )}/showcase`
-  );
-}
+// function getCardImage(user: UserInfo): string {
+//   return (
+//     user.preview ??
+//     `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
+//       user.url
+//     )}/showcase`
+//   );
+// }
 
 function ShowcaseCard({ user, tag }: { user: UserInfo; tag: string }) {
-  const image = getCardImage(user);
-
   const tagObj = tags.find((x) => x.tag == tag);
 
   return (
     <li key={user.title} className="card shadow--md">
       <div className={clsx("card__image", styles.showcaseCardImage)}>
-        <Image img={image} alt={user.title} />
+        {user.preview ? <Image img={user.preview} alt={user.title} /> : ""}
       </div>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>

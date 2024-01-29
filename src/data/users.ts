@@ -53,17 +53,6 @@ export const users: User[] = [
   {
     "tag": "CharacterPlatform",
     "ja": {
-      "title": "DMM VR CONNECT",
-      "url": "https://connect.vrlab.dmm.com/"
-    },
-    "en": {
-      "title": "DMM VR CONNECT",
-      "url": "https://connect.vrlab.dmm.com/"
-    }
-  },
-  {
-    "tag": "CharacterPlatform",
-    "ja": {
       "title": "CryptoAvatars",
       "url": "https://cryptoavatars.io/home",
       "description": "アバターの所有権と相互運用性を可能にするブロックチェーンプロトコル",
@@ -432,19 +421,6 @@ export const users: User[] = [
       "url": "https://malaybaku.github.io/VMagicMirror/en/",
       "description": "Windows ",
       "preview": "https://malaybaku.github.io/VMagicMirror/images/home/gallery_00.png"
-    }
-  },
-  {
-    "tag": "Streaming",
-    "ja": {
-      "title": "2DR",
-      "url": "https://2dr.info/",
-      "description": "iOS, Android"
-    },
-    "en": {
-      "title": "2DR",
-      "url": "https://2dr.info/",
-      "description": "iOS, Android"
     }
   },
   {
@@ -935,19 +911,6 @@ export const users: User[] = [
   {
     "tag": "Photography",
     "ja": {
-      "title": "Vismuth",
-      "url": "https://vismuth.com/",
-      "description": "Android, iOS"
-    },
-    "en": {
-      "title": "Vismuth",
-      "url": "https://vismuth.com/",
-      "description": "Android, iOS"
-    }
-  },
-  {
-    "tag": "Photography",
-    "ja": {
       "title": "Vスタンプ",
       "url": "https://bnut.jp/vstamp",
       "description": "Android, iOS",
@@ -1287,19 +1250,6 @@ export const users: User[] = [
   {
     "tag": "Game",
     "ja": {
-      "title": "SEIYA",
-      "url": "https://wandv.jp/seiya/",
-      "description": "Windows VR"
-    },
-    "en": {
-      "title": "SEIYA",
-      "url": "https://wandv.jp/seiya/",
-      "description": "Windows VR"
-    }
-  },
-  {
-    "tag": "Game",
-    "ja": {
       "title": "BONFIRE~焚き火~",
       "url": "https://orenodinner.booth.pm/items/952450",
       "description": "Oculus Go",
@@ -1435,19 +1385,6 @@ export const users: User[] = [
   {
     "tag": "Game",
     "ja": {
-      "title": "BOW MAN",
-      "url": "https://bowman.vrlab.dmm.com/ja/",
-      "description": "Windows VR"
-    },
-    "en": {
-      "title": "BOW MAN",
-      "url": "https://bowman.vrlab.dmm.com/ja/",
-      "description": "Windows VR"
-    }
-  },
-  {
-    "tag": "Game",
-    "ja": {
       "title": "Craftopia",
       "url": "https://store.steampowered.com/app/1307550/Craftopia/",
       "description": "Windows",
@@ -1473,19 +1410,6 @@ export const users: User[] = [
       "url": "https://store.steampowered.com/app/1366570/RESONARK_X/",
       "description": "Windows VR, [Oculus Quest](https://www.oculus.com/experiences/quest/3405379359561787/)",
       "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1366570/capsule_616x353.jpg?t=1616769503"
-    }
-  },
-  {
-    "tag": "Game",
-    "ja": {
-      "title": "ラクキン",
-      "url": "https://rakugaki-kingdom.com/",
-      "description": "iOS, Android"
-    },
-    "en": {
-      "title": "Rakugaki Kingdom",
-      "url": "https://rakugaki-kingdom.com/",
-      "description": "iOS, Android"
     }
   },
   {
@@ -1788,19 +1712,6 @@ export const users: User[] = [
   {
     "tag": "Viewer",
     "ja": {
-      "title": "VRM Viewer",
-      "url": "https://vrm-viewer.yukimochi.io/",
-      "description": "Webブラウザ "
-    },
-    "en": {
-      "title": "VRM Viewer",
-      "url": "https://vrm-viewer.yukimochi.io/",
-      "description": "Web browser"
-    }
-  },
-  {
-    "tag": "Viewer",
-    "ja": {
       "title": "VRMQuickLook",
       "url": "https://github.com/magicien/VRMQuickLook",
       "description": "macOS ",
@@ -1899,32 +1810,6 @@ export const users: User[] = [
       "url": "https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/",
       "description": "Windows ",
       "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1096550/capsule_616x353.jpg?t=1652877726"
-    }
-  },
-  {
-    "tag": "Viewer",
-    "ja": {
-      "title": "TSO AR Viewer",
-      "url": "https://seed.online/static/guide-arviewer",
-      "description": "Android, iOS "
-    },
-    "en": {
-      "title": "TSO AR Viewer",
-      "url": "https://seed.online/static/guide-arviewer",
-      "description": "Android, iOS"
-    }
-  },
-  {
-    "tag": "UsingInternally",
-    "ja": {
-      "title": "Vカツ",
-      "url": "http://vkatsu.jp/",
-      "description": "Windows, iOS, Android "
-    },
-    "en": {
-      "title": "Vkatsu",
-      "url": "http://vkatsu.jp/",
-      "description": "Windows, iOS, Android"
     }
   },
   {
@@ -2222,19 +2107,6 @@ export const users: User[] = [
   {
     "tag": "Other",
     "ja": {
-      "title": "ミロックプラス",
-      "url": "https://www.miloq-plus.com/",
-      "description": "Android, iOS "
-    },
-    "en": {
-      "title": "miloq plus",
-      "url": "https://www.miloq-plus.com/",
-      "description": "Android, iOS"
-    }
-  },
-  {
-    "tag": "Other",
-    "ja": {
       "title": "SimpleURPToonLitOutlineExample",
       "url": "https://github.com/simplestargame/SimpleURPToonLitOutlineExample",
       "description": "Windows ",
@@ -2276,5 +2148,134 @@ export const users: User[] = [
       "description": "Windows, Linux, Xbox Series, PlayStation 5",
       "preview": "https://repository-images.githubusercontent.com/37770961/c7a169f3-f000-4351-aa94-78cf1d79c7c4"
     }
-  }
+  },
+  //
+  {
+    "tag": "CharacterPlatform",
+    "ja": {
+      "title": "DMM VR CONNECT",
+      "url": "https://connect.vrlab.dmm.com/"
+    },
+    "en": {
+      "title": "DMM VR CONNECT",
+      "url": "https://connect.vrlab.dmm.com/"
+    }
+  },
+  {
+    "tag": "Game",
+    "ja": {
+      "title": "BOW MAN",
+      "url": "https://bowman.vrlab.dmm.com/ja/",
+      "description": "Windows VR"
+    },
+    "en": {
+      "title": "BOW MAN",
+      "url": "https://bowman.vrlab.dmm.com/ja/",
+      "description": "Windows VR"
+    }
+  },
+  {
+    "tag": "Streaming",
+    "ja": {
+      "title": "2DR",
+      "url": "https://2dr.info/",
+      "description": "iOS, Android"
+    },
+    "en": {
+      "title": "2DR",
+      "url": "https://2dr.info/",
+      "description": "iOS, Android"
+    }
+  },
+  {
+    "tag": "Photography",
+    "ja": {
+      "title": "Vismuth",
+      "url": "https://vismuth.com/",
+      "description": "Android, iOS"
+    },
+    "en": {
+      "title": "Vismuth",
+      "url": "https://vismuth.com/",
+      "description": "Android, iOS"
+    }
+  },
+  {
+    "tag": "Game",
+    "ja": {
+      "title": "SEIYA",
+      "url": "https://wandv.jp/seiya/",
+      "description": "Windows VR"
+    },
+    "en": {
+      "title": "SEIYA",
+      "url": "https://wandv.jp/seiya/",
+      "description": "Windows VR"
+    }
+  },
+  {
+    "tag": "Game",
+    "ja": {
+      "title": "ラクキン",
+      "url": "https://rakugaki-kingdom.com/",
+      "description": "iOS, Android"
+    },
+    "en": {
+      "title": "Rakugaki Kingdom",
+      "url": "https://rakugaki-kingdom.com/",
+      "description": "iOS, Android"
+    }
+  },
+  {
+    "tag": "Viewer",
+    "ja": {
+      "title": "VRM Viewer",
+      "url": "https://vrm-viewer.yukimochi.io/",
+      "description": "Webブラウザ "
+    },
+    "en": {
+      "title": "VRM Viewer",
+      "url": "https://vrm-viewer.yukimochi.io/",
+      "description": "Web browser"
+    }
+  },
+  {
+    "tag": "Viewer",
+    "ja": {
+      "title": "TSO AR Viewer",
+      "url": "https://seed.online/static/guide-arviewer",
+      "description": "Android, iOS "
+    },
+    "en": {
+      "title": "TSO AR Viewer",
+      "url": "https://seed.online/static/guide-arviewer",
+      "description": "Android, iOS"
+    }
+  },
+  {
+    "tag": "UsingInternally",
+    "ja": {
+      "title": "Vカツ",
+      "url": "http://vkatsu.jp/",
+      "description": "Windows, iOS, Android "
+    },
+    "en": {
+      "title": "Vkatsu",
+      "url": "http://vkatsu.jp/",
+      "description": "Windows, iOS, Android"
+    }
+  },
+  {
+    "tag": "Other",
+    "ja": {
+      "title": "ミロックプラス",
+      "url": "https://www.miloq-plus.com/",
+      "description": "Android, iOS "
+    },
+    "en": {
+      "title": "miloq plus",
+      "url": "https://www.miloq-plus.com/",
+      "description": "Android, iOS"
+    }
+  },
 ];
