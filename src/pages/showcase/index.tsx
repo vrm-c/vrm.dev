@@ -1,5 +1,4 @@
 import React from "react";
-import Markdown from "react-markdown";
 import clsx from "clsx";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -10,8 +9,10 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 
-import { sortedUsers, type User, type UserInfo } from "@site/src/data/users";
-import { Tags, TagList, type TagType } from "@site/src/data/tags";
+import { users } from "@site/src/data/users";
+import { type User, type UserInfo } from "@site/src/data/user";
+import { tags } from "@site/src/data/tags";
+import { type Tag } from "@site/src/data/tag";
 
 import ShowcaseCard from "./_components/ShowcaseCard";
 import ShowcaseFilterToggle, {
@@ -35,22 +36,13 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
-const TITLE = translate({ message: "Docusaurus Site Showcase" });
-const DESCRIPTION = translate({
-  message: "List of websites people are building with Docusaurus",
-});
-const SUBMIT_URL = "https://github.com/facebook/docusaurus/discussions/7826";
-
 function filterUsers(
   users: User[],
-  selectedTags: TagType[],
+  selectedTags: Tag[],
   operator: Operator,
-  searchName: string | null
+  searchName: string | null,
+  currentLocale: string
 ) {
-  const {
-    i18n: { currentLocale },
-  } = useDocusaurusContext();
-
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
     users = users.filter((user) =>
@@ -89,8 +81,8 @@ function ShowcaseFilters() {
         <ShowcaseFilterToggle />
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
-        {TagList.map((tag, i) => {
-          const { ja, en, color } = Tags[tag];
+        {tags.map((tagInfo, i) => {
+          const { tag, ja, en, color } = tagInfo;
           const id = `showcase_checkbox_id_${tag}`;
           const label = currentLocale == "ja" ? ja : en;
           const description = currentLocale == "ja" ? ja : en;
@@ -107,19 +99,15 @@ function ShowcaseFilters() {
                   id={id}
                   label={label}
                   icon={
-                    tag === "favorite" ? (
-                      <FavoriteIcon svgClass={styles.svgIconFavoriteXs} />
-                    ) : (
-                      <span
-                        style={{
-                          backgroundColor: color,
-                          width: 10,
-                          height: 10,
-                          borderRadius: "50%",
-                          marginLeft: 8,
-                        }}
-                      />
-                    )
+                    <span
+                      style={{
+                        backgroundColor: color,
+                        width: 10,
+                        height: 10,
+                        borderRadius: "50%",
+                        marginLeft: 8,
+                      }}
+                    />
                   }
                 />
               </ShowcaseTooltip>
@@ -128,40 +116,6 @@ function ShowcaseFilters() {
         })}
       </ul>
     </section>
-  );
-}
-
-function Row(props: { user: User; lang: string }) {
-  const { user, lang } = props;
-  const info = user[lang];
-  const tag = Tags[user.tag];
-  // const debug = true;
-  const debug = false;
-  return (
-    <>
-      <tr>
-        <td style={{ borderLeft: `solid 4px ${tag.color}` }}>{tag[lang]}</td>
-        <td>
-          <a href={info.url}>{info.title}</a>
-        </td>
-        <td>
-          <Markdown>{info.description}</Markdown>
-        </td>
-        <td>{user.vrm}</td>
-      </tr>
-      {debug && user["en"] && (
-        <tr>
-          <td style={{ borderLeft: `solid 4px ${tag.color}` }}>{tag["en"]}</td>
-          <td>
-            <a href={user["en"].url}>{user["en"].title}</a>
-          </td>
-          <td>
-            <Markdown>{user["en"].description}</Markdown>
-          </td>
-          <td>{user.vrm}</td>
-        </tr>
-      )}
-    </>
   );
 }
 
@@ -189,7 +143,7 @@ function useFilteredUsers() {
   const location = useLocation<UserState>();
   const [operator, setOperator] = React.useState<Operator>("OR");
   // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = React.useState<TagType[]>([]);
+  const [selectedTags, setSelectedTags] = React.useState<Tag[]>([]);
   const [searchName, setSearchName] = React.useState<string | null>(null);
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
   // hydration mismatch)
@@ -200,15 +154,15 @@ function useFilteredUsers() {
     restoreUserState(location.state);
   }, [location]);
 
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
+
   return React.useMemo(
-    () => filterUsers(sortedUsers, selectedTags, operator, searchName),
+    () => filterUsers(users, selectedTags, operator, searchName, currentLocale),
     [selectedTags, operator, searchName]
   );
 }
-
-// function ShowcaseCard({ user }: { user: User }) {
-//   return <>{user.ja.title}</>;
-// }
 
 function SearchBar() {
   const history = useHistory();
@@ -267,14 +221,14 @@ function ShowcaseCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredUsers.length === sortedUsers.length ? (
+      {filteredUsers.length === users.length ? (
         <>
           <div className="container margin-top--lg">
             <Heading as="h2" className={styles.showcaseHeader}>
               <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {sortedUsers.map((user) => (
+              {users.map((user) => (
                 <ShowcaseCard
                   key={user[currentLocale].title}
                   user={user[currentLocale]}
@@ -324,8 +278,7 @@ export default function (props: any) {
         <div
           style={{ display: "flex", marginLeft: "auto" }}
           className="container"
-        >
-        </div>
+        ></div>
 
         <ShowcaseCards />
       </main>
