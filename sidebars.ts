@@ -159,6 +159,16 @@ const sidebars: SidebarsConfig = {
       items: [{ type: "doc", id: "vrm1/changed" }],
     },
   ],
+
+  vrmaSidebar: [
+    {
+      type: "category",
+      label: "VRM Animation",
+      link: { type: "doc", id: "vrma/index" },
+      items: [],
+    }
+  ],
+
   univrm1Sidebar: [
     {
       type: "category",
