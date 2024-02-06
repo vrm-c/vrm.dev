@@ -95,6 +95,12 @@ const config: Config = {
           position: "left",
         },
         {
+          label: "VRM Animation",
+          type: "docSidebar",
+          sidebarId: "vrmaSidebar",
+          position: "left",
+        },
+        {
           label: "glTF",
           type: "docSidebar",
           sidebarId: "gltfSidebar",
