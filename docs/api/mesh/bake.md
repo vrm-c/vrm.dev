@@ -57,8 +57,8 @@ Skinning が壊れることはありません。
 
 :::danger スケールは 1 がお勧め
 
-- lossyScale と同じ問題があり、行列では表現できるが scale では表現できないなどのトラブルがあります。
-  :::
+lossyScale と同じ問題があり、行列では表現できるが scale では表現できないなどのトラブルがあります。
+:::
 
 ## blendshape に対応する
 
@@ -77,7 +77,7 @@ blendshape を列挙してひとつずつ weight を上げてから bake して�
 
 BakeMesh に対する boneposes 計算前に回転と拡大縮小を変更することが可能であることを利用して、
 無回転、無拡大縮小にするのが vrm-0.x の正規化処理です。
-MeshBake ですが、事前に T-Pose にするという規約が追加されています。
+事前に T-Pose にするという規約が追加されています。
 
 `Assets\UniGLTF\Runtime\MeshUtility\MeshFreezer.cs`
 
@@ -100,4 +100,10 @@ https://github.com/vrm-c/UniVRM/blob/v0.115.0/Assets/UniGLTF/Runtime/MeshUtility
 - Mesh の bake
 - Hierarchy の正規化
 - SkinnedMeshRenderer へのアタッチと bindposes の計算
+
+### TODO
+
+- glTF exporter 統合
+- vrm1 exporter 統合
+
 
