@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import Link from "@docusaurus/Link";
 
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
@@ -273,7 +274,7 @@ export default function (props: any) {
 
         <div style={{ margin: "1em" }}>
           登録、更新の依頼は
-          <a href="https://github.com/vrm-c/vrm.dev/issues">こちら</a>へ。
+          <Link href="/vrm/showcase/">こちら</Link>へ。
         </div>
 
         <ShowcaseFilters />

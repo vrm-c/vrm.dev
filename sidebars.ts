@@ -307,6 +307,7 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/coordinate" },
             { type: "doc", id: "api/scripted_importer" },
             { type: "doc", id: "api/format" },
+            { type: "doc", id: "api/mesh/bake" },
           ],
         },
       ],
