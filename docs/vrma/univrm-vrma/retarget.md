@@ -14,7 +14,7 @@ UniVRM の vrm-1.0 実装には、初期姿勢の変換をサポートする `Co
 含まれています。
 ランタイムロードでは自動的にセットアップされます。
 
-[ControlRig 正規化されていないモデルを操作する](/vrm1_controlrig/)
+[ControlRig 正規化されていないモデルを操作する](/api/vrm1_controlrig/)
 
 :::tip Unity の mecanim humanoid に肩代りしてもらうこともできます
 

@@ -2,5 +2,5 @@
 
 `TODO`
 
-[VRM パブリック・ライセンス文書 1.0](/licenses/1.0/index.html)
+[VRM パブリック・ライセンス文書 1.0](pathname:///licenses/1.0/index.html)
 
