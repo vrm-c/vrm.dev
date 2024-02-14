@@ -166,8 +166,13 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "VRM Animation",
       link: { type: "doc", id: "vrma/index" },
-      items: [],
-    }
+      items: [
+        "vrma/univrm-vrma/index",
+        "vrma/univrm-vrma/vrma-import",
+        "vrma/univrm-vrma/vrma-export",
+        "vrma/univrm-vrma/retarget",
+      ],
+    },
   ],
 
   univrm1Sidebar: [
@@ -234,6 +239,12 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/sample/RuntimeExporterSample" },
             { type: "doc", id: "api/sample/FirstPersonSample" },
             { type: "doc", id: "api/sample/AnimationBridgeSample" },
+            {
+              type: "category",
+              label: "VRM10Viewer",
+              link: { type: "doc", id: "api/sample/VRM10Viewer/index" },
+              items: ["api/sample/VRM10Viewer/animation"],
+            },
           ],
         },
         {
