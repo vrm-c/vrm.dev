@@ -6,52 +6,52 @@ weight: 1
 
 # VRM Animation
 
-## 「VRMアニメーション」とは？
+## What is "VRM Animation" ?
 
-VRMアニメーションは、VRMで定義された人型モデルのアニメーションを記述できます。
+VRM Animation is a format for describing animations of humanoid models defined in VRM.
 
-- 同じVRMアニメーションファイルが**あらゆるVRMファイルで利用できます。**
-- フォーマットは**glTF**で記述され、**クロスプラットフォーム**で取り扱うことができます。
-- UniVRMを通じて、**UnityでVRMアニメーションを読み書きする標準実装が提供されます。**
+- **The same VRM animation file can be used for any VRM file.**
+- The format is described in **glTF**, and is a **cross-platform** format.
+- **Standard implementation for importing and exporting VRM animations in Unity** is provided through UniVRM.
 
-## ファイルの内容
+## The contents of the file
 
-- アニメーションは**glTFのアニメーション**として記述されます。
-- **VRMの各コンポーネントととアニメーション対象のglTFノードを対応付ける情報**が拡張内に定義されています。
-    - `VRMC_vrm_animation` という拡張で定義されます。
-    - 拡張子として `.vrma` を利用することが推奨されます。
-- **Humanoidボーンアニメーション**を記述可能です。
-    - glTFノードがどのHumanoidボーンに対応するかを拡張内で記述します。
-    - アニメーションで定義されたボーン回転を宛先となるVRMに適切に反映するよう、回転の変換を行うことを実装に期待します。
-- **表情アニメーション**を記述可能です。
-    - 表情のウェイトをglTFノードの座標に変換した状態で保持します。
-    - VRMで定義されたプリセット表情のほか、宛先VRMに相当する表情が定義されていればカスタム表情についても反映が可能です。
-- **視線制御アニメーション**を記述可能です。
-    - 視線がどの方向に向くべきかを表すglTFノードを拡張内で指定します。
+- Animation is described as **glTF animation**.
+- **Information that associates each component of VRM with the animated glTF node** is defined in the extension.
+    - It is defined in the extension `VRMC_vrm_animation`.
+    - It is recommended to use the extension `.vrma`.
+- **Humanoid bone animation** can be described.
+    - The extension specifies which Humanoid bone a glTF node corresponds to.
+    - The implementation will transform the rotation of the animation to the destination VRM to apply the animation properly.
+- **Expression animation** can be described.
+    - The file contains the animated weight of an expression as a coordinate of a glTF node.
+    - In addition to the preset expressions defined in VRM, it also supports custom expressions if the destination VRM has corresponding expressions.
+- **Gaze control animation** can be described.
+    - The extension specifies the glTF node that represents the direction of the gaze.
 
-## VRMアニメーションでできること
+## Uses of VRM Animation
 
-VRMアニメーションを利用することで、人型モデルに対するアニメーションを**アプリケーションやモデルをまたいで利用できます。**
+With VRM Animation, **you can use animations for humanoid models across applications and models.**
 
-例えば、以下のような使い方が想定されます。
+Following are some examples of how VRM Animation can be used:
 
-- VRMアニメーションに対応したオーサリングツールを利用して、アニメーションを作成する
-- モーションキャプチャで記録したアニメーションをさまざまなアプリケーションで利用する
-- 作ったアニメーションを配信アプリや撮影アプリで再生する
-- 作ったアニメーションをメタバースに持っていって再生するほか、他のユーザとシェアして一緒に使う
-- VRMアニメーションファイルをゲームエンジンで読み込み、ゲーム等の開発で利用する
+- Create animations using authoring tools that support VRM Animation
+- Use animations recorded with motion capture in various applications
+- Use animations created with VRM Animation in live streaming and photo applications
+- Take animations created with VRM Animation to the Metaverse and play, share with other users, and use together
+- Load VRM Animation files in game engines and use them in game development
 
-## VRMアニメーションが使えるアプリケーション
+## Applications that support VRM Animation
 
 :::warning
 
-VRMアニメーションの仕様を検討するにあたり、多くのアプリケーションにdraft仕様への対応にご協力いただきました。VRMアニメーション仕様は正式リリースされたばかりです。draft版に対応したアプリケーションを利用する場合、正式版の仕様と動作が異なったり、想定通りの動作をしない場合があります。
+Thanks to the community, many applications have cooperated in supporting the draft specification of VRM Animation. The VRM Animation specification has just been officially released. If you use an application that supports the draft version, the behavior may differ from the official version, or it may not work as expected.
 
 :::
 
 :::info
 
-このリストにアプリケーションを追加したい場合、[GitHub上のレポジトリにPull Requestを送ってください。](https://github.com/vrm-c/vrm.dev)
+If you would like to add your application to this list, please [send a Pull Request to the repository on GitHub.](https://github.com/vrm-c/vrm.dev)
 
 :::
 
@@ -66,7 +66,7 @@ VRMアニメーションの仕様を検討するにあたり、多くのアプ�
 - [VRMスプリングボーン調整ツール](https://napharmonia.com/vrmtool/)
 - [VRMA, BVHをアップロードして VRMを動かすやつ](https://tfuru.github.io/vrma-loader-sample/)
 
-## VRMアニメーションを利用したアプリケーションを開発する
+## Development of applications using VRM Animation
 
 :::note
 
