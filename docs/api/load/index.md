@@ -2,5 +2,4 @@
 
 `v0.118`
 
-[RuntimeImport](/api/runtime-import/index)
-
+[RuntimeImport](/api/runtime-import/)

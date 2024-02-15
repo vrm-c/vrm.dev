@@ -1,6 +1,6 @@
 # load vrm-0.x
 
-[GltfData](/docs/api/runtime-import/gltfdata) から vrm-0.x ヒエラルキーを構築します。
+[GltfData](/api/runtime-import/gltfdata) から vrm-0.x ヒエラルキーを構築します。
 
 <!-- truncate -->
 

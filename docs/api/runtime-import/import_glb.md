@@ -1,6 +1,6 @@
 # load glb
 
-[GltfData](/docs/api/runtime-import/gltfdata) から Unity ヒエラルキーを構築します。
+[GltfData](/api/runtime-import/gltfdata) から Unity ヒエラルキーを構築します。
 
 <!-- truncate -->
 
