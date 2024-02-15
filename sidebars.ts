@@ -156,7 +156,18 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Vrm-1.0",
       link: { type: "doc", id: "vrm1/index" },
-      items: [{ type: "doc", id: "vrm1/changed" }],
+      items: [
+        "vrm1/changed",
+        "vrm1/gltf_details",
+        "vrm1/meta",
+        "vrm1/humanoid",
+        "vrm1/expression",
+        "vrm1/lookat_firstperson",
+        "vrm1/springbone",
+        "vrm1/emission",
+        "vrm1/mtoon",
+        "vrm1/constraint",
+      ],
     },
   ],
 
@@ -165,8 +176,13 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "VRM Animation",
       link: { type: "doc", id: "vrma/index" },
-      items: [],
-    }
+      items: [
+        "vrma/univrm-vrma/index",
+        "vrma/univrm-vrma/vrma-import",
+        "vrma/univrm-vrma/vrma-export",
+        "vrma/univrm-vrma/retarget",
+      ],
+    },
   ],
 
   univrm1Sidebar: [
@@ -234,6 +250,12 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/sample/RuntimeExporterSample" },
             { type: "doc", id: "api/sample/FirstPersonSample" },
             { type: "doc", id: "api/sample/AnimationBridgeSample" },
+            {
+              type: "category",
+              label: "VRM10Viewer",
+              link: { type: "doc", id: "api/sample/VRM10Viewer/index" },
+              items: ["api/sample/VRM10Viewer/animation"],
+            },
           ],
         },
         {
@@ -307,6 +329,7 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/coordinate" },
             { type: "doc", id: "api/scripted_importer" },
             { type: "doc", id: "api/format" },
+            { type: "doc", id: "api/mesh/bake" },
           ],
         },
       ],

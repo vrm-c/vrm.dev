@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import Link from "@docusaurus/Link";
 
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
@@ -272,7 +273,7 @@ export default function (props: any) {
         <h1>What applications can use VRM files?</h1>
 
         <div style={{ margin: "1em" }}>
-          Click <a href="https://github.com/vrm-c/vrm.dev/issues">here</a> to
+          Click <Link href="/vrm/showcase/">here</Link> to
           request registration or renewal
         </div>
 
