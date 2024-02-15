@@ -28,6 +28,16 @@ https://github.com/vrm-c/vrm.dev.en
 
 :::
 
+:::danger 英語版の反映方法
+
+英語版を merge した `次回の日本語版 の github action` でビルドされます。
+即座に反映したい場合は、日本語版の reposity の `Actions` - `Docusaurus` - `Run workflow` ボタンを
+手動で押してください(緑のボタン)。
+
+![action](./kick_action.jpg)
+
+:::
+
 ## 翻訳手順
 
 - vrm.dev の内容が更新される

@@ -27,3 +27,5 @@ UniVRM 以外でもアニメーション変換を実装できます。
 
 https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm_animation-1.0/how_to_transform_human_pose.ja.md
 
+モデルとモーションのスケルトンが、
+HumanoidBone 仕様を満たしていて TPose であることが必要条件です。

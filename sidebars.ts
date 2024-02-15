@@ -178,7 +178,6 @@ const sidebars: SidebarsConfig = {
       label: "VRM Animation",
       link: { type: "doc", id: "vrma/index" },
       items: [
-        "vrma/univrm-vrma/index",
         "vrma/univrm-vrma/vrma-import",
         "vrma/univrm-vrma/vrma-export",
         "vrma/univrm-vrma/retarget",
