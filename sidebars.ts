@@ -276,7 +276,7 @@ const sidebars: SidebarsConfig = {
                 { type: "doc", id: "api/vrm1_controlrig" },
               ],
             },
-            "api/runtime-import/import_vrma",
+            "vrma/univrm-vrma/vrma-import",
             "api/runtime-import/import_urp",
             "api/runtime-import/await_caller",
             {

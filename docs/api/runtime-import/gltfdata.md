@@ -2,24 +2,36 @@
 
 `.glb`, `.vrm`, `.vrma` など から GltfData をロードします。
 
+GltfData が入手できたら中身に合わせた GameObject 生成へと分岐してください。
+
 ## `byte[]` からロードする
 
-## TextAsset からロードする
+```cs
+public sealed class GlbBinaryParser
+{
+    public GlbBinaryParser(byte[] data, string uniqueName)
+}
+
+// 使用例
+using (GltfData data = new GlbBinaryParser(bytes, path).Parse())
+{
+}
+```
 
 ## filepath からロードする
 
-## WebGL で url からロードする
+```cs
+public sealed class GlbFileParser
+{
+    public GlbFileParser(string glbFilePath)
+}
 
-## GltfData から GameObject を生成する。
+// 使用例
+using (GltfData data = new GlbFileParser(path).Parse())
+{
+}
+```
 
-GltfData が入手できたら中身に合わせた GameObject 生成へと分岐してください。
+## Dispose
 
-:::info UniGLTF.GltfData は vrm-0, vrm-1, glb, gltf で共通です
-:::
-
-:::tip UniGLTF.GltfData の生成はスレッドセーフです
-Unity にアクセスしません。
-:::
-
-## GltfData から vrm-0.x, vrm-1.0 vrma を判別する
-
+- [0_95_dispose](/api/0_95_dispose)
