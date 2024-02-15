@@ -74,6 +74,12 @@ const config: Config = {
           sidebarId: "vrmSidebar",
           position: "left",
         },
+        {
+          label: "🎉VRM Animation🎉",
+          type: "docSidebar",
+          sidebarId: "vrmaSidebar",
+          position: "left",
+        },
         { to: "/showcase", label: "ShowCase", position: "left" },
         {
           label: "VRM-1.0",
@@ -91,12 +97,6 @@ const config: Config = {
           label: "UniVRM",
           type: "docSidebar",
           sidebarId: "univrmSidebar",
-          position: "left",
-        },
-        {
-          label: "VRM Animation",
-          type: "docSidebar",
-          sidebarId: "vrmaSidebar",
           position: "left",
         },
         {
