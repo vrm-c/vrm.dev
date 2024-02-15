@@ -14,12 +14,6 @@ VRMアニメーションは、VRMで定義された人型モデルのアニメ�
 - フォーマットは**glTF**で記述され、**クロスプラットフォーム**で取り扱うことができます。
 - UniVRMを通じて、**UnityでVRMアニメーションを読み書きする標準実装が提供されます。**
 
-:::warning
-
-**VRMアニメーションの仕様は現在draftとなっています。** 正式版がリリースされるまでの間、仕様が変更される可能性があります。
-
-:::
-
 ## ファイルの内容
 
 - アニメーションは**glTFのアニメーション**として記述されます。
@@ -49,11 +43,28 @@ VRMアニメーションを利用することで、人型モデルに対する�
 
 ## VRMアニメーションが使えるアプリケーション
 
-:::note
+:::warning
 
-TODO
+VRMアニメーションの仕様を検討するにあたり、多くのアプリケーションにdraft仕様への対応にご協力いただきました。VRMアニメーション仕様は正式リリースされたばかりです。draft版に対応したアプリケーションを利用する場合、正式版の仕様と動作が異なったり、想定通りの動作をしない場合があります。
 
 :::
+
+:::info
+
+このリストにアプリケーションを追加したい場合、[GitHub上のレポジトリにPull Requestを送ってください。](https://github.com/vrm-c/vrm.dev)
+
+:::
+
+- [UniVRM](https://github.com/vrm-c/UniVRM)
+- [@pixiv/three-vrm](https://github.com/pixiv/three-vrm)
+- [VRM Add-on for Blender](https://vrm-addon-for-blender.info/)
+- [bvh2vrma](https://vrm-c.github.io/bvh2vrma/)
+- [VRoid Hub](https://hub.vroid.com/)
+- [AnimationClipToVrmaSample](https://github.com/malaybaku/AnimationClipToVrmaSample)
+- [VMagicMirror](https://malaybaku.github.io/VMagicMirror/)
+- [VRM Posing Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/)
+- [VRMスプリングボーン調整ツール](https://napharmonia.com/vrmtool/)
+- [VRMA, BVHをアップロードして VRMを動かすやつ](https://tfuru.github.io/vrma-loader-sample/)
 
 ## VRMアニメーションを利用したアプリケーションを開発する
 
