@@ -6,11 +6,12 @@ tags: ["unity"]
 ---
 
 # VRMFirstPerson
+
 ## Overview
 
 VRMFirstPerson has two types of settings: headset positioning and VR visibility settings.
 
-__This setting is valid only if the application supports it.__
+**This setting is valid only if the application supports it.**
 
 ## Headset Position
 
@@ -39,26 +40,25 @@ Video output to a device other than the HMD, video for distribution, mirrors, an
 
 ### VR Visibility Setting
 
-| Setting            | First-Person Camera | Third-Person Camera | Note                                                 |
-|-----------------|--------------|--------------|------------------------------------------------------|
-| Auto            | △         | △         | Initial setting. Details below                                         |
-| Both            | 〇           | 〇           | The part with a certain distance from the head (e.g. body, hands and feet)               |
-| ThirdPersonOnly |              | 〇           | Only visible from the external camera (e.g. head, hair, hat) |
-| FirstPersonOnly | 〇           |              | The setting item itself may not be necessary.                                           |
+| Setting         | First-Person Camera | Third-Person Camera | Note                                                                       |
+| --------------- | ------------------- | ------------------- | -------------------------------------------------------------------------- |
+| Auto            | △                   | △                   | Initial setting. Details below                                             |
+| Both            | 〇                  | 〇                  | The part with a certain distance from the head (e.g. body, hands and feet) |
+| ThirdPersonOnly |                     | 〇                  | Only visible from the external camera (e.g. head, hair, hat)               |
+| FirstPersonOnly | 〇                  |                     | The setting item itself may not be necessary.                              |
 
 ### Example of inconvenience
 
-* Model's head gets cut by the near plane
-* The view is blocked by the Model's hair
-* The contents of your avatar, such as your teeth, are exposed
+- Model's head gets cut by the near plane
+- The view is blocked by the Model's hair
+- The contents of your avatar, such as your teeth, are exposed
 
 ## Recommended Structure
 
 We recommend dividing the mesh into the head and body at the avatar creation stage.
 
-* Specify `ThirdPersonOnly` for `Head`
-* Specify `Both` for `Body`
-
+- Specify `ThirdPersonOnly` for `Head`
+- Specify `Both` for `Body`
 
 ![Alicia's `Body` is set as `Both`, while the parts related to `Head` are set as `ThirdPersonOnly`.](/images/vrm/firstperson.png)
 
@@ -66,7 +66,7 @@ We recommend dividing the mesh into the head and body at the avatar creation sta
 
 ## VR Visibility Setting
 
-[VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask)
+[VRMFirstPerson.Setup()](/api/firstperson)
 Automatic division using Auto is a heavy process.
 
 ### Division criteria
@@ -83,4 +83,3 @@ Export may fail when the reference becomes `Missing` when the configuration of t
 Click the `gear icon ⚙` on the upper right corner of `VRM First Person(Script)` inspector and select `Reset` shown as follow:
 
 ![firstperson を reset](/images/vrm/firstperson_reset.gif)
-
