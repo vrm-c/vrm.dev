@@ -4,6 +4,8 @@ url: /vrma_about/
 weight: 1
 ---
 
+https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_vrm_animation-1.0
+
 # VRM Animation
 
 ## What is "VRM Animation" ?
@@ -18,16 +20,16 @@ VRM Animation is a format for describing animations of humanoid models defined i
 
 - Animation is described as **glTF animation**.
 - **Information that associates each component of VRM with the animated glTF node** is defined in the extension.
-    - It is defined in the extension `VRMC_vrm_animation`.
-    - It is recommended to use the extension `.vrma`.
-- **Humanoid bone animation** can be described.
-    - The extension specifies which Humanoid bone a glTF node corresponds to.
-    - The implementation will transform the rotation of the animation to the destination VRM to apply the animation properly.
-- **Expression animation** can be described.
-    - The file contains the animated weight of an expression as a coordinate of a glTF node.
-    - In addition to the preset expressions defined in VRM, it also supports custom expressions if the destination VRM has corresponding expressions.
-- **Gaze control animation** can be described.
-    - The extension specifies the glTF node that represents the direction of the gaze.
+  - It is defined in the extension `VRMC_vrm_animation`.
+  - It is recommended to use the extension `.vrma`.
+- 🦴 **Humanoid bone animation** can be described.
+  - The extension specifies which Humanoid bone a glTF node corresponds to.
+  - The implementation will transform the rotation of the animation to the destination VRM to apply the animation properly.
+- 😄 **Expression animation** can be described.
+  - The file contains the animated weight of an expression as a coordinate of a glTF node.
+  - In addition to the preset expressions defined in VRM, it also supports custom expressions if the destination VRM has corresponding expressions.
+- 👀 **Gaze control animation** can be described.
+  - The extension specifies the glTF node that represents the direction of the gaze.
 
 ## Uses of VRM Animation
 
@@ -51,7 +53,12 @@ Thanks to the community, many applications have cooperated in supporting the dra
 
 :::info
 
-If you would like to add your application to this list, please [send a Pull Request to the repository on GitHub.](https://github.com/vrm-c/vrm.dev)
+If you would like to add your application to this list, please send to
+
+[GitHub issues](https://github.com/vrm-c/vrm.dev/issues) or
+[GitHub Pull Request](https://github.com/vrm-c/vrm.dev/pulls)
+
+Name and Url is required.
 
 :::
 
@@ -63,13 +70,28 @@ If you would like to add your application to this list, please [send a Pull Requ
 - [AnimationClipToVrmaSample](https://github.com/malaybaku/AnimationClipToVrmaSample)
 - [VMagicMirror](https://malaybaku.github.io/VMagicMirror/)
 - [VRM Posing Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/)
-- [VRMスプリングボーン調整ツール](https://napharmonia.com/vrmtool/)
-- [VRMA, BVHをアップロードして VRMを動かすやつ](https://tfuru.github.io/vrma-loader-sample/)
+- [VRM スプリングボーン調整ツール](https://napharmonia.com/vrmtool/)
+- [VRMA, BVH をアップロードして VRM を動かすやつ](https://tfuru.github.io/vrma-loader-sample/)
 
 ## Development of applications using VRM Animation
 
-:::note
+VRM-1.0 の方に、VRM-Animation サポートが実装されています。
 
-TODO: UniVRMへのリンクを貼る
+### import
 
+[import](/vrma/univrm-vrma/vrma-import)
+と
+[retarget](/vrma/univrm-vrma/retarget)
+を参照してください。
+
+### export
+
+また、Unity 上に humanoid のアニメーションがある場合に、
+コマ送りして VRM-Animation として export することが可能です。
+
+:::warning editor 専用です
 :::
+
+[export](/vrma/univrm-vrma/vrma-export)
+
+を参照してださい。

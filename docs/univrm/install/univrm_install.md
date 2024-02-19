@@ -5,11 +5,21 @@ aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
 tags: ["unity"]
 ---
 
-# Install UniVRM
+# .unitypackage file
 
-## Unity Version
+https://github.com/vrm-c/UniVRM/releases から `unitypackage` をダウンロードしてください。
+`UniGLTF_VRMShaders` 、 `UniVRM` という順番で２つのパッケージをインストールしてください。
 
-* The recommended version is `Unity-2019.4`. Other supported Unity versions [can be found here](/univrm/install/unity_version).
+- The recommended version is `Unity-2019.4`. Other supported Unity versions [can be found here](/univrm/install/unity_version).
+
+|          | UniGLTF_VRMShaders | UniVRM  | VRM     |
+| -------- | ------------------ | ------- | ------- |
+| for GLTF | install            |         |         |
+| for VRM  | install            | install |         |
+| for VRM1 | install            |         | install |
+
+- `Sample` パッケージは廃止になり中に含まれます。
+- `UPM` の `Sample` 機能でインストールできます。
 
 ## Get unity package in
 
@@ -19,15 +29,15 @@ https://github.com/vrm-c/UniVRM/releases
 
 ## Before Installation
 
-* Create a new Unity project
+- Create a new Unity project
 
-* "Go to `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` and set `ColorSpace` to `Linear` (recommended setting)
+- "Go to `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` and set `ColorSpace` to `Linear` (recommended setting)
 
 ![linear setting](/images/vrm/linear_setting.jpg)
 
 :::warning If your Unity version is `Unity-2018.3, Unity-2018.4, Unity-2019.1`:
 
-* "Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent`
+- "Go to `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` and set `Scripting Runtime Version` to `.Net4.X equivalent`
 
 :::
 
@@ -60,7 +70,7 @@ Previous versions:
 
 If menu does not show up:
 
-* Open Console: click `clear` button on the upper-left corner of the Console window to see if any error (message in red) occurs
+- Open Console: click `clear` button on the upper-left corner of the Console window to see if any error (message in red) occurs
 
 ![show console](/images/vrm/show_console.jpg)
 
@@ -70,4 +80,3 @@ If menu does not show up:
 
 - [How to make VRM file](/vrm/how_to_make_vrm/)
 - [VRM Import](/univrm/import/univrm_import)
-

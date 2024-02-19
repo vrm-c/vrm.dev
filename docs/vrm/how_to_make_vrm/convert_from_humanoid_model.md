@@ -16,7 +16,7 @@ First prepare
 
 As there are
 
-* **[license settings](../vrm_meta) embedded in VRM file, users need to set them up according to Author's (yourself or others) permission usage.**
+* **license settings embedded in VRM file, users need to set them up according to Author's (yourself or others) permission usage.**
 
 Then, ensure the [required bones](https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones) are included so that the model can be recognized as `Humanoid`.
 

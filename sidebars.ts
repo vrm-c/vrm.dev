@@ -48,14 +48,14 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "category",
-          label: "How to install",
+          label: "Install",
+          link: { type: "doc", id: "univrm/install/index" },
           items: [
             { type: "doc", id: "univrm/install/unity_version" },
             { type: "doc", id: "univrm/install/univrm_install" },
-            { type: "doc", id: "univrm/install/univrm_upm" },
-            { type: "doc", id: "univrm/install/univrm_install_samples" },
+            "univrm/install/univrm_upm",
             { type: "doc", id: "univrm/install/univrm_uninstall" },
-            { type: "doc", id: "univrm/install/univrm_version" },
+            "univrm/install/install_error",
           ],
         },
         {
@@ -177,7 +177,6 @@ const sidebars: SidebarsConfig = {
       label: "VRM Animation",
       link: { type: "doc", id: "vrma/index" },
       items: [
-        "vrma/univrm-vrma/index",
         "vrma/univrm-vrma/vrma-import",
         "vrma/univrm-vrma/vrma-export",
         "vrma/univrm-vrma/retarget",
@@ -242,10 +241,13 @@ const sidebars: SidebarsConfig = {
       label: "UniVRM API",
       link: { type: "doc", id: "api/index" },
       items: [
+        "api/upm",
         {
           type: "category",
           label: "Sample",
+          link: { type: "doc", id: "api/sample/index" },
           items: [
+            "api/sample/sample_install",
             { type: "doc", id: "api/sample/SimpleViewer" },
             { type: "doc", id: "api/sample/RuntimeExporterSample" },
             { type: "doc", id: "api/sample/FirstPersonSample" },
@@ -260,19 +262,38 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Load",
-          link: { type: "doc", id: "api/load/index" },
+          label: "RuntimeImport",
+          link: { type: "doc", id: "api/runtime-import/index" },
           items: [
-            { type: "doc", id: "api/vrm1_load" },
-            { type: "doc", id: "api/vrm1_migration" },
-            { type: "doc", id: "api/vrm1_controlrig" },
-            { type: "doc", id: "api/0_87_runtime_import" },
-            { type: "doc", id: "api/0_82_runtime_import" },
-            { type: "doc", id: "api/0_82_glb_import" },
-            { type: "doc", id: "api/0_79_runtime_import" },
-            { type: "doc", id: "api/0_77_runtime_import" },
-            { type: "doc", id: "api/0_68_runtime_import" },
-            { type: "doc", id: "api/0_44_runtime_import" },
+            "api/runtime-import/gltfdata",
+            "api/runtime-import/RuntimeGltfInstance",
+            "api/runtime-import/import_glb",
+            "api/runtime-import/import_vrm0",
+            {
+              type: "category",
+              label: "vrm-1.0",
+              link: { type: "doc", id: "api/vrm1_load" },
+              items: [
+                { type: "doc", id: "api/vrm1_migration" },
+                { type: "doc", id: "api/vrm1_controlrig" },
+              ],
+            },
+            "vrma/univrm-vrma/vrma-import",
+            "api/runtime-import/import_urp",
+            "api/runtime-import/await_caller",
+            {
+              type: "category",
+              label: "api更新情報",
+              items: [
+                { type: "doc", id: "api/0_87_runtime_import" },
+                { type: "doc", id: "api/0_82_runtime_import" },
+                { type: "doc", id: "api/0_82_glb_import" },
+                { type: "doc", id: "api/0_79_runtime_import" },
+                { type: "doc", id: "api/0_77_runtime_import" },
+                { type: "doc", id: "api/0_68_runtime_import" },
+                { type: "doc", id: "api/0_44_runtime_import" },
+              ],
+            },
           ],
         },
         {
@@ -312,16 +333,10 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Update",
+          label: "Other",
           items: [
             { type: "doc", id: "api/api_update" },
             { type: "doc", id: "api/0_36_update" },
-          ],
-        },
-        {
-          type: "category",
-          label: "Other",
-          items: [
             { type: "doc", id: "api/runtime_resource_management" },
             { type: "doc", id: "api/0_95_dispose" },
             { type: "doc", id: "api/0_95_highlevel" },
@@ -341,7 +356,6 @@ const sidebars: SidebarsConfig = {
       label: "ReleaseNote",
       link: { type: "doc", id: "release/index" },
       items: [
-        { type: "doc", id: "release/unitypackage" },
         {
           type: "category",
           label: "~v0.55",
