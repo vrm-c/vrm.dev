@@ -11,12 +11,4 @@ aliases:
 weight: 30
 ---
 
-# Programming
-
-## お知らせ
-
-プログラミング関連のドキュメントは、 [UniVRM Programming Document](https://vrm-c.github.io/UniVRM/) に移動・整理中しましたが、当サイトに合流しました。
-
-- [API](/api/)
-- [ReleaseNote](/release/)
-
+[API](/api/) に移動しました。

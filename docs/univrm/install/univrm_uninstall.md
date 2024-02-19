@@ -1,12 +1,10 @@
 ---
-linkTitle: "UniVRMをアンインストールする"
 date: 2020-08-31
-weight: 5
 aliases: []
 tags: ["unity"]
 ---
 
-# UniVRMをアンインストールする
+# アンインストール
 
 以下のフォルダを削除してください。
 
