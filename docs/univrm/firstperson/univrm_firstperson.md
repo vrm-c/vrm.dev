@@ -66,7 +66,7 @@ HMD以外に出力される映像・配信用映像・鏡・マルチプレイ�
 
 可視設定がAutoの場合はインポート時にメッシュが `Both` と `ThirdPersonOnly` に自動分割されます。  
 分割されない場合はメッシュの全てが `Both` か `ThirdPersonOnly` になります。  
-UniVRMでは [VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask) を呼び出します。
+UniVRMでは [VRMFirstPerson.Setup()](/api/firstperson#setuplayermask) を呼び出します。
 Autoによる自動分割は重めの処理になります。  
 
 ### 分割基準

@@ -5,7 +5,7 @@
 * glb/gltf に `ScriptedImporter` の導入
 * `Standard` マテリアルの import/export や mipmapパたメーター などの改修
 
-- [API](https://vrm-c.github.io/UniVRM/ja/)
+- [API](/api/)
 
 | date  | version                                                        | 安定性・バグ                                    | 更新内容・備考                                                                                                                                                                       |
 | ----- | -------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -21,7 +21,7 @@
 | 05/12 | [0.74.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0) |                                                 | \* [Runtime ロード後の　 SpringBone 　スケーリング挙動の修正](https://github.com/vrm-c/UniVRM/issues/922)                                                                            |
 | 05/25 | [0.75.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0) |                                                 | 正規化時に LookAt のパラメーターが落ちてしまうのを修正                                                                                                                               |
 | 06/08 | [0.76.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0) |                                                 | namespace MeshUtility が UnityEditor.MeshUtility class と競合するのを修正                                                                                                            |
-| 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) |                                                 | [API 更新](https://vrm-c.github.io/UniVRM/) https://github.com/vrm-c/UniVRM/issues/1022 https://github.com/vrm-c/UniVRM/issues/496                                                   |
+| 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) |                                                 | [API 更新](/api/) https://github.com/vrm-c/UniVRM/issues/1022 https://github.com/vrm-c/UniVRM/issues/496                                                   |
 | 06/23 | [0.78.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0) |                                                 | https://github.com/vrm-c/UniVRM/pull/1049                                                                                                                                            |
 
 
@@ -37,7 +37,7 @@ v*
 ## Download
 
 
-* [API](https://vrm-c.github.io/UniVRM/ja/)
+* [API](/api/)
 
 | date  | version                                                                                                                           | 安定性・バグ                                    | 更新内容・備考                                                                                                                                                                |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,7 +53,7 @@ v*
 | 05/12 | [0.74.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.74.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/36?closed=1) |                                                 | * [Runtime ロード後の　SpringBone　スケーリング挙動の修正](https://github.com/vrm-c/UniVRM/issues/922)                                                                        |
 | 05/25 | [0.75.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.75.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/37?closed=1) |                                                 | 正規化時にLookAtのパラメーターが落ちてしまうのを修正                                                                                                                          |
 | 06/08 | [0.76.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.76.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/38?closed=1) |                                                 | namespace MeshUtilityがUnityEditor.MeshUtility classと競合するのを修正                                                                                                        |
-| 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/39?closed=1) |                                                 | [API更新](https://vrm-c.github.io/UniVRM/) https://github.com/vrm-c/UniVRM/issues/1022 https://github.com/vrm-c/UniVRM/issues/496                 |
+| 06/17 | [0.77.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.77.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/39?closed=1) |                                                 | [API更新](/api/) https://github.com/vrm-c/UniVRM/issues/1022 https://github.com/vrm-c/UniVRM/issues/496                 |
 | 06/23 | [0.78.0](https://github.com/vrm-c/UniVRM/releases/tag/v0.78.0) [Milestone](https://github.com/vrm-c/UniVRM/milestone/40?closed=1) |                                                 | https://github.com/vrm-c/UniVRM/pull/1049                                                                                                                                     |
 
 [^material_import]: [\#786](https://github.com/vrm-c/UniVRM/issues/786) [\#788](https://github.com/vrm-c/UniVRM/issues/788)
