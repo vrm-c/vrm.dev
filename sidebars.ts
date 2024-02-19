@@ -48,14 +48,14 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "category",
-          label: "Install方法",
+          label: "Install",
+          link: { type: "doc", id: "univrm/install/index" },
           items: [
             { type: "doc", id: "univrm/install/unity_version" },
             { type: "doc", id: "univrm/install/univrm_install" },
-            { type: "doc", id: "univrm/install/univrm_upm" },
-            { type: "doc", id: "univrm/install/univrm_install_samples" },
+            "univrm/install/univrm_upm",
             { type: "doc", id: "univrm/install/univrm_uninstall" },
-            { type: "doc", id: "univrm/install/univrm_version" },
+            "univrm/install/install_error",
           ],
         },
         {
@@ -241,11 +241,13 @@ const sidebars: SidebarsConfig = {
       label: "UniVRM API",
       link: { type: "doc", id: "api/index" },
       items: [
+        "api/upm",
         {
           type: "category",
           label: "Sample",
           link: { type: "doc", id: "api/sample/index" },
           items: [
+            "api/sample/sample_install",
             { type: "doc", id: "api/sample/SimpleViewer" },
             { type: "doc", id: "api/sample/RuntimeExporterSample" },
             { type: "doc", id: "api/sample/FirstPersonSample" },
@@ -354,7 +356,6 @@ const sidebars: SidebarsConfig = {
       label: "ReleaseNote",
       link: { type: "doc", id: "release/index" },
       items: [
-        { type: "doc", id: "release/unitypackage" },
         {
           type: "category",
           label: "~v0.55",

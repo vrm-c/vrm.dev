@@ -5,11 +5,19 @@ aliases: ["/univrm/univrm_install/", "/univrm/install/univrm_install/"]
 tags: ["unity"]
 ---
 
-# UniVRMをインストールする
+# .unitypackage ファイル
 
-## Unity Version
+https://github.com/vrm-c/UniVRM/releases から `unitypackage` をダウンロードしてください。
+`UniGLTF_VRMShaders` 、 `UniVRM` という順番で２つのパッケージをインストールしてください。
 
-* Unity-2019.4 が推奨バージョンです。その他のバージョンは、[Unityのバージョン](/univrm/install/unity_version) を参照してください。
+|          | UniGLTF_VRMShaders | UniVRM  | VRM     |
+| -------- | ------------------ | ------- | ------- |
+| for GLTF | install            |         |         |
+| for VRM  | install            | install |         |
+| for VRM1 | install            |         | install |
+
+- `Sample` パッケージは廃止になり中に含まれます。
+- `UPM` の `Sample` 機能でインストールできます。
 
 ## unitypackage の入手
 
@@ -21,22 +29,22 @@ https://github.com/vrm-c/UniVRM/releases
 
 ## インストール前の準備
 
-* Unityで新規のプロジェクトを作成します
+- Unity で新規のプロジェクトを作成します
 
-* `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
+- `ProjectSettings` - `Player` - `Other Settings` - `Rendering` - `ColorSpace` を `Linear` に設定します(推奨)
 
 ![linear setting](/images/vrm/linear_setting.jpg)
 
 :::warning Unity-2018.3, Unity-2018.4, Unity-2019.1 で作業する場合
 
-* `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
+- `ProjectSettings` - `Player` - `Other Settings` - `Scripting Runtime Version` を `.Net4.X equivalent` にしてください
 
 :::
 
 :::warning 既存のプロジェクト
 
 事前に、古いバージョンの VRM を削除することを推奨しています。
-[UniVRMをアンインストール](/univrm/install/univrm_uninstall) を参照してください。
+[UniVRM をアンインストール](/univrm/install/univrm_uninstall) を参照してください。
 
 :::
 
@@ -62,7 +70,7 @@ VRM menu が表示されていれば動作しています：
 
 menu が出てこない場合は、
 
-* Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
+- Console を表示させます。左上の clear ボタンを推して、エラー(赤いメッセージ)が無いことを確認してください
 
 ![show console](/images/vrm/show_console.jpg)
 
@@ -70,6 +78,5 @@ menu が出てこない場合は、
 
 ## 関連セクション
 
-- [VRMファイルを作ってみたい](/vrm/how_to_make_vrm)
-- [VRMをインポートする](/univrm/import/univrm_import)
-
+- [VRM ファイルを作ってみたい](/vrm/how_to_make_vrm)
+- [VRM をインポートする](/univrm/import/univrm_import)
