@@ -1,5 +1,6 @@
-# v0.56 ～ v0.67 (Unity-2018.4) 推奨バージョン v0.66
+# ■v0.56 ～ v0.67■
 
+- 推奨バージョン v0.66
 - 更新で入った新しいバグ: バージョンアップで新規に混入したバグ。迅速にバグフィックス
 
 | date       | version                                                       | 安定性・バグ           | 更新内容・備考                                                               |
@@ -28,15 +29,6 @@
 | 02/03      | [0.66.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.66.0) | 安定 ✅                | 未正規化ヒエラルキーにスプリングボーンがあるときの警告メッセージ             |
 |            | [0.67.0](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.0) |                        | UPM 専用。パッケージリリース無し                                             |
 |            | [0.67.1](http://github.com/vrm-c/UniVRM/releases/tag/v0.67.1) |                        | UPM 専用。パッケージリリース無し                                             |
-
-## ReleaseNote
-
-```{toctree}
-:glob:
-:maxdepth: 1
-
-v*
-```
 
 ## Download
 

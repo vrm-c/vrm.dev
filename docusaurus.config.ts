@@ -75,24 +75,24 @@ const config: Config = {
           position: "left",
         },
         {
-          label: "🎉VRM Animation🎉",
-          type: "docSidebar",
-          sidebarId: "vrmaSidebar",
-          position: "left",
-        },
-        { to: "/showcase", label: "ShowCase", position: "left" },
-        {
           label: "VRM-1.0",
           type: "docSidebar",
           sidebarId: "vrm1Sidebar",
           position: "left",
         },
         {
-          label: "UniVRM-1.0",
+          label: "🎉VRM Animation🎉",
           type: "docSidebar",
-          sidebarId: "univrm1Sidebar",
+          sidebarId: "vrmaSidebar",
           position: "left",
         },
+        { to: "/showcase", label: "ShowCase", position: "left" },
+        // {
+        //   label: "UniVRM-1.0",
+        //   type: "docSidebar",
+        //   sidebarId: "univrm1Sidebar",
+        //   position: "left",
+        // },
         {
           label: "UniVRM",
           type: "docSidebar",
