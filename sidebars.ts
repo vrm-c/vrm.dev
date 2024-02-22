@@ -168,6 +168,43 @@ const sidebars: SidebarsConfig = {
         "vrm1/emission",
         "vrm1/mtoon",
         "vrm1/constraint",
+        {
+          type: "category",
+          label: "UniVRM-1.0",
+          link: { type: "doc", id: "univrm1/index" },
+          items: [
+            "univrm1/urp",
+            { type: "doc", id: "univrm1/folder_structure" },
+            {
+              type: "category",
+              label: "VRM-1.0モデルを作成する",
+              link: { type: "doc", id: "univrm1/vrm1_tutorial/index" },
+              items: [
+                {
+                  type: "doc",
+                  id: "univrm1/vrm1_tutorial/first_export_from_fbx",
+                },
+                { type: "doc", id: "univrm1/vrm1_tutorial/vrm_object" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/meta" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/expression" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/lookat" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/firstperson" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/springbone" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/material" },
+                { type: "doc", id: "univrm1/vrm1_tutorial/constraint" },
+              ],
+            },
+            {
+              type: "category",
+              label: "VRM-0.x モデルを VRM-1.0 モデルにアップグレードする",
+              link: { type: "doc", id: "univrm1/migrate_vrm0/index" },
+              items: [
+                { type: "doc", id: "univrm1/migrate_vrm0/feature" },
+                { type: "doc", id: "univrm1/migrate_vrm0/migrate_editor" },
+              ],
+            },
+          ],
+        },
       ],
     },
   ],
@@ -181,42 +218,6 @@ const sidebars: SidebarsConfig = {
         "vrma/univrm-vrma/vrma-import",
         "vrma/univrm-vrma/vrma-export",
         "vrma/univrm-vrma/retarget",
-      ],
-    },
-  ],
-
-  univrm1Sidebar: [
-    {
-      type: "category",
-      label: "UniVRM-1.0",
-      link: { type: "doc", id: "univrm1/index" },
-      items: [
-        { type: "doc", id: "univrm1/folder_structure" },
-        {
-          type: "category",
-          label: "VRM-1.0モデルを作成する",
-          link: { type: "doc", id: "univrm1/vrm1_tutorial/index" },
-          items: [
-            { type: "doc", id: "univrm1/vrm1_tutorial/first_export_from_fbx" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/vrm_object" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/meta" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/expression" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/lookat" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/firstperson" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/springbone" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/material" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/constraint" },
-          ],
-        },
-        {
-          type: "category",
-          label: "VRM-0.x モデルを VRM-1.0 モデルにアップグレードする",
-          link: { type: "doc", id: "univrm1/migrate_vrm0/index" },
-          items: [
-            { type: "doc", id: "univrm1/migrate_vrm0/feature" },
-            { type: "doc", id: "univrm1/migrate_vrm0/migrate_editor" },
-          ],
-        },
       ],
     },
   ],
