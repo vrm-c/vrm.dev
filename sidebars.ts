@@ -258,16 +258,17 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/sample/index" },
           items: [
             "api/sample/sample_install",
-            { type: "doc", id: "api/sample/SimpleViewer" },
-            { type: "doc", id: "api/sample/RuntimeExporterSample" },
-            { type: "doc", id: "api/sample/FirstPersonSample" },
-            { type: "doc", id: "api/sample/AnimationBridgeSample" },
+            "api/sample/SimpleViewer",
+            "api/sample/RuntimeExporterSample",
+            "api/sample/FirstPersonSample",
+            "api/sample/AnimationBridgeSample",
             {
               type: "category",
               label: "VRM10Viewer",
               link: { type: "doc", id: "api/sample/VRM10Viewer/index" },
               items: ["api/sample/VRM10Viewer/animation"],
             },
+            "api/sample/Vrm10FirstPersonSample",
           ],
         },
         {
@@ -326,11 +327,8 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "FirstPerson",
-          items: [
-            { type: "doc", id: "api/first_person" },
-            { type: "doc", id: "api/vrm1_firstperson" },
-            { type: "doc", id: "api/firstperson" },
-          ],
+          link: { type: "doc", id: "api/first_person" },
+          items: ["api/vrm1_firstperson", "api/firstperson"],
         },
         {
           type: "category",
