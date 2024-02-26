@@ -55,7 +55,16 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "univrm/install/univrm_install" },
             "univrm/install/univrm_upm",
             { type: "doc", id: "univrm/install/univrm_uninstall" },
-            "univrm/install/install_error",
+          ],
+        },
+        {
+          type: "category",
+          label: "Error",
+          link: { type: "doc", id: "univrm/error/index" },
+          items: [
+            "univrm/error/multiple_scripted_importers",
+            "univrm/error/could_not_include",
+            "univrm/error/report_error",
           ],
         },
         {
