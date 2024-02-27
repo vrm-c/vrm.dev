@@ -228,6 +228,17 @@ const config: Config = {
         ],
       },
     ],
+    [
+      // https://github.com/easyops-cn/docusaurus-search-local
+      "@easyops-cn/docusaurus-search-local",
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        hashed: true,
+        language: ["ja"],
+        indexDocs: true,
+        docsRouteBasePath: "/",
+      },
+    ],
   ],
 };
 

@@ -251,7 +251,12 @@ const sidebars: SidebarsConfig = {
       label: "UniVRM API",
       link: { type: "doc", id: "api/index" },
       items: [
-        "api/upm",
+        {
+          type: "category",
+          label: "Project",
+          // link: { type: "doc", id: "api/sample/index" },
+          items: ["api/upm"],
+        },
         {
           type: "category",
           label: "Sample",
@@ -333,6 +338,7 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "SpringBone",
+          link: { type: "doc", id: "api/spring/index" },
           items: [
             { type: "doc", id: "api/vrm1_springbone" },
             { type: "doc", id: "api/fast_spring_bone" },
