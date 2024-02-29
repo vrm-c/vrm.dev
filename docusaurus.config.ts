@@ -76,24 +76,24 @@ const config: Config = {
           position: "left",
         },
         {
-          label: "🎉VRM Animation🎉",
-          type: "docSidebar",
-          sidebarId: "vrmaSidebar",
-          position: "left",
-        },
-        { to: "/showcase", label: "ShowCase", position: "left" },
-        {
           label: "VRM-1.0",
           type: "docSidebar",
           sidebarId: "vrm1Sidebar",
           position: "left",
         },
         {
-          label: "UniVRM-1.0",
+          label: "🎉VRM Animation🎉",
           type: "docSidebar",
-          sidebarId: "univrm1Sidebar",
+          sidebarId: "vrmaSidebar",
           position: "left",
         },
+        { to: "/showcase", label: "ShowCase", position: "left" },
+        // {
+        //   label: "UniVRM-1.0",
+        //   type: "docSidebar",
+        //   sidebarId: "univrm1Sidebar",
+        //   position: "left",
+        // },
         {
           label: "UniVRM",
           type: "docSidebar",
@@ -216,6 +216,17 @@ const config: Config = {
         min: 640, // min resized image's size. if original is lower, use that size.
         steps: 2, // the max number of images generated between min and max (inclusive)
         disableInDev: false,
+      },
+    ],
+    [
+      // https://github.com/easyops-cn/docusaurus-search-local
+      "@easyops-cn/docusaurus-search-local",
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        hashed: true,
+        language: ["en"],
+        indexDocs: true,
+        docsRouteBasePath: "/",
       },
     ],
   ],

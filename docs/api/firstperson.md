@@ -1,4 +1,4 @@
-# VRMFirstPersonの使い方
+# `vrm-0.x` VRMFirstPersonの使い方
 
 [FirstPerson と Renderer の可視制御 ](/api/first_person)
 

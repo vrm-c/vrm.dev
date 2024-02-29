@@ -13,7 +13,7 @@ date: 2021-08-05
 
 VRM 1.0 は、2022 年 9 月にリリースされました。
 
-VRM 0.x の構成が整理されてまとまり毎に分割されました。
+VRM 0.x の構成が整理されて機能毎に分割されました。
 コアとなる humanoid, meta, expression などを含む [VRMC_vrm-1.0](https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_vrm-1.0) 、トゥーン表現マテリアルの [VRMC_materials_mtoon-1.0](https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_materials_mtoon-1.0),
 ゆれものの [VRMC_springBone-1.0](https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_springBone-1.0) です。
 
@@ -21,7 +21,7 @@ VRM 0.x の構成が整理されてまとまり毎に分割されました。
 
 :::info
 
-[VRMC_vrm_animation-1.0](/vrma/) を開発中です。
+2020年2月 [VRMC_vrm_animation-1.0](/vrma/) が release されました。
 
 :::
 

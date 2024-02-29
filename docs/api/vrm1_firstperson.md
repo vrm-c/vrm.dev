@@ -1,4 +1,4 @@
-# FirstPerson
+# `vrm-1.0` FirstPerson
 
 [FirstPerson と Renderer の可視制御 ](/api/first_person)
 
