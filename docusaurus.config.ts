@@ -224,7 +224,7 @@ const config: Config = {
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       {
         hashed: true,
-        language: ["en"],
+
         indexDocs: true,
         docsRouteBasePath: "/",
       },
