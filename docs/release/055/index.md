@@ -1,4 +1,7 @@
-# ～ v0.55 (Unity-5.6 .NET-3.5) 推奨バージョン v0.55
+# ■ ～ v0.55■
+
+- Unity-5.6 .NET-3.5
+- 推奨バージョン v0.55
 
 | date | version                                                       |
 | ---- | ------------------------------------------------------------- |
@@ -7,12 +10,3 @@
 ## UnityPackage
 
 - `UniVRM-0.XX.0_YYYY.unitypackage`
-
-## Releases
-
-```{toctree}
-:glob:
-:maxdepth: 1
-
-v*
-```
