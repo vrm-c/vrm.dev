@@ -9,17 +9,22 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
  The sidebars can be generated from the filesystem, or explicitly defined here.
 
  Create as many sidebars as you want.
+
+# 注意
+
+- type: "category" の label に関し。このファイルは翻訳の都合上英語で書いてください
+
  */
 const sidebars: SidebarsConfig = {
   vrmSidebar: [
     {
       type: "category",
-      label: "vrmについて",
+      label: "about vrm",
       items: [
         { type: "doc", id: "vrm/vrm_about" },
         {
           type: "category",
-          label: "VRMファイルを作ってみたい",
+          label: "how to make VRM",
           link: { type: "doc", id: "vrm/how_to_make_vrm/index" },
           items: [
             { type: "doc", id: "vrm/how_to_make_vrm/setup_unity" },
@@ -186,7 +191,7 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "univrm1/folder_structure" },
             {
               type: "category",
-              label: "VRM-1.0モデルを作成する",
+              label: "make VRM-1.0",
               link: { type: "doc", id: "univrm1/vrm1_tutorial/index" },
               items: [
                 {
@@ -205,7 +210,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: "category",
-              label: "VRM-0.x モデルを VRM-1.0 モデルにアップグレードする",
+              label: "migrate to VRM-1.0 from VRM-0.x",
               link: { type: "doc", id: "univrm1/migrate_vrm0/index" },
               items: [
                 { type: "doc", id: "univrm1/migrate_vrm0/feature" },
@@ -234,7 +239,7 @@ const sidebars: SidebarsConfig = {
   siteSidebar: [
     {
       type: "category",
-      label: "サイト管理",
+      label: "site management",
       // link: { type: 'doc', id: 'site/index' },
       items: [
         { type: "doc", id: "site/system" },
@@ -299,7 +304,7 @@ const sidebars: SidebarsConfig = {
             "api/runtime-import/await_caller",
             {
               type: "category",
-              label: "api更新情報",
+              label: "api update",
               items: [
                 { type: "doc", id: "api/0_87_runtime_import" },
                 { type: "doc", id: "api/0_82_runtime_import" },
@@ -326,7 +331,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "BlendShape",
+          label: "Expression",
           items: [{ type: "doc", id: "api/0_58_blendshape" }],
         },
         {
