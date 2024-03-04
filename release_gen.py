@@ -9,6 +9,7 @@
 # 3. download button => docs/index.html
 #
 import pathlib
+import sys
 import re
 import git.repo
 import re
@@ -105,8 +106,9 @@ def get_tags(repo):
             yield int(m[1]), int(m[2]), int(m[3])
 
 
-if __name__ == "__main__":
-    repo = git.repo.Repo(str(HERE.parent))
+def main(path: str):
+    repo = git.repo.Repo(path)
+    print(repo)
 
     def cmp_tag(l, r):
         if l[0] != r[0]:
@@ -120,15 +122,25 @@ if __name__ == "__main__":
     x, y, z = tags[-1]
     version = f"{x}.{y}.{z}"
     hash = get_hash(repo, f"v{version}")
+
     # 1.
     copy_release_md(f"{version}", hash)
+
     # 2.
-    release = HERE / f"release/{RELEASE_NOTE_DIR}/v{version}.md"
+    release = HERE / f"docs/release/{RELEASE_NOTE_DIR}/v{version}.md"
     if not release.exists():
         text = change_log(repo, f"{version}")
         release.write_text(text, encoding="utf-8")
+
     # 3.
-    (HERE / "index.html").write_text(
-        gen(HTML_TEMPLATE.read_text(encoding="utf-8"), f"{version}", hash),
-        encoding="utf-8",
-    )
+    # (HERE / "index.html").write_text(
+    #     gen(HTML_TEMPLATE.read_text(encoding="utf-8"), f"{version}", hash),
+    #     encoding="utf-8",
+    # )
+
+
+if __name__ == "__main__":
+    repo = HERE
+    if len(sys.argv) > 1:
+        repo = pathlib.Path(sys.argv[1])
+    main(str(repo.absolute()))
