@@ -69,6 +69,8 @@ const sidebars: SidebarsConfig = {
           items: [
             "univrm/error/multiple_scripted_importers",
             "univrm/error/could_not_include",
+            "univrm/error/null_reference_exeption",
+            //
             "univrm/error/report_error",
           ],
         },
@@ -260,7 +262,10 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Project",
           // link: { type: "doc", id: "api/sample/index" },
-          items: ["api/upm"],
+          items: [
+            "api/upm",
+            "api/build",
+          ],
         },
         {
           type: "category",
