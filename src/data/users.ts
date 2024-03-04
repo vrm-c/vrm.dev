@@ -235,6 +235,21 @@ export const users: User[] = [
   {
     "tag": "CharacterCreation",
     "ja": {
+      "title": "Character Studio",
+      "url": "https://github.com/m3-org/CharacterStudio",
+      "description": "Web browser",
+      "preview": "https://m3-org.github.io/characterstudio-docs/img/charstudio.jpg"
+    },
+    "en": {
+      "title": "Character Studio",
+      "url": "https://github.com/m3-org/CharacterStudio",
+      "description": "Web browser",
+      "preview": "https://m3-org.github.io/characterstudio-docs/img/charstudio.jpg"
+    }
+  },
+  {
+    "tag": "CharacterCreation",
+    "ja": {
       "title": "セシル変身アプリ",
       "url": "https://fantia.jp/fanclubs/10552",
       "description": "Windows, macOS",
@@ -1102,6 +1117,21 @@ export const users: User[] = [
       "url": "https://github.com/exokitxr/avatars",
       "description": "Windows, macOS, Linux, VR",
       "preview": "https://opengraph.githubassets.com/4b718896d41bca688ee9b3fb6b3bfc8f5c67582cd2488b49b69119b9509f6eec/exokitxr/avatars"
+    }
+  },
+  {
+    "tag": "Metaverse",
+    "ja": {
+      "title": "Nifty Island",
+      "url": "https://niftyisland.com/",
+      "description": "Windows, macOS",
+      "preview": "https://niftyisland.com/assets/pub/img/ni-preview.png"
+    },
+    "en": {
+      "title": "Nifty Island",
+      "url": "https://niftyisland.com/",
+      "description": "Windows, macOS",
+      "preview": "https://niftyisland.com/assets/pub/img/ni-preview.png"
     }
   },
   {
