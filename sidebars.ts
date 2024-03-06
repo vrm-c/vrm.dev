@@ -301,7 +301,6 @@ const sidebars: SidebarsConfig = {
               link: { type: "doc", id: "api/vrm1_load" },
               items: [
                 { type: "doc", id: "api/vrm1_migration" },
-                { type: "doc", id: "api/vrm1_controlrig" },
               ],
             },
             "vrma/univrm-vrma/vrma-import",
@@ -353,6 +352,16 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/vrm1_springbone" },
             { type: "doc", id: "api/fast_spring_bone" },
             { type: "doc", id: "api/0_106_spring_manual_update" },
+          ],
+        },
+        {
+          type: "category",
+          label: "Humanoid",
+          link: { type: "doc", id: "api/humanoid/index" },
+          items: [
+            "api/humanoid/humanoid_animation",
+            "vrma/univrm-vrma/retarget",
+            { type: "doc", id: "api/vrm1_controlrig" },
           ],
         },
         {
