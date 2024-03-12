@@ -1273,7 +1273,7 @@ export const users: User[] = [
     "en": {
       "title": "oncyber",
       "url": "https://oncyber.io/",
-      "description": "web browser, mobile, webXR",
+      "description": "web ブラウザ、モバイル、webXR",
       "preview": "https://cyber.mypinata.cloud/ipfs/QmVDt3ZNfkqZGduEW69eQvSsTBC331zh6aydg7NPpePxXr?filename=thumbnail_yvbk53_auozqa.png"
     }
   },
