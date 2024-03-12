@@ -2308,4 +2308,19 @@ export const users: User[] = [
       "description": "Android, iOS"
     }
   },
+  {
+    "tag": "Metaverse",
+    "ja": {
+      "title": "dverso.io",
+      "url": "https://dverso.io",
+      "description": "Windows, macOS, iOS, Android",
+      "preview": "https://assets.dverso.io/logo.png"
+    },
+    "en": {
+      "title": "dverso.io",
+      "url": "https://dverso.io",
+      "description": "Windows, macOS, iOS, Android",
+      "preview": "https://assets.dverso.io/logo.png"
+    }
+  },
 ];

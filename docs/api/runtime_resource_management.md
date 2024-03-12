@@ -1,11 +1,10 @@
-# Runtime のリソース管理について
+# GameObject.Destory で vrm 関連リソースを破棄します
 
-Runtime Import で `Texture`, `Material`, `Mesh` などのリソースを Root の `GameObject.OnDestroy`
-と同時に `UnityEngine.Object.Destroy` したい。
+:::tip RuntimeGltfInstance は runtime 専用
+Editor import(Prefab や ScriptedImporter)では Attach されません。
+:::
 
-## RuntimeGltfInstance
-
-`RuntimeGltfInstance.OnDestroy` で破棄を実行するようにした。
+`RuntimeGltfInstance.OnDestroy` で関連リソースを破棄します。
 
 ```
 ImporterContext
@@ -23,31 +22,4 @@ RuntimeGltfInstance
     [Own]List<Animation>
     [Own]List<Texture>
     [Own]List<Material>
-```
-
-> VRM-0.X では `RuntimeGltfInstance` にリソースを委譲している。
-
-## Vrm10Instance
-
-```
-Vrm10Importer
-    [Own]HumanoidAvatar
-    [Own]Vrm10Object
-    [Own]List<Vrm10Expression>
-
-👇  Vrm10Importer.LoadAsync
-
-RuntimeGltfInstance
-    [Own]HumanoidAvatar
-    [Own]VrmObject
-    [Own]List<VrmExpression>
-```
-
-### FirstPerson
-
-```
-👇  Vrm10Instance.FirstPerson.SetupAsync
-
-RuntimeGltfInstance
-    [Own]List<Mesh>.Add(headless)
 ```
