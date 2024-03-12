@@ -70,6 +70,7 @@ const sidebars: SidebarsConfig = {
             "univrm/error/multiple_scripted_importers",
             "univrm/error/could_not_include",
             "univrm/error/null_reference_exeption",
+            "univrm/error/skinnedmeshrenderer_rootbone",
             //
             "univrm/error/report_error",
           ],
@@ -292,6 +293,7 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/runtime-import/index" },
           items: [
             "api/runtime-import/gltfdata",
+            "api/0_95_dispose",
             "api/runtime-import/RuntimeGltfInstance",
             "api/runtime-import/import_glb",
             "api/runtime-import/import_vrm0",
@@ -301,7 +303,6 @@ const sidebars: SidebarsConfig = {
               link: { type: "doc", id: "api/vrm1_load" },
               items: [
                 { type: "doc", id: "api/vrm1_migration" },
-                { type: "doc", id: "api/vrm1_controlrig" },
               ],
             },
             "vrma/univrm-vrma/vrma-import",
@@ -357,12 +358,28 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
+          label: "Humanoid",
+          link: { type: "doc", id: "api/humanoid/index" },
+          items: [
+            "api/humanoid/humanoid_animation",
+            "vrma/univrm-vrma/retarget",
+            { type: "doc", id: "api/vrm1_controlrig" },
+          ],
+        },
+        {
+          type: "category",
+          label: "Component",
+          link: { type: "doc", id: "api/component/index" },
+          items: [
+            { type: "doc", id: "api/runtime_resource_management" },
+          ],
+        },
+        {
+          type: "category",
           label: "Other",
           items: [
             { type: "doc", id: "api/api_update" },
             { type: "doc", id: "api/0_36_update" },
-            { type: "doc", id: "api/runtime_resource_management" },
-            { type: "doc", id: "api/0_95_dispose" },
             { type: "doc", id: "api/0_95_highlevel" },
             { type: "doc", id: "api/how_to_impl_extension" },
             { type: "doc", id: "api/coordinate" },
