@@ -6,13 +6,14 @@ import Image from "@theme/IdealImage";
 import Heading from "@theme/Heading";
 import { type UserInfo } from "@site/src/data/user";
 import { tags } from "@site/src/data/tags";
+import { TagFlags } from "@site/src/data/tagflags";
 import { type TagInfo } from "@site/src/data/tag";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./styles.module.css";
 
 const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
-  ({ tag, color, ja, en }, ref) => {
+  ({ flag, color, ja, en }, ref) => {
     const {
       i18n: { currentLocale },
     } = useDocusaurusContext();
@@ -40,8 +41,10 @@ const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
 //   );
 // }
 
-function ShowcaseCard({ user, tag }: { user: UserInfo; tag: string }) {
-  const tagObj = tags.find((x) => x.tag == tag);
+function ShowcaseCard({ user, flags }: { user: UserInfo; flags: number }) {
+  const tagObjs = tags.filter((x) => {
+    return (x.flag & flags) != 0;
+  });
 
   return (
     <li key={user.title} className="card shadow--md">
@@ -61,7 +64,7 @@ function ShowcaseCard({ user, tag }: { user: UserInfo; tag: string }) {
         </div>
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
-        <TagComp {...tagObj} />
+        {tagObjs.map((tagObj, i) => <TagComp key={i} {...tagObj} />)}
       </ul>
     </li>
   );

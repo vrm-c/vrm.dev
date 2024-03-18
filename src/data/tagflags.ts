@@ -1,0 +1,18 @@
+export enum TagFlags {
+  None = 0,
+  CharacterPlatform = 1 << 0,
+  VrmAnimation = 1 << 1,
+  CharacterCreation = 1 << 2,
+  ImporterExporter = 1 << 3,
+  Streaming = 1 << 4,
+  MotionCapture = 1 << 5,
+  Animation = 1 << 6,
+  Photography = 1 << 7,
+  Metaverse = 1 << 8,
+  Game = 1 << 9,
+  WebBrowser = 1 << 10,
+  Viewer = 1 << 11,
+  UsingInternally = 1 << 12,
+  Other = 1 << 13,
+  Vrm10 = 1 << 14,
+}

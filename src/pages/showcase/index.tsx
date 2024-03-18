@@ -21,7 +21,7 @@ import ShowcaseFilterToggle, {
   readOperator,
 } from "./_components/ShowcaseFilterToggle";
 import ShowcaseTagSelect, {
-  readSearchTags,
+  readSearchFlags,
 } from "./_components/ShowcaseTagSelect";
 import ShowcaseTooltip from "./_components/ShowcaseTooltip";
 
@@ -39,7 +39,7 @@ export function prepareUserState(): UserState | undefined {
 
 function filterUsers(
   users: User[],
-  selectedTags: Tag[],
+  selectedFlags: number,
   operator: Operator,
   searchName: string | null,
   currentLocale: string
@@ -50,17 +50,16 @@ function filterUsers(
       user[currentLocale].title.toLowerCase().includes(searchName.toLowerCase())
     );
   }
-  if (selectedTags.length === 0) {
+  if (selectedFlags === 0) {
     return users;
   }
   return users.filter((user) => {
-    // if (user.tags.length === 0) {
-    //   return false;
-    // }
     if (operator === "AND") {
-      return selectedTags.every((tag) => user.tag == tag);
+      return (selectedFlags & user.flags) == selectedFlags;
     }
-    return selectedTags.some((tag) => user.tag == tag);
+    else {
+      return (selectedFlags & user.flags) != 0;
+    }
   });
 }
 
@@ -83,8 +82,8 @@ function ShowcaseFilters() {
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {tags.map((tagInfo, i) => {
-          const { tag, ja, en, color } = tagInfo;
-          const id = `showcase_checkbox_id_${tag}`;
+          const { flag, ja, en, color } = tagInfo;
+          const id = `showcase_checkbox_id_${flag}`;
           const label = currentLocale == "ja" ? ja : en;
           const description = currentLocale == "ja" ? ja : en;
 
@@ -96,7 +95,7 @@ function ShowcaseFilters() {
                 anchorEl="#__docusaurus"
               >
                 <ShowcaseTagSelect
-                  tag={tag}
+                  flag={flag}
                   id={id}
                   label={label}
                   icon={
@@ -140,16 +139,37 @@ function restoreUserState(userState: UserState | null) {
   window.scrollTo({ top: scrollTopPosition });
 }
 
+function cmpUser(a: User, b: User): number {
+  if (a.updated) {
+    if (b.updated) {
+      return b.updated.getTime() - a.updated.getTime();
+    }
+    else {
+      // left
+      return -1;
+    }
+  }
+  else {
+    if (b.updated) {
+      // right
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+}
+
 function useFilteredUsers() {
   const location = useLocation<UserState>();
   const [operator, setOperator] = React.useState<Operator>("OR");
   // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = React.useState<Tag[]>([]);
+  const [selectedFlags, setSelectedFlags] = React.useState<number>(0);
   const [searchName, setSearchName] = React.useState<string | null>(null);
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
   // hydration mismatch)
   React.useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
+    setSelectedFlags(readSearchFlags(location.search));
     setOperator(readOperator(location.search));
     setSearchName(readSearchName(location.search));
     restoreUserState(location.state);
@@ -160,8 +180,8 @@ function useFilteredUsers() {
   } = useDocusaurusContext();
 
   return React.useMemo(
-    () => filterUsers(users, selectedTags, operator, searchName, currentLocale),
-    [selectedTags, operator, searchName]
+    () => filterUsers(users.toSorted(cmpUser), selectedFlags, operator, searchName, currentLocale),
+    [selectedFlags, operator, searchName]
   );
 }
 
@@ -229,11 +249,11 @@ function ShowcaseCards() {
               <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {users.map((user) => (
+              {users.toSorted(cmpUser).map((user) => (
                 <ShowcaseCard
                   key={user[currentLocale].title}
                   user={user[currentLocale]}
-                  tag={user.tag}
+                  flags={user.flags}
                 />
               ))}
             </ul>
@@ -249,7 +269,7 @@ function ShowcaseCards() {
               <ShowcaseCard
                 key={user[currentLocale].title}
                 user={user[currentLocale]}
-                tag={user.tag}
+                flags={user.flags}
               />
             ))}
           </ul>
@@ -259,7 +279,7 @@ function ShowcaseCards() {
   );
 }
 
-export default function (props: any) {
+export default function(props: any) {
   return (
     <Layout {...props}>
       <main
