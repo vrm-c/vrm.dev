@@ -1,10 +1,11 @@
 import type { User } from "./user.d.ts";
+import { TagFlags as F } from "./tagflags";
 
 // Add sites to this list
 // prettier-ignore
 export const users: User[] = [
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform | F.Vrm10,
     "ja": {
       "title": "ザ・シードオンライン",
       "url": "https://virtualcast.jp/store/",
@@ -17,10 +18,9 @@ export const users: User[] = [
       "description": "`1.0` can be uploaded. 3D viewer does not support `1.0`",
       "preview": "https://virtualcast.jp/img/common/logo/virtual_cast_570_270_white.png"
     },
-    "vrm": "1.0"
   },
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform,
     "ja": {
       "title": "ニコニ立体",
       "url": "https://3d.nicovideo.jp/",
@@ -35,7 +35,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform | F.Vrm10,
     "ja": {
       "title": "VRoid Hub",
       "url": "https://hub.vroid.com/",
@@ -48,10 +48,10 @@ export const users: User[] = [
       "preview": "https://hub.vroid.com/public/images/ogp/default_en.png",
       "description": "VRoid Hub is a platform where users can post their 3D characters and share them with other users. With VRoid Hub, users can post their own 3D models to make their characters come alive thanks to a vast range of animations available on the character's profile page, and distribute model data to other users by setting specific usage conditions. In addition, 3D characters posted on VRoid Hub can also be used as avatars on various VR/AR platforms and 3D contents via VRoid Hub linkage. "
     },
-    "vrm": "1.0"
+    "updated": new Date("2023-01-02"),
   },
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform,
     "ja": {
       "title": "CryptoAvatars",
       "url": "https://cryptoavatars.io/home",
@@ -66,7 +66,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform,
     "ja": {
       "title": "VIPE - Virtual Persona",
       "url": "https://vipe.io",
@@ -81,7 +81,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter | F.VrmAnimation | F.Vrm10,
     "ja": {
       "title": "UniVRM",
       "url": "https://github.com/vrm-c/UniVRM/releases",
@@ -94,10 +94,9 @@ export const users: User[] = [
       "description": "Unity editor extension, Unity library. `1.0` version can also load `0.x`",
       "preview": "https://opengraph.githubassets.com/23b46f1ccc13b6834ec5370809e05918d9bf45aa53e0a6fe49fce61bf0384d89/vrm-c/UniVRM"
     },
-    "vrm": "1.0"
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter | F.Vrm10,
     "ja": {
       "title": "@pixiv/three-vrm",
       "url": "https://github.com/pixiv/three-vrm/",
@@ -110,10 +109,9 @@ export const users: User[] = [
       "description": "A library for Three.js. Can load both past VRM and VRM 1.0",
       "preview": "https://repository-images.githubusercontent.com/190160360/9aa13e00-d54c-11e9-9ba3-c9878cf9d28a"
     },
-    "vrm": "1.0"
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "VRM Add-on for Blender",
       "url": "https://vrm-addon-for-blender.info/ja",
@@ -128,7 +126,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "VRM4U",
       "url": "https://github.com/ruyo/VRM4U",
@@ -143,7 +141,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "godot-vrm",
       "url": "https://github.com/V-Sekai/godot-vrm",
@@ -158,7 +156,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "glTF-Maya-Exporter",
       "url": "https://github.com/kashikacojp/glTF-Maya-Exporter",
@@ -173,7 +171,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "VRM Converter for VRChat",
       "url": "https://pokemori.booth.pm/items/1025226",
@@ -188,7 +186,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "ImporterExporter",
+    "flags": F.ImporterExporter,
     "ja": {
       "title": "UniVRMExtensions",
       "url": "https://pokemori.booth.pm/items/1788660",
@@ -203,7 +201,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterCreation",
+    "flags": F.CharacterCreation,
     "ja": {
       "title": "VRoid Studio",
       "url": "https://vroid.com/studio/",
@@ -218,7 +216,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterCreation",
+    "flags": F.CharacterCreation,
     "ja": {
       "title": "VRoid Mobile",
       "url": "https://vroid.com/mobile/",
@@ -233,7 +231,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterCreation",
+    "flags": F.CharacterCreation,
     "ja": {
       "title": "Character Studio",
       "url": "https://github.com/m3-org/CharacterStudio",
@@ -248,7 +246,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "CharacterCreation",
+    "flags": F.CharacterCreation,
     "ja": {
       "title": "セシル変身アプリ",
       "url": "https://fantia.jp/fanclubs/10552",
@@ -263,7 +261,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VDRAW",
       "url": "https://sites.google.com/view/vdraw/",
@@ -278,7 +276,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "SHOWROOM V",
       "url": "https://campaign.showroom-live.com/showroom-v/",
@@ -293,7 +291,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Hitogata",
       "url": "https://sites.google.com/site/vhitogata/",
@@ -308,7 +306,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "3tene",
       "url": "https://3tene.com/",
@@ -321,7 +319,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Wakaru",
       "url": "https://store.steampowered.com/app/870820/Wakaru_ver_beta/",
@@ -336,7 +334,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "バーチャルモーションキャプチャー",
       "url": "https://sh-akira.github.io/VirtualMotionCapture/",
@@ -351,7 +349,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "FaceVTuber",
       "url": "https://facevtuber.com/",
@@ -364,7 +362,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "LiveAvatar",
       "url": "https://github.com/m2wasabi/LiveAvatar",
@@ -379,7 +377,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Luppet",
       "url": "https://luppet.appspot.com/",
@@ -394,7 +392,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "vear",
       "url": "https://apps.apple.com/jp/app/vear/id1490697369",
@@ -409,7 +407,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "CharWebCam",
       "url": "https://github.com/xelloss120/CharWebCam",
@@ -424,7 +422,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VMagicMirror",
       "url": "https://malaybaku.github.io/VMagicMirror/",
@@ -439,7 +437,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VUP-VTuber",
       "url": "https://store.steampowered.com/app/1207050/VUPVTuber_Maker_Animation_MMDLive2D__facial_capture/",
@@ -454,7 +452,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "ミチコンPlus",
       "url": "https://www.next-system.com/michicon",
@@ -469,7 +467,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VOVOLA",
       "url": "https://vovola.wixsite.com/website",
@@ -482,7 +480,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VSeeFace",
       "url": "https://www.vseeface.icu/",
@@ -495,7 +493,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "ZZ3D",
       "url": "https://halmin.wixsite.com/zz3d",
@@ -510,7 +508,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "LIV",
       "url": "https://liv.tv/",
@@ -525,7 +523,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Animaze by FaceRig",
       "url": "https://store.steampowered.com/app/1364390/Animaze_by_FaceRig/",
@@ -540,7 +538,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "VTmini",
       "url": "https://store.steampowered.com/app/1801480/VTmini/",
@@ -555,7 +553,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "JINS MEME VTUNER",
       "url": "https://apps.apple.com/jp/app/jins-meme-vtuner/id1554040568",
@@ -568,7 +566,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "RiBLA Broadcast",
       "url": "https://ribla-laboratory.booth.pm/items/3642935",
@@ -583,7 +581,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Vフレット",
       "url": "https://nkjzm.jp/vfret",
@@ -598,7 +596,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "Avatar.Webcam",
       "url": "https://avatar.webcam",
@@ -613,7 +611,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "TRACKING WORLD",
       "url": "http://deatrathias.net/TW/",
@@ -626,7 +624,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "waidayo",
       "url": "https://booth.pm/ja/items/1779185",
@@ -641,7 +639,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "ThreeDPoseTracker",
       "url": "https://github.com/digital-standard/ThreeDPoseTracker",
@@ -656,7 +654,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "TDPT",
       "url": "https://digital-standard.com/tdpt_lp/",
@@ -671,7 +669,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "EasyVirtualMotionCaptureForUnity",
       "url": "https://booth.pm/ja/items/1801535",
@@ -686,7 +684,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "Webcam Motion Capture",
       "url": "https://webcammotioncapture.info/ja/index.php",
@@ -701,7 +699,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "iFacialMocap",
       "url": "https://www.ifacialmocap.com/home/japanese/",
@@ -716,7 +714,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "FACEMOTION3D",
       "url": "https://apps.apple.com/jp/app/facemotion3d/id1507538005",
@@ -731,7 +729,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "Kalidoface 3D",
       "url": "https://github.com/yeemachine/kalidoface-3d",
@@ -746,7 +744,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "VIRTU: Avatar Camera",
       "url": "https://virtu.booth.pm/items/3684467",
@@ -761,7 +759,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "MotionCapture",
+    "flags": F.MotionCapture,
     "ja": {
       "title": "VRigUnity",
       "url": "https://github.com/Kariaro/VRigUnity",
@@ -776,7 +774,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "Ls ENGINE",
       "url": "https://lsengine.net/",
@@ -791,7 +789,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "AI4Animation",
       "url": "https://github.com/t-takasaka/AI4Animation/tree/master/AI4Animation/Assets/Demo/ARKit",
@@ -804,7 +802,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "Dance Dance Maker!",
       "url": "https://booth.pm/ja/items/2216222",
@@ -819,7 +817,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "DanceDreamMV",
       "url": "https://maruapps.com/dancedreammv/",
@@ -834,7 +832,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "Doll Dancer",
       "url": "https://play.google.com/store/apps/details?id=com.personuo.dolldancer",
@@ -849,7 +847,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "Dan Sing Sing MV Maker",
       "url": "https://vtubershop.booth.pm/items/3366941",
@@ -864,7 +862,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Animation",
+    "flags": F.Animation,
     "ja": {
       "title": "PlayAniMaker",
       "url": "https://sites.google.com/view/playanimaker",
@@ -879,7 +877,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "VRMお人形遊びPC版",
       "url": "https://120byte.booth.pm/items/1654585",
@@ -894,7 +892,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "VRMお人形遊び",
       "url": "https://120byte.booth.pm/items/1099618",
@@ -909,7 +907,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "Vタビ",
       "url": "https://app.famitsu.com/gametitle/8356/",
@@ -924,7 +922,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "Vスタンプ",
       "url": "https://bnut.jp/vstamp",
@@ -939,7 +937,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "VRM Automatic Photographing",
       "url": "https://matsuvr.booth.pm/items/2223918",
@@ -954,7 +952,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "VRMCardMaker",
       "url": "https://booth.pm/ja/items/1808860",
@@ -969,7 +967,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "Pose Arch",
       "url": "https://apps.apple.com/jp/app/pose-arch/id1483326327",
@@ -984,7 +982,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "COCOPStudio",
       "url": "https://cocop.site/cocopstudio/",
@@ -999,7 +997,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "Emmv Studio",
       "url": "https://booth.pm/ja/items/2495794",
@@ -1014,7 +1012,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "PaSha!",
       "url": "https://ayato3d.booth.pm/items/2202577",
@@ -1029,7 +1027,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "PoseMixerAR",
       "url": "https://maruapps.com/posemixerar/",
@@ -1044,7 +1042,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "VRMポージング",
       "url": "https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/",
@@ -1059,7 +1057,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse | F.Vrm10,
     "ja": {
       "title": "バーチャルキャスト",
       "url": "https://virtualcast.jp/",
@@ -1072,10 +1070,10 @@ export const users: User[] = [
       "description": "[Windows VR](https://store.steampowered.com/app/947890/VirtualCast/), [Oculus Quest](https://www.oculus.com/experiences/quest/4174249979259348/)",
       "preview": "https://virtualcast.jp/img/common/logo/virtual_cast_570_270_white.png"
     },
-    "vrm": "1.0"
+    "updated": new Date("2023-01-01"),
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "cluster",
       "url": "https://cluster.mu/",
@@ -1087,10 +1085,11 @@ export const users: User[] = [
       "url": "https://cluster.mu/",
       "description": "PCVR, Windows, macOS, iOS, Android",
       "preview": "https://cluster.mu/ogp.png"
-    }
+    },
+    "updated": new Date("2023-01-03"),
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Clarie",
       "url": "https://biscrat.booth.pm/items/1193414",
@@ -1105,7 +1104,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Exokit",
       "url": "https://github.com/exokitxr/avatars",
@@ -1120,7 +1119,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Nifty Island",
       "url": "https://niftyisland.com/",
@@ -1135,7 +1134,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "TECO",
       "url": "https://teco-vr.com/",
@@ -1150,7 +1149,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "コラボル",
       "url": "https://brother-pv.booth.pm/items/2016717",
@@ -1165,7 +1164,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Webaverse",
       "url": "https://webaverse.com/",
@@ -1178,7 +1177,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "ambr",
       "url": "https://ambr.co.jp/",
@@ -1191,7 +1190,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Connect Chat",
       "url": "https://store.steampowered.com/app/1424930/Connect_Chat/",
@@ -1206,7 +1205,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "VZero",
       "url": "https://facevtuber.com/vzero/",
@@ -1221,7 +1220,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Substrata",
       "url": "https://substrata.info/",
@@ -1234,7 +1233,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "Hyperfy",
       "url": "https://hyperfy.io/",
@@ -1249,7 +1248,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse | F.Vrm10,
     "ja": {
       "title": "Mona",
       "url": "https://monaverse.com",
@@ -1260,10 +1259,9 @@ export const users: User[] = [
       "url": "https://monaverse.com",
       "description": "Web browser"
     },
-    "vrm": "1.0"
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "oncyber",
       "url": "https://oncyber.io/",
@@ -1278,7 +1276,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Vワールド",
       "url": "https://naby.booth.pm/items/990663",
@@ -1293,7 +1291,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "BONFIRE~焚き火~",
       "url": "https://orenodinner.booth.pm/items/952450",
@@ -1308,7 +1306,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "つんつんVR",
       "url": "https://store.steampowered.com/app/867090/VR__TSUNTSUN_VR/",
@@ -1323,7 +1321,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "コロコロシステム",
       "url": "https://www.mediaplex.co.jp/korokoro/",
@@ -1338,7 +1336,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "パイロットクロス",
       "url": "https://n-mattun.booth.pm/",
@@ -1353,7 +1351,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "プリミティア",
       "url": "https://store.steampowered.com/app/1745170/Primitier/",
@@ -1368,7 +1366,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Synth Riders",
       "url": "https://store.steampowered.com/app/885000/Synth_Riders/",
@@ -1383,7 +1381,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "SOUNDART",
       "url": "https://store.steampowered.com/app/1144460/SOUNDART/",
@@ -1398,7 +1396,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "VRAST!",
       "url": "https://rc-cobalt.booth.pm/items/1756359",
@@ -1413,7 +1411,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Legend of the Shieldbearers",
       "url": "https://www.spacepupstudio.com/lots",
@@ -1428,7 +1426,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Craftopia",
       "url": "https://store.steampowered.com/app/1307550/Craftopia/",
@@ -1443,7 +1441,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "RESONARK X",
       "url": "https://store.steampowered.com/app/1366570/RESONARK_X/",
@@ -1458,7 +1456,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "FantasySeed",
       "url": "https://booth.pm/ja/items/1293100",
@@ -1473,7 +1471,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Roduet",
       "url": "https://fujisunflower.booth.pm/items/2510498",
@@ -1488,7 +1486,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Cube Art World",
       "url": "https://simplestar-game.booth.pm/items/2622434",
@@ -1503,7 +1501,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "TouroReminiscence",
       "url": "https://booth.pm/ja/items/2349960",
@@ -1518,7 +1516,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "VRM Cyber walk",
       "url": "https://ktamayan.booth.pm/items/2790105",
@@ -1533,7 +1531,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "Virtual Home Run Derby",
       "url": "https://paldynojosh.booth.pm/items/1485218",
@@ -1548,7 +1546,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "フードデリバリーバトル",
       "url": "https://store.steampowered.com/app/1708710/Food_Delivery_Battle/",
@@ -1563,7 +1561,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "古銭プッシャーフレンズ",
       "url": "https://store.steampowered.com/app/1722020/Old_Coin_Pusher_Friends/",
@@ -1578,7 +1576,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "AVATAVI",
       "url": "https://avatavi.com/jp/index.html",
@@ -1593,7 +1591,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "あけろ！爆裂駐車場！",
       "url": "https://unityroom.com/games/bakuretsu",
@@ -1606,7 +1604,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "スーパーエクストリームVRMサッカー",
       "url": "https://unityroom.com/games/hyperdimension-virtual-super-extreme-vrm-soccer",
@@ -1619,7 +1617,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "密ッションインポッシブル",
       "url": "https://unityroom.com/games/mitsussion",
@@ -1632,7 +1630,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "スーパーVRMブラザーズ3D",
       "url": "https://unityroom.com/games/aguroshoutest",
@@ -1645,7 +1643,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "ペースアップ！",
       "url": "https://unityroom.com/games/paseup",
@@ -1658,7 +1656,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "二輪VRM",
       "url": "https://unityroom.com/games/vrm_bike",
@@ -1671,7 +1669,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "VRM三段跳び",
       "url": "https://unityroom.com/games/vrmtriplejump",
@@ -1684,7 +1682,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "(超)STEP PANEL MATCH",
       "url": "https://unityroom.com/games/step-panel-match",
@@ -1697,7 +1695,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "WebBrowser",
+    "flags": F.WebBrowser,
     "ja": {
       "title": "Vブレード",
       "url": "https://unityroom.com/games/vblade",
@@ -1710,7 +1708,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "Babylon VRM Viewer",
       "url": "https://github.com/virtual-cast/babylon-vrm-loader/",
@@ -1725,7 +1723,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VPocket",
       "url": "https://booooooh.booth.pm/items/1033823",
@@ -1740,7 +1738,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VRMビュアー",
       "url": "https://w.atwiki.jp/beamman/",
@@ -1755,7 +1753,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VRMQuickLook",
       "url": "https://github.com/magicien/VRMQuickLook",
@@ -1770,7 +1768,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VRM Live Viewer",
       "url": "https://booth.pm/ja/items/1783082",
@@ -1785,7 +1783,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "UniWinApi Example project",
       "url": "https://github.com/kirurobo/UniWinApi",
@@ -1800,7 +1798,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "KinectV2VRM",
       "url": "https://github.com/m2wasabi/KinectV2VRM",
@@ -1815,7 +1813,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "MocuMocuVRM",
       "url": "http://www.vrai.jp/vr_mocuvrm.html",
@@ -1828,7 +1826,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VRM Display",
       "url": "https://akarimichi.github.io/vrm-display-releases/",
@@ -1843,7 +1841,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "Desktop Magic Engine",
       "url": "https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/",
@@ -1858,7 +1856,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "カスタムキャスト",
       "url": "https://customcast.jp/",
@@ -1871,7 +1869,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "REALITY",
       "url": "https://reality.wrightflyer.net/",
@@ -1884,7 +1882,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "パペ文字",
       "url": "https://www.puppemoji.com/",
@@ -1897,7 +1895,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "メイアライブオーダーメイド版",
       "url": "https://materializer.co/lab/mayalive",
@@ -1912,7 +1910,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "MakeAvatar",
       "url": "https://gugenka.jp/digital/make_avatar.php",
@@ -1927,7 +1925,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "VRMLoaderUI",
       "url": "https://github.com/m2wasabi/VRMLoaderUI",
@@ -1942,7 +1940,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "テアトル",
       "url": "https://teator.jp/",
@@ -1957,7 +1955,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "NeoRoidHub for Unity",
       "url": "https://neoseast-japan.booth.pm/items/2562276",
@@ -1972,7 +1970,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "Virtual Presentation Space",
       "url": "https://eyesout.itch.io/virtual-presentation-space",
@@ -1987,7 +1985,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "VTuber Editor",
       "url": "https://store.steampowered.com/app/1454500/VTuber_Editor/",
@@ -2002,7 +2000,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "ACUAH β",
       "url": "https://riemgoshawk.booth.pm/items/1990160",
@@ -2015,7 +2013,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "TIFA",
       "url": "https://melonspeedruns.itch.io/tifa",
@@ -2030,7 +2028,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "STYLY",
       "url": "https://styly.cc/",
@@ -2045,7 +2043,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "[HANA] BlendShapeをコントロールするツール",
       "url": "https://kuniyan.booth.pm/items/2437978",
@@ -2060,7 +2058,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "Virtual Studio",
       "url": "https://natsunatsu.booth.pm/items/2956377",
@@ -2075,7 +2073,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "VRM表情設定するやつ",
       "url": "https://120byte.booth.pm/items/2152326",
@@ -2090,7 +2088,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "VRMテクスチャ差し替えるやつ",
       "url": "https://120byte.booth.pm/items/2177538",
@@ -2105,7 +2103,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "アイテムショップ",
       "url": "https://suzuki-cecil.booth.pm/items/3250368",
@@ -2120,7 +2118,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "meebits-blender-utils",
       "url": "https://github.com/MeebitsDAO/meebits-blender-utils",
@@ -2135,7 +2133,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "The Meebits - Larva Labs",
       "url": "https://meebits.larvalabs.com/",
@@ -2150,7 +2148,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "SimpleURPToonLitOutlineExample",
       "url": "https://github.com/simplestargame/SimpleURPToonLitOutlineExample",
@@ -2165,7 +2163,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "Kalidokit",
       "url": "https://github.com/yeemachine/kalidokit",
@@ -2180,7 +2178,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "Wicked Engine",
       "url": "https://github.com/turanszkij/WickedEngine",
@@ -2196,7 +2194,7 @@ export const users: User[] = [
   },
   //
   {
-    "tag": "CharacterPlatform",
+    "flags": F.CharacterPlatform,
     "ja": {
       "title": "DMM VR CONNECT",
       "url": "https://connect.vrlab.dmm.com/"
@@ -2207,7 +2205,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "BOW MAN",
       "url": "https://bowman.vrlab.dmm.com/ja/",
@@ -2220,7 +2218,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Streaming",
+    "flags": F.Streaming,
     "ja": {
       "title": "2DR",
       "url": "https://2dr.info/",
@@ -2233,7 +2231,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Photography",
+    "flags": F.Photography,
     "ja": {
       "title": "Vismuth",
       "url": "https://vismuth.com/",
@@ -2246,7 +2244,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "SEIYA",
       "url": "https://wandv.jp/seiya/",
@@ -2259,7 +2257,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Game",
+    "flags": F.Game,
     "ja": {
       "title": "ラクキン",
       "url": "https://rakugaki-kingdom.com/",
@@ -2272,7 +2270,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "VRM Viewer",
       "url": "https://vrm-viewer.yukimochi.io/",
@@ -2285,7 +2283,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Viewer",
+    "flags": F.Viewer,
     "ja": {
       "title": "TSO AR Viewer",
       "url": "https://seed.online/static/guide-arviewer",
@@ -2298,7 +2296,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "UsingInternally",
+    "flags": F.UsingInternally,
     "ja": {
       "title": "Vカツ",
       "url": "http://vkatsu.jp/",
@@ -2311,7 +2309,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Other",
+    "flags": F.Other,
     "ja": {
       "title": "ミロックプラス",
       "url": "https://www.miloq-plus.com/",
@@ -2324,7 +2322,7 @@ export const users: User[] = [
     }
   },
   {
-    "tag": "Metaverse",
+    "flags": F.Metaverse,
     "ja": {
       "title": "dverso.io",
       "url": "https://dverso.io",

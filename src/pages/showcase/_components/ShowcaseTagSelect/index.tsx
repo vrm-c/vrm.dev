@@ -13,65 +13,93 @@ import React, {
   type ReactNode,
   type ReactElement,
 } from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {toggleListItem} from '@site/src/data/jsUtils';
-import type {TagType} from '@site/src/data/tags';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { toggleListItem } from '@site/src/data/jsUtils';
+import type { Tag } from '@site/src/data/tag.d.ts';
+import { TagFlags } from '@site/src/data/tagflags';
 
-import {prepareUserState} from '../../index';
+import { prepareUserState } from '../../index';
 import styles from './styles.module.css';
 
 interface Props extends ComponentProps<'input'> {
   icon: ReactElement<ComponentProps<'svg'>>;
   label: ReactNode;
-  tag: TagType;
+  flag: TagFlags;
 }
 
+// tags
 const TagQueryStringKey = 'tags';
 
-export function readSearchTags(search: string): TagType[] {
-  return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
+export function readSearchTags(search: string): Tag[] {
+  return new URLSearchParams(search).getAll(TagQueryStringKey) as Tag[];
 }
 
-function replaceSearchTags(search: string, newTags: TagType[]) {
+function replaceSearchTags(search: string, newTags: Tag[]) {
   const searchParams = new URLSearchParams(search);
   searchParams.delete(TagQueryStringKey);
   newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
   return searchParams.toString();
 }
 
+// flags
+export function readSearchFlags(search: string): number {
+  const flags = new URLSearchParams(search).get("flags");
+  return flags ? parseInt(flags) : 0;
+}
+
+function replaceSearchFlags(search: string, newFlags: number) {
+  const searchParams = new URLSearchParams(search);
+  searchParams.delete("flags");
+  searchParams.append("flags", newFlags.toString());
+  return searchParams.toString();
+}
+
 function ShowcaseTagSelect(
-  {id, icon, label, tag, ...rest}: Props,
+  { id, icon, label, flag, ...rest }: Props,
   ref: React.ForwardedRef<HTMLLabelElement>,
 ) {
   const location = useLocation();
   const history = useHistory();
   const [selected, setSelected] = useState(false);
+
   useEffect(() => {
-    const tags = readSearchTags(location.search);
-    setSelected(tags.includes(tag));
-  }, [tag, location]);
-  const toggleTag = useCallback(() => {
-    const tags = readSearchTags(location.search);
-    const newTags = toggleListItem(tags, tag);
-    const newSearch = replaceSearchTags(location.search, newTags);
+    // const tags = readSearchTags(location.search);
+    // setSelected(tags.includes(tag));
+
+    const flags = readSearchFlags(location.search);
+    setSelected((flags & flag) != 0);
+  }, [flag, location]);
+
+  // const toggleTag = useCallback((e) => {
+  //   console.log(e.target.checked);
+  //   const tags = readSearchTags(location.search);
+  //   const newTags = toggleListItem(tags, tag);
+  //   const newSearch = replaceSearchTags(location.search, newTags);
+  //   history.push({
+  //     ...location,
+  //     search: newSearch,
+  //     state: prepareUserState(),
+  //   });
+  // }, [tag, location, history]);
+
+  const toggleFlag = useCallback((e) => {
+    const flags = readSearchFlags(location.search);
+    const newFlags = e.target.checked ? (flags | flag) : (flags & ~flag);
+    console.log(flag, e.target.checked, flags, newFlags);
+    const newSearch = replaceSearchFlags(location.search, newFlags);
     history.push({
       ...location,
       search: newSearch,
       state: prepareUserState(),
     });
-  }, [tag, location, history]);
+  }, [flag, location, history]);
+
   return (
     <>
       <input
         type="checkbox"
-        checked={true}
         id={id}
         className="screen-reader-only"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            toggleTag();
-          }
-        }}
         onFocus={(e) => {
           if (e.relatedTarget) {
             e.target.nextElementSibling?.dispatchEvent(
@@ -82,7 +110,7 @@ function ShowcaseTagSelect(
         onBlur={(e) => {
           e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent('blur'));
         }}
-        onChange={toggleTag}
+        onChange={toggleFlag}
         checked={selected}
         {...rest}
       />

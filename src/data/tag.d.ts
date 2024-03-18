@@ -15,7 +15,7 @@ export type Tag =
   | "Other";
 
 export type TagInfo = {
-  tag: Tag;
+  flag: TagFlags;
   ja: string;
   en: string;
   color: string;
