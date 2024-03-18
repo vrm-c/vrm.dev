@@ -9,9 +9,8 @@ export type UserInfo = {
 };
 
 export type User = {
-  tag: Tag;
+  flags: TagFlags;
   ja: UserInfo;
   en?: UserInfo;
-  // `1.0 support` or `1.0 only` or `0.x only` else ?
-  vrm?: string;
+  updated?: Date,
 };
