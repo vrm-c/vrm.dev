@@ -11,6 +11,28 @@ import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 
 import { users } from "@site/src/data/users";
+function cmpUser(a: User, b: User): number {
+  if (a.updated) {
+    if (b.updated) {
+      return b.updated.getTime() - a.updated.getTime();
+    }
+    else {
+      // left
+      return -1;
+    }
+  }
+  else {
+    if (b.updated) {
+      // right
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+}
+users.sort(cmpUser);
+
 import { type User, type UserInfo } from "@site/src/data/user";
 import { tags } from "@site/src/data/tags";
 import { type Tag } from "@site/src/data/tag";
@@ -139,27 +161,6 @@ function restoreUserState(userState: UserState | null) {
   window.scrollTo({ top: scrollTopPosition });
 }
 
-function cmpUser(a: User, b: User): number {
-  if (a.updated) {
-    if (b.updated) {
-      return b.updated.getTime() - a.updated.getTime();
-    }
-    else {
-      // left
-      return -1;
-    }
-  }
-  else {
-    if (b.updated) {
-      // right
-      return 1;
-    }
-    else {
-      return 0;
-    }
-  }
-}
-
 function useFilteredUsers() {
   const location = useLocation<UserState>();
   const [operator, setOperator] = React.useState<Operator>("OR");
@@ -180,7 +181,7 @@ function useFilteredUsers() {
   } = useDocusaurusContext();
 
   return React.useMemo(
-    () => filterUsers(users.toSorted(cmpUser), selectedFlags, operator, searchName, currentLocale),
+    () => filterUsers(users, selectedFlags, operator, searchName, currentLocale),
     [selectedFlags, operator, searchName]
   );
 }
@@ -249,7 +250,7 @@ function ShowcaseCards() {
               <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {users.toSorted(cmpUser).map((user) => (
+              {users.map((user) => (
                 <ShowcaseCard
                   key={user[currentLocale].title}
                   user={user[currentLocale]}
