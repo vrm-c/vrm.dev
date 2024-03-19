@@ -71,6 +71,7 @@ const sidebars: SidebarsConfig = {
             "univrm/error/could_not_include",
             "univrm/error/null_reference_exeption",
             "univrm/error/skinnedmeshrenderer_rootbone",
+            "univrm/error/cs1061",
             //
             "univrm/error/report_error",
           ],
@@ -354,6 +355,7 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/vrm1_springbone" },
             { type: "doc", id: "api/fast_spring_bone" },
             { type: "doc", id: "api/0_106_spring_manual_update" },
+            { type: "doc", id: "api/spring/spring_and_scaling" },
           ],
         },
         {
