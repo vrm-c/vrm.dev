@@ -355,6 +355,7 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "api/vrm1_springbone" },
             { type: "doc", id: "api/fast_spring_bone" },
             { type: "doc", id: "api/0_106_spring_manual_update" },
+            { type: "doc", id: "api/spring/spring_and_scaling" },
           ],
         },
         {
