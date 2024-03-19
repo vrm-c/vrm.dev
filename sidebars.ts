@@ -71,6 +71,7 @@ const sidebars: SidebarsConfig = {
             "univrm/error/could_not_include",
             "univrm/error/null_reference_exeption",
             "univrm/error/skinnedmeshrenderer_rootbone",
+            "univrm/error/cs1061",
             //
             "univrm/error/report_error",
           ],
