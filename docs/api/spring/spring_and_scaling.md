@@ -1,17 +1,17 @@
-# SpringBone と スケーリング
+# SpringBone and Scaling
 
-## 実装ごとの対応状況
+## Status by implementation
 
-| 実装                 | スケーリング対応 | 動的なパラメーターの変更 | manual update |
-| -------------------- | ---------------- | ------------------------ | ------------- |
-| vrm-0                | v0.74            | ?                        | ?             |
-| vrm-0 fastspringbone | ?                | ?                        | ?             |
-| vrm-1                | ?                | v0.106(重力)             | ✅            |
+| implementation       | scaling | Dynamic parameter | manual update |
+| -------------------- | ------- | ----------------- | ------------- |
+| vrm-0                | v0.74   | ?                 | ?             |
+| vrm-0 fastspringbone | ?       | ?                 | ?             |
+| vrm-1                | ?       | v0.106(gravity)   | ✅            |
 
-:::warning uniform(xyz が同じ)スケーリングのみの対応です
+:::warning Only uniform (xyz is the same) scaling is supported
 :::
 
-:::warning 初期化時に固定されるパラメーターがあります
+:::warning There are parameters that are fixed during initialization
 :::
 
 - [SpringBone does not work correctly if you change the model size, for example scale (8,8,8). · Issue #2242 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2242)
