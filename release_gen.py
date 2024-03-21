@@ -127,10 +127,10 @@ def main(path: str):
     copy_release_md(f"{version}", hash)
 
     # 2.
-    release = HERE / f"docs/release/{RELEASE_NOTE_DIR}/v{version}.md"
-    if not release.exists():
-        text = change_log(repo, f"{version}")
-        release.write_text(text, encoding="utf-8")
+    # release = HERE / f"docs/release/{RELEASE_NOTE_DIR}/v{version}.md"
+    # if not release.exists():
+    #     text = change_log(repo, f"{version}")
+    #     release.write_text(text, encoding="utf-8")
 
     # 3.
     # (HERE / "index.html").write_text(
