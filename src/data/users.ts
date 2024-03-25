@@ -2336,4 +2336,19 @@ export const users: User[] = [
       "preview": "https://assets.dverso.io/logo.png"
     }
   },
+  {
+    "flags": F.CharacterCreation,
+    "ja": {
+      "title": "myVIPE",
+      "url": "https://vipe.io/myvipe",
+      "description": "Web browser",
+      "preview": "https://white-legal-elk-728.mypinata.cloud/ipfs/QmUwjmEeApqGVeSza8bV8zE91s3W82X7MpV7eQqRP7DT5w/myVIPE.jpg"
+    },
+    "en": {
+      "title": "myVIPE",
+      "url": "https://vipe.io/myvipe",
+      "description": "Web browser",
+      "preview": "https://white-legal-elk-728.mypinata.cloud/ipfs/QmUwjmEeApqGVeSza8bV8zE91s3W82X7MpV7eQqRP7DT5w/myVIPE.jpg"
+    }
+  },
 ];
