@@ -20,11 +20,10 @@ VRM-0.x と VRM-1.0 で対応のある項目はコピーし、
 
 ### Runtime
 
-```{admonition} VRM-0.x として処理
-:class: info
+:::info VRM-0.x として処理
 
 アプリケーションは、 VRM-0.x 情報で処理することが推奨されます。
-```
+:::
 
 ## Humanoid
 
@@ -63,12 +62,11 @@ VRM-1.0 ではより自由度の高い SpringBone が表現できるようにな
 
 - 基本的に同じです
 
-```{admonition} 初期のVRMのUnlitバリエーション対応
-:class: warning
+:::warning 初期のVRMのUnlitバリエーション対応
 
 ほとんどの Unlit シェーダは `UniGLTF/UniUnlit` シェーダにアップグレードされます。
 `VRM/UnlitTransparentZWrite` シェーダは `MToon10` シェーダにアップグレードされます。
-```
+:::
 
 ### MToon
 

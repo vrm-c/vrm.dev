@@ -15,14 +15,13 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 * Z軸 (v0.68.0 より前と同じ)
 * X軸 (v0.68.0 から追加)
 
-```{figure} /_static/images/unigltf/glb_axis.gif
-```
+![figure](/images/unigltf/glb_axis.gif)
 
 選択して `Apply` を押すと反映されます。
 
 ## glb の extract
 
-<https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary>
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF-Binary
 
 を例に説明します。
 
@@ -31,8 +30,7 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 初期状態(clear)では、glb に含まれる Asset (Mesh, Material, Texture, AnimationClip) は SubAsset として glb(DamagedHelmet) の配下になります。
 配下のアセットは変更することはできずに ReadOnly です。
 
-```{figure} /_static/images/unigltf/glb_clear.jpg
-```
+![figure](/images/unigltf/glb_clear.jpg)
 
 ### extract
 
@@ -40,12 +38,11 @@ glTFの右手系Y-UP から Unityの左手系Y-UP に変換するときに反転
 glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset になります。
 取り出されたアセットは変更可能になります。
 
-```{figure} /_static/images/unigltf/glb_extract.jpg
-```
+![figure](/images/unigltf/glb_extract.jpg)
 
 ## gltf の extract
 
-<https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF>
+https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet/glTF
 
 を例に説明します。
 
@@ -54,16 +51,15 @@ glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset
 初期状態(clear)では、関連する Asset (Mesh, Material, Texture(変換が必要なもの), AnimationClip)は SubAsset として配下になります。
 配下のアセットは変更することはできずに ReadOnly です。
 
-```{figure} /_static/images/unigltf/gltf_clear.jpg
-```
+![figure](/images/unigltf/gltf_clear.jpg)
 
-```{admonition} gltf の関連 asset
+:::warning gltf の関連 asset
 :class: warning
 
 glTF では元々テクスチャーなどは独立したファイルですが、
 変換が必要な場合は使われないことに注意してください。
 上記の例では、Default_metalRoughness, Default_AO は変換対象です。
-```
+:::
 
 ### extract
 
@@ -71,8 +67,7 @@ glTF では元々テクスチャーなどは独立したファイルですが、
 glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset になります。
 取り出されたアセットは変更可能になります。
 
-```{figure} /_static/images/unigltf/gltf_extract.jpg
-```
+![figure](/images/unigltf/gltf_extract.jpg)
 
 ## AssetFile の作られ方
 
@@ -80,73 +75,60 @@ glb(DamagedHelmet) の配下から取り出されて(extract) 独立した Asset
 
 以下のように import されます。
 
-```{admonition} vrm0 の import
-:class: warning
+:::warning vrm0 の import
 
-![img](/_static/images/vrm10/vrm0_import.jpg)
+![img](/images/vrm10/vrm0_import.jpg)
 
 * mesh や texture や material や blendshape などの `独立した` 関連アセットファイルが作成されます。
-```
-
+:::
 
 ### VRM1 とv0.68以降のGLB/GLTF の Importer
 
 以下のように import されます。
 
-```{admonition} vrm1 の import
-:class: warning
+:::warning vrm1 の import
 
-
-
-![img](/_static/images/vrm10/vrm1_import.jpg)
+![img](/images/vrm10/vrm1_import.jpg)
 
 * mesh や material や texture や Expression が `SubAsset` として作成されます。
-```
+:::
 
+:::warning glb の import
 
-```{admonition} glb の import
-:class: warning
-
-![img](/_static/images/gltf/glb_extract_before.jpg)
+![img](/images/gltf/glb_extract_before.jpg)
 
 * material と texture が `SubAsset` として作成されます
-```
-
+:::
 
 ## SubAsset を変更するには Extract する
 
 新しい Importer で作られた SubAsset は 変更ができません。
 
-```{admonition} subasset
-:class: warning
+:::warning subasset
 
 SubAsset は glb や VRM 内のリソースを表しているためで、
 例えば Material を変更しても、その変更を元の glb / VRM に反映することができません。
 
 FBX の Importer も同様の動作です。
-```
+:::
 
 VRM1 とv0.68以降のGLB/GLTF では、Material タブなどで extract ができます。
 
-```{figure} /_static/images/vrm10/extract_material.jpg
-```
+![figure](/images/vrm10/extract_material.jpg)
 
-```{figure} /_static/images/vrm10/extract_vrm_empty.jpg
-```
+![figure](/images/vrm10/extract_vrm_empty.jpg)
 
-```{figure} /_static/images/vrm10/extract_vrm.jpg
-```
+![figure](/images/vrm10/extract_vrm.jpg)
 
-```{admonition} fbx の extract
-:class: warning
+:::warning fbx の extract
 
 fbx importer の material タブには下記のようなボタンがあります。
 
-![img](/_static/images/vrm10/fbx_extract.jpg)
+![img](/images/vrm10/fbx_extract.jpg)
 
 `Export Textures...` や `Export Materials...` すると fbx の中の material を 外にコピーして独立した Asset とすることができます。
 このコピーされた Asset は自由に変更することができます。
-```
+:::
 
 ## 外部の Asset と glb / VRM を関連付ける Remap
 
@@ -156,14 +138,13 @@ fbx importer の material タブには下記のようなボタンがあります
 * None になっているときは、 `glb`, `vrm` 内部の SubAsset を使用しているという意味になります。
 * 既存のAssetを割り当てることができます
 
-```{admonition} extract 後
-:class: warning
+:::warning extract 後
 
-![img](/_static/images/vrm10/remap_materials.jpg)
+![img](/images/vrm10/remap_materials.jpg)
 
-![img](/_static/images/gltf/glb_extract_after.jpg)
+![img](/images/gltf/glb_extract_after.jpg)
 
-![img](/_static/images/gltf/vrm1_extract_after.jpg)
+![img](/images/gltf/vrm1_extract_after.jpg)
 
 SubAsset が書き出され、それが Remap に代入されます。
-```
+:::

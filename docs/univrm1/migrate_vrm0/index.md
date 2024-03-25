@@ -7,8 +7,3 @@ UniVRM では利便性のために、簡易なマイグレーション(アップ
 - Unity 2020.3.34f1
 - UniVRM 0.103.0
 
-```{toctree}
-:maxdepth: 1
-feature
-migrate_editor
-```

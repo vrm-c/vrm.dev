@@ -58,19 +58,15 @@ HMD以外に出力される映像・配信用映像・鏡・マルチプレイ�
 * 頭に `ThirdPersonOnly` を指定
 * 体に `Both` を指定
 
-```{figure} /_static/images/vrm/firstperson.png
-立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します。
-```
+![立体ちゃんは頭とそれ以外が分かれているので体をBoth、頭をThirdPersonOnlyに指定します](/images/vrm/firstperson.png)
 
-```{figure} /_static/images/vrm/firstperson_runtime.png
-動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました。
-```
+![動作例。ThirdPersonOnlyに設定したメッシュがFirstPersonで非表示になりました](/images/vrm/firstperson_runtime.png)
 
 ## Autoの可視設定
 
 可視設定がAutoの場合はインポート時にメッシュが `Both` と `ThirdPersonOnly` に自動分割されます。  
 分割されない場合はメッシュの全てが `Both` か `ThirdPersonOnly` になります。  
-UniVRMでは [VRMFirstPerson.Setup()](https://vrm-c.github.io/UniVRM/ja/vrm0/firstperson.html#setuplayermask) を呼び出します。
+UniVRMでは [VRMFirstPerson.Setup()](/api/firstperson) を呼び出します。
 Autoによる自動分割は重めの処理になります。  
 
 ### 分割基準
@@ -86,6 +82,5 @@ FirstPerson は初期設定で Auto を指定しますが、エクスポート�
 
 `VRM First Person (Script)` インスペクタの右上の `歯車アイコン ⚙` で表示されるメニューから `Reset` を選択してください。
 
-```{figure} /_static/images/vrm/firstperson_reset.gif
-firstperson を reset
-```
+![firstperson を reset](/images/vrm/firstperson_reset.gif)
+

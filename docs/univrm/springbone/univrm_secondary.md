@@ -11,56 +11,45 @@ tags: ["unity"]
 
 揺れモノ設定に関するコンポーネント群です。
 
+## VRMSpringBone
+
+尻尾・髪の毛・衣装など揺れモノとして動きに合わせて揺れて欲しい部位の設定です。  
+揺らしたい部位の一番親のボーンをRootBonesに指定してください。  
+そうすることでRootBonesに指定した部位の子ボーンも動きに合わせて揺れます。
+
+![RootBonesに髪の毛とリボンの根本を指定](/images/vrm/VRMSpringBone.png)
+
+### 移動する際の揺れ防止
+VRMSpringBoneは通常ワールド原点を基準に揺れ計算をします。  
+一方で、VRMSpringBoneのCenterを活用すると揺れ計算の基準点をボーンなどに変更できます。  
+以下のような場合にCenterの活用が効果的です。
+- モデルが歩行などによって平行移動した場合にSpringBoneが揺れ過ぎてしまう
+- 頭を動かした場合のみに髪の毛や髪飾りなど頭についているSpringBoneが動いてほしい
+
+なお[VRM 1.0ではCenterに設定出来るノードの制約が決まりました](https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_springBone-1.0/README.ja.md)が、VRM 0.Xの段階ではCenterに設定出来るノードの制約が決まっていませんでした。  
+> Centerノードは、そのSpringChainの0番目のJointもしくは、その祖先nodeである必要があります。 また、Centerノードには、他のSpringChainのJointノードおよびその子孫を指定することはできません。
+
+## VRMSpringBoneColliderGroup
+
+揺れモノが特定の部位を貫通しないようにボーンに当たり判定を追加できます。  
+1つのボーンに追加したVRMSpringBoneColliderGroupで複数の当たり判定を設定することが可能です。
+
+![頭に当たり判定(VRMSpringBoneColliderGroup)を追加](/images/vrm/collider.png)
+
+VRMSpringBoneColliderGroupを追加した後はVRMSpringBoneのColliderGroupsに登録してください。
+
+![headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定](/images/vrm/set_collider.png)
+
+![動作時のGizmo](/images/vrm/spring_gizmo.png)
+
 ## コンポーネントが追加される場所
 ### VRMSpringBone
 
-VRMのインポートの際は、自動的生成される```secondary```という名前のゲームオブジェクトに追加されます。
+VRMのインポートの際は、自動的生成される```secondary```という名前のゲームオブジェクトにVRMSpringBoneが追加されます。  
+エクスポートの際と異なっていてVRMSpringBoneが見つからないことがあるのでご注意ください。
 
 ### VRMSpringBoneColliderGroup
 
-VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにそのまま追加されます。
+VRMのインポートの際は、エクスポートの際に追加したゲームオブジェクトにVRMSpringBoneColliderGroupがそのまま追加されます。
 
-```{figure} /_static/images/vrm/vrm_settings.png
-VRMSpringBoneが見つからない場合には``secondary``という名前のゲームオブジェクトをご確認ください。
-```
-## VRMSpringBone
-
-揺れモノとして尻尾・髪の毛・衣装などの動きに合わせて揺れて欲しい部位の設定です。  
-揺らしたい部位の一番親のGameObjectをRootBonesに指定してください。
-
-```{figure} /_static/images/vrm/VRMSpringBone.png
-RootBonesに髪の毛とリボンの根本を指定
-```
-
-RootBonesに指定した部位の子ボーンも含めて動きに合わせて揺れます。
-
-## [オプション] VRMSpringBoneColliderGroup
-
-揺れモノが特定の部位を貫通しないように当たり判定を追加できます。
-
-```{figure} /_static/images/vrm/collider.png
-頭に当たり判定(VRMSpringBoneColliderGroup)を追加
-```
-
-当たり判定を入れたいボーンにVRMSpringBoneColliderGroupを追加した後にVRMSpringBoneのColliderGroupsで指定してください。
-
-```{figure} /_static/images/vrm/set_collider.png
-headにVRMSpringBoneColliderGroupを追加して、VRMSpringBoneのCollierGroupsに指定
-```
-
-```{figure} /_static/images/vrm/spring_gizmo.png
-動作時のGizmo。
-```
-
-## 設定したVRMSpringBoneが無い
-
-VRMSpringBoneはインポート時に```secondary```ノードに追加されます。エクスポート時と違う場所に現れるのでご注意ください。
-
-## 複雑な当たり判定の設定
-
-複雑な当たり判定の設定をする際は、追加した１つのVRMSpringBoneColliderGroupで複数の球を設定します。
-
-## 移動する際の揺れ防止
-
-通常のVRMSpringBoneはワールド原点を基準に計算しています。VRMSpringBoneのCenterにゲームオブジェクトを指定すると揺れモノの基準点を変更できます。
-例えば、歩行の際に移動する親ゲームオブジェクトを指定すると揺れモノの不要な揺れが防止できます。
+![figure](/images/vrm/vrm_settings.png)

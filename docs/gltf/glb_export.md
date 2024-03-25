@@ -19,8 +19,7 @@ tags: ["gltf"]
 ### 手順
 #### 1. `UniGLTF/Export UniGLTF-2.X.Y` メニューからダイアログを開きます
 
-```{figure} /_static/images/unigltf/glb_export_dialog.jpg
-```
+![figure](/images/unigltf/glb_export_dialog.jpg)
 
 #### 2. `ExportRoot` に対象の GameIObject をセットしてください
 
@@ -37,7 +36,8 @@ tags: ["gltf"]
 * `MeshRenderer + MeshFilter` (一番親以外の子供につけてください)
 * `SkinnedMeshRenderer` (一番親以外の子供につけてください)
 
-```{admonition} 一番親は glTF の scene になります
+:::note 一番親は glTF の scene になります
+
 UniGLTF では glTF のデータ構造を以下のように処理しています。
 シーンはノードではないので、移動・回転・拡縮、meshの有無がありません。
 
@@ -45,27 +45,28 @@ UniGLTF では glTF のデータ構造を以下のように処理しています
   * node00
   * node01
       * node010
-```
+
+:::
 
 * `Animation` (一番親のオブジェクトに付けてください。回転はQuaternionのキーフレームを打ってください。移動・回転・拡縮に対応しています。BlendShapeは未対応)
 
-```{admonition} glTF の Animation は node にアタッチされない
+:::note glTF の Animation は node にアタッチされない
 node にアタッチせずにシーンに記述されるようなデータ構造です。
-```
+:::
 
 ### 対応しているShader
 
 * `Standard`
 
-```{admonition} glTF のデフォルトマテリアル
+:::note glTF のデフォルトマテリアル
 glTF の Default material である PBR になります。
-```
+:::
 
 * `Unlit/Color`, `Unlit/Texture`, `Unlit/Transparent`, `Unlit/Transparent Cutout`, `UniGLTF/UniUnlit`
 
-```{admonition} glTF の KHR_materials_unlit
+:::note glTF の KHR_materials_unlit
 glTF の `KHR_materials_unlit` 拡張として記録します。
-```
+:::
 
 ----
 
@@ -86,13 +87,11 @@ UniVRMに含まれるUniGLTFでglbファイルを作成することが出来ま�
 #### 3. エクスポートしたいオブジェクトをemptyの子にします。
 (この例ではCubeを作成しました。Prefab等任意のオブジェクトを追加できます)
 
-```{figure} /_static/images/wiki/root_cube.png
-```
+![figure](/images/wiki/root_cube.png)
 
 #### 4. 一番親のオブジェクトを選択して、エクスポートメニューを起動します。
 
-```{figure} /_static/images/wiki/menu_unigltf_export.png
-```
+![figure](/images/wiki/menu_unigltf_export.png)
 
 #### 5. ファイル名を選択して `glb` ファイルを書き出せば完了です。
 

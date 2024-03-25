@@ -23,5 +23,3 @@ Material, BlendShapeAvatar, BlendShapeClipはユーザーが変更している�
 
 UnityEditorでVRMをAssetImportしたときに、Mesh, Texture, Material, BlendShape, Prefabが既存の場合は上書きされます。
 
-
-

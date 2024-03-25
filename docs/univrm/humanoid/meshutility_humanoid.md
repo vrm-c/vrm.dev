@@ -26,18 +26,15 @@ UniVRM の `glb` import で prefab が生成されます。
 
 AddComponent で `Humanoid` を追加してください。(MeshUtility.Humanoid。UniVRMに含まれています。)
 
-```{figure} /_static/images/vrm/bone_required.jpg
-```
+![figure](/images/vrm/bone_required.jpg)
 
 適当に Bone を当てはめます。
 
-```{figure} /_static/images/vrm/create_avatar.jpg
-```
+![figure](/images/vrm/create_avatar.jpg)
 
 `Create UnityEngine.Avatar` ボタンを押します。
 
-```{figure} /_static/images/vrm/humanoid_animator.jpg
-```
+![figure](/images/vrm/humanoid_animator.jpg)
 
 humanoid avatar が新規に作成されます。
 

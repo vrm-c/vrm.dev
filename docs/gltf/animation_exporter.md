@@ -6,19 +6,18 @@ aliases: ["/dev/univrm-0.xx/gltf/animation_exporter/"]
 
 # アニメーション
 
-- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations>
+- https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#animations
 
 `v0.44` から部分的に対応しています。
 
-```{admonition} VRM のアニメーション
-:class: warning
-VRM は、Animation を使わないという仕様です。
-```
+:::warning VRM のアニメーション
 
-```{admonition} Export は Runtime では動作しません
-:class: warning
+VRM は、Animation を使わないという仕様です。
+:::
+
+:::warning Export は Runtime では動作しません
 Runtime では AnimationClip の情報を取得できないため、Export は動作しません。
-```
+:::
 
 ## 対応状況
 
@@ -48,22 +47,14 @@ Runtime では AnimationClip の情報を取得できないため、Export は�
 1. ルートGameObjectにAnimationコンポーネントを追加
 2. UnityEditorのツールバーからWindow>AnimationでAnimationウインドウを開く
 3. ルートGameObjectが選択状態であることを確認してAnimationウインドウ中央に表示されているCreateボタンを押してAnimationClipを作る
-4. Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする 
-```{figure} /_static/images/wiki/LegacyClip.png
-Interpolation
-```
+4. Inspectorの設定をDebugモードにしてAnimationClipのLegacyフラグをONにする ![Interpolation](/images/wiki/LegacyClip.png)
 
 5. AnimationコンポーネントのAnimation項目に作成したAnimationClipを設定
 6. クリップに対してアニメーションキーを追加
 7. UniGLTF>Exportからglbを出力する
 
-
 ### 注意事項
-1. RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること  
-```{figure} /_static/images/wiki/Interpolation.png
-Interpolation
-```
-
+1. RotationKeyのInterpolation設定をQuaternionかまたはEulerAngles(Quaternion)にすること  ![Interpolation](/images/wiki/Interpolation.png)
 2. Animatorの場合は設定されている全てのClipを検索して書き出しをしているが、ステートの状態などは出力されない
 3. Animator経由だと複数のアニメーションが書き込まれるが、UniGLTFのImporterが読み込むのは最初の１つだけ(UniGLTF-1.25時点）
 
@@ -91,4 +82,4 @@ Interpolation
 
 ## glTF: CUBICSPLINE == AnimationUtility.TangentMode.Free
 
-- <https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic>
+- https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#interpolation-cubic

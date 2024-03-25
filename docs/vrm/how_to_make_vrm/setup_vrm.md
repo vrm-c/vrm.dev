@@ -14,8 +14,8 @@ weight: 3
 
 **VRMファイルを、UnityのAssetsにドラッグ＆ドロップする** だけで、VRMファイルがインポートされ **モデルデータのPrefabが生成されます** 。
 
-![img](/_static/images/vrm/vrm_prefab.png)
-![img](/_static/images/vrm/vrm_components.jpg)
+![img](/images/vrm/vrm_prefab.png)
+![img](/images/vrm/vrm_components.jpg)
 
 * 正規化されている
 * VRMMeta, Animator, VRMBlendShapeProxy, VRMFirstPerson, VRMLookAtHead, VRMLookAtBoneApplyer 等がアタッチされている
@@ -26,13 +26,11 @@ weight: 3
 
 prefab をシーンに展開します。
 
-```{figure} /_static/images/vrm/alicia_scene2.png
-```
+![figure](/images/vrm/alicia_scene2.png)
 
 ## VRM独自の設定を行う
 
-```{figure} /_static/images/vrm/vrm_settings.png
-```
+![figure](/images/vrm/vrm_settings.png)
 
 読み込まれたモデルデータをHierarchyで選択すると、**インスペクタにさまざまな設定項目** があらわれます。また、**secondaryには揺れ物の設定**が入っています。これらを設定していきます。
 **少なくとも、[タイトル・作者・ライセンス情報](/univrm/meta/univrm_meta)** は埋めるようにしてください。 **特にライセンス情報は重要です！**
@@ -50,19 +48,13 @@ prefab をシーンに展開します。
 
 調整が終わったら、UnityのHierarchyでモデルデータを選択し、再度メニューから`VRM0` - `Export UniVRM-0.XX`を実行します。
 
-```{figure} /_static/images/vrm/vrm_menu.jpg
-vrm_menu
-```
+![vrm_menu](/images/vrm/vrm_menu.jpg)
 
 前のバージョンは `VRM` - `UniVRM-0.XX` - `Export humanoid`。
 
-```{figure} /_static/images/vrm/UniVRMExportHumanoid.jpg
-UniVRMExportHumanoid
-```
+![UniVRMExportHumanoid](/images/vrm/UniVRMExportHumanoid.jpg)
 
-```{admonition} Pose Freeze
-:class: note
-
+:::note Pose Freeze
 
 エクスポート時に正規化します。
 最新版は、 `ExportRoot` をセットしたときにヒエラルキーに回転・拡縮があるかどうかを調べて、このチェックボックスを自動で設定するようになっています。
@@ -73,7 +65,7 @@ UniVRMExportHumanoid
 などの場合に必要です。 `ExportRoot` を再セットすれば自動判定します。
 
 * [BlendShape の Bake](/univrm/blendshape/univrm_bake_blendshape) もあります。
-```
+:::
 
 ### 完成！
-これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/vrm/vrm_applications)に読み込ませてみましょう！
+これでセットアップ済のVRMファイルが出来ました。[対応アプリケーション](/showcase)に読み込ませてみましょう！

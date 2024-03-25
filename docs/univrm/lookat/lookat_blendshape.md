@@ -14,13 +14,11 @@ VRMLookAtHead + VRMLookAtBlendShapeApplyer の２つのコンポーネントを�
 
 `Inspector -> Add Component -> VRMLookAtBlendShapeApplyer`.
 
-```{figure} /_static/images/vrm/add_vrm_lookat_blendshape.jpg
-```
+![figure](/images/vrm/add_vrm_lookat_blendshape.jpg)
 
 ## モーフ制御の視線: VRMLookAtBlendShapeApplyer
 
-```{figure} /_static/images/wiki/blendshape_applyer.png
-```
+![figure](/images/wiki/blendshape_applyer.png)
 
 BlendShapeで視線制御するモデル用のコンポーネントです。
 事前に、 `LookUp`, `LookDown`, `LookLeft`, `LookRight` の４つの BlendShape を設定してください。

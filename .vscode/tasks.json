@@ -13,7 +13,12 @@
         {
             "label": "sphinx-pot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/sphinx-build -M gettext . _pot",
+            "linux": {
+                "command": "${workspaceFolder}/.venv/bin/sphinx-build -M gettext . _pot",
+            },
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/sphinx-build -M gettext . _pot",
+            },
             "options": {
                 "cwd": "${workspaceFolder}/docs"
             },
@@ -22,7 +27,12 @@
         {
             "label": "sphinx-po",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/sphinx-intl update -p _pot/gettext -l en",
+            "linux": {
+                "command": "${workspaceFolder}/.venv/bin/sphinx-intl update -p _pot/gettext -l en",
+            },
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/sphinx-intl update -p _pot/gettext -l en",
+            },
             "options": {
                 "cwd": "${workspaceFolder}/docs"
             },

@@ -6,13 +6,6 @@ aliases: ["/docs/univrm/univrm_workflow/"]
 
 # VRMファイルを作ってみたい
 
-```{toctree}
-setup_unity
-convert_from_humanoid_model
-setup_vrm
-vrm_behavior_confirmation
-```
-
 UniVRMを使うVRM化作業のながれは以下のようになります：
 
 1. 元になるモデルを T-Pose にしてライセンス情報を記述。正規化を有効にしてVRMファイルを出力する
@@ -24,7 +17,5 @@ UniVRMを使うVRM化作業のながれは以下のようになります：
 
 ところとなります。
 
-```{figure} /_static/images/vrm/VRM_changeVRM_jp.png
+![VRMファイルを作るワークフロー](/images/vrm/VRM_changeVRM_jp.png)
 
-**VRMファイルを作るワークフロー**
-```
