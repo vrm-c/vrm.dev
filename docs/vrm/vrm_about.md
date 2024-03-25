@@ -93,6 +93,7 @@ VR でのアバター表現が急速に盛り上がるなか、こういった�
 - [The Seed Online](https://seed.online/)
 - [VRoid Hub](https://hub.vroid.com/)
 - [ニコニ立体](https://3d.nicovideo.jp/)
+- [VIPE](https://vipe.io)
 
 で VRM ファイルの投稿ができます。
 ニコニ立体では[こちら](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)から投稿された VRM モデルデータのリストが見られます。ライセンスなど確認して使ってみてください。
