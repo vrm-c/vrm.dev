@@ -105,6 +105,7 @@ Here we propose a **platform-independent, 3D avatar file format** called **VRM**
 - [The Seed Online](https://seed.online/)
 - [VRoid Hub](https://hub.vroid.com/)
 - [niconisolid](https://3d.nicovideo.jp/)
+- [VIPE](https://vipe.io)
 
 For Nikonisolid, the submitted VRM file [can be found here](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)
 
