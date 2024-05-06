@@ -52,7 +52,7 @@ const FeatureList: FeatureItem[] = [
     title: 'VRM meetup公式Discordサーバー',
     description: (
       <>
-        <a href="http://discord.gg/26kbRgb58k">slide</a>
+        <a href="http://discord.gg/26kbRgb58k">discord</a>
       </>
     ),
   }
