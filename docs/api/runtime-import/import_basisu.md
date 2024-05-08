@@ -11,14 +11,14 @@ KHR_texture_basisu 拡張を使用した glTF / VRM ファイルを用意する�
 
 モデルファイルに含まれる KTX basisu テクスチャは、予め上下反転しておく必要があります。
 
-|  | Editor | Runtime |
+|  | Editor Import | Runtime Import |
 | --- | --- | --- |
 | 通常のテクスチャ | - | TBD |
 | 上下反転したテクスチャ | - | ✅ |
 
 :::warning
 Unity は内部的にすべてのテクスチャを上下反転しています。
-したがって Runtime に圧縮テクスチャをロードしようとした場合、上下反転した状態で圧縮しておくのが効率的です。
+したがって Runtime に圧縮テクスチャをインポートしようとした場合、上下反転した状態で圧縮しておくのが効率的です。
 ただし上下反転した状態では glTF として正しい状態にはならないため、Unity 以外のツールでの利用には注意が必要です。
 
 - https://docs.unity3d.com/Packages/com.unity.cloud.ktx@3.4/manual/creating-textures.html
@@ -36,14 +36,18 @@ UniVRM は KTX for Unity パッケージの存在を検知して、自動的に�
 具体的には [`USE_COM_UNITY_CLOUD_KTX` シンボルが有効化されます](https://github.com/vrm-c/UniVRM/blob/master/Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef#L18)。
 :::
 
-### 2. ロード時にオプションを有効化
+### 2. インポート時にオプションを有効化
 glTF ファイルをパースして得られる `GltfData` クラスに存在する `ExtensionSupportFlags` プロパティを設定します。
 具体的には以下の 2 点です。
 
-- `GltfData.ExtensionSupportFlags.ConsiderKhrTextureBasisu` を `true` に設定
-- `GltfData.ExtensionSupportFlags.IsAllTexturesYFlipped` を `true` に設定
+- `GltfData.ExtensionSupportFlags.ConsiderKhrTextureBasisu`
+    - `true` に設定
+    - モデルに定義されている `KHR_texture_basisu` 拡張を考慮してインポートすることを明示するフラグです。
+- `GltfData.ExtensionSupportFlags.IsAllTexturesYFlipped`
+    - `true` に設定
+    - モデルに含まれるテクスチャが Unity 専用に上下反転されていることを明示するフラグです。
 
-これらを設定した `GltfData` を、通常の手順でロードします。
+これらを設定した `GltfData` を、通常の手順でインポートします。
 以下がサンプルコードです。
 
 ```csharp
@@ -88,6 +92,7 @@ public class LoadYFlippedBasisuModel : MonoBehaviour
 }
 ```
 
-## 関連するソースコード
-### テクスチャのイメージバイナリを読み込む機能
-https://github.com/vrm-c/UniVRM/blob/v0.121.0/Assets/VRMShaders/GLTF/IO/Runtime/Texture/Importer/KtxTextureDeserializer.cs
+## 参考
+
+- テクスチャのイメージバイナリを読み込むコード
+    - https://github.com/vrm-c/UniVRM/blob/v0.121.0/Assets/VRMShaders/GLTF/IO/Runtime/Texture/Importer/KtxTextureDeserializer.cs
