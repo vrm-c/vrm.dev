@@ -326,6 +326,14 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
+          label: "EditorImport",
+          items: [
+            'api/editor-import/vrm0x',
+            'api/editor-import/vrm10',
+          ]
+        },
+        {
+          type: "category",
           label: "Material/Texture",
           items: [
             "api/runtime-import/import_basisu",

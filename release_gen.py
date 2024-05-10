@@ -11,11 +11,18 @@
 import pathlib
 import sys
 import re
-import git.repo
-import re
-import pathlib
 import io
 from functools import cmp_to_key
+
+
+try:
+    import git.repo
+    import pyperclip
+except:
+    print("import error. require")
+    print("pip install GitPython pyperclip")
+    sys.exit()
+
 
 HERE = pathlib.Path(__file__).absolute().parent
 UNIVRM_VERSION = HERE.parent / "Assets/VRM/Runtime/Format/VRMVersion.cs"
@@ -62,7 +69,6 @@ def get_hash(repo, tag_name) -> str:
 
 
 def copy_release_md(version: str, hash: str):
-    import pyperclip
 
     text = gen(TEMPLATE.read_text(encoding="utf-8"), version, hash)
     pyperclip.copy(text)
@@ -140,7 +146,9 @@ def main(path: str):
 
 
 if __name__ == "__main__":
-    repo = HERE
-    if len(sys.argv) > 1:
-        repo = pathlib.Path(sys.argv[1])
+    if len(sys.argv) < 2:
+        print("usage: py release_gen.py {UNIVRM_REPO_DIR}")
+        sys.exit()
+
+    repo = pathlib.Path(sys.argv[1])
     main(str(repo.absolute()))
