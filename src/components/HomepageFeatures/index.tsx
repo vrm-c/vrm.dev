@@ -47,6 +47,14 @@ const FeatureList: FeatureItem[] = [
         <a href="https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996">slide</a>
       </>
     ),
+  },
+  {
+    title: 'VRM meetup公式Discordサーバー',
+    description: (
+      <>
+        <a href="http://discord.gg/26kbRgb58k">discord</a>
+      </>
+    ),
   }
 ];
 
