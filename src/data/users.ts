@@ -2002,19 +2002,6 @@ export const users: User[] = [
   {
     "flags": F.Other,
     "ja": {
-      "title": "ACUAH β",
-      "url": "https://riemgoshawk.booth.pm/items/1990160",
-      "description": "Android "
-    },
-    "en": {
-      "title": "ACUAH β",
-      "url": "https://riemgoshawk.booth.pm/items/1990160",
-      "description": "Android "
-    }
-  },
-  {
-    "flags": F.Other,
-    "ja": {
       "title": "TIFA",
       "url": "https://melonspeedruns.itch.io/tifa",
       "description": "Windows ",
@@ -2350,5 +2337,66 @@ export const users: User[] = [
       "description": "Web browser",
       "preview": "https://white-legal-elk-728.mypinata.cloud/ipfs/QmUwjmEeApqGVeSza8bV8zE91s3W82X7MpV7eQqRP7DT5w/myVIPE.jpg"
     }
+  },
+  // 2024-05-23
+  {
+    "flags": F.Other,
+    "ja": {
+      "title": "ACUAH",
+      "description": `ユーザーカスタマイズ可能なキャラクターアシスタントアプリです。
+[Android](https://play.google.com/store/apps/details?id=com.csunitetech.acuah)
+[iOS](https://apps.apple.com/jp/app/acuah/id6477607472)
+`,
+      'preview': 'https://acuah.info/ACUAH_570x270.png',
+    },
+    "en": {
+      "title": "ACUAH",
+      "description": `ユーザーカスタマイズ可能なキャラクターアシスタントアプリです。
+[Android](https://play.google.com/store/apps/details?id=com.csunitetech.acuah)
+[iOS](https://apps.apple.com/jp/app/acuah/id6477607472)
+`,
+      'preview': 'https://acuah.info/ACUAH_570x270.png',
+    },
+    "updated": new Date("2024-05-23"),
+  },
+  {
+    "ja": {
+      "title": "BoxBallBuilder",
+      "url": "https://fujisunflower.booth.pm/items/4083428",
+      "description": "簡単に単純な3Dデータ作成が出来るアプリです。",
+    },
+    "updated": new Date("2024-05-23"),
+  },
+  {
+    "ja": {
+      "title": "MaiMirror",
+      "url": "https://fujisunflower.booth.pm/items/3752411",
+      "description": "配信用のアバター表示アプリです。",
+    },
+    "updated": new Date("2024-05-23"),
+  },
+  {
+    "ja":{ 
+      "title": "VRMMaterialEditor",
+      "url": "https://fujisunflower.fanbox.cc/posts/7820024",
+      "description": "VRM 0系の詳細なマテリアル編集を行うアプリです。",
+    },
+    "updated": new Date("2024-05-23"),
+  },
+  {
+    "ja":{
+      "title": "VRMRemaker",
+      "url": "https://fujisunflower.fanbox.cc/posts/7313957",
+      "description": "VRM0系とVRM1系の間で再編集を行うアプリ『VRMRemaker』です。",
+    },
+    "updated": new Date("2024-05-23"),
+  },
+  {
+    "ja":{
+      "title": "VRMDressRoom",
+      "url": "https://fujisunflower.fanbox.cc/posts/5550686",
+      "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",
+    },
+    "updated": new Date("2024-05-23"),
   },
 ];
