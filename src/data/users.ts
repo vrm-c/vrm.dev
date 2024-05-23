@@ -2365,10 +2365,20 @@ export const users: User[] = [
       "url": "https://fujisunflower.booth.pm/items/4083428",
       "description": "簡単に単純な3Dデータ作成が出来るアプリです。",
     },
+    "en": {
+      "title": "BoxBallBuilder",
+      "url": "https://fujisunflower.booth.pm/items/4083428",
+      "description": "簡単に単純な3Dデータ作成が出来るアプリです。",
+    },
     "updated": new Date("2024-05-23"),
   },
   {
     "ja": {
+      "title": "MaiMirror",
+      "url": "https://fujisunflower.booth.pm/items/3752411",
+      "description": "配信用のアバター表示アプリです。",
+    },
+    "en": {
       "title": "MaiMirror",
       "url": "https://fujisunflower.booth.pm/items/3752411",
       "description": "配信用のアバター表示アプリです。",
@@ -2381,6 +2391,11 @@ export const users: User[] = [
       "url": "https://fujisunflower.fanbox.cc/posts/7820024",
       "description": "VRM 0系の詳細なマテリアル編集を行うアプリです。",
     },
+    "en":{ 
+      "title": "VRMMaterialEditor",
+      "url": "https://fujisunflower.fanbox.cc/posts/7820024",
+      "description": "VRM 0系の詳細なマテリアル編集を行うアプリです。",
+    },
     "updated": new Date("2024-05-23"),
   },
   {
@@ -2389,10 +2404,20 @@ export const users: User[] = [
       "url": "https://fujisunflower.fanbox.cc/posts/7313957",
       "description": "VRM0系とVRM1系の間で再編集を行うアプリ『VRMRemaker』です。",
     },
+    "en":{
+      "title": "VRMRemaker",
+      "url": "https://fujisunflower.fanbox.cc/posts/7313957",
+      "description": "VRM0系とVRM1系の間で再編集を行うアプリ『VRMRemaker』です。",
+    },
     "updated": new Date("2024-05-23"),
   },
   {
     "ja":{
+      "title": "VRMDressRoom",
+      "url": "https://fujisunflower.fanbox.cc/posts/5550686",
+      "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",
+    },
+    "en":{
       "title": "VRMDressRoom",
       "url": "https://fujisunflower.fanbox.cc/posts/5550686",
       "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",
