@@ -17,7 +17,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '技術仕様',
+    title: 'Technical specifications',
     description: (
       <>
         <a href="https://github.com/vrm-c/vrm-specification">vrm-specification</a>
@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'VRMコンソーシアム',
+    title: 'VRM consortium',
     description: (
       <>
         <a href="https://vrm-consortium.org/">vrm-consortium</a>
@@ -33,7 +33,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '【C4】新しい概念を規格として定義する～アバターのための規格「VRM」を考えた話',
+    title: '[C4] Defining a new concept as a standard - A story about creating the standard "VRM" for avatars',
     description: (
       <>
         <a href="https://www.youtube.com/watch?v=rya1SeMBkxY">video</a>
@@ -41,7 +41,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '【Unite Tokyo 2019】3Dアバターファイルフォーマット「VRM」詳説',
+    title: '[Unite Tokyo 2019] Detailed explanation of 3D avatar file format “VRM”',
     description: (
       <>
         <a href="https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996">slide</a>
@@ -49,10 +49,26 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'VRM meetup公式Discordサーバー',
+    title: 'VRM meetup Official',
     description: (
       <>
         <a href="http://discord.gg/26kbRgb58k">discord</a>
+      </>
+    ),
+  },
+  {
+    title: 'VRM Specification Contributors',
+    description: (
+      <>
+        <a href="https://github.com/vrm-c/vrm-specification/graphs/contributors">Github</a>
+      </>
+    ),
+  },
+  {
+    title: 'UniVRM Contributors',
+    description: (
+      <>
+        <a href="https://github.com/vrm-c/UniVRM/graphs/contributors">Github</a>
       </>
     ),
   }
