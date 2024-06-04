@@ -361,10 +361,23 @@ const sidebars: SidebarsConfig = {
           label: "SpringBone",
           link: { type: "doc", id: "api/spring/index" },
           items: [
-            { type: "doc", id: "api/vrm1_springbone" },
-            { type: "doc", id: "api/fast_spring_bone" },
-            { type: "doc", id: "api/0_106_spring_manual_update" },
-            { type: "doc", id: "api/spring/spring_and_scaling" },
+            "api/spring/spring_and_scaling",
+            {
+              type: "category",
+              label: "vrm-1.0",
+              items: [
+                "api/spring/vrm1_springbone",
+                "api/spring/VRMC_springBone_extended_collider",
+              ]
+            },
+            {
+              type: "category",
+              label: "vrm-0.x",
+              items: [
+                "api/fast_spring_bone",
+                "api/0_106_spring_manual_update",
+              ]
+            },
           ],
         },
         {
