@@ -55,6 +55,22 @@ const FeatureList: FeatureItem[] = [
         <a href="http://discord.gg/26kbRgb58k">discord</a>
       </>
     ),
+  },
+  {
+    title: 'VRM仕様の貢献者',
+    description: (
+      <>
+        <a href="https://github.com/vrm-c/vrm-specification/graphs/contributors">Github</a>
+      </>
+    ),
+  },
+  {
+    title: 'UniVRMの貢献者',
+    description: (
+      <>
+        <a href="https://github.com/vrm-c/UniVRM/graphs/contributors">Github</a>
+      </>
+    ),
   }
 ];
 
