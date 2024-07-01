@@ -1,7 +1,7 @@
 import type { Tag } from "./tag.d.ts";
 
 export type UserInfo = {
-  title: string;
+  title?: string;
   url?: string;
   description?: string;
   // ogp image url

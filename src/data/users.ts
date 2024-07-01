@@ -14,9 +14,7 @@ export const users: User[] = [
     },
     "en": {
       "title": "The Seed Online",
-      "url": "https://virtualcast.jp/store/",
       "description": "`1.0` can be uploaded. 3D viewer does not support `1.0`",
-      "preview": "https://virtualcast.jp/img/common/logo/virtual_cast_570_270_white.png"
     },
   },
   {
@@ -29,9 +27,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Niconi Solid",
-      "url": "https://3d.nicovideo.jp/",
-      "preview": "https://3d.nicovideo.jp/images/ogp.png",
-      "description": "3D投稿サービス「ニコニ立体」"
     }
   },
   {
@@ -1716,10 +1711,7 @@ export const users: User[] = [
       "preview": "https://repository-images.githubusercontent.com/185508879/04114e80-7638-11e9-88be-b3df71865dfc"
     },
     "en": {
-      "title": "Babylon VRM Viewer",
-      "url": "https://github.com/virtual-cast/babylon-vrm-loader/",
       "description": "Babylon.js extension",
-      "preview": "https://repository-images.githubusercontent.com/185508879/04114e80-7638-11e9-88be-b3df71865dfc"
     }
   },
   {
@@ -1730,12 +1722,6 @@ export const users: User[] = [
       "description": "Android, iOS ",
       "preview": "https://booth.pximg.net/c/620x620/766abe90-a3ce-40ec-829e-ee51f60a5e39/i/1033823/edda207e-0f4c-47a8-8187-4750abdaa730_base_resized.jpg"
     },
-    "en": {
-      "title": "VPocket",
-      "url": "https://booooooh.booth.pm/items/1033823",
-      "description": "Android, iOS",
-      "preview": "https://booth.pximg.net/c/620x620/766abe90-a3ce-40ec-829e-ee51f60a5e39/i/1033823/edda207e-0f4c-47a8-8187-4750abdaa730_base_resized.jpg"
-    }
   },
   {
     "flags": F.Viewer,
@@ -1747,9 +1733,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "VRMViewer",
-      "url": "https://w.atwiki.jp/beamman/",
-      "description": "Windows ",
-      "preview": "https://img.atwiki.jp/beamman/attach/13/163/vrm.png"
     }
   },
   {
@@ -1760,12 +1743,6 @@ export const users: User[] = [
       "description": "macOS ",
       "preview": "https://opengraph.githubassets.com/37ddf4ff51b99b8eae86c5ea4cd088a0f7199a2825da84af9ce1905e039ffe6b/magicien/VRMQuickLook"
     },
-    "en": {
-      "title": "VRMQuickLook",
-      "url": "https://github.com/magicien/VRMQuickLook",
-      "description": "macOS ",
-      "preview": "https://opengraph.githubassets.com/37ddf4ff51b99b8eae86c5ea4cd088a0f7199a2825da84af9ce1905e039ffe6b/magicien/VRMQuickLook"
-    }
   },
   {
     "flags": F.Viewer,
@@ -1775,12 +1752,6 @@ export const users: User[] = [
       "description": "Windows ",
       "preview": "https://booth.pximg.net/c/620x620/46161e9d-5b71-4b27-a134-1820ef0c2489/i/1783082/073e1432-0e59-485f-b615-94f5444b53af_base_resized.jpg"
     },
-    "en": {
-      "title": "VRM Live Viewer",
-      "url": "https://booth.pm/ja/items/1783082",
-      "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/46161e9d-5b71-4b27-a134-1820ef0c2489/i/1783082/073e1432-0e59-485f-b615-94f5444b53af_base_resized.jpg"
-    }
   },
   {
     "flags": F.Viewer,
@@ -1791,10 +1762,7 @@ export const users: User[] = [
       "preview": "https://repository-images.githubusercontent.com/144803660/866ab580-b060-11e9-9dcf-bd73939b211a"
     },
     "en": {
-      "title": "UniWinApi Example project",
-      "url": "https://github.com/kirurobo/UniWinApi",
       "description": "Unity library",
-      "preview": "https://repository-images.githubusercontent.com/144803660/866ab580-b060-11e9-9dcf-bd73939b211a"
     }
   },
   {
@@ -1806,10 +1774,7 @@ export const users: User[] = [
       "preview": "https://opengraph.githubassets.com/a4ba1e60f92c02abb2ecd9461d7acbf81c09b2e8b13c38ce21383965ed80fa66/m2wasabi/KinectV2VRM"
     },
     "en": {
-      "title": "KinectV2VRM",
-      "url": "https://github.com/m2wasabi/KinectV2VRM",
       "description": "Unity library",
-      "preview": "https://opengraph.githubassets.com/a4ba1e60f92c02abb2ecd9461d7acbf81c09b2e8b13c38ce21383965ed80fa66/m2wasabi/KinectV2VRM"
     }
   },
   {
@@ -1819,11 +1784,6 @@ export const users: User[] = [
       "url": "http://www.vrai.jp/vr_mocuvrm.html",
       "description": "Windows VR, Looking Glass "
     },
-    "en": {
-      "title": "MocuMocuVRM",
-      "url": "http://www.vrai.jp/vr_mocuvrm.html",
-      "description": "Windows VR, Looking Glass"
-    }
   },
   {
     "flags": F.Viewer,
@@ -1833,12 +1793,6 @@ export const users: User[] = [
       "description": "Windows ",
       "preview": "https://akarimichi.github.io/vrm-display-releases/assets/images/card-image.png"
     },
-    "en": {
-      "title": "VRM Display",
-      "url": "https://akarimichi.github.io/vrm-display-releases/",
-      "description": "Windows ",
-      "preview": "https://akarimichi.github.io/vrm-display-releases/assets/images/card-image.png"
-    }
   },
   {
     "flags": F.Viewer,
@@ -1848,12 +1802,6 @@ export const users: User[] = [
       "description": "Windows ",
       "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1096550/capsule_616x353.jpg?t=1652877726"
     },
-    "en": {
-      "title": "Desktop Magic Engine",
-      "url": "https://store.steampowered.com/app/1096550/Desktop_Magic_Engine/",
-      "description": "Windows ",
-      "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1096550/capsule_616x353.jpg?t=1652877726"
-    }
   },
   {
     "flags": F.UsingInternally,
@@ -1864,8 +1812,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Custom Cast",
-      "url": "https://customcast.jp/",
-      "description": "iOS, Android"
     }
   },
   {
@@ -1875,11 +1821,6 @@ export const users: User[] = [
       "url": "https://reality.wrightflyer.net/",
       "description": "iOS, Android "
     },
-    "en": {
-      "title": "REALITY",
-      "url": "https://reality.wrightflyer.net/",
-      "description": "iOS, Android"
-    }
   },
   {
     "flags": F.UsingInternally,
@@ -1890,8 +1831,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Puppemoji",
-      "url": "https://www.puppemoji.com/",
-      "description": "iOS "
     }
   },
   {
@@ -1904,9 +1843,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Mayalive Order Made Version",
-      "url": "https://materializer.co/lab/mayalive",
-      "description": "Windows, macOS",
-      "preview": "https://materializer.co/lab/_media/logo-materializer-white.png"
     }
   },
   {
@@ -1918,10 +1854,6 @@ export const users: User[] = [
       "preview": "https://storage.googleapis.com/production-os-assets/assets/eca324fe-a374-42e9-b038-de9d4061038d"
     },
     "en": {
-      "title": "MakeAvatar",
-      "url": "https://gugenka.jp/digital/make_avatar.php",
-      "description": "iOS, Android",
-      "preview": "https://storage.googleapis.com/production-os-assets/assets/eca324fe-a374-42e9-b038-de9d4061038d"
     }
   },
   {
@@ -1933,10 +1865,7 @@ export const users: User[] = [
       "preview": "https://opengraph.githubassets.com/4fc4a503a4078dac4b9102f1c0f658a2d1ed514fbefbb6bdd429e91883a39ec8/m2wasabi/VRMLoaderUI"
     },
     "en": {
-      "title": "VRMLoaderUI",
-      "url": "https://github.com/m2wasabi/VRMLoaderUI",
       "description": "Unity library",
-      "preview": "https://opengraph.githubassets.com/4fc4a503a4078dac4b9102f1c0f658a2d1ed514fbefbb6bdd429e91883a39ec8/m2wasabi/VRMLoaderUI"
     }
   },
   {
@@ -1949,9 +1878,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "TEATOR",
-      "url": "https://teator.jp/",
-      "description": "Windows 10",
-      "preview": "https://teator.jp/assets/ogp.jpg"
     }
   },
   {
@@ -1963,10 +1889,7 @@ export const users: User[] = [
       "preview": "https://booth.pximg.net/c/620x620/8d4d3bf2-308b-4754-bde2-a197718377cd/i/2562276/f36dc2a1-808b-47a8-b6d5-0a19eb146026_base_resized.jpg"
     },
     "en": {
-      "title": "NeoRoidHub for Unity",
-      "url": "https://neoseast-japan.booth.pm/items/2562276",
       "description": "Unity editor extension",
-      "preview": "https://booth.pximg.net/c/620x620/8d4d3bf2-308b-4754-bde2-a197718377cd/i/2562276/f36dc2a1-808b-47a8-b6d5-0a19eb146026_base_resized.jpg"
     }
   },
   {
@@ -1977,12 +1900,6 @@ export const users: User[] = [
       "description": "Windows VR ",
       "preview": "https://img.itch.zone/aW1nLzMwODM5NjkucG5n/original/xszbVE.png"
     },
-    "en": {
-      "title": "Virtual Presentation Space",
-      "url": "https://eyesout.itch.io/virtual-presentation-space",
-      "description": "Windows VR",
-      "preview": "https://img.itch.zone/aW1nLzMwODM5NjkucG5n/original/xszbVE.png"
-    }
   },
   {
     "flags": F.Other,
@@ -1992,21 +1909,9 @@ export const users: User[] = [
       "description": "Windows ",
       "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1454500/capsule_616x353.jpg?t=1669859174"
     },
-    "en": {
-      "title": "VTuber Editor",
-      "url": "https://store.steampowered.com/app/1454500/VTuber_Editor/",
-      "description": "Windows ",
-      "preview": "https://cdn.akamai.steamstatic.com/steam/apps/1454500/capsule_616x353.jpg?t=1669859174"
-    }
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "TIFA",
-      "url": "https://melonspeedruns.itch.io/tifa",
-      "description": "Windows ",
-      "preview": "https://img.itch.zone/aW1nLzU0MDU1MjMuZ2lm/original/CgX5uJ.gif"
-    },
     "en": {
       "title": "TIFA",
       "url": "https://melonspeedruns.itch.io/tifa",
@@ -2022,12 +1927,6 @@ export const users: User[] = [
       "description": "Windows, Windows VR, Android, iOS ",
       "preview": "https://styly.cc/_next/static/media/White_Back_Ground_STYLY_Logo.25c7f144.png"
     },
-    "en": {
-      "title": "STYLY",
-      "url": "https://styly.cc/",
-      "description": "Windows, Windows VR, Android, iOS",
-      "preview": "https://styly.cc/_next/static/media/White_Back_Ground_STYLY_Logo.25c7f144.png"
-    }
   },
   {
     "flags": F.Other,
@@ -2041,7 +1940,6 @@ export const users: User[] = [
       "title": "[HANA_Tool_v2] Control BlendShapes Tool",
       "url": "https://kuniyan.booth.pm/items/2604269",
       "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/5b7e23ca-da84-4832-8e36-f91e02616b3d/i/2604269/ffd3f184-0773-4423-bb96-3eb53d082e7e_base_resized.jpg"
     }
   },
   {
@@ -2052,12 +1950,6 @@ export const users: User[] = [
       "description": "Windows ",
       "preview": "https://booth.pximg.net/c/620x620/5d1ed011-ef46-45fd-809b-f64220617ae8/i/2956377/fcb0a8f7-bf0b-4c7b-ae45-241ecc43e5dd_base_resized.jpg"
     },
-    "en": {
-      "title": "Virtual Studio",
-      "url": "https://natsunatsu.booth.pm/items/2956377",
-      "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/5d1ed011-ef46-45fd-809b-f64220617ae8/i/2956377/fcb0a8f7-bf0b-4c7b-ae45-241ecc43e5dd_base_resized.jpg"
-    }
   },
   {
     "flags": F.Other,
@@ -2069,9 +1961,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "VRM facial setting",
-      "url": "https://120byte.booth.pm/items/2152326",
-      "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/6dd2a4de-9111-46cb-b1c2-14645f3c8515/i/2152326/e734b8b5-169d-445e-8311-d2d7f5c71b28_base_resized.jpg"
     }
   },
   {
@@ -2084,9 +1973,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "VRM texture replace",
-      "url": "https://120byte.booth.pm/items/2177538",
-      "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/6dd2a4de-9111-46cb-b1c2-14645f3c8515/i/2177538/00364192-65e2-462a-88e4-402be5280373_base_resized.jpg"
     }
   },
   {
@@ -2099,19 +1985,10 @@ export const users: User[] = [
     },
     "en": {
       "title": "Item Shop",
-      "url": "https://suzuki-cecil.booth.pm/items/3250368",
-      "description": "Windows ",
-      "preview": "https://booth.pximg.net/c/620x620/d8fc025c-b520-429f-a51b-71342613591f/i/3250368/d65f636e-d3d0-4e5e-9364-cd82340c2110_base_resized.jpg"
     }
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "meebits-blender-utils",
-      "url": "https://github.com/MeebitsDAO/meebits-blender-utils",
-      "description": "Windows ",
-      "preview": "https://opengraph.githubassets.com/9b8000c01cce334bfe720389fcd96a2fb24fefd50e3b2b468a9fff496565007f/MeebitsDAO/meebits-blender-utils"
-    },
     "en": {
       "title": "meebits-blender-utils",
       "url": "https://github.com/MeebitsDAO/meebits-blender-utils",
@@ -2121,12 +1998,6 @@ export const users: User[] = [
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "The Meebits - Larva Labs",
-      "url": "https://meebits.larvalabs.com/",
-      "description": "Windows ",
-      "preview": "https://meebits.app/public/images/homepage/group.jpg"
-    },
     "en": {
       "title": "The Meebits - Larva Labs",
       "url": "https://meebits.larvalabs.com/",
@@ -2136,12 +2007,6 @@ export const users: User[] = [
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "SimpleURPToonLitOutlineExample",
-      "url": "https://github.com/simplestargame/SimpleURPToonLitOutlineExample",
-      "description": "Windows ",
-      "preview": "https://repository-images.githubusercontent.com/452284076/92f08df6-d1d1-4b34-953e-def02f7d561f"
-    },
     "en": {
       "title": "SimpleURPToonLitOutlineExample",
       "url": "https://github.com/simplestargame/SimpleURPToonLitOutlineExample",
@@ -2151,12 +2016,6 @@ export const users: User[] = [
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "Kalidokit",
-      "url": "https://github.com/yeemachine/kalidokit",
-      "description": "Windows ",
-      "preview": "https://opengraph.githubassets.com/a08f1a61d9a0e14348a6f01ec45a6b48bc7608671e4d1133a566e842c02145bc/yeemachine/kalidokit"
-    },
     "en": {
       "title": "Kalidokit",
       "url": "https://github.com/yeemachine/kalidokit",
@@ -2166,12 +2025,6 @@ export const users: User[] = [
   },
   {
     "flags": F.Other,
-    "ja": {
-      "title": "Wicked Engine",
-      "url": "https://github.com/turanszkij/WickedEngine",
-      "description": "Windows, Linux, Xbox Series, PlayStation 5 ",
-      "preview": "https://repository-images.githubusercontent.com/37770961/c7a169f3-f000-4351-aa94-78cf1d79c7c4"
-    },
     "en": {
       "title": "Wicked Engine",
       "url": "https://github.com/turanszkij/WickedEngine",
@@ -2186,10 +2039,6 @@ export const users: User[] = [
       "title": "DMM VR CONNECT",
       "url": "https://connect.vrlab.dmm.com/"
     },
-    "en": {
-      "title": "DMM VR CONNECT",
-      "url": "https://connect.vrlab.dmm.com/"
-    }
   },
   {
     "flags": F.Game,
@@ -2198,11 +2047,6 @@ export const users: User[] = [
       "url": "https://bowman.vrlab.dmm.com/ja/",
       "description": "Windows VR"
     },
-    "en": {
-      "title": "BOW MAN",
-      "url": "https://bowman.vrlab.dmm.com/ja/",
-      "description": "Windows VR"
-    }
   },
   {
     "flags": F.Streaming,
@@ -2211,11 +2055,6 @@ export const users: User[] = [
       "url": "https://2dr.info/",
       "description": "iOS, Android"
     },
-    "en": {
-      "title": "2DR",
-      "url": "https://2dr.info/",
-      "description": "iOS, Android"
-    }
   },
   {
     "flags": F.Photography,
@@ -2224,11 +2063,6 @@ export const users: User[] = [
       "url": "https://vismuth.com/",
       "description": "Android, iOS"
     },
-    "en": {
-      "title": "Vismuth",
-      "url": "https://vismuth.com/",
-      "description": "Android, iOS"
-    }
   },
   {
     "flags": F.Game,
@@ -2237,11 +2071,6 @@ export const users: User[] = [
       "url": "https://wandv.jp/seiya/",
       "description": "Windows VR"
     },
-    "en": {
-      "title": "SEIYA",
-      "url": "https://wandv.jp/seiya/",
-      "description": "Windows VR"
-    }
   },
   {
     "flags": F.Game,
@@ -2252,8 +2081,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Rakugaki Kingdom",
-      "url": "https://rakugaki-kingdom.com/",
-      "description": "iOS, Android"
     }
   },
   {
@@ -2264,8 +2091,6 @@ export const users: User[] = [
       "description": "Webブラウザ "
     },
     "en": {
-      "title": "VRM Viewer",
-      "url": "https://vrm-viewer.yukimochi.io/",
       "description": "Web browser"
     }
   },
@@ -2276,11 +2101,6 @@ export const users: User[] = [
       "url": "https://seed.online/static/guide-arviewer",
       "description": "Android, iOS "
     },
-    "en": {
-      "title": "TSO AR Viewer",
-      "url": "https://seed.online/static/guide-arviewer",
-      "description": "Android, iOS"
-    }
   },
   {
     "flags": F.UsingInternally,
@@ -2291,8 +2111,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "Vkatsu",
-      "url": "http://vkatsu.jp/",
-      "description": "Windows, iOS, Android"
     }
   },
   {
@@ -2304,8 +2122,6 @@ export const users: User[] = [
     },
     "en": {
       "title": "miloq plus",
-      "url": "https://www.miloq-plus.com/",
-      "description": "Android, iOS"
     }
   },
   {
@@ -2316,12 +2132,6 @@ export const users: User[] = [
       "description": "Windows, macOS, iOS, Android",
       "preview": "https://assets.dverso.io/logo.png"
     },
-    "en": {
-      "title": "dverso.io",
-      "url": "https://dverso.io",
-      "description": "Windows, macOS, iOS, Android",
-      "preview": "https://assets.dverso.io/logo.png"
-    }
   },
   {
     "flags": F.CharacterCreation,
@@ -2331,25 +2141,11 @@ export const users: User[] = [
       "description": "Web browser",
       "preview": "https://white-legal-elk-728.mypinata.cloud/ipfs/QmUwjmEeApqGVeSza8bV8zE91s3W82X7MpV7eQqRP7DT5w/myVIPE.jpg"
     },
-    "en": {
-      "title": "myVIPE",
-      "url": "https://vipe.io/myvipe",
-      "description": "Web browser",
-      "preview": "https://white-legal-elk-728.mypinata.cloud/ipfs/QmUwjmEeApqGVeSza8bV8zE91s3W82X7MpV7eQqRP7DT5w/myVIPE.jpg"
-    }
   },
   // 2024-05-23
   {
     "flags": F.Other,
     "ja": {
-      "title": "ACUAH",
-      "description": `ユーザーカスタマイズ可能なキャラクターアシスタントアプリです。
-[Android](https://play.google.com/store/apps/details?id=com.csunitetech.acuah)
-[iOS](https://apps.apple.com/jp/app/acuah/id6477607472)
-`,
-      'preview': 'https://acuah.info/ACUAH_570x270.png',
-    },
-    "en": {
       "title": "ACUAH",
       "description": `ユーザーカスタマイズ可能なキャラクターアシスタントアプリです。
 [Android](https://play.google.com/store/apps/details?id=com.csunitetech.acuah)
