@@ -2,7 +2,7 @@ import type { Tag } from "./tag.d.ts";
 
 export type UserInfo = {
   title: string;
-  url: string;
+  url?: string;
   description?: string;
   // ogp image url
   preview?: string;
@@ -10,7 +10,7 @@ export type UserInfo = {
 
 export type User = {
   flags: TagFlags;
-  ja: UserInfo;
+  ja?: UserInfo;
   en?: UserInfo;
   updated?: Date,
 };

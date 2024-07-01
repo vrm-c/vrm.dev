@@ -2360,6 +2360,7 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
+    "flags": F.Other,
     "ja": {
       "title": "BoxBallBuilder",
       "url": "https://fujisunflower.booth.pm/items/4083428",
@@ -2368,6 +2369,7 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
+    "flags": F.Other,
     "ja": {
       "title": "MaiMirror",
       "url": "https://fujisunflower.booth.pm/items/3752411",
@@ -2376,7 +2378,8 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
-    "ja":{ 
+    "flags": F.Other,
+    "ja": {
       "title": "VRMMaterialEditor",
       "url": "https://fujisunflower.fanbox.cc/posts/7820024",
       "description": "VRM 0系の詳細なマテリアル編集を行うアプリです。",
@@ -2384,7 +2387,8 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
-    "ja":{
+    "flags": F.Other,
+    "ja": {
       "title": "VRMRemaker",
       "url": "https://fujisunflower.fanbox.cc/posts/7313957",
       "description": "VRM0系とVRM1系の間で再編集を行うアプリ『VRMRemaker』です。",
@@ -2392,7 +2396,8 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
-    "ja":{
+    "flags": F.Other,
+    "ja": {
       "title": "VRMDressRoom",
       "url": "https://fujisunflower.fanbox.cc/posts/5550686",
       "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",

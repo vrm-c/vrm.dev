@@ -250,12 +250,8 @@ function ShowcaseCards() {
               <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {users.map((user) => (
-                <ShowcaseCard
-                  key={user[currentLocale].title}
-                  user={user[currentLocale]}
-                  flags={user.flags}
-                />
+              {users.map((user, i) => (
+                <ShowcaseCard key={i} user={user} locale={currentLocale} />
               ))}
             </ul>
           </div>
@@ -266,12 +262,8 @@ function ShowcaseCards() {
             className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
           />
           <ul className={clsx("clean-list", styles.showcaseList)}>
-            {filteredUsers.map((user) => (
-              <ShowcaseCard
-                key={user[currentLocale].title}
-                user={user[currentLocale]}
-                flags={user.flags}
-              />
+            {filteredUsers.map((user, i) => (
+              <ShowcaseCard key={i} user={user} locale={currentLocale} />
             ))}
           </ul>
         </div>
