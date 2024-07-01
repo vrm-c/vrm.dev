@@ -41,6 +41,14 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    title: 'アバターのための規格「VRM」の誕生秘話！　概念を規格として定義するために必要なこと',
+    description: (
+      <>
+        <a href="https://levtech.jp/media/article/column/detail_80/">interview</a>
+      </>
+    ),
+  },
+  {
     title: '【Unite Tokyo 2019】3Dアバターファイルフォーマット「VRM」詳説',
     description: (
       <>
@@ -71,12 +79,12 @@ const FeatureList: FeatureItem[] = [
         <a href="https://github.com/vrm-c/UniVRM/graphs/contributors">Github</a>
       </>
     ),
-  }
+  },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4 card shadow--md', styles.feature)}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
