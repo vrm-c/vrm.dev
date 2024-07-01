@@ -1,4 +1,5 @@
 import type { Tag } from "./tag.d.ts";
+import type { PlatformFlags } from "./platformflags";
 
 export type UserInfo = {
   title?: string;

@@ -257,7 +257,7 @@ function ShowcaseCards() {
           </div>
         </>
       ) : (
-        <div className="container">
+        <div className="container margin-top--lg">
           <div
             className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
           />

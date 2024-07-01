@@ -13,6 +13,9 @@ export enum TagFlags {
   WebBrowser = 1 << 10,
   Viewer = 1 << 11,
   UsingInternally = 1 << 12,
-  Other = 1 << 13,
+  VrmHelper = 1 << 13,
   Vrm10 = 1 << 14,
+  FaceTracking = 1 << 15,
+
+  Other = 1 << 31,
 }

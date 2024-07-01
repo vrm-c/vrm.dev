@@ -27,4 +27,24 @@ export const platforms: PlatformInfo[] = [
     label: "WebBrowser",
     color: "#888888",
   },
+  {
+    flag: PlatformFlags.WindowsVR,
+    label: "WindowsVR(stream or oculus)",
+    color: "#888888",
+  },
+  {
+    flag: PlatformFlags.MetaQuest,
+    label: "MetaQuest",
+    color: "#888888",
+  },
+  {
+    flag: PlatformFlags.Linux,
+    label: "Linux",
+    color: "#888888",
+  },
+  {
+    flag: PlatformFlags.WebXR,
+    label: "WebXR",
+    color: "#888888",
+  },
 ];
