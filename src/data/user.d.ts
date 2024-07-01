@@ -1,8 +1,9 @@
 import type { Tag } from "./tag.d.ts";
+import type { PlatformFlags } from "./platformflags";
 
 export type UserInfo = {
-  title: string;
-  url: string;
+  title?: string;
+  url?: string;
   description?: string;
   // ogp image url
   preview?: string;
@@ -10,7 +11,8 @@ export type UserInfo = {
 
 export type User = {
   flags: TagFlags;
-  ja: UserInfo;
+  platforms?: PlatformFlags,
+  ja?: UserInfo;
   en?: UserInfo;
   updated?: Date,
 };
