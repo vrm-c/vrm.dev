@@ -10,6 +10,7 @@ export type UserInfo = {
 
 export type User = {
   flags: TagFlags;
+  platforms?: PlatformFlags,
   ja?: UserInfo;
   en?: UserInfo;
   updated?: Date,

@@ -8,6 +8,8 @@ import { type User, type UserInfo } from "@site/src/data/user";
 import { tags } from "@site/src/data/tags";
 import { TagFlags } from "@site/src/data/tagflags";
 import { type TagInfo } from "@site/src/data/tag";
+import { platforms } from "@site/src/data/platforms";
+import { type PlatformInfo } from "@site/src/data/platform";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./styles.module.css";
@@ -32,6 +34,27 @@ const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
   }
 );
 
+const PlatformComp = React.forwardRef<HTMLLIElement, PlatformInfo>(
+  ({ flag, label, color }, ref) => {
+    const {
+      i18n: { currentLocale },
+    } = useDocusaurusContext();
+
+    return (
+      <li ref={ref} className={styles.tag} title={label}>
+        <span className={styles.textLabel}>
+          {label}
+        </span>
+        <span
+          className={styles.colorLabel}
+          style={{ backgroundColor: color }}
+        />
+      </li>
+    );
+  }
+);
+
+
 // function getCardImage(user: UserInfo): string {
 //   return (
 //     user.preview ??
@@ -53,8 +76,7 @@ function getLocaleValue(user: User,
       return user.en[key];
     }
     else {
-      // for debug
-      return "no description";
+      return "";
     }
   }
   else if (locale == 'en') {
@@ -66,8 +88,7 @@ function getLocaleValue(user: User,
       return user.ja[key];
     }
     else {
-      // for debug
-      return "no description";
+      return "";
     }
   }
 }
@@ -75,6 +96,9 @@ function getLocaleValue(user: User,
 function ShowcaseCard({ user, locale }: { user: User, locale: string }) {
   const tagObjs = tags.filter((x) => {
     return (x.flag & user.flags) != 0;
+  });
+  const platObjs = platforms.filter((x) => {
+    return (x.flag & user.platforms) != 0;
   });
 
   const preview = getLocaleValue(user, 'preview', locale);
@@ -96,6 +120,10 @@ function ShowcaseCard({ user, locale }: { user: User, locale: string }) {
           <Markdown>{getLocaleValue(user, 'description', locale)}</Markdown>
         </div>
       </div>
+
+      <ul className={clsx("card__footer", styles.cardFooter)}>
+        {platObjs.map((platObj, i) => <PlatformComp key={i} {...platObj} />)}
+      </ul>
       <ul className={clsx("card__footer", styles.cardFooter)}>
         {tagObjs.map((tagObj, i) => <TagComp key={i} {...tagObj} />)}
       </ul>

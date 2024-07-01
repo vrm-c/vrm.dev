@@ -1,5 +1,6 @@
 import type { User } from "./user.d.ts";
 import { TagFlags as F } from "./tagflags";
+import { PlatformFlags as P } from "./platformflags";
 
 // Add sites to this list
 // prettier-ignore
@@ -197,46 +198,43 @@ export const users: User[] = [
   },
   {
     "flags": F.CharacterCreation,
+    "platforms": P.Windows | P.macOS,
     "ja": {
       "title": "VRoid Studio",
       "url": "https://vroid.com/studio/",
-      "description": "Windows, macOS",
       "preview": "https://vroid.com/_next/static/images/vroid-studio-ogp-jp-14b96bb956ed763f749259a0312079a1.png"
     },
     "en": {
       "title": "VRoid Studio",
       "url": "https://vroid.com/en/studio/",
-      "description": "Windows, macOS",
       "preview": "https://vroid.com/_next/static/images/vroid-studio-ogp-en-ee999ec19debf7f483027e7d3c963be5.png"
     }
   },
   {
     "flags": F.CharacterCreation,
+    "platforms": P.iOS | P.Android,
     "ja": {
       "title": "VRoid Mobile",
       "url": "https://vroid.com/mobile/",
-      "description": "iOS, Android",
       "preview": "https://vroid.com/_next/static/images/ogp-mobile-e2f35d7d439e8f596f67497cb0e92dd0.png"
     },
     "en": {
       "title": "VRoid Mobile",
       "url": "https://vroid.com/en/mobile/",
-      "description": "iOS, Android",
       "preview": "https://vroid.com/_next/static/images/ogp-mobile_en-ed40679b3c1a4b28833d140172193451.png"
     }
   },
   {
     "flags": F.CharacterCreation,
+    "platforms": P.WebBrowser,
     "ja": {
       "title": "Character Studio",
       "url": "https://github.com/m3-org/CharacterStudio",
-      "description": "Web browser",
       "preview": "https://m3-org.github.io/characterstudio-docs/img/charstudio.jpg"
     },
     "en": {
       "title": "Character Studio",
       "url": "https://github.com/m3-org/CharacterStudio",
-      "description": "Web browser",
       "preview": "https://m3-org.github.io/characterstudio-docs/img/charstudio.jpg"
     }
   },
