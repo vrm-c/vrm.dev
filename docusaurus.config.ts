@@ -74,18 +74,6 @@ const config: Config = {
           sidebarId: "vrmSidebar",
           position: "left",
         },
-        {
-          label: "VRM-1.0",
-          type: "docSidebar",
-          sidebarId: "vrm1Sidebar",
-          position: "left",
-        },
-        {
-          label: "🎉VRM Animation🎉",
-          type: "docSidebar",
-          sidebarId: "vrmaSidebar",
-          position: "left",
-        },
         { to: "/showcase", label: "ShowCase", position: "left" },
         // {
         //   label: "UniVRM-1.0",
@@ -100,12 +88,17 @@ const config: Config = {
           position: "left",
         },
         {
+          label: "UniVRM-1.0",
+          type: "docSidebar",
+          sidebarId: "vrm1Sidebar",
+          position: "left",
+        },
+        {
           label: "glTF",
           type: "docSidebar",
           sidebarId: "gltfSidebar",
           position: "left",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         //
         {
           label: "UniVRM-API",
@@ -120,12 +113,7 @@ const config: Config = {
           sidebarId: "releaseSidebar",
           position: "right",
         },
-        {
-          label: "Site",
-          type: "docSidebar",
-          sidebarId: "siteSidebar",
-          position: "right",
-        },
+        { to: "/blog", label: "Site", position: "right" },
         {
           type: "localeDropdown",
           position: "right",

@@ -42,6 +42,33 @@ const sidebars: SidebarsConfig = {
         { type: "doc", id: "vrm/how_to_view_vrm" },
         { type: "doc", id: "vrm/vrm_meta" },
         { type: "doc", id: "vrm/vrm_development" },
+        {
+          type: "category",
+          label: "Vrm-1.0",
+          items: [
+            "vrm1/index",
+            "vrm1/changed",
+            "vrm1/gltf_details",
+            "vrm1/meta",
+            "vrm1/humanoid",
+            "vrm1/expression",
+            "vrm1/lookat_firstperson",
+            "vrm1/springbone",
+            "vrm1/emission",
+            "vrm1/mtoon",
+            "vrm1/constraint",
+          ]
+        },
+        {
+          type: "category",
+          label: "VRM Animation",
+          link: { type: "doc", id: "vrma/index" },
+          items: [
+            "vrma/univrm-vrma/vrma-import",
+            "vrma/univrm-vrma/vrma-export",
+            "vrma/univrm-vrma/retarget",
+          ],
+        },
       ],
     },
   ],
@@ -173,87 +200,43 @@ const sidebars: SidebarsConfig = {
   vrm1Sidebar: [
     {
       type: "category",
-      label: "Vrm-1.0",
-      link: { type: "doc", id: "vrm1/index" },
+      label: "UniVRM-1.0",
+      link: { type: "doc", id: "univrm1/index" },
       items: [
-        "vrm1/changed",
-        "vrm1/gltf_details",
-        "vrm1/meta",
-        "vrm1/humanoid",
-        "vrm1/expression",
-        "vrm1/lookat_firstperson",
-        "vrm1/springbone",
-        "vrm1/emission",
-        "vrm1/mtoon",
-        "vrm1/constraint",
+        "univrm1/urp",
+        { type: "doc", id: "univrm1/folder_structure" },
         {
           type: "category",
-          label: "UniVRM-1.0",
-          link: { type: "doc", id: "univrm1/index" },
+          label: "make VRM-1.0",
+          link: { type: "doc", id: "univrm1/vrm1_tutorial/index" },
           items: [
-            "univrm1/urp",
-            { type: "doc", id: "univrm1/folder_structure" },
             {
-              type: "category",
-              label: "make VRM-1.0",
-              link: { type: "doc", id: "univrm1/vrm1_tutorial/index" },
-              items: [
-                {
-                  type: "doc",
-                  id: "univrm1/vrm1_tutorial/first_export_from_fbx",
-                },
-                { type: "doc", id: "univrm1/vrm1_tutorial/vrm_object" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/meta" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/expression" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/lookat" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/firstperson" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/springbone" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/material" },
-                { type: "doc", id: "univrm1/vrm1_tutorial/constraint" },
-              ],
+              type: "doc",
+              id: "univrm1/vrm1_tutorial/first_export_from_fbx",
             },
-            {
-              type: "category",
-              label: "migrate to VRM-1.0 from VRM-0.x",
-              link: { type: "doc", id: "univrm1/migrate_vrm0/index" },
-              items: [
-                { type: "doc", id: "univrm1/migrate_vrm0/feature" },
-                { type: "doc", id: "univrm1/migrate_vrm0/migrate_editor" },
-              ],
-            },
+            { type: "doc", id: "univrm1/vrm1_tutorial/vrm_object" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/meta" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/expression" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/lookat" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/firstperson" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/springbone" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/material" },
+            { type: "doc", id: "univrm1/vrm1_tutorial/constraint" },
+          ],
+        },
+        {
+          type: "category",
+          label: "migrate to VRM-1.0 from VRM-0.x",
+          link: { type: "doc", id: "univrm1/migrate_vrm0/index" },
+          items: [
+            { type: "doc", id: "univrm1/migrate_vrm0/feature" },
+            { type: "doc", id: "univrm1/migrate_vrm0/migrate_editor" },
           ],
         },
       ],
     },
   ],
 
-  vrmaSidebar: [
-    {
-      type: "category",
-      label: "VRM Animation",
-      link: { type: "doc", id: "vrma/index" },
-      items: [
-        "vrma/univrm-vrma/vrma-import",
-        "vrma/univrm-vrma/vrma-export",
-        "vrma/univrm-vrma/retarget",
-      ],
-    },
-  ],
-
-  siteSidebar: [
-    {
-      type: "category",
-      label: "site management",
-      // link: { type: 'doc', id: 'site/index' },
-      items: [
-        { type: "doc", id: "site/system" },
-        { type: "doc", id: "site/build" },
-        { type: "doc", id: "site/vrm_application" },
-        { type: "doc", id: "site/contributing" },
-        { type: "doc", id: "site/translation" },
-      ],
-    },
-  ],
   apiSidebar: [
     {
       type: "category",
