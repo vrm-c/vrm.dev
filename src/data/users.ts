@@ -268,7 +268,7 @@ export const users: User[] = [
     "ja": {
       "title": "VDRAW",
       "url": "https://sites.google.com/view/vdraw/",
-      "preview": "https://lh5.googleusercontent.com/2HiytY5iIpMJSr7G-Aeb_TTyf9E6_pz-nT2k5gQW9DPIoxHQ3-_ot0KuXUEEumk8qnOalpgavR-mK5pb0wVWRBl5UfvErth5pHoXLreRupHlWb8B=w1280"
+      'preview': 'https://lh5.googleusercontent.com/9k3G1z3KIYtk10upFNkK_G1oSwUX-KrDDTCrRWcjwBz-OcFTtwBzUw8OvqFAMfVUEIaRZcHzJ_EEEEHsRnEG5sCfEK5pCPOjsOxeYBsg43UGtq9r=w1280',
     },
   },
   {
@@ -286,7 +286,7 @@ export const users: User[] = [
     "ja": {
       "title": "Hitogata",
       "url": "https://sites.google.com/site/vhitogata/",
-      "preview": "https://lh5.googleusercontent.com/0xYwhzxl1v3PCq6RwCzfpmKEHWBUUEFJXxkxooGWH6BxlYpAfyeKyoXWomkZg_CNlDRfzcpNqHElhxe1qJ0sxdlNwtU1wrw7t07fAWnDZb4tb31M6AVPxtJ2uV7Xn0j28Q=w1280"
+      'preview': 'https://lh3.googleusercontent.com/Uo0gtibPDHzbFRWm6Qq0zAjMvcQ5SyFpW1j9fl3B5wIYT--K1uzMVM5E9YbnIfK3HswuHD_9x_PAiyTAWSFzQSA3qyd3f9iTIlSmvwMkl_FZEokdudxxiXCnWrOINbrzHw=w1280',
     },
   },
   {
@@ -295,6 +295,7 @@ export const users: User[] = [
     "ja": {
       "title": "3tene",
       "url": "https://3tene.com/",
+      'preview': 'https://3tene.com/wp-content/uploads/2019/08/3tenepro_3D_MV.jpg',
     },
   },
   {
@@ -418,7 +419,8 @@ export const users: User[] = [
     "ja": {
       "title": "VSeeFace",
       "url": "https://www.vseeface.icu/",
-      "description": "Windows + optional hand tracking"
+      "description": "Windows + optional hand tracking",
+      'preview': 'https://www.vseeface.icu/assets/img/VSeeFaceScreenshot500px.png',
     },
   },
   {
@@ -657,7 +659,7 @@ export const users: User[] = [
     "ja": {
       "title": "PlayAniMaker",
       "url": "https://sites.google.com/view/playanimaker",
-      "preview": "https://lh3.googleusercontent.com/JJL6RxVppw4CYUcUWwW2Ii0cNNzcoTg00B3v21n-Nzi0Opieb6wwAWcZzEriVN_JJ9dV-A=w16383"
+      'preview': 'https://lh6.googleusercontent.com/NNe_8uXas0l_j2dshTw1PtlzPv2kzNKZCN0FbueTGQsGMaDPvPPIiAzolbxkxTM_YgpBsg=w16383',
     },
   },
   {
@@ -1031,7 +1033,7 @@ export const users: User[] = [
     "ja": {
       "title": "Legend of the Shieldbearers",
       "url": "https://www.spacepupstudio.com/lots",
-      "preview": "https://lh4.googleusercontent.com/f776QxmrcZmhgIgx2OnAKnN-v_RFH_SgoGOP4fz5G7TxBe6aCUbBBeontNNp-ENz-CvskL3_ZSXf6l16TdtTSJ8=w16383"
+      'preview': 'https://lh4.googleusercontent.com/NHSbg64qKoluqGoUgRcr4OVu9VEubswP65QGmTn11y8SWnTfefsQ_kkqYIfUZxCI4zKHAq4ZZ_cLkoGK4DOi_pM=w16383',
     },
   },
   {
@@ -1347,6 +1349,7 @@ export const users: User[] = [
     "ja": {
       "title": "カスタムキャスト",
       "url": "https://customcast.jp/",
+      'preview': 'https://customcast.jp/apple-touch-icon.png',
     },
     "en": {
       "title": "Custom Cast",
@@ -1358,6 +1361,7 @@ export const users: User[] = [
     "ja": {
       "title": "REALITY",
       "url": "https://reality.wrightflyer.net/",
+      'preview': 'https://reality.app/img/ogp.png',
     },
   },
   {
@@ -1402,18 +1406,6 @@ export const users: User[] = [
     },
     "en": {
       "description": "Unity library",
-    }
-  },
-  {
-    "flags": F.Other,
-    "platforms": P.Windows,
-    "ja": {
-      "title": "テアトル",
-      "url": "https://teator.jp/",
-      "preview": "https://teator.jp/assets/ogp.jpg"
-    },
-    "en": {
-      "title": "TEATOR",
     }
   },
   {
@@ -1569,97 +1561,6 @@ export const users: User[] = [
   },
   //
   {
-    "flags": F.CharacterPlatform,
-    "ja": {
-      "title": "DMM VR CONNECT",
-      "url": "https://connect.vrlab.dmm.com/"
-    },
-  },
-  {
-    "flags": F.Game,
-    "ja": {
-      "title": "BOW MAN",
-      "url": "https://bowman.vrlab.dmm.com/ja/",
-      "description": "Windows VR"
-    },
-  },
-  {
-    "flags": F.Streaming,
-    "ja": {
-      "title": "2DR",
-      "url": "https://2dr.info/",
-      "description": "iOS, Android"
-    },
-  },
-  {
-    "flags": F.Photography,
-    "ja": {
-      "title": "Vismuth",
-      "url": "https://vismuth.com/",
-      "description": "Android, iOS"
-    },
-  },
-  {
-    "flags": F.Game,
-    "ja": {
-      "title": "SEIYA",
-      "url": "https://wandv.jp/seiya/",
-      "description": "Windows VR"
-    },
-  },
-  {
-    "flags": F.Game,
-    "ja": {
-      "title": "ラクキン",
-      "url": "https://rakugaki-kingdom.com/",
-      "description": "iOS, Android"
-    },
-    "en": {
-      "title": "Rakugaki Kingdom",
-    }
-  },
-  {
-    "flags": F.Viewer,
-    "ja": {
-      "title": "VRM Viewer",
-      "url": "https://vrm-viewer.yukimochi.io/",
-      "description": "Webブラウザ "
-    },
-    "en": {
-      "description": "Web browser"
-    }
-  },
-  {
-    "flags": F.Viewer,
-    "ja": {
-      "title": "TSO AR Viewer",
-      "url": "https://seed.online/static/guide-arviewer",
-      "description": "Android, iOS "
-    },
-  },
-  {
-    "flags": F.UsingInternally,
-    "platforms": P.Windows | P.iOS | P.Android,
-    "ja": {
-      "title": "Vカツ",
-      "url": "http://vkatsu.jp/",
-    },
-    "en": {
-      "title": "Vkatsu",
-    }
-  },
-  {
-    "flags": F.Other,
-    "ja": {
-      "title": "ミロックプラス",
-      "url": "https://www.miloq-plus.com/",
-      "description": "Android, iOS "
-    },
-    "en": {
-      "title": "miloq plus",
-    }
-  },
-  {
     "flags": F.Metaverse,
     "platforms": P.Windows | P.macOS | P.iOS | P.Android,
     "ja": {
@@ -1682,6 +1583,7 @@ export const users: User[] = [
     "flags": F.Other,
     "ja": {
       "title": "ACUAH",
+      'url': 'https://apps.apple.com/jp/app/acuah/id6477607472',
       "description": `ユーザーカスタマイズ可能なキャラクターアシスタントアプリです。
 [Android](https://play.google.com/store/apps/details?id=com.csunitetech.acuah)
 [iOS](https://apps.apple.com/jp/app/acuah/id6477607472)
@@ -1691,20 +1593,24 @@ export const users: User[] = [
     "updated": new Date("2024-05-23"),
   },
   {
-    "flags": F.Other,
+    "flags": F.CharacterCreation,
+    'platforms': P.Windows,
     "ja": {
       "title": "BoxBallBuilder",
       "url": "https://fujisunflower.booth.pm/items/4083428",
       "description": "簡単に単純な3Dデータ作成が出来るアプリです。",
+      'preview': 'https://booth.pximg.net/c/620x620/cb0237fe-c742-4a81-a90a-6e3f920ad3de/i/4083428/49b36758-47d8-4022-baad-6775e2e09448_base_resized.jpg',
     },
     "updated": new Date("2024-05-23"),
   },
   {
-    "flags": F.Other,
+    "flags": F.Streaming,
+    'platforms': P.Windows,
     "ja": {
       "title": "MaiMirror",
       "url": "https://fujisunflower.booth.pm/items/3752411",
       "description": "配信用のアバター表示アプリです。",
+      'preview': 'https://booth.pximg.net/c/620x620/cb0237fe-c742-4a81-a90a-6e3f920ad3de/i/3752411/fb455edb-dc11-4bbb-b8e1-7dbfa07e000e_base_resized.jpg',
     },
     "updated": new Date("2024-05-23"),
   },
@@ -1715,6 +1621,7 @@ export const users: User[] = [
       "title": "VRMMaterialEditor",
       "url": "https://fujisunflower.fanbox.cc/posts/7820024",
       "description": "VRM 0系の詳細なマテリアル編集を行うアプリです。",
+      'preview': 'https://pixiv.pximg.net/c/1200x630_90_a2_g5/fanbox/public/images/post/7820024/cover/bKvhnsmEkIkLeoy2i3l9GLdn.jpeg',
     },
     "updated": new Date("2024-05-23"),
   },
@@ -1725,6 +1632,7 @@ export const users: User[] = [
       "title": "VRMRemaker",
       "url": "https://fujisunflower.fanbox.cc/posts/7313957",
       "description": "VRM0系とVRM1系の間で再編集を行うアプリ『VRMRemaker』です。",
+      'preview': 'https://pixiv.pximg.net/c/1200x630_90_a2_g5/fanbox/public/images/post/7313957/cover/d5OMPUeud1AdEquWATMAC0GM.jpeg',
     },
     "updated": new Date("2024-05-23"),
   },
@@ -1735,6 +1643,7 @@ export const users: User[] = [
       "title": "VRMDressRoom",
       "url": "https://fujisunflower.fanbox.cc/posts/5550686",
       "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",
+      'preview': 'https://pixiv.pximg.net/c/1200x630_90_a2_g5/fanbox/public/images/post/5550686/cover/bO7Z4RbwnQwN3vHaVRBzunEg.jpeg',
     },
     "updated": new Date("2024-05-23"),
   },
@@ -1766,5 +1675,111 @@ export const users: User[] = [
       'url': 'https://tfuru.github.io/vrma-loader-sample/',
     },
     "updated": new Date("2024-07-04"),
+  },
+  //
+  // dead links...
+  //
+  {
+    "flags": F.Other,
+    "platforms": P.Windows,
+    "ja": {
+      "title": "テアトル",
+      "url": "https://teator.jp/",
+      "preview": "https://teator.jp/assets/ogp.jpg"
+    },
+    "en": {
+      "title": "TEATOR",
+    }
+  },
+  {
+    "flags": F.Other,
+    "ja": {
+      "title": "ミロックプラス",
+      "url": "https://www.miloq-plus.com/",
+      "description": "Android, iOS "
+    },
+    "en": {
+      "title": "miloq plus",
+    }
+  },
+  {
+    "flags": F.UsingInternally,
+    "platforms": P.Windows | P.iOS | P.Android,
+    "ja": {
+      "title": "Vカツ",
+      "url": "http://vkatsu.jp/",
+    },
+    "en": {
+      "title": "Vkatsu",
+    }
+  },
+  {
+    "flags": F.Viewer,
+    "ja": {
+      "title": "TSO AR Viewer",
+      "url": "https://seed.online/static/guide-arviewer",
+      "description": "Android, iOS "
+    },
+  },
+  {
+    "flags": F.Viewer,
+    "ja": {
+      "title": "VRM Viewer",
+      "url": "https://vrm-viewer.yukimochi.io/",
+      "description": "Webブラウザ "
+    },
+    "en": {
+      "description": "Web browser"
+    }
+  },
+  {
+    "flags": F.Game,
+    "ja": {
+      "title": "ラクキン",
+      "url": "https://rakugaki-kingdom.com/",
+      "description": "iOS, Android"
+    },
+    "en": {
+      "title": "Rakugaki Kingdom",
+    }
+  },
+  {
+    "flags": F.Game,
+    "ja": {
+      "title": "SEIYA",
+      "url": "https://wandv.jp/seiya/",
+      "description": "Windows VR"
+    },
+  },
+  {
+    "flags": F.Photography,
+    "ja": {
+      "title": "Vismuth",
+      "url": "https://vismuth.com/",
+      "description": "Android, iOS"
+    },
+  },
+  {
+    "flags": F.Streaming,
+    "ja": {
+      "title": "2DR",
+      "url": "https://2dr.info/",
+      "description": "iOS, Android"
+    },
+  },
+  {
+    "flags": F.Game,
+    "ja": {
+      "title": "BOW MAN",
+      "url": "https://bowman.vrlab.dmm.com/ja/",
+      "description": "Windows VR"
+    },
+  },
+  {
+    "flags": F.CharacterPlatform,
+    "ja": {
+      "title": "DMM VR CONNECT",
+      "url": "https://connect.vrlab.dmm.com/"
+    },
   },
 ];
