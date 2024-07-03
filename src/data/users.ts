@@ -1243,6 +1243,7 @@ export const users: User[] = [
   },
   {
     "flags": F.ImporterExporter,
+    "platforms": P.WebBrowser,
     "ja": {
       "title": "Babylon VRM Viewer",
       "url": "https://github.com/virtual-cast/babylon-vrm-loader/",
