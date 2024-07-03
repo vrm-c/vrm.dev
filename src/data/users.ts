@@ -31,7 +31,7 @@ export const users: User[] = [
     }
   },
   {
-    "flags": F.CharacterPlatform | F.Vrm10,
+    "flags": F.CharacterPlatform | F.Vrm10 | F.VrmAnimation,
     "ja": {
       "title": "VRoid Hub",
       "url": "https://hub.vroid.com/",
@@ -92,7 +92,8 @@ export const users: User[] = [
     },
   },
   {
-    "flags": F.ImporterExporter | F.Vrm10,
+    "flags": F.ImporterExporter | F.Vrm10 | F.VrmAnimation,
+    'platforms': P.WebBrowser,
     "ja": {
       "title": "@pixiv/three-vrm",
       "url": "https://github.com/pixiv/three-vrm/",
@@ -107,7 +108,18 @@ export const users: User[] = [
     },
   },
   {
-    "flags": F.ImporterExporter,
+    'flags': F.VrmAnimation,
+    'platforms': P.WebBrowser,
+    'ja': {
+      'title': 'bvh to VRMA',
+      'url': 'https://vrm-c.github.io/bvh2vrma/',
+      'description': '[github](https://github.com/vrm-c/bvh2vrma)',
+      'preview': 'https://opengraph.githubassets.com/4155634754504a292119b967bd2b3117c462966846b7b517f7c6ae6e6d56f241/vrm-c/bvh2vrma',
+    },
+    "updated": new Date("2024-07-03"),
+  },
+  {
+    "flags": F.ImporterExporter | F.Vrm10 | F.VrmAnimation,
     "ja": {
       "title": "VRM Add-on for Blender",
       "url": "https://vrm-addon-for-blender.info/ja",
@@ -354,7 +366,7 @@ export const users: User[] = [
     },
   },
   {
-    "flags": F.Streaming,
+    "flags": F.Streaming | F.VrmAnimation,
     "platforms": P.Windows,
     "ja": {
       "title": "VMagicMirror",
@@ -761,7 +773,7 @@ export const users: User[] = [
     },
   },
   {
-    "flags": F.Photography,
+    "flags": F.Photography | F.VrmAnimation,
     "platforms": P.Windows | P.iOS | P.Android,
     "ja": {
       "title": "VRMポージング",
@@ -1725,5 +1737,34 @@ export const users: User[] = [
       "description": "素体用のVRM 0系を衣装用のVRM 0系でお着替えするアプリです。",
     },
     "updated": new Date("2024-05-23"),
+  },
+  {
+    'flags': F.VrmAnimation,
+    'ja': {
+      'title': 'AnimationClipToVrmaSample',
+      'url': 'https://github.com/malaybaku/AnimationClipToVrmaSample',
+      'description': 'Sample Project to Convert AnimationClip to VRM Animation (.vrma) in Unity',
+      'preview': 'https://opengraph.githubassets.com/43a572fe49915f8f0b5e7afa6acb258e6f752e3f2ee82ba7da9cd28e23416e7c/malaybaku/AnimationClipToVrmaSample',
+    },
+    "updated": new Date("2024-07-04"),
+  },
+  {
+    'flags': F.VrmHelper | F.VrmAnimation,
+    'platforms': P.WebBrowser,
+    'ja': {
+      'title': 'VRM spring bone adjustment tool',
+      'url': 'https://napharmonia.com/vrmtool/',
+      'preview': 'https://napharmonia.com/wp-content/uploads/2023/03/VRMツール.jpg',
+    },
+    "updated": new Date("2024-07-04"),
+  },
+  {
+    'flags': F.VrmAnimation,
+    'platforms': P.WebBrowser,
+    'ja': {
+      'title': 'VRMA, BVHをアップロードして VRMを動かすやつ',
+      'url': 'https://tfuru.github.io/vrma-loader-sample/',
+    },
+    "updated": new Date("2024-07-04"),
   },
 ];
