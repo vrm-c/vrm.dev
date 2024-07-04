@@ -45,6 +45,8 @@ Following are some examples of how VRM Animation can be used:
 
 ## Applications that support VRM Animation
 
+[showcase](/showcase/?flags=2)
+
 :::warning
 
 Thanks to the community, many applications have cooperated in supporting the draft specification of VRM Animation. The VRM Animation specification has just been officially released. If you use an application that supports the draft version, the behavior may differ from the official version, or it may not work as expected.

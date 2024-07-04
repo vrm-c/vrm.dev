@@ -10,7 +10,10 @@ export const tags: TagInfo[] = [
     color: "#2f62fc",
   },
   {
-    flag: TagFlags.Metaverse, ja: "メタバース", en: "Metaverse", color: "#4267b2"
+    flag: TagFlags.Metaverse,
+    ja: "メタバース",
+    en: "Metaverse",
+    color: "#4267b2",
   },
   {
     flag: TagFlags.UsingInternally,
@@ -21,16 +24,22 @@ export const tags: TagInfo[] = [
   // character make / devlopment...green
   {
     flag: TagFlags.CharacterCreation,
-    ja: "キャラメイクツール",
-    en: "Character maker",
+    ja: "Vrm作成(キャラメイクツール)",
+    en: "MakeVrm(Character maker)",
     color: "#127f82",
   },
   {
-    flag: TagFlags.ImporterExporter, ja: "プラグイン", en: "Plugin", color: "#21731b"
+    flag: TagFlags.ImporterExporter,
+    ja: "プラグイン",
+    en: "Plugin",
+    color: "#21731b"
   },
   // animation / capture / streaming...red
   {
-    flag: TagFlags.Game, ja: "ゲーム", en: "Game", color: "#f34545"
+    flag: TagFlags.Game,
+    ja: "ゲーム",
+    en: "Game",
+    color: "#f34545"
   },
   {
     flag: TagFlags.Streaming,
@@ -39,7 +48,10 @@ export const tags: TagInfo[] = [
     color: "#801cea",
   },
   {
-    flag: TagFlags.Photography, ja: "撮影", en: "Photography", color: "#73df45"
+    flag: TagFlags.Photography,
+    ja: "撮影",
+    en: "Photography",
+    color: "#73df45"
   },
   {
     flag: TagFlags.MotionCapture,
@@ -48,7 +60,10 @@ export const tags: TagInfo[] = [
     color: "#ffb300",
   },
   {
-    flag: TagFlags.Animation, ja: "アニメーション", en: "Animation", color: "#fe6829"
+    flag: TagFlags.Animation,
+    ja: "アニメーション",
+    en: "Animation",
+    color: "#fe6829"
   },
   {
     flag: TagFlags.WebBrowser,
@@ -57,7 +72,10 @@ export const tags: TagInfo[] = [
     color: "#ffcfc3",
   },
   {
-    flag: TagFlags.Viewer, ja: "ビューワー", en: "Viewer", color: "#ed62ff"
+    flag: TagFlags.Viewer,
+    ja: "ビューワー",
+    en: "Viewer",
+    color: "#ed62ff"
   },
   //
   {
@@ -72,8 +90,23 @@ export const tags: TagInfo[] = [
     en: "Vrm-1.0",
     color: "#8c2f00",
   },
+  {
+    flag: TagFlags.FaceTracking,
+    ja: "フェイストラッキング",
+    en: "FaceTracking",
+    color: "#ffb300"
+  },
+  {
+    flag: TagFlags.VrmHelper,
+    ja: "Vrm作成(Baseモデルが必要)",
+    en: "VrmMakeHelper(Requires base model)",
+    color: "#127f82"
+  },
   //
   {
-    flag: TagFlags.Other, ja: "その他", en: "Other", color: "#6b6b6b"
+    flag: TagFlags.Other,
+    ja: "その他",
+    en: "Other",
+    color: "#6b6b6b"
   },
 ];

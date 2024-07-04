@@ -41,7 +41,15 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '[Unite Tokyo 2019] Detailed explanation of 3D avatar file format “VRM”',
+    title: 'アバターのための規格「VRM」の誕生秘話！　概念を規格として定義するために必要なこと',
+    description: (
+      <>
+        <a href="https://levtech.jp/media/article/column/detail_80/">interview</a>
+      </>
+    ),
+  },
+  {
+    title: '【Unite Tokyo 2019】3Dアバターファイルフォーマット「VRM」詳説',
     description: (
       <>
         <a href="https://www.slideshare.net/UnityTechnologiesJapan002/unite-tokyo-20193dvrm-176308996">slide</a>
@@ -49,7 +57,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'VRM meetup公式Discordサーバー',
+    title: 'VRM meetup official Discord server',
     description: (
       <>
         <a href="http://discord.gg/26kbRgb58k">discord</a>
@@ -57,7 +65,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'VRM仕様の貢献者',
+    title: 'VRM specification contributors',
     description: (
       <>
         <a href="https://github.com/vrm-c/vrm-specification/graphs/contributors">Github</a>
@@ -65,18 +73,18 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'UniVRMの貢献者',
+    title: 'UniVRM contributors',
     description: (
       <>
         <a href="https://github.com/vrm-c/UniVRM/graphs/contributors">Github</a>
       </>
     ),
-  }
+  },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4 card shadow--md', styles.feature)}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
