@@ -94,9 +94,11 @@ const sidebars: SidebarsConfig = {
           label: "Error",
           link: { type: "doc", id: "univrm/error/index" },
           items: [
+            "univrm/error/AvatarBuilderDupBone",
+            "univrm/error/NullReferenceExceptionMeshAttachInfo",
+            "univrm/error/null_reference_exeption",
             "univrm/error/multiple_scripted_importers",
             "univrm/error/could_not_include",
-            "univrm/error/null_reference_exeption",
             "univrm/error/skinnedmeshrenderer_rootbone",
             "univrm/error/cs1061",
             //
