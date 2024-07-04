@@ -10,10 +10,27 @@ weight: 6
 
 ## VRM Features (for Developers)
 
-- Right-handed Y-Up coordinate system ➡️[Coordinate](/api/coordinate)
-- Metric unit is meter ➡️ You don't have to worry about whether 1 is 1 meter or 1 cm.
-- It is a humanoid model and has a fixed bone configuration ➡️ Easy to use general-purpose humanoid motion and motion capture
-- T-pose as the initial posture (towards +Z-axis) ➡️ can be used directly for Third-Person-Shooter mode
+- `vrm-0.x` `vrm-1.0` Right-handed Y-Up coordinate system ➡️[Coordinate](/api/coordinate)
+- `vrm-0.x` `vrm-1.0` Metric unit is meter ➡️ You don't have to worry about whether 1 is 1 meter or 1 cm.
+- `vrm-0.x` `vrm-1.0` It is a humanoid model and has a fixed bone configuration ➡️ Easy to use general-purpose humanoid motion and motion capture
+- `vrm-0.x` `vrm-1.0` T-pose as the initial posture (`0.x towards Z-axis` `1.0 towards Z+axis`) ➡️ can be used directly for Third-Person-Shooter mode
+
+:::tip
+技術的に VRM-0.X は bake 済みの T-Pose を介して FK の humanoid motion を共有する仕組みです。
+
+T-Pose bake をVrm-0.X 正規化と呼んでいます。
+
+VRM-1.0 は bake しない T-Pose を介して humanoid motion を共有する仕組みです。
+そのため異なる T-Pose 同士での retarget 手法を VRM-Animation で補完しました。
+
+- [VRM 1.0](/vrm1)
+- [VRM Animation](/vrma)
+
+VRM-1.0 に対応するためには、FK retarget の実装が必要になります。
+VRM-0.x(各ボーンの rotation を代入するだけ) に比べて RunTime の実装難易度がやや高くなります。
+
+- [ポーズデータの互換性について](https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm_animation-1.0/how_to_transform_human_pose.ja.md)
+:::
 
 - Guaranteed that there is no rotation or scale in the initial posture ➡️ The burden of writing code that takes initial posture into account can be reduced.
 - It is guaranteed that bones and mesh overlap in the initial posture (the skinning Bind matrix only includes movement) ➡️ The burden of baking before processing the mesh can be reduced.
@@ -41,6 +58,8 @@ You can use this feature to implement a character creation tool.
 `Assets/VRM.Samples/Scenes/VRMRuntimeExporterSample.unity`
 
 ## Other VRM Implementations
+
+[showcase](http://localhost:3000/showcase/?flags=8)
 
 - https://github.com/ruyo/VRM4U
 - https://github.com/saturday06/VRM_IMPORTER_for_Blender
