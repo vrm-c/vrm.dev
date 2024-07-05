@@ -13,7 +13,7 @@ Shader error in 'VRM10/Universal Render Pipeline/MToon10': Couldn't open include
 :::note `v0.124.2` からこのエラーが発生しないように対策されます。
 :::
 
-:::tip URP を使っていない場合は無視して問題ありません
+:::tip URP を使っていない場合は、このエラーを無視できます。
 :::
 
 - [プロジェクトに URP Package を導入していないときに URP 版 MToon がエラーになる · Issue #2065 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2065)

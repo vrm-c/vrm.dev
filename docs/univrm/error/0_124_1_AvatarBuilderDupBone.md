@@ -1,8 +1,9 @@
 # AvatarBuilder duplicate human bone 'Hips'
 
 :::note
-SkinnedMeshRenderers.bones に null が含まれていることで export されたデータに、
-不正な bone 参照が含まれる。 Export されたモデルを Import して HumanoidAvatar を作成することに失敗する。
+SkinnedMeshRenderers.bones に null を含むモデルを export すると
+不正な bone 参照が含まれる。 
+Export されたモデルを Import して HumanoidAvatar を作成することに失敗する。
 :::
 
 `UniVRM-0.124.1` を使ってください。

@@ -183,7 +183,15 @@ const sidebars: SidebarsConfig = {
             "univrm/error/0_124_0_NoBoneWeight",
             "univrm/error/0_124_1_AvatarBuilderDupBone",
             "univrm/error/0_124_1_NullReferenceExceptionMeshAttachInfo",
+            "univrm/error/0_123_0_NullMaterial",
           ],
+        },
+        {
+          type: "category",
+          label: "SpringBone",
+          items: [
+            "univrm/error/0_123_0_CapsuleCollider",
+          ]
         },
         "univrm/error/0_100_1_multiple_scripted_importers",
         "univrm/error/0_124_2_could_not_include",
