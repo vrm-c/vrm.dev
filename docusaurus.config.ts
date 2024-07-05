@@ -94,6 +94,12 @@ const config: Config = {
           position: "left",
         },
         {
+          label: "エラーなど",
+          type: "docSidebar",
+          sidebarId: "errorSidebar",
+          position: "left",
+        },
+        {
           label: "glTF",
           type: "docSidebar",
           sidebarId: "gltfSidebar",
