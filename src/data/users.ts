@@ -1677,6 +1677,63 @@ export const users: User[] = [
     },
     "updated": new Date("2024-07-04"),
   },
+  {
+    "flags": F.CharacterCreation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "Vket Avatar Maker",
+      "url": "https://avatarmaker.vket.com/",
+      "description": "ブラウザでアバターを作成できるサービス",
+      "preview": "https://avatarmaker.vket.com/images/common/ogp.jpg"
+    },
+    "en": {
+      "description": "A service that allows you to create avatars in your browser",
+      "preview": "https://avatarmaker.vket.com/images/common/ogp.jpg"
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.CharacterCreation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "ThreadTale",
+      "url": "https://threadtale.vket.com/",
+      "description": "ブラウザで衣装テクスチャを生成するサービス",
+    },
+    "en": {
+      "description": "A service that allows you to generate avatar texture in your browser",
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.Metaverse | F.Game,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "Vket Cloud",
+      "url": "https://cloud.vket.com/",
+      "description": "メタバースサービスをブラウザで展開できる開発エンジン",
+      "preview": "https://cloud.vket.com/images/ogp.png"
+    },
+    "en": {
+      "description": "A development engine for deploying metaverse services on browsers",
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.Metaverse | F.CharacterPlatform | F.Viewer | F.VrmAnimation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "My Vket",
+      "url": "https://vket.com/",
+      "description": "ブラウザ上で気軽に交流、イベント、アバターやアイテム販売ができるサービス",
+      "preview": "https://vket.com/images/ogp.png"
+    },
+    "en": {
+      "description": "A social platform for chatting, hosting events, and selling avatars and items via browser",
+      "preview": "https://vket.com/images/ogp_en.png"
+    },
+    "updated": new Date("2024-07-05"),
+  },
   //
   // dead links...
   //
