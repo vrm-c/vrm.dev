@@ -94,7 +94,7 @@ const config: Config = {
           position: "left",
         },
         {
-          label: "エラーなど",
+          label: "エラー情報",
           type: "docSidebar",
           sidebarId: "errorSidebar",
           position: "left",
