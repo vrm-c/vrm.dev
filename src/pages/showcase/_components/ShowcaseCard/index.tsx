@@ -20,16 +20,20 @@ const TagComp = React.forwardRef<HTMLLIElement, TagInfo>(
       i18n: { currentLocale },
     } = useDocusaurusContext();
 
+    const url = `/showcase/?flags=${flag}`;
+
     return (
-      <li ref={ref} className={styles.tag} title={ja}>
-        <span className={styles.textLabel}>
-          {currentLocale == "ja" ? ja : en}
-        </span>
-        <span
-          className={styles.colorLabel}
-          style={{ backgroundColor: color }}
-        />
-      </li>
+      <a href={url}>
+        <li ref={ref} className={styles.tag} title={ja}>
+          <span className={styles.textLabel}>
+            {currentLocale == "ja" ? ja : en}
+          </span>
+          <span
+            className={styles.colorLabel}
+            style={{ backgroundColor: color }}
+          />
+        </li>
+      </a>
     );
   }
 );
@@ -40,16 +44,20 @@ const PlatformComp = React.forwardRef<HTMLLIElement, PlatformInfo>(
       i18n: { currentLocale },
     } = useDocusaurusContext();
 
+    const url = `/showcase/?platform=${flag}`;
+
     return (
-      <li ref={ref} className={styles.tag} title={label}>
-        <span className={styles.textLabel}>
-          {label}
-        </span>
-        <span
-          className={styles.colorLabel}
-          style={{ backgroundColor: color }}
-        />
-      </li>
+      <a href={url}>
+        <li ref={ref} className={styles.tag} title={label}>
+          <span className={styles.textLabel}>
+            {label}
+          </span>
+          <span
+            className={styles.colorLabel}
+            style={{ backgroundColor: color }}
+          />
+        </li>
+      </a>
     );
   }
 );
