@@ -1,16 +1,19 @@
-# Shader error in 'VRM10/Universal Render Pipeline/MToon10': Couldn't open include file
+# Couldn't open include file
+
+:::note
+This problem occurs when you install VRMShaders in an environment where Universal RP is not installed.
+This is an error where the file referenced by the URP version of MToon cannot be found.
 
 ```txt
 Shader error in 'VRM10/Universal Render Pipeline/MToon10': Couldn't open include file 'Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl'. at /My project/Library/PackageCache/com.vrmc.vrmshaders@c684b72477/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthnormals_vertex.hlsl(5)
 ```
 
-:::warning Universal RP is not installed
 :::
 
-:::tip If you are not using URP, you can safely ignore it.
+:::note `From v0.124.2`, prevent this error.
+:::
 
-This is an error where the file referenced by the URP version of MToon cannot be found.
-
+:::tip If you are not using URP, you can ignore this error.
 :::
 
 - [プロジェクトに URP Package を導入していないときに URP 版 MToon がエラーになる · Issue #2065 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2065)
@@ -18,7 +21,7 @@ This is an error where the file referenced by the URP version of MToon cannot be
 
 - ![img](https://github.com/vrm-c/UniVRM/assets/68057/a48816d7-7db2-469e-b762-a0951fa8a670)
 
-**エラーメッセージ**
+**error message**
 
 <details>
 Shader error in 'VRM10/Universal Render Pipeline/MToon10': Couldn't open include file 'Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl'. at /ghq/github.com/ousttrue/UniVRM-UPM/Library/PackageCache/com.vrmc.vrmshaders@b4130b9e5d/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_render_pipeline.hlsl(5)
