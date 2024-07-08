@@ -91,22 +91,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Error",
-          link: { type: "doc", id: "univrm/error/index" },
-          items: [
-            "univrm/error/AvatarBuilderDupBone",
-            "univrm/error/NullReferenceExceptionMeshAttachInfo",
-            "univrm/error/null_reference_exeption",
-            "univrm/error/multiple_scripted_importers",
-            "univrm/error/could_not_include",
-            "univrm/error/skinnedmeshrenderer_rootbone",
-            "univrm/error/cs1061",
-            //
-            "univrm/error/report_error",
-          ],
-        },
-        {
-          type: "category",
           label: "Export",
           items: [
             { type: "doc", id: "univrm/export/univrm_export" },
@@ -182,6 +166,39 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "univrm/programming/index" },
           items: [],
         },
+      ],
+    },
+  ],
+  errorSidebar: [
+    {
+      type: "category",
+      label: "Error",
+      link: { type: "doc", id: "univrm/error/index" },
+      items: [
+        {
+          type: "category",
+          label: "Export",
+          items: [
+            "univrm/error/0_115_0_BlendshapeCollapse",
+            "univrm/error/0_124_0_NoBoneWeight",
+            "univrm/error/0_124_1_AvatarBuilderDupBone",
+            "univrm/error/0_124_1_NullReferenceExceptionMeshAttachInfo",
+            "univrm/error/0_123_0_NullMaterial",
+          ],
+        },
+        {
+          type: "category",
+          label: "SpringBone",
+          items: [
+            "univrm/error/0_123_0_CapsuleCollider",
+          ]
+        },
+        "univrm/error/0_100_1_multiple_scripted_importers",
+        "univrm/error/0_124_2_could_not_include",
+        "univrm/error/skinnedmeshrenderer_rootbone",
+        "univrm/error/cs1061",
+        //
+        "univrm/error/report_error",
       ],
     },
   ],

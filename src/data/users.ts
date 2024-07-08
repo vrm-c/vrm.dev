@@ -183,14 +183,12 @@ export const users: User[] = [
     "ja": {
       "title": "VRM Converter for VRChat",
       "url": "https://pokemori.booth.pm/items/1025226",
-      "description": "Unityエディタ拡張",
+      "description": "VRM-0.0とVRChat SDK3アバターを相互変換するUnityエディタ拡張",
       "preview": "https://booth.pximg.net/c/620x620/ba01b0da-9d0b-4dd8-a9ad-3f35270de1c8/i/1025226/c639ada2-329a-4f94-9545-9d3eb2ace96e_base_resized.jpg"
     },
     "en": {
-      "title": "VRM Converter for VRChat",
-      "url": "https://www.v-market.work/ec/items/122/detail/",
-      "description": "Unity editor extension",
-      "preview": "https://vket-store-production.s3.ap-northeast-1.amazonaws.com/uploads/avatar_image/image_url/2723/medium_1282534c-ddd7-4941-af78-6c6e57f8b06a.png?X-Amz-Expires=600&X-Amz-Date=20240126T105044Z&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkgwRgIhAKiOfVGV4LvpurjSITQT%2B7YWweoyguKXzUYxwSMmfHLrAiEA7V5PWUF5WadrWNVeBbs0pTJ%2BR8rUkgOOJ54b7%2F93p6UqgQQIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwzNTAwOTU4ODQ2MTIiDFaV6KBY8mK1re2lqSrVA%2FQpsAyj%2Bg8CsqS53GgMSvTlAgjVwiflI%2BRgTprberNb8mmrfem%2B7%2Bxzjqq4f85aK567fvI29YvTQolTqxnG9taIx4kk5QggYoWr%2BTeQTQiyAiJ2fT6A86wkj65pcsf83kQlHjh0VB%2B8dCqdo06Ub0KVNipreE9lrmslxFqaRtpKpTq5R8FO5zQnAW%2BJ5gEYIwMknZKDGCHc%2BqM%2Fy%2B%2FnAduEb5FqWlURrsPx%2FhJeLL9juGLmp2C7pf%2BDK6M%2FyZ0scgIgu1u7k4L0zz%2BoXvWImXOS6jR5W%2BE%2FBs6mQvbms51%2BwChbFWtXgZQvar9Fv83Zy26%2FCL%2BvnPUK6fhi0CX6BRsLK4L6a742X%2BLB7TlkEk0kjaFaXmZVLgEOwblCp8HQW0S3F9B6pfPIg2RPh4o89CbmRJ80TXwj3YcxhQUSV3OsPOdb1mLsBpjHpsDCKKQrVGXrspUbDmrDfk3L8cLqMhjY4OhhgQg75Zo5%2F1IzbREffAFlcNPX9YYktzJvKIWCI8V2O%2BclPmlZIVGh1hML4l516I2aVC2K3s3tA3PWcP%2FAaRWz6Jl80l5HR0N6rszMbh8uS0eohgjQAX0olZtJjTDQeRVC%2B8ZqM2v5uzYbTLkD5dqS5esw97vNrQY6pAFAngYCYdtKLBF2oztudpQPtcivTDa2MJj%2BsbKGSsxDsCJnzRt2WdQayUKMx1FEtuZoZ32iy8VUZ6DGpUtCRgzZZrY7xSrnMLu15y0Nd1M85n%2BD6k3SZjnTkYrN7PZg81cA3X4zN2gtQbVebcUO%2FAgc7lZa6Qv1USPsKPlwbM%2F87GaJHjmnVotoa9iwjHKY0Dvx7iwAuNc7Y9EfYUGRTqrAjUuYpA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVDA2XIFCI7KE2W6N%2F20240126%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d2545cba809278232bf5d93328a453821b98b2b04110466c88b2500f466762c7"
+      "url": "https://store.vket.com/en/items/122",
+      "description": "Unity editor extension for converting between VRM-0.0 and VRChat SDK3 avatars",
     }
   },
   {
@@ -198,14 +196,12 @@ export const users: User[] = [
     "ja": {
       "title": "UniVRMExtensions",
       "url": "https://pokemori.booth.pm/items/1788660",
-      "description": "Unityエディタ拡張",
+      "description": "VRM-0.0に関連するUnityエディタ拡張",
       "preview": "https://booth.pximg.net/c/620x620/ba01b0da-9d0b-4dd8-a9ad-3f35270de1c8/i/1788660/0e58aab0-1709-48c0-8a45-7b8fc2ef1500_base_resized.jpg"
     },
     "en": {
-      "title": "UniVRMExtensions",
-      "url": "https://www.v-market.work/ec/items/1066/detail/",
-      "description": "Unity editor extension",
-      "preview": "https://vket-store-production.s3.ap-northeast-1.amazonaws.com/uploads/avatar_image/image_url/14776/medium_ff9ebbed-bb71-421d-ab16-46523750961c0b0760535c9ce40fdff3d104468066b9.png?X-Amz-Expires=600&X-Amz-Date=20240126T105045Z&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkgwRgIhAKiOfVGV4LvpurjSITQT%2B7YWweoyguKXzUYxwSMmfHLrAiEA7V5PWUF5WadrWNVeBbs0pTJ%2BR8rUkgOOJ54b7%2F93p6UqgQQIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwzNTAwOTU4ODQ2MTIiDFaV6KBY8mK1re2lqSrVA%2FQpsAyj%2Bg8CsqS53GgMSvTlAgjVwiflI%2BRgTprberNb8mmrfem%2B7%2Bxzjqq4f85aK567fvI29YvTQolTqxnG9taIx4kk5QggYoWr%2BTeQTQiyAiJ2fT6A86wkj65pcsf83kQlHjh0VB%2B8dCqdo06Ub0KVNipreE9lrmslxFqaRtpKpTq5R8FO5zQnAW%2BJ5gEYIwMknZKDGCHc%2BqM%2Fy%2B%2FnAduEb5FqWlURrsPx%2FhJeLL9juGLmp2C7pf%2BDK6M%2FyZ0scgIgu1u7k4L0zz%2BoXvWImXOS6jR5W%2BE%2FBs6mQvbms51%2BwChbFWtXgZQvar9Fv83Zy26%2FCL%2BvnPUK6fhi0CX6BRsLK4L6a742X%2BLB7TlkEk0kjaFaXmZVLgEOwblCp8HQW0S3F9B6pfPIg2RPh4o89CbmRJ80TXwj3YcxhQUSV3OsPOdb1mLsBpjHpsDCKKQrVGXrspUbDmrDfk3L8cLqMhjY4OhhgQg75Zo5%2F1IzbREffAFlcNPX9YYktzJvKIWCI8V2O%2BclPmlZIVGh1hML4l516I2aVC2K3s3tA3PWcP%2FAaRWz6Jl80l5HR0N6rszMbh8uS0eohgjQAX0olZtJjTDQeRVC%2B8ZqM2v5uzYbTLkD5dqS5esw97vNrQY6pAFAngYCYdtKLBF2oztudpQPtcivTDa2MJj%2BsbKGSsxDsCJnzRt2WdQayUKMx1FEtuZoZ32iy8VUZ6DGpUtCRgzZZrY7xSrnMLu15y0Nd1M85n%2BD6k3SZjnTkYrN7PZg81cA3X4zN2gtQbVebcUO%2FAgc7lZa6Qv1USPsKPlwbM%2F87GaJHjmnVotoa9iwjHKY0Dvx7iwAuNc7Y9EfYUGRTqrAjUuYpA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVDA2XIFCI7KE2W6N%2F20240126%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d94b6f8359b4bea00b31f9921910822a6dcb6abe3d5e4aad711fb8052b4c6215"
+      "url": "https://store.vket.com/en/items/1066",
+      "description": "Unity editor extension related to VRM-0.0",
     }
   },
   {
@@ -1676,6 +1672,63 @@ export const users: User[] = [
       'url': 'https://tfuru.github.io/vrma-loader-sample/',
     },
     "updated": new Date("2024-07-04"),
+  },
+  {
+    "flags": F.CharacterCreation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "Vket Avatar Maker",
+      "url": "https://avatarmaker.vket.com/",
+      "description": "ブラウザでアバターを作成できるサービス",
+      "preview": "https://avatarmaker.vket.com/images/common/ogp.jpg"
+    },
+    "en": {
+      "description": "A service that allows you to create avatars in your browser",
+      "preview": "https://avatarmaker.vket.com/images/common/ogp.jpg"
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.CharacterCreation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "ThreadTale",
+      "url": "https://threadtale.vket.com/",
+      "description": "ブラウザで衣装テクスチャを生成するサービス",
+    },
+    "en": {
+      "description": "A service that allows you to generate avatar texture in your browser",
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.Metaverse | F.Game,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "Vket Cloud",
+      "url": "https://cloud.vket.com/",
+      "description": "メタバースサービスをブラウザで展開できる開発エンジン",
+      "preview": "https://cloud.vket.com/images/ogp.png"
+    },
+    "en": {
+      "description": "A development engine for deploying metaverse services on browsers",
+    },
+    "updated": new Date("2024-07-05"),
+  },
+  {
+    "flags": F.Metaverse | F.CharacterPlatform | F.Viewer | F.VrmAnimation,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "My Vket",
+      "url": "https://vket.com/",
+      "description": "ブラウザ上で気軽に交流、イベント、アバターやアイテム販売ができるサービス",
+      "preview": "https://vket.com/images/ogp.png"
+    },
+    "en": {
+      "description": "A social platform for chatting, hosting events, and selling avatars and items via browser",
+      "preview": "https://vket.com/images/ogp_en.png"
+    },
+    "updated": new Date("2024-07-05"),
   },
   //
   // dead links...

@@ -9,6 +9,7 @@ import Link from "@docusaurus/Link";
 
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
+import { type TagInfo } from "@site/src/data/tag";
 
 import { users } from "@site/src/data/users";
 function cmpUser(a: User, b: User): number {
@@ -85,6 +86,40 @@ function filterUsers(
   });
 }
 
+function FlagCheckbox({ tagInfo, locale }: { tagInfo: TagInfo, locale: string }) {
+  const { flag, ja, en, color } = tagInfo;
+  const id = `showcase_checkbox_id_${flag}`;
+  const label = locale == "ja" ? ja : en;
+  const description = locale == "ja" ? ja : en;
+
+  return (
+    <li className={styles.checkboxListItem}>
+      <ShowcaseTooltip
+        id={id}
+        text={description}
+        anchorEl="#__docusaurus"
+      >
+        <ShowcaseTagSelect
+          flag={flag}
+          id={id}
+          label={label}
+          icon={
+            <span
+              style={{
+                backgroundColor: color,
+                width: 10,
+                height: 10,
+                borderRadius: "50%",
+                marginLeft: 8,
+              }}
+            />
+          }
+        />
+      </ShowcaseTooltip>
+    </li>
+  );
+}
+
 function ShowcaseFilters() {
   const {
     i18n: { currentLocale },
@@ -103,39 +138,7 @@ function ShowcaseFilters() {
         <ShowcaseFilterToggle />
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
-        {tags.map((tagInfo, i) => {
-          const { flag, ja, en, color } = tagInfo;
-          const id = `showcase_checkbox_id_${flag}`;
-          const label = currentLocale == "ja" ? ja : en;
-          const description = currentLocale == "ja" ? ja : en;
-
-          return (
-            <li key={i} className={styles.checkboxListItem}>
-              <ShowcaseTooltip
-                id={id}
-                text={description}
-                anchorEl="#__docusaurus"
-              >
-                <ShowcaseTagSelect
-                  flag={flag}
-                  id={id}
-                  label={label}
-                  icon={
-                    <span
-                      style={{
-                        backgroundColor: color,
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                        marginLeft: 8,
-                      }}
-                    />
-                  }
-                />
-              </ShowcaseTooltip>
-            </li>
-          );
-        })}
+        {tags.map((tagInfo, i) => <FlagCheckbox key={i} tagInfo={tagInfo} locale={currentLocale} />)}
       </ul>
     </section>
   );
