@@ -1,22 +1,22 @@
-# Export時にBlendShapeが乱れる
+# Exporting: BlendShape is broken
 
 :::danger
-MeshBake(正規化)処理のバグ
+Bug in MeshBake (normalization) processing
 :::
 
-`UniVRM-0.124.1` を使ってください。
-`UniVRM-0.124.0` はこの件の修正で別のバグが入っています。
-`UniVRM-0.115.0 以前` を使ってください。
+Please use `UniVRM-0.124.1`.
+`UniVRM-0.124.0` fixes this issue and contains another bug.
+Please use `UniVRM-0.115.0 or earlier`.
 
 :::warning
-`UniVRM-0.116.0 ~ UniVRM-0.123.0` で発生。
+Occurred with `UniVRM-0.116.0 ~ UniVRM-0.123.0`.
 :::
 
 :::info
 
-- エクスポート時に正規化
-- 元のモデルにスケールがかかっていると顕在化
-- 元のモデルに回転がかかっていると顕在化(Blender Z-UP)
+- Normalize on export
+- Appears when the original model is scaled
+- Appears when the original model is rotated (Blender Z-UP)
 
 :::
 

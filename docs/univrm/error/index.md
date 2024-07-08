@@ -1,5 +1,5 @@
-# エラー情報
+# ErrorInfo
 
-- 既知のエラー
-- UniVRM の特定のバージョンのエラー
-- Unity の特定のエラーメッセージ
+- Known errors
+- Errors in specific versions of UniVRM
+- Specific error messages in Unity
