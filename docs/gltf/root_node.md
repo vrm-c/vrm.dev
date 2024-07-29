@@ -1,30 +1,30 @@
-# Root Node の仕様
+# Root Node specifications
 
-glTF はシーン上に複数の root node (親の無いnode) を記述できます。
-一方 UniGLTF で `import` された asset は、単一の root GameObject になります。
-UniGLTF でこのギャップをどのように処理しているのかついて説明します。
+glTF can write multiple root nodes (nodes without parents) on the scene.
+On the other hand, an asset that is `import` in UniGLTF becomes a single root GameObject.
+We will explain how UniGLTF handles this gap.
 
 ## import
 
-UniGLTF は `import` 時に root になる empty を作成します。
-glTF の root node(複数存在しうる) をこの empty の子Objectにします。
+UniGLTF creates an empty root when `import`.
+Make glTF's root node (there may be more than one) a child object of this empty.
 
 ## export
 
-`export` の root GameObject を glTF のシーンであるとみなします。
-root GameObject の子オブジェクトを glTF の root Node としてエクスポートします。
+Consider the root GameObject of `export` to be a glTF scene.
+Export the child objects of root GameObject as glTF root Node.
 
 :::danger
-- `export root` は glTFNode としては消滅します
+- `export root` disappears as glTFNode
 :::
 
 :::danger
-- `export root` は 移動回転拡縮は記録できません
+- `export root` cannot record translation, rotation, scaling.
 :::
 
 :::danger
-- `export root` は glTFNode の index が無いので参照できません
-- SpringBone の `Center` に `export root` を指定できません(indexが無い)
-- `export root` は Animation できません(indexが無い)
-  - AnimationBehaviour は `export` 対象外です
+- `export root` cannot be referenced because there is no glTFNode index
+- Cannot specify `export root` for SpringBone's `Center` (no index)
+- `export root` cannot be animated (no index)
+  - AnimationBehaviour is not eligible for `export`
 :::
