@@ -213,6 +213,7 @@ const sidebars: SidebarsConfig = {
         { type: "doc", id: "gltf/animation_exporter" },
         { type: "doc", id: "gltf/emission_glow" },
         { type: "doc", id: "gltf/mesh_utility" },
+        "gltf/root_node",
       ],
     },
   ],
