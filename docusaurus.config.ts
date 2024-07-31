@@ -107,28 +107,32 @@ const config: Config = {
         },
         //
         {
-          label: "UniVRM-API",
-          type: "docSidebar",
-          sidebarId: "apiSidebar",
-          position: "right",
-        },
+          type: 'dropdown',
+          label: 'Develop',
+          position: 'right',
+          items: [
+            {
+              label: "UniVRM-API",
+              type: "docSidebar",
+              sidebarId: "apiSidebar",
+            },
 
-        {
-          label: "UniVRM-Release",
-          type: "docSidebar",
-          sidebarId: "releaseSidebar",
-          position: "right",
+            {
+              label: "UniVRM-Release",
+              type: "docSidebar",
+              sidebarId: "releaseSidebar",
+            },
+            { to: "/blog", label: "Site" },
+            {
+              href: "https://github.com/vrm-c/vrm.dev",
+              className: "github-link icon-black",
+              "aria-label": "GitHub repository",
+            },
+          ],
         },
-        { to: "/blog", label: "Site", position: "right" },
         {
           type: "localeDropdown",
-          position: "right",
-        },
-        {
-          href: "https://github.com/vrm-c/vrm.dev",
-          position: "right",
-          className: "github-link icon-black",
-          "aria-label": "GitHub repository",
+          position: 'right',
         },
       ],
     },
