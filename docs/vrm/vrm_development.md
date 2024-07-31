@@ -64,7 +64,7 @@ UniVRM は Asset(Prefab) を作成せずに、シーン上に直接 GameObject �
 
 ## UniVRM以外の実装
 
-[showcase](http://localhost:3000/showcase/?flags=8)
+[showcase](/showcase/?flags=8)
 
 - https://github.com/ruyo/VRM4U
 - https://github.com/saturday06/VRM_IMPORTER_for_Blender

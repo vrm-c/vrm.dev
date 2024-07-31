@@ -11,7 +11,7 @@ weight: 1
 VRM では「人型」の「キャラクター・アバター」を取り扱うことができます。
 
 - フォーマットは **クロスプラットフォーム** な **[glTF](https://www.khronos.org/gltf/) ベース** です。ゲームエンジンや Web で取り扱うことが可能です。
-  - ➡️ [plugins](http://localhost:3000/showcase/?flags=8)
+  - ➡️ [plugins](/showcase/?flags=8)
 - **Unity で VRM ファイルを読み書きする UniVRM が提供されます**
   - ➡️ [UniVRM](https://github.com/vrm-c/UniVRM/releases)
 
