@@ -1,6 +1,6 @@
 # URP 対応状況
 
-## Built-in と URP の shader 対応
+## URP版 shader の実装状況
 
 :::tip editor
 glb と vrm-1.0 は、inspector から URP Material への差し替えができます。
@@ -18,10 +18,26 @@ unlit に fallback します。
 import 時に VRM-1.0 にマイグレートすることで、MToon-1.0 の URP 版を使うことを検討してください。
 :::
 
-## Export
+## URP Import
 
-URP shader からエクスポートする経路が未実装です。
+| glTF extensions      | IMaterialDescriptorGenerator        | 備考                        |
+| -------------------- | ----------------------------------- | --------------------------- |
+| (PBR)                | UrpGltfMaterialDescriptorGenerator  |                             |
+| KHR_materials_unlit  | UrpGltfMaterialDescriptorGenerator  |                             |
+| VRMC_materials_mtoon | UrpVrm10MaterialDescriptorGenerator |                             |
+| VRM                  | UrpVrmMaterialDescriptorGenerator   | URP版 VRM0.X MToon が未実装 |
 
-## RuntimeImport
+### RuntimeImport
 
 `IMaterialDescriptorGenerator` 引数により生成する Material を Built-in / URP でスイッチできます。
+
+## URP Export
+
+WIP
+
+| glTF extensions      | IMaterialExporter       | 備考       |
+| -------------------- | ----------------------- | ---------- |
+| (PBR)                | UrpGltfMaterialExporter | `v0.125.0` |
+| KHR_materials_unlit  | UrpGltfMaterialExporter | `v0.125.0` |
+| VRMC_materials_mtoon |                         | 未実装     |
+| VRM                  |                         | 未実装     |
