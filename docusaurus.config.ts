@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import remark_plugin from "./remark_plugin";
 
 const cardImage = "images/vrm/card.png";
 
@@ -40,6 +41,10 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           routeBasePath: "/",
+
+          // pugins
+          beforeDefaultRemarkPlugins: [remark_plugin],
+          // rehypePlugins: [rehype_plugin],
         },
         blog: {
           showReadingTime: false,
