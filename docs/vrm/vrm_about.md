@@ -11,9 +11,9 @@ weight: 1
 VRM can handle `humanoid` `character avatars`.
 
 - The format is **glTF based**, so it's **cross-platform**. It can also be handled by other game engines and the Web.
-  - ➡️ [glTF](https://www.khronos.org/gltf/)
+  - ➡️ [plugins](/showcase/?flags=8)
 - **Provides a standard implementation (UniVRM) for reading and writing VRM**
-  - ➡️ [Download](https://github.com/vrm-c/UniVRM/releases)
+  - ➡️ [UniVRM](https://github.com/vrm-c/UniVRM/releases)
 
 ### Contents
 
