@@ -59,7 +59,7 @@ You can use this feature to implement a character creation tool.
 
 ## Other VRM Implementations
 
-[showcase](http://localhost:3000/showcase/?flags=8)
+[showcase](/showcase/?flags=8)
 
 - https://github.com/ruyo/VRM4U
 - https://github.com/saturday06/VRM_IMPORTER_for_Blender
