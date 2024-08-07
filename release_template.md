@@ -3,6 +3,11 @@
 - [日本語](https://vrm.dev/release/${dir}/v${version}/)
 - [English](https://vrm.dev/en/release/${dir}/v${version}/)
 
+> [!WARNING]
+> from `v0.125.0`.
+> `com.vrmc.vrmshaders` is removed.
+> `com.vrmc.vrmshaders` is no longer required in manifest.json.
+
 ## Installation
 
 The UniVRM supports Unity ${unity_version} or later.
@@ -15,7 +20,6 @@ You can install UniVRM using the UnityPackage or the UPM Package.
   - **Download [VRM-${version_hash}.unitypackage](https://github.com/vrm-c/UniVRM/releases/download/v${version}/VRM-${version_hash}.unitypackage)**
 
 - via UPM Package
-  - `com.vrmc.vrmshaders`
   - `com.vrmc.gltf`
   - `com.vrmc.vrm`
 
@@ -25,7 +29,6 @@ You can install UniVRM using the UnityPackage or the UPM Package.
   - **Download [UniVRM-${version_hash}.unitypackage](https://github.com/vrm-c/UniVRM/releases/download/v${version}/UniVRM-${version_hash}.unitypackage)**
 
 - via UPM Package
-  - `com.vrmc.vrmshaders`
   - `com.vrmc.gltf`
   - `com.vrmc.univrm`
 
@@ -36,7 +39,6 @@ You can install these UPM packages via Package Manager in UnityEditor.
 
 | UPM package         | git URL                                                                 |
 |:--------------------|:------------------------------------------------------------------------|
-| com.vrmc.vrmshaders | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v${version} |
 | com.vrmc.gltf       | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v${version}    |
 | com.vrmc.univrm     | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v${version}        |
 | com.vrmc.vrm        | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v${version}      |
@@ -48,7 +50,6 @@ You can also install via editing `Packages/manifest.json` directly.
 {
   "dependencies": {
     // ...
-    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v${version}",
     "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v${version}",
     "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v${version}",
     "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v${version}",

@@ -1,5 +1,8 @@
 # UnityPackageManager による Install
 
+:::warning `v0.125.0` から `com.vrmc.vrmshaders` は無くなります
+:::
+
 :::info git が必要です
 
 https://git-scm.com/
@@ -41,16 +44,16 @@ git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、
 
 ## UniVRM の UPM package
 
-`v0.119` の例
+`v0.125.0` の例
 
 https://github.com/vrm-c/UniVRM/releases
 
-| name                | url                                                                  | note          |
-| ------------------- | -------------------------------------------------------------------- | ------------- |
-| com.vrmc.vrmshaders | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.119.0 | material 周辺 |
-| com.vrmc.gltf       | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.119.0    | UniGLTF       |
-| com.vrmc.univrm     | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.119.0        | VRM-0.x       |
-| com.vrmc.vrm        | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.119.0      | VRM-1.0       |
+| name                | url                                                                  | note                                               |
+| ------------------- | -------------------------------------------------------------------- | -------------------------------------------------- |
+| com.vrmc.vrmshaders | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.125.0 | Material関連。`v0.125.0` から `UniGLTF` に統合されて無くなります |
+| com.vrmc.gltf       | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.125.0    | UniGLTF                                            |
+| com.vrmc.univrm     | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.125.0        | VRM-0.x                                            |
+| com.vrmc.vrm        | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.125.0      | VRM-1.0                                            |
 
 ## UnityPackageManager ウインドウによるインストール
 
@@ -66,7 +69,21 @@ Project ウィンドウの Packages フォルダにインポートしたパッ�
 
 以下の内容を追記してください。
 
-```js title="v0.119の例"
+```js title="v0.125.0 の例"
+{
+  "dependencies": {
+    // ...
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.125.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.125.0",
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.125.0",
+    // ...
+}
+```
+
+:::warning `v0.125.0` から `com.vrmc.vrmshaders` は無くなります
+:::
+
+```js title="v0.119.0 の例"
 {
   "dependencies": {
     // ...
