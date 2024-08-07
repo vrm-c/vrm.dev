@@ -53,7 +53,14 @@ const sidebars: SidebarsConfig = {
             "vrm1/humanoid",
             "vrm1/expression",
             "vrm1/lookat_firstperson",
-            "vrm1/springbone",
+            {
+              type: "category",
+              label: "VRMC_springBone",
+              link: { type: "doc", id: "vrm1/springbone/index" },
+              items: [
+                "vrm1/springbone/extended_collider",
+              ],
+            },
             "vrm1/emission",
             "vrm1/mtoon",
             "vrm1/constraint",
