@@ -1836,4 +1836,18 @@ export const users: User[] = [
       "url": "https://connect.vrlab.dmm.com/"
     },
   },
+  //
+  // new
+  //
+  {
+    "flags": F.VrmAnimation,
+    "platforms": P.iOS | P.WebBrowser,
+    "ja": {
+      "title": "VRMポーズファイラー",
+      "url": "https://hub.vroid.com/apps/y213JgHLrqgiMUYriWnssR9iOIvoEAQOPOLedBvcmbA",
+      "preview": "https://vroid-hub.pximg.net/c/1280x720_a2_g5/images/oauth_application_eyecatch_images/75872023757847100.png",
+      "description": "手軽にビューアーとして使える[Webページ](https://vrm-pose-filer.pages.dev/)も公開中です。",
+    },
+    "updated": new Date("2024-08-16"),
+  },
 ];
