@@ -75,6 +75,7 @@ VRM アニメーションの仕様を検討するにあたり、多くのアプ�
 - [VRM Posing Desktop](https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/)
 - [VRM スプリングボーン調整ツール](https://napharmonia.com/vrmtool/)
 - [VRMA, BVH をアップロードして VRM を動かすやつ](https://tfuru.github.io/vrma-loader-sample/)
+- [VRMポーズファイラー](https://hub.vroid.com/apps/y213JgHLrqgiMUYriWnssR9iOIvoEAQOPOLedBvcmbA)
 
 ## VRM アニメーションを利用したアプリケーションを開発する
 
