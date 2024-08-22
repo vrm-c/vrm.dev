@@ -1850,4 +1850,20 @@ export const users: User[] = [
     },
     "updated": new Date("2024-08-16"),
   },
+  {
+    "flags": F.Viewer,
+    "platforms": P.WebXR | P.WebBrowser,
+    "ja": {
+      "title": "VR Dance Viewer",
+      "url": "https://uniharu.booth.pm/items/5254229",
+      "description": " ",
+      "preview": "https://booth.pximg.net/18da8d9c-4167-47d1-805a-bb2b2172d6e4/i/5254229/b18cb8f3-77f4-4809-9a39-898bec3e9399_base_resized.jpg"
+    },
+    "en": {
+      "title": "VR Dance Viewer",
+      "description": " ",
+      "preview": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicRFqd_NJjuel61TsZASltoYSUs05SCMlw3ukhCHA2qcn9OVeYKYyoLbaV9lY20iey1ocKGU0w0PqDNGHe6V5QPOXVaSrzNRwLojkOk5jkYp4u3_qi70J9_WUTvoOHHITZ7rw2X0qYLhDoh9lhnR0Z7ycKZQdMcimuFgd1s1xsJNbuXefp7wCc7wZUxg1I/s1200/icon.png"
+    },
+    "updated": new Date("2024-08-22"),
+  },
 ];
