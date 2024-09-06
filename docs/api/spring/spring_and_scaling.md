@@ -1,17 +1,39 @@
-# SpringBone と スケーリング
+# SpringBone の実装状況
 
-## 実装ごとの対応状況
+| type  | job | update          | load    | note                                  |
+| ----- | --- | --------------- | ------- | ------------------------------------- |
+| vrm-0 |     | spring root     | default | v0.74(scaling), v0.126(scaling param) |
+| vrm-0 | job | model root      | (todo)  | job かつ singleton でないバージョン   |
+| vrm-0 | job | scene singleton | custom  |                                       |
+| vrm-1 | job | model root      | (todo)  | job かつ singleton でないバージョン   |
+| vrm-1 | job | scene singleton | default | v0.106(重力), v0.126(editor)          |
 
-| 実装                 | スケーリング対応 | 動的なパラメーターの変更 | manual update |
-| -------------------- | ---------------- | ------------------------ | ------------- |
-| vrm-0                | v0.74            | ?                        | ?             |
-| vrm-0 fastspringbone | ?                | ?                        | ?             |
-| vrm-1                | ?                | v0.106(重力)             | ✅            |
+:::info ３つのSpringBone実装の部品を共通化予定
 
-:::warning uniform(xyz が同じ)スケーリングのみの対応です
+- https://github.com/vrm-c/UniVRM/issues/2422
+
 :::
 
-:::warning 初期化時に固定されるパラメーターがあります
+:::note job かつ singleton でないバージョン
+
+複数VRM を同時に処理する場合は scene singleton の方がパフォーマンスが向上します。
+
+:::
+
+:::note job は房並列です
+
+joint 毎ではなく房(根元 から末端まで)単位の並列です。
+
+根元から順番に長さで拘束して位置を確定させるため再帰処理が必須。
+
+- 伸縮せずに見た目がきれい
+- 配列化できない
+
+というトレードオフがあります。
+
+:::
+
+:::warning スケーリングは uniform(xyz が同じ) のみの対応です
 :::
 
 - `0.x` [SpringBone does not work correctly if you change the model size, for example scale (8,8,8). · Issue #2242 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2242)
