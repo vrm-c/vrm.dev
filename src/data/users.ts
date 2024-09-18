@@ -799,8 +799,8 @@ export const users: User[] = [
     "updated": new Date("2024-07-01"),
   },
   {
-    "flags": F.Metaverse,
-    "platforms": P.WindowsVR | P.Windows | P.macOS | P.iOS | P.Android,
+    "flags": F.Metaverse | F.Vrm10,
+    "platforms": P.WindowsVR | P.Windows | P.macOS | P.iOS | P.Android | P.MetaQuest,
     "ja": {
       "title": "cluster",
       "url": "https://cluster.mu/",
