@@ -246,7 +246,14 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "univrm1/vrm1_tutorial/expression" },
             { type: "doc", id: "univrm1/vrm1_tutorial/lookat" },
             { type: "doc", id: "univrm1/vrm1_tutorial/firstperson" },
-            { type: "doc", id: "univrm1/vrm1_tutorial/springbone" },
+            {
+              type: "category",
+              label: "SpringBone の設定",
+              link: { type: "doc", id: "univrm1/vrm1_tutorial/springbone/index" },
+              items: [
+                "univrm1/vrm1_tutorial/springbone/center",
+              ],
+            },
             { type: "doc", id: "univrm1/vrm1_tutorial/material" },
             { type: "doc", id: "univrm1/vrm1_tutorial/constraint" },
           ],

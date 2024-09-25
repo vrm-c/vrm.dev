@@ -33,6 +33,9 @@ VRMInstance の Spring[x].Joints リストにセットしてください。
 
 ### Spring に Center を設定する
 
+SpringBoneにはCenterというプロパティが存在し、設定することで揺れを制御することができます。
+詳しくは、 [centerで揺れを抑制する](./center.md) を参照してください。
+
 ## SpringBone の Collider
 
 ### Collider コンポーネントをアタッチする
