@@ -1,4 +1,4 @@
-# 🚧 v0.127.1
+# 🚧 next. SpringBone 周り
 
 https://github.com/vrm-c/UniVRM/milestone/93
 
