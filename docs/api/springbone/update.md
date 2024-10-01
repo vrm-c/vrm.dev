@@ -1,11 +1,13 @@
-# `v0.106` SpringBone の手動更新
+# update のカスタマイズ
+
+## `v0.106` SpringBone の手動更新
 
 from [v0.106.0](/release/100/v0.106.0)
 
 [\#1866](https://github.com/vrm-c/UniVRM/pull/1886)
 
-* VRMSpringBone.SpringBoneUpdateType.Manual を追加
-* VRMSpringBone.ManualUpdate を追加
+- VRMSpringBone.SpringBoneUpdateType.Manual を追加
+- VRMSpringBone.ManualUpdate を追加
 
 以下のように呼び出すことができます。
 
@@ -19,4 +21,4 @@ spring.m_updateType = VRMSpringBone.SpringBoneUpdateType.Manual;
 spring.ManualUpdate(time.deltaTime);
 ```
 
-* spring.ManualUpdate を使う前に spring.m_updateType を `Manual` に設定する必要があります。
+- spring.ManualUpdate を使う前に spring.m_updateType を `Manual` に設定する必要があります。
