@@ -369,25 +369,32 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "SpringBone",
-          link: { type: "doc", id: "api/spring/index" },
+          link: { type: "doc", id: "api/springbone/index" },
           items: [
-            "api/spring/spring_and_scaling",
             {
               type: "category",
               label: "vrm-1.0",
+              link: { type: "doc", id: "api/springbone/vrm1/index" },
               items: [
-                "api/spring/vrm1_springbone",
-                "api/spring/VRMC_springBone_extended_collider",
+                "api/springbone/vrm1/runtime",
+                "api/springbone/vrm1/VRMC_springBone_extended_collider",
+                "api/springbone/vrm1/FastSpringBoneService",
               ]
             },
             {
               type: "category",
               label: "vrm-0.x",
+              link: { type: "doc", id: "api/springbone/vrm0/index" },
               items: [
-                "api/fast_spring_bone",
-                "api/0_106_spring_manual_update",
+                "api/springbone/vrm0/runtime",
               ]
             },
+            "api/springbone/update",
+            "api/springbone/jobs",
+            'api/springbone/center',
+            'api/springbone/scaling',
+            'api/springbone/startup',
+            'api/springbone/note',
           ],
         },
         {
