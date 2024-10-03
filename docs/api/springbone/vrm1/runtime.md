@@ -61,6 +61,9 @@ public sealed class FastSpringBoneService : MonoBehaviour
 
 Vrm10FastSpringboneRuntime と同じ job を使用します。シングルトンでは無いバージョンです。
 
+- [UniVRM タイムライン…プレイモードとエデットモードで挙動が異なる · Issue #1971 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/1971)
+- [\[1.0\] FastSpringBone Service does not disposed when I change the code while playing in editor · Issue #1567 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/1567)
+
 ### 特徴
 
 - Unity job system で実装されている
@@ -82,6 +85,8 @@ public class Vrm10Runtime : IDisposable
 ```
 
 ## Runtime の操作
+
+`v0.128.0`
 
 ### Runtime を取得する
 
@@ -111,6 +116,8 @@ Vrm10Instance vrm;
 vrm.Runtime.Springbone.RestoreInitialTransform();
 ```
 
+- [SpringBoneの状態をリセットする機能 · Issue #2348 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2348)
+
 ### model level
 #### 一時停止する
 
@@ -123,9 +130,15 @@ vrm.Runtime.Springbone.SetModelLevel(vrm.transform, new {
 });
 ```
 
+- [SpringBoneをアバターごとに停止、再開させる機能 · Issue #2347 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2347)
+
 #### 外力
 
 風など一時的な外からのフォースを加えます。
+
+- [\[1.0\] SpringBone の外力(重力的な)を毎フレームアプリから制御できるインタフェース · Issue #1860 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/1860)
+- [【VRM1】Unity実行中にVRM10 Spring Boneの重力設定の変更をリアルタイムに画面に反映したい · Issue #1829 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/1829)
+- [Wind effects · Issue #1732 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/1732)
 
 #### Scaling のモード変更
 
@@ -135,6 +148,8 @@ vrm.Runtime.Springbone.SetModelLevel(vrm.transform, new {
   SupportsScalingAtRuntime = true,
 });
 ```
+
+- [スケールを大きくすると、SpringBoneの動きがおかしくなる。 · Issue #2403 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2403)
 
 ### joint level
 
@@ -147,4 +162,6 @@ Vrm10Instance vrm;
 Vrm10SpringBoneJoint joint;
 vrm.Runtime.Springbone.SetModelLevel(joint.transform, joint.ToParams());
 ```
+
+- [VRM1.0でエディターの再生中にSpringBobeの調整ができない · Issue #2410 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2410)
 
