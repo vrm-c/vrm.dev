@@ -799,12 +799,12 @@ export const users: User[] = [
     "updated": new Date("2024-07-01"),
   },
   {
-    "flags": F.Metaverse,
-    "platforms": P.WindowsVR | P.Windows | P.macOS | P.iOS | P.Android,
+    "flags": F.Metaverse | F.Vrm10,
+    "platforms": P.WindowsVR | P.Windows | P.macOS | P.iOS | P.Android | P.MetaQuest,
     "ja": {
       "title": "cluster",
       "url": "https://cluster.mu/",
-      "preview": "https://cluster.mu/ogp.png"
+      "preview": "https://file-storage.cluster.mu/images/vrm/cluster_1280_720.png"
     },
     "updated": new Date("2023-01-03"),
   },
