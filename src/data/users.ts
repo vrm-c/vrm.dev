@@ -806,7 +806,7 @@ export const users: User[] = [
       "url": "https://cluster.mu/",
       "preview": "https://file-storage.cluster.mu/images/vrm/cluster_1280_720.png"
     },
-    "updated": new Date("2023-01-03"),
+    "updated": new Date("2024-10-01"),
   },
   {
     "flags": F.Metaverse,

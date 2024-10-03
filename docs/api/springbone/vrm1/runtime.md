@@ -92,26 +92,59 @@ Vrm10Instance vrm;
 IVrm10SpringBoneRuntime springboneRuntime = vrm.Runtime.Springbone;
 ```
 
-### 初期姿勢にする
-
-すべての Joint の localRotation を初期化したときの値に戻します。
-
-### 一時停止する
-
-SpringBone の処理は継続しますが、結果を Transform に書き戻す処理を停止します。
-
-#### warm start
-
 ### 再構築する
 
 SpringBone の構成が変わったり、T-Poseが変わった場合に最初から再構築します。
 重い処理となります。
 
-### Spring設定の反映
+```cs
+Vrm10Instance vrm;
+vrm.Runtime.Springbone.ReconstructSpringBone();
+```
+
+### 初期姿勢にする
+
+すべての Joint の localRotation を初期化したときの値に戻します。
+
+```cs
+Vrm10Instance vrm;
+vrm.Runtime.Springbone.RestoreInitialTransform();
+```
+
+### model level
+#### 一時停止する
+
+SpringBone の処理は継続しますが、結果を Transform に書き戻す処理を停止します。
+
+```cs
+Vrm10Instance vrm;
+vrm.Runtime.Springbone.SetModelLevel(vrm.transform, new {
+  StopSpringBoneWriteback = true,
+});
+```
+
+#### 外力
+
+風など一時的な外からのフォースを加えます。
+
+#### Scaling のモード変更
+
+```cs
+Vrm10Instance vrm;
+vrm.Runtime.Springbone.SetModelLevel(vrm.transform, new {
+  SupportsScalingAtRuntime = true,
+});
+```
+
+### joint level
 
 stiffness, dragForce などのパラメーター変更を反映します。
 再構築より軽量です。
 
-### 外力
+```cs
+// TODO
+Vrm10Instance vrm;
+Vrm10SpringBoneJoint joint;
+vrm.Runtime.Springbone.SetModelLevel(joint.transform, joint.ToParams());
+```
 
-風など一時的な外からのフォースを加えます。
