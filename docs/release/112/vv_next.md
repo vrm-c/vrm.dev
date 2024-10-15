@@ -1,4 +1,4 @@
-# 🚧 next. SpringBone 周り
+# 🚧 nextnext.
 
-https://github.com/vrm-c/UniVRM/milestone/93
+https://github.com/vrm-c/UniVRM/milestone/94
 
