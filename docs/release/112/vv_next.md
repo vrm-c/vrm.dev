@@ -1,4 +1,3 @@
-# 🚧 nextnext.
+# 🚧 next.
 
-https://github.com/vrm-c/UniVRM/milestone/94
-
+https://github.com/vrm-c/UniVRM/milestone/95
