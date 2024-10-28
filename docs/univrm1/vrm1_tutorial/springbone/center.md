@@ -8,6 +8,8 @@ Centerが設定されていない場合、SpringBoneはワールド座標の原�
 
 ## 平行移動による揺れの抑制
 
+![SpringBoneのCenterを設定していない場合と設定した場合の揺れ方の比較](./center_comparison.gif)
+
 アプリケーション内でVRMモデルが平行移動した際の揺れの抑制を行うには、VRMモデルのルート位置に配置したGameObjectをCenterに設定します。
 
 :::warning
@@ -15,8 +17,6 @@ UniVRMの仕様上、VRMモデルのルートとなるGameObjectをCenterに設�
 これは、VRMモデルのルートがglTF上ではnodeとして扱われないためです。
 詳しくは、 [Root Node の仕様](/gltf/root_node) を参照してください。
 :::
-
-TODO: 説明GIF
 
 VRMモデルのルート直下にCenterとなる空のGameObjectを作成します。
 
