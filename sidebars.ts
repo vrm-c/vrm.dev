@@ -209,29 +209,20 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  gltfSidebar: [
-    {
-      type: "category",
-      label: "glTF",
-      link: { type: "doc", id: "gltf/index" },
-      items: [
-        { type: "doc", id: "gltf/glb_import" },
-        { type: "doc", id: "gltf/glb_export" },
-        { type: "doc", id: "gltf/animation_exporter" },
-        { type: "doc", id: "gltf/emission_glow" },
-        { type: "doc", id: "gltf/mesh_utility" },
-        "gltf/root_node",
-      ],
-    },
-  ],
   vrm1Sidebar: [
     {
       type: "category",
       label: "UniVRM-1.0",
       link: { type: "doc", id: "univrm1/index" },
       items: [
-        "univrm1/urp",
-        { type: "doc", id: "univrm1/folder_structure" },
+        "univrm1/install",
+        {
+          type: "category",
+          label: "Material",
+          link: { type: "doc", id: "univrm1/material/index" },
+          items: [
+          ]
+        },
         {
           type: "category",
           label: "make VRM-1.0",
@@ -280,10 +271,10 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Project",
-          // link: { type: "doc", id: "api/sample/index" },
+          link: { type: "doc", id: "api/project/index" },
           items: [
-            "api/upm",
-            "api/build",
+            "api/project/upm",
+            "api/project/build",
           ],
         },
         {
@@ -420,6 +411,19 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/component/index" },
           items: [
             { type: "doc", id: "api/runtime_resource_management" },
+          ],
+        },
+        {
+          type: "category",
+          label: "glTF",
+          link: { type: "doc", id: "gltf/index" },
+          items: [
+            { type: "doc", id: "gltf/glb_import" },
+            { type: "doc", id: "gltf/glb_export" },
+            { type: "doc", id: "gltf/animation_exporter" },
+            { type: "doc", id: "gltf/emission_glow" },
+            { type: "doc", id: "gltf/mesh_utility" },
+            "gltf/root_node",
           ],
         },
         {
