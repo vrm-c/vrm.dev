@@ -1,4 +1,6 @@
-# UnityPackageManager による Install
+# UPM
+
+UnityPackageManager による Install
 
 :::warning `v0.125.0` から `com.vrmc.vrmshaders` は無くなります
 :::
@@ -48,12 +50,12 @@ git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、
 
 https://github.com/vrm-c/UniVRM/releases
 
-| name                | url                                                                  | note                                               |
-| ------------------- | -------------------------------------------------------------------- | -------------------------------------------------- |
+| name                | url                                                                  | note                                                             |
+| ------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | com.vrmc.vrmshaders | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.125.0 | Material関連。`v0.125.0` から `UniGLTF` に統合されて無くなります |
-| com.vrmc.gltf       | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.125.0    | UniGLTF                                            |
-| com.vrmc.univrm     | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.125.0        | VRM-0.x                                            |
-| com.vrmc.vrm        | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.125.0      | VRM-1.0                                            |
+| com.vrmc.gltf       | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.125.0    | UniGLTF                                                          |
+| com.vrmc.univrm     | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.125.0        | VRM-0.x                                                          |
+| com.vrmc.vrm        | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.125.0      | VRM-1.0                                                          |
 
 ## UnityPackageManager ウインドウによるインストール
 
