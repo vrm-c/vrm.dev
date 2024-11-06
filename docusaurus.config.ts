@@ -105,12 +105,6 @@ const config: Config = {
           sidebarId: "errorSidebar",
           position: "left",
         },
-        {
-          label: "glTF",
-          type: "docSidebar",
-          sidebarId: "gltfSidebar",
-          position: "left",
-        },
         //
         {
           type: 'dropdown',
