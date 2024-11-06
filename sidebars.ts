@@ -92,7 +92,6 @@ const sidebars: SidebarsConfig = {
           items: [
             { type: "doc", id: "univrm/install/unity_version" },
             { type: "doc", id: "univrm/install/univrm_install" },
-            "univrm/install/univrm_upm",
             { type: "doc", id: "univrm/install/univrm_uninstall" },
           ],
         },
