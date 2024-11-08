@@ -1,5 +1,7 @@
 # 記事更新
 
+<!-- truncate -->
+
 ## vrm.dev への Pull Request の送りかた
 
 markdown 記事をこちらに pull request してください。

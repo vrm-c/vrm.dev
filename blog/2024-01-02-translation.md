@@ -3,6 +3,8 @@
 言語ごとに 別の docusaurus リポジトリを個別に運営しています。
 日本語を原本として、英語版を fork しています。
 
+<!-- truncate -->
+
 :::note sphinx の gettext 方式を fork 方式に変更しました
 
 参考 [オープンソースドキュメント翻訳プラットフォームとしての GitHub (React 日本語ドキュメントの例)](https://zenn.dev/smikitky/articles/0d250f7367eda9)

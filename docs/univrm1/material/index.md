@@ -1,6 +1,6 @@
 # Material
 
-Import 時に Project のレンダリングパイプラインに応じて使用される `Shader` がスイッチします。
+Import 時に Project のレンダリングパイプラインに応じて、使用される `Shader` がスイッチします。
 
 ## built-in
 
@@ -36,16 +36,9 @@ Import 時に VRM-1.0 にマイグレートすることで、MToon-1.0 の URP �
 
 ### URP Export
 
-| glTF extensions      | IMaterialExporter       | note            |
-| -------------------- | ----------------------- | --------------- |
-| (glTF default)       | UrpGltfMaterialExporter | `v0.125.0`      |
-| KHR_materials_unlit  | UrpGltfMaterialExporter | `v0.125.0`      |
-| VRMC_materials_mtoon |                         | `TODO`          |
-| VRM                  |                         | `not supported` |
-
-:::warning MToon-1.0 の urp export は未実装です
-
-Export には built-in のプロジェクトを使ってください。
-
-:::
-
+| glTF extensions      | IMaterialExporter             | note            |
+| -------------------- | ----------------------------- | --------------- |
+| (glTF default)       | UrpGltfMaterialExporter       | `v0.125.0`      |
+| KHR_materials_unlit  | UrpGltfMaterialExporter       | `v0.125.0`      |
+| VRMC_materials_mtoon | UrpVrm10MToonMaterialExporter | `v0.128.0`      |
+| VRM                  |                               | `not supported` |
