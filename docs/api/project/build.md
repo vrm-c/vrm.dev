@@ -21,6 +21,17 @@ https://docs.unity3d.com/ja/current/Manual/shader-compilation.html
 https://docs.unity3d.com/ja/2022.3/Manual/class-GraphicsSettings.html#Always
 :::
 
+:::warning `Universal Render Pipeline/Lit` のビルド時間が長大
+
+URP版のPBRシェーダー、 `Universal Render Pipeline/Lit` の初回ビルドに長時間かかることがわかりました。
+
+https://github.com/vrm-c/UniVRM/pull/2498
+
+初回ビルドに長時間(10時間など)かかることにご注意ください。
+2回目以降はキャッシュが使用されるのでそこまではかかりません。
+ビルド時間軽減のためのカスタムシェーダーを検討中です。
+:::
+
 ### glTF ファイルを扱うアプリの場合
 
 `com.vrmc.gltf` パッケージを用いて glTF ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。

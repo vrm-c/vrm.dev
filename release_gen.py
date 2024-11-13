@@ -29,8 +29,10 @@ UNIVRM_VERSION = HERE.parent / "Assets/VRM/Runtime/Format/VRMVersion.cs"
 MERGE_PATTERN = re.compile(r"Merge pull request #(\d+)")
 TEMPLATE = HERE / "release_template.md"
 HTML_TEMPLATE = HERE / "html_template.html"
-RELEASE_NOTE_DIR = "112"
-UNITY_VERSION = "2021.3 LTS"
+# RELEASE_NOTE_DIR = "112"
+# UNITY_VERSION = "2021.3 LTS"
+RELEASE_NOTE_DIR = "128"
+UNITY_VERSION = "2022.3 LTS"
 
 
 def gen(template: str, version: str, hash: str):
