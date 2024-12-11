@@ -300,6 +300,9 @@ const sidebars: SidebarsConfig = {
           label: "RuntimeImport",
           link: { type: "doc", id: "api/runtime-import/index" },
           items: [
+            "api/runtime-import/UniVRM10_Vrm10",
+            "api/runtime-import/UniVRM10_Vrm10Instance",
+            "api/runtime-import/UniVRM10_Vrm10Runtime",
             "api/runtime-import/gltfdata",
             "api/0_95_dispose",
             "api/runtime-import/RuntimeGltfInstance",
