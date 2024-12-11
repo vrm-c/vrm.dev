@@ -6,6 +6,14 @@
 
 ## export
 
+:::warning `0.x` export 時に blendshape の bake が無い
+
+[\[0.x\]\[export\] 正規化時にBlendShapeをベイクするチェックボックスが無かった by ousttrue · Pull Request #2512 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/pull/2512)
+
+- fixed `v0.128.1` (予定)
+
+:::
+
 :::warning NullReferenceException: at Assets/VRM/Runtime/IO/VrmGeometryBackup.cs:76
 
 [NullReferenceException: Object reference not set to an instance of an object · Issue #2479 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/issues/2479)
