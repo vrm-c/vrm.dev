@@ -1,4 +1,4 @@
-# `v0.82.1` RuntimeImport VRMData
+# VRM.VRMData
 
 以下の手順で import します。
 
@@ -17,8 +17,6 @@ GltfData Load(string path)
     return new GlbFileParser(path).Parse();
 }
 ```
-
-[GLB import](0_82_glb_import.md) も参照してください。
 
 ## 2. `VRMData` を得る
 
