@@ -1,5 +1,7 @@
 # UniVRM10.Vrm10
 
+VRM-1.0 importer
+
 `Assets/VRM10/Runtime/IO/Vrm10.cs`
 
 ## LoadPathAsync
@@ -51,7 +53,7 @@ unity の humanoid を経由せずに直接操作する場合のユーティリ�
 
 ### showMeshes: Load完了時に表示させるか
 
-[ShowMeshes](/api/runtime-import/RuntimeGltfInstance/#showmeshes)
+[ShowMeshes](/api/runtime-import/UniGLTF_RuntimeGltfInstance/#showmeshes)
 
 ### awaitCaller: 非同期の制御
 

@@ -2,6 +2,12 @@
 
 vrm-1.0 のヒエラルキーのルートにアタッチされる MonoBehaviour です。
 
+:::info vrm-1.0 には UniGLTF.RuntimeGltfInstance もアタッチされます
+
+[UniGLTF.RuntimeGltfInstance](/api/runtime-import/UniGLTF_RuntimeGltfInstance)
+
+:::
+
 ## ランタイム情報
 
 ### Vrm10Instance.Runtime
