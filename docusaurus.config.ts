@@ -116,7 +116,6 @@ const config: Config = {
               type: "docSidebar",
               sidebarId: "apiSidebar",
             },
-
             {
               label: "UniVRM-Release",
               type: "docSidebar",

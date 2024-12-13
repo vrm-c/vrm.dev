@@ -2,3 +2,4 @@
 
 [こちら](/vrm/showcase)
 
+<!-- truncate -->
