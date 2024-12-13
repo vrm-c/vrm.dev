@@ -1,6 +1,6 @@
 # Material
 
-The Shader used will be switched depending on the Project's rendering pipeline during import.
+Import 時に Project のレンダリングパイプラインに応じて、使用される `Shader` がスイッチします。
 
 ## built-in
 
@@ -29,22 +29,16 @@ The Shader used will be switched depending on the Project's rendering pipeline d
 | VRMC_materials_mtoon | UrpVrm10MaterialDescriptorGenerator |                                                                     |
 | VRM(vrm-0.x)         | UrpVrmMaterialDescriptorGenerator   | `not supported`. [#2375](https://github.com/vrm-c/UniVRM/pull/2375) |
 
-:::warning VRM-0.x version of MToon does not support URP.
-Fallback to unlit.
-Please consider using the URP version of MToon-1.0 by migrating to VRM-1.0 during import.
+:::warning VRM-0.x 版 MToon の URP 対応はありません
+unlit に fallback します。
+Import 時に VRM-1.0 にマイグレートすることで、MToon-1.0 の URP 版を使うことを検討してください。
 :::
 
 ### URP Export
 
-| glTF extensions      | IMaterialExporter       | note            |
-| -------------------- | ----------------------- | --------------- |
-| (glTF default)       | UrpGltfMaterialExporter | `v0.125.0`      |
-| KHR_materials_unlit  | UrpGltfMaterialExporter | `v0.125.0`      |
-| VRMC_materials_mtoon |                         | `TODO`          |
-| VRM                  |                         | `not supported` |
-
-:::warning MToon-1.0's urp export is not implemented
-
-Please use the built-in project for export.
-
-:::
+| glTF extensions      | IMaterialExporter             | note            |
+| -------------------- | ----------------------------- | --------------- |
+| (glTF default)       | UrpGltfMaterialExporter       | `v0.125.0`      |
+| KHR_materials_unlit  | UrpGltfMaterialExporter       | `v0.125.0`      |
+| VRMC_materials_mtoon | UrpVrm10MToonMaterialExporter | `v0.128.0`      |
+| VRM                  |                               | `not supported` |

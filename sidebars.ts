@@ -267,13 +267,13 @@ const sidebars: SidebarsConfig = {
       label: "UniVRM API",
       link: { type: "doc", id: "api/index" },
       items: [
+        { type: "doc", id: "api/api_update" },
         {
           type: "category",
           label: "Project",
-          link: { type: "doc", id: "api/project/index" },
           items: [
-            "api/project/upm",
-            "api/project/build",
+            { type: "doc", id: "api/project/packages" },
+            { type: "doc", label: "IncludeShaders", id: "api/project/include_shaders" },
           ],
         },
         {
@@ -300,35 +300,35 @@ const sidebars: SidebarsConfig = {
           label: "RuntimeImport",
           link: { type: "doc", id: "api/runtime-import/index" },
           items: [
-            "api/runtime-import/gltfdata",
-            "api/0_95_dispose",
-            "api/runtime-import/RuntimeGltfInstance",
-            "api/runtime-import/import_glb",
-            "api/runtime-import/import_vrm0",
             {
               type: "category",
-              label: "vrm-1.0",
-              link: { type: "doc", id: "api/vrm1_load" },
+              label: "Basic",
               items: [
-                { type: "doc", id: "api/vrm1_migration" },
+                { type: "doc", label: "vrm-1.0", id: "api/runtime-import/UniVRM10_Vrm10" },
+                { type: "doc", label: "vrm-0.x", id: "api/runtime-import/VRM_VrmUtility" },
+                { type: "doc", label: "glTF", id: "api/runtime-import/UniGLTF_GltfUtility" },
               ],
             },
-            "vrma/univrm-vrma/vrma-import",
-            "api/runtime-import/import_urp",
-            "api/runtime-import/await_caller",
             {
               type: "category",
-              label: "api update",
+              label: "Advanced",
               items: [
-                { type: "doc", id: "api/0_87_runtime_import" },
-                { type: "doc", id: "api/0_82_runtime_import" },
-                { type: "doc", id: "api/0_82_glb_import" },
-                { type: "doc", id: "api/0_79_runtime_import" },
-                { type: "doc", id: "api/0_77_runtime_import" },
-                { type: "doc", id: "api/0_68_runtime_import" },
-                { type: "doc", id: "api/0_44_runtime_import" },
+                "api/runtime-import/UniGLTF_IAwaitCaller",
+                "api/runtime-import/UniGLTF_GltfData",
+                "api/runtime-import/VRM_VRMData",
               ],
             },
+            {
+              type: "category",
+              label: "Instance",
+              items: [
+                "api/runtime-import/UniGLTF_RuntimeGltfInstance",
+                "api/runtime-import/UniVRM10_Vrm10Instance",
+                "api/runtime-import/UniVRM10_Vrm10Runtime",
+                "api/runtime-import/VRM_BlendShapeProxy",
+              ],
+            },
+            ,
           ],
         },
         {
@@ -337,25 +337,21 @@ const sidebars: SidebarsConfig = {
           items: [
             'api/editor-import/vrm0x',
             'api/editor-import/vrm10',
+            { type: "doc", id: "api/scripted_importer" },
           ]
         },
         {
           type: "category",
           label: "Material/Texture",
           items: [
+            "api/material/urp",
             "api/runtime-import/import_basisu",
-            { type: "doc", id: "api/0_112_urp" },
             { type: "doc", id: "api/0_96_1_use_gamma_colorspace" },
             { type: "doc", id: "api/0_76_texture_deserializer" },
-            { type: "doc", id: "api/how_to_customize_material_import" },
             { type: "doc", id: "api/texture_manipulation" },
             { type: "doc", id: "api/transparent_zwrite" },
+            { type: "doc", id: "gltf/emission_glow" },
           ],
-        },
-        {
-          type: "category",
-          label: "Expression",
-          items: [{ type: "doc", id: "api/0_58_blendshape" }],
         },
         {
           type: "category",
@@ -406,11 +402,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Component",
-          link: { type: "doc", id: "api/component/index" },
+          label: "Mesh",
           items: [
-            { type: "doc", id: "api/runtime_resource_management" },
-          ],
+            { type: "doc", id: "gltf/mesh_utility" },
+            { type: "doc", id: "api/mesh/bake" },
+          ]
         },
         {
           type: "category",
@@ -420,23 +416,11 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "gltf/glb_import" },
             { type: "doc", id: "gltf/glb_export" },
             { type: "doc", id: "gltf/animation_exporter" },
-            { type: "doc", id: "gltf/emission_glow" },
-            { type: "doc", id: "gltf/mesh_utility" },
             "gltf/root_node",
-          ],
-        },
-        {
-          type: "category",
-          label: "Other",
-          items: [
-            { type: "doc", id: "api/api_update" },
             { type: "doc", id: "api/0_36_update" },
-            { type: "doc", id: "api/0_95_highlevel" },
+            { type: "doc", id: "api/format" },
             { type: "doc", id: "api/how_to_impl_extension" },
             { type: "doc", id: "api/coordinate" },
-            { type: "doc", id: "api/scripted_importer" },
-            { type: "doc", id: "api/format" },
-            { type: "doc", id: "api/mesh/bake" },
           ],
         },
       ],
@@ -451,38 +435,37 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "~v0.55(Unity-5.6)",
-          // link: { type: 'doc', id: 'release/055/index' },
           items: [{ type: "autogenerated", dirName: "release/055" }],
         },
         {
           type: "category",
           label: "v0.56(Unity2018.4)~",
-          // link: { type: 'doc', id: 'release/056/index' },
           items: [{ type: "autogenerated", dirName: "release/056" }],
         },
         {
           type: "category",
           label: "v0.68(Unity2018.4)~",
-          // link: { type: 'doc', id: 'release/068/index' },
           items: [{ type: "autogenerated", dirName: "release/068" }],
         },
         {
           type: "category",
           label: "v0.75(Unity2019.4)~",
-          // link: { type: 'doc', id: 'release/079/index' },
           items: [{ type: "autogenerated", dirName: "release/079" }],
         },
         {
           type: "category",
           label: "v0.100(Unity2020.3)~",
-          // link: { type: 'doc', id: 'release/100/index' },
           items: [{ type: "autogenerated", dirName: "release/100" }],
         },
         {
           type: "category",
           label: "v0.112(Unity2021.3)~",
-          // link: { type: 'doc', id: 'release/112/index' },
           items: [{ type: "autogenerated", dirName: "release/112" }],
+        },
+        {
+          type: "category",
+          label: "v0.128(Unity2022.3)~",
+          items: [{ type: "autogenerated", dirName: "release/128" }],
         },
         { type: "doc", id: "release/how_to_release" },
         { type: "doc", id: "release/how_to_translation" },

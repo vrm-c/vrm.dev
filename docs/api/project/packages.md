@@ -1,46 +1,54 @@
-# 構成
+# Packages
 
 ## v0.125以降
 
-`VRMShaders` (UPM パッケージ `com.vrmc.vrmshaders` ) は `UniGLTF` などに統合されました。
+:::info
 
-### UniGLTF
+`com.vrmc.vrmshaders` (VRMShaders) は `UniGLTF` などに統合されて無くなりました。
 
-UPM パッケージ `com.vrmc.gltf` です。
-`com.vrmc.vrmshaders` に依存します。
+:::
+
+```js title="v0.125.0 の例"
+{
+  "dependencies": {
+    // ...
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.125.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.125.0",
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.125.0",
+    // ...
+}
+```
+
+### com.vrmc.gltf (UniGLTF)
 
 `gltf`, `glb` の import / export 機能が有ります。
 拡張子、 `.gltf`, `.glb` のファイルの Editor import 機能が有ります。
 
-### VRM
-
-UPM パッケージ `com.vrmc.univrm` です。
-`com.vrmc.vrmshaders` と `com.vrmc.gltf` に依存します。
+### com.vrmc.univrm (VRM)
 
 `vrm-0.x` の import / export 機能が有ります。
 拡張子、 `.vrm` のファイルの Editor import 機能が有ります。
 もし、`vrm-1.0` だった場合は import できません。
 
-### VRM_Samples
+#### VRM_Samples
 
 `vrm-0.x` のサンプルシーンが有ります。
-動作に `VRM`, `UniGLTF`, `VRMShaders` が必要です。
+動作に `VRM`, `UniGLTF` が必要です。
 
-### VRM10
+### com.vrmc.vrm (VRM10)
 
-UPM パッケージ `com.vrmc.vrm` です。
-`com.vrmc.vrmshaders` と `com.vrmc.gltf` に依存します。
+`com.vrmc.gltf` に依存します。
 
 `vrm-1.0` の import / export 機能が有ります。
 拡張子、 `.vrm` のファイルの Editor import 機能が有ります。
 もし、`vrm-0.x` だった場合は マイグレート が可能です。
 
-### VRM10_Samples
+#### VRM10_Samples
 
 `vrm-1.0` のサンプルシーンが有ります。
-動作に `VRM10`, `UniGLTF`, `VRMShaders` が必要です。
+動作に `VRM10`, `UniGLTF` が必要です。
 
-### フォルダの組み合わせ
+### パッケージの組み合わせ
 
 フォルダは、依存フォルダの条件を満たす範囲で組み合わせることができます。
 すべてのフォルダがあると `vrm-0.x` と `vrm-1.0` の両方が動きます。
@@ -68,52 +76,59 @@ UPM パッケージ `com.vrmc.vrm` です。
 
 ## v0.125より前
 
-### VRMShaders
+```js title="v0.119.0 の例"
+{
+  "dependencies": {
+    // ...
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.119.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.119.0",
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.119.0",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.119.0",
+    // ...
+}
+```
 
-UPM パッケージ `com.vrmc.vrmshaders` です。
+### com.vrmc.vrmshaders (VRMShaders)
 
 `gltf`, `vrm-0.x`, `vrm-1.0` に関連する `Shader` や `Material` や `Texture` に関連する機能を集めています。
 `UniUnlit` `MToon` `MToon-1.0` が含まれています。
 
 個々のシェーダーについては、https://vrm.dev/univrm/shaders/index.html を参照してください。
 
-### UniGLTF
+### com.vrmc.gltf (UniGLTF)
 
-UPM パッケージ `com.vrmc.gltf` です。
 `com.vrmc.vrmshaders` に依存します。
 
 `gltf`, `glb` の import / export 機能が有ります。
 拡張子、 `.gltf`, `.glb` のファイルの Editor import 機能が有ります。
 
-### VRM
+### com.vrmc.univrm (VRM)
 
-UPM パッケージ `com.vrmc.univrm` です。
 `com.vrmc.vrmshaders` と `com.vrmc.gltf` に依存します。
 
 `vrm-0.x` の import / export 機能が有ります。
 拡張子、 `.vrm` のファイルの Editor import 機能が有ります。
 もし、`vrm-1.0` だった場合は import できません。
 
-### VRM_Samples
+#### VRM_Samples
 
 `vrm-0.x` のサンプルシーンが有ります。
 動作に `VRM`, `UniGLTF`, `VRMShaders` が必要です。
 
-### VRM10
+### com.vrmc.vrm (VRM10)
 
-UPM パッケージ `com.vrmc.vrm` です。
 `com.vrmc.vrmshaders` と `com.vrmc.gltf` に依存します。
 
 `vrm-1.0` の import / export 機能が有ります。
 拡張子、 `.vrm` のファイルの Editor import 機能が有ります。
 もし、`vrm-0.x` だった場合は マイグレート が可能です。
 
-### VRM10_Samples
+#### VRM10_Samples
 
 `vrm-1.0` のサンプルシーンが有ります。
 動作に `VRM10`, `UniGLTF`, `VRMShaders` が必要です。
 
-### フォルダの組み合わせ
+### パッケージの組み合わせ
 
 フォルダは、依存フォルダの条件を満たす範囲で組み合わせることができます。
 すべてのフォルダがあると `vrm-0.x` と `vrm-1.0` の両方が動きます。
@@ -149,6 +164,57 @@ UPM パッケージ `com.vrmc.vrm` です。
 
 VRMShaders が無いので動きません。
 
-## `org.khronos.unitygltf` や `com.atteneder.gltfast` と併用する
+## org.khronos.unitygltf や com.atteneder.gltfast と併用する
 
 [#2461](https://github.com/vrm-c/UniVRM/pull/2461)
+
+## UnityPackageManager による Install
+
+:::info git が必要です
+
+https://git-scm.com/
+
+Unity Manual [Requirements](https://docs.unity3d.com/Manual/upm-git.html#req) を参照してください。
+
+> To use Git dependencies in a project,
+> make sure the [Git client](https://git-scm.com/)
+> is installed on your machine and that you have added the Git executable path
+> to the PATH system environment variable.
+
+- powershell からバージョンを確認した例 (20201130)
+
+```sh
+> git --version
+git version 2.29.2.windows.2
+```
+
+:::
+
+:::danger git 未インストール
+
+> An error occurred while resolving packages:
+> Project has invalid dependencies:
+> com.vrmc.vrmshaders: No 'git' executable was found.
+> Please install Git on your system then restart Unity and Unity Hub
+
+というようなエラーが出ます。
+
+:::
+
+:::warning 他の git のトラブル
+
+https://git-scm.com/ からインストールした
+git.exe (デフォルトは、 `C:\Program Files\Git\cmd\git.exe`) が、
+環境変数 PATH の中で最初に見つかるように設定してください。
+
+:::
+
+## UnityPackageManager ウインドウによるインストール
+
+![UnityPackageManagerのWindow](/images/vrm10/menu_packagemanager.jpg)
+
+![add package from git URL](/images/vrm10/from_git.jpg)
+
+Project ウィンドウの Packages フォルダにインポートしたパッケージを確認する
+
+![figure](/images/vrm/upm_package.jpg)
