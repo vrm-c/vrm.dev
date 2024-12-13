@@ -1,4 +1,6 @@
-# `v0.58` BlendShapeProxy
+# VRM.BlendShapeProxy
+
+`v0.58`
 
 ## BlendShapeKeyのインタフェースを厳格化、整理
 

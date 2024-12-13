@@ -188,10 +188,6 @@ async RuntimeGltfInstance Load(GltfData data)
 }
 ```
 
-#### materialGenerator で URP 用のマテリアルをロードする
-
-[Import 時に生成される Material をカスタマイズする](/api/how_to_customize_material_import)
-
 ### 3. インスタンスを使用する
 
 ```csharp

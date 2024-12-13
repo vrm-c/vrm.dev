@@ -57,16 +57,15 @@ public void EnableUpdateWhenOffscreen();
 
 ヒエラルキー内の SkinnedMeshRenderer の `updateWhenOffscreen = true` をまとめてセットします。
 
-### リソースの破棄
+### GameObject.Destory で vrm 関連リソースを破棄します
 
-GameObject.Destory で自動的に破棄されます。
+`RuntimeGltfInstance.OnDestroy` で関連リソースを破棄します。
+GameObject.Destory(instance) として明示的に破棄してください。
 
 ```cs
-        void OnDestroy()
-        {
-            foreach (var (_, obj) in _resources)
-            {
-                UnityObjectDestroyer.DestroyRuntimeOrEditor(obj);
-            }
-        }
+RuntimeGltfInstance instance = // import
+
+// 使い終わって不要になった
+
+GameObject.Destory(instance);
 ```

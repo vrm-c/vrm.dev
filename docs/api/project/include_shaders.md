@@ -1,8 +1,4 @@
-# アプリケーションを Build するには
-
-UniVRM を利用するアプリケーションをビルドする際の注意事項を記載します。
-
-## シェーダー
+# プロジェクトに含めるシェーダーについて
 
 UniVRM ライブラリを導入しただけでは、ビルド時にシェーダーエラーが発生し、モデルが正常に読み込めません。
 なぜなら、アプリ上で読み込む glTF ファイルや VRM ファイルはビルド時には存在しないため、Unity が適切なシェーダをビルドに含めることができないからです。
@@ -21,6 +17,39 @@ https://docs.unity3d.com/ja/current/Manual/shader-compilation.html
 https://docs.unity3d.com/ja/2022.3/Manual/class-GraphicsSettings.html#Always
 :::
 
+## Built-in Render Pipeline
+
+### glTF ファイルを扱うアプリの場合
+
+`com.vrmc.gltf` パッケージを用いて glTF ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
+
+|                    | Built-in RP |
+| ------------------ | ----------- |
+| `Standard`         | ✅          |
+| `UniGLTF/UniUnlit` | ✅          |
+
+### VRM 0.X ファイルを扱うアプリの場合
+
+`com.vrmc.univrm` パッケージを用いて VRM 0.X ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
+
+|                    | Built-in RP |
+| ------------------ | ----------- |
+| `Standard`         | ✅          |
+| `UniGLTF/UniUnlit` | ✅          |
+| `VRM/MToon`        | ✅          |
+
+### VRM 1.0 ファイルを扱うアプリの場合
+
+`com.vrmc.vrm` パッケージを用いて VRM 1.0 ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
+
+|                    | Built-in RP |
+| ------------------ | ----------- |
+| `Standard`         | ✅          |
+| `UniGLTF/UniUnlit` | ✅          |
+| `VRM10/MToon10`    | ✅          |
+
+## Universal Render Pipeline(URP)
+
 :::warning `Universal Render Pipeline/Lit` のビルド時間が長大
 
 URP版のPBRシェーダー、 `Universal Render Pipeline/Lit` の初回ビルドに長時間かかることがわかりました。
@@ -36,42 +65,39 @@ https://github.com/vrm-c/UniVRM/pull/2498
 
 `com.vrmc.gltf` パッケージを用いて glTF ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
 
-|                                | Built-in RP | URP |
-| ------------------------------ | ----------- | --- |
-| `Standard`                     | ✅          | -   |
-| `Univesal Render Pipeline/Lit` | -           | ✅  |
-| `UniGLTF/UniUnlit`             | ✅          | ✅  |
+|                                | URP |
+| ------------------------------ | --- |
+| `Univesal Render Pipeline/Lit` | ✅  |
+| `UniGLTF/UniUnlit`             | ✅  |
 
 ### VRM 0.X ファイルを扱うアプリの場合
 
 `com.vrmc.univrm` パッケージを用いて VRM 0.X ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
 
-|                                     | Built-in RP | URP |
-| ----------------------------------- | ----------- | --- |
-| `Standard`                          | ✅          | -   |
-| `Univesal Render Pipeline/Lit`      | -           | ✅  |
-| `UniGLTF/UniUnlit`                  | ✅          | ✅  |
-| `VRM/MToon`                         | ✅          | -   |
-| URP用 MToon シェーダ(not supported) | -           | -   |
+|                                     | URP |
+| ----------------------------------- | --- |
+| `Univesal Render Pipeline/Lit`      | ✅  |
+| `UniGLTF/UniUnlit`                  | ✅  |
+| URP用 MToon シェーダ(not supported) | -   |
 
 ### VRM 1.0 ファイルを扱うアプリの場合
 
 `com.vrmc.vrm` パッケージを用いて VRM 1.0 ファイルを扱うアプリの場合、以下のシェーダをビルドに含める必要があります。
 
-|                                           | Built-in RP | URP |
-| ----------------------------------------- | ----------- | --- |
-| `Standard`                                | ✅          | -   |
-| `Univesal Render Pipeline/Lit`            | -           | ✅  |
-| `UniGLTF/UniUnlit`                        | ✅          | ✅  |
-| `VRM10/MToon10`                           | ✅          | -   |
-| `VRM10/Universal Render Pipeline/MToon10` | -           | ✅  |
+|                                           | URP |
+| ----------------------------------------- | --- |
+| `Univesal Render Pipeline/Lit`            | ✅  |
+| `UniGLTF/UniUnlit`                        | ✅  |
+| `VRM10/Universal Render Pipeline/MToon10` | ✅  |
 
-### その他シェーダー
+## その他シェーダー
 
 :::note
+
 UniGLTF 内部の以下のシェーダは `Resources` ディレクトリに含まれているため、対応の必要はありません。
 
 - `Hidden/UniGLTF/NormalMapExporter`
 - `Hidden/UniGLTF/StandardMapExporter`
 - `Hidden/UniGLTF/StandardMapImporter`
-  :::
+
+:::

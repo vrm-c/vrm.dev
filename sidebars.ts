@@ -267,13 +267,13 @@ const sidebars: SidebarsConfig = {
       label: "UniVRM API",
       link: { type: "doc", id: "api/index" },
       items: [
+        { type: "doc", id: "api/api_update" },
         {
           type: "category",
           label: "Project",
-          link: { type: "doc", id: "api/project/index" },
           items: [
-            "api/project/upm",
-            "api/project/build",
+            { type: "doc", id: "api/project/packages" },
+            { type: "doc", label: "IncludeShaders", id: "api/project/include_shaders" },
           ],
         },
         {
@@ -325,6 +325,7 @@ const sidebars: SidebarsConfig = {
                 "api/runtime-import/UniGLTF_RuntimeGltfInstance",
                 "api/runtime-import/UniVRM10_Vrm10Instance",
                 "api/runtime-import/UniVRM10_Vrm10Runtime",
+                "api/runtime-import/VRM_BlendShapeProxy",
               ],
             },
             ,
@@ -336,25 +337,21 @@ const sidebars: SidebarsConfig = {
           items: [
             'api/editor-import/vrm0x',
             'api/editor-import/vrm10',
+            { type: "doc", id: "api/scripted_importer" },
           ]
         },
         {
           type: "category",
           label: "Material/Texture",
           items: [
+            "api/material/urp",
             "api/runtime-import/import_basisu",
-            { type: "doc", id: "api/0_112_urp" },
             { type: "doc", id: "api/0_96_1_use_gamma_colorspace" },
             { type: "doc", id: "api/0_76_texture_deserializer" },
-            { type: "doc", id: "api/how_to_customize_material_import" },
             { type: "doc", id: "api/texture_manipulation" },
             { type: "doc", id: "api/transparent_zwrite" },
+            { type: "doc", id: "gltf/emission_glow" },
           ],
-        },
-        {
-          type: "category",
-          label: "Expression",
-          items: [{ type: "doc", id: "api/0_58_blendshape" }],
         },
         {
           type: "category",
@@ -405,11 +402,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Component",
-          link: { type: "doc", id: "api/component/index" },
+          label: "Mesh",
           items: [
-            { type: "doc", id: "api/runtime_resource_management" },
-          ],
+            { type: "doc", id: "gltf/mesh_utility" },
+            { type: "doc", id: "api/mesh/bake" },
+          ]
         },
         {
           type: "category",
@@ -419,23 +416,11 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "gltf/glb_import" },
             { type: "doc", id: "gltf/glb_export" },
             { type: "doc", id: "gltf/animation_exporter" },
-            { type: "doc", id: "gltf/emission_glow" },
-            { type: "doc", id: "gltf/mesh_utility" },
             "gltf/root_node",
-          ],
-        },
-        {
-          type: "category",
-          label: "Other",
-          items: [
-            { type: "doc", id: "api/api_update" },
             { type: "doc", id: "api/0_36_update" },
-            { type: "doc", id: "api/0_95_highlevel" },
+            { type: "doc", id: "api/format" },
             { type: "doc", id: "api/how_to_impl_extension" },
             { type: "doc", id: "api/coordinate" },
-            { type: "doc", id: "api/scripted_importer" },
-            { type: "doc", id: "api/format" },
-            { type: "doc", id: "api/mesh/bake" },
           ],
         },
       ],
