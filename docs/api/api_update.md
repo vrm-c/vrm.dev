@@ -1,33 +1,20 @@
-# API更新
+# 0.x to 1.0
 
-`VRM-1.0` ではフォーマットの更新とともに、 `Unity Component` が変わります。
+`VRM-0.x` の個別のコンポーネントに機能を分散する設計を変更して
+`Vrm10Instance` にすべてを集約する方式になりました。
 
-## Load
+| 0.x                           | 1.0                            |
+| ----------------------------- | ------------------------------ |
+| VRMBlendShapeProxy            | VRMInstance.Runtime.Expression |
+| VRMLookAt                     | VRMInstance.Runtime.LookAt     |
+| VRMSpringBone(各SpringのRoot) | VRMInstance.Runtime.SpringBone |
 
-`VRM-0.X` をロードして新しいコンポーネントで動かすことができます。
-この場合 `VRM-0` ライセンスで扱ってください。
-
-```csharpharp
-RuntimeGltfInstance instance = await VrmUtility.LoadAsync(path);
-```
-
-👇
-
-```csharpharp
-Vrm10Instance vrm10Instance = await Vrm10.LoadPathAsync(path);
-```
-
-`VRM-0.x` から設計を変更して `Vrm10Instance` にすべての情報を格納する方式になりました。
-
-```{admonition} 毎フレーム決まった順番で更新します。
-:class: info
+:::info 毎フレーム決まった順番で更新します。
 
 1. Control Rig
 2. Constraints
 3. Gaze control
 4. Expression
-            
-<https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM10/Runtime/Components/Vrm10Runtime/Vrm10Runtime.csharp#L170>
 
 ポーズ付け、ポーズの加工を考慮すると
 
@@ -37,11 +24,11 @@ Vrm10Instance vrm10Instance = await Vrm10.LoadPathAsync(path);
 - [2] Constraints 解決
 - [3] Gaze control 解決
 - [4] Expression 適用
+- [5] SpringBone 更新
 
 となりそうです。
 順番の制御が必要な場合は、VRMInstance の更新を手動に切り替えて手動で更新してください。
-その場合、[SpringBone を最後に更新](/vrm1/vrm1_springbone) するように注意してください。
-```
+:::
 
 ## Expression
 

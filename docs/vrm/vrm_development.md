@@ -35,7 +35,7 @@ VRM-0.x(各ボーンの rotation を代入するだけ) に比べて RunTime の
 
 * `vrm-0.x` 初期姿勢でボーンとMeshが重なることが保証されている(スキニングのBind行列に移動しか含まれていない) ➡️ Meshを加工する前にBakeするなどの負担が軽減できます
 * `vrm-1.0` 初期姿勢でボーンとMeshが重なることが保証できない。Bind行列に制限を課すことができなかった。
-* `vrm-0.x` `vrm-1.0` 表情・視線操作が統一されている ➡️ [BlendShapeProxy](/api/0_58_blendshape)
+* `vrm-0.x` `vrm-1.0` 表情・視線操作が統一されている ➡️ [BlendShapeProxy](/api/runtime-import/VRM_BlendShapeProxy)
 * `vrm-0.x` `vrm-1.0` 物理でない揺れものがセットアップ済み ➡️ 物理と干渉せずに揺れるのでゲームのギミックと干渉したり、暴れたりしません
 * `vrm-0.x` `vrm-1.0` VRの設定が含まれている ➡️ [FirstPerson](/api/firstperson)
 * `vrm-0.x` `vrm-1.0` ライセンス情報が定義されている ➡️ モデルの持ち主の意思にそぐわない使用を回避できます
