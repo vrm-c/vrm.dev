@@ -46,9 +46,9 @@ BVH の初期姿勢は特に決まっていません。
 
 ### vrm-1.0 ControlRig で変換コピーする
 
-![img](../ControlRig.png)
+![img](./ControlRig.png)
 
-[ControlRig](/api/vrm1_controlrig)
+[ControlRig](/api/humanoid/vrm1_controlrig)
 
 :::tip 正規化さていないスケルトン/モーションを変換できます。
 

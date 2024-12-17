@@ -1,4 +1,6 @@
-# コライダー拡張
+# VRMC_springBone_extended_collider-1.0
+
+`from v0.123.0`
 
 3つのコライダー形状が追加されます。
 
