@@ -362,7 +362,6 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "SpringBone",
-          link: { type: "doc", id: "api/springbone/index" },
           items: [
             {
               type: "category",
@@ -372,6 +371,7 @@ const sidebars: SidebarsConfig = {
                 "api/springbone/vrm1/runtime",
                 "api/springbone/vrm1/VRMC_springBone_extended_collider",
                 "api/springbone/vrm1/FastSpringBoneService",
+                'api/springbone/vrm1/startup',
               ]
             },
             {
@@ -379,15 +379,11 @@ const sidebars: SidebarsConfig = {
               label: "vrm-0.x",
               link: { type: "doc", id: "api/springbone/vrm0/index" },
               items: [
-                "api/springbone/vrm0/runtime",
+                "api/springbone/vrm0/VRM_VRMSpringBone",
+                "api/springbone/vrm0/VRM_IVrm0XSpringBoneRuntime",
+                "api/springbone/vrm0/jobs",
               ]
             },
-            "api/springbone/update",
-            "api/springbone/jobs",
-            'api/springbone/center',
-            'api/springbone/scaling',
-            'api/springbone/startup',
-            'api/springbone/note',
           ],
         },
         {

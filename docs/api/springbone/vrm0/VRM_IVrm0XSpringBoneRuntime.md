@@ -1,4 +1,11 @@
-# SpringBone Runtime
+# VRM.IVrm0XSpringBoneRuntime
+
+実行システムを切り替えられるようになりました。
+
+- **Vrm0XSpringBoneDefaultRuntime(default)**: 通常の MonoBehaviour です。
+- `v0.85` **Vrm0XFastSpringboneRuntime**: Unity job system で実装されています。すべての vrm の spring bone まとめて処理するシングルトンです。
+
+これらの実装は importer の引数で切り替え可能です。`from v0.127.0`
 
 [SimpleViewer](https://github.com/vrm-c/UniVRM/blob/master/Assets/VRM_Samples/SimpleViewer/ViewerUI.cs)を参照してください。
 
