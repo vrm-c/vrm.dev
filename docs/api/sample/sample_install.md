@@ -1,13 +1,19 @@
-# UniVRM サンプルをインストールする
+# Install UniVRM Sample
 
-このセクションでは、[UniVRM パッケージをインストール](/univrm/install/univrm_install)したことを想定しています。
+## UPM
 
-## UniVRM サンプルのパッケージ
+![PackageManager](./sample_from_upm.jpg)
+
+## Unity Package
+
+[UniVRM パッケージをインストール](/univrm/install/univrm_install) の場合
+
+### UniVRM サンプルのパッケージ
 
 `v0.81.0` から UniVRM サンプルは UniVRM パッケージに含まれています。  
 最新の UniVRM バージョンがインストールされている場合は、**UniVRM サンプルのシーンを実行する**セクションをご覧ください。
 
-### ~ v0.80.0
+#### ~ v0.80.0
 
 https://github.com/vrm-c/UniVRM/releases
 
@@ -22,4 +28,3 @@ https://github.com/vrm-c/UniVRM/releases
 以下の画像ようにインポートウィンドウを見たら、`Import`ボタンをクリックしてください：
 
 ![sample_package_import](/images/vrm/sample_package_import.jpg)
-
