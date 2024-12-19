@@ -32,12 +32,11 @@
 
 ## Expression
 
-```{admonition} VRMBlendShapeProxy は Vrm10Instance.Runtime.Expression になりました。
-:class: info
+:::info VRMBlendShapeProxy は Vrm10Instance.Runtime.Expression になりました。
 
 ImmediatelySetValue と AccumulateValue は、SetWeight に一本化されました。
 ImmediatelySetValue は無くなりました。
-```
+:::
 
 ```csharp
 var proxy = root.GetComponent<VRMBlendShapeProxy>();
@@ -53,12 +52,11 @@ vrm10.Runtime.Expression.SetWeight(ExpressionKey.CreateFromPreset(ExpressionPres
 
 ## LookAt
 
-```{admonition} VRMLookAt は Vrm10Instance.Runtime.LookAt になりました。
-:class: info
+:::info VRMLookAt は Vrm10Instance.Runtime.LookAt になりました。
 
 vrm10.Gaze.position か vrm10.Runtime.LookAt.SetLookAtYawPitch で予め更新しておいた値が、
 後で vrm10.Runtime により適用されます。
-```
+:::
 
 ### Gaze
 

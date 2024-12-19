@@ -1,5 +1,7 @@
 # SimpleViewer
 
+[Assets/VRM_Samples/SimpleViewer](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM_Samples/SimpleViewer)
+
 Runtime ローダーのサンプルです。
 
 `Assets/VRM_Samples/SimpleViewer/ViewerUI.cs`
@@ -16,7 +18,4 @@ Runtime ローダーのサンプルです。
 
 ![sample_viewer_activate](/images/vrm/sample_viewer_activate.jpg)
 
-`VRM.Samples`に[ランタイム VRM エクスポート](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/RuntimeExporterSample)と[一人称レンダリング](https://github.com/vrm-c/UniVRM/tree/master/Assets/VRM/Samples/FirstPersonSample)のサンプルがあります。
-
 Alicia モデルは[こちら](https://github.com/vrm-c/UniVRM/blob/master/Tests/Models/Alicia_vrm-0.51/AliciaSolid_vrm-0.51.vrm)。
-

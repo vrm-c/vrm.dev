@@ -74,6 +74,7 @@ const sidebars: SidebarsConfig = {
             "vrma/univrm-vrma/vrma-import",
             "vrma/univrm-vrma/vrma-export",
             "vrma/univrm-vrma/retarget",
+            "vrma/animation",
           ],
         },
       ],
@@ -282,17 +283,28 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/sample/index" },
           items: [
             "api/sample/sample_install",
-            "api/sample/SimpleViewer",
-            "api/sample/RuntimeExporterSample",
-            "api/sample/FirstPersonSample",
-            "api/sample/AnimationBridgeSample",
             {
               type: "category",
-              label: "VRM10Viewer",
-              link: { type: "doc", id: "api/sample/VRM10Viewer/index" },
-              items: ["api/sample/VRM10Viewer/animation"],
+              label: "vrm-1.0",
+              items: [
+                "api/sample/vrm10/VRM10Viewer",
+                "api/sample/vrm10/VRM10RuntimeExporterSample",
+                "api/sample/vrm10/VRM10FirstPersonSample",
+                "api/sample/vrm10/SimpleVrma",
+                "api/sample/vrm10/ClothSample",
+              ],
             },
-            "api/sample/Vrm10FirstPersonSample",
+            {
+              type: "category",
+              label: "vrm-0.x",
+              items: [
+                "api/sample/vrm0x/SimpleViewer",
+                "api/sample/vrm0x/RuntimeExporterSample",
+                "api/sample/vrm0x/FirstPersonSample",
+                "api/sample/vrm0x/AnimationBridgeSample",
+              ],
+            },
+            ,
           ],
         },
         {
@@ -330,15 +342,6 @@ const sidebars: SidebarsConfig = {
             },
             ,
           ],
-        },
-        {
-          type: "category",
-          label: "EditorImport",
-          items: [
-            'api/editor-import/vrm0x',
-            'api/editor-import/vrm10',
-            "api/editor-import/scripted_importer",
-          ]
         },
         {
           type: "category",
@@ -398,14 +401,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Mesh",
-          items: [
-            { type: "doc", id: "gltf/mesh_utility" },
-            { type: "doc", id: "api/mesh/bake" },
-          ]
-        },
-        {
-          type: "category",
           label: "glTF",
           items: [
             "gltf/glb_import",
@@ -417,6 +412,16 @@ const sidebars: SidebarsConfig = {
             "api/gltf/how_to_impl_extension",
             "api/coordinate",
           ],
+        },
+        {
+          type: "category",
+          label: "Others",
+          items: [
+            "gltf/mesh_utility",
+            "api/mesh/bake",
+            'api/editor-import/vrm0x',
+            "api/editor-import/scripted_importer",
+          ]
         },
       ],
     },
