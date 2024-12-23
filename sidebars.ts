@@ -74,6 +74,7 @@ const sidebars: SidebarsConfig = {
             "vrma/univrm-vrma/vrma-import",
             "vrma/univrm-vrma/vrma-export",
             "vrma/univrm-vrma/retarget",
+            "vrma/animation",
           ],
         },
       ],
@@ -282,17 +283,28 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/sample/index" },
           items: [
             "api/sample/sample_install",
-            "api/sample/SimpleViewer",
-            "api/sample/RuntimeExporterSample",
-            "api/sample/FirstPersonSample",
-            "api/sample/AnimationBridgeSample",
             {
               type: "category",
-              label: "VRM10Viewer",
-              link: { type: "doc", id: "api/sample/VRM10Viewer/index" },
-              items: ["api/sample/VRM10Viewer/animation"],
+              label: "vrm-1.0",
+              items: [
+                "api/sample/vrm10/VRM10Viewer",
+                "api/sample/vrm10/VRM10RuntimeExporterSample",
+                "api/sample/vrm10/VRM10FirstPersonSample",
+                "api/sample/vrm10/SimpleVrma",
+                "api/sample/vrm10/ClothSample",
+              ],
             },
-            "api/sample/Vrm10FirstPersonSample",
+            {
+              type: "category",
+              label: "vrm-0.x",
+              items: [
+                "api/sample/vrm0x/SimpleViewer",
+                "api/sample/vrm0x/RuntimeExporterSample",
+                "api/sample/vrm0x/FirstPersonSample",
+                "api/sample/vrm0x/AnimationBridgeSample",
+              ],
+            },
+            ,
           ],
         },
         {
@@ -333,45 +345,36 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "EditorImport",
-          items: [
-            'api/editor-import/vrm0x',
-            'api/editor-import/vrm10',
-            { type: "doc", id: "api/scripted_importer" },
-          ]
-        },
-        {
-          type: "category",
           label: "Material/Texture",
           items: [
             "api/material/urp",
             "api/runtime-import/import_basisu",
-            { type: "doc", id: "api/0_96_1_use_gamma_colorspace" },
-            { type: "doc", id: "api/0_76_texture_deserializer" },
-            { type: "doc", id: "api/texture_manipulation" },
-            { type: "doc", id: "api/transparent_zwrite" },
-            { type: "doc", id: "gltf/emission_glow" },
+            "api/material/0_96_1_use_gamma_colorspace",
+            "api/material/0_76_texture_deserializer",
+            "api/material/texture_manipulation",
+            "api/material/transparent_zwrite",
+            "gltf/emission_glow",
           ],
         },
         {
           type: "category",
           label: "FirstPerson",
-          link: { type: "doc", id: "api/first_person" },
-          items: ["api/vrm1_firstperson", "api/firstperson"],
+          items: [
+            "api/firstperson/first_person",
+            "api/firstperson/vrm1_firstperson",
+            "api/firstperson/firstperson",],
         },
         {
           type: "category",
           label: "SpringBone",
-          link: { type: "doc", id: "api/springbone/index" },
           items: [
             {
               type: "category",
               label: "vrm-1.0",
               link: { type: "doc", id: "api/springbone/vrm1/index" },
               items: [
-                "api/springbone/vrm1/runtime",
-                "api/springbone/vrm1/VRMC_springBone_extended_collider",
-                "api/springbone/vrm1/FastSpringBoneService",
+                "api/springbone/vrm1/IVrm10SpringBoneRuntime",
+                { type: "doc", label: "ExtendedCollider", id: "api/springbone/vrm1/VRMC_springBone_extended_collider" },
               ]
             },
             {
@@ -379,15 +382,11 @@ const sidebars: SidebarsConfig = {
               label: "vrm-0.x",
               link: { type: "doc", id: "api/springbone/vrm0/index" },
               items: [
-                "api/springbone/vrm0/runtime",
+                "api/springbone/vrm0/VRM_VRMSpringBone",
+                "api/springbone/vrm0/VRM_IVrm0XSpringBoneRuntime",
+                "api/springbone/vrm0/jobs",
               ]
             },
-            "api/springbone/update",
-            "api/springbone/jobs",
-            'api/springbone/center',
-            'api/springbone/scaling',
-            'api/springbone/startup',
-            'api/springbone/note',
           ],
         },
         {
@@ -397,31 +396,32 @@ const sidebars: SidebarsConfig = {
           items: [
             "api/humanoid/humanoid_animation",
             "vrma/univrm-vrma/retarget",
-            { type: "doc", id: "api/vrm1_controlrig" },
+            "api/humanoid/vrm1_controlrig",
           ],
-        },
-        {
-          type: "category",
-          label: "Mesh",
-          items: [
-            { type: "doc", id: "gltf/mesh_utility" },
-            { type: "doc", id: "api/mesh/bake" },
-          ]
         },
         {
           type: "category",
           label: "glTF",
-          link: { type: "doc", id: "gltf/index" },
           items: [
-            { type: "doc", id: "gltf/glb_import" },
-            { type: "doc", id: "gltf/glb_export" },
-            { type: "doc", id: "gltf/animation_exporter" },
+            "gltf/glb_import",
+            "gltf/glb_export",
+            "gltf/animation_exporter",
             "gltf/root_node",
-            { type: "doc", id: "api/0_36_update" },
-            { type: "doc", id: "api/format" },
-            { type: "doc", id: "api/how_to_impl_extension" },
-            { type: "doc", id: "api/coordinate" },
+            "api/gltf/0_36_update",
+            "api/gltf/format",
+            "api/gltf/how_to_impl_extension",
+            "api/coordinate",
           ],
+        },
+        {
+          type: "category",
+          label: "Others",
+          items: [
+            "gltf/mesh_utility",
+            "api/mesh/bake",
+            'api/editor-import/vrm0x',
+            "api/editor-import/scripted_importer",
+          ]
         },
       ],
     },

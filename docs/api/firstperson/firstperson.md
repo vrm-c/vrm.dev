@@ -1,6 +1,6 @@
 # `vrm-0.x` VRMFirstPersonの使い方
 
-[FirstPerson と Renderer の可視制御 ](/api/first_person)
+[FirstPerson と Renderer の可視制御 ](/api/firstperson/first_person)
 
 実行時に**VRMFirstPerson.Setup**を呼び出すことで、FirstPerson設定に応じた Renderer の可視制御を行うことができます。
 明示的に外部から呼び出してください。

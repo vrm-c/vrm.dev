@@ -49,7 +49,7 @@ vrm-0.x とアタッチされるコンポーネントが異なります。
 
 unity の humanoid を経由せずに直接操作する場合のユーティリティーです。
 
-[正規化されていないモデルを操作する](/api/vrm1_controlrig)
+[正規化されていないモデルを操作する](/api/humanoid/vrm1_controlrig)
 
 ### showMeshes: Load完了時に表示させるか
 
@@ -108,7 +108,7 @@ public class ImporterContextSettings
 
 ### springboneRuntime: SpringBone の Runtime 選択
 
-[SpringBone Runtime](/api/springbone/vrm1/runtime)
+[SpringBone Runtime](/api/springbone/vrm1/IVrm10SpringBoneRuntime)
 
 ## LoadBytesAsync
 
