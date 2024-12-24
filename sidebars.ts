@@ -149,6 +149,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "vrma/univrm-vrma/vrma-import",
         "vrma/univrm-vrma/vrma-export",
+        "vrma/vrma-application",
       ],
     },
   ],
@@ -306,7 +307,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Material/Texture",
+          label: "Material & Texture",
           items: [
             "api/material/urp",
             "api/runtime-import/import_basisu",
@@ -353,11 +354,13 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Humanoid & Vrma",
+          link: { type: "doc", id: "api/humanoid/index" },
           items: [
-            "api/humanoid/index",
-            "api/humanoid/humanoid_animation",
-            "api/humanoid/retarget",
-            "api/humanoid/vrm1_controlrig",
+            "api/humanoid/useAnimator",
+            "api/humanoid/vrm0_copy_rotation",
+            "api/humanoid/Vrm10RuntimeControlRig",
+            "api/humanoid/runtime_vrma",
+            "api/humanoid/UniHumanoid",
           ],
         },
         {
