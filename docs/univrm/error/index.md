@@ -10,7 +10,7 @@
 
 [\[0.x\]\[export\] 正規化時にBlendShapeをベイクするチェックボックスが無かった by ousttrue · Pull Request #2512 · vrm-c/UniVRM · GitHub](https://github.com/vrm-c/UniVRM/pull/2512)
 
-- fixed `v0.128.1` (予定)
+- fixed `v0.128.1`
 
 :::
 
