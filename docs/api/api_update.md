@@ -1,7 +1,6 @@
 # 0.x to 1.0
 
-`VRM-0.x` の個別のコンポーネントに機能を分散する設計を変更して
-`Vrm10Instance` にすべてを集約する方式になりました。
+The design of distributing functions to individual components of `VRM-0.x` has been changed to consolidating everything into `Vrm10Instance`.
 
 | 0.x                           | 1.0                            |
 | ----------------------------- | ------------------------------ |
@@ -9,33 +8,32 @@
 | VRMLookAt                     | VRMInstance.Runtime.LookAt     |
 | VRMSpringBone(各SpringのRoot) | VRMInstance.Runtime.SpringBone |
 
-:::info 毎フレーム決まった順番で更新します。
+:::info It updates every frame in a fixed order.
 
 1. Control Rig
 2. Constraints
 3. Gaze control
 4. Expression
 
-ポーズ付け、ポーズの加工を考慮すると
+Considering posing and pose processing
 
-- [-2] ControlRig にポーズを付ける(Animator もしくは独自処理)
-- [-1] ControlRig の修正。IK など
-- [1] ControlRig 適用 から本体へのモーション転送
-- [2] Constraints 解決
-- [3] Gaze control 解決
-- [4] Expression 適用
-- [5] SpringBone 更新
+- [-2] Pose the ControlRig (using Animator or your own process)
+- [-1] ControlRig fixes. IK etc.
+- [1] Applying ControlRig to transfer motion to the body
+- [2] Constraints Solution
+- [3] Gaze control solution
+- [4] Expression apply
+- [5] SpringBone Update
 
-となりそうです。
-順番の制御が必要な場合は、VRMInstance の更新を手動に切り替えて手動で更新してください。
+If you need control over the order, you can update the VRMInstance manually by switching it to update manually.
 :::
 
 ## Expression
 
-:::info VRMBlendShapeProxy は Vrm10Instance.Runtime.Expression になりました。
+:::info VRMBlendShapeProxy is now Vrm10Instance.Runtime.Expression.
 
-ImmediatelySetValue と AccumulateValue は、SetWeight に一本化されました。
-ImmediatelySetValue は無くなりました。
+ImmediatelySetValue and AccumulateValue have been merged into SetWeight.
+ImmediatelySetValue is gone.
 :::
 
 ```csharp
@@ -52,10 +50,9 @@ vrm10.Runtime.Expression.SetWeight(ExpressionKey.CreateFromPreset(ExpressionPres
 
 ## LookAt
 
-:::info VRMLookAt は Vrm10Instance.Runtime.LookAt になりました。
+:::info VRMLookAt is now Vrm10Instance.Runtime.LookAt.
 
-vrm10.Gaze.position か vrm10.Runtime.LookAt.SetLookAtYawPitch で予め更新しておいた値が、
-後で vrm10.Runtime により適用されます。
+The values ​​previously updated by vrm10.Gaze.position or vrm10.Runtime.LookAt.SetLookAtYawPitch will be applied later by vrm10.Runtime.
 :::
 
 ### Gaze
