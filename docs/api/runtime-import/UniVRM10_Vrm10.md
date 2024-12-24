@@ -49,7 +49,7 @@ vrm-0.x とアタッチされるコンポーネントが異なります。
 
 unity の humanoid を経由せずに直接操作する場合のユーティリティーです。
 
-[正規化されていないモデルを操作する](/api/humanoid/vrm1_controlrig)
+[正規化されていないモデルを操作する](/api/humanoid/Vrm10RuntimeControlRig)
 
 ### showMeshes: Load完了時に表示させるか
 

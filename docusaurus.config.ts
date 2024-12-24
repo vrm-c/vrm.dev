@@ -99,9 +99,9 @@ const config: Config = {
           position: "left",
         },
         {
-          label: "エラー情報",
+          label: "Vrma",
           type: "docSidebar",
-          sidebarId: "errorSidebar",
+          sidebarId: "vrmaSidebar",
           position: "left",
         },
         //

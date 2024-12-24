@@ -1,6 +1,6 @@
-# import animation
+# Runtime Vrma
 
-VRM-1.0 を import します。
+## import VRM-1.0
 
 ```cs title="load vrm-1.0"
 var vrm10Instance = await Vrm10.LoadPathAsync(path,
@@ -23,7 +23,7 @@ instance.ShowMeshes();
 instance.EnableUpdateWhenOffscreen();
 ```
 
-VRM-Animation を import します。
+## import VRM-Animation
 
 ```cs title="load vrm-animation"
 // gltf, glb etc...
@@ -34,7 +34,7 @@ var vrmAnimation = instance.GetComponent<Vrm10AnimationInstance>();
 instance.GetComponent<Animation>().Play();
 ```
 
-VRM-1.0 と VRM-Animation を連結します。
+## connect VRM-1.0 and VRM-Animation
 
 ```cs title="connect model with vrm-animation"
 vrm10Instance.Runtime.VrmAnimation = vrmAnimation;

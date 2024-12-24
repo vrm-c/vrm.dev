@@ -1,5 +1,15 @@
 # VRM-Animation export
 
+Unity 上に humanoid のアニメーションがある場合に、
+コマ送りして VRM-Animation として export することが可能です。
+
+:::warning editor 専用です
+:::
+
+[export](/vrma/univrm-vrma/vrma-export)
+
+を参照してださい。
+
 BVH Converter 実装を参照してください。
 
 - `menu` - `VRM1` - `Experimental` - `Convert BVH to VRM-Animation...`
