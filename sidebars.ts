@@ -42,41 +42,6 @@ const sidebars: SidebarsConfig = {
         { type: "doc", id: "vrm/how_to_view_vrm" },
         { type: "doc", id: "vrm/vrm_meta" },
         { type: "doc", id: "vrm/vrm_development" },
-        {
-          type: "category",
-          label: "Vrm-1.0",
-          items: [
-            "vrm1/index",
-            "vrm1/changed",
-            "vrm1/gltf_details",
-            "vrm1/meta",
-            "vrm1/humanoid",
-            "vrm1/expression",
-            "vrm1/lookat_firstperson",
-            {
-              type: "category",
-              label: "VRMC_springBone",
-              link: { type: "doc", id: "vrm1/springbone/index" },
-              items: [
-                "vrm1/springbone/extended_collider",
-              ],
-            },
-            "vrm1/emission",
-            "vrm1/mtoon",
-            "vrm1/constraint",
-          ]
-        },
-        {
-          type: "category",
-          label: "VRM Animation",
-          link: { type: "doc", id: "vrma/index" },
-          items: [
-            "vrma/univrm-vrma/vrma-import",
-            "vrma/univrm-vrma/vrma-export",
-            "vrma/univrm-vrma/retarget",
-            "vrma/animation",
-          ],
-        },
       ],
     },
   ],
@@ -176,36 +141,14 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  errorSidebar: [
+  vrmaSidebar: [
     {
       type: "category",
-      label: "Error",
-      link: { type: "doc", id: "univrm/error/index" },
+      label: "VRM Animation",
+      link: { type: "doc", id: "vrma/index" },
       items: [
-        {
-          type: "category",
-          label: "Export",
-          items: [
-            "univrm/error/0_115_0_BlendshapeCollapse",
-            "univrm/error/0_124_0_NoBoneWeight",
-            "univrm/error/0_124_1_AvatarBuilderDupBone",
-            "univrm/error/0_124_1_NullReferenceExceptionMeshAttachInfo",
-            "univrm/error/0_123_0_NullMaterial",
-          ],
-        },
-        {
-          type: "category",
-          label: "SpringBone",
-          items: [
-            "univrm/error/0_123_0_CapsuleCollider",
-          ]
-        },
-        "univrm/error/0_100_1_multiple_scripted_importers",
-        "univrm/error/0_124_2_could_not_include",
-        "univrm/error/skinnedmeshrenderer_rootbone",
-        "univrm/error/cs1061",
-        //
-        "univrm/error/report_error",
+        "vrma/univrm-vrma/vrma-import",
+        "vrma/univrm-vrma/vrma-export",
       ],
     },
   ],
@@ -258,6 +201,24 @@ const sidebars: SidebarsConfig = {
             { type: "doc", id: "univrm1/migrate_vrm0/migrate_editor" },
           ],
         },
+        "vrm1/index",
+        "vrm1/changed",
+        "vrm1/gltf_details",
+        "vrm1/meta",
+        "vrm1/humanoid",
+        "vrm1/expression",
+        "vrm1/lookat_firstperson",
+        {
+          type: "category",
+          label: "VRMC_springBone",
+          link: { type: "doc", id: "vrm1/springbone/index" },
+          items: [
+            "vrm1/springbone/extended_collider",
+          ],
+        },
+        "vrm1/emission",
+        "vrm1/mtoon",
+        "vrm1/constraint",
       ],
     },
   ],
@@ -391,11 +352,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Humanoid",
-          link: { type: "doc", id: "api/humanoid/index" },
+          label: "Humanoid & Vrma",
           items: [
+            "api/humanoid/index",
             "api/humanoid/humanoid_animation",
-            "vrma/univrm-vrma/retarget",
+            "api/humanoid/retarget",
             "api/humanoid/vrm1_controlrig",
           ],
         },
@@ -469,6 +430,37 @@ const sidebars: SidebarsConfig = {
         },
         { type: "doc", id: "release/how_to_release" },
         { type: "doc", id: "release/how_to_translation" },
+      ],
+    },
+    {
+      type: "category",
+      label: "Error",
+      link: { type: "doc", id: "univrm/error/index" },
+      items: [
+        {
+          type: "category",
+          label: "Export",
+          items: [
+            "univrm/error/0_115_0_BlendshapeCollapse",
+            "univrm/error/0_124_0_NoBoneWeight",
+            "univrm/error/0_124_1_AvatarBuilderDupBone",
+            "univrm/error/0_124_1_NullReferenceExceptionMeshAttachInfo",
+            "univrm/error/0_123_0_NullMaterial",
+          ],
+        },
+        {
+          type: "category",
+          label: "SpringBone",
+          items: [
+            "univrm/error/0_123_0_CapsuleCollider",
+          ]
+        },
+        "univrm/error/0_100_1_multiple_scripted_importers",
+        "univrm/error/0_124_2_could_not_include",
+        "univrm/error/skinnedmeshrenderer_rootbone",
+        "univrm/error/cs1061",
+        //
+        "univrm/error/report_error",
       ],
     },
   ],

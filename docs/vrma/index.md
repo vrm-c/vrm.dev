@@ -85,7 +85,7 @@ VRM-1.0 の方に、VRM-Animation サポートが実装されています。
 
 [import](/vrma/univrm-vrma/vrma-import)
 と
-[retarget](/vrma/univrm-vrma/retarget)
+[retarget](/api/humanoid/retarget)
 を参照してください。
 
 ### export
