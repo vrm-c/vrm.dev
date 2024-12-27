@@ -1,4 +1,4 @@
-# UniVRM-1.0
+# VRM-1.0
 
 UniVRM は VRM 規格を実装した Unity のライブラリアセットです。
 UniVRM を利用して、Unity から VRM ファイルを生成したり、読み込むことができます。

@@ -1,9 +1,3 @@
----
-date: 2018-04-16T16:30:00+09:00
-aliases: [/how_to_view_vrm/]
-weight: 6
----
-
 # VRMで開発する
 
 - [programming](/api/)
