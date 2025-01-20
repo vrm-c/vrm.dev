@@ -1866,4 +1866,21 @@ export const users: User[] = [
     },
     "updated": new Date("2024-08-22"),
   },
+  {
+    "flags": F.WebBrowser | F.Vrm10 | F.VrmAnimation | F.Viewer | F.Animation,
+    "platforms": P.WebBrowser | P.WebXR,
+    "ja": {
+      "title": "Rhodonite Editor",
+      "url": "https://editor.librn.com/",
+      "description": "Web3Dライブラリ[RhodoniteTS](https://github.com/actnwit/RhodoniteTS)をベースにしたビューアーです。VRMファイルをドラッグ＆ドロップしてVRMファイルを表示、さらにVRMAファイルをドラッグ＆ドロップすることで表示したVRMにモーションを適用することができます。",
+      "preview": "https://github.com/actnwit/RhodoniteTS/raw/main/assets/images/Rhodonite_Logo_2.png"
+    },
+    "en": {
+      "title": "Rhodonite Editor",
+      "url": "https://editor.librn.com/",
+      "description": "This viewer is based on the Web3D library [RhodoniteTS](https://github.com/actnwit/RhodoniteTS). You can drag and drop a VRM file to display it, and drag and drop a VRMA file to apply motion to the displayed VRM.",
+      "preview": "https://github.com/actnwit/RhodoniteTS/raw/main/assets/images/Rhodonite_Logo_2.png"
+    },
+    "updated": new Date("2025-01-01"),
+  },
 ];
