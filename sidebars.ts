@@ -288,6 +288,7 @@ const sidebars: SidebarsConfig = {
         "api/material/texture_manipulation",
         "api/material/transparent_zwrite",
         "gltf/emission_glow",
+        "api/material/IMaterialDescriptor",
       ],
     },
     {
