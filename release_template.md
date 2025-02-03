@@ -6,6 +6,8 @@ The UniVRM supports Unity ${unity_version} or later.
 
 ### UnityPackage
 
+Download the unitypackage, and drag and drop it to import the package into your project.
+
 - VRM 1.0: **[Download](https://github.com/vrm-c/UniVRM/releases/download/v${version}/VRM-${version_hash}.unitypackage)**
 - VRM 0.x: **[Download](https://github.com/vrm-c/UniVRM/releases/download/v${version}/UniVRM-${version_hash}.unitypackage)**
 
