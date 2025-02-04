@@ -44,7 +44,7 @@ You can also install via editing `Packages/manifest.json` directly.
 ```
 </details>
 
-### Development samples
+### Development Samples
 
 <details>
 <summary>click to expand</summary>
