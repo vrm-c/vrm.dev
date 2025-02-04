@@ -16,7 +16,7 @@ https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-b
 
 RuntimeLoad 向けではありません。
 
-## ShaderGraph で CustomMaterial を作成
+## ShaderGraph で TinyPbr を作成
 
 `v0.128.2` [VRM10Viewer Sample](/api/sample/vrm10/VRM10Viewer/) にて PBR と MToon1.0 のカスタムシェーダーを提供予定です。
 
@@ -25,13 +25,25 @@ PBR はそれなりに、MToon は簡易なものになります。
 
 機能が不足する場合に改造や自作できるように、 `ShaderGraph Shader` 作成と `Vrm10Importer へのカスタムの MaterialLoader 組み込み` を説明します。
 
-| shader        | comment                                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| URP PBR       | VRM10Viewer の CustomPBR を使うか改造するなどしてください                                                                              |
-| URP unlit     | `UniGLTF/UniUnlit` を使ってください                                                                                                    |
-| URP MToon-1.0 | `VRM10/Universal Render Pipeline/MToon10` を使ってください。WebGLのときは、VRM10Viewer の CustomMtoon を使うか改造するなどしてください |
+| shader        | desktop urp                               | webgl urp                  | note                           |
+| ------------- | ----------------------------------------- | -------------------------- | ------------------------------ |
+| URP PBR       | VRM10Viewer の CustomPBR                  | VRM10Viewer の CustomPBR   | Always Included Shaders 問題   |
+| URP unlit     | `UniGLTF/UniUnlit`                        | `UniGLTF/UniUnlit`         |                                |
+| URP MToon-1.0 | `VRM10/Universal Render Pipeline/MToon10` | VRM10Viewer の CustomMtoon | WebGL runtimeload variant 問題 |
 
 ## 手順
+
+### Shader 関連の命名ガイドライン
+
+シェーダーを中心に複数の関連ファイルを管理するので、一貫した命名にすると便利です。
+
+TinyPbr と名付けた例。
+
+| type                         | name                          | note                                                               |
+| ---------------------------- | ----------------------------- | ------------------------------------------------------------------ |
+| shader                       | TinyPbr                       | TinyPbrOpaque, TinyPbrAlphaBlend, TinyPbrCutoff が必要かもしれない |
+| 補助クラス                   | TinyPbrContext.cs             |                                                                    |
+| IMaterialDescriptorGenerator | TinyPbrDescriptorGenerator.cs |                                                                    |
 
 ### ShaderGraph で Shader を作成
 
@@ -48,7 +60,7 @@ PBR はそれなりに、MToon は簡易なものになります。
 - BaseColor に `Sample Texture 2D` を接続
 - `Sample Texture 2D` に `Texture2D Asset` を接続
 - `Texture2D Asset` を convert to property
-- Name `BaseMap` (CustomMaterialContext.BaseMap と同じ)
+- Name `BaseMap` (TinyPbrMaterialContext.BaseMap と同じ)
 - check `Use Tiling and Offsset`
 - check `Exposed`
 
@@ -61,18 +73,15 @@ PBR はそれなりに、MToon は簡易なものになります。
 ### Importer に組込む
 
 <details>
-  <summary>CustomMaterialContext.cs</summary>
+  <summary>TinyPbrMaterialContext.cs</summary>
   <p>
 
 ```cs
-using System;
-using UniGLTF;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace UniVRM10.VRM10Viewer
 {
-    public class CustomMaterialContext
+    public class TinyPbrContext
     {
         private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
         public readonly Material Material;
@@ -95,13 +104,9 @@ namespace UniVRM10.VRM10Viewer
             set => Material.SetTextureScale(BaseMap, value);
         }
 
-        public CustomMaterialContext(Material material)
+        public TinyPbrContext(Material material)
         {
             Material = material;
-        }
-
-        public void Validate()
-        {
         }
     }
 }
@@ -111,7 +116,7 @@ namespace UniVRM10.VRM10Viewer
 </details>
 
 <details>
-  <summary>CustomMaterialDescriptorGenerator.cs</summary>
+  <summary>TinyPbrDescriptorGenerator.cs</summary>
   <p>
 
 ```cs
@@ -119,7 +124,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UniGLTF;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace UniVRM10.VRM10Viewer
@@ -127,16 +131,16 @@ namespace UniVRM10.VRM10Viewer
     /// <summary>
     /// GLTF の MaterialImporter
     /// </summary>
-    public sealed class CustomMaterialDescriptorGenerator : IMaterialDescriptorGenerator
+    public sealed class TinyPbrDescriptorGenerator : IMaterialDescriptorGenerator
     {
         public UrpGltfPbrMaterialImporter PbrMaterialImporter { get; } = new();
         public UrpGltfDefaultMaterialImporter DefaultMaterialImporter { get; } = new();
 
-        public Material CustomMaterial { get; set; }
+        public Material Material { get; set; }
 
-        public CustomMaterialDescriptorGenerator(Material customMaterial)
+        public TinyPbrDescriptorGenerator(Material material)
         {
-            CustomMaterial = customMaterial;
+            Material = material;
         }
 
         public MaterialDescriptor Get(GltfData data, int i)
@@ -170,7 +174,7 @@ namespace UniVRM10.VRM10Viewer
             var src = data.GLTF.materials[i];
             matDesc = new MaterialDescriptor(
                 GltfMaterialImportUtils.ImportMaterialName(i, src),
-                CustomMaterial.shader,
+                Material.shader,
                 null,
                 new Dictionary<string, TextureDescriptor>(),
                 new Dictionary<string, float>(),
@@ -186,7 +190,7 @@ namespace UniVRM10.VRM10Viewer
 
         public static async Task GenerateMaterialAsync(GltfData data, glTFMaterial src, Material dst, GetTextureAsyncFunc getTextureAsync, IAwaitCaller awaitCaller)
         {
-            var context = new CustomMaterialContext(dst);
+            var context = new TinyPbrContext(dst);
 
             if (src is { pbrMetallicRoughness: { baseColorTexture: { index: >= 0 } } })
             {
@@ -207,7 +211,7 @@ namespace UniVRM10.VRM10Viewer
 ```cs
         public static async Task GenerateMaterialAsync(GltfData data, glTFMaterial src, Material dst, GetTextureAsyncFunc getTextureAsync, IAwaitCaller awaitCaller)
         {
-            var context = new CustomMaterialContext(dst);
+            var context = new TinyPbrContext(dst);
 
             if (src is { pbrMetallicRoughness: { baseColorTexture: { index: >= 0 } } })
             {
