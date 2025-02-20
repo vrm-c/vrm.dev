@@ -1,21 +1,5 @@
 # CustomMaterial の作り方
 
-## WebGL + RuntimeLoad 問題
-
-WebGL で RuntimeLoad する場合に Unity の ShaderVariant の解決がうまくいかないようです。
-
-https://github.com/vrm-c/UniVRM/issues/2548
-
-## URP/Lit を Always Included Shaders にできない問題
-
-`Universal Render Pipeline/Lit` は ShaderVariant が厖大で、 `Always Included Shaders` に登録することが非推奨です。
-
-https://github.com/vrm-c/UniVRM/pull/2498
-
-https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-build/863894/4
-
-RuntimeLoad 向けではありません。
-
 ## ShaderGraph で TinyPbr を作成
 
 `v0.128.2` [VRM10Viewer Sample](/api/sample/vrm10/VRM10Viewer/) にて PBR と MToon1.0 のカスタムシェーダーを提供予定です。
@@ -24,12 +8,6 @@ RuntimeLoad 向けではありません。
 PBR はそれなりに、MToon は簡易なものになります。
 
 機能が不足する場合に改造や自作できるように、 `ShaderGraph Shader` 作成と `Vrm10Importer へのカスタムの MaterialLoader 組み込み` を説明します。
-
-| shader        | desktop urp                               | webgl urp                  | note                           |
-| ------------- | ----------------------------------------- | -------------------------- | ------------------------------ |
-| URP PBR       | VRM10Viewer の CustomPBR                  | VRM10Viewer の CustomPBR   | Always Included Shaders 問題   |
-| URP unlit     | `UniGLTF/UniUnlit`                        | `UniGLTF/UniUnlit`         |                                |
-| URP MToon-1.0 | `VRM10/Universal Render Pipeline/MToon10` | VRM10Viewer の CustomMtoon | WebGL runtimeload variant 問題 |
 
 ## 手順
 
@@ -232,10 +210,3 @@ namespace UniVRM10.VRM10Viewer
 
 TODO:
 
-## PBR 詳細
-
-TODO:
-
-## MToon 詳細
-
-TODO:
