@@ -18,6 +18,7 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebars: SidebarsConfig = {
   vrmSidebar: [
     "vrm/vrm_about",
+    "vrm/vrm_features",
     {
       type: "category",
       label: "how to make VRM",
@@ -281,14 +282,22 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Material & Texture",
       items: [
-        "api/material/urp",
         "api/runtime-import/import_basisu",
         "api/material/0_96_1_use_gamma_colorspace",
         "api/material/0_76_texture_deserializer",
         "api/material/texture_manipulation",
         "api/material/transparent_zwrite",
         "gltf/emission_glow",
-        "api/material/make_custom_material",
+        {
+          type: "category",
+          label: "URP",
+          link: { type: "doc", id: "api/material/urp" },
+          items: [
+            "api/material/make_custom_material/index",
+            "api/material/make_custom_material/custom_pbr",
+            "api/material/make_custom_material/custom_mtoon",
+          ],
+        },
       ],
     },
     {
