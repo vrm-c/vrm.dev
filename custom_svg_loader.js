@@ -8,7 +8,12 @@ export default function loader(source) {
   source = source.replace(/"([^"]+?\.(png|jpg))"/, (all, unquoted, ext) => {
     const img_path = path.join(this.context, unquoted);
     const img_content = fs.readFileSync(img_path);
-    return `"data:image/png;base64,${img_content.toString('base64')}"`;
+    if (img_content instanceof Buffer) {
+      return `"data:image/png;base64,${img_content.toString('base64')}"`;
+    }
+    else {
+      return all;
+    }
   });
 
   return source;
