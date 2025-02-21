@@ -14,7 +14,7 @@ export default function(context, options) {
             type: 'asset/resource',
             use: [
               {
-                loader: path.resolve('custom_svg_loader.js'),
+                loader: path.resolve('custom_svg_loader.ts'),
                 options: {
                   /* ... */
                 },
