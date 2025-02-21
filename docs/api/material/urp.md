@@ -22,7 +22,7 @@ vrm-1.0 ローダーでvrm-0.x を変換ロードすることができます。
 
 ## 'Universal Render Pipeline/Lit' のビルド時間が長すぎる
 
-:::info `Universal Render Pipeline/Lit` は `Always Included Shaders` として使うこと想定されていない
+:::warning `Universal Render Pipeline/Lit` は `Always Included Shaders` として使うことが想定されていない
 https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-build/863894/6
 :::
 
@@ -35,13 +35,13 @@ https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-b
 
 [VRM10Viewer](/api/sample/vrm10/VRM10Viewer/) に作例が含まれています。
 
-:::info
+:::note
 後日、UniVRM 本体に正式版を含める予定ですが、当面 Sample の作成例となります。
 :::
 
 ## WebGL で 'VRM10/Universal Render Pipeline/MToon10' のシェーディングが乱れる
 
-:::info
+:::warning
 WebGL + URP 個有の問題で、他のビルドでは再現しません。
 :::
 
@@ -54,7 +54,7 @@ WebGL + URP 個有の問題で、他のビルドでは再現しません。
 
 [VRM10Viewer](/api/sample/vrm10/VRM10Viewer/) に作例が含まれています。
 
-:::info
+:::note
 ShaderGraph で MToon を再現することが難しい機能があります(Outlineなど)。
 簡易な代替シェーダーとなります。
 :::
