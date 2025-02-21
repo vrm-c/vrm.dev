@@ -204,7 +204,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    path.resolve('./custom_webpack.js'),
+    path.resolve('./custom_webpack.ts'),
     [
       "@docusaurus/plugin-ideal-image",
       {
