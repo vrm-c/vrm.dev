@@ -27,7 +27,7 @@
 
 ➡️ [VRM ファイルが使えるアプリケーション](/showcase)
 
-### VRM ファイルを投稿する・探す
+## VRM ファイルを投稿する・探す
 
 - [The Seed Online](https://seed.online/)
 - [VRoid Hub](https://hub.vroid.com/)
