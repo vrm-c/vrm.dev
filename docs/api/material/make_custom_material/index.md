@@ -7,23 +7,21 @@
 応急処置のため Sample に入れて 正式サポート外としております。
 PBR はそれなりに、MToon は簡易なものになります。
 
-機能が不足する場合に改造や自作できるように、 `ShaderGraph Shader` 作成と `Vrm10Importer へのカスタムの MaterialLoader 組み込み` を説明します。
+機能が不足する場合に改造や自作できるように、 `ShaderGraph Shader` の作成と、Vrm10Importer でカスタムのシェーダーをロードするための `IMaterialDescriptorGenerator` の作成方法を説明します。
 
-## 手順
-
-### Shader 関連の命名ガイドライン
+## Shader 関連の命名ガイドライン
 
 シェーダーを中心に複数の関連ファイルを管理するので、一貫した命名にすると便利です。
 
 TinyPbr と名付けた例。
 
-| type                         | name                          | note                                                               |
-| ---------------------------- | ----------------------------- | ------------------------------------------------------------------ |
-| shader                       | TinyPbr                       | TinyPbrOpaque, TinyPbrAlphaBlend, TinyPbrCutoff が必要かもしれない |
-| 補助クラス                   | TinyPbrContext.cs             |                                                                    |
-| IMaterialDescriptorGenerator | TinyPbrDescriptorGenerator.cs |                                                                    |
+| type                         | name                          |
+| ---------------------------- | ----------------------------- |
+| shader                       | TinyPbr                       |
+| 補助クラス                   | TinyPbrContext.cs             |
+| IMaterialDescriptorGenerator | TinyPbrDescriptorGenerator.cs |
 
-### ShaderGraph で Shader を作成
+## ShaderGraph で Shader を作成
 
 ![make shader graph asset](./create_shader_graph_menu.jpg)
 
@@ -31,9 +29,9 @@ TinyPbr と名付けた例。
 
 ![color texure](./sg_first.jpg)
 
-#### TextureNode
+### TextureNode
 
-最低限の動作確認をするために color texture だけを作成ます。
+最低限で動作を確認するために color texture だけを作成ます。
 
 - BaseColor に `Sample Texture 2D` を接続
 - `Sample Texture 2D` に `Texture2D Asset` を接続
@@ -48,50 +46,7 @@ TinyPbr と名付けた例。
 
 ![MainTexture Flag](./set_as_main_texture.jpg)
 
-### Importer に組込む
-
-<details>
-  <summary>TinyPbrMaterialContext.cs</summary>
-  <p>
-
-```cs
-using UnityEngine;
-
-namespace UniVRM10.VRM10Viewer
-{
-    public class TinyPbrContext
-    {
-        private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
-        public readonly Material Material;
-
-        public Texture BaseTexture
-        {
-            get => Material.GetTexture(BaseMap);
-            set => Material.SetTexture(BaseMap, value);
-        }
-
-        public Vector2 BaseTextureOffset
-        {
-            get => Material.GetTextureOffset(BaseMap);
-            set => Material.SetTextureOffset(BaseMap, value);
-        }
-
-        public Vector2 BaseTextureScale
-        {
-            get => Material.GetTextureScale(BaseMap);
-            set => Material.SetTextureScale(BaseMap, value);
-        }
-
-        public TinyPbrContext(Material material)
-        {
-            Material = material;
-        }
-    }
-}
-```
-
-  </p>
-</details>
+## IMaterialDescriptorGenerator を作成する
 
 <details>
   <summary>TinyPbrDescriptorGenerator.cs</summary>
@@ -123,12 +78,6 @@ namespace UniVRM10.VRM10Viewer
 
         public MaterialDescriptor Get(GltfData data, int i)
         {
-            // TODO: VRM
-
-            // UNLIT
-            MaterialDescriptor param;
-            // if (BuiltInGltfUnlitMaterialImporter.TryCreateParam(data, i, out param)) return param;
-
             if (TryCreateParam(data, i, out param)) return param;
 
             // NOTE: Fallback to default material
@@ -206,7 +155,52 @@ namespace UniVRM10.VRM10Viewer
   </p>
 </details>
 
-## IMaterialDescriptorGenerator 詳細
+<details>
+  <summary>TinyPbrMaterialContext.cs</summary>
+  <p>
 
-TODO:
+```cs
+using UnityEngine;
 
+namespace UniVRM10.VRM10Viewer
+{
+    public class TinyPbrContext
+    {
+        private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
+        public readonly Material Material;
+
+        public Texture BaseTexture
+        {
+            get => Material.GetTexture(BaseMap);
+            set => Material.SetTexture(BaseMap, value);
+        }
+
+        public Vector2 BaseTextureOffset
+        {
+            get => Material.GetTextureOffset(BaseMap);
+            set => Material.SetTextureOffset(BaseMap, value);
+        }
+
+        public Vector2 BaseTextureScale
+        {
+            get => Material.GetTextureScale(BaseMap);
+            set => Material.SetTextureScale(BaseMap, value);
+        }
+
+        public TinyPbrContext(Material material)
+        {
+            Material = material;
+        }
+    }
+}
+```
+
+  </p>
+</details>
+
+## TinyPbrDescriptorGenerator を使って vrm をロードする。
+
+```cs
+Material shader_graph_material;
+var vrm = await Vrm10.LoadPathAsync(vrm_path, IMaterialDescriptorGenerator: new TinyPbrDescriptorGenerator(shader_graph_material));
+```

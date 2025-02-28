@@ -294,6 +294,7 @@ const sidebars: SidebarsConfig = {
           link: { type: "doc", id: "api/material/urp" },
           items: [
             "api/material/make_custom_material/index",
+            "api/material/make_custom_material/IMaterialDescriptorGenerator",
             "api/material/make_custom_material/custom_pbr",
             "api/material/make_custom_material/custom_mtoon",
           ],
