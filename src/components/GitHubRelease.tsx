@@ -3,7 +3,7 @@
 // https://icon-sets.iconify.design/
 import { Icon } from '@iconify/react'; // Import the entire Iconify library.
 
-export default function GithubRelease(props: { tag: string }) {
+export default function GitHubRelease(props: { tag: string }) {
   const { tag } = props;
   let url = `https://github.com/vrm-c/UniVRM/releases/tag/${tag}`;
   return (<span>

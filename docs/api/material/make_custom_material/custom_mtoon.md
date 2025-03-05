@@ -1,6 +1,6 @@
 import sg from './mtoon_shadergraph.svg'
 
-# MToon 詳細
+# TinyMToon 詳細
 
 MToon は Lighting をカスタムするので、 URP の Unlit をベースに ShaderGraph を作成してください。
 
