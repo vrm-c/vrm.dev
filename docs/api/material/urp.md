@@ -1,5 +1,3 @@
-import GithubIssue from '@site/src/components/GithubIssue';
-
 # URP 対応について
 
 | vrm material | urp-shader                                       | note          |
@@ -26,7 +24,7 @@ vrm-1.0 ローダーでvrm-0.x を変換ロードすることができます。
 https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-build/863894/6
 :::
 
-<GithubIssue issue="2498" title="[urp][build] ビルドすると膨大な時間がかかるため削除" />
+<GitHubIssue issue="2498" title="[urp][build] ビルドすると膨大な時間がかかるため削除" />
 
 代替マテリアルを ShaderGraph で作成する例を作りました。
 
@@ -45,7 +43,7 @@ https://discussions.unity.com/t/urp-lit-sample-is-missing-all-shaders-in-webgl-b
 WebGL + URP 個有の問題で、他のビルドでは再現しません。
 :::
 
-<GithubIssue issue="2548" title="Unity WebGLで動的にインポートしたvrmのShadeがおかしい" />
+<GitHubIssue issue="2548" title="Unity WebGLで動的にインポートしたvrmのShadeがおかしい" />
 
 代替マテリアルを ShaderGraph で作成する例を作りました。
 

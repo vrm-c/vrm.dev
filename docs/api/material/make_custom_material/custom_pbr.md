@@ -6,7 +6,7 @@ import sg_metallic_roughness_occlusion from './pbr_shadergraph_metallic_roughnes
 import sg_normal from './pbr_shadergraph_normal.svg'
 import sg_emission from './pbr_shadergraph_emission.svg'
 
-# PBR 詳細
+# TinyPBR 詳細
 
 `glTF の PBR` と `Unity ShaderGraph の Lit` は機能がだいたい同じです。
 おおむねプロパティを連結するだけです。
