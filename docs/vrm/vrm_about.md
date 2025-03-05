@@ -26,12 +26,3 @@
 ![VRM applications](/images/vrm/VRM_WorldConnect_jp.png)
 
 ➡️ [VRM ファイルが使えるアプリケーション](/showcase)
-
-## VRM ファイルを投稿する・探す
-
-- [The Seed Online](https://seed.online/)
-- [VRoid Hub](https://hub.vroid.com/)
-- [ニコニ立体](https://3d.nicovideo.jp/)
-  - [こちら](https://3d.nicovideo.jp/search?word_type=tag&word=VRM)から投稿された VRM モデルデータのリストが見られます。ライセンスなど確認して使ってみてください。
-  - ご自分で VRM ファイルを投稿する際、「バーチャルキャスト連携」を有効にすると[バーチャルキャスト](https://virtualcast.jp/)から利用できます。
-- [VIPE](https://vipe.io)

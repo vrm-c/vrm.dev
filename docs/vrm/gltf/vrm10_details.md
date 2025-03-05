@@ -1,4 +1,4 @@
-# gltf 格納詳細
+# vrm-1.0 glTF 格納詳細
 
 :::warning
 import, export の実装で注意が必要です。
