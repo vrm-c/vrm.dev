@@ -22,7 +22,7 @@ VR でのアバター表現が急速に盛り上がる中でこういった状�
 
 - ❗ テクスチャーやマテリアルが別ファイルになっている。絶対パスが記述されている。
 - ❗ zip になっている。文字コード、フォルダ構成。
-- ✅ テクスチャやマテリアルを含めたすべてが１ファイルにまとまり **簡単にランタイムロード** できます。👉 [glb](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) ベースです。
+- ✅ テクスチャやマテリアルを含めたすべてが１ファイルにまとまり **簡単にランタイムロード** できます。➡️ [glb](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) ベースです。
 
 ## モデル情報を共通化する
 

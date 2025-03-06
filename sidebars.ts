@@ -16,9 +16,43 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
  */
 const sidebars: SidebarsConfig = {
+  // VRM関連でUnity以外について
   vrmSidebar: [
     "vrm/vrm_about",
     "vrm/vrm_features",
+    // ライセンスなど
+    "vrm/vrm_meta",
+    // glTF層の説明
+    {
+      type: "category",
+      label: "glTF詳細",
+      items: [
+        "vrm/gltf/format",
+        "vrm/gltf/vrm10_details",
+        // vertex buffer
+        // blendshape name
+        // coords
+      ]
+    },
+    // material(pbr, unlit, mtoon, emission)
+    "vrm/material/index",
+    // operation(humanoid/tpose, pose, expression, lookat)
+    // springbone, constraint
+    // firstperson
+  ],
+  // UniVRMの使い方
+  univrmSidebar: [
+    "univrm/index",
+    {
+      type: "category",
+      label: "Install",
+      link: { type: "doc", id: "univrm/install/index" },
+      items: [
+        { type: "doc", id: "univrm/install/unity_version" },
+        { type: "doc", id: "univrm/install/univrm_install" },
+        { type: "doc", id: "univrm/install/univrm_uninstall" },
+      ],
+    },
     {
       type: "category",
       label: "how to make VRM",
@@ -34,22 +68,6 @@ const sidebars: SidebarsConfig = {
           type: "doc",
           id: "vrm/how_to_make_vrm/vrm_behavior_confirmation",
         },
-      ],
-    },
-    "vrm/how_to_view_vrm",
-    "vrm/vrm_meta",
-    "vrm/vrm_development",
-  ],
-  univrmSidebar: [
-    "univrm/index",
-    {
-      type: "category",
-      label: "Install",
-      link: { type: "doc", id: "univrm/install/index" },
-      items: [
-        { type: "doc", id: "univrm/install/unity_version" },
-        { type: "doc", id: "univrm/install/univrm_install" },
-        { type: "doc", id: "univrm/install/univrm_uninstall" },
       ],
     },
     {
@@ -184,7 +202,6 @@ const sidebars: SidebarsConfig = {
     },
     "vrm1/index",
     "vrm1/changed",
-    "vrm1/gltf_details",
     "vrm1/meta",
     "vrm1/humanoid",
     "vrm1/expression",
@@ -201,8 +218,9 @@ const sidebars: SidebarsConfig = {
     "vrm1/mtoon",
     "vrm1/constraint",
   ],
-
+  //unity開発面
   apiSidebar: [
+    "vrm/vrm_development",
     { type: "doc", id: "api/api_update" },
     {
       type: "category",
@@ -222,6 +240,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "vrm-1.0",
           items: [
+            "vrm/how_to_view_vrm",
             "api/sample/vrm10/VRM10Viewer",
             "api/sample/vrm10/VRM10RuntimeExporterSample",
             "api/sample/vrm10/VRM10FirstPersonSample",
@@ -355,7 +374,6 @@ const sidebars: SidebarsConfig = {
         "gltf/animation_exporter",
         "gltf/root_node",
         "api/gltf/0_36_update",
-        "api/gltf/format",
         "api/gltf/how_to_impl_extension",
         "api/coordinate",
       ],
