@@ -3,31 +3,12 @@
 ```
 glTF => IMaterialDescriptorGenerator => MaterialDescriptor => UnityEngine.Material
 ```
+
 `IMaterialDescriptorGenerator` を実装して importer に渡すことで, Material の生成をカスタマイズできます。
 
-```cs title="Assets/UniGLTF/Runtime/UniGLTF/IO/MaterialIO/Import/IMaterialDescriptorGenerator.c"
-namespace UniGLTF
-{
-    public interface IMaterialDescriptorGenerator
-    {
-        MaterialDescriptor Get(GltfData data, int i);
-        MaterialDescriptor GetGltfDefault(string materialName = null);
-    }
+<UniVRMSource path="UniGLTF/Runtime/UniGLTF/IO/MaterialIO/Import/IMaterialDescriptorGenerator.cs" />
 
-    public sealed class MaterialDescriptor
-    {
-        public delegate Task MaterialGenerateAsyncFunc(Material m, GetTextureAsyncFunc getTexture, IAwaitCaller awaitCaller);
-        public readonly string Name;
-        public readonly Shader Shader;
-        public readonly IReadOnlyList<MaterialGenerateAsyncFunc> AsyncActions;
-
-        public MaterialDescriptor(
-            string name,
-            Shader shader,
-            IReadOnlyList<MaterialGenerateAsyncFunc> asyncActions);
-    }
-}
-```
+<UniVRMSource path="UniGLTF/Runtime/UniGLTF/IO/MaterialIO/Import/MaterialDescriptor.cs" />
 
 ## IMaterialDescriptorGenerator.Get の実装
 
@@ -45,5 +26,6 @@ namespace UniGLTF
 前ページのサンプルは、分岐せずに PBR を作成しました。
 :::
 
-### MaterialGenerateAsyncFunc に Material 構築を記述する
+### MaterialGenerateAsyncFunc による Material 構築を記述する
 
+<UniVRMSource path="VRM10_Samples/VRM10Viewer/MaterialImporter/TinyPbrMaterialImporter.cs" />
