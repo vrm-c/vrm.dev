@@ -1,4 +1,4 @@
-# 🚧 next: 2025-06-05 planned
+# 🚧 next
 
-<GitHubMilestone milestone="101" />
+<GitHubMilestone milestone="102" />
 
