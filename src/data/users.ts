@@ -1899,4 +1899,21 @@ export const users: User[] = [
     },
     "updated": new Date("2025-06-01"),
   },
+  {
+    "flags": F.CharacterPlatform | F.Vrm10 | F.FaceTracking,
+    "platforms": P.Windows | P.macOS,
+    "ja": {
+      "title": "NICE CAMERA",
+      "url": "https://nicecamera.kidsplates.jp/",
+      "description": "NICE CAMERAは、PC1台だけでリモートツールを使って簡単にアバター操作ができる革新的なアプリです。",
+      "preview": "https://nicecamera.kidsplates.jp/data/vrm_showcase_preview.png"
+    },
+    "en": {
+      "title": "NICE CAMERA",
+      "url": "https://nicecamera.kidsplates.jp/en/",
+      "description": "NICE CAMERA is an innovative application that allows easy handling of avatars using remote tools with only one PC.",
+      "preview": "https://nicecamera.kidsplates.jp/data/vrm_showcase_preview.png"
+    },
+    "updated": new Date("2025-07-07"),
+  },
 ];
