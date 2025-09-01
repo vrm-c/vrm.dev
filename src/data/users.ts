@@ -1883,4 +1883,62 @@ export const users: User[] = [
     },
     "updated": new Date("2025-01-01"),
   },
+  {
+    "flags": F.ImporterExporter,
+    "ja": {
+      "title": "bevy_vrm1",
+      "url": "https://github.com/not-elm/bevy_vrm1",
+      "description": "BevyでVRM1.0とVRMAをサポートするためのライブラリです。",
+      "preview": "https://github.com/not-elm/bevy_vrm1/blob/main/docs/simple.png?raw=true"
+    },
+    "en": {
+      "title": "bevy_vrm1",
+      "url": "https://github.com/not-elm/bevy_vrm1",
+      "description": "This crate allows you to support VRM1.0 and VRMA in Bevy.",
+      "preview": "https://github.com/not-elm/bevy_vrm1/blob/main/docs/simple.png?raw=true"
+    },
+    "updated": new Date("2025-06-01"),
+  },
+  {
+    "flags": F.CharacterPlatform | F.Vrm10 | F.FaceTracking,
+    "platforms": P.Windows | P.macOS,
+    "ja": {
+      "title": "NICE CAMERA",
+      "url": "https://nicecamera.kidsplates.jp/",
+      "description": "NICE CAMERAは、PC1台だけでリモートツールを使って簡単にアバター操作ができる革新的なアプリです。",
+      "preview": "https://nicecamera.kidsplates.jp/data/vrm_showcase_preview.png"
+    },
+    "en": {
+      "title": "NICE CAMERA",
+      "url": "https://nicecamera.kidsplates.jp/en/",
+      "description": "NICE CAMERA is an innovative application that allows easy handling of avatars using remote tools with only one PC.",
+      "preview": "https://nicecamera.kidsplates.jp/data/vrm_showcase_preview.png"
+    },
+    "updated": new Date("2025-07-07"),
+  },
+  {
+    "flags": F.Other | F.Vrm10,
+    "platforms": P.Windows,
+    "ja": {
+      "title": "One_Shutter",
+      "url": "https://kamonohasiwatasi.booth.pm/items/7170915",
+      "description": "VRMとVRMAを読み込んでグラフィックスプライトにするツール！"
+    },
+    "en": {
+      "title": "One_Shutter",
+      "url": "https://kamonohasiwatasi.booth.pm/items/7170915",
+      "description": "A tool that reads VRM and VRMA and creates graphic sprites."
+    },
+    "updated": new Date("2025-07-26"),
+  },
+  {
+    flags: F.Other,
+    "platforms": P.WebBrowser,
+    "en": {
+      "title": "Basejump",
+      "url": "https://basejump.xyz/home",
+      "description": "Basejump is a new platform for making, and playing with VRM compatible games and game assets",
+    },
+    "updated": new Date("2025-08-11"),
+  },
 ];
