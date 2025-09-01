@@ -1916,4 +1916,19 @@ export const users: User[] = [
     },
     "updated": new Date("2025-07-07"),
   },
+  {
+    "flags": F.Vrm10,
+    "platforms": P.Windows,
+    "ja": {
+      "title": "One_Shutter",
+      "url": "https://kamonohasiwatasi.booth.pm/items/7170915",
+      "description": "VRMとVRMAを読み込んでグラフィックスプライトにするツール！"
+    },
+    "en": {
+      "title": "One_Shutter",
+      "url": "https://kamonohasiwatasi.booth.pm/items/7170915",
+      "description": "A tool that reads VRM and VRMA and creates graphic sprites."
+    },
+    "updated": new Date("2025-07-26"),
+  },
 ];
