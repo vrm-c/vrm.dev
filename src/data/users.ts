@@ -1883,4 +1883,20 @@ export const users: User[] = [
     },
     "updated": new Date("2025-01-01"),
   },
+  {
+    "flags": F.ImporterExporter,
+    "ja": {
+      "title": "bevy_vrm1",
+      "url": "https://github.com/not-elm/bevy_vrm1",
+      "description": "BevyでVRM1.0とVRMAをサポートするためのライブラリです。",
+      "preview": "https://github.com/not-elm/bevy_vrm1/blob/main/docs/simple.png?raw=true"
+    },
+    "en": {
+      "title": "bevy_vrm1",
+      "url": "https://github.com/not-elm/bevy_vrm1",
+      "description": "This crate allows you to support VRM1.0 and VRMA in Bevy.",
+      "preview": "https://github.com/not-elm/bevy_vrm1/blob/main/docs/simple.png?raw=true"
+    },
+    "updated": new Date("2025-06-01"),
+  },
 ];
