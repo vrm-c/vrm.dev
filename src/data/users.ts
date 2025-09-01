@@ -1917,7 +1917,7 @@ export const users: User[] = [
     "updated": new Date("2025-07-07"),
   },
   {
-    "flags": F.Vrm10,
+    "flags": F.Other | F.Vrm10,
     "platforms": P.Windows,
     "ja": {
       "title": "One_Shutter",
@@ -1930,5 +1930,15 @@ export const users: User[] = [
       "description": "A tool that reads VRM and VRMA and creates graphic sprites."
     },
     "updated": new Date("2025-07-26"),
+  },
+  {
+    flags: F.Other,
+    "platforms": P.WebBrowser,
+    "en": {
+      "title": "Basejump",
+      "url": "https://basejump.xyz/home",
+      "description": "Basejump is a new platform for making, and playing with VRM compatible games and game assets",
+    },
+    "updated": new Date("2025-08-11"),
   },
 ];
