@@ -1,4 +1,4 @@
 # 🚧 nextnext
 
-<GitHubMilestone milestone="105" />
+<GitHubMilestone milestone="106" />
 
