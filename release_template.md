@@ -22,11 +22,15 @@ You can install these UPM packages via Package Manager in UnityEditor.
 - Click `+` at the top-right of the package manager window, then select `Add package from git URL...`
 - Specify UPM packages using URLs below.
 
+> [!Warning]
+> Starting with version `v0.131.0`, Assets/UniGLTF, VRM, and VRM10 have been moved to the `Packages` folder.
+> Therefore, please specify `path=/Packages/UniGLTF`, `path=/Packages/VRM`, or `path=/Packages/VRM10`.
+
 | UPM package                  | git URL                                                                 |
 |:-----------------------------|:------------------------------------------------------------------------|
-| com.vrmc.gltf                | https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v${version}    |
-| com.vrmc.univrm (VRM 0.x)    | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v${version}        |
-| com.vrmc.vrm (VRM 1.0)       | https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v${version}      |
+| com.vrmc.gltf                | https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v${version}    |
+| com.vrmc.univrm (VRM 0.x)    | https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM#v${version}        |
+| com.vrmc.vrm (VRM 1.0)       | https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v${version}      |
 
 You can also install via editing `Packages/manifest.json` directly.
 
@@ -35,9 +39,9 @@ You can also install via editing `Packages/manifest.json` directly.
 {
   "dependencies": {
     // ...
-    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v${version}",
-    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v${version}",
-    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v${version}",
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v${version}",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM#v${version}",
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v${version}",
     // ...
   }
 }
