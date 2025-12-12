@@ -1941,4 +1941,14 @@ export const users: User[] = [
     },
     "updated": new Date("2025-08-11"),
   },
+  {
+    flags: F.Animation,
+    "platforms": P.iOS | P.Android,
+    "ja": {
+      "title": "ISD Pose Alive",
+      "url": "https://play.google.com/store/apps/details?id=com.lilysoftllc.isdplayer3d",
+      "description": "スマホでVRMアニメーション作成. [iOS](https://apps.apple.com/app/isd-pose-alive/id6751082497)"
+    },
+    "updated": new Date("2025-12-12"),
+  },
 ];
