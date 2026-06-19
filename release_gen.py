@@ -18,7 +18,7 @@ from functools import cmp_to_key
 try:
     import git.repo
     import pyperclip
-except:
+except Exception:
     print("import error. require")
     print("pip install GitPython pyperclip")
     sys.exit()
@@ -31,7 +31,7 @@ TEMPLATE = HERE / "release_template.md"
 HTML_TEMPLATE = HERE / "html_template.html"
 # RELEASE_NOTE_DIR = "112"
 # UNITY_VERSION = "2021.3 LTS"
-RELEASE_NOTE_DIR = "128"
+RELEASE_NOTE_DIR = "131"
 UNITY_VERSION = "2022.3 LTS"
 
 
