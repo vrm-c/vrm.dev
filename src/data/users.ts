@@ -234,6 +234,21 @@ export const users: User[] = [
   },
   {
     "flags": F.CharacterCreation,
+    "ja": {
+      "title": "VTubeMe",
+      "url": "https://vtubeme.com/",
+      "description": "セルフィー1枚から写実的な3D VRMアバターを数分で作成。VSeeFace・Warudo・3teneなどに対応。",
+      "preview": "https://vtubeme.com/opengraph-image"
+    },
+    "en": {
+      "title": "VTubeMe",
+      "url": "https://vtubeme.com/",
+      "description": "Create a photorealistic 3D VRM avatar from a single selfie in minutes. Works with VSeeFace, Warudo and 3tene.",
+      "preview": "https://vtubeme.com/opengraph-image"
+    }
+  },
+  {
+    "flags": F.CharacterCreation,
     "platforms": P.WebBrowser,
     "ja": {
       "title": "Character Studio",
