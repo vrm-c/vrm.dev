@@ -1966,4 +1966,21 @@ export const users: User[] = [
     },
     "updated": new Date("2025-12-12"),
   },
+  {
+    "flags": F.WebBrowser | F.Animation | F.Vrm10 | F.Photography,
+    "platforms": P.WebBrowser,
+    "ja": {
+      "title": "VRM Body Modifier",
+      "url": "https://vrm-body-modifier.vercel.app/",
+      "description": "ブラウザ上でVRMモデルの読み込み、体型調整、ポーズ・アニメーション（.vrma）の再生ができるWebツールです。カスタム表情や目線の制御もサポートしています。",
+      "preview": "https://github.com/user-attachments/assets/2af0925a-91c8-4680-9cf4-1bda42eedd34"
+    },
+    "en": {
+      "title": "VRM Body Modifier",
+      "url": "https://vrm-body-modifier.vercel.app/",
+      "description": "A web-based tool to load, modify body proportions, and animate VRM avatars in real-time. Supports .vrma files and custom facial expressions.",
+      "preview": "https://github.com/user-attachments/assets/2af0925a-91c8-4680-9cf4-1bda42eedd34"
+    },
+    "updated": new Date("2026-01-23"),
+  },
 ];
