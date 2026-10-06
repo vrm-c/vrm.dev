@@ -2007,4 +2007,21 @@ export const users: User[] = [
         preview: "https://private-user-images.githubusercontent.com/480173/590066077-5e125b10-2d5c-4506-ae72-94821853137c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ5MTM3MDcsIm5iZiI6MTc4NDkxMzQwNywicGF0aCI6Ii80ODAxNzMvNTkwMDY2MDc3LTVlMTI1YjEwLTJkNWMtNDUwNi1hZTcyLTk0ODIxODUzMTM3Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNFQxNzE2NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNTMwNTI3MzMzZDM1ZmY0MmJhOTFhNjFkYjFlMjYzYmMzNTc3ZWRiYjE3MjNiMTQwNGZmZGViM2MyN2UxOWI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.88Ss3ecKuZl8n9LbGWLBcUJ-ZvJSEUI3D0Y-IKLB07A",
       },
   },
+  {
+      updated: new Date("2026-09-13"),
+      flags: F.Viewer | F.VrmAnimation | F.Vrm10,
+      platforms: P.Windows | P.macOS,
+      ja: {
+        title: "萌灵桌宠",
+        url: "https://getanimate.app/ja/",
+        description: "Windows / macOS 対応のVRMデスクトップペット・AIコンパニオン。VRM 0.x / 1.0 モデルの読み込みに対応。撫でる・ドラッグ・カーソル追従などのインタラクション、AIチャット、カスタムTTS音声、モーション読み込み可能なダンス機能を搭載。ビルトインモデル2体は無料。",
+        preview: "https://getanimate.app/assets/hero-illustration.png",
+      },
+      en: {
+        title: "AniMate Waifu",
+        url: "https://getanimate.app/",
+        description: "An AI anime desktop pet and VRM companion for Windows / macOS. Supports VRM 0.x / 1.0 model import, interactions such as head pats, dragging and cursor tracking, AI chat with custom TTS voices, and a dance workshop with motion import. Two built-in models are free.",
+        preview: "https://getanimate.app/assets/hero-illustration.png",
+      },
+  },
 ];
