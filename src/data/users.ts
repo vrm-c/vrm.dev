@@ -2007,4 +2007,15 @@ export const users: User[] = [
         preview: "https://private-user-images.githubusercontent.com/480173/590066077-5e125b10-2d5c-4506-ae72-94821853137c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ5MTM3MDcsIm5iZiI6MTc4NDkxMzQwNywicGF0aCI6Ii80ODAxNzMvNTkwMDY2MDc3LTVlMTI1YjEwLTJkNWMtNDUwNi1hZTcyLTk0ODIxODUzMTM3Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNFQxNzE2NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNTMwNTI3MzMzZDM1ZmY0MmJhOTFhNjFkYjFlMjYzYmMzNTc3ZWRiYjE3MjNiMTQwNGZmZGViM2MyN2UxOWI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.88Ss3ecKuZl8n9LbGWLBcUJ-ZvJSEUI3D0Y-IKLB07A",
       },
   },
+  {
+    updated: new Date("2026-09-22"),
+    flags: F.Metaverse | F.WebBrowser | F.Vrm10,
+    platforms: P.WebBrowser,
+    en: {
+      title: "Arrival.Space",
+      url: "https://arrival.space/",
+      description: "A 3D social platform that runs in the browser: claim a space, edit it together and share it. Visitors can bring their own avatar by importing a VRM (0.x and 1.0), which is then driven by the platform's own animation set.",
+      preview: "https://ugc.arrival.space/brand/arrival-space-vrm-showcase-20260922.jpg",
+    },
+  },
 ];
