@@ -2007,4 +2007,21 @@ export const users: User[] = [
         preview: "https://private-user-images.githubusercontent.com/480173/590066077-5e125b10-2d5c-4506-ae72-94821853137c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ5MTM3MDcsIm5iZiI6MTc4NDkxMzQwNywicGF0aCI6Ii80ODAxNzMvNTkwMDY2MDc3LTVlMTI1YjEwLTJkNWMtNDUwNi1hZTcyLTk0ODIxODUzMTM3Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNFQxNzE2NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNTMwNTI3MzMzZDM1ZmY0MmJhOTFhNjFkYjFlMjYzYmMzNTc3ZWRiYjE3MjNiMTQwNGZmZGViM2MyN2UxOWI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.88Ss3ecKuZl8n9LbGWLBcUJ-ZvJSEUI3D0Y-IKLB07A",
       },
   },
+  {
+    updated: new Date("2026-11-10"),
+    flags: F.WebBrowser | F.Viewer | F.ImporterExporter | F.Vrm10 | F.VrmAnimation,
+    platforms: P.WebBrowser,
+    ja: {
+      title: "Shapeweld",
+      url: "https://shapeweld.com/ja/tools#group-vrm",
+      description: "ブラウザーで動く無料のVRMツール集。FBX/GLB/MMD→VRM変換、VRM→FBX、VRM 0.x↔1.0変換、VRMビューワー（0.x/1.0、.vrma再生）、ポーザー、軽量化ツール、CC0/MITの無料VRMモデル415体。アカウント不要。",
+      preview: "https://shapeweld.com/opengraph-image"
+    },
+    en: {
+      title: "Shapeweld",
+      url: "https://shapeweld.com/tools#group-vrm",
+      description: "Free VRM tools in the browser: FBX/GLB/MMD to VRM, VRM to FBX, VRM 0.x to 1.0 and back, a VRM viewer (0.x and 1.0, plays .vrma), a poser, an optimizer, and 415 free VRM models (CC0 and MIT). No account.",
+      preview: "https://shapeweld.com/opengraph-image"
+    },
+  },
 ];
